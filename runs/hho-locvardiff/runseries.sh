@@ -10,6 +10,10 @@ executable_name="hho-locvardiff"
 ###
 # Directories
 origin=$(pwd)
+if [ ! -f ../directories.sh ]; then
+  echo "directories.sh does not exist. Please read the README.txt in the parent folder."
+  exit
+fi
 . ../directories.sh
 
 # Options:
