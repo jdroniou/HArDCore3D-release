@@ -1,0 +1,234 @@
+\hypertarget{classStemMesh3D_1_1tetgenio}{}\section{Stem\+Mesh3D\+:\+:tetgenio Class Reference}
+\label{classStemMesh3D_1_1tetgenio}\index{Stem\+Mesh3\+D\+::tetgenio@{Stem\+Mesh3\+D\+::tetgenio}}
+
+
+Collaboration diagram for Stem\+Mesh3D\+:\+:tetgenio\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classStemMesh3D_1_1tetgenio__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structStemMesh3D_1_1tetgenio_1_1facet}{facet}
+\item 
+struct \hyperlink{structStemMesh3D_1_1tetgenio_1_1pbcgroup}{pbcgroup}
+\item 
+struct \hyperlink{structStemMesh3D_1_1tetgenio_1_1polygon}{polygon}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_aeb3b8945a91f73d771453de7760d523a}\label{classStemMesh3D_1_1tetgenio_aeb3b8945a91f73d771453de7760d523a}} 
+enum \{ {\bfseries F\+I\+L\+E\+N\+A\+M\+E\+S\+I\+ZE} = 1024
+ \}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a774bcf24d97d570a2a74d762a789b89e}\label{classStemMesh3D_1_1tetgenio_a774bcf24d97d570a2a74d762a789b89e}} 
+enum \{ {\bfseries I\+N\+P\+U\+T\+L\+I\+N\+E\+S\+I\+ZE} = 1024
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_ac16e6ad18ce273e5641e77e43133ab34}\label{classStemMesh3D_1_1tetgenio_ac16e6ad18ce273e5641e77e43133ab34}} 
+void {\bfseries initialize} ()
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a50791238a7e9e271328b5c80cb48cced}\label{classStemMesh3D_1_1tetgenio_a50791238a7e9e271328b5c80cb48cced}} 
+void {\bfseries deinitialize} ()
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a1d2641699dddb6a716635f43de307586}\label{classStemMesh3D_1_1tetgenio_a1d2641699dddb6a716635f43de307586}} 
+bool {\bfseries load\+\_\+node\+\_\+call} (F\+I\+LE $\ast$infile, int markers, char $\ast$nodefilename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a329156308b8f67251fc4490dc8e6d983}\label{classStemMesh3D_1_1tetgenio_a329156308b8f67251fc4490dc8e6d983}} 
+bool {\bfseries load\+\_\+node} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a1d6cd4aacd1fafe1f9522be663e503c4}\label{classStemMesh3D_1_1tetgenio_a1d6cd4aacd1fafe1f9522be663e503c4}} 
+bool {\bfseries load\+\_\+addnodes} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a83442e24a49527ea42e7af8d1d800b33}\label{classStemMesh3D_1_1tetgenio_a83442e24a49527ea42e7af8d1d800b33}} 
+bool {\bfseries load\+\_\+pbc} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_aa75ecd50869344069c8aab5bdd3b0e35}\label{classStemMesh3D_1_1tetgenio_aa75ecd50869344069c8aab5bdd3b0e35}} 
+bool {\bfseries load\+\_\+var} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a6eb2fe04559b4a56c574cd39c8e34439}\label{classStemMesh3D_1_1tetgenio_a6eb2fe04559b4a56c574cd39c8e34439}} 
+bool {\bfseries load\+\_\+poly} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_aeaf98f93edbd2a9faa0d53ff4bc4e91b}\label{classStemMesh3D_1_1tetgenio_aeaf98f93edbd2a9faa0d53ff4bc4e91b}} 
+bool {\bfseries load\+\_\+off} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_ad22ac047eb377f5ab2fd84c0bee395cd}\label{classStemMesh3D_1_1tetgenio_ad22ac047eb377f5ab2fd84c0bee395cd}} 
+bool {\bfseries load\+\_\+ply} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a1f26b5156c03a480c264bdec1c1b2bfa}\label{classStemMesh3D_1_1tetgenio_a1f26b5156c03a480c264bdec1c1b2bfa}} 
+bool {\bfseries load\+\_\+stl} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_aa4bdbd3ea2da2914e24c67be7e6d1d0a}\label{classStemMesh3D_1_1tetgenio_aa4bdbd3ea2da2914e24c67be7e6d1d0a}} 
+bool {\bfseries load\+\_\+medit} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_ad327410b2ab83ec06860a141a4e87a7f}\label{classStemMesh3D_1_1tetgenio_ad327410b2ab83ec06860a141a4e87a7f}} 
+bool {\bfseries load\+\_\+plc} (char $\ast$filename, int object)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a198f47cd3bd717057bc0f22d5dcf4b5b}\label{classStemMesh3D_1_1tetgenio_a198f47cd3bd717057bc0f22d5dcf4b5b}} 
+bool {\bfseries load\+\_\+tetmesh} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_ae2947260644bf6185ca299b31bf90fbf}\label{classStemMesh3D_1_1tetgenio_ae2947260644bf6185ca299b31bf90fbf}} 
+void {\bfseries save\+\_\+nodes} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_acf84c62877b2201366f0d657b657d358}\label{classStemMesh3D_1_1tetgenio_acf84c62877b2201366f0d657b657d358}} 
+void {\bfseries save\+\_\+elements} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a5fee06b57903ebde470e79317b45c65b}\label{classStemMesh3D_1_1tetgenio_a5fee06b57903ebde470e79317b45c65b}} 
+void {\bfseries save\+\_\+faces} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_aa90ff0a1c24587809f9c0b537aa66db7}\label{classStemMesh3D_1_1tetgenio_aa90ff0a1c24587809f9c0b537aa66db7}} 
+void {\bfseries save\+\_\+edges} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a57cf97fce145ff0a66725ea93c556e5c}\label{classStemMesh3D_1_1tetgenio_a57cf97fce145ff0a66725ea93c556e5c}} 
+void {\bfseries save\+\_\+neighbors} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a88932d9ac915a7d594022da818fca634}\label{classStemMesh3D_1_1tetgenio_a88932d9ac915a7d594022da818fca634}} 
+void {\bfseries save\+\_\+poly} (char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a03cd753e6b48b419d538bfb48b87469c}\label{classStemMesh3D_1_1tetgenio_a03cd753e6b48b419d538bfb48b87469c}} 
+char $\ast$ {\bfseries readline} (char $\ast$string, F\+I\+LE $\ast$infile, int $\ast$linenumber)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a63cd8cf14961e8cafa5a543c7bf651b4}\label{classStemMesh3D_1_1tetgenio_a63cd8cf14961e8cafa5a543c7bf651b4}} 
+char $\ast$ {\bfseries findnextfield} (char $\ast$string)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a12755b132e01188103f40384f7cc5a9d}\label{classStemMesh3D_1_1tetgenio_a12755b132e01188103f40384f7cc5a9d}} 
+char $\ast$ {\bfseries readnumberline} (char $\ast$string, F\+I\+LE $\ast$infile, char $\ast$infilename)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a35197f177bf5ffd75c181c245d2c4b36}\label{classStemMesh3D_1_1tetgenio_a35197f177bf5ffd75c181c245d2c4b36}} 
+char $\ast$ {\bfseries findnextnumber} (char $\ast$string)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_aad465116bd4a3b81668f09ca639545d8}\label{classStemMesh3D_1_1tetgenio_aad465116bd4a3b81668f09ca639545d8}} 
+static void {\bfseries init} (\hyperlink{structStemMesh3D_1_1tetgenio_1_1polygon}{polygon} $\ast$p)
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a82b49bf2fe508832efb12cf290b74d17}\label{classStemMesh3D_1_1tetgenio_a82b49bf2fe508832efb12cf290b74d17}} 
+static void {\bfseries init} (\hyperlink{structStemMesh3D_1_1tetgenio_1_1facet}{facet} $\ast$f)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a09e3de45049962cc14a8383f823a08f7}\label{classStemMesh3D_1_1tetgenio_a09e3de45049962cc14a8383f823a08f7}} 
+int {\bfseries firstnumber}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_aa3de1ebb0258d2e2af7e2441c7d0fffa}\label{classStemMesh3D_1_1tetgenio_aa3de1ebb0258d2e2af7e2441c7d0fffa}} 
+int {\bfseries mesh\+\_\+dim}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a6ff6107d87bb86a2035154cc6085ce43}\label{classStemMesh3D_1_1tetgenio_a6ff6107d87bb86a2035154cc6085ce43}} 
+R\+E\+AL $\ast$ {\bfseries pointlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_ab24affc4b9d372ba0ba192af5f4bbcf3}\label{classStemMesh3D_1_1tetgenio_ab24affc4b9d372ba0ba192af5f4bbcf3}} 
+R\+E\+AL $\ast$ {\bfseries pointattributelist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a914e829ba35daebbc51a35f430db92e3}\label{classStemMesh3D_1_1tetgenio_a914e829ba35daebbc51a35f430db92e3}} 
+R\+E\+AL $\ast$ {\bfseries addpointlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_ad13c2e982e8a7a5b679327d79f4139a4}\label{classStemMesh3D_1_1tetgenio_ad13c2e982e8a7a5b679327d79f4139a4}} 
+int $\ast$ {\bfseries pointmarkerlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_aeb14ac64946c796c4fd1c12c178a1908}\label{classStemMesh3D_1_1tetgenio_aeb14ac64946c796c4fd1c12c178a1908}} 
+int {\bfseries numberofpoints}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a6db73e75cd77d1e4f3d18ca96b873b17}\label{classStemMesh3D_1_1tetgenio_a6db73e75cd77d1e4f3d18ca96b873b17}} 
+int {\bfseries numberofpointattributes}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_ac16549f431847564e2c1340fae5eb5fe}\label{classStemMesh3D_1_1tetgenio_ac16549f431847564e2c1340fae5eb5fe}} 
+int {\bfseries numberofaddpoints}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a02976bf5fc92eb8f11c7b0dcaef25c7a}\label{classStemMesh3D_1_1tetgenio_a02976bf5fc92eb8f11c7b0dcaef25c7a}} 
+int $\ast$ {\bfseries tetrahedronlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_adfacf997837300183a9e066a25df94a4}\label{classStemMesh3D_1_1tetgenio_adfacf997837300183a9e066a25df94a4}} 
+R\+E\+AL $\ast$ {\bfseries tetrahedronattributelist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_acb22b561061050986f40838c45686ef3}\label{classStemMesh3D_1_1tetgenio_acb22b561061050986f40838c45686ef3}} 
+R\+E\+AL $\ast$ {\bfseries tetrahedronvolumelist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_aef899cc17366c00494c2b9fbb2c10f63}\label{classStemMesh3D_1_1tetgenio_aef899cc17366c00494c2b9fbb2c10f63}} 
+int $\ast$ {\bfseries neighborlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a23dbe000145eff15daf4e30967dbc509}\label{classStemMesh3D_1_1tetgenio_a23dbe000145eff15daf4e30967dbc509}} 
+int {\bfseries numberoftetrahedra}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a8f66b00bf6545aacdbfb761128983bd9}\label{classStemMesh3D_1_1tetgenio_a8f66b00bf6545aacdbfb761128983bd9}} 
+int {\bfseries numberofcorners}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_ab740c7ceee2ffdc278914bdeb0f20bb0}\label{classStemMesh3D_1_1tetgenio_ab740c7ceee2ffdc278914bdeb0f20bb0}} 
+int {\bfseries numberoftetrahedronattributes}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_afeae0cef633dea221713fee929b28599}\label{classStemMesh3D_1_1tetgenio_afeae0cef633dea221713fee929b28599}} 
+\hyperlink{structStemMesh3D_1_1tetgenio_1_1facet}{facet} $\ast$ {\bfseries facetlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a1c8e862919b79e311087732efe534cd3}\label{classStemMesh3D_1_1tetgenio_a1c8e862919b79e311087732efe534cd3}} 
+int $\ast$ {\bfseries facetmarkerlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_af445f0d9f30d5bc74fa175c6d14cb2ee}\label{classStemMesh3D_1_1tetgenio_af445f0d9f30d5bc74fa175c6d14cb2ee}} 
+int {\bfseries numberoffacets}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a8b86ed43b82ae7bd4e4c749bff9d57ae}\label{classStemMesh3D_1_1tetgenio_a8b86ed43b82ae7bd4e4c749bff9d57ae}} 
+R\+E\+AL $\ast$ {\bfseries holelist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a095291ec7bc07a1c9da094be8b8fe5e5}\label{classStemMesh3D_1_1tetgenio_a095291ec7bc07a1c9da094be8b8fe5e5}} 
+int {\bfseries numberofholes}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a5914729a9415f08207f5b43dfb4d154d}\label{classStemMesh3D_1_1tetgenio_a5914729a9415f08207f5b43dfb4d154d}} 
+R\+E\+AL $\ast$ {\bfseries regionlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a3ef1ef2de691c018f2c89d3eef859379}\label{classStemMesh3D_1_1tetgenio_a3ef1ef2de691c018f2c89d3eef859379}} 
+int {\bfseries numberofregions}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a53e2f2cfcf8fd462c6bd9ee606d10d66}\label{classStemMesh3D_1_1tetgenio_a53e2f2cfcf8fd462c6bd9ee606d10d66}} 
+R\+E\+AL $\ast$ {\bfseries facetconstraintlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a8868e0398d33c68a859c93fdd16c89ed}\label{classStemMesh3D_1_1tetgenio_a8868e0398d33c68a859c93fdd16c89ed}} 
+int {\bfseries numberoffacetconstraints}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a197a69132226c424c1dded9bf3ca9023}\label{classStemMesh3D_1_1tetgenio_a197a69132226c424c1dded9bf3ca9023}} 
+R\+E\+AL $\ast$ {\bfseries segmentconstraintlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_aef0f2b92e42626444cefe887888007d5}\label{classStemMesh3D_1_1tetgenio_aef0f2b92e42626444cefe887888007d5}} 
+int {\bfseries numberofsegmentconstraints}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a760b23d98f9f067a54f0b2101ef36b4d}\label{classStemMesh3D_1_1tetgenio_a760b23d98f9f067a54f0b2101ef36b4d}} 
+R\+E\+AL $\ast$ {\bfseries nodeconstraintlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a09616a7d15879c9e6068b6381eea8f0b}\label{classStemMesh3D_1_1tetgenio_a09616a7d15879c9e6068b6381eea8f0b}} 
+int {\bfseries numberofnodeconstraints}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a7cb0773b4e9be518644b4dc29b213b16}\label{classStemMesh3D_1_1tetgenio_a7cb0773b4e9be518644b4dc29b213b16}} 
+\hyperlink{structStemMesh3D_1_1tetgenio_1_1pbcgroup}{pbcgroup} $\ast$ {\bfseries pbcgrouplist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a0cea787d5f18130cecbb14cd485a31a9}\label{classStemMesh3D_1_1tetgenio_a0cea787d5f18130cecbb14cd485a31a9}} 
+int {\bfseries numberofpbcgroups}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a845cc1a4a1e3b95c0fe1cf37c7c1de1a}\label{classStemMesh3D_1_1tetgenio_a845cc1a4a1e3b95c0fe1cf37c7c1de1a}} 
+int $\ast$ {\bfseries trifacelist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a5e7a5d11d168251f7d5ba8794f13fe42}\label{classStemMesh3D_1_1tetgenio_a5e7a5d11d168251f7d5ba8794f13fe42}} 
+int $\ast$ {\bfseries trifacemarkerlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a5555ba8f8337eb339d0fe2d7decd3475}\label{classStemMesh3D_1_1tetgenio_a5555ba8f8337eb339d0fe2d7decd3475}} 
+int {\bfseries numberoftrifaces}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_af075e154234bb4975355f6a6ade72b0a}\label{classStemMesh3D_1_1tetgenio_af075e154234bb4975355f6a6ade72b0a}} 
+int $\ast$ {\bfseries edgelist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_accedc23de3f2aa2a567a9ee7560819d5}\label{classStemMesh3D_1_1tetgenio_accedc23de3f2aa2a567a9ee7560819d5}} 
+int $\ast$ {\bfseries edgemarkerlist}
+\item 
+\mbox{\Hypertarget{classStemMesh3D_1_1tetgenio_a12a7d8064cd6a20c386d69d65ba37ffd}\label{classStemMesh3D_1_1tetgenio_a12a7d8064cd6a20c386d69d65ba37ffd}} 
+int {\bfseries numberofedges}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Mesh/\+Stem\+Mesh/tetgen.\+h\end{DoxyCompactItemize}

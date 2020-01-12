@@ -1,0 +1,223 @@
+\hypertarget{group__Quadratures}{}\section{Quadratures}
+\label{group__Quadratures}\index{Quadratures@{Quadratures}}
+
+
+Classes providing quadratures on edges and in cells.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classHArDCore3D_1_1QuadRuleEdge}{H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Edge}
+\item 
+class \hyperlink{classHArDCore3D_1_1LegendreGauss}{H\+Ar\+D\+Core3\+D\+::\+Legendre\+Gauss}
+\item 
+class \hyperlink{classHArDCore3D_1_1QuadRuleTetra}{H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Tetra}
+\item 
+class \hyperlink{classHArDCore3D_1_1QuadRuleTriangle}{H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle}
+\item 
+struct \hyperlink{structHArDCore3D_1_1QuadratureNode}{H\+Ar\+D\+Core3\+D\+::\+Quadrature\+Node}
+\begin{DoxyCompactList}\small\item\em Description of one node and one weight from a quadrature rule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}\label{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}} 
+typedef std\+::vector$<$ \hyperlink{structHArDCore3D_1_1QuadratureNode}{Quadrature\+Node} $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quadrature\+Rule}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__Quadratures_ga0d95447bb72cfc1b19cd2ea192ff6695}{H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::\+Quad\+Rule\+Triangle} (size\+\_\+t \+\_\+doe, bool warn)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Quadratures_ga98156eda410a5aa6f9787ce920358fca}\label{group__Quadratures_ga98156eda410a5aa6f9787ce920358fca}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::xq} (size\+\_\+t i)
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga0aa8f08c87bc5b2bc8180c149e16a4c2}\label{group__Quadratures_ga0aa8f08c87bc5b2bc8180c149e16a4c2}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::yq} (size\+\_\+t i)
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga24bec7179e0f2f637d49f594d8bd1e2a}\label{group__Quadratures_ga24bec7179e0f2f637d49f594d8bd1e2a}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::zq} (size\+\_\+t i)
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga47725c429eec36e849a8bbf69a924303}\label{group__Quadratures_ga47725c429eec36e849a8bbf69a924303}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::wq} (size\+\_\+t i)
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga5071f69f8f99171329a13943d5fe515d}\label{group__Quadratures_ga5071f69f8f99171329a13943d5fe515d}} 
+size\+\_\+t {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::nq} ()
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga5b3fbfdc8b8c49bd090bf216cfe105ee}\label{group__Quadratures_ga5b3fbfdc8b8c49bd090bf216cfe105ee}} 
+void {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::setup} (double xV\mbox{[}$\,$\mbox{]}, double yV\mbox{[}$\,$\mbox{]}, double zV\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{group__Quadratures_gad87031214049b17a0a1839507f08e8cb}\label{group__Quadratures_gad87031214049b17a0a1839507f08e8cb}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::area} (double xV\mbox{[}$\,$\mbox{]}, double yV\mbox{[}$\,$\mbox{]}, double zV\mbox{[}$\,$\mbox{]}) const
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga7a185c689ce9f635e803694bd0e8d2e7}\label{group__Quadratures_ga7a185c689ce9f635e803694bd0e8d2e7}} 
+{\bfseries H\+Ar\+D\+Core3\+D\+::\+Quadrature\+Node\+::\+Quadrature\+Node} (double x, double y, double z, double w)
+\item 
+\mbox{\Hypertarget{group__Quadratures_gac0d94c3725c0502056333f314fb48fc9}\label{group__Quadratures_gac0d94c3725c0502056333f314fb48fc9}} 
+Eigen\+::\+Vector3d {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quadrature\+Node\+::vector} () const
+\item 
+Quadrature\+Rule \hyperlink{group__Quadratures_ga18d0a2cf574bef7d6e83760de2f38152}{H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule} (const \hyperlink{classHArDCore3D_1_1Cell}{Cell} \&T, const int doe, const bool force\+\_\+split=false)
+\begin{DoxyCompactList}\small\item\em Generate quadrature rule on mesh element. \end{DoxyCompactList}\item 
+Quadrature\+Rule \hyperlink{group__Quadratures_gae0e89136814758912e6e93fa0a260bd6}{H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule} (const \hyperlink{classHArDCore3D_1_1Face}{Face} \&F, const int doe)
+\begin{DoxyCompactList}\small\item\em Generate quadrature rule on mesh face. \end{DoxyCompactList}\item 
+Quadrature\+Rule \hyperlink{group__Quadratures_ga1516d2ddf96226cbcbacf93675e6678f}{H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule} (const \hyperlink{classHArDCore3D_1_1Edge}{Edge} \&E, const int doe)
+\begin{DoxyCompactList}\small\item\em Generate quadrature rule on mesh edge. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Quadratures_ga721ceca09ec55725a59f484412041546}\label{group__Quadratures_ga721ceca09ec55725a59f484412041546}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::tetra\+\_\+volume} (double x\mbox{[}4\mbox{]}, double y\mbox{[}4\mbox{]}, double z\mbox{[}4\mbox{]})
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga3d29f4e825b8ce8abed864fe61c1e547}\label{group__Quadratures_ga3d29f4e825b8ce8abed864fe61c1e547}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::tetra\+\_\+sum} (double func(double x, double y, double z), double x\mbox{[}4\mbox{]}, double y\mbox{[}4\mbox{]}, double z\mbox{[}4\mbox{]}, int nq, double cq0\mbox{[}$\,$\mbox{]}, double cq1\mbox{[}$\,$\mbox{]}, double cq2\mbox{[}$\,$\mbox{]}, double wq\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga2959cdcee47b26f7661359afc848098f}\label{group__Quadratures_ga2959cdcee47b26f7661359afc848098f}} 
+size\+\_\+t {\bfseries H\+Ar\+D\+Core3\+D\+::tetra\+\_\+unit\+\_\+size} (size\+\_\+t rule)
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga49d3a11aa2d74a16bfda192b67d69f3d}\label{group__Quadratures_ga49d3a11aa2d74a16bfda192b67d69f3d}} 
+void {\bfseries H\+Ar\+D\+Core3\+D\+::tetra\+\_\+unit\+\_\+set} (size\+\_\+t rule, size\+\_\+t nq, double cq0\mbox{[}$\,$\mbox{]}, double cq1\mbox{[}$\,$\mbox{]}, double cq2\mbox{[}$\,$\mbox{]}, double wq\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga36434a8319a40c91a5deafaa2c38f6f3}\label{group__Quadratures_ga36434a8319a40c91a5deafaa2c38f6f3}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::parallelipiped\+\_\+volume\+\_\+3d} (double x\mbox{[}4\mbox{]}, double y\mbox{[}4\mbox{]}, double z\mbox{[}4\mbox{]})
+\item 
+\mbox{\Hypertarget{group__Quadratures_gaf3ff72076364ccf402a9de3040cae812}\label{group__Quadratures_gaf3ff72076364ccf402a9de3040cae812}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::tetra\+\_\+unit\+\_\+volume} ()
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga59fc38494b2b1789e1b5e3db3329646c}\label{group__Quadratures_ga59fc38494b2b1789e1b5e3db3329646c}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::tetra\+\_\+unit\+\_\+sum} (double func(double x, double y, double z), size\+\_\+t nq, double xq\mbox{[}$\,$\mbox{]}, double yq\mbox{[}$\,$\mbox{]}, double zq\mbox{[}$\,$\mbox{]}, double wq\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{group__Quadratures_gab736fa08c7510bf06428c7ee938e0c7c}\label{group__Quadratures_gab736fa08c7510bf06428c7ee938e0c7c}} 
+size\+\_\+t {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Tetra\+::nq} () const
+\item 
+\mbox{\Hypertarget{group__Quadratures_gac7d6d0fcc8f63e38967d020d9023ad62}\label{group__Quadratures_gac7d6d0fcc8f63e38967d020d9023ad62}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Tetra\+::xq} (int iq) const
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga0dffade47ba012f57c7ca552570e2119}\label{group__Quadratures_ga0dffade47ba012f57c7ca552570e2119}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Tetra\+::yq} (int iq) const
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga4693da35cc21331c2737c08b8166c54c}\label{group__Quadratures_ga4693da35cc21331c2737c08b8166c54c}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Tetra\+::zq} (int iq) const
+\item 
+\mbox{\Hypertarget{group__Quadratures_gae38100dd53fe45b8a3d263458b0ffc95}\label{group__Quadratures_gae38100dd53fe45b8a3d263458b0ffc95}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Tetra\+::wq} (int iq) const
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__Quadratures_gaecf0514e3812232ca758bab779318ca3}\label{group__Quadratures_gaecf0514e3812232ca758bab779318ca3}} 
+size\+\_\+t {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::\+\_\+npts}
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga190d4d4627fc6c632dd7829951bde3d7}\label{group__Quadratures_ga190d4d4627fc6c632dd7829951bde3d7}} 
+double $\ast$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::qsx}
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga84ce0aad8aa167e51fedc36b4ff6b532}\label{group__Quadratures_ga84ce0aad8aa167e51fedc36b4ff6b532}} 
+double $\ast$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::qsy}
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga6e639977bf10e2d195168fe13fb6278b}\label{group__Quadratures_ga6e639977bf10e2d195168fe13fb6278b}} 
+double $\ast$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::qsz}
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga9637eb56f3d5b1e50b4444e0abda70d2}\label{group__Quadratures_ga9637eb56f3d5b1e50b4444e0abda70d2}} 
+double $\ast$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::qswg}
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga23e20aac779af8eb9a8d75b2e330b706}\label{group__Quadratures_ga23e20aac779af8eb9a8d75b2e330b706}} 
+double $\ast$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::\+\_\+xy}
+\item 
+\mbox{\Hypertarget{group__Quadratures_gafdb1f7da129756e5ca6ff329cd366928}\label{group__Quadratures_gafdb1f7da129756e5ca6ff329cd366928}} 
+double $\ast$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::\+\_\+w}
+\item 
+\mbox{\Hypertarget{group__Quadratures_ga2a30df67610b141f56b65c1324068143}\label{group__Quadratures_ga2a30df67610b141f56b65c1324068143}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quadrature\+Node\+::x}
+\item 
+\mbox{\Hypertarget{group__Quadratures_gad1a6b5b68c8e5bfce6d4753d091efa22}\label{group__Quadratures_gad1a6b5b68c8e5bfce6d4753d091efa22}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quadrature\+Node\+::y}
+\item 
+\mbox{\Hypertarget{group__Quadratures_gac5e2438567a78de1430595b4f8ccd1fc}\label{group__Quadratures_gac5e2438567a78de1430595b4f8ccd1fc}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quadrature\+Node\+::z}
+\item 
+\mbox{\Hypertarget{group__Quadratures_gace3667769fdabe08dd83fe6eb5201643}\label{group__Quadratures_gace3667769fdabe08dd83fe6eb5201643}} 
+double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quadrature\+Node\+::w}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classes providing quadratures on edges and in cells. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__Quadratures_ga18d0a2cf574bef7d6e83760de2f38152}\label{group__Quadratures_ga18d0a2cf574bef7d6e83760de2f38152}} 
+\index{Quadratures@{Quadratures}!generate\+\_\+quadrature\+\_\+rule@{generate\+\_\+quadrature\+\_\+rule}}
+\index{generate\+\_\+quadrature\+\_\+rule@{generate\+\_\+quadrature\+\_\+rule}!Quadratures@{Quadratures}}
+\subsubsection{\texorpdfstring{generate\+\_\+quadrature\+\_\+rule()}{generate\_quadrature\_rule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Quadrature\+Rule H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule (\begin{DoxyParamCaption}\item[{const \hyperlink{classHArDCore3D_1_1Cell}{Cell} \&}]{T,  }\item[{const int}]{doe,  }\item[{const bool}]{force\+\_\+split = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Generate quadrature rule on mesh element. 
+
+\begin{DoxyReturn}{Returns}
+list of quadrature nodes and weights 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Reference to the mesh cell \\
+\hline
+{\em doe} & Degree of exactness \\
+\hline
+{\em force\+\_\+split} & T\+R\+UE if we want the quadrature nodes to be computed by forcing the splitting of the cell into pyramids based on the center of mass and the faces, and then cutting these pyramids into tetrahedrons (otherwise, tetrahedrons are not split) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_gae0e89136814758912e6e93fa0a260bd6}\label{group__Quadratures_gae0e89136814758912e6e93fa0a260bd6}} 
+\index{Quadratures@{Quadratures}!generate\+\_\+quadrature\+\_\+rule@{generate\+\_\+quadrature\+\_\+rule}}
+\index{generate\+\_\+quadrature\+\_\+rule@{generate\+\_\+quadrature\+\_\+rule}!Quadratures@{Quadratures}}
+\subsubsection{\texorpdfstring{generate\+\_\+quadrature\+\_\+rule()}{generate\_quadrature\_rule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Quadrature\+Rule H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule (\begin{DoxyParamCaption}\item[{const \hyperlink{classHArDCore3D_1_1Face}{Face} \&}]{F,  }\item[{const int}]{doe }\end{DoxyParamCaption})}
+
+
+
+Generate quadrature rule on mesh face. 
+
+\begin{DoxyReturn}{Returns}
+list of quadrature nodes and weights 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em F} & Reference to the mesh face \\
+\hline
+{\em doe} & Degree of exactness \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga1516d2ddf96226cbcbacf93675e6678f}\label{group__Quadratures_ga1516d2ddf96226cbcbacf93675e6678f}} 
+\index{Quadratures@{Quadratures}!generate\+\_\+quadrature\+\_\+rule@{generate\+\_\+quadrature\+\_\+rule}}
+\index{generate\+\_\+quadrature\+\_\+rule@{generate\+\_\+quadrature\+\_\+rule}!Quadratures@{Quadratures}}
+\subsubsection{\texorpdfstring{generate\+\_\+quadrature\+\_\+rule()}{generate\_quadrature\_rule()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Quadrature\+Rule H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule (\begin{DoxyParamCaption}\item[{const \hyperlink{classHArDCore3D_1_1Edge}{Edge} \&}]{E,  }\item[{const int}]{doe }\end{DoxyParamCaption})}
+
+
+
+Generate quadrature rule on mesh edge. 
+
+\begin{DoxyReturn}{Returns}
+list of quadrature nodes and weights 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em E} & Reference to the mesh edge \\
+\hline
+{\em doe} & Degree of exactness \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga0d95447bb72cfc1b19cd2ea192ff6695}\label{group__Quadratures_ga0d95447bb72cfc1b19cd2ea192ff6695}} 
+\index{Quadratures@{Quadratures}!Quad\+Rule\+Triangle@{Quad\+Rule\+Triangle}}
+\index{Quad\+Rule\+Triangle@{Quad\+Rule\+Triangle}!Quadratures@{Quadratures}}
+\subsubsection{\texorpdfstring{Quad\+Rule\+Triangle()}{QuadRuleTriangle()}}
+{\footnotesize\ttfamily Quad\+Rule\+Triangle\+::\+Quad\+Rule\+Triangle (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{\+\_\+doe,  }\item[{bool}]{warn }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doe} & degrees of exactness (e.\+g. how many points for approximating integral \\
+\hline
+{\em warn} & \\
+\hline
+\end{DoxyParams}

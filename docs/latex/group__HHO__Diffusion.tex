@@ -1,0 +1,68 @@
+\hypertarget{group__HHO__Diffusion}{}\section{H\+H\+O\+\_\+\+Diffusion}
+\label{group__HHO__Diffusion}\index{H\+H\+O\+\_\+\+Diffusion@{H\+H\+O\+\_\+\+Diffusion}}
+
+
+H\+HO scheme for diffusion equation -\/div(Diff grad u)=f, with Diff piecewise constant on the mesh.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classHArDCore3D_1_1HHO__Diffusion}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Diffusion}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classHArDCore3D_1_1HHO__Diffusion}{H\+H\+O\+\_\+\+Diffusion} class provides tools to implement the H\+HO method for the diffusion problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__HHO__Diffusion_gab9aebbde87e22073a94a57e26f58a860}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Diffusion\+::\+H\+H\+O\+\_\+\+Diffusion} (\hyperlink{classHArDCore3D_1_1HHO__Diffusion_a6792ca91d753720b28f458bdb3cedcd0}{tensor\+\_\+function\+\_\+type} kappa, \hyperlink{classHArDCore3D_1_1HHO__Diffusion_a868fb4b88efbf1b77a712706d616b8d1}{source\+\_\+function\+\_\+type} source, size\+\_\+t BC, \hyperlink{classHArDCore3D_1_1HHO__Diffusion_a1fa6e03a7ffd6cb0c8a38b34eda2bd27}{solution\+\_\+function\+\_\+type} exact\+\_\+solution, \hyperlink{classHArDCore3D_1_1HHO__Diffusion_afd0b6d7ab35bca58a5f7ec29afbba355}{grad\+\_\+function\+\_\+type} grad\+\_\+exact\+\_\+solution, std\+::string solver\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Constructor of the class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__Diffusion_gac2ab416e340edc055d1494f5dbe9acce}\label{group__HHO__Diffusion_gac2ab416e340edc055d1494f5dbe9acce}} 
+Eigen\+::\+Vector\+Xd \hyperlink{group__HHO__Diffusion_gac2ab416e340edc055d1494f5dbe9acce}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Diffusion\+::solve} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho)
+\begin{DoxyCompactList}\small\item\em Assemble and solve the scheme. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__Diffusion_ga65f1cf98696c042edefb2f35d298b971}\label{group__HHO__Diffusion_ga65f1cf98696c042edefb2f35d298b971}} 
+double \hyperlink{group__HHO__Diffusion_ga65f1cf98696c042edefb2f35d298b971}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Diffusion\+::\+Energy\+Norm} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho, const Eigen\+::\+Vector\+Xd Xh)
+\begin{DoxyCompactList}\small\item\em Discrete energy norm (associated to the diffusion operator) of an hybrid function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__Diffusion_gaa2bb4d069026f1604d2899031d3642f1}\label{group__HHO__Diffusion_gaa2bb4d069026f1604d2899031d3642f1}} 
+double \hyperlink{group__HHO__Diffusion_gaa2bb4d069026f1604d2899031d3642f1}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Diffusion\+::get\+\_\+assembly\+\_\+time} () const
+\begin{DoxyCompactList}\small\item\em cpu time to assemble the scheme \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__Diffusion_gadcad4a2ddc4f767a5cc59362c93adbc2}\label{group__HHO__Diffusion_gadcad4a2ddc4f767a5cc59362c93adbc2}} 
+double \hyperlink{group__HHO__Diffusion_gadcad4a2ddc4f767a5cc59362c93adbc2}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Diffusion\+::get\+\_\+solving\+\_\+time} () const
+\begin{DoxyCompactList}\small\item\em cpu time to solve the scheme \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__Diffusion_ga00b3b186fb915242a805c7c53e323e6e}\label{group__HHO__Diffusion_ga00b3b186fb915242a805c7c53e323e6e}} 
+double \hyperlink{group__HHO__Diffusion_ga00b3b186fb915242a805c7c53e323e6e}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Diffusion\+::get\+\_\+itime} (size\+\_\+t idx) const
+\begin{DoxyCompactList}\small\item\em various intermediate assembly times \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__Diffusion_ga91b1ec7d73685c4a1d49d671b4b69814}\label{group__HHO__Diffusion_ga91b1ec7d73685c4a1d49d671b4b69814}} 
+double \hyperlink{group__HHO__Diffusion_ga91b1ec7d73685c4a1d49d671b4b69814}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Diffusion\+::get\+\_\+solving\+\_\+error} () const
+\begin{DoxyCompactList}\small\item\em residual after solving the scheme \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+H\+HO scheme for diffusion equation -\/div(Diff grad u)=f, with Diff piecewise constant on the mesh. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__HHO__Diffusion_gab9aebbde87e22073a94a57e26f58a860}\label{group__HHO__Diffusion_gab9aebbde87e22073a94a57e26f58a860}} 
+\index{H\+H\+O\+\_\+\+Diffusion@{H\+H\+O\+\_\+\+Diffusion}!H\+H\+O\+\_\+\+Diffusion@{H\+H\+O\+\_\+\+Diffusion}}
+\index{H\+H\+O\+\_\+\+Diffusion@{H\+H\+O\+\_\+\+Diffusion}!H\+H\+O\+\_\+\+Diffusion@{H\+H\+O\+\_\+\+Diffusion}}
+\subsubsection{\texorpdfstring{H\+H\+O\+\_\+\+Diffusion()}{HHO\_Diffusion()}}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Diffusion\+::\+H\+H\+O\+\_\+\+Diffusion (\begin{DoxyParamCaption}\item[{\hyperlink{classHArDCore3D_1_1HHO__Diffusion_a6792ca91d753720b28f458bdb3cedcd0}{tensor\+\_\+function\+\_\+type}}]{kappa,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__Diffusion_a868fb4b88efbf1b77a712706d616b8d1}{source\+\_\+function\+\_\+type}}]{source,  }\item[{size\+\_\+t}]{BC,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__Diffusion_a1fa6e03a7ffd6cb0c8a38b34eda2bd27}{solution\+\_\+function\+\_\+type}}]{exact\+\_\+solution,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__Diffusion_afd0b6d7ab35bca58a5f7ec29afbba355}{grad\+\_\+function\+\_\+type}}]{grad\+\_\+exact\+\_\+solution,  }\item[{std\+::string}]{solver\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Constructor of the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kappa} & diffusion tensor \\
+\hline
+{\em source} & source term \\
+\hline
+{\em BC} & type of boundary conditions (0 for Dirichlet, 1 for Neumann) \\
+\hline
+{\em exact\+\_\+solution} & exact solution \\
+\hline
+{\em grad\+\_\+exact\+\_\+solution} & gradient of the exact solution \\
+\hline
+{\em solver\+\_\+type} & type of solver to use for the global system (bicgstab at the moment) \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,121 @@
+\hypertarget{classHArDCore3D_1_1ElementQuad}{}\section{H\+Ar\+D\+Core3D\+:\+:Element\+Quad Class Reference}
+\label{classHArDCore3D_1_1ElementQuad}\index{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad@{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad}}
+
+
+{\ttfamily \#include $<$elementquad.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHArDCore3D_1_1ElementQuad_a0d27ba99f9f3e6f2a3e5311e6be19eba}{Element\+Quad} (const \hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho, const size\+\_\+t iT, const size\+\_\+t doeT, const size\+\_\+t doeF)
+\begin{DoxyCompactList}\small\item\em Class constructor\+: loads the quadrature rules and values of basis functions/gradients at these points. \end{DoxyCompactList}\item 
+Quadrature\+Rule \hyperlink{group__HybridCore_ga9676c87f42764a058c9d7aecd2ce44cd}{get\+\_\+quadT} () const
+\begin{DoxyCompactList}\small\item\em Returns quadrature rules in cell. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Array\+Xd $>$ \hyperlink{group__HybridCore_gaafce6cb00f061fe1159a9972b73d3bb9}{get\+\_\+phi\+T\+\_\+quadT} () const
+\begin{DoxyCompactList}\small\item\em Returns values of cell basis functions at cell quadrature rules in cell. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Array\+X\+Xd $>$ \hyperlink{group__HybridCore_gab0450891cb0d96686256c31e87948374}{get\+\_\+dphi\+T\+\_\+quadT} () const
+\begin{DoxyCompactList}\small\item\em Returns values of gradients of cell basis functions at cell quadrature rules in cell. \end{DoxyCompactList}\item 
+Quadrature\+Rule \hyperlink{group__HybridCore_ga7eb693a2f8d58d04b0e653cb952e59f2}{get\+\_\+quadF} (size\+\_\+t ilF) const
+\begin{DoxyCompactList}\small\item\em Returns quadrature rules on face with local number ilF. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Array\+Xd $>$ \hyperlink{group__HybridCore_gab6349fe3a8eb0d4070cd2bd82742bdcc}{get\+\_\+phi\+T\+\_\+quadF} (size\+\_\+t ilF) const
+\begin{DoxyCompactList}\small\item\em Returns values of cell basis functions at cell quadrature rules on face with local number ilF. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Array\+Xd $>$ \hyperlink{group__HybridCore_gad9c2ba4cdbfda183ee00ab059d8885e5}{get\+\_\+phi\+F\+\_\+quadF} (size\+\_\+t ilF) const
+\begin{DoxyCompactList}\small\item\em Returns values of faces basis functions at face quadrature rules on face with local number ilF. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Array\+X\+Xd $>$ \hyperlink{group__HybridCore_gabae2f4323f94acb5417ca82870790071}{get\+\_\+dphi\+T\+\_\+quadF} (size\+\_\+t ilF) const
+\begin{DoxyCompactList}\small\item\em Returns values of gradients of cell basis functions at cell quadrature rules on face with local number ilF. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Array\+X\+Xd $>$ \hyperlink{classHArDCore3D_1_1ElementQuad_a0df097bcb15554c9f9ee752f04c14f95}{get\+\_\+vec\+\_\+phi\+T\+\_\+quadT} (size\+\_\+t degree) const
+\begin{DoxyCompactList}\small\item\em Builds on the fly the values of cell basis functions at cell quadrature nodes. The vector basis is obtained by tensorization of the scalar one\+: (phi\+\_\+0,0,0), (phi\+\_\+1,0,0), ..., (phi\+\_\+N,0,0), (0,phi\+\_\+0,0), (0,phi\+\_\+1,0) ... (0,phi\+\_\+N,0), (0,0,phi\+\_\+0) ... (0,0,phi\+\_\+N). \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Array\+X\+Xd $>$ \hyperlink{classHArDCore3D_1_1ElementQuad_a318c36aca48d3cdb6b501d3d0e1554cf}{get\+\_\+vec\+\_\+phi\+T\+\_\+quadF} (size\+\_\+t ilF, size\+\_\+t degree) const
+\begin{DoxyCompactList}\small\item\em Builds on the fly the values of cell basis functions at face quadrature nodes. The vector basis is obtained by tensorization of the scalar one\+: (phi\+\_\+0,0,0), (phi\+\_\+1,0,0), ..., (phi\+\_\+N,0,0), (0,phi\+\_\+0,0), (0,phi\+\_\+1,0) ... (0,phi\+\_\+N,0), (0,0,phi\+\_\+0) ... (0,0,phi\+\_\+N). \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Array\+X\+Xd $>$ \hyperlink{classHArDCore3D_1_1ElementQuad_a1a9a6bf14079608b3f706136568d3e7d}{get\+\_\+vec\+\_\+phi\+F\+\_\+quadF} (size\+\_\+t ilF, size\+\_\+t degree) const
+\begin{DoxyCompactList}\small\item\em Builds on the fly the values of face basis functions at face quadrature nodes. The vector basis is obtained by tensorization of the scalar one\+: (phi\+\_\+0,0,0), (phi\+\_\+1,0,0), ..., (phi\+\_\+N,0,0), (0,phi\+\_\+0,0), (0,phi\+\_\+1,0) ... (0,phi\+\_\+N,0), (0,0,phi\+\_\+0) ... (0,0,phi\+\_\+N). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classHArDCore3D_1_1ElementQuad}{Element\+Quad} class creates cell and face quadrature rules, and vectors of values of basis functions and gradients at these points 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHArDCore3D_1_1ElementQuad_a0d27ba99f9f3e6f2a3e5311e6be19eba}\label{classHArDCore3D_1_1ElementQuad_a0d27ba99f9f3e6f2a3e5311e6be19eba}} 
+\index{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad@{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad}!Element\+Quad@{Element\+Quad}}
+\index{Element\+Quad@{Element\+Quad}!H\+Ar\+D\+Core3\+D\+::\+Element\+Quad@{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad}}
+\subsubsection{\texorpdfstring{Element\+Quad()}{ElementQuad()}}
+{\footnotesize\ttfamily Element\+Quad\+::\+Element\+Quad (\begin{DoxyParamCaption}\item[{const \hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&}]{hho,  }\item[{const size\+\_\+t}]{iT,  }\item[{const size\+\_\+t}]{doeT,  }\item[{const size\+\_\+t}]{doeF }\end{DoxyParamCaption})}
+
+
+
+Class constructor\+: loads the quadrature rules and values of basis functions/gradients at these points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hho} & A reference to the hybridcore instance \\
+\hline
+{\em iT} & Number of cell \\
+\hline
+{\em doeT} & The degree of exactness for cell quadratures \\
+\hline
+{\em doeF} & The degree of exactness of face quadratures \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHArDCore3D_1_1ElementQuad_a1a9a6bf14079608b3f706136568d3e7d}\label{classHArDCore3D_1_1ElementQuad_a1a9a6bf14079608b3f706136568d3e7d}} 
+\index{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad@{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad}!get\+\_\+vec\+\_\+phi\+F\+\_\+quadF@{get\+\_\+vec\+\_\+phi\+F\+\_\+quadF}}
+\index{get\+\_\+vec\+\_\+phi\+F\+\_\+quadF@{get\+\_\+vec\+\_\+phi\+F\+\_\+quadF}!H\+Ar\+D\+Core3\+D\+::\+Element\+Quad@{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad}}
+\subsubsection{\texorpdfstring{get\+\_\+vec\+\_\+phi\+F\+\_\+quad\+F()}{get\_vec\_phiF\_quadF()}}
+{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Array\+X\+Xd $>$ Element\+Quad\+::get\+\_\+vec\+\_\+phi\+F\+\_\+quadF (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ilF,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption}) const}
+
+
+
+Builds on the fly the values of face basis functions at face quadrature nodes. The vector basis is obtained by tensorization of the scalar one\+: (phi\+\_\+0,0,0), (phi\+\_\+1,0,0), ..., (phi\+\_\+N,0,0), (0,phi\+\_\+0,0), (0,phi\+\_\+1,0) ... (0,phi\+\_\+N,0), (0,0,phi\+\_\+0) ... (0,0,phi\+\_\+N). 
+
+\begin{DoxyReturn}{Returns}
+vec\+\_\+phi\+T\+\_\+quadT such that, for r=0,..,dim-\/1 and i=0,..,dim\+\_\+\+Pcell(degree)-\/1, vec\+\_\+phi\+T\+\_\+quadT\mbox{[}r$\ast$dim\+\_\+\+Pcell(degree)-\/1 + i\mbox{]} has, on its row r, the values of the i-\/th scalar basis function at the quadrature nodes, and 0 on its other rows. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em degree} & local number of face required degree of basis function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHArDCore3D_1_1ElementQuad_a318c36aca48d3cdb6b501d3d0e1554cf}\label{classHArDCore3D_1_1ElementQuad_a318c36aca48d3cdb6b501d3d0e1554cf}} 
+\index{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad@{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad}!get\+\_\+vec\+\_\+phi\+T\+\_\+quadF@{get\+\_\+vec\+\_\+phi\+T\+\_\+quadF}}
+\index{get\+\_\+vec\+\_\+phi\+T\+\_\+quadF@{get\+\_\+vec\+\_\+phi\+T\+\_\+quadF}!H\+Ar\+D\+Core3\+D\+::\+Element\+Quad@{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad}}
+\subsubsection{\texorpdfstring{get\+\_\+vec\+\_\+phi\+T\+\_\+quad\+F()}{get\_vec\_phiT\_quadF()}}
+{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Array\+X\+Xd $>$ Element\+Quad\+::get\+\_\+vec\+\_\+phi\+T\+\_\+quadF (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ilF,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption}) const}
+
+
+
+Builds on the fly the values of cell basis functions at face quadrature nodes. The vector basis is obtained by tensorization of the scalar one\+: (phi\+\_\+0,0,0), (phi\+\_\+1,0,0), ..., (phi\+\_\+N,0,0), (0,phi\+\_\+0,0), (0,phi\+\_\+1,0) ... (0,phi\+\_\+N,0), (0,0,phi\+\_\+0) ... (0,0,phi\+\_\+N). 
+
+\begin{DoxyReturn}{Returns}
+vec\+\_\+phi\+T\+\_\+quadT such that, for r=0,..,dim-\/1 and i=0,..,dim\+\_\+\+Pcell(degree)-\/1, vec\+\_\+phi\+T\+\_\+quadT\mbox{[}r$\ast$dim\+\_\+\+Pcell(degree)-\/1 + i\mbox{]} has, on its row r, the values of the i-\/th scalar basis function at the quadrature nodes, and 0 on its other rows. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em degree} & local number of face maximum degree of basis functions required \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHArDCore3D_1_1ElementQuad_a0df097bcb15554c9f9ee752f04c14f95}\label{classHArDCore3D_1_1ElementQuad_a0df097bcb15554c9f9ee752f04c14f95}} 
+\index{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad@{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad}!get\+\_\+vec\+\_\+phi\+T\+\_\+quadT@{get\+\_\+vec\+\_\+phi\+T\+\_\+quadT}}
+\index{get\+\_\+vec\+\_\+phi\+T\+\_\+quadT@{get\+\_\+vec\+\_\+phi\+T\+\_\+quadT}!H\+Ar\+D\+Core3\+D\+::\+Element\+Quad@{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad}}
+\subsubsection{\texorpdfstring{get\+\_\+vec\+\_\+phi\+T\+\_\+quad\+T()}{get\_vec\_phiT\_quadT()}}
+{\footnotesize\ttfamily std\+::vector$<$ Eigen\+::\+Array\+X\+Xd $>$ Element\+Quad\+::get\+\_\+vec\+\_\+phi\+T\+\_\+quadT (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption}) const}
+
+
+
+Builds on the fly the values of cell basis functions at cell quadrature nodes. The vector basis is obtained by tensorization of the scalar one\+: (phi\+\_\+0,0,0), (phi\+\_\+1,0,0), ..., (phi\+\_\+N,0,0), (0,phi\+\_\+0,0), (0,phi\+\_\+1,0) ... (0,phi\+\_\+N,0), (0,0,phi\+\_\+0) ... (0,0,phi\+\_\+N). 
+
+\begin{DoxyReturn}{Returns}
+vec\+\_\+phi\+T\+\_\+quadT such that, for r=0,..,dim-\/1 and i=0,..,dim\+\_\+\+Pcell(degree)-\/1, vec\+\_\+phi\+T\+\_\+quadT\mbox{[}r$\ast$dim\+\_\+\+Pcell(degree)-\/1 + i\mbox{]} has, on its row r, the values of the i-\/th scalar basis function at the quadrature nodes, and 0 on its other rows. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em degree} & maximal degree of basis functions that is required \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Hybrid\+Core/elementquad.\+hpp\item 
+src/\+Hybrid\+Core/elementquad.\+cpp\end{DoxyCompactItemize}

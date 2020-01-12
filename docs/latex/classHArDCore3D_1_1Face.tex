@@ -1,0 +1,118 @@
+\hypertarget{classHArDCore3D_1_1Face}{}\section{H\+Ar\+D\+Core3D\+:\+:Face Class Reference}
+\label{classHArDCore3D_1_1Face}\index{H\+Ar\+D\+Core3\+D\+::\+Face@{H\+Ar\+D\+Core3\+D\+::\+Face}}
+
+
+The \hyperlink{classHArDCore3D_1_1Face}{Face} class provides description of an edge.  
+
+
+
+
+{\ttfamily \#include $<$face.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHArDCore3D_1_1Face_a7dc8f1b50f054d1612862e0ccffe0827}{Face} (size\+\_\+t iF, \hyperlink{classHArDCore3D_1_1Mesh}{Mesh} $\ast$mesh, std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Edge}{Edge} $\ast$$>$ edges, std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$$>$ vertices, bool boundary, double \hyperlink{group__Mesh_gad8284631ae078f8f5a15147b7b1014a1}{measure}, double \hyperlink{group__Mesh_ga3303318a9f1465bf279617959644b01a}{diam}, Vector3d \hyperlink{classHArDCore3D_1_1Face_ac5d883f4f09a9af506924638939bb35a}{center\+\_\+mass}, Vector3d \hyperlink{classHArDCore3D_1_1Face_af2b13fd21cb283d14878c2ea25727e1f}{normal})
+\item 
+size\+\_\+t \hyperlink{group__Mesh_ga5cf9000fd94ae2e7ec79245607644f1b}{global\+\_\+index} () const
+\begin{DoxyCompactList}\small\item\em returns the face global index \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{group__Mesh_ga5407c36b8a6d8d8bf64e8fd559cebbe9}{n\+\_\+cells} () const
+\begin{DoxyCompactList}\small\item\em returns the number of cells neighbouring the face \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{group__Mesh_gaab27135cdfd18bc7dae7f01715a4edc6}{n\+\_\+edges} () const
+\begin{DoxyCompactList}\small\item\em returns the number of edges neighbouring the face \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{group__Mesh_ga50edc49af3d9f7433e238e9d18f7f11c}{n\+\_\+vertices} () const
+\begin{DoxyCompactList}\small\item\em returns the number of vertices neighbouring the face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_aa209c78a79161da020d96bdd752d8e87}\label{classHArDCore3D_1_1Face_aa209c78a79161da020d96bdd752d8e87}} 
+std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Cell}{Cell} $\ast$ $>$ \hyperlink{classHArDCore3D_1_1Face_aa209c78a79161da020d96bdd752d8e87}{get\+\_\+cells} () const
+\begin{DoxyCompactList}\small\item\em list of cells that are neighbours of the face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_abb3add94aa880748646382717345c1ec}\label{classHArDCore3D_1_1Face_abb3add94aa880748646382717345c1ec}} 
+std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Edge}{Edge} $\ast$ $>$ \hyperlink{classHArDCore3D_1_1Face_abb3add94aa880748646382717345c1ec}{get\+\_\+edges} () const
+\begin{DoxyCompactList}\small\item\em list of edges of the face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_a4be6533a35079c67abfedc8dd65d01f1}\label{classHArDCore3D_1_1Face_a4be6533a35079c67abfedc8dd65d01f1}} 
+std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$ $>$ \hyperlink{classHArDCore3D_1_1Face_a4be6533a35079c67abfedc8dd65d01f1}{get\+\_\+vertices} () const
+\begin{DoxyCompactList}\small\item\em list of vertices of the face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_ab463b4972c43d6f62f034cf8c0ed70c2}\label{classHArDCore3D_1_1Face_ab463b4972c43d6f62f034cf8c0ed70c2}} 
+\hyperlink{classHArDCore3D_1_1Cell}{Cell} $\ast$ \hyperlink{classHArDCore3D_1_1Face_ab463b4972c43d6f62f034cf8c0ed70c2}{cell} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em returns pointer to the i-\/th cell neighbour of the face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_a93dd83df13314df283be122c36b93c29}\label{classHArDCore3D_1_1Face_a93dd83df13314df283be122c36b93c29}} 
+\hyperlink{classHArDCore3D_1_1Edge}{Edge} $\ast$ \hyperlink{classHArDCore3D_1_1Face_a93dd83df13314df283be122c36b93c29}{edge} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em returns a pointer to the i-\/th edge of the face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_a63c8254509d075b402e1ce7393efd70c}\label{classHArDCore3D_1_1Face_a63c8254509d075b402e1ce7393efd70c}} 
+\hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$ \hyperlink{classHArDCore3D_1_1Face_a63c8254509d075b402e1ce7393efd70c}{vertex} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em returns a pointer to the i-\/th vertex of the face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_a9fafed8814ff199fbbe5995ff4de3067}\label{classHArDCore3D_1_1Face_a9fafed8814ff199fbbe5995ff4de3067}} 
+size\+\_\+t \hyperlink{classHArDCore3D_1_1Face_a9fafed8814ff199fbbe5995ff4de3067}{index\+\_\+edge} (const \hyperlink{classHArDCore3D_1_1Edge}{Edge} $\ast$E) const
+\begin{DoxyCompactList}\small\item\em reciprocal of edge(i)\+: returns the local index of edge E in the face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_abecb40cdeec22fee088921e66aa86800}\label{classHArDCore3D_1_1Face_abecb40cdeec22fee088921e66aa86800}} 
+size\+\_\+t \hyperlink{classHArDCore3D_1_1Face_abecb40cdeec22fee088921e66aa86800}{index\+\_\+vertex} (const \hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$V) const
+\begin{DoxyCompactList}\small\item\em reciprocal of vertex(i)\+: returns the local index of vertex V in the face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_a8cf04b618dccb40a61ee8144edd9610e}\label{classHArDCore3D_1_1Face_a8cf04b618dccb40a61ee8144edd9610e}} 
+Vector3d \hyperlink{classHArDCore3D_1_1Face_a8cf04b618dccb40a61ee8144edd9610e}{edge\+\_\+normal} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em returns the normal to the i-\/th edge in the plane spanned by the face. This is not necessarily the outer normal to the face. To obtain this outer normal, multiply by edge\+\_\+orientation(i). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_aa02d3eab7ba590dec07134da1f85dbeb}\label{classHArDCore3D_1_1Face_aa02d3eab7ba590dec07134da1f85dbeb}} 
+int \hyperlink{classHArDCore3D_1_1Face_aa02d3eab7ba590dec07134da1f85dbeb}{edge\+\_\+orientation} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em returns the orientation of the i-\/th edge. It is the number such that edge\+\_\+orientation $\ast$ edge\+\_\+normal is the outer normal to the face. \end{DoxyCompactList}\item 
+double \hyperlink{group__Mesh_gad8284631ae078f8f5a15147b7b1014a1}{measure} () const
+\begin{DoxyCompactList}\small\item\em measure of the face \end{DoxyCompactList}\item 
+double \hyperlink{group__Mesh_ga3303318a9f1465bf279617959644b01a}{diam} () const
+\begin{DoxyCompactList}\small\item\em returns diameter of face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_ac5d883f4f09a9af506924638939bb35a}\label{classHArDCore3D_1_1Face_ac5d883f4f09a9af506924638939bb35a}} 
+Vector3d \hyperlink{classHArDCore3D_1_1Face_ac5d883f4f09a9af506924638939bb35a}{center\+\_\+mass} () const
+\begin{DoxyCompactList}\small\item\em get the center of mass of the face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_af2b13fd21cb283d14878c2ea25727e1f}\label{classHArDCore3D_1_1Face_af2b13fd21cb283d14878c2ea25727e1f}} 
+Vector3d \hyperlink{classHArDCore3D_1_1Face_af2b13fd21cb283d14878c2ea25727e1f}{normal} () const
+\begin{DoxyCompactList}\small\item\em get the normal to the face \end{DoxyCompactList}\item 
+bool \hyperlink{group__Mesh_ga8f69df15c3c76b4f80f51231ede670f5}{is\+\_\+boundary} () const
+\begin{DoxyCompactList}\small\item\em getter to see if the face is a boundary face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_a0c4cc1b593b288e6c70747b6481824f8}\label{classHArDCore3D_1_1Face_a0c4cc1b593b288e6c70747b6481824f8}} 
+void \hyperlink{classHArDCore3D_1_1Face_a0c4cc1b593b288e6c70747b6481824f8}{add\+\_\+cell} (\hyperlink{classHArDCore3D_1_1Cell}{Cell} $\ast$\hyperlink{classHArDCore3D_1_1Face_ab463b4972c43d6f62f034cf8c0ed70c2}{cell})
+\begin{DoxyCompactList}\small\item\em Add a cell to the face. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_a0f3dd04f1ab142689e76165d8824c428}\label{classHArDCore3D_1_1Face_a0f3dd04f1ab142689e76165d8824c428}} 
+void \hyperlink{classHArDCore3D_1_1Face_a0f3dd04f1ab142689e76165d8824c428}{add\+\_\+edge} (\hyperlink{classHArDCore3D_1_1Edge}{Edge} $\ast$\hyperlink{classHArDCore3D_1_1Face_a93dd83df13314df283be122c36b93c29}{edge})
+\begin{DoxyCompactList}\small\item\em Add a edge to the face. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_a7b9f09bcce8fc3beb56634e0793af83f}\label{classHArDCore3D_1_1Face_a7b9f09bcce8fc3beb56634e0793af83f}} 
+void \hyperlink{classHArDCore3D_1_1Face_a7b9f09bcce8fc3beb56634e0793af83f}{add\+\_\+vertex} (\hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$\hyperlink{classHArDCore3D_1_1Face_a63c8254509d075b402e1ce7393efd70c}{vertex})
+\begin{DoxyCompactList}\small\item\em Add a vertex to the face. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_afdd39678036c46f979da9909419c3428}\label{classHArDCore3D_1_1Face_afdd39678036c46f979da9909419c3428}} 
+void \hyperlink{classHArDCore3D_1_1Face_afdd39678036c46f979da9909419c3428}{set\+\_\+boundary} (bool val)
+\begin{DoxyCompactList}\small\item\em Set the \+\_\+boundary value of the face to val. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_a66289e0a31138cfce6ac948f09423548}\label{classHArDCore3D_1_1Face_a66289e0a31138cfce6ac948f09423548}} 
+void \hyperlink{classHArDCore3D_1_1Face_a66289e0a31138cfce6ac948f09423548}{set\+\_\+global\+\_\+index} (size\+\_\+t idx)
+\begin{DoxyCompactList}\small\item\em Set the global index of the face to idx. Used to re-\/index the faces, should essentially only be used inside \hyperlink{classHArDCore3D_1_1Mesh_af77873bbc892a7a5b37bf4773c55aefc}{Mesh\+::renum}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classHArDCore3D_1_1Face}{Face} class provides description of an edge. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHArDCore3D_1_1Face_a7dc8f1b50f054d1612862e0ccffe0827}\label{classHArDCore3D_1_1Face_a7dc8f1b50f054d1612862e0ccffe0827}} 
+\index{H\+Ar\+D\+Core3\+D\+::\+Face@{H\+Ar\+D\+Core3\+D\+::\+Face}!Face@{Face}}
+\index{Face@{Face}!H\+Ar\+D\+Core3\+D\+::\+Face@{H\+Ar\+D\+Core3\+D\+::\+Face}}
+\subsubsection{\texorpdfstring{Face()}{Face()}}
+{\footnotesize\ttfamily Face\+::\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh} $\ast$}]{mesh,  }\item[{std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Edge}{Edge} $\ast$$>$}]{edges,  }\item[{std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$$>$}]{vertices,  }\item[{bool}]{boundary,  }\item[{double}]{measure,  }\item[{double}]{diam,  }\item[{Vector3d}]{center\+\_\+mass,  }\item[{Vector3d}]{normal }\end{DoxyParamCaption})}
+
+A class representing a face of a 2D mesh. Contains a pointer to the mesh, as well as to the vertices, edges and cells connected to that face Constructor. Faces are created after vertices and edges, but before cells. So all their connectivites except cells can be filled in
+
+
+\begin{DoxyParams}{Parameters}
+{\em iF} & global face number \\
+\hline
+{\em mesh} & pointer to the mesh \\
+\hline
+{\em edges} & edges of the face \\
+\hline
+{\em vertices} & vertices of the face \\
+\hline
+{\em measure} & area of the face \\
+\hline
+{\em diam} & diam of the face \\
+\hline
+{\em center\+\_\+mass} & center of mass of the face \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Mesh/face.\+hpp\item 
+src/\+Mesh/face.\+cpp\end{DoxyCompactItemize}

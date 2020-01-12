@@ -1,0 +1,55 @@
+This is the documentation of the 3D version (sources\+: \href{https://github.com/jdroniou/HArDCore3D-release/}{\tt https\+://github.\+com/jdroniou/\+H\+Ar\+D\+Core3\+D-\/release/}) of the H\+Ar\+D\+::\+Core suite of C++ tools for schemes whose unknowns are polynomials in the cells and on the edges (in 2D) or faces (in 3D). Most of the generic details described in the main page \href{https://jdroniou.github.io/HArDCore2D-release/}{\tt https\+://jdroniou.\+github.\+io/\+H\+Ar\+D\+Core2\+D-\/release/} of the 2D version are applicable to this 3D version. We refer to this page for the generic principles behind H\+Ar\+D\+::\+Core and we focus here on the specificities of the 3D version.
+
+Because they are built on the same principles, transferring an implementation of a scheme from 2D to 3D or vice-\/versa is quite straightforward (if the scheme\textquotesingle{}s own principles are dimension-\/independent, that is, its mathematical description is the same in 2D and 3D). Details to perform such a transfer are described in the readme file of the H\+Ar\+D\+::\+Core github depository \href{https://github.com/jdroniou/HArDCore}{\tt https\+://github.\+com/jdroniou/\+H\+Ar\+D\+Core}.
+
+You will find here\+:
+
+
+\begin{DoxyItemize}
+\item \href{#mesh}{\tt The mesh structure} -- The principles of the data structure representing the mesh, and how to load a mesh.
+\item \href{#schemes}{\tt Schemes} -- The list of schemes currently implemented in H\+Ar\+D\+::\+Core3D, and scripts to run them.
+\end{DoxyItemize}
+
+\label{_mesh}%
+ \hypertarget{index_mesh}{}\section{The mesh}\label{index_mesh}
+\hypertarget{index_meshpple}{}\subsection{Principles}\label{index_meshpple}
+As in 2D, after it is loaded the mesh is represented by classes describing its geometric elements of dimension 0, 1, 2 and 3. There is thus a {\ttfamily vertex} class, an {\ttfamily edge} class, a {\ttfamily face} class and a {\ttfamily mesh} class\+: \hyperlink{classHArDCore3D_1_1Vertex}{Vertex}, \hyperlink{classHArDCore3D_1_1Edge}{Edge}, \hyperlink{classHArDCore3D_1_1Face}{Face}, and \hyperlink{classHArDCore3D_1_1Cell}{Cell}. Each of these classes contains methods to access useful information for the corresponding element, including other geometrical quantities it is related to. The mesh itself is represented by an element of the \hyperlink{classHArDCore3D_1_1Mesh}{Mesh} class with methods to access all the vertices, edges, faces and cells (or a particular vertex, edge, face or cell). In this class, each cell has a unique identifier, numbered from 0. We refer to the main page of the documentation \href{https://jdroniou.github.io/HArDCore2D-release/}{\tt https\+://jdroniou.\+github.\+io/\+H\+Ar\+D\+Core2\+D-\/release/} of the 2D version for the principles on how to manipulate these classes, and to the class descriptions for specific members of the 3D version.\hypertarget{index_loading_mesh}{}\subsection{Loading a mesh}\label{index_loading_mesh}
+H\+Ar\+D\+Core3D can currently read meshes in {\ttfamily TG}, {\ttfamily RF} and {\ttfamily M\+SH}. The loader and all geometrical computations are performed using {\ttfamily Stem\+Mesh}, based on G. Manzini\textquotesingle{}s mesh library \href{https://github.com/gmanzini-LANL/PDE-Mesh-Manager}{\tt https\+://github.\+com/gmanzini-\/\+L\+A\+N\+L/\+P\+D\+E-\/\+Mesh-\/\+Manager}.
+
+A mesh file must be read using an instance of the {\ttfamily meshbuilder} class, and then built using {\ttfamily build\+\_\+the\+\_\+mesh}. A working example is given below (assuming the executable will be in {\ttfamily build/\+Schemes} for example).
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "mesh.hpp"}
+\textcolor{preprocessor}{#include "mesh\_builder.hpp"}
+
+\textcolor{keyword}{using namespace }\hyperlink{namespaceHArDCore3D}{HArDCore3D};
+
+\textcolor{keywordtype}{int} main() \{
+
+    \textcolor{comment}{// Mesh file to read, with type}
+    std::string default\_mesh = \textcolor{stringliteral}{"../../meshes/Voro-small-0/RF\_fmt/voro-4"};
+    std::string default\_meshtype = \textcolor{stringliteral}{"RF"};
+
+    \textcolor{comment}{// Read the mesh file and build the mesh}
+    \hyperlink{classHArDCore3D_1_1MeshBuilder}{MeshBuilder} meshbuilder = \hyperlink{classHArDCore3D_1_1MeshBuilder}{MeshBuilder}(mesh\_file, mesh\_type);
+    std::unique\_ptr<Mesh> mesh\_ptr = meshbuilder.\hyperlink{classHArDCore3D_1_1MeshBuilder_a208c94e8cb6490226215b59eb67e7911}{build\_the\_mesh}();
+
+    std::cout << \textcolor{stringliteral}{"There are "} << mesh\_ptr->n\_cells() << \textcolor{stringliteral}{" cells in the mesh.\(\backslash\)n"};
+\}
+\end{DoxyCode}
+
+
+\label{_schemes}%
+ \hypertarget{index_schemes}{}\section{Schemes}\label{index_schemes}
+The schemes currently available in H\+Ar\+D\+::\+Core3D are\+:
+
+
+\begin{DoxyItemize}
+\item \hyperlink{classHArDCore3D_1_1HHO__Diffusion}{H\+H\+O\+\_\+diffusion}\+: Hybrid High-\/\+Order for $-\mathrm{div}(K\nabla u)=f$, for Dirichlet or Neumann boundary conditions, with $K$ a diffusion tensor that is piecewise constant on the mesh.
+\item \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{H\+H\+O\+\_\+locvardiff}\+: Hybrid High-\/\+Order for $-\mathrm{div}(K\nabla u)=f$, for Dirichlet or Neumann boundary conditions, with $K$ a diffusion tensor that can vary in each cell.
+\end{DoxyItemize}
+
+The directory {\ttfamily runs} contains B\+A\+SH to run series of tests on families of meshes. The files {\ttfamily data.\+sh} describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the {\ttfamily output} directory, including a pdf file {\ttfamily rate.\+pdf} describing the rates of convergence in various energy norms.
+
+To run the scripts as they are, you will need {\ttfamily pdflatex} and a F\+O\+R\+T\+R\+AN compiler, and to adjust the {\ttfamily Makefile} to your compiler, to run {\ttfamily compute\+\_\+rates.\+f90} and compute the rates of convergence in the various norms. 
