@@ -1,0 +1,26 @@
+# first line: header with the following syntax:
+# <number of cells> <flag1>
+# (put flag1=0)
+# 
+# for each cell there is:
+#
+# (i) a line with the the cell header; syntax:
+# <cell id> <number of faces>
+#
+# (ii) a line for each face with the list of the vertices of the face;
+# syntax:
+# <face id> <number of vertices> <vertex 1> <vertex 2> ...
+#
+# the face id is local to the cell: for each cell it restarts from 0 (or from 1)
+#
+# All numberings may begin from 0 or from 1, but consistently with the choice of
+# the vertex numbering in the other file.
+# 
+1  0
+0  6
+  0  4    3  2  1  0
+  1  4    0  1  5  4
+  2  4    3  0  4  7
+  3  4    1  2  6  5
+  4  4    2  3  7  6
+  5  4    4  5  6  7

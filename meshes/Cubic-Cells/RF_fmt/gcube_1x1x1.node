@@ -1,0 +1,19 @@
+# lines beginning with '#' are comments
+#
+# first line: header specifying
+# <number of vertices> <dimension> <flag1> <flag2>
+# (put dimension=3, flag1=flag2=0)
+#
+# after the header there is one line per vertex with this
+# syntax:
+# <vertex id> <x> <y> <z>
+# (verted ids can start from 0 or from 1, I prefer 0)
+8  3  0  0
+                   0     0   0   0
+                   1     1   0   0
+                   2     1   1   0
+                   3     0   1   0
+                   4     0   0   1
+                   5     1   0   1
+                   6     1   1   1
+                   7     0   1   1

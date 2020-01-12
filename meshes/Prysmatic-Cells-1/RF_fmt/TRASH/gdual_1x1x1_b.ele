@@ -1,0 +1,13 @@
+# *.ele file of 3D-mesh in REGN_FACE format 
+# ./Mesh-3D/Meshes/Layered/Dual-1b/RF_fmt/gdual_5x5x5.ele
+1  0
+0  8
+  0  4     1   0   6   7
+  1  4     2   1   7   8
+  2  4     3   2   8   9
+  3  4     4   3   9  10
+  4  4     5   4  10  11 
+  5  4     0   5   6   5
+  6  6     0   1   2   3   4   5
+  7  6    11  10   9   8   7   6
+# output from mesh3Dv_writer.hh 

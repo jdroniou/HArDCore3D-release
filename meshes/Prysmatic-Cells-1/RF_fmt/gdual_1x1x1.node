@@ -1,0 +1,17 @@
+# *.node file of 3D ATS mesh in REGN_FACE format 
+# offset = 0
+# fname  = ./MeshDataSets/Mesh-3D/STANDARD-SET/Prysmatic-Cells/RF_fmt/gdual_1x1x1.node
+12  3  0  0
+       0                        0                      0                      0   
+       1                        1                      0                      0   
+       2                        2                      1                      0   
+       3                        1                      2                      0   
+       4                        0                      2                      0   
+       5                       -1                      1                      0   
+       6                        0                      0                      1   
+       7                        1                      0                      1   
+       8                        2                      1                      1   
+       9                        1                      2                      1   
+      10                        0                      2                      1   
+      11                       -1                      1                      1   
+# output from mesh3Dv_writer.hh 

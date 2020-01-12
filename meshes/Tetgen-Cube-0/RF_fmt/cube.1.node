@@ -1,0 +1,20 @@
+# *.node file of 3D-mesh in REGN_FACE format 
+# ./Mesh-3D/Meshes/STANDARD-SET/Tetgen-Cube-0/RF_fmt/cube.1.node
+16  3  0  0
+                   0     0   0   0
+                   1     1   0   0
+                   2     1   1   0
+                   3     0   1   0
+                   4     0   0   1
+                   5     1   0   1
+                   6     1   1   1
+                   7     0   1   1
+                   8     0   0.4995622   0
+                   9     0.499535   1   0
+                  10     0.4996422   1   1
+                  11     0   0.4999569   1
+                  12     0.5002653   0   1
+                  13     0   0   0.4999157
+                  14     1   0.5001663   1
+                  15     1   0   0.5001722
+# output from mesh3Dv_writer.hh 
