@@ -1,7 +1,7 @@
 # HArDCore3D
 HArD::Core3D (Hybrid Arbitrary Degree::Core 3D) - Library to implement schemes with face and cell polynomial unknowns on 3D generic meshes.
 
-This is the 3D version of the HArD::Core library (https://github.com/jdroniou/HArDCore). The implementation principles are the same as those of the 2D version (https://github.com/jdroniou/HArDCore2D); see in particular the README.md file in that repository. The documentation can be found at https://jdroniou.github.io/HArDCore3D/
+This is the 3D version of the HArD::Core library (https://github.com/jdroniou/HArDCore). The implementation principles are the same as those of the 2D version (https://github.com/jdroniou/HArDCore2D-release); see in particular the README.md file in that repository. The documentation can be found at https://jdroniou.github.io/HArDCore3D-release/
 
 The meshing (src/Mesh/StemMesh) and quadrature (src/Quadratures) modules in HArDCore3D are partially based on Marco Manzini's code available at https://github.com/gmanzini-LANL/PDE-Mesh-Manager.
 
