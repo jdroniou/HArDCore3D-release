@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['grad_5ffunction_5ftype',['grad_function_type',['../classHArDCore3D_1_1HHO__Diffusion.html#afd0b6d7ab35bca58a5f7ec29afbba355',1,'HArDCore3D::HHO_Diffusion::grad_function_type()'],['../classHArDCore3D_1_1HHO__LocVarDiff.html#a13003c1e92aab2a21e3055e2fd7104f8',1,'HArDCore3D::HHO_LocVarDiff::grad_function_type()']]]
+  ['polycellbasistype',['PolyCellBasisType',['../classHArDCore3D_1_1HybridCore.html#a5c478c9953257f154d2ea98f115fba0d',1,'HArDCore3D::HybridCore']]],
+  ['polyedgebasistype',['PolyEdgeBasisType',['../classHArDCore3D_1_1HybridCore.html#ad3123dceabd79eec7cdb57ba1014fc17',1,'HArDCore3D::HybridCore']]],
+  ['polyfacebasistype',['PolyFaceBasisType',['../classHArDCore3D_1_1HybridCore.html#ab02b7a4490b6a739e2d084e9a70dbcc5',1,'HArDCore3D::HybridCore']]]
 ];

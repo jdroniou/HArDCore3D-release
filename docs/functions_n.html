@@ -86,11 +86,17 @@ $(function() {
 <li>n_bvertex()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a616550f2a459b5c239d2d205a408b484">StemMesh3D::mesh_3Dv</a>
 </li>
+<li>n_cell_dofs()
+: <a class="el" href="classHArDCore3D_1_1UVector.html#a0ca65e887f268ac464d45c45f2d1c4a4">HArDCore3D::UVector</a>
+</li>
 <li>n_cells()
 : <a class="el" href="group__Mesh.html#gabe29c7660cf7a1dddb06b876ebc76f80">HArDCore3D::Edge</a>
 , <a class="el" href="group__Mesh.html#ga5407c36b8a6d8d8bf64e8fd559cebbe9">HArDCore3D::Face</a>
 , <a class="el" href="group__Mesh.html#ga60fb49998f950bad0659d1ac394d7cfd">HArDCore3D::Mesh</a>
 , <a class="el" href="group__Mesh.html#ga52a24c4c5fbdc474b5a5e379d037f2e4">HArDCore3D::Vertex</a>
+</li>
+<li>n_dir_faces()
+: <a class="el" href="classBoundaryConditions.html#af9e9493f0ba9be92b7299838bc08f0bf">BoundaryConditions</a>
 </li>
 <li>n_edge()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a8068061ffd6a9080b92d25270c1f668d">StemMesh3D::mesh_3Dv</a>
@@ -109,6 +115,9 @@ $(function() {
 </li>
 <li>n_face()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a06d9c5f13b364627149ea844501e9441">StemMesh3D::mesh_3Dv</a>
+</li>
+<li>n_face_dofs()
+: <a class="el" href="classHArDCore3D_1_1UVector.html#aa1f68faa5324ceceee6d49e66e766fc3">HArDCore3D::UVector</a>
 </li>
 <li>n_face_edge()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a2d8ae772da1e33edfb9332823d4c7212">StemMesh3D::mesh_3Dv</a>
@@ -140,6 +149,9 @@ $(function() {
 <li>n_regn_face()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a02974473e896bc49a5a19cd92b521061">StemMesh3D::mesh_3Dv</a>
 </li>
+<li>n_total_cell_dofs()
+: <a class="el" href="classHArDCore3D_1_1UVector.html#a5a48f281a6cdabd298d5f2edf4c04022">HArDCore3D::UVector</a>
+</li>
 <li>n_vertex()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#ac29b66e58fbd9bc301118bea14426709">StemMesh3D::mesh_3Dv</a>
 </li>
@@ -155,38 +167,15 @@ $(function() {
 <li>n_vrtx_vrtx()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a1a6eaa9ed8ebf41ada912b834f34e7c6">StemMesh3D::mesh_3Dv</a>
 </li>
-<li>nboundary_face_dofs()
-: <a class="el" href="group__HybridCore.html#gaddeb59cc8b5d89525e27b2dee22eb70f">HArDCore3D::HybridCore</a>
+<li>name()
+: <a class="el" href="classBoundaryConditions.html#ac3609733d5e7e43e9240d0a8b05d17ba">BoundaryConditions</a>
 </li>
 <li>neighbour()
 : <a class="el" href="classHArDCore3D_1_1Cell.html#adddfffa330938bd8ab624349722a0e4e">HArDCore3D::Cell</a>
 </li>
-<li>ngradient_dofs()
-: <a class="el" href="group__HybridCore.html#ga3b0fe217b02f8b2c132f6917e2ac9900">HArDCore3D::HybridCore</a>
-</li>
-<li>nhighorder_dofs()
-: <a class="el" href="group__HybridCore.html#ga07b815b769bba05753666f6bf900fdc5">HArDCore3D::HybridCore</a>
-</li>
-<li>ninternal_face_dofs()
-: <a class="el" href="group__HybridCore.html#gaffef0ee3517c408e3d086956feb022bd">HArDCore3D::HybridCore</a>
-</li>
-<li>nlocal_cell_dofs()
-: <a class="el" href="group__HybridCore.html#ga228678f9bf8057025f3c220e40cab209">HArDCore3D::HybridCore</a>
-</li>
-<li>nlocal_face_dofs()
-: <a class="el" href="group__HybridCore.html#ga94fa97198237f40a378a384f3d072394">HArDCore3D::HybridCore</a>
-</li>
 <li>normal()
 : <a class="el" href="classHArDCore3D_1_1Face.html#af2b13fd21cb283d14878c2ea25727e1f">HArDCore3D::Face</a>
-</li>
-<li>ntotal_cell_dofs()
-: <a class="el" href="group__HybridCore.html#gaae30736925e857cb467c3f5c75fdc97e">HArDCore3D::HybridCore</a>
-</li>
-<li>ntotal_dofs()
-: <a class="el" href="group__HybridCore.html#ga804722e06e20a32477cd1ae41ee6f473">HArDCore3D::HybridCore</a>
-</li>
-<li>ntotal_face_dofs()
-: <a class="el" href="group__HybridCore.html#gab2e20ded434d1aacc44927934faabc1c">HArDCore3D::HybridCore</a>
+, <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisFace.html#a299c04e82954cd6bd69a31de664d1150">HArDCore3D::MonomialScalarBasisFace</a>
 </li>
 </ul>
 </div><!-- contents -->

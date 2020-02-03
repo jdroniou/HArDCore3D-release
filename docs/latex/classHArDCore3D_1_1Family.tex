@@ -1,0 +1,100 @@
+\hypertarget{classHArDCore3D_1_1Family}{}\section{H\+Ar\+D\+Core3D\+:\+:Family$<$ Basis\+Type $>$ Class Template Reference}
+\label{classHArDCore3D_1_1Family}\index{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$@{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$}}
+
+
+{\ttfamily \#include $<$basis.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a2d87c9bf83c4dd0574dc399506d4870c}\label{classHArDCore3D_1_1Family_a2d87c9bf83c4dd0574dc399506d4870c}} 
+typedef Basis\+Type\+::\+Function\+Value {\bfseries Function\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_aa4c3dc501f6c7178d2ed5c797f9aefc1}\label{classHArDCore3D_1_1Family_aa4c3dc501f6c7178d2ed5c797f9aefc1}} 
+typedef Basis\+Type\+::\+Gradient\+Value {\bfseries Gradient\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a7b53a354b3fad04c15ba0e35c46d3f51}\label{classHArDCore3D_1_1Family_a7b53a354b3fad04c15ba0e35c46d3f51}} 
+typedef Vector\+Rd {\bfseries Curl\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a48cb296e638fde22922d3a583f6cf126}\label{classHArDCore3D_1_1Family_a48cb296e638fde22922d3a583f6cf126}} 
+typedef double {\bfseries Divergence\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a9e16a6663722460eb003835c731bea9c}\label{classHArDCore3D_1_1Family_a9e16a6663722460eb003835c731bea9c}} 
+typedef Basis\+Type\+::\+Geometric\+Support {\bfseries Geometric\+Support}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHArDCore3D_1_1Family_aa0576f3bfd8f5cdbdd863f147b646d15}{Family} (const Basis\+Type \&basis, const Eigen\+::\+Matrix\+Xd \&\hyperlink{classHArDCore3D_1_1Family_af056ff8a6cbf5c566c243290e72af217}{matrix})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_aa71fa9b9c83346561fde4c764a1b2e72}\label{classHArDCore3D_1_1Family_aa71fa9b9c83346561fde4c764a1b2e72}} 
+size\+\_\+t \hyperlink{classHArDCore3D_1_1Family_aa71fa9b9c83346561fde4c764a1b2e72}{dimension} () const
+\begin{DoxyCompactList}\small\item\em Dimension of the family. This is actually the number of functions in the family, not necessarily linearly independent. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a3616bf77a028e9e7638af28820370931}\label{classHArDCore3D_1_1Family_a3616bf77a028e9e7638af28820370931}} 
+Function\+Value \hyperlink{classHArDCore3D_1_1Family_a3616bf77a028e9e7638af28820370931}{function} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the i-\/th function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a7e8e2733993bda1d5aff348d7d31cbcf}\label{classHArDCore3D_1_1Family_a7e8e2733993bda1d5aff348d7d31cbcf}} 
+Gradient\+Value \hyperlink{classHArDCore3D_1_1Family_a7e8e2733993bda1d5aff348d7d31cbcf}{gradient} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_af5aac63dc865a440eb25c6b41b8d66d1}\label{classHArDCore3D_1_1Family_af5aac63dc865a440eb25c6b41b8d66d1}} 
+Curl\+Value \hyperlink{classHArDCore3D_1_1Family_af5aac63dc865a440eb25c6b41b8d66d1}{curl} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a87cbacf4f0cf12e0c9cfe9afa2e40c29}\label{classHArDCore3D_1_1Family_a87cbacf4f0cf12e0c9cfe9afa2e40c29}} 
+Divergence\+Value \hyperlink{classHArDCore3D_1_1Family_a87cbacf4f0cf12e0c9cfe9afa2e40c29}{divergence} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_af056ff8a6cbf5c566c243290e72af217}\label{classHArDCore3D_1_1Family_af056ff8a6cbf5c566c243290e72af217}} 
+const Eigen\+::\+Matrix\+Xd \& \hyperlink{classHArDCore3D_1_1Family_af056ff8a6cbf5c566c243290e72af217}{matrix} () const
+\begin{DoxyCompactList}\small\item\em Return the coefficient matrix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a7afd19f4c3c17b7ac8ed16115b0ffe1c}\label{classHArDCore3D_1_1Family_a7afd19f4c3c17b7ac8ed16115b0ffe1c}} 
+const Basis\+Type \& \hyperlink{classHArDCore3D_1_1Family_a7afd19f4c3c17b7ac8ed16115b0ffe1c}{ancestor} () const
+\begin{DoxyCompactList}\small\item\em Return the ancestor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a78b538f422207983374190af40e1dfec}\label{classHArDCore3D_1_1Family_a78b538f422207983374190af40e1dfec}} 
+static const Tensor\+RankE {\bfseries tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_ab00249d408f8228595197421aaf28ac6}\label{classHArDCore3D_1_1Family_ab00249d408f8228595197421aaf28ac6}} 
+static const bool {\bfseries has\+Function} = Basis\+Type\+::has\+Function
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a3fcb3b85e2f26f201e608b04bdf7f926}\label{classHArDCore3D_1_1Family_a3fcb3b85e2f26f201e608b04bdf7f926}} 
+static const bool {\bfseries has\+Gradient} = Basis\+Type\+::has\+Gradient
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_a6c12f947e8ba8dedc3ac6809481249f0}\label{classHArDCore3D_1_1Family_a6c12f947e8ba8dedc3ac6809481249f0}} 
+static const bool {\bfseries has\+Curl} = Basis\+Type\+::has\+Curl
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_ac905ca089d3f75eee5a4e655544b9223}\label{classHArDCore3D_1_1Family_ac905ca089d3f75eee5a4e655544b9223}} 
+static const bool {\bfseries has\+Divergence} = Basis\+Type\+::has\+Divergence
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Basis\+Type$>$\newline
+class H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$}
+
+\hyperlink{classHArDCore3D_1_1Family}{Family} of functions expressed as linear combination of the functions of a given basis 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHArDCore3D_1_1Family_aa0576f3bfd8f5cdbdd863f147b646d15}\label{classHArDCore3D_1_1Family_aa0576f3bfd8f5cdbdd863f147b646d15}} 
+\index{H\+Ar\+D\+Core3\+D\+::\+Family@{H\+Ar\+D\+Core3\+D\+::\+Family}!Family@{Family}}
+\index{Family@{Family}!H\+Ar\+D\+Core3\+D\+::\+Family@{H\+Ar\+D\+Core3\+D\+::\+Family}}
+\subsubsection{\texorpdfstring{Family()}{Family()}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type$>$ \\
+\hyperlink{classHArDCore3D_1_1Family}{H\+Ar\+D\+Core3\+D\+::\+Family}$<$ Basis\+Type $>$\+::\hyperlink{classHArDCore3D_1_1Family}{Family} (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em basis} & The basis in which the family is expressed \\
+\hline
+{\em matrix} & The coefficient matrix whose i-\/th line contains the coefficient of the expansion of the i-\/th function of the family in the basis \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Common/basis.\+hpp\end{DoxyCompactItemize}

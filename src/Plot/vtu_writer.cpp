@@ -73,15 +73,14 @@ VtuWriter::VtuWriter(Mesh* mesh)
 // Method to plot a vtu file
 bool VtuWriter::write_to_vtu(const std::string filename, const Eigen::VectorXd &sol_vrtx) {
 
-    FILE* pFile=fopen(filename.c_str(),"w");
-		write_header(pFile);
-		write_vertices(pFile);
-		write_solution(pFile, sol_vrtx);
-		write_cells(pFile);
-		write_footer(pFile);
-		fclose(pFile);
-
-		return true;
+  FILE* pFile=fopen(filename.c_str(),"w");
+	write_header(pFile);
+	write_vertices(pFile);
+	write_solution(pFile, sol_vrtx);
+	write_cells(pFile);
+	write_footer(pFile);
+	fclose(pFile);
+	return true;
 }
 
 bool VtuWriter::write_header(FILE* pFile){

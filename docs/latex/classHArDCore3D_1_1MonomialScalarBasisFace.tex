@@ -1,0 +1,102 @@
+\hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace}{}\section{H\+Ar\+D\+Core3D\+:\+:Monomial\+Scalar\+Basis\+Face Class Reference}
+\label{classHArDCore3D_1_1MonomialScalarBasisFace}\index{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face@{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face}}
+
+
+Scalar monomial basis on a face.  
+
+
+
+
+{\ttfamily \#include $<$basis.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a71bec97252664e36ca3ad118d9d21c5f}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a71bec97252664e36ca3ad118d9d21c5f}} 
+typedef double {\bfseries Function\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a43c9548748ae2ffbda2750305a75c4c4}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a43c9548748ae2ffbda2750305a75c4c4}} 
+typedef Vector\+Rd {\bfseries Gradient\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a1608a0cb98bc4e23f53da80bcc9b898a}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a1608a0cb98bc4e23f53da80bcc9b898a}} 
+typedef Vector\+Rd {\bfseries Curl\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a32196c4ba9262b365431669d44277b23}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a32196c4ba9262b365431669d44277b23}} 
+typedef double {\bfseries Divergence\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a4d8acdf73dbc7897fe23d219c1fed135}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a4d8acdf73dbc7897fe23d219c1fed135}} 
+typedef \hyperlink{classHArDCore3D_1_1Face}{Face} {\bfseries Geometric\+Support}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_afe0390024b0b4c5e3581f73ff2a1ece2}\label{classHArDCore3D_1_1MonomialScalarBasisFace_afe0390024b0b4c5e3581f73ff2a1ece2}} 
+typedef Eigen\+::\+Matrix$<$ double, 2, dimspace $>$ {\bfseries Jacobian\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace_ad87f40b1e97ec1b95dcf9c56282912f3}{Monomial\+Scalar\+Basis\+Face} (const \hyperlink{classHArDCore3D_1_1Face}{Face} \&F, size\+\_\+t degree)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a404551f2ca5ed4e605289addbc6fb9c4}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a404551f2ca5ed4e605289addbc6fb9c4}} 
+size\+\_\+t \hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace_a404551f2ca5ed4e605289addbc6fb9c4}{dimension} () const
+\begin{DoxyCompactList}\small\item\em Dimension of the basis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a5dcaa7bcfc2afaf3615556f83bf1076b}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a5dcaa7bcfc2afaf3615556f83bf1076b}} 
+Function\+Value \hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace_a5dcaa7bcfc2afaf3615556f83bf1076b}{function} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a25989d831b6ca783612bc54ce0f25b66}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a25989d831b6ca783612bc54ce0f25b66}} 
+Gradient\+Value \hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace_a25989d831b6ca783612bc54ce0f25b66}{gradient} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_aadba906ff906d86d97cfcc1a5fbc505f}\label{classHArDCore3D_1_1MonomialScalarBasisFace_aadba906ff906d86d97cfcc1a5fbc505f}} 
+Curl\+Value \hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace_aadba906ff906d86d97cfcc1a5fbc505f}{curl} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the two-\/dimensional curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a299c04e82954cd6bd69a31de664d1150}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a299c04e82954cd6bd69a31de664d1150}} 
+const Vector\+Rd \& \hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace_a299c04e82954cd6bd69a31de664d1150}{normal} () const
+\begin{DoxyCompactList}\small\item\em Return the normal to the face used in the computation of the curl. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_aa8a841d7f31dd65d0dc3aeae6d3283c6}\label{classHArDCore3D_1_1MonomialScalarBasisFace_aa8a841d7f31dd65d0dc3aeae6d3283c6}} 
+const Jacobian\+Type \& \hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace_aa8a841d7f31dd65d0dc3aeae6d3283c6}{jacobian} () const
+\begin{DoxyCompactList}\small\item\em Return the Jacobian of the coordinate system transformation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a5e2771dce6f22d686302ef1654b1d7a1}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a5e2771dce6f22d686302ef1654b1d7a1}} 
+static const Tensor\+RankE {\bfseries tensor\+Rank} = Scalar
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a7f8f17dffce90637f3a38831c1453db5}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a7f8f17dffce90637f3a38831c1453db5}} 
+static const bool {\bfseries has\+Function} = true
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_acf6b7bb1df49b58e85f0ee9058e83761}\label{classHArDCore3D_1_1MonomialScalarBasisFace_acf6b7bb1df49b58e85f0ee9058e83761}} 
+static const bool {\bfseries has\+Gradient} = true
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_a99e8f7a15ecf13d854344b34c7b0f963}\label{classHArDCore3D_1_1MonomialScalarBasisFace_a99e8f7a15ecf13d854344b34c7b0f963}} 
+static const bool {\bfseries has\+Curl} = true
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_abded3a224b17ec37cafbebdc190889ac}\label{classHArDCore3D_1_1MonomialScalarBasisFace_abded3a224b17ec37cafbebdc190889ac}} 
+static const bool {\bfseries has\+Divergence} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Scalar monomial basis on a face. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHArDCore3D_1_1MonomialScalarBasisFace_ad87f40b1e97ec1b95dcf9c56282912f3}\label{classHArDCore3D_1_1MonomialScalarBasisFace_ad87f40b1e97ec1b95dcf9c56282912f3}} 
+\index{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face@{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face}!Monomial\+Scalar\+Basis\+Face@{Monomial\+Scalar\+Basis\+Face}}
+\index{Monomial\+Scalar\+Basis\+Face@{Monomial\+Scalar\+Basis\+Face}!H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face@{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face}}
+\subsubsection{\texorpdfstring{Monomial\+Scalar\+Basis\+Face()}{MonomialScalarBasisFace()}}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Monomial\+Scalar\+Basis\+Face (\begin{DoxyParamCaption}\item[{const \hyperlink{classHArDCore3D_1_1Face}{Face} \&}]{F,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F} & A mesh face \\
+\hline
+{\em degree} & The maximum polynomial degree to be considered \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Common/basis.\+hpp\item 
+src/\+Common/basis.\+cpp\end{DoxyCompactItemize}

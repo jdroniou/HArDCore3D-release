@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ymax',['ymax',['../classStemMesh3D_1_1mesh__3Dv.html#aabed6131430e047c4f38f3db6fbafaf1',1,'StemMesh3D::mesh_3Dv']]],
-  ['ymin',['ymin',['../classStemMesh3D_1_1mesh__3Dv.html#aa3db572deb15fb732eee5c36ebf4a3ac',1,'StemMesh3D::mesh_3Dv']]]
+  ['xmax',['xmax',['../classStemMesh3D_1_1mesh__3Dv.html#a742de5662e4e8f9acb3db49e30464b2d',1,'StemMesh3D::mesh_3Dv']]],
+  ['xmin',['xmin',['../classStemMesh3D_1_1mesh__3Dv.html#a3d36f7cff6f6006ab50287eb7ecfffe8',1,'StemMesh3D::mesh_3Dv']]]
 ];

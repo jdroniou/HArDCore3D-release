@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['quadraturenode',['QuadratureNode',['../structHArDCore3D_1_1QuadratureNode.html',1,'HArDCore3D']]],
-  ['quadregion',['QuadRegion',['../classStemMesh3D_1_1QuadRegion.html',1,'StemMesh3D']]],
-  ['quadruleedge',['QuadRuleEdge',['../classHArDCore3D_1_1QuadRuleEdge.html',1,'HArDCore3D']]],
-  ['quadruletetra',['QuadRuleTetra',['../classHArDCore3D_1_1QuadRuleTetra.html',1,'HArDCore3D']]],
-  ['quadruletriangle',['QuadRuleTriangle',['../classHArDCore3D_1_1QuadRuleTriangle.html',1,'HArDCore3D']]],
-  ['queue',['queue',['../classStemMesh3D_1_1tetgenmesh_1_1queue.html',1,'StemMesh3D::tetgenmesh']]]
+  ['pbcdata',['pbcdata',['../structStemMesh3D_1_1tetgenmesh_1_1pbcdata.html',1,'StemMesh3D::tetgenmesh']]],
+  ['pbcgroup',['pbcgroup',['../structStemMesh3D_1_1tetgenio_1_1pbcgroup.html',1,'StemMesh3D::tetgenio']]],
+  ['polygon',['polygon',['../structStemMesh3D_1_1tetgenio_1_1polygon.html',1,'StemMesh3D::tetgenio']]]
 ];

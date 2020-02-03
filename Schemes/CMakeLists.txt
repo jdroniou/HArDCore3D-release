@@ -1,5 +1,5 @@
 # TestCase
-ADD_LIBRARY(TestCase OBJECT TestCase/TestCase.cpp)
+ADD_LIBRARY(TestCase OBJECT TestCase/TestCase.cpp TestCase/BoundaryConditions.cpp)
 
 # HHO Diffusion
 ADD_EXECUTABLE(hho-diffusion $<TARGET_OBJECTS:TestCase> HHO-diffusion/HHO_Diffusion.cpp)

@@ -18,20 +18,47 @@ fi
 
 # Options:
 if [[ $1 == "help" ]]; then
-	echo -e "\nExecute tests using parameters in data.sh, creates and compile latex file, and calculate rates.\n"
+	echo -e "\nExecute tests using parameters in data.sh, creates and compile latex file, and calculate rates.\n
+Executed without parameters: uses the data in the local data.sh file\n
+Parameters that can be passed: data file | -k <value of k> | -l <value of l>\n"
 	exit;
 fi;
 
 
-if [ ! -d $outdir ]; then
-	mkdir $outdir
+if [ -d $outdir ]; then
+	\rm -r $outdir
 fi
-\rm -r $outdir/*
+	mkdir $outdir
 
 ###
 # LOAD DATA
 # (LATER: Test that each required data exists (files, parameters...))
-. data.sh
+# Default data file
+datafile=$(readlink -f data.sh);
+# We go over the parameters. -k K or -l L will set k or l to these values. Any other
+# parameter is assumed to be a datafile that overrides the previous one
+until [ $# -eq 0 ]; do
+  if [[ $1 == "-k" ]]; then
+    ksave=$(echo $2 | sed s/'^[^0-9].*'//g)
+    shift 2
+  elif [[ $1 == "-l" ]]; then
+    lsave=$(echo $2 | sed s/'^[^0-9].*'//g)
+    shift 2
+  else
+    datafile=$(readlink -f $1)
+    shift
+  fi
+done
+echo -e "Using data file $datafile\n"
+. $datafile
+
+# if ksave or lsave have been ecountered we override whatever values $datafile might have contained
+if [[ ! -z "$ksave" ]]; then
+  k=$ksave;
+fi
+if [[ ! -z "$lsave" ]]; then
+  l=$lsave;
+fi
 
 echo "degrees: (face) k=$k, (cell) l=$l"
 echo "boundary conditions bc=$bc"
@@ -44,9 +71,9 @@ for i in `seq 1 $nbmesh`;
 do
 	meshtype=$(echo ${mesh[$i]} | cut -d ':' -f 1)
 	meshfile=$meshdir"/"$(echo ${mesh[$i]} | cut -d ':' -f 2)
-	echo -e "\n*************************\nmesh $i out of $nbmesh: $meshfile"
+	echo -e "\n*************************\nmesh $i out of $nbmesh: ${mesh[$i]}"
 	# Execute code
-	$executable -t $meshtype -m $meshfile -k $k -l $l --choice_basis $choice_basis -b $bc -c $tcsol $tcdiff --solver_type $solver_type
+	$executable -t $meshtype -m $meshfile -k $k -l $l -b $bc -c $tcsol $tcdiff --solver_type $solver_type --use_threads $use_threads
 	r=$?
 	if [ "$r" != "0" ]; then
 		exit
@@ -54,10 +81,14 @@ do
 	# Move outputs
 	mv results.txt $outdir/results-$i.txt
 	if [ -f T-solution.vtu ]; then
-	mv T-solution.vtu $outdir/mesh"$i"_T-solution.vtu
+	  mv T-solution.vtu $outdir/mesh"$i"_T-solution.vtu
 	fi
-	mv solution.vtu $outdir/mesh"$i"_solution.vtu
-	mv exact-solution.vtu $outdir/mesh"$i"_exact-solution.vtu
+	if [ -f solution.vtu ]; then
+	  mv solution.vtu $outdir/mesh"$i"_solution.vtu
+  fi
+	if [ -f exact-solution.vtu ]; then
+	  mv exact-solution.vtu $outdir/mesh"$i"_exact-solution.vtu
+  fi
 done;
 
 # CREATE DATA FILE FOR LATEX
@@ -181,7 +212,9 @@ echo "degrees: (face) k=$k, (cell) l=$l"
 echo "boundary conditions bc=$bc"
 echo "test case: solution=$tcsol, diffusion=$tcdiff"
 cd ..
-echo "k=$k, l=$l" > $outdir/allrates.txt
+echo "data file: $datafile" > $outdir/allrates.txt
+echo "k=$k, l=$l" >> $outdir/allrates.txt
+echo "Mesh 1: ${mesh[1]}" >> $outdir/allrates.txt
 make compute_rates_run | tee -a $outdir/allrates.txt
 
 

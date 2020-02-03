@@ -181,27 +181,32 @@ double Mesh::regularity(){
   //[NO]                  * diameter of cell / diameter of edge  [for each edge of the cell]
   //[NO]                  * diameter of face / diameter of edge  [for each edge of the face]
 
+  std::vector<double> reg_cell(n_cells(), 0.0);
+  for (size_t iT=0; iT < n_cells(); iT++){
+    Cell* T = cell(iT);
+    double hT = T->diam();
+    reg_cell[iT] = hT / pow(T->measure(), 1/dim());
 
-  double value = 0.0;
-  for (auto& icell : get_cells()){
-    double hC = icell->diam();
+    for (auto& F : T->get_faces()){
+      double hF = F->diam();
+      reg_cell[iT] = std::max(reg_cell[iT], hT/hF);
+      reg_cell[iT] = std::max(reg_cell[iT], hF / pow(F->measure(), 1/(dim() - 1)));
 
-    value = std::max(value, hC / pow(icell->measure(), 1/this->dim()));
+      //                              for (auto& E : F->get_edges()){
+      //                                      double hE = E->diam();
 
-    for (auto& iface : icell->get_faces()){
-      double hF = iface->diam();
-
-      value = std::max(value, hC / hF);
-      value = std::max(value, hF / pow(iface->measure(), 1/(this->dim() - 1)));
-
-      //                              for (auto& iedge : iface->get_edges()){
-      //                                      double hE = iedge->diam();
-
-      //                                      value = std::max(value, hC / hE);
+      //                                      value = std::max(value, hT / hE);
       //                                      value = std::max(value, hF / hE);
       //                              }
+
     }
   }
+
+  double value = 0.0;
+  for (size_t iT=0; iT < n_cells(); iT++){
+    value = std::max(value, reg_cell[iT]);
+  }
+
 
   return value;
 

@@ -6,10 +6,12 @@ var searchData=
   ['edge_5forientation',['edge_orientation',['../classHArDCore3D_1_1Face.html#aa02d3eab7ba590dec07134da1f85dbeb',1,'HArDCore3D::Face']]],
   ['edge_5fstruct',['edge_struct',['../structStemMesh3D_1_1edge__struct.html',1,'StemMesh3D']]],
   ['edge_5fvrtx',['edge_vrtx',['../classStemMesh3D_1_1mesh__3Dv.html#a7024d4e9bd97ff05c7926c9b4a97be62',1,'StemMesh3D::mesh_3Dv']]],
+  ['edgebasis',['EdgeBasis',['../classHArDCore3D_1_1HybridCore.html#a21071e365011fbb477a70475f7642f02',1,'HArDCore3D::HybridCore']]],
   ['elementquad',['ElementQuad',['../classHArDCore3D_1_1ElementQuad.html',1,'HArDCore3D::ElementQuad'],['../classHArDCore3D_1_1ElementQuad.html#a0d27ba99f9f3e6f2a3e5311e6be19eba',1,'HArDCore3D::ElementQuad::ElementQuad()']]],
-  ['energynorm',['EnergyNorm',['../group__HHO__Diffusion.html#ga65f1cf98696c042edefb2f35d298b971',1,'HArDCore3D::HHO_Diffusion::EnergyNorm()'],['../group__HHO__LocVarDiff.html#gab04749bad041c0ed9e91c54f262d42e1',1,'HArDCore3D::HHO_LocVarDiff::EnergyNorm()']]],
+  ['energynorm',['EnergyNorm',['../group__HHO__Diffusion.html#ga18588364740b7c9a8fc25213499eaadd',1,'HArDCore3D::HHO_Diffusion::EnergyNorm()'],['../group__HHO__LocVarDiff.html#ga19858d12d0b2dd817aac99a36f390e2e',1,'HArDCore3D::HHO_LocVarDiff::EnergyNorm()']]],
   ['eval_5fbbox',['eval_bbox',['../classStemMesh3D_1_1mesh__3Dv.html#a4f4fbb68bc50a56fab817fa3ddaf33c2',1,'StemMesh3D::mesh_3Dv']]],
-  ['evaluate_5fin_5fcell',['evaluate_in_cell',['../classHArDCore3D_1_1HybridCore.html#a19e0febebb2735a8cc7017873683b611',1,'HArDCore3D::HybridCore']]],
-  ['evaluate_5fin_5fface',['evaluate_in_face',['../classHArDCore3D_1_1HybridCore.html#a7364c571c3ecadb5a7025047478b3e40',1,'HArDCore3D::HybridCore']]],
+  ['evaluate_5fin_5fcell',['evaluate_in_cell',['../classHArDCore3D_1_1HybridCore.html#a9c76abf42a1d56fbf863d8258690497c',1,'HArDCore3D::HybridCore']]],
+  ['evaluate_5fin_5fface',['evaluate_in_face',['../classHArDCore3D_1_1HybridCore.html#a088adb7dbbde4b63229b404ee72ed9ea',1,'HArDCore3D::HybridCore']]],
+  ['evaluate_5fquad',['evaluate_quad',['../structHArDCore3D_1_1evaluate__quad.html',1,'HArDCore3D']]],
   ['extfileinput',['ExtFileInput',['../classStemMesh3D_1_1ExtFileInput.html',1,'StemMesh3D']]]
 ];

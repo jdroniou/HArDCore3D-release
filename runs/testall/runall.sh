@@ -16,10 +16,10 @@ scheme=$1;
 . data.sh
 
 # Create/clean output directory
-if [ ! -d $outdir ]; then
-	mkdir $outdir
+if [ -d $outdir ]; then
+	\rm -r $outdir
 fi
-\rm -r $outdir/*
+mkdir $outdir
 
 # Go the scheme directory
 cd ../$scheme;

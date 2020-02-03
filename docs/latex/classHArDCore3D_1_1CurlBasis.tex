@@ -1,0 +1,65 @@
+\hypertarget{classHArDCore3D_1_1CurlBasis}{}\section{H\+Ar\+D\+Core3D\+:\+:Curl\+Basis$<$ Basis\+Type $>$ Class Template Reference}
+\label{classHArDCore3D_1_1CurlBasis}\index{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$@{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$}}
+
+
+{\ttfamily \#include $<$basis.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_a7e5eb1482d6efca49471b2800a5efe40}\label{classHArDCore3D_1_1CurlBasis_a7e5eb1482d6efca49471b2800a5efe40}} 
+typedef Vector\+Rd {\bfseries Function\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_a58d6ef3138763855bc986ee8173b0d30}\label{classHArDCore3D_1_1CurlBasis_a58d6ef3138763855bc986ee8173b0d30}} 
+typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries Gradient\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_a533a905a9554da41681e92d56d81d689}\label{classHArDCore3D_1_1CurlBasis_a533a905a9554da41681e92d56d81d689}} 
+typedef Vector\+Rd {\bfseries Curl\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_a5da003cb660e44eaf9a899631494503f}\label{classHArDCore3D_1_1CurlBasis_a5da003cb660e44eaf9a899631494503f}} 
+typedef double {\bfseries Divergence\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_a351ef62bb74afe2ddeff23d28879634d}\label{classHArDCore3D_1_1CurlBasis_a351ef62bb74afe2ddeff23d28879634d}} 
+typedef Basis\+Type\+::\+Geometric\+Support {\bfseries Geometric\+Support}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_af0423afdb02f0b69b206709290b71325}\label{classHArDCore3D_1_1CurlBasis_af0423afdb02f0b69b206709290b71325}} 
+\hyperlink{classHArDCore3D_1_1CurlBasis_af0423afdb02f0b69b206709290b71325}{Curl\+Basis} (const Basis\+Type \&basis)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_af49ecdf88a5895335f602276d81a805b}\label{classHArDCore3D_1_1CurlBasis_af49ecdf88a5895335f602276d81a805b}} 
+size\+\_\+t \hyperlink{classHArDCore3D_1_1CurlBasis_af49ecdf88a5895335f602276d81a805b}{dimension} () const
+\begin{DoxyCompactList}\small\item\em Compute the dimension of the basis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_a5476b7c9f36899f48fdb549f25974b27}\label{classHArDCore3D_1_1CurlBasis_a5476b7c9f36899f48fdb549f25974b27}} 
+Function\+Value \hyperlink{classHArDCore3D_1_1CurlBasis_a5476b7c9f36899f48fdb549f25974b27}{function} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_a27d5f76ff419fbc0e1ce3200bf60d5af}\label{classHArDCore3D_1_1CurlBasis_a27d5f76ff419fbc0e1ce3200bf60d5af}} 
+static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_aa3dddcba9bc2d51963ad399f3187037f}\label{classHArDCore3D_1_1CurlBasis_aa3dddcba9bc2d51963ad399f3187037f}} 
+static const bool {\bfseries has\+Function} = true
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_a4083d38b937f063c7ef81c25ad74dbb3}\label{classHArDCore3D_1_1CurlBasis_a4083d38b937f063c7ef81c25ad74dbb3}} 
+static const bool {\bfseries has\+Gradient} = false
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_abc35e5e4f2cdab3ad77de9f2ba1d32ac}\label{classHArDCore3D_1_1CurlBasis_abc35e5e4f2cdab3ad77de9f2ba1d32ac}} 
+static const bool {\bfseries has\+Curl} = false
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1CurlBasis_a5a3ced55d938a4db0cb91c78b076d5e7}\label{classHArDCore3D_1_1CurlBasis_a5a3ced55d938a4db0cb91c78b076d5e7}} 
+static const bool {\bfseries has\+Divergence} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Basis\+Type$>$\newline
+class H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$}
+
+Basis for the space of curls of polynomials. It assumes that the vector basis from which it is constructed is a basis for G\+Ok 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Common/basis.\+hpp\end{DoxyCompactItemize}

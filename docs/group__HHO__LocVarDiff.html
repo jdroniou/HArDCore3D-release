@@ -78,39 +78,26 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga498c8ed6193d76926ca3f3627ed6cf11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga498c8ed6193d76926ca3f3627ed6cf11">HArDCore3D::HHO_LocVarDiff::HHO_LocVarDiff</a> (<a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#aba48f23cd9e46ab3b0d7d907e0990bd6">tensor_function_type</a> kappa, size_t deg_kappa, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a478a09a65f66428a614412e7d308ffcd">source_function_type</a> source, size_t BC, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a57cf83c67a9bcd71822a4ebdfbe0f0ce">solution_function_type</a> exact_solution, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a13003c1e92aab2a21e3055e2fd7104f8">grad_function_type</a> grad_exact_solution, std::string solver_type)</td></tr>
-<tr class="memdesc:ga498c8ed6193d76926ca3f3627ed6cf11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="#ga498c8ed6193d76926ca3f3627ed6cf11">More...</a><br /></td></tr>
-<tr class="separator:ga498c8ed6193d76926ca3f3627ed6cf11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab01c6aad8ad6264f67f866ec26c8055d"><td class="memItemLeft" align="right" valign="top"><a id="gab01c6aad8ad6264f67f866ec26c8055d"></a>
-Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gab01c6aad8ad6264f67f866ec26c8055d">HArDCore3D::HHO_LocVarDiff::solve</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
-<tr class="memdesc:gab01c6aad8ad6264f67f866ec26c8055d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble and solve the scheme. <br /></td></tr>
-<tr class="separator:gab01c6aad8ad6264f67f866ec26c8055d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab04749bad041c0ed9e91c54f262d42e1"><td class="memItemLeft" align="right" valign="top"><a id="gab04749bad041c0ed9e91c54f262d42e1"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gab04749bad041c0ed9e91c54f262d42e1">HArDCore3D::HHO_LocVarDiff::EnergyNorm</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, const Eigen::VectorXd Xh)</td></tr>
-<tr class="memdesc:gab04749bad041c0ed9e91c54f262d42e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete energy norm (associated to the diffusion operator) of an hybrid function. <br /></td></tr>
-<tr class="separator:gab04749bad041c0ed9e91c54f262d42e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4232eab7b9753215b506d5ce701c4f4f"><td class="memItemLeft" align="right" valign="top"><a id="ga4232eab7b9753215b506d5ce701c4f4f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga4232eab7b9753215b506d5ce701c4f4f">HArDCore3D::HHO_LocVarDiff::get_assembly_time</a> () const</td></tr>
-<tr class="memdesc:ga4232eab7b9753215b506d5ce701c4f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to assemble the scheme <br /></td></tr>
-<tr class="separator:ga4232eab7b9753215b506d5ce701c4f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga10971b2952ab54d336127a43f5ed9b29"><td class="memItemLeft" align="right" valign="top"><a id="ga10971b2952ab54d336127a43f5ed9b29"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga10971b2952ab54d336127a43f5ed9b29">HArDCore3D::HHO_LocVarDiff::get_solving_time</a> () const</td></tr>
-<tr class="memdesc:ga10971b2952ab54d336127a43f5ed9b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to solve the scheme <br /></td></tr>
-<tr class="separator:ga10971b2952ab54d336127a43f5ed9b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae66d0e79903e2ca077ff2515c20d7d2e"><td class="memItemLeft" align="right" valign="top"><a id="gae66d0e79903e2ca077ff2515c20d7d2e"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gae66d0e79903e2ca077ff2515c20d7d2e">HArDCore3D::HHO_LocVarDiff::get_itime</a> (size_t idx) const</td></tr>
-<tr class="memdesc:gae66d0e79903e2ca077ff2515c20d7d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">various intermediate assembly times <br /></td></tr>
-<tr class="separator:gae66d0e79903e2ca077ff2515c20d7d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga22542468093ee4e8e24d8c0a27946f8f"><td class="memItemLeft" align="right" valign="top"><a id="ga22542468093ee4e8e24d8c0a27946f8f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga22542468093ee4e8e24d8c0a27946f8f">HArDCore3D::HHO_LocVarDiff::get_solving_error</a> () const</td></tr>
-<tr class="memdesc:ga22542468093ee4e8e24d8c0a27946f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">residual after solving the scheme <br /></td></tr>
-<tr class="separator:ga22542468093ee4e8e24d8c0a27946f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a6f808bf86dd5d3a757422b89df407b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga6a6f808bf86dd5d3a757422b89df407b">HArDCore3D::HHO_LocVarDiff::HHO_LocVarDiff</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, size_t K, int L, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a70a4ae64b7a421bf535c669f340b2641">tensor_function_type</a> kappa, size_t deg_kappa, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#ab56032fb1c52e4a24e75af0002d0a2d4">source_function_type</a> source, <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> BC, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a7b0e23cbc8db30ca257c47df7fd4ca25">solution_function_type</a> exact_solution, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#aac4d74b1420ac542bcc2b96c11ccba55">grad_function_type</a> grad_exact_solution, std::string solver_type, bool use_threads, std::ostream &amp;output=std::cout)</td></tr>
+<tr class="memdesc:ga6a6f808bf86dd5d3a757422b89df407b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="#ga6a6f808bf86dd5d3a757422b89df407b">More...</a><br /></td></tr>
+<tr class="separator:ga6a6f808bf86dd5d3a757422b89df407b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5fa4c3b9a58d7208198ee0d6860c093a"><td class="memItemLeft" align="right" valign="top"><a id="ga5fa4c3b9a58d7208198ee0d6860c093a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga5fa4c3b9a58d7208198ee0d6860c093a">HArDCore3D::HHO_LocVarDiff::assemble</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
+<tr class="memdesc:ga5fa4c3b9a58d7208198ee0d6860c093a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble and solve the scheme. <br /></td></tr>
+<tr class="separator:ga5fa4c3b9a58d7208198ee0d6860c093a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11bf9be780b53676d2cc1ec9bb30dcc6"><td class="memItemLeft" align="right" valign="top"><a id="ga11bf9be780b53676d2cc1ec9bb30dcc6"></a>
+<a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::HHO_LocVarDiff::solve</b> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
+<tr class="separator:ga11bf9be780b53676d2cc1ec9bb30dcc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga19858d12d0b2dd817aac99a36f390e2e"><td class="memItemLeft" align="right" valign="top"><a id="ga19858d12d0b2dd817aac99a36f390e2e"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga19858d12d0b2dd817aac99a36f390e2e">HArDCore3D::HHO_LocVarDiff::EnergyNorm</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, const <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a> Xh)</td></tr>
+<tr class="memdesc:ga19858d12d0b2dd817aac99a36f390e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete energy norm (associated to the diffusion operator) of an hybrid function. <br /></td></tr>
+<tr class="separator:ga19858d12d0b2dd817aac99a36f390e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>HHO scheme for diffusion equation -div(Diff grad u)=f, with Diff possibly varying in each cell. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga498c8ed6193d76926ca3f3627ed6cf11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga498c8ed6193d76926ca3f3627ed6cf11">&#9670;&nbsp;</a></span>HHO_LocVarDiff()</h2>
+<a id="ga6a6f808bf86dd5d3a757422b89df407b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6a6f808bf86dd5d3a757422b89df407b">&#9670;&nbsp;</a></span>HHO_LocVarDiff()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,7 +105,25 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
         <tr>
           <td class="memname">HArDCore3D::HHO_LocVarDiff::HHO_LocVarDiff </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#aba48f23cd9e46ab3b0d7d907e0990bd6">tensor_function_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;&#160;</td>
+          <td class="paramname"><em>hho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>K</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a70a4ae64b7a421bf535c669f340b2641">tensor_function_type</a>&#160;</td>
           <td class="paramname"><em>kappa</em>, </td>
         </tr>
         <tr>
@@ -130,32 +135,44 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a478a09a65f66428a614412e7d308ffcd">source_function_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#ab56032fb1c52e4a24e75af0002d0a2d4">source_function_type</a>&#160;</td>
           <td class="paramname"><em>source</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&#160;</td>
           <td class="paramname"><em>BC</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a57cf83c67a9bcd71822a4ebdfbe0f0ce">solution_function_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a7b0e23cbc8db30ca257c47df7fd4ca25">solution_function_type</a>&#160;</td>
           <td class="paramname"><em>exact_solution</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a13003c1e92aab2a21e3055e2fd7104f8">grad_function_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#aac4d74b1420ac542bcc2b96c11ccba55">grad_function_type</a>&#160;</td>
           <td class="paramname"><em>grad_exact_solution</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>solver_type</em>&#160;</td>
+          <td class="paramname"><em>solver_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_threads</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em> = <code>std::cout</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -168,13 +185,18 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 <p>Constructor of the class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">hho</td><td>reference to the mesh </td></tr>
+    <tr><td class="paramname">K</td><td>degree of polynomials on faces </td></tr>
+    <tr><td class="paramname">L</td><td>degree of polynomials in cells </td></tr>
     <tr><td class="paramname">kappa</td><td>diffusion tensor </td></tr>
     <tr><td class="paramname">deg_kappa</td><td>polynomial degree of the diffusion tensor </td></tr>
     <tr><td class="paramname">source</td><td>source term </td></tr>
-    <tr><td class="paramname">BC</td><td>type of boundary conditions (0 for Dirichlet, 1 for Neumann) </td></tr>
+    <tr><td class="paramname">BC</td><td>type of boundary conditions </td></tr>
     <tr><td class="paramname">exact_solution</td><td>exact solution </td></tr>
     <tr><td class="paramname">grad_exact_solution</td><td>gradient of the exact solution </td></tr>
     <tr><td class="paramname">solver_type</td><td>type of solver to use for the global system (bicgstab at the moment) </td></tr>
+    <tr><td class="paramname">use_threads</td><td>optional argument determining if local parallelisation is to be used </td></tr>
+    <tr><td class="paramname">output</td><td>optional argument for output of messages </td></tr>
   </table>
   </dd>
 </dl>

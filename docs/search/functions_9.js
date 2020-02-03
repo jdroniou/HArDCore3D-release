@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['k',['K',['../group__HybridCore.html#ga5c5d20faf615bca6e170961a61464fb2',1,'HArDCore3D::HybridCore']]]
+  ['jacobian',['jacobian',['../classHArDCore3D_1_1MonomialScalarBasisFace.html#aa8a841d7f31dd65d0dc3aeae6d3283c6',1,'HArDCore3D::MonomialScalarBasisFace']]]
 ];

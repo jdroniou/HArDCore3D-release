@@ -13,26 +13,17 @@ class \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{H\+Ar\+D\+Core3\+D\+::\+H\+
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{group__HHO__LocVarDiff_ga498c8ed6193d76926ca3f3627ed6cf11}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff} (\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_aba48f23cd9e46ab3b0d7d907e0990bd6}{tensor\+\_\+function\+\_\+type} kappa, size\+\_\+t deg\+\_\+kappa, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a478a09a65f66428a614412e7d308ffcd}{source\+\_\+function\+\_\+type} source, size\+\_\+t BC, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a57cf83c67a9bcd71822a4ebdfbe0f0ce}{solution\+\_\+function\+\_\+type} exact\+\_\+solution, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a13003c1e92aab2a21e3055e2fd7104f8}{grad\+\_\+function\+\_\+type} grad\+\_\+exact\+\_\+solution, std\+::string solver\+\_\+type)
+\hyperlink{group__HHO__LocVarDiff_ga6a6f808bf86dd5d3a757422b89df407b}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho, size\+\_\+t K, int L, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a70a4ae64b7a421bf535c669f340b2641}{tensor\+\_\+function\+\_\+type} kappa, size\+\_\+t deg\+\_\+kappa, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_ab56032fb1c52e4a24e75af0002d0a2d4}{source\+\_\+function\+\_\+type} source, \hyperlink{classBoundaryConditions}{Boundary\+Conditions} BC, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a7b0e23cbc8db30ca257c47df7fd4ca25}{solution\+\_\+function\+\_\+type} exact\+\_\+solution, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_aac4d74b1420ac542bcc2b96c11ccba55}{grad\+\_\+function\+\_\+type} grad\+\_\+exact\+\_\+solution, std\+::string solver\+\_\+type, bool use\+\_\+threads, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor of the class. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HHO__LocVarDiff_gab01c6aad8ad6264f67f866ec26c8055d}\label{group__HHO__LocVarDiff_gab01c6aad8ad6264f67f866ec26c8055d}} 
-Eigen\+::\+Vector\+Xd \hyperlink{group__HHO__LocVarDiff_gab01c6aad8ad6264f67f866ec26c8055d}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::solve} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho)
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga5fa4c3b9a58d7208198ee0d6860c093a}\label{group__HHO__LocVarDiff_ga5fa4c3b9a58d7208198ee0d6860c093a}} 
+void \hyperlink{group__HHO__LocVarDiff_ga5fa4c3b9a58d7208198ee0d6860c093a}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::assemble} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho)
 \begin{DoxyCompactList}\small\item\em Assemble and solve the scheme. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HHO__LocVarDiff_gab04749bad041c0ed9e91c54f262d42e1}\label{group__HHO__LocVarDiff_gab04749bad041c0ed9e91c54f262d42e1}} 
-double \hyperlink{group__HHO__LocVarDiff_gab04749bad041c0ed9e91c54f262d42e1}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+Energy\+Norm} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho, const Eigen\+::\+Vector\+Xd Xh)
-\begin{DoxyCompactList}\small\item\em Discrete energy norm (associated to the diffusion operator) of an hybrid function. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HHO__LocVarDiff_ga4232eab7b9753215b506d5ce701c4f4f}\label{group__HHO__LocVarDiff_ga4232eab7b9753215b506d5ce701c4f4f}} 
-double \hyperlink{group__HHO__LocVarDiff_ga4232eab7b9753215b506d5ce701c4f4f}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+assembly\+\_\+time} () const
-\begin{DoxyCompactList}\small\item\em cpu time to assemble the scheme \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HHO__LocVarDiff_ga10971b2952ab54d336127a43f5ed9b29}\label{group__HHO__LocVarDiff_ga10971b2952ab54d336127a43f5ed9b29}} 
-double \hyperlink{group__HHO__LocVarDiff_ga10971b2952ab54d336127a43f5ed9b29}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+solving\+\_\+time} () const
-\begin{DoxyCompactList}\small\item\em cpu time to solve the scheme \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HHO__LocVarDiff_gae66d0e79903e2ca077ff2515c20d7d2e}\label{group__HHO__LocVarDiff_gae66d0e79903e2ca077ff2515c20d7d2e}} 
-double \hyperlink{group__HHO__LocVarDiff_gae66d0e79903e2ca077ff2515c20d7d2e}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+itime} (size\+\_\+t idx) const
-\begin{DoxyCompactList}\small\item\em various intermediate assembly times \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HHO__LocVarDiff_ga22542468093ee4e8e24d8c0a27946f8f}\label{group__HHO__LocVarDiff_ga22542468093ee4e8e24d8c0a27946f8f}} 
-double \hyperlink{group__HHO__LocVarDiff_ga22542468093ee4e8e24d8c0a27946f8f}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+solving\+\_\+error} () const
-\begin{DoxyCompactList}\small\item\em residual after solving the scheme \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga11bf9be780b53676d2cc1ec9bb30dcc6}\label{group__HHO__LocVarDiff_ga11bf9be780b53676d2cc1ec9bb30dcc6}} 
+\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector} {\bfseries H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::solve} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho)
+\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga19858d12d0b2dd817aac99a36f390e2e}\label{group__HHO__LocVarDiff_ga19858d12d0b2dd817aac99a36f390e2e}} 
+double \hyperlink{group__HHO__LocVarDiff_ga19858d12d0b2dd817aac99a36f390e2e}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+Energy\+Norm} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho, const \hyperlink{classHArDCore3D_1_1UVector}{U\+Vector} Xh)
+\begin{DoxyCompactList}\small\item\em Discrete energy norm (associated to the diffusion operator) of an hybrid function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -41,11 +32,11 @@ H\+HO scheme for diffusion equation -\/div(Diff grad u)=f, with Diff possibly va
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{group__HHO__LocVarDiff_ga498c8ed6193d76926ca3f3627ed6cf11}\label{group__HHO__LocVarDiff_ga498c8ed6193d76926ca3f3627ed6cf11}} 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga6a6f808bf86dd5d3a757422b89df407b}\label{group__HHO__LocVarDiff_ga6a6f808bf86dd5d3a757422b89df407b}} 
 \index{H\+H\+O\+\_\+\+Loc\+Var\+Diff@{H\+H\+O\+\_\+\+Loc\+Var\+Diff}!H\+H\+O\+\_\+\+Loc\+Var\+Diff@{H\+H\+O\+\_\+\+Loc\+Var\+Diff}}
 \index{H\+H\+O\+\_\+\+Loc\+Var\+Diff@{H\+H\+O\+\_\+\+Loc\+Var\+Diff}!H\+H\+O\+\_\+\+Loc\+Var\+Diff@{H\+H\+O\+\_\+\+Loc\+Var\+Diff}}
 \subsubsection{\texorpdfstring{H\+H\+O\+\_\+\+Loc\+Var\+Diff()}{HHO\_LocVarDiff()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff (\begin{DoxyParamCaption}\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_aba48f23cd9e46ab3b0d7d907e0990bd6}{tensor\+\_\+function\+\_\+type}}]{kappa,  }\item[{size\+\_\+t}]{deg\+\_\+kappa,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a478a09a65f66428a614412e7d308ffcd}{source\+\_\+function\+\_\+type}}]{source,  }\item[{size\+\_\+t}]{BC,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a57cf83c67a9bcd71822a4ebdfbe0f0ce}{solution\+\_\+function\+\_\+type}}]{exact\+\_\+solution,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a13003c1e92aab2a21e3055e2fd7104f8}{grad\+\_\+function\+\_\+type}}]{grad\+\_\+exact\+\_\+solution,  }\item[{std\+::string}]{solver\+\_\+type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff (\begin{DoxyParamCaption}\item[{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&}]{hho,  }\item[{size\+\_\+t}]{K,  }\item[{int}]{L,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a70a4ae64b7a421bf535c669f340b2641}{tensor\+\_\+function\+\_\+type}}]{kappa,  }\item[{size\+\_\+t}]{deg\+\_\+kappa,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_ab56032fb1c52e4a24e75af0002d0a2d4}{source\+\_\+function\+\_\+type}}]{source,  }\item[{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}}]{BC,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a7b0e23cbc8db30ca257c47df7fd4ca25}{solution\+\_\+function\+\_\+type}}]{exact\+\_\+solution,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_aac4d74b1420ac542bcc2b96c11ccba55}{grad\+\_\+function\+\_\+type}}]{grad\+\_\+exact\+\_\+solution,  }\item[{std\+::string}]{solver\+\_\+type,  }\item[{bool}]{use\+\_\+threads,  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
 
 
 
@@ -53,18 +44,28 @@ Constructor of the class.
 
 
 \begin{DoxyParams}{Parameters}
+{\em hho} & reference to the mesh \\
+\hline
+{\em K} & degree of polynomials on faces \\
+\hline
+{\em L} & degree of polynomials in cells \\
+\hline
 {\em kappa} & diffusion tensor \\
 \hline
 {\em deg\+\_\+kappa} & polynomial degree of the diffusion tensor \\
 \hline
 {\em source} & source term \\
 \hline
-{\em BC} & type of boundary conditions (0 for Dirichlet, 1 for Neumann) \\
+{\em BC} & type of boundary conditions \\
 \hline
 {\em exact\+\_\+solution} & exact solution \\
 \hline
 {\em grad\+\_\+exact\+\_\+solution} & gradient of the exact solution \\
 \hline
 {\em solver\+\_\+type} & type of solver to use for the global system (bicgstab at the moment) \\
+\hline
+{\em use\+\_\+threads} & optional argument determining if local parallelisation is to be used \\
+\hline
+{\em output} & optional argument for output of messages \\
 \hline
 \end{DoxyParams}

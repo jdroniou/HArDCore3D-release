@@ -2,32 +2,27 @@
 #
 
 # Face and cell degrees
-kmax=2
-lmax=2
-
-# Choice basis
-#choice_basis="Mon"
-choice_basis="ON"
+kmax=1
+lmax=1
 
 # Use threads
-#use_threads="false"
 use_threads="true"
 
-# Boundary conditions (0=Dirichlet, 1=Neumann)
-bc=0
+# Boundary conditions (D, N, Mx)
+bc="M0"
 
 # Test case
 tcsol=2
-tcdiff=1
+tcdiff=2
 
 # Solver
 solver_type="bicgstab"
 #solver_type="ma41"
 
 # Meshes (with type)
-mesh[1]="TG:Tetgen-Cube-0/TG_fmt/cube.1"
-mesh[2]="TG:Tetgen-Cube-0/TG_fmt/cube.2"
-mesh[3]="TG:Tetgen-Cube-0/TG_fmt/cube.3"
+#mesh[1]="TG:Tetgen-Cube-0/TG_fmt/cube.1"
+#mesh[2]="TG:Tetgen-Cube-0/TG_fmt/cube.2"
+#mesh[3]="TG:Tetgen-Cube-0/TG_fmt/cube.3"
 #mesh[4]="TG:Tetgen-Cube-0/TG_fmt/cube.4"
 #mesh[5]="TG:Tetgen-Cube-0/TG_fmt/cube.5"
 #mesh[6]="TG:Tetgen-Cube-0/TG_fmt/cube.6"
@@ -45,9 +40,9 @@ mesh[3]="TG:Tetgen-Cube-0/TG_fmt/cube.3"
 #mesh[2]="RF:Prysmatic-Cells/RF_fmt/vprism_8x8x8"
 #mesh[3]="RF:Prysmatic-Cells/RF_fmt/vprism_16x16x16"
 
-#mesh[1]="RF:Cubic-Cells/RF_fmt/gcube_4x4x4"
-#mesh[2]="RF:Cubic-Cells/RF_fmt/gcube_8x8x8"
-#mesh[3]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16"
+mesh[1]="RF:Cubic-Cells/RF_fmt/gcube_4x4x4"
+mesh[2]="RF:Cubic-Cells/RF_fmt/gcube_8x8x8"
+mesh[3]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16"
 #mesh[4]="RF:Cubic-Cells/RF_fmt/gcube_32x32x32"
 
 #mesh[1]="RF:Voro-Tets-2/RF_fmt/voro.1"

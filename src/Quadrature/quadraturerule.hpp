@@ -47,6 +47,7 @@ namespace HArDCore3D {
       // Do nothing
     }
 
+    /// Returns the quadrature point as an Eigen vector
     inline Eigen::Vector3d vector() const {
       return Eigen::Vector3d(x,y,z);
     }

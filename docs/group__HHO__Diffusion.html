@@ -67,7 +67,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>HHO scheme for diffusion equation -div(Diff grad u)=f, with Diff piecewise constant on the mesh.  
+<p>HHO scheme for diffusion equation -div(Diff grad u)=f, with Diff piecewise constant.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -78,39 +78,26 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gab9aebbde87e22073a94a57e26f58a860"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gab9aebbde87e22073a94a57e26f58a860">HArDCore3D::HHO_Diffusion::HHO_Diffusion</a> (<a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a6792ca91d753720b28f458bdb3cedcd0">tensor_function_type</a> kappa, <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a868fb4b88efbf1b77a712706d616b8d1">source_function_type</a> source, size_t BC, <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a1fa6e03a7ffd6cb0c8a38b34eda2bd27">solution_function_type</a> exact_solution, <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#afd0b6d7ab35bca58a5f7ec29afbba355">grad_function_type</a> grad_exact_solution, std::string solver_type)</td></tr>
-<tr class="memdesc:gab9aebbde87e22073a94a57e26f58a860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="#gab9aebbde87e22073a94a57e26f58a860">More...</a><br /></td></tr>
-<tr class="separator:gab9aebbde87e22073a94a57e26f58a860"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac2ab416e340edc055d1494f5dbe9acce"><td class="memItemLeft" align="right" valign="top"><a id="gac2ab416e340edc055d1494f5dbe9acce"></a>
-Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gac2ab416e340edc055d1494f5dbe9acce">HArDCore3D::HHO_Diffusion::solve</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
-<tr class="memdesc:gac2ab416e340edc055d1494f5dbe9acce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble and solve the scheme. <br /></td></tr>
-<tr class="separator:gac2ab416e340edc055d1494f5dbe9acce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga65f1cf98696c042edefb2f35d298b971"><td class="memItemLeft" align="right" valign="top"><a id="ga65f1cf98696c042edefb2f35d298b971"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga65f1cf98696c042edefb2f35d298b971">HArDCore3D::HHO_Diffusion::EnergyNorm</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, const Eigen::VectorXd Xh)</td></tr>
-<tr class="memdesc:ga65f1cf98696c042edefb2f35d298b971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete energy norm (associated to the diffusion operator) of an hybrid function. <br /></td></tr>
-<tr class="separator:ga65f1cf98696c042edefb2f35d298b971"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa2bb4d069026f1604d2899031d3642f1"><td class="memItemLeft" align="right" valign="top"><a id="gaa2bb4d069026f1604d2899031d3642f1"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gaa2bb4d069026f1604d2899031d3642f1">HArDCore3D::HHO_Diffusion::get_assembly_time</a> () const</td></tr>
-<tr class="memdesc:gaa2bb4d069026f1604d2899031d3642f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to assemble the scheme <br /></td></tr>
-<tr class="separator:gaa2bb4d069026f1604d2899031d3642f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadcad4a2ddc4f767a5cc59362c93adbc2"><td class="memItemLeft" align="right" valign="top"><a id="gadcad4a2ddc4f767a5cc59362c93adbc2"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gadcad4a2ddc4f767a5cc59362c93adbc2">HArDCore3D::HHO_Diffusion::get_solving_time</a> () const</td></tr>
-<tr class="memdesc:gadcad4a2ddc4f767a5cc59362c93adbc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to solve the scheme <br /></td></tr>
-<tr class="separator:gadcad4a2ddc4f767a5cc59362c93adbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00b3b186fb915242a805c7c53e323e6e"><td class="memItemLeft" align="right" valign="top"><a id="ga00b3b186fb915242a805c7c53e323e6e"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga00b3b186fb915242a805c7c53e323e6e">HArDCore3D::HHO_Diffusion::get_itime</a> (size_t idx) const</td></tr>
-<tr class="memdesc:ga00b3b186fb915242a805c7c53e323e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">various intermediate assembly times <br /></td></tr>
-<tr class="separator:ga00b3b186fb915242a805c7c53e323e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga91b1ec7d73685c4a1d49d671b4b69814"><td class="memItemLeft" align="right" valign="top"><a id="ga91b1ec7d73685c4a1d49d671b4b69814"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga91b1ec7d73685c4a1d49d671b4b69814">HArDCore3D::HHO_Diffusion::get_solving_error</a> () const</td></tr>
-<tr class="memdesc:ga91b1ec7d73685c4a1d49d671b4b69814"><td class="mdescLeft">&#160;</td><td class="mdescRight">residual after solving the scheme <br /></td></tr>
-<tr class="separator:ga91b1ec7d73685c4a1d49d671b4b69814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89f7078dcd1d4ffd848eed86cbfb00cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga89f7078dcd1d4ffd848eed86cbfb00cf">HArDCore3D::HHO_Diffusion::HHO_Diffusion</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, size_t K, int L, <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a640287c18811b16ef9136832e99879a1">tensor_function_type</a> kappa, <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a2e1e24f77c08b2edbd8d836a91f6b08b">source_function_type</a> source, <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> BC, <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#ab3104f23491ecb92d2701db651380148">solution_function_type</a> exact_solution, <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a35b1f1e3277f1d675b12d4e7533e3d23">grad_function_type</a> grad_exact_solution, std::string solver_type, bool use_threads, std::ostream &amp;output=std::cout)</td></tr>
+<tr class="memdesc:ga89f7078dcd1d4ffd848eed86cbfb00cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="#ga89f7078dcd1d4ffd848eed86cbfb00cf">More...</a><br /></td></tr>
+<tr class="separator:ga89f7078dcd1d4ffd848eed86cbfb00cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82476d19a0312e0b370a1f6100d863d1"><td class="memItemLeft" align="right" valign="top"><a id="ga82476d19a0312e0b370a1f6100d863d1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga82476d19a0312e0b370a1f6100d863d1">HArDCore3D::HHO_Diffusion::assemble</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
+<tr class="memdesc:ga82476d19a0312e0b370a1f6100d863d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble and solve the scheme. <br /></td></tr>
+<tr class="separator:ga82476d19a0312e0b370a1f6100d863d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga582be64d213833c883137e143839c370"><td class="memItemLeft" align="right" valign="top"><a id="ga582be64d213833c883137e143839c370"></a>
+<a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::HHO_Diffusion::solve</b> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
+<tr class="separator:ga582be64d213833c883137e143839c370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18588364740b7c9a8fc25213499eaadd"><td class="memItemLeft" align="right" valign="top"><a id="ga18588364740b7c9a8fc25213499eaadd"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga18588364740b7c9a8fc25213499eaadd">HArDCore3D::HHO_Diffusion::EnergyNorm</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, const <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a> Xh)</td></tr>
+<tr class="memdesc:ga18588364740b7c9a8fc25213499eaadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete energy norm (associated to the diffusion operator) of an hybrid function. <br /></td></tr>
+<tr class="separator:ga18588364740b7c9a8fc25213499eaadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>HHO scheme for diffusion equation -div(Diff grad u)=f, with Diff piecewise constant on the mesh. </p>
+<p>HHO scheme for diffusion equation -div(Diff grad u)=f, with Diff piecewise constant. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gab9aebbde87e22073a94a57e26f58a860"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab9aebbde87e22073a94a57e26f58a860">&#9670;&nbsp;</a></span>HHO_Diffusion()</h2>
+<a id="ga89f7078dcd1d4ffd848eed86cbfb00cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga89f7078dcd1d4ffd848eed86cbfb00cf">&#9670;&nbsp;</a></span>HHO_Diffusion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,38 +105,68 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
         <tr>
           <td class="memname">HArDCore3D::HHO_Diffusion::HHO_Diffusion </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a6792ca91d753720b28f458bdb3cedcd0">tensor_function_type</a>&#160;</td>
-          <td class="paramname"><em>kappa</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a868fb4b88efbf1b77a712706d616b8d1">source_function_type</a>&#160;</td>
-          <td class="paramname"><em>source</em>, </td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;&#160;</td>
+          <td class="paramname"><em>hho</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>K</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a640287c18811b16ef9136832e99879a1">tensor_function_type</a>&#160;</td>
+          <td class="paramname"><em>kappa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a2e1e24f77c08b2edbd8d836a91f6b08b">source_function_type</a>&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&#160;</td>
           <td class="paramname"><em>BC</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a1fa6e03a7ffd6cb0c8a38b34eda2bd27">solution_function_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#ab3104f23491ecb92d2701db651380148">solution_function_type</a>&#160;</td>
           <td class="paramname"><em>exact_solution</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#afd0b6d7ab35bca58a5f7ec29afbba355">grad_function_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a35b1f1e3277f1d675b12d4e7533e3d23">grad_function_type</a>&#160;</td>
           <td class="paramname"><em>grad_exact_solution</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>solver_type</em>&#160;</td>
+          <td class="paramname"><em>solver_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_threads</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em> = <code>std::cout</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -162,12 +179,17 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 <p>Constructor of the class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">hho</td><td>reference to the mesh </td></tr>
+    <tr><td class="paramname">K</td><td>degree of polynomials on faces </td></tr>
+    <tr><td class="paramname">L</td><td>degree of polynomials in cells </td></tr>
     <tr><td class="paramname">kappa</td><td>diffusion tensor </td></tr>
     <tr><td class="paramname">source</td><td>source term </td></tr>
-    <tr><td class="paramname">BC</td><td>type of boundary conditions (0 for Dirichlet, 1 for Neumann) </td></tr>
+    <tr><td class="paramname">BC</td><td>type of boundary conditions </td></tr>
     <tr><td class="paramname">exact_solution</td><td>exact solution </td></tr>
     <tr><td class="paramname">grad_exact_solution</td><td>gradient of the exact solution </td></tr>
     <tr><td class="paramname">solver_type</td><td>type of solver to use for the global system (bicgstab at the moment) </td></tr>
+    <tr><td class="paramname">use_threads</td><td>optional argument determining if local parallelisation is to be used </td></tr>
+    <tr><td class="paramname">output</td><td>optional argument for output of messages </td></tr>
   </table>
   </dd>
 </dl>

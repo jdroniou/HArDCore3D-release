@@ -1,0 +1,77 @@
+\hypertarget{classBoundaryConditions}{}\section{Boundary\+Conditions Class Reference}
+\label{classBoundaryConditions}\index{Boundary\+Conditions@{Boundary\+Conditions}}
+
+
+The \hyperlink{classBoundaryConditions}{Boundary\+Conditions} class provides definition of boundary conditions.  
+
+
+
+
+{\ttfamily \#include $<$Boundary\+Conditions.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBoundaryConditions_a5f9b50ca35f0fcee51e84e015223396c}{Boundary\+Conditions} (const std\+::string bc\+\_\+id, \hyperlink{classHArDCore3D_1_1Mesh}{Mesh} \&mesh)
+\begin{DoxyCompactList}\small\item\em Initialise data. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{classBoundaryConditions_a2d4ed623f0f8b4585cbe75454777e14c}{type} (const \hyperlink{classHArDCore3D_1_1Face}{Face} \&face) const
+\begin{DoxyCompactList}\small\item\em Test the boundary condition of an face. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoundaryConditions_af9e9493f0ba9be92b7299838bc08f0bf}\label{classBoundaryConditions_af9e9493f0ba9be92b7299838bc08f0bf}} 
+const size\+\_\+t \hyperlink{classBoundaryConditions_af9e9493f0ba9be92b7299838bc08f0bf}{n\+\_\+dir\+\_\+faces} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of Dirichlet faces. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoundaryConditions_ac3609733d5e7e43e9240d0a8b05d17ba}\label{classBoundaryConditions_ac3609733d5e7e43e9240d0a8b05d17ba}} 
+const std\+::string \hyperlink{classBoundaryConditions_ac3609733d5e7e43e9240d0a8b05d17ba}{name} () const
+\begin{DoxyCompactList}\small\item\em Returns the complete name of the boundary condition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoundaryConditions_a1898911b1e8e0b2832e2ce406b238d99}\label{classBoundaryConditions_a1898911b1e8e0b2832e2ce406b238d99}} 
+void \hyperlink{classBoundaryConditions_a1898911b1e8e0b2832e2ce406b238d99}{reorder\+\_\+faces} ()
+\begin{DoxyCompactList}\small\item\em Re-\/order faces of the mesh to put the Dirichlet faces at the end. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classBoundaryConditions}{Boundary\+Conditions} class provides definition of boundary conditions. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBoundaryConditions_a5f9b50ca35f0fcee51e84e015223396c}\label{classBoundaryConditions_a5f9b50ca35f0fcee51e84e015223396c}} 
+\index{Boundary\+Conditions@{Boundary\+Conditions}!Boundary\+Conditions@{Boundary\+Conditions}}
+\index{Boundary\+Conditions@{Boundary\+Conditions}!Boundary\+Conditions@{Boundary\+Conditions}}
+\subsubsection{\texorpdfstring{Boundary\+Conditions()}{BoundaryConditions()}}
+{\footnotesize\ttfamily Boundary\+Conditions\+::\+Boundary\+Conditions (\begin{DoxyParamCaption}\item[{const std\+::string}]{bc\+\_\+id,  }\item[{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh} \&}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Initialise data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bc\+\_\+id} & The identifier for the boundary condition (D, N or Mx) \\
+\hline
+{\em mesh} & reference to the mesh \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBoundaryConditions_a2d4ed623f0f8b4585cbe75454777e14c}\label{classBoundaryConditions_a2d4ed623f0f8b4585cbe75454777e14c}} 
+\index{Boundary\+Conditions@{Boundary\+Conditions}!type@{type}}
+\index{type@{type}!Boundary\+Conditions@{Boundary\+Conditions}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily const std\+::string Boundary\+Conditions\+::type (\begin{DoxyParamCaption}\item[{const \hyperlink{classHArDCore3D_1_1Face}{Face} \&}]{face }\end{DoxyParamCaption}) const}
+
+
+
+Test the boundary condition of an face. 
+
+\begin{DoxyReturn}{Returns}
+\char`\"{}dir\char`\"{} or \char`\"{}neu\char`\"{} depending if the face is a Dirichlet or Neumann boundary condition, as determined by m\+\_\+bc\+\_\+id below. For an internal face, returns \char`\"{}int\char`\"{}. m\+\_\+bc\+\_\+id = \char`\"{}\+D\char`\"{}\+: all faces are Dirichlet m\+\_\+bc\+\_\+id = \char`\"{}\+N\char`\"{}\+: all faces are Neumann m\+\_\+bc\+\_\+id = \char`\"{}\+Mx\char`\"{} (x=0,1,...)\+: various types of mixed boundary conditions, some faces will be Dirichlet and some will be Neumman. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em face} & Face on which to check the boundary condition \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Schemes/\+Test\+Case/Boundary\+Conditions.\+hpp\item 
+Schemes/\+Test\+Case/Boundary\+Conditions.\+cpp\end{DoxyCompactItemize}

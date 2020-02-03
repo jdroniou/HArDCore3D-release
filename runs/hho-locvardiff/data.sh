@@ -5,12 +5,11 @@
 k=1
 l=1
 
-# Choice basis
-#choice_basis="Mon"
-choice_basis="ON"
+# Use threads
+use_threads="true"
 
-# Boundary conditions (0=Dirichlet, 1=Neumann)
-bc=0
+# Boundary conditions (D, N, Mx)
+bc="M0"
 
 # Test case
 tcsol=2
@@ -41,9 +40,9 @@ solver_type="bicgstab"
 #mesh[2]="RF:Prysmatic-Cells/RF_fmt/vprism_8x8x8"
 #mesh[3]="RF:Prysmatic-Cells/RF_fmt/vprism_16x16x16"
 
-mesh[1]="RF:Cubic-Cells/RF_fmt/gcube_4x4x4"
-mesh[2]="RF:Cubic-Cells/RF_fmt/gcube_8x8x8"
-mesh[3]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16"
+#mesh[1]="RF:Cubic-Cells/RF_fmt/gcube_4x4x4"
+#mesh[2]="RF:Cubic-Cells/RF_fmt/gcube_8x8x8"
+#mesh[3]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16"
 #mesh[4]="RF:Cubic-Cells/RF_fmt/gcube_32x32x32"
 
 #mesh[1]="RF:Voro-Tets-2/RF_fmt/voro.1"
@@ -59,11 +58,11 @@ mesh[3]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16"
 #mesh[5]="RF:Voro-Tets-1/RF_fmt/voro.5"
 #mesh[6]="RF:Voro-Tets-1/RF_fmt/voro.6"
 
-#mesh[1]="RF:Voro-small-0/RF_fmt/voro-2"
-#mesh[2]="RF:Voro-small-0/RF_fmt/voro-4"
-#mesh[3]="RF:Voro-small-0/RF_fmt/voro-6"
-#mesh[4]="RF:Voro-small-0/RF_fmt/voro-8"
-#mesh[5]="RF:Voro-small-0/RF_fmt/voro-10"
+mesh[1]="RF:Voro-small-0/RF_fmt/voro-2"
+mesh[2]="RF:Voro-small-0/RF_fmt/voro-4"
+mesh[3]="RF:Voro-small-0/RF_fmt/voro-6"
+mesh[4]="RF:Voro-small-0/RF_fmt/voro-8"
+mesh[5]="RF:Voro-small-0/RF_fmt/voro-10"
 
 #mesh[1]="RF:Voro-small-1/RF_fmt/voro.3"
 #mesh[2]="RF:Voro-small-1/RF_fmt/voro.4"

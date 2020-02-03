@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['quadrature_5fover_5fcell',['quadrature_over_cell',['../group__HybridCore.html#gaca6e3380063a17fcb76276bc8c503d5b',1,'HArDCore3D::HybridCore']]],
-  ['quadrature_5fover_5fface',['quadrature_over_face',['../group__HybridCore.html#gabba9f8c9be9f2006a441304054b955c6',1,'HArDCore3D::HybridCore']]],
   ['quadraturenode',['QuadratureNode',['../structHArDCore3D_1_1QuadratureNode.html',1,'HArDCore3D']]],
   ['quadratures',['Quadratures',['../group__Quadratures.html',1,'']]],
   ['quadregion',['QuadRegion',['../classStemMesh3D_1_1QuadRegion.html',1,'StemMesh3D']]],

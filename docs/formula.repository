@@ -14,3 +14,27 @@
 \form#13:$\nabla \phi_i$
 \form#14:$V2$
 \form#15:$V1$
+\form#16:$K+1$
+\form#17:$(K+1)(K+2)/2$
+\form#18:$\left(\begin{array}{c}f_1\\0\\\vdots\\0\end{array}\right)$
+\form#19:$\left(\begin{array}{c}f_2\\0\\\vdots\\0\end{array}\right)$
+\form#20:$\left(\begin{array}{c}f_r\\0\\\vdots\\0\end{array}\right)$
+\form#21:$\left(\begin{array}{c}0\\f_1\\0\\\vdots\\0\end{array}\right)$
+\form#22:$\left(\begin{array}{c}0\\f_2\\0\\\vdots\\0\end{array}\right)$
+\form#23:$\left(\begin{array}{c}0\\f_r\\0\\\vdots\\0\end{array}\right)$
+\form#24:$\left(\begin{array}{c}0\\\vdots\\0\\f_1\end{array}\right)$
+\form#25:$\left(\begin{array}{c}0\\\vdots\\0\\f_r\end{array}\right)$
+\form#26:$\left(\begin{array}{c}(\nabla f_1)^t\\0\\\vdots\\0\end{array}\right)$
+\form#27:$\left(\begin{array}{c}(\nabla f_2)^t\\0\\\vdots\\0\end{array}\right)$
+\form#28:$\left(\begin{array}{c}(\nabla f_r)^t\\0\\\vdots\\0\end{array}\right)$
+\form#29:$\left(\begin{array}{c}0\\(\nabla f_1)^t\\0\\\vdots\\0\end{array}\right)$
+\form#30:$\left(\begin{array}{c}0\\(\nabla f_2)^t\\0\\\vdots\\0\end{array}\right)$
+\form#31:$\left(\begin{array}{c}0\\(\nabla f_r)^t\\0\\\vdots\\0\end{array}\right)$
+\form#32:$\left(\begin{array}{c}0\\\vdots\\0\\(\nabla f_1)^t\end{array}\right)$
+\form#33:$\left(\begin{array}{c}0\\\vdots\\0\\(\nabla f_r)^t\end{array}\right)$
+\form#34:$M$
+\form#35:$(f_1,...,f_r)$
+\form#36:$(\phi_1,...,\phi_r)$
+\form#37:$\phi_i = \sum_j M_{ij}f_j$
+\form#38:$L^2$
+\form#39:$(\phi_1,0,0), (\phi_2,0,0), ..., (\phi_N,0,0), (0,\phi_1,0), (0,\phi_2,0) ... (0,\phi_N,0), (0,0,\phi_1) ... (0,0,\phi_N)$

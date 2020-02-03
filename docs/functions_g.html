@@ -63,8 +63,8 @@ $(function() {
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>get_assembly_time()
-: <a class="el" href="group__HHO__Diffusion.html#gaa2bb4d069026f1604d2899031d3642f1">HArDCore3D::HHO_Diffusion</a>
-, <a class="el" href="group__HHO__LocVarDiff.html#ga4232eab7b9753215b506d5ce701c4f4f">HArDCore3D::HHO_LocVarDiff</a>
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#aa2bb4d069026f1604d2899031d3642f1">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a4232eab7b9753215b506d5ce701c4f4f">HArDCore3D::HHO_LocVarDiff</a>
 </li>
 <li>get_b_cells()
 : <a class="el" href="group__Mesh.html#ga648b0420dce3db1204d4e1b270b57aa2">HArDCore3D::Mesh</a>
@@ -102,6 +102,9 @@ $(function() {
 <li>get_bnd_vrtx()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a397ec757e2e38525d7a9721112f6a08a">StemMesh3D::mesh_3Dv</a>
 </li>
+<li>get_cell_deg()
+: <a class="el" href="classHArDCore3D_1_1UVector.html#a4621feb28406aad90512e4a0b6ec5662">HArDCore3D::UVector</a>
+</li>
 <li>get_cells()
 : <a class="el" href="classHArDCore3D_1_1Edge.html#a72bedde2003c68d015c70326924b6d7f">HArDCore3D::Edge</a>
 , <a class="el" href="classHArDCore3D_1_1Face.html#aa209c78a79161da020d96bdd752d8e87">HArDCore3D::Face</a>
@@ -112,10 +115,10 @@ $(function() {
 : <a class="el" href="group__TestCases.html#ga3dd2daaebb012281b252ab65db0045b2">TestCase</a>
 </li>
 <li>get_dphiT_quadF()
-: <a class="el" href="group__HybridCore.html#gabae2f4323f94acb5417ca82870790071">HArDCore3D::ElementQuad</a>
+: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#a023175342dd0e23426348ebe2445b7cc">HArDCore3D::ElementQuad</a>
 </li>
 <li>get_dphiT_quadT()
-: <a class="el" href="group__HybridCore.html#gab0450891cb0d96686256c31e87948374">HArDCore3D::ElementQuad</a>
+: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#a4a585d06f102a8c04ebffc1f8541e778">HArDCore3D::ElementQuad</a>
 </li>
 <li>get_edge_edge()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a06babc4d9918195a426c4800dec47979">StemMesh3D::mesh_3Dv</a>
@@ -137,6 +140,9 @@ $(function() {
 , <a class="el" href="classHArDCore3D_1_1Face.html#abb3add94aa880748646382717345c1ec">HArDCore3D::Face</a>
 , <a class="el" href="group__Mesh.html#ga0fa81aa91495ca87dd8b134ee46d25fa">HArDCore3D::Mesh</a>
 , <a class="el" href="group__Mesh.html#gaa573992f8b8942be8f665ca0670cb738">HArDCore3D::Vertex</a>
+</li>
+<li>get_face_deg()
+: <a class="el" href="classHArDCore3D_1_1UVector.html#a8f9826e319a633d697fb7fe50ffa2799">HArDCore3D::UVector</a>
 </li>
 <li>get_face_diam()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a8bb48254482f61dc1c6f552f0fa8d7c5">StemMesh3D::mesh_3Dv</a>
@@ -187,38 +193,66 @@ $(function() {
 : <a class="el" href="group__Mesh.html#ga272a2fb7e29331652482190f45e30c02">HArDCore3D::Mesh</a>
 </li>
 <li>get_itime()
-: <a class="el" href="group__HHO__Diffusion.html#ga00b3b186fb915242a805c7c53e323e6e">HArDCore3D::HHO_Diffusion</a>
-, <a class="el" href="group__HHO__LocVarDiff.html#gae66d0e79903e2ca077ff2515c20d7d2e">HArDCore3D::HHO_LocVarDiff</a>
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a00b3b186fb915242a805c7c53e323e6e">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#ae66d0e79903e2ca077ff2515c20d7d2e">HArDCore3D::HHO_LocVarDiff</a>
+</li>
+<li>get_mesh()
+: <a class="el" href="classHArDCore3D_1_1HybridCore.html#af9413be657df06123c1544d16df6b137">HArDCore3D::HybridCore</a>
 </li>
 <li>get_mesh_name()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a64769d0a6781ff75ea2a1e603886d80a">StemMesh3D::mesh_3Dv</a>
 </li>
-<li>get_mesh_ptr()
-: <a class="el" href="group__HybridCore.html#gad4c32f117a1e67ec4a13dd9656c404e8">HArDCore3D::HybridCore</a>
-</li>
 <li>get_name()
 : <a class="el" href="group__Mesh.html#ga2140b63286e05a457a914ca1a1455c2a">HArDCore3D::Mesh</a>
+</li>
+<li>get_ndir_face_dofs()
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a2e582a2d0dbd25ade261d160c32aa504">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#abfaa052588d0662fa9f2a2c771ae7229">HArDCore3D::HHO_LocVarDiff</a>
 </li>
 <li>get_neighbours()
 : <a class="el" href="classHArDCore3D_1_1Cell.html#a4d29dc1248424166380aa33d9ea7de3d">HArDCore3D::Cell</a>
 </li>
+<li>get_nhighorder_dofs()
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#abfc762c3cf9a0bbaf6f7d24512352e31">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a745621585c09932f84dc01096997eabb">HArDCore3D::HHO_LocVarDiff</a>
+</li>
+<li>get_nlocal_cell_dofs()
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a6f5856e7137441c95a3495f2267facf3">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#ab0746da36b0bebd4b112d7d43aea41c5">HArDCore3D::HHO_LocVarDiff</a>
+</li>
+<li>get_nlocal_face_dofs()
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a81f57d9aa97bcac14dbd4e0fc378bd46">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a50183dd5315faafad99f94c33b3b297e">HArDCore3D::HHO_LocVarDiff</a>
+</li>
 <li>get_nor()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a558210d25a3eead99384f039a3419730">StemMesh3D::mesh_3Dv</a>
 </li>
+<li>get_ntotal_cell_dofs()
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#adbbbcb3f31c94640fd926fb24cfc75c7">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a77c2a80e682212997d23d60712d5391e">HArDCore3D::HHO_LocVarDiff</a>
+</li>
+<li>get_ntotal_dofs()
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a9564d2be867b683e002bb555d397ed09">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a9240e104e5b96b06040bb0f6a2e13514">HArDCore3D::HHO_LocVarDiff</a>
+</li>
+<li>get_ntotal_face_dofs()
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a22ff2e589a8b847354666ea2f9397b5b">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#ae76d4ea3457115f301371430f49d8c8a">HArDCore3D::HHO_LocVarDiff</a>
+</li>
 <li>get_phiF_quadF()
-: <a class="el" href="group__HybridCore.html#gad9c2ba4cdbfda183ee00ab059d8885e5">HArDCore3D::ElementQuad</a>
+: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#a561b60cc7997268260b7cd05edce20d9">HArDCore3D::ElementQuad</a>
 </li>
 <li>get_phiT_quadF()
-: <a class="el" href="group__HybridCore.html#gab6349fe3a8eb0d4070cd2bd82742bdcc">HArDCore3D::ElementQuad</a>
+: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#a34cbdbaafb9fe8681474b11bc8ebfd93">HArDCore3D::ElementQuad</a>
 </li>
 <li>get_phiT_quadT()
-: <a class="el" href="group__HybridCore.html#gaafce6cb00f061fe1159a9972b73d3bb9">HArDCore3D::ElementQuad</a>
+: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#aa56cdde521a902082ce050928893804d">HArDCore3D::ElementQuad</a>
 </li>
 <li>get_quadF()
-: <a class="el" href="group__HybridCore.html#ga7eb693a2f8d58d04b0e653cb952e59f2">HArDCore3D::ElementQuad</a>
+: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#a9e734ea29a3c4e0403bb5aea2ba910e3">HArDCore3D::ElementQuad</a>
 </li>
 <li>get_quadT()
-: <a class="el" href="group__HybridCore.html#ga9676c87f42764a058c9d7aecd2ce44cd">HArDCore3D::ElementQuad</a>
+: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#af8ee9bc271f5b73902b87f68f46f51f5">HArDCore3D::ElementQuad</a>
 </li>
 <li>get_regn_diam()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#acc10571f29f0b076c82571fc6ae33d76">StemMesh3D::mesh_3Dv</a>
@@ -239,24 +273,24 @@ $(function() {
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a063d41ebed2be9a826b8254f38a0c7d9">StemMesh3D::mesh_3Dv</a>
 </li>
 <li>get_solving_error()
-: <a class="el" href="group__HHO__Diffusion.html#ga91b1ec7d73685c4a1d49d671b4b69814">HArDCore3D::HHO_Diffusion</a>
-, <a class="el" href="group__HHO__LocVarDiff.html#ga22542468093ee4e8e24d8c0a27946f8f">HArDCore3D::HHO_LocVarDiff</a>
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a91b1ec7d73685c4a1d49d671b4b69814">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a22542468093ee4e8e24d8c0a27946f8f">HArDCore3D::HHO_LocVarDiff</a>
 </li>
 <li>get_solving_time()
-: <a class="el" href="group__HHO__Diffusion.html#gadcad4a2ddc4f767a5cc59362c93adbc2">HArDCore3D::HHO_Diffusion</a>
-, <a class="el" href="group__HHO__LocVarDiff.html#ga10971b2952ab54d336127a43f5ed9b29">HArDCore3D::HHO_LocVarDiff</a>
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#adcad4a2ddc4f767a5cc59362c93adbc2">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a10971b2952ab54d336127a43f5ed9b29">HArDCore3D::HHO_LocVarDiff</a>
 </li>
 <li>get_tng()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a5977abe45fc95cde4e0125c09df953b1">StemMesh3D::mesh_3Dv</a>
 </li>
 <li>get_vec_phiF_quadF()
-: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#a1a9a6bf14079608b3f706136568d3e7d">HArDCore3D::ElementQuad</a>
+: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#a862a7cc1c7f5e62bcb26c5a2a14bb4ea">HArDCore3D::ElementQuad</a>
 </li>
 <li>get_vec_phiT_quadF()
-: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#a318c36aca48d3cdb6b501d3d0e1554cf">HArDCore3D::ElementQuad</a>
+: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#ad470965a0f66f62c1ffed045e2dd49fc">HArDCore3D::ElementQuad</a>
 </li>
 <li>get_vec_phiT_quadT()
-: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#a0df097bcb15554c9f9ee752f04c14f95">HArDCore3D::ElementQuad</a>
+: <a class="el" href="classHArDCore3D_1_1ElementQuad.html#a3c549d43c0a5171d0c14f6b56ffc843d">HArDCore3D::ElementQuad</a>
 </li>
 <li>get_vertices()
 : <a class="el" href="classHArDCore3D_1_1Cell.html#a19a14fe5dd32fbf9d9557aaece6a0499">HArDCore3D::Cell</a>
@@ -283,18 +317,24 @@ $(function() {
 , <a class="el" href="group__Mesh.html#ga5cf9000fd94ae2e7ec79245607644f1b">HArDCore3D::Face</a>
 , <a class="el" href="group__Mesh.html#gab6a570ed052f6bb7ad6570f83cbae6a9">HArDCore3D::Vertex</a>
 </li>
-<li>grad_basis_quad()
-: <a class="el" href="classHArDCore3D_1_1HybridCore.html#add794287f4bb49157a7b5f94a5ecb200">HArDCore3D::HybridCore</a>
-</li>
 <li>grad_function_type
-: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#afd0b6d7ab35bca58a5f7ec29afbba355">HArDCore3D::HHO_Diffusion</a>
-, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#a13003c1e92aab2a21e3055e2fd7104f8">HArDCore3D::HHO_LocVarDiff</a>
+: <a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html#a35b1f1e3277f1d675b12d4e7533e3d23">HArDCore3D::HHO_Diffusion</a>
+, <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html#aac4d74b1420ac542bcc2b96c11ccba55">HArDCore3D::HHO_LocVarDiff</a>
 </li>
 <li>grad_sol()
 : <a class="el" href="classTestCase.html#a46b6847f3cdeca43af4b7c34e85748b9">TestCase</a>
 </li>
-<li>gram_matrix()
-: <a class="el" href="classHArDCore3D_1_1HybridCore.html#a7403a7f6890fc8ffae6f8dc531c1b397">HArDCore3D::HybridCore</a>
+<li>gradient()
+: <a class="el" href="classHArDCore3D_1_1Family.html#a7e8e2733993bda1d5aff348d7d31cbcf">HArDCore3D::Family&lt; BasisType &gt;</a>
+, <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html#afe6fb4aef0d61e720116d8ba64c94971">HArDCore3D::MonomialScalarBasisCell</a>
+, <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisEdge.html#ae0c76acbc1682b81cc2fe25f23d7884f">HArDCore3D::MonomialScalarBasisEdge</a>
+, <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisFace.html#a25989d831b6ca783612bc54ce0f25b66">HArDCore3D::MonomialScalarBasisFace</a>
+, <a class="el" href="classHArDCore3D_1_1RestrictedBasis.html#ae191627737010694521dc5aae42744cd">HArDCore3D::RestrictedBasis&lt; BasisType &gt;</a>
+, <a class="el" href="classHArDCore3D_1_1ShiftedBasis.html#a1e825cd8aa68c4e1a1e3900e24be84f7">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
+, <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html#a42238c95ed27a327d0291c67a1c6196b">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
+</li>
+<li>GradientBasis()
+: <a class="el" href="classHArDCore3D_1_1GradientBasis.html#af2fa9b4764b550f576aeba7e24e6c911">HArDCore3D::GradientBasis&lt; BasisType &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['legendregauss',['LegendreGauss',['../classHArDCore3D_1_1LegendreGauss.html',1,'HArDCore3D']]],
-  ['link',['link',['../classStemMesh3D_1_1tetgenmesh_1_1link.html',1,'StemMesh3D::tetgenmesh']]],
-  ['list',['list',['../classStemMesh3D_1_1tetgenmesh_1_1list.html',1,'StemMesh3D::tetgenmesh']]]
+  ['hho_5fdiffusion',['HHO_Diffusion',['../classHArDCore3D_1_1HHO__Diffusion.html',1,'HArDCore3D']]],
+  ['hho_5flocvardiff',['HHO_LocVarDiff',['../classHArDCore3D_1_1HHO__LocVarDiff.html',1,'HArDCore3D']]],
+  ['hybridcore',['HybridCore',['../classHArDCore3D_1_1HybridCore.html',1,'HArDCore3D']]]
 ];

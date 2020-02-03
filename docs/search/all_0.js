@@ -14,5 +14,8 @@ var searchData=
   ['add_5fneighbour',['add_neighbour',['../classHArDCore3D_1_1Cell.html#a6e29b140b5f4a286ed694f2851fe76e1',1,'HArDCore3D::Cell']]],
   ['add_5fnormal',['add_normal',['../classHArDCore3D_1_1Cell.html#a6062f4f6764a978c5c3a645e1cb6a1bf',1,'HArDCore3D::Cell']]],
   ['add_5fvertex',['add_vertex',['../classHArDCore3D_1_1Cell.html#aa4bebb4d2f23daaed37e1e1e2d464d01',1,'HArDCore3D::Cell::add_vertex()'],['../classHArDCore3D_1_1Edge.html#a8902091c785b5857648f5c9ba55f6eba',1,'HArDCore3D::Edge::add_vertex()'],['../classHArDCore3D_1_1Face.html#a7b9f09bcce8fc3beb56634e0793af83f',1,'HArDCore3D::Face::add_vertex()'],['../group__Mesh.html#gafe8cbdafd0716faad0283e281ca15711',1,'HArDCore3D::Mesh::add_vertex()'],['../classHArDCore3D_1_1Vertex.html#aeffe35d0d60a1ee284f645a5642ff75c',1,'HArDCore3D::Vertex::add_vertex()']]],
-  ['ari_5fcoords_5ff',['ari_coords_F',['../classStemMesh3D_1_1mesh__3Dv.html#a3a20194034b0d98ad894bcad47d57ffe',1,'StemMesh3D::mesh_3Dv']]]
+  ['ancestor',['ancestor',['../classHArDCore3D_1_1Family.html#a7afd19f4c3c17b7ac8ed16115b0ffe1c',1,'HArDCore3D::Family']]],
+  ['ari_5fcoords_5ff',['ari_coords_F',['../classStemMesh3D_1_1mesh__3Dv.html#a3a20194034b0d98ad894bcad47d57ffe',1,'StemMesh3D::mesh_3Dv']]],
+  ['assemble',['assemble',['../group__HHO__Diffusion.html#ga82476d19a0312e0b370a1f6100d863d1',1,'HArDCore3D::HHO_Diffusion::assemble()'],['../group__HHO__LocVarDiff.html#ga5fa4c3b9a58d7208198ee0d6860c093a',1,'HArDCore3D::HHO_LocVarDiff::assemble()']]],
+  ['asvectorxd',['asVectorXd',['../classHArDCore3D_1_1UVector.html#ac44c85c6f56c0c6f2b66f0ed630574dd',1,'HArDCore3D::UVector']]]
 ];
