@@ -18,7 +18,7 @@
 
 namespace HArDCore3D {
 // Class
-VtuWriter::VtuWriter(Mesh* mesh)
+VtuWriter::VtuWriter(const Mesh* mesh)
     : _mesh(mesh),
 			ncells(mesh->n_cells()),
 			vtk_type(ncells),

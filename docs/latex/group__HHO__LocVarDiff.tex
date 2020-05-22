@@ -1,42 +1,75 @@
-\hypertarget{group__HHO__LocVarDiff}{}\section{H\+H\+O\+\_\+\+Loc\+Var\+Diff}
-\label{group__HHO__LocVarDiff}\index{H\+H\+O\+\_\+\+Loc\+Var\+Diff@{H\+H\+O\+\_\+\+Loc\+Var\+Diff}}
+\hypertarget{group__HHO__LocVarDiff}{}\doxysection{H\+H\+O\+\_\+\+Loc\+Var\+Diff}
+\label{group__HHO__LocVarDiff}\index{HHO\_LocVarDiff@{HHO\_LocVarDiff}}
 
 
-H\+HO scheme for diffusion equation -\/div(Diff grad u)=f, with Diff possibly varying in each cell.  
+H\+HO scheme for diffusion equation -\/div(\+Diff grad u)=f, with Diff possibly varying in each cell.  
 
 
-\subsection*{Classes}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff}
-\begin{DoxyCompactList}\small\item\em The \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{H\+H\+O\+\_\+\+Loc\+Var\+Diff} class provides tools to implement the H\+HO method for the diffusion problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Functions}
+class \mbox{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{H\+H\+O\+\_\+\+Loc\+Var\+Diff}} class provides tools to implement the H\+HO method for the diffusion problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{group__HHO__LocVarDiff_ga6a6f808bf86dd5d3a757422b89df407b}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho, size\+\_\+t K, int L, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a70a4ae64b7a421bf535c669f340b2641}{tensor\+\_\+function\+\_\+type} kappa, size\+\_\+t deg\+\_\+kappa, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_ab56032fb1c52e4a24e75af0002d0a2d4}{source\+\_\+function\+\_\+type} source, \hyperlink{classBoundaryConditions}{Boundary\+Conditions} BC, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a7b0e23cbc8db30ca257c47df7fd4ca25}{solution\+\_\+function\+\_\+type} exact\+\_\+solution, \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_aac4d74b1420ac542bcc2b96c11ccba55}{grad\+\_\+function\+\_\+type} grad\+\_\+exact\+\_\+solution, std\+::string solver\+\_\+type, bool use\+\_\+threads, std\+::ostream \&output=std\+::cout)
+\mbox{\hyperlink{group__HHO__LocVarDiff_gaf4ea116d21e8e33ab8de8160d3685630}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff}} (\mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} \&hho, size\+\_\+t K, int L, Cell\+F\+Type$<$ Matrix\+Rd $>$ kappa, size\+\_\+t deg\+\_\+kappa, Cell\+F\+Type$<$ double $>$ source, \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} BC, \mbox{\hyperlink{group__Basis_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ exact\+\_\+solution, Cell\+F\+Type$<$ Vector\+Rd $>$ grad\+\_\+exact\+\_\+solution, std\+::string solver\+\_\+type, bool use\+\_\+threads, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor of the class. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__HHO__LocVarDiff_ga5fa4c3b9a58d7208198ee0d6860c093a}\label{group__HHO__LocVarDiff_ga5fa4c3b9a58d7208198ee0d6860c093a}} 
-void \hyperlink{group__HHO__LocVarDiff_ga5fa4c3b9a58d7208198ee0d6860c093a}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::assemble} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho)
+void \mbox{\hyperlink{group__HHO__LocVarDiff_ga5fa4c3b9a58d7208198ee0d6860c093a}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::assemble}} (\mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} \&hho)
 \begin{DoxyCompactList}\small\item\em Assemble and solve the scheme. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__HHO__LocVarDiff_ga11bf9be780b53676d2cc1ec9bb30dcc6}\label{group__HHO__LocVarDiff_ga11bf9be780b53676d2cc1ec9bb30dcc6}} 
-\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector} {\bfseries H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::solve} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho)
+\mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} {\bfseries H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::solve} (\mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} \&hho)
 \item 
 \mbox{\Hypertarget{group__HHO__LocVarDiff_ga19858d12d0b2dd817aac99a36f390e2e}\label{group__HHO__LocVarDiff_ga19858d12d0b2dd817aac99a36f390e2e}} 
-double \hyperlink{group__HHO__LocVarDiff_ga19858d12d0b2dd817aac99a36f390e2e}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+Energy\+Norm} (\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&hho, const \hyperlink{classHArDCore3D_1_1UVector}{U\+Vector} Xh)
-\begin{DoxyCompactList}\small\item\em Discrete energy norm (associated to the diffusion operator) of an hybrid function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+double \mbox{\hyperlink{group__HHO__LocVarDiff_ga19858d12d0b2dd817aac99a36f390e2e}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+Energy\+Norm}} (\mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} \&hho, const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} Xh)
+\begin{DoxyCompactList}\small\item\em Discrete energy norm (associated to the diffusion operator) of an hybrid function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga4232eab7b9753215b506d5ce701c4f4f}\label{group__HHO__LocVarDiff_ga4232eab7b9753215b506d5ce701c4f4f}} 
+double \mbox{\hyperlink{group__HHO__LocVarDiff_ga4232eab7b9753215b506d5ce701c4f4f}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+assembly\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em cpu time to assemble the scheme \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga10971b2952ab54d336127a43f5ed9b29}\label{group__HHO__LocVarDiff_ga10971b2952ab54d336127a43f5ed9b29}} 
+double \mbox{\hyperlink{group__HHO__LocVarDiff_ga10971b2952ab54d336127a43f5ed9b29}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+solving\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em cpu time to solve the scheme \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga22542468093ee4e8e24d8c0a27946f8f}\label{group__HHO__LocVarDiff_ga22542468093ee4e8e24d8c0a27946f8f}} 
+double \mbox{\hyperlink{group__HHO__LocVarDiff_ga22542468093ee4e8e24d8c0a27946f8f}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+solving\+\_\+error}} () const
+\begin{DoxyCompactList}\small\item\em residual after solving the scheme \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_gae66d0e79903e2ca077ff2515c20d7d2e}\label{group__HHO__LocVarDiff_gae66d0e79903e2ca077ff2515c20d7d2e}} 
+double \mbox{\hyperlink{group__HHO__LocVarDiff_gae66d0e79903e2ca077ff2515c20d7d2e}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+itime}} (size\+\_\+t idx) const
+\begin{DoxyCompactList}\small\item\em various intermediate assembly times \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_gab0746da36b0bebd4b112d7d43aea41c5}\label{group__HHO__LocVarDiff_gab0746da36b0bebd4b112d7d43aea41c5}} 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__LocVarDiff_gab0746da36b0bebd4b112d7d43aea41c5}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+nlocal\+\_\+cell\+\_\+dofs}} ()
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs in each cell. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga50183dd5315faafad99f94c33b3b297e}\label{group__HHO__LocVarDiff_ga50183dd5315faafad99f94c33b3b297e}} 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__LocVarDiff_ga50183dd5315faafad99f94c33b3b297e}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+nlocal\+\_\+face\+\_\+dofs}} ()
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs on each face. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga745621585c09932f84dc01096997eabb}\label{group__HHO__LocVarDiff_ga745621585c09932f84dc01096997eabb}} 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__LocVarDiff_ga745621585c09932f84dc01096997eabb}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+nhighorder\+\_\+dofs}} ()
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs per cell for high-\/order (K+1) polynomials. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga77c2a80e682212997d23d60712d5391e}\label{group__HHO__LocVarDiff_ga77c2a80e682212997d23d60712d5391e}} 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__LocVarDiff_ga77c2a80e682212997d23d60712d5391e}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+ntotal\+\_\+cell\+\_\+dofs}} ()
+\begin{DoxyCompactList}\small\item\em Total number of cell D\+O\+Fs over the entire mesh. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_gae76d4ea3457115f301371430f49d8c8a}\label{group__HHO__LocVarDiff_gae76d4ea3457115f301371430f49d8c8a}} 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__LocVarDiff_gae76d4ea3457115f301371430f49d8c8a}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+ntotal\+\_\+face\+\_\+dofs}} ()
+\begin{DoxyCompactList}\small\item\em Total number of face D\+O\+Fs over the entire mesh. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_gabfaa052588d0662fa9f2a2c771ae7229}\label{group__HHO__LocVarDiff_gabfaa052588d0662fa9f2a2c771ae7229}} 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__LocVarDiff_gabfaa052588d0662fa9f2a2c771ae7229}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+ndir\+\_\+face\+\_\+dofs}} ()
+\begin{DoxyCompactList}\small\item\em Total number of face D\+O\+Fs for Dirichlet faces. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__HHO__LocVarDiff_ga9240e104e5b96b06040bb0f6a2e13514}\label{group__HHO__LocVarDiff_ga9240e104e5b96b06040bb0f6a2e13514}} 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__LocVarDiff_ga9240e104e5b96b06040bb0f6a2e13514}{H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::get\+\_\+ntotal\+\_\+dofs}} ()
+\begin{DoxyCompactList}\small\item\em Total number of degrees of freedom over the entire mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-H\+HO scheme for diffusion equation -\/div(Diff grad u)=f, with Diff possibly varying in each cell. 
+\doxysubsection{Detailed Description}
+H\+HO scheme for diffusion equation -\/div(\+Diff grad u)=f, with Diff possibly varying in each cell. 
 
 
 
-\subsection{Function Documentation}
-\mbox{\Hypertarget{group__HHO__LocVarDiff_ga6a6f808bf86dd5d3a757422b89df407b}\label{group__HHO__LocVarDiff_ga6a6f808bf86dd5d3a757422b89df407b}} 
-\index{H\+H\+O\+\_\+\+Loc\+Var\+Diff@{H\+H\+O\+\_\+\+Loc\+Var\+Diff}!H\+H\+O\+\_\+\+Loc\+Var\+Diff@{H\+H\+O\+\_\+\+Loc\+Var\+Diff}}
-\index{H\+H\+O\+\_\+\+Loc\+Var\+Diff@{H\+H\+O\+\_\+\+Loc\+Var\+Diff}!H\+H\+O\+\_\+\+Loc\+Var\+Diff@{H\+H\+O\+\_\+\+Loc\+Var\+Diff}}
-\subsubsection{\texorpdfstring{H\+H\+O\+\_\+\+Loc\+Var\+Diff()}{HHO\_LocVarDiff()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff (\begin{DoxyParamCaption}\item[{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} \&}]{hho,  }\item[{size\+\_\+t}]{K,  }\item[{int}]{L,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a70a4ae64b7a421bf535c669f340b2641}{tensor\+\_\+function\+\_\+type}}]{kappa,  }\item[{size\+\_\+t}]{deg\+\_\+kappa,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_ab56032fb1c52e4a24e75af0002d0a2d4}{source\+\_\+function\+\_\+type}}]{source,  }\item[{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}}]{BC,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_a7b0e23cbc8db30ca257c47df7fd4ca25}{solution\+\_\+function\+\_\+type}}]{exact\+\_\+solution,  }\item[{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff_aac4d74b1420ac542bcc2b96c11ccba55}{grad\+\_\+function\+\_\+type}}]{grad\+\_\+exact\+\_\+solution,  }\item[{std\+::string}]{solver\+\_\+type,  }\item[{bool}]{use\+\_\+threads,  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__HHO__LocVarDiff_gaf4ea116d21e8e33ab8de8160d3685630}\label{group__HHO__LocVarDiff_gaf4ea116d21e8e33ab8de8160d3685630}} 
+\index{HHO\_LocVarDiff@{HHO\_LocVarDiff}!HHO\_LocVarDiff@{HHO\_LocVarDiff}}
+\index{HHO\_LocVarDiff@{HHO\_LocVarDiff}!HHO\_LocVarDiff@{HHO\_LocVarDiff}}
+\doxysubsubsection{\texorpdfstring{HHO\_LocVarDiff()}{HHO\_LocVarDiff()}}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff\+::\+H\+H\+O\+\_\+\+Loc\+Var\+Diff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} \&}]{hho,  }\item[{size\+\_\+t}]{K,  }\item[{int}]{L,  }\item[{Cell\+F\+Type$<$ Matrix\+Rd $>$}]{kappa,  }\item[{size\+\_\+t}]{deg\+\_\+kappa,  }\item[{Cell\+F\+Type$<$ double $>$}]{source,  }\item[{\mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}}}]{BC,  }\item[{\mbox{\hyperlink{group__Basis_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$}]{exact\+\_\+solution,  }\item[{Cell\+F\+Type$<$ Vector\+Rd $>$}]{grad\+\_\+exact\+\_\+solution,  }\item[{std\+::string}]{solver\+\_\+type,  }\item[{bool}]{use\+\_\+threads,  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
 
 
 

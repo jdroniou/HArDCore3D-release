@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['hho_5fdiffusion',['HHO_Diffusion',['../group__HHO__Diffusion.html',1,'']]],
-  ['hho_5flocvardiff',['HHO_LocVarDiff',['../group__HHO__LocVarDiff.html',1,'']]],
-  ['hybridcore',['HybridCore',['../group__HybridCore.html',1,'']]]
+  ['ddr_5fmagnetostatic_835',['DDR_magnetostatic',['../group__DDR__magnetostatic.html',1,'']]],
+  ['ddrcore_836',['DDRcore',['../group__DDRcore.html',1,'']]]
 ];

@@ -1,0 +1,84 @@
+\hypertarget{classHArDCore3D_1_1XGrad}{}\doxysection{H\+Ar\+D\+Core3D\+::X\+Grad Class Reference}
+\label{classHArDCore3D_1_1XGrad}\index{HArDCore3D::XGrad@{HArDCore3D::XGrad}}
+
+
+Discrete H1 space.  
+
+
+
+
+{\ttfamily \#include $<$xgrad.\+hpp$>$}
+
+
+
+Inheritance diagram for H\+Ar\+D\+Core3D\+::X\+Grad\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classHArDCore3D_1_1XGrad__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H\+Ar\+D\+Core3D\+::X\+Grad\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classHArDCore3D_1_1XGrad__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store local operators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ double(const Eigen\+::\+Vector3d \&)$>$ {\bfseries Function\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__DDRcore_gaa324e5f72366f9c2fe7326384986269c}{X\+Grad}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, bool use\+\_\+threads=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRcore_ga90b1a980d171c5622cbfd2b289fede2f}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__DDRcore_ga0e82338c483d5dc11bc0b84adb52998b}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRcore_gafa11408a74e8545c1bcb817a7d1ac87e}{interpolate}} (const Function\+Type \&q) const
+\begin{DoxyCompactList}\small\item\em Interpolator. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRcore_ga6342c6d44a0b08b3a9b3728384204fde}{edge\+Operators}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge operators for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRcore_ga9b5cca5f857fe8c1f48ecd8e29b687a5}{edge\+Operators}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge operators for edge E. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRcore_gadaecb7d1ca4811b5cf0ddfb64520a6b0}{face\+Operators}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face operators for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRcore_ga39c8365e893f692f285fe15be8b7162b}{face\+Operators}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F) const
+\begin{DoxyCompactList}\small\item\em Return face operators for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRcore_gac7cac3064e3d00e3073899338577dd0a}{cell\+Operators}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRcore_ga3b0c3f70a1fc5d518f8a87eaef38ae05}{cell\+Operators}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRcore_gaedbe0171512eca325eee8d91cbf558d9}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRcore_ga793170ec5942e367325fc3b5611c8e3d}{cell\+Bases}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRcore_gab71562dccfe07e1bafed18660115729c}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRcore_gacd58fb250bc2a93bd6f2e1c7a2f6ae6d}{face\+Bases}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRcore_ga9255b8206ebb7727738398276e518a61}{edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRcore_ga6fd06c440bb5efafe04dbcd56a7db847}{edge\+Bases}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Discrete H1 space. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+D\+D\+R\+Core/xgrad.\+hpp\item 
+src/\+D\+D\+R\+Core/xgrad.\+cpp\end{DoxyCompactItemize}

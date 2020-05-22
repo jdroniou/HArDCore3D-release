@@ -1,34 +1,38 @@
-\hypertarget{classHArDCore3D_1_1MeshBuilder}{}\section{H\+Ar\+D\+Core3D\+:\+:Mesh\+Builder Class Reference}
-\label{classHArDCore3D_1_1MeshBuilder}\index{H\+Ar\+D\+Core3\+D\+::\+Mesh\+Builder@{H\+Ar\+D\+Core3\+D\+::\+Mesh\+Builder}}
+\hypertarget{classHArDCore3D_1_1MeshBuilder}{}\doxysection{H\+Ar\+D\+Core3D\+::Mesh\+Builder Class Reference}
+\label{classHArDCore3D_1_1MeshBuilder}\index{HArDCore3D::MeshBuilder@{HArDCore3D::MeshBuilder}}
 
 
-The \hyperlink{classHArDCore3D_1_1MeshBuilder}{Mesh\+Builder} class provides build tools to create a full mesh with all connectivities.  
+The \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder}{Mesh\+Builder}} class provides build tools to create a full mesh with all connectivities.  
 
 
 
 
 {\ttfamily \#include $<$mesh\+\_\+builder.\+hpp$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classHArDCore3D_1_1MeshBuilder_ab40a9ca5099b1b098e7aa5810adf6a7b}{Mesh\+Builder} (std\+::string mesh\+\_\+file, std\+::string mesh\+\_\+type)
+\mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder_ab40a9ca5099b1b098e7aa5810adf6a7b}{Mesh\+Builder}} (std\+::string mesh\+\_\+file, std\+::string mesh\+\_\+type)
 \item 
-std\+::unique\+\_\+ptr$<$ \hyperlink{classHArDCore3D_1_1Mesh}{Mesh} $>$ \hyperlink{classHArDCore3D_1_1MeshBuilder_a208c94e8cb6490226215b59eb67e7911}{build\+\_\+the\+\_\+mesh} ()
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} $>$ \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder_a208c94e8cb6490226215b59eb67e7911}{build\+\_\+the\+\_\+mesh}} ()
 \begin{DoxyCompactList}\small\item\em construct the connectivity in the mesh \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-The \hyperlink{classHArDCore3D_1_1MeshBuilder}{Mesh\+Builder} class provides build tools to create a full mesh with all connectivities. 
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder}{Mesh\+Builder}} class provides build tools to create a full mesh with all connectivities. 
 
-\subsection{Constructor \& Destructor Documentation}
+\begin{DoxyVerb}  @addtogroup Mesh
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classHArDCore3D_1_1MeshBuilder_ab40a9ca5099b1b098e7aa5810adf6a7b}\label{classHArDCore3D_1_1MeshBuilder_ab40a9ca5099b1b098e7aa5810adf6a7b}} 
-\index{H\+Ar\+D\+Core3\+D\+::\+Mesh\+Builder@{H\+Ar\+D\+Core3\+D\+::\+Mesh\+Builder}!Mesh\+Builder@{Mesh\+Builder}}
-\index{Mesh\+Builder@{Mesh\+Builder}!H\+Ar\+D\+Core3\+D\+::\+Mesh\+Builder@{H\+Ar\+D\+Core3\+D\+::\+Mesh\+Builder}}
-\subsubsection{\texorpdfstring{Mesh\+Builder()}{MeshBuilder()}}
+\index{HArDCore3D::MeshBuilder@{HArDCore3D::MeshBuilder}!MeshBuilder@{MeshBuilder}}
+\index{MeshBuilder@{MeshBuilder}!HArDCore3D::MeshBuilder@{HArDCore3D::MeshBuilder}}
+\doxysubsubsection{\texorpdfstring{MeshBuilder()}{MeshBuilder()}}
 {\footnotesize\ttfamily Mesh\+Builder\+::\+Mesh\+Builder (\begin{DoxyParamCaption}\item[{std\+::string}]{mesh\+\_\+file,  }\item[{std\+::string}]{mesh\+\_\+type }\end{DoxyParamCaption})}
 
-Constructor for \hyperlink{classHArDCore3D_1_1MeshBuilder}{Mesh\+Builder}. 
+Constructor for \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder}{Mesh\+Builder}}. 
 \begin{DoxyParams}{Parameters}
 {\em mesh\+\_\+file} & the mesh file to read \\
 \hline
@@ -37,12 +41,12 @@ Constructor for \hyperlink{classHArDCore3D_1_1MeshBuilder}{Mesh\+Builder}.
 \end{DoxyParams}
 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classHArDCore3D_1_1MeshBuilder_a208c94e8cb6490226215b59eb67e7911}\label{classHArDCore3D_1_1MeshBuilder_a208c94e8cb6490226215b59eb67e7911}} 
-\index{H\+Ar\+D\+Core3\+D\+::\+Mesh\+Builder@{H\+Ar\+D\+Core3\+D\+::\+Mesh\+Builder}!build\+\_\+the\+\_\+mesh@{build\+\_\+the\+\_\+mesh}}
-\index{build\+\_\+the\+\_\+mesh@{build\+\_\+the\+\_\+mesh}!H\+Ar\+D\+Core3\+D\+::\+Mesh\+Builder@{H\+Ar\+D\+Core3\+D\+::\+Mesh\+Builder}}
-\subsubsection{\texorpdfstring{build\+\_\+the\+\_\+mesh()}{build\_the\_mesh()}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \hyperlink{classHArDCore3D_1_1Mesh}{Mesh} $>$ Mesh\+Builder\+::build\+\_\+the\+\_\+mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\index{HArDCore3D::MeshBuilder@{HArDCore3D::MeshBuilder}!build\_the\_mesh@{build\_the\_mesh}}
+\index{build\_the\_mesh@{build\_the\_mesh}!HArDCore3D::MeshBuilder@{HArDCore3D::MeshBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_the\_mesh()}{build\_the\_mesh()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} $>$ Mesh\+Builder\+::build\+\_\+the\+\_\+mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 

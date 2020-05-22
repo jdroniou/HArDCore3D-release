@@ -1,26 +1,16 @@
-H\+Ar\+D\+::\+Core (sources\+: \href{https://github.com/jdroniou/HArDCore}{\tt https\+://github.\+com/jdroniou/\+H\+Ar\+D\+Core}) provides a suite of C++ tools to implement numerical schemes whose unknowns are polynomials in the cells, on the edges, and on the faces. The focus is on dealing on generic polytopal meshes. This documentation addresses the 3D version of H\+Ar\+D\+::\+Core, but similar principles are valid for the 2D version. Transferring a scheme\textquotesingle{}s implementation from 3D to 2D or vice-\/versa is very straightforward, provided that the scheme\textquotesingle{}s mathematical definition does not depend on the dimension and that the generic types provided in {\ttfamily \hyperlink{basis_8hpp_source}{basis.\+hpp}} are used; see readme file of the H\+Ar\+D\+::\+Core github depository \href{https://github.com/jdroniou/HArDCore}{\tt https\+://github.\+com/jdroniou/\+H\+Ar\+D\+Core}.
-
-
-\begin{DoxyItemize}
-\item \href{#build}{\tt Build instructions} -- How to build the libraries and the schemes.
-\item \href{#mesh}{\tt Mesh module} -- The principles of the data structure representing the mesh, and how to load a mesh.
-\item \href{#quad_rules}{\tt Quadrature rules} -- Constructing quadrature rules on polytopal elements, their faces, their edges.
-\item \href{#basis}{\tt Basis module} -- Brief description of the Basis class.
-\item \href{#hybridcore}{\tt Hybrid\+Core module} -- How to use the \hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} class, and companion classes, to compute classical objects requires in schemes\textquotesingle{} implementations.
-\item \href{#schemes}{\tt Schemes} -- The list of schemes currently implemented in H\+Ar\+D\+::\+Core3D, and scripts to run them.
-\end{DoxyItemize}
+H\+Ar\+D\+::\+Core (sources\+: \href{https://github.com/jdroniou/HArDCore}{\texttt{ https\+://github.\+com/jdroniou/\+H\+Ar\+D\+Core}}) provides a suite of C++ tools to implement numerical schemes whose unknowns are polynomials in the cells, on the edges, and on the faces. The focus is on dealing on generic polytopal meshes. This documentation addresses the 3D version of H\+Ar\+D\+::\+Core, but similar principles are valid for the 2D version. Transferring a scheme\textquotesingle{}s implementation from 3D to 2D or vice-\/versa is very straightforward, provided that the scheme\textquotesingle{}s mathematical definition does not depend on the dimension and that the generic types provided in {\ttfamily \mbox{\hyperlink{basis_8hpp_source}{basis.\+hpp}}} are used; see readme file of the H\+Ar\+D\+::\+Core github depository \href{https://github.com/jdroniou/HArDCore}{\texttt{ https\+://github.\+com/jdroniou/\+H\+Ar\+D\+Core}}.
 
 \label{_build}%
- \hypertarget{index_build}{}\section{Build instructions}\label{index_build}
-\hypertarget{index_buildlib}{}\subsection{Building the libraries and the schemes}\label{index_buildlib}
+ \hypertarget{index_build}{}\doxysection{Build instructions}\label{index_build}
+\hypertarget{index_buildlib}{}\doxysubsection{Building the libraries and the schemes}\label{index_buildlib}
 To build the libraries and implemented schemes, the minimal requirements are\+:
 
 
 \begin{DoxyItemize}
-\item C\+Make version 2.\+6 or above (\href{https://cmake.org/}{\tt https\+://cmake.\+org/})
-\item A C++ compiler that supports the C++14 standard, eg. G\+CC (\href{https://gcc.gnu.org/}{\tt https\+://gcc.\+gnu.\+org/}) or Clang (\href{https://clang.llvm.org/}{\tt https\+://clang.\+llvm.\+org/})
-\item Eigen C++ library, version 3.\+3 or above (\href{http://eigen.tuxfamily.org/}{\tt http\+://eigen.\+tuxfamily.\+org/})
-\item The following Boost C++ libraries (\href{http://www.boost.org/}{\tt http\+://www.\+boost.\+org/})\+: filesystem, program options, timer, chrono.
+\item C\+Make version 2.\+6 or above (\href{https://cmake.org/}{\texttt{ https\+://cmake.\+org/}})
+\item A C++ compiler that supports the C++14 standard, eg. G\+CC (\href{https://gcc.gnu.org/}{\texttt{ https\+://gcc.\+gnu.\+org/}}) or Clang (\href{https://clang.llvm.org/}{\texttt{ https\+://clang.\+llvm.\+org/}})
+\item Eigen C++ library, version 3.\+3 or above (\href{http://eigen.tuxfamily.org/}{\texttt{ http\+://eigen.\+tuxfamily.\+org/}})
+\item The following Boost C++ libraries (\href{http://www.boost.org/}{\texttt{ http\+://www.\+boost.\+org/}})\+: filesystem, program options, timer, chrono.
 \end{DoxyItemize}
 
 Make sure that you have the development version of boost installed. On Linux, install {\ttfamily libboost-\/dev}, {\ttfamily libboost-\/filesystem-\/dev}, {\ttfamily libboost-\/program-\/options-\/dev}, {\ttfamily libboost-\/chrono-\/dev} and {\ttfamily libboost-\/timer-\/dev} from your package manager.
@@ -30,172 +20,178 @@ The linear systems resulting from the assembled scheme are solved using the Bi\+
 Once you have installed all of the required dependencies, set up the build directory and generate the build files by running the following from the repository root\+:
 
 
-\begin{DoxyCode}
-mkdir build
-cd build
-cmake ..
-make
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
 \end{DoxyCode}
 
 
-After this, {\ttfamily build/\+Schemes} will contain the executables (e.\+g. {\ttfamily hho-\/diffusion}) to run the schemes. These executables need to access the typ2 meshes, which they should naturally find if you put the {\ttfamily typ2\+\_\+meshes} directory at the root of the project\textquotesingle{}s files.\hypertarget{index_doco}{}\subsection{Building the Documentation}\label{index_doco}
-The mesh documentation is built with Doxygen (\href{http://www.stack.nl/~dimitri/doxygen/}{\tt http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/}). If you are reading this then somebody has already built it for you. If you modify the code and wish to rebuild the documentation, simply run {\ttfamily doxygen} from the root directory. The H\+T\+ML version of the documentation is generated inside {\ttfamily documentation/html} and the La\+TeX version is generated inside {\ttfamily documentation/latex} and can be compiled using the generated Makefile.
+After this, {\ttfamily build/\+Schemes} will contain the executables (e.\+g. {\ttfamily hho-\/diffusion}) to run the schemes. These executables need to access the typ2 meshes, which they should naturally find if you put the {\ttfamily typ2\+\_\+meshes} directory at the root of the project\textquotesingle{}s files.\hypertarget{index_doco}{}\doxysubsection{Building the Documentation}\label{index_doco}
+The mesh documentation is built with Doxygen (\href{http://www.stack.nl/~dimitri/doxygen/}{\texttt{ http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/}}). If you are reading this then somebody has already built it for you. If you modify the code and wish to rebuild the documentation, simply run {\ttfamily doxygen} from the root directory. The H\+T\+ML version of the documentation is generated inside {\ttfamily documentation/html} and the La\+TeX version is generated inside {\ttfamily documentation/latex} and can be compiled using the generated Makefile.
 
 \label{_mesh}%
- \hypertarget{index_mesh}{}\section{Mesh module}\label{index_mesh}
-\hypertarget{index_meshpple}{}\subsection{Principles}\label{index_meshpple}
-After it is loaded, the mesh is represented by classes describing a vertex, an edge, a face, and a cell\+: \hyperlink{classHArDCore3D_1_1Vertex}{Vertex}, \hyperlink{classHArDCore3D_1_1Edge}{Edge}, \hyperlink{classHArDCore3D_1_1Face}{Face}, and \hyperlink{classHArDCore3D_1_1Cell}{Cell}. Each of these classes contains methods to access useful information for the corresponding element, including other geometrical quantities it is related to. The mesh itself is represented by an element of the \hyperlink{classHArDCore3D_1_1Mesh}{Mesh} class with methods to access all the vertices, edges, faces and cells (or a particular vertex, edge, face or cell).
+ \hypertarget{index_mesh}{}\doxysection{Mesh module}\label{index_mesh}
+\hypertarget{index_meshpple}{}\doxysubsection{Principles}\label{index_meshpple}
+After it is loaded, the mesh is represented by classes describing a vertex, an edge, a face, and a cell\+: \mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}}, \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}}, \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}}, and \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}}. Each of these classes contains methods to access useful information for the corresponding element, including other geometrical quantities it is related to. The mesh itself is represented by an element of the \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} class with methods to access all the vertices, edges, faces and cells (or a particular vertex, edge, face or cell).
 
 For example, if {\ttfamily mesh\+\_\+ptr} is a pointer to a Mesh class, the lines 
-\begin{DoxyCode}
-Vertex* vertex = mesh\_ptr->vertex(5);
-
-Eigen::Vector3d vert\_coord = vertex->coords()
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Vertex* vertex = mesh\_ptr-\/>vertex(5);}
+\DoxyCodeLine{}
+\DoxyCodeLine{Eigen::Vector3d vert\_coord = vertex-\/>coords()}
 \end{DoxyCode}
  store the coordinates of the fifth vertex into the Eigen vector vert\+\_\+coord. As a generic rule, all geometrical vectors are {\ttfamily Eigen\+::\+Vector3d}. We also use {\ttfamily Eigen\+::\+Vector\{3,X\}d} and {\ttfamily Eigen\+::\+Matrix\{3,X\}d} for objects on which linear algebraic operations are performed. Lists (e.\+g. of cells, of functions...) are usually instances of {\ttfamily std\+::vector$<$...$>$}. Finally, {\ttfamily Eigen\+::multi\textbackslash{}\+\_\+array} is used for lists of values of basis functions or their gradients at quadrature nodes.
 
 Here is an example that loops over all cells, grabs all the faces of the cell, and loops over these faces to output their diameter. Here, {\ttfamily mesh\+\_\+ptr} is a pointer to the mesh.
 
 
-\begin{DoxyCode}
-\textcolor{comment}{// Loop over all cells of the mesh}
-\textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} iT = 0; iT < mesh\_ptr->n\_cells() iT++) \{
-
-    \textcolor{comment}{// We grab the faces of the iT-th cell}
-    std::vector<Face *> faces = mesh\_ptr->cell(iT)->get\_faces();
-
-    \textcolor{comment}{// Loop over the faces of the cell}
-    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} ilF = 0; ilF < cell->n\_faces(); ilF++) \{
-
-        \textcolor{comment}{// Write the face diameter on the standard output}
-        std::cout << \textcolor{stringliteral}{"The diameter of face "} << ilF+1 << \textcolor{stringliteral}{" in cell "} << iT+1 << \textcolor{stringliteral}{" is: "} << faces(ilE)->diam
-      () << \textcolor{stringliteral}{"\(\backslash\)n"};
-    \}
-
-\}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Loop over all cells of the mesh}}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} iT = 0; iT < mesh\_ptr-\/>n\_cells() iT++) \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// We grab the faces of the iT-\/th cell}}
+\DoxyCodeLine{    std::vector<Face *> faces = mesh\_ptr-\/>cell(iT)-\/>get\_faces();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Loop over the faces of the cell}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} ilF = 0; ilF < cell-\/>n\_faces(); ilF++) \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// Write the face diameter on the standard output}}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"The diameter of face "} << ilF+1 << \textcolor{stringliteral}{" in cell "} << iT+1 << \textcolor{stringliteral}{" is: "} << faces(ilE)-\/>diam() << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
 \end{DoxyCode}
 
 
-The mesh classes and other auxilliary classes are located inside the namespace H\+Ar\+D\+Core3D.
+The mesh classes and other auxilliary classes are located inside the namespace \mbox{\hyperlink{namespaceHArDCore3D}{H\+Ar\+D\+Core3D}}.
 
-There is no direct access from a high-\/level geometrical entity to elements purely associated with lower-\/level entities. For example, if {\ttfamily mesh\+\_\+ptr} is a pointer to the mesh, there is no direct method to access the coordinates of the i-\/th vertex of the mesh (no {\ttfamily mesh\+\_\+ptr-\/$>$coords\+\_\+vertex()} exists). Instead, this is done through {\ttfamily mesh\+\_\+ptr-\/$>$vertex(i)-\/$>$coords()}. This choice is deliberate as it preserves the logical organisation of the data structure, and facilitates the memorisation of the various methods. Of course, writing a wrapper providing such a direct access is easy...\hypertarget{index_loading_mesh}{}\subsection{Loading a mesh}\label{index_loading_mesh}
-H\+Ar\+D\+Core3D can currently read meshes in {\ttfamily TG}, {\ttfamily RF} and {\ttfamily M\+SH}. The loader and all geometrical computations are performed using {\ttfamily Stem\+Mesh}, based on G. Manzini\textquotesingle{}s mesh library \href{https://github.com/gmanzini-LANL/PDE-Mesh-Manager}{\tt https\+://github.\+com/gmanzini-\/\+L\+A\+N\+L/\+P\+D\+E-\/\+Mesh-\/\+Manager}.
+There is no direct access from a high-\/level geometrical entity to elements purely associated with lower-\/level entities. For example, if {\ttfamily mesh\+\_\+ptr} is a pointer to the mesh, there is no direct method to access the coordinates of the i-\/th vertex of the mesh (no {\ttfamily mesh\+\_\+ptr-\/$>$coords\+\_\+vertex()} exists). Instead, this is done through {\ttfamily mesh\+\_\+ptr-\/$>$vertex(i)-\/$>$coords()}. This choice is deliberate as it preserves the logical organisation of the data structure, and facilitates the memorisation of the various methods. Of course, writing a wrapper providing such a direct access is easy...\hypertarget{index_loading_mesh}{}\doxysubsection{Loading a mesh}\label{index_loading_mesh}
+\mbox{\hyperlink{namespaceHArDCore3D}{H\+Ar\+D\+Core3D}} can currently read meshes in {\ttfamily TG}, {\ttfamily RF} and {\ttfamily M\+SH}. The loader and all geometrical computations are performed using {\ttfamily Stem\+Mesh}, based on G. Manzini\textquotesingle{}s mesh library \href{https://github.com/gmanzini-LANL/PDE-Mesh-Manager}{\texttt{ https\+://github.\+com/gmanzini-\/\+L\+A\+N\+L/\+P\+D\+E-\/\+Mesh-\/\+Manager}}.
 
 A mesh file must be read using an instance of the {\ttfamily meshbuilder} class, and then built using {\ttfamily build\+\_\+the\+\_\+mesh}. A working example is given below (assuming the executable will be in {\ttfamily build/\+Schemes} for example).
 
 
-\begin{DoxyCode}
-\textcolor{preprocessor}{#include "mesh.hpp"}
-\textcolor{preprocessor}{#include "mesh\_builder.hpp"}
-
-\textcolor{keyword}{using namespace }\hyperlink{namespaceHArDCore3D}{HArDCore3D};
-
-\textcolor{keywordtype}{int} main() \{
-
-    \textcolor{comment}{// Mesh file to read, with type}
-    std::string default\_mesh = \textcolor{stringliteral}{"../../meshes/Voro-small-0/RF\_fmt/voro-4"};
-    std::string default\_meshtype = \textcolor{stringliteral}{"RF"};
-
-    \textcolor{comment}{// Read the mesh file and build the mesh}
-    \hyperlink{classHArDCore3D_1_1MeshBuilder}{MeshBuilder} meshbuilder = \hyperlink{classHArDCore3D_1_1MeshBuilder}{MeshBuilder}(mesh\_file, mesh\_type);
-    std::unique\_ptr<Mesh> mesh\_ptr = meshbuilder.\hyperlink{classHArDCore3D_1_1MeshBuilder_a208c94e8cb6490226215b59eb67e7911}{build\_the\_mesh}();
-
-    std::cout << \textcolor{stringliteral}{"There are "} << mesh\_ptr->n\_cells() << \textcolor{stringliteral}{" cells in the mesh.\(\backslash\)n"};
-\}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "mesh.hpp"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "mesh\_builder.hpp"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceHArDCore3D}{HArDCore3D}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Mesh file to read, with type}}
+\DoxyCodeLine{    std::string default\_mesh = \textcolor{stringliteral}{"../../meshes/Voro-\/small-\/0/RF\_fmt/voro-\/4"};}
+\DoxyCodeLine{    std::string default\_meshtype = \textcolor{stringliteral}{"RF"};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Read the mesh file and build the mesh}}
+\DoxyCodeLine{    \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder}{MeshBuilder}} meshbuilder = \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder}{MeshBuilder}}(mesh\_file, mesh\_type);}
+\DoxyCodeLine{    std::unique\_ptr<Mesh> mesh\_ptr = meshbuilder.\mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder_a208c94e8cb6490226215b59eb67e7911}{build\_the\_mesh}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"There are "} << mesh\_ptr-\/>n\_cells() << \textcolor{stringliteral}{" cells in the mesh.\(\backslash\)n"};}
+\DoxyCodeLine{\}}
 \end{DoxyCode}
 
 
 Note that the builder returns a {\ttfamily unique\+\_\+ptr} for the mesh. This ensures that, at the end of the code, the mesh destructor is called (which destroys all cells, faces, edges, vertices...). Some classes and functions use a raw pointer to the mesh, so the {\ttfamily .get()} method should be used when passing the mesh as argument to the class constructors or functions.
 
-{\itshape Note}\+: the mesh formats allow for meshes with very generic polygonal cells, including non-\/convex cells. However, the builder assumes that each cell is star-\/shaped with respect to the isobarycenter of its vertices -- otherwise, the calculation of the center of mass may be incorrect. Similarly, the quadrature rules (see \href{#quad_rules}{\tt Quadrature rules}) assume that each cell is star-\/shaped with respect to its center of mass.
+{\itshape Note}\+: the mesh formats allow for meshes with very generic polygonal cells, including non-\/convex cells. However, the builder assumes that each cell is star-\/shaped with respect to the isobarycenter of its vertices -- otherwise, the calculation of the center of mass may be incorrect. Similarly, the quadrature rules (see \href{\#quad_rules}{\texttt{ Quadrature rules}}) assume that each cell is star-\/shaped with respect to its center of mass.
 
 \label{_quad_rules}%
- \hypertarget{index_quad_rules}{}\section{Quadrature rules}\label{index_quad_rules}
+ \hypertarget{index_quad_rules}{}\doxysection{Quadrature rules}\label{index_quad_rules}
 H\+Ar\+D\+::\+Core deals with quite arbitrary cell geometries. As a consequence, no reference element can be used, and the quadrature rules have to be adjusted to each particular cell/face/edge. For the cells, for example, this is done by partitioning each cell into tetrahedra and by using classical quadrature rules on tetrahedras. The choice was also made not to pre-\/compute all quadrature rules for all cells, faces and edges, but rather to compute them -- with a locally chosen degree of exactness -- when needed in the code. To reduce the computational cost, quadrature rules -- and the values of basis functions at quadrature nodes -- should only be computed once when looping over each cell, before being used, e.\+g., to form mass matrices.
 
-The Quadratures module provides routines to do that. The key method is generate\+\_\+quadrature\+\_\+rule(C\+FE,doe) calculates quadrature nodes and weights, exact up to the polynomial degree {\ttfamily doe}, for an integration over cell/face/edge C\+FE (passed as a reference of \hyperlink{classHArDCore3D_1_1Cell}{Cell}, \hyperlink{classHArDCore3D_1_1Face}{Face} or \hyperlink{classHArDCore3D_1_1Edge}{Edge} class). At present, the quadrature rules available in the code support a total degree of exactness in the cells up to 14 in the cells and 20 on the faces and the edges (the quadrature rules on the faces come from \href{https://people.sc.fsu.edu/~jburkardt/cpp_src/triangle_dunavant_rule/triangle_dunavant_rule.html}{\tt John Burkardt\textquotesingle{}s implementation of the Dunavant rules}). The generated quadrature rule is stored in a structure Quadrature\+Rule, which is a vector of quadrature nodes (weights and position).
+The Quadratures module provides routines to do that. The key method is \mbox{\hyperlink{group__Quadratures_ga18d0a2cf574bef7d6e83760de2f38152}{generate\+\_\+quadrature\+\_\+rule(C\+FE,doe)}} calculates quadrature nodes and weights, exact up to the polynomial degree {\ttfamily doe}, for an integration over cell/face/edge C\+FE (passed as a reference of \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}}, \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} or \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} class). At present, the quadrature rules available in the code support a total degree of exactness in the cells up to 14 in the cells and 20 on the faces and the edges (the quadrature rules on the faces come from \href{https://people.sc.fsu.edu/~jburkardt/cpp_src/triangle_dunavant_rule/triangle_dunavant_rule.html}{\texttt{ John Burkardt\textquotesingle{}s implementation of the Dunavant rules}}). The generated quadrature rule is stored in a structure Quadrature\+Rule, which is a vector of quadrature nodes (weights and position).
 
 \label{_basis}%
- \hypertarget{index_basis_module}{}\section{Basis module}\label{index_basis_module}
-The \hyperlink{group__Basis}{Basis} module provides classes and functions that define and manipulate polynomial basis functions on a cell, face, or edge, and various derived quantities (gradient, curl...). The underlying basis functions are monomial, but families of functions defined as linear combination of monomial basis functions are also handled via the {\ttfamily Family} class. See examples in \href{#hybridcore}{\tt Hybrid\+Core}.
+ \hypertarget{index_basis_module}{}\doxysection{Basis module}\label{index_basis_module}
+The \mbox{\hyperlink{group__Basis}{Basis}} module provides classes and functions that define and manipulate polynomial basis functions on a cell, face, or edge, and various derived quantities (gradient, curl...). The underlying basis functions are monomial, but families of functions defined as linear combination of monomial basis functions are also handled via the {\ttfamily Family} class. See examples in \href{\#hybridcore}{\texttt{ Hybrid\+Core}}.
 
-Free functions are also available to compute basis functions at quadrature nodes (using the \href{#quad_rules}{\tt Quadrature rules} module), orthonormalise basis functions, and compute Gram-\/like matrices between various families of functions. These matrices are essential in the design of high-\/order methods on polytopal meshes. See examples in \href{#hybridcore}{\tt Hybrid\+Core}.
+Free functions are also available to compute basis functions at quadrature nodes (using the \href{\#quad_rules}{\texttt{ Quadrature rules}} module), orthonormalise basis functions, and compute Gram-\/like matrices between various families of functions. These matrices are essential in the design of high-\/order methods on polytopal meshes. See examples in \href{\#hybridcore}{\texttt{ Hybrid\+Core}}.
 
 \label{_hybridcore}%
- \hypertarget{index_hybridcore}{}\section{Hybridcore module}\label{index_hybridcore}
-The \hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} module encapsulates routines to create bases of polynomial spaces in each cell, on each face, and on each edge, and to manipulate discrete functions through the class \hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}.\hypertarget{index_basisfunc}{}\subsection{Basis functions}\label{index_basisfunc}
-The instantiation of an \hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} class creates basis functions for the polynomial spaces in the cells, on the faces and on the edges, specifying the maximum degree required for each geometric entity. The basis functions are elements of the \hyperlink{classHArDCore3D_1_1Family}{Family} class and are accessed via the Cell\+Basis, Face\+Basis and Edge\+Basis method. For example, the following piece of code initialises an Hybrid\+Core instance with degrees $K+1$ in the cells, $K$ on the faces, and no edge basis functions, and access the value at some Eigen\+::\+Vector3d x of the i-\/th basis function on face iF, and the gradient of the j-\/th basis function in cell iT.
+ \hypertarget{index_hybridcore}{}\doxysection{Hybridcore module}\label{index_hybridcore}
+The \mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} module encapsulates routines to create bases of polynomial spaces in each cell, on each face, and on each edge, and to manipulate discrete functions through the class \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}}.\hypertarget{index_basisfunc}{}\doxysubsection{Basis functions}\label{index_basisfunc}
+The instantiation of an \mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} class creates basis functions for the polynomial spaces in the cells, on the faces and on the edges, specifying the maximum degree required for each geometric entity. The basis functions are elements of the \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}} class and are accessed via the Cell\+Basis, Face\+Basis and Edge\+Basis method. For example, the following piece of code initialises an Hybrid\+Core instance with degrees $K+1$ in the cells, $K$ on the faces, and no edge basis functions, and access the value at some Eigen\+::\+Vector3d x of the i-\/th basis function on face iF, and the gradient of the j-\/th basis function in cell iT.
 
 
-\begin{DoxyCode}
-\textcolor{comment}{// Initialise the class}
-HybridCore hho(mesh\_ptr.get(), K+1, K, -1, use\_threads, output);
-\textcolor{comment}{// Access value of face basis function}
-\textcolor{keywordtype}{double} val\_face = hho.FaceBasis(iF).function(i, x);
-\textcolor{comment}{// Access value of gradient of cell basis function}
-Eigen::Vector3d grad\_cell = hho.CellBasis(iT).gradient(j, x);
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Initialise the class}}
+\DoxyCodeLine{HybridCore hho(mesh\_ptr.get(), K+1, K, -\/1, use\_threads, output);}
+\DoxyCodeLine{\textcolor{comment}{// Access value of face basis function}}
+\DoxyCodeLine{\textcolor{keywordtype}{double} val\_face = hho.FaceBasis(iF).function(i, x);}
+\DoxyCodeLine{\textcolor{comment}{// Access value of gradient of cell basis function}}
+\DoxyCodeLine{Eigen::Vector3d grad\_cell = hho.CellBasis(iT).gradient(j, x);}
 \end{DoxyCode}
 
 
 The basis functions are hierarchical, which means that they are constructed by increasing degree. Hence, for example, if cell basis functions up to degree $K+1$ have been generated, a basis of the space of polynomials of degree $K$ in the cell is thus obtained by selecting the first $(K+1)(K+2)/2$ cell basis functions.
 
-The \hyperlink{classHArDCore3D_1_1UVector}{U\+Vector} class describes coefficients on cell and face basis functions. The first coefficients correspond to cell basis functions, ordered by the cells themselves, and the last coefficients correspond to face basis functions. The methods in this class provide the surrounding structure to make sense of these coefficients (degrees of considered polynomial functions in cells/on faces, restrictions to a certain cell and its faces, etc.).\hypertarget{index_usge_quad}{}\subsection{Usage of quadrature rules.}\label{index_usge_quad}
-The \hyperlink{structHArDCore3D_1_1evaluate__quad}{evaluate\+\_\+quad} template function evaluate basis functions, or gradients, etc. at provided quadrature nodes. The {\ttfamily boost\+::multi\textbackslash{}\+\_\+array} provided by this function can then be passed to compute\+\_\+gram\+\_\+matrix to create a matrix of inner products of two families of basis functions. Here is an example.
+The \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} class describes coefficients on cell and face basis functions. The first coefficients correspond to cell basis functions, ordered by the cells themselves, and the last coefficients correspond to face basis functions. The methods in this class provide the surrounding structure to make sense of these coefficients (degrees of considered polynomial functions in cells/on faces, restrictions to a certain cell and its faces, etc.).\hypertarget{index_usge_quad}{}\doxysubsection{Usage of quadrature rules.}\label{index_usge_quad}
+The \mbox{\hyperlink{structHArDCore3D_1_1evaluate__quad}{evaluate\+\_\+quad}} template function evaluate basis functions, or gradients, etc. at provided quadrature nodes. The {\ttfamily boost\+::multi\textbackslash{}\+\_\+array} provided by this function can then be passed to \mbox{\hyperlink{group__Basis_gaf5cc3ed71949b5d7adc5877e6bfebcb4}{compute\+\_\+gram\+\_\+matrix}} to create a matrix of inner products of two families of basis functions. Here is an example.
 
 
-\begin{DoxyCode}
-\textcolor{comment}{// Create basis (f\_1,...,f\_r) of degree k in cell T}
-MonomialScalarBasisCell basisT(T, k);
-\textcolor{comment}{// Create quadrature rules of degree 2*k in cell T}
-QuadratureRule quadT = \hyperlink{group__Quadratures_ga18d0a2cf574bef7d6e83760de2f38152}{generate\_quadrature\_rule}(T, 2*k);
-\textcolor{comment}{// Compute values of gradients of basis functions at the quadrature nodes}
-boost::multi\_array<VectorRd, 2> gradbasis\_on\_quadT = evaluate\_quad<Gradient>::compute(basisT, quadT);
-\textcolor{comment}{// Create Gram-like matrix (here, a stiffness matix) of (\(\backslash\)nabla f\_i,\(\backslash\)nabla f\_j)}
-Eigen::MatrixXd M = \hyperlink{group__Basis_gaf5cc3ed71949b5d7adc5877e6bfebcb4}{compute\_gram\_matrix}(gradbasis\_on\_quadT, gradbasis\_on\_quadT, quadT, \textcolor{keyword}{
-      true});
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Create basis (f\_1,...,f\_r) of degree k in cell T}}
+\DoxyCodeLine{MonomialScalarBasisCell basisT(T, k);}
+\DoxyCodeLine{\textcolor{comment}{// Create quadrature rules of degree 2*k in cell T}}
+\DoxyCodeLine{QuadratureRule quadT = \mbox{\hyperlink{group__Quadratures_ga18d0a2cf574bef7d6e83760de2f38152}{generate\_quadrature\_rule}}(T, 2*k);}
+\DoxyCodeLine{\textcolor{comment}{// Compute values of gradients of basis functions at the quadrature nodes}}
+\DoxyCodeLine{boost::multi\_array<VectorRd, 2> gradbasis\_on\_quadT = evaluate\_quad<Gradient>::compute(basisT, quadT);}
+\DoxyCodeLine{\textcolor{comment}{// Create Gram-\/like matrix (here, a stiffness matix) of (\(\backslash\)nabla f\_i,\(\backslash\)nabla f\_j)}}
+\DoxyCodeLine{Eigen::MatrixXd M = \mbox{\hyperlink{group__Basis_gaf5cc3ed71949b5d7adc5877e6bfebcb4}{compute\_gram\_matrix}}(gradbasis\_on\_quadT, gradbasis\_on\_quadT, quadT, \textcolor{keyword}{true});}
 \end{DoxyCode}
 
 
-Note the usage of the type {\ttfamily Vector\+Rd} defined in {\ttfamily \hyperlink{basis_8hpp_source}{basis.\+hpp}}, which enables for a dimension-\/independent piece of code (easier to adapt to the 2D case). This procedure can also be applied, e.\+g., to cell basis functions on face quadrature nodes, etc.
+Note the usage of the type {\ttfamily Vector\+Rd} defined in {\ttfamily \mbox{\hyperlink{basis_8hpp_source}{basis.\+hpp}}}, which enables for a dimension-\/independent piece of code (easier to adapt to the 2D case). This procedure can also be applied, e.\+g., to cell basis functions on face quadrature nodes, etc.
 
-However, in the \hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core} class, the quadrature rules and values of basis functions (and gradients) at the quadrature nodes can be conveniently computed and stored using the \hyperlink{classHArDCore3D_1_1ElementQuad}{Element\+Quad} class. Instantiating an element of this class on a cell loads these rules and values once, that can then be passed to several functions in charge of various calculations (e.\+g. one function computes the local cell contribution to the diffusion term, another function is in charge of computing the load term associated to the cell, etc.). This prevents recomputing these rules and values when needed by various functions. It works the following way\+:
+However, in the \mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} class, the quadrature rules and values of basis functions (and gradients) at the quadrature nodes can be conveniently computed and stored using the \mbox{\hyperlink{classHArDCore3D_1_1ElementQuad}{Element\+Quad}} class. Instantiating an element of this class on a cell loads these rules and values once, that can then be passed to several functions in charge of various calculations (e.\+g. one function computes the local cell contribution to the diffusion term, another function is in charge of computing the load term associated to the cell, etc.). This prevents recomputing these rules and values when needed by various functions. It works the following way\+:
 
 
-\begin{DoxyCode}
-HybridCore hho(mesh\_ptr.get(), K+1, K, -1, use\_threads, output);    \textcolor{comment}{// HybridCore instantiation}
-\textcolor{keywordtype}{size\_t} doeT = m\_Ldeg + m\_K + 1;     \textcolor{comment}{// degree of exactness for cell quadrature rules}
-\textcolor{keywordtype}{size\_t} doeF = 2*m\_K + 1;            \textcolor{comment}{// degree of exactness for edge quadrature rules}
-ElementQuad elquad(hho, iT, doeT, doeF);  \textcolor{comment}{// compute local quadrature rules at quadrature points in cell iT}
-
-Eigen::MatrixXd aT = diffusion\_operator(hho, iT, elquad);       \textcolor{comment}{// compute local contribution to diffusion
-       term}
-Eigen::VectorXd bT = load\_operator(hho, iT, elquad);        \textcolor{comment}{//  compute local loading term}
-
-(...)
-\textcolor{comment}{// Function to compute local contribution to diffusion term}
-Eigen::MatrixXd HHO\_Diffusion::diffusion\_operator(HybridCore &hho, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} iT, \textcolor{keyword}{const} ElementQuad &
-      elquad)\textcolor{keyword}{ const }\{
-
-(... initialise/\textcolor{keywordflow}{do} stuff ...)
-\textcolor{comment}{// Cell quadrature rules and values at nodes are needed, we grab them}
-QuadratureRule quadT = elquad.get\_quadT();
-boost::multi\_array<double, 2> phiT\_quadT = elquad.get\_phiT\_quadT();
-boost::multi\_array<VectorRd, 2> dphiT\_quadT = elquad.get\_dphiT\_quadT();
-
-(... the rest as in the previous example: create mass matrices, etc. ...)
+\begin{DoxyCode}{0}
+\DoxyCodeLine{HybridCore hho(mesh\_ptr.get(), K+1, K, -\/1, use\_threads, output);    \textcolor{comment}{// HybridCore instantiation}}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t} doeT = m\_Ldeg + m\_K + 1;     \textcolor{comment}{// degree of exactness for cell quadrature rules}}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t} doeF = 2*m\_K + 1;            \textcolor{comment}{// degree of exactness for edge quadrature rules}}
+\DoxyCodeLine{ElementQuad elquad(hho, iT, doeT, doeF);  \textcolor{comment}{// compute local quadrature rules at quadrature points in cell iT}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Eigen::MatrixXd aT = diffusion\_operator(hho, iT, elquad);       \textcolor{comment}{// compute local contribution to diffusion term}}
+\DoxyCodeLine{Eigen::VectorXd bT = load\_operator(hho, iT, elquad);        \textcolor{comment}{//  compute local loading term}}
+\DoxyCodeLine{}
+\DoxyCodeLine{(...)}
+\DoxyCodeLine{\textcolor{comment}{// Function to compute local contribution to diffusion term}}
+\DoxyCodeLine{Eigen::MatrixXd HHO\_Diffusion::diffusion\_operator(HybridCore \&hho, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} iT, \textcolor{keyword}{const} ElementQuad \&elquad)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{(... initialise/\textcolor{keywordflow}{do} stuff ...)}
+\DoxyCodeLine{\textcolor{comment}{// Cell quadrature rules and values at nodes are needed, we grab them}}
+\DoxyCodeLine{QuadratureRule quadT = elquad.get\_quadT();}
+\DoxyCodeLine{boost::multi\_array<double, 2> phiT\_quadT = elquad.get\_phiT\_quadT();}
+\DoxyCodeLine{boost::multi\_array<VectorRd, 2> dphiT\_quadT = elquad.get\_dphiT\_quadT();}
+\DoxyCodeLine{}
+\DoxyCodeLine{(... the rest as in the previous example: create mass matrices, etc. ...)}
 \end{DoxyCode}
 
+
+\label{_hho3D}%
+ \hypertarget{index_hho_3D}{}\doxysection{H\+H\+O3\+D general module}\label{index_hho_3D}
+The \mbox{\hyperlink{group__HHO3D}{H\+H\+O3D}} module provides typedefs, a class and functions to implement Hybrid High Order (H\+HO) schemes. Rules (functions) to create local bilinear forms (matrices) and loading terms (vectors) are passed to the \mbox{\hyperlink{classHHO3D}{H\+H\+O3D}} class, that takes care of the global assembly and solving of the system.
+
+\label{_ddr}%
+ \hypertarget{index_ddr}{}\doxysection{D\+D\+R core module}\label{index_ddr}
+The \mbox{\hyperlink{group__DDRcore}{D\+D\+Rcore}} module provides classes and functions to implement the discrete de Rham sequence.
 
 \label{_schemes}%
- \hypertarget{index_schemes}{}\section{Schemes}\label{index_schemes}
-The following schemes are currently available in H\+Ar\+D\+::\+Core3D. The Hybrid High-\/\+Order schemes follow the implementation principles described in Appendix B of the book available at \href{https://hal.archives-ouvertes.fr/hal-02151813}{\tt https\+://hal.\+archives-\/ouvertes.\+fr/hal-\/02151813}.
+ \hypertarget{index_schemes}{}\doxysection{Schemes}\label{index_schemes}
+The following schemes are currently available in H\+Ar\+D\+::\+Core3D. The Hybrid High-\/\+Order schemes follow the implementation principles described in Appendix B of the book available at \href{https://hal.archives-ouvertes.fr/hal-02151813}{\texttt{ https\+://hal.\+archives-\/ouvertes.\+fr/hal-\/02151813}}.
 
 
 \begin{DoxyItemize}
-\item \hyperlink{classHArDCore3D_1_1HHO__Diffusion}{H\+H\+O\+\_\+diffusion}\+: Hybrid High-\/\+Order for $-\mathrm{div}(K\nabla u)=f$, for Dirichlet or Neumann boundary conditions, with $K$ a diffusion tensor that is piecewise constant on the mesh.
-\item \hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{H\+H\+O\+\_\+locvardiff}\+: Hybrid High-\/\+Order for $-\mathrm{div}(K\nabla u)=f$, for Dirichlet or Neumann boundary conditions, with $K$ a diffusion tensor that can vary in each cell.
+\item \mbox{\hyperlink{classHArDCore3D_1_1HHO__Diffusion}{H\+H\+O\+\_\+diffusion}}\+: Hybrid High-\/\+Order (H\+HO) for $-\mathrm{div}(K\nabla u)=f$, for Dirichlet, Neumann or mixed boundary conditions, with $K$ a diffusion tensor that is piecewise constant on the mesh.
+\item \mbox{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{H\+H\+O\+\_\+locvardiff}}\+: H\+HO for $-\mathrm{div}(K\nabla u)=f$, for Dirichlet, Neumann or mixed boundary conditions, with $K$ a diffusion tensor that can vary in each cell.
+\item \mbox{\hyperlink{group__HHO__DiffAdvecReac}{H\+H\+O\+\_\+diffadvecreac}}\+: H\+HO for $-\mathrm{div}(K\nabla u+\beta u)+\mu u=f$, for Dirichlet or mixed boundary conditions, with $K$ a diffusion tensor that can vary in each cell.
+\item \mbox{\hyperlink{group__DDR__magnetostatic}{D\+D\+R\+\_\+magnetostatic}}\+: Discrete De Rham (D\+DR) scheme for the magnetostatic problem.
 \end{DoxyItemize}
 
 The directory {\ttfamily runs} contains B\+A\+SH to run series of tests on families of meshes. The files {\ttfamily data.\+sh} describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the {\ttfamily output} directory, including a pdf file {\ttfamily rate.\+pdf} describing the rates of convergence in various energy norms.
 
-To run the scripts as they are, you will need {\ttfamily pdflatex} and a F\+O\+R\+T\+R\+AN compiler, and to adjust the {\ttfamily Makefile} to your compiler, to run {\ttfamily compute\+\_\+rates.\+f90} and compute the rates of convergence in the various norms. 
+To run the scripts as they are, you will need {\ttfamily pdflatex}. 

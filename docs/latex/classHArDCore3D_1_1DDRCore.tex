@@ -1,0 +1,71 @@
+\hypertarget{classHArDCore3D_1_1DDRCore}{}\doxysection{H\+Ar\+D\+Core3D\+::D\+D\+R\+Core Class Reference}
+\label{classHArDCore3D_1_1DDRCore}\index{HArDCore3D::DDRCore@{HArDCore3D::DDRCore}}
+
+
+Construct the spaces for the D\+DR sequence.  
+
+
+
+
+{\ttfamily \#include $<$ddrcore.\+hpp$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{Cell\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure for element bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{Edge\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure for edge bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{Face\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure for face bases. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ {\bfseries Poly\+Cell\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Poly\+Cell\+Basis\+Type}}, 3 $>$ {\bfseries Poly3\+Cell\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ $>$ $>$ {\bfseries Goly\+Cell\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Poly3\+Cell\+Basis\+Type}} $>$ {\bfseries Goly\+Orth\+Cell\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Goly\+Orth\+Cell\+Basis\+Type}} $>$ {\bfseries Roly\+Cell\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Poly3\+Cell\+Basis\+Type}} $>$ {\bfseries Roly\+Orth\+Cell\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ {\bfseries Poly\+Face\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Poly\+Face\+Basis\+Type}} $>$ {\bfseries Poly2\+Face\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Poly\+Face\+Basis\+Type}} $>$ $>$ {\bfseries Roly\+Face\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Poly2\+Face\+Basis\+Type}} $>$ {\bfseries Roly\+Orth\+Face\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ $>$ $>$ {\bfseries Potential\+Test\+Function\+Basis\+Type}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} $>$ {\bfseries Poly\+Edge\+Basis\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__DDRcore_ga5f49b71bcd21c0c569a59ade78f05fdd}{D\+D\+R\+Core}} (const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \&mesh, size\+\_\+t K, bool use\+\_\+threads=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \& {\bfseries mesh} () const
+\item 
+const size\+\_\+t \& {\bfseries degree} () const
+\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{Cell\+Bases}} \& \mbox{\hyperlink{group__DDRcore_ga222dbade666f7ab10e5bfae0f0579b09}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for element iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{Face\+Bases}} \& \mbox{\hyperlink{group__DDRcore_gadd926309d1517cf7d591215afcf2dfd5}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for face iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{Edge\+Bases}} \& \mbox{\hyperlink{group__DDRcore_ga59b66dab48528b4503dcfae4128df155}{edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge iE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Construct the spaces for the D\+DR sequence. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+D\+D\+R\+Core/ddrcore.\+hpp\item 
+src/\+D\+D\+R\+Core/ddrcore.\+cpp\end{DoxyCompactItemize}

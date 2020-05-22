@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['quadruletetra',['QuadRuleTetra',['../classHArDCore3D_1_1QuadRuleTetra.html#aa9690d2663c19c67d52b3cd176afa4b9',1,'HArDCore3D::QuadRuleTetra']]],
-  ['quadruletriangle',['QuadRuleTriangle',['../group__Quadratures.html#ga0d95447bb72cfc1b19cd2ea192ff6695',1,'HArDCore3D::QuadRuleTriangle']]]
+  ['plot_757',['plot',['../group__HHO3D.html#ga90c52326056fd34a01bae961af6173de',1,'HHO3D']]],
+  ['poly_758',['Poly',['../group__DDRcore.html#gaa4f1be3674586f91be75fa82b0f15c06',1,'HArDCore3D::PolynomialSpaceDimension&lt; Cell &gt;::Poly()'],['../group__DDRcore.html#ga22228536ce1b14bab8f448732240e06b',1,'HArDCore3D::PolynomialSpaceDimension&lt; Face &gt;::Poly()'],['../group__DDRcore.html#gacd6cc9660f6f97e52d075c031cdd34a0',1,'HArDCore3D::PolynomialSpaceDimension&lt; Edge &gt;::Poly()']]],
+  ['program_5foptions_759',['program_options',['../group__HHO__DiffAdvecReac.html#ga8d66c8b7072f75e6aa8bc72aa4baadab',1,'program_options(int argc, const char *argv[], std::string &amp;mesh_name, std::string &amp;mesh_type, std::string &amp;bc_id, std::vector&lt; int &gt; &amp;id_tcase, size_t &amp;L, size_t &amp;K, std::string &amp;plot_file, bool &amp;use_threads, bool &amp;export_matrix):&#160;HHO_DiffAdvecReac.cpp'],['../group__HHO__DiffAdvecReac.html#ga8d66c8b7072f75e6aa8bc72aa4baadab',1,'program_options(const int, const char *[], std::string &amp;, std::string &amp;, std::string &amp;, std::vector&lt; int &gt; &amp;, size_t &amp;, size_t &amp;, std::string &amp;, bool &amp;, bool &amp;):&#160;HHO_DiffAdvecReac.cpp']]]
 ];

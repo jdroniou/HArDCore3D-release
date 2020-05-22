@@ -1,5 +1,6 @@
 <map id="StemMesh3D::tetgenio" name="StemMesh3D::tetgenio">
-<area shape="rect" id="node2" href="$structStemMesh3D_1_1tetgenio_1_1facet.html" title="StemMesh3D::tetgenio\l::facet" alt="" coords="5,109,161,151"/>
-<area shape="rect" id="node3" href="$structStemMesh3D_1_1tetgenio_1_1polygon.html" title="StemMesh3D::tetgenio\l::polygon" alt="" coords="5,5,161,47"/>
-<area shape="rect" id="node4" href="$structStemMesh3D_1_1tetgenio_1_1pbcgroup.html" title="StemMesh3D::tetgenio\l::pbcgroup" alt="" coords="185,109,341,151"/>
+<area shape="rect" id="node1" title=" " alt="" coords="140,213,296,240"/>
+<area shape="rect" id="node2" href="$structStemMesh3D_1_1tetgenio_1_1facet.html" title=" " alt="" coords="5,109,161,151"/>
+<area shape="rect" id="node3" href="$structStemMesh3D_1_1tetgenio_1_1polygon.html" title=" " alt="" coords="5,5,161,47"/>
+<area shape="rect" id="node4" href="$structStemMesh3D_1_1tetgenio_1_1pbcgroup.html" title=" " alt="" coords="185,109,341,151"/>
 </map>

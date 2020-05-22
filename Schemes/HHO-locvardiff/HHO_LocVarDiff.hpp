@@ -41,6 +41,7 @@
 #include <hybridcore.hpp>
 #include <elementquad.hpp>
 #include <parallel_for.hpp>
+#include <TestCase/TestCase.hpp>
 #include <TestCase/BoundaryConditions.hpp>
 
 /*!
@@ -61,26 +62,18 @@ namespace HArDCore3D {
   /// The HHO_LocVarDiff class provides tools to implement the HHO method for the diffusion problem
 
   class HHO_LocVarDiff {
-
-    // Types
-  public:
-    typedef Eigen::Matrix3d MatrixRd;
-    using solution_function_type = std::function<double(VectorRd)>;    ///< type for solution
-    using source_function_type = std::function<double(VectorRd, Cell*)>;    ///< type for source
-    using grad_function_type = std::function<VectorRd(VectorRd, Cell*)>;    ///< type for gradient
-    using tensor_function_type = std::function<MatrixRd(VectorRd, Cell*)>;    ///< type for diffusion tensor
-
+    public:
     ///@brief Constructor of the class
     HHO_LocVarDiff(
        HybridCore& hho,        ///< reference to the mesh
        size_t K,              ///< degree of polynomials on faces
        int L,                 ///< degree of polynomials in cells
-       tensor_function_type kappa,   ///< diffusion tensor
+       CellFType<MatrixRd> kappa,   ///< diffusion tensor
        size_t deg_kappa,              ///< polynomial degree of the diffusion tensor
-       source_function_type source,  ///< source term
+       CellFType<double> source,  ///< source term
        BoundaryConditions BC,             ///< type of boundary conditions
-       solution_function_type exact_solution,   ///< exact solution
-       grad_function_type grad_exact_solution,   ///< gradient of the exact solution
+       FType<double> exact_solution,   ///< exact solution
+       CellFType<VectorRd> grad_exact_solution,   ///< gradient of the exact solution
        std::string solver_type,    ///< type of solver to use for the global system (bicgstab at the moment)
        bool use_threads,    ///< optional argument determining if local parallelisation is to be used
        std::ostream & output = std::cout    ///< optional argument for output of messages
@@ -145,12 +138,12 @@ namespace HArDCore3D {
     size_t m_Ldeg;
 
     // Data
-    const tensor_function_type kappa;
+    const CellFType<MatrixRd> kappa;
     size_t _deg_kappa;
-    const source_function_type source;
+    const CellFType<double> source;
     const BoundaryConditions m_BC;
-    const solution_function_type exact_solution;
-    const grad_function_type grad_exact_solution;
+    const FType<double> exact_solution;
+    const CellFType<VectorRd> grad_exact_solution;
     const std::string solver_type;
     const bool m_use_threads;
     std::ostream & m_output;
@@ -184,7 +177,7 @@ namespace HArDCore3D {
 
   };
 
-  HHO_LocVarDiff::HHO_LocVarDiff(HybridCore& hho, size_t K, int L, tensor_function_type kappa, size_t deg_kappa, source_function_type source, BoundaryConditions BC, solution_function_type exact_solution, grad_function_type grad_exact_solution, std::string solver_type, bool use_threads, std::ostream & output)
+  HHO_LocVarDiff::HHO_LocVarDiff(HybridCore& hho, size_t K, int L, CellFType<MatrixRd> kappa, size_t deg_kappa, CellFType<double> source, BoundaryConditions BC, FType<double> exact_solution, CellFType<VectorRd> grad_exact_solution, std::string solver_type, bool use_threads, std::ostream & output)
     : m_hho(hho),
       m_K(K),
       m_L(L),
@@ -665,12 +658,15 @@ namespace HArDCore3D {
 
     for (size_t ilF = 0; ilF < nfacesT; ilF++) {
       // Two options for stabilisation: diameter of face, or ratio measure cell/measure face
-  //    double dTF = cell->face(ilF)->diam();
-      double dTF = cell->measure() / cell->face(ilF)->measure();
+     double dTF = cell->face(ilF)->diam();
+    //   double dTF = cell->measure() / cell->face(ilF)->measure();
 
       VectorRd xF = cell->face(ilF)->center_mass();
 
-      auto kappa_TF = kappa(xF, cell).trace();
+    //   auto kappa_TF = kappa(xF, cell).trace();
+
+    const VectorRd &nTF = cell->face_normal(ilF);
+      const double kappa_TF = (kappa(xF, cell) * nTF).dot(nTF);
 
       // Face residual delta_TF^k = pi_F^k (rT uT) - u_F
       Eigen::MatrixXd MFFinv = MFF[ilF].inverse();
@@ -678,7 +674,7 @@ namespace HArDCore3D {
       deltaTFK.block(0, m_nlocal_cell_dofs + ilF * m_nlocal_face_dofs, m_nlocal_face_dofs, m_nlocal_face_dofs) -=
         Eigen::MatrixXd::Identity(m_nlocal_face_dofs, m_nlocal_face_dofs);
 
-      // Stabilisation term
+      // Stabilisation term: here, we actually project deltaTL on P^k(F) so, for l=k+1, it actually corresponds to the stabilisation used in HDG methods (see Section 5.1.6 of HHO book)
       Eigen::MatrixXd deltaTFK_minus_deltaTL = deltaTFK - MFFinv * MFT[ilF].topLeftCorner(m_nlocal_face_dofs, m_nlocal_cell_dofs) * deltaTL;
 
       STF += (kappa_TF / dTF) * deltaTFK_minus_deltaTL.transpose() * MFF[ilF] *  deltaTFK_minus_deltaTL;
@@ -690,7 +686,7 @@ namespace HArDCore3D {
 
 
     // Adjust local bilinear form with stabilisation term
-    ATF += STF;
+    ATF += mesh->dim() * STF;
 
     return ATF;
 

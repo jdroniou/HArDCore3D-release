@@ -1,0 +1,72 @@
+\hypertarget{classHArDCore3D_1_1XDiv}{}\doxysection{H\+Ar\+D\+Core3D\+::X\+Div Class Reference}
+\label{classHArDCore3D_1_1XDiv}\index{HArDCore3D::XDiv@{HArDCore3D::XDiv}}
+
+
+Discrete Hdiv space.  
+
+
+
+
+{\ttfamily \#include $<$xdiv.\+hpp$>$}
+
+
+
+Inheritance diagram for H\+Ar\+D\+Core3D\+::X\+Div\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classHArDCore3D_1_1XDiv__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H\+Ar\+D\+Core3D\+::X\+Div\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classHArDCore3D_1_1XDiv__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{Local\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store local operators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ {\bfseries Function\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__DDRcore_ga0b1c78b35b73fcf374d8861e2f78b55e}{X\+Div}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, bool use\+\_\+threads=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRcore_ga53a8bec65ff15b3dcda0c597d2657b24}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__DDRcore_ga33542fcbafb007d3b3e93781abf19a29}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRcore_gab9f2153a64773b0f06630f78c037d406}{interpolate}} (const Function\+Type \&v) const
+\begin{DoxyCompactList}\small\item\em Interpolator. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRcore_gad0d0527952b8e6499b1c2c043a878876}{cell\+Operators}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRcore_ga7e53ba95de71fe3e6878a838d492af78}{cell\+Operators}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRcore_gaf61e3557d62fa2da1489ee0f6a9df9fc}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRcore_gad25c356fbdda7e5b26db223ebf376a39}{cell\+Bases}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRcore_gac8cefcb0fc66710090d254e13dac919a}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRcore_ga7cb8248afff89a299f8076e3515911ea}{face\+Bases}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Discrete Hdiv space. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+D\+D\+R\+Core/xdiv.\+hpp\item 
+src/\+D\+D\+R\+Core/xdiv.\+cpp\end{DoxyCompactItemize}

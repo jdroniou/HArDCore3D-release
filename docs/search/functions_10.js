@@ -1,16 +1,18 @@
 var searchData=
 [
-  ['scalar_5fproduct',['scalar_product',['../group__Basis.html#ga46a7162dd1acacd29421a7d8db89c96e',1,'HArDCore3D::scalar_product(const double &amp;x, const double &amp;y)'],['../group__Basis.html#ga0105ef2d1903eeddce62e6ad647a8ead',1,'HArDCore3D::scalar_product(const VectorRd &amp;x, const VectorRd &amp;y)'],['../group__Basis.html#gaeeaa152dde6743b3293a88f14d907e7c',1,'HArDCore3D::scalar_product(const boost::multi_array&lt; VectorRd, 2 &gt; &amp;basis_quad, const VectorRd &amp;v)']]],
-  ['set_5fboundary',['set_boundary',['../classHArDCore3D_1_1Cell.html#ac4332b689450ab38b5c77ae9f5ff0809',1,'HArDCore3D::Cell::set_boundary()'],['../classHArDCore3D_1_1Edge.html#aed492c6f6fa58b06262ecfa0420121e3',1,'HArDCore3D::Edge::set_boundary()'],['../classHArDCore3D_1_1Face.html#afdd39678036c46f979da9909419c3428',1,'HArDCore3D::Face::set_boundary()'],['../classHArDCore3D_1_1Vertex.html#a72fa3131022cb2c847a2e9d5b56cb893',1,'HArDCore3D::Vertex::set_boundary()']]],
-  ['set_5ffe',['set_fE',['../classStemMesh3D_1_1mesh__3Dv.html#a6b4fa28dbbe68fc44b75e3cdb4ffe7a2',1,'StemMesh3D::mesh_3Dv']]],
-  ['set_5fff',['set_fF',['../classStemMesh3D_1_1mesh__3Dv.html#aa5c3c8d360f8107e370c935222c6849d',1,'StemMesh3D::mesh_3Dv']]],
-  ['set_5ffr',['set_fR',['../classStemMesh3D_1_1mesh__3Dv.html#a0ac5f5f5f81fa2afcbe8a36990d9df21',1,'StemMesh3D::mesh_3Dv']]],
-  ['set_5ffv',['set_fV',['../classStemMesh3D_1_1mesh__3Dv.html#a4bc6f51b9675c7dca59ab8ccfc256a44',1,'StemMesh3D::mesh_3Dv']]],
-  ['set_5fglobal_5findex',['set_global_index',['../classHArDCore3D_1_1Cell.html#a65ac02c8ef4407d5c0693ae97d24c45a',1,'HArDCore3D::Cell::set_global_index()'],['../classHArDCore3D_1_1Edge.html#a150b8b31cd1b608d6ce8b020227a6db2',1,'HArDCore3D::Edge::set_global_index()'],['../classHArDCore3D_1_1Face.html#a66289e0a31138cfce6ac948f09423548',1,'HArDCore3D::Face::set_global_index()'],['../classHArDCore3D_1_1Vertex.html#a1acf4d7072729d8f5f89876383361099',1,'HArDCore3D::Vertex::set_global_index()']]],
-  ['set_5fh_5fmax',['set_h_max',['../group__Mesh.html#gafdbe174b87d591e573dd1953650744ec',1,'HArDCore3D::Mesh']]],
-  ['set_5fmesh_5fname',['set_mesh_name',['../classStemMesh3D_1_1mesh__3Dv.html#ac40eb6e8236253c78ce71c0fd876d539',1,'StemMesh3D::mesh_3Dv']]],
-  ['set_5fname',['set_name',['../group__Mesh.html#ga694cc6fe11d3640859f7f2c23c8acd44',1,'HArDCore3D::Mesh']]],
-  ['shiftedbasis',['ShiftedBasis',['../classHArDCore3D_1_1ShiftedBasis.html#aea075c3cb8fbdd848e30d84821f23711',1,'HArDCore3D::ShiftedBasis']]],
-  ['sol',['sol',['../classTestCase.html#ac33657413d3b2af32c65ac8153137ff4',1,'TestCase']]],
-  ['source',['source',['../classTestCase.html#a7e745a0df9fcc771962c48145e230965',1,'TestCase']]]
+  ['reac_762',['reac',['../classTestCase.html#aa76112b47b6831c46fcd2aa672b5de4e',1,'TestCase']]],
+  ['regn_5fface_763',['regn_face',['../classStemMesh3D_1_1mesh__3Dv.html#a761e6d7a78b1547681310935e1ce0a8c',1,'StemMesh3D::mesh_3Dv']]],
+  ['regn_5fface_5fformat_764',['REGN_FACE_format',['../classStemMesh3D_1_1ExtFileInput.html#ae89dd2d6f641d108ec15b435ba62d62e',1,'StemMesh3D::ExtFileInput']]],
+  ['regularity_765',['regularity',['../classHArDCore3D_1_1Mesh.html#a9bdfdf3e4528832da6925f96edc5ad8f',1,'HArDCore3D::Mesh']]],
+  ['renum_766',['renum',['../classHArDCore3D_1_1Mesh.html#af77873bbc892a7a5b37bf4773c55aefc',1,'HArDCore3D::Mesh']]],
+  ['reorder_5ffaces_767',['reorder_faces',['../classBoundaryConditions.html#a1898911b1e8e0b2832e2ce406b238d99',1,'BoundaryConditions']]],
+  ['required_5frule_768',['required_rule',['../group__Quadratures.html#gaaa2822c1275680abfc0ee93690b1a9b7',1,'HArDCore3D::QuadRuleTetra']]],
+  ['restr_769',['restr',['../group__HybridCore.html#ga24a0a68f8f1e8bdc4845bee48b7ce8d2',1,'HArDCore3D::UVector']]],
+  ['restrict_770',['restrict',['../group__DDRcore.html#ga9f11b7b2aca1a8155bc4106199041e78',1,'HArDCore3D::DDRSpace::restrict(const Edge &amp;E, const Eigen::VectorXd vh) const'],['../group__DDRcore.html#ga7a86b45176a2440d3c36d03c61b33fad',1,'HArDCore3D::DDRSpace::restrict(const Face &amp;F, const Eigen::VectorXd vh) const'],['../group__DDRcore.html#ga1745cc3a6b663671f103e90592fbdcbd',1,'HArDCore3D::DDRSpace::restrict(const Cell &amp;T, const Eigen::VectorXd vh) const']]],
+  ['restrictcell_771',['restrictCell',['../group__DDRcore.html#ga699cc19f55f535fd8349fe552676a525',1,'HArDCore3D::DDRSpace']]],
+  ['restrictedbasis_772',['RestrictedBasis',['../group__Basis.html#gac9623c0deb32ee33cb10de45f4f75702',1,'HArDCore3D::RestrictedBasis']]],
+  ['restrictedge_773',['restrictEdge',['../group__DDRcore.html#gaa2bf0aa56bb500a1104603593506229a',1,'HArDCore3D::DDRSpace']]],
+  ['restrictface_774',['restrictFace',['../group__DDRcore.html#ga51ee63c6cc37dc07bcbd11227bd7e820',1,'HArDCore3D::DDRSpace']]],
+  ['roly_775',['Roly',['../group__DDRcore.html#ga247ddc7c8127ff7aa9680c8192fbc747',1,'HArDCore3D::PolynomialSpaceDimension&lt; Cell &gt;::Roly()'],['../group__DDRcore.html#gad66be33d62a1aedcdbdbeb1ab459ce6b',1,'HArDCore3D::PolynomialSpaceDimension&lt; Face &gt;::Roly()']]],
+  ['rolyorth_776',['RolyOrth',['../group__DDRcore.html#gafdb99cde836a2d08769d2b7042490a33',1,'HArDCore3D::PolynomialSpaceDimension&lt; Cell &gt;::RolyOrth()'],['../group__DDRcore.html#ga38fc886970ced7cb39f808b4e62abf55',1,'HArDCore3D::PolynomialSpaceDimension&lt; Face &gt;::RolyOrth()']]]
 ];

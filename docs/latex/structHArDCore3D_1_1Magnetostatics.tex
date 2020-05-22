@@ -1,0 +1,57 @@
+\hypertarget{structHArDCore3D_1_1Magnetostatics}{}\doxysection{H\+Ar\+D\+Core3D\+::Magnetostatics Struct Reference}
+\label{structHArDCore3D_1_1Magnetostatics}\index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
+
+
+Assemble a magnetostatic problem.  
+
+
+
+
+{\ttfamily \#include $<$magnetostatics.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Sparse\+Matrix$<$ double $>$ {\bfseries System\+Matrix\+Type}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ {\bfseries Forcing\+Term\+Type}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ {\bfseries Solution\+Potential\+Type}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ {\bfseries Solution\+Curl\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__DDR__magnetostatic_ga9e47b948148096a76ef7cc8be28ac0b9}{Magnetostatics}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool use\+\_\+threads, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DDR__magnetostatic_ga3ab30d98e0c805339a0170560702ed4a}{assemble\+Linear\+System}} (const Forcing\+Term\+Type \&f, const Solution\+Potential\+Type \&u)
+\begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
+ \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}{dimension}} () const
+\begin{DoxyCompactList}\small\item\em Returns the global problem dimension. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga19b0cd652147b495285bece47378342c}{x\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36d240d6810c180781c7a2615a7f914e}{x\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}}. \end{DoxyCompactList}\item 
+const System\+Matrix\+Type \& \mbox{\hyperlink{group__DDR__magnetostatic_gafb6670bd6c5b8a6754108f45de910a63}{system\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+System\+Matrix\+Type \& \mbox{\hyperlink{group__DDR__magnetostatic_gaada8e4f19159b7e7ca218dffeccf6a3e}{system\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__magnetostatic_ga29cbbcb0980b052188bb32902e57db67}{system\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__magnetostatic_ga4e0de6a7a5cf5f6fdd0c511b1f4776e9}{system\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{group__DDR__magnetostatic_gaa900b40958daa559bdf2d900e105a51c}{stabilization\+Parameter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}{stabilization\+Parameter}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Assemble a magnetostatic problem. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Schemes/\+D\+D\+R\+Core/magnetostatics.\+hpp\item 
+Schemes/\+D\+D\+R\+Core/magnetostatics.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,107 @@
+\hypertarget{group__DDR__magnetostatic}{}\doxysection{D\+D\+R\+\_\+magnetostatic}
+\label{group__DDR__magnetostatic}\index{DDR\_magnetostatic@{DDR\_magnetostatic}}
+
+
+Implementation of the D\+DR scheme for the magnetostatic problem.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics}}
+\begin{DoxyCompactList}\small\item\em Assemble a magnetostatic problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}\label{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}} 
+typedef Eigen\+::\+Sparse\+Matrix$<$ double $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::\+System\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gaebd9236e99aa83d9e5b68d9d86655a7d}\label{group__DDR__magnetostatic_gaebd9236e99aa83d9e5b68d9d86655a7d}} 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::\+Forcing\+Term\+Type}
+\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gad2a0390bd8d0403beec2119200c14964}\label{group__DDR__magnetostatic_gad2a0390bd8d0403beec2119200c14964}} 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::\+Solution\+Potential\+Type}
+\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gab892187027bcb442d30c76dc95f84043}\label{group__DDR__magnetostatic_gab892187027bcb442d30c76dc95f84043}} 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::\+Solution\+Curl\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__DDR__magnetostatic_ga9e47b948148096a76ef7cc8be28ac0b9}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::\+Magnetostatics}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool use\+\_\+threads, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DDR__magnetostatic_ga3ab30d98e0c805339a0170560702ed4a}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::assemble\+Linear\+System}} (const Forcing\+Term\+Type \&f, const Solution\+Potential\+Type \&u)
+\begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}\label{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}} 
+size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::dimension}} () const
+\begin{DoxyCompactList}\small\item\em Returns the global problem dimension. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga19b0cd652147b495285bece47378342c}\label{group__DDR__magnetostatic_ga19b0cd652147b495285bece47378342c}} 
+const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga19b0cd652147b495285bece47378342c}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::x\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga36d240d6810c180781c7a2615a7f914e}\label{group__DDR__magnetostatic_ga36d240d6810c180781c7a2615a7f914e}} 
+const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36d240d6810c180781c7a2615a7f914e}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::x\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gafb6670bd6c5b8a6754108f45de910a63}\label{group__DDR__magnetostatic_gafb6670bd6c5b8a6754108f45de910a63}} 
+const System\+Matrix\+Type \& \mbox{\hyperlink{group__DDR__magnetostatic_gafb6670bd6c5b8a6754108f45de910a63}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::system\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gaada8e4f19159b7e7ca218dffeccf6a3e}\label{group__DDR__magnetostatic_gaada8e4f19159b7e7ca218dffeccf6a3e}} 
+System\+Matrix\+Type \& \mbox{\hyperlink{group__DDR__magnetostatic_gaada8e4f19159b7e7ca218dffeccf6a3e}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::system\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga29cbbcb0980b052188bb32902e57db67}\label{group__DDR__magnetostatic_ga29cbbcb0980b052188bb32902e57db67}} 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__magnetostatic_ga29cbbcb0980b052188bb32902e57db67}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::system\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga4e0de6a7a5cf5f6fdd0c511b1f4776e9}\label{group__DDR__magnetostatic_ga4e0de6a7a5cf5f6fdd0c511b1f4776e9}} 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__magnetostatic_ga4e0de6a7a5cf5f6fdd0c511b1f4776e9}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::system\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gaa900b40958daa559bdf2d900e105a51c}\label{group__DDR__magnetostatic_gaa900b40958daa559bdf2d900e105a51c}} 
+const double \& \mbox{\hyperlink{group__DDR__magnetostatic_gaa900b40958daa559bdf2d900e105a51c}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::stabilization\+Parameter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}\label{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}} 
+double \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::stabilization\+Parameter}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the D\+DR scheme for the magnetostatic problem. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga3ab30d98e0c805339a0170560702ed4a}\label{group__DDR__magnetostatic_ga3ab30d98e0c805339a0170560702ed4a}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!assembleLinearSystem@{assembleLinearSystem}}
+\index{assembleLinearSystem@{assembleLinearSystem}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{assembleLinearSystem()}{assembleLinearSystem()}}
+{\footnotesize\ttfamily void Magnetostatics\+::assemble\+Linear\+System (\begin{DoxyParamCaption}\item[{const Forcing\+Term\+Type \&}]{f,  }\item[{const Solution\+Potential\+Type \&}]{u }\end{DoxyParamCaption})}
+
+
+
+Assemble the global system ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Forcing term \\
+\hline
+{\em u} & Boundary condition \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga9e47b948148096a76ef7cc8be28ac0b9}\label{group__DDR__magnetostatic_ga9e47b948148096a76ef7cc8be28ac0b9}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!Magnetostatics@{Magnetostatics}}
+\index{Magnetostatics@{Magnetostatics}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{Magnetostatics()}{Magnetostatics()}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Magnetostatics (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&}]{ddrcore,  }\item[{bool}]{use\+\_\+threads,  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ddrcore} & Core for the D\+DR space sequence \\
+\hline
+{\em use\+\_\+threads} & True for parallel execution, false for sequential execution \\
+\hline
+{\em output} & Output stream to print status messages \\
+\hline
+\end{DoxyParams}

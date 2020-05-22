@@ -18,7 +18,6 @@
 #include "mesh_builder.hpp"
 
 #include "HHO_Diffusion.hpp"
-#include "TestCase/TestCase.hpp"
 #include "vtu_writer.hpp"
 
 using namespace HArDCore3D;
@@ -73,7 +72,7 @@ int main(int argc, const char* argv[]) {
   // Select solver type
   std::string solver_type = vm["solver_type"].as<std::string>();
 
-  // Select multithreadingsolver type
+  // Select multithreading or not
   bool use_threads = vm["use_threads"].as<bool>();
 
   // Checks
@@ -107,23 +106,11 @@ int main(int argc, const char* argv[]) {
   std::vector<int> id_tcase = (vm.count("testcase") ? vm["testcase"].as<std::vector<int>>() : default_id_tcase);
   TestCase tcase(id_tcase);
 
-  // Diffusion tensor
-  HHO_Diffusion::tensor_function_type kappa = [&](VectorRd p, Cell* cell) {
-    return tcase.diff(p.x(),p.y(),p.z(),cell);
-  };
-
-  // Source term
-  HHO_Diffusion::source_function_type source = [&](VectorRd p, Cell* cell) {
-    return tcase.source(p.x(),p.y(),p.z(),cell);
-  };
-
-  // Exact solution and gradient
-  HHO_Diffusion::solution_function_type exact_solution = [&](VectorRd p) {
-    return tcase.sol(p.x(),p.y(),p.z());
-  };
-  HHO_Diffusion::grad_function_type grad_exact_solution = [&](VectorRd p, Cell* cell) {
-    return tcase.grad_sol(p.x(),p.y(),p.z(),cell);
-  };
+  // Diffusion tensor, source, exact solution and gradient
+  CellFType<MatrixRd> kappa = tcase.diff();
+  CellFType<double> source = tcase.diff_source();
+  FType<double> exact_solution = tcase.sol();
+  CellFType<VectorRd> grad_exact_solution = tcase.grad_sol();
 
   // Create the model equation
   HHO_Diffusion model(hho, K, L, kappa, source, BC, exact_solution, grad_exact_solution, solver_type, use_threads, output);

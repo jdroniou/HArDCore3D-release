@@ -1,0 +1,73 @@
+\hypertarget{classTestCaseNL}{}\doxysection{Test\+Case\+NL Class Reference}
+\label{classTestCaseNL}\index{TestCaseNL@{TestCaseNL}}
+
+
+The \mbox{\hyperlink{classTestCaseNL}{Test\+Case\+NL}} class provides definition of a nonlinear function, and related functions.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Case\+N\+L.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTestCaseNL_aabaacd0088d60610b004c1a0134d1284}\label{classTestCaseNL_aabaacd0088d60610b004c1a0134d1284}} 
+using \mbox{\hyperlink{classTestCaseNL_aabaacd0088d60610b004c1a0134d1284}{nonlinearity\+\_\+function\+\_\+type}} = std\+::function$<$ double(double, std\+::string)$>$
+\begin{DoxyCompactList}\small\item\em type for nonlinear function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTestCaseNL_a600b3b7ced9b2b1c52eaa07eb8bebd93}{Test\+Case\+NL}} (const int i\+T\+C\+NL)
+\begin{DoxyCompactList}\small\item\em Initialise data. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTestCaseNL_ac86928b857cdf7c426f41e77857085e3}{nonlinearity}} (const double s, const std\+::string type)
+\begin{DoxyCompactList}\small\item\em Nonlinearity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classTestCaseNL}{Test\+Case\+NL}} class provides definition of a nonlinear function, and related functions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTestCaseNL_a600b3b7ced9b2b1c52eaa07eb8bebd93}\label{classTestCaseNL_a600b3b7ced9b2b1c52eaa07eb8bebd93}} 
+\index{TestCaseNL@{TestCaseNL}!TestCaseNL@{TestCaseNL}}
+\index{TestCaseNL@{TestCaseNL}!TestCaseNL@{TestCaseNL}}
+\doxysubsubsection{\texorpdfstring{TestCaseNL()}{TestCaseNL()}}
+{\footnotesize\ttfamily Test\+Case\+N\+L\+::\+Test\+Case\+NL (\begin{DoxyParamCaption}\item[{const int}]{i\+T\+C\+NL }\end{DoxyParamCaption})}
+
+
+
+Initialise data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+T\+C\+NL} & The id of the test case \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTestCaseNL_ac86928b857cdf7c426f41e77857085e3}\label{classTestCaseNL_ac86928b857cdf7c426f41e77857085e3}} 
+\index{TestCaseNL@{TestCaseNL}!nonlinearity@{nonlinearity}}
+\index{nonlinearity@{nonlinearity}!TestCaseNL@{TestCaseNL}}
+\doxysubsubsection{\texorpdfstring{nonlinearity()}{nonlinearity()}}
+{\footnotesize\ttfamily double Test\+Case\+N\+L\+::nonlinearity (\begin{DoxyParamCaption}\item[{const double}]{s,  }\item[{const std\+::string}]{type }\end{DoxyParamCaption})}
+
+
+
+Nonlinearity. 
+
+i\+T\+CR\mbox{[}0\mbox{]}=1\+: $f(u)=u$
+
+i\+T\+CR\mbox{[}0\mbox{]}=2\+: $f(u)=|u|u$
+
+i\+T\+CR\mbox{[}0\mbox{]}=3\+: $f(u)=u^+$
+\begin{DoxyParams}{Parameters}
+{\em type} & \char`\"{}type\char`\"{} = \char`\"{}fct\char`\"{} for the function itself, \char`\"{}nlin\char`\"{} for the nonlinear part gamma such that fct(u) = gamma(u) u, \char`\"{}der\char`\"{} for derivative, \char`\"{}hess\char`\"{} for 2nd derivative \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Schemes/\+Test\+Case/Test\+Case\+N\+L.\+hpp\item 
+Schemes/\+Test\+Case/Test\+Case\+N\+L.\+cpp\end{DoxyCompactItemize}

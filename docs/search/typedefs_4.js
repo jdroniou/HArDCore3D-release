@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['tensor_5ffunction_5ftype',['tensor_function_type',['../classHArDCore3D_1_1HHO__Diffusion.html#a640287c18811b16ef9136832e99879a1',1,'HArDCore3D::HHO_Diffusion::tensor_function_type()'],['../classHArDCore3D_1_1HHO__LocVarDiff.html#a70a4ae64b7a421bf535c669f340b2641',1,'HArDCore3D::HHO_LocVarDiff::tensor_function_type()']]]
+  ['polycellbasistype_829',['PolyCellBasisType',['../group__HybridCore.html#ga5c478c9953257f154d2ea98f115fba0d',1,'HArDCore3D::HybridCore']]],
+  ['polyedgebasistype_830',['PolyEdgeBasisType',['../group__HybridCore.html#gad3123dceabd79eec7cdb57ba1014fc17',1,'HArDCore3D::HybridCore']]],
+  ['polyfacebasistype_831',['PolyFaceBasisType',['../group__HybridCore.html#gab02b7a4490b6a739e2d084e9a70dbcc5',1,'HArDCore3D::HybridCore']]]
 ];

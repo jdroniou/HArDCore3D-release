@@ -1,5 +1,5 @@
-\hypertarget{classStemMesh3D_1_1mesh__3Dv}{}\section{Stem\+Mesh3D\+:\+:mesh\+\_\+3\+Dv Class Reference}
-\label{classStemMesh3D_1_1mesh__3Dv}\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
+\hypertarget{classStemMesh3D_1_1mesh__3Dv}{}\doxysection{Stem\+Mesh3D\+::mesh\+\_\+3\+Dv Class Reference}
+\label{classStemMesh3D_1_1mesh__3Dv}\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
 
 
 The interface for working with generic 3D meshes.  
@@ -9,11 +9,11 @@ The interface for working with generic 3D meshes.
 
 {\ttfamily \#include $<$mesh3\+D.\+hh$>$}
 
-\subsection*{Public Types}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a550002922df52cb0711f6d0da2398d6b}\label{classStemMesh3D_1_1mesh__3Dv_a550002922df52cb0711f6d0da2398d6b}} 
-enum \hyperlink{classStemMesh3D_1_1mesh__3Dv_a550002922df52cb0711f6d0da2398d6b}{bbox\+\_\+dimension} \{ \newline
+enum \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a550002922df52cb0711f6d0da2398d6b}{bbox\+\_\+dimension}} \{ \newline
 {\bfseries xmin}, 
 {\bfseries ymin}, 
 {\bfseries zmin}, 
@@ -21,227 +21,227 @@ enum \hyperlink{classStemMesh3D_1_1mesh__3Dv_a550002922df52cb0711f6d0da2398d6b}{
 \newline
 {\bfseries ymax}, 
 {\bfseries zmax}
- \}\begin{DoxyCompactList}\small\item\em The six extremes of the bounding box of the domain. \end{DoxyCompactList}
-\item 
+ \}
+\begin{DoxyCompactList}\small\item\em The six extremes of the bounding box of the domain. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}\label{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}} 
-using \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type} = int
+using \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}} = int
 \begin{DoxyCompactList}\small\item\em Type used for element flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ab7799362e99de42d7fef62d12f007367}\label{classStemMesh3D_1_1mesh__3Dv_ab7799362e99de42d7fef62d12f007367}} 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_ab7799362e99de42d7fef62d12f007367}{n\+\_\+region} () const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ab7799362e99de42d7fef62d12f007367}{n\+\_\+region}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of regions (3D cells / control volumes) in the mesh. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a06d9c5f13b364627149ea844501e9441}\label{classStemMesh3D_1_1mesh__3Dv_a06d9c5f13b364627149ea844501e9441}} 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a06d9c5f13b364627149ea844501e9441}{n\+\_\+face} () const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a06d9c5f13b364627149ea844501e9441}{n\+\_\+face}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of faces in the mesh. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a8068061ffd6a9080b92d25270c1f668d}\label{classStemMesh3D_1_1mesh__3Dv_a8068061ffd6a9080b92d25270c1f668d}} 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a8068061ffd6a9080b92d25270c1f668d}{n\+\_\+edge} () const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a8068061ffd6a9080b92d25270c1f668d}{n\+\_\+edge}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of edges in the mesh/. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ac29b66e58fbd9bc301118bea14426709}\label{classStemMesh3D_1_1mesh__3Dv_ac29b66e58fbd9bc301118bea14426709}} 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_ac29b66e58fbd9bc301118bea14426709}{n\+\_\+vertex} () const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ac29b66e58fbd9bc301118bea14426709}{n\+\_\+vertex}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of vertices in the mesh. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a7c885048a027fc84eb6d2b7e2590c5e2}\label{classStemMesh3D_1_1mesh__3Dv_a7c885048a027fc84eb6d2b7e2590c5e2}} 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a7c885048a027fc84eb6d2b7e2590c5e2}{n\+\_\+bregion} () const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a7c885048a027fc84eb6d2b7e2590c5e2}{n\+\_\+bregion}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of regions on the boundary. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a394bc87d5f29715e6faae1e2d21ceff7}\label{classStemMesh3D_1_1mesh__3Dv_a394bc87d5f29715e6faae1e2d21ceff7}} 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a394bc87d5f29715e6faae1e2d21ceff7}{n\+\_\+bface} () const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a394bc87d5f29715e6faae1e2d21ceff7}{n\+\_\+bface}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of faces on the boundary. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_aa9793810147053ffdfcd9cc9eeaec160}\label{classStemMesh3D_1_1mesh__3Dv_aa9793810147053ffdfcd9cc9eeaec160}} 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_aa9793810147053ffdfcd9cc9eeaec160}{n\+\_\+bedge} () const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aa9793810147053ffdfcd9cc9eeaec160}{n\+\_\+bedge}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of edges on the boundary. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a616550f2a459b5c239d2d205a408b484}\label{classStemMesh3D_1_1mesh__3Dv_a616550f2a459b5c239d2d205a408b484}} 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a616550f2a459b5c239d2d205a408b484}{n\+\_\+bvertex} () const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a616550f2a459b5c239d2d205a408b484}{n\+\_\+bvertex}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of vertices on the boundary. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a91cb00af3bac18dbde6320e4178111ed}{get\+\_\+bnd\+\_\+regn} (size\+\_\+t ilR) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a91cb00af3bac18dbde6320e4178111ed}{get\+\_\+bnd\+\_\+regn}} (size\+\_\+t ilR) const
 \begin{DoxyCompactList}\small\item\em Returns the global region number of the (ilR)\textquotesingle{}th boundary region. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a990498932160b3031badb906be06fb84}{get\+\_\+bnd\+\_\+face} (size\+\_\+t ilF) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a990498932160b3031badb906be06fb84}{get\+\_\+bnd\+\_\+face}} (size\+\_\+t ilF) const
 \begin{DoxyCompactList}\small\item\em Returns the global face number of the (ilF)\textquotesingle{}th boundary face. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a329a4b4f0ae621e3a700c61d52f82fdd}{get\+\_\+bnd\+\_\+edge} (size\+\_\+t ilE) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a329a4b4f0ae621e3a700c61d52f82fdd}{get\+\_\+bnd\+\_\+edge}} (size\+\_\+t ilE) const
 \begin{DoxyCompactList}\small\item\em Returns the global edge number of the (ilE)\textquotesingle{}th boundary edge. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a397ec757e2e38525d7a9721112f6a08a}{get\+\_\+bnd\+\_\+vrtx} (size\+\_\+t ilV) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a397ec757e2e38525d7a9721112f6a08a}{get\+\_\+bnd\+\_\+vrtx}} (size\+\_\+t ilV) const
 \begin{DoxyCompactList}\small\item\em Returns the global vertex number of the (ilV)\textquotesingle{}th boundary vertex. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a761e6d7a78b1547681310935e1ce0a8c}{regn\+\_\+face} (size\+\_\+t iR, size\+\_\+t ilF) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a761e6d7a78b1547681310935e1ce0a8c}{regn\+\_\+face}} (size\+\_\+t iR, size\+\_\+t ilF) const
 \begin{DoxyCompactList}\small\item\em Returns the global face number of the (ilF)\textquotesingle{}th local face of the region iR. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a70f328491a6660c05914c9226e297ecc}{face\+\_\+edge} (size\+\_\+t iF, size\+\_\+t ilE) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a70f328491a6660c05914c9226e297ecc}{face\+\_\+edge}} (size\+\_\+t iF, size\+\_\+t ilE) const
 \begin{DoxyCompactList}\small\item\em Returns the global edge number of the (ilE)\textquotesingle{}th local edge of the face iF. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a7024d4e9bd97ff05c7926c9b4a97be62}{edge\+\_\+vrtx} (size\+\_\+t iE, size\+\_\+t ilV) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a7024d4e9bd97ff05c7926c9b4a97be62}{edge\+\_\+vrtx}} (size\+\_\+t iE, size\+\_\+t ilV) const
 \begin{DoxyCompactList}\small\item\em Returns the global vertex number of the (ilV)\textquotesingle{}th vertex of the edge iE. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_afd4c48e4133adad4c31e6fe8bfb96c2a}{face\+\_\+regn} (size\+\_\+t iF, size\+\_\+t ilR) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_afd4c48e4133adad4c31e6fe8bfb96c2a}{face\+\_\+regn}} (size\+\_\+t iF, size\+\_\+t ilR) const
 \begin{DoxyCompactList}\small\item\em Returns the global region number of the (ilR)\textquotesingle{}th region bordering the face iF. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_aef749900ff2a72c8dbb21b28f3c21556}{edge\+\_\+face} (size\+\_\+t iE, size\+\_\+t ilF) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aef749900ff2a72c8dbb21b28f3c21556}{edge\+\_\+face}} (size\+\_\+t iE, size\+\_\+t ilF) const
 \begin{DoxyCompactList}\small\item\em Returns the global face number of the (ilF)\textquotesingle{}th face bordering the edge iE. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a93fff194e371aa21a00f0e5e1e6d45cd}{vrtx\+\_\+edge} (size\+\_\+t iV, size\+\_\+t ilE) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a93fff194e371aa21a00f0e5e1e6d45cd}{vrtx\+\_\+edge}} (size\+\_\+t iV, size\+\_\+t ilE) const
 \begin{DoxyCompactList}\small\item\em Returns the global edge number of the (ilE)\textquotesingle{}th edge adjacent to the vertex iV. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_afbe4f73847a1ae2c6a24170ab3a7827e}{vrtx\+\_\+vrtx} (size\+\_\+t iV, size\+\_\+t ilV) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_afbe4f73847a1ae2c6a24170ab3a7827e}{vrtx\+\_\+vrtx}} (size\+\_\+t iV, size\+\_\+t ilV) const
 \begin{DoxyCompactList}\small\item\em Returns the global vertex number of the (ilV)\textquotesingle{}th adjacent vertex to vertex iV. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a02974473e896bc49a5a19cd92b521061}{n\+\_\+regn\+\_\+face} (size\+\_\+t iR) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a02974473e896bc49a5a19cd92b521061}{n\+\_\+regn\+\_\+face}} (size\+\_\+t iR) const
 \begin{DoxyCompactList}\small\item\em Returns the number of local faces that are adjacent to the given region. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a2d8ae772da1e33edfb9332823d4c7212}{n\+\_\+face\+\_\+edge} (size\+\_\+t iF) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a2d8ae772da1e33edfb9332823d4c7212}{n\+\_\+face\+\_\+edge}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns the number of local edges that are adjacent to the given face. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a3a0580ffb017ad1118c6b10631b845fb}{n\+\_\+edge\+\_\+vrtx} (size\+\_\+t iE) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a3a0580ffb017ad1118c6b10631b845fb}{n\+\_\+edge\+\_\+vrtx}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Returns the number of local vertices that are adjacent to the given edge. This should always return 2. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a121da582c92b922a0d6ca76a0f1330ee}{n\+\_\+face\+\_\+regn} (size\+\_\+t iF) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a121da582c92b922a0d6ca76a0f1330ee}{n\+\_\+face\+\_\+regn}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns the number of regions that are adjacent to the given face. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a7655cc55bc89437d85f1a7beddbf66f4}{n\+\_\+edge\+\_\+face} (size\+\_\+t iE) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a7655cc55bc89437d85f1a7beddbf66f4}{n\+\_\+edge\+\_\+face}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Returns the number of faces that are adjacent to the given edge. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9996181afbb34b235ef0877471eb4fb3}{n\+\_\+vrtx\+\_\+edge} (size\+\_\+t iV) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9996181afbb34b235ef0877471eb4fb3}{n\+\_\+vrtx\+\_\+edge}} (size\+\_\+t iV) const
 \begin{DoxyCompactList}\small\item\em Returns the number of edges that are adjacent to the given vertex. \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{classStemMesh3D_1_1mesh__3Dv_a1a6eaa9ed8ebf41ada912b834f34e7c6}{n\+\_\+vrtx\+\_\+vrtx} (size\+\_\+t iV) const
+size\+\_\+t \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a1a6eaa9ed8ebf41ada912b834f34e7c6}{n\+\_\+vrtx\+\_\+vrtx}} (size\+\_\+t iV) const
 \begin{DoxyCompactList}\small\item\em Returns the number of vertices that are adjacent to the given vertex. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_a4c6ab11bf9ea2eac1709052d14f5c5b3}{ok\+\_\+regn\+\_\+face} (size\+\_\+t iR, size\+\_\+t ilF) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a4c6ab11bf9ea2eac1709052d14f5c5b3}{ok\+\_\+regn\+\_\+face}} (size\+\_\+t iR, size\+\_\+t ilF) const
 \begin{DoxyCompactList}\small\item\em Returns true if the global face corresponding to ilF is oriented correctly with respect to iR. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_af49e94aea3119432fadf9878cafba5c5}{ok\+\_\+face\+\_\+edge} (size\+\_\+t iF, size\+\_\+t ilE) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_af49e94aea3119432fadf9878cafba5c5}{ok\+\_\+face\+\_\+edge}} (size\+\_\+t iF, size\+\_\+t ilE) const
 \begin{DoxyCompactList}\small\item\em Returns true if the global edge corresponding to ilE is oriented correctly with respect to iF. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_a0864ac0c5e4a946ff620caf60ba2526e}{ok\+\_\+edge\+\_\+face} (size\+\_\+t iE, size\+\_\+t ilF) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a0864ac0c5e4a946ff620caf60ba2526e}{ok\+\_\+edge\+\_\+face}} (size\+\_\+t iE, size\+\_\+t ilF) const
 \begin{DoxyCompactList}\small\item\em Returns true if the global face corresponding to ilF is oriented correctly with respect to iE. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_a1bcbb55c1a867e69c088f13ce09f924f}{ok\+\_\+vrtx\+\_\+edge} (size\+\_\+t iV, size\+\_\+t ilE) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a1bcbb55c1a867e69c088f13ce09f924f}{ok\+\_\+vrtx\+\_\+edge}} (size\+\_\+t iV, size\+\_\+t ilE) const
 \begin{DoxyCompactList}\small\item\em Returns true if the global vertex iV is the first vertex on the global edge corresponding to ilE. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_aae9d1d4fa2441cb2ac8e6a05f3e5038b}{get\+\_\+regn\+\_\+regn} (size\+\_\+t iR, std\+::vector$<$ size\+\_\+t $>$ \&rlist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aae9d1d4fa2441cb2ac8e6a05f3e5038b}{get\+\_\+regn\+\_\+regn}} (size\+\_\+t iR, std\+::vector$<$ size\+\_\+t $>$ \&rlist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the region numbers of all regions adjacent to the given region. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a7388f79d9b639140efda17e33d169547}{get\+\_\+regn\+\_\+face} (size\+\_\+t iR, std\+::vector$<$ size\+\_\+t $>$ \&flist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a7388f79d9b639140efda17e33d169547}{get\+\_\+regn\+\_\+face}} (size\+\_\+t iR, std\+::vector$<$ size\+\_\+t $>$ \&flist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the face numbers of all faces adjacent to the given region. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9a60d9a26cb41402390b0acc5cbd17ec}{get\+\_\+regn\+\_\+edge} (size\+\_\+t iR, std\+::vector$<$ size\+\_\+t $>$ \&elist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9a60d9a26cb41402390b0acc5cbd17ec}{get\+\_\+regn\+\_\+edge}} (size\+\_\+t iR, std\+::vector$<$ size\+\_\+t $>$ \&elist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the edge numbers of all edges adjacent to the given region. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a063d41ebed2be9a826b8254f38a0c7d9}{get\+\_\+regn\+\_\+vrtx} (size\+\_\+t iR, std\+::vector$<$ size\+\_\+t $>$ \&vlist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a063d41ebed2be9a826b8254f38a0c7d9}{get\+\_\+regn\+\_\+vrtx}} (size\+\_\+t iR, std\+::vector$<$ size\+\_\+t $>$ \&vlist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the vertex numbers of all vertices adjacent to the given region. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a77ba74ed0585df27c1d16b26d2a4caa0}{get\+\_\+face\+\_\+regn} (size\+\_\+t iF, std\+::vector$<$ size\+\_\+t $>$ \&rlist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a77ba74ed0585df27c1d16b26d2a4caa0}{get\+\_\+face\+\_\+regn}} (size\+\_\+t iF, std\+::vector$<$ size\+\_\+t $>$ \&rlist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the region numbers of all regions adjacent to the given face. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_ab505aac621d73bedfb3f7145ee857054}{get\+\_\+face\+\_\+face} (size\+\_\+t iF, std\+::vector$<$ size\+\_\+t $>$ \&flist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ab505aac621d73bedfb3f7145ee857054}{get\+\_\+face\+\_\+face}} (size\+\_\+t iF, std\+::vector$<$ size\+\_\+t $>$ \&flist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the face numbers of all faces adjacent to the given face. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_ae1cecbb86f79a41a6e979e6afc32be3f}{get\+\_\+face\+\_\+edge} (size\+\_\+t iF, std\+::vector$<$ size\+\_\+t $>$ \&elist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ae1cecbb86f79a41a6e979e6afc32be3f}{get\+\_\+face\+\_\+edge}} (size\+\_\+t iF, std\+::vector$<$ size\+\_\+t $>$ \&elist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the edge numbers of all edges adjacent to the given face. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a4a48a14ef16c33c441fff9dafd26989b}{get\+\_\+face\+\_\+vrtx} (size\+\_\+t iF, std\+::vector$<$ size\+\_\+t $>$ \&vlist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a4a48a14ef16c33c441fff9dafd26989b}{get\+\_\+face\+\_\+vrtx}} (size\+\_\+t iF, std\+::vector$<$ size\+\_\+t $>$ \&vlist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the vertex numbers of all vertices adjacent to the given face. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_ace07d45b45e79fd62e37530b6e5501c8}{get\+\_\+edge\+\_\+regn} (size\+\_\+t iE, std\+::vector$<$ size\+\_\+t $>$ \&rlist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ace07d45b45e79fd62e37530b6e5501c8}{get\+\_\+edge\+\_\+regn}} (size\+\_\+t iE, std\+::vector$<$ size\+\_\+t $>$ \&rlist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the region numbers of all regions adjacent to the given edge. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_acfc3f5d372d82b08180391776e0e5b85}{get\+\_\+edge\+\_\+face} (size\+\_\+t iE, std\+::vector$<$ size\+\_\+t $>$ \&flist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_acfc3f5d372d82b08180391776e0e5b85}{get\+\_\+edge\+\_\+face}} (size\+\_\+t iE, std\+::vector$<$ size\+\_\+t $>$ \&flist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the face numbers of all faces adjacent to the given edge. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a06babc4d9918195a426c4800dec47979}{get\+\_\+edge\+\_\+edge} (size\+\_\+t iE, std\+::vector$<$ size\+\_\+t $>$ \&elist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a06babc4d9918195a426c4800dec47979}{get\+\_\+edge\+\_\+edge}} (size\+\_\+t iE, std\+::vector$<$ size\+\_\+t $>$ \&elist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the edge numbers of all edges adjacent to the given edge. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_ab815cec3c06264372a7e57e01e1db380}{get\+\_\+edge\+\_\+vrtx} (size\+\_\+t iE, std\+::vector$<$ size\+\_\+t $>$ \&vlist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ab815cec3c06264372a7e57e01e1db380}{get\+\_\+edge\+\_\+vrtx}} (size\+\_\+t iE, std\+::vector$<$ size\+\_\+t $>$ \&vlist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the vertex numbers of all vertices adjacent to the given edge. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a39a03b8697cda8c74485cfc118299eea}{get\+\_\+vrtx\+\_\+regn} (size\+\_\+t iV, std\+::vector$<$ size\+\_\+t $>$ \&rlist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a39a03b8697cda8c74485cfc118299eea}{get\+\_\+vrtx\+\_\+regn}} (size\+\_\+t iV, std\+::vector$<$ size\+\_\+t $>$ \&rlist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the region numbers of all regions adjacent to the given vertex. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a75a75c96ae9daf80877c60480020667a}{get\+\_\+vrtx\+\_\+face} (size\+\_\+t iV, std\+::vector$<$ size\+\_\+t $>$ \&flist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a75a75c96ae9daf80877c60480020667a}{get\+\_\+vrtx\+\_\+face}} (size\+\_\+t iV, std\+::vector$<$ size\+\_\+t $>$ \&flist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the face numbers of all faces adjacent to the given vertex. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_aa5e678364abe37ff90930374d706cf6f}{get\+\_\+vrtx\+\_\+edge} (size\+\_\+t iV, std\+::vector$<$ size\+\_\+t $>$ \&elist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aa5e678364abe37ff90930374d706cf6f}{get\+\_\+vrtx\+\_\+edge}} (size\+\_\+t iV, std\+::vector$<$ size\+\_\+t $>$ \&elist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the edge numbers of all edges adjacent to the given vertex. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_ae06da20fca1682cf92dd808f2880517f}{get\+\_\+vrtx\+\_\+vrtx} (size\+\_\+t iV, std\+::vector$<$ size\+\_\+t $>$ \&vlist) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ae06da20fca1682cf92dd808f2880517f}{get\+\_\+vrtx\+\_\+vrtx}} (size\+\_\+t iV, std\+::vector$<$ size\+\_\+t $>$ \&vlist) const
 \begin{DoxyCompactList}\small\item\em Populate the given vector with the vertex numbers of all vertices adjacent to the given vertex. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_aa6ba589981c83feda412066fd0580032}{is\+\_\+boundary\+\_\+vrtx} (size\+\_\+t iV) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aa6ba589981c83feda412066fd0580032}{is\+\_\+boundary\+\_\+vrtx}} (size\+\_\+t iV) const
 \begin{DoxyCompactList}\small\item\em Returns true if the vertex with the given number is on the boundary. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_ae947ad7de0dffd404d5641467bc5fee4}{is\+\_\+boundary\+\_\+edge} (size\+\_\+t iE) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ae947ad7de0dffd404d5641467bc5fee4}{is\+\_\+boundary\+\_\+edge}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Returns true if the edge with the given number is on the boundary. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_a3c02e5034f9c9e08ae91057fb165fbad}{is\+\_\+boundary\+\_\+face} (size\+\_\+t iF) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a3c02e5034f9c9e08ae91057fb165fbad}{is\+\_\+boundary\+\_\+face}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns true if the face with the given number is on the boundary. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_a3c3a3d3014b5e7d097facf759364f6a7}{is\+\_\+boundary\+\_\+regn} (size\+\_\+t iR) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a3c3a3d3014b5e7d097facf759364f6a7}{is\+\_\+boundary\+\_\+regn}} (size\+\_\+t iR) const
 \begin{DoxyCompactList}\small\item\em Returns true if the region with the given number is on the boundary. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_aa7dc342e2b241b485f5a5f8f722e660f}{is\+\_\+internal\+\_\+vrtx} (size\+\_\+t iV) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aa7dc342e2b241b485f5a5f8f722e660f}{is\+\_\+internal\+\_\+vrtx}} (size\+\_\+t iV) const
 \begin{DoxyCompactList}\small\item\em Returns true if the vertex with the given number is internal (not on the boundary) \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_ae4e6b4995cb4169fdb930a508d0b83de}{is\+\_\+internal\+\_\+edge} (size\+\_\+t iE) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ae4e6b4995cb4169fdb930a508d0b83de}{is\+\_\+internal\+\_\+edge}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Returns true if the edge with the given number is internal (not on the boundary) \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_a7ec74c519a65b29f52e243e4905b687d}{is\+\_\+internal\+\_\+face} (size\+\_\+t iF) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a7ec74c519a65b29f52e243e4905b687d}{is\+\_\+internal\+\_\+face}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns true if the face with the given number is internal (not on the boundary) \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_adaeed2f2444ec1db2b5bcc380eb38d15}{is\+\_\+internal\+\_\+regn} (size\+\_\+t iR) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_adaeed2f2444ec1db2b5bcc380eb38d15}{is\+\_\+internal\+\_\+regn}} (size\+\_\+t iR) const
 \begin{DoxyCompactList}\small\item\em Returns true if the region with the given number is internal (not on the boundary) \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_ae52d0ac704be160984e7ef7bfde79758}{get\+\_\+bnd\+\_\+pos\+\_\+vrtx} (size\+\_\+t iV) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ae52d0ac704be160984e7ef7bfde79758}{get\+\_\+bnd\+\_\+pos\+\_\+vrtx}} (size\+\_\+t iV) const
 \begin{DoxyCompactList}\small\item\em Returns the boundary vertex number of the given vertex. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_a6d613200a8b1f52a99536d7178984ab9}{get\+\_\+bnd\+\_\+pos\+\_\+edge} (size\+\_\+t iE) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a6d613200a8b1f52a99536d7178984ab9}{get\+\_\+bnd\+\_\+pos\+\_\+edge}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Returns the boundary edge number of the given edge. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_a862e96e989afcfb4f32f50f6e3096740}{get\+\_\+bnd\+\_\+pos\+\_\+face} (size\+\_\+t iF) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a862e96e989afcfb4f32f50f6e3096740}{get\+\_\+bnd\+\_\+pos\+\_\+face}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns the boundary face number of the given face. \end{DoxyCompactList}\item 
-bool \hyperlink{classStemMesh3D_1_1mesh__3Dv_a39cd8935fe64cca4d649ded1bdb073ea}{get\+\_\+bnd\+\_\+pos\+\_\+regn} (size\+\_\+t iR) const
+bool \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a39cd8935fe64cca4d649ded1bdb073ea}{get\+\_\+bnd\+\_\+pos\+\_\+regn}} (size\+\_\+t iR) const
 \begin{DoxyCompactList}\small\item\em Returns the boundary region number of the given region. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a558210d25a3eead99384f039a3419730}{get\+\_\+nor} (size\+\_\+t iF, size\+\_\+t s) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a558210d25a3eead99384f039a3419730}{get\+\_\+nor}} (size\+\_\+t iF, size\+\_\+t s) const
 \begin{DoxyCompactList}\small\item\em Returns the s-\/coordinate of the unit normal vector to the given face. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a5977abe45fc95cde4e0125c09df953b1}{get\+\_\+tng} (size\+\_\+t iE, size\+\_\+t s) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a5977abe45fc95cde4e0125c09df953b1}{get\+\_\+tng}} (size\+\_\+t iE, size\+\_\+t s) const
 \begin{DoxyCompactList}\small\item\em Returns the s-\/coodinate of a unit tangent vector to a given edge. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a1c784e3ea324d11e1ebd51574dcaabde}{get\+\_\+regn\+\_\+measure} (size\+\_\+t iR) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a1c784e3ea324d11e1ebd51574dcaabde}{get\+\_\+regn\+\_\+measure}} (size\+\_\+t iR) const
 \begin{DoxyCompactList}\small\item\em Returns the 3D measure (volume) of the region with the given number. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_acc10571f29f0b076c82571fc6ae33d76}{get\+\_\+regn\+\_\+diam} (size\+\_\+t iR) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_acc10571f29f0b076c82571fc6ae33d76}{get\+\_\+regn\+\_\+diam}} (size\+\_\+t iR) const
 \begin{DoxyCompactList}\small\item\em Returns the diameter of the region with the given number. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_ad44062545fdcb775a3cb83476750b1cd}{get\+\_\+face\+\_\+measure} (size\+\_\+t iF) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ad44062545fdcb775a3cb83476750b1cd}{get\+\_\+face\+\_\+measure}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns the 2D measure (area) of the face with the given number. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a8bb48254482f61dc1c6f552f0fa8d7c5}{get\+\_\+face\+\_\+diam} (size\+\_\+t iF) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a8bb48254482f61dc1c6f552f0fa8d7c5}{get\+\_\+face\+\_\+diam}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns the diameter face with the given number. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a003b3bf1a525c821bfb5bb5cf666d3fe}{get\+\_\+edge\+\_\+measure} (size\+\_\+t iF) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a003b3bf1a525c821bfb5bb5cf666d3fe}{get\+\_\+edge\+\_\+measure}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns the 1D measure (length) of the edge with the given number. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a4f4fbb68bc50a56fab817fa3ddaf33c2}{eval\+\_\+bbox} (const \hyperlink{classStemMesh3D_1_1mesh__3Dv_a550002922df52cb0711f6d0da2398d6b}{bbox\+\_\+dimension} \&ret) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a4f4fbb68bc50a56fab817fa3ddaf33c2}{eval\+\_\+bbox}} (const \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a550002922df52cb0711f6d0da2398d6b}{bbox\+\_\+dimension}} \&ret) const
 \begin{DoxyCompactList}\small\item\em Compute the bounding box of the domain and return the minimum/maximum value at the given boundary. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a11dee62c0eab3cb5e37f81807c98c964}{min\+\_\+coords} (size\+\_\+t s) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a11dee62c0eab3cb5e37f81807c98c964}{min\+\_\+coords}} (size\+\_\+t s) const
 \begin{DoxyCompactList}\small\item\em Returns the minimum value in the s-\/coordinate in the domain. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a3290b6cc7656e81ccb9ffa0da954755d}{max\+\_\+coords} (size\+\_\+t s) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a3290b6cc7656e81ccb9ffa0da954755d}{max\+\_\+coords}} (size\+\_\+t s) const
 \begin{DoxyCompactList}\small\item\em Returns the maximum value in the s-\/coordinate in the domain. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_abcf7917eb8a7c6598e258b55a618f3e5}{bbox} (double \&\hyperlink{classStemMesh3D_1_1mesh__3Dv_a3d36f7cff6f6006ab50287eb7ecfffe8}{xmin}, double \&\hyperlink{classStemMesh3D_1_1mesh__3Dv_aa3db572deb15fb732eee5c36ebf4a3ac}{ymin}, double \&\hyperlink{classStemMesh3D_1_1mesh__3Dv_a8a9c427682879aa08eff74e9a311af88}{zmin}, double \&\hyperlink{classStemMesh3D_1_1mesh__3Dv_a742de5662e4e8f9acb3db49e30464b2d}{xmax}, double \&\hyperlink{classStemMesh3D_1_1mesh__3Dv_aabed6131430e047c4f38f3db6fbafaf1}{ymax}, double \&\hyperlink{classStemMesh3D_1_1mesh__3Dv_add032c1260324e57f35537ebf59b5815}{zmax}) const
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_abcf7917eb8a7c6598e258b55a618f3e5}{bbox}} (double \&\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a3d36f7cff6f6006ab50287eb7ecfffe8}{xmin}}, double \&\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aa3db572deb15fb732eee5c36ebf4a3ac}{ymin}}, double \&\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a8a9c427682879aa08eff74e9a311af88}{zmin}}, double \&\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a742de5662e4e8f9acb3db49e30464b2d}{xmax}}, double \&\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aabed6131430e047c4f38f3db6fbafaf1}{ymax}}, double \&\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_add032c1260324e57f35537ebf59b5815}{zmax}}) const
 \begin{DoxyCompactList}\small\item\em Compute the bounding box of the domain and assign the boundaries to the given variables. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a3d36f7cff6f6006ab50287eb7ecfffe8}\label{classStemMesh3D_1_1mesh__3Dv_a3d36f7cff6f6006ab50287eb7ecfffe8}} 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a3d36f7cff6f6006ab50287eb7ecfffe8}{xmin} () const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a3d36f7cff6f6006ab50287eb7ecfffe8}{xmin}} () const
 \begin{DoxyCompactList}\small\item\em Returns the minimum x-\/value in the domain. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_aa3db572deb15fb732eee5c36ebf4a3ac}\label{classStemMesh3D_1_1mesh__3Dv_aa3db572deb15fb732eee5c36ebf4a3ac}} 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_aa3db572deb15fb732eee5c36ebf4a3ac}{ymin} () const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aa3db572deb15fb732eee5c36ebf4a3ac}{ymin}} () const
 \begin{DoxyCompactList}\small\item\em Returns the minimum y-\/value in the domain. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a8a9c427682879aa08eff74e9a311af88}\label{classStemMesh3D_1_1mesh__3Dv_a8a9c427682879aa08eff74e9a311af88}} 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a8a9c427682879aa08eff74e9a311af88}{zmin} () const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a8a9c427682879aa08eff74e9a311af88}{zmin}} () const
 \begin{DoxyCompactList}\small\item\em Returns the minimum z-\/value in the domain. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a742de5662e4e8f9acb3db49e30464b2d}\label{classStemMesh3D_1_1mesh__3Dv_a742de5662e4e8f9acb3db49e30464b2d}} 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a742de5662e4e8f9acb3db49e30464b2d}{xmax} () const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a742de5662e4e8f9acb3db49e30464b2d}{xmax}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum x-\/value in the domain. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_aabed6131430e047c4f38f3db6fbafaf1}\label{classStemMesh3D_1_1mesh__3Dv_aabed6131430e047c4f38f3db6fbafaf1}} 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_aabed6131430e047c4f38f3db6fbafaf1}{ymax} () const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aabed6131430e047c4f38f3db6fbafaf1}{ymax}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum y-\/value in the domain. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_add032c1260324e57f35537ebf59b5815}\label{classStemMesh3D_1_1mesh__3Dv_add032c1260324e57f35537ebf59b5815}} 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_add032c1260324e57f35537ebf59b5815}{zmax} () const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_add032c1260324e57f35537ebf59b5815}{zmax}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum z-\/value in the domain. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a29503e2b5f21281a0fd14ec774c1c5da}{coords\+\_\+V} (size\+\_\+t iV, size\+\_\+t k) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a29503e2b5f21281a0fd14ec774c1c5da}{coords\+\_\+V}} (size\+\_\+t iV, size\+\_\+t k) const
 \begin{DoxyCompactList}\small\item\em Returns the k-\/coordinate of vertex with the given number. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a10101184cb1bbc5e8b552dc53bb6a832}{coords\+\_\+E} (size\+\_\+t iE, size\+\_\+t k) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a10101184cb1bbc5e8b552dc53bb6a832}{coords\+\_\+E}} (size\+\_\+t iE, size\+\_\+t k) const
 \begin{DoxyCompactList}\small\item\em Returns the k-\/coordinate of the barycenter of the given edge. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_ac7c814c45152936451a8d5da7606fb76}{coords\+\_\+F} (size\+\_\+t iF, size\+\_\+t k) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ac7c814c45152936451a8d5da7606fb76}{coords\+\_\+F}} (size\+\_\+t iF, size\+\_\+t k) const
 \begin{DoxyCompactList}\small\item\em Returns the k-\/coordinate of the barycenter of the given face. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a93c53cc79d88193b65fa5206082720e2}{coords\+\_\+R} (size\+\_\+t iR, size\+\_\+t k) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a93c53cc79d88193b65fa5206082720e2}{coords\+\_\+R}} (size\+\_\+t iR, size\+\_\+t k) const
 \begin{DoxyCompactList}\small\item\em Returns the k-\/coordinate of the barycenter of the given region. \end{DoxyCompactList}\item 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a3a20194034b0d98ad894bcad47d57ffe}{ari\+\_\+coords\+\_\+F} (size\+\_\+t iF, size\+\_\+t k) const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a3a20194034b0d98ad894bcad47d57ffe}{ari\+\_\+coords\+\_\+F}} (size\+\_\+t iF, size\+\_\+t k) const
 \begin{DoxyCompactList}\small\item\em Returns k-\/coordinate of the arithmetic center of the face iF. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a1b5982bc8d9d594a86a4dbfa96535528}\label{classStemMesh3D_1_1mesh__3Dv_a1b5982bc8d9d594a86a4dbfa96535528}} 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a1b5982bc8d9d594a86a4dbfa96535528}{h\+\_\+max} () const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a1b5982bc8d9d594a86a4dbfa96535528}{h\+\_\+max}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum diameter over all regions in the mesh. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ab238bb015dbd3325d9dabcfe36e56498}\label{classStemMesh3D_1_1mesh__3Dv_ab238bb015dbd3325d9dabcfe36e56498}} 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_ab238bb015dbd3325d9dabcfe36e56498}{h\+\_\+min} () const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ab238bb015dbd3325d9dabcfe36e56498}{h\+\_\+min}} () const
 \begin{DoxyCompactList}\small\item\em Returns the minimum edge length over all edges in the mesh. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a3722bcc23212e0f22d11b6c32745c3c3}\label{classStemMesh3D_1_1mesh__3Dv_a3722bcc23212e0f22d11b6c32745c3c3}} 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_a3722bcc23212e0f22d11b6c32745c3c3}{h\+\_\+vol} () const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a3722bcc23212e0f22d11b6c32745c3c3}{h\+\_\+vol}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum cube-\/root of the volumes of all regions in the mesh. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ae2fa08ebf584d6d0d1fdc1ccb6be603c}\label{classStemMesh3D_1_1mesh__3Dv_ae2fa08ebf584d6d0d1fdc1ccb6be603c}} 
-double \hyperlink{classStemMesh3D_1_1mesh__3Dv_ae2fa08ebf584d6d0d1fdc1ccb6be603c}{h\+\_\+avg} () const
+double \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ae2fa08ebf584d6d0d1fdc1ccb6be603c}{h\+\_\+avg}} () const
 \begin{DoxyCompactList}\small\item\em Returns the cube-\/root of the average volume of all regions in the mesh. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_ac40eb6e8236253c78ce71c0fd876d539}{set\+\_\+mesh\+\_\+name} (std\+::string \+\_\+mesh\+\_\+name)
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_ac40eb6e8236253c78ce71c0fd876d539}{set\+\_\+mesh\+\_\+name}} (std\+::string \+\_\+mesh\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Sets the name of the mesh to the given string. \end{DoxyCompactList}\item 
-std\+::string \hyperlink{classStemMesh3D_1_1mesh__3Dv_a64769d0a6781ff75ea2a1e603886d80a}{get\+\_\+mesh\+\_\+name} (bool tex\+\_\+flag=false) const
+std\+::string \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a64769d0a6781ff75ea2a1e603886d80a}{get\+\_\+mesh\+\_\+name}} (bool tex\+\_\+flag=false) const
 \begin{DoxyCompactList}\small\item\em Returns the name of the mesh. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a4bc6f51b9675c7dca59ab8ccfc256a44}{set\+\_\+fV} (size\+\_\+t iV, \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type} new\+\_\+fV)
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a4bc6f51b9675c7dca59ab8ccfc256a44}{set\+\_\+fV}} (size\+\_\+t iV, \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}} new\+\_\+fV)
 \begin{DoxyCompactList}\small\item\em Set the external flag for the given vertex. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a6b4fa28dbbe68fc44b75e3cdb4ffe7a2}{set\+\_\+fE} (size\+\_\+t iE, \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type} new\+\_\+fE)
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a6b4fa28dbbe68fc44b75e3cdb4ffe7a2}{set\+\_\+fE}} (size\+\_\+t iE, \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}} new\+\_\+fE)
 \begin{DoxyCompactList}\small\item\em Set the external flag for the given edge. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_aa5c3c8d360f8107e370c935222c6849d}{set\+\_\+fF} (size\+\_\+t iF, \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type} new\+\_\+fF)
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aa5c3c8d360f8107e370c935222c6849d}{set\+\_\+fF}} (size\+\_\+t iF, \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}} new\+\_\+fF)
 \begin{DoxyCompactList}\small\item\em Set the external flag for the given face. \end{DoxyCompactList}\item 
-void \hyperlink{classStemMesh3D_1_1mesh__3Dv_a0ac5f5f5f81fa2afcbe8a36990d9df21}{set\+\_\+fR} (size\+\_\+t iR, \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type} new\+\_\+fR)
+void \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a0ac5f5f5f81fa2afcbe8a36990d9df21}{set\+\_\+fR}} (size\+\_\+t iR, \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}} new\+\_\+fR)
 \begin{DoxyCompactList}\small\item\em Set the external flag for the given vertex. \end{DoxyCompactList}\item 
-\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type} \hyperlink{classStemMesh3D_1_1mesh__3Dv_a6836854df501ef92c61508ffe72cba53}{get\+\_\+fV} (size\+\_\+t iV) const
+\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}} \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a6836854df501ef92c61508ffe72cba53}{get\+\_\+fV}} (size\+\_\+t iV) const
 \begin{DoxyCompactList}\small\item\em Returns the external flag of the given vertex. \end{DoxyCompactList}\item 
-\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type} \hyperlink{classStemMesh3D_1_1mesh__3Dv_af9f9b082c0849c0d4b2f52f20a5f491a}{get\+\_\+fE} (size\+\_\+t iE) const
+\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}} \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_af9f9b082c0849c0d4b2f52f20a5f491a}{get\+\_\+fE}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Returns the external flag of the given edge. \end{DoxyCompactList}\item 
-\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type} \hyperlink{classStemMesh3D_1_1mesh__3Dv_a18b520ee0f337abad9f7f1c07ddb423d}{get\+\_\+fF} (size\+\_\+t iF) const
+\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}} \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a18b520ee0f337abad9f7f1c07ddb423d}{get\+\_\+fF}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns the external flag of the given face. \end{DoxyCompactList}\item 
-\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type} \hyperlink{classStemMesh3D_1_1mesh__3Dv_a3274375ccd0ac08edeadd853fef5f800}{get\+\_\+fR} (size\+\_\+t iR) const
+\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}} \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a3274375ccd0ac08edeadd853fef5f800}{get\+\_\+fR}} (size\+\_\+t iR) const
 \begin{DoxyCompactList}\small\item\em Returns the external flag of the given region. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Attributes}
+\doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a6d5a6a1b8c9f941d2ff32b20ee718ed7}\label{classStemMesh3D_1_1mesh__3Dv_a6d5a6a1b8c9f941d2ff32b20ee718ed7}} 
-static constexpr \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type} \hyperlink{classStemMesh3D_1_1mesh__3Dv_a6d5a6a1b8c9f941d2ff32b20ee718ed7}{U\+N\+S\+E\+T\+\_\+\+F\+L\+AG} = -\/999
+static constexpr \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}} \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a6d5a6a1b8c9f941d2ff32b20ee718ed7}{U\+N\+S\+E\+T\+\_\+\+F\+L\+AG}} = -\/999
 \begin{DoxyCompactList}\small\item\em Default flag for elements with no associated flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Friends}
+\doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_aafdd4f7e6c95e7b1e521233532cfe570}\label{classStemMesh3D_1_1mesh__3Dv_aafdd4f7e6c95e7b1e521233532cfe570}} 
@@ -249,16 +249,16 @@ class {\bfseries mesh3\+Dv\+\_\+builder}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 The interface for working with generic 3D meshes. 
 
 The 3D mesh class encapsulates the data structures required to store a 3D mesh and provides an interface for accessing data about the mesh that is necessary for implementing numerical schemes. 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a3a20194034b0d98ad894bcad47d57ffe}\label{classStemMesh3D_1_1mesh__3Dv_a3a20194034b0d98ad894bcad47d57ffe}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!ari\+\_\+coords\+\_\+F@{ari\+\_\+coords\+\_\+F}}
-\index{ari\+\_\+coords\+\_\+F@{ari\+\_\+coords\+\_\+F}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{ari\+\_\+coords\+\_\+\+F()}{ari\_coords\_F()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!ari\_coords\_F@{ari\_coords\_F}}
+\index{ari\_coords\_F@{ari\_coords\_F}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{ari\_coords\_F()}{ari\_coords\_F()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::ari\+\_\+coords\+\_\+F (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{size\+\_\+t}]{k }\end{DoxyParamCaption}) const}
 
 
@@ -273,9 +273,9 @@ The arithmetic center is the average of the edge midpoints. It is not necessaril
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_abcf7917eb8a7c6598e258b55a618f3e5}\label{classStemMesh3D_1_1mesh__3Dv_abcf7917eb8a7c6598e258b55a618f3e5}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!bbox@{bbox}}
-\index{bbox@{bbox}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{bbox()}{bbox()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!bbox@{bbox}}
+\index{bbox@{bbox}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{bbox()}{bbox()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::bbox (\begin{DoxyParamCaption}\item[{double \&}]{xmin,  }\item[{double \&}]{ymin,  }\item[{double \&}]{zmin,  }\item[{double \&}]{xmax,  }\item[{double \&}]{ymax,  }\item[{double \&}]{zmax }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -298,9 +298,9 @@ Compute the bounding box of the domain and assign the boundaries to the given va
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a10101184cb1bbc5e8b552dc53bb6a832}\label{classStemMesh3D_1_1mesh__3Dv_a10101184cb1bbc5e8b552dc53bb6a832}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!coords\+\_\+E@{coords\+\_\+E}}
-\index{coords\+\_\+E@{coords\+\_\+E}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{coords\+\_\+\+E()}{coords\_E()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!coords\_E@{coords\_E}}
+\index{coords\_E@{coords\_E}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{coords\_E()}{coords\_E()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::coords\+\_\+E (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{size\+\_\+t}]{k }\end{DoxyParamCaption}) const}
 
 
@@ -315,9 +315,9 @@ Note that s=0,1,2 corresponds to the x,y,z coordinates respectively.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ac7c814c45152936451a8d5da7606fb76}\label{classStemMesh3D_1_1mesh__3Dv_ac7c814c45152936451a8d5da7606fb76}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!coords\+\_\+F@{coords\+\_\+F}}
-\index{coords\+\_\+F@{coords\+\_\+F}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{coords\+\_\+\+F()}{coords\_F()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!coords\_F@{coords\_F}}
+\index{coords\_F@{coords\_F}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{coords\_F()}{coords\_F()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::coords\+\_\+F (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{size\+\_\+t}]{k }\end{DoxyParamCaption}) const}
 
 
@@ -332,9 +332,9 @@ Note that s=0,1,2 corresponds to the x,y,z coordinates respectively.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a93c53cc79d88193b65fa5206082720e2}\label{classStemMesh3D_1_1mesh__3Dv_a93c53cc79d88193b65fa5206082720e2}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!coords\+\_\+R@{coords\+\_\+R}}
-\index{coords\+\_\+R@{coords\+\_\+R}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{coords\+\_\+\+R()}{coords\_R()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!coords\_R@{coords\_R}}
+\index{coords\_R@{coords\_R}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{coords\_R()}{coords\_R()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::coords\+\_\+R (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR,  }\item[{size\+\_\+t}]{k }\end{DoxyParamCaption}) const}
 
 
@@ -349,9 +349,9 @@ Note that s=0,1,2 corresponds to the x,y,z coordinates respectively.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a29503e2b5f21281a0fd14ec774c1c5da}\label{classStemMesh3D_1_1mesh__3Dv_a29503e2b5f21281a0fd14ec774c1c5da}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!coords\+\_\+V@{coords\+\_\+V}}
-\index{coords\+\_\+V@{coords\+\_\+V}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{coords\+\_\+\+V()}{coords\_V()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!coords\_V@{coords\_V}}
+\index{coords\_V@{coords\_V}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{coords\_V()}{coords\_V()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::coords\+\_\+V (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV,  }\item[{size\+\_\+t}]{k }\end{DoxyParamCaption}) const}
 
 
@@ -366,9 +366,9 @@ Note that s=0,1,2 corresponds to the x,y,z coordinates respectively.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_aef749900ff2a72c8dbb21b28f3c21556}\label{classStemMesh3D_1_1mesh__3Dv_aef749900ff2a72c8dbb21b28f3c21556}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!edge\+\_\+face@{edge\+\_\+face}}
-\index{edge\+\_\+face@{edge\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{edge\+\_\+face()}{edge\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!edge\_face@{edge\_face}}
+\index{edge\_face@{edge\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{edge\_face()}{edge\_face()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::edge\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{size\+\_\+t}]{ilF }\end{DoxyParamCaption}) const}
 
 
@@ -383,9 +383,9 @@ Returns the global face number of the (ilF)\textquotesingle{}th face bordering t
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a7024d4e9bd97ff05c7926c9b4a97be62}\label{classStemMesh3D_1_1mesh__3Dv_a7024d4e9bd97ff05c7926c9b4a97be62}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!edge\+\_\+vrtx@{edge\+\_\+vrtx}}
-\index{edge\+\_\+vrtx@{edge\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{edge\+\_\+vrtx()}{edge\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!edge\_vrtx@{edge\_vrtx}}
+\index{edge\_vrtx@{edge\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{edge\_vrtx()}{edge\_vrtx()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::edge\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{size\+\_\+t}]{ilV }\end{DoxyParamCaption}) const}
 
 
@@ -400,10 +400,10 @@ Returns the global vertex number of the (ilV)\textquotesingle{}th vertex of the 
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a4f4fbb68bc50a56fab817fa3ddaf33c2}\label{classStemMesh3D_1_1mesh__3Dv_a4f4fbb68bc50a56fab817fa3ddaf33c2}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!eval\+\_\+bbox@{eval\+\_\+bbox}}
-\index{eval\+\_\+bbox@{eval\+\_\+bbox}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{eval\+\_\+bbox()}{eval\_bbox()}}
-{\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::eval\+\_\+bbox (\begin{DoxyParamCaption}\item[{const \hyperlink{classStemMesh3D_1_1mesh__3Dv_a550002922df52cb0711f6d0da2398d6b}{bbox\+\_\+dimension} \&}]{ret }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!eval\_bbox@{eval\_bbox}}
+\index{eval\_bbox@{eval\_bbox}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{eval\_bbox()}{eval\_bbox()}}
+{\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::eval\+\_\+bbox (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a550002922df52cb0711f6d0da2398d6b}{bbox\+\_\+dimension}} \&}]{ret }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -415,9 +415,9 @@ Compute the bounding box of the domain and return the minimum/maximum value at t
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a70f328491a6660c05914c9226e297ecc}\label{classStemMesh3D_1_1mesh__3Dv_a70f328491a6660c05914c9226e297ecc}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!face\+\_\+edge@{face\+\_\+edge}}
-\index{face\+\_\+edge@{face\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{face\+\_\+edge()}{face\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!face\_edge@{face\_edge}}
+\index{face\_edge@{face\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{face\_edge()}{face\_edge()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::face\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{size\+\_\+t}]{ilE }\end{DoxyParamCaption}) const}
 
 
@@ -432,9 +432,9 @@ Returns the global edge number of the (ilE)\textquotesingle{}th local edge of th
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_afd4c48e4133adad4c31e6fe8bfb96c2a}\label{classStemMesh3D_1_1mesh__3Dv_afd4c48e4133adad4c31e6fe8bfb96c2a}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!face\+\_\+regn@{face\+\_\+regn}}
-\index{face\+\_\+regn@{face\+\_\+regn}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{face\+\_\+regn()}{face\_regn()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!face\_regn@{face\_regn}}
+\index{face\_regn@{face\_regn}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{face\_regn()}{face\_regn()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::face\+\_\+regn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{size\+\_\+t}]{ilR }\end{DoxyParamCaption}) const}
 
 
@@ -449,9 +449,9 @@ Returns the global region number of the (ilR)\textquotesingle{}th region borderi
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a329a4b4f0ae621e3a700c61d52f82fdd}\label{classStemMesh3D_1_1mesh__3Dv_a329a4b4f0ae621e3a700c61d52f82fdd}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+bnd\+\_\+edge@{get\+\_\+bnd\+\_\+edge}}
-\index{get\+\_\+bnd\+\_\+edge@{get\+\_\+bnd\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+bnd\+\_\+edge()}{get\_bnd\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_bnd\_edge@{get\_bnd\_edge}}
+\index{get\_bnd\_edge@{get\_bnd\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_bnd\_edge()}{get\_bnd\_edge()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+bnd\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ilE }\end{DoxyParamCaption}) const}
 
 
@@ -460,13 +460,13 @@ Returns the global edge number of the (ilE)\textquotesingle{}th boundary edge.
 
 
 \begin{DoxyParams}{Parameters}
-{\em ilE} & The number of the boundary edge (0 $<$ ilE $<$ \hyperlink{classStemMesh3D_1_1mesh__3Dv_aa9793810147053ffdfcd9cc9eeaec160}{n\+\_\+bedge()}) \\
+{\em ilE} & The number of the boundary edge (0 $<$ ilE $<$ \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_aa9793810147053ffdfcd9cc9eeaec160}{n\+\_\+bedge()}}) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a990498932160b3031badb906be06fb84}\label{classStemMesh3D_1_1mesh__3Dv_a990498932160b3031badb906be06fb84}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+bnd\+\_\+face@{get\+\_\+bnd\+\_\+face}}
-\index{get\+\_\+bnd\+\_\+face@{get\+\_\+bnd\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+bnd\+\_\+face()}{get\_bnd\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_bnd\_face@{get\_bnd\_face}}
+\index{get\_bnd\_face@{get\_bnd\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_bnd\_face()}{get\_bnd\_face()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+bnd\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ilF }\end{DoxyParamCaption}) const}
 
 
@@ -475,13 +475,13 @@ Returns the global face number of the (ilF)\textquotesingle{}th boundary face.
 
 
 \begin{DoxyParams}{Parameters}
-{\em ilF} & The number of the boundary face (0 $<$ ilF $<$ \hyperlink{classStemMesh3D_1_1mesh__3Dv_a394bc87d5f29715e6faae1e2d21ceff7}{n\+\_\+bface()}) \\
+{\em ilF} & The number of the boundary face (0 $<$ ilF $<$ \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a394bc87d5f29715e6faae1e2d21ceff7}{n\+\_\+bface()}}) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a6d613200a8b1f52a99536d7178984ab9}\label{classStemMesh3D_1_1mesh__3Dv_a6d613200a8b1f52a99536d7178984ab9}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+bnd\+\_\+pos\+\_\+edge@{get\+\_\+bnd\+\_\+pos\+\_\+edge}}
-\index{get\+\_\+bnd\+\_\+pos\+\_\+edge@{get\+\_\+bnd\+\_\+pos\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+bnd\+\_\+pos\+\_\+edge()}{get\_bnd\_pos\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_bnd\_pos\_edge@{get\_bnd\_pos\_edge}}
+\index{get\_bnd\_pos\_edge@{get\_bnd\_pos\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_bnd\_pos\_edge()}{get\_bnd\_pos\_edge()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+bnd\+\_\+pos\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const}
 
 
@@ -494,9 +494,9 @@ Returns the boundary edge number of the given edge.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a862e96e989afcfb4f32f50f6e3096740}\label{classStemMesh3D_1_1mesh__3Dv_a862e96e989afcfb4f32f50f6e3096740}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+bnd\+\_\+pos\+\_\+face@{get\+\_\+bnd\+\_\+pos\+\_\+face}}
-\index{get\+\_\+bnd\+\_\+pos\+\_\+face@{get\+\_\+bnd\+\_\+pos\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+bnd\+\_\+pos\+\_\+face()}{get\_bnd\_pos\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_bnd\_pos\_face@{get\_bnd\_pos\_face}}
+\index{get\_bnd\_pos\_face@{get\_bnd\_pos\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_bnd\_pos\_face()}{get\_bnd\_pos\_face()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+bnd\+\_\+pos\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const}
 
 
@@ -509,9 +509,9 @@ Returns the boundary face number of the given face.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a39cd8935fe64cca4d649ded1bdb073ea}\label{classStemMesh3D_1_1mesh__3Dv_a39cd8935fe64cca4d649ded1bdb073ea}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+bnd\+\_\+pos\+\_\+regn@{get\+\_\+bnd\+\_\+pos\+\_\+regn}}
-\index{get\+\_\+bnd\+\_\+pos\+\_\+regn@{get\+\_\+bnd\+\_\+pos\+\_\+regn}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+bnd\+\_\+pos\+\_\+regn()}{get\_bnd\_pos\_regn()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_bnd\_pos\_regn@{get\_bnd\_pos\_regn}}
+\index{get\_bnd\_pos\_regn@{get\_bnd\_pos\_regn}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_bnd\_pos\_regn()}{get\_bnd\_pos\_regn()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+bnd\+\_\+pos\+\_\+regn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR }\end{DoxyParamCaption}) const}
 
 
@@ -524,9 +524,9 @@ Returns the boundary region number of the given region.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ae52d0ac704be160984e7ef7bfde79758}\label{classStemMesh3D_1_1mesh__3Dv_ae52d0ac704be160984e7ef7bfde79758}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+bnd\+\_\+pos\+\_\+vrtx@{get\+\_\+bnd\+\_\+pos\+\_\+vrtx}}
-\index{get\+\_\+bnd\+\_\+pos\+\_\+vrtx@{get\+\_\+bnd\+\_\+pos\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+bnd\+\_\+pos\+\_\+vrtx()}{get\_bnd\_pos\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_bnd\_pos\_vrtx@{get\_bnd\_pos\_vrtx}}
+\index{get\_bnd\_pos\_vrtx@{get\_bnd\_pos\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_bnd\_pos\_vrtx()}{get\_bnd\_pos\_vrtx()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+bnd\+\_\+pos\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const}
 
 
@@ -539,9 +539,9 @@ Returns the boundary vertex number of the given vertex.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a91cb00af3bac18dbde6320e4178111ed}\label{classStemMesh3D_1_1mesh__3Dv_a91cb00af3bac18dbde6320e4178111ed}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+bnd\+\_\+regn@{get\+\_\+bnd\+\_\+regn}}
-\index{get\+\_\+bnd\+\_\+regn@{get\+\_\+bnd\+\_\+regn}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+bnd\+\_\+regn()}{get\_bnd\_regn()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_bnd\_regn@{get\_bnd\_regn}}
+\index{get\_bnd\_regn@{get\_bnd\_regn}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_bnd\_regn()}{get\_bnd\_regn()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+bnd\+\_\+regn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ilR }\end{DoxyParamCaption}) const}
 
 
@@ -550,13 +550,13 @@ Returns the global region number of the (ilR)\textquotesingle{}th boundary regio
 
 
 \begin{DoxyParams}{Parameters}
-{\em ilR} & The number of the boundary region (0 $<$ ilR $<$ \hyperlink{classStemMesh3D_1_1mesh__3Dv_a7c885048a027fc84eb6d2b7e2590c5e2}{n\+\_\+bregion()}) \\
+{\em ilR} & The number of the boundary region (0 $<$ ilR $<$ \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a7c885048a027fc84eb6d2b7e2590c5e2}{n\+\_\+bregion()}}) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a397ec757e2e38525d7a9721112f6a08a}\label{classStemMesh3D_1_1mesh__3Dv_a397ec757e2e38525d7a9721112f6a08a}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+bnd\+\_\+vrtx@{get\+\_\+bnd\+\_\+vrtx}}
-\index{get\+\_\+bnd\+\_\+vrtx@{get\+\_\+bnd\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+bnd\+\_\+vrtx()}{get\_bnd\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_bnd\_vrtx@{get\_bnd\_vrtx}}
+\index{get\_bnd\_vrtx@{get\_bnd\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_bnd\_vrtx()}{get\_bnd\_vrtx()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+bnd\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ilV }\end{DoxyParamCaption}) const}
 
 
@@ -565,13 +565,13 @@ Returns the global vertex number of the (ilV)\textquotesingle{}th boundary verte
 
 
 \begin{DoxyParams}{Parameters}
-{\em ilV} & The number of the boundary vertex (0 $<$ ilV $<$ \hyperlink{classStemMesh3D_1_1mesh__3Dv_a616550f2a459b5c239d2d205a408b484}{n\+\_\+bvertex()}) \\
+{\em ilV} & The number of the boundary vertex (0 $<$ ilV $<$ \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a616550f2a459b5c239d2d205a408b484}{n\+\_\+bvertex()}}) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a06babc4d9918195a426c4800dec47979}\label{classStemMesh3D_1_1mesh__3Dv_a06babc4d9918195a426c4800dec47979}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+edge\+\_\+edge@{get\+\_\+edge\+\_\+edge}}
-\index{get\+\_\+edge\+\_\+edge@{get\+\_\+edge\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+edge\+\_\+edge()}{get\_edge\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_edge\_edge@{get\_edge\_edge}}
+\index{get\_edge\_edge@{get\_edge\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_edge\_edge()}{get\_edge\_edge()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+edge\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{elist }\end{DoxyParamCaption}) const}
 
 
@@ -586,9 +586,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_acfc3f5d372d82b08180391776e0e5b85}\label{classStemMesh3D_1_1mesh__3Dv_acfc3f5d372d82b08180391776e0e5b85}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+edge\+\_\+face@{get\+\_\+edge\+\_\+face}}
-\index{get\+\_\+edge\+\_\+face@{get\+\_\+edge\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+edge\+\_\+face()}{get\_edge\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_edge\_face@{get\_edge\_face}}
+\index{get\_edge\_face@{get\_edge\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_edge\_face()}{get\_edge\_face()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+edge\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{flist }\end{DoxyParamCaption}) const}
 
 
@@ -603,9 +603,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a003b3bf1a525c821bfb5bb5cf666d3fe}\label{classStemMesh3D_1_1mesh__3Dv_a003b3bf1a525c821bfb5bb5cf666d3fe}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+edge\+\_\+measure@{get\+\_\+edge\+\_\+measure}}
-\index{get\+\_\+edge\+\_\+measure@{get\+\_\+edge\+\_\+measure}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+edge\+\_\+measure()}{get\_edge\_measure()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_edge\_measure@{get\_edge\_measure}}
+\index{get\_edge\_measure@{get\_edge\_measure}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_edge\_measure()}{get\_edge\_measure()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+edge\+\_\+measure (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const}
 
 
@@ -618,9 +618,9 @@ Returns the 1D measure (length) of the edge with the given number.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ace07d45b45e79fd62e37530b6e5501c8}\label{classStemMesh3D_1_1mesh__3Dv_ace07d45b45e79fd62e37530b6e5501c8}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+edge\+\_\+regn@{get\+\_\+edge\+\_\+regn}}
-\index{get\+\_\+edge\+\_\+regn@{get\+\_\+edge\+\_\+regn}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+edge\+\_\+regn()}{get\_edge\_regn()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_edge\_regn@{get\_edge\_regn}}
+\index{get\_edge\_regn@{get\_edge\_regn}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_edge\_regn()}{get\_edge\_regn()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+edge\+\_\+regn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{rlist }\end{DoxyParamCaption}) const}
 
 
@@ -635,9 +635,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ab815cec3c06264372a7e57e01e1db380}\label{classStemMesh3D_1_1mesh__3Dv_ab815cec3c06264372a7e57e01e1db380}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+edge\+\_\+vrtx@{get\+\_\+edge\+\_\+vrtx}}
-\index{get\+\_\+edge\+\_\+vrtx@{get\+\_\+edge\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+edge\+\_\+vrtx()}{get\_edge\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_edge\_vrtx@{get\_edge\_vrtx}}
+\index{get\_edge\_vrtx@{get\_edge\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_edge\_vrtx()}{get\_edge\_vrtx()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+edge\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{vlist }\end{DoxyParamCaption}) const}
 
 
@@ -652,9 +652,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a8bb48254482f61dc1c6f552f0fa8d7c5}\label{classStemMesh3D_1_1mesh__3Dv_a8bb48254482f61dc1c6f552f0fa8d7c5}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+face\+\_\+diam@{get\+\_\+face\+\_\+diam}}
-\index{get\+\_\+face\+\_\+diam@{get\+\_\+face\+\_\+diam}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+face\+\_\+diam()}{get\_face\_diam()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_face\_diam@{get\_face\_diam}}
+\index{get\_face\_diam@{get\_face\_diam}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_face\_diam()}{get\_face\_diam()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+face\+\_\+diam (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const}
 
 
@@ -667,9 +667,9 @@ Returns the diameter face with the given number.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ae1cecbb86f79a41a6e979e6afc32be3f}\label{classStemMesh3D_1_1mesh__3Dv_ae1cecbb86f79a41a6e979e6afc32be3f}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+face\+\_\+edge@{get\+\_\+face\+\_\+edge}}
-\index{get\+\_\+face\+\_\+edge@{get\+\_\+face\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+face\+\_\+edge()}{get\_face\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_face\_edge@{get\_face\_edge}}
+\index{get\_face\_edge@{get\_face\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_face\_edge()}{get\_face\_edge()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+face\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{elist }\end{DoxyParamCaption}) const}
 
 
@@ -684,9 +684,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ab505aac621d73bedfb3f7145ee857054}\label{classStemMesh3D_1_1mesh__3Dv_ab505aac621d73bedfb3f7145ee857054}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+face\+\_\+face@{get\+\_\+face\+\_\+face}}
-\index{get\+\_\+face\+\_\+face@{get\+\_\+face\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+face\+\_\+face()}{get\_face\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_face\_face@{get\_face\_face}}
+\index{get\_face\_face@{get\_face\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_face\_face()}{get\_face\_face()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+face\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{flist }\end{DoxyParamCaption}) const}
 
 
@@ -701,9 +701,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ad44062545fdcb775a3cb83476750b1cd}\label{classStemMesh3D_1_1mesh__3Dv_ad44062545fdcb775a3cb83476750b1cd}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+face\+\_\+measure@{get\+\_\+face\+\_\+measure}}
-\index{get\+\_\+face\+\_\+measure@{get\+\_\+face\+\_\+measure}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+face\+\_\+measure()}{get\_face\_measure()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_face\_measure@{get\_face\_measure}}
+\index{get\_face\_measure@{get\_face\_measure}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_face\_measure()}{get\_face\_measure()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+face\+\_\+measure (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const}
 
 
@@ -716,9 +716,9 @@ Returns the 2D measure (area) of the face with the given number.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a77ba74ed0585df27c1d16b26d2a4caa0}\label{classStemMesh3D_1_1mesh__3Dv_a77ba74ed0585df27c1d16b26d2a4caa0}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+face\+\_\+regn@{get\+\_\+face\+\_\+regn}}
-\index{get\+\_\+face\+\_\+regn@{get\+\_\+face\+\_\+regn}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+face\+\_\+regn()}{get\_face\_regn()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_face\_regn@{get\_face\_regn}}
+\index{get\_face\_regn@{get\_face\_regn}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_face\_regn()}{get\_face\_regn()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+face\+\_\+regn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{rlist }\end{DoxyParamCaption}) const}
 
 
@@ -733,9 +733,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a4a48a14ef16c33c441fff9dafd26989b}\label{classStemMesh3D_1_1mesh__3Dv_a4a48a14ef16c33c441fff9dafd26989b}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+face\+\_\+vrtx@{get\+\_\+face\+\_\+vrtx}}
-\index{get\+\_\+face\+\_\+vrtx@{get\+\_\+face\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+face\+\_\+vrtx()}{get\_face\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_face\_vrtx@{get\_face\_vrtx}}
+\index{get\_face\_vrtx@{get\_face\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_face\_vrtx()}{get\_face\_vrtx()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+face\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{vlist }\end{DoxyParamCaption}) const}
 
 
@@ -750,10 +750,10 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_af9f9b082c0849c0d4b2f52f20a5f491a}\label{classStemMesh3D_1_1mesh__3Dv_af9f9b082c0849c0d4b2f52f20a5f491a}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+fE@{get\+\_\+fE}}
-\index{get\+\_\+fE@{get\+\_\+fE}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+f\+E()}{get\_fE()}}
-{\footnotesize\ttfamily \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{mesh\+\_\+3\+Dv\+::flag\+\_\+type} Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+fE (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_fE@{get\_fE}}
+\index{get\_fE@{get\_fE}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_fE()}{get\_fE()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{mesh\+\_\+3\+Dv\+::flag\+\_\+type}} Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+fE (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const}
 
 
 
@@ -765,10 +765,10 @@ Each edge may have a flag associated with it for external use. Set these as your
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a18b520ee0f337abad9f7f1c07ddb423d}\label{classStemMesh3D_1_1mesh__3Dv_a18b520ee0f337abad9f7f1c07ddb423d}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+fF@{get\+\_\+fF}}
-\index{get\+\_\+fF@{get\+\_\+fF}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+f\+F()}{get\_fF()}}
-{\footnotesize\ttfamily \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{mesh\+\_\+3\+Dv\+::flag\+\_\+type} Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+fF (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_fF@{get\_fF}}
+\index{get\_fF@{get\_fF}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_fF()}{get\_fF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{mesh\+\_\+3\+Dv\+::flag\+\_\+type}} Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+fF (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const}
 
 
 
@@ -780,10 +780,10 @@ Each face may have a flag associated with it for external use. Set these as your
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a3274375ccd0ac08edeadd853fef5f800}\label{classStemMesh3D_1_1mesh__3Dv_a3274375ccd0ac08edeadd853fef5f800}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+fR@{get\+\_\+fR}}
-\index{get\+\_\+fR@{get\+\_\+fR}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+f\+R()}{get\_fR()}}
-{\footnotesize\ttfamily \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{mesh\+\_\+3\+Dv\+::flag\+\_\+type} Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+fR (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR }\end{DoxyParamCaption}) const}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_fR@{get\_fR}}
+\index{get\_fR@{get\_fR}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_fR()}{get\_fR()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{mesh\+\_\+3\+Dv\+::flag\+\_\+type}} Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+fR (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR }\end{DoxyParamCaption}) const}
 
 
 
@@ -795,10 +795,10 @@ Each region may have a flag associated with it for external use. Set these as yo
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a6836854df501ef92c61508ffe72cba53}\label{classStemMesh3D_1_1mesh__3Dv_a6836854df501ef92c61508ffe72cba53}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+fV@{get\+\_\+fV}}
-\index{get\+\_\+fV@{get\+\_\+fV}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+f\+V()}{get\_fV()}}
-{\footnotesize\ttfamily \hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{mesh\+\_\+3\+Dv\+::flag\+\_\+type} Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+fV (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_fV@{get\_fV}}
+\index{get\_fV@{get\_fV}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_fV()}{get\_fV()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{mesh\+\_\+3\+Dv\+::flag\+\_\+type}} Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+fV (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const}
 
 
 
@@ -810,9 +810,9 @@ Each vertex may have a flag associated with it for external use. Set these as yo
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a64769d0a6781ff75ea2a1e603886d80a}\label{classStemMesh3D_1_1mesh__3Dv_a64769d0a6781ff75ea2a1e603886d80a}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+mesh\+\_\+name@{get\+\_\+mesh\+\_\+name}}
-\index{get\+\_\+mesh\+\_\+name@{get\+\_\+mesh\+\_\+name}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+mesh\+\_\+name()}{get\_mesh\_name()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_mesh\_name@{get\_mesh\_name}}
+\index{get\_mesh\_name@{get\_mesh\_name}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_mesh\_name()}{get\_mesh\_name()}}
 {\footnotesize\ttfamily std\+::string Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+mesh\+\_\+name (\begin{DoxyParamCaption}\item[{bool}]{tex\+\_\+flag = {\ttfamily false} }\end{DoxyParamCaption}) const}
 
 
@@ -825,9 +825,9 @@ If tex\+\_\+flag is true, then underscore characters will be escaped with a \tex
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a558210d25a3eead99384f039a3419730}\label{classStemMesh3D_1_1mesh__3Dv_a558210d25a3eead99384f039a3419730}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+nor@{get\+\_\+nor}}
-\index{get\+\_\+nor@{get\+\_\+nor}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+nor()}{get\_nor()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_nor@{get\_nor}}
+\index{get\_nor@{get\_nor}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_nor()}{get\_nor()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+nor (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{size\+\_\+t}]{s }\end{DoxyParamCaption}) const}
 
 
@@ -842,9 +842,9 @@ Note that s=0,1,2 corresponds to the x,y,z coordinates respectively. The face no
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_acc10571f29f0b076c82571fc6ae33d76}\label{classStemMesh3D_1_1mesh__3Dv_acc10571f29f0b076c82571fc6ae33d76}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+regn\+\_\+diam@{get\+\_\+regn\+\_\+diam}}
-\index{get\+\_\+regn\+\_\+diam@{get\+\_\+regn\+\_\+diam}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+regn\+\_\+diam()}{get\_regn\_diam()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_regn\_diam@{get\_regn\_diam}}
+\index{get\_regn\_diam@{get\_regn\_diam}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_regn\_diam()}{get\_regn\_diam()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+regn\+\_\+diam (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR }\end{DoxyParamCaption}) const}
 
 
@@ -857,9 +857,9 @@ Returns the diameter of the region with the given number.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a9a60d9a26cb41402390b0acc5cbd17ec}\label{classStemMesh3D_1_1mesh__3Dv_a9a60d9a26cb41402390b0acc5cbd17ec}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+regn\+\_\+edge@{get\+\_\+regn\+\_\+edge}}
-\index{get\+\_\+regn\+\_\+edge@{get\+\_\+regn\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+regn\+\_\+edge()}{get\_regn\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_regn\_edge@{get\_regn\_edge}}
+\index{get\_regn\_edge@{get\_regn\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_regn\_edge()}{get\_regn\_edge()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+regn\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{elist }\end{DoxyParamCaption}) const}
 
 
@@ -874,9 +874,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a7388f79d9b639140efda17e33d169547}\label{classStemMesh3D_1_1mesh__3Dv_a7388f79d9b639140efda17e33d169547}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+regn\+\_\+face@{get\+\_\+regn\+\_\+face}}
-\index{get\+\_\+regn\+\_\+face@{get\+\_\+regn\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+regn\+\_\+face()}{get\_regn\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_regn\_face@{get\_regn\_face}}
+\index{get\_regn\_face@{get\_regn\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_regn\_face()}{get\_regn\_face()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+regn\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{flist }\end{DoxyParamCaption}) const}
 
 
@@ -891,9 +891,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a1c784e3ea324d11e1ebd51574dcaabde}\label{classStemMesh3D_1_1mesh__3Dv_a1c784e3ea324d11e1ebd51574dcaabde}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+regn\+\_\+measure@{get\+\_\+regn\+\_\+measure}}
-\index{get\+\_\+regn\+\_\+measure@{get\+\_\+regn\+\_\+measure}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+regn\+\_\+measure()}{get\_regn\_measure()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_regn\_measure@{get\_regn\_measure}}
+\index{get\_regn\_measure@{get\_regn\_measure}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_regn\_measure()}{get\_regn\_measure()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+regn\+\_\+measure (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR }\end{DoxyParamCaption}) const}
 
 
@@ -906,9 +906,9 @@ Returns the 3D measure (volume) of the region with the given number.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_aae9d1d4fa2441cb2ac8e6a05f3e5038b}\label{classStemMesh3D_1_1mesh__3Dv_aae9d1d4fa2441cb2ac8e6a05f3e5038b}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+regn\+\_\+regn@{get\+\_\+regn\+\_\+regn}}
-\index{get\+\_\+regn\+\_\+regn@{get\+\_\+regn\+\_\+regn}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+regn\+\_\+regn()}{get\_regn\_regn()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_regn\_regn@{get\_regn\_regn}}
+\index{get\_regn\_regn@{get\_regn\_regn}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_regn\_regn()}{get\_regn\_regn()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+regn\+\_\+regn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{rlist }\end{DoxyParamCaption}) const}
 
 
@@ -923,9 +923,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a063d41ebed2be9a826b8254f38a0c7d9}\label{classStemMesh3D_1_1mesh__3Dv_a063d41ebed2be9a826b8254f38a0c7d9}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+regn\+\_\+vrtx@{get\+\_\+regn\+\_\+vrtx}}
-\index{get\+\_\+regn\+\_\+vrtx@{get\+\_\+regn\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+regn\+\_\+vrtx()}{get\_regn\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_regn\_vrtx@{get\_regn\_vrtx}}
+\index{get\_regn\_vrtx@{get\_regn\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_regn\_vrtx()}{get\_regn\_vrtx()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+regn\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{vlist }\end{DoxyParamCaption}) const}
 
 
@@ -940,9 +940,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a5977abe45fc95cde4e0125c09df953b1}\label{classStemMesh3D_1_1mesh__3Dv_a5977abe45fc95cde4e0125c09df953b1}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+tng@{get\+\_\+tng}}
-\index{get\+\_\+tng@{get\+\_\+tng}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+tng()}{get\_tng()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_tng@{get\_tng}}
+\index{get\_tng@{get\_tng}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_tng()}{get\_tng()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+tng (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{size\+\_\+t}]{s }\end{DoxyParamCaption}) const}
 
 
@@ -957,9 +957,9 @@ Note that s=0,1,2 corresponds to the x,y,z coordinates respectively. The tangent
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_aa5e678364abe37ff90930374d706cf6f}\label{classStemMesh3D_1_1mesh__3Dv_aa5e678364abe37ff90930374d706cf6f}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+vrtx\+\_\+edge@{get\+\_\+vrtx\+\_\+edge}}
-\index{get\+\_\+vrtx\+\_\+edge@{get\+\_\+vrtx\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+vrtx\+\_\+edge()}{get\_vrtx\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_vrtx\_edge@{get\_vrtx\_edge}}
+\index{get\_vrtx\_edge@{get\_vrtx\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_vrtx\_edge()}{get\_vrtx\_edge()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+vrtx\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{elist }\end{DoxyParamCaption}) const}
 
 
@@ -974,9 +974,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a75a75c96ae9daf80877c60480020667a}\label{classStemMesh3D_1_1mesh__3Dv_a75a75c96ae9daf80877c60480020667a}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+vrtx\+\_\+face@{get\+\_\+vrtx\+\_\+face}}
-\index{get\+\_\+vrtx\+\_\+face@{get\+\_\+vrtx\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+vrtx\+\_\+face()}{get\_vrtx\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_vrtx\_face@{get\_vrtx\_face}}
+\index{get\_vrtx\_face@{get\_vrtx\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_vrtx\_face()}{get\_vrtx\_face()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+vrtx\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{flist }\end{DoxyParamCaption}) const}
 
 
@@ -991,9 +991,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a39a03b8697cda8c74485cfc118299eea}\label{classStemMesh3D_1_1mesh__3Dv_a39a03b8697cda8c74485cfc118299eea}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+vrtx\+\_\+regn@{get\+\_\+vrtx\+\_\+regn}}
-\index{get\+\_\+vrtx\+\_\+regn@{get\+\_\+vrtx\+\_\+regn}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+vrtx\+\_\+regn()}{get\_vrtx\_regn()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_vrtx\_regn@{get\_vrtx\_regn}}
+\index{get\_vrtx\_regn@{get\_vrtx\_regn}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_vrtx\_regn()}{get\_vrtx\_regn()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+vrtx\+\_\+regn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{rlist }\end{DoxyParamCaption}) const}
 
 
@@ -1008,9 +1008,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ae06da20fca1682cf92dd808f2880517f}\label{classStemMesh3D_1_1mesh__3Dv_ae06da20fca1682cf92dd808f2880517f}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!get\+\_\+vrtx\+\_\+vrtx@{get\+\_\+vrtx\+\_\+vrtx}}
-\index{get\+\_\+vrtx\+\_\+vrtx@{get\+\_\+vrtx\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{get\+\_\+vrtx\+\_\+vrtx()}{get\_vrtx\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!get\_vrtx\_vrtx@{get\_vrtx\_vrtx}}
+\index{get\_vrtx\_vrtx@{get\_vrtx\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{get\_vrtx\_vrtx()}{get\_vrtx\_vrtx()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::get\+\_\+vrtx\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{vlist }\end{DoxyParamCaption}) const}
 
 
@@ -1025,9 +1025,9 @@ Note that if the given vector is non-\/empty, it will not be cleared. The adjace
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ae947ad7de0dffd404d5641467bc5fee4}\label{classStemMesh3D_1_1mesh__3Dv_ae947ad7de0dffd404d5641467bc5fee4}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!is\+\_\+boundary\+\_\+edge@{is\+\_\+boundary\+\_\+edge}}
-\index{is\+\_\+boundary\+\_\+edge@{is\+\_\+boundary\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{is\+\_\+boundary\+\_\+edge()}{is\_boundary\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!is\_boundary\_edge@{is\_boundary\_edge}}
+\index{is\_boundary\_edge@{is\_boundary\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{is\_boundary\_edge()}{is\_boundary\_edge()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::is\+\_\+boundary\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const}
 
 
@@ -1040,9 +1040,9 @@ Returns true if the edge with the given number is on the boundary.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a3c02e5034f9c9e08ae91057fb165fbad}\label{classStemMesh3D_1_1mesh__3Dv_a3c02e5034f9c9e08ae91057fb165fbad}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!is\+\_\+boundary\+\_\+face@{is\+\_\+boundary\+\_\+face}}
-\index{is\+\_\+boundary\+\_\+face@{is\+\_\+boundary\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{is\+\_\+boundary\+\_\+face()}{is\_boundary\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!is\_boundary\_face@{is\_boundary\_face}}
+\index{is\_boundary\_face@{is\_boundary\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{is\_boundary\_face()}{is\_boundary\_face()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::is\+\_\+boundary\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const}
 
 
@@ -1055,9 +1055,9 @@ Returns true if the face with the given number is on the boundary.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a3c3a3d3014b5e7d097facf759364f6a7}\label{classStemMesh3D_1_1mesh__3Dv_a3c3a3d3014b5e7d097facf759364f6a7}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!is\+\_\+boundary\+\_\+regn@{is\+\_\+boundary\+\_\+regn}}
-\index{is\+\_\+boundary\+\_\+regn@{is\+\_\+boundary\+\_\+regn}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{is\+\_\+boundary\+\_\+regn()}{is\_boundary\_regn()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!is\_boundary\_regn@{is\_boundary\_regn}}
+\index{is\_boundary\_regn@{is\_boundary\_regn}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{is\_boundary\_regn()}{is\_boundary\_regn()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::is\+\_\+boundary\+\_\+regn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR }\end{DoxyParamCaption}) const}
 
 
@@ -1070,9 +1070,9 @@ Returns true if the region with the given number is on the boundary.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_aa6ba589981c83feda412066fd0580032}\label{classStemMesh3D_1_1mesh__3Dv_aa6ba589981c83feda412066fd0580032}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!is\+\_\+boundary\+\_\+vrtx@{is\+\_\+boundary\+\_\+vrtx}}
-\index{is\+\_\+boundary\+\_\+vrtx@{is\+\_\+boundary\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{is\+\_\+boundary\+\_\+vrtx()}{is\_boundary\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!is\_boundary\_vrtx@{is\_boundary\_vrtx}}
+\index{is\_boundary\_vrtx@{is\_boundary\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{is\_boundary\_vrtx()}{is\_boundary\_vrtx()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::is\+\_\+boundary\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const}
 
 
@@ -1085,9 +1085,9 @@ Returns true if the vertex with the given number is on the boundary.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ae4e6b4995cb4169fdb930a508d0b83de}\label{classStemMesh3D_1_1mesh__3Dv_ae4e6b4995cb4169fdb930a508d0b83de}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!is\+\_\+internal\+\_\+edge@{is\+\_\+internal\+\_\+edge}}
-\index{is\+\_\+internal\+\_\+edge@{is\+\_\+internal\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{is\+\_\+internal\+\_\+edge()}{is\_internal\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!is\_internal\_edge@{is\_internal\_edge}}
+\index{is\_internal\_edge@{is\_internal\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{is\_internal\_edge()}{is\_internal\_edge()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::is\+\_\+internal\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const}
 
 
@@ -1100,9 +1100,9 @@ Returns true if the edge with the given number is internal (not on the boundary)
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a7ec74c519a65b29f52e243e4905b687d}\label{classStemMesh3D_1_1mesh__3Dv_a7ec74c519a65b29f52e243e4905b687d}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!is\+\_\+internal\+\_\+face@{is\+\_\+internal\+\_\+face}}
-\index{is\+\_\+internal\+\_\+face@{is\+\_\+internal\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{is\+\_\+internal\+\_\+face()}{is\_internal\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!is\_internal\_face@{is\_internal\_face}}
+\index{is\_internal\_face@{is\_internal\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{is\_internal\_face()}{is\_internal\_face()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::is\+\_\+internal\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const}
 
 
@@ -1115,9 +1115,9 @@ Returns true if the face with the given number is internal (not on the boundary)
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_adaeed2f2444ec1db2b5bcc380eb38d15}\label{classStemMesh3D_1_1mesh__3Dv_adaeed2f2444ec1db2b5bcc380eb38d15}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!is\+\_\+internal\+\_\+regn@{is\+\_\+internal\+\_\+regn}}
-\index{is\+\_\+internal\+\_\+regn@{is\+\_\+internal\+\_\+regn}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{is\+\_\+internal\+\_\+regn()}{is\_internal\_regn()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!is\_internal\_regn@{is\_internal\_regn}}
+\index{is\_internal\_regn@{is\_internal\_regn}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{is\_internal\_regn()}{is\_internal\_regn()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::is\+\_\+internal\+\_\+regn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR }\end{DoxyParamCaption}) const}
 
 
@@ -1130,9 +1130,9 @@ Returns true if the region with the given number is internal (not on the boundar
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_aa7dc342e2b241b485f5a5f8f722e660f}\label{classStemMesh3D_1_1mesh__3Dv_aa7dc342e2b241b485f5a5f8f722e660f}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!is\+\_\+internal\+\_\+vrtx@{is\+\_\+internal\+\_\+vrtx}}
-\index{is\+\_\+internal\+\_\+vrtx@{is\+\_\+internal\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{is\+\_\+internal\+\_\+vrtx()}{is\_internal\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!is\_internal\_vrtx@{is\_internal\_vrtx}}
+\index{is\_internal\_vrtx@{is\_internal\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{is\_internal\_vrtx()}{is\_internal\_vrtx()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::is\+\_\+internal\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const}
 
 
@@ -1145,9 +1145,9 @@ Returns true if the vertex with the given number is internal (not on the boundar
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a3290b6cc7656e81ccb9ffa0da954755d}\label{classStemMesh3D_1_1mesh__3Dv_a3290b6cc7656e81ccb9ffa0da954755d}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!max\+\_\+coords@{max\+\_\+coords}}
-\index{max\+\_\+coords@{max\+\_\+coords}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{max\+\_\+coords()}{max\_coords()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!max\_coords@{max\_coords}}
+\index{max\_coords@{max\_coords}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{max\_coords()}{max\_coords()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::max\+\_\+coords (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -1160,9 +1160,9 @@ Returns the maximum value in the s-\/coordinate in the domain.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a11dee62c0eab3cb5e37f81807c98c964}\label{classStemMesh3D_1_1mesh__3Dv_a11dee62c0eab3cb5e37f81807c98c964}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!min\+\_\+coords@{min\+\_\+coords}}
-\index{min\+\_\+coords@{min\+\_\+coords}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{min\+\_\+coords()}{min\_coords()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!min\_coords@{min\_coords}}
+\index{min\_coords@{min\_coords}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{min\_coords()}{min\_coords()}}
 {\footnotesize\ttfamily double Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::min\+\_\+coords (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -1175,9 +1175,9 @@ Returns the minimum value in the s-\/coordinate in the domain.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a7655cc55bc89437d85f1a7beddbf66f4}\label{classStemMesh3D_1_1mesh__3Dv_a7655cc55bc89437d85f1a7beddbf66f4}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!n\+\_\+edge\+\_\+face@{n\+\_\+edge\+\_\+face}}
-\index{n\+\_\+edge\+\_\+face@{n\+\_\+edge\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{n\+\_\+edge\+\_\+face()}{n\_edge\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!n\_edge\_face@{n\_edge\_face}}
+\index{n\_edge\_face@{n\_edge\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{n\_edge\_face()}{n\_edge\_face()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::n\+\_\+edge\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const}
 
 
@@ -1190,9 +1190,9 @@ Returns the number of faces that are adjacent to the given edge.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a3a0580ffb017ad1118c6b10631b845fb}\label{classStemMesh3D_1_1mesh__3Dv_a3a0580ffb017ad1118c6b10631b845fb}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!n\+\_\+edge\+\_\+vrtx@{n\+\_\+edge\+\_\+vrtx}}
-\index{n\+\_\+edge\+\_\+vrtx@{n\+\_\+edge\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{n\+\_\+edge\+\_\+vrtx()}{n\_edge\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!n\_edge\_vrtx@{n\_edge\_vrtx}}
+\index{n\_edge\_vrtx@{n\_edge\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{n\_edge\_vrtx()}{n\_edge\_vrtx()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::n\+\_\+edge\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const}
 
 
@@ -1205,9 +1205,9 @@ Returns the number of local vertices that are adjacent to the given edge. This s
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a2d8ae772da1e33edfb9332823d4c7212}\label{classStemMesh3D_1_1mesh__3Dv_a2d8ae772da1e33edfb9332823d4c7212}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!n\+\_\+face\+\_\+edge@{n\+\_\+face\+\_\+edge}}
-\index{n\+\_\+face\+\_\+edge@{n\+\_\+face\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{n\+\_\+face\+\_\+edge()}{n\_face\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!n\_face\_edge@{n\_face\_edge}}
+\index{n\_face\_edge@{n\_face\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{n\_face\_edge()}{n\_face\_edge()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::n\+\_\+face\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const}
 
 
@@ -1220,9 +1220,9 @@ Returns the number of local edges that are adjacent to the given face.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a121da582c92b922a0d6ca76a0f1330ee}\label{classStemMesh3D_1_1mesh__3Dv_a121da582c92b922a0d6ca76a0f1330ee}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!n\+\_\+face\+\_\+regn@{n\+\_\+face\+\_\+regn}}
-\index{n\+\_\+face\+\_\+regn@{n\+\_\+face\+\_\+regn}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{n\+\_\+face\+\_\+regn()}{n\_face\_regn()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!n\_face\_regn@{n\_face\_regn}}
+\index{n\_face\_regn@{n\_face\_regn}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{n\_face\_regn()}{n\_face\_regn()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::n\+\_\+face\+\_\+regn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const}
 
 
@@ -1235,9 +1235,9 @@ Returns the number of regions that are adjacent to the given face.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a02974473e896bc49a5a19cd92b521061}\label{classStemMesh3D_1_1mesh__3Dv_a02974473e896bc49a5a19cd92b521061}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!n\+\_\+regn\+\_\+face@{n\+\_\+regn\+\_\+face}}
-\index{n\+\_\+regn\+\_\+face@{n\+\_\+regn\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{n\+\_\+regn\+\_\+face()}{n\_regn\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!n\_regn\_face@{n\_regn\_face}}
+\index{n\_regn\_face@{n\_regn\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{n\_regn\_face()}{n\_regn\_face()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::n\+\_\+regn\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR }\end{DoxyParamCaption}) const}
 
 
@@ -1250,9 +1250,9 @@ Returns the number of local faces that are adjacent to the given region.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a9996181afbb34b235ef0877471eb4fb3}\label{classStemMesh3D_1_1mesh__3Dv_a9996181afbb34b235ef0877471eb4fb3}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!n\+\_\+vrtx\+\_\+edge@{n\+\_\+vrtx\+\_\+edge}}
-\index{n\+\_\+vrtx\+\_\+edge@{n\+\_\+vrtx\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{n\+\_\+vrtx\+\_\+edge()}{n\_vrtx\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!n\_vrtx\_edge@{n\_vrtx\_edge}}
+\index{n\_vrtx\_edge@{n\_vrtx\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{n\_vrtx\_edge()}{n\_vrtx\_edge()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::n\+\_\+vrtx\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const}
 
 
@@ -1265,9 +1265,9 @@ Returns the number of edges that are adjacent to the given vertex.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a1a6eaa9ed8ebf41ada912b834f34e7c6}\label{classStemMesh3D_1_1mesh__3Dv_a1a6eaa9ed8ebf41ada912b834f34e7c6}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!n\+\_\+vrtx\+\_\+vrtx@{n\+\_\+vrtx\+\_\+vrtx}}
-\index{n\+\_\+vrtx\+\_\+vrtx@{n\+\_\+vrtx\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{n\+\_\+vrtx\+\_\+vrtx()}{n\_vrtx\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!n\_vrtx\_vrtx@{n\_vrtx\_vrtx}}
+\index{n\_vrtx\_vrtx@{n\_vrtx\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{n\_vrtx\_vrtx()}{n\_vrtx\_vrtx()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::n\+\_\+vrtx\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const}
 
 
@@ -1280,9 +1280,9 @@ This is the same as the number of edges that are adjacent to the given vertex.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a0864ac0c5e4a946ff620caf60ba2526e}\label{classStemMesh3D_1_1mesh__3Dv_a0864ac0c5e4a946ff620caf60ba2526e}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!ok\+\_\+edge\+\_\+face@{ok\+\_\+edge\+\_\+face}}
-\index{ok\+\_\+edge\+\_\+face@{ok\+\_\+edge\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{ok\+\_\+edge\+\_\+face()}{ok\_edge\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!ok\_edge\_face@{ok\_edge\_face}}
+\index{ok\_edge\_face@{ok\_edge\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{ok\_edge\_face()}{ok\_edge\_face()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::ok\+\_\+edge\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{size\+\_\+t}]{ilF }\end{DoxyParamCaption}) const}
 
 
@@ -1297,9 +1297,9 @@ Each edge of the mesh is adjacent to many faces. Hence, the orientation of the g
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_af49e94aea3119432fadf9878cafba5c5}\label{classStemMesh3D_1_1mesh__3Dv_af49e94aea3119432fadf9878cafba5c5}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!ok\+\_\+face\+\_\+edge@{ok\+\_\+face\+\_\+edge}}
-\index{ok\+\_\+face\+\_\+edge@{ok\+\_\+face\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{ok\+\_\+face\+\_\+edge()}{ok\_face\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!ok\_face\_edge@{ok\_face\_edge}}
+\index{ok\_face\_edge@{ok\_face\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{ok\_face\_edge()}{ok\_face\_edge()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::ok\+\_\+face\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{size\+\_\+t}]{ilE }\end{DoxyParamCaption}) const}
 
 
@@ -1314,9 +1314,9 @@ Each internal edge of the mesh is adjacent to many faces. Hence, the orientation
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a4c6ab11bf9ea2eac1709052d14f5c5b3}\label{classStemMesh3D_1_1mesh__3Dv_a4c6ab11bf9ea2eac1709052d14f5c5b3}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!ok\+\_\+regn\+\_\+face@{ok\+\_\+regn\+\_\+face}}
-\index{ok\+\_\+regn\+\_\+face@{ok\+\_\+regn\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{ok\+\_\+regn\+\_\+face()}{ok\_regn\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!ok\_regn\_face@{ok\_regn\_face}}
+\index{ok\_regn\_face@{ok\_regn\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{ok\_regn\_face()}{ok\_regn\_face()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::ok\+\_\+regn\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR,  }\item[{size\+\_\+t}]{ilF }\end{DoxyParamCaption}) const}
 
 
@@ -1331,9 +1331,9 @@ Each internal face of the mesh is adjacent to two regions. Hence, the orientatio
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a1bcbb55c1a867e69c088f13ce09f924f}\label{classStemMesh3D_1_1mesh__3Dv_a1bcbb55c1a867e69c088f13ce09f924f}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!ok\+\_\+vrtx\+\_\+edge@{ok\+\_\+vrtx\+\_\+edge}}
-\index{ok\+\_\+vrtx\+\_\+edge@{ok\+\_\+vrtx\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{ok\+\_\+vrtx\+\_\+edge()}{ok\_vrtx\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!ok\_vrtx\_edge@{ok\_vrtx\_edge}}
+\index{ok\_vrtx\_edge@{ok\_vrtx\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{ok\_vrtx\_edge()}{ok\_vrtx\_edge()}}
 {\footnotesize\ttfamily bool Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::ok\+\_\+vrtx\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV,  }\item[{size\+\_\+t}]{ilE }\end{DoxyParamCaption}) const}
 
 
@@ -1348,9 +1348,9 @@ Returns true if the global vertex iV is the first vertex on the global edge corr
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a761e6d7a78b1547681310935e1ce0a8c}\label{classStemMesh3D_1_1mesh__3Dv_a761e6d7a78b1547681310935e1ce0a8c}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!regn\+\_\+face@{regn\+\_\+face}}
-\index{regn\+\_\+face@{regn\+\_\+face}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{regn\+\_\+face()}{regn\_face()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!regn\_face@{regn\_face}}
+\index{regn\_face@{regn\_face}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{regn\_face()}{regn\_face()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::regn\+\_\+face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR,  }\item[{size\+\_\+t}]{ilF }\end{DoxyParamCaption}) const}
 
 
@@ -1365,10 +1365,10 @@ Returns the global face number of the (ilF)\textquotesingle{}th local face of th
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a6b4fa28dbbe68fc44b75e3cdb4ffe7a2}\label{classStemMesh3D_1_1mesh__3Dv_a6b4fa28dbbe68fc44b75e3cdb4ffe7a2}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!set\+\_\+fE@{set\+\_\+fE}}
-\index{set\+\_\+fE@{set\+\_\+fE}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{set\+\_\+f\+E()}{set\_fE()}}
-{\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::set\+\_\+fE (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}}]{new\+\_\+fE }\end{DoxyParamCaption})}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!set\_fE@{set\_fE}}
+\index{set\_fE@{set\_fE}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{set\_fE()}{set\_fE()}}
+{\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::set\+\_\+fE (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}}}]{new\+\_\+fE }\end{DoxyParamCaption})}
 
 
 
@@ -1382,10 +1382,10 @@ Each edge may have a flag associated with it for external use. Set these as your
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_aa5c3c8d360f8107e370c935222c6849d}\label{classStemMesh3D_1_1mesh__3Dv_aa5c3c8d360f8107e370c935222c6849d}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!set\+\_\+fF@{set\+\_\+fF}}
-\index{set\+\_\+fF@{set\+\_\+fF}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{set\+\_\+f\+F()}{set\_fF()}}
-{\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::set\+\_\+fF (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}}]{new\+\_\+fF }\end{DoxyParamCaption})}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!set\_fF@{set\_fF}}
+\index{set\_fF@{set\_fF}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{set\_fF()}{set\_fF()}}
+{\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::set\+\_\+fF (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}}}]{new\+\_\+fF }\end{DoxyParamCaption})}
 
 
 
@@ -1399,10 +1399,10 @@ Each face may have a flag associated with it for external use. Set these as your
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a0ac5f5f5f81fa2afcbe8a36990d9df21}\label{classStemMesh3D_1_1mesh__3Dv_a0ac5f5f5f81fa2afcbe8a36990d9df21}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!set\+\_\+fR@{set\+\_\+fR}}
-\index{set\+\_\+fR@{set\+\_\+fR}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{set\+\_\+f\+R()}{set\_fR()}}
-{\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::set\+\_\+fR (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR,  }\item[{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}}]{new\+\_\+fR }\end{DoxyParamCaption})}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!set\_fR@{set\_fR}}
+\index{set\_fR@{set\_fR}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{set\_fR()}{set\_fR()}}
+{\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::set\+\_\+fR (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iR,  }\item[{\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}}}]{new\+\_\+fR }\end{DoxyParamCaption})}
 
 
 
@@ -1416,10 +1416,10 @@ Each region may have a flag associated with it for external use. Set these as yo
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a4bc6f51b9675c7dca59ab8ccfc256a44}\label{classStemMesh3D_1_1mesh__3Dv_a4bc6f51b9675c7dca59ab8ccfc256a44}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!set\+\_\+fV@{set\+\_\+fV}}
-\index{set\+\_\+fV@{set\+\_\+fV}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{set\+\_\+f\+V()}{set\_fV()}}
-{\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::set\+\_\+fV (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV,  }\item[{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}}]{new\+\_\+fV }\end{DoxyParamCaption})}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!set\_fV@{set\_fV}}
+\index{set\_fV@{set\_fV}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{set\_fV()}{set\_fV()}}
+{\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::set\+\_\+fV (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV,  }\item[{\mbox{\hyperlink{classStemMesh3D_1_1mesh__3Dv_a9544cba555b60f17f04fcd1689314338}{flag\+\_\+type}}}]{new\+\_\+fV }\end{DoxyParamCaption})}
 
 
 
@@ -1433,9 +1433,9 @@ Each vertex may have a flag associated with it for external use. Set these as yo
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_ac40eb6e8236253c78ce71c0fd876d539}\label{classStemMesh3D_1_1mesh__3Dv_ac40eb6e8236253c78ce71c0fd876d539}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!set\+\_\+mesh\+\_\+name@{set\+\_\+mesh\+\_\+name}}
-\index{set\+\_\+mesh\+\_\+name@{set\+\_\+mesh\+\_\+name}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{set\+\_\+mesh\+\_\+name()}{set\_mesh\_name()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!set\_mesh\_name@{set\_mesh\_name}}
+\index{set\_mesh\_name@{set\_mesh\_name}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{set\_mesh\_name()}{set\_mesh\_name()}}
 {\footnotesize\ttfamily void Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::set\+\_\+mesh\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+mesh\+\_\+name }\end{DoxyParamCaption})}
 
 
@@ -1448,9 +1448,9 @@ Sets the name of the mesh to the given string.
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_a93fff194e371aa21a00f0e5e1e6d45cd}\label{classStemMesh3D_1_1mesh__3Dv_a93fff194e371aa21a00f0e5e1e6d45cd}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!vrtx\+\_\+edge@{vrtx\+\_\+edge}}
-\index{vrtx\+\_\+edge@{vrtx\+\_\+edge}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{vrtx\+\_\+edge()}{vrtx\_edge()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!vrtx\_edge@{vrtx\_edge}}
+\index{vrtx\_edge@{vrtx\_edge}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{vrtx\_edge()}{vrtx\_edge()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::vrtx\+\_\+edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV,  }\item[{size\+\_\+t}]{ilE }\end{DoxyParamCaption}) const}
 
 
@@ -1465,9 +1465,9 @@ Returns the global edge number of the (ilE)\textquotesingle{}th edge adjacent to
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classStemMesh3D_1_1mesh__3Dv_afbe4f73847a1ae2c6a24170ab3a7827e}\label{classStemMesh3D_1_1mesh__3Dv_afbe4f73847a1ae2c6a24170ab3a7827e}} 
-\index{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}!vrtx\+\_\+vrtx@{vrtx\+\_\+vrtx}}
-\index{vrtx\+\_\+vrtx@{vrtx\+\_\+vrtx}!Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv@{Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv}}
-\subsubsection{\texorpdfstring{vrtx\+\_\+vrtx()}{vrtx\_vrtx()}}
+\index{StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}!vrtx\_vrtx@{vrtx\_vrtx}}
+\index{vrtx\_vrtx@{vrtx\_vrtx}!StemMesh3D::mesh\_3Dv@{StemMesh3D::mesh\_3Dv}}
+\doxysubsubsection{\texorpdfstring{vrtx\_vrtx()}{vrtx\_vrtx()}}
 {\footnotesize\ttfamily size\+\_\+t Stem\+Mesh3\+D\+::mesh\+\_\+3\+Dv\+::vrtx\+\_\+vrtx (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV,  }\item[{size\+\_\+t}]{ilV }\end{DoxyParamCaption}) const}
 
 

@@ -3,12 +3,6 @@ HArD::Core (sources: https://github.com/jdroniou/HArDCore) provides a suite of C
 
 \tableofcontents
 
-* [Build instructions](#build) -- How to build the libraries and the schemes.
-* [Mesh module](#mesh) -- The principles of the data structure representing the mesh, and how to load a mesh.
-* [Quadrature rules](#quad_rules) -- Constructing quadrature rules on polytopal elements, their faces, their edges.
-* [Basis module](#basis) -- Brief description of the [Basis](@ref HArDCore3D::Basis) class.
-* [HybridCore module](#hybridcore) -- How to use the [HybridCore](@ref HArDCore3D::HybridCore) class, and companion classes, to compute classical objects requires in schemes' implementations.
-* [Schemes](#schemes) -- The list of schemes currently implemented in HArD::Core3D, and scripts to run them.
 
 <a name="build">
 \section build Build instructions
@@ -197,6 +191,18 @@ boost::multi_array<VectorRd, 2> dphiT_quadT = elquad.get_dphiT_quadT();
 
 \endcode
 
+<a name="hho3D">
+\section hho_3D HHO3D general module
+</a>
+
+The [HHO3D](@ref HHO3D) module provides typedefs, a class and functions to implement Hybrid High Order (HHO) schemes. Rules (functions) to create local bilinear forms (matrices) and loading terms (vectors) are passed to the HHO3D class, that takes care of the global assembly and solving of the system.
+
+<a name="ddr">
+\section ddr DDR core module
+</a>
+
+The [DDRcore](@ref DDRcore) module provides classes and functions to implement the discrete de Rham sequence.
+
 
 <a name="schemes">
 \section schemes Schemes
@@ -204,13 +210,17 @@ boost::multi_array<VectorRd, 2> dphiT_quadT = elquad.get_dphiT_quadT();
 
 The following schemes are currently available in HArD::Core3D. The Hybrid High-Order schemes follow the implementation principles described in Appendix B of the book available at https://hal.archives-ouvertes.fr/hal-02151813.
 
- - [HHO_diffusion](@ref HArDCore3D::HHO_Diffusion): Hybrid High-Order for \f$-\mathrm{div}(K\nabla u)=f\f$, for Dirichlet or Neumann boundary conditions, with \f$K\f$ a diffusion tensor that is piecewise constant on the mesh.
+ - [HHO_diffusion](@ref HArDCore3D::HHO_Diffusion): Hybrid High-Order (HHO) for \f$-\mathrm{div}(K\nabla u)=f\f$, for Dirichlet, Neumann or mixed boundary conditions, with \f$K\f$ a diffusion tensor that is piecewise constant on the mesh.
 
- - [HHO_locvardiff](@ref HArDCore3D::HHO_LocVarDiff): Hybrid High-Order for \f$-\mathrm{div}(K\nabla u)=f\f$, for Dirichlet or Neumann boundary conditions, with \f$K\f$ a diffusion tensor that can vary in each cell.
+ - [HHO_locvardiff](@ref HArDCore3D::HHO_LocVarDiff): HHO for \f$-\mathrm{div}(K\nabla u)=f\f$, for Dirichlet, Neumann or mixed boundary conditions, with \f$K\f$ a diffusion tensor that can vary in each cell.
+
+ - [HHO_diffadvecreac](@ref HHO_DiffAdvecReac): HHO for \f$-\mathrm{div}(K\nabla u+\beta u)+\mu u=f\f$, for Dirichlet or mixed boundary conditions, with \f$K\f$ a diffusion tensor that can vary in each cell.
+
+ - [DDR_magnetostatic](@ref DDR_magnetostatic): Discrete De Rham (DDR) scheme for the magnetostatic problem.
 
 The directory `runs` contains BASH to run series of tests on families of meshes. The files `data.sh` describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the `output` directory, including a pdf file `rate.pdf` describing the rates of convergence in various energy norms.
 
-To run the scripts as they are, you will need `pdflatex` and a FORTRAN compiler, and to adjust the `Makefile` to your compiler, to run `compute_rates.f90` and compute the rates of convergence in the various norms.
+To run the scripts as they are, you will need `pdflatex`.
 
 
 

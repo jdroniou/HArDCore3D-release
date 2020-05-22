@@ -1,83 +1,98 @@
-\hypertarget{classHArDCore3D_1_1Edge}{}\section{H\+Ar\+D\+Core3D\+:\+:Edge Class Reference}
-\label{classHArDCore3D_1_1Edge}\index{H\+Ar\+D\+Core3\+D\+::\+Edge@{H\+Ar\+D\+Core3\+D\+::\+Edge}}
+\hypertarget{classHArDCore3D_1_1Edge}{}\doxysection{H\+Ar\+D\+Core3D\+::Edge Class Reference}
+\label{classHArDCore3D_1_1Edge}\index{HArDCore3D::Edge@{HArDCore3D::Edge}}
 
 
-The \hyperlink{classHArDCore3D_1_1Edge}{Edge} class provides description of an edge.  
+The \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} class provides description of an edge.  
 
 
 
 
 {\ttfamily \#include $<$edge.\+hpp$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classHArDCore3D_1_1Edge_a051ae1dd47537d89d8efbce3d4fd1760}{Edge} (size\+\_\+t iE, \hyperlink{classHArDCore3D_1_1Mesh}{Mesh} $\ast$mesh, std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$$>$ vertices, bool boundary, double \hyperlink{group__Mesh_ga38609361fcb95fa62e0bf2d5170144aa}{measure}, Vector3d \hyperlink{group__Mesh_gac7aee988662d982ab3fd81704af7842c}{center\+\_\+mass})
+\mbox{\hyperlink{classHArDCore3D_1_1Edge_aead46bf6e803e24a5c1027369651b581}{Edge}} (size\+\_\+t iE, \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} $\ast$mesh, std\+::vector$<$ \mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} $\ast$ $>$ vertices, bool boundary, double \mbox{\hyperlink{classHArDCore3D_1_1Edge_a38609361fcb95fa62e0bf2d5170144aa}{measure}}, Vector3d \mbox{\hyperlink{classHArDCore3D_1_1Edge_ac7aee988662d982ab3fd81704af7842c}{center\+\_\+mass}})
 \item 
-size\+\_\+t \hyperlink{group__Mesh_ga7460c422a7e7ed1a59bc930054551f68}{global\+\_\+index} () const
-\begin{DoxyCompactList}\small\item\em returns the edge global index \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{group__Mesh_gabe29c7660cf7a1dddb06b876ebc76f80}{n\+\_\+cells} () const
-\begin{DoxyCompactList}\small\item\em returns the number of cells neighbouring the edge \end{DoxyCompactList}\item 
-size\+\_\+t \hyperlink{group__Mesh_gaab36400cd966cbeec90297f41c14ac55}{n\+\_\+faces} () const
-\begin{DoxyCompactList}\small\item\em returns the number of faces neighbouring the edge \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_a72bedde2003c68d015c70326924b6d7f}\label{classHArDCore3D_1_1Edge_a72bedde2003c68d015c70326924b6d7f}} 
-std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Cell}{Cell} $\ast$ $>$ \hyperlink{classHArDCore3D_1_1Edge_a72bedde2003c68d015c70326924b6d7f}{get\+\_\+cells} () const
+std\+::vector$<$ \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} $\ast$ $>$ \mbox{\hyperlink{classHArDCore3D_1_1Edge_a72bedde2003c68d015c70326924b6d7f}{get\+\_\+cells}} () const
 \begin{DoxyCompactList}\small\item\em list of cells that are neighbours of the edge \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_a67aee2c97080416a5bbff937275a6c67}\label{classHArDCore3D_1_1Edge_a67aee2c97080416a5bbff937275a6c67}} 
-std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Face}{Face} $\ast$ $>$ \hyperlink{classHArDCore3D_1_1Edge_a67aee2c97080416a5bbff937275a6c67}{get\+\_\+faces} () const
+std\+::vector$<$ \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} $\ast$ $>$ \mbox{\hyperlink{classHArDCore3D_1_1Edge_a67aee2c97080416a5bbff937275a6c67}{get\+\_\+faces}} () const
 \begin{DoxyCompactList}\small\item\em list of faces of the edge \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_a5315c7fa0058509166d75175660ed542}\label{classHArDCore3D_1_1Edge_a5315c7fa0058509166d75175660ed542}} 
-std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$ $>$ \hyperlink{classHArDCore3D_1_1Edge_a5315c7fa0058509166d75175660ed542}{get\+\_\+vertices} () const
+std\+::vector$<$ \mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} $\ast$ $>$ \mbox{\hyperlink{classHArDCore3D_1_1Edge_a5315c7fa0058509166d75175660ed542}{get\+\_\+vertices}} () const
 \begin{DoxyCompactList}\small\item\em list of vertices of the edge \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_ad4be0bfb981ccf2c1e02e870772dbdc3}\label{classHArDCore3D_1_1Edge_ad4be0bfb981ccf2c1e02e870772dbdc3}} 
-\hyperlink{classHArDCore3D_1_1Cell}{Cell} $\ast$ \hyperlink{classHArDCore3D_1_1Edge_ad4be0bfb981ccf2c1e02e870772dbdc3}{cell} (size\+\_\+t i) const
+\mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} $\ast$ \mbox{\hyperlink{classHArDCore3D_1_1Edge_ad4be0bfb981ccf2c1e02e870772dbdc3}{cell}} (size\+\_\+t i) const
 \begin{DoxyCompactList}\small\item\em returns pointer to the i-\/th cell neighbour of the edge \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_a84a3891c3abf7f441f2787943e0e0f66}\label{classHArDCore3D_1_1Edge_a84a3891c3abf7f441f2787943e0e0f66}} 
-\hyperlink{classHArDCore3D_1_1Face}{Face} $\ast$ \hyperlink{classHArDCore3D_1_1Edge_a84a3891c3abf7f441f2787943e0e0f66}{face} (size\+\_\+t i) const
+\mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} $\ast$ \mbox{\hyperlink{classHArDCore3D_1_1Edge_a84a3891c3abf7f441f2787943e0e0f66}{face}} (size\+\_\+t i) const
 \begin{DoxyCompactList}\small\item\em returns pointer to the i-\/th face neighbour of the edge \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_ade257bc049ec1f43751fc647e07ec052}\label{classHArDCore3D_1_1Edge_ade257bc049ec1f43751fc647e07ec052}} 
-\hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$ \hyperlink{classHArDCore3D_1_1Edge_ade257bc049ec1f43751fc647e07ec052}{vertex} (size\+\_\+t i) const
+\mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} $\ast$ \mbox{\hyperlink{classHArDCore3D_1_1Edge_ade257bc049ec1f43751fc647e07ec052}{vertex}} (size\+\_\+t i) const
 \begin{DoxyCompactList}\small\item\em returns a pointer to the i-\/th vertex of the edge \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_a9801b008f6b5d356c257589945171ec2}\label{classHArDCore3D_1_1Edge_a9801b008f6b5d356c257589945171ec2}} 
-size\+\_\+t \hyperlink{classHArDCore3D_1_1Edge_a9801b008f6b5d356c257589945171ec2}{index\+\_\+vertex} (\hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$V) const
+size\+\_\+t \mbox{\hyperlink{classHArDCore3D_1_1Edge_a9801b008f6b5d356c257589945171ec2}{index\+\_\+vertex}} (\mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} $\ast$V) const
 \begin{DoxyCompactList}\small\item\em reciprocal of vertex(i)\+: returns the local index of vertex V in the edge \end{DoxyCompactList}\item 
-double \hyperlink{group__Mesh_ga38609361fcb95fa62e0bf2d5170144aa}{measure} () const
-\begin{DoxyCompactList}\small\item\em length of the edge \end{DoxyCompactList}\item 
-double \hyperlink{group__Mesh_ga93672b9685e10344c31cdae234017557}{diam} () const
-\begin{DoxyCompactList}\small\item\em length of the edge \end{DoxyCompactList}\item 
-Vector3d \hyperlink{group__Mesh_gac7aee988662d982ab3fd81704af7842c}{center\+\_\+mass} () const
-\begin{DoxyCompactList}\small\item\em get the midpoint of the edge \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_a5af3b015940acca0b35e8960161ba592}\label{classHArDCore3D_1_1Edge_a5af3b015940acca0b35e8960161ba592}} 
-Vector3d \hyperlink{classHArDCore3D_1_1Edge_a5af3b015940acca0b35e8960161ba592}{tangent} () const
+Vector3d \mbox{\hyperlink{classHArDCore3D_1_1Edge_a5af3b015940acca0b35e8960161ba592}{tangent}} () const
 \begin{DoxyCompactList}\small\item\em $<$ get the normalised tangent to the edge, oriented from the first vertex to the second vertex. \end{DoxyCompactList}\item 
-bool \hyperlink{group__Mesh_ga2caaa7859e84eab62858ff8c24d261fe}{is\+\_\+boundary} () const
-\begin{DoxyCompactList}\small\item\em getter to see if edge is boundary edge \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_a364bacf89dfa0be36abbbadbb2dd4f78}\label{classHArDCore3D_1_1Edge_a364bacf89dfa0be36abbbadbb2dd4f78}} 
-void \hyperlink{classHArDCore3D_1_1Edge_a364bacf89dfa0be36abbbadbb2dd4f78}{add\+\_\+cell} (\hyperlink{classHArDCore3D_1_1Cell}{Cell} $\ast$\hyperlink{classHArDCore3D_1_1Edge_ad4be0bfb981ccf2c1e02e870772dbdc3}{cell})
+void \mbox{\hyperlink{classHArDCore3D_1_1Edge_a364bacf89dfa0be36abbbadbb2dd4f78}{add\+\_\+cell}} (\mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} $\ast$\mbox{\hyperlink{classHArDCore3D_1_1Edge_ad4be0bfb981ccf2c1e02e870772dbdc3}{cell}})
 \begin{DoxyCompactList}\small\item\em Add a new cell to the edge. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_a7758bf6587d0153b7c9e63d088b61157}\label{classHArDCore3D_1_1Edge_a7758bf6587d0153b7c9e63d088b61157}} 
-void \hyperlink{classHArDCore3D_1_1Edge_a7758bf6587d0153b7c9e63d088b61157}{add\+\_\+face} (\hyperlink{classHArDCore3D_1_1Face}{Face} $\ast$\hyperlink{classHArDCore3D_1_1Edge_a84a3891c3abf7f441f2787943e0e0f66}{face})
+void \mbox{\hyperlink{classHArDCore3D_1_1Edge_a7758bf6587d0153b7c9e63d088b61157}{add\+\_\+face}} (\mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} $\ast$\mbox{\hyperlink{classHArDCore3D_1_1Edge_a84a3891c3abf7f441f2787943e0e0f66}{face}})
 \begin{DoxyCompactList}\small\item\em Add a new face to the edge. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_a8902091c785b5857648f5c9ba55f6eba}\label{classHArDCore3D_1_1Edge_a8902091c785b5857648f5c9ba55f6eba}} 
-void \hyperlink{classHArDCore3D_1_1Edge_a8902091c785b5857648f5c9ba55f6eba}{add\+\_\+vertex} (\hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$\hyperlink{classHArDCore3D_1_1Edge_ade257bc049ec1f43751fc647e07ec052}{vertex})
+void \mbox{\hyperlink{classHArDCore3D_1_1Edge_a8902091c785b5857648f5c9ba55f6eba}{add\+\_\+vertex}} (\mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} $\ast$\mbox{\hyperlink{classHArDCore3D_1_1Edge_ade257bc049ec1f43751fc647e07ec052}{vertex}})
 \begin{DoxyCompactList}\small\item\em Add a new vertex to the edge. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_aed492c6f6fa58b06262ecfa0420121e3}\label{classHArDCore3D_1_1Edge_aed492c6f6fa58b06262ecfa0420121e3}} 
-void \hyperlink{classHArDCore3D_1_1Edge_aed492c6f6fa58b06262ecfa0420121e3}{set\+\_\+boundary} (bool val)
+void \mbox{\hyperlink{classHArDCore3D_1_1Edge_aed492c6f6fa58b06262ecfa0420121e3}{set\+\_\+boundary}} (bool val)
 \begin{DoxyCompactList}\small\item\em Set the \+\_\+boundary value of the face to val. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHArDCore3D_1_1Edge_a150b8b31cd1b608d6ce8b020227a6db2}\label{classHArDCore3D_1_1Edge_a150b8b31cd1b608d6ce8b020227a6db2}} 
-void \hyperlink{classHArDCore3D_1_1Edge_a150b8b31cd1b608d6ce8b020227a6db2}{set\+\_\+global\+\_\+index} (size\+\_\+t idx)
-\begin{DoxyCompactList}\small\item\em Set the global index of the edge to idx. Used to re-\/index the edges, should essentially only be used inside \hyperlink{classHArDCore3D_1_1Mesh_af77873bbc892a7a5b37bf4773c55aefc}{Mesh\+::renum}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classHArDCore3D_1_1Edge_a150b8b31cd1b608d6ce8b020227a6db2}{set\+\_\+global\+\_\+index}} (size\+\_\+t idx)
+\begin{DoxyCompactList}\small\item\em Set the global index of the edge to idx. Used to re-\/index the edges, should essentially only be used inside \mbox{\hyperlink{classHArDCore3D_1_1Mesh_af77873bbc892a7a5b37bf4773c55aefc}{Mesh\+::renum}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Edge_a7460c422a7e7ed1a59bc930054551f68}\label{classHArDCore3D_1_1Edge_a7460c422a7e7ed1a59bc930054551f68}} 
+size\+\_\+t \mbox{\hyperlink{classHArDCore3D_1_1Edge_a7460c422a7e7ed1a59bc930054551f68}{global\+\_\+index}} () const
+\begin{DoxyCompactList}\small\item\em returns the edge global index \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Edge_abe29c7660cf7a1dddb06b876ebc76f80}\label{classHArDCore3D_1_1Edge_abe29c7660cf7a1dddb06b876ebc76f80}} 
+size\+\_\+t \mbox{\hyperlink{classHArDCore3D_1_1Edge_abe29c7660cf7a1dddb06b876ebc76f80}{n\+\_\+cells}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of cells neighbouring the edge \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Edge_aab36400cd966cbeec90297f41c14ac55}\label{classHArDCore3D_1_1Edge_aab36400cd966cbeec90297f41c14ac55}} 
+size\+\_\+t \mbox{\hyperlink{classHArDCore3D_1_1Edge_aab36400cd966cbeec90297f41c14ac55}{n\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of faces neighbouring the edge \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Edge_a38609361fcb95fa62e0bf2d5170144aa}\label{classHArDCore3D_1_1Edge_a38609361fcb95fa62e0bf2d5170144aa}} 
+double \mbox{\hyperlink{classHArDCore3D_1_1Edge_a38609361fcb95fa62e0bf2d5170144aa}{measure}} () const
+\begin{DoxyCompactList}\small\item\em length of the edge \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Edge_a93672b9685e10344c31cdae234017557}\label{classHArDCore3D_1_1Edge_a93672b9685e10344c31cdae234017557}} 
+double \mbox{\hyperlink{classHArDCore3D_1_1Edge_a93672b9685e10344c31cdae234017557}{diam}} () const
+\begin{DoxyCompactList}\small\item\em length of the edge \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Edge_ac7aee988662d982ab3fd81704af7842c}\label{classHArDCore3D_1_1Edge_ac7aee988662d982ab3fd81704af7842c}} 
+Vector3d \mbox{\hyperlink{classHArDCore3D_1_1Edge_ac7aee988662d982ab3fd81704af7842c}{center\+\_\+mass}} () const
+\begin{DoxyCompactList}\small\item\em get the midpoint of the edge \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Edge_a2caaa7859e84eab62858ff8c24d261fe}\label{classHArDCore3D_1_1Edge_a2caaa7859e84eab62858ff8c24d261fe}} 
+bool \mbox{\hyperlink{classHArDCore3D_1_1Edge_a2caaa7859e84eab62858ff8c24d261fe}{is\+\_\+boundary}} () const
+\begin{DoxyCompactList}\small\item\em getter to see if edge is boundary edge \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-The \hyperlink{classHArDCore3D_1_1Edge}{Edge} class provides description of an edge. 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classHArDCore3D_1_1Edge_a051ae1dd47537d89d8efbce3d4fd1760}\label{classHArDCore3D_1_1Edge_a051ae1dd47537d89d8efbce3d4fd1760}} 
-\index{H\+Ar\+D\+Core3\+D\+::\+Edge@{H\+Ar\+D\+Core3\+D\+::\+Edge}!Edge@{Edge}}
-\index{Edge@{Edge}!H\+Ar\+D\+Core3\+D\+::\+Edge@{H\+Ar\+D\+Core3\+D\+::\+Edge}}
-\subsubsection{\texorpdfstring{Edge()}{Edge()}}
-{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh} $\ast$}]{mesh,  }\item[{std\+::vector$<$ \hyperlink{classHArDCore3D_1_1Vertex}{Vertex} $\ast$$>$}]{vertices,  }\item[{bool}]{boundary,  }\item[{double}]{measure,  }\item[{Vector3d}]{center\+\_\+mass }\end{DoxyParamCaption})}
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} class provides description of an edge. 
+
+\begin{DoxyVerb}  @addtogroup Mesh
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHArDCore3D_1_1Edge_aead46bf6e803e24a5c1027369651b581}\label{classHArDCore3D_1_1Edge_aead46bf6e803e24a5c1027369651b581}} 
+\index{HArDCore3D::Edge@{HArDCore3D::Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!HArDCore3D::Edge@{HArDCore3D::Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{\mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} $\ast$}]{mesh,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} $\ast$ $>$}]{vertices,  }\item[{bool}]{boundary,  }\item[{double}]{measure,  }\item[{Vector3d}]{center\+\_\+mass }\end{DoxyParamCaption})}
 
 A class representing an edge of a 3D mesh. Contains a pointer to the mesh, as well as to the cells, faces and vertices connected to that edge Constructor. Edges are constructed after vertices, so these can be feed into the constructor.
 

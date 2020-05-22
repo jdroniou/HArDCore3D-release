@@ -1,22 +1,8 @@
 var searchData=
 [
-  ['memorypool',['memorypool',['../classStemMesh3D_1_1tetgenmesh_1_1memorypool.html',1,'StemMesh3D::tetgenmesh']]],
-  ['mesh',['Mesh',['../classHArDCore3D_1_1Mesh.html',1,'HArDCore3D']]],
-  ['mesh2d_5freader',['mesh2D_reader',['../classStemMesh3D_1_1mesh2D__reader.html',1,'StemMesh3D']]],
-  ['mesh2d_5freader_5fgeneralformat',['mesh2D_reader_GeneralFormat',['../classStemMesh3D_1_1mesh2D__reader__GeneralFormat.html',1,'StemMesh3D']]],
-  ['mesh3d_5freader',['mesh3D_reader',['../classStemMesh3D_1_1mesh3D__reader.html',1,'StemMesh3D']]],
-  ['mesh3d_5freader_5fmsh_5fformat',['mesh3D_reader_MSH_format',['../classStemMesh3D_1_1mesh3D__reader__MSH__format.html',1,'StemMesh3D']]],
-  ['mesh3d_5freader_5fregn_5fface_5fformat',['mesh3D_reader_REGN_FACE_format',['../classStemMesh3D_1_1mesh3D__reader__REGN__FACE__format.html',1,'StemMesh3D']]],
-  ['mesh3d_5freader_5ftetgen_5fformat',['mesh3D_reader_TETGEN_format',['../classStemMesh3D_1_1mesh3D__reader__TETGEN__format.html',1,'StemMesh3D']]],
-  ['mesh3dv_5fbuilder',['mesh3Dv_builder',['../classStemMesh3D_1_1mesh3Dv__builder.html',1,'StemMesh3D']]],
-  ['mesh3dv_5fcmaster',['mesh3Dv_cmaster',['../classStemMesh3D_1_1mesh3Dv__cmaster.html',1,'StemMesh3D']]],
-  ['mesh3dv_5fgmv_5foutput',['mesh3Dv_GMV_output',['../classStemMesh3D_1_1mesh3Dv__GMV__output.html',1,'StemMesh3D']]],
-  ['mesh3dv_5fprinter',['mesh3Dv_printer',['../classStemMesh3D_1_1mesh3Dv__printer.html',1,'StemMesh3D']]],
-  ['mesh3dv_5fwriter',['mesh3Dv_writer',['../classStemMesh3D_1_1mesh3Dv__writer.html',1,'StemMesh3D']]],
-  ['mesh3dv_5fwriter_5fmsh',['mesh3Dv_writer_MSH',['../classStemMesh3D_1_1mesh3Dv__writer__MSH.html',1,'StemMesh3D']]],
-  ['mesh_5f3dv',['mesh_3Dv',['../classStemMesh3D_1_1mesh__3Dv.html',1,'StemMesh3D']]],
-  ['meshbuilder',['MeshBuilder',['../classHArDCore3D_1_1MeshBuilder.html',1,'HArDCore3D']]],
-  ['monomialscalarbasiscell',['MonomialScalarBasisCell',['../classHArDCore3D_1_1MonomialScalarBasisCell.html',1,'HArDCore3D']]],
-  ['monomialscalarbasisedge',['MonomialScalarBasisEdge',['../classHArDCore3D_1_1MonomialScalarBasisEdge.html',1,'HArDCore3D']]],
-  ['monomialscalarbasisface',['MonomialScalarBasisFace',['../classHArDCore3D_1_1MonomialScalarBasisFace.html',1,'HArDCore3D']]]
+  ['l2projection_429',['L2Projection',['../classHArDCore3D_1_1Tests_1_1L2Projection.html',1,'HArDCore3D::Tests']]],
+  ['legendregauss_430',['LegendreGauss',['../classHArDCore3D_1_1LegendreGauss.html',1,'HArDCore3D']]],
+  ['link_431',['link',['../classStemMesh3D_1_1tetgenmesh_1_1link.html',1,'StemMesh3D::tetgenmesh']]],
+  ['list_432',['list',['../classStemMesh3D_1_1tetgenmesh_1_1list.html',1,'StemMesh3D::tetgenmesh']]],
+  ['localoperators_433',['LocalOperators',['../structHArDCore3D_1_1XCurl_1_1LocalOperators.html',1,'HArDCore3D::XCurl::LocalOperators'],['../structHArDCore3D_1_1XDiv_1_1LocalOperators.html',1,'HArDCore3D::XDiv::LocalOperators'],['../structHArDCore3D_1_1XGrad_1_1LocalOperators.html',1,'HArDCore3D::XGrad::LocalOperators']]]
 ];

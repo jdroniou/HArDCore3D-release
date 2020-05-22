@@ -1,93 +1,57 @@
-\hypertarget{classHArDCore3D_1_1ShiftedBasis}{}\section{H\+Ar\+D\+Core3D\+:\+:Shifted\+Basis$<$ Basis\+Type $>$ Class Template Reference}
-\label{classHArDCore3D_1_1ShiftedBasis}\index{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$@{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$}}
+\hypertarget{classHArDCore3D_1_1ShiftedBasis}{}\doxysection{H\+Ar\+D\+Core3D\+::Shifted\+Basis$<$ Basis\+Type $>$ Class Template Reference}
+\label{classHArDCore3D_1_1ShiftedBasis}\index{HArDCore3D::ShiftedBasis$<$ BasisType $>$@{HArDCore3D::ShiftedBasis$<$ BasisType $>$}}
 
 
 {\ttfamily \#include $<$basis.\+hpp$>$}
 
-\subsection*{Public Types}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_adfb11a56f0804ecdf268b8523abd450b}\label{classHArDCore3D_1_1ShiftedBasis_adfb11a56f0804ecdf268b8523abd450b}} 
 typedef Basis\+Type\+::\+Function\+Value {\bfseries Function\+Value}
 \item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_acf31c5df5dc17e5b93a921eaa68731ef}\label{classHArDCore3D_1_1ShiftedBasis_acf31c5df5dc17e5b93a921eaa68731ef}} 
 typedef Basis\+Type\+::\+Gradient\+Value {\bfseries Gradient\+Value}
 \item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_aa211a7a7092eadf348a9f8fc52c8ac7b}\label{classHArDCore3D_1_1ShiftedBasis_aa211a7a7092eadf348a9f8fc52c8ac7b}} 
 typedef Vector\+Rd {\bfseries Curl\+Value}
 \item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_addf96b150b94a4fe6db4d69d0c73c405}\label{classHArDCore3D_1_1ShiftedBasis_addf96b150b94a4fe6db4d69d0c73c405}} 
 typedef double {\bfseries Divergence\+Value}
 \item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_a67fe9edf4dbbff050f7965b55f1b974b}\label{classHArDCore3D_1_1ShiftedBasis_a67fe9edf4dbbff050f7965b55f1b974b}} 
 typedef Basis\+Type\+::\+Geometric\+Support {\bfseries Geometric\+Support}
 \end{DoxyCompactItemize}
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classHArDCore3D_1_1ShiftedBasis_aea075c3cb8fbdd848e30d84821f23711}{Shifted\+Basis} (const Basis\+Type \&basis, const int shift)
+\mbox{\hyperlink{group__Basis_gaea075c3cb8fbdd848e30d84821f23711}{Shifted\+Basis}} (const Basis\+Type \&basis, const int shift)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_a0d1ffbb1cb714755de9035fcb9d5f183}\label{classHArDCore3D_1_1ShiftedBasis_a0d1ffbb1cb714755de9035fcb9d5f183}} 
-size\+\_\+t \hyperlink{classHArDCore3D_1_1ShiftedBasis_a0d1ffbb1cb714755de9035fcb9d5f183}{dimension} () const
+size\+\_\+t \mbox{\hyperlink{group__Basis_ga0d1ffbb1cb714755de9035fcb9d5f183}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Return the dimension of the basis. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_a67db64c53524c17389e1928ff7288101}\label{classHArDCore3D_1_1ShiftedBasis_a67db64c53524c17389e1928ff7288101}} 
-Function\+Value \hyperlink{classHArDCore3D_1_1ShiftedBasis_a67db64c53524c17389e1928ff7288101}{function} (size\+\_\+t i, const Vector\+Rd \&x) const
+Function\+Value \mbox{\hyperlink{group__Basis_ga67db64c53524c17389e1928ff7288101}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_a1e825cd8aa68c4e1a1e3900e24be84f7}\label{classHArDCore3D_1_1ShiftedBasis_a1e825cd8aa68c4e1a1e3900e24be84f7}} 
-Gradient\+Value \hyperlink{classHArDCore3D_1_1ShiftedBasis_a1e825cd8aa68c4e1a1e3900e24be84f7}{gradient} (size\+\_\+t i, const Vector\+Rd \&x) const
+Gradient\+Value \mbox{\hyperlink{group__Basis_ga1e825cd8aa68c4e1a1e3900e24be84f7}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_adca4290363039ead695cd70ca589e04d}\label{classHArDCore3D_1_1ShiftedBasis_adca4290363039ead695cd70ca589e04d}} 
-Curl\+Value \hyperlink{classHArDCore3D_1_1ShiftedBasis_adca4290363039ead695cd70ca589e04d}{curl} (size\+\_\+t i, const Vector\+Rd \&x) const
+Curl\+Value \mbox{\hyperlink{group__Basis_gadca4290363039ead695cd70ca589e04d}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_a667f2913df630001dcc7d693662af926}\label{classHArDCore3D_1_1ShiftedBasis_a667f2913df630001dcc7d693662af926}} 
-Divergence\+Value \hyperlink{classHArDCore3D_1_1ShiftedBasis_a667f2913df630001dcc7d693662af926}{divergence} (size\+\_\+t i, const Vector\+Rd \&x) const
+Divergence\+Value \mbox{\hyperlink{group__Basis_ga667f2913df630001dcc7d693662af926}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Attributes}
+\doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_a3aed71a500126a2f56662ca9e4cc8788}\label{classHArDCore3D_1_1ShiftedBasis_a3aed71a500126a2f56662ca9e4cc8788}} 
 static const Tensor\+RankE {\bfseries tensor\+Rank} = Basis\+Type\+::tensor\+Rank
 \item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_ac37f96b17e6954da1571f16593fcf0c6}\label{classHArDCore3D_1_1ShiftedBasis_ac37f96b17e6954da1571f16593fcf0c6}} 
 static const bool {\bfseries has\+Function} = Basis\+Type\+::has\+Function
 \item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_a7cca9d8dbc0ac24114ae1ba519eb6f60}\label{classHArDCore3D_1_1ShiftedBasis_a7cca9d8dbc0ac24114ae1ba519eb6f60}} 
 static const bool {\bfseries has\+Gradient} = Basis\+Type\+::has\+Gradient
 \item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_ae6469509558a028a4125c496270cbffc}\label{classHArDCore3D_1_1ShiftedBasis_ae6469509558a028a4125c496270cbffc}} 
 static const bool {\bfseries has\+Curl} = Basis\+Type\+::has\+Curl
 \item 
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_abdca69c0f60b7e305c887e16df8e4c26}\label{classHArDCore3D_1_1ShiftedBasis_abdca69c0f60b7e305c887e16df8e4c26}} 
 static const bool {\bfseries has\+Divergence} = Basis\+Type\+::has\+Divergence
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename Basis\+Type$>$\newline
 class H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$}
 
 Generate a basis where the function indices are shifted. Can be used, e.\+g., to ignore the constant function in scalar bases 
-
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classHArDCore3D_1_1ShiftedBasis_aea075c3cb8fbdd848e30d84821f23711}\label{classHArDCore3D_1_1ShiftedBasis_aea075c3cb8fbdd848e30d84821f23711}} 
-\index{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis@{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis}!Shifted\+Basis@{Shifted\+Basis}}
-\index{Shifted\+Basis@{Shifted\+Basis}!H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis@{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis}}
-\subsubsection{\texorpdfstring{Shifted\+Basis()}{ShiftedBasis()}}
-{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
-\hyperlink{classHArDCore3D_1_1ShiftedBasis}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis}$<$ Basis\+Type $>$\+::\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis} (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{const int}]{shift }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Constructor. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em basis} & A basis \\
-\hline
-{\em shift} & The shift \\
-\hline
-\end{DoxyParams}
-
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

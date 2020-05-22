@@ -1,0 +1,83 @@
+\hypertarget{classHArDCore3D_1_1Tests_1_1L2Projection}{}\doxysection{H\+Ar\+D\+Core3D\+::Tests\+::L2\+Projection$<$ Basis\+Type $>$ Class Template Reference}
+\label{classHArDCore3D_1_1Tests_1_1L2Projection}\index{HArDCore3D::Tests::L2Projection$<$ BasisType $>$@{HArDCore3D::Tests::L2Projection$<$ BasisType $>$}}
+
+
+Compute the L2-\/orthogonal projection of a function.  
+
+
+
+
+{\ttfamily \#include $<$l2projection.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Tests_1_1L2Projection_a60919d38ddf225fc9505dba4d3ce2496}\label{classHArDCore3D_1_1Tests_1_1L2Projection_a60919d38ddf225fc9505dba4d3ce2496}} 
+typedef Basis\+Type\+::\+Function\+Value {\bfseries Function\+Value}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Tests_1_1L2Projection_a1fbc2b23e145139249c7bb5b76ab03e2}\label{classHArDCore3D_1_1Tests_1_1L2Projection_a1fbc2b23e145139249c7bb5b76ab03e2}} 
+typedef boost\+::multi\+\_\+array$<$ Function\+Value, 2 $>$ {\bfseries Basis\+Evaluation}
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Tests_1_1L2Projection_add7e04fd075434eb177cf8f1dee7b26d}\label{classHArDCore3D_1_1Tests_1_1L2Projection_add7e04fd075434eb177cf8f1dee7b26d}} 
+typedef std\+::function$<$ typename Basis\+Type\+::\+Function\+Value(const Eigen\+::\+Vector3d \&)$>$ {\bfseries Function\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHArDCore3D_1_1Tests_1_1L2Projection_af08f02a357930fac0cd5676aa8c92268}{L2\+Projection}} (const Basis\+Type \&basis, Quadrature\+Rule \&quad, const Basis\+Evaluation \&basis\+\_\+quad)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Tests_1_1L2Projection_a36d895bb7cd8306b32fc6d94564ca101}\label{classHArDCore3D_1_1Tests_1_1L2Projection_a36d895bb7cd8306b32fc6d94564ca101}} 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classHArDCore3D_1_1Tests_1_1L2Projection_a36d895bb7cd8306b32fc6d94564ca101}{compute}} (const Function\+Type \&f) const
+\begin{DoxyCompactList}\small\item\em Compute the projection of a function. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classHArDCore3D_1_1Tests_1_1L2Projection_a0afa203faadbe3aa6669a235dd1b533c}{squared\+\_\+error}} (const Function\+Type \&f, const Eigen\+::\+Vector\+Xd \&f\+\_\+dofs) const
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Tests_1_1L2Projection_ab2afbe46553a097e11fecdf10999bde4}\label{classHArDCore3D_1_1Tests_1_1L2Projection_ab2afbe46553a097e11fecdf10999bde4}} 
+double \mbox{\hyperlink{classHArDCore3D_1_1Tests_1_1L2Projection_ab2afbe46553a097e11fecdf10999bde4}{error}} (const Function\+Type \&f, const Eigen\+::\+Vector\+Xd \&f\+\_\+dofs) const
+\begin{DoxyCompactList}\small\item\em Compute the error between the L2-\/orthogonal projection and the function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1Tests_1_1L2Projection_ad7fcd705d9757e31773d3ffa71d47b81}\label{classHArDCore3D_1_1Tests_1_1L2Projection_ad7fcd705d9757e31773d3ffa71d47b81}} 
+const Basis\+Evaluation \& \mbox{\hyperlink{classHArDCore3D_1_1Tests_1_1L2Projection_ad7fcd705d9757e31773d3ffa71d47b81}{basis\+Quad}} ()
+\begin{DoxyCompactList}\small\item\em Return the basis evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Basis\+Type$>$\newline
+class H\+Ar\+D\+Core3\+D\+::\+Tests\+::\+L2\+Projection$<$ Basis\+Type $>$}
+
+Compute the L2-\/orthogonal projection of a function. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHArDCore3D_1_1Tests_1_1L2Projection_af08f02a357930fac0cd5676aa8c92268}\label{classHArDCore3D_1_1Tests_1_1L2Projection_af08f02a357930fac0cd5676aa8c92268}} 
+\index{HArDCore3D::Tests::L2Projection$<$ BasisType $>$@{HArDCore3D::Tests::L2Projection$<$ BasisType $>$}!L2Projection@{L2Projection}}
+\index{L2Projection@{L2Projection}!HArDCore3D::Tests::L2Projection$<$ BasisType $>$@{HArDCore3D::Tests::L2Projection$<$ BasisType $>$}}
+\doxysubsubsection{\texorpdfstring{L2Projection()}{L2Projection()}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+\mbox{\hyperlink{classHArDCore3D_1_1Tests_1_1L2Projection}{H\+Ar\+D\+Core3\+D\+::\+Tests\+::\+L2\+Projection}}$<$ Basis\+Type $>$\+::\mbox{\hyperlink{classHArDCore3D_1_1Tests_1_1L2Projection}{L2\+Projection}} (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{Quadrature\+Rule \&}]{quad,  }\item[{const Basis\+Evaluation \&}]{basis\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em basis} & Basis for the space on which we project \\
+\hline
+{\em quad} & Quadrature rule \\
+\hline
+{\em basis\+\_\+quad} & Evaluation of the basis at quadrature nodes \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHArDCore3D_1_1Tests_1_1L2Projection_a0afa203faadbe3aa6669a235dd1b533c}\label{classHArDCore3D_1_1Tests_1_1L2Projection_a0afa203faadbe3aa6669a235dd1b533c}} 
+\index{HArDCore3D::Tests::L2Projection$<$ BasisType $>$@{HArDCore3D::Tests::L2Projection$<$ BasisType $>$}!squared\_error@{squared\_error}}
+\index{squared\_error@{squared\_error}!HArDCore3D::Tests::L2Projection$<$ BasisType $>$@{HArDCore3D::Tests::L2Projection$<$ BasisType $>$}}
+\doxysubsubsection{\texorpdfstring{squared\_error()}{squared\_error()}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+double \mbox{\hyperlink{classHArDCore3D_1_1Tests_1_1L2Projection}{H\+Ar\+D\+Core3\+D\+::\+Tests\+::\+L2\+Projection}}$<$ Basis\+Type $>$\+::squared\+\_\+error (\begin{DoxyParamCaption}\item[{const Function\+Type \&}]{f,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{f\+\_\+dofs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compute the squared L2-\/error between the L2-\/orthogonal projection and the function 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Schemes/\+D\+D\+R\+Core/l2projection.\+hpp\end{DoxyCompactItemize}

@@ -1,11 +1,4 @@
 var searchData=
 [
-  ['validate',['validate',['../classTestCase.html#a1f428652eb476f6eb4973ef1f478e8ce',1,'TestCase']]],
-  ['vector',['vector',['../group__Quadratures.html#gac0d94c3725c0502056333f314fb48fc9',1,'HArDCore3D::QuadratureNode']]],
-  ['vector_5fproduct',['vector_product',['../group__Basis.html#ga7fd6906b30cba10f2f452b029a86ca00',1,'HArDCore3D']]],
-  ['vertex',['Vertex',['../classHArDCore3D_1_1Vertex.html#a30e7743fc40f1b771b9dad963a9badd1',1,'HArDCore3D::Vertex::Vertex()'],['../classHArDCore3D_1_1Cell.html#a2e6bcdeac17fd028ef3892e7866c7b88',1,'HArDCore3D::Cell::vertex()'],['../classHArDCore3D_1_1Edge.html#ade257bc049ec1f43751fc647e07ec052',1,'HArDCore3D::Edge::vertex()'],['../classHArDCore3D_1_1Face.html#a63c8254509d075b402e1ce7393efd70c',1,'HArDCore3D::Face::vertex()'],['../classHArDCore3D_1_1Mesh.html#ad099224c697c05a57fad6a47fdcd9e76',1,'HArDCore3D::Mesh::vertex()'],['../classHArDCore3D_1_1Vertex.html#ae4d861f137a630bb3fde25acf03198ed',1,'HArDCore3D::Vertex::vertex()']]],
-  ['vertexvalues',['VertexValues',['../classHArDCore3D_1_1HybridCore.html#a1d33ec0786b8127a161384ecf8f04018',1,'HArDCore3D::HybridCore']]],
-  ['vrtx_5fedge',['vrtx_edge',['../classStemMesh3D_1_1mesh__3Dv.html#a93fff194e371aa21a00f0e5e1e6d45cd',1,'StemMesh3D::mesh_3Dv']]],
-  ['vrtx_5fvrtx',['vrtx_vrtx',['../classStemMesh3D_1_1mesh__3Dv.html#afbe4f73847a1ae2c6a24170ab3a7827e',1,'StemMesh3D::mesh_3Dv']]],
-  ['vtuwriter',['VtuWriter',['../group__Plot.html#ga7aff33c21507345fcaa46515ed006470',1,'HArDCore3D::VtuWriter']]]
+  ['uvector_803',['UVector',['../group__HybridCore.html#gae2a9aa60d46161d5cbba31dfd1c5eccd',1,'HArDCore3D::UVector']]]
 ];
