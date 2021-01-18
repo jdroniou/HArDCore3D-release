@@ -274,11 +274,11 @@ and polynomials on the faces (polynomials on the edges are not taken into accoun
     // Degree of the edge polynomials
     const int m_edge_deg;
     // Using threads
-    const bool m_use_threads;
+    bool m_use_threads;
     // Output stream
     std::ostream & m_output;
     // Orthonormalise or not the basis functions
-    const bool & m_ortho;
+    bool m_ortho;
 
     // Cell, face and edges bases
     std::vector<std::unique_ptr<PolyCellBasisType>> m_cell_basis;
@@ -289,10 +289,6 @@ and polynomials on the faces (polynomials on the edges are not taken into accoun
     PolyCellBasisType _construct_cell_basis(size_t iT);
     PolyFaceBasisType _construct_face_basis(size_t iF);
     PolyEdgeBasisType _construct_edge_basis(size_t iF);
-
-    // offset for quadrature rules, should be 0 except for testing purposes
-    int _offset_doe;	
-
   };
 
 

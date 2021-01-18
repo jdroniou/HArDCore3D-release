@@ -2,6 +2,11 @@
 \label{classHArDCore3D_1_1ShiftedBasis}\index{HArDCore3D::ShiftedBasis$<$ BasisType $>$@{HArDCore3D::ShiftedBasis$<$ BasisType $>$}}
 
 
+Generate a basis where the function indices are shifted.  
+
+
+
+
 {\ttfamily \#include $<$basis.\+hpp$>$}
 
 \doxysubsection*{Public Types}
@@ -20,17 +25,17 @@ typedef Basis\+Type\+::\+Geometric\+Support {\bfseries Geometric\+Support}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Basis_gaea075c3cb8fbdd848e30d84821f23711}{Shifted\+Basis}} (const Basis\+Type \&basis, const int shift)
+\mbox{\hyperlink{group__Common_gaea075c3cb8fbdd848e30d84821f23711}{Shifted\+Basis}} (const Basis\+Type \&basis, const int shift)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Basis_ga0d1ffbb1cb714755de9035fcb9d5f183}{dimension}} () const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga0d1ffbb1cb714755de9035fcb9d5f183}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Return the dimension of the basis. \end{DoxyCompactList}\item 
-Function\+Value \mbox{\hyperlink{group__Basis_ga67db64c53524c17389e1928ff7288101}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Function\+Value \mbox{\hyperlink{group__Common_ga67db64c53524c17389e1928ff7288101}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-Gradient\+Value \mbox{\hyperlink{group__Basis_ga1e825cd8aa68c4e1a1e3900e24be84f7}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Gradient\+Value \mbox{\hyperlink{group__Common_ga1e825cd8aa68c4e1a1e3900e24be84f7}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-Curl\+Value \mbox{\hyperlink{group__Basis_gadca4290363039ead695cd70ca589e04d}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Curl\+Value \mbox{\hyperlink{group__Common_gadca4290363039ead695cd70ca589e04d}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-Divergence\+Value \mbox{\hyperlink{group__Basis_ga667f2913df630001dcc7d693662af926}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Divergence\+Value \mbox{\hyperlink{group__Common_ga667f2913df630001dcc7d693662af926}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -51,7 +56,9 @@ static const bool {\bfseries has\+Divergence} = Basis\+Type\+::has\+Divergence
 \subsubsection*{template$<$typename Basis\+Type$>$\newline
 class H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$}
 
-Generate a basis where the function indices are shifted. Can be used, e.\+g., to ignore the constant function in scalar bases 
+Generate a basis where the function indices are shifted. 
+
+Can be used, e.\+g., to ignore the constant function in a hierarchical scalar basis 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

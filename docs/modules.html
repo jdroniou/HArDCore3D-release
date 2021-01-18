@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -74,12 +81,12 @@ $(function() {
 <tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__HHO3D.html" target="_self">HHO3D</a></td><td class="desc">Class providing helper methods and assemble and solve routines for general 3D HHO schemes </td></tr>
 <tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__HHO__LocVarDiff.html" target="_self">HHO_LocVarDiff</a></td><td class="desc">HHO scheme for diffusion equation -div(Diff grad u)=f, with Diff possibly varying in each cell </td></tr>
 <tr id="row_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__TestCases.html" target="_self">TestCases</a></td><td class="desc">Defines test cases (exact solutions, source terms, boundary condition, etc.) </td></tr>
-<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__Basis.html" target="_self">Basis</a></td><td class="desc">Classes and functions for polynomial basis creation and manipulation </td></tr>
-<tr id="row_7_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__DDRcore.html" target="_self">DDRcore</a></td><td class="desc">Classes providing tools to the Discrete De Rham sequence </td></tr>
+<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__Common.html" target="_self">Common</a></td><td class="desc">Classes and functions for polynomial basis creation and manipulation </td></tr>
+<tr id="row_7_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__DDRCore.html" target="_self">DDRCore</a></td><td class="desc">Classes providing tools to the Discrete De Rham sequence </td></tr>
 <tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__HybridCore.html" target="_self">HybridCore</a></td><td class="desc">Classes providing cell and face quadrature rules, and values of basis functions at the nodes </td></tr>
-<tr id="row_9_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__Plot.html" target="_self">Plot</a></td><td class="desc">Classes providing tools to create vtu files to visualise solutions </td></tr>
-<tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__Quadratures.html" target="_self">Quadratures</a></td><td class="desc">Classes providing quadratures on edges and in cells </td></tr>
-<tr id="row_11_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__Mesh.html" target="_self">Mesh</a></td><td class="desc"></td></tr>
+<tr id="row_9_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__Mesh.html" target="_self">Mesh</a></td><td class="desc">Classes to describe and access the elements of a 3D mesh </td></tr>
+<tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__Plot.html" target="_self">Plot</a></td><td class="desc">Classes providing tools to create vtu files to visualise solutions </td></tr>
+<tr id="row_11_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__Quadratures.html" target="_self">Quadratures</a></td><td class="desc">Classes providing quadratures on edges and in cells </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->

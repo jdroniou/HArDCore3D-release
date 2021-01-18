@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -101,13 +108,13 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> { <span class="comment">// Forward declaration</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>HArDCore3D { <span class="comment">// Forward declaration</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">class </span>Mesh;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">class </span>Cell;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">class </span>Vertex;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span>HArDCore3D {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//                            Class definition</span></div>
@@ -145,9 +152,8 @@ $(function() {
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif //_VTU_WRITER</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassHArDCore3D_1_1Mesh_html"><div class="ttname"><a href="classHArDCore3D_1_1Mesh.html">HArDCore3D::Mesh</a></div><div class="ttdoc">The Mesh class provides description of a mesh.</div><div class="ttdef"><b>Definition:</b> mesh.hpp:59</div></div>
+<div class="ttc" id="aclassHArDCore3D_1_1Mesh_html"><div class="ttname"><a href="classHArDCore3D_1_1Mesh.html">HArDCore3D::Mesh</a></div><div class="ttdoc">The Mesh class provides description of a mesh.</div><div class="ttdef"><b>Definition:</b> mesh.hpp:61</div></div>
 <div class="ttc" id="agroup__Plot_html_ga24a7defcf350ceff6a48de65b6740505"><div class="ttname"><a href="group__Plot.html#ga24a7defcf350ceff6a48de65b6740505">HArDCore3D::VtuWriter::VtuWriter</a></div><div class="ttdeci">VtuWriter(const Mesh *mesh)</div><div class="ttdoc">Constructor for mesh writer.</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:21</div></div>
-<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdoc">Classes to describe and access the elements of a 3D mesh.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:1</div></div>
 <div class="ttc" id="agroup__Plot_html_ga11ec3bf54886e6570bfe72daf3f41a5d"><div class="ttname"><a href="group__Plot.html#ga11ec3bf54886e6570bfe72daf3f41a5d">HArDCore3D::VtuWriter::write_to_vtu</a></div><div class="ttdeci">bool write_to_vtu(const std::string file_name, const Eigen::VectorXd &amp;sol_vertex)</div><div class="ttdoc">Writes the plot file.</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:74</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1VtuWriter_html"><div class="ttname"><a href="classHArDCore3D_1_1VtuWriter.html">HArDCore3D::VtuWriter</a></div><div class="ttdoc">The VtuWriter class provides methods to plot a 3D mesh and a solution on this mesh.</div><div class="ttdef"><b>Definition:</b> vtu_writer.hpp:55</div></div>
 <!-- start footer part -->

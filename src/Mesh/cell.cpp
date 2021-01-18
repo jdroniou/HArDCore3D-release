@@ -27,7 +27,6 @@ Cell::Cell(size_t iC,
 	   double diam, 
 	   Vector3d center_mass)
   : _iC(iC),
-    _mesh(mesh),
     _faces(faces),
     _edges(edges),
     _vertices(vertices),

@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -70,7 +77,7 @@ $(function() {
 <div class="title">l2projection.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceHArDCore3D.html">    1</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> {</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">namespace </span>HArDCore3D {</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;  </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keyword">namespace </span>Tests {</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    </div>
@@ -90,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    : m_basis(basis),</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      m_quad(quad),</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      m_basis_quad(basis_quad),</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      m_cholesky_mass(<a class="code" href="group__Basis.html#gaf5cc3ed71949b5d7adc5877e6bfebcb4">compute_gram_matrix</a>(basis_quad, basis_quad, quad))</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      m_cholesky_mass(<a class="code" href="group__Common.html#gaf5cc3ed71949b5d7adc5877e6bfebcb4">compute_gram_matrix</a>(basis_quad, basis_quad, quad))</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// Check that the basis evaluation and quadrature rule are coherent</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    assert( basis.dimension() == basis_quad.shape()[0] &amp;&amp; quad.size() == basis_quad.shape()[1] );</div>
@@ -102,7 +109,7 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; m_basis.dimension(); i++) {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> iqn = 0; iqn &lt; m_quad.size(); iqn++) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        FunctionValue f_iqn = f(m_quad[iqn].vector());</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        b(i) += m_quad[iqn].w * <a class="code" href="group__Basis.html#ga46a7162dd1acacd29421a7d8db89c96e">scalar_product</a>(f_iqn, m_basis_quad[i][iqn]);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        b(i) += m_quad[iqn].w * <a class="code" href="group__Common.html#ga46a7162dd1acacd29421a7d8db89c96e">scalar_product</a>(f_iqn, m_basis_quad[i][iqn]);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      } <span class="comment">// for iqn</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    } <span class="comment">// for i</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> m_cholesky_mass.solve(b);</div>
@@ -117,7 +124,7 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        f_iqn += f_dofs(i) * m_basis_quad[i][iqn];</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      } <span class="comment">// for i</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      FunctionValue diff_f_iqn = f_iqn - f(m_quad[iqn].vector());</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      err += m_quad[iqn].w * <a class="code" href="group__Basis.html#ga46a7162dd1acacd29421a7d8db89c96e">scalar_product</a>(diff_f_iqn, diff_f_iqn);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      err += m_quad[iqn].w * <a class="code" href="group__Common.html#ga46a7162dd1acacd29421a7d8db89c96e">scalar_product</a>(diff_f_iqn, diff_f_iqn);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    } <span class="comment">// for iqn</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> err;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      }</div>
@@ -153,7 +160,7 @@ $(function() {
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      f_iqn += f_dofs(i) * basis_quad[i][iqn];</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    } <span class="comment">// for i</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    norm += quad[iqn].w * <a class="code" href="group__Basis.html#ga46a7162dd1acacd29421a7d8db89c96e">scalar_product</a>(f_iqn, f_iqn);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    norm += quad[iqn].w * <a class="code" href="group__Common.html#ga46a7162dd1acacd29421a7d8db89c96e">scalar_product</a>(f_iqn, f_iqn);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      } <span class="comment">// for iqn</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordflow">return</span> norm;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
@@ -172,11 +179,10 @@ $(function() {
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;} <span class="comment">// end of namespace HArDCore3D</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__Common_html_gaf5cc3ed71949b5d7adc5877e6bfebcb4"><div class="ttname"><a href="group__Common.html#gaf5cc3ed71949b5d7adc5877e6bfebcb4">HArDCore3D::compute_gram_matrix</a></div><div class="ttdeci">Eigen::MatrixXd compute_gram_matrix(const boost::multi_array&lt; VectorRd, 2 &gt; &amp;B1, const boost::multi_array&lt; double, 2 &gt; &amp;B2, const QuadratureRule &amp;qr)</div><div class="ttdef"><b>Definition:</b> basis.cpp:315</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1Tests_1_1L2Projection_html_a0afa203faadbe3aa6669a235dd1b533c"><div class="ttname"><a href="classHArDCore3D_1_1Tests_1_1L2Projection.html#a0afa203faadbe3aa6669a235dd1b533c">HArDCore3D::Tests::L2Projection::squared_error</a></div><div class="ttdeci">double squared_error(const FunctionType &amp;f, const Eigen::VectorXd &amp;f_dofs) const</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:44</div></div>
-<div class="ttc" id="agroup__Basis_html_ga46a7162dd1acacd29421a7d8db89c96e"><div class="ttname"><a href="group__Basis.html#ga46a7162dd1acacd29421a7d8db89c96e">HArDCore3D::scalar_product</a></div><div class="ttdeci">double scalar_product(const double &amp;x, const double &amp;y)</div><div class="ttdoc">Scalar product between two reals.</div><div class="ttdef"><b>Definition:</b> basis.cpp:124</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1Tests_1_1L2Projection_html_ab2afbe46553a097e11fecdf10999bde4"><div class="ttname"><a href="classHArDCore3D_1_1Tests_1_1L2Projection.html#ab2afbe46553a097e11fecdf10999bde4">HArDCore3D::Tests::L2Projection::error</a></div><div class="ttdeci">double error(const FunctionType &amp;f, const Eigen::VectorXd &amp;f_dofs) const</div><div class="ttdoc">Compute the error between the L2-orthogonal projection and the function.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:59</div></div>
-<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdoc">Classes to describe and access the elements of a 3D mesh.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:1</div></div>
-<div class="ttc" id="agroup__Basis_html_gaf5cc3ed71949b5d7adc5877e6bfebcb4"><div class="ttname"><a href="group__Basis.html#gaf5cc3ed71949b5d7adc5877e6bfebcb4">HArDCore3D::compute_gram_matrix</a></div><div class="ttdeci">Eigen::MatrixXd compute_gram_matrix(const boost::multi_array&lt; VectorRd, 2 &gt; &amp;B1, const boost::multi_array&lt; double, 2 &gt; &amp;B2, const QuadratureRule &amp;qr)</div><div class="ttdef"><b>Definition:</b> basis.cpp:161</div></div>
+<div class="ttc" id="agroup__Common_html_ga46a7162dd1acacd29421a7d8db89c96e"><div class="ttname"><a href="group__Common.html#ga46a7162dd1acacd29421a7d8db89c96e">HArDCore3D::scalar_product</a></div><div class="ttdeci">double scalar_product(const double &amp;x, const double &amp;y)</div><div class="ttdoc">Scalar product between two reals.</div><div class="ttdef"><b>Definition:</b> basis.cpp:278</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1Tests_1_1L2Projection_html_a36d895bb7cd8306b32fc6d94564ca101"><div class="ttname"><a href="classHArDCore3D_1_1Tests_1_1L2Projection.html#a36d895bb7cd8306b32fc6d94564ca101">HArDCore3D::Tests::L2Projection::compute</a></div><div class="ttdeci">Eigen::VectorXd compute(const FunctionType &amp;f) const</div><div class="ttdoc">Compute the projection of a function.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:30</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1Tests_1_1L2Projection_html_af08f02a357930fac0cd5676aa8c92268"><div class="ttname"><a href="classHArDCore3D_1_1Tests_1_1L2Projection.html#af08f02a357930fac0cd5676aa8c92268">HArDCore3D::Tests::L2Projection::L2Projection</a></div><div class="ttdeci">L2Projection(const BasisType &amp;basis, QuadratureRule &amp;quad, const BasisEvaluation &amp;basis_quad)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:15</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1Tests_1_1L2Projection_html"><div class="ttname"><a href="classHArDCore3D_1_1Tests_1_1L2Projection.html">HArDCore3D::Tests::L2Projection</a></div><div class="ttdoc">Compute the L2-orthogonal projection of a function.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:7</div></div>

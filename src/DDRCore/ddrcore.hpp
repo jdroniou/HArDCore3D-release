@@ -39,9 +39,10 @@
 #include <iostream>
 
 #include <basis.hpp>
+#include <polynomialspacedimension.hpp>
 
 /*!	
- * @defgroup DDRcore 
+ * @defgroup DDRCore 
  * @brief Classes providing tools to the Discrete De Rham sequence
  */
 
@@ -50,134 +51,73 @@ namespace HArDCore3D
 {
 
   /*!
-   *	\addtogroup DDRcore
+   *	\addtogroup DDRCore
    * @{
    */
 
-  /// Basis dimensions for the full and trimmed polynomial spaces
-  template<typename GeometricSupport>
-  struct PolynomialSpaceDimension
-  {
-    // Only specializations are relevant
-  };
-  
-  template<>
-  struct PolynomialSpaceDimension<Cell>
-  {
-    /// Dimension of Pk(T)
-    static size_t Poly(int k)
-    {
-      return (k >= 0 ? (k * (k + 1) * (2 * k + 1) + 9 * k * (k + 1) + 12 * (k + 1)) / 12 : 0);
-    }
-    /// Dimension of Gk(T)
-    static size_t Goly(int k)
-    {
-      return (k >= 0 ? PolynomialSpaceDimension<Cell>::Poly(k + 1) - 1 : 0);
-    }
-    /// Dimension of GOk(T)
-    static size_t GolyOrth(int k)
-    {
-      return 3 * PolynomialSpaceDimension<Cell>::Poly(k) - PolynomialSpaceDimension<Cell>::Goly(k);
-    }
-    /// Dimension of Rk(T)
-    static size_t Roly(int k)
-    {
-      return (k >= 0 ? PolynomialSpaceDimension<Cell>::GolyOrth(k + 1) : 0);
-    }
-    /// Dimension of ROk(T)
-    static size_t RolyOrth(int k)
-    {
-      return 3 * PolynomialSpaceDimension<Cell>::Poly(k) - PolynomialSpaceDimension<Cell>::Roly(k);
-    }
-  };
-
-  template<>
-  struct PolynomialSpaceDimension<Face>
-  {
-    /// Dimension of Pk(F)
-    static size_t Poly(int k)
-    {
-      return (k >= 0 ? (k + 1) * (k + 2) / 2 : 0);
-    }
-    /// Dimension of Rk(F)
-    static size_t Roly(int k)
-    {
-      return (k >= 0 ? PolynomialSpaceDimension<Face>::Poly(k + 1) - 1 : 0);
-    }
-    /// Dimension of ROk(F)
-    static size_t RolyOrth(int k)
-    {
-      return 2 * PolynomialSpaceDimension<Face>::Poly(k) - PolynomialSpaceDimension<Face>::Roly(k);
-    }
-  };
-
-  template<>
-  struct PolynomialSpaceDimension<Edge>
-  {
-    /// Dimension of Pk(E)
-    static size_t Poly(int k)
-    {
-      return (k >= 0 ? k + 1 : 0);
-    }
-  };
 
   //------------------------------------------------------------------------------
 
-  /// Construct the spaces for the DDR sequence
+  /// Construct all polynomial spaces for the DDR sequence
   class DDRCore
   {
   public:
     // Types for element bases
-    typedef Family<MonomialScalarBasisCell> PolyCellBasisType;
-    typedef TensorizedVectorFamily<PolyCellBasisType, 3> Poly3CellBasisType;
-    typedef Family<GradientBasis<ShiftedBasis<MonomialScalarBasisCell> > > GolyCellBasisType;
-    typedef Family<Poly3CellBasisType> GolyOrthCellBasisType;
-    typedef CurlBasis<GolyOrthCellBasisType> RolyCellBasisType;
-    typedef Family<Poly3CellBasisType> RolyOrthCellBasisType;
+    typedef Family<MonomialScalarBasisCell> PolyBasisCellType;
+    typedef TensorizedVectorFamily<RestrictedBasis<PolyBasisCellType>, 3> Poly3BasisCellType;
+    typedef Family<GradientBasis<ShiftedBasis<MonomialScalarBasisCell> > > GolyBasisCellType;
+    typedef Family<GolyComplBasisCell> GolyComplBasisCellType;
+    typedef Family<CurlBasis<GolyComplBasisCell>> RolyBasisCellType;
+    typedef Family<RolyComplBasisCell> RolyComplBasisCellType;
 
     // Types for face bases
-    typedef Family<MonomialScalarBasisFace> PolyFaceBasisType;
-    typedef TangentFamily<PolyFaceBasisType> Poly2FaceBasisType;
-    typedef CurlBasis<ShiftedBasis<PolyFaceBasisType> > RolyFaceBasisType;
-    typedef Family<Poly2FaceBasisType> RolyOrthFaceBasisType;
-    typedef Family<Family<TangentFamily<MonomialScalarBasisFace> > > PotentialTestFunctionBasisType;
+    typedef Family<MonomialScalarBasisFace> PolyBasisFaceType;
+    typedef TangentFamily<RestrictedBasis<PolyBasisFaceType>> Poly2BasisFaceType;
+    typedef Family<CurlBasis<ShiftedBasis<MonomialScalarBasisFace>>> RolyBasisFaceType;
+    typedef Family<RolyComplBasisFace> RolyComplBasisFaceType;
 
     // Type for edge basis
     typedef Family<MonomialScalarBasisEdge> PolyEdgeBasisType;
 
-    /// Structure for element bases
+    /// Structure to store element bases
+    /** 'Poly': basis of polynomial space; 'Goly': gradient basis; 'Roly': curl basis.\n
+        'k', 'kmo' (k-1) and 'kpo' (k+1) determines the degree.\n
+        'Compl' for the complement of the corresponding 'Goly' or 'Roly' in the 'Poly' space */
     struct CellBases
     {
       /// Geometric support
       typedef Cell GeometricSupport;
 
-      std::unique_ptr<PolyCellBasisType> Polykpo;
-      std::unique_ptr<RestrictedBasis<PolyCellBasisType> > Polyk;
-      std::unique_ptr<RestrictedBasis<PolyCellBasisType> > Polykmo;
-      std::unique_ptr<Poly3CellBasisType> Polyk3;
-      std::unique_ptr<GolyCellBasisType> Golykmo;
-      std::unique_ptr<GolyOrthCellBasisType> GolyOrthk;
-      std::unique_ptr<GolyOrthCellBasisType> GolyOrthkpo;
-      std::unique_ptr<RolyCellBasisType>  Rolykmo;
-      std::unique_ptr<RolyOrthCellBasisType> RolyOrthk;
+      std::unique_ptr<PolyBasisCellType> Polykpo;
+      std::unique_ptr<RestrictedBasis<PolyBasisCellType> > Polyk;
+      std::unique_ptr<RestrictedBasis<PolyBasisCellType> > Polykmo;
+      std::unique_ptr<Poly3BasisCellType> Polyk3;
+      std::unique_ptr<GolyBasisCellType> Golykmo;
+      std::unique_ptr<GolyComplBasisCellType> GolyComplk;
+      std::unique_ptr<GolyComplBasisCellType> GolyComplkpo;
+      std::unique_ptr<RolyBasisCellType>  Rolykmo;
+      std::unique_ptr<RolyComplBasisCellType> RolyComplk;
+      std::unique_ptr<RolyComplBasisCellType> RolyComplkp2;
     };
 
-    /// Structure for face bases
+    /// Structure to store face bases
+    /** See CellBases for details */
     struct FaceBases
     {
       /// Geometric support
       typedef Face GeometricSupport;
 
-      std::unique_ptr<PolyFaceBasisType> Polykpo;
-      std::unique_ptr<RestrictedBasis<PolyFaceBasisType> > Polyk;
-      std::unique_ptr<RestrictedBasis<PolyFaceBasisType> > Polykmo;
-      std::unique_ptr<Poly2FaceBasisType> Polyk2;
-      std::unique_ptr<RolyFaceBasisType> Rolykmo;
-      std::unique_ptr<RolyOrthFaceBasisType> RolyOrthk;
-      std::unique_ptr<PotentialTestFunctionBasisType> RolyOrthkp2;
+      std::unique_ptr<PolyBasisFaceType> Polykpo;
+      std::unique_ptr<RestrictedBasis<PolyBasisFaceType> > Polyk;
+      std::unique_ptr<RestrictedBasis<PolyBasisFaceType> > Polykmo;
+      std::unique_ptr<Poly2BasisFaceType> Polyk2;
+      std::unique_ptr<RolyBasisFaceType> Rolykmo;
+      std::unique_ptr<RolyComplBasisFaceType> RolyComplk;
+      std::unique_ptr<RolyComplBasisFaceType> RolyComplkp2;
     };
 
-    /// Structure for edge bases
+    /// Structure to store edge bases
+    /** See CellBases for details */
     struct EdgeBases
     {
       /// Geometric support
@@ -191,13 +131,13 @@ namespace HArDCore3D
     /// Constructor
     DDRCore(const Mesh & mesh, size_t K, bool use_threads = true, std::ostream & output = std::cout);
     
-    // Return a const reference to the mesh
+    /// Return a const reference to the mesh
     const Mesh & mesh() const
     {
       return m_mesh;
     }
 
-    // Return the polynomial degree
+    /// Return the polynomial degree
     const size_t & degree() const
     {
       return m_K;
@@ -250,6 +190,7 @@ namespace HArDCore3D
     std::vector<std::unique_ptr<FaceBases> > m_face_bases;
     // Edge bases
     std::vector<std::unique_ptr<EdgeBases> > m_edge_bases;
+        
   };
   
 } // end of namespace HArDCore3D

@@ -15,7 +15,6 @@
 using namespace HArDCore3D;
 Vertex::Vertex(size_t iV, Mesh *mesh, Vector3d coords, bool boundary)
     : _iV(iV), 
-			_mesh(mesh),
 			_coords(coords), 
 			_cells(0),
 			_faces(0),

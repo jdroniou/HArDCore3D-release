@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -81,264 +88,320 @@ $(function() {
 </td></tr>
 <tr><td><img src="inherit_graph_2.png" border="0" usemap="#HArDCore3D_1_1CurlBasis_3_01BasisType_01_4" alt=""/>
 <map name="HArDCore3D_1_1CurlBasis_3_01BasisType_01_4" id="HArDCore3D_1_1CurlBasis_3_01BasisType_01_4">
-<area shape="rect" href="classHArDCore3D_1_1CurlBasis.html" title=" " alt="" coords="5,5,171,47"/>
+<area shape="rect" href="classHArDCore3D_1_1CurlBasis.html" title="Basis for the space of curls of polynomials." alt="" coords="5,5,171,47"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_3.png" border="0" usemap="#HArDCore3D_1_1DDRCore" alt=""/>
 <map name="HArDCore3D_1_1DDRCore" id="HArDCore3D_1_1DDRCore">
-<area shape="rect" href="classHArDCore3D_1_1DDRCore.html" title="Construct the spaces for the DDR sequence." alt="" coords="5,5,172,32"/>
+<area shape="rect" href="classHArDCore3D_1_1DDRCore.html" title="Construct all polynomial spaces for the DDR sequence." alt="" coords="5,5,172,32"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_4.png" border="0" usemap="#HArDCore3D_1_1DDRCore_1_1CellBases" alt=""/>
 <map name="HArDCore3D_1_1DDRCore_1_1CellBases" id="HArDCore3D_1_1DDRCore_1_1CellBases">
-<area shape="rect" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html" title="Structure for element bases." alt="" coords="5,5,172,47"/>
+<area shape="rect" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html" title="Structure to store element bases." alt="" coords="5,5,172,47"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_5.png" border="0" usemap="#HArDCore3D_1_1DDRCore_1_1EdgeBases" alt=""/>
 <map name="HArDCore3D_1_1DDRCore_1_1EdgeBases" id="HArDCore3D_1_1DDRCore_1_1EdgeBases">
-<area shape="rect" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html" title="Structure for edge bases." alt="" coords="5,5,172,47"/>
+<area shape="rect" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html" title="Structure to store edge bases." alt="" coords="5,5,172,47"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_6.png" border="0" usemap="#HArDCore3D_1_1DDRCore_1_1FaceBases" alt=""/>
 <map name="HArDCore3D_1_1DDRCore_1_1FaceBases" id="HArDCore3D_1_1DDRCore_1_1FaceBases">
-<area shape="rect" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html" title="Structure for face bases." alt="" coords="5,5,172,47"/>
+<area shape="rect" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html" title="Structure to store face bases." alt="" coords="5,5,172,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_7.png" border="0" usemap="#HArDCore3D_1_1DDRSpace" alt=""/>
-<map name="HArDCore3D_1_1DDRSpace" id="HArDCore3D_1_1DDRSpace">
-<area shape="rect" href="classHArDCore3D_1_1DDRSpace.html" title="Base class for DDR spaces." alt="" coords="5,56,180,83"/>
-<area shape="rect" href="classHArDCore3D_1_1XCurl.html" title="Discrete Hcurl space." alt="" coords="230,5,371,32"/>
-<area shape="rect" href="classHArDCore3D_1_1XDiv.html" title="Discrete Hdiv space." alt="" coords="232,56,369,83"/>
-<area shape="rect" href="classHArDCore3D_1_1XGrad.html" title="Discrete H1 space." alt="" coords="228,107,373,133"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_8.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01BasisFunction_01_4" alt=""/>
+<tr><td><img src="inherit_graph_7.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01BasisFunction_01_4" alt=""/>
 <map name="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01BasisFunction_01_4" id="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01BasisFunction_01_4">
-<area shape="rect" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits.html" title="Basis evaluation traits. Only specializations are meaningful." alt="" coords="5,5,204,61"/>
+<area shape="rect" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits.html" title="Basis evaluation traits. Only specialization of &#39;BasisFunction&#39; (=Function, Gradient,..." alt="" coords="5,5,204,61"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_9.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Curl_01_4" alt=""/>
+<tr><td><img src="inherit_graph_8.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Curl_01_4" alt=""/>
 <map name="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Curl_01_4" id="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Curl_01_4">
 <area shape="rect" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Curl_01_4.html" title=" " alt="" coords="5,5,168,61"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_10.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Divergence_01_4" alt=""/>
+<tr><td><img src="inherit_graph_9.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Divergence_01_4" alt=""/>
 <map name="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Divergence_01_4" id="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Divergence_01_4">
 <area shape="rect" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Divergence_01_4.html" title=" " alt="" coords="5,5,187,61"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_11.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Function_01_4" alt=""/>
+<tr><td><img src="inherit_graph_10.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Function_01_4" alt=""/>
 <map name="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Function_01_4" id="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Function_01_4">
 <area shape="rect" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Function_01_4.html" title=" " alt="" coords="5,5,171,61"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_12.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Gradient_01_4" alt=""/>
+<tr><td><img src="inherit_graph_11.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Gradient_01_4" alt=""/>
 <map name="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Gradient_01_4" id="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Gradient_01_4">
 <area shape="rect" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Gradient_01_4.html" title=" " alt="" coords="5,5,169,61"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_13.png" border="0" usemap="#HArDCore3D_1_1Edge" alt=""/>
+<tr><td><img src="inherit_graph_12.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Curl_01_4" alt=""/>
+<map name="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Curl_01_4" id="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Curl_01_4">
+<area shape="rect" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBas16e94cc3561d5df4f5b07f40947ddc80.html" title=" " alt="" coords="5,5,212,76"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_13.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Divergence_01_4" alt=""/>
+<map name="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Divergence_01_4" id="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Divergence_01_4">
+<area shape="rect" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasf7970a904fb5bf5e0964fdf032f37682.html" title=" " alt="" coords="5,5,253,76"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_14.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Function_01_4" alt=""/>
+<map name="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Function_01_4" id="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Function_01_4">
+<area shape="rect" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasadb35b75fb171fb1d9154a129a3c3414.html" title=" " alt="" coords="5,5,237,76"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_15.png" border="0" usemap="#HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Gradient_01_4" alt=""/>
+<map name="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Gradient_01_4" id="HArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasisType_00_01N_01_4_00_01Gradient_01_4">
+<area shape="rect" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasac6dfb25d40fd254551d4194b76f2160.html" title=" " alt="" coords="5,5,236,76"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_16.png" border="0" usemap="#HArDCore3D_1_1DOFSpace" alt=""/>
+<map name="HArDCore3D_1_1DOFSpace" id="HArDCore3D_1_1DOFSpace">
+<area shape="rect" href="classHArDCore3D_1_1DOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="5,56,179,83"/>
+<area shape="rect" href="classHArDCore3D_1_1DDRSpace.html" title="Base class for DDR spaces. Provides functions to manipulate global DOFs (the local version being prov..." alt="" coords="227,56,401,83"/>
+<area shape="rect" href="classHArDCore3D_1_1XCurl.html" title="Discrete Hcurl space: local operators, L2 product and global interpolator." alt="" coords="451,5,593,32"/>
+<area shape="rect" href="classHArDCore3D_1_1XDiv.html" title="Discrete Hdiv space: local operators, L2 product and global interpolator." alt="" coords="453,56,591,83"/>
+<area shape="rect" href="classHArDCore3D_1_1XGrad.html" title="Discrete H1 space: local operators, L2 product and global interpolator." alt="" coords="449,107,595,133"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_17.png" border="0" usemap="#HArDCore3D_1_1Edge" alt=""/>
 <map name="HArDCore3D_1_1Edge" id="HArDCore3D_1_1Edge">
 <area shape="rect" href="classHArDCore3D_1_1Edge.html" title="The Edge class provides description of an edge." alt="" coords="5,5,144,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_14.png" border="0" usemap="#HArDCore3D_1_1ElementQuad" alt=""/>
+<tr><td><img src="inherit_graph_18.png" border="0" usemap="#HArDCore3D_1_1ElementQuad" alt=""/>
 <map name="HArDCore3D_1_1ElementQuad" id="HArDCore3D_1_1ElementQuad">
 <area shape="rect" href="classHArDCore3D_1_1ElementQuad.html" title=" " alt="" coords="5,5,192,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_15.png" border="0" usemap="#HArDCore3D_1_1evaluate__quad_3_01BasisFunction_01_4" alt=""/>
+<tr><td><img src="inherit_graph_19.png" border="0" usemap="#HArDCore3D_1_1evaluate__quad_3_01BasisFunction_01_4" alt=""/>
 <map name="HArDCore3D_1_1evaluate__quad_3_01BasisFunction_01_4" id="HArDCore3D_1_1evaluate__quad_3_01BasisFunction_01_4">
-<area shape="rect" href="structHArDCore3D_1_1evaluate__quad.html" title=" " alt="" coords="5,5,169,47"/>
+<area shape="rect" href="structHArDCore3D_1_1evaluate__quad.html" title="Evaluate a basis at quadrature nodes. &#39;BasisFunction&#39; (=Function, Gradient, Curl or Divergence) deter..." alt="" coords="5,5,169,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_16.png" border="0" usemap="#HArDCore3D_1_1Face" alt=""/>
+<tr><td><img src="inherit_graph_20.png" border="0" usemap="#HArDCore3D_1_1Face" alt=""/>
 <map name="HArDCore3D_1_1Face" id="HArDCore3D_1_1Face">
 <area shape="rect" href="classHArDCore3D_1_1Face.html" title="The Face class provides description of an edge." alt="" coords="5,5,143,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_17.png" border="0" usemap="#HArDCore3D_1_1Family_3_01BasisType_01_4" alt=""/>
+<tr><td><img src="inherit_graph_21.png" border="0" usemap="#HArDCore3D_1_1Family_3_01BasisType_01_4" alt=""/>
 <map name="HArDCore3D_1_1Family_3_01BasisType_01_4" id="HArDCore3D_1_1Family_3_01BasisType_01_4">
-<area shape="rect" href="classHArDCore3D_1_1Family.html" title=" " alt="" coords="5,5,152,47"/>
+<area shape="rect" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis." alt="" coords="5,5,152,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_18.png" border="0" usemap="#HArDCore3D_1_1GradientBasis_3_01BasisType_01_4" alt=""/>
+<tr><td><img src="inherit_graph_22.png" border="0" usemap="#HArDCore3D_1_1GolyComplBasisCell" alt=""/>
+<map name="HArDCore3D_1_1GolyComplBasisCell" id="HArDCore3D_1_1GolyComplBasisCell">
+<area shape="rect" href="classHArDCore3D_1_1GolyComplBasisCell.html" title="Basis for the complement G^{c,k}(T) in P^k(T)^3 of the range of grad." alt="" coords="5,5,235,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_23.png" border="0" usemap="#HArDCore3D_1_1GolyComplBasisFace" alt=""/>
+<map name="HArDCore3D_1_1GolyComplBasisFace" id="HArDCore3D_1_1GolyComplBasisFace">
+<area shape="rect" href="classHArDCore3D_1_1GolyComplBasisFace.html" title="Basis for the complement G^{c,k}(F) in P^k(F)^2 of the range of the gradient on a face." alt="" coords="5,5,240,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_24.png" border="0" usemap="#HArDCore3D_1_1GradientBasis_3_01BasisType_01_4" alt=""/>
 <map name="HArDCore3D_1_1GradientBasis_3_01BasisType_01_4" id="HArDCore3D_1_1GradientBasis_3_01BasisType_01_4">
-<area shape="rect" href="classHArDCore3D_1_1GradientBasis.html" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classHArDCore3D_1_1GradientBasis.html" title="Basis for the space of gradients of polynomials." alt="" coords="5,5,196,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_19.png" border="0" usemap="#HArDCore3D_1_1HHO__Diffusion" alt=""/>
+<tr><td><img src="inherit_graph_25.png" border="0" usemap="#HArDCore3D_1_1HHO__Diffusion" alt=""/>
 <map name="HArDCore3D_1_1HHO__Diffusion" id="HArDCore3D_1_1HHO__Diffusion">
 <area shape="rect" href="classHArDCore3D_1_1HHO__Diffusion.html" title="The HHO_Diffusion class provides tools to implement the HHO method for the diffusion problem." alt="" coords="5,5,203,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_20.png" border="0" usemap="#HArDCore3D_1_1HHO__LocVarDiff" alt=""/>
+<tr><td><img src="inherit_graph_26.png" border="0" usemap="#HArDCore3D_1_1HHO__LocVarDiff" alt=""/>
 <map name="HArDCore3D_1_1HHO__LocVarDiff" id="HArDCore3D_1_1HHO__LocVarDiff">
 <area shape="rect" href="classHArDCore3D_1_1HHO__LocVarDiff.html" title="The HHO_LocVarDiff class provides tools to implement the HHO method for the diffusion problem." alt="" coords="5,5,212,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_21.png" border="0" usemap="#HArDCore3D_1_1HybridCore" alt=""/>
+<tr><td><img src="inherit_graph_27.png" border="0" usemap="#HArDCore3D_1_1HybridCore" alt=""/>
 <map name="HArDCore3D_1_1HybridCore" id="HArDCore3D_1_1HybridCore">
 <area shape="rect" href="classHArDCore3D_1_1HybridCore.html" title=" " alt="" coords="5,5,180,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_22.png" border="0" usemap="#HArDCore3D_1_1LegendreGauss" alt=""/>
+<tr><td><img src="inherit_graph_28.png" border="0" usemap="#HArDCore3D_1_1IntegralWeight" alt=""/>
+<map name="HArDCore3D_1_1IntegralWeight" id="HArDCore3D_1_1IntegralWeight">
+<area shape="rect" href="structHArDCore3D_1_1IntegralWeight.html" title="Structure for weights (scalar, at the moment) in integral." alt="" coords="5,5,196,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_29.png" border="0" usemap="#HArDCore3D_1_1LegendreGauss" alt=""/>
 <map name="HArDCore3D_1_1LegendreGauss" id="HArDCore3D_1_1LegendreGauss">
 <area shape="rect" href="classHArDCore3D_1_1LegendreGauss.html" title=" " alt="" coords="5,5,204,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_23.png" border="0" usemap="#HArDCore3D_1_1Magnetostatics" alt=""/>
+<tr><td><img src="inherit_graph_30.png" border="0" usemap="#HArDCore3D_1_1Magnetostatics" alt=""/>
 <map name="HArDCore3D_1_1Magnetostatics" id="HArDCore3D_1_1Magnetostatics">
 <area shape="rect" href="structHArDCore3D_1_1Magnetostatics.html" title="Assemble a magnetostatic problem." alt="" coords="5,5,203,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_24.png" border="0" usemap="#HArDCore3D_1_1Mesh" alt=""/>
+<tr><td><img src="inherit_graph_31.png" border="0" usemap="#HArDCore3D_1_1Mesh" alt=""/>
 <map name="HArDCore3D_1_1Mesh" id="HArDCore3D_1_1Mesh">
 <area shape="rect" href="classHArDCore3D_1_1Mesh.html" title="The Mesh class provides description of a mesh." alt="" coords="5,5,145,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_25.png" border="0" usemap="#HArDCore3D_1_1MeshBuilder" alt=""/>
+<tr><td><img src="inherit_graph_32.png" border="0" usemap="#HArDCore3D_1_1MeshBuilder" alt=""/>
 <map name="HArDCore3D_1_1MeshBuilder" id="HArDCore3D_1_1MeshBuilder">
 <area shape="rect" href="classHArDCore3D_1_1MeshBuilder.html" title="The MeshBuilder class provides build tools to create a full mesh with all connectivities." alt="" coords="5,5,185,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_26.png" border="0" usemap="#HArDCore3D_1_1MonomialScalarBasisCell" alt=""/>
+<tr><td><img src="inherit_graph_33.png" border="0" usemap="#HArDCore3D_1_1MonomialPowers_3_01Cell_01_4" alt=""/>
+<map name="HArDCore3D_1_1MonomialPowers_3_01Cell_01_4" id="HArDCore3D_1_1MonomialPowers_3_01Cell_01_4">
+<area shape="rect" href="structHArDCore3D_1_1MonomialPowers_3_01Cell_01_4.html" title=" " alt="" coords="5,5,213,47"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_34.png" border="0" usemap="#HArDCore3D_1_1MonomialPowers_3_01Face_01_4" alt=""/>
+<map name="HArDCore3D_1_1MonomialPowers_3_01Face_01_4" id="HArDCore3D_1_1MonomialPowers_3_01Face_01_4">
+<area shape="rect" href="structHArDCore3D_1_1MonomialPowers_3_01Face_01_4.html" title=" " alt="" coords="5,5,213,47"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_35.png" border="0" usemap="#HArDCore3D_1_1MonomialPowers_3_01GeometricSupport_01_4" alt=""/>
+<map name="HArDCore3D_1_1MonomialPowers_3_01GeometricSupport_01_4" id="HArDCore3D_1_1MonomialPowers_3_01GeometricSupport_01_4">
+<area shape="rect" href="structHArDCore3D_1_1MonomialPowers.html" title="Compute vectors listing the powers of monomial basis functions (for a cell or face,..." alt="" coords="5,5,213,47"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_36.png" border="0" usemap="#HArDCore3D_1_1MonomialScalarBasisCell" alt=""/>
 <map name="HArDCore3D_1_1MonomialScalarBasisCell" id="HArDCore3D_1_1MonomialScalarBasisCell">
 <area shape="rect" href="classHArDCore3D_1_1MonomialScalarBasisCell.html" title="Scalar monomial basis on a cell." alt="" coords="5,5,207,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_27.png" border="0" usemap="#HArDCore3D_1_1MonomialScalarBasisEdge" alt=""/>
+<tr><td><img src="inherit_graph_37.png" border="0" usemap="#HArDCore3D_1_1MonomialScalarBasisEdge" alt=""/>
 <map name="HArDCore3D_1_1MonomialScalarBasisEdge" id="HArDCore3D_1_1MonomialScalarBasisEdge">
 <area shape="rect" href="classHArDCore3D_1_1MonomialScalarBasisEdge.html" title="Scalar monomial basis on an edge." alt="" coords="5,5,207,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_28.png" border="0" usemap="#HArDCore3D_1_1MonomialScalarBasisFace" alt=""/>
+<tr><td><img src="inherit_graph_38.png" border="0" usemap="#HArDCore3D_1_1MonomialScalarBasisFace" alt=""/>
 <map name="HArDCore3D_1_1MonomialScalarBasisFace" id="HArDCore3D_1_1MonomialScalarBasisFace">
 <area shape="rect" href="classHArDCore3D_1_1MonomialScalarBasisFace.html" title="Scalar monomial basis on a face." alt="" coords="5,5,207,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_29.png" border="0" usemap="#HArDCore3D_1_1PolynomialSpaceDimension_3_01Cell_01_4" alt=""/>
+<tr><td><img src="inherit_graph_39.png" border="0" usemap="#HArDCore3D_1_1PolynomialSpaceDimension_3_01Cell_01_4" alt=""/>
 <map name="HArDCore3D_1_1PolynomialSpaceDimension_3_01Cell_01_4" id="HArDCore3D_1_1PolynomialSpaceDimension_3_01Cell_01_4">
 <area shape="rect" href="structHArDCore3D_1_1PolynomialSpaceDimension_3_01Cell_01_4.html" title=" " alt="" coords="5,5,215,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_30.png" border="0" usemap="#HArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01_4" alt=""/>
+<tr><td><img src="inherit_graph_40.png" border="0" usemap="#HArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01_4" alt=""/>
 <map name="HArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01_4" id="HArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01_4">
 <area shape="rect" href="structHArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01_4.html" title=" " alt="" coords="5,5,215,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_31.png" border="0" usemap="#HArDCore3D_1_1PolynomialSpaceDimension_3_01Face_01_4" alt=""/>
+<tr><td><img src="inherit_graph_41.png" border="0" usemap="#HArDCore3D_1_1PolynomialSpaceDimension_3_01Face_01_4" alt=""/>
 <map name="HArDCore3D_1_1PolynomialSpaceDimension_3_01Face_01_4" id="HArDCore3D_1_1PolynomialSpaceDimension_3_01Face_01_4">
 <area shape="rect" href="structHArDCore3D_1_1PolynomialSpaceDimension_3_01Face_01_4.html" title=" " alt="" coords="5,5,215,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_32.png" border="0" usemap="#HArDCore3D_1_1PolynomialSpaceDimension_3_01GeometricSupport_01_4" alt=""/>
+<tr><td><img src="inherit_graph_42.png" border="0" usemap="#HArDCore3D_1_1PolynomialSpaceDimension_3_01GeometricSupport_01_4" alt=""/>
 <map name="HArDCore3D_1_1PolynomialSpaceDimension_3_01GeometricSupport_01_4" id="HArDCore3D_1_1PolynomialSpaceDimension_3_01GeometricSupport_01_4">
-<area shape="rect" href="structHArDCore3D_1_1PolynomialSpaceDimension.html" title="Basis dimensions for the full and trimmed polynomial spaces." alt="" coords="5,5,219,47"/>
+<area shape="rect" href="structHArDCore3D_1_1PolynomialSpaceDimension.html" title="Basis dimensions for various polynomial spaces on edges/faces/elements (when relevant): Pk,..." alt="" coords="5,5,219,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_33.png" border="0" usemap="#HArDCore3D_1_1QuadratureNode" alt=""/>
+<tr><td><img src="inherit_graph_43.png" border="0" usemap="#HArDCore3D_1_1QuadratureNode" alt=""/>
 <map name="HArDCore3D_1_1QuadratureNode" id="HArDCore3D_1_1QuadratureNode">
 <area shape="rect" href="structHArDCore3D_1_1QuadratureNode.html" title="Description of one node and one weight from a quadrature rule." alt="" coords="5,5,208,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_34.png" border="0" usemap="#HArDCore3D_1_1QuadRuleEdge" alt=""/>
+<tr><td><img src="inherit_graph_44.png" border="0" usemap="#HArDCore3D_1_1QuadRuleEdge" alt=""/>
 <map name="HArDCore3D_1_1QuadRuleEdge" id="HArDCore3D_1_1QuadRuleEdge">
 <area shape="rect" href="classHArDCore3D_1_1QuadRuleEdge.html" title=" " alt="" coords="5,5,201,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_35.png" border="0" usemap="#HArDCore3D_1_1QuadRuleTetra" alt=""/>
+<tr><td><img src="inherit_graph_45.png" border="0" usemap="#HArDCore3D_1_1QuadRuleTetra" alt=""/>
 <map name="HArDCore3D_1_1QuadRuleTetra" id="HArDCore3D_1_1QuadRuleTetra">
 <area shape="rect" href="classHArDCore3D_1_1QuadRuleTetra.html" title=" " alt="" coords="5,5,200,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_36.png" border="0" usemap="#HArDCore3D_1_1QuadRuleTriangle" alt=""/>
+<tr><td><img src="inherit_graph_46.png" border="0" usemap="#HArDCore3D_1_1QuadRuleTriangle" alt=""/>
 <map name="HArDCore3D_1_1QuadRuleTriangle" id="HArDCore3D_1_1QuadRuleTriangle">
 <area shape="rect" href="classHArDCore3D_1_1QuadRuleTriangle.html" title=" " alt="" coords="5,5,217,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_37.png" border="0" usemap="#HArDCore3D_1_1RestrictedBasis_3_01BasisType_01_4" alt=""/>
+<tr><td><img src="inherit_graph_47.png" border="0" usemap="#HArDCore3D_1_1RestrictedBasis_3_01BasisType_01_4" alt=""/>
 <map name="HArDCore3D_1_1RestrictedBasis_3_01BasisType_01_4" id="HArDCore3D_1_1RestrictedBasis_3_01BasisType_01_4">
-<area shape="rect" href="classHArDCore3D_1_1RestrictedBasis.html" title=" " alt="" coords="5,5,207,47"/>
+<area shape="rect" href="classHArDCore3D_1_1RestrictedBasis.html" title="Generate a basis restricted to the first &quot;dimension&quot; functions." alt="" coords="5,5,207,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_38.png" border="0" usemap="#HArDCore3D_1_1ShiftedBasis_3_01BasisType_01_4" alt=""/>
+<tr><td><img src="inherit_graph_48.png" border="0" usemap="#HArDCore3D_1_1RolyComplBasisCell" alt=""/>
+<map name="HArDCore3D_1_1RolyComplBasisCell" id="HArDCore3D_1_1RolyComplBasisCell">
+<area shape="rect" href="classHArDCore3D_1_1RolyComplBasisCell.html" title="Basis for the complement R^{c,k}(T) in P^k(T)^3 of the range of curl." alt="" coords="5,5,235,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_49.png" border="0" usemap="#HArDCore3D_1_1RolyComplBasisFace" alt=""/>
+<map name="HArDCore3D_1_1RolyComplBasisFace" id="HArDCore3D_1_1RolyComplBasisFace">
+<area shape="rect" href="classHArDCore3D_1_1RolyComplBasisFace.html" title="Basis for the complement R^{c,k}(F) in P^k(F)^2 of the range of the vectorial rotational on a face." alt="" coords="5,5,240,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_50.png" border="0" usemap="#HArDCore3D_1_1ShiftedBasis_3_01BasisType_01_4" alt=""/>
 <map name="HArDCore3D_1_1ShiftedBasis_3_01BasisType_01_4" id="HArDCore3D_1_1ShiftedBasis_3_01BasisType_01_4">
-<area shape="rect" href="classHArDCore3D_1_1ShiftedBasis.html" title=" " alt="" coords="5,5,188,47"/>
+<area shape="rect" href="classHArDCore3D_1_1ShiftedBasis.html" title="Generate a basis where the function indices are shifted." alt="" coords="5,5,188,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_39.png" border="0" usemap="#HArDCore3D_1_1TangentFamily_3_01ScalarFamilyType_01_4" alt=""/>
+<tr><td><img src="inherit_graph_51.png" border="0" usemap="#HArDCore3D_1_1TangentFamily_3_01ScalarFamilyType_01_4" alt=""/>
 <map name="HArDCore3D_1_1TangentFamily_3_01ScalarFamilyType_01_4" id="HArDCore3D_1_1TangentFamily_3_01ScalarFamilyType_01_4">
-<area shape="rect" href="classHArDCore3D_1_1TangentFamily.html" title="Vector family for tangent functions." alt="" coords="5,5,199,47"/>
+<area shape="rect" href="classHArDCore3D_1_1TangentFamily.html" title="Vector family for polynomial functions that are tangent to a certain place (determined by the generat..." alt="" coords="5,5,199,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_40.png" border="0" usemap="#HArDCore3D_1_1TensorizedVectorFamily_3_01ScalarFamilyType_00_01N_01_4" alt=""/>
+<tr><td><img src="inherit_graph_52.png" border="0" usemap="#HArDCore3D_1_1TensorizedVectorFamily_3_01ScalarFamilyType_00_01N_01_4" alt=""/>
 <map name="HArDCore3D_1_1TensorizedVectorFamily_3_01ScalarFamilyType_00_01N_01_4" id="HArDCore3D_1_1TensorizedVectorFamily_3_01ScalarFamilyType_00_01N_01_4">
-<area shape="rect" href="classHArDCore3D_1_1TensorizedVectorFamily.html" title=" " alt="" coords="5,5,215,47"/>
+<area shape="rect" href="classHArDCore3D_1_1TensorizedVectorFamily.html" title="Vector family obtained by tensorization of a scalar family." alt="" coords="5,5,215,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_41.png" border="0" usemap="#HArDCore3D_1_1Tests_1_1L2Projection_3_01BasisType_01_4" alt=""/>
-<map name="HArDCore3D_1_1Tests_1_1L2Projection_3_01BasisType_01_4" id="HArDCore3D_1_1Tests_1_1L2Projection_3_01BasisType_01_4">
-<area shape="rect" href="classHArDCore3D_1_1Tests_1_1L2Projection.html" title="Compute the L2&#45;orthogonal projection of a function." alt="" coords="5,5,184,47"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_42.png" border="0" usemap="#HArDCore3D_1_1UVector" alt=""/>
+<tr><td><img src="inherit_graph_53.png" border="0" usemap="#HArDCore3D_1_1UVector" alt=""/>
 <map name="HArDCore3D_1_1UVector" id="HArDCore3D_1_1UVector">
 <area shape="rect" href="classHArDCore3D_1_1UVector.html" title=" " alt="" coords="5,5,161,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_43.png" border="0" usemap="#HArDCore3D_1_1Vertex" alt=""/>
+<tr><td><img src="inherit_graph_54.png" border="0" usemap="#HArDCore3D_1_1Vertex" alt=""/>
 <map name="HArDCore3D_1_1Vertex" id="HArDCore3D_1_1Vertex">
 <area shape="rect" href="classHArDCore3D_1_1Vertex.html" title="The Vertex class provides description of a vertex." alt="" coords="5,5,152,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_44.png" border="0" usemap="#HArDCore3D_1_1VtuWriter" alt=""/>
+<tr><td><img src="inherit_graph_55.png" border="0" usemap="#HArDCore3D_1_1VtuWriter" alt=""/>
 <map name="HArDCore3D_1_1VtuWriter" id="HArDCore3D_1_1VtuWriter">
 <area shape="rect" href="classHArDCore3D_1_1VtuWriter.html" title="The VtuWriter class provides methods to plot a 3D mesh and a solution on this mesh." alt="" coords="5,5,168,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_45.png" border="0" usemap="#HArDCore3D_1_1XCurl_1_1LocalOperators" alt=""/>
+<tr><td><img src="inherit_graph_56.png" border="0" usemap="#HArDCore3D_1_1XCurl_1_1LocalOperators" alt=""/>
 <map name="HArDCore3D_1_1XCurl_1_1LocalOperators" id="HArDCore3D_1_1XCurl_1_1LocalOperators">
-<area shape="rect" href="structHArDCore3D_1_1XCurl_1_1LocalOperators.html" title="A structure to store local operators." alt="" coords="5,5,155,47"/>
+<area shape="rect" href="structHArDCore3D_1_1XCurl_1_1LocalOperators.html" title="A structure to store the local operators (curl and potential)" alt="" coords="5,5,155,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_46.png" border="0" usemap="#HArDCore3D_1_1XDiv_1_1LocalOperators" alt=""/>
+<tr><td><img src="inherit_graph_57.png" border="0" usemap="#HArDCore3D_1_1XDiv_1_1LocalOperators" alt=""/>
 <map name="HArDCore3D_1_1XDiv_1_1LocalOperators" id="HArDCore3D_1_1XDiv_1_1LocalOperators">
-<area shape="rect" href="structHArDCore3D_1_1XDiv_1_1LocalOperators.html" title="A structure to store local operators." alt="" coords="5,5,239,32"/>
+<area shape="rect" href="structHArDCore3D_1_1XDiv_1_1LocalOperators.html" title="A structure to store local operators (divergence and potential)" alt="" coords="5,5,239,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_47.png" border="0" usemap="#HArDCore3D_1_1XGrad_1_1LocalOperators" alt=""/>
+<tr><td><img src="inherit_graph_58.png" border="0" usemap="#HArDCore3D_1_1XGrad_1_1LocalOperators" alt=""/>
 <map name="HArDCore3D_1_1XGrad_1_1LocalOperators" id="HArDCore3D_1_1XGrad_1_1LocalOperators">
-<area shape="rect" href="structHArDCore3D_1_1XGrad_1_1LocalOperators.html" title="A structure to store local operators." alt="" coords="5,5,159,47"/>
+<area shape="rect" href="structHArDCore3D_1_1XGrad_1_1LocalOperators.html" title="A structure to store local operators (gradient and potential)" alt="" coords="5,5,159,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_48.png" border="0" usemap="#HHO3D" alt=""/>
+<tr><td><img src="inherit_graph_59.png" border="0" usemap="#HHO3D" alt=""/>
 <map name="HHO3D" id="HHO3D">
 <area shape="rect" href="classHHO3D.html" title=" " alt="" coords="5,5,75,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_49.png" border="0" usemap="#StemMesh3D_1_1edge__struct" alt=""/>
+<tr><td><img src="inherit_graph_60.png" border="0" usemap="#StemMesh3D_1_1edge__struct" alt=""/>
 <map name="StemMesh3D_1_1edge__struct" id="StemMesh3D_1_1edge__struct">
 <area shape="rect" href="structStemMesh3D_1_1edge__struct.html" title=" " alt="" coords="5,5,184,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_50.png" border="0" usemap="#StemMesh3D_1_1ExtFileInput" alt=""/>
+<tr><td><img src="inherit_graph_61.png" border="0" usemap="#StemMesh3D_1_1ExtFileInput" alt=""/>
 <map name="StemMesh3D_1_1ExtFileInput" id="StemMesh3D_1_1ExtFileInput">
 <area shape="rect" href="classStemMesh3D_1_1ExtFileInput.html" title="Reads mesh files from a variety of file formats and loads them into a mesh object." alt="" coords="5,5,185,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_51.png" border="0" usemap="#StemMesh3D_1_1face__struct" alt=""/>
+<tr><td><img src="inherit_graph_62.png" border="0" usemap="#StemMesh3D_1_1face__struct" alt=""/>
 <map name="StemMesh3D_1_1face__struct" id="StemMesh3D_1_1face__struct">
 <area shape="rect" href="structStemMesh3D_1_1face__struct.html" title=" " alt="" coords="5,5,180,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_52.png" border="0" usemap="#StemMesh3D_1_1mesh2D__reader" alt=""/>
+<tr><td><img src="inherit_graph_63.png" border="0" usemap="#StemMesh3D_1_1mesh2D__reader" alt=""/>
 <map name="StemMesh3D_1_1mesh2D__reader" id="StemMesh3D_1_1mesh2D__reader">
 <area shape="rect" href="classStemMesh3D_1_1mesh2D__reader.html" title=" " alt="" coords="5,5,164,47"/>
 <area shape="rect" href="classStemMesh3D_1_1mesh2D__reader__GeneralFormat.html" title=" " alt="" coords="212,5,371,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_53.png" border="0" usemap="#StemMesh3D_1_1mesh3D__reader" alt=""/>
+<tr><td><img src="inherit_graph_64.png" border="0" usemap="#StemMesh3D_1_1mesh3D__reader" alt=""/>
 <map name="StemMesh3D_1_1mesh3D__reader" id="StemMesh3D_1_1mesh3D__reader">
 <area shape="rect" href="classStemMesh3D_1_1mesh3D__reader.html" title=" " alt="" coords="5,71,164,112"/>
 <area shape="rect" href="classStemMesh3D_1_1mesh3D__reader__MSH__format.html" title=" " alt="" coords="232,5,391,47"/>
@@ -346,109 +409,109 @@ $(function() {
 <area shape="rect" href="classStemMesh3D_1_1mesh3D__reader__TETGEN__format.html" title=" " alt="" coords="226,136,397,177"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_54.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__builder" alt=""/>
+<tr><td><img src="inherit_graph_65.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__builder" alt=""/>
 <map name="StemMesh3D_1_1mesh3Dv__builder" id="StemMesh3D_1_1mesh3Dv__builder">
 <area shape="rect" href="classStemMesh3D_1_1mesh3Dv__builder.html" title=" " alt="" coords="5,5,172,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_55.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__cmaster" alt=""/>
+<tr><td><img src="inherit_graph_66.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__cmaster" alt=""/>
 <map name="StemMesh3D_1_1mesh3Dv__cmaster" id="StemMesh3D_1_1mesh3Dv__cmaster">
 <area shape="rect" href="classStemMesh3D_1_1mesh3Dv__cmaster.html" title=" " alt="" coords="5,5,172,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_56.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__GMV__output" alt=""/>
+<tr><td><img src="inherit_graph_67.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__GMV__output" alt=""/>
 <map name="StemMesh3D_1_1mesh3Dv__GMV__output" id="StemMesh3D_1_1mesh3Dv__GMV__output">
 <area shape="rect" href="classStemMesh3D_1_1mesh3Dv__GMV__output.html" title=" " alt="" coords="5,5,172,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_57.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__printer" alt=""/>
+<tr><td><img src="inherit_graph_68.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__printer" alt=""/>
 <map name="StemMesh3D_1_1mesh3Dv__printer" id="StemMesh3D_1_1mesh3Dv__printer">
 <area shape="rect" href="classStemMesh3D_1_1mesh3Dv__printer.html" title=" " alt="" coords="5,5,172,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_58.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__writer" alt=""/>
+<tr><td><img src="inherit_graph_69.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__writer" alt=""/>
 <map name="StemMesh3D_1_1mesh3Dv__writer" id="StemMesh3D_1_1mesh3Dv__writer">
 <area shape="rect" href="classStemMesh3D_1_1mesh3Dv__writer.html" title=" " alt="" coords="5,5,172,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_59.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__writer__MSH" alt=""/>
+<tr><td><img src="inherit_graph_70.png" border="0" usemap="#StemMesh3D_1_1mesh3Dv__writer__MSH" alt=""/>
 <map name="StemMesh3D_1_1mesh3Dv__writer__MSH" id="StemMesh3D_1_1mesh3Dv__writer__MSH">
 <area shape="rect" href="classStemMesh3D_1_1mesh3Dv__writer__MSH.html" title=" " alt="" coords="5,5,172,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_60.png" border="0" usemap="#StemMesh3D_1_1mesh__3Dv" alt=""/>
+<tr><td><img src="inherit_graph_71.png" border="0" usemap="#StemMesh3D_1_1mesh__3Dv" alt=""/>
 <map name="StemMesh3D_1_1mesh__3Dv" id="StemMesh3D_1_1mesh__3Dv">
 <area shape="rect" href="classStemMesh3D_1_1mesh__3Dv.html" title="The interface for working with generic 3D meshes." alt="" coords="5,5,179,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_61.png" border="0" usemap="#StemMesh3D_1_1QuadRegion" alt=""/>
+<tr><td><img src="inherit_graph_72.png" border="0" usemap="#StemMesh3D_1_1QuadRegion" alt=""/>
 <map name="StemMesh3D_1_1QuadRegion" id="StemMesh3D_1_1QuadRegion">
 <area shape="rect" href="classStemMesh3D_1_1QuadRegion.html" title=" " alt="" coords="5,5,188,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_62.png" border="0" usemap="#StemMesh3D_1_1tetgenbehavior" alt=""/>
+<tr><td><img src="inherit_graph_73.png" border="0" usemap="#StemMesh3D_1_1tetgenbehavior" alt=""/>
 <map name="StemMesh3D_1_1tetgenbehavior" id="StemMesh3D_1_1tetgenbehavior">
 <area shape="rect" href="classStemMesh3D_1_1tetgenbehavior.html" title=" " alt="" coords="5,5,200,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_63.png" border="0" usemap="#StemMesh3D_1_1tetgenio" alt=""/>
+<tr><td><img src="inherit_graph_74.png" border="0" usemap="#StemMesh3D_1_1tetgenio" alt=""/>
 <map name="StemMesh3D_1_1tetgenio" id="StemMesh3D_1_1tetgenio">
 <area shape="rect" href="classStemMesh3D_1_1tetgenio.html" title=" " alt="" coords="5,5,161,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_64.png" border="0" usemap="#StemMesh3D_1_1tetgenio_1_1facet" alt=""/>
+<tr><td><img src="inherit_graph_75.png" border="0" usemap="#StemMesh3D_1_1tetgenio_1_1facet" alt=""/>
 <map name="StemMesh3D_1_1tetgenio_1_1facet" id="StemMesh3D_1_1tetgenio_1_1facet">
 <area shape="rect" href="structStemMesh3D_1_1tetgenio_1_1facet.html" title=" " alt="" coords="5,5,161,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_65.png" border="0" usemap="#StemMesh3D_1_1tetgenio_1_1pbcgroup" alt=""/>
+<tr><td><img src="inherit_graph_76.png" border="0" usemap="#StemMesh3D_1_1tetgenio_1_1pbcgroup" alt=""/>
 <map name="StemMesh3D_1_1tetgenio_1_1pbcgroup" id="StemMesh3D_1_1tetgenio_1_1pbcgroup">
 <area shape="rect" href="structStemMesh3D_1_1tetgenio_1_1pbcgroup.html" title=" " alt="" coords="5,5,161,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_66.png" border="0" usemap="#StemMesh3D_1_1tetgenio_1_1polygon" alt=""/>
+<tr><td><img src="inherit_graph_77.png" border="0" usemap="#StemMesh3D_1_1tetgenio_1_1polygon" alt=""/>
 <map name="StemMesh3D_1_1tetgenio_1_1polygon" id="StemMesh3D_1_1tetgenio_1_1polygon">
 <area shape="rect" href="structStemMesh3D_1_1tetgenio_1_1polygon.html" title=" " alt="" coords="5,5,161,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_67.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh" alt=""/>
+<tr><td><img src="inherit_graph_78.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh" alt=""/>
 <map name="StemMesh3D_1_1tetgenmesh" id="StemMesh3D_1_1tetgenmesh">
 <area shape="rect" href="classStemMesh3D_1_1tetgenmesh.html" title=" " alt="" coords="5,5,184,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_68.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1badface" alt=""/>
+<tr><td><img src="inherit_graph_79.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1badface" alt=""/>
 <map name="StemMesh3D_1_1tetgenmesh_1_1badface" id="StemMesh3D_1_1tetgenmesh_1_1badface">
 <area shape="rect" href="structStemMesh3D_1_1tetgenmesh_1_1badface.html" title=" " alt="" coords="5,5,184,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_69.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1face" alt=""/>
+<tr><td><img src="inherit_graph_80.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1face" alt=""/>
 <map name="StemMesh3D_1_1tetgenmesh_1_1face" id="StemMesh3D_1_1tetgenmesh_1_1face">
 <area shape="rect" href="classStemMesh3D_1_1tetgenmesh_1_1face.html" title=" " alt="" coords="5,5,184,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_70.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1list" alt=""/>
+<tr><td><img src="inherit_graph_81.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1list" alt=""/>
 <map name="StemMesh3D_1_1tetgenmesh_1_1list" id="StemMesh3D_1_1tetgenmesh_1_1list">
 <area shape="rect" href="classStemMesh3D_1_1tetgenmesh_1_1list.html" title=" " alt="" coords="5,5,184,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_71.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1memorypool" alt=""/>
+<tr><td><img src="inherit_graph_82.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1memorypool" alt=""/>
 <map name="StemMesh3D_1_1tetgenmesh_1_1memorypool" id="StemMesh3D_1_1tetgenmesh_1_1memorypool">
 <area shape="rect" href="classStemMesh3D_1_1tetgenmesh_1_1memorypool.html" title=" " alt="" coords="5,5,184,47"/>
 <area shape="rect" href="classStemMesh3D_1_1tetgenmesh_1_1link.html" title=" " alt="" coords="232,5,411,47"/>
 <area shape="rect" href="classStemMesh3D_1_1tetgenmesh_1_1queue.html" title=" " alt="" coords="459,5,637,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_72.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1pbcdata" alt=""/>
+<tr><td><img src="inherit_graph_83.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1pbcdata" alt=""/>
 <map name="StemMesh3D_1_1tetgenmesh_1_1pbcdata" id="StemMesh3D_1_1tetgenmesh_1_1pbcdata">
 <area shape="rect" href="structStemMesh3D_1_1tetgenmesh_1_1pbcdata.html" title=" " alt="" coords="5,5,184,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_73.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1triface" alt=""/>
+<tr><td><img src="inherit_graph_84.png" border="0" usemap="#StemMesh3D_1_1tetgenmesh_1_1triface" alt=""/>
 <map name="StemMesh3D_1_1tetgenmesh_1_1triface" id="StemMesh3D_1_1tetgenmesh_1_1triface">
 <area shape="rect" href="classStemMesh3D_1_1tetgenmesh_1_1triface.html" title=" " alt="" coords="5,5,184,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_74.png" border="0" usemap="#TestCase" alt=""/>
+<tr><td><img src="inherit_graph_85.png" border="0" usemap="#TestCase" alt=""/>
 <map name="TestCase" id="TestCase">
 <area shape="rect" href="classTestCase.html" title="The TestCase class provides definition of test cases." alt="" coords="5,5,84,32"/>
 </map>

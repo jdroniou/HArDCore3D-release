@@ -2,6 +2,11 @@
 \label{classHArDCore3D_1_1GradientBasis}\index{HArDCore3D::GradientBasis$<$ BasisType $>$@{HArDCore3D::GradientBasis$<$ BasisType $>$}}
 
 
+Basis for the space of gradients of polynomials.  
+
+
+
+
 {\ttfamily \#include $<$basis.\+hpp$>$}
 
 \doxysubsection*{Public Types}
@@ -9,7 +14,7 @@
 \item 
 typedef Vector\+Rd {\bfseries Function\+Value}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ {\bfseries Gradient\+Value}
+typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries Gradient\+Value}
 \item 
 typedef Vector\+Rd {\bfseries Curl\+Value}
 \item 
@@ -20,11 +25,11 @@ typedef Basis\+Type\+::\+Geometric\+Support {\bfseries Geometric\+Support}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Basis_gaf2fa9b4764b550f576aeba7e24e6c911}{Gradient\+Basis}} (const Basis\+Type \&basis)
+\mbox{\hyperlink{group__Common_gaf2fa9b4764b550f576aeba7e24e6c911}{Gradient\+Basis}} (const Basis\+Type \&basis)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Basis_gabf5cc38208c346f4b6f6d5ca5d20d767}{dimension}} () const
+size\+\_\+t \mbox{\hyperlink{group__Common_gabf5cc38208c346f4b6f6d5ca5d20d767}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Compute the dimension of the basis. \end{DoxyCompactList}\item 
-Function\+Value \mbox{\hyperlink{group__Basis_ga21186eb9b6825da3867965bd2e046b23}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Function\+Value \mbox{\hyperlink{group__Common_ga21186eb9b6825da3867965bd2e046b23}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -45,7 +50,9 @@ static const bool {\bfseries has\+Divergence} = false
 \subsubsection*{template$<$typename Basis\+Type$>$\newline
 class H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$}
 
-Basis for the space of gradients of polynomials. It assumes that the first function of the scalar basis is constant 
+Basis for the space of gradients of polynomials. 
+
+To construct a basis of G$^\wedge$k, this assumes that the scalar basis it is constructed from is a basis of P$^\wedge$\{k+1\}/\+P$^\wedge$0, space of polynomials of degree k+1 without trivial polynomial with zero gradient (e.\+g. polynomials with zero average, or a hierarchical basis of P$^\wedge$\{k+1\} in which we have removed the first, constant, polynomial) 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

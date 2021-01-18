@@ -2,6 +2,11 @@
 \label{classHArDCore3D_1_1Family}\index{HArDCore3D::Family$<$ BasisType $>$@{HArDCore3D::Family$<$ BasisType $>$}}
 
 
+\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}} of functions expressed as linear combination of the functions of a given basis.  
+
+
+
+
 {\ttfamily \#include $<$basis.\+hpp$>$}
 
 \doxysubsection*{Public Types}
@@ -20,21 +25,29 @@ typedef Basis\+Type\+::\+Geometric\+Support {\bfseries Geometric\+Support}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Basis_gaa0576f3bfd8f5cdbdd863f147b646d15}{Family}} (const Basis\+Type \&basis, const Eigen\+::\+Matrix\+Xd \&\mbox{\hyperlink{group__Basis_gaf056ff8a6cbf5c566c243290e72af217}{matrix}})
+\mbox{\hyperlink{group__Common_gaa0576f3bfd8f5cdbdd863f147b646d15}{Family}} (const Basis\+Type \&basis, const Eigen\+::\+Matrix\+Xd \&\mbox{\hyperlink{group__Common_gaf056ff8a6cbf5c566c243290e72af217}{matrix}})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Basis_gaa71fa9b9c83346561fde4c764a1b2e72}{dimension}} () const
+size\+\_\+t \mbox{\hyperlink{group__Common_gaa71fa9b9c83346561fde4c764a1b2e72}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Dimension of the family. This is actually the number of functions in the family, not necessarily linearly independent. \end{DoxyCompactList}\item 
-Function\+Value \mbox{\hyperlink{group__Basis_ga3616bf77a028e9e7638af28820370931}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Function\+Value \mbox{\hyperlink{group__Common_ga3616bf77a028e9e7638af28820370931}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th function at point x. \end{DoxyCompactList}\item 
-Gradient\+Value \mbox{\hyperlink{group__Basis_ga7e8e2733993bda1d5aff348d7d31cbcf}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Function\+Value \mbox{\hyperlink{group__Common_ga2cc33261e6b7012ad21f62805adfa061}{function}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ Function\+Value, 2 $>$ \&ancestor\+\_\+value\+\_\+quad) const
+\begin{DoxyCompactList}\small\item\em Evaluate the i-\/th function at a quadrature point iqn, knowing all the values of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
+Gradient\+Value \mbox{\hyperlink{group__Common_ga7e8e2733993bda1d5aff348d7d31cbcf}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th function at point x. \end{DoxyCompactList}\item 
-Curl\+Value \mbox{\hyperlink{group__Basis_gaf5aac63dc865a440eb25c6b41b8d66d1}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Gradient\+Value \mbox{\hyperlink{group__Common_gae1199c53d8ea68392eb915f4dee7ef52}{gradient}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ Gradient\+Value, 2 $>$ \&ancestor\+\_\+gradient\+\_\+quad) const
+\begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
+Curl\+Value \mbox{\hyperlink{group__Common_gaf5aac63dc865a440eb25c6b41b8d66d1}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th function at point x. \end{DoxyCompactList}\item 
-Divergence\+Value \mbox{\hyperlink{group__Basis_ga87cbacf4f0cf12e0c9cfe9afa2e40c29}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Curl\+Value \mbox{\hyperlink{group__Common_ga8aa52ddcc2c74db8fb176319d5691eec}{curl}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ Curl\+Value, 2 $>$ \&ancestor\+\_\+curl\+\_\+quad) const
+\begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th function at a quadrature point iqn, knowing all the curls of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
+Divergence\+Value \mbox{\hyperlink{group__Common_ga87cbacf4f0cf12e0c9cfe9afa2e40c29}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th function at point x. \end{DoxyCompactList}\item 
-const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__Basis_gaf056ff8a6cbf5c566c243290e72af217}{matrix}} () const
+Divergence\+Value \mbox{\hyperlink{group__Common_ga0b6dc927463e4b67215ca7503d4e15bb}{divergence}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ Divergence\+Value, 2 $>$ \&ancestor\+\_\+divergence\+\_\+quad) const
+\begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th function at a quadrature point iqn, knowing all the divergences of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__Common_gaf056ff8a6cbf5c566c243290e72af217}{matrix}} () const
 \begin{DoxyCompactList}\small\item\em Return the coefficient matrix. \end{DoxyCompactList}\item 
-const Basis\+Type \& \mbox{\hyperlink{group__Basis_ga7afd19f4c3c17b7ac8ed16115b0ffe1c}{ancestor}} () const
+const Basis\+Type \& \mbox{\hyperlink{group__Common_ga7afd19f4c3c17b7ac8ed16115b0ffe1c}{ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the ancestor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -55,7 +68,7 @@ static const bool {\bfseries has\+Divergence} = Basis\+Type\+::has\+Divergence
 \subsubsection*{template$<$typename Basis\+Type$>$\newline
 class H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$}
 
-\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}} of functions expressed as linear combination of the functions of a given basis 
+\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}} of functions expressed as linear combination of the functions of a given basis. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

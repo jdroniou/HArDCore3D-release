@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -104,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;quadraturerule.hpp&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>HArDCore3D {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">//                            Class definition</span></div>
@@ -210,7 +217,6 @@ $(function() {
 <div class="ttc" id="agroup__HybridCore_html_gaf8ee9bc271f5b73902b87f68f46f51f5"><div class="ttname"><a href="group__HybridCore.html#gaf8ee9bc271f5b73902b87f68f46f51f5">HArDCore3D::ElementQuad::get_quadT</a></div><div class="ttdeci">const QuadratureRule &amp; get_quadT() const</div><div class="ttdoc">Returns quadrature rules in cell.</div><div class="ttdef"><b>Definition:</b> elementquad.hpp:66</div></div>
 <div class="ttc" id="agroup__HybridCore_html_ga3c549d43c0a5171d0c14f6b56ffc843d"><div class="ttname"><a href="group__HybridCore.html#ga3c549d43c0a5171d0c14f6b56ffc843d">HArDCore3D::ElementQuad::get_vec_phiT_quadT</a></div><div class="ttdeci">boost::multi_array&lt; VectorRd, 2 &gt; get_vec_phiT_quadT(size_t degree) const</div><div class="ttdoc">Builds on the fly the values of vector cell basis functions at cell quadrature nodes....</div><div class="ttdef"><b>Definition:</b> elementquad.cpp:62</div></div>
 <div class="ttc" id="agroup__HybridCore_html_gaa56cdde521a902082ce050928893804d"><div class="ttname"><a href="group__HybridCore.html#gaa56cdde521a902082ce050928893804d">HArDCore3D::ElementQuad::get_phiT_quadT</a></div><div class="ttdeci">const boost::multi_array&lt; double, 2 &gt; &amp; get_phiT_quadT() const</div><div class="ttdoc">Returns values of cell basis functions at cell quadrature nodes.</div><div class="ttdef"><b>Definition:</b> elementquad.hpp:78</div></div>
-<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdoc">Classes to describe and access the elements of a 3D mesh.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:1</div></div>
 <div class="ttc" id="agroup__HybridCore_html_ga9e734ea29a3c4e0403bb5aea2ba910e3"><div class="ttname"><a href="group__HybridCore.html#ga9e734ea29a3c4e0403bb5aea2ba910e3">HArDCore3D::ElementQuad::get_quadF</a></div><div class="ttdeci">const QuadratureRule &amp; get_quadF(size_t ilF) const</div><div class="ttdoc">Returns quadrature rules on face with local number ilF.</div><div class="ttdef"><b>Definition:</b> elementquad.hpp:72</div></div>
 <div class="ttc" id="agroup__HybridCore_html_ga561b60cc7997268260b7cd05edce20d9"><div class="ttname"><a href="group__HybridCore.html#ga561b60cc7997268260b7cd05edce20d9">HArDCore3D::ElementQuad::get_phiF_quadF</a></div><div class="ttdeci">const boost::multi_array&lt; double, 2 &gt; get_phiF_quadF(size_t ilF) const</div><div class="ttdoc">Returns values of face basis functions at face quadrature nodes, for face with local number ilF.</div><div class="ttdef"><b>Definition:</b> elementquad.hpp:96</div></div>
 <div class="ttc" id="agroup__HybridCore_html_ga023175342dd0e23426348ebe2445b7cc"><div class="ttname"><a href="group__HybridCore.html#ga023175342dd0e23426348ebe2445b7cc">HArDCore3D::ElementQuad::get_dphiT_quadF</a></div><div class="ttdeci">const boost::multi_array&lt; VectorRd, 2 &gt; &amp; get_dphiT_quadF(size_t ilF) const</div><div class="ttdoc">Returns values of gradients of cell basis functions at face quadrature nodes, for face with local num...</div><div class="ttdef"><b>Definition:</b> elementquad.hpp:102</div></div>

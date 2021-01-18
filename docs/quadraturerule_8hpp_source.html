@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -103,7 +110,7 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;face.hpp&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;edge.hpp&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span>HArDCore3D {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">struct </span>QuadratureNode</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  {</div>
@@ -137,7 +144,6 @@ $(function() {
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}  <span class="comment">// end of namespace HArDCore3D</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdoc">Classes to describe and access the elements of a 3D mesh.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:1</div></div>
 <div class="ttc" id="agroup__Quadratures_html_ga18d0a2cf574bef7d6e83760de2f38152"><div class="ttname"><a href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">HArDCore3D::generate_quadrature_rule</a></div><div class="ttdeci">QuadratureRule generate_quadrature_rule(const Cell &amp;T, const int doe, const bool force_split)</div><div class="ttdoc">Generate quadrature rule on mesh element.</div><div class="ttdef"><b>Definition:</b> quadraturerule.cpp:13</div></div>
 <div class="ttc" id="agroup__Quadratures_html_gac0d94c3725c0502056333f314fb48fc9"><div class="ttname"><a href="group__Quadratures.html#gac0d94c3725c0502056333f314fb48fc9">HArDCore3D::QuadratureNode::vector</a></div><div class="ttdeci">Eigen::Vector3d vector() const</div><div class="ttdoc">Returns the quadrature point as an Eigen vector.</div><div class="ttdef"><b>Definition:</b> quadraturerule.hpp:52</div></div>
 <!-- start footer part -->

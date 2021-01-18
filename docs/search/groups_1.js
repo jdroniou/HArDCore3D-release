@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ddr_5fmagnetostatic_835',['DDR_magnetostatic',['../group__DDR__magnetostatic.html',1,'']]],
-  ['ddrcore_836',['DDRcore',['../group__DDRcore.html',1,'']]]
+  ['ddr_5fmagnetostatic_869',['DDR_magnetostatic',['../group__DDR__magnetostatic.html',1,'']]],
+  ['ddrcore_870',['DDRCore',['../group__DDRCore.html',1,'']]]
 ];

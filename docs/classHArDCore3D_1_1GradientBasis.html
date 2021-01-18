@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -62,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a></li>  </ul>
+<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,9 +79,12 @@ $(function() {
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classHArDCore3D_1_1GradientBasis-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">HArDCore3D::GradientBasis&lt; BasisType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Basis.html">Basis</a></div></div>  </div>
+<div class="title">HArDCore3D::GradientBasis&lt; BasisType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Common.html">Common</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Basis for the space of gradients of polynomials.  
+ <a href="classHArDCore3D_1_1GradientBasis.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="basis_8hpp_source.html">basis.hpp</a>&gt;</code></p>
 <table class="memberdecls">
@@ -84,7 +94,7 @@ Public Types</h2></td></tr>
 typedef VectorRd&#160;</td><td class="memItemRight" valign="bottom"><b>FunctionValue</b></td></tr>
 <tr class="separator:gafc6d347c3c4e36a9090cc91638bebfb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga587b8fe3f498ae7ec7bb6ed4242958fa"><td class="memItemLeft" align="right" valign="top">
-typedef Eigen::Matrix&lt; double, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a>, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GradientValue</b></td></tr>
+typedef Eigen::Matrix&lt; double, dimspace, dimspace &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GradientValue</b></td></tr>
 <tr class="separator:ga587b8fe3f498ae7ec7bb6ed4242958fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab588b4936d9f62067a8c2c5eb7572542"><td class="memItemLeft" align="right" valign="top">
 typedef VectorRd&#160;</td><td class="memItemRight" valign="bottom"><b>CurlValue</b></td></tr>
@@ -99,15 +109,15 @@ typedef BasisType::GeometricSupport&#160;</td><td class="memItemRight" valign="b
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:gaf2fa9b4764b550f576aeba7e24e6c911"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaf2fa9b4764b550f576aeba7e24e6c911">GradientBasis</a> (const BasisType &amp;basis)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaf2fa9b4764b550f576aeba7e24e6c911">GradientBasis</a> (const BasisType &amp;basis)</td></tr>
 <tr class="memdesc:gaf2fa9b4764b550f576aeba7e24e6c911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
 <tr class="separator:gaf2fa9b4764b550f576aeba7e24e6c911"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabf5cc38208c346f4b6f6d5ca5d20d767"><td class="memItemLeft" align="right" valign="top">
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gabf5cc38208c346f4b6f6d5ca5d20d767">dimension</a> () const</td></tr>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gabf5cc38208c346f4b6f6d5ca5d20d767">dimension</a> () const</td></tr>
 <tr class="memdesc:gabf5cc38208c346f4b6f6d5ca5d20d767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the dimension of the basis. <br /></td></tr>
 <tr class="separator:gabf5cc38208c346f4b6f6d5ca5d20d767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga21186eb9b6825da3867965bd2e046b23"><td class="memItemLeft" align="right" valign="top">
-FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga21186eb9b6825da3867965bd2e046b23">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga21186eb9b6825da3867965bd2e046b23">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga21186eb9b6825da3867965bd2e046b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:ga21186eb9b6825da3867965bd2e046b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -133,7 +143,8 @@ static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasDiver
 <div class="textblock"><h3>template&lt;typename BasisType&gt;<br />
 class HArDCore3D::GradientBasis&lt; BasisType &gt;</h3>
 
-<p>Basis for the space of gradients of polynomials. It assumes that the first function of the scalar basis is constant </p>
+<p>Basis for the space of gradients of polynomials. </p>
+<p>To construct a basis of G^k, this assumes that the scalar basis it is constructed from is a basis of P^{k+1}/P^0, space of polynomials of degree k+1 without trivial polynomial with zero gradient (e.g. polynomials with zero average, or a hierarchical basis of P^{k+1} in which we have removed the first, constant, polynomial) </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Common/<a class="el" href="basis_8hpp_source.html">basis.hpp</a></li>
 </ul>

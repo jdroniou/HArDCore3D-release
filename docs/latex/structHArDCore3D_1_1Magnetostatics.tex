@@ -7,7 +7,7 @@ Assemble a magnetostatic problem.
 
 
 
-{\ttfamily \#include $<$magnetostatics.\+hpp$>$}
+{\ttfamily \#include $<$ddr-\/magnetostatics.\+hpp$>$}
 
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
@@ -19,13 +19,15 @@ typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ 
 typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ {\bfseries Solution\+Potential\+Type}
 \item 
 typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ {\bfseries Solution\+Curl\+Type}
+\item 
+typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} {\bfseries Permeability\+Type}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{group__DDR__magnetostatic_ga9e47b948148096a76ef7cc8be28ac0b9}{Magnetostatics}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool use\+\_\+threads, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__DDR__magnetostatic_ga3ab30d98e0c805339a0170560702ed4a}{assemble\+Linear\+System}} (const Forcing\+Term\+Type \&f, const Solution\+Potential\+Type \&u)
+void \mbox{\hyperlink{group__DDR__magnetostatic_gad138164f173610fb861cef714646edae}{assemble\+Linear\+System}} (const Forcing\+Term\+Type \&f, const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Permeability\+Type}} \&mu, const Solution\+Potential\+Type \&u)
 \begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
  \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}{dimension}} () const
@@ -45,7 +47,9 @@ Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__magnetostatic_ga4e0de6a7a5
 const double \& \mbox{\hyperlink{group__DDR__magnetostatic_gaa900b40958daa559bdf2d900e105a51c}{stabilization\+Parameter}} () const
 \begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
 double \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}{stabilization\+Parameter}} ()
-\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__DDR__magnetostatic_ga26c61a8a5522d09c07d2a20eecb15925}{compute\+Norm}} (const Eigen\+::\+Vector\+Xd \&v) const
+\begin{DoxyCompactList}\small\item\em Compute the discrete Hcurl \textbackslash{}times Hdiv norm. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -53,5 +57,5 @@ Assemble a magnetostatic problem.
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Schemes/\+D\+D\+R\+Core/magnetostatics.\+hpp\item 
-Schemes/\+D\+D\+R\+Core/magnetostatics.\+cpp\end{DoxyCompactItemize}
+Schemes/\+D\+D\+R-\/magnetostatics/ddr-\/magnetostatics.\+hpp\item 
+Schemes/\+D\+D\+R-\/magnetostatics/ddr-\/magnetostatics.\+cpp\end{DoxyCompactItemize}

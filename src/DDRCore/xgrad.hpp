@@ -7,27 +7,27 @@
 namespace HArDCore3D
 {
   /*!
-   *	\addtogroup DDRcore
+   *  \addtogroup DDRCore
    * @{
    */
 
-  /// Discrete H1 space
+  /// Discrete H1 space: local operators, L2 product and global interpolator
   class XGrad : public DDRSpace
   {
   public:
     typedef std::function<double(const Eigen::Vector3d &)> FunctionType;
 
-    /// A structure to store local operators
+    /// A structure to store local operators (gradient and potential)
     struct LocalOperators
     {
       LocalOperators(
-		     const Eigen::MatrixXd & _gradient, ///< Gradient operator
-		     const Eigen::MatrixXd & _potential ///< Potential operator
-		     )
-	: gradient(_gradient),
-	  potential(_potential)
+                     const Eigen::MatrixXd & _gradient, ///< Gradient operator
+                     const Eigen::MatrixXd & _potential ///< Potential operator
+                     )
+        : gradient(_gradient),
+          potential(_potential)
       {
-	// Do nothing
+        // Do nothing
       }
       
       Eigen::MatrixXd gradient;
@@ -124,6 +124,9 @@ namespace HArDCore3D
       return m_ddr_core.edgeBases(E.global_index());
     }
 
+    /// Build the components of the gradient operator
+    Eigen::MatrixXd buildGradientComponentsCell(size_t iT) const;
+    
   private:    
     LocalOperators _compute_edge_gradient_potential(size_t iE);
     LocalOperators _compute_face_gradient_potential(size_t iF);

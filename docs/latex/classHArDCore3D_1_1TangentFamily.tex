@@ -2,7 +2,7 @@
 \label{classHArDCore3D_1_1TangentFamily}\index{HArDCore3D::TangentFamily$<$ ScalarFamilyType $>$@{HArDCore3D::TangentFamily$<$ ScalarFamilyType $>$}}
 
 
-Vector family for tangent functions.  
+Vector family for polynomial functions that are tangent to a certain place (determined by the generators)  
 
 
 
@@ -14,7 +14,7 @@ Vector family for tangent functions.
 \item 
 typedef Vector\+Rd {\bfseries Function\+Value}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ {\bfseries Gradient\+Value}
+typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries Gradient\+Value}
 \item 
 typedef Vector\+Rd {\bfseries Curl\+Value}
 \item 
@@ -25,13 +25,13 @@ typedef \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} {\bfseries Geometric\+S
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Basis_gadf75daa62a416097ab9c2ec133dd3553}{Tangent\+Family}} (const Scalar\+Family\+Type \&scalar\+\_\+family, const Eigen\+::\+Matrix$<$ double, 2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&generators)
+\mbox{\hyperlink{group__Common_gadf75daa62a416097ab9c2ec133dd3553}{Tangent\+Family}} (const Scalar\+Family\+Type \&scalar\+\_\+family, const Eigen\+::\+Matrix$<$ double, 2, dimspace $>$ \&generators)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Basis_ga0c8e2840a23a7f9703ca75a9504b2423}{dimension}} () const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga0c8e2840a23a7f9703ca75a9504b2423}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Return the dimension of the family. \end{DoxyCompactList}\item 
-Function\+Value \mbox{\hyperlink{group__Basis_ga77132c1ffe753b76526c730aac3eec1e}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Function\+Value \mbox{\hyperlink{group__Common_ga77132c1ffe753b76526c730aac3eec1e}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-Divergence\+Value \mbox{\hyperlink{group__Basis_ga7b41039db007f6410867f68954b69ede}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Divergence\+Value \mbox{\hyperlink{group__Common_ga7b41039db007f6410867f68954b69ede}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -52,7 +52,7 @@ static const bool {\bfseries has\+Divergence} = true
 \subsubsection*{template$<$typename Scalar\+Family\+Type$>$\newline
 class H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$}
 
-Vector family for tangent functions. 
+Vector family for polynomial functions that are tangent to a certain place (determined by the generators) 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

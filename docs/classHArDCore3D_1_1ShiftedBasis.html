@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -62,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">ShiftedBasis</a></li>  </ul>
+<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">ShiftedBasis</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,9 +79,12 @@ $(function() {
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classHArDCore3D_1_1ShiftedBasis-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">HArDCore3D::ShiftedBasis&lt; BasisType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Basis.html">Basis</a></div></div>  </div>
+<div class="title">HArDCore3D::ShiftedBasis&lt; BasisType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Common.html">Common</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Generate a basis where the function indices are shifted.  
+ <a href="classHArDCore3D_1_1ShiftedBasis.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="basis_8hpp_source.html">basis.hpp</a>&gt;</code></p>
 <table class="memberdecls">
@@ -98,27 +108,27 @@ typedef BasisType::GeometricSupport&#160;</td><td class="memItemRight" valign="b
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:gaea075c3cb8fbdd848e30d84821f23711"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaea075c3cb8fbdd848e30d84821f23711">ShiftedBasis</a> (const BasisType &amp;basis, const int shift)</td></tr>
-<tr class="memdesc:gaea075c3cb8fbdd848e30d84821f23711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Basis.html#gaea075c3cb8fbdd848e30d84821f23711">More...</a><br /></td></tr>
+<tr class="memitem:gaea075c3cb8fbdd848e30d84821f23711"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaea075c3cb8fbdd848e30d84821f23711">ShiftedBasis</a> (const BasisType &amp;basis, const int shift)</td></tr>
+<tr class="memdesc:gaea075c3cb8fbdd848e30d84821f23711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Common.html#gaea075c3cb8fbdd848e30d84821f23711">More...</a><br /></td></tr>
 <tr class="separator:gaea075c3cb8fbdd848e30d84821f23711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0d1ffbb1cb714755de9035fcb9d5f183"><td class="memItemLeft" align="right" valign="top">
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga0d1ffbb1cb714755de9035fcb9d5f183">dimension</a> () const</td></tr>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga0d1ffbb1cb714755de9035fcb9d5f183">dimension</a> () const</td></tr>
 <tr class="memdesc:ga0d1ffbb1cb714755de9035fcb9d5f183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimension of the basis. <br /></td></tr>
 <tr class="separator:ga0d1ffbb1cb714755de9035fcb9d5f183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga67db64c53524c17389e1928ff7288101"><td class="memItemLeft" align="right" valign="top">
-FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga67db64c53524c17389e1928ff7288101">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga67db64c53524c17389e1928ff7288101">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga67db64c53524c17389e1928ff7288101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:ga67db64c53524c17389e1928ff7288101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1e825cd8aa68c4e1a1e3900e24be84f7"><td class="memItemLeft" align="right" valign="top">
-GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga1e825cd8aa68c4e1a1e3900e24be84f7">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga1e825cd8aa68c4e1a1e3900e24be84f7">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga1e825cd8aa68c4e1a1e3900e24be84f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:ga1e825cd8aa68c4e1a1e3900e24be84f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadca4290363039ead695cd70ca589e04d"><td class="memItemLeft" align="right" valign="top">
-CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gadca4290363039ead695cd70ca589e04d">curl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gadca4290363039ead695cd70ca589e04d">curl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:gadca4290363039ead695cd70ca589e04d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:gadca4290363039ead695cd70ca589e04d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga667f2913df630001dcc7d693662af926"><td class="memItemLeft" align="right" valign="top">
-DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga667f2913df630001dcc7d693662af926">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga667f2913df630001dcc7d693662af926">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga667f2913df630001dcc7d693662af926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:ga667f2913df630001dcc7d693662af926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -144,7 +154,8 @@ static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasDiver
 <div class="textblock"><h3>template&lt;typename BasisType&gt;<br />
 class HArDCore3D::ShiftedBasis&lt; BasisType &gt;</h3>
 
-<p>Generate a basis where the function indices are shifted. Can be used, e.g., to ignore the constant function in scalar bases </p>
+<p>Generate a basis where the function indices are shifted. </p>
+<p>Can be used, e.g., to ignore the constant function in a hierarchical scalar basis </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Common/<a class="el" href="basis_8hpp_source.html">basis.hpp</a></li>
 </ul>

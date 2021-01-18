@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -67,8 +74,8 @@ $(function() {
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>set_boundary()
 : <a class="el" href="group__Mesh.html#gac4332b689450ab38b5c77ae9f5ff0809">HArDCore3D::Cell</a>
-, <a class="el" href="classHArDCore3D_1_1Edge.html#aed492c6f6fa58b06262ecfa0420121e3">HArDCore3D::Edge</a>
-, <a class="el" href="classHArDCore3D_1_1Face.html#afdd39678036c46f979da9909419c3428">HArDCore3D::Face</a>
+, <a class="el" href="group__Mesh.html#gaed492c6f6fa58b06262ecfa0420121e3">HArDCore3D::Edge</a>
+, <a class="el" href="group__Mesh.html#gafdd39678036c46f979da9909419c3428">HArDCore3D::Face</a>
 , <a class="el" href="group__Mesh.html#ga72fa3131022cb2c847a2e9d5b56cb893">HArDCore3D::Vertex</a>
 </li>
 <li>set_dirichlet()
@@ -88,15 +95,15 @@ $(function() {
 </li>
 <li>set_global_index()
 : <a class="el" href="group__Mesh.html#ga65ac02c8ef4407d5c0693ae97d24c45a">HArDCore3D::Cell</a>
-, <a class="el" href="classHArDCore3D_1_1Edge.html#a150b8b31cd1b608d6ce8b020227a6db2">HArDCore3D::Edge</a>
-, <a class="el" href="classHArDCore3D_1_1Face.html#a66289e0a31138cfce6ac948f09423548">HArDCore3D::Face</a>
+, <a class="el" href="group__Mesh.html#ga150b8b31cd1b608d6ce8b020227a6db2">HArDCore3D::Edge</a>
+, <a class="el" href="group__Mesh.html#ga66289e0a31138cfce6ac948f09423548">HArDCore3D::Face</a>
 , <a class="el" href="group__Mesh.html#ga1acf4d7072729d8f5f89876383361099">HArDCore3D::Vertex</a>
 </li>
 <li>set_global_operator()
 : <a class="el" href="group__HHO3D.html#gae58bdad281ef8980a8a3ab527c4066f7">HHO3D</a>
 </li>
 <li>set_h_max()
-: <a class="el" href="classHArDCore3D_1_1Mesh.html#afdbe174b87d591e573dd1953650744ec">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#gafdbe174b87d591e573dd1953650744ec">HArDCore3D::Mesh</a>
 </li>
 <li>set_load_vector()
 : <a class="el" href="group__HHO3D.html#ga900c704c67fc0dff437a377e19a18017">HHO3D</a>
@@ -105,10 +112,10 @@ $(function() {
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#ac40eb6e8236253c78ce71c0fd876d539">StemMesh3D::mesh_3Dv</a>
 </li>
 <li>set_name()
-: <a class="el" href="classHArDCore3D_1_1Mesh.html#a694cc6fe11d3640859f7f2c23c8acd44">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#ga694cc6fe11d3640859f7f2c23c8acd44">HArDCore3D::Mesh</a>
 </li>
 <li>ShiftedBasis()
-: <a class="el" href="group__Basis.html#gaea075c3cb8fbdd848e30d84821f23711">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
+: <a class="el" href="group__Common.html#gaea075c3cb8fbdd848e30d84821f23711">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
 </li>
 <li>sol()
 : <a class="el" href="classTestCase.html#af43950f065a64745f2ee52fad86106eb">TestCase</a>
@@ -116,11 +123,8 @@ $(function() {
 <li>solve()
 : <a class="el" href="group__HHO3D.html#gaa70703caa4da647cfb742750776d247c">HHO3D</a>
 </li>
-<li>squared_error()
-: <a class="el" href="classHArDCore3D_1_1Tests_1_1L2Projection.html#a0afa203faadbe3aa6669a235dd1b533c">HArDCore3D::Tests::L2Projection&lt; BasisType &gt;</a>
-</li>
 <li>stabilizationParameter()
-: <a class="el" href="group__DDR__magnetostatic.html#ga36ff2404c85e550ad25907ec8ba188db">HArDCore3D::Magnetostatics</a>
+: <a class="el" href="group__DDR__magnetostatic.html#gaa900b40958daa559bdf2d900e105a51c">HArDCore3D::Magnetostatics</a>
 </li>
 <li>standard_load_vector()
 : <a class="el" href="group__HHO3D.html#gaf67d049ac7cf172cfaf81e95772d891d">HHO3D</a>
@@ -129,7 +133,7 @@ $(function() {
 : <a class="el" href="group__DDR__magnetostatic.html#gafb6670bd6c5b8a6754108f45de910a63">HArDCore3D::Magnetostatics</a>
 </li>
 <li>systemVector()
-: <a class="el" href="group__DDR__magnetostatic.html#ga4e0de6a7a5cf5f6fdd0c511b1f4776e9">HArDCore3D::Magnetostatics</a>
+: <a class="el" href="group__DDR__magnetostatic.html#ga29cbbcb0980b052188bb32902e57db67">HArDCore3D::Magnetostatics</a>
 </li>
 </ul>
 </div><!-- contents -->

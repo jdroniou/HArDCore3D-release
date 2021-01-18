@@ -1,10 +1,26 @@
 var searchData=
 [
-  ['pbcdata_454',['pbcdata',['../structStemMesh3D_1_1tetgenmesh_1_1pbcdata.html',1,'StemMesh3D::tetgenmesh']]],
-  ['pbcgroup_455',['pbcgroup',['../structStemMesh3D_1_1tetgenio_1_1pbcgroup.html',1,'StemMesh3D::tetgenio']]],
-  ['polygon_456',['polygon',['../structStemMesh3D_1_1tetgenio_1_1polygon.html',1,'StemMesh3D::tetgenio']]],
-  ['polynomialspacedimension_457',['PolynomialSpaceDimension',['../structHArDCore3D_1_1PolynomialSpaceDimension.html',1,'HArDCore3D']]],
-  ['polynomialspacedimension_3c_20cell_20_3e_458',['PolynomialSpaceDimension&lt; Cell &gt;',['../structHArDCore3D_1_1PolynomialSpaceDimension_3_01Cell_01_4.html',1,'HArDCore3D']]],
-  ['polynomialspacedimension_3c_20edge_20_3e_459',['PolynomialSpaceDimension&lt; Edge &gt;',['../structHArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01_4.html',1,'HArDCore3D']]],
-  ['polynomialspacedimension_3c_20face_20_3e_460',['PolynomialSpaceDimension&lt; Face &gt;',['../structHArDCore3D_1_1PolynomialSpaceDimension_3_01Face_01_4.html',1,'HArDCore3D']]]
+  ['magnetostatics_456',['Magnetostatics',['../structHArDCore3D_1_1Magnetostatics.html',1,'HArDCore3D']]],
+  ['memorypool_457',['memorypool',['../classStemMesh3D_1_1tetgenmesh_1_1memorypool.html',1,'StemMesh3D::tetgenmesh']]],
+  ['mesh_458',['Mesh',['../classHArDCore3D_1_1Mesh.html',1,'HArDCore3D']]],
+  ['mesh2d_5freader_459',['mesh2D_reader',['../classStemMesh3D_1_1mesh2D__reader.html',1,'StemMesh3D']]],
+  ['mesh2d_5freader_5fgeneralformat_460',['mesh2D_reader_GeneralFormat',['../classStemMesh3D_1_1mesh2D__reader__GeneralFormat.html',1,'StemMesh3D']]],
+  ['mesh3d_5freader_461',['mesh3D_reader',['../classStemMesh3D_1_1mesh3D__reader.html',1,'StemMesh3D']]],
+  ['mesh3d_5freader_5fmsh_5fformat_462',['mesh3D_reader_MSH_format',['../classStemMesh3D_1_1mesh3D__reader__MSH__format.html',1,'StemMesh3D']]],
+  ['mesh3d_5freader_5fregn_5fface_5fformat_463',['mesh3D_reader_REGN_FACE_format',['../classStemMesh3D_1_1mesh3D__reader__REGN__FACE__format.html',1,'StemMesh3D']]],
+  ['mesh3d_5freader_5ftetgen_5fformat_464',['mesh3D_reader_TETGEN_format',['../classStemMesh3D_1_1mesh3D__reader__TETGEN__format.html',1,'StemMesh3D']]],
+  ['mesh3dv_5fbuilder_465',['mesh3Dv_builder',['../classStemMesh3D_1_1mesh3Dv__builder.html',1,'StemMesh3D']]],
+  ['mesh3dv_5fcmaster_466',['mesh3Dv_cmaster',['../classStemMesh3D_1_1mesh3Dv__cmaster.html',1,'StemMesh3D']]],
+  ['mesh3dv_5fgmv_5foutput_467',['mesh3Dv_GMV_output',['../classStemMesh3D_1_1mesh3Dv__GMV__output.html',1,'StemMesh3D']]],
+  ['mesh3dv_5fprinter_468',['mesh3Dv_printer',['../classStemMesh3D_1_1mesh3Dv__printer.html',1,'StemMesh3D']]],
+  ['mesh3dv_5fwriter_469',['mesh3Dv_writer',['../classStemMesh3D_1_1mesh3Dv__writer.html',1,'StemMesh3D']]],
+  ['mesh3dv_5fwriter_5fmsh_470',['mesh3Dv_writer_MSH',['../classStemMesh3D_1_1mesh3Dv__writer__MSH.html',1,'StemMesh3D']]],
+  ['mesh_5f3dv_471',['mesh_3Dv',['../classStemMesh3D_1_1mesh__3Dv.html',1,'StemMesh3D']]],
+  ['meshbuilder_472',['MeshBuilder',['../classHArDCore3D_1_1MeshBuilder.html',1,'HArDCore3D']]],
+  ['monomialpowers_473',['MonomialPowers',['../structHArDCore3D_1_1MonomialPowers.html',1,'HArDCore3D']]],
+  ['monomialpowers_3c_20cell_20_3e_474',['MonomialPowers&lt; Cell &gt;',['../structHArDCore3D_1_1MonomialPowers_3_01Cell_01_4.html',1,'HArDCore3D']]],
+  ['monomialpowers_3c_20face_20_3e_475',['MonomialPowers&lt; Face &gt;',['../structHArDCore3D_1_1MonomialPowers_3_01Face_01_4.html',1,'HArDCore3D']]],
+  ['monomialscalarbasiscell_476',['MonomialScalarBasisCell',['../classHArDCore3D_1_1MonomialScalarBasisCell.html',1,'HArDCore3D']]],
+  ['monomialscalarbasisedge_477',['MonomialScalarBasisEdge',['../classHArDCore3D_1_1MonomialScalarBasisEdge.html',1,'HArDCore3D']]],
+  ['monomialscalarbasisface_478',['MonomialScalarBasisFace',['../classHArDCore3D_1_1MonomialScalarBasisFace.html',1,'HArDCore3D']]]
 ];

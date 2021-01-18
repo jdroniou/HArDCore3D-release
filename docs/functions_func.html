@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -66,46 +73,46 @@ $(function() {
 
 <h3><a id="index_a"></a>- a -</h3><ul>
 <li>add_b_cell()
-: <a class="el" href="classHArDCore3D_1_1Mesh.html#a31f05cf2b4cbb3dd729e99f96345dbbe">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#ga31f05cf2b4cbb3dd729e99f96345dbbe">HArDCore3D::Mesh</a>
 </li>
 <li>add_b_edge()
-: <a class="el" href="classHArDCore3D_1_1Mesh.html#adf0072fd6a1ca4a2b99563ab875202fd">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#gadf0072fd6a1ca4a2b99563ab875202fd">HArDCore3D::Mesh</a>
 </li>
 <li>add_b_face()
-: <a class="el" href="classHArDCore3D_1_1Mesh.html#a3efbbd1fc6718b9110bc08cc0225471c">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#ga3efbbd1fc6718b9110bc08cc0225471c">HArDCore3D::Mesh</a>
 </li>
 <li>add_b_vertex()
-: <a class="el" href="classHArDCore3D_1_1Mesh.html#a6495493613a7e8453473cce4838b7dc8">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#ga6495493613a7e8453473cce4838b7dc8">HArDCore3D::Mesh</a>
 </li>
 <li>add_cell()
-: <a class="el" href="classHArDCore3D_1_1Edge.html#a364bacf89dfa0be36abbbadbb2dd4f78">HArDCore3D::Edge</a>
-, <a class="el" href="classHArDCore3D_1_1Face.html#a0c4cc1b593b288e6c70747b6481824f8">HArDCore3D::Face</a>
-, <a class="el" href="classHArDCore3D_1_1Mesh.html#ab58e51275f4fd83e36fdf8aba6ee846d">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#ga364bacf89dfa0be36abbbadbb2dd4f78">HArDCore3D::Edge</a>
+, <a class="el" href="group__Mesh.html#ga0c4cc1b593b288e6c70747b6481824f8">HArDCore3D::Face</a>
+, <a class="el" href="group__Mesh.html#gab58e51275f4fd83e36fdf8aba6ee846d">HArDCore3D::Mesh</a>
 , <a class="el" href="group__Mesh.html#ga133647cd83e7d3b92a9ac55fe5878808">HArDCore3D::Vertex</a>
 </li>
 <li>add_edge()
 : <a class="el" href="group__Mesh.html#gaa18b4bdf2f9217febcc96fc4415de1ce">HArDCore3D::Cell</a>
-, <a class="el" href="classHArDCore3D_1_1Face.html#a0f3dd04f1ab142689e76165d8824c428">HArDCore3D::Face</a>
-, <a class="el" href="classHArDCore3D_1_1Mesh.html#ae006746b7f6bf52b3172716f4365fa5b">HArDCore3D::Mesh</a>
+, <a class="el" href="group__Mesh.html#ga0f3dd04f1ab142689e76165d8824c428">HArDCore3D::Face</a>
+, <a class="el" href="group__Mesh.html#gae006746b7f6bf52b3172716f4365fa5b">HArDCore3D::Mesh</a>
 , <a class="el" href="group__Mesh.html#gabc7880abdf7299a56b38b1cb2302ed19">HArDCore3D::Vertex</a>
 </li>
 <li>add_face()
 : <a class="el" href="group__Mesh.html#ga57e3ed95a38ecc546ead65e3c9d42820">HArDCore3D::Cell</a>
-, <a class="el" href="classHArDCore3D_1_1Edge.html#a7758bf6587d0153b7c9e63d088b61157">HArDCore3D::Edge</a>
-, <a class="el" href="classHArDCore3D_1_1Mesh.html#a37af87e0b0fbb14363b2af7106231d1e">HArDCore3D::Mesh</a>
+, <a class="el" href="group__Mesh.html#ga7758bf6587d0153b7c9e63d088b61157">HArDCore3D::Edge</a>
+, <a class="el" href="group__Mesh.html#ga37af87e0b0fbb14363b2af7106231d1e">HArDCore3D::Mesh</a>
 , <a class="el" href="group__Mesh.html#ga2c502ea7f0f94c387af9aed652ce3ad4">HArDCore3D::Vertex</a>
 </li>
 <li>add_i_cell()
-: <a class="el" href="classHArDCore3D_1_1Mesh.html#aecf50e57da45ad71c485f1e3f51d82ea">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#gaecf50e57da45ad71c485f1e3f51d82ea">HArDCore3D::Mesh</a>
 </li>
 <li>add_i_edge()
-: <a class="el" href="classHArDCore3D_1_1Mesh.html#a24c3b59a00bd3c7ac51bc868807c3ff4">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#ga24c3b59a00bd3c7ac51bc868807c3ff4">HArDCore3D::Mesh</a>
 </li>
 <li>add_i_face()
-: <a class="el" href="classHArDCore3D_1_1Mesh.html#a11ec925f03b38f68cc942c096a93af19">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#ga11ec925f03b38f68cc942c096a93af19">HArDCore3D::Mesh</a>
 </li>
 <li>add_i_vertex()
-: <a class="el" href="classHArDCore3D_1_1Mesh.html#ac084d96b6ffab6ff330cdd3aaf8dd424">HArDCore3D::Mesh</a>
+: <a class="el" href="group__Mesh.html#gac084d96b6ffab6ff330cdd3aaf8dd424">HArDCore3D::Mesh</a>
 </li>
 <li>add_neighbour()
 : <a class="el" href="group__Mesh.html#ga6e29b140b5f4a286ed694f2851fe76e1">HArDCore3D::Cell</a>
@@ -115,16 +122,18 @@ $(function() {
 </li>
 <li>add_vertex()
 : <a class="el" href="group__Mesh.html#gaa4bebb4d2f23daaed37e1e1e2d464d01">HArDCore3D::Cell</a>
-, <a class="el" href="classHArDCore3D_1_1Edge.html#a8902091c785b5857648f5c9ba55f6eba">HArDCore3D::Edge</a>
-, <a class="el" href="classHArDCore3D_1_1Face.html#a7b9f09bcce8fc3beb56634e0793af83f">HArDCore3D::Face</a>
-, <a class="el" href="classHArDCore3D_1_1Mesh.html#afe8cbdafd0716faad0283e281ca15711">HArDCore3D::Mesh</a>
+, <a class="el" href="group__Mesh.html#ga8902091c785b5857648f5c9ba55f6eba">HArDCore3D::Edge</a>
+, <a class="el" href="group__Mesh.html#ga7b9f09bcce8fc3beb56634e0793af83f">HArDCore3D::Face</a>
+, <a class="el" href="group__Mesh.html#gafe8cbdafd0716faad0283e281ca15711">HArDCore3D::Mesh</a>
 , <a class="el" href="group__Mesh.html#gaeffe35d0d60a1ee284f645a5642ff75c">HArDCore3D::Vertex</a>
 </li>
 <li>advec()
 : <a class="el" href="classTestCase.html#aaa22fd22946c745ac7b8a93b892dbd52">TestCase</a>
 </li>
 <li>ancestor()
-: <a class="el" href="group__Basis.html#ga7afd19f4c3c17b7ac8ed16115b0ffe1c">HArDCore3D::Family&lt; BasisType &gt;</a>
+: <a class="el" href="group__Common.html#ga7afd19f4c3c17b7ac8ed16115b0ffe1c">HArDCore3D::Family&lt; BasisType &gt;</a>
+, <a class="el" href="group__Common.html#ga69735cd402a3190ebd982269f4cb1582">HArDCore3D::RestrictedBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Common.html#gaa98332fb236225d4e17bc64aecf1eb30">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
 </li>
 <li>ari_coords_F()
 : <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a3a20194034b0d98ad894bcad47d57ffe">StemMesh3D::mesh_3Dv</a>
@@ -135,7 +144,7 @@ $(function() {
 , <a class="el" href="group__HHO3D.html#gab3b4d42b56364d7626a9bda8b2d1d36a">HHO3D</a>
 </li>
 <li>assembleLinearSystem()
-: <a class="el" href="group__DDR__magnetostatic.html#ga3ab30d98e0c805339a0170560702ed4a">HArDCore3D::Magnetostatics</a>
+: <a class="el" href="group__DDR__magnetostatic.html#gad138164f173610fb861cef714646edae">HArDCore3D::Magnetostatics</a>
 </li>
 <li>asVectorXd()
 : <a class="el" href="group__HybridCore.html#gac44c85c6f56c0c6f2b66f0ed630574dd">HArDCore3D::UVector</a>

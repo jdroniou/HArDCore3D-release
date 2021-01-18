@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -62,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1XDiv.html">XDiv</a></li><li class="navelem"><a class="el" href="structHArDCore3D_1_1XDiv_1_1LocalOperators.html">LocalOperators</a></li>  </ul>
+<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1XDiv.html">XDiv</a></li><li class="navelem"><a class="el" href="structHArDCore3D_1_1XDiv_1_1LocalOperators.html">LocalOperators</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -71,18 +78,18 @@ $(function() {
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structHArDCore3D_1_1XDiv_1_1LocalOperators-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">HArDCore3D::XDiv::LocalOperators Struct Reference<div class="ingroups"><a class="el" href="group__DDRcore.html">DDRcore</a></div></div>  </div>
+<div class="title">HArDCore3D::XDiv::LocalOperators Struct Reference<div class="ingroups"><a class="el" href="group__DDRCore.html">DDRCore</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A structure to store local operators.  
+<p>A structure to store local operators (divergence and potential)  
  <a href="structHArDCore3D_1_1XDiv_1_1LocalOperators.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="xdiv_8hpp_source.html">xdiv.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:gae3e67d2c8a03204068df005ae75ea771"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRcore.html#gae3e67d2c8a03204068df005ae75ea771">LocalOperators</a> (const Eigen::MatrixXd &amp;_divergence, const Eigen::MatrixXd &amp;_divergence_rhs, const Eigen::MatrixXd &amp;_potential)</td></tr>
+<tr class="memitem:gae3e67d2c8a03204068df005ae75ea771"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRCore.html#gae3e67d2c8a03204068df005ae75ea771">LocalOperators</a> (const Eigen::MatrixXd &amp;_divergence, const Eigen::MatrixXd &amp;_divergence_rhs, const Eigen::MatrixXd &amp;_potential)</td></tr>
 <tr class="separator:gae3e67d2c8a03204068df005ae75ea771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -98,7 +105,7 @@ Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><b>potential<
 <tr class="separator:ga8fdfbce5dc2c74114135ffcd302760f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A structure to store local operators. </p>
+<div class="textblock"><p>A structure to store local operators (divergence and potential) </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/DDRCore/<a class="el" href="xdiv_8hpp_source.html">xdiv.hpp</a></li>
 </ul>

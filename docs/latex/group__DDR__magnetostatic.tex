@@ -24,13 +24,16 @@ typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ 
 \item 
 \mbox{\Hypertarget{group__DDR__magnetostatic_gab892187027bcb442d30c76dc95f84043}\label{group__DDR__magnetostatic_gab892187027bcb442d30c76dc95f84043}} 
 typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::\+Solution\+Curl\+Type}
+\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gab9b0a0b9567472243716e8acd486d01e}\label{group__DDR__magnetostatic_gab9b0a0b9567472243716e8acd486d01e}} 
+typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} {\bfseries H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::\+Permeability\+Type}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{group__DDR__magnetostatic_ga9e47b948148096a76ef7cc8be28ac0b9}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::\+Magnetostatics}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool use\+\_\+threads, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__DDR__magnetostatic_ga3ab30d98e0c805339a0170560702ed4a}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::assemble\+Linear\+System}} (const Forcing\+Term\+Type \&f, const Solution\+Potential\+Type \&u)
+void \mbox{\hyperlink{group__DDR__magnetostatic_gad138164f173610fb861cef714646edae}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::assemble\+Linear\+System}} (const Forcing\+Term\+Type \&f, const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Permeability\+Type}} \&mu, const Solution\+Potential\+Type \&u)
 \begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
  \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}\label{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}} 
@@ -59,7 +62,9 @@ const double \& \mbox{\hyperlink{group__DDR__magnetostatic_gaa900b40958daa559bdf
 \begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}\label{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}} 
 double \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::stabilization\+Parameter}} ()
-\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__DDR__magnetostatic_ga26c61a8a5522d09c07d2a20eecb15925}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::compute\+Norm}} (const Eigen\+::\+Vector\+Xd \&v) const
+\begin{DoxyCompactList}\small\item\em Compute the discrete Hcurl \textbackslash{}times Hdiv norm. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -68,11 +73,11 @@ Implementation of the D\+DR scheme for the magnetostatic problem.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{group__DDR__magnetostatic_ga3ab30d98e0c805339a0170560702ed4a}\label{group__DDR__magnetostatic_ga3ab30d98e0c805339a0170560702ed4a}} 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gad138164f173610fb861cef714646edae}\label{group__DDR__magnetostatic_gad138164f173610fb861cef714646edae}} 
 \index{DDR\_magnetostatic@{DDR\_magnetostatic}!assembleLinearSystem@{assembleLinearSystem}}
 \index{assembleLinearSystem@{assembleLinearSystem}!DDR\_magnetostatic@{DDR\_magnetostatic}}
 \doxysubsubsection{\texorpdfstring{assembleLinearSystem()}{assembleLinearSystem()}}
-{\footnotesize\ttfamily void Magnetostatics\+::assemble\+Linear\+System (\begin{DoxyParamCaption}\item[{const Forcing\+Term\+Type \&}]{f,  }\item[{const Solution\+Potential\+Type \&}]{u }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Magnetostatics\+::assemble\+Linear\+System (\begin{DoxyParamCaption}\item[{const Forcing\+Term\+Type \&}]{f,  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Permeability\+Type}} \&}]{mu,  }\item[{const Solution\+Potential\+Type \&}]{u }\end{DoxyParamCaption})}
 
 
 
@@ -83,7 +88,24 @@ Assemble the global system ~\newline
 \begin{DoxyParams}{Parameters}
 {\em f} & Forcing term \\
 \hline
+{\em mu} & Permeability \\
+\hline
 {\em u} & Boundary condition \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga26c61a8a5522d09c07d2a20eecb15925}\label{group__DDR__magnetostatic_ga26c61a8a5522d09c07d2a20eecb15925}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!computeNorm@{computeNorm}}
+\index{computeNorm@{computeNorm}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{computeNorm()}{computeNorm()}}
+{\footnotesize\ttfamily double Magnetostatics\+::compute\+Norm (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{v }\end{DoxyParamCaption}) const}
+
+
+
+Compute the discrete Hcurl \textbackslash{}times Hdiv norm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{group__DDR__magnetostatic_ga9e47b948148096a76ef7cc8be28ac0b9}\label{group__DDR__magnetostatic_ga9e47b948148096a76ef7cc8be28ac0b9}} 

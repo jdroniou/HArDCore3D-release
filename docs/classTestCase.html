@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -80,7 +87,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a89135d3d44b1eedf9efcb6ce421d9269"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestCase.html#a89135d3d44b1eedf9efcb6ce421d9269">TestCase</a> (std::vector&lt; int &gt; iTC)</td></tr>
 <tr class="memdesc:a89135d3d44b1eedf9efcb6ce421d9269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise data.  <a href="classTestCase.html#a89135d3d44b1eedf9efcb6ce421d9269">More...</a><br /></td></tr>
 <tr class="separator:a89135d3d44b1eedf9efcb6ce421d9269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af43950f065a64745f2ee52fad86106eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestCase.html#af43950f065a64745f2ee52fad86106eb">sol</a> ()</td></tr>
+<tr class="memitem:af43950f065a64745f2ee52fad86106eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTestCase.html#af43950f065a64745f2ee52fad86106eb">sol</a> ()</td></tr>
 <tr class="memdesc:af43950f065a64745f2ee52fad86106eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the exact solution.  <a href="classTestCase.html#af43950f065a64745f2ee52fad86106eb">More...</a><br /></td></tr>
 <tr class="separator:af43950f065a64745f2ee52fad86106eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae90a2722c30bdccb51c947c5a200857"><td class="memItemLeft" align="right" valign="top"><a id="aae90a2722c30bdccb51c947c5a200857"></a>
@@ -190,7 +197,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Returns the diffusion matrix. </p>
 <p>m_iTC[1]=1: Diff = Id</p>
-<p>m_iTC[1]=2: Diff = <img class="formulaInl" alt="$\left[\begin{array}{ccc}y^2+z^2+1 &amp; -xy &amp; -xz\\ -xy &amp; x^2+y^2+1 &amp; -yz\\ -xz &amp; -yz &amp; x^2+y^2+1\end{array}\right]$" src="form_10.png"/></p>
+<p>m_iTC[1]=2: Diff = \(\left[\begin{array}{ccc}y^2+z^2+1 &amp; -xy &amp; -xz\\ -xy &amp; x^2+y^2+1 &amp; -yz\\ -xz &amp; -yz &amp; x^2+y^2+1\end{array}\right]\)</p>
 
 </div>
 </div>
@@ -201,7 +208,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Basis.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt; TestCase::sol </td>
+          <td class="memname"><a class="el" href="group__Common.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt; TestCase::sol </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -210,12 +217,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Returns the exact solution. </p>
-<p>m_iTC[0]=1: <img class="formulaInl" alt="$u(x,y,z)=sin(\pi x) sin(\pi y) sin (\pi z)$" src="form_4.png"/></p>
-<p>m_iTC[0]=2: <img class="formulaInl" alt="$u(x,y,z)=cos(\pi x) cos(\pi y) cos(\pi z)$" src="form_5.png"/></p>
-<p>m_iTC[0]=3: <img class="formulaInl" alt="$u(x,y,z)= x$" src="form_6.png"/></p>
-<p>m_iTC[0]=4: <img class="formulaInl" alt="$u(x,y,z)= y$" src="form_7.png"/></p>
-<p>m_iTC[0]=5: <img class="formulaInl" alt="$u(x,y,z)= z$" src="form_8.png"/></p>
-<p>m_iTC[0]=6: <img class="formulaInl" alt="$u(x,y,z)= x^2+y^2+z^2$" src="form_9.png"/></p>
+<p>m_iTC[0]=1: \(u(x,y,z)=sin(\pi x) sin(\pi y) sin (\pi z)\)</p>
+<p>m_iTC[0]=2: \(u(x,y,z)=cos(\pi x) cos(\pi y) cos(\pi z)\)</p>
+<p>m_iTC[0]=3: \(u(x,y,z)= x\)</p>
+<p>m_iTC[0]=4: \(u(x,y,z)= y\)</p>
+<p>m_iTC[0]=5: \(u(x,y,z)= z\)</p>
+<p>m_iTC[0]=6: \(u(x,y,z)= x^2+y^2+z^2\)</p>
 
 </div>
 </div>

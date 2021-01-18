@@ -12,7 +12,7 @@ XDiv::XDiv(const DDRCore & ddr_core, bool use_threads, std::ostream & output)
   : DDRSpace(
 	     ddr_core.mesh(), 0, 0,
 	     PolynomialSpaceDimension<Face>::Poly(ddr_core.degree()),
-	     PolynomialSpaceDimension<Cell>::Goly(ddr_core.degree() - 1) + PolynomialSpaceDimension<Cell>::GolyOrth(ddr_core.degree())
+	     PolynomialSpaceDimension<Cell>::Goly(ddr_core.degree() - 1) + PolynomialSpaceDimension<Cell>::GolyCompl(ddr_core.degree())
 	      ),
     m_ddr_core(ddr_core),
     m_use_threads(use_threads),
@@ -83,9 +83,9 @@ Eigen::VectorXd XDiv::interpolate(const FunctionType & v) const
 	      = l2_projection(v, *cellBases(iT).Golykmo, quad_2k_T, basis_Gkmo_T_quad);
 
 	    offset_T += PolynomialSpaceDimension<Cell>::Goly(degree() - 1);	    
-	    auto basis_GOk_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).GolyOrthk, quad_2k_T);
-	    vh.segment(offset_T, PolynomialSpaceDimension<Cell>::GolyOrth(degree()))
-	      = l2_projection(v, *cellBases(iT).GolyOrthk, quad_2k_T, basis_GOk_T_quad);
+	    auto basis_GOk_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).GolyComplk, quad_2k_T);
+	    vh.segment(offset_T, PolynomialSpaceDimension<Cell>::GolyCompl(degree()))
+	      = l2_projection(v, *cellBases(iT).GolyComplk, quad_2k_T, basis_GOk_T_quad);
 	  } // for iT
 	};
     parallel_for(mesh().n_cells(), interpolate_cells, m_use_threads);
@@ -149,7 +149,7 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
   // Potential
   //------------------------------------------------------------------------------
 
-  auto Poly0kpo = ShiftedBasis<DDRCore::PolyCellBasisType>(*cellBases(iT).Polykpo, 1);
+  auto Poly0kpo = ShiftedBasis<DDRCore::PolyBasisCellType>(*cellBases(iT).Polykpo, 1);
 
   Eigen::MatrixXd MPT
     = Eigen::MatrixXd::Zero(cellBases(iT).Polyk3->dimension(),
@@ -168,10 +168,10 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
 			   );
 
   if (degree() > 0) {
-    auto basis_GOk_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).GolyOrthk, quad_2k_T);
-    MPT.bottomRows(cellBases(iT).GolyOrthk->dimension())
+    auto basis_GOk_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).GolyComplk, quad_2k_T);
+    MPT.bottomRows(cellBases(iT).GolyComplk->dimension())
       = compute_gram_matrix(basis_GOk_T_quad, basis_Pk3_T_quad, quad_2k_T);
-    BPT.bottomRightCorner(cellBases(iT).GolyOrthk->dimension(), cellBases(iT).GolyOrthk->dimension())
+    BPT.bottomRightCorner(cellBases(iT).GolyComplk->dimension(), cellBases(iT).GolyComplk->dimension())
       = compute_gram_matrix(basis_GOk_T_quad, quad_2k_T);		   
   } // if degree() > 0
 
@@ -193,24 +193,188 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
 						      quad_2kpo_F
 						      );
   } // for iF
-
-  Eigen::MatrixXd PT = MPT.partialPivLu().solve(BPT);
-
-  // // Correction to enforce that the L2-orthogonal projection of PT
-  // // on Gk-1(T) is equal to the cell uknown
-  // if (degree() > 0) {
-  //   auto basis_Gkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Golykmo, quad_2k_T);
-
-  //   Eigen::MatrixXd gram_Gkmo_T = compute_gram_matrix(basis_Gkmo_T_quad, quad_2k_T);
-  //   Eigen::MatrixXd gram_Gkmo_T_Pk3_T = compute_gram_matrix(basis_Gkmo_T_quad, basis_Pk3_T_quad, quad_2k_T);
-  //   Eigen::MatrixXd gram_Pk3_T = compute_gram_matrix(basis_Pk3_T_quad, quad_2k_T);
-  //   Eigen::MatrixXd proj_Gkmo_T_Pk3_T = gram_Pk3_T.ldlt().solve(gram_Gkmo_T_Pk3_T.transpose());
-
-  //   // Remove the L2-orthogonal projection of PT on Gk-1(T) and replace
-  //   // it with the cell unknown
-  //   PT -= proj_Gkmo_T_Pk3_T * gram_Gkmo_T.ldlt().solve(gram_Gkmo_T_Pk3_T * PT);
-  //   PT.middleCols(localOffset(T), PolynomialSpaceDimension<Cell>::Goly(degree() - 1)) += proj_Gkmo_T_Pk3_T;
-  // }
   
-  return LocalOperators(DT, BDT, PT);
+  return LocalOperators(DT, BDT, MPT.partialPivLu().solve(BPT));
 }
+
+
+//------------------------------------------------------------------------------
+//        Functions to compute matrices for local L2 products on Xdiv
+//------------------------------------------------------------------------------
+
+Eigen::MatrixXd XDiv::computeL2Product(
+                                        const size_t iT,
+                                        const double & penalty_factor,
+                                        const Eigen::MatrixXd & mass_Pk3_T,
+                                        const IntegralWeight & weight
+                                        ) const
+{
+  const Cell & T = *mesh().cell(iT); 
+    
+  // create the weighted mass matrix, with simple product if weight is constant
+  Eigen::MatrixXd w_mass_Pk3_T;
+  if (weight.deg(T)==0){
+    // constant weight
+    if (mass_Pk3_T.rows()==1){
+      // We have to compute the mass matrix
+      QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2 * degree());
+      w_mass_Pk3_T = weight.value(T, T.center_mass()) * compute_gram_matrix(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_T), quad_2k_T);
+    }else{
+      w_mass_Pk3_T = weight.value(T, T.center_mass()) * mass_Pk3_T;
+    }
+  }else{
+    // weight is not constant, we create a weighted mass matrix
+    QuadratureRule quad_2kpw_T = generate_quadrature_rule(T, 2 * degree() + weight.deg(T));
+    auto basis_Pk3_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2kpw_T);
+    std::function<double(const Eigen::Vector3d &)> weight_T 
+              = [&T, &weight](const Eigen::Vector3d &x)->double {
+                  return weight.value(T, x);
+                };
+    w_mass_Pk3_T = compute_weighted_gram_matrix(weight_T, basis_Pk3_T_quad, basis_Pk3_T_quad, quad_2kpw_T, "sym");
+  }
+
+  // leftOp and rightOp come from the potentials
+  std::vector<Eigen::MatrixXd> potentialOp(T.n_faces()+1);
+  for (size_t iF = 0; iF < T.n_faces(); iF++){
+    const Face & F = *T.face(iF);
+    potentialOp[iF] = extendOperator(T, F, Eigen::MatrixXd::Identity(dimensionFace(F),dimensionFace(F)));
+  }
+  potentialOp[T.n_faces()] = m_cell_operators[iT]->potential;
+
+  return computeL2Product_with_Ops(iT, potentialOp, potentialOp, penalty_factor, w_mass_Pk3_T, weight);
+
+}
+
+Eigen::MatrixXd XDiv::computeL2ProductCurl(
+                                        const size_t iT,
+                                        const XCurl & x_curl,
+                                        const std::string & side,
+                                        const double & penalty_factor,
+                                        const Eigen::MatrixXd & mass_Pk3_T,
+                                        const IntegralWeight & weight
+                                        ) const
+{
+  const Cell & T = *mesh().cell(iT);
+
+  // create the weighted mass matrix, with simple product if weight is constant
+  Eigen::MatrixXd w_mass_Pk3_T;
+  if (weight.deg(T)==0){
+    // constant weight
+    if (mass_Pk3_T.rows()==1){
+      // We have to compute the mass matrix
+      QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2 * degree());
+      w_mass_Pk3_T = weight.value(T, T.center_mass()) * compute_gram_matrix(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_T), quad_2k_T);
+    }else{
+      w_mass_Pk3_T = weight.value(T, T.center_mass()) * mass_Pk3_T;
+    }
+  }else{
+    // weight is not constant, we create a weighted mass matrix
+    QuadratureRule quad_2kpw_T = generate_quadrature_rule(T, 2 * degree() + weight.deg(T));
+    auto basis_Pk3_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2kpw_T);
+    std::function<double(const Eigen::Vector3d &)> weight_T 
+              = [&T, &weight](const Eigen::Vector3d &x)->double {
+                  return weight.value(T, x);
+                };
+    w_mass_Pk3_T = compute_weighted_gram_matrix(weight_T, basis_Pk3_T_quad, basis_Pk3_T_quad, quad_2kpw_T, "sym");
+  }
+
+  // list of full curls
+  std::vector<Eigen::MatrixXd> curlOp(T.n_faces()+1);
+  for (size_t iF = 0; iF < T.n_faces(); iF++){
+    const Face & F = *T.face(iF);
+    curlOp[iF] = x_curl.extendOperator(T, F, x_curl.faceOperators(F).curl);
+  }
+  curlOp[T.n_faces()] = x_curl.cellOperators(iT).curl;
+  
+  // If we apply the curl on one side only we'll need the potentials
+  if (side != "both"){
+    // list of potentials
+    std::vector<Eigen::MatrixXd> potentialOp(T.n_faces()+1);
+    for (size_t iF = 0; iF < T.n_faces(); iF++){
+      const Face & F = *T.face(iF);
+      potentialOp[iF] = extendOperator(T, F, Eigen::MatrixXd::Identity(dimensionFace(F),dimensionFace(F)));
+    }
+    potentialOp[T.n_faces()] = m_cell_operators[iT]->potential;
+
+  
+    // Depending on side of curl
+    if (side == "left"){
+      return computeL2Product_with_Ops(iT, curlOp, potentialOp, penalty_factor, w_mass_Pk3_T, weight);
+    }else{
+      return computeL2Product_with_Ops(iT, potentialOp, curlOp, penalty_factor, w_mass_Pk3_T, weight);
+    }
+    
+  }
+
+  // Default: curl on both sides
+  return computeL2Product_with_Ops(iT, curlOp, curlOp, penalty_factor, w_mass_Pk3_T, weight);
+
+}
+
+
+Eigen::MatrixXd XDiv::computeL2Product_with_Ops(
+                                        const size_t iT,
+                                        const std::vector<Eigen::MatrixXd> & leftOp,
+                                        const std::vector<Eigen::MatrixXd> & rightOp,
+                                        const double & penalty_factor,
+                                        const Eigen::MatrixXd & w_mass_Pk3_T,
+                                        const IntegralWeight & weight
+                                        ) const
+{
+  const Cell & T = *mesh().cell(iT); 
+
+  // leftOp and rightOp must list the operators acting on the DOFs, and which we want to
+  // use for the L2 product. Specifically, each one lists operators (matrices) returning
+  // values in faces space P^k(F) and element space P^k(T)^3.
+  // For the standard Xdiv L2 product, these will respectively be identity (for each face), and PT. 
+  // To compute the Xdiv L2 product applied (left or right) to the discrete curl,
+  // leftOp or rightOp must list the face and element (full) curl operators.
+  // All these operators must have the same domain, so possibly being extended appropriately
+  // using extendOperator from ddrspace.
+
+  Eigen::MatrixXd L2P = Eigen::MatrixXd::Zero(leftOp[0].cols(), rightOp[0].cols());
+  
+  size_t offset_T = T.n_faces();
+
+  // Face penalty terms
+  for (size_t iF = 0; iF < T.n_faces(); iF++) {
+    const Face & F = *T.face(iF);
+
+    // Compute gram matrices
+    QuadratureRule quad_2k_F = generate_quadrature_rule(F, 2 * degree());
+    auto basis_Pk3_T_dot_nF_quad
+      = scalar_product(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_F), F.normal());
+    auto basis_Pk_F_quad
+      = evaluate_quad<Function>::compute(*faceBases(F.global_index()).Polyk, quad_2k_F);
+    Eigen::MatrixXd mass_PkF_PkF = compute_gram_matrix(basis_Pk_F_quad, quad_2k_F);
+    Eigen::MatrixXd gram_PkF_Pk3T_dot_nF = compute_gram_matrix(basis_Pk_F_quad, basis_Pk3_T_dot_nF_quad, quad_2k_F, "nonsym");
+    
+    // Weight including scaling hF
+    double max_weight_quad_F = weight.value(T, quad_2k_F[0].vector());
+    // If the weight is not constant, we want to take the largest along the edge
+    if (weight.deg(T)>0){
+      for (size_t iqn = 1; iqn < quad_2k_F.size(); iqn++) {
+        max_weight_quad_F = std::max(max_weight_quad_F, weight.value(T, quad_2k_F[iqn].vector()));
+      } // for
+    }
+    double w_hF = max_weight_quad_F * F.diam();
+
+    // The penalty term int_T (leftOp.nF - (leftOp)_F) * (rightOp.nF - (rightOp)_F) is computed by developping
+    // Contribution of face F
+    L2P += w_hF * ( leftOp[offset_T].transpose() * gram_PkF_Pk3T_dot_nF.transpose() * mass_PkF_PkF.ldlt().solve(gram_PkF_Pk3T_dot_nF) * rightOp[offset_T]
+                - leftOp[offset_T].transpose() * gram_PkF_Pk3T_dot_nF.transpose() * rightOp[iF] 
+                - leftOp[iF].transpose() * gram_PkF_Pk3T_dot_nF * rightOp[offset_T]
+                + leftOp[iF].transpose() * mass_PkF_PkF * rightOp[iF]                  
+                  );
+
+  } // for iF
+
+  L2P *= penalty_factor;
+  
+  // Consistent (cell) term
+  L2P += leftOp[offset_T].transpose() * w_mass_Pk3_T * rightOp[offset_T];
+ 
+  return L2P;
+}
+
+

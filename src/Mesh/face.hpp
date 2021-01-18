@@ -20,7 +20,7 @@ namespace HArDCore3D {  // forward declaration
 namespace HArDCore3D {
   using Eigen::Vector3d;
   /*!
-   *       @addtogroup Mesh
+   * @addtogroup Mesh
    * @{
    */
 
@@ -89,7 +89,6 @@ namespace HArDCore3D {
 
   private:
     size_t _iF;
-    Mesh *_mesh;
     std::vector<Cell *> _cells;
     std::vector<Edge *> _edges;
     std::vector<Vertex *> _vertices;

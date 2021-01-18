@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -81,7 +88,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaf4ea116d21e8e33ab8de8160d3685630"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gaf4ea116d21e8e33ab8de8160d3685630">HArDCore3D::HHO_LocVarDiff::HHO_LocVarDiff</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, size_t K, int L, CellFType&lt; MatrixRd &gt; kappa, size_t deg_kappa, CellFType&lt; double &gt; source, <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> BC, <a class="el" href="group__Basis.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt; exact_solution, CellFType&lt; VectorRd &gt; grad_exact_solution, std::string solver_type, bool use_threads, std::ostream &amp;output=std::cout)</td></tr>
+<tr class="memitem:gaf4ea116d21e8e33ab8de8160d3685630"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gaf4ea116d21e8e33ab8de8160d3685630">HArDCore3D::HHO_LocVarDiff::HHO_LocVarDiff</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, size_t K, int L, CellFType&lt; MatrixRd &gt; kappa, size_t deg_kappa, CellFType&lt; double &gt; source, <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> BC, <a class="el" href="group__Common.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt; exact_solution, CellFType&lt; VectorRd &gt; grad_exact_solution, std::string solver_type, bool use_threads, std::ostream &amp;output=std::cout)</td></tr>
 <tr class="memdesc:gaf4ea116d21e8e33ab8de8160d3685630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="group__HHO__LocVarDiff.html#gaf4ea116d21e8e33ab8de8160d3685630">More...</a><br /></td></tr>
 <tr class="separator:gaf4ea116d21e8e33ab8de8160d3685630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5fa4c3b9a58d7208198ee0d6860c093a"><td class="memItemLeft" align="right" valign="top"><a id="ga5fa4c3b9a58d7208198ee0d6860c093a"></a>
@@ -194,7 +201,7 @@ const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Basis.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Common.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt;&#160;</td>
           <td class="paramname"><em>exact_solution</em>, </td>
         </tr>
         <tr>

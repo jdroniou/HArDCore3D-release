@@ -2,6 +2,11 @@
 \label{classHArDCore3D_1_1RestrictedBasis}\index{HArDCore3D::RestrictedBasis$<$ BasisType $>$@{HArDCore3D::RestrictedBasis$<$ BasisType $>$}}
 
 
+Generate a basis restricted to the first \char`\"{}dimension\char`\"{} functions.  
+
+
+
+
 {\ttfamily \#include $<$basis.\+hpp$>$}
 
 \doxysubsection*{Public Types}
@@ -20,17 +25,19 @@ typedef Basis\+Type\+::\+Geometric\+Support {\bfseries Geometric\+Support}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Basis_gac9623c0deb32ee33cb10de45f4f75702}{Restricted\+Basis}} (const Basis\+Type \&basis, const size\+\_\+t \&\mbox{\hyperlink{group__Basis_gaf281956665b32bc8613043e4f303182e}{dimension}})
+\mbox{\hyperlink{group__Common_gac9623c0deb32ee33cb10de45f4f75702}{Restricted\+Basis}} (const Basis\+Type \&basis, const size\+\_\+t \&\mbox{\hyperlink{group__Common_gaf281956665b32bc8613043e4f303182e}{dimension}})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Basis_gaf281956665b32bc8613043e4f303182e}{dimension}} () const
+size\+\_\+t \mbox{\hyperlink{group__Common_gaf281956665b32bc8613043e4f303182e}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Return the dimension of the basis. \end{DoxyCompactList}\item 
-Function\+Value \mbox{\hyperlink{group__Basis_gacb26aa08f1f3d62deb174e82dc9c2046}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+const Basis\+Type \& \mbox{\hyperlink{group__Common_ga69735cd402a3190ebd982269f4cb1582}{ancestor}} () const
+\begin{DoxyCompactList}\small\item\em Return the underlying complete basis. \end{DoxyCompactList}\item 
+Function\+Value \mbox{\hyperlink{group__Common_gacb26aa08f1f3d62deb174e82dc9c2046}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-Gradient\+Value \mbox{\hyperlink{group__Basis_gae191627737010694521dc5aae42744cd}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Gradient\+Value \mbox{\hyperlink{group__Common_gae191627737010694521dc5aae42744cd}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-Curl\+Value \mbox{\hyperlink{group__Basis_ga6886d8130d38f8e0cdeac3c53fe9e177}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Curl\+Value \mbox{\hyperlink{group__Common_ga6886d8130d38f8e0cdeac3c53fe9e177}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-Divergence\+Value \mbox{\hyperlink{group__Basis_ga06c5ecd7cb9ce4c52891c355a5dc2108}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Divergence\+Value \mbox{\hyperlink{group__Common_ga06c5ecd7cb9ce4c52891c355a5dc2108}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -51,7 +58,9 @@ static const bool {\bfseries has\+Divergence} = Basis\+Type\+::has\+Divergence
 \subsubsection*{template$<$typename Basis\+Type$>$\newline
 class H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$}
 
-Generate a basis restricted to the first \char`\"{}dimension\char`\"{} functions. This can be useful, e.\+g., to form bases of subspaces of a given space from a hierarchical basis of the latter 
+Generate a basis restricted to the first \char`\"{}dimension\char`\"{} functions. 
+
+This can be useful, e.\+g., to form bases of subspaces of a given space from a hierarchical basis of the latter 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

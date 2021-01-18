@@ -23,7 +23,6 @@ Face::Face(size_t iF,
 	   Vector3d center_mass,
      Vector3d normal)
   : _iF(iF), 
-    _mesh(mesh), 
     _cells(0),
     _edges(edges),
     _vertices(vertices),

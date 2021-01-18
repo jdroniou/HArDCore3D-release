@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -78,7 +85,7 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;triangle_dunavant_rule.hpp&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>HArDCore3D {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classHArDCore3D_1_1QuadRuleTriangle.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHArDCore3D_1_1QuadRuleTriangle.html">QuadRuleTriangle</a>{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> max_doe = 20;</div>
@@ -111,7 +118,6 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif // _QUADRULE_FACE_BASE_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdoc">Classes to describe and access the elements of a 3D mesh.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:1</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1QuadRuleTriangle_html"><div class="ttname"><a href="classHArDCore3D_1_1QuadRuleTriangle.html">HArDCore3D::QuadRuleTriangle</a></div><div class="ttdef"><b>Definition:</b> quad3d_face.hpp:16</div></div>
 <div class="ttc" id="agroup__Quadratures_html_ga0d95447bb72cfc1b19cd2ea192ff6695"><div class="ttname"><a href="group__Quadratures.html#ga0d95447bb72cfc1b19cd2ea192ff6695">HArDCore3D::QuadRuleTriangle::QuadRuleTriangle</a></div><div class="ttdeci">QuadRuleTriangle(size_t _doe, bool warn)</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> quad3d_face.cpp:12</div></div>
 <!-- start footer part -->

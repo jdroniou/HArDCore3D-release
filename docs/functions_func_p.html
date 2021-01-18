@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -69,9 +76,9 @@ $(function() {
 : <a class="el" href="group__HHO3D.html#ga90c52326056fd34a01bae961af6173de">HHO3D</a>
 </li>
 <li>Poly()
-: <a class="el" href="group__DDRcore.html#gaa4f1be3674586f91be75fa82b0f15c06">HArDCore3D::PolynomialSpaceDimension&lt; Cell &gt;</a>
-, <a class="el" href="group__DDRcore.html#gacd6cc9660f6f97e52d075c031cdd34a0">HArDCore3D::PolynomialSpaceDimension&lt; Edge &gt;</a>
-, <a class="el" href="group__DDRcore.html#ga22228536ce1b14bab8f448732240e06b">HArDCore3D::PolynomialSpaceDimension&lt; Face &gt;</a>
+: <a class="el" href="group__Common.html#gaa4f1be3674586f91be75fa82b0f15c06">HArDCore3D::PolynomialSpaceDimension&lt; Cell &gt;</a>
+, <a class="el" href="group__Common.html#gacd6cc9660f6f97e52d075c031cdd34a0">HArDCore3D::PolynomialSpaceDimension&lt; Edge &gt;</a>
+, <a class="el" href="group__Common.html#ga22228536ce1b14bab8f448732240e06b">HArDCore3D::PolynomialSpaceDimension&lt; Face &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

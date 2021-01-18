@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -62,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="structHArDCore3D_1_1Magnetostatics.html">Magnetostatics</a></li>  </ul>
+<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="structHArDCore3D_1_1Magnetostatics.html">Magnetostatics</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -78,7 +85,7 @@ $(function() {
 <p>Assemble a magnetostatic problem.  
  <a href="structHArDCore3D_1_1Magnetostatics.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="magnetostatics_8hpp_source.html">magnetostatics.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ddr-magnetostatics_8hpp_source.html">ddr-magnetostatics.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -94,27 +101,30 @@ typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;
 <tr class="memitem:gab892187027bcb442d30c76dc95f84043"><td class="memItemLeft" align="right" valign="top">
 typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SolutionCurlType</b></td></tr>
 <tr class="separator:gab892187027bcb442d30c76dc95f84043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9b0a0b9567472243716e8acd486d01e"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>&#160;</td><td class="memItemRight" valign="bottom"><b>PermeabilityType</b></td></tr>
+<tr class="separator:gab9b0a0b9567472243716e8acd486d01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ga9e47b948148096a76ef7cc8be28ac0b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga9e47b948148096a76ef7cc8be28ac0b9">Magnetostatics</a> (const <a class="el" href="classHArDCore3D_1_1DDRCore.html">DDRCore</a> &amp;ddrcore, bool use_threads, std::ostream &amp;output=std::cout)</td></tr>
 <tr class="memdesc:ga9e47b948148096a76ef7cc8be28ac0b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__DDR__magnetostatic.html#ga9e47b948148096a76ef7cc8be28ac0b9">More...</a><br /></td></tr>
 <tr class="separator:ga9e47b948148096a76ef7cc8be28ac0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3ab30d98e0c805339a0170560702ed4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga3ab30d98e0c805339a0170560702ed4a">assembleLinearSystem</a> (const ForcingTermType &amp;f, const SolutionPotentialType &amp;u)</td></tr>
-<tr class="memdesc:ga3ab30d98e0c805339a0170560702ed4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble the global system <br  />
-  <a href="group__DDR__magnetostatic.html#ga3ab30d98e0c805339a0170560702ed4a">More...</a><br /></td></tr>
-<tr class="separator:ga3ab30d98e0c805339a0170560702ed4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad138164f173610fb861cef714646edae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gad138164f173610fb861cef714646edae">assembleLinearSystem</a> (const ForcingTermType &amp;f, const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">PermeabilityType</a> &amp;mu, const SolutionPotentialType &amp;u)</td></tr>
+<tr class="memdesc:gad138164f173610fb861cef714646edae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble the global system <br  />
+  <a href="group__DDR__magnetostatic.html#gad138164f173610fb861cef714646edae">More...</a><br /></td></tr>
+<tr class="separator:gad138164f173610fb861cef714646edae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8da4c0eb850477b856bbdf115045266f"><td class="memItemLeft" align="right" valign="top">
 size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga8da4c0eb850477b856bbdf115045266f">dimension</a> () const</td></tr>
 <tr class="memdesc:ga8da4c0eb850477b856bbdf115045266f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the global problem dimension. <br /></td></tr>
 <tr class="separator:ga8da4c0eb850477b856bbdf115045266f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga19b0cd652147b495285bece47378342c"><td class="memItemLeft" align="right" valign="top">
 const <a class="el" href="classHArDCore3D_1_1XCurl.html">XCurl</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga19b0cd652147b495285bece47378342c">xCurl</a> () const</td></tr>
-<tr class="memdesc:ga19b0cd652147b495285bece47378342c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1XCurl.html" title="Discrete Hcurl space.">XCurl</a>. <br /></td></tr>
+<tr class="memdesc:ga19b0cd652147b495285bece47378342c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1XCurl.html" title="Discrete Hcurl space: local operators, L2 product and global interpolator.">XCurl</a>. <br /></td></tr>
 <tr class="separator:ga19b0cd652147b495285bece47378342c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga36d240d6810c180781c7a2615a7f914e"><td class="memItemLeft" align="right" valign="top">
 const <a class="el" href="classHArDCore3D_1_1XDiv.html">XDiv</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga36d240d6810c180781c7a2615a7f914e">xDiv</a> () const</td></tr>
-<tr class="memdesc:ga36d240d6810c180781c7a2615a7f914e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1XDiv.html" title="Discrete Hdiv space.">XDiv</a>. <br /></td></tr>
+<tr class="memdesc:ga36d240d6810c180781c7a2615a7f914e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1XDiv.html" title="Discrete Hdiv space: local operators, L2 product and global interpolator.">XDiv</a>. <br /></td></tr>
 <tr class="separator:ga36d240d6810c180781c7a2615a7f914e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafb6670bd6c5b8a6754108f45de910a63"><td class="memItemLeft" align="right" valign="top">
 const SystemMatrixType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gafb6670bd6c5b8a6754108f45de910a63">systemMatrix</a> () const</td></tr>
@@ -140,12 +150,15 @@ const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga36ff2404c85e550ad25907ec8ba188db">stabilizationParameter</a> ()</td></tr>
 <tr class="memdesc:ga36ff2404c85e550ad25907ec8ba188db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the stabilization parameter. <br /></td></tr>
 <tr class="separator:ga36ff2404c85e550ad25907ec8ba188db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26c61a8a5522d09c07d2a20eecb15925"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga26c61a8a5522d09c07d2a20eecb15925">computeNorm</a> (const Eigen::VectorXd &amp;v) const</td></tr>
+<tr class="memdesc:ga26c61a8a5522d09c07d2a20eecb15925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the discrete Hcurl \times Hdiv norm.  <a href="group__DDR__magnetostatic.html#ga26c61a8a5522d09c07d2a20eecb15925">More...</a><br /></td></tr>
+<tr class="separator:ga26c61a8a5522d09c07d2a20eecb15925"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Assemble a magnetostatic problem. </p>
 </div><hr/>The documentation for this struct was generated from the following files:<ul>
-<li>Schemes/DDRCore/<a class="el" href="magnetostatics_8hpp_source.html">magnetostatics.hpp</a></li>
-<li>Schemes/DDRCore/magnetostatics.cpp</li>
+<li>Schemes/DDR-magnetostatics/<a class="el" href="ddr-magnetostatics_8hpp_source.html">ddr-magnetostatics.hpp</a></li>
+<li>Schemes/DDR-magnetostatics/ddr-magnetostatics.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

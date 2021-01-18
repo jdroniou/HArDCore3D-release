@@ -5,12 +5,15 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 #                             Compiler setup
 #------------------------------------------------------------------------------#
 
-IF(CMAKE_SYSTEM_NAME=Windows)
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   SET(ADDITIONAL_FLAGS "-DWIN32")
-ENDIF(CMAKE_SYSTEM_NAME=Windows)
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 
 SET(CMAKE_CXX_COMPILER "c++")
-SET(CMAKE_CXX_FLAGS "-std=c++17 -g -Wall -Wno-maybe-uninitialized")
+SET(CMAKE_CXX_FLAGS "-std=c++17 -g -Wall")
+# IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+#   SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-Wno-maybe-uninitialized")
+# ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 SET(CMAKE_CXX_FLAGS_DEBUGALL "${CMAKE_CXX_FLAGS} -fsanitize=address,undefined -pthread" )
 SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS} -O3 -DOPTIMIZE -pthread" ${ADDITIONAL_FLAGS} )
 SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -O3 -DNDEBUG -DOPTIMIZE -pthread" ${ADDITIONAL_FLAGS} )
@@ -31,11 +34,11 @@ SET(HOME_DIR ${CMAKE_CURRENT_SOURCE_DIR} CACHE INTERNAL "")
 SET(CMAKE_MODULE_PATH ${HOME_DIR}/CMake)
 
 FIND_PACKAGE(Boost COMPONENTS filesystem program_options timer chrono REQUIRED)
-SET(EXTERNAL_INCLUDES ${Boost_INCLUDES})
+SET(EXTERNAL_INCLUDES ${Boost_INCLUDE_DIR})
 SET(EXTERNAL_LIBRARIES ${Boost_LIBRARIES})
 
 FIND_PACKAGE(Eigen3 3.3.4)
-SET(EXTERNAL_INCLUDES ${EIGEN3_INCLUDE_DIR})
+SET(EXTERNAL_INCLUDES ${EXTERNAL_INCLUDES} ${EIGEN3_INCLUDE_DIR})
 
 FIND_PACKAGE(SuperLU)
 IF(SUPERLU_FOUND)
@@ -58,7 +61,7 @@ IF(MKL_FOUND)
   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DWITH_MKL")  
 ENDIF()
 
-INCLUDE_DIRECTORIES(${EIGEN3_INCLUDE_DIRS})
+INCLUDE_DIRECTORIES(${EXTERNAL_INCLUDES})
 
 #------------------------------------------------------------------------------#
 #                             Directories for compiled libraries
@@ -70,6 +73,7 @@ INCLUDE_DIRECTORIES(src/Common)
 INCLUDE_DIRECTORIES(src/HybridCore)
 INCLUDE_DIRECTORIES(src/Plot)
 INCLUDE_DIRECTORIES(src/DDRCore)
+#INCLUDE_DIRECTORIES(src/DDRCore-orth)
 
 ADD_SUBDIRECTORY(src/Mesh)
 ADD_SUBDIRECTORY(src/Quadrature)
@@ -77,6 +81,7 @@ ADD_SUBDIRECTORY(src/Common)
 ADD_SUBDIRECTORY(src/HybridCore)
 ADD_SUBDIRECTORY(src/Plot)
 ADD_SUBDIRECTORY(src/DDRCore)
+#ADD_SUBDIRECTORY(src/DDRCore-orth)
 
 #------------------------------------------------------------------------------#
 #                             Directories for methods

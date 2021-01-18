@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -69,11 +76,23 @@ $(function() {
 <div class="title">Mesh</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classes to describe and access the elements of a 3D mesh.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1Cell.html">HArDCore3D::Cell</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classHArDCore3D_1_1Cell.html" title="The Cell class provides description of a cell.">Cell</a> class provides description of a cell.  <a href="classHArDCore3D_1_1Cell.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1Edge.html">HArDCore3D::Edge</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classHArDCore3D_1_1Edge.html" title="The Edge class provides description of an edge.">Edge</a> class provides description of an edge.  <a href="classHArDCore3D_1_1Edge.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1Face.html">HArDCore3D::Face</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classHArDCore3D_1_1Face.html" title="The Face class provides description of an edge.">Face</a> class provides description of an edge.  <a href="classHArDCore3D_1_1Face.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1Mesh.html">HArDCore3D::Mesh</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classHArDCore3D_1_1Mesh.html" title="The Mesh class provides description of a mesh.">Mesh</a> class provides description of a mesh.  <a href="classHArDCore3D_1_1Mesh.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1Vertex.html">HArDCore3D::Vertex</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classHArDCore3D_1_1Vertex.html" title="The Vertex class provides description of a vertex.">Vertex</a> class provides description of a vertex.  <a href="classHArDCore3D_1_1Vertex.html#details">More...</a><br /></td></tr>
@@ -194,8 +213,408 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="separator:gac4332b689450ab38b5c77ae9f5ff0809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga65ac02c8ef4407d5c0693ae97d24c45a"><td class="memItemLeft" align="right" valign="top"><a id="ga65ac02c8ef4407d5c0693ae97d24c45a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga65ac02c8ef4407d5c0693ae97d24c45a">HArDCore3D::Cell::set_global_index</a> (size_t idx)</td></tr>
-<tr class="memdesc:ga65ac02c8ef4407d5c0693ae97d24c45a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global index of the cell to idx. Used to re-index the cells, should essentially only be used inside <a class="el" href="classHArDCore3D_1_1Mesh.html#af77873bbc892a7a5b37bf4773c55aefc" title="Re-index the cells, edges or vertices.">Mesh::renum</a>. <br /></td></tr>
+<tr class="memdesc:ga65ac02c8ef4407d5c0693ae97d24c45a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global index of the cell to idx. Used to re-index the cells, should essentially only be used inside <a class="el" href="group__Mesh.html#gaf77873bbc892a7a5b37bf4773c55aefc" title="Re-index the cells, edges or vertices.">Mesh::renum</a>. <br /></td></tr>
 <tr class="separator:ga65ac02c8ef4407d5c0693ae97d24c45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaead46bf6e803e24a5c1027369651b581"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaead46bf6e803e24a5c1027369651b581">HArDCore3D::Edge::Edge</a> (size_t iE, <a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> *mesh, std::vector&lt; <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> * &gt; vertices, bool boundary, double <a class="el" href="group__Mesh.html#ga38609361fcb95fa62e0bf2d5170144aa">measure</a>, Vector3d <a class="el" href="group__Mesh.html#gac7aee988662d982ab3fd81704af7842c">center_mass</a>)</td></tr>
+<tr class="separator:gaead46bf6e803e24a5c1027369651b581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7460c422a7e7ed1a59bc930054551f68"><td class="memItemLeft" align="right" valign="top"><a id="ga7460c422a7e7ed1a59bc930054551f68"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga7460c422a7e7ed1a59bc930054551f68">HArDCore3D::Edge::global_index</a> () const</td></tr>
+<tr class="memdesc:ga7460c422a7e7ed1a59bc930054551f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the edge global index <br /></td></tr>
+<tr class="separator:ga7460c422a7e7ed1a59bc930054551f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe29c7660cf7a1dddb06b876ebc76f80"><td class="memItemLeft" align="right" valign="top"><a id="gabe29c7660cf7a1dddb06b876ebc76f80"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gabe29c7660cf7a1dddb06b876ebc76f80">HArDCore3D::Edge::n_cells</a> () const</td></tr>
+<tr class="memdesc:gabe29c7660cf7a1dddb06b876ebc76f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of cells neighbouring the edge <br /></td></tr>
+<tr class="separator:gabe29c7660cf7a1dddb06b876ebc76f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab36400cd966cbeec90297f41c14ac55"><td class="memItemLeft" align="right" valign="top"><a id="gaab36400cd966cbeec90297f41c14ac55"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaab36400cd966cbeec90297f41c14ac55">HArDCore3D::Edge::n_faces</a> () const</td></tr>
+<tr class="memdesc:gaab36400cd966cbeec90297f41c14ac55"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of faces neighbouring the edge <br /></td></tr>
+<tr class="separator:gaab36400cd966cbeec90297f41c14ac55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72bedde2003c68d015c70326924b6d7f"><td class="memItemLeft" align="right" valign="top"><a id="ga72bedde2003c68d015c70326924b6d7f"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga72bedde2003c68d015c70326924b6d7f">HArDCore3D::Edge::get_cells</a> () const</td></tr>
+<tr class="memdesc:ga72bedde2003c68d015c70326924b6d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of cells that are neighbours of the edge <br /></td></tr>
+<tr class="separator:ga72bedde2003c68d015c70326924b6d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67aee2c97080416a5bbff937275a6c67"><td class="memItemLeft" align="right" valign="top"><a id="ga67aee2c97080416a5bbff937275a6c67"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Face.html">Face</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga67aee2c97080416a5bbff937275a6c67">HArDCore3D::Edge::get_faces</a> () const</td></tr>
+<tr class="memdesc:ga67aee2c97080416a5bbff937275a6c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of faces of the edge <br /></td></tr>
+<tr class="separator:ga67aee2c97080416a5bbff937275a6c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5315c7fa0058509166d75175660ed542"><td class="memItemLeft" align="right" valign="top"><a id="ga5315c7fa0058509166d75175660ed542"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga5315c7fa0058509166d75175660ed542">HArDCore3D::Edge::get_vertices</a> () const</td></tr>
+<tr class="memdesc:ga5315c7fa0058509166d75175660ed542"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of vertices of the edge <br /></td></tr>
+<tr class="separator:ga5315c7fa0058509166d75175660ed542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4be0bfb981ccf2c1e02e870772dbdc3"><td class="memItemLeft" align="right" valign="top"><a id="gad4be0bfb981ccf2c1e02e870772dbdc3"></a>
+<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gad4be0bfb981ccf2c1e02e870772dbdc3">HArDCore3D::Edge::cell</a> (size_t i) const</td></tr>
+<tr class="memdesc:gad4be0bfb981ccf2c1e02e870772dbdc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to the i-th cell neighbour of the edge <br /></td></tr>
+<tr class="separator:gad4be0bfb981ccf2c1e02e870772dbdc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84a3891c3abf7f441f2787943e0e0f66"><td class="memItemLeft" align="right" valign="top"><a id="ga84a3891c3abf7f441f2787943e0e0f66"></a>
+<a class="el" href="classHArDCore3D_1_1Face.html">Face</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga84a3891c3abf7f441f2787943e0e0f66">HArDCore3D::Edge::face</a> (size_t i) const</td></tr>
+<tr class="memdesc:ga84a3891c3abf7f441f2787943e0e0f66"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to the i-th face neighbour of the edge <br /></td></tr>
+<tr class="separator:ga84a3891c3abf7f441f2787943e0e0f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade257bc049ec1f43751fc647e07ec052"><td class="memItemLeft" align="right" valign="top"><a id="gade257bc049ec1f43751fc647e07ec052"></a>
+<a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gade257bc049ec1f43751fc647e07ec052">HArDCore3D::Edge::vertex</a> (size_t i) const</td></tr>
+<tr class="memdesc:gade257bc049ec1f43751fc647e07ec052"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a pointer to the i-th vertex of the edge <br /></td></tr>
+<tr class="separator:gade257bc049ec1f43751fc647e07ec052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9a42bef442e3c99fc204218266b71ca"><td class="memItemLeft" align="right" valign="top"><a id="gae9a42bef442e3c99fc204218266b71ca"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gae9a42bef442e3c99fc204218266b71ca">HArDCore3D::Edge::index_vertex</a> (const <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *V) const</td></tr>
+<tr class="memdesc:gae9a42bef442e3c99fc204218266b71ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">reciprocal of vertex(i): returns the local index of vertex V in the edge <br /></td></tr>
+<tr class="separator:gae9a42bef442e3c99fc204218266b71ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38609361fcb95fa62e0bf2d5170144aa"><td class="memItemLeft" align="right" valign="top"><a id="ga38609361fcb95fa62e0bf2d5170144aa"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga38609361fcb95fa62e0bf2d5170144aa">HArDCore3D::Edge::measure</a> () const</td></tr>
+<tr class="memdesc:ga38609361fcb95fa62e0bf2d5170144aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of the edge <br /></td></tr>
+<tr class="separator:ga38609361fcb95fa62e0bf2d5170144aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93672b9685e10344c31cdae234017557"><td class="memItemLeft" align="right" valign="top"><a id="ga93672b9685e10344c31cdae234017557"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga93672b9685e10344c31cdae234017557">HArDCore3D::Edge::diam</a> () const</td></tr>
+<tr class="memdesc:ga93672b9685e10344c31cdae234017557"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of the edge <br /></td></tr>
+<tr class="separator:ga93672b9685e10344c31cdae234017557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7aee988662d982ab3fd81704af7842c"><td class="memItemLeft" align="right" valign="top"><a id="gac7aee988662d982ab3fd81704af7842c"></a>
+Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gac7aee988662d982ab3fd81704af7842c">HArDCore3D::Edge::center_mass</a> () const</td></tr>
+<tr class="memdesc:gac7aee988662d982ab3fd81704af7842c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the midpoint of the edge <br /></td></tr>
+<tr class="separator:gac7aee988662d982ab3fd81704af7842c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5af3b015940acca0b35e8960161ba592"><td class="memItemLeft" align="right" valign="top"><a id="ga5af3b015940acca0b35e8960161ba592"></a>
+Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga5af3b015940acca0b35e8960161ba592">HArDCore3D::Edge::tangent</a> () const</td></tr>
+<tr class="memdesc:ga5af3b015940acca0b35e8960161ba592"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; get the normalised tangent to the edge, oriented from the first vertex to the second vertex. <br /></td></tr>
+<tr class="separator:ga5af3b015940acca0b35e8960161ba592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2caaa7859e84eab62858ff8c24d261fe"><td class="memItemLeft" align="right" valign="top"><a id="ga2caaa7859e84eab62858ff8c24d261fe"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga2caaa7859e84eab62858ff8c24d261fe">HArDCore3D::Edge::is_boundary</a> () const</td></tr>
+<tr class="memdesc:ga2caaa7859e84eab62858ff8c24d261fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter to see if edge is boundary edge <br /></td></tr>
+<tr class="separator:ga2caaa7859e84eab62858ff8c24d261fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga364bacf89dfa0be36abbbadbb2dd4f78"><td class="memItemLeft" align="right" valign="top"><a id="ga364bacf89dfa0be36abbbadbb2dd4f78"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga364bacf89dfa0be36abbbadbb2dd4f78">HArDCore3D::Edge::add_cell</a> (<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *<a class="el" href="group__Mesh.html#gad4be0bfb981ccf2c1e02e870772dbdc3">cell</a>)</td></tr>
+<tr class="memdesc:ga364bacf89dfa0be36abbbadbb2dd4f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new cell to the edge. <br /></td></tr>
+<tr class="separator:ga364bacf89dfa0be36abbbadbb2dd4f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7758bf6587d0153b7c9e63d088b61157"><td class="memItemLeft" align="right" valign="top"><a id="ga7758bf6587d0153b7c9e63d088b61157"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga7758bf6587d0153b7c9e63d088b61157">HArDCore3D::Edge::add_face</a> (<a class="el" href="classHArDCore3D_1_1Face.html">Face</a> *<a class="el" href="group__Mesh.html#ga84a3891c3abf7f441f2787943e0e0f66">face</a>)</td></tr>
+<tr class="memdesc:ga7758bf6587d0153b7c9e63d088b61157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new face to the edge. <br /></td></tr>
+<tr class="separator:ga7758bf6587d0153b7c9e63d088b61157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8902091c785b5857648f5c9ba55f6eba"><td class="memItemLeft" align="right" valign="top"><a id="ga8902091c785b5857648f5c9ba55f6eba"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga8902091c785b5857648f5c9ba55f6eba">HArDCore3D::Edge::add_vertex</a> (<a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *<a class="el" href="group__Mesh.html#gade257bc049ec1f43751fc647e07ec052">vertex</a>)</td></tr>
+<tr class="memdesc:ga8902091c785b5857648f5c9ba55f6eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new vertex to the edge. <br /></td></tr>
+<tr class="separator:ga8902091c785b5857648f5c9ba55f6eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed492c6f6fa58b06262ecfa0420121e3"><td class="memItemLeft" align="right" valign="top"><a id="gaed492c6f6fa58b06262ecfa0420121e3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaed492c6f6fa58b06262ecfa0420121e3">HArDCore3D::Edge::set_boundary</a> (bool val)</td></tr>
+<tr class="memdesc:gaed492c6f6fa58b06262ecfa0420121e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the _boundary value of the face to val. <br /></td></tr>
+<tr class="separator:gaed492c6f6fa58b06262ecfa0420121e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga150b8b31cd1b608d6ce8b020227a6db2"><td class="memItemLeft" align="right" valign="top"><a id="ga150b8b31cd1b608d6ce8b020227a6db2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga150b8b31cd1b608d6ce8b020227a6db2">HArDCore3D::Edge::set_global_index</a> (size_t idx)</td></tr>
+<tr class="memdesc:ga150b8b31cd1b608d6ce8b020227a6db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global index of the edge to idx. Used to re-index the edges, should essentially only be used inside <a class="el" href="group__Mesh.html#gaf77873bbc892a7a5b37bf4773c55aefc" title="Re-index the cells, edges or vertices.">Mesh::renum</a>. <br /></td></tr>
+<tr class="separator:ga150b8b31cd1b608d6ce8b020227a6db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf581dda7ff692d3732c5e0944ac46ab0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaf581dda7ff692d3732c5e0944ac46ab0">HArDCore3D::Face::Face</a> (size_t iF, <a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> *mesh, std::vector&lt; <a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> * &gt; edges, std::vector&lt; <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> * &gt; vertices, bool boundary, double <a class="el" href="group__Mesh.html#gad8284631ae078f8f5a15147b7b1014a1">measure</a>, double <a class="el" href="group__Mesh.html#ga3303318a9f1465bf279617959644b01a">diam</a>, Vector3d <a class="el" href="group__Mesh.html#gac5d883f4f09a9af506924638939bb35a">center_mass</a>, Vector3d <a class="el" href="group__Mesh.html#gaf2b13fd21cb283d14878c2ea25727e1f">normal</a>)</td></tr>
+<tr class="separator:gaf581dda7ff692d3732c5e0944ac46ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5cf9000fd94ae2e7ec79245607644f1b"><td class="memItemLeft" align="right" valign="top"><a id="ga5cf9000fd94ae2e7ec79245607644f1b"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga5cf9000fd94ae2e7ec79245607644f1b">HArDCore3D::Face::global_index</a> () const</td></tr>
+<tr class="memdesc:ga5cf9000fd94ae2e7ec79245607644f1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the face global index <br /></td></tr>
+<tr class="separator:ga5cf9000fd94ae2e7ec79245607644f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5407c36b8a6d8d8bf64e8fd559cebbe9"><td class="memItemLeft" align="right" valign="top"><a id="ga5407c36b8a6d8d8bf64e8fd559cebbe9"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga5407c36b8a6d8d8bf64e8fd559cebbe9">HArDCore3D::Face::n_cells</a> () const</td></tr>
+<tr class="memdesc:ga5407c36b8a6d8d8bf64e8fd559cebbe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of cells neighbouring the face <br /></td></tr>
+<tr class="separator:ga5407c36b8a6d8d8bf64e8fd559cebbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab27135cdfd18bc7dae7f01715a4edc6"><td class="memItemLeft" align="right" valign="top"><a id="gaab27135cdfd18bc7dae7f01715a4edc6"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaab27135cdfd18bc7dae7f01715a4edc6">HArDCore3D::Face::n_edges</a> () const</td></tr>
+<tr class="memdesc:gaab27135cdfd18bc7dae7f01715a4edc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of edges neighbouring the face <br /></td></tr>
+<tr class="separator:gaab27135cdfd18bc7dae7f01715a4edc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50edc49af3d9f7433e238e9d18f7f11c"><td class="memItemLeft" align="right" valign="top"><a id="ga50edc49af3d9f7433e238e9d18f7f11c"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga50edc49af3d9f7433e238e9d18f7f11c">HArDCore3D::Face::n_vertices</a> () const</td></tr>
+<tr class="memdesc:ga50edc49af3d9f7433e238e9d18f7f11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of vertices neighbouring the face <br /></td></tr>
+<tr class="separator:ga50edc49af3d9f7433e238e9d18f7f11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa209c78a79161da020d96bdd752d8e87"><td class="memItemLeft" align="right" valign="top"><a id="gaa209c78a79161da020d96bdd752d8e87"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaa209c78a79161da020d96bdd752d8e87">HArDCore3D::Face::get_cells</a> () const</td></tr>
+<tr class="memdesc:gaa209c78a79161da020d96bdd752d8e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of cells that are neighbours of the face <br /></td></tr>
+<tr class="separator:gaa209c78a79161da020d96bdd752d8e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb3add94aa880748646382717345c1ec"><td class="memItemLeft" align="right" valign="top"><a id="gabb3add94aa880748646382717345c1ec"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gabb3add94aa880748646382717345c1ec">HArDCore3D::Face::get_edges</a> () const</td></tr>
+<tr class="memdesc:gabb3add94aa880748646382717345c1ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of edges of the face <br /></td></tr>
+<tr class="separator:gabb3add94aa880748646382717345c1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4be6533a35079c67abfedc8dd65d01f1"><td class="memItemLeft" align="right" valign="top"><a id="ga4be6533a35079c67abfedc8dd65d01f1"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga4be6533a35079c67abfedc8dd65d01f1">HArDCore3D::Face::get_vertices</a> () const</td></tr>
+<tr class="memdesc:ga4be6533a35079c67abfedc8dd65d01f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of vertices of the face <br /></td></tr>
+<tr class="separator:ga4be6533a35079c67abfedc8dd65d01f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab463b4972c43d6f62f034cf8c0ed70c2"><td class="memItemLeft" align="right" valign="top"><a id="gab463b4972c43d6f62f034cf8c0ed70c2"></a>
+<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gab463b4972c43d6f62f034cf8c0ed70c2">HArDCore3D::Face::cell</a> (size_t i) const</td></tr>
+<tr class="memdesc:gab463b4972c43d6f62f034cf8c0ed70c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to the i-th cell neighbour of the face <br /></td></tr>
+<tr class="separator:gab463b4972c43d6f62f034cf8c0ed70c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93dd83df13314df283be122c36b93c29"><td class="memItemLeft" align="right" valign="top"><a id="ga93dd83df13314df283be122c36b93c29"></a>
+<a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga93dd83df13314df283be122c36b93c29">HArDCore3D::Face::edge</a> (size_t i) const</td></tr>
+<tr class="memdesc:ga93dd83df13314df283be122c36b93c29"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a pointer to the i-th edge of the face <br /></td></tr>
+<tr class="separator:ga93dd83df13314df283be122c36b93c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63c8254509d075b402e1ce7393efd70c"><td class="memItemLeft" align="right" valign="top"><a id="ga63c8254509d075b402e1ce7393efd70c"></a>
+<a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga63c8254509d075b402e1ce7393efd70c">HArDCore3D::Face::vertex</a> (size_t i) const</td></tr>
+<tr class="memdesc:ga63c8254509d075b402e1ce7393efd70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a pointer to the i-th vertex of the face <br /></td></tr>
+<tr class="separator:ga63c8254509d075b402e1ce7393efd70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9fafed8814ff199fbbe5995ff4de3067"><td class="memItemLeft" align="right" valign="top"><a id="ga9fafed8814ff199fbbe5995ff4de3067"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga9fafed8814ff199fbbe5995ff4de3067">HArDCore3D::Face::index_edge</a> (const <a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> *E) const</td></tr>
+<tr class="memdesc:ga9fafed8814ff199fbbe5995ff4de3067"><td class="mdescLeft">&#160;</td><td class="mdescRight">reciprocal of edge(i): returns the local index of edge E in the face <br /></td></tr>
+<tr class="separator:ga9fafed8814ff199fbbe5995ff4de3067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabecb40cdeec22fee088921e66aa86800"><td class="memItemLeft" align="right" valign="top"><a id="gabecb40cdeec22fee088921e66aa86800"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gabecb40cdeec22fee088921e66aa86800">HArDCore3D::Face::index_vertex</a> (const <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *V) const</td></tr>
+<tr class="memdesc:gabecb40cdeec22fee088921e66aa86800"><td class="mdescLeft">&#160;</td><td class="mdescRight">reciprocal of vertex(i): returns the local index of vertex V in the face <br /></td></tr>
+<tr class="separator:gabecb40cdeec22fee088921e66aa86800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8cf04b618dccb40a61ee8144edd9610e"><td class="memItemLeft" align="right" valign="top"><a id="ga8cf04b618dccb40a61ee8144edd9610e"></a>
+Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga8cf04b618dccb40a61ee8144edd9610e">HArDCore3D::Face::edge_normal</a> (size_t i) const</td></tr>
+<tr class="memdesc:ga8cf04b618dccb40a61ee8144edd9610e"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the normal to the i-th edge in the plane spanned by the face. This is not necessarily the outer normal to the face. To obtain this outer normal, multiply by edge_orientation(i). <br /></td></tr>
+<tr class="separator:ga8cf04b618dccb40a61ee8144edd9610e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa02d3eab7ba590dec07134da1f85dbeb"><td class="memItemLeft" align="right" valign="top"><a id="gaa02d3eab7ba590dec07134da1f85dbeb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaa02d3eab7ba590dec07134da1f85dbeb">HArDCore3D::Face::edge_orientation</a> (size_t i) const</td></tr>
+<tr class="memdesc:gaa02d3eab7ba590dec07134da1f85dbeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the orientation of the i-th edge. It is the number such that edge_orientation * edge_normal is the outer normal to the face. <br /></td></tr>
+<tr class="separator:gaa02d3eab7ba590dec07134da1f85dbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8284631ae078f8f5a15147b7b1014a1"><td class="memItemLeft" align="right" valign="top"><a id="gad8284631ae078f8f5a15147b7b1014a1"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gad8284631ae078f8f5a15147b7b1014a1">HArDCore3D::Face::measure</a> () const</td></tr>
+<tr class="memdesc:gad8284631ae078f8f5a15147b7b1014a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">measure of the face <br /></td></tr>
+<tr class="separator:gad8284631ae078f8f5a15147b7b1014a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3303318a9f1465bf279617959644b01a"><td class="memItemLeft" align="right" valign="top"><a id="ga3303318a9f1465bf279617959644b01a"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga3303318a9f1465bf279617959644b01a">HArDCore3D::Face::diam</a> () const</td></tr>
+<tr class="memdesc:ga3303318a9f1465bf279617959644b01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns diameter of face <br /></td></tr>
+<tr class="separator:ga3303318a9f1465bf279617959644b01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5d883f4f09a9af506924638939bb35a"><td class="memItemLeft" align="right" valign="top"><a id="gac5d883f4f09a9af506924638939bb35a"></a>
+Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gac5d883f4f09a9af506924638939bb35a">HArDCore3D::Face::center_mass</a> () const</td></tr>
+<tr class="memdesc:gac5d883f4f09a9af506924638939bb35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the center of mass of the face <br /></td></tr>
+<tr class="separator:gac5d883f4f09a9af506924638939bb35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2b13fd21cb283d14878c2ea25727e1f"><td class="memItemLeft" align="right" valign="top"><a id="gaf2b13fd21cb283d14878c2ea25727e1f"></a>
+Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaf2b13fd21cb283d14878c2ea25727e1f">HArDCore3D::Face::normal</a> () const</td></tr>
+<tr class="memdesc:gaf2b13fd21cb283d14878c2ea25727e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the normal to the face <br /></td></tr>
+<tr class="separator:gaf2b13fd21cb283d14878c2ea25727e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f69df15c3c76b4f80f51231ede670f5"><td class="memItemLeft" align="right" valign="top"><a id="ga8f69df15c3c76b4f80f51231ede670f5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga8f69df15c3c76b4f80f51231ede670f5">HArDCore3D::Face::is_boundary</a> () const</td></tr>
+<tr class="memdesc:ga8f69df15c3c76b4f80f51231ede670f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter to see if the face is a boundary face <br /></td></tr>
+<tr class="separator:ga8f69df15c3c76b4f80f51231ede670f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c4cc1b593b288e6c70747b6481824f8"><td class="memItemLeft" align="right" valign="top"><a id="ga0c4cc1b593b288e6c70747b6481824f8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga0c4cc1b593b288e6c70747b6481824f8">HArDCore3D::Face::add_cell</a> (<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *<a class="el" href="group__Mesh.html#gab463b4972c43d6f62f034cf8c0ed70c2">cell</a>)</td></tr>
+<tr class="memdesc:ga0c4cc1b593b288e6c70747b6481824f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a cell to the face. <br /></td></tr>
+<tr class="separator:ga0c4cc1b593b288e6c70747b6481824f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f3dd04f1ab142689e76165d8824c428"><td class="memItemLeft" align="right" valign="top"><a id="ga0f3dd04f1ab142689e76165d8824c428"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga0f3dd04f1ab142689e76165d8824c428">HArDCore3D::Face::add_edge</a> (<a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> *<a class="el" href="group__Mesh.html#ga93dd83df13314df283be122c36b93c29">edge</a>)</td></tr>
+<tr class="memdesc:ga0f3dd04f1ab142689e76165d8824c428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a edge to the face. <br /></td></tr>
+<tr class="separator:ga0f3dd04f1ab142689e76165d8824c428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b9f09bcce8fc3beb56634e0793af83f"><td class="memItemLeft" align="right" valign="top"><a id="ga7b9f09bcce8fc3beb56634e0793af83f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga7b9f09bcce8fc3beb56634e0793af83f">HArDCore3D::Face::add_vertex</a> (<a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *<a class="el" href="group__Mesh.html#ga63c8254509d075b402e1ce7393efd70c">vertex</a>)</td></tr>
+<tr class="memdesc:ga7b9f09bcce8fc3beb56634e0793af83f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a vertex to the face. <br /></td></tr>
+<tr class="separator:ga7b9f09bcce8fc3beb56634e0793af83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdd39678036c46f979da9909419c3428"><td class="memItemLeft" align="right" valign="top"><a id="gafdd39678036c46f979da9909419c3428"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gafdd39678036c46f979da9909419c3428">HArDCore3D::Face::set_boundary</a> (bool val)</td></tr>
+<tr class="memdesc:gafdd39678036c46f979da9909419c3428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the _boundary value of the face to val. <br /></td></tr>
+<tr class="separator:gafdd39678036c46f979da9909419c3428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66289e0a31138cfce6ac948f09423548"><td class="memItemLeft" align="right" valign="top"><a id="ga66289e0a31138cfce6ac948f09423548"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga66289e0a31138cfce6ac948f09423548">HArDCore3D::Face::set_global_index</a> (size_t idx)</td></tr>
+<tr class="memdesc:ga66289e0a31138cfce6ac948f09423548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global index of the face to idx. Used to re-index the faces, should essentially only be used inside <a class="el" href="group__Mesh.html#gaf77873bbc892a7a5b37bf4773c55aefc" title="Re-index the cells, edges or vertices.">Mesh::renum</a>. <br /></td></tr>
+<tr class="separator:ga66289e0a31138cfce6ac948f09423548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2af137f1571af89172b9c102302c416b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga2af137f1571af89172b9c102302c416b">HArDCore3D::Mesh::Mesh</a> ()</td></tr>
+<tr class="separator:ga2af137f1571af89172b9c102302c416b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga694cc6fe11d3640859f7f2c23c8acd44"><td class="memItemLeft" align="right" valign="top"><a id="ga694cc6fe11d3640859f7f2c23c8acd44"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga694cc6fe11d3640859f7f2c23c8acd44">HArDCore3D::Mesh::set_name</a> (std::string name)</td></tr>
+<tr class="memdesc:ga694cc6fe11d3640859f7f2c23c8acd44"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the name of the mesh <br /></td></tr>
+<tr class="separator:ga694cc6fe11d3640859f7f2c23c8acd44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2140b63286e05a457a914ca1a1455c2a"><td class="memItemLeft" align="right" valign="top"><a id="ga2140b63286e05a457a914ca1a1455c2a"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga2140b63286e05a457a914ca1a1455c2a">HArDCore3D::Mesh::get_name</a> ()</td></tr>
+<tr class="memdesc:ga2140b63286e05a457a914ca1a1455c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter for the edge name <br /></td></tr>
+<tr class="separator:ga2140b63286e05a457a914ca1a1455c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga60fb49998f950bad0659d1ac394d7cfd"><td class="memItemLeft" align="right" valign="top"><a id="ga60fb49998f950bad0659d1ac394d7cfd"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga60fb49998f950bad0659d1ac394d7cfd">HArDCore3D::Mesh::n_cells</a> () const</td></tr>
+<tr class="memdesc:ga60fb49998f950bad0659d1ac394d7cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of cells in the mesh <br /></td></tr>
+<tr class="separator:ga60fb49998f950bad0659d1ac394d7cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95cf99c07e92c81332fb534372ad7ff7"><td class="memItemLeft" align="right" valign="top"><a id="ga95cf99c07e92c81332fb534372ad7ff7"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga95cf99c07e92c81332fb534372ad7ff7">HArDCore3D::Mesh::n_faces</a> () const</td></tr>
+<tr class="memdesc:ga95cf99c07e92c81332fb534372ad7ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of faces in the mesh <br /></td></tr>
+<tr class="separator:ga95cf99c07e92c81332fb534372ad7ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga145d728300f3cc4e156919ce635efdfc"><td class="memItemLeft" align="right" valign="top"><a id="ga145d728300f3cc4e156919ce635efdfc"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga145d728300f3cc4e156919ce635efdfc">HArDCore3D::Mesh::n_edges</a> () const</td></tr>
+<tr class="memdesc:ga145d728300f3cc4e156919ce635efdfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of edges in the mesh <br /></td></tr>
+<tr class="separator:ga145d728300f3cc4e156919ce635efdfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga51e96fc91249453bf09268ec91839972"><td class="memItemLeft" align="right" valign="top"><a id="ga51e96fc91249453bf09268ec91839972"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga51e96fc91249453bf09268ec91839972">HArDCore3D::Mesh::n_vertices</a> () const</td></tr>
+<tr class="memdesc:ga51e96fc91249453bf09268ec91839972"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of vertices in the mesh <br /></td></tr>
+<tr class="separator:ga51e96fc91249453bf09268ec91839972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb86f1eadf808e15e90881d626b467c0"><td class="memItemLeft" align="right" valign="top"><a id="gadb86f1eadf808e15e90881d626b467c0"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gadb86f1eadf808e15e90881d626b467c0">HArDCore3D::Mesh::h_max</a> () const</td></tr>
+<tr class="memdesc:gadb86f1eadf808e15e90881d626b467c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">max of diameter of cells <br /></td></tr>
+<tr class="separator:gadb86f1eadf808e15e90881d626b467c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f3bd8e8670711d830a7cde341808dd1"><td class="memItemLeft" align="right" valign="top"><a id="ga4f3bd8e8670711d830a7cde341808dd1"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga4f3bd8e8670711d830a7cde341808dd1">HArDCore3D::Mesh::dim</a> () const</td></tr>
+<tr class="memdesc:ga4f3bd8e8670711d830a7cde341808dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">dimension of the mesh (3) <br /></td></tr>
+<tr class="separator:ga4f3bd8e8670711d830a7cde341808dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab231e49129645ecfddafa69329c0fc51"><td class="memItemLeft" align="right" valign="top"><a id="gab231e49129645ecfddafa69329c0fc51"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gab231e49129645ecfddafa69329c0fc51">HArDCore3D::Mesh::n_b_cells</a> () const</td></tr>
+<tr class="memdesc:gab231e49129645ecfddafa69329c0fc51"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of boundary cells <br /></td></tr>
+<tr class="separator:gab231e49129645ecfddafa69329c0fc51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c45021dc33e35f209bd604221f04bb1"><td class="memItemLeft" align="right" valign="top"><a id="ga3c45021dc33e35f209bd604221f04bb1"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga3c45021dc33e35f209bd604221f04bb1">HArDCore3D::Mesh::n_b_faces</a> () const</td></tr>
+<tr class="memdesc:ga3c45021dc33e35f209bd604221f04bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of boundary faces <br /></td></tr>
+<tr class="separator:ga3c45021dc33e35f209bd604221f04bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacef44edcdc9f6d4d49d1508e7bc7ed2f"><td class="memItemLeft" align="right" valign="top"><a id="gacef44edcdc9f6d4d49d1508e7bc7ed2f"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gacef44edcdc9f6d4d49d1508e7bc7ed2f">HArDCore3D::Mesh::n_b_edges</a> () const</td></tr>
+<tr class="memdesc:gacef44edcdc9f6d4d49d1508e7bc7ed2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of boundary edges <br /></td></tr>
+<tr class="separator:gacef44edcdc9f6d4d49d1508e7bc7ed2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38e8f0bf1414441ceef7e3b39526ac23"><td class="memItemLeft" align="right" valign="top"><a id="ga38e8f0bf1414441ceef7e3b39526ac23"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga38e8f0bf1414441ceef7e3b39526ac23">HArDCore3D::Mesh::n_b_vertices</a> () const</td></tr>
+<tr class="memdesc:ga38e8f0bf1414441ceef7e3b39526ac23"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of boundary vertices <br /></td></tr>
+<tr class="separator:ga38e8f0bf1414441ceef7e3b39526ac23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae31711c40d2d9888a6e8ca906bd2cbea"><td class="memItemLeft" align="right" valign="top"><a id="gae31711c40d2d9888a6e8ca906bd2cbea"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gae31711c40d2d9888a6e8ca906bd2cbea">HArDCore3D::Mesh::n_i_cells</a> () const</td></tr>
+<tr class="memdesc:gae31711c40d2d9888a6e8ca906bd2cbea"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of interior cells <br /></td></tr>
+<tr class="separator:gae31711c40d2d9888a6e8ca906bd2cbea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa63c3fd9dc4f6336e14c95ca7d517d5a"><td class="memItemLeft" align="right" valign="top"><a id="gaa63c3fd9dc4f6336e14c95ca7d517d5a"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaa63c3fd9dc4f6336e14c95ca7d517d5a">HArDCore3D::Mesh::n_i_faces</a> () const</td></tr>
+<tr class="memdesc:gaa63c3fd9dc4f6336e14c95ca7d517d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of interior faces <br /></td></tr>
+<tr class="separator:gaa63c3fd9dc4f6336e14c95ca7d517d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7650c95dec763d4aa3fcb44644229f0e"><td class="memItemLeft" align="right" valign="top"><a id="ga7650c95dec763d4aa3fcb44644229f0e"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga7650c95dec763d4aa3fcb44644229f0e">HArDCore3D::Mesh::n_i_edges</a> () const</td></tr>
+<tr class="memdesc:ga7650c95dec763d4aa3fcb44644229f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of interior edges <br /></td></tr>
+<tr class="separator:ga7650c95dec763d4aa3fcb44644229f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga209126a0e22bea2f597dbc844110123c"><td class="memItemLeft" align="right" valign="top"><a id="ga209126a0e22bea2f597dbc844110123c"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga209126a0e22bea2f597dbc844110123c">HArDCore3D::Mesh::n_i_vertices</a> () const</td></tr>
+<tr class="memdesc:ga209126a0e22bea2f597dbc844110123c"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of interior vertices <br /></td></tr>
+<tr class="separator:ga209126a0e22bea2f597dbc844110123c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc945c1f5859943cc2e3f771d35e3b2e"><td class="memItemLeft" align="right" valign="top"><a id="gabc945c1f5859943cc2e3f771d35e3b2e"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gabc945c1f5859943cc2e3f771d35e3b2e">HArDCore3D::Mesh::get_cells</a> () const</td></tr>
+<tr class="memdesc:gabc945c1f5859943cc2e3f771d35e3b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the cells in the mesh. <br /></td></tr>
+<tr class="separator:gabc945c1f5859943cc2e3f771d35e3b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab61b9310613e48727c099a7162b79511"><td class="memItemLeft" align="right" valign="top"><a id="gab61b9310613e48727c099a7162b79511"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Face.html">Face</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gab61b9310613e48727c099a7162b79511">HArDCore3D::Mesh::get_faces</a> () const</td></tr>
+<tr class="memdesc:gab61b9310613e48727c099a7162b79511"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the faces in the mesh. <br /></td></tr>
+<tr class="separator:gab61b9310613e48727c099a7162b79511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0fa81aa91495ca87dd8b134ee46d25fa"><td class="memItemLeft" align="right" valign="top"><a id="ga0fa81aa91495ca87dd8b134ee46d25fa"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga0fa81aa91495ca87dd8b134ee46d25fa">HArDCore3D::Mesh::get_edges</a> () const</td></tr>
+<tr class="memdesc:ga0fa81aa91495ca87dd8b134ee46d25fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the edges in the mesh. <br /></td></tr>
+<tr class="separator:ga0fa81aa91495ca87dd8b134ee46d25fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7809eef99241a3a111d4570f1b388621"><td class="memItemLeft" align="right" valign="top"><a id="ga7809eef99241a3a111d4570f1b388621"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga7809eef99241a3a111d4570f1b388621">HArDCore3D::Mesh::get_vertices</a> () const</td></tr>
+<tr class="memdesc:ga7809eef99241a3a111d4570f1b388621"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the vertices in the mesh. <br /></td></tr>
+<tr class="separator:ga7809eef99241a3a111d4570f1b388621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae07b938c57cf57e3bb9c76d3df1eb549"><td class="memItemLeft" align="right" valign="top"><a id="gae07b938c57cf57e3bb9c76d3df1eb549"></a>
+<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gae07b938c57cf57e3bb9c76d3df1eb549">HArDCore3D::Mesh::cell</a> (size_t iC) const</td></tr>
+<tr class="memdesc:gae07b938c57cf57e3bb9c76d3df1eb549"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to a cell using its global index <br /></td></tr>
+<tr class="separator:gae07b938c57cf57e3bb9c76d3df1eb549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09d8a0ee1f515991b06a3517e33a894e"><td class="memItemLeft" align="right" valign="top"><a id="ga09d8a0ee1f515991b06a3517e33a894e"></a>
+<a class="el" href="classHArDCore3D_1_1Face.html">Face</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga09d8a0ee1f515991b06a3517e33a894e">HArDCore3D::Mesh::face</a> (size_t iF) const</td></tr>
+<tr class="memdesc:ga09d8a0ee1f515991b06a3517e33a894e"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to a face using its global index <br /></td></tr>
+<tr class="separator:ga09d8a0ee1f515991b06a3517e33a894e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacad7cdf3d2c00fa6fc23ff77c63c7d1a"><td class="memItemLeft" align="right" valign="top"><a id="gacad7cdf3d2c00fa6fc23ff77c63c7d1a"></a>
+<a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gacad7cdf3d2c00fa6fc23ff77c63c7d1a">HArDCore3D::Mesh::edge</a> (size_t iE) const</td></tr>
+<tr class="memdesc:gacad7cdf3d2c00fa6fc23ff77c63c7d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to an edge using its global index <br /></td></tr>
+<tr class="separator:gacad7cdf3d2c00fa6fc23ff77c63c7d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad099224c697c05a57fad6a47fdcd9e76"><td class="memItemLeft" align="right" valign="top"><a id="gad099224c697c05a57fad6a47fdcd9e76"></a>
+<a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gad099224c697c05a57fad6a47fdcd9e76">HArDCore3D::Mesh::vertex</a> (size_t iV) const</td></tr>
+<tr class="memdesc:gad099224c697c05a57fad6a47fdcd9e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to a vertex using its global index <br /></td></tr>
+<tr class="separator:gad099224c697c05a57fad6a47fdcd9e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga648b0420dce3db1204d4e1b270b57aa2"><td class="memItemLeft" align="right" valign="top"><a id="ga648b0420dce3db1204d4e1b270b57aa2"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga648b0420dce3db1204d4e1b270b57aa2">HArDCore3D::Mesh::get_b_cells</a> () const</td></tr>
+<tr class="memdesc:ga648b0420dce3db1204d4e1b270b57aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the boundary cells in the mesh. <br /></td></tr>
+<tr class="separator:ga648b0420dce3db1204d4e1b270b57aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1cedb2faebdc7ec891e6d49b74e2d0b3"><td class="memItemLeft" align="right" valign="top"><a id="ga1cedb2faebdc7ec891e6d49b74e2d0b3"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Face.html">Face</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga1cedb2faebdc7ec891e6d49b74e2d0b3">HArDCore3D::Mesh::get_b_faces</a> () const</td></tr>
+<tr class="memdesc:ga1cedb2faebdc7ec891e6d49b74e2d0b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the boundary faces in the mesh. <br /></td></tr>
+<tr class="separator:ga1cedb2faebdc7ec891e6d49b74e2d0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab118708826029e78cab33759480457d"><td class="memItemLeft" align="right" valign="top"><a id="gaab118708826029e78cab33759480457d"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaab118708826029e78cab33759480457d">HArDCore3D::Mesh::get_b_edges</a> () const</td></tr>
+<tr class="memdesc:gaab118708826029e78cab33759480457d"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the boundary edges in the mesh. <br /></td></tr>
+<tr class="separator:gaab118708826029e78cab33759480457d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41f26cc7aaf8946a13b3f2c1700c8e63"><td class="memItemLeft" align="right" valign="top"><a id="ga41f26cc7aaf8946a13b3f2c1700c8e63"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga41f26cc7aaf8946a13b3f2c1700c8e63">HArDCore3D::Mesh::get_b_vertices</a> () const</td></tr>
+<tr class="memdesc:ga41f26cc7aaf8946a13b3f2c1700c8e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the boundary vertices in the mesh. <br /></td></tr>
+<tr class="separator:ga41f26cc7aaf8946a13b3f2c1700c8e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga200361b60684c429e961e6b4f278dfb3"><td class="memItemLeft" align="right" valign="top"><a id="ga200361b60684c429e961e6b4f278dfb3"></a>
+<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga200361b60684c429e961e6b4f278dfb3">HArDCore3D::Mesh::b_cell</a> (size_t iC) const</td></tr>
+<tr class="memdesc:ga200361b60684c429e961e6b4f278dfb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to the iC-th boundary cell <br /></td></tr>
+<tr class="separator:ga200361b60684c429e961e6b4f278dfb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad9ddcb7b2df1b3ac5dcbdd2bf6ab4b2"><td class="memItemLeft" align="right" valign="top"><a id="gaad9ddcb7b2df1b3ac5dcbdd2bf6ab4b2"></a>
+<a class="el" href="classHArDCore3D_1_1Face.html">Face</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaad9ddcb7b2df1b3ac5dcbdd2bf6ab4b2">HArDCore3D::Mesh::b_face</a> (size_t iF) const</td></tr>
+<tr class="memdesc:gaad9ddcb7b2df1b3ac5dcbdd2bf6ab4b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to the iF-th boundary face <br /></td></tr>
+<tr class="separator:gaad9ddcb7b2df1b3ac5dcbdd2bf6ab4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga07395cbe8ecaf85abf52f91aef20422f"><td class="memItemLeft" align="right" valign="top"><a id="ga07395cbe8ecaf85abf52f91aef20422f"></a>
+<a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga07395cbe8ecaf85abf52f91aef20422f">HArDCore3D::Mesh::b_edge</a> (size_t iE) const</td></tr>
+<tr class="memdesc:ga07395cbe8ecaf85abf52f91aef20422f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to the iE-th boundary edge <br /></td></tr>
+<tr class="separator:ga07395cbe8ecaf85abf52f91aef20422f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga749b688ccabc6bfcf630b759607ef29a"><td class="memItemLeft" align="right" valign="top"><a id="ga749b688ccabc6bfcf630b759607ef29a"></a>
+<a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga749b688ccabc6bfcf630b759607ef29a">HArDCore3D::Mesh::b_vertex</a> (size_t iV) const</td></tr>
+<tr class="memdesc:ga749b688ccabc6bfcf630b759607ef29a"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to the iV-th boundary vertex <br /></td></tr>
+<tr class="separator:ga749b688ccabc6bfcf630b759607ef29a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b88870d7da98e3c1762ea5e2921a0de"><td class="memItemLeft" align="right" valign="top"><a id="ga7b88870d7da98e3c1762ea5e2921a0de"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga7b88870d7da98e3c1762ea5e2921a0de">HArDCore3D::Mesh::get_i_cells</a> () const</td></tr>
+<tr class="memdesc:ga7b88870d7da98e3c1762ea5e2921a0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the interior cells in the mesh. <br /></td></tr>
+<tr class="separator:ga7b88870d7da98e3c1762ea5e2921a0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ec5d24146948a627e100e838de0f715"><td class="memItemLeft" align="right" valign="top"><a id="ga3ec5d24146948a627e100e838de0f715"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Face.html">Face</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga3ec5d24146948a627e100e838de0f715">HArDCore3D::Mesh::get_i_faces</a> () const</td></tr>
+<tr class="memdesc:ga3ec5d24146948a627e100e838de0f715"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the interior faces in the mesh. <br /></td></tr>
+<tr class="separator:ga3ec5d24146948a627e100e838de0f715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab47e764fd3660ad3b910d203a57ebfe3"><td class="memItemLeft" align="right" valign="top"><a id="gab47e764fd3660ad3b910d203a57ebfe3"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gab47e764fd3660ad3b910d203a57ebfe3">HArDCore3D::Mesh::get_i_edges</a> () const</td></tr>
+<tr class="memdesc:gab47e764fd3660ad3b910d203a57ebfe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the interior edges in the mesh. <br /></td></tr>
+<tr class="separator:gab47e764fd3660ad3b910d203a57ebfe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga272a2fb7e29331652482190f45e30c02"><td class="memItemLeft" align="right" valign="top"><a id="ga272a2fb7e29331652482190f45e30c02"></a>
+std::vector&lt; <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga272a2fb7e29331652482190f45e30c02">HArDCore3D::Mesh::get_i_vertices</a> () const</td></tr>
+<tr class="memdesc:ga272a2fb7e29331652482190f45e30c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">lists the interior vertices in the mesh. <br /></td></tr>
+<tr class="separator:ga272a2fb7e29331652482190f45e30c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee5a30682d86cd7c130667fd4fdf395f"><td class="memItemLeft" align="right" valign="top"><a id="gaee5a30682d86cd7c130667fd4fdf395f"></a>
+<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaee5a30682d86cd7c130667fd4fdf395f">HArDCore3D::Mesh::i_cell</a> (size_t iC) const</td></tr>
+<tr class="memdesc:gaee5a30682d86cd7c130667fd4fdf395f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to the iC-th interior cell <br /></td></tr>
+<tr class="separator:gaee5a30682d86cd7c130667fd4fdf395f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f346cc773f3bd0f884fa2057a151629"><td class="memItemLeft" align="right" valign="top"><a id="ga7f346cc773f3bd0f884fa2057a151629"></a>
+<a class="el" href="classHArDCore3D_1_1Face.html">Face</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga7f346cc773f3bd0f884fa2057a151629">HArDCore3D::Mesh::i_face</a> (size_t iF) const</td></tr>
+<tr class="memdesc:ga7f346cc773f3bd0f884fa2057a151629"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to the iF-th interior face <br /></td></tr>
+<tr class="separator:ga7f346cc773f3bd0f884fa2057a151629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc84a2329361880a2f821d567149a1e8"><td class="memItemLeft" align="right" valign="top"><a id="gacc84a2329361880a2f821d567149a1e8"></a>
+<a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gacc84a2329361880a2f821d567149a1e8">HArDCore3D::Mesh::i_edge</a> (size_t iE) const</td></tr>
+<tr class="memdesc:gacc84a2329361880a2f821d567149a1e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to the iE-th interior edge <br /></td></tr>
+<tr class="separator:gacc84a2329361880a2f821d567149a1e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58578f5f723f5e589ba498f74ddcbf08"><td class="memItemLeft" align="right" valign="top"><a id="ga58578f5f723f5e589ba498f74ddcbf08"></a>
+<a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga58578f5f723f5e589ba498f74ddcbf08">HArDCore3D::Mesh::i_vertex</a> (size_t iV) const</td></tr>
+<tr class="memdesc:ga58578f5f723f5e589ba498f74ddcbf08"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to the iV-th interior vertex <br /></td></tr>
+<tr class="separator:ga58578f5f723f5e589ba498f74ddcbf08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab58e51275f4fd83e36fdf8aba6ee846d"><td class="memItemLeft" align="right" valign="top"><a id="gab58e51275f4fd83e36fdf8aba6ee846d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gab58e51275f4fd83e36fdf8aba6ee846d">HArDCore3D::Mesh::add_cell</a> (<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *<a class="el" href="group__Mesh.html#gae07b938c57cf57e3bb9c76d3df1eb549">cell</a>)</td></tr>
+<tr class="memdesc:gab58e51275f4fd83e36fdf8aba6ee846d"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a cell to the mesh <br /></td></tr>
+<tr class="separator:gab58e51275f4fd83e36fdf8aba6ee846d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37af87e0b0fbb14363b2af7106231d1e"><td class="memItemLeft" align="right" valign="top"><a id="ga37af87e0b0fbb14363b2af7106231d1e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga37af87e0b0fbb14363b2af7106231d1e">HArDCore3D::Mesh::add_face</a> (<a class="el" href="classHArDCore3D_1_1Face.html">Face</a> *<a class="el" href="group__Mesh.html#ga09d8a0ee1f515991b06a3517e33a894e">face</a>)</td></tr>
+<tr class="memdesc:ga37af87e0b0fbb14363b2af7106231d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a face to the mesh <br /></td></tr>
+<tr class="separator:ga37af87e0b0fbb14363b2af7106231d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae006746b7f6bf52b3172716f4365fa5b"><td class="memItemLeft" align="right" valign="top"><a id="gae006746b7f6bf52b3172716f4365fa5b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gae006746b7f6bf52b3172716f4365fa5b">HArDCore3D::Mesh::add_edge</a> (<a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> *<a class="el" href="group__Mesh.html#gacad7cdf3d2c00fa6fc23ff77c63c7d1a">edge</a>)</td></tr>
+<tr class="memdesc:gae006746b7f6bf52b3172716f4365fa5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an edge to the mesh <br /></td></tr>
+<tr class="separator:gae006746b7f6bf52b3172716f4365fa5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe8cbdafd0716faad0283e281ca15711"><td class="memItemLeft" align="right" valign="top"><a id="gafe8cbdafd0716faad0283e281ca15711"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gafe8cbdafd0716faad0283e281ca15711">HArDCore3D::Mesh::add_vertex</a> (<a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *<a class="el" href="group__Mesh.html#gad099224c697c05a57fad6a47fdcd9e76">vertex</a>)</td></tr>
+<tr class="memdesc:gafe8cbdafd0716faad0283e281ca15711"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a vertex to the mesh <br /></td></tr>
+<tr class="separator:gafe8cbdafd0716faad0283e281ca15711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31f05cf2b4cbb3dd729e99f96345dbbe"><td class="memItemLeft" align="right" valign="top"><a id="ga31f05cf2b4cbb3dd729e99f96345dbbe"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga31f05cf2b4cbb3dd729e99f96345dbbe">HArDCore3D::Mesh::add_b_cell</a> (<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *<a class="el" href="group__Mesh.html#gae07b938c57cf57e3bb9c76d3df1eb549">cell</a>)</td></tr>
+<tr class="memdesc:ga31f05cf2b4cbb3dd729e99f96345dbbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a boundary cell to the mesh <br /></td></tr>
+<tr class="separator:ga31f05cf2b4cbb3dd729e99f96345dbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3efbbd1fc6718b9110bc08cc0225471c"><td class="memItemLeft" align="right" valign="top"><a id="ga3efbbd1fc6718b9110bc08cc0225471c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga3efbbd1fc6718b9110bc08cc0225471c">HArDCore3D::Mesh::add_b_face</a> (<a class="el" href="classHArDCore3D_1_1Face.html">Face</a> *<a class="el" href="group__Mesh.html#ga09d8a0ee1f515991b06a3517e33a894e">face</a>)</td></tr>
+<tr class="memdesc:ga3efbbd1fc6718b9110bc08cc0225471c"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a boundary face to the mesh <br /></td></tr>
+<tr class="separator:ga3efbbd1fc6718b9110bc08cc0225471c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf0072fd6a1ca4a2b99563ab875202fd"><td class="memItemLeft" align="right" valign="top"><a id="gadf0072fd6a1ca4a2b99563ab875202fd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gadf0072fd6a1ca4a2b99563ab875202fd">HArDCore3D::Mesh::add_b_edge</a> (<a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> *<a class="el" href="group__Mesh.html#gacad7cdf3d2c00fa6fc23ff77c63c7d1a">edge</a>)</td></tr>
+<tr class="memdesc:gadf0072fd6a1ca4a2b99563ab875202fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a boundary edge to the mesh <br /></td></tr>
+<tr class="separator:gadf0072fd6a1ca4a2b99563ab875202fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6495493613a7e8453473cce4838b7dc8"><td class="memItemLeft" align="right" valign="top"><a id="ga6495493613a7e8453473cce4838b7dc8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga6495493613a7e8453473cce4838b7dc8">HArDCore3D::Mesh::add_b_vertex</a> (<a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *<a class="el" href="group__Mesh.html#gad099224c697c05a57fad6a47fdcd9e76">vertex</a>)</td></tr>
+<tr class="memdesc:ga6495493613a7e8453473cce4838b7dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a boundary vertex to the mesh <br /></td></tr>
+<tr class="separator:ga6495493613a7e8453473cce4838b7dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaecf50e57da45ad71c485f1e3f51d82ea"><td class="memItemLeft" align="right" valign="top"><a id="gaecf50e57da45ad71c485f1e3f51d82ea"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaecf50e57da45ad71c485f1e3f51d82ea">HArDCore3D::Mesh::add_i_cell</a> (<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *<a class="el" href="group__Mesh.html#gae07b938c57cf57e3bb9c76d3df1eb549">cell</a>)</td></tr>
+<tr class="memdesc:gaecf50e57da45ad71c485f1e3f51d82ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an interior cell to the mesh <br /></td></tr>
+<tr class="separator:gaecf50e57da45ad71c485f1e3f51d82ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11ec925f03b38f68cc942c096a93af19"><td class="memItemLeft" align="right" valign="top"><a id="ga11ec925f03b38f68cc942c096a93af19"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga11ec925f03b38f68cc942c096a93af19">HArDCore3D::Mesh::add_i_face</a> (<a class="el" href="classHArDCore3D_1_1Face.html">Face</a> *<a class="el" href="group__Mesh.html#ga09d8a0ee1f515991b06a3517e33a894e">face</a>)</td></tr>
+<tr class="memdesc:ga11ec925f03b38f68cc942c096a93af19"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an interior face to the mesh <br /></td></tr>
+<tr class="separator:ga11ec925f03b38f68cc942c096a93af19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24c3b59a00bd3c7ac51bc868807c3ff4"><td class="memItemLeft" align="right" valign="top"><a id="ga24c3b59a00bd3c7ac51bc868807c3ff4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga24c3b59a00bd3c7ac51bc868807c3ff4">HArDCore3D::Mesh::add_i_edge</a> (<a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> *<a class="el" href="group__Mesh.html#gacad7cdf3d2c00fa6fc23ff77c63c7d1a">edge</a>)</td></tr>
+<tr class="memdesc:ga24c3b59a00bd3c7ac51bc868807c3ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an interior edge to the mesh <br /></td></tr>
+<tr class="separator:ga24c3b59a00bd3c7ac51bc868807c3ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac084d96b6ffab6ff330cdd3aaf8dd424"><td class="memItemLeft" align="right" valign="top"><a id="gac084d96b6ffab6ff330cdd3aaf8dd424"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gac084d96b6ffab6ff330cdd3aaf8dd424">HArDCore3D::Mesh::add_i_vertex</a> (<a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> *<a class="el" href="group__Mesh.html#gad099224c697c05a57fad6a47fdcd9e76">vertex</a>)</td></tr>
+<tr class="memdesc:gac084d96b6ffab6ff330cdd3aaf8dd424"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an interior vertex to the mesh <br /></td></tr>
+<tr class="separator:gac084d96b6ffab6ff330cdd3aaf8dd424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdbe174b87d591e573dd1953650744ec"><td class="memItemLeft" align="right" valign="top"><a id="gafdbe174b87d591e573dd1953650744ec"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gafdbe174b87d591e573dd1953650744ec">HArDCore3D::Mesh::set_h_max</a> (double <a class="el" href="group__Mesh.html#gadb86f1eadf808e15e90881d626b467c0">h_max</a>)</td></tr>
+<tr class="memdesc:gafdbe174b87d591e573dd1953650744ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the mesh size to h_max <br /></td></tr>
+<tr class="separator:gafdbe174b87d591e573dd1953650744ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9bdfdf3e4528832da6925f96edc5ad8f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga9bdfdf3e4528832da6925f96edc5ad8f">HArDCore3D::Mesh::regularity</a> ()</td></tr>
+<tr class="memdesc:ga9bdfdf3e4528832da6925f96edc5ad8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a regularity factor  <a href="group__Mesh.html#ga9bdfdf3e4528832da6925f96edc5ad8f">More...</a><br /></td></tr>
+<tr class="separator:ga9bdfdf3e4528832da6925f96edc5ad8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf77873bbc892a7a5b37bf4773c55aefc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaf77873bbc892a7a5b37bf4773c55aefc">HArDCore3D::Mesh::renum</a> (const char B, const std::vector&lt; size_t &gt; new_to_old)</td></tr>
+<tr class="memdesc:gaf77873bbc892a7a5b37bf4773c55aefc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-index the cells, edges or vertices.  <a href="group__Mesh.html#gaf77873bbc892a7a5b37bf4773c55aefc">More...</a><br /></td></tr>
+<tr class="separator:gaf77873bbc892a7a5b37bf4773c55aefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga30e7743fc40f1b771b9dad963a9badd1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga30e7743fc40f1b771b9dad963a9badd1">HArDCore3D::Vertex::Vertex</a> (size_t iV, <a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> *mesh, Vector3d <a class="el" href="group__Mesh.html#ga8b06a63ada3bfd88e6429e5cfd028c0b">coords</a>, bool boundary)</td></tr>
 <tr class="separator:ga30e7743fc40f1b771b9dad963a9badd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab6a570ed052f6bb7ad6570f83cbae6a9"><td class="memItemLeft" align="right" valign="top"><a id="gab6a570ed052f6bb7ad6570f83cbae6a9"></a>
@@ -283,10 +702,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="separator:ga72fa3131022cb2c847a2e9d5b56cb893"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1acf4d7072729d8f5f89876383361099"><td class="memItemLeft" align="right" valign="top"><a id="ga1acf4d7072729d8f5f89876383361099"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga1acf4d7072729d8f5f89876383361099">HArDCore3D::Vertex::set_global_index</a> (size_t idx)</td></tr>
-<tr class="memdesc:ga1acf4d7072729d8f5f89876383361099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global index of the vertex to idx. Used to re-index the vertices, should essentially only be used inside <a class="el" href="classHArDCore3D_1_1Mesh.html#af77873bbc892a7a5b37bf4773c55aefc" title="Re-index the cells, edges or vertices.">Mesh::renum</a>. <br /></td></tr>
+<tr class="memdesc:ga1acf4d7072729d8f5f89876383361099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global index of the vertex to idx. Used to re-index the vertices, should essentially only be used inside <a class="el" href="group__Mesh.html#gaf77873bbc892a7a5b37bf4773c55aefc" title="Re-index the cells, edges or vertices.">Mesh::renum</a>. <br /></td></tr>
 <tr class="separator:ga1acf4d7072729d8f5f89876383361099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Classes to describe and access the elements of a 3D mesh. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga512c4d7f649bc03e64292394af0eeef2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga512c4d7f649bc03e64292394af0eeef2">&#9670;&nbsp;</a></span>Cell()</h2>
@@ -374,6 +794,231 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
     <tr><td class="paramname">measure</td><td>volume of the cell </td></tr>
     <tr><td class="paramname">diam</td><td>diameter of the cell </td></tr>
     <tr><td class="paramname">center_mass</td><td>center of mass of the cell </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaead46bf6e803e24a5c1027369651b581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaead46bf6e803e24a5c1027369651b581">&#9670;&nbsp;</a></span>Edge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Edge::Edge </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iE</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> *&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> * &gt;&#160;</td>
+          <td class="paramname"><em>vertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>measure</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector3d&#160;</td>
+          <td class="paramname"><em>center_mass</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A class representing an edge of a 3D mesh. Contains a pointer to the mesh, as well as to the cells, faces and vertices connected to that edge Constructor. Edges are constructed after vertices, so these can be feed into the constructor.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iE</td><td>global edge number </td></tr>
+    <tr><td class="paramname">mesh</td><td>pointer to the mesh </td></tr>
+    <tr><td class="paramname">vertices</td><td>vertices of the edge </td></tr>
+    <tr><td class="paramname">measure</td><td>length of the edge </td></tr>
+    <tr><td class="paramname">center_mass</td><td>midpoint of the edge </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf581dda7ff692d3732c5e0944ac46ab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf581dda7ff692d3732c5e0944ac46ab0">&#9670;&nbsp;</a></span>Face()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Face::Face </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> *&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classHArDCore3D_1_1Edge.html">Edge</a> * &gt;&#160;</td>
+          <td class="paramname"><em>edges</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classHArDCore3D_1_1Vertex.html">Vertex</a> * &gt;&#160;</td>
+          <td class="paramname"><em>vertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>boundary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>measure</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>diam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector3d&#160;</td>
+          <td class="paramname"><em>center_mass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector3d&#160;</td>
+          <td class="paramname"><em>normal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A class representing a face of a 2D mesh. Contains a pointer to the mesh, as well as to the vertices, edges and cells connected to that face Constructor. Faces are created after vertices and edges, but before cells. So all their connectivites except cells can be filled in</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iF</td><td>global face number </td></tr>
+    <tr><td class="paramname">mesh</td><td>pointer to the mesh </td></tr>
+    <tr><td class="paramname">edges</td><td>edges of the face </td></tr>
+    <tr><td class="paramname">vertices</td><td>vertices of the face </td></tr>
+    <tr><td class="paramname">measure</td><td>area of the face </td></tr>
+    <tr><td class="paramname">diam</td><td>diam of the face </td></tr>
+    <tr><td class="paramname">center_mass</td><td>center of mass of the face </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga2af137f1571af89172b9c102302c416b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2af137f1571af89172b9c102302c416b">&#9670;&nbsp;</a></span>Mesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mesh::Mesh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>default constructor for an empty mesh </p>
+
+</div>
+</div>
+<a id="ga9bdfdf3e4528832da6925f96edc5ad8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9bdfdf3e4528832da6925f96edc5ad8f">&#9670;&nbsp;</a></span>regularity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Mesh::regularity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>returns a regularity factor </p>
+<p>Regularity factor = maximum of</p><ul>
+<li>diameter of cell / (measure of cell)^{1/3}</li>
+<li>diameter of cell / diameter of face [for each face of the cell]</li>
+<li>diameter of face / (measure of face)^{1/2}</li>
+</ul>
+
+</div>
+</div>
+<a id="gaf77873bbc892a7a5b37bf4773c55aefc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf77873bbc892a7a5b37bf4773c55aefc">&#9670;&nbsp;</a></span>renum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mesh::renum </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; size_t &gt;&#160;</td>
+          <td class="paramname"><em>new_to_old</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Re-index the cells, edges or vertices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">B</td><td>T for cells, F for faces, E for edges, V for vertices </td></tr>
+    <tr><td class="paramname">new_to_old</td><td>Vector of new indices to old ones (new_to_old[i]=j: the index formerly j will become i) </td></tr>
   </table>
   </dd>
 </dl>

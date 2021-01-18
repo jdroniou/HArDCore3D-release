@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -86,11 +93,11 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> { <span class="comment">// Forward declaration</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>HArDCore3D { <span class="comment">// Forward declaration</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">class </span>Mesh;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span>HArDCore3D {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">//                            Class definition</span></div>
@@ -114,7 +121,6 @@ $(function() {
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassHArDCore3D_1_1MeshBuilder_html_a208c94e8cb6490226215b59eb67e7911"><div class="ttname"><a href="classHArDCore3D_1_1MeshBuilder.html#a208c94e8cb6490226215b59eb67e7911">HArDCore3D::MeshBuilder::build_the_mesh</a></div><div class="ttdeci">std::unique_ptr&lt; Mesh &gt; build_the_mesh()</div><div class="ttdoc">construct the connectivity in the mesh</div><div class="ttdef"><b>Definition:</b> mesh_builder.cpp:24</div></div>
-<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdoc">Classes to describe and access the elements of a 3D mesh.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:1</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1MeshBuilder_html_ab40a9ca5099b1b098e7aa5810adf6a7b"><div class="ttname"><a href="classHArDCore3D_1_1MeshBuilder.html#ab40a9ca5099b1b098e7aa5810adf6a7b">HArDCore3D::MeshBuilder::MeshBuilder</a></div><div class="ttdeci">MeshBuilder(std::string mesh_file, std::string mesh_type)</div><div class="ttdef"><b>Definition:</b> mesh_builder.cpp:19</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1MeshBuilder_html"><div class="ttname"><a href="classHArDCore3D_1_1MeshBuilder.html">HArDCore3D::MeshBuilder</a></div><div class="ttdoc">The MeshBuilder class provides build tools to create a full mesh with all connectivities.</div><div class="ttdef"><b>Definition:</b> mesh_builder.hpp:33</div></div>
 <!-- start footer part -->

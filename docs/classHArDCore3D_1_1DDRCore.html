@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -62,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1DDRCore.html">DDRCore</a></li>  </ul>
+<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1DDRCore.html">DDRCore</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,11 +79,11 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classHArDCore3D_1_1DDRCore-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">HArDCore3D::DDRCore Class Reference<div class="ingroups"><a class="el" href="group__DDRcore.html">DDRcore</a></div></div>  </div>
+<div class="title">HArDCore3D::DDRCore Class Reference<div class="ingroups"><a class="el" href="group__DDRCore.html">DDRCore</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Construct the spaces for the DDR sequence.  
+<p>Construct all polynomial spaces for the DDR sequence.  
  <a href="classHArDCore3D_1_1DDRCore.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ddrcore_8hpp_source.html">ddrcore.hpp</a>&gt;</code></p>
@@ -84,50 +91,47 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">CellBases</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for element bases.  <a href="structHArDCore3D_1_1DDRCore_1_1CellBases.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to store element bases.  <a href="structHArDCore3D_1_1DDRCore_1_1CellBases.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">EdgeBases</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for edge bases.  <a href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to store edge bases.  <a href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">FaceBases</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for face bases.  <a href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to store face bases.  <a href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ga5dd65026845eed50661d1b8d64fdbcd1"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PolyCellBasisType</b></td></tr>
-<tr class="separator:ga5dd65026845eed50661d1b8d64fdbcd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1ae826b0dbc43e8a9acd5246568ce779"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">PolyCellBasisType</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Poly3CellBasisType</b></td></tr>
-<tr class="separator:ga1ae826b0dbc43e8a9acd5246568ce779"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga264aab542953b6d0493517813b577ce9"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">ShiftedBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GolyCellBasisType</b></td></tr>
-<tr class="separator:ga264aab542953b6d0493517813b577ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3a0b9670fcecdf756592fc9a2702705e"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">Poly3CellBasisType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GolyOrthCellBasisType</b></td></tr>
-<tr class="separator:ga3a0b9670fcecdf756592fc9a2702705e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2c03d50dcc5efefff11fa76049bbbd3d"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1CurlBasis.html">CurlBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">GolyOrthCellBasisType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RolyCellBasisType</b></td></tr>
-<tr class="separator:ga2c03d50dcc5efefff11fa76049bbbd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3713cf64a86a62ed38e631bb04709d11"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">Poly3CellBasisType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RolyOrthCellBasisType</b></td></tr>
-<tr class="separator:ga3713cf64a86a62ed38e631bb04709d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1e395134d385835274ac4c535bbc762"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisFace.html">MonomialScalarBasisFace</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PolyFaceBasisType</b></td></tr>
-<tr class="separator:gac1e395134d385835274ac4c535bbc762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaefea5ccbf8bf261c906b5bef823c332e"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1TangentFamily.html">TangentFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">PolyFaceBasisType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Poly2FaceBasisType</b></td></tr>
-<tr class="separator:gaefea5ccbf8bf261c906b5bef823c332e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa4cd8646851c10e169bad53e25109114"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1CurlBasis.html">CurlBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">ShiftedBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">PolyFaceBasisType</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RolyFaceBasisType</b></td></tr>
-<tr class="separator:gaa4cd8646851c10e169bad53e25109114"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2495315762c01c33aebefe1696489ce4"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1TangentFamily.html">Poly2FaceBasisType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RolyOrthFaceBasisType</b></td></tr>
-<tr class="separator:ga2495315762c01c33aebefe1696489ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab9915e41069367244c4938d154b7c785"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1TangentFamily.html">TangentFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisFace.html">MonomialScalarBasisFace</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PotentialTestFunctionBasisType</b></td></tr>
-<tr class="separator:gab9915e41069367244c4938d154b7c785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga23ccbb1459084ee0576cf0c056430f58"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PolyBasisCellType</b></td></tr>
+<tr class="separator:ga23ccbb1459084ee0576cf0c056430f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a5513bc7820a36eda4515b81740a35d"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1RestrictedBasis.html">RestrictedBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">PolyBasisCellType</a> &gt;, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Poly3BasisCellType</b></td></tr>
+<tr class="separator:ga7a5513bc7820a36eda4515b81740a35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace75e120d0af0cc0cec7892dac8d3df4"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">ShiftedBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GolyBasisCellType</b></td></tr>
+<tr class="separator:gace75e120d0af0cc0cec7892dac8d3df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8d7ab3240176dab867a4e7ed77ed9158"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1GolyComplBasisCell.html">GolyComplBasisCell</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GolyComplBasisCellType</b></td></tr>
+<tr class="separator:ga8d7ab3240176dab867a4e7ed77ed9158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga499d1f5450341d0045d400c5f3457584"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1CurlBasis.html">CurlBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1GolyComplBasisCell.html">GolyComplBasisCell</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RolyBasisCellType</b></td></tr>
+<tr class="separator:ga499d1f5450341d0045d400c5f3457584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeebff7b722caf50be9eafba35e65d1ec"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1RolyComplBasisCell.html">RolyComplBasisCell</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RolyComplBasisCellType</b></td></tr>
+<tr class="separator:gaeebff7b722caf50be9eafba35e65d1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b54c4bb8d156ae7a2e5c01a1c553655"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisFace.html">MonomialScalarBasisFace</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PolyBasisFaceType</b></td></tr>
+<tr class="separator:ga0b54c4bb8d156ae7a2e5c01a1c553655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26ed7e32f1540e1b6512982f2305c55f"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="classHArDCore3D_1_1TangentFamily.html">TangentFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1RestrictedBasis.html">RestrictedBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">PolyBasisFaceType</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Poly2BasisFaceType</b></td></tr>
+<tr class="separator:ga26ed7e32f1540e1b6512982f2305c55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga925dd6c4d55e4a4fa924f4c9aff4e221"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1CurlBasis.html">CurlBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">ShiftedBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisFace.html">MonomialScalarBasisFace</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RolyBasisFaceType</b></td></tr>
+<tr class="separator:ga925dd6c4d55e4a4fa924f4c9aff4e221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeee1a4e190fba39e31a9184519e1ba43"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1RolyComplBasisFace.html">RolyComplBasisFace</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RolyComplBasisFaceType</b></td></tr>
+<tr class="separator:gaeee1a4e190fba39e31a9184519e1ba43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga081f30b7ded91e984bcb6595d13cbeb0"><td class="memItemLeft" align="right" valign="top">
 typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisEdge.html">MonomialScalarBasisEdge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PolyEdgeBasisType</b></td></tr>
 <tr class="separator:ga081f30b7ded91e984bcb6595d13cbeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,30 +139,32 @@ typedef <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a cl
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ga5f49b71bcd21c0c569a59ade78f05fdd"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRcore.html#ga5f49b71bcd21c0c569a59ade78f05fdd">DDRCore</a> (const <a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> &amp;mesh, size_t K, bool use_threads=true, std::ostream &amp;output=std::cout)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRCore.html#ga5f49b71bcd21c0c569a59ade78f05fdd">DDRCore</a> (const <a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> &amp;<a class="el" href="group__DDRCore.html#ga4b3c317f8cf4193ba4b945f2b087a6f2">mesh</a>, size_t K, bool use_threads=true, std::ostream &amp;output=std::cout)</td></tr>
 <tr class="memdesc:ga5f49b71bcd21c0c569a59ade78f05fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
 <tr class="separator:ga5f49b71bcd21c0c569a59ade78f05fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4b3c317f8cf4193ba4b945f2b087a6f2"><td class="memItemLeft" align="right" valign="top">
-const <a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>mesh</b> () const</td></tr>
+const <a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRCore.html#ga4b3c317f8cf4193ba4b945f2b087a6f2">mesh</a> () const</td></tr>
+<tr class="memdesc:ga4b3c317f8cf4193ba4b945f2b087a6f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a const reference to the mesh. <br /></td></tr>
 <tr class="separator:ga4b3c317f8cf4193ba4b945f2b087a6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0810ab2d6dfaaedc3242d83a942acee4"><td class="memItemLeft" align="right" valign="top">
-const size_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>degree</b> () const</td></tr>
+const size_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRCore.html#ga0810ab2d6dfaaedc3242d83a942acee4">degree</a> () const</td></tr>
+<tr class="memdesc:ga0810ab2d6dfaaedc3242d83a942acee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the polynomial degree. <br /></td></tr>
 <tr class="separator:ga0810ab2d6dfaaedc3242d83a942acee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga222dbade666f7ab10e5bfae0f0579b09"><td class="memItemLeft" align="right" valign="top">
-const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">CellBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRcore.html#ga222dbade666f7ab10e5bfae0f0579b09">cellBases</a> (size_t iT) const</td></tr>
+const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">CellBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRCore.html#ga222dbade666f7ab10e5bfae0f0579b09">cellBases</a> (size_t iT) const</td></tr>
 <tr class="memdesc:ga222dbade666f7ab10e5bfae0f0579b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for element iT. <br /></td></tr>
 <tr class="separator:ga222dbade666f7ab10e5bfae0f0579b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadd926309d1517cf7d591215afcf2dfd5"><td class="memItemLeft" align="right" valign="top">
-const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">FaceBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRcore.html#gadd926309d1517cf7d591215afcf2dfd5">faceBases</a> (size_t iF) const</td></tr>
+const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">FaceBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRCore.html#gadd926309d1517cf7d591215afcf2dfd5">faceBases</a> (size_t iF) const</td></tr>
 <tr class="memdesc:gadd926309d1517cf7d591215afcf2dfd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return face bases for face iF. <br /></td></tr>
 <tr class="separator:gadd926309d1517cf7d591215afcf2dfd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga59b66dab48528b4503dcfae4128df155"><td class="memItemLeft" align="right" valign="top">
-const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">EdgeBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRcore.html#ga59b66dab48528b4503dcfae4128df155">edgeBases</a> (size_t iE) const</td></tr>
+const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">EdgeBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDRCore.html#ga59b66dab48528b4503dcfae4128df155">edgeBases</a> (size_t iE) const</td></tr>
 <tr class="memdesc:ga59b66dab48528b4503dcfae4128df155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return edge bases for edge iE. <br /></td></tr>
 <tr class="separator:ga59b66dab48528b4503dcfae4128df155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Construct the spaces for the DDR sequence. </p>
+<div class="textblock"><p>Construct all polynomial spaces for the DDR sequence. </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/DDRCore/<a class="el" href="ddrcore_8hpp_source.html">ddrcore.hpp</a></li>
 <li>src/DDRCore/ddrcore.cpp</li>

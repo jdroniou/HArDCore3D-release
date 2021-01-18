@@ -1,5 +1,16 @@
+.DS_Store
+CMakeLists-perso.txt
+Schemes/CMakeLists-perso.txt
+NC-poly/
+TestCaseNL*
+CMakeLists-NC
+nc_poly_richards/
+meshes/
 build/
+TODO.txt
+old/
 outputs/
 COMPUTE_RATES
+test/
 directories.sh
 *~

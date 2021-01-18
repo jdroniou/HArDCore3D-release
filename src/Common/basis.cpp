@@ -13,19 +13,10 @@ namespace HArDCore3D
   MonomialScalarBasisCell::MonomialScalarBasisCell(const Cell &T, size_t degree)
       : m_degree(degree),
         m_xT(T.center_mass()),
-        m_hT(T.diam())
+        m_hT(T.diam()),
+        m_powers(MonomialPowers<Cell>::compute(degree))
   {
-    m_powers.reserve(dimension());
-    for (size_t l = 0; l <= m_degree; l++)
-    {
-      for (size_t i = 0; i <= l; i++)
-      {
-        for (size_t j = 0; i + j <= l; j++)
-        {
-          m_powers.push_back(VectorZd(i, j, l - i - j));
-        } // for j
-      }   // for i
-    }     // for l
+    // do nothing
   }
 
   MonomialScalarBasisCell::FunctionValue MonomialScalarBasisCell::function(size_t i, const VectorRd &x) const
@@ -55,21 +46,13 @@ namespace HArDCore3D
         m_xF(F.center_mass()),
         m_hF(F.diam()),
         m_nF(F.normal()),
-        m_jacobian(Eigen::Matrix<double, 2, dimspace>::Zero())
+        m_jacobian(Eigen::Matrix<double, 2, dimspace>::Zero()),
+        m_powers(MonomialPowers<Face>::compute(degree))
   {
+    // Compute change of variables
     m_jacobian.row(0) = F.edge(0)->tangent();
     m_jacobian.row(1) = F.edge_normal(0);
     m_jacobian /= m_hF;
-
-    // Generate powers
-    m_powers.reserve(dimension());
-    for (size_t l = 0; l <= m_degree; l++)
-    {
-      for (size_t i = 0; i <= l; i++)
-      {
-        m_powers.push_back(Eigen::Vector2i(i, l - i));
-      } // for i
-    }   // for l
   }
 
   MonomialScalarBasisFace::FunctionValue MonomialScalarBasisFace::function(size_t i, const VectorRd &x) const
@@ -116,6 +99,177 @@ namespace HArDCore3D
   {
     return (i == 0 ? 0. : i * std::pow(_coordinate_transform(x), i - 1) / m_hE) * m_tE;
   }
+  
+  //------------------------------------------------------------------------------
+  // Basis for R^{c,k}(T)
+  //------------------------------------------------------------------------------
+
+  RolyComplBasisCell::RolyComplBasisCell(const Cell &T, size_t degree)
+      : m_degree(degree),
+        m_xT(T.center_mass()),
+        m_hT(T.diam())
+  {
+    // Monomial powers for P^{k-1}(T)
+    if (degree >= 1){
+      m_powers = MonomialPowers<Cell>::compute(degree-1);
+    }else{
+      std::cout << "Attempting to construct RckT with degree 0, stopping" << std::endl;
+      exit(1);
+    }
+  }
+
+  RolyComplBasisCell::FunctionValue RolyComplBasisCell::function(size_t i, const VectorRd &x) const
+  {
+    VectorRd y = _coordinate_transform(x);
+    const VectorZd &powers = m_powers[i];
+    return std::pow(y(0), powers(0)) * std::pow(y(1), powers(1)) * std::pow(y(2), powers(2)) * y;
+  }
+  
+  RolyComplBasisCell::DivergenceValue RolyComplBasisCell::divergence(size_t i, const VectorRd &x) const
+  {
+    VectorRd y = _coordinate_transform(x);
+    const VectorZd &powers = m_powers[i];
+    return (powers(0)+powers(1)+powers(2)+3) * std::pow(y(0), powers(0)) * std::pow(y(1), powers(1)) * std::pow(y(2), powers(2)) / m_hT;
+  }
+
+
+  //------------------------------------------------------------------------------
+  // Basis for G^{c,k}(T)
+  //------------------------------------------------------------------------------
+
+  GolyComplBasisCell::GolyComplBasisCell(const Cell &T, size_t degree)
+      : m_degree(degree),
+        m_xT(T.center_mass()),
+        m_hT(T.diam())
+  {
+    // Monomial powers for P^{k-1}(T)
+    if (degree >= 1){
+      m_dimPkmo3D = PolynomialSpaceDimension<Cell>::Poly(m_degree-1);
+      m_dimPkmo2D = PolynomialSpaceDimension<Face>::Poly(m_degree-1);
+      std::vector<VectorZd> powers3D = MonomialPowers<Cell>::compute(m_degree-1);
+      std::vector<Eigen::Vector2i> powers2D = MonomialPowers<Face>::compute(m_degree-1);
+      m_powers.resize(2 * m_dimPkmo3D + m_dimPkmo2D);
+      for (size_t i = 0; i < m_dimPkmo3D; i++){
+        m_powers[i] = powers3D[i];
+        m_powers[i + m_dimPkmo3D] = powers3D[i];
+      }
+      size_t offset = 2 * m_dimPkmo3D;
+      for (size_t i = 0; i < m_dimPkmo2D; i++){
+        m_powers[offset + i] = VectorZd::Zero();
+        m_powers[offset + i].head(2) = powers2D[i];
+      }
+    }else{
+      std::cout << "Attempting to construct GckT with degree 0, stopping" << std::endl;
+      exit(1);
+    }
+  }
+
+  VectorRd GolyComplBasisCell::direction_value(size_t i, const VectorRd &x) const
+  {
+    assert(i < m_powers.size());
+    if (i < m_dimPkmo3D){
+      return VectorRd(0., x(2), -x(1));
+    } else if (i < 2 * m_dimPkmo3D){
+      return VectorRd(-x(2), 0., x(0));
+    } else {
+      return VectorRd(x(1), -x(0), 0.);
+    }
+  }
+
+  VectorRd GolyComplBasisCell::direction_curl(size_t i, const VectorRd &x) const
+  {
+    assert(i < m_powers.size());
+    if (i < m_dimPkmo3D){
+      return VectorRd(-2., 0., 0.);
+    } else if (i < 2 * m_dimPkmo3D){
+      return VectorRd(0. , -2., 0.);
+    } else {
+      return VectorRd(0., 0., -2.);
+    }
+  }
+
+  GolyComplBasisCell::FunctionValue GolyComplBasisCell::function(size_t i, const VectorRd &x) const
+  {
+    assert(i < m_powers.size());
+    VectorRd y = _coordinate_transform(x);
+    const VectorZd &powers = m_powers[i];
+    return std::pow(y(0), powers(0)) * std::pow(y(1), powers(1)) * std::pow(y(2), powers(2)) * direction_value(i, y);
+  }
+  
+  GolyComplBasisCell::CurlValue GolyComplBasisCell::curl(size_t i, const VectorRd &x) const
+  {
+    VectorRd y = _coordinate_transform(x);
+    const VectorZd &powers = m_powers[i];
+    
+    // value of the scalar factor in the basis function
+    double scal = std::pow(y(0), powers(0)) * std::pow(y(1), powers(1)) * std::pow(y(2), powers(2));
+    
+    // gradient of the scalar factor in the basis function
+    VectorRd G = VectorRd::Zero(); 
+    G(0) = (powers(0) == 0 ? 0. : powers(0) * std::pow(y(0), powers(0) - 1) * std::pow(y(1), powers(1)) * std::pow(y(2), powers(2)));
+    G(1) = (powers(1) == 0 ? 0. : std::pow(y(0), powers(0)) * powers(1) * std::pow(y(1), powers(1) - 1) * std::pow(y(2), powers(2)));
+    G(2) = (powers(2) == 0 ? 0. : std::pow(y(0), powers(0)) * std::pow(y(1), powers(1)) * powers(2) * std::pow(y(2), powers(2) - 1));
+
+    return ( G.cross(direction_value(i, y)) + scal * direction_curl(i, y) ) / m_hT;
+  }
+
+
+  //------------------------------------------------------------------------------
+  // Basis for R^{c,k}(F)
+  //------------------------------------------------------------------------------
+
+  RolyComplBasisFace::RolyComplBasisFace(const Face &F, size_t degree)
+      : m_degree(degree),
+        m_xF(F.center_mass()),
+        m_hF(F.diam()),
+        m_jacobian(Eigen::Matrix<double, 2, dimspace>::Zero())
+  {
+    // Compute monomial powers for P^{k-1}(F)
+    if (degree>=1){
+      m_powers = MonomialPowers<Face>::compute(degree-1);
+    }else{
+      std::cout << "Attempting to construct RckF with degree 0 (possibly while constructing GckF), stopping" << std::endl;
+      exit(1);
+    }
+  
+    // Compute change of variable
+    m_jacobian.row(0) = F.edge(0)->tangent();
+    m_jacobian.row(1) = F.edge_normal(0);
+    m_jacobian /= m_hF;
+  }
+
+  RolyComplBasisFace::FunctionValue RolyComplBasisFace::function(size_t i, const VectorRd &x) const
+  {
+    Eigen::Vector2d y = _coordinate_transform(x);
+    const Eigen::Vector2i &powers = m_powers[i];
+    return std::pow(y(0), powers(0)) * std::pow(y(1), powers(1)) * (x-m_xF)/m_hF;
+  }
+
+  RolyComplBasisFace::DivergenceValue RolyComplBasisFace::divergence(size_t i, const VectorRd &x) const
+  {
+    Eigen::Vector2d y = _coordinate_transform(x);
+    const Eigen::Vector2i &powers = m_powers[i];
+    return (powers(0)+powers(1)+2) * std::pow(y(0), powers(0)) * std::pow(y(1), powers(1)) / m_hF;
+  }
+
+
+  //------------------------------------------------------------------------------
+  // Basis for G^{c,k}(F)
+  //------------------------------------------------------------------------------
+
+  GolyComplBasisFace::GolyComplBasisFace(const Face &F, size_t degree)
+      : m_degree(degree),
+        m_nF(F.normal())
+  {
+    m_Rck_basis.reset(new RolyComplBasisFace(F, degree));
+  }
+
+  GolyComplBasisFace::FunctionValue GolyComplBasisFace::function(size_t i, const VectorRd &x) const
+  {
+    // The basis of Gck(F) is a simple rotation of the basis of Rck
+    return (m_Rck_basis->function(i, x)).cross(m_nF);
+  }
+
 
   //------------------------------------------------------------------------------
   // A common notion of scalar product for scalars and vectors

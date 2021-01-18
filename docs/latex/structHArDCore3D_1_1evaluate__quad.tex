@@ -2,22 +2,29 @@
 \label{structHArDCore3D_1_1evaluate__quad}\index{HArDCore3D::evaluate\_quad$<$ BasisFunction $>$@{HArDCore3D::evaluate\_quad$<$ BasisFunction $>$}}
 
 
+Evaluate a basis at quadrature nodes. \textquotesingle{}Basis\+Function\textquotesingle{} (=Function, Gradient, Curl or Divergence) determines what kind of value we want to evaluate.  
+
+
+
+
 {\ttfamily \#include $<$basis.\+hpp$>$}
 
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Basis\+Type $>$ }\\static boost\+::multi\+\_\+array$<$ typename \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, Basis\+Function $>$\+::Return\+Value, 2 $>$ \mbox{\hyperlink{group__Basis_ga1abe06df2a8a25ad4de2f738930ec143}{compute}} (const Basis\+Type \&basis, const Quadrature\+Rule \&quad)
+{\footnotesize template$<$typename Basis\+Type $>$ }\\static boost\+::multi\+\_\+array$<$ typename \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, Basis\+Function $>$\+::Return\+Value, 2 $>$ \mbox{\hyperlink{group__Common_ga1abe06df2a8a25ad4de2f738930ec143}{compute}} (const Basis\+Type \&basis, const Quadrature\+Rule \&quad)
 \begin{DoxyCompactList}\small\item\em Generic basis evaluation. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Basis\+Type $>$ }\\static boost\+::multi\+\_\+array$<$ typename \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$, Basis\+Function $>$\+::Return\+Value, 2 $>$ \mbox{\hyperlink{group__Basis_gaa1df24802a0b4781d1c7e8203f772a52}{compute}} (const \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$ \&basis, const Quadrature\+Rule \&quad)
-\end{DoxyCompactItemize}
+{\footnotesize template$<$typename Basis\+Type $>$ }\\static boost\+::multi\+\_\+array$<$ typename \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$, Basis\+Function $>$\+::Return\+Value, 2 $>$ \mbox{\hyperlink{group__Common_gaa1df24802a0b4781d1c7e8203f772a52}{compute}} (const \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$ \&basis, const Quadrature\+Rule \&quad)
+\begin{DoxyCompactList}\small\item\em Evaluate a \textquotesingle{}\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}\textquotesingle{} of functions at quadrature nodes (optimised compared the generic basis evaluation, to avoid computing several times the ancestor basis at the quadrature nodes) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type , size\+\_\+t N$>$ }\\static boost\+::multi\+\_\+array$<$ typename \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type, N $>$, Basis\+Function $>$\+::Return\+Value, 2 $>$ \mbox{\hyperlink{group__Common_ga1d7af8de1df73bd44b137ab6e4f409ae}{compute}} (const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type, N $>$ \&basis, const Quadrature\+Rule \&quad)
+\begin{DoxyCompactList}\small\item\em Evaluate a tensorized family at quadrature nodes (optimised compared the generic basis evaluation, to avoid computing several times the ancestor basis at the quadrature nodes) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$Basis\+FunctionE Basis\+Function$>$\newline
 struct H\+Ar\+D\+Core3\+D\+::evaluate\+\_\+quad$<$ Basis\+Function $>$}
 
-Evaluate a basis at quadrature nodes. \textquotesingle{}Basis\+Function\textquotesingle{} determines what kind of value we want to evaluate (the function value of the basis, their gradients, etc.). 
+Evaluate a basis at quadrature nodes. \textquotesingle{}Basis\+Function\textquotesingle{} (=Function, Gradient, Curl or Divergence) determines what kind of value we want to evaluate. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

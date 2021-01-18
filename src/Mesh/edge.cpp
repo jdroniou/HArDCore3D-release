@@ -19,7 +19,6 @@ Edge::Edge(size_t iE,
 	   double measure, 
 	   Vector3d center_mass)
   : _iE(iE), 
-    _mesh(mesh), 
     _boundary(boundary),
     _cells(0),
     _faces(0),
@@ -56,7 +55,7 @@ Vertex *Edge::vertex(size_t i) const {
   }
 }
 
-size_t Edge::index_vertex(Vertex* V) const {
+size_t Edge::index_vertex(const Vertex* V) const {
   size_t i = 0;
   while(i < 2 && vertex(i) != V){
     i++;

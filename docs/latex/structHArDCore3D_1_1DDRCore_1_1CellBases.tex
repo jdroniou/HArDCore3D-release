@@ -2,7 +2,7 @@
 \label{structHArDCore3D_1_1DDRCore_1_1CellBases}\index{HArDCore3D::DDRCore::CellBases@{HArDCore3D::DDRCore::CellBases}}
 
 
-Structure for element bases.  
+Structure to store element bases.  
 
 
 
@@ -12,33 +12,39 @@ Structure for element bases.
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \mbox{\hyperlink{group__DDRcore_ga7bfe17a4d1d277d8d6ac477854eee603}{Geometric\+Support}}
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \mbox{\hyperlink{group__DDRCore_ga7bfe17a4d1d277d8d6ac477854eee603}{Geometric\+Support}}
 \begin{DoxyCompactList}\small\item\em Geometric support. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Poly\+Cell\+Basis\+Type}} $>$ {\bfseries Polykpo}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Poly\+Basis\+Cell\+Type}} $>$ {\bfseries Polykpo}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Poly\+Cell\+Basis\+Type}} $>$ $>$ {\bfseries Polyk}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Poly\+Basis\+Cell\+Type}} $>$ $>$ {\bfseries Polyk}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Poly\+Cell\+Basis\+Type}} $>$ $>$ {\bfseries Polykmo}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Poly\+Basis\+Cell\+Type}} $>$ $>$ {\bfseries Polykmo}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Poly3\+Cell\+Basis\+Type}} $>$ {\bfseries Polyk3}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Poly3\+Basis\+Cell\+Type}} $>$ {\bfseries Polyk3}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Goly\+Cell\+Basis\+Type}} $>$ {\bfseries Golykmo}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Goly\+Basis\+Cell\+Type}} $>$ {\bfseries Golykmo}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Goly\+Orth\+Cell\+Basis\+Type}} $>$ {\bfseries Goly\+Orthk}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Goly\+Compl\+Basis\+Cell\+Type}} $>$ {\bfseries Goly\+Complk}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Goly\+Orth\+Cell\+Basis\+Type}} $>$ {\bfseries Goly\+Orthkpo}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Goly\+Compl\+Basis\+Cell\+Type}} $>$ {\bfseries Goly\+Complkpo}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Roly\+Cell\+Basis\+Type}} $>$ {\bfseries Rolykmo}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Roly\+Basis\+Cell\+Type}} $>$ {\bfseries Rolykmo}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Roly\+Orth\+Cell\+Basis\+Type}} $>$ {\bfseries Roly\+Orthk}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Roly\+Compl\+Basis\+Cell\+Type}} $>$ {\bfseries Roly\+Complk}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Roly\+Compl\+Basis\+Cell\+Type}} $>$ {\bfseries Roly\+Complkp2}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Structure for element bases. 
+Structure to store element bases. 
+
+\textquotesingle{}Poly\textquotesingle{}\+: basis of polynomial space; \textquotesingle{}Goly\textquotesingle{}\+: gradient basis; \textquotesingle{}Roly\textquotesingle{}\+: curl basis.~\newline
+\textquotesingle{}k\textquotesingle{}, \textquotesingle{}kmo\textquotesingle{} (k-\/1) and \textquotesingle{}kpo\textquotesingle{} (k+1) determines the degree.~\newline
+\textquotesingle{}Compl\textquotesingle{} for the complement of the corresponding \textquotesingle{}Goly\textquotesingle{} or \textquotesingle{}Roly\textquotesingle{} in the \textquotesingle{}Poly\textquotesingle{} space 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

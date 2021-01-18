@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -62,26 +69,26 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="structHArDCore3D_1_1PolynomialSpaceDimension.html">PolynomialSpaceDimension</a></li>  </ul>
+<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="structHArDCore3D_1_1PolynomialSpaceDimension.html">PolynomialSpaceDimension</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">HArDCore3D::PolynomialSpaceDimension&lt; GeometricSupport &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__DDRcore.html">DDRcore</a></div></div>  </div>
+<div class="title">HArDCore3D::PolynomialSpaceDimension&lt; GeometricSupport &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__Common.html">Common</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Basis dimensions for the full and trimmed polynomial spaces.  
+<p>Basis dimensions for various polynomial spaces on edges/faces/elements (when relevant): Pk, Gk, Rk and complements.  
  <a href="structHArDCore3D_1_1PolynomialSpaceDimension.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="ddrcore_8hpp_source.html">ddrcore.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="polynomialspacedimension_8hpp_source.html">polynomialspacedimension.hpp</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename GeometricSupport&gt;<br />
 struct HArDCore3D::PolynomialSpaceDimension&lt; GeometricSupport &gt;</h3>
 
-<p>Basis dimensions for the full and trimmed polynomial spaces. </p>
+<p>Basis dimensions for various polynomial spaces on edges/faces/elements (when relevant): Pk, Gk, Rk and complements. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/DDRCore/<a class="el" href="ddrcore_8hpp_source.html">ddrcore.hpp</a></li>
+<li>src/Common/<a class="el" href="polynomialspacedimension_8hpp_source.html">polynomialspacedimension.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

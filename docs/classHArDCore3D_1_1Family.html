@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -62,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1Family.html">Family</a></li>  </ul>
+<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1Family.html">Family</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,9 +79,12 @@ $(function() {
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classHArDCore3D_1_1Family-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">HArDCore3D::Family&lt; BasisType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Basis.html">Basis</a></div></div>  </div>
+<div class="title">HArDCore3D::Family&lt; BasisType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Common.html">Common</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of functions expressed as linear combination of the functions of a given basis.  
+ <a href="classHArDCore3D_1_1Family.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="basis_8hpp_source.html">basis.hpp</a>&gt;</code></p>
 <table class="memberdecls">
@@ -98,35 +108,51 @@ typedef BasisType::GeometricSupport&#160;</td><td class="memItemRight" valign="b
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:gaa0576f3bfd8f5cdbdd863f147b646d15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaa0576f3bfd8f5cdbdd863f147b646d15">Family</a> (const BasisType &amp;basis, const Eigen::MatrixXd &amp;<a class="el" href="group__Basis.html#gaf056ff8a6cbf5c566c243290e72af217">matrix</a>)</td></tr>
-<tr class="memdesc:gaa0576f3bfd8f5cdbdd863f147b646d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Basis.html#gaa0576f3bfd8f5cdbdd863f147b646d15">More...</a><br /></td></tr>
+<tr class="memitem:gaa0576f3bfd8f5cdbdd863f147b646d15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaa0576f3bfd8f5cdbdd863f147b646d15">Family</a> (const BasisType &amp;basis, const Eigen::MatrixXd &amp;<a class="el" href="group__Common.html#gaf056ff8a6cbf5c566c243290e72af217">matrix</a>)</td></tr>
+<tr class="memdesc:gaa0576f3bfd8f5cdbdd863f147b646d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Common.html#gaa0576f3bfd8f5cdbdd863f147b646d15">More...</a><br /></td></tr>
 <tr class="separator:gaa0576f3bfd8f5cdbdd863f147b646d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa71fa9b9c83346561fde4c764a1b2e72"><td class="memItemLeft" align="right" valign="top">
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaa71fa9b9c83346561fde4c764a1b2e72">dimension</a> () const</td></tr>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaa71fa9b9c83346561fde4c764a1b2e72">dimension</a> () const</td></tr>
 <tr class="memdesc:gaa71fa9b9c83346561fde4c764a1b2e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of the family. This is actually the number of functions in the family, not necessarily linearly independent. <br /></td></tr>
 <tr class="separator:gaa71fa9b9c83346561fde4c764a1b2e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3616bf77a028e9e7638af28820370931"><td class="memItemLeft" align="right" valign="top">
-FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga3616bf77a028e9e7638af28820370931">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga3616bf77a028e9e7638af28820370931">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga3616bf77a028e9e7638af28820370931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th function at point x. <br /></td></tr>
 <tr class="separator:ga3616bf77a028e9e7638af28820370931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2cc33261e6b7012ad21f62805adfa061"><td class="memItemLeft" align="right" valign="top">
+FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2cc33261e6b7012ad21f62805adfa061">function</a> (size_t i, size_t iqn, const boost::multi_array&lt; FunctionValue, 2 &gt; &amp;ancestor_value_quad) const</td></tr>
+<tr class="memdesc:ga2cc33261e6b7012ad21f62805adfa061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th function at a quadrature point iqn, knowing all the values of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="separator:ga2cc33261e6b7012ad21f62805adfa061"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7e8e2733993bda1d5aff348d7d31cbcf"><td class="memItemLeft" align="right" valign="top">
-GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga7e8e2733993bda1d5aff348d7d31cbcf">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga7e8e2733993bda1d5aff348d7d31cbcf">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga7e8e2733993bda1d5aff348d7d31cbcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th function at point x. <br /></td></tr>
 <tr class="separator:ga7e8e2733993bda1d5aff348d7d31cbcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1199c53d8ea68392eb915f4dee7ef52"><td class="memItemLeft" align="right" valign="top">
+GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gae1199c53d8ea68392eb915f4dee7ef52">gradient</a> (size_t i, size_t iqn, const boost::multi_array&lt; GradientValue, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
+<tr class="memdesc:gae1199c53d8ea68392eb915f4dee7ef52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="separator:gae1199c53d8ea68392eb915f4dee7ef52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf5aac63dc865a440eb25c6b41b8d66d1"><td class="memItemLeft" align="right" valign="top">
-CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaf5aac63dc865a440eb25c6b41b8d66d1">curl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaf5aac63dc865a440eb25c6b41b8d66d1">curl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:gaf5aac63dc865a440eb25c6b41b8d66d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th function at point x. <br /></td></tr>
 <tr class="separator:gaf5aac63dc865a440eb25c6b41b8d66d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8aa52ddcc2c74db8fb176319d5691eec"><td class="memItemLeft" align="right" valign="top">
+CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga8aa52ddcc2c74db8fb176319d5691eec">curl</a> (size_t i, size_t iqn, const boost::multi_array&lt; CurlValue, 2 &gt; &amp;ancestor_curl_quad) const</td></tr>
+<tr class="memdesc:ga8aa52ddcc2c74db8fb176319d5691eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th function at a quadrature point iqn, knowing all the curls of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="separator:ga8aa52ddcc2c74db8fb176319d5691eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga87cbacf4f0cf12e0c9cfe9afa2e40c29"><td class="memItemLeft" align="right" valign="top">
-DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga87cbacf4f0cf12e0c9cfe9afa2e40c29">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga87cbacf4f0cf12e0c9cfe9afa2e40c29">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga87cbacf4f0cf12e0c9cfe9afa2e40c29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th function at point x. <br /></td></tr>
 <tr class="separator:ga87cbacf4f0cf12e0c9cfe9afa2e40c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b6dc927463e4b67215ca7503d4e15bb"><td class="memItemLeft" align="right" valign="top">
+DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga0b6dc927463e4b67215ca7503d4e15bb">divergence</a> (size_t i, size_t iqn, const boost::multi_array&lt; DivergenceValue, 2 &gt; &amp;ancestor_divergence_quad) const</td></tr>
+<tr class="memdesc:ga0b6dc927463e4b67215ca7503d4e15bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th function at a quadrature point iqn, knowing all the divergences of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="separator:ga0b6dc927463e4b67215ca7503d4e15bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf056ff8a6cbf5c566c243290e72af217"><td class="memItemLeft" align="right" valign="top">
-const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaf056ff8a6cbf5c566c243290e72af217">matrix</a> () const</td></tr>
+const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaf056ff8a6cbf5c566c243290e72af217">matrix</a> () const</td></tr>
 <tr class="memdesc:gaf056ff8a6cbf5c566c243290e72af217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the coefficient matrix. <br /></td></tr>
 <tr class="separator:gaf056ff8a6cbf5c566c243290e72af217"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7afd19f4c3c17b7ac8ed16115b0ffe1c"><td class="memItemLeft" align="right" valign="top">
-const BasisType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga7afd19f4c3c17b7ac8ed16115b0ffe1c">ancestor</a> () const</td></tr>
+const BasisType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga7afd19f4c3c17b7ac8ed16115b0ffe1c">ancestor</a> () const</td></tr>
 <tr class="memdesc:ga7afd19f4c3c17b7ac8ed16115b0ffe1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ancestor. <br /></td></tr>
 <tr class="separator:ga7afd19f4c3c17b7ac8ed16115b0ffe1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -152,7 +178,7 @@ static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasDiver
 <div class="textblock"><h3>template&lt;typename BasisType&gt;<br />
 class HArDCore3D::Family&lt; BasisType &gt;</h3>
 
-<p><a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of functions expressed as linear combination of the functions of a given basis </p>
+<p><a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of functions expressed as linear combination of the functions of a given basis. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Common/<a class="el" href="basis_8hpp_source.html">basis.hpp</a></li>
 </ul>

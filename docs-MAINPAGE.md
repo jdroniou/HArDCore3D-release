@@ -118,40 +118,21 @@ HArD::Core deals with quite arbitrary cell geometries. As a consequence, no refe
 
 The [Quadratures](@ref HArDCore3D::Quadratures) module provides routines to do that. The key method is [generate_quadrature_rule(CFE,doe)](@ref HArDCore3D::generate_quadrature_rule) calculates quadrature nodes and weights, exact up to the polynomial degree `doe`, for an integration over cell/face/edge CFE (passed as a reference of [Cell](@ref HArDCore3D::Cell), [Face](@ref HArDCore3D::Face) or [Edge](@ref HArDCore3D::Edge) class). At present, the quadrature rules available in the code support a total degree of exactness in the cells up to 14 in the cells and 20 on the faces and the edges (the quadrature rules on the faces come from [John Burkardt's implementation of the Dunavant rules](https://people.sc.fsu.edu/~jburkardt/cpp_src/triangle_dunavant_rule/triangle_dunavant_rule.html)). The generated quadrature rule is stored in a structure [QuadratureRule](@ref HArDCore3D::QuadratureRule), which is a vector of quadrature nodes (weights and position).
 
-<a name="basis">
-\section basis_module Basis module
+<a name="common">
+\section common_module Common module
 </a>
 
-The [Basis](@ref Basis) module provides classes and functions that define and manipulate polynomial basis functions on a cell, face, or edge, and various derived quantities (gradient, curl...). The underlying basis functions are monomial, but families of functions defined as linear combination of monomial basis functions are also handled via the `Family` class. See examples in [HybridCore](#hybridcore).
+The main class in the [Common](@ref Common) module is [Basis](@ref Basis), which provides classes and functions that define and manipulate polynomial basis functions on a cell, face, or edge, of full polynomial spaces \f$\mathbb{P}^k\f$ as well as various derived quantities (image of gradient, image of curl, complements, etc.). The underlying basis functions are monomial, but families of functions defined as linear combination of monomial basis functions are also handled via the `Family` class. See examples in [HybridCore](#hybridcore) or [DDRCore](#ddr).
 
-Free functions are also available to compute basis functions at quadrature nodes (using the [Quadrature rules](#quad_rules) module), orthonormalise basis functions, and compute Gram-like matrices between various families of functions. These matrices are essential in the design of high-order methods on polytopal meshes. See examples in [HybridCore](#hybridcore).
+Free functions are also available to compute basis functions at quadrature nodes (using the [Quadrature rules](#quad_rules) module), orthonormalise basis functions, and compute Gram-like matrices between various families of functions. These matrices are essential in the design of high-order methods on polytopal meshes. Again, see examples in the [HybridCore](#hybridcore), [DDRCore](#ddr) and the various schemes built on them.
 
-<a name="hybridcore">
-\section hybridcore Hybridcore module
-</a>
+This module also contains:
+ - [PolynomialSpaceDimension](@ref HArDCore3D::PolynomialSpaceDimension): structure to compute the dimensions of various polynomial spaces on edges, faces and cell,
+ - [DOFSpace](@ref HArDCore3D::DOFSpace): class to access the local degrees of freedom associated with a geometric entity (vertex, edge, face, or cell) and all its associated entities of smaller dimension. This class determines how the local degrees of freedom are ordered (in the current setting, it's by increasing dimension of the associated geometric entities: DOFs of vertices, DOFs of edges, DOFs of faces and finally DOFs of cells). DOFSpace is currently only used in DDRCore and its derived schemes, but could potentially be used for other hybrid schemes.
 
-The [HybridCore](@ref HArDCore3D::HybridCore) module encapsulates routines to create bases of polynomial spaces in each cell, on each face, and on each edge, and to manipulate discrete functions through the class [UVector](@ref HArDCore3D::UVector). 
+\subsection usage_quad Usage of quadrature rules.
 
-\subsection basisfunc Basis functions
-
-The instantiation of an [HybridCore](@ref HArDCore3D::HybridCore) class creates basis functions for the polynomial spaces in the cells, on the faces and on the edges, specifying the maximum degree required for each geometric entity. The basis functions are elements of the [Family](@ref HArDCore3D::Family) class and are accessed via the [CellBasis](@ref HArDCore3D::CellBasis), [FaceBasis](@ref HArDCore3D::FaceBasis) and [EdgeBasis](@ref HArDCore3D::EdgeBasis) method. For example, the following piece of code initialises an HybridCore instance with degrees \f$K+1\f$ in the cells, \f$K\f$ on the faces, and no edge basis functions, and access the value at some Eigen::Vector3d x of the i-th basis function on face iF, and the gradient of the j-th basis function in cell iT.
-
-\code{.cpp}
-  // Initialise the class
-  HybridCore hho(mesh_ptr.get(), K+1, K, -1, use_threads, output);
-  // Access value of face basis function
-  double val_face = hho.FaceBasis(iF).function(i, x);
-  // Access value of gradient of cell basis function
-  Eigen::Vector3d grad_cell = hho.CellBasis(iT).gradient(j, x);
-\endcode
-
-The basis functions are hierarchical, which means that they are constructed by increasing degree. Hence, for example, if cell basis functions up to degree \f$K+1\f$ have been generated, a basis of the space of polynomials of degree \f$K\f$ in the cell is thus obtained by selecting the first \f$(K+1)(K+2)/2\f$ cell basis functions.
-
-The [UVector](@ref HArDCore3D::UVector) class describes coefficients on cell and face basis functions. The first coefficients correspond to cell basis functions, ordered by the cells themselves, and the last coefficients correspond to face basis functions. The methods in this class provide the surrounding structure to make sense of these coefficients (degrees of considered polynomial functions in cells/on faces, restrictions to a certain cell and its faces, etc.).
-
-\subsection usge_quad Usage of quadrature rules.
-
-The [evaluate_quad](@ref HArDCore3D::evaluate_quad) template function evaluate basis functions, or gradients, etc. at provided quadrature nodes. The `boost::multi\_array` provided by this function can then be passed to [compute_gram_matrix](@ref HArDCore3D::compute_gram_matrix) to create a matrix of inner products of two families of basis functions. Here is an example.
+The [evaluate_quad](@ref HArDCore3D::evaluate_quad) template function evaluate basis functions, or gradients, etc. at provided quadrature nodes. The `boost::multi_array` provided by this function can then be passed to [compute_gram_matrix](@ref HArDCore3D::compute_gram_matrix) to create a matrix of inner products of two families of basis functions. Here is an example.
 
 \code{.cpp}
 // Create basis (f_1,...,f_r) of degree k in cell T
@@ -166,7 +147,33 @@ Eigen::MatrixXd M = compute_gram_matrix(gradbasis_on_quadT, gradbasis_on_quadT, 
 
 Note the usage of the type `VectorRd` defined in `basis.hpp`, which enables for a dimension-independent piece of code (easier to adapt to the 2D case). This procedure can also be applied, e.g., to cell basis functions on face quadrature nodes, etc.
 
-However, in the [HybridCore](@ref HArDCore3D::HybridCore) class, the quadrature rules and values of basis functions (and gradients) at the quadrature nodes can be conveniently computed and stored using the [ElementQuad](@ref HArDCore3D::ElementQuad) class. Instantiating an element of this class on a cell loads these rules and values once, that can then be passed to several functions in charge of various calculations (e.g. one function computes the local cell contribution to the diffusion term, another function is in charge of computing the load term associated to the cell, etc.). This prevents recomputing these rules and values when needed by various functions. It works the following way:
+
+<a name="hybridcore">
+\section hybridcore Hybridcore module
+</a>
+
+This module encapsulates routines to create bases of polynomial spaces in each cell, on each face, and on each edge, and to manipulate discrete functions through the class [UVector](@ref HArDCore3D::UVector). 
+
+\subsection basisfunc Basis functions
+
+The instantiation of an [HybridCore](@ref HybridCore) class creates basis functions for the polynomial spaces in the cells, on the faces and on the edges, specifying the maximum degree required for each geometric entity. The basis functions are elements of the [Family](@ref HArDCore3D::Family) class and are accessed via the [CellBasis](@ref HArDCore3D::CellBasis), [FaceBasis](@ref HArDCore3D::FaceBasis) and [EdgeBasis](@ref HArDCore3D::EdgeBasis) method. For example, the following piece of code initialises an HybridCore instance with degrees \f$K+1\f$ in the cells, \f$K\f$ on the faces, and no edge basis functions, and access the value at some Eigen::Vector3d x of the i-th basis function on face iF, and the gradient of the j-th basis function in cell iT.
+
+\code{.cpp}
+  // Initialise the class
+  HybridCore hho(mesh_ptr.get(), K+1, K, -1, use_threads, output);
+  // Access value of face basis function
+  double val_face = hho.FaceBasis(iF).function(i, x);
+  // Access value of gradient of cell basis function
+  Eigen::Vector3d grad_cell = hho.CellBasis(iT).gradient(j, x);
+\endcode
+
+The basis functions are hierarchical, which means that they are constructed by increasing degree. Hence, for example, if cell basis functions up to degree \f$K+1\f$ have been generated, a basis of the space of polynomials of degree \f$K\f$ in the cell is thus obtained by selecting the first \f$(K+1)(K+2)/2\f$ cell basis functions.
+
+The [UVector](@ref HArDCore3D::UVector) class describes coefficients on cell and face basis functions. The first coefficients correspond to cell basis functions, ordered by the cells themselves, and the last coefficients correspond to face basis functions. The methods in this class provide the surrounding structure to make sense of these coefficients (degrees of considered polynomial functions in cells/on faces, restrictions to a certain cell and its faces, etc.).
+
+\subsection qr_hcore Quadrature rules evaluations in HybridCore
+
+As explained above, the [evaluate_quad](@ref HArDCore3D::evaluate_quad) template enables the evaluation of basis functions (or their gradient, curl, or divergence) at pre-computed quadrature nodes. In the HybridCore module, however, the quadrature rules and values of basis functions (and gradients) at the quadrature nodes can be conveniently computed and stored using the [ElementQuad](@ref HArDCore3D::ElementQuad) class. Instantiating an element of this class on a cell loads these rules and values once, that can then be passed to several functions in charge of various calculations (e.g. one function computes the local cell contribution to the diffusion term, another function is in charge of computing the load term associated to the cell, etc.). This prevents recomputing these rules and values when needed by various functions. It works the following way:
 
 \code{.cpp}
 HybridCore hho(mesh_ptr.get(), K+1, K, -1, use_threads, output);    // HybridCore instantiation
@@ -198,10 +205,20 @@ boost::multi_array<VectorRd, 2> dphiT_quadT = elquad.get_dphiT_quadT();
 The [HHO3D](@ref HHO3D) module provides typedefs, a class and functions to implement Hybrid High Order (HHO) schemes. Rules (functions) to create local bilinear forms (matrices) and loading terms (vectors) are passed to the HHO3D class, that takes care of the global assembly and solving of the system.
 
 <a name="ddr">
-\section ddr DDR core module
+\section ddr DDRCore module
 </a>
 
-The [DDRcore](@ref DDRcore) module provides classes and functions to implement the discrete de Rham sequence.
+The [DDRCore](@ref DDRCore) module provides classes and functions to implement the discrete de Rham (DDR) complex. This complex is based on spaces with unknowns on all geometric entities (vertices, edges, faces and cells), and discrete differential operators acting between these spaces. It is based on the principles detailed in https://arxiv.org/abs/2101.04940 and https://arxiv.org/abs/2101.04946 (see also the founding work https://doi.org/10.1142/S0218202520500372).
+
+It is built on the concepts in the [Common](@ref Common) module, in particular all the polynomial bases managed in the classes available in this module, as well as the local ordering of degrees of freedom defined by the [DOFSpace](@ref HArDCore3D::DOFSpace) class. The main elements of the DDRCore module are:
+
+  - [DDRSpace](@ref HArDCore3D::DDRSpace): class to manipulate global degrees of freedom. As [DOFSpace](#ref HArDCore3D::DOFSpace) over which it's built, this class organises the DOFs by increasing order of the mesh entities dimensions (DOFs linked to all vertices, then DOFs linked to all edges, then DOFs linked to all faces, and finally all DOFs linked to cells). These DOFs only make sense when bases of polynomial spaces have been chosen on the geometric entities (such as some of the bases created by the DDRCore class below), and correspond then to the coefficients on these bases.
+  - [DDRCore](@ref HArDCore3D::DDRCore): class to construct bases of the local polynomial spaces, on all geometric entities, that are required for DDR schemes.
+  - [XGrad](@ref HArDCore3D::XGrad), [XCurl](@ref HArDCore3D::XCurl) and [XDiv](@ref HArDCore3D::XDiv): classes to compute the discrete operators, potentials, interpolators and \f$L^2\f$-inner products associated with each space in the DDR complex. Each of these classes uses some of the bases built in DDRCore, and is built on a corresponding DDRSpace (which determines how the degrees of freedom, corresponding to the bases, are organised in the space).
+
+Note that [DDRSpace](@ref HArDCore3D::DDRSpace) could potentially be used for generic schemes (not just based on the discrete de Rham sequence), perhaps with a different ordering of the DOFs.
+
+<b>Important note</b>: a directory "DDRCore-orth" can be found in the repository. It corresponds to the DDR spaces using orthogonal complements to the images of the gradient and curl operators on polynomial spaces, as described in https://doi.org/10.1142/S0218202520500372. This directory is not commented here, and its code is not maintained any longer. The directory "DDRCore" is the one referred to in this documentation, is based on the Kozsul complements of the images of gradient and curl, as in https://arxiv.org/abs/2101.04940, and is the one that is still maintained. DDRCore-orth is only provided for comparison purposes; the complements in this directory are much more expensive to create and manipulated, as explained in https://arxiv.org/abs/2101.04946. To compile a scheme using the orthogonal complements, simply modify the main CMakeLists.txt and change all "DDRCore" into "DDRCore-orth".
 
 
 <a name="schemes">
@@ -218,9 +235,7 @@ The following schemes are currently available in HArD::Core3D. The Hybrid High-O
 
  - [DDR_magnetostatic](@ref DDR_magnetostatic): Discrete De Rham (DDR) scheme for the magnetostatic problem.
 
-The directory `runs` contains BASH to run series of tests on families of meshes. The files `data.sh` describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the `output` directory, including a pdf file `rate.pdf` describing the rates of convergence in various energy norms.
-
-To run the scripts as they are, you will need `pdflatex`.
+The directory `runs` contains BASH to run series of tests on families of meshes. The files `data.sh` describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the `output` directory, shows the convergence rate in the standard console output, and creates a pdf file `rate.pdf` describing the rates of convergence in various energy norms (you will need `pdflatex` to create this pdf file; commenting out the corresponding line is fine, the pdf will simply not be create).
 
 
 

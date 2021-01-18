@@ -35,21 +35,23 @@ namespace HArDCore3D { // Forward declaration
 }
 
 /*!     
- *       @defgroup Mesh 
+ * @defgroup Mesh 
  * @brief Classes to describe and access the elements of a 3D mesh
  */
 
 namespace HArDCore3D {
+
+  /*!
+   * @addtogroup Mesh
+   * @{
+   */
+
   /**
    * Class which represents a 3D mesh. Contains cells, faces, edges, vertices.
    */
 
   using Eigen::Vector3d;
 
-  /*!
-   *       @addtogroup Mesh
-   * @{
-   */
   // ----------------------------------------------------------------------------
   //                            Class definition
   // ----------------------------------------------------------------------------
@@ -76,10 +78,10 @@ namespace HArDCore3D {
     size_t n_b_faces() const;           ///< number of boundary faces
     size_t n_b_edges() const;           ///< number of boundary edges
     size_t n_b_vertices() const;        ///< number of boundary vertices
-    size_t n_i_cells() const;           ///< number of boundary cells
-    size_t n_i_faces() const;           ///< number of boundary faces
-    size_t n_i_edges() const;           ///< number of boundary edges
-    size_t n_i_vertices() const;        ///< number of boundary vertices
+    size_t n_i_cells() const;           ///< number of interior cells
+    size_t n_i_faces() const;           ///< number of interior faces
+    size_t n_i_edges() const;           ///< number of interior edges
+    size_t n_i_vertices() const;        ///< number of interior vertices
 
     inline std::vector<Cell*> get_cells() const;  ///< lists the cells in the mesh.
     inline std::vector<Face*> get_faces() const;  ///< lists the faces in the mesh.

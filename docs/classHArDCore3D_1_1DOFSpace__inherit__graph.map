@@ -1,0 +1,7 @@
+<map id="HArDCore3D::DOFSpace" name="HArDCore3D::DOFSpace">
+<area shape="rect" id="node1" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="153,5,327,32"/>
+<area shape="rect" id="node2" href="$classHArDCore3D_1_1DDRSpace.html" title="Base class for DDR spaces. Provides functions to manipulate global DOFs (the local version being prov..." alt="" coords="153,80,327,107"/>
+<area shape="rect" id="node3" href="$classHArDCore3D_1_1XCurl.html" title="Discrete Hcurl space: local operators, L2 product and global interpolator." alt="" coords="5,155,147,181"/>
+<area shape="rect" id="node4" href="$classHArDCore3D_1_1XDiv.html" title="Discrete Hdiv space: local operators, L2 product and global interpolator." alt="" coords="171,155,309,181"/>
+<area shape="rect" id="node5" href="$classHArDCore3D_1_1XGrad.html" title="Discrete H1 space: local operators, L2 product and global interpolator." alt="" coords="333,155,478,181"/>
+</map>

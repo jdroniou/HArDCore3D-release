@@ -22,24 +22,24 @@ typedef double {\bfseries Divergence\+Value}
 \item 
 typedef \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} {\bfseries Geometric\+Support}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, 2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ {\bfseries Jacobian\+Type}
+typedef Eigen\+::\+Matrix$<$ double, 2, dimspace $>$ {\bfseries Jacobian\+Type}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Basis_gad87f40b1e97ec1b95dcf9c56282912f3}{Monomial\+Scalar\+Basis\+Face}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F, size\+\_\+t degree)
+\mbox{\hyperlink{group__Common_gad87f40b1e97ec1b95dcf9c56282912f3}{Monomial\+Scalar\+Basis\+Face}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Basis_ga404551f2ca5ed4e605289addbc6fb9c4}{dimension}} () const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga404551f2ca5ed4e605289addbc6fb9c4}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Dimension of the basis. \end{DoxyCompactList}\item 
-Function\+Value \mbox{\hyperlink{group__Basis_ga5dcaa7bcfc2afaf3615556f83bf1076b}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Function\+Value \mbox{\hyperlink{group__Common_ga5dcaa7bcfc2afaf3615556f83bf1076b}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-Gradient\+Value \mbox{\hyperlink{group__Basis_ga25989d831b6ca783612bc54ce0f25b66}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Gradient\+Value \mbox{\hyperlink{group__Common_ga25989d831b6ca783612bc54ce0f25b66}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-Curl\+Value \mbox{\hyperlink{group__Basis_gaadba906ff906d86d97cfcc1a5fbc505f}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
+Curl\+Value \mbox{\hyperlink{group__Common_gaadba906ff906d86d97cfcc1a5fbc505f}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the two-\/dimensional curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-const Vector\+Rd \& \mbox{\hyperlink{group__Basis_ga299c04e82954cd6bd69a31de664d1150}{normal}} () const
+const Vector\+Rd \& \mbox{\hyperlink{group__Common_ga299c04e82954cd6bd69a31de664d1150}{normal}} () const
 \begin{DoxyCompactList}\small\item\em Return the normal to the face used in the computation of the curl. \end{DoxyCompactList}\item 
-const Jacobian\+Type \& \mbox{\hyperlink{group__Basis_gaa8a841d7f31dd65d0dc3aeae6d3283c6}{jacobian}} () const
+const Jacobian\+Type \& \mbox{\hyperlink{group__Common_gaa8a841d7f31dd65d0dc3aeae6d3283c6}{jacobian}} () const
 \begin{DoxyCompactList}\small\item\em Return the Jacobian of the coordinate system transformation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}

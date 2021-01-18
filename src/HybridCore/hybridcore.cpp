@@ -23,9 +23,9 @@ UVector::UVector(const Eigen::VectorXd values, const Mesh& mesh, const int cell_
     m_mesh(mesh), 
     m_cell_deg(cell_deg),
     m_face_deg(face_deg)
-  {
-    // Do nothing
-  }
+{
+  // Do nothing
+}
 
 Eigen::VectorXd UVector::restr(size_t iT) const{
   Cell* cell = m_mesh.cell(iT);
@@ -61,69 +61,69 @@ HybridCore::HybridCore(const Mesh* mesh_ptr, const int cell_deg, const size_t fa
     m_ortho(ortho),
     m_cell_basis(mesh_ptr->n_cells()),
     m_face_basis(mesh_ptr->n_faces()),
-    m_edge_basis(mesh_ptr->n_edges()),
-    _offset_doe(0)        {
+    m_edge_basis(mesh_ptr->n_edges())
+{
   m_output << "[HybridCore] Construction" << (m_use_threads ? " (multi-threading)" : "") << (m_ortho ? " (orthonormalised basis functions)" : "") << "\n";
   // Create cell bases
   std::function<void(size_t, size_t)> construct_all_cell_basis
     =[&] (size_t start, size_t end)->void 
-    {  
-      for (size_t iT = start; iT < end; iT++){
-        m_cell_basis[iT].reset( new PolyCellBasisType(_construct_cell_basis(iT)) );
-      }
-    };
+     {  
+       for (size_t iT = start; iT < end; iT++){
+         m_cell_basis[iT].reset( new PolyCellBasisType(_construct_cell_basis(iT)) );
+       }
+     };
   parallel_for(mesh_ptr->n_cells(), construct_all_cell_basis, m_use_threads);
 
   // Create face bases
   std::function<void(size_t, size_t)> construct_all_face_basis
     =[&] (size_t start, size_t end)->void 
-    {  
-      for (size_t iF = start; iF < end; iF++){
-        m_face_basis[iF].reset( new PolyFaceBasisType(_construct_face_basis(iF)) );
-      }
-    };
+     {  
+       for (size_t iF = start; iF < end; iF++){
+         m_face_basis[iF].reset( new PolyFaceBasisType(_construct_face_basis(iF)) );
+       }
+     };
   parallel_for(mesh_ptr->n_faces(), construct_all_face_basis, m_use_threads);
 
   // Create edge bases
   std::function<void(size_t, size_t)> construct_all_edge_basis
     =[&] (size_t start, size_t end)->void 
-    {  
-      for (size_t iE = start; iE < end; iE++){
-        m_edge_basis[iE].reset( new PolyEdgeBasisType(_construct_edge_basis(iE)) );
-      }
-    };
+     {  
+       for (size_t iE = start; iE < end; iE++){
+         m_edge_basis[iE].reset( new PolyEdgeBasisType(_construct_edge_basis(iE)) );
+       }
+     };
   if (m_edge_deg >=0 ){
     parallel_for(mesh_ptr->n_edges(), construct_all_edge_basis, m_use_threads);
   }
 
 }
 
-// -------------------------------------------------------------
-// ------- Construction of cell, face and edge basis functions
-// -------------------------------------------------------------
+    // -------------------------------------------------------------
+    // ------- Construction of cell, face and edge basis functions
+    // -------------------------------------------------------------
 
 
-HybridCore::PolyCellBasisType HybridCore::_construct_cell_basis(size_t iT)
-{
-  const Cell & T = *m_mesh->cell(iT);
+    HybridCore::PolyCellBasisType HybridCore::_construct_cell_basis(size_t iT)
+    {
+      const Cell & T = *m_mesh->cell(iT);
 
-  // Basis of monomials
-  MonomialScalarBasisCell basis_mono_T(T, m_cell_deg_pos);
+      // Basis of monomials
+      MonomialScalarBasisCell basis_mono_T(T, m_cell_deg_pos);
 
-  // We construct the non-orthonormalised basis (same as above but as a "Family")
-  Eigen::MatrixXd B = Eigen::MatrixXd::Identity(basis_mono_T.dimension(), basis_mono_T.dimension());
-  PolyCellBasisType CellBasis(basis_mono_T, B);
+      // We construct the non-orthonormalised basis (same as above but as a "Family")
+      Eigen::MatrixXd B = Eigen::MatrixXd::Identity(basis_mono_T.dimension(), basis_mono_T.dimension());
+      PolyCellBasisType CellBasis(basis_mono_T, B);
   
-  // Orthonormalisation
-  if (m_ortho){
-    QuadratureRule quadT = generate_quadrature_rule(T, 2 * m_cell_deg_pos);
-    auto basis_mono_T_quadT = evaluate_quad<Function>::compute(basis_mono_T, quadT);
-    CellBasis = l2_orthonormalize(basis_mono_T, quadT, basis_mono_T_quadT);
-  }
+      // Orthonormalisation
+      if (m_ortho){
+        QuadratureRule quadT = generate_quadrature_rule(T, 2 * m_cell_deg_pos);
+        auto basis_mono_T_quadT = evaluate_quad<Function>::compute(basis_mono_T, quadT);
+        CellBasis = l2_orthonormalize(basis_mono_T, quadT, basis_mono_T_quadT);
+      }
 
-  return CellBasis;
+      return CellBasis;
 
-}
+    }
 
 HybridCore::PolyFaceBasisType HybridCore::_construct_face_basis(size_t iF)
 {
@@ -205,7 +205,7 @@ double HybridCore::L2norm(const UVector &Xh) const {
   Eigen::ArrayXd cell_norm = Eigen::ArrayXd::Zero(m_mesh->n_cells());
 
   std::function<void(size_t, size_t)> compute_local_norms
-      = [&](size_t start, size_t end)->void
+    = [&](size_t start, size_t end)->void
       {
         for (size_t iT = start; iT < end; iT++) {
           // L2 norm computed using the mass matrix
@@ -235,7 +235,7 @@ double HybridCore::H1norm(const UVector &Xh) const {
   int face_deg = Xh.get_face_deg();
 
   std::function<void(size_t, size_t)> compute_local_norms
-      = [&](size_t start, size_t end)->void
+    = [&](size_t start, size_t end)->void
       {
         for (size_t iT = start; iT < end; iT++) {
           Cell* cell = m_mesh->cell(iT);
@@ -253,7 +253,7 @@ double HybridCore::H1norm(const UVector &Xh) const {
           //
           // Stiffness matrix
           H1aT.topLeftCorner(n_cell_dofs, n_cell_dofs) = 
-              compute_gram_matrix(dphiT_quadT, dphiT_quadT, quadT, n_cell_dofs, n_cell_dofs, "sym");
+            compute_gram_matrix(dphiT_quadT, dphiT_quadT, quadT, n_cell_dofs, n_cell_dofs, "sym");
 
 
           // FACES CONTRIBUTION               
@@ -285,7 +285,7 @@ double HybridCore::H1norm(const UVector &Xh) const {
           Eigen::VectorXd XTF = Xh.restr(iT);
           cell_norm[iT] = XTF.transpose() * H1aT * XTF;
         }
-       };
+      };
 
   parallel_for(m_mesh->n_cells(), compute_local_norms, m_use_threads);
 

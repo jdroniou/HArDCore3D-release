@@ -94,7 +94,6 @@ namespace HArDCore3D {
 
   private:
     size_t _iC;         ///< cell global index
-    Mesh *_mesh;                     ///< pointer to the owner mesh
     std::vector<Face *> _faces;      ///< list of cell faces
     std::vector<Edge *> _edges;      ///< list of cell edges
     std::vector<Vertex *> _vertices;      ///< a list of cell vertices

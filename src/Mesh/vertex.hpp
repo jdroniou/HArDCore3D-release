@@ -77,7 +77,6 @@ public:
 
 private:
     size_t _iV;
-    Mesh *_mesh;
 		Vector3d _coords;
     std::vector<Cell *> _cells;
     std::vector<Face *> _faces;

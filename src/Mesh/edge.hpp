@@ -20,7 +20,7 @@ namespace HArDCore3D {  // forward declaration
 namespace HArDCore3D {
   using Eigen::Vector3d;
   /*!
-   *       @addtogroup Mesh
+   * @addtogroup Mesh
    * @{
    */
 
@@ -62,7 +62,7 @@ namespace HArDCore3D {
     Cell *cell(size_t i) const;  ///< returns pointer to the i-th cell neighbour of the edge
     Face *face(size_t i) const;  ///< returns pointer to the i-th face neighbour of the edge
     Vertex *vertex(size_t i) const;  ///< returns a pointer to the i-th vertex of the edge
-    size_t index_vertex(Vertex* V) const; ///< reciprocal of vertex(i): returns the local index of vertex V in the edge
+    size_t index_vertex(const Vertex* V) const; ///< reciprocal of vertex(i): returns the local index of vertex V in the edge
 
     inline double measure() const;   ///< length of the edge
     inline double diam() const;   ///< length of the edge
@@ -82,7 +82,6 @@ namespace HArDCore3D {
 
   private:
     size_t _iE;
-    Mesh *_mesh;
     bool _boundary;
     std::vector<Cell *> _cells;
     std::vector<Face *> _faces;

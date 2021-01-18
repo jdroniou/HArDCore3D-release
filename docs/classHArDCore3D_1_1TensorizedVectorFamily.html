@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -62,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a></li>  </ul>
+<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,9 +79,12 @@ $(function() {
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classHArDCore3D_1_1TensorizedVectorFamily-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Basis.html">Basis</a></div></div>  </div>
+<div class="title">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Common.html">Common</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Vector family obtained by tensorization of a scalar family.  
+ <a href="classHArDCore3D_1_1TensorizedVectorFamily.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="basis_8hpp_source.html">basis.hpp</a>&gt;</code></p>
 <table class="memberdecls">
@@ -84,7 +94,7 @@ Public Types</h2></td></tr>
 typedef Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FunctionValue</b></td></tr>
 <tr class="separator:ga5a0fe2c82baec8624b201a536551fba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga882d73f02d56827fc7f051ebf2a6befb"><td class="memItemLeft" align="right" valign="top">
-typedef Eigen::Matrix&lt; double, N, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GradientValue</b></td></tr>
+typedef Eigen::Matrix&lt; double, N, dimspace &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GradientValue</b></td></tr>
 <tr class="separator:ga882d73f02d56827fc7f051ebf2a6befb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2a99d3ad58e081c33fe712c019b0d704"><td class="memItemLeft" align="right" valign="top">
 typedef VectorRd&#160;</td><td class="memItemRight" valign="bottom"><b>CurlValue</b></td></tr>
@@ -102,25 +112,45 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TensorizedVectorFamily</b> (const ScalarFamilyType &amp;scalar_family)</td></tr>
 <tr class="separator:ga2f34ec8677412c819a7a49b91401c70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f8e17599e9b38b58ef247317783c51f"><td class="memItemLeft" align="right" valign="top">
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga1f8e17599e9b38b58ef247317783c51f">dimension</a> () const</td></tr>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga1f8e17599e9b38b58ef247317783c51f">dimension</a> () const</td></tr>
 <tr class="memdesc:ga1f8e17599e9b38b58ef247317783c51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimension of the family. <br /></td></tr>
 <tr class="separator:ga1f8e17599e9b38b58ef247317783c51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac34ef60810b5d9641458c640bb66b3b4"><td class="memItemLeft" align="right" valign="top">
-FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gac34ef60810b5d9641458c640bb66b3b4">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gac34ef60810b5d9641458c640bb66b3b4">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:gac34ef60810b5d9641458c640bb66b3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:gac34ef60810b5d9641458c640bb66b3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2a76b33d6046e1bd46409ec3aacbd425"><td class="memItemLeft" align="right" valign="top">
+FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2a76b33d6046e1bd46409ec3aacbd425">function</a> (size_t i, size_t iqn, const boost::multi_array&lt; double, 2 &gt; &amp;ancestor_value_quad) const</td></tr>
+<tr class="memdesc:ga2a76b33d6046e1bd46409ec3aacbd425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at a quadrature point iqn, knowing all the values of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="separator:ga2a76b33d6046e1bd46409ec3aacbd425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga42238c95ed27a327d0291c67a1c6196b"><td class="memItemLeft" align="right" valign="top">
-GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga42238c95ed27a327d0291c67a1c6196b">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga42238c95ed27a327d0291c67a1c6196b">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga42238c95ed27a327d0291c67a1c6196b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:ga42238c95ed27a327d0291c67a1c6196b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga77afc35bfef1864de71abdb78d6a9c36"><td class="memItemLeft" align="right" valign="top">
+GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga77afc35bfef1864de71abdb78d6a9c36">gradient</a> (size_t i, size_t iqn, const boost::multi_array&lt; VectorRd, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
+<tr class="memdesc:ga77afc35bfef1864de71abdb78d6a9c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="separator:ga77afc35bfef1864de71abdb78d6a9c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2ed39faecc4dbb67d0ec8125f9a61366"><td class="memItemLeft" align="right" valign="top">
-CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga2ed39faecc4dbb67d0ec8125f9a61366">curl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2ed39faecc4dbb67d0ec8125f9a61366">curl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga2ed39faecc4dbb67d0ec8125f9a61366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:ga2ed39faecc4dbb67d0ec8125f9a61366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga607c5bdebb107065e41883e46f1bfc13"><td class="memItemLeft" align="right" valign="top">
+CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga607c5bdebb107065e41883e46f1bfc13">curl</a> (size_t i, size_t iqn, const boost::multi_array&lt; VectorRd, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
+<tr class="memdesc:ga607c5bdebb107065e41883e46f1bfc13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="separator:ga607c5bdebb107065e41883e46f1bfc13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7c792e5a5a1c364a53d9da3ac7d4ba11"><td class="memItemLeft" align="right" valign="top">
-DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga7c792e5a5a1c364a53d9da3ac7d4ba11">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga7c792e5a5a1c364a53d9da3ac7d4ba11">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga7c792e5a5a1c364a53d9da3ac7d4ba11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:ga7c792e5a5a1c364a53d9da3ac7d4ba11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf8de8320203975aa548709d455a6ec4"><td class="memItemLeft" align="right" valign="top">
+DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaaf8de8320203975aa548709d455a6ec4">divergence</a> (size_t i, size_t iqn, const boost::multi_array&lt; VectorRd, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
+<tr class="memdesc:gaaf8de8320203975aa548709d455a6ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="separator:gaaf8de8320203975aa548709d455a6ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa98332fb236225d4e17bc64aecf1eb30"><td class="memItemLeft" align="right" valign="top">
+const ScalarFamilyType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaa98332fb236225d4e17bc64aecf1eb30">ancestor</a> () const</td></tr>
+<tr class="memdesc:gaa98332fb236225d4e17bc64aecf1eb30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ancestor (family that has been tensorized) <br /></td></tr>
+<tr class="separator:gaa98332fb236225d4e17bc64aecf1eb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -134,20 +164,21 @@ static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasFunct
 static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasGradient</b> = ScalarFamilyType::hasGradient</td></tr>
 <tr class="separator:gad979bfdf5ecf01b03fe58afa3a367319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf7b0b7d38444c6f5948a7af77f54cb76"><td class="memItemLeft" align="right" valign="top">
-static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasDivergence</b> = (ScalarFamilyType::hasGradient &amp;&amp; N == <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a>)</td></tr>
+static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasDivergence</b> = (ScalarFamilyType::hasGradient &amp;&amp; N == dimspace)</td></tr>
 <tr class="separator:gaf7b0b7d38444c6f5948a7af77f54cb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac508be3ba29add3055e394ea73413f3d"><td class="memItemLeft" align="right" valign="top">
-static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasCurl</b> = (ScalarFamilyType::hasGradient &amp;&amp; N == <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a>)</td></tr>
+static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasCurl</b> = (ScalarFamilyType::hasGradient &amp;&amp; N == dimspace)</td></tr>
 <tr class="separator:gac508be3ba29add3055e394ea73413f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename ScalarFamilyType, size_t N&gt;<br />
 class HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</h3>
 
-<p>Vector family obtained by tensorization of a scalar family. The tensorization is done the following way: if (f_1,...,f_r) is the family of scalar functions, the tensorized family of rank N is given by (where all vectors are columns of size N):</p>
-<p><img class="formulaInl" alt="$\left(\begin{array}{c}f_1\\0\\\vdots\\0\end{array}\right)$" src="form_14.png"/>; <img class="formulaInl" alt="$\left(\begin{array}{c}f_2\\0\\\vdots\\0\end{array}\right)$" src="form_15.png"/>;...; <img class="formulaInl" alt="$\left(\begin{array}{c}f_r\\0\\\vdots\\0\end{array}\right)$" src="form_16.png"/>; <img class="formulaInl" alt="$\left(\begin{array}{c}0\\f_1\\0\\\vdots\\0\end{array}\right)$" src="form_17.png"/>; <img class="formulaInl" alt="$\left(\begin{array}{c}0\\f_2\\0\\\vdots\\0\end{array}\right)$" src="form_18.png"/>;...; <img class="formulaInl" alt="$\left(\begin{array}{c}0\\f_r\\0\\\vdots\\0\end{array}\right)$" src="form_19.png"/>;...; <img class="formulaInl" alt="$\left(\begin{array}{c}0\\\vdots\\0\\f_1\end{array}\right)$" src="form_20.png"/>;...; <img class="formulaInl" alt="$\left(\begin{array}{c}0\\\vdots\\0\\f_r\end{array}\right)$" src="form_21.png"/></p>
+<p>Vector family obtained by tensorization of a scalar family. </p>
+<p>The tensorization is done the following way: if (f_1,...,f_r) is the family of scalar functions, the tensorized family of rank N is given by (where all vectors are columns of size N):</p>
+<p>\(\left(\begin{array}{c}f_1\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}f_2\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}f_r\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}0\\f_1\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}0\\f_2\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}0\\f_r\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}0\\\vdots\\0\\f_1\end{array}\right)\);...; \(\left(\begin{array}{c}0\\\vdots\\0\\f_r\end{array}\right)\)</p>
 <p>The gradient values are therefore matrices of size N*r, where the gradients of the scalar functions are put in rows:</p>
-<p><img class="formulaInl" alt="$\left(\begin{array}{c}(\nabla f_1)^t\\0\\\vdots\\0\end{array}\right)$" src="form_22.png"/>; <img class="formulaInl" alt="$\left(\begin{array}{c}(\nabla f_2)^t\\0\\\vdots\\0\end{array}\right)$" src="form_23.png"/>;...; <img class="formulaInl" alt="$\left(\begin{array}{c}(\nabla f_r)^t\\0\\\vdots\\0\end{array}\right)$" src="form_24.png"/>; <img class="formulaInl" alt="$\left(\begin{array}{c}0\\(\nabla f_1)^t\\0\\\vdots\\0\end{array}\right)$" src="form_25.png"/>; <img class="formulaInl" alt="$\left(\begin{array}{c}0\\(\nabla f_2)^t\\0\\\vdots\\0\end{array}\right)$" src="form_26.png"/>;...; <img class="formulaInl" alt="$\left(\begin{array}{c}0\\(\nabla f_r)^t\\0\\\vdots\\0\end{array}\right)$" src="form_27.png"/>;...; <img class="formulaInl" alt="$\left(\begin{array}{c}0\\\vdots\\0\\(\nabla f_1)^t\end{array}\right)$" src="form_28.png"/>;...; <img class="formulaInl" alt="$\left(\begin{array}{c}0\\\vdots\\0\\(\nabla f_r)^t\end{array}\right)$" src="form_29.png"/> </p>
+<p>\(\left(\begin{array}{c}(\nabla f_1)^t\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}(\nabla f_2)^t\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}(\nabla f_r)^t\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}0\\(\nabla f_1)^t\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}0\\(\nabla f_2)^t\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}0\\(\nabla f_r)^t\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}0\\\vdots\\0\\(\nabla f_1)^t\end{array}\right)\);...; \(\left(\begin{array}{c}0\\\vdots\\0\\(\nabla f_r)^t\end{array}\right)\) </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Common/<a class="el" href="basis_8hpp_source.html">basis.hpp</a></li>
 </ul>

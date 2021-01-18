@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">HArD::Core3D
    </div>
-   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with edge and cell polynomials as unknowns</div>
+   <div id="projectbrief">Hybrid Arbitrary Degree::Core 3D - Library to implement 3D schemes with vertex, edge, face and cell polynomials as unknowns</div>
   </td>
  </tr>
  </tbody>
@@ -97,7 +104,7 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;mesh.hpp&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using namespace </span>HArDCore3D;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//                            Class definition</span></div>
@@ -147,8 +154,7 @@ $(function() {
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif //_BOUNDARY_CONDITION_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassHArDCore3D_1_1Mesh_html"><div class="ttname"><a href="classHArDCore3D_1_1Mesh.html">HArDCore3D::Mesh</a></div><div class="ttdoc">The Mesh class provides description of a mesh.</div><div class="ttdef"><b>Definition:</b> mesh.hpp:59</div></div>
-<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdoc">Classes to describe and access the elements of a 3D mesh.</div><div class="ttdef"><b>Definition:</b> l2projection.hpp:1</div></div>
+<div class="ttc" id="aclassHArDCore3D_1_1Mesh_html"><div class="ttname"><a href="classHArDCore3D_1_1Mesh.html">HArDCore3D::Mesh</a></div><div class="ttdoc">The Mesh class provides description of a mesh.</div><div class="ttdef"><b>Definition:</b> mesh.hpp:61</div></div>
 <div class="ttc" id="aclassBoundaryConditions_html_ac3609733d5e7e43e9240d0a8b05d17ba"><div class="ttname"><a href="classBoundaryConditions.html#ac3609733d5e7e43e9240d0a8b05d17ba">BoundaryConditions::name</a></div><div class="ttdeci">const std::string name() const</div><div class="ttdoc">Returns the complete name of the boundary condition.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.hpp:68</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1Face_html"><div class="ttname"><a href="classHArDCore3D_1_1Face.html">HArDCore3D::Face</a></div><div class="ttdoc">The Face class provides description of an edge.</div><div class="ttdef"><b>Definition:</b> face.hpp:32</div></div>
 <div class="ttc" id="aclassBoundaryConditions_html"><div class="ttname"><a href="classBoundaryConditions.html">BoundaryConditions</a></div><div class="ttdoc">The BoundaryConditions class provides definition of boundary conditions.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.hpp:43</div></div>

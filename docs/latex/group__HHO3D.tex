@@ -41,15 +41,15 @@ void \mbox{\hyperlink{group__HHO3D_gae58bdad281ef8980a8a3ab527c4066f7}{H\+H\+O3\
 \mbox{\Hypertarget{group__HHO3D_ga900c704c67fc0dff437a377e19a18017}\label{group__HHO3D_ga900c704c67fc0dff437a377e19a18017}} 
 void \mbox{\hyperlink{group__HHO3D_ga900c704c67fc0dff437a377e19a18017}{H\+H\+O3\+D\+::set\+\_\+load\+\_\+vector}} (const \mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \&)
 \begin{DoxyCompactList}\small\item\em Set the load vector. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__HHO3D_ga90c52326056fd34a01bae961af6173de}{H\+H\+O3\+D\+::plot}} (const std\+::string, const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&, const \mbox{\hyperlink{group__Basis_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&)
+void \mbox{\hyperlink{group__HHO3D_ga90c52326056fd34a01bae961af6173de}{H\+H\+O3\+D\+::plot}} (const std\+::string, const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&, const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&)
 \begin{DoxyCompactList}\small\item\em Plot the numerical and exact solutions. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \mbox{\hyperlink{group__HHO3D_gaf67d049ac7cf172cfaf81e95772d891d}{H\+H\+O3\+D\+::standard\+\_\+load\+\_\+vector}} (const Cell\+F\+Type$<$ double $>$ \&)
 \begin{DoxyCompactList}\small\item\em Returns the standard load vector (f, v\+\_\+T)\+\_\+T with no Neumann boundary conditions. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \mbox{\hyperlink{group__HHO3D_ga643e5c8c486212fc65eac391648c0bf9}{H\+H\+O3\+D\+::standard\+\_\+load\+\_\+vector}} (const Cell\+F\+Type$<$ double $>$ \&, const Cell\+F\+Type$<$ Vector\+Rd $>$ \&, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&)
 \begin{DoxyCompactList}\small\item\em Returns the standard load vector (f, v\+\_\+T)\+\_\+T. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \mbox{\hyperlink{group__HHO3D_gacb59e83557de3bc5266ddfa7bd7fd481}{H\+H\+O3\+D\+::standard\+\_\+load\+\_\+vector}} (const Cell\+F\+Type$<$ double $>$ \&, const \mbox{\hyperlink{group__Basis_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&)
+\mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \mbox{\hyperlink{group__HHO3D_gacb59e83557de3bc5266ddfa7bd7fd481}{H\+H\+O3\+D\+::standard\+\_\+load\+\_\+vector}} (const Cell\+F\+Type$<$ double $>$ \&, const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&)
 \begin{DoxyCompactList}\small\item\em Returns the standard load vector (f, v\+\_\+T)\+\_\+T. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__HHO3D_ga2230426ff92810893168177ddd623f35}{H\+H\+O3\+D\+::set\+\_\+dirichlet}} (const \mbox{\hyperlink{group__Basis_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&, const size\+\_\+t)
+void \mbox{\hyperlink{group__HHO3D_ga2230426ff92810893168177ddd623f35}{H\+H\+O3\+D\+::set\+\_\+dirichlet}} (const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&, const size\+\_\+t)
 \begin{DoxyCompactList}\small\item\em Set the Dirichlet boundary conditions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__HHO3D_ga1dc0ef5581cfb16964e86963086f0d4d}{H\+H\+O3\+D\+::set\+\_\+dirichlet}} (const size\+\_\+t)
 \begin{DoxyCompactList}\small\item\em Set the Dirichlet boundary condition to zero. \end{DoxyCompactList}\item 
@@ -115,7 +115,7 @@ Class constructor\+: initialises the model by providing a Hybrid\+Core object, a
 \index{HHO3D@{HHO3D}!plot@{plot}}
 \index{plot@{plot}!HHO3D@{HHO3D}}
 \doxysubsubsection{\texorpdfstring{plot()}{plot()}}
-{\footnotesize\ttfamily void H\+H\+O3\+D\+::plot (\begin{DoxyParamCaption}\item[{const std\+::string}]{plot\+\_\+file,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&}]{sol,  }\item[{const \mbox{\hyperlink{group__Basis_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&}]{exact\+\_\+sol }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void H\+H\+O3\+D\+::plot (\begin{DoxyParamCaption}\item[{const std\+::string}]{plot\+\_\+file,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&}]{sol,  }\item[{const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&}]{exact\+\_\+sol }\end{DoxyParamCaption})}
 
 
 
@@ -134,7 +134,7 @@ Plot the numerical and exact solutions.
 \index{HHO3D@{HHO3D}!set\_dirichlet@{set\_dirichlet}}
 \index{set\_dirichlet@{set\_dirichlet}!HHO3D@{HHO3D}}
 \doxysubsubsection{\texorpdfstring{set\_dirichlet()}{set\_dirichlet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void H\+H\+O3\+D\+::set\+\_\+dirichlet (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Basis_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&}]{f,  }\item[{const size\+\_\+t}]{n\+\_\+dir\+\_\+faces }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void H\+H\+O3\+D\+::set\+\_\+dirichlet (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&}]{f,  }\item[{const size\+\_\+t}]{n\+\_\+dir\+\_\+faces }\end{DoxyParamCaption})}
 
 
 
@@ -200,7 +200,7 @@ Returns the standard load vector (f, v\+\_\+T)\+\_\+T.
 \index{HHO3D@{HHO3D}!standard\_load\_vector@{standard\_load\_vector}}
 \index{standard\_load\_vector@{standard\_load\_vector}!HHO3D@{HHO3D}}
 \doxysubsubsection{\texorpdfstring{standard\_load\_vector()}{standard\_load\_vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} H\+H\+O3\+D\+::standard\+\_\+load\+\_\+vector (\begin{DoxyParamCaption}\item[{const Cell\+F\+Type$<$ double $>$ \&}]{source,  }\item[{const \mbox{\hyperlink{group__Basis_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} H\+H\+O3\+D\+::standard\+\_\+load\+\_\+vector (\begin{DoxyParamCaption}\item[{const Cell\+F\+Type$<$ double $>$ \&}]{source,  }\item[{const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ double $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&}]{BC }\end{DoxyParamCaption})}
 
 
 
