@@ -30,7 +30,7 @@ cmake ..
 make
 ```
 
-After this, `build/Schemes` will contain the executables (e.g. `hho-diffusion`) to run the schemes. These executables need to access the typ2 meshes, which they should naturally find if you put the `typ2_meshes` directory at the root of the project's files.
+After this, `build/Schemes` will contain the executables (e.g. `hho-diffusion`) to run the schemes. These executables need to access the meshes, which they should naturally find if you have left the `meshes` directory at the root of the project's files.
 
 
 
