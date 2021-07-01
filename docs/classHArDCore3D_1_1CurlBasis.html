@@ -120,12 +120,19 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga5476b7c9f36899f48fdb549f25974b27">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga5476b7c9f36899f48fdb549f25974b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:ga5476b7c9f36899f48fdb549f25974b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga374cf617bb34d3952d2bbe3f0cf05857"><td class="memItemLeft" align="right" valign="top">
+constexpr const BasisType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga374cf617bb34d3952d2bbe3f0cf05857">ancestor</a> () const</td></tr>
+<tr class="memdesc:ga374cf617bb34d3952d2bbe3f0cf05857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ancestor (basis that the gradient was taken of) <br /></td></tr>
+<tr class="separator:ga374cf617bb34d3952d2bbe3f0cf05857"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ga27d5f76ff419fbc0e1ce3200bf60d5af"><td class="memItemLeft" align="right" valign="top">
-static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = Vector</td></tr>
-<tr class="separator:ga27d5f76ff419fbc0e1ce3200bf60d5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85dd7d93d82b13c5026435f1f4a8dc6d"><td class="memItemLeft" align="right" valign="top">
+constexpr static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = Vector</td></tr>
+<tr class="separator:ga85dd7d93d82b13c5026435f1f4a8dc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3108160b370b596b417b3fee42148ecc"><td class="memItemLeft" align="right" valign="top">
+constexpr static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasAncestor</b> = true</td></tr>
+<tr class="separator:ga3108160b370b596b417b3fee42148ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa3dddcba9bc2d51963ad399f3187037f"><td class="memItemLeft" align="right" valign="top">
 static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasFunction</b> = true</td></tr>
 <tr class="separator:gaa3dddcba9bc2d51963ad399f3187037f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,7 +151,7 @@ static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasDiver
 class HArDCore3D::CurlBasis&lt; BasisType &gt;</h3>
 
 <p>Basis for the space of curls of polynomials. </p>
-<p>To construct a basis of R^k, assumes that the vector basis from which it is constructed is a basis for G^{k+1,c} (in 3D) or P^{k+1}/P^0 (in 2D) </p>
+<p>To construct a basis of R^k, assumes that the vector basis from which it is constructed is a basis for G^{k+1,c} (in 3D) or P^{k+1}/P^0 (in 2D). This can also be used to create a family of curl (not necessarily linearly independent) </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Common/<a class="el" href="basis_8hpp_source.html">basis.hpp</a></li>
 </ul>

@@ -29,8 +29,10 @@ typedef Basis\+Type\+::\+Geometric\+Support {\bfseries Geometric\+Support}
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Common_gaf281956665b32bc8613043e4f303182e}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Return the dimension of the basis. \end{DoxyCompactList}\item 
-const Basis\+Type \& \mbox{\hyperlink{group__Common_ga69735cd402a3190ebd982269f4cb1582}{ancestor}} () const
+constexpr const Basis\+Type \& \mbox{\hyperlink{group__Common_ga992e1072f409f356ee437ab57a9d195a}{ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the underlying complete basis. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gafea55bfd37fcfe53c1b6ebe6a9212df8}{max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 Function\+Value \mbox{\hyperlink{group__Common_gacb26aa08f1f3d62deb174e82dc9c2046}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 Gradient\+Value \mbox{\hyperlink{group__Common_gae191627737010694521dc5aae42744cd}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
@@ -42,7 +44,9 @@ Divergence\+Value \mbox{\hyperlink{group__Common_ga06c5ecd7cb9ce4c52891c355a5dc2
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const Tensor\+RankE {\bfseries tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+constexpr static const Tensor\+RankE {\bfseries tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+\item 
+constexpr static const bool {\bfseries has\+Ancestor} = true
 \item 
 static const bool {\bfseries has\+Function} = Basis\+Type\+::has\+Function
 \item 

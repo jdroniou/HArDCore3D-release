@@ -103,7 +103,7 @@ typedef Eigen::Matrix&lt; double, dimspace, dimspace &gt;&#160;</td><td class="m
 typedef double&#160;</td><td class="memItemRight" valign="bottom"><b>DivergenceValue</b></td></tr>
 <tr class="separator:ga073abdc299819b6aa71f8ef679f71e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf5ced8758911390c4eed54ba6bb41b6e"><td class="memItemLeft" align="right" valign="top">
-typedef <a class="el" href="classHArDCore3D_1_1Face.html">Face</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GeometricSupport</b></td></tr>
+typedef Face&#160;</td><td class="memItemRight" valign="bottom"><b>GeometricSupport</b></td></tr>
 <tr class="separator:gaf5ced8758911390c4eed54ba6bb41b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0cbdf6618e91e09a34adef7f0cef48d8"><td class="memItemLeft" align="right" valign="top">
 typedef Eigen::Matrix&lt; double, 2, dimspace &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>JacobianType</b></td></tr>
@@ -111,7 +111,7 @@ typedef Eigen::Matrix&lt; double, 2, dimspace &gt;&#160;</td><td class="memItemR
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:gafa1a983e06c624057325da3f15d24f26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gafa1a983e06c624057325da3f15d24f26">GolyComplBasisFace</a> (const <a class="el" href="classHArDCore3D_1_1Face.html">Face</a> &amp;F, size_t degree)</td></tr>
+<tr class="memitem:gafa1a983e06c624057325da3f15d24f26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gafa1a983e06c624057325da3f15d24f26">GolyComplBasisFace</a> (const Face &amp;F, size_t degree)</td></tr>
 <tr class="memdesc:gafa1a983e06c624057325da3f15d24f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Common.html#gafa1a983e06c624057325da3f15d24f26">More...</a><br /></td></tr>
 <tr class="separator:gafa1a983e06c624057325da3f15d24f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6e854d4617a587f4ada2e8520dd8370e"><td class="memItemLeft" align="right" valign="top">
@@ -129,9 +129,12 @@ const VectorRd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:gac51db534b0a29f0006a8973a07459bb1"><td class="memItemLeft" align="right" valign="top">
-static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = Vector</td></tr>
-<tr class="separator:gac51db534b0a29f0006a8973a07459bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5108b9354f683ae7be935a4ceb9569bd"><td class="memItemLeft" align="right" valign="top">
+constexpr static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = Vector</td></tr>
+<tr class="separator:ga5108b9354f683ae7be935a4ceb9569bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c913291ec4bab40fad06b27b1f464f8"><td class="memItemLeft" align="right" valign="top">
+constexpr static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasAncestor</b> = false</td></tr>
+<tr class="separator:ga7c913291ec4bab40fad06b27b1f464f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga85658a58babb166b5460b736de871ba4"><td class="memItemLeft" align="right" valign="top">
 static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasFunction</b> = true</td></tr>
 <tr class="separator:ga85658a58babb166b5460b736de871ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>

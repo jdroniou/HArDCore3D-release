@@ -30,8 +30,12 @@ typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} 
 void \mbox{\hyperlink{group__DDR__magnetostatic_gad138164f173610fb861cef714646edae}{assemble\+Linear\+System}} (const Forcing\+Term\+Type \&f, const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Permeability\+Type}} \&mu, const Solution\+Potential\+Type \&u)
 \begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
  \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}{dimension}} () const
-\begin{DoxyCompactList}\small\item\em Returns the global problem dimension. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga9d4739fa01b264a573909bb69488487f}{dimension\+Space}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the magnetic field + potential space. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga4a501f243a498fd6567c2b7b71c9be98}{nb\+S\+C\+D\+O\+Fs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (here, the cell magnetic field D\+O\+Fs) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_gab9bdfe696d9b36cca0546e85ee73eed4}{size\+System}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the statically condensed system. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga19b0cd652147b495285bece47378342c}{x\+Curl}} () const
 \begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}}. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36d240d6810c180781c7a2615a7f914e}{x\+Div}} () const
@@ -48,6 +52,10 @@ const double \& \mbox{\hyperlink{group__DDR__magnetostatic_gaa900b40958daa559bdf
 \begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
 double \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}{stabilization\+Parameter}} ()
 \begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+const System\+Matrix\+Type \& \mbox{\hyperlink{group__DDR__magnetostatic_ga7c5f649d4c5d14b11f52033b4cfff644}{sc\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the static condensation recovery operator. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__magnetostatic_gac5cc8800c0cea12e57a31a8f97f58ce7}{sc\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the static condensation rhs. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__DDR__magnetostatic_ga26c61a8a5522d09c07d2a20eecb15925}{compute\+Norm}} (const Eigen\+::\+Vector\+Xd \&v) const
 \begin{DoxyCompactList}\small\item\em Compute the discrete Hcurl \textbackslash{}times Hdiv norm. \end{DoxyCompactList}\end{DoxyCompactItemize}
 

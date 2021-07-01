@@ -27,9 +27,6 @@
 #include <vector>
 
 #include <mesh.hpp>
-#include <cell.hpp>
-#include <face.hpp>
-#include <edge.hpp>
 
 namespace HArDCore3D {
 

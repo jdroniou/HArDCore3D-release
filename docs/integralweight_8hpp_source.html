@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef INTEGRALWEIGHT_HPP</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define INTEGRALWEIGHT_HPP</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;cell.hpp&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;mesh.hpp&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>HArDCore3D</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
@@ -106,8 +106,8 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;       <span class="comment">// Generic constructor</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="group__Common.html#ga60ba878dc51ffe013b4cd394741d34f0">   35</a></span>&#160;        <a class="code" href="group__Common.html#ga60ba878dc51ffe013b4cd394741d34f0">IntegralWeight</a>(</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;              <span class="keyword">const</span> std::function&lt;<span class="keywordtype">double</span> (<span class="keyword">const</span> <a class="code" href="classHArDCore3D_1_1Cell.html">Cell</a> &amp; T, <span class="keyword">const</span> Eigen::Vector3d &amp; x)&gt; _value, </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;              std::function&lt;<span class="keywordtype">size_t</span> (<span class="keyword">const</span> <a class="code" href="classHArDCore3D_1_1Cell.html">Cell</a> &amp; T)&gt; _deg </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;              <span class="keyword">const</span> std::function&lt;<span class="keywordtype">double</span> (<span class="keyword">const</span> <a class="code" href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">Cell</a> &amp; T, <span class="keyword">const</span> Eigen::Vector3d &amp; x)&gt; _value, </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;              std::function&lt;<span class="keywordtype">size_t</span> (<span class="keyword">const</span> <a class="code" href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">Cell</a> &amp; T)&gt; _deg </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;              )</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        : value(_value),</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          deg(_deg)</div>
@@ -117,13 +117,13 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;       <span class="comment">// Easy constructor for constant weights</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;       <a class="code" href="group__Common.html#ga60ba878dc51ffe013b4cd394741d34f0">IntegralWeight</a>(<span class="keywordtype">double</span> val)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        : <a class="code" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>( [val](const <a class="code" href="classHArDCore3D_1_1Cell.html">Cell</a> &amp;T, const Eigen::Vector3d &amp;x)-&gt;double {<span class="keywordflow">return</span> val;}, [](<span class="keyword">const</span> Cell &amp;T)-&gt;<span class="keywordtype">size_t</span> {<span class="keywordflow">return</span> 0;} )</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        : <a class="code" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>( [val](const <a class="code" href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">Cell</a> &amp;T, const Eigen::Vector3d &amp;x)-&gt;double {<span class="keywordflow">return</span> val;}, [](<span class="keyword">const</span> <a class="code" href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">Cell</a> &amp;T)-&gt;<span class="keywordtype">size_t</span> {<span class="keywordflow">return</span> 0;} )</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;       {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// Do nothing</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;       }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      std::function&lt;double (<span class="keyword">const</span> Cell &amp; T, <span class="keyword">const</span> Eigen::Vector3d &amp; x)&gt; value;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      std::function&lt;size_t (<span class="keyword">const</span> Cell &amp; T)&gt; deg;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      std::function&lt;double (<span class="keyword">const</span> <a class="code" href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">Cell</a> &amp; T, <span class="keyword">const</span> Eigen::Vector3d &amp; x)&gt; value;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      std::function&lt;size_t (<span class="keyword">const</span> <a class="code" href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">Cell</a> &amp; T)&gt; deg;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
@@ -131,7 +131,7 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassHArDCore3D_1_1Cell_html"><div class="ttname"><a href="classHArDCore3D_1_1Cell.html">HArDCore3D::Cell</a></div><div class="ttdoc">The Cell class provides description of a cell.</div><div class="ttdef"><b>Definition:</b> cell.hpp:32</div></div>
+<div class="ttc" id="agroup__Mesh_html_gaccc346b5620989466f9bb142c1680ac7"><div class="ttname"><a href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">MeshND::Cell</a></div><div class="ttdeci">MeshObject&lt; space_dim, space_dim &gt; Cell</div><div class="ttdoc">A Cell is a MeshObject with object_dim = space_dim.</div><div class="ttdef"><b>Definition:</b> MeshObject.hpp:152</div></div>
 <div class="ttc" id="agroup__Common_html_ga60ba878dc51ffe013b4cd394741d34f0"><div class="ttname"><a href="group__Common.html#ga60ba878dc51ffe013b4cd394741d34f0">HArDCore3D::IntegralWeight::IntegralWeight</a></div><div class="ttdeci">IntegralWeight(const std::function&lt; double(const Cell &amp;T, const Eigen::Vector3d &amp;x)&gt; _value, std::function&lt; size_t(const Cell &amp;T)&gt; _deg)</div><div class="ttdef"><b>Definition:</b> integralweight.hpp:35</div></div>
 <div class="ttc" id="astructHArDCore3D_1_1IntegralWeight_html"><div class="ttname"><a href="structHArDCore3D_1_1IntegralWeight.html">HArDCore3D::IntegralWeight</a></div><div class="ttdoc">Structure for weights (scalar, at the moment) in integral.</div><div class="ttdef"><b>Definition:</b> integralweight.hpp:32</div></div>
 <!-- start footer part -->

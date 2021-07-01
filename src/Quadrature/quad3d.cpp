@@ -8,7 +8,8 @@
 
 */
 
-#include "quad3d.hpp"
+#include <quad3d.hpp>
+#include <max_degrees_quadratures.hpp>
 
 /*
   
@@ -33,9 +34,9 @@ QuadRuleTetra::QuadRuleTetra(size_t doe, bool warn)
       : rule(required_rule(doe)),
         nqn(tetra_unit_size(rule)),
         xV(4), yV(4), zV(4) {
-    if (doe > max_doe && warn)
+    if (doe > MAX_DOE_CELL && warn)
       std::cerr << "Warning: quadrature rule of degree " << doe <<
-                " requested, but the maximum available is degree " << max_doe << std::endl;
+                " requested, but the maximum available is degree " << MAX_DOE_CELL << std::endl;
     init();
   }
 

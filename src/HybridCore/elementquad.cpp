@@ -7,7 +7,6 @@
 
 #include "elementquad.hpp"
 #include <string>
-#include <mesh.hpp>
 #include <quadraturerule.hpp>
 
 using namespace HArDCore3D;

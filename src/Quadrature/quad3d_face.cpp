@@ -1,5 +1,6 @@
 
-#include "quad3d_face.hpp"
+#include <quad3d_face.hpp>
+#include <max_degrees_quadratures.hpp>
 #include <iostream>
 
 using namespace HArDCore3D;
@@ -18,8 +19,8 @@ QuadRuleTriangle::QuadRuleTriangle( size_t doe, bool warn )
 			_xy(0),
 			_w(0) {
 
-  if (doe > max_doe && warn) {std::cerr << "Warning: quadrature rule of degree " << doe  <<
-                                       " requested, but the maximum available is degree " << max_doe << std::endl;}
+  if (doe > MAX_DOE_FACE && warn) {std::cerr << "Warning: quadrature rule of degree " << doe  <<
+                                       " requested, but the maximum available is degree " << MAX_DOE_FACE << std::endl;}
        qsx  = new double[_npts] ;
        qsy  = new double[_npts] ;
        qsz  = new double[_npts] ;

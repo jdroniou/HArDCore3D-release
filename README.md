@@ -3,7 +3,7 @@ HArD::Core3D (Hybrid Arbitrary Degree::Core 3D) - Library to implement schemes w
 
 This is the 3D version of the HArD::Core library (https://github.com/jdroniou/HArDCore). The documentation can be found at https://jdroniou.github.io/HArDCore3D-release/
 
-The meshing (src/Mesh/StemMesh) and quadrature (src/Quadratures) modules in HArDCore3D are partially based on Marco Manzini's code available at https://github.com/gmanzini-LANL/PDE-Mesh-Manager.
+The quadrature (src/Quadratures) module in HArDCore3D is partially based on Marco Manzini's code available at https://github.com/gmanzini-LANL/PDE-Mesh-Manager. A previous version of the mesh builder also used Marco's code, but we have since then developed a specific mesh builder in HArDCore3D.
 
 The purpose of HArD::Core3D is to provide easy-to-use tools to code hybrid schemes, such as the Hybrid High-Order method. The data structure is described using intuitive classes that expose natural functions we use in the mathematical description of the scheme. For example, each mesh element is a member of the class 'Cell', that gives access to its diameter, the list of its faces (themselves members of the class 'Face' that describe the geometrical features of the face), etc. Functions are also provided to compute the key elements usually required to implement hybrid schemes, such as mass matrices of local basis functions, stiffness matrices, etc. The approach adopted is that of a compromise between readibility/usability and efficiency. 
 

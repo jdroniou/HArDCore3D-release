@@ -71,10 +71,15 @@ XGrad::XGrad(const DDRCore & ddr_core, bool use_threads, std::ostream & output)
 // Interpolator
 //------------------------------------------------------------------------------
 
-Eigen::VectorXd XGrad::interpolate(const FunctionType & q) const
+Eigen::VectorXd XGrad::interpolate(const FunctionType & q, const int doe_cell, const int doe_face, const int doe_edge) const
 {
   Eigen::VectorXd qh = Eigen::VectorXd::Zero(dimension());
 
+  // Degrees of quadrature rules
+  size_t dqr_cell = (doe_cell >= 0 ? doe_cell : 2 * degree() + 3);
+  size_t dqr_face = (doe_face >= 0 ? doe_face : 2 * degree() + 3);
+  size_t dqr_edge = (doe_edge >= 0 ? doe_edge : 2 * degree() + 3);
+  
   // Interpolate at vertices
   std::function<void(size_t, size_t)> interpolate_vertices
     = [this, &qh, q](size_t start, size_t end)->void
@@ -89,42 +94,42 @@ Eigen::VectorXd XGrad::interpolate(const FunctionType & q) const
     
     // Interpolate at edges
     std::function<void(size_t, size_t)> interpolate_edges
-      = [this, &qh, q](size_t start, size_t end)->void
+      = [this, &qh, q, &dqr_edge](size_t start, size_t end)->void
         {
           for (size_t iE = start; iE < end; iE++) {
             const Edge & E = *mesh().edge(iE);
-            QuadratureRule quad = generate_quadrature_rule(E, 2 * degree());
-            auto basis_Pkmo_E_quad = evaluate_quad<Function>::compute(*edgeBases(iE).Polykmo, quad);
+            QuadratureRule quad_dqr_E = generate_quadrature_rule(E, dqr_edge);
+            auto basis_Pkmo_E_quad = evaluate_quad<Function>::compute(*edgeBases(iE).Polykmo, quad_dqr_E);
             qh.segment(globalOffset(E), PolynomialSpaceDimension<Edge>::Poly(degree() - 1)) 
-              = l2_projection(q, *edgeBases(iE).Polykmo, quad, basis_Pkmo_E_quad);
+              = l2_projection(q, *edgeBases(iE).Polykmo, quad_dqr_E, basis_Pkmo_E_quad);
           } // for iE
         };
     parallel_for(mesh().n_edges(), interpolate_edges, m_use_threads);
     
     // Interpolate at faces
     std::function<void(size_t, size_t)> interpolate_faces
-      = [this, &qh, q](size_t start, size_t end)->void
+      = [this, &qh, q, &dqr_face](size_t start, size_t end)->void
         {
           for (size_t iF = start; iF < end; iF++) {
             const Face & F = *mesh().face(iF);
-            QuadratureRule quad = generate_quadrature_rule(F, 2 * degree());
-            auto basis_Pkmo_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).Polykmo, quad);
+            QuadratureRule quad_dqr_F = generate_quadrature_rule(F, dqr_face);
+            auto basis_Pkmo_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).Polykmo, quad_dqr_F);
             qh.segment(globalOffset(F), PolynomialSpaceDimension<Face>::Poly(degree() - 1)) 
-              = l2_projection(q, *faceBases(iF).Polykmo, quad, basis_Pkmo_F_quad);
+              = l2_projection(q, *faceBases(iF).Polykmo, quad_dqr_F, basis_Pkmo_F_quad);
           } // for iF
         };
     parallel_for(mesh().n_faces(), interpolate_faces, m_use_threads);
 
     // Interpolate at cells
     std::function<void(size_t, size_t)> interpolate_cells
-      = [this, &qh, q](size_t start, size_t end)->void
+      = [this, &qh, q, &dqr_cell](size_t start, size_t end)->void
         {
           for (size_t iT = start; iT < end; iT++) {
             const Cell & T = *mesh().cell(iT);
-            QuadratureRule quad = generate_quadrature_rule(T, 2 * degree());
-            auto basis_Pkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykmo, quad);
+            QuadratureRule quad_dqr_T = generate_quadrature_rule(T, dqr_cell);
+            auto basis_Pkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykmo, quad_dqr_T);
             qh.segment(globalOffset(T), PolynomialSpaceDimension<Cell>::Poly(degree() - 1)) 
-              = l2_projection(q, *cellBases(iT).Polykmo, quad, basis_Pkmo_T_quad);
+              = l2_projection(q, *cellBases(iT).Polykmo, quad_dqr_T, basis_Pkmo_T_quad);
           } // for iT
         };
     parallel_for(mesh().n_cells(), interpolate_cells, m_use_threads);
@@ -433,6 +438,118 @@ XGrad::LocalOperators XGrad::_compute_cell_gradient_potential(size_t iT)
 
   return LocalOperators(GT, MPT.partialPivLu().solve(BPT));
 }
+
+//-----------------------------------------------------------------------------
+// local L2 inner product
+//-----------------------------------------------------------------------------
+Eigen::MatrixXd XGrad::computeL2Product(
+                                        const size_t iT,
+                                        const double & penalty_factor,
+                                        const Eigen::MatrixXd & mass_Pkpo_T,
+                                        const IntegralWeight & weight
+                                        ) const
+{
+  const Cell & T = *mesh().cell(iT); 
+  
+  // create the weighted mass matrix, with simple product if weight is constant
+  Eigen::MatrixXd w_mass_Pkpo_T;
+  if (weight.deg(T)==0){
+    // constant weight
+    if (mass_Pkpo_T.rows()==1){
+      // We have to compute the mass matrix
+      QuadratureRule quad_2kpo_T = generate_quadrature_rule(T, 2 * (degree()+1));
+      w_mass_Pkpo_T = weight.value(T, T.center_mass()) * compute_gram_matrix(evaluate_quad<Function>::compute(*cellBases(iT).Polykpo, quad_2kpo_T), quad_2kpo_T);
+    }else{
+      w_mass_Pkpo_T = weight.value(T, T.center_mass()) * mass_Pkpo_T;
+    }
+  }else{
+    // weight is not constant, we create a weighted mass matrix
+    QuadratureRule quad_2kpo_pw_T = generate_quadrature_rule(T, 2 * (degree() + 1) + weight.deg(T));
+    auto basis_Pkpo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykpo, quad_2kpo_pw_T);
+    std::function<double(const Eigen::Vector3d &)> weight_T 
+              = [&T, &weight](const Eigen::Vector3d &x)->double {
+                  return weight.value(T, x);
+                };
+    w_mass_Pkpo_T = compute_weighted_gram_matrix(weight_T, basis_Pkpo_T_quad, basis_Pkpo_T_quad, quad_2kpo_pw_T, "sym");
+  }
+
+
+  // Compute matrix of L2 product  
+  Eigen::MatrixXd L2P = Eigen::MatrixXd::Zero(dimensionCell(iT), dimensionCell(iT));
+
+  // We need the potential in the cell
+  Eigen::MatrixXd Potential_T = cellOperators(iT).potential;
+
+  // Edge penalty terms
+  for (size_t iE = 0; iE < T.n_edges(); iE++) {
+    const Edge & E = *T.edge(iE);
+        
+    QuadratureRule quad_2kpo_E = generate_quadrature_rule(E, 2 * (degree()+1) );
+    
+    // weight and scaling hE^2
+    double max_weight_quad_E = weight.value(T, quad_2kpo_E[0].vector());
+    // If the weight is not constant, we want to take the largest along the edge
+    if (weight.deg(T)>0){
+      for (size_t iqn = 1; iqn < quad_2kpo_E.size(); iqn++) {
+        max_weight_quad_E = std::max(max_weight_quad_E, weight.value(T, quad_2kpo_E[iqn].vector()));
+      } // for
+    }
+    double w_hE2 = max_weight_quad_E * std::pow(E.measure(), 2);
+
+    // The penalty term int_E (PT q - q_E) * (PT r - r_E) is computed by developping.
+    auto basis_Pkpo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykpo, quad_2kpo_E);
+    auto basis_Pkpo_E_quad = evaluate_quad<Function>::compute(*edgeBases(E.global_index()).Polykpo, quad_2kpo_E);
+    Eigen::MatrixXd gram_PkpoT_PkpoE = compute_gram_matrix(basis_Pkpo_T_quad, basis_Pkpo_E_quad, quad_2kpo_E);
+    
+    Eigen::MatrixXd Potential_E = extendOperator(T, E, edgeOperators(E).potential);
+
+    // Contribution of edge E
+    L2P += w_hE2 * ( Potential_T.transpose() * compute_gram_matrix(basis_Pkpo_T_quad, quad_2kpo_E) * Potential_T
+                   - Potential_T.transpose() * gram_PkpoT_PkpoE * Potential_E
+                   - Potential_E.transpose() * gram_PkpoT_PkpoE.transpose() * Potential_T
+                   + Potential_E.transpose() * compute_gram_matrix(basis_Pkpo_E_quad, quad_2kpo_E) * Potential_E );
+  } // for iE
+
+  // Face penalty terms
+  for (size_t iF = 0; iF < T.n_faces(); iF++) {
+    const Face & F = *T.face(iF);
+        
+    QuadratureRule quad_2kpo_F = generate_quadrature_rule(F, 2 * (degree()+1) );
+    
+    // weight and scaling hF
+    double max_weight_quad_F = weight.value(T, quad_2kpo_F[0].vector());
+    // If the weight is not constant, we want to take the largest along the face
+    if (weight.deg(T)>0){
+      for (size_t iqn = 1; iqn < quad_2kpo_F.size(); iqn++) {
+        max_weight_quad_F = std::max(max_weight_quad_F, weight.value(T, quad_2kpo_F[iqn].vector()));
+      } // for
+    }
+    double w_hF = max_weight_quad_F * F.diam();
+
+    // The penalty term int_F (PT q - gammaF q) * (PT r - gammaF r) is computed by developping.
+    auto basis_Pkpo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykpo, quad_2kpo_F);
+    auto basis_Pkpo_F_quad = evaluate_quad<Function>::compute(*faceBases(F.global_index()).Polykpo, quad_2kpo_F);
+    Eigen::MatrixXd gram_PkpoT_PkpoF = compute_gram_matrix(basis_Pkpo_T_quad, basis_Pkpo_F_quad, quad_2kpo_F);
+    
+    Eigen::MatrixXd Potential_F = extendOperator(T, F, faceOperators(F).potential);
+    
+    // Contribution of face F
+    L2P += w_hF * ( Potential_T.transpose() * compute_gram_matrix(basis_Pkpo_T_quad, quad_2kpo_F) * Potential_T
+                   - Potential_T.transpose() * gram_PkpoT_PkpoF * Potential_F
+                   - Potential_F.transpose() * gram_PkpoT_PkpoF.transpose() * Potential_T
+                   + Potential_F.transpose() * compute_gram_matrix(basis_Pkpo_F_quad, quad_2kpo_F) * Potential_F );
+
+  } // for iF
+
+  L2P *= penalty_factor;
+
+  // Cell term
+  L2P += Potential_T.transpose() * w_mass_Pkpo_T * Potential_T;
+
+  return L2P;
+
+}
+
 
 //------------------------------------------------------------------------------
 // Build the components of the gradient operator

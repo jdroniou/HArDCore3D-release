@@ -67,6 +67,8 @@ INCLUDE_DIRECTORIES(${EXTERNAL_INCLUDES})
 #                             Directories for compiled libraries
 #------------------------------------------------------------------------------#
 
+INCLUDE_DIRECTORIES(include/Math)
+INCLUDE_DIRECTORIES(include/Mesh)
 INCLUDE_DIRECTORIES(src/Mesh)
 INCLUDE_DIRECTORIES(src/Quadrature)
 INCLUDE_DIRECTORIES(src/Common)

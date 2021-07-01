@@ -2,7 +2,7 @@
 #
 
 # Degree
-k=1
+k=2
 
 # Stabilization parameter
 stab_par=1.0
@@ -52,7 +52,7 @@ case ${mesh_family} in
 	mesh[1]="RF:Cubic-Cells/RF_fmt/gcube_2x2x2"
 	mesh[2]="RF:Cubic-Cells/RF_fmt/gcube_4x4x4"
 	mesh[3]="RF:Cubic-Cells/RF_fmt/gcube_8x8x8"
-	mesh[4]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16"
+#	mesh[4]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16"
 	# mesh[5]="RF:Cubic-Cells/RF_fmt/gcube_32x32x32"
 	;;
     Voro-Tets-2)

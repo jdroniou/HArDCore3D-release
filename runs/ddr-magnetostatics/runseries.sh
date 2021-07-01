@@ -17,7 +17,7 @@ timesfile="times.dat"
 
 # Directories
 executable_name="ddr-magnetostatics"
-make $executable_name
+#make $executable_name
 
 origin=$(pwd)
 if [ ! -f ../directories.sh ]; then
@@ -44,7 +44,6 @@ fi
 nbmesh=${#mesh[@]}
 for i in `seq 1 $nbmesh`; 
 do
-    meshtype=$(echo ${mesh[$i]} | cut -d ':' -f 1)
     meshfile=$meshdir"/"$(echo ${mesh[$i]} | cut -d ':' -f 2)
     echo -e "------------------------------------------------------------------------------"
     echo -e "Mesh $i out of $nbmesh: $meshfile"
@@ -85,7 +84,7 @@ do
       EnergyErrorRate=$(perl -E "say sprintf(\"%.2f\", log($OldEnergyError/$EnergyError)/log($OldMeshSize/$MeshSize))")
       OldHcurlHdivError=$(awk '/HcurlHdivError:/ {print $NF}' $outsubdir/results-$imo.txt)
       HcurlHdivErrorRate=$(perl -E "say sprintf(\"%.2f\", log($OldHcurlHdivError/$HcurlHdivError)/log($OldMeshSize/$MeshSize))")
-      echo -e "$Degree $MeshSize $NbCells $NbFaces $NbEdges $DimXCurl $DimXDiv $EnergyError $EnergyErrorRate $HcurlHdivError $HcurlHdivErrorRate $TimeDDRCore $TimeAssembleModel $TimeResolution" >> $outsubdir/$errorsfile
+      echo -e "$Degree $MeshSize $NbCells $NbFaces $NbEdges $DimXCurl $DimXDiv $EnergyError $EnergyErrorRate $HcurlHdivError $HcurlHdivErrorRate" >> $outsubdir/$errorsfile
     else
   	  echo -e "$Degree $MeshSize $NbCells $NbFaces $NbEdges $DimXCurl $DimXDiv $EnergyError -- $HcurlHdivError -- " >> $outsubdir/$errorsfile
     fi

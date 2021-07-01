@@ -22,7 +22,9 @@
 #ifndef QUAD1D_HPP
 #define QUAD1D_HPP
 #include<stddef.h>
+
 namespace HArDCore3D {  // forward dec
+
 class LegendreGauss;
 }
 
@@ -35,7 +37,6 @@ class LegendreGauss;
 namespace HArDCore3D {
 
 class QuadRuleEdge {
-    static constexpr size_t max_doe = 20;
 
 public:
     QuadRuleEdge(size_t doe, bool warn);

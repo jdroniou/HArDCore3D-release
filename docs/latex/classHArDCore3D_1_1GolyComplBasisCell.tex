@@ -20,23 +20,31 @@ typedef Vector\+Rd {\bfseries Curl\+Value}
 \item 
 typedef double {\bfseries Divergence\+Value}
 \item 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} {\bfseries Geometric\+Support}
+typedef Cell {\bfseries Geometric\+Support}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Common_gae888c90badbcf2878f72e4d992956836}{Goly\+Compl\+Basis\+Cell}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, size\+\_\+t degree)
+\mbox{\hyperlink{group__Common_gae888c90badbcf2878f72e4d992956836}{Goly\+Compl\+Basis\+Cell}} (const Cell \&T, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga3d4ed120b30cde8ef8d0842d05cf7eb3}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Compute the dimension of the basis. \end{DoxyCompactList}\item 
 Function\+Value \mbox{\hyperlink{group__Common_ga6814a80c622c8cf9ee9b7a2ab93473c4}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 Curl\+Value \mbox{\hyperlink{group__Common_ga9e70209fbb1c756097eecd4e820d387b}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
-\begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gac4e1f6061628360a9ffbad4142db2d4f}{max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
+Vector\+Zd \mbox{\hyperlink{group__Common_ga61459b0bb74e4b3d3417726370fd471b}{powers}} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Returns the powers of the i-\/th basis function (not including the vector part) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga1cf821223a7be9697b62e6cbfb5b294c}{dim\+Pkmo}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of P$^\wedge$\{k-\/1\}(R$^\wedge$3) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+constexpr static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+\item 
+constexpr static const bool {\bfseries has\+Ancestor} = false
 \item 
 static const bool {\bfseries has\+Function} = true
 \item 

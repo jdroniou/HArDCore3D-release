@@ -5,10 +5,12 @@
 
 
 #include <quad1d.hpp>
+#include <max_degrees_quadratures.hpp>
 #include <cmath>
 #include <iostream>
 #include <limits>
 #include <iomanip>
+
 using namespace HArDCore3D;
 QuadRuleEdge::QuadRuleEdge(size_t doe, bool warn):
   _rule(0),

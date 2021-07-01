@@ -84,12 +84,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5f9b50ca35f0fcee51e84e015223396c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a5f9b50ca35f0fcee51e84e015223396c">BoundaryConditions</a> (const std::string bc_id, <a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> &amp;mesh)</td></tr>
+<tr class="memitem:a5f9b50ca35f0fcee51e84e015223396c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a5f9b50ca35f0fcee51e84e015223396c">BoundaryConditions</a> (const std::string bc_id, Mesh &amp;mesh)</td></tr>
 <tr class="memdesc:a5f9b50ca35f0fcee51e84e015223396c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise data.  <a href="classBoundaryConditions.html#a5f9b50ca35f0fcee51e84e015223396c">More...</a><br /></td></tr>
 <tr class="separator:a5f9b50ca35f0fcee51e84e015223396c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d4ed623f0f8b4585cbe75454777e14c"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a2d4ed623f0f8b4585cbe75454777e14c">type</a> (const <a class="el" href="classHArDCore3D_1_1Face.html">Face</a> &amp;face) const</td></tr>
-<tr class="memdesc:a2d4ed623f0f8b4585cbe75454777e14c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test the boundary condition of an face.  <a href="classBoundaryConditions.html#a2d4ed623f0f8b4585cbe75454777e14c">More...</a><br /></td></tr>
-<tr class="separator:a2d4ed623f0f8b4585cbe75454777e14c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1cc33d2947928f7e24bbf5574ac5a3"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a5e1cc33d2947928f7e24bbf5574ac5a3">type</a> (Face &amp;face) const</td></tr>
+<tr class="memdesc:a5e1cc33d2947928f7e24bbf5574ac5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test the boundary condition of an face.  <a href="classBoundaryConditions.html#a5e1cc33d2947928f7e24bbf5574ac5a3">More...</a><br /></td></tr>
+<tr class="separator:a5e1cc33d2947928f7e24bbf5574ac5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9e9493f0ba9be92b7299838bc08f0bf"><td class="memItemLeft" align="right" valign="top"><a id="af9e9493f0ba9be92b7299838bc08f0bf"></a>
 const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#af9e9493f0ba9be92b7299838bc08f0bf">n_dir_faces</a> () const</td></tr>
 <tr class="memdesc:af9e9493f0ba9be92b7299838bc08f0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of Dirichlet faces. <br /></td></tr>
@@ -121,7 +121,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1Mesh.html">Mesh</a> &amp;&#160;</td>
+          <td class="paramtype">Mesh &amp;&#160;</td>
           <td class="paramname"><em>mesh</em>&#160;</td>
         </tr>
         <tr>
@@ -144,8 +144,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2d4ed623f0f8b4585cbe75454777e14c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d4ed623f0f8b4585cbe75454777e14c">&#9670;&nbsp;</a></span>type()</h2>
+<a id="a5e1cc33d2947928f7e24bbf5574ac5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e1cc33d2947928f7e24bbf5574ac5a3">&#9670;&nbsp;</a></span>type()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +153,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">const std::string BoundaryConditions::type </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1Face.html">Face</a> &amp;&#160;</td>
+          <td class="paramtype">Face &amp;&#160;</td>
           <td class="paramname"><em>face</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -172,8 +172,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Schemes/TestCase/<a class="el" href="BoundaryConditions_8hpp_source.html">BoundaryConditions.hpp</a></li>
-<li>Schemes/TestCase/BoundaryConditions.cpp</li>
+<li>Schemes/BoundaryConditions/<a class="el" href="BoundaryConditions_8hpp_source.html">BoundaryConditions.hpp</a></li>
+<li>Schemes/BoundaryConditions/BoundaryConditions.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

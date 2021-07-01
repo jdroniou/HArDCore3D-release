@@ -4,8 +4,6 @@
 #include <quad3d_face.hpp>
 #include <quad1d.hpp>
 
-#include <edge.hpp>
-#include <vertex.hpp>
 
 namespace HArDCore3D
 {

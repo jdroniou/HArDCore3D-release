@@ -21,7 +21,7 @@ class \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{H\+Ar\+D\+Cor
 class \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge}}
 \begin{DoxyCompactList}\small\item\em Scalar monomial basis on an edge. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1Family}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}} of functions expressed as linear combination of the functions of a given basis. \end{DoxyCompactList}\item 
+\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$}}
 \begin{DoxyCompactList}\small\item\em Vector family obtained by tensorization of a scalar family. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$}}
@@ -34,6 +34,8 @@ class \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{H\+Ar\+D\+Core3\+D\+::\
 \begin{DoxyCompactList}\small\item\em Basis for the space of gradients of polynomials. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$}}
 \begin{DoxyCompactList}\small\item\em Basis for the space of curls of polynomials. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em Basis (or rather family) of divergence of an existing basis. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisCell}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell}}
 \begin{DoxyCompactList}\small\item\em Basis for the complement R$^\wedge$\{c,k\}(T) in P$^\wedge$k(T)$^\wedge$3 of the range of curl. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell}}
@@ -80,18 +82,15 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01
 \mbox{\Hypertarget{group__Common_gabc4232845eaba80e0a1a45618ed0764d}\label{group__Common_gabc4232845eaba80e0a1a45618ed0764d}} 
 typedef Eigen\+::\+Matrix3d {\bfseries H\+Ar\+D\+Core3\+D\+::\+Matrix\+Rd}
 \item 
-\mbox{\Hypertarget{group__Common_gafa49064b5221a119dd0271fb5f8ddbb1}\label{group__Common_gafa49064b5221a119dd0271fb5f8ddbb1}} 
-typedef Eigen\+::\+Vector3d {\bfseries H\+Ar\+D\+Core3\+D\+::\+Vector\+Rd}
-\item 
-\mbox{\Hypertarget{group__Common_gadeaa2d1c651a6a71697e40f9e8c9065b}\label{group__Common_gadeaa2d1c651a6a71697e40f9e8c9065b}} 
-typedef Eigen\+::\+Vector3i {\bfseries H\+Ar\+D\+Core3\+D\+::\+Vector\+Zd}
-\item 
+\mbox{\Hypertarget{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}\label{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}} 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{H\+Ar\+D\+Core3\+D\+::\+F\+Type}} = std\+::function$<$ T(const Vector\+Rd \&)$>$
+\begin{DoxyCompactList}\small\item\em type for function of point. T is the return type of the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga523c09e1cb40e9357025dd81596ad752}\label{group__Common_ga523c09e1cb40e9357025dd81596ad752}} 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{group__Common_ga523c09e1cb40e9357025dd81596ad752}{H\+Ar\+D\+Core3\+D\+::\+Cell\+F\+Type}} = std\+::function$<$ T(const Vector\+Rd \&, const Cell $\ast$)$>$
+\begin{DoxyCompactList}\small\item\em type for function of point. T is the return type of the function \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga2369d54cfa073699935be349d3d5909b}\label{group__Common_ga2369d54cfa073699935be349d3d5909b}} 
 {\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{H\+Ar\+D\+Core3\+D\+::\+Basis\+Quad}} = boost\+::multi\+\_\+array$<$ T, 2 $>$
 \begin{DoxyCompactList}\small\item\em type for bases evaluated on quadrature nodes \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__Common_gaf7ef55817c2af72faaaa416170fba181}\label{group__Common_gaf7ef55817c2af72faaaa416170fba181}} 
-{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{H\+Ar\+D\+Core3\+D\+::\+F\+Type}} = std\+::function$<$ T(const Vector\+Rd \&)$>$
-\begin{DoxyCompactList}\small\item\em type for function of point. T is the type of value of the function \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga7ee03d626d3f1844ca9e7a2273cbf060}\label{group__Common_ga7ee03d626d3f1844ca9e7a2273cbf060}} 
 typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Function\+Value}
 \item 
@@ -105,7 +104,7 @@ typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+C
 typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Divergence\+Value}
 \item 
 \mbox{\Hypertarget{group__Common_gaf1fb25612ece0a8d033134f47b5d82a4}\label{group__Common_gaf1fb25612ece0a8d033134f47b5d82a4}} 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Geometric\+Support}
+typedef Cell {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Geometric\+Support}
 \item 
 \mbox{\Hypertarget{group__Common_ga71bec97252664e36ca3ad118d9d21c5f}\label{group__Common_ga71bec97252664e36ca3ad118d9d21c5f}} 
 typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Function\+Value}
@@ -120,7 +119,7 @@ typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+F
 typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Divergence\+Value}
 \item 
 \mbox{\Hypertarget{group__Common_ga4d8acdf73dbc7897fe23d219c1fed135}\label{group__Common_ga4d8acdf73dbc7897fe23d219c1fed135}} 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Geometric\+Support}
+typedef Face {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Geometric\+Support}
 \item 
 \mbox{\Hypertarget{group__Common_gafe0390024b0b4c5e3581f73ff2a1ece2}\label{group__Common_gafe0390024b0b4c5e3581f73ff2a1ece2}} 
 typedef Eigen\+::\+Matrix$<$ double, 2, dimspace $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Jacobian\+Type}
@@ -138,7 +137,7 @@ typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+E
 typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Divergence\+Value}
 \item 
 \mbox{\Hypertarget{group__Common_gac53bd9843072d6d731dafc58c68b789e}\label{group__Common_gac53bd9843072d6d731dafc58c68b789e}} 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Geometric\+Support}
+typedef Edge {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Geometric\+Support}
 \item 
 \mbox{\Hypertarget{group__Common_ga2d87c9bf83c4dd0574dc399506d4870c}\label{group__Common_ga2d87c9bf83c4dd0574dc399506d4870c}} 
 typedef Basis\+Type\+::\+Function\+Value {\bfseries H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::\+Function\+Value}
@@ -173,8 +172,8 @@ typedef Scalar\+Family\+Type\+::\+Geometric\+Support {\bfseries H\+Ar\+D\+Core3\
 \mbox{\Hypertarget{group__Common_ga1124b8f08d201215ca7b2158460ad7f5}\label{group__Common_ga1124b8f08d201215ca7b2158460ad7f5}} 
 typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Function\+Value}
 \item 
-\mbox{\Hypertarget{group__Common_gacab8c05d4bd8bc9656bf038d2f092f55}\label{group__Common_gacab8c05d4bd8bc9656bf038d2f092f55}} 
-typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Gradient\+Value}
+\mbox{\Hypertarget{group__Common_ga478b6317fd67433269c1a860dfdfd552}\label{group__Common_ga478b6317fd67433269c1a860dfdfd552}} 
+typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Gradient\+Value}
 \item 
 \mbox{\Hypertarget{group__Common_ga849aca7abc07cabc56b61a5c112a2948}\label{group__Common_ga849aca7abc07cabc56b61a5c112a2948}} 
 typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Curl\+Value}
@@ -183,7 +182,7 @@ typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\
 typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Divergence\+Value}
 \item 
 \mbox{\Hypertarget{group__Common_ga1b78f11229d89bdac125bd5b1f6983ef}\label{group__Common_ga1b78f11229d89bdac125bd5b1f6983ef}} 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Geometric\+Support}
+typedef Face {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Geometric\+Support}
 \item 
 \mbox{\Hypertarget{group__Common_gadfb11a56f0804ecdf268b8523abd450b}\label{group__Common_gadfb11a56f0804ecdf268b8523abd450b}} 
 typedef Basis\+Type\+::\+Function\+Value {\bfseries H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::\+Function\+Value}
@@ -245,6 +244,21 @@ typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$
 \mbox{\Hypertarget{group__Common_ga351ef62bb74afe2ddeff23d28879634d}\label{group__Common_ga351ef62bb74afe2ddeff23d28879634d}} 
 typedef Basis\+Type\+::\+Geometric\+Support {\bfseries H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::\+Geometric\+Support}
 \item 
+\mbox{\Hypertarget{group__Common_ga7d28a7719ad0329ee8dfc4d8d418a571}\label{group__Common_ga7d28a7719ad0329ee8dfc4d8d418a571}} 
+typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::\+Function\+Value}
+\item 
+\mbox{\Hypertarget{group__Common_ga895dcd795d4e18c39a4eea2503483c59}\label{group__Common_ga895dcd795d4e18c39a4eea2503483c59}} 
+typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::\+Gradient\+Value}
+\item 
+\mbox{\Hypertarget{group__Common_ga6155591aa4f58e7b908a17a5b170caec}\label{group__Common_ga6155591aa4f58e7b908a17a5b170caec}} 
+typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::\+Curl\+Value}
+\item 
+\mbox{\Hypertarget{group__Common_ga9db3db672cc9bb41f17be617269349f9}\label{group__Common_ga9db3db672cc9bb41f17be617269349f9}} 
+typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::\+Divergence\+Value}
+\item 
+\mbox{\Hypertarget{group__Common_ga72110ca9be10f6ed801e138ce2dc31f3}\label{group__Common_ga72110ca9be10f6ed801e138ce2dc31f3}} 
+typedef Basis\+Type\+::\+Geometric\+Support {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::\+Geometric\+Support}
+\item 
 \mbox{\Hypertarget{group__Common_ga086bb5008eb8c8d382effe2775bfece6}\label{group__Common_ga086bb5008eb8c8d382effe2775bfece6}} 
 typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Function\+Value}
 \item 
@@ -258,7 +272,7 @@ typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries H\+Ar\+D\
 typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Divergence\+Value}
 \item 
 \mbox{\Hypertarget{group__Common_gaf60e0ddb281f31993143c5ab174fd9a3}\label{group__Common_gaf60e0ddb281f31993143c5ab174fd9a3}} 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Geometric\+Support}
+typedef Cell {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Geometric\+Support}
 \item 
 \mbox{\Hypertarget{group__Common_ga7f8d7bbc1ed611fe07fd43548d6cf8a2}\label{group__Common_ga7f8d7bbc1ed611fe07fd43548d6cf8a2}} 
 typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Function\+Value}
@@ -273,7 +287,7 @@ typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+
 typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Divergence\+Value}
 \item 
 \mbox{\Hypertarget{group__Common_gafc5f881930fe81b28773581c9b58a059}\label{group__Common_gafc5f881930fe81b28773581c9b58a059}} 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Geometric\+Support}
+typedef Cell {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Geometric\+Support}
 \item 
 \mbox{\Hypertarget{group__Common_ga0fbe83978b2d84c505aa065ba6749a62}\label{group__Common_ga0fbe83978b2d84c505aa065ba6749a62}} 
 typedef Vector\+Rd {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Function\+Value}
@@ -288,7 +302,7 @@ typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries H\+Ar\+D\
 typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Divergence\+Value}
 \item 
 \mbox{\Hypertarget{group__Common_gadb0fb3bd5248e978eca3ff472d7c6307}\label{group__Common_gadb0fb3bd5248e978eca3ff472d7c6307}} 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Geometric\+Support}
+typedef Face {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Geometric\+Support}
 \item 
 \mbox{\Hypertarget{group__Common_ga9c696306169237dd8de32d9cc6c69a47}\label{group__Common_ga9c696306169237dd8de32d9cc6c69a47}} 
 typedef Eigen\+::\+Matrix$<$ double, 2, dimspace $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Jacobian\+Type}
@@ -306,7 +320,7 @@ typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries H\+Ar\+D\
 typedef double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Divergence\+Value}
 \item 
 \mbox{\Hypertarget{group__Common_gaf5ced8758911390c4eed54ba6bb41b6e}\label{group__Common_gaf5ced8758911390c4eed54ba6bb41b6e}} 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Geometric\+Support}
+typedef Face {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Geometric\+Support}
 \item 
 \mbox{\Hypertarget{group__Common_ga0cbdf6618e91e09a34adef7f0cef48d8}\label{group__Common_ga0cbdf6618e91e09a34adef7f0cef48d8}} 
 typedef Eigen\+::\+Matrix$<$ double, 2, dimspace $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Jacobian\+Type}
@@ -366,13 +380,19 @@ enum {\bfseries Basis\+FunctionE} \{ {\bfseries Function},
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{group__Common_ga28f99dd5c79542558d82c7d01367496e}\label{group__Common_ga28f99dd5c79542558d82c7d01367496e}} 
-static std\+::vector$<$ Vector\+Zd $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Powers$<$ Cell $>$\+::compute} (size\+\_\+t degree)
+\mbox{\Hypertarget{group__Common_gad738218ef4030b3b4a46dabcc1d2b67b}\label{group__Common_gad738218ef4030b3b4a46dabcc1d2b67b}} 
+static std\+::vector$<$ Vector\+Zd $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Powers$<$ Cell $>$\+::homogeneous} (const size\+\_\+t L)
 \item 
-\mbox{\Hypertarget{group__Common_gadb52cebddd577609f067d957d706a738}\label{group__Common_gadb52cebddd577609f067d957d706a738}} 
-static std\+::vector$<$ Eigen\+::\+Vector2i $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Powers$<$ Face $>$\+::compute} (size\+\_\+t degree)
+\mbox{\Hypertarget{group__Common_ga5a457dc08469649fb0c7945105927ad2}\label{group__Common_ga5a457dc08469649fb0c7945105927ad2}} 
+static std\+::vector$<$ Vector\+Zd $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Powers$<$ Cell $>$\+::complete} (const size\+\_\+t degree)
 \item 
-\mbox{\hyperlink{group__Common_ga88e7776e18ccc8e6dff40f2c0644246a}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Monomial\+Scalar\+Basis\+Cell}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, size\+\_\+t degree)
+\mbox{\Hypertarget{group__Common_ga240ab6a8139ebb79d27c3c29f34c1dd4}\label{group__Common_ga240ab6a8139ebb79d27c3c29f34c1dd4}} 
+static std\+::vector$<$ Eigen\+::\+Vector2i $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Powers$<$ Face $>$\+::homogeneous} (const size\+\_\+t L)
+\item 
+\mbox{\Hypertarget{group__Common_gabcb517032802f3f969803d7e0d201dad}\label{group__Common_gabcb517032802f3f969803d7e0d201dad}} 
+static std\+::vector$<$ Eigen\+::\+Vector2i $>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Powers$<$ Face $>$\+::complete} (size\+\_\+t degree)
+\item 
+\mbox{\hyperlink{group__Common_ga88e7776e18ccc8e6dff40f2c0644246a}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Monomial\+Scalar\+Basis\+Cell}} (const Cell \&T, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gaa889b63f16b51979a2fcea3253851c89}\label{group__Common_gaa889b63f16b51979a2fcea3253851c89}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_gaa889b63f16b51979a2fcea3253851c89}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::dimension}} () const
@@ -383,7 +403,13 @@ Function\+Value \mbox{\hyperlink{group__Common_gaed6372e890152e660a20b73b6949fa2
 \mbox{\Hypertarget{group__Common_gafe6fb4aef0d61e720116d8ba64c94971}\label{group__Common_gafe6fb4aef0d61e720116d8ba64c94971}} 
 Gradient\+Value \mbox{\hyperlink{group__Common_gafe6fb4aef0d61e720116d8ba64c94971}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_gad87f40b1e97ec1b95dcf9c56282912f3}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Monomial\+Scalar\+Basis\+Face}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F, size\+\_\+t degree)
+\mbox{\Hypertarget{group__Common_gaa74c15b33f8ef6b0c8eefa25a689bca9}\label{group__Common_gaa74c15b33f8ef6b0c8eefa25a689bca9}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_gaa74c15b33f8ef6b0c8eefa25a689bca9}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga382451aff0b566fb35d40fb89a156d7d}\label{group__Common_ga382451aff0b566fb35d40fb89a156d7d}} 
+Vector\+Zd \mbox{\hyperlink{group__Common_ga382451aff0b566fb35d40fb89a156d7d}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::powers}} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Returns the powers of the i-\/th basis function (its degree can be found using powers(i).sum()) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_gad87f40b1e97ec1b95dcf9c56282912f3}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Monomial\+Scalar\+Basis\+Face}} (const Face \&F, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga404551f2ca5ed4e605289addbc6fb9c4}\label{group__Common_ga404551f2ca5ed4e605289addbc6fb9c4}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga404551f2ca5ed4e605289addbc6fb9c4}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::dimension}} () const
@@ -397,13 +423,16 @@ Gradient\+Value \mbox{\hyperlink{group__Common_ga25989d831b6ca783612bc54ce0f25b6
 \mbox{\Hypertarget{group__Common_gaadba906ff906d86d97cfcc1a5fbc505f}\label{group__Common_gaadba906ff906d86d97cfcc1a5fbc505f}} 
 Curl\+Value \mbox{\hyperlink{group__Common_gaadba906ff906d86d97cfcc1a5fbc505f}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the two-\/dimensional curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_gac1ec7508d33707306056a7ef73be8638}\label{group__Common_gac1ec7508d33707306056a7ef73be8638}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_gac1ec7508d33707306056a7ef73be8638}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga299c04e82954cd6bd69a31de664d1150}\label{group__Common_ga299c04e82954cd6bd69a31de664d1150}} 
 const Vector\+Rd \& \mbox{\hyperlink{group__Common_ga299c04e82954cd6bd69a31de664d1150}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::normal}} () const
 \begin{DoxyCompactList}\small\item\em Return the normal to the face used in the computation of the curl. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gaa8a841d7f31dd65d0dc3aeae6d3283c6}\label{group__Common_gaa8a841d7f31dd65d0dc3aeae6d3283c6}} 
 const Jacobian\+Type \& \mbox{\hyperlink{group__Common_gaa8a841d7f31dd65d0dc3aeae6d3283c6}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::jacobian}} () const
 \begin{DoxyCompactList}\small\item\em Return the Jacobian of the coordinate system transformation. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga5d0c563a52d9debf6889e2f994342ec7}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Monomial\+Scalar\+Basis\+Edge}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E, size\+\_\+t degree)
+\mbox{\hyperlink{group__Common_ga5d0c563a52d9debf6889e2f994342ec7}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Monomial\+Scalar\+Basis\+Edge}} (const Edge \&E, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga9e4059481a81157311d0137bfe0935e1}\label{group__Common_ga9e4059481a81157311d0137bfe0935e1}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga9e4059481a81157311d0137bfe0935e1}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::dimension}} () const
@@ -414,6 +443,9 @@ Function\+Value \mbox{\hyperlink{group__Common_gafa89fccabeee35112f4aec3bb8bd212
 \mbox{\Hypertarget{group__Common_gae0c76acbc1682b81cc2fe25f23d7884f}\label{group__Common_gae0c76acbc1682b81cc2fe25f23d7884f}} 
 Gradient\+Value \mbox{\hyperlink{group__Common_gae0c76acbc1682b81cc2fe25f23d7884f}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga08a121a5671b17bd8b15dfeb953e8a5f}\label{group__Common_ga08a121a5671b17bd8b15dfeb953e8a5f}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga08a121a5671b17bd8b15dfeb953e8a5f}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Common_gaa0576f3bfd8f5cdbdd863f147b646d15}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::\+Family}} (const Basis\+Type \&basis, const Eigen\+::\+Matrix\+Xd \&\mbox{\hyperlink{group__Common_gaf056ff8a6cbf5c566c243290e72af217}{matrix}})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gaa71fa9b9c83346561fde4c764a1b2e72}\label{group__Common_gaa71fa9b9c83346561fde4c764a1b2e72}} 
@@ -446,9 +478,12 @@ Divergence\+Value \mbox{\hyperlink{group__Common_ga0b6dc927463e4b67215ca7503d4e1
 \mbox{\Hypertarget{group__Common_gaf056ff8a6cbf5c566c243290e72af217}\label{group__Common_gaf056ff8a6cbf5c566c243290e72af217}} 
 const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__Common_gaf056ff8a6cbf5c566c243290e72af217}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::matrix}} () const
 \begin{DoxyCompactList}\small\item\em Return the coefficient matrix. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__Common_ga7afd19f4c3c17b7ac8ed16115b0ffe1c}\label{group__Common_ga7afd19f4c3c17b7ac8ed16115b0ffe1c}} 
-const Basis\+Type \& \mbox{\hyperlink{group__Common_ga7afd19f4c3c17b7ac8ed16115b0ffe1c}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::ancestor}} () const
+\mbox{\Hypertarget{group__Common_ga0fc644171394a03fb1752ed5039a6876}\label{group__Common_ga0fc644171394a03fb1752ed5039a6876}} 
+constexpr const Basis\+Type \& \mbox{\hyperlink{group__Common_ga0fc644171394a03fb1752ed5039a6876}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the ancestor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_gac5c787dd9674770eb4bffdeeb769c946}\label{group__Common_gac5c787dd9674770eb4bffdeeb769c946}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_gac5c787dd9674770eb4bffdeeb769c946}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga2f34ec8677412c819a7a49b91401c70f}\label{group__Common_ga2f34ec8677412c819a7a49b91401c70f}} 
 {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::\+Tensorized\+Vector\+Family} (const Scalar\+Family\+Type \&scalar\+\_\+family)
 \item 
@@ -479,9 +514,12 @@ Divergence\+Value \mbox{\hyperlink{group__Common_ga7c792e5a5a1c364a53d9da3ac7d4b
 \mbox{\Hypertarget{group__Common_gaaf8de8320203975aa548709d455a6ec4}\label{group__Common_gaaf8de8320203975aa548709d455a6ec4}} 
 Divergence\+Value \mbox{\hyperlink{group__Common_gaaf8de8320203975aa548709d455a6ec4}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::divergence}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&ancestor\+\_\+gradient\+\_\+quad) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__Common_gaa98332fb236225d4e17bc64aecf1eb30}\label{group__Common_gaa98332fb236225d4e17bc64aecf1eb30}} 
-const Scalar\+Family\+Type \& \mbox{\hyperlink{group__Common_gaa98332fb236225d4e17bc64aecf1eb30}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::ancestor}} () const
+\mbox{\Hypertarget{group__Common_ga2fa5d0c533a652d4e64400b3cffb9029}\label{group__Common_ga2fa5d0c533a652d4e64400b3cffb9029}} 
+constexpr const Scalar\+Family\+Type \& \mbox{\hyperlink{group__Common_ga2fa5d0c533a652d4e64400b3cffb9029}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the ancestor (family that has been tensorized) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga649326979292f0ff66afc7040516363c}\label{group__Common_ga649326979292f0ff66afc7040516363c}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga649326979292f0ff66afc7040516363c}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Common_gadf75daa62a416097ab9c2ec133dd3553}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Tangent\+Family}} (const Scalar\+Family\+Type \&scalar\+\_\+family, const Eigen\+::\+Matrix$<$ double, 2, dimspace $>$ \&generators)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga0c8e2840a23a7f9703ca75a9504b2423}\label{group__Common_ga0c8e2840a23a7f9703ca75a9504b2423}} 
@@ -493,11 +531,23 @@ Function\+Value \mbox{\hyperlink{group__Common_ga77132c1ffe753b76526c730aac3eec1
 \mbox{\Hypertarget{group__Common_ga7b41039db007f6410867f68954b69ede}\label{group__Common_ga7b41039db007f6410867f68954b69ede}} 
 Divergence\+Value \mbox{\hyperlink{group__Common_ga7b41039db007f6410867f68954b69ede}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga66fe0b4776e9c60b1f39e751cede2324}\label{group__Common_ga66fe0b4776e9c60b1f39e751cede2324}} 
+constexpr const Scalar\+Family\+Type \& \mbox{\hyperlink{group__Common_ga66fe0b4776e9c60b1f39e751cede2324}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::ancestor}} () const
+\begin{DoxyCompactList}\small\item\em Return the ancestor (family used for the tangent) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_gad753134cb7b00af29f2430a524978d12}\label{group__Common_gad753134cb7b00af29f2430a524978d12}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_gad753134cb7b00af29f2430a524978d12}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Common_gaea075c3cb8fbdd848e30d84821f23711}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::\+Shifted\+Basis}} (const Basis\+Type \&basis, const int shift)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga0d1ffbb1cb714755de9035fcb9d5f183}\label{group__Common_ga0d1ffbb1cb714755de9035fcb9d5f183}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga0d1ffbb1cb714755de9035fcb9d5f183}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::dimension}} () const
 \begin{DoxyCompactList}\small\item\em Return the dimension of the basis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_gac1b993c85fac9bfdca68021040099c2a}\label{group__Common_gac1b993c85fac9bfdca68021040099c2a}} 
+constexpr const Basis\+Type \& \mbox{\hyperlink{group__Common_gac1b993c85fac9bfdca68021040099c2a}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::ancestor}} () const
+\begin{DoxyCompactList}\small\item\em Return the underlying complete basis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga456b3898a7ee7d67c75c45bba1c21c4b}\label{group__Common_ga456b3898a7ee7d67c75c45bba1c21c4b}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga456b3898a7ee7d67c75c45bba1c21c4b}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga67db64c53524c17389e1928ff7288101}\label{group__Common_ga67db64c53524c17389e1928ff7288101}} 
 Function\+Value \mbox{\hyperlink{group__Common_ga67db64c53524c17389e1928ff7288101}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
@@ -515,9 +565,12 @@ Divergence\+Value \mbox{\hyperlink{group__Common_ga667f2913df630001dcc7d693662af
 \mbox{\Hypertarget{group__Common_gaf281956665b32bc8613043e4f303182e}\label{group__Common_gaf281956665b32bc8613043e4f303182e}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_gaf281956665b32bc8613043e4f303182e}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::dimension}} () const
 \begin{DoxyCompactList}\small\item\em Return the dimension of the basis. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__Common_ga69735cd402a3190ebd982269f4cb1582}\label{group__Common_ga69735cd402a3190ebd982269f4cb1582}} 
-const Basis\+Type \& \mbox{\hyperlink{group__Common_ga69735cd402a3190ebd982269f4cb1582}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::ancestor}} () const
+\mbox{\Hypertarget{group__Common_ga992e1072f409f356ee437ab57a9d195a}\label{group__Common_ga992e1072f409f356ee437ab57a9d195a}} 
+constexpr const Basis\+Type \& \mbox{\hyperlink{group__Common_ga992e1072f409f356ee437ab57a9d195a}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the underlying complete basis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_gafea55bfd37fcfe53c1b6ebe6a9212df8}\label{group__Common_gafea55bfd37fcfe53c1b6ebe6a9212df8}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_gafea55bfd37fcfe53c1b6ebe6a9212df8}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gacb26aa08f1f3d62deb174e82dc9c2046}\label{group__Common_gacb26aa08f1f3d62deb174e82dc9c2046}} 
 Function\+Value \mbox{\hyperlink{group__Common_gacb26aa08f1f3d62deb174e82dc9c2046}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
@@ -539,6 +592,9 @@ size\+\_\+t \mbox{\hyperlink{group__Common_gabf5cc38208c346f4b6f6d5ca5d20d767}{H
 \mbox{\Hypertarget{group__Common_ga21186eb9b6825da3867965bd2e046b23}\label{group__Common_ga21186eb9b6825da3867965bd2e046b23}} 
 Function\+Value \mbox{\hyperlink{group__Common_ga21186eb9b6825da3867965bd2e046b23}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga8792890c12bacd446176f4602056417e}\label{group__Common_ga8792890c12bacd446176f4602056417e}} 
+constexpr const Basis\+Type \& \mbox{\hyperlink{group__Common_ga8792890c12bacd446176f4602056417e}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::ancestor}} () const
+\begin{DoxyCompactList}\small\item\em Return the ancestor (basis that the gradient was taken of) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gaf0423afdb02f0b69b206709290b71325}\label{group__Common_gaf0423afdb02f0b69b206709290b71325}} 
 \mbox{\hyperlink{group__Common_gaf0423afdb02f0b69b206709290b71325}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::\+Curl\+Basis}} (const Basis\+Type \&basis)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
@@ -548,7 +604,22 @@ size\+\_\+t \mbox{\hyperlink{group__Common_gaf49ecdf88a5895335f602276d81a805b}{H
 \mbox{\Hypertarget{group__Common_ga5476b7c9f36899f48fdb549f25974b27}\label{group__Common_ga5476b7c9f36899f48fdb549f25974b27}} 
 Function\+Value \mbox{\hyperlink{group__Common_ga5476b7c9f36899f48fdb549f25974b27}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga98289e16109a552704685379e02a325e}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Roly\+Compl\+Basis\+Cell}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, size\+\_\+t degree)
+\mbox{\Hypertarget{group__Common_ga374cf617bb34d3952d2bbe3f0cf05857}\label{group__Common_ga374cf617bb34d3952d2bbe3f0cf05857}} 
+constexpr const Basis\+Type \& \mbox{\hyperlink{group__Common_ga374cf617bb34d3952d2bbe3f0cf05857}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::ancestor}} () const
+\begin{DoxyCompactList}\small\item\em Return the ancestor (basis that the gradient was taken of) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga814efa0bfe5f8035c5ef203cb229ca31}\label{group__Common_ga814efa0bfe5f8035c5ef203cb229ca31}} 
+\mbox{\hyperlink{group__Common_ga814efa0bfe5f8035c5ef203cb229ca31}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::\+Divergence\+Basis}} (const Basis\+Type \&basis)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_gadf081f9b37af70f3a9870b163a727ed5}\label{group__Common_gadf081f9b37af70f3a9870b163a727ed5}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_gadf081f9b37af70f3a9870b163a727ed5}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::dimension}} () const
+\begin{DoxyCompactList}\small\item\em Compute the dimension of the basis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_gaf611392a524e727e43d25fccf953314b}\label{group__Common_gaf611392a524e727e43d25fccf953314b}} 
+Function\+Value \mbox{\hyperlink{group__Common_gaf611392a524e727e43d25fccf953314b}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga416c3d3dd9eff2a82631c853762cc50d}\label{group__Common_ga416c3d3dd9eff2a82631c853762cc50d}} 
+constexpr const Basis\+Type \& \mbox{\hyperlink{group__Common_ga416c3d3dd9eff2a82631c853762cc50d}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::ancestor}} () const
+\begin{DoxyCompactList}\small\item\em Return the ancestor (basis that the gradient was taken of) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga98289e16109a552704685379e02a325e}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Roly\+Compl\+Basis\+Cell}} (const Cell \&T, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga964b9b4b33364cbe605d03b3c0bd0f39}\label{group__Common_ga964b9b4b33364cbe605d03b3c0bd0f39}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga964b9b4b33364cbe605d03b3c0bd0f39}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::dimension}} () const
@@ -559,7 +630,13 @@ Function\+Value \mbox{\hyperlink{group__Common_gaa030621a604f2d2402a83719b14e40a
 \mbox{\Hypertarget{group__Common_gae9437fe66e19fd6af8474c2e66262bd2}\label{group__Common_gae9437fe66e19fd6af8474c2e66262bd2}} 
 Divergence\+Value \mbox{\hyperlink{group__Common_gae9437fe66e19fd6af8474c2e66262bd2}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_gae888c90badbcf2878f72e4d992956836}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Goly\+Compl\+Basis\+Cell}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, size\+\_\+t degree)
+\mbox{\Hypertarget{group__Common_ga29e6bf8800390436c3120f9b1eb65124}\label{group__Common_ga29e6bf8800390436c3120f9b1eb65124}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga29e6bf8800390436c3120f9b1eb65124}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga70d7abf0a77b03bc851012ed20bfb4eb}\label{group__Common_ga70d7abf0a77b03bc851012ed20bfb4eb}} 
+Vector\+Zd \mbox{\hyperlink{group__Common_ga70d7abf0a77b03bc851012ed20bfb4eb}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::powers}} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Returns the powers of the i-\/th basis function (not including the vector part) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_gae888c90badbcf2878f72e4d992956836}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Goly\+Compl\+Basis\+Cell}} (const Cell \&T, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga3d4ed120b30cde8ef8d0842d05cf7eb3}\label{group__Common_ga3d4ed120b30cde8ef8d0842d05cf7eb3}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga3d4ed120b30cde8ef8d0842d05cf7eb3}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::dimension}} () const
@@ -570,7 +647,16 @@ Function\+Value \mbox{\hyperlink{group__Common_ga6814a80c622c8cf9ee9b7a2ab93473c
 \mbox{\Hypertarget{group__Common_ga9e70209fbb1c756097eecd4e820d387b}\label{group__Common_ga9e70209fbb1c756097eecd4e820d387b}} 
 Curl\+Value \mbox{\hyperlink{group__Common_ga9e70209fbb1c756097eecd4e820d387b}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga4f419152cefea2f4003e6794e8f3dcf2}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Roly\+Compl\+Basis\+Face}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F, size\+\_\+t degree)
+\mbox{\Hypertarget{group__Common_gac4e1f6061628360a9ffbad4142db2d4f}\label{group__Common_gac4e1f6061628360a9ffbad4142db2d4f}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_gac4e1f6061628360a9ffbad4142db2d4f}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga61459b0bb74e4b3d3417726370fd471b}\label{group__Common_ga61459b0bb74e4b3d3417726370fd471b}} 
+Vector\+Zd \mbox{\hyperlink{group__Common_ga61459b0bb74e4b3d3417726370fd471b}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::powers}} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Returns the powers of the i-\/th basis function (not including the vector part) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga1cf821223a7be9697b62e6cbfb5b294c}\label{group__Common_ga1cf821223a7be9697b62e6cbfb5b294c}} 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga1cf821223a7be9697b62e6cbfb5b294c}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::dim\+Pkmo}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of P$^\wedge$\{k-\/1\}(R$^\wedge$3) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga4f419152cefea2f4003e6794e8f3dcf2}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Roly\+Compl\+Basis\+Face}} (const Face \&F, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gac734469577985acf916ef90586384ae2}\label{group__Common_gac734469577985acf916ef90586384ae2}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_gac734469577985acf916ef90586384ae2}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::dimension}} () const
@@ -584,7 +670,7 @@ Divergence\+Value \mbox{\hyperlink{group__Common_gaa1e11e01e8dd03fdf0dd4789608ea
 \mbox{\Hypertarget{group__Common_gaaf7bee0da61409bdb423a3b26bf69fb4}\label{group__Common_gaaf7bee0da61409bdb423a3b26bf69fb4}} 
 const Jacobian\+Type \& \mbox{\hyperlink{group__Common_gaaf7bee0da61409bdb423a3b26bf69fb4}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::jacobian}} () const
 \begin{DoxyCompactList}\small\item\em Return the Jacobian of the coordinate system transformation. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_gafa1a983e06c624057325da3f15d24f26}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Goly\+Compl\+Basis\+Face}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F, size\+\_\+t degree)
+\mbox{\hyperlink{group__Common_gafa1a983e06c624057325da3f15d24f26}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Goly\+Compl\+Basis\+Face}} (const Face \&F, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga6e854d4617a587f4ada2e8520dd8370e}\label{group__Common_ga6e854d4617a587f4ada2e8520dd8370e}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga6e854d4617a587f4ada2e8520dd8370e}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::dimension}} () const
@@ -657,10 +743,10 @@ double \mbox{\hyperlink{group__Common_ga46a7162dd1acacd29421a7d8db89c96e}{H\+Ar\
 \mbox{\Hypertarget{group__Common_ga0105ef2d1903eeddce62e6ad647a8ead}\label{group__Common_ga0105ef2d1903eeddce62e6ad647a8ead}} 
 double \mbox{\hyperlink{group__Common_ga0105ef2d1903eeddce62e6ad647a8ead}{H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product}} (const Vector\+Rd \&x, const Vector\+Rd \&y)
 \begin{DoxyCompactList}\small\item\em Scalar product between two vectors. \end{DoxyCompactList}\item 
-boost\+::multi\+\_\+array$<$ double, 2 $>$ \mbox{\hyperlink{group__Common_gaeeaa152dde6743b3293a88f14d907e7c}{H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&basis\+\_\+quad, const Vector\+Rd \&v)
-\item 
+{\footnotesize template$<$typename Value $>$ }\\boost\+::multi\+\_\+array$<$ double, 2 $>$ \mbox{\hyperlink{group__Common_ga7c34745cd64a55b7072c5c19e45fa3ec}{H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Value, 2 $>$ \&basis\+\_\+quad, const Value \&v)
+\begin{DoxyCompactList}\small\item\em This overloading of the scalar\+\_\+product function computes the scalar product between an evaluation of a basis and a constant value; both basis values and constant value must be of type Value. \end{DoxyCompactList}\item 
 boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \mbox{\hyperlink{group__Common_ga7fd6906b30cba10f2f452b029a86ca00}{H\+Ar\+D\+Core3\+D\+::vector\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&basis\+\_\+quad, const Vector\+Rd \&v)
-\begin{DoxyCompactList}\small\item\em Compute the vector product between the evaluation of a basis and a constant vector. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compute the vector (cross) product between the evaluation of a basis and a constant vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Basis\+Type $>$ }\\\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$ \mbox{\hyperlink{group__Common_ga087cb67abbfba7c2d90f67a4e05abc20}{H\+Ar\+D\+Core3\+D\+::l2\+\_\+orthonormalize}} (const Basis\+Type \&basis, const Quadrature\+Rule \&qr, boost\+::multi\+\_\+array$<$ typename Basis\+Type\+::\+Function\+Value, 2 $>$ \&basis\+\_\+quad)
 \begin{DoxyCompactList}\small\item\em $L^2$-\/orthonormalization\+: simply consists in using \mbox{\hyperlink{group__Common_ga5452c71e3652aa957d105446a95826e8}{gram\+\_\+schmidt()}} with the specific l2 inner product \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Function\+Value $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga224969a8de049faa61bc39d3975bb237}{H\+Ar\+D\+Core3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Function\+Value, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Function\+Value, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const size\+\_\+t nrows, const size\+\_\+t ncols, const std\+::string sym=\char`\"{}nonsym\char`\"{})
@@ -679,23 +765,23 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga33b9c4c2ff96b783e8096d584
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga70a3cd2df90246841fb82bfff01665ba}{H\+Ar\+D\+Core3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const std\+::string sym)
 \item 
-{\footnotesize template$<$typename T $>$ }\\Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga69278468dd98b9ff1c514877f4705590}{H\+Ar\+D\+Core3\+D\+::integrate}} (const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ T $>$ \&f, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0)
+{\footnotesize template$<$typename T $>$ }\\Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga69278468dd98b9ff1c514877f4705590}{H\+Ar\+D\+Core3\+D\+::integrate}} (const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ T $>$ \&f, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0)
 \begin{DoxyCompactList}\small\item\em Computes the vector of integrals (f, phi\+\_\+i) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename U $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga49336d89ac16f3e9babd9df2571f5f26}{H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ U $>$ \&f, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B1, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B2, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0, const std\+::string sym=\char`\"{}nonsym\char`\"{})
+{\footnotesize template$<$typename T , typename U $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga49336d89ac16f3e9babd9df2571f5f26}{H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ U $>$ \&f, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B1, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B2, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0, const std\+::string sym=\char`\"{}nonsym\char`\"{})
 \begin{DoxyCompactList}\small\item\em Computes the Gram-\/like matrix of integrals (f phi\+\_\+i, phi\+\_\+j) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename U $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga7553f5c35f39f629060bd6b25710f3fc}{H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ U $>$ \&f, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B1, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B2, const Quadrature\+Rule \&qr, const std\+::string sym)
+{\footnotesize template$<$typename T , typename U $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga7553f5c35f39f629060bd6b25710f3fc}{H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ U $>$ \&f, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B1, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B2, const Quadrature\+Rule \&qr, const std\+::string sym)
 \begin{DoxyCompactList}\small\item\em Computes the Gram-\/like matrix of integrals (f phi\+\_\+i, phi\+\_\+j) \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gaccbfd425467a7d4d3212f43c29c2d6e7}{H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ Vector\+Rd $>$ \&f, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ Vector\+Rd $>$ \&B1, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ double $>$ \&B2, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0)
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gaccbfd425467a7d4d3212f43c29c2d6e7}{H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \&f, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ Vector\+Rd $>$ \&B1, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ double $>$ \&B2, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0)
 \begin{DoxyCompactList}\small\item\em Computes the Gram-\/like matrix of integrals (f dot phi\+\_\+i, phi\+\_\+j) \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga17118956be8fdf8f41886286d37e4fe7}{H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ Vector\+Rd $>$ \&f, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ double $>$ \&B1, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ Vector\+Rd $>$ \&B2, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0)
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga17118956be8fdf8f41886286d37e4fe7}{H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \&f, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ double $>$ \&B1, const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ Vector\+Rd $>$ \&B2, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0)
 \begin{DoxyCompactList}\small\item\em Computes the Gram-\/like matrix of integrals (phi\+\_\+i, f dot phi\+\_\+j) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Basis\+Type $>$ }\\Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga9fc99a6fc8eaea7b200fc643de492bea}{H\+Ar\+D\+Core3\+D\+::l2\+\_\+projection}} (const std\+::function$<$ typename Basis\+Type\+::\+Function\+Value(const Vector\+Rd \&)$>$ \&f, const Basis\+Type \&basis, Quadrature\+Rule \&quad, const boost\+::multi\+\_\+array$<$ typename Basis\+Type\+::\+Function\+Value, 2 $>$ \&basis\+\_\+quad)
 \begin{DoxyCompactList}\small\item\em Compute the L2-\/projection of a function. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga4d61471624e7a6f427627804ab9dd65e}\label{group__Common_ga4d61471624e7a6f427627804ab9dd65e}} 
-\mbox{\hyperlink{group__Common_ga4d61471624e7a6f427627804ab9dd65e}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga2bf25204b5238ee2cb8386980b4d3d23}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
+\mbox{\hyperlink{group__Common_ga4d61471624e7a6f427627804ab9dd65e}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga2bf25204b5238ee2cb8386980b4d3d23}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga2bf25204b5238ee2cb8386980b4d3d23}\label{group__Common_ga2bf25204b5238ee2cb8386980b4d3d23}} 
-const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_ga2bf25204b5238ee2cb8386980b4d3d23}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::mesh}} () const
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_ga2bf25204b5238ee2cb8386980b4d3d23}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::mesh}} () const
 \begin{DoxyCompactList}\small\item\em Returns the mesh. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gab3cbb4fe1085b32192baf757864a12d2}\label{group__Common_gab3cbb4fe1085b32192baf757864a12d2}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_gab3cbb4fe1085b32192baf757864a12d2}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Vertex}} () const
@@ -713,61 +799,70 @@ size\+\_\+t \mbox{\hyperlink{group__Common_ga3ec18049e568f17ccbf04ae9216db601}{H
 size\+\_\+t \mbox{\hyperlink{group__Common_ga29e694831f8cb15a697ebd1fa3328cfc}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension}} () const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the global space (all D\+O\+Fs for all geometric entities) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gaf5be09370de0b156d84ffebfa65cfdd7}\label{group__Common_gaf5be09370de0b156d84ffebfa65cfdd7}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_gaf5be09370de0b156d84ffebfa65cfdd7}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Vertex}} (const \mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gaf5be09370de0b156d84ffebfa65cfdd7}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Vertex}} (const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the vertex V. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gac302decae3fc38c68349633679907ded}\label{group__Common_gac302decae3fc38c68349633679907ded}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_gac302decae3fc38c68349633679907ded}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Vertex}} (size\+\_\+t iV) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the vertex of index iV. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gabd1ff0e8f72b0d704fc1dc43515a4964}\label{group__Common_gabd1ff0e8f72b0d704fc1dc43515a4964}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_gabd1ff0e8f72b0d704fc1dc43515a4964}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Edge}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gabd1ff0e8f72b0d704fc1dc43515a4964}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Edge}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the edge E (including vertices) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga5874112f1e7410b3d5374ccd26c29dc2}\label{group__Common_ga5874112f1e7410b3d5374ccd26c29dc2}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga5874112f1e7410b3d5374ccd26c29dc2}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Edge}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the edge of index iE (including vertices) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga5d352f872c262bdfef16b4724e537129}\label{group__Common_ga5d352f872c262bdfef16b4724e537129}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga5d352f872c262bdfef16b4724e537129}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Face}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga5d352f872c262bdfef16b4724e537129}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Face}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the face F (including edges and vertices) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga9d9b8096c64c1744d35cd6c56dcfef53}\label{group__Common_ga9d9b8096c64c1744d35cd6c56dcfef53}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga9d9b8096c64c1744d35cd6c56dcfef53}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Face}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the face of index iF (including edges and vertices) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga59a24a629227943440f4f6798e224266}\label{group__Common_ga59a24a629227943440f4f6798e224266}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga59a24a629227943440f4f6798e224266}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Cell}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga59a24a629227943440f4f6798e224266}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Cell}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the cell T (including faces, edges and vertices) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga235962f32e9b513f34d907b81a56bb63}\label{group__Common_ga235962f32e9b513f34d907b81a56bb63}} 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga235962f32e9b513f34d907b81a56bb63}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::dimension\+Cell}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the cell of index iT (including faces, edges and vertices) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga48882a60b19f7a2a6fdb6131a6a1f555}\label{group__Common_ga48882a60b19f7a2a6fdb6131a6a1f555}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga48882a60b19f7a2a6fdb6131a6a1f555}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E, const \mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga48882a60b19f7a2a6fdb6131a6a1f555}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const Edge \&E, const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the edge E. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gaf5461326d116945f36c43696079ddcf7}\label{group__Common_gaf5461326d116945f36c43696079ddcf7}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_gaf5461326d116945f36c43696079ddcf7}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gaf5461326d116945f36c43696079ddcf7}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the edge E. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gaff0c032a9f7f742b08023015e09f4a65}\label{group__Common_gaff0c032a9f7f742b08023015e09f4a65}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_gaff0c032a9f7f742b08023015e09f4a65}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F, const \mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gaff0c032a9f7f742b08023015e09f4a65}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const Face \&F, const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the face F. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga2d0c748052389a75d261b8a22d2e77fc}\label{group__Common_ga2d0c748052389a75d261b8a22d2e77fc}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga2d0c748052389a75d261b8a22d2e77fc}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F, const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga2d0c748052389a75d261b8a22d2e77fc}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const Face \&F, const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the edge E with respect to the face F. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga6b808cb9c2188eefd660994dcdc21dfb}\label{group__Common_ga6b808cb9c2188eefd660994dcdc21dfb}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga6b808cb9c2188eefd660994dcdc21dfb}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga6b808cb9c2188eefd660994dcdc21dfb}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the face F. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gae3d61c6860ac8b8e0be93106ff0f334a}\label{group__Common_gae3d61c6860ac8b8e0be93106ff0f334a}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_gae3d61c6860ac8b8e0be93106ff0f334a}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, const \mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gae3d61c6860ac8b8e0be93106ff0f334a}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T, const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the cell T. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga9f90bbc7123b42a9f5e46ee01467e401}\label{group__Common_ga9f90bbc7123b42a9f5e46ee01467e401}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga9f90bbc7123b42a9f5e46ee01467e401}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga9f90bbc7123b42a9f5e46ee01467e401}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T, const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the edge E with respect to the cell T. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gac482cd7e8c15b56548b57993e753c1c7}\label{group__Common_gac482cd7e8c15b56548b57993e753c1c7}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_gac482cd7e8c15b56548b57993e753c1c7}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gac482cd7e8c15b56548b57993e753c1c7}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T, const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the face F with respect to the cell T. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_ga1780a89a433818e0d7adc3c16dc4b0c1}\label{group__Common_ga1780a89a433818e0d7adc3c16dc4b0c1}} 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga1780a89a433818e0d7adc3c16dc4b0c1}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga1780a89a433818e0d7adc3c16dc4b0c1}{H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the element T. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga60ba878dc51ffe013b4cd394741d34f0}{H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (const std\+::function$<$ double(const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, const Eigen\+::\+Vector3d \&x)$>$ \+\_\+value, std\+::function$<$ size\+\_\+t(const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T)$>$ \+\_\+deg)
+\mbox{\hyperlink{group__Common_ga60ba878dc51ffe013b4cd394741d34f0}{H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (const std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ \+\_\+value, std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ \+\_\+deg)
 \item 
 \mbox{\Hypertarget{group__Common_gaed526b573136d558b81d9be87646b5c9}\label{group__Common_gaed526b573136d558b81d9be87646b5c9}} 
 {\bfseries H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight} (double val)
 \item 
+\mbox{\Hypertarget{group__Common_ga3d0b88a9cf4441b331df044ff5283323}\label{group__Common_ga3d0b88a9cf4441b331df044ff5283323}} 
+static void \mbox{\hyperlink{group__Common_ga3d0b88a9cf4441b331df044ff5283323}{H\+Ar\+D\+Core3\+D\+::parallel\+\_\+for}} (unsigned nb\+\_\+elements, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end)$>$ functor, bool use\+\_\+threads=true)
+\begin{DoxyCompactList}\small\item\em Generic function to execute threaded processes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_gac77ab9801f6fcca6b81f0a069969c951}\label{group__Common_gac77ab9801f6fcca6b81f0a069969c951}} 
+static std\+::pair$<$ Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_gac77ab9801f6fcca6b81f0a069969c951}{H\+Ar\+D\+Core3\+D\+::parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, size\+\_\+t size\+\_\+system, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets, Eigen\+::\+Vector\+Xd $\ast$rhs)$>$ batch\+\_\+local\+\_\+assembly, bool use\+\_\+threads=true)
+\begin{DoxyCompactList}\small\item\em Function to assemble global matrix and right-\/hand side from a procedure that compute local triplets and rhs contributions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_ga96c8e29a4f63768d516460ff68a4e979}\label{group__Common_ga96c8e29a4f63768d516460ff68a4e979}} 
+static std\+::tuple$<$ Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd, Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_ga96c8e29a4f63768d516460ff68a4e979}{H\+Ar\+D\+Core3\+D\+::parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, size\+\_\+t size\+\_\+system1, std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ size\+\_\+\+Mat2, size\+\_\+t size\+\_\+b2, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets1, Eigen\+::\+Vector\+Xd $\ast$vec1, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets2, Eigen\+::\+Vector\+Xd $\ast$vec2)$>$ batch\+\_\+local\+\_\+assembly, bool use\+\_\+threads=true)
+\begin{DoxyCompactList}\small\item\em Function to assemble a two global matrices and vectors (such as\+: system and static condensation operator, or system and matrix for BC) from a procedure that compute local triplets and rhs contributions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gaa4f1be3674586f91be75fa82b0f15c06}\label{group__Common_gaa4f1be3674586f91be75fa82b0f15c06}} 
 static size\+\_\+t \mbox{\hyperlink{group__Common_gaa4f1be3674586f91be75fa82b0f15c06}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Poly}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Pk(\+T) \end{DoxyCompactList}\item 
@@ -786,6 +881,12 @@ static size\+\_\+t \mbox{\hyperlink{group__Common_ga1de54f13e08a96383b30900296b6
 \mbox{\Hypertarget{group__Common_ga22228536ce1b14bab8f448732240e06b}\label{group__Common_ga22228536ce1b14bab8f448732240e06b}} 
 static size\+\_\+t \mbox{\hyperlink{group__Common_ga22228536ce1b14bab8f448732240e06b}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Poly}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Pk(\+F) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_gabb441ee750501ad19a56a744bb97c2ab}\label{group__Common_gabb441ee750501ad19a56a744bb97c2ab}} 
+static size\+\_\+t \mbox{\hyperlink{group__Common_gabb441ee750501ad19a56a744bb97c2ab}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Goly}} (int k)
+\begin{DoxyCompactList}\small\item\em Dimension of Gk(\+F) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Common_gabf01fe85b09055f0457c7b0215eca8a0}\label{group__Common_gabf01fe85b09055f0457c7b0215eca8a0}} 
+static size\+\_\+t \mbox{\hyperlink{group__Common_gabf01fe85b09055f0457c7b0215eca8a0}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Goly\+Compl}} (int k)
+\begin{DoxyCompactList}\small\item\em Dimension of Gck(\+F) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Common_gad66be33d62a1aedcdbdbeb1ab459ce6b}\label{group__Common_gad66be33d62a1aedcdbdbeb1ab459ce6b}} 
 static size\+\_\+t \mbox{\hyperlink{group__Common_gad66be33d62a1aedcdbdbeb1ab459ce6b}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Roly}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Rk(\+F) \end{DoxyCompactList}\item 
@@ -801,8 +902,11 @@ static size\+\_\+t \mbox{\hyperlink{group__Common_gacd6cc9660f6f97e52d075c031cdd
 \mbox{\Hypertarget{group__Common_ga23a211ab9d745e2e803ad606e1df445f}\label{group__Common_ga23a211ab9d745e2e803ad606e1df445f}} 
 constexpr int \mbox{\hyperlink{group__Common_ga23a211ab9d745e2e803ad606e1df445f}{H\+Ar\+D\+Core3\+D\+::dimspace}} = 3
 \begin{DoxyCompactList}\small\item\em Dimension, and generic types for vector in correct dimension (makes it easier to translate a code between 2D and 3D) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__Common_ga104e27d408ed50f11be94319e1f25257}\label{group__Common_ga104e27d408ed50f11be94319e1f25257}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::tensor\+Rank} = Scalar
+\mbox{\Hypertarget{group__Common_gab43422e8da4efc46d8eb6e614043fb3a}\label{group__Common_gab43422e8da4efc46d8eb6e614043fb3a}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::tensor\+Rank} = Scalar
+\item 
+\mbox{\Hypertarget{group__Common_gac19a4f178187d83e876eed0585ff0303}\label{group__Common_gac19a4f178187d83e876eed0585ff0303}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::has\+Ancestor} = false
 \item 
 \mbox{\Hypertarget{group__Common_gaca469ec6c0769d354043cac5c0e46efa}\label{group__Common_gaca469ec6c0769d354043cac5c0e46efa}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::has\+Function} = true
@@ -816,8 +920,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Ce
 \mbox{\Hypertarget{group__Common_ga3209c64ffde8ca1f8d63abb33ce8ee5a}\label{group__Common_ga3209c64ffde8ca1f8d63abb33ce8ee5a}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::has\+Divergence} = false
 \item 
-\mbox{\Hypertarget{group__Common_ga5e2771dce6f22d686302ef1654b1d7a1}\label{group__Common_ga5e2771dce6f22d686302ef1654b1d7a1}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::tensor\+Rank} = Scalar
+\mbox{\Hypertarget{group__Common_ga74bd34297effa0fe6ff25e7037e4d06e}\label{group__Common_ga74bd34297effa0fe6ff25e7037e4d06e}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::tensor\+Rank} = Scalar
+\item 
+\mbox{\Hypertarget{group__Common_ga6ef4d1c2d635ec83514467171b61e061}\label{group__Common_ga6ef4d1c2d635ec83514467171b61e061}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::has\+Ancestor} = false
 \item 
 \mbox{\Hypertarget{group__Common_ga7f8f17dffce90637f3a38831c1453db5}\label{group__Common_ga7f8f17dffce90637f3a38831c1453db5}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::has\+Function} = true
@@ -831,8 +938,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Fa
 \mbox{\Hypertarget{group__Common_gabded3a224b17ec37cafbebdc190889ac}\label{group__Common_gabded3a224b17ec37cafbebdc190889ac}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::has\+Divergence} = false
 \item 
-\mbox{\Hypertarget{group__Common_ga30e0bd3b18537fba53da8cdc1d0fcb3c}\label{group__Common_ga30e0bd3b18537fba53da8cdc1d0fcb3c}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::tensor\+Rank} = Scalar
+\mbox{\Hypertarget{group__Common_ga388e6368e7bc42d0e537bfea5e398a53}\label{group__Common_ga388e6368e7bc42d0e537bfea5e398a53}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::tensor\+Rank} = Scalar
+\item 
+\mbox{\Hypertarget{group__Common_ga46443d53162faa74da5867b3d56b9526}\label{group__Common_ga46443d53162faa74da5867b3d56b9526}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::has\+Ancestor} = false
 \item 
 \mbox{\Hypertarget{group__Common_ga2f68f9c5072ae2c9fcc578af10bd3820}\label{group__Common_ga2f68f9c5072ae2c9fcc578af10bd3820}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::has\+Function} = true
@@ -846,8 +956,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Ed
 \mbox{\Hypertarget{group__Common_ga236b6c30dd086def8c0826441a5e110c}\label{group__Common_ga236b6c30dd086def8c0826441a5e110c}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::has\+Divergence} = false
 \item 
-\mbox{\Hypertarget{group__Common_ga78b538f422207983374190af40e1dfec}\label{group__Common_ga78b538f422207983374190af40e1dfec}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+\mbox{\Hypertarget{group__Common_gad17d368b1c5a0b0bf2c849fd8353a374}\label{group__Common_gad17d368b1c5a0b0bf2c849fd8353a374}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+\item 
+\mbox{\Hypertarget{group__Common_gabb09e8ff6ea8e0c4d4498761fd872972}\label{group__Common_gabb09e8ff6ea8e0c4d4498761fd872972}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::has\+Ancestor} = true
 \item 
 \mbox{\Hypertarget{group__Common_gab00249d408f8228595197421aaf28ac6}\label{group__Common_gab00249d408f8228595197421aaf28ac6}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::has\+Function} = Basis\+Type\+::has\+Function
@@ -861,8 +974,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+
 \mbox{\Hypertarget{group__Common_gac905ca089d3f75eee5a4e655544b9223}\label{group__Common_gac905ca089d3f75eee5a4e655544b9223}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::has\+Divergence} = Basis\+Type\+::has\+Divergence
 \item 
-\mbox{\Hypertarget{group__Common_ga885e56bf6d22b2bccfd8dc8f57e1796a}\label{group__Common_ga885e56bf6d22b2bccfd8dc8f57e1796a}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::tensor\+Rank} = Vector
+\mbox{\Hypertarget{group__Common_ga6a2dd3b404ac41b88a9a690834e49b8f}\label{group__Common_ga6a2dd3b404ac41b88a9a690834e49b8f}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::tensor\+Rank} = Vector
+\item 
+\mbox{\Hypertarget{group__Common_gadb757e1dd5cdf054f2ad08cba1c8126d}\label{group__Common_gadb757e1dd5cdf054f2ad08cba1c8126d}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::has\+Ancestor} = true
 \item 
 \mbox{\Hypertarget{group__Common_ga9b13b73400eb42f3860a261232954deb}\label{group__Common_ga9b13b73400eb42f3860a261232954deb}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::has\+Function} = Scalar\+Family\+Type\+::has\+Function
@@ -876,8 +992,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$
 \mbox{\Hypertarget{group__Common_gac508be3ba29add3055e394ea73413f3d}\label{group__Common_gac508be3ba29add3055e394ea73413f3d}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::has\+Curl} = (Scalar\+Family\+Type\+::has\+Gradient \&\& N == dimspace)
 \item 
-\mbox{\Hypertarget{group__Common_gaddb414802c3ee0841738affdf7518d76}\label{group__Common_gaddb414802c3ee0841738affdf7518d76}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::tensor\+Rank} = Vector
+\mbox{\Hypertarget{group__Common_ga0c1be4966b6727e605c63552a284d5ed}\label{group__Common_ga0c1be4966b6727e605c63552a284d5ed}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::tensor\+Rank} = Vector
+\item 
+\mbox{\Hypertarget{group__Common_ga99f575440e27e478c7085b4e2bcf1178}\label{group__Common_ga99f575440e27e478c7085b4e2bcf1178}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::has\+Ancestor} = true
 \item 
 \mbox{\Hypertarget{group__Common_gad4ab1d6b2ca463c599a0cc2aa3bee0a0}\label{group__Common_gad4ab1d6b2ca463c599a0cc2aa3bee0a0}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::has\+Function} = true
@@ -891,8 +1010,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+
 \mbox{\Hypertarget{group__Common_gacc4ac75108de64702c0f59737f1b5173}\label{group__Common_gacc4ac75108de64702c0f59737f1b5173}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::has\+Divergence} = true
 \item 
-\mbox{\Hypertarget{group__Common_ga3aed71a500126a2f56662ca9e4cc8788}\label{group__Common_ga3aed71a500126a2f56662ca9e4cc8788}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+\mbox{\Hypertarget{group__Common_ga146c6b7ee1d90b25fbfec315a73a4e33}\label{group__Common_ga146c6b7ee1d90b25fbfec315a73a4e33}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+\item 
+\mbox{\Hypertarget{group__Common_gaf3a9cd82dcbaf5ce5ea60809723d7f51}\label{group__Common_gaf3a9cd82dcbaf5ce5ea60809723d7f51}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::has\+Ancestor} = true
 \item 
 \mbox{\Hypertarget{group__Common_gac37f96b17e6954da1571f16593fcf0c6}\label{group__Common_gac37f96b17e6954da1571f16593fcf0c6}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::has\+Function} = Basis\+Type\+::has\+Function
@@ -906,8 +1028,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Ty
 \mbox{\Hypertarget{group__Common_gabdca69c0f60b7e305c887e16df8e4c26}\label{group__Common_gabdca69c0f60b7e305c887e16df8e4c26}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::has\+Divergence} = Basis\+Type\+::has\+Divergence
 \item 
-\mbox{\Hypertarget{group__Common_ga3ddf18de758627911fa464fc589f7efa}\label{group__Common_ga3ddf18de758627911fa464fc589f7efa}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+\mbox{\Hypertarget{group__Common_ga3f9ce91f8e07c56e0ac2a08c92293ec9}\label{group__Common_ga3f9ce91f8e07c56e0ac2a08c92293ec9}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+\item 
+\mbox{\Hypertarget{group__Common_ga9b0f9cad6af430adde892c2f013b036f}\label{group__Common_ga9b0f9cad6af430adde892c2f013b036f}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::has\+Ancestor} = true
 \item 
 \mbox{\Hypertarget{group__Common_gac69eacd2dade777041c3320d4b830131}\label{group__Common_gac69eacd2dade777041c3320d4b830131}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::has\+Function} = Basis\+Type\+::has\+Function
@@ -921,8 +1046,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\
 \mbox{\Hypertarget{group__Common_gaf5b965b1943c028721975f8044ec9b87}\label{group__Common_gaf5b965b1943c028721975f8044ec9b87}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::has\+Divergence} = Basis\+Type\+::has\+Divergence
 \item 
-\mbox{\Hypertarget{group__Common_gae15ea33e6d492df490f202061e73a5c7}\label{group__Common_gae15ea33e6d492df490f202061e73a5c7}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank} = Vector
+\mbox{\Hypertarget{group__Common_gacee6ade35c9c1c43ae84d947a3a22d90}\label{group__Common_gacee6ade35c9c1c43ae84d947a3a22d90}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank} = Vector
+\item 
+\mbox{\Hypertarget{group__Common_ga2272fbf955936e9bcc825603b0449643}\label{group__Common_ga2272fbf955936e9bcc825603b0449643}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::has\+Ancestor} = true
 \item 
 \mbox{\Hypertarget{group__Common_gac70395c81f9bb7ec168fc77cb287f6b8}\label{group__Common_gac70395c81f9bb7ec168fc77cb287f6b8}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::has\+Function} = true
@@ -936,8 +1064,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+T
 \mbox{\Hypertarget{group__Common_ga3be6e64c5c36d83019fdfefd249a0f3d}\label{group__Common_ga3be6e64c5c36d83019fdfefd249a0f3d}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::has\+Divergence} = false
 \item 
-\mbox{\Hypertarget{group__Common_ga27d5f76ff419fbc0e1ce3200bf60d5af}\label{group__Common_ga27d5f76ff419fbc0e1ce3200bf60d5af}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank} = Vector
+\mbox{\Hypertarget{group__Common_ga85dd7d93d82b13c5026435f1f4a8dc6d}\label{group__Common_ga85dd7d93d82b13c5026435f1f4a8dc6d}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank} = Vector
+\item 
+\mbox{\Hypertarget{group__Common_ga3108160b370b596b417b3fee42148ecc}\label{group__Common_ga3108160b370b596b417b3fee42148ecc}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::has\+Ancestor} = true
 \item 
 \mbox{\Hypertarget{group__Common_gaa3dddcba9bc2d51963ad399f3187037f}\label{group__Common_gaa3dddcba9bc2d51963ad399f3187037f}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::has\+Function} = true
@@ -951,8 +1082,29 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type 
 \mbox{\Hypertarget{group__Common_ga5a3ced55d938a4db0cb91c78b076d5e7}\label{group__Common_ga5a3ced55d938a4db0cb91c78b076d5e7}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::has\+Divergence} = false
 \item 
-\mbox{\Hypertarget{group__Common_gae2d5f6179039595c7552014e0dfc86fc}\label{group__Common_gae2d5f6179039595c7552014e0dfc86fc}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::tensor\+Rank} = Vector
+\mbox{\Hypertarget{group__Common_ga41facfbc83567bec73acde57a9756ec4}\label{group__Common_ga41facfbc83567bec73acde57a9756ec4}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank} = Scalar
+\item 
+\mbox{\Hypertarget{group__Common_ga7c0634bc3b6872414e2b07c2a491a448}\label{group__Common_ga7c0634bc3b6872414e2b07c2a491a448}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::has\+Ancestor} = true
+\item 
+\mbox{\Hypertarget{group__Common_ga7c9ddef268c1e0455839ac2d5bd931db}\label{group__Common_ga7c9ddef268c1e0455839ac2d5bd931db}} 
+static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::has\+Function} = true
+\item 
+\mbox{\Hypertarget{group__Common_ga6c1601007631d65ac424ac20f7aba2a2}\label{group__Common_ga6c1601007631d65ac424ac20f7aba2a2}} 
+static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::has\+Gradient} = false
+\item 
+\mbox{\Hypertarget{group__Common_gaea0d9518972367c67c8b6919184dc5a2}\label{group__Common_gaea0d9518972367c67c8b6919184dc5a2}} 
+static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::has\+Curl} = false
+\item 
+\mbox{\Hypertarget{group__Common_ga2ed5bdfb5a56bdd38245c86930628ca2}\label{group__Common_ga2ed5bdfb5a56bdd38245c86930628ca2}} 
+static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::has\+Divergence} = false
+\item 
+\mbox{\Hypertarget{group__Common_ga0dc1703854e1b7185087ce2cc41474ed}\label{group__Common_ga0dc1703854e1b7185087ce2cc41474ed}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::tensor\+Rank} = Vector
+\item 
+\mbox{\Hypertarget{group__Common_gafe0d3e625e265e72bb52dfdb25a021b1}\label{group__Common_gafe0d3e625e265e72bb52dfdb25a021b1}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::has\+Ancestor} = false
 \item 
 \mbox{\Hypertarget{group__Common_ga4a0f9931416601458a7b27aba31a122a}\label{group__Common_ga4a0f9931416601458a7b27aba31a122a}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::has\+Function} = true
@@ -966,8 +1118,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+:
 \mbox{\Hypertarget{group__Common_ga80bdfa79913245f50a4be627cd588b34}\label{group__Common_ga80bdfa79913245f50a4be627cd588b34}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::has\+Divergence} = true
 \item 
-\mbox{\Hypertarget{group__Common_ga2d7830ed1686c70c2b268c542237fc4d}\label{group__Common_ga2d7830ed1686c70c2b268c542237fc4d}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::tensor\+Rank} = Vector
+\mbox{\Hypertarget{group__Common_gaa118913e5b978f97b6b12eb88294d60d}\label{group__Common_gaa118913e5b978f97b6b12eb88294d60d}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::tensor\+Rank} = Vector
+\item 
+\mbox{\Hypertarget{group__Common_ga9681920f976b732f63c963595acf19be}\label{group__Common_ga9681920f976b732f63c963595acf19be}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::has\+Ancestor} = false
 \item 
 \mbox{\Hypertarget{group__Common_ga55fc151905ee1480e33db8e5526b8945}\label{group__Common_ga55fc151905ee1480e33db8e5526b8945}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::has\+Function} = true
@@ -981,8 +1136,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+:
 \mbox{\Hypertarget{group__Common_gaae600e9a23657d28bce1e6d4700b5a25}\label{group__Common_gaae600e9a23657d28bce1e6d4700b5a25}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::has\+Divergence} = false
 \item 
-\mbox{\Hypertarget{group__Common_ga6f17a9216f45e703a7d20e2bc0fb8dde}\label{group__Common_ga6f17a9216f45e703a7d20e2bc0fb8dde}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::tensor\+Rank} = Vector
+\mbox{\Hypertarget{group__Common_ga398117bc91ab19d9cdcb93be96270059}\label{group__Common_ga398117bc91ab19d9cdcb93be96270059}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::tensor\+Rank} = Vector
+\item 
+\mbox{\Hypertarget{group__Common_gaf300593008a6b4e0ea031ad65be79b07}\label{group__Common_gaf300593008a6b4e0ea031ad65be79b07}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::has\+Ancestor} = false
 \item 
 \mbox{\Hypertarget{group__Common_ga35d71f5ff089ba26c825ddad4c9b0e97}\label{group__Common_ga35d71f5ff089ba26c825ddad4c9b0e97}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::has\+Function} = true
@@ -996,8 +1154,11 @@ static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+:
 \mbox{\Hypertarget{group__Common_gad2ccb8cadd9997b4870d5a6b90d706e9}\label{group__Common_gad2ccb8cadd9997b4870d5a6b90d706e9}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::has\+Divergence} = true
 \item 
-\mbox{\Hypertarget{group__Common_gac51db534b0a29f0006a8973a07459bb1}\label{group__Common_gac51db534b0a29f0006a8973a07459bb1}} 
-static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::tensor\+Rank} = Vector
+\mbox{\Hypertarget{group__Common_ga5108b9354f683ae7be935a4ceb9569bd}\label{group__Common_ga5108b9354f683ae7be935a4ceb9569bd}} 
+constexpr static const Tensor\+RankE {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::tensor\+Rank} = Vector
+\item 
+\mbox{\Hypertarget{group__Common_ga7c913291ec4bab40fad06b27b1f464f8}\label{group__Common_ga7c913291ec4bab40fad06b27b1f464f8}} 
+constexpr static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::has\+Ancestor} = false
 \item 
 \mbox{\Hypertarget{group__Common_ga85658a58babb166b5460b736de871ba4}\label{group__Common_ga85658a58babb166b5460b736de871ba4}} 
 static const bool {\bfseries H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::has\+Function} = true
@@ -1024,7 +1185,7 @@ static const Basis\+FunctionE {\bfseries H\+Ar\+D\+Core3\+D\+::detail\+::basis\+
 static const Basis\+FunctionE {\bfseries H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Divergence $>$\+::\+Ancestor\+Basis\+Function} = Gradient
 \item 
 \mbox{\Hypertarget{group__Common_gaee6309df95b3459b1f4905c15c6239bd}\label{group__Common_gaee6309df95b3459b1f4905c15c6239bd}} 
-const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \& {\bfseries H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::m\+\_\+mesh}
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& {\bfseries H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::m\+\_\+mesh}
 \item 
 \mbox{\Hypertarget{group__Common_ga56a143825b7be4349a5164d8336b5841}\label{group__Common_ga56a143825b7be4349a5164d8336b5841}} 
 size\+\_\+t {\bfseries H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+vertex\+\_\+dofs}
@@ -1039,10 +1200,10 @@ size\+\_\+t {\bfseries H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+l
 size\+\_\+t {\bfseries H\+Ar\+D\+Core3\+D\+::\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+cell\+\_\+dofs}
 \item 
 \mbox{\Hypertarget{group__Common_ga0e64dd7fa60d788876219241162f0f6e}\label{group__Common_ga0e64dd7fa60d788876219241162f0f6e}} 
-std\+::function$<$ double(const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, const Eigen\+::\+Vector3d \&x)$>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::value}
+std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::value}
 \item 
 \mbox{\Hypertarget{group__Common_ga6380d57e44432a9d08114c442158dc8a}\label{group__Common_ga6380d57e44432a9d08114c442158dc8a}} 
-std\+::function$<$ size\+\_\+t(const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T)$>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::deg}
+std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ {\bfseries H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::deg}
 \end{DoxyCompactItemize}
 
 
@@ -1259,7 +1420,7 @@ Compute the Gram-\/like matrix given the evaluation of two families of functions
 \index{compute\_weighted\_gram\_matrix@{compute\_weighted\_gram\_matrix}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{compute\_weighted\_gram\_matrix()}{compute\_weighted\_gram\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
-Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ U $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&}]{B1,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&}]{B2,  }\item[{const Quadrature\+Rule \&}]{qr,  }\item[{const std\+::string}]{sym }\end{DoxyParamCaption})}
+Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ U $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&}]{B1,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&}]{B2,  }\item[{const Quadrature\+Rule \&}]{qr,  }\item[{const std\+::string}]{sym }\end{DoxyParamCaption})}
 
 
 
@@ -1283,7 +1444,7 @@ Computes the Gram-\/like matrix of integrals (f phi\+\_\+i, phi\+\_\+j)
 \index{compute\_weighted\_gram\_matrix@{compute\_weighted\_gram\_matrix}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{compute\_weighted\_gram\_matrix()}{compute\_weighted\_gram\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
-Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ U $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&}]{B1,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&}]{B2,  }\item[{const Quadrature\+Rule \&}]{qr,  }\item[{size\+\_\+t}]{n\+\_\+rows = {\ttfamily 0},  }\item[{size\+\_\+t}]{n\+\_\+cols = {\ttfamily 0},  }\item[{const std\+::string}]{sym = {\ttfamily \char`\"{}nonsym\char`\"{}} }\end{DoxyParamCaption})}
+Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ U $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&}]{B1,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&}]{B2,  }\item[{const Quadrature\+Rule \&}]{qr,  }\item[{size\+\_\+t}]{n\+\_\+rows = {\ttfamily 0},  }\item[{size\+\_\+t}]{n\+\_\+cols = {\ttfamily 0},  }\item[{const std\+::string}]{sym = {\ttfamily \char`\"{}nonsym\char`\"{}} }\end{DoxyParamCaption})}
 
 
 
@@ -1310,7 +1471,7 @@ Computes the Gram-\/like matrix of integrals (f phi\+\_\+i, phi\+\_\+j)
 \index{Common@{Common}!compute\_weighted\_gram\_matrix@{compute\_weighted\_gram\_matrix}}
 \index{compute\_weighted\_gram\_matrix@{compute\_weighted\_gram\_matrix}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{compute\_weighted\_gram\_matrix()}{compute\_weighted\_gram\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ Vector\+Rd $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ double $>$ \&}]{B1,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ Vector\+Rd $>$ \&}]{B2,  }\item[{const Quadrature\+Rule \&}]{qr,  }\item[{size\+\_\+t}]{n\+\_\+rows,  }\item[{size\+\_\+t}]{n\+\_\+cols }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ double $>$ \&}]{B1,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ Vector\+Rd $>$ \&}]{B2,  }\item[{const Quadrature\+Rule \&}]{qr,  }\item[{size\+\_\+t}]{n\+\_\+rows,  }\item[{size\+\_\+t}]{n\+\_\+cols }\end{DoxyParamCaption})}
 
 
 
@@ -1335,7 +1496,7 @@ Computes the Gram-\/like matrix of integrals (phi\+\_\+i, f dot phi\+\_\+j)
 \index{Common@{Common}!compute\_weighted\_gram\_matrix@{compute\_weighted\_gram\_matrix}}
 \index{compute\_weighted\_gram\_matrix@{compute\_weighted\_gram\_matrix}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{compute\_weighted\_gram\_matrix()}{compute\_weighted\_gram\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ Vector\+Rd $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ Vector\+Rd $>$ \&}]{B1,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ double $>$ \&}]{B2,  }\item[{const Quadrature\+Rule \&}]{qr,  }\item[{size\+\_\+t}]{n\+\_\+rows,  }\item[{size\+\_\+t}]{n\+\_\+cols }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ Vector\+Rd $>$ \&}]{B1,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ double $>$ \&}]{B2,  }\item[{const Quadrature\+Rule \&}]{qr,  }\item[{size\+\_\+t}]{n\+\_\+rows,  }\item[{size\+\_\+t}]{n\+\_\+cols }\end{DoxyParamCaption})}
 
 
 
@@ -1378,7 +1539,7 @@ Constructor.
 \index{Common@{Common}!GolyComplBasisCell@{GolyComplBasisCell}}
 \index{GolyComplBasisCell@{GolyComplBasisCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{GolyComplBasisCell()}{GolyComplBasisCell()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Goly\+Compl\+Basis\+Cell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&}]{T,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Goly\+Compl\+Basis\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
 
 
 
@@ -1395,7 +1556,7 @@ Constructor.
 \index{Common@{Common}!GolyComplBasisFace@{GolyComplBasisFace}}
 \index{GolyComplBasisFace@{GolyComplBasisFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{GolyComplBasisFace()}{GolyComplBasisFace()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Goly\+Compl\+Basis\+Face (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&}]{F,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Goly\+Compl\+Basis\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
 
 
 
@@ -1428,7 +1589,7 @@ The function also modifies the variable basis\+\_\+eval so that it contains the 
 \index{Common@{Common}!IntegralWeight@{IntegralWeight}}
 \index{IntegralWeight@{IntegralWeight}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{IntegralWeight()}{IntegralWeight()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, const Eigen\+::\+Vector3d \&x)$>$}]{\+\_\+value,  }\item[{std\+::function$<$ size\+\_\+t(const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T)$>$}]{\+\_\+deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$}]{\+\_\+value,  }\item[{std\+::function$<$ size\+\_\+t(const Cell \&T)$>$}]{\+\_\+deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -1442,7 +1603,7 @@ The function also modifies the variable basis\+\_\+eval so that it contains the 
 \index{integrate@{integrate}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{integrate()}{integrate()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::integrate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_gaf7ef55817c2af72faaaa416170fba181}{F\+Type}}$<$ T $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&}]{B,  }\item[{const Quadrature\+Rule \&}]{qr,  }\item[{size\+\_\+t}]{n\+\_\+rows = {\ttfamily 0} }\end{DoxyParamCaption})}
+Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::integrate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ T $>$ \&}]{f,  }\item[{const \mbox{\hyperlink{group__Common_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&}]{B,  }\item[{const Quadrature\+Rule \&}]{qr,  }\item[{size\+\_\+t}]{n\+\_\+rows = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
@@ -1505,7 +1666,7 @@ Compute the L2-\/projection of a function.
 \index{Common@{Common}!MonomialScalarBasisCell@{MonomialScalarBasisCell}}
 \index{MonomialScalarBasisCell@{MonomialScalarBasisCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{MonomialScalarBasisCell()}{MonomialScalarBasisCell()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Monomial\+Scalar\+Basis\+Cell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&}]{T,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Monomial\+Scalar\+Basis\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
 
 
 
@@ -1522,7 +1683,7 @@ Constructor.
 \index{Common@{Common}!MonomialScalarBasisEdge@{MonomialScalarBasisEdge}}
 \index{MonomialScalarBasisEdge@{MonomialScalarBasisEdge}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{MonomialScalarBasisEdge()}{MonomialScalarBasisEdge()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Monomial\+Scalar\+Basis\+Edge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&}]{E,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Monomial\+Scalar\+Basis\+Edge (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
 
 
 
@@ -1539,7 +1700,7 @@ Constructor.
 \index{Common@{Common}!MonomialScalarBasisFace@{MonomialScalarBasisFace}}
 \index{MonomialScalarBasisFace@{MonomialScalarBasisFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{MonomialScalarBasisFace()}{MonomialScalarBasisFace()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Monomial\+Scalar\+Basis\+Face (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&}]{F,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Monomial\+Scalar\+Basis\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
 
 
 
@@ -1574,7 +1735,7 @@ Constructor.
 \index{Common@{Common}!RolyComplBasisCell@{RolyComplBasisCell}}
 \index{RolyComplBasisCell@{RolyComplBasisCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{RolyComplBasisCell()}{RolyComplBasisCell()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Roly\+Compl\+Basis\+Cell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&}]{T,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Roly\+Compl\+Basis\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
 
 
 
@@ -1591,7 +1752,7 @@ Constructor.
 \index{Common@{Common}!RolyComplBasisFace@{RolyComplBasisFace}}
 \index{RolyComplBasisFace@{RolyComplBasisFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{RolyComplBasisFace()}{RolyComplBasisFace()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Roly\+Compl\+Basis\+Face (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&}]{F,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Roly\+Compl\+Basis\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{size\+\_\+t}]{degree }\end{DoxyParamCaption})}
 
 
 
@@ -1604,13 +1765,18 @@ Constructor.
 {\em degree} & The maximum polynomial degree to be considered \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{group__Common_gaeeaa152dde6743b3293a88f14d907e7c}\label{group__Common_gaeeaa152dde6743b3293a88f14d907e7c}} 
+\mbox{\Hypertarget{group__Common_ga7c34745cd64a55b7072c5c19e45fa3ec}\label{group__Common_ga7c34745cd64a55b7072c5c19e45fa3ec}} 
 \index{Common@{Common}!scalar\_product@{scalar\_product}}
 \index{scalar\_product@{scalar\_product}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{scalar\_product()}{scalar\_product()}}
-{\footnotesize\ttfamily boost\+::multi\+\_\+array$<$ double, 2 $>$ H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product (\begin{DoxyParamCaption}\item[{const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&}]{basis\+\_\+quad,  }\item[{const Vector\+Rd \&}]{v }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename Value $>$ \\
+boost\+::multi\+\_\+array$<$double, 2$>$ H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product (\begin{DoxyParamCaption}\item[{const boost\+::multi\+\_\+array$<$ Value, 2 $>$ \&}]{basis\+\_\+quad,  }\item[{const Value \&}]{v }\end{DoxyParamCaption})}
 
-This overloading of the scalar\+\_\+product function computes the scalar product between an evaluation of a basis and a constant vector 
+
+
+This overloading of the scalar\+\_\+product function computes the scalar product between an evaluation of a basis and a constant value; both basis values and constant value must be of type Value. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em basis\+\_\+quad} & The basis evaluation \\
 \hline
@@ -1661,7 +1827,7 @@ Constructor.
 
 
 
-Compute the vector product between the evaluation of a basis and a constant vector. 
+Compute the vector (cross) product between the evaluation of a basis and a constant vector. 
 
 
 \begin{DoxyParams}{Parameters}

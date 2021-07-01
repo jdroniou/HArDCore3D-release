@@ -114,10 +114,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:gad138164f173610fb861cef714646edae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble the global system <br  />
   <a href="group__DDR__magnetostatic.html#gad138164f173610fb861cef714646edae">More...</a><br /></td></tr>
 <tr class="separator:gad138164f173610fb861cef714646edae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8da4c0eb850477b856bbdf115045266f"><td class="memItemLeft" align="right" valign="top">
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga8da4c0eb850477b856bbdf115045266f">dimension</a> () const</td></tr>
-<tr class="memdesc:ga8da4c0eb850477b856bbdf115045266f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the global problem dimension. <br /></td></tr>
-<tr class="separator:ga8da4c0eb850477b856bbdf115045266f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d4739fa01b264a573909bb69488487f"><td class="memItemLeft" align="right" valign="top">
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga9d4739fa01b264a573909bb69488487f">dimensionSpace</a> () const</td></tr>
+<tr class="memdesc:ga9d4739fa01b264a573909bb69488487f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension of the magnetic field + potential space. <br /></td></tr>
+<tr class="separator:ga9d4739fa01b264a573909bb69488487f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a501f243a498fd6567c2b7b71c9be98"><td class="memItemLeft" align="right" valign="top">
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga4a501f243a498fd6567c2b7b71c9be98">nbSCDOFs</a> () const</td></tr>
+<tr class="memdesc:ga4a501f243a498fd6567c2b7b71c9be98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of statically condensed DOFs (here, the cell magnetic field DOFs) <br /></td></tr>
+<tr class="separator:ga4a501f243a498fd6567c2b7b71c9be98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9bdfe696d9b36cca0546e85ee73eed4"><td class="memItemLeft" align="right" valign="top">
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gab9bdfe696d9b36cca0546e85ee73eed4">sizeSystem</a> () const</td></tr>
+<tr class="memdesc:gab9bdfe696d9b36cca0546e85ee73eed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the statically condensed system. <br /></td></tr>
+<tr class="separator:gab9bdfe696d9b36cca0546e85ee73eed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga19b0cd652147b495285bece47378342c"><td class="memItemLeft" align="right" valign="top">
 const <a class="el" href="classHArDCore3D_1_1XCurl.html">XCurl</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga19b0cd652147b495285bece47378342c">xCurl</a> () const</td></tr>
 <tr class="memdesc:ga19b0cd652147b495285bece47378342c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1XCurl.html" title="Discrete Hcurl space: local operators, L2 product and global interpolator.">XCurl</a>. <br /></td></tr>
@@ -150,6 +158,14 @@ const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga36ff2404c85e550ad25907ec8ba188db">stabilizationParameter</a> ()</td></tr>
 <tr class="memdesc:ga36ff2404c85e550ad25907ec8ba188db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the stabilization parameter. <br /></td></tr>
 <tr class="separator:ga36ff2404c85e550ad25907ec8ba188db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c5f649d4c5d14b11f52033b4cfff644"><td class="memItemLeft" align="right" valign="top">
+const SystemMatrixType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga7c5f649d4c5d14b11f52033b4cfff644">scMatrix</a> () const</td></tr>
+<tr class="memdesc:ga7c5f649d4c5d14b11f52033b4cfff644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the static condensation recovery operator. <br /></td></tr>
+<tr class="separator:ga7c5f649d4c5d14b11f52033b4cfff644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5cc8800c0cea12e57a31a8f97f58ce7"><td class="memItemLeft" align="right" valign="top">
+Eigen::VectorXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gac5cc8800c0cea12e57a31a8f97f58ce7">scVector</a> ()</td></tr>
+<tr class="memdesc:gac5cc8800c0cea12e57a31a8f97f58ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the static condensation rhs. <br /></td></tr>
+<tr class="separator:gac5cc8800c0cea12e57a31a8f97f58ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga26c61a8a5522d09c07d2a20eecb15925"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga26c61a8a5522d09c07d2a20eecb15925">computeNorm</a> (const Eigen::VectorXd &amp;v) const</td></tr>
 <tr class="memdesc:ga26c61a8a5522d09c07d2a20eecb15925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the discrete Hcurl \times Hdiv norm.  <a href="group__DDR__magnetostatic.html#ga26c61a8a5522d09c07d2a20eecb15925">More...</a><br /></td></tr>
 <tr class="separator:ga26c61a8a5522d09c07d2a20eecb15925"><td class="memSeparator" colspan="2">&#160;</td></tr>

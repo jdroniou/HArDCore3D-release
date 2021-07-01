@@ -2,11 +2,6 @@
 \label{classHArDCore3D_1_1Family}\index{HArDCore3D::Family$<$ BasisType $>$@{HArDCore3D::Family$<$ BasisType $>$}}
 
 
-\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}} of functions expressed as linear combination of the functions of a given basis.  
-
-
-
-
 {\ttfamily \#include $<$basis.\+hpp$>$}
 
 \doxysubsection*{Public Types}
@@ -47,12 +42,16 @@ Divergence\+Value \mbox{\hyperlink{group__Common_ga0b6dc927463e4b67215ca7503d4e1
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th function at a quadrature point iqn, knowing all the divergences of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
 const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__Common_gaf056ff8a6cbf5c566c243290e72af217}{matrix}} () const
 \begin{DoxyCompactList}\small\item\em Return the coefficient matrix. \end{DoxyCompactList}\item 
-const Basis\+Type \& \mbox{\hyperlink{group__Common_ga7afd19f4c3c17b7ac8ed16115b0ffe1c}{ancestor}} () const
-\begin{DoxyCompactList}\small\item\em Return the ancestor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+constexpr const Basis\+Type \& \mbox{\hyperlink{group__Common_ga0fc644171394a03fb1752ed5039a6876}{ancestor}} () const
+\begin{DoxyCompactList}\small\item\em Return the ancestor. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gac5c787dd9674770eb4bffdeeb769c946}{max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const Tensor\+RankE {\bfseries tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+constexpr static const Tensor\+RankE {\bfseries tensor\+Rank} = Basis\+Type\+::tensor\+Rank
+\item 
+constexpr static const bool {\bfseries has\+Ancestor} = true
 \item 
 static const bool {\bfseries has\+Function} = Basis\+Type\+::has\+Function
 \item 
@@ -68,7 +67,9 @@ static const bool {\bfseries has\+Divergence} = Basis\+Type\+::has\+Divergence
 \subsubsection*{template$<$typename Basis\+Type$>$\newline
 class H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$}
 
-\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}} of functions expressed as linear combination of the functions of a given basis. 
+\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}} of functions expressed as linear combination of the functions of a given basis
+
+If $(f_1,...,f_r)$ is the basis, then the family is $(\phi_1,...,\phi_l)$ where $\phi_i = \sum_j M_ij f_j$. The matrix $M$ is the member m\+\_\+matrix. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

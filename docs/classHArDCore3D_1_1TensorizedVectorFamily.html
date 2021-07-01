@@ -147,16 +147,23 @@ DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaaf8de8320203975aa548709d455a6ec4">divergence</a> (size_t i, size_t iqn, const boost::multi_array&lt; VectorRd, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
 <tr class="memdesc:gaaf8de8320203975aa548709d455a6ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
 <tr class="separator:gaaf8de8320203975aa548709d455a6ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa98332fb236225d4e17bc64aecf1eb30"><td class="memItemLeft" align="right" valign="top">
-const ScalarFamilyType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaa98332fb236225d4e17bc64aecf1eb30">ancestor</a> () const</td></tr>
-<tr class="memdesc:gaa98332fb236225d4e17bc64aecf1eb30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ancestor (family that has been tensorized) <br /></td></tr>
-<tr class="separator:gaa98332fb236225d4e17bc64aecf1eb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fa5d0c533a652d4e64400b3cffb9029"><td class="memItemLeft" align="right" valign="top">
+constexpr const ScalarFamilyType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2fa5d0c533a652d4e64400b3cffb9029">ancestor</a> () const</td></tr>
+<tr class="memdesc:ga2fa5d0c533a652d4e64400b3cffb9029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ancestor (family that has been tensorized) <br /></td></tr>
+<tr class="separator:ga2fa5d0c533a652d4e64400b3cffb9029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga649326979292f0ff66afc7040516363c"><td class="memItemLeft" align="right" valign="top">
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga649326979292f0ff66afc7040516363c">max_degree</a> () const</td></tr>
+<tr class="memdesc:ga649326979292f0ff66afc7040516363c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum degree of the basis functions. <br /></td></tr>
+<tr class="separator:ga649326979292f0ff66afc7040516363c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ga885e56bf6d22b2bccfd8dc8f57e1796a"><td class="memItemLeft" align="right" valign="top">
-static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = Vector</td></tr>
-<tr class="separator:ga885e56bf6d22b2bccfd8dc8f57e1796a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a2dd3b404ac41b88a9a690834e49b8f"><td class="memItemLeft" align="right" valign="top">
+constexpr static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = Vector</td></tr>
+<tr class="separator:ga6a2dd3b404ac41b88a9a690834e49b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb757e1dd5cdf054f2ad08cba1c8126d"><td class="memItemLeft" align="right" valign="top">
+constexpr static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasAncestor</b> = true</td></tr>
+<tr class="separator:gadb757e1dd5cdf054f2ad08cba1c8126d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9b13b73400eb42f3860a261232954deb"><td class="memItemLeft" align="right" valign="top">
 static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasFunction</b> = ScalarFamilyType::hasFunction</td></tr>
 <tr class="separator:ga9b13b73400eb42f3860a261232954deb"><td class="memSeparator" colspan="2">&#160;</td></tr>

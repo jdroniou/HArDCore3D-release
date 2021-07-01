@@ -1,0 +1,73 @@
+\hypertarget{classHArDCore3D_1_1MeshReaderRF}{}\doxysection{H\+Ar\+D\+Core3D\+::Mesh\+Reader\+RF Class Reference}
+\label{classHArDCore3D_1_1MeshReaderRF}\index{HArDCore3D::MeshReaderRF@{HArDCore3D::MeshReaderRF}}
+
+
+The \mbox{\hyperlink{classHArDCore3D_1_1MeshReaderRF}{Mesh\+Reader\+RF}} class provides functions to read a RF mesh file.  
+
+
+
+
+{\ttfamily \#include $<$mesh\+\_\+reader.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHArDCore3D_1_1MeshReaderRF_a12b1657e23db5db0f698525cf9008b6f}{Mesh\+Reader\+RF}} (std\+::string file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em class to read the cells and vertices in a file \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHArDCore3D_1_1MeshReaderRF_af3c700126be667bb7c3bec3d9766c0ff}{$\sim$\+Mesh\+Reader\+RF}} ()
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MeshReaderRF_a1b5e5e1bd2a87ea28b1aa29a4d6a4b27}\label{classHArDCore3D_1_1MeshReaderRF_a1b5e5e1bd2a87ea28b1aa29a4d6a4b27}} 
+void {\bfseries read\+\_\+node\+\_\+file} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ \&vertices)
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MeshReaderRF_a0e293f2022000fa146bc3a778f5a2e15}\label{classHArDCore3D_1_1MeshReaderRF_a0e293f2022000fa146bc3a778f5a2e15}} 
+void {\bfseries read\+\_\+ele\+\_\+file} (std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ std\+::size\+\_\+t $>$$>$$>$ \&cells)
+\item 
+\mbox{\Hypertarget{classHArDCore3D_1_1MeshReaderRF_aac4a74969a1d86ecc1f08f7ca6a52eeb}\label{classHArDCore3D_1_1MeshReaderRF_aac4a74969a1d86ecc1f08f7ca6a52eeb}} 
+void {\bfseries read\+\_\+partition\+\_\+file} (std\+::vector$<$ std\+::vector$<$ std\+::size\+\_\+t $>$$>$ \&partition)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classHArDCore3D_1_1MeshReaderRF}{Mesh\+Reader\+RF}} class provides functions to read a RF mesh file. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHArDCore3D_1_1MeshReaderRF_a12b1657e23db5db0f698525cf9008b6f}\label{classHArDCore3D_1_1MeshReaderRF_a12b1657e23db5db0f698525cf9008b6f}} 
+\index{HArDCore3D::MeshReaderRF@{HArDCore3D::MeshReaderRF}!MeshReaderRF@{MeshReaderRF}}
+\index{MeshReaderRF@{MeshReaderRF}!HArDCore3D::MeshReaderRF@{HArDCore3D::MeshReaderRF}}
+\doxysubsubsection{\texorpdfstring{MeshReaderRF()}{MeshReaderRF()}}
+{\footnotesize\ttfamily Mesh\+Reader\+R\+F\+::\+Mesh\+Reader\+RF (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+class to read the cells and vertices in a file 
+
+Constructor for mesh reader
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & name of the file name, needs to include the full path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHArDCore3D_1_1MeshReaderRF_af3c700126be667bb7c3bec3d9766c0ff}\label{classHArDCore3D_1_1MeshReaderRF_af3c700126be667bb7c3bec3d9766c0ff}} 
+\index{HArDCore3D::MeshReaderRF@{HArDCore3D::MeshReaderRF}!````~MeshReaderRF@{$\sim$MeshReaderRF}}
+\index{````~MeshReaderRF@{$\sim$MeshReaderRF}!HArDCore3D::MeshReaderRF@{HArDCore3D::MeshReaderRF}}
+\doxysubsubsection{\texorpdfstring{$\sim$MeshReaderRF()}{~MeshReaderRF()}}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Mesh\+Reader\+R\+F\+::$\sim$\+Mesh\+Reader\+RF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reads the file into the specified containers
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & reference to a vector to hold the vertices coordinates \\
+\hline
+{\em faces} & reference to a vector to hold the cell indexes \\
+\hline
+{\em cells} & reference to a vector to hold the cell centers coordinates \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Mesh/mesh\+\_\+reader.\+hpp\item 
+src/\+Mesh/mesh\+\_\+reader.\+cpp\end{DoxyCompactItemize}

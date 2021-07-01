@@ -14,7 +14,6 @@ namespace HArDCore3D {
 */
 
 class QuadRuleTriangle{
- static constexpr size_t max_doe = 20;
 
 public:
     /**

@@ -1,0 +1,411 @@
+\hypertarget{group__DirectedGraph}{}\doxysection{Directed\+Graph}
+\label{group__DirectedGraph}\index{DirectedGraph@{DirectedGraph}}
+
+
+The \mbox{\hyperlink{classDirectedGraph}{Directed\+Graph}} class as well as classes that make it up and the Node\+Array class.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDirectedFace}{Directed\+Face}}
+\item 
+class \mbox{\hyperlink{classDirectedCell}{Directed\+Cell}}
+\item 
+class \mbox{\hyperlink{classCellNodeArray}{Cell\+Node\+Array}}
+\item 
+class \mbox{\hyperlink{classGraphNodeArray}{Graph\+Node\+Array}}
+\item 
+class \mbox{\hyperlink{classDirectedGraph}{Directed\+Graph}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga773decc3b1a80d48cafcc5529b4a2b52}\label{group__DirectedGraph_ga773decc3b1a80d48cafcc5529b4a2b52}} 
+typedef std\+::vector$<$ std\+::vector$<$ std\+::size\+\_\+t $>$ $>$ \mbox{\hyperlink{group__DirectedGraph_ga773decc3b1a80d48cafcc5529b4a2b52}{Array}}
+\begin{DoxyCompactList}\small\item\em Type definition for a matrix of unsigned ints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__DirectedGraph_gab3c830ce6712eedb8ed700faeb9f8892}\label{group__DirectedGraph_gab3c830ce6712eedb8ed700faeb9f8892}} 
+\mbox{\hyperlink{group__DirectedGraph_gab3c830ce6712eedb8ed700faeb9f8892}{Directed\+Face\+::\+Directed\+Face}} ()
+\begin{DoxyCompactList}\small\item\em Null constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_gaba5e073908ac6c9fba6312fcd87a8934}\label{group__DirectedGraph_gaba5e073908ac6c9fba6312fcd87a8934}} 
+\mbox{\hyperlink{group__DirectedGraph_gaba5e073908ac6c9fba6312fcd87a8934}{Directed\+Face\+::$\sim$\+Directed\+Face}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga6842229272b49356d115d80139621d76}\label{group__DirectedGraph_ga6842229272b49356d115d80139621d76}} 
+\mbox{\hyperlink{group__DirectedGraph_ga6842229272b49356d115d80139621d76}{Directed\+Face\+::\+Directed\+Face}} (std\+::vector$<$ std\+::size\+\_\+t $>$)
+\begin{DoxyCompactList}\small\item\em Class Constructor\+: Initialises the face with the two nodes that form the face. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_ga04769e625391a9d4f426b5245183567a}{Directed\+Face\+::add\+\_\+vertex}} (size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Add a vertex to face. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_gae4d1522331389ab808fb12da9d99f6b8}\label{group__DirectedGraph_gae4d1522331389ab808fb12da9d99f6b8}} 
+bool \mbox{\hyperlink{group__DirectedGraph_gae4d1522331389ab808fb12da9d99f6b8}{operator==}} (const \mbox{\hyperlink{classDirectedFace}{Directed\+Face}} \&, const \mbox{\hyperlink{classDirectedFace}{Directed\+Face}} \&)
+\begin{DoxyCompactList}\small\item\em Boolean operation to test if two faces are equal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga225e167654e33677739daa8b4024ecec}\label{group__DirectedGraph_ga225e167654e33677739daa8b4024ecec}} 
+\mbox{\hyperlink{group__DirectedGraph_ga225e167654e33677739daa8b4024ecec}{Directed\+Cell\+::\+Directed\+Cell}} ()
+\begin{DoxyCompactList}\small\item\em Null Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga253ec3c1e27f3448f4c027dc939d23ca}\label{group__DirectedGraph_ga253ec3c1e27f3448f4c027dc939d23ca}} 
+\mbox{\hyperlink{group__DirectedGraph_ga253ec3c1e27f3448f4c027dc939d23ca}{Directed\+Cell\+::\+Directed\+Cell}} (std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga6d3d90db9d33b062dbc1a5bb8e3a7ac5}\label{group__DirectedGraph_ga6d3d90db9d33b062dbc1a5bb8e3a7ac5}} 
+\mbox{\hyperlink{group__DirectedGraph_ga6d3d90db9d33b062dbc1a5bb8e3a7ac5}{Directed\+Cell\+::$\sim$\+Directed\+Cell}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DirectedGraph_gac57136d1331d11fcd447293ee9e18304}{Directed\+Cell\+::\+Directed\+Cell}} (std\+::vector$<$ \mbox{\hyperlink{classDirectedFace}{Directed\+Face}} $>$ \&, std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Class Constructor\+: Initialises the cell with a vector of faces and the cell ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_gab13a6a2baf680da049d74571d5754c7a}{Directed\+Cell\+::add\+\_\+face}} (\mbox{\hyperlink{classDirectedFace}{Directed\+Face}} \&)
+\begin{DoxyCompactList}\small\item\em Method to append an face to the end of the cell. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_ga9ceda9914cec89310175777aca20fac2}{Directed\+Cell\+::remove\+\_\+face}} (std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Remove face at a given position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_gac0f16b824c2bafc1001458e76a406d2f}{Directed\+Cell\+::append\+\_\+cell}} (\mbox{\hyperlink{classDirectedCell}{Directed\+Cell}} \&)
+\item 
+\mbox{\Hypertarget{group__DirectedGraph_gafa8d1a8e2f5bee38bd622a43b7ca987d}\label{group__DirectedGraph_gafa8d1a8e2f5bee38bd622a43b7ca987d}} 
+bool {\bfseries Directed\+Cell\+::check\+\_\+cell} ()
+\item 
+bool \mbox{\hyperlink{group__DirectedGraph_ga53b9c1643f956bcd5ab002056378c6b3}{Directed\+Cell\+::has\+\_\+face}} (\mbox{\hyperlink{classDirectedFace}{Directed\+Face}})
+\begin{DoxyCompactList}\small\item\em Tests if cell has an face. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_gaf5ae2eecc2289036fec988e6ac17b28a}\label{group__DirectedGraph_gaf5ae2eecc2289036fec988e6ac17b28a}} 
+void \mbox{\hyperlink{group__DirectedGraph_gaf5ae2eecc2289036fec988e6ac17b28a}{Directed\+Cell\+::print}} ()
+\begin{DoxyCompactList}\small\item\em Prints all the faces of the cell. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_gae81ef934a632a10c321924e0ee0c2cdd}\label{group__DirectedGraph_gae81ef934a632a10c321924e0ee0c2cdd}} 
+\mbox{\hyperlink{group__DirectedGraph_gae81ef934a632a10c321924e0ee0c2cdd}{Cell\+Node\+Array\+::\+Cell\+Node\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Null constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga8e8bfb34499bd027d66c7b38727e5f34}\label{group__DirectedGraph_ga8e8bfb34499bd027d66c7b38727e5f34}} 
+\mbox{\hyperlink{group__DirectedGraph_ga8e8bfb34499bd027d66c7b38727e5f34}{Cell\+Node\+Array\+::$\sim$\+Cell\+Node\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DirectedGraph_ga66192ac33aed1728eff86b4225ea6536}{Cell\+Node\+Array\+::\+Cell\+Node\+Array}} (\mbox{\hyperlink{group__DirectedGraph_ga773decc3b1a80d48cafcc5529b4a2b52}{Array}} \&)
+\begin{DoxyCompactList}\small\item\em Class Constructor\+: Initialises the Node\+Array with the cell-\/node array. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__DirectedGraph_gaeaa08c422428f795a4b3061010fa32fc}{Cell\+Node\+Array\+::node\+\_\+exists}} (std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Test if a given node exists in the cell-\/node array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_ga1feae939ac3c412f801bde4b738f8f78}{Cell\+Node\+Array\+::renum\+\_\+nodes}} (std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Subtracts one from all nodes greater than a given node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_gaf20261ec61d394e94036de8b6c9fc614}{Cell\+Node\+Array\+::print}} (std\+::ofstream $\ast$, std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Prints the cell node array to an out file stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga6c69776546c7cb4512bd70b8fe09bdf0}\label{group__DirectedGraph_ga6c69776546c7cb4512bd70b8fe09bdf0}} 
+\mbox{\hyperlink{group__DirectedGraph_ga6c69776546c7cb4512bd70b8fe09bdf0}{Graph\+Node\+Array\+::\+Graph\+Node\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Null constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_gae3ea206d0967db01b011587a0bbee31a}\label{group__DirectedGraph_gae3ea206d0967db01b011587a0bbee31a}} 
+\mbox{\hyperlink{group__DirectedGraph_gae3ea206d0967db01b011587a0bbee31a}{Graph\+Node\+Array\+::$\sim$\+Graph\+Node\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DirectedGraph_gabf8791778b5d306cab8e52ac388264dd}{Graph\+Node\+Array\+::\+Graph\+Node\+Array}} (std\+::vector$<$ \mbox{\hyperlink{classCellNodeArray}{Cell\+Node\+Array}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Class Constructor\+: Initialises the Node\+Array with the cell-\/node array. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__DirectedGraph_ga643e4b8829864ecd3bc5e6dcc904bfd6}{Graph\+Node\+Array\+::node\+\_\+exists}} (std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Test if a given node exists in the cell-\/node array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_ga67a2f20e27976bc80ce97361e6978c1a}{Graph\+Node\+Array\+::renum\+\_\+nodes}} (std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Subtracts one from all nodes greater than a given node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_ga622917e9b97c39772ea8614f1b387a4f}{Graph\+Node\+Array\+::print}} (std\+::ofstream $\ast$)
+\begin{DoxyCompactList}\small\item\em Prints the cell node array to an out file stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga7d37e393a3106ec8bc0a553bd3b3781d}\label{group__DirectedGraph_ga7d37e393a3106ec8bc0a553bd3b3781d}} 
+\mbox{\hyperlink{group__DirectedGraph_ga7d37e393a3106ec8bc0a553bd3b3781d}{Directed\+Graph\+::\+Directed\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Null constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga176ce553205173ec161e7f8ecee538e2}\label{group__DirectedGraph_ga176ce553205173ec161e7f8ecee538e2}} 
+\mbox{\hyperlink{group__DirectedGraph_ga176ce553205173ec161e7f8ecee538e2}{Directed\+Graph\+::$\sim$\+Directed\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DirectedGraph_gacc2e4b9901d188b39ed07b344721cd16}{Directed\+Graph\+::\+Directed\+Graph}} (std\+::vector$<$ \mbox{\hyperlink{classDirectedCell}{Directed\+Cell}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Class Constructor\+: Initialises the \mbox{\hyperlink{classDirectedGraph}{Directed\+Graph}} with the cells. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_ga42fd299698e4fe23da7d1ec808782e62}{Directed\+Graph\+::add\+\_\+cell}} (\mbox{\hyperlink{classDirectedCell}{Directed\+Cell}} \&)
+\begin{DoxyCompactList}\small\item\em Appends a cell to the end of the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_ga628418a842a138d4f116eb896884313d}{Directed\+Graph\+::remove\+\_\+cell}} (std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Removes cell from a given position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga8c65f0105052eb42b390466fba9bbfa9}\label{group__DirectedGraph_ga8c65f0105052eb42b390466fba9bbfa9}} 
+bool \mbox{\hyperlink{group__DirectedGraph_ga8c65f0105052eb42b390466fba9bbfa9}{Directed\+Graph\+::test\+\_\+graph}} ()
+\begin{DoxyCompactList}\small\item\em Test if graph has duplicate faces or unordered cells. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga4ee0c940bce40349e65e66650793c150}\label{group__DirectedGraph_ga4ee0c940bce40349e65e66650793c150}} 
+void \mbox{\hyperlink{group__DirectedGraph_ga4ee0c940bce40349e65e66650793c150}{Directed\+Graph\+::randomise}} ()
+\begin{DoxyCompactList}\small\item\em Randomise order of cells in graph. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga733c67a409201b1fbcd8f81b149674e5}\label{group__DirectedGraph_ga733c67a409201b1fbcd8f81b149674e5}} 
+void \mbox{\hyperlink{group__DirectedGraph_ga733c67a409201b1fbcd8f81b149674e5}{Directed\+Graph\+::order}} ()
+\begin{DoxyCompactList}\small\item\em Order cells in graph by the number of faces in each cell. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_gaeefb904651b206753259331ba674792b}\label{group__DirectedGraph_gaeefb904651b206753259331ba674792b}} 
+void \mbox{\hyperlink{group__DirectedGraph_gaeefb904651b206753259331ba674792b}{Directed\+Graph\+::coarsen}} ()
+\begin{DoxyCompactList}\small\item\em Coarsen the graph by merging cells. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga699690c1dc328475925d8308cdef658f}\label{group__DirectedGraph_ga699690c1dc328475925d8308cdef658f}} 
+\mbox{\hyperlink{classGraphNodeArray}{Graph\+Node\+Array}} \mbox{\hyperlink{group__DirectedGraph_ga699690c1dc328475925d8308cdef658f}{Directed\+Graph\+::graph\+\_\+to\+\_\+array}} ()
+\begin{DoxyCompactList}\small\item\em Returns the cell-\/node array the graph corresponds to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga9c6c96b6359f0110be53d7eb62315510}\label{group__DirectedGraph_ga9c6c96b6359f0110be53d7eb62315510}} 
+std\+::string \mbox{\hyperlink{group__DirectedGraph_ga9c6c96b6359f0110be53d7eb62315510}{Directed\+Graph\+::get\+\_\+partition}} ()
+\begin{DoxyCompactList}\small\item\em Returns list of fine cells that each coarse cell consists of. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga2f26c8e89557dfc44ff6473530a19d21}\label{group__DirectedGraph_ga2f26c8e89557dfc44ff6473530a19d21}} 
+void \mbox{\hyperlink{group__DirectedGraph_ga2f26c8e89557dfc44ff6473530a19d21}{Directed\+Graph\+::plotfile}} (std\+::ofstream $\ast$, std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&)
+\begin{DoxyCompactList}\small\item\em Outputs to a .dat file for gnuplot to read. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__DirectedGraph_gafbf56b0f88221fadf7b137f0d3f95271}\label{group__DirectedGraph_gafbf56b0f88221fadf7b137f0d3f95271}} 
+std\+::vector$<$ std\+::size\+\_\+t $>$ \mbox{\hyperlink{group__DirectedGraph_gafbf56b0f88221fadf7b137f0d3f95271}{Directed\+Face\+::V}}
+\begin{DoxyCompactList}\small\item\em vector of vertices \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_gac695fd50528ac35bdf04e1d31fb73def}\label{group__DirectedGraph_gac695fd50528ac35bdf04e1d31fb73def}} 
+std\+::vector$<$ \mbox{\hyperlink{classDirectedFace}{Directed\+Face}} $>$ \mbox{\hyperlink{group__DirectedGraph_gac695fd50528ac35bdf04e1d31fb73def}{Directed\+Cell\+::T}}
+\begin{DoxyCompactList}\small\item\em The faces the cell consists of. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga7076a03ed5eab5b98a7d74cce0a4d4e9}\label{group__DirectedGraph_ga7076a03ed5eab5b98a7d74cce0a4d4e9}} 
+std\+::vector$<$ std\+::size\+\_\+t $>$ \mbox{\hyperlink{group__DirectedGraph_ga7076a03ed5eab5b98a7d74cce0a4d4e9}{Directed\+Cell\+::part}}
+\begin{DoxyCompactList}\small\item\em The cell ID\textquotesingle{}s of the cell\textquotesingle{}s that have formed this cell. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga2c55773429d4c6d9411607795cc9b340}\label{group__DirectedGraph_ga2c55773429d4c6d9411607795cc9b340}} 
+\mbox{\hyperlink{group__DirectedGraph_ga773decc3b1a80d48cafcc5529b4a2b52}{Array}} \mbox{\hyperlink{group__DirectedGraph_ga2c55773429d4c6d9411607795cc9b340}{Cell\+Node\+Array\+::A}}
+\begin{DoxyCompactList}\small\item\em The cell-\/node array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_gab4fb0c81bc08201a646916657ec67b0f}\label{group__DirectedGraph_gab4fb0c81bc08201a646916657ec67b0f}} 
+std\+::vector$<$ \mbox{\hyperlink{classCellNodeArray}{Cell\+Node\+Array}} $>$ \mbox{\hyperlink{group__DirectedGraph_gab4fb0c81bc08201a646916657ec67b0f}{Graph\+Node\+Array\+::\+GA}}
+\begin{DoxyCompactList}\small\item\em The cell-\/node array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DirectedGraph_ga607e96aec2a7672a9ba375f38c0288dc}\label{group__DirectedGraph_ga607e96aec2a7672a9ba375f38c0288dc}} 
+std\+::vector$<$ \mbox{\hyperlink{classDirectedCell}{Directed\+Cell}} $>$ \mbox{\hyperlink{group__DirectedGraph_ga607e96aec2a7672a9ba375f38c0288dc}{Directed\+Graph\+::G}}
+\begin{DoxyCompactList}\small\item\em Vector of cells that form the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDirectedGraph}{Directed\+Graph}} class as well as classes that make it up and the Node\+Array class. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__DirectedGraph_ga42fd299698e4fe23da7d1ec808782e62}\label{group__DirectedGraph_ga42fd299698e4fe23da7d1ec808782e62}} 
+\index{DirectedGraph@{DirectedGraph}!add\_cell@{add\_cell}}
+\index{add\_cell@{add\_cell}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{add\_cell()}{add\_cell()}}
+{\footnotesize\ttfamily void Directed\+Graph\+::add\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDirectedCell}{Directed\+Cell}} \&}]{T }\end{DoxyParamCaption})}
+
+
+
+Appends a cell to the end of the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_gab13a6a2baf680da049d74571d5754c7a}\label{group__DirectedGraph_gab13a6a2baf680da049d74571d5754c7a}} 
+\index{DirectedGraph@{DirectedGraph}!add\_face@{add\_face}}
+\index{add\_face@{add\_face}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{add\_face()}{add\_face()}}
+{\footnotesize\ttfamily void Directed\+Cell\+::add\+\_\+face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDirectedFace}{Directed\+Face}} \&}]{f }\end{DoxyParamCaption})}
+
+
+
+Method to append an face to the end of the cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Face to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_ga04769e625391a9d4f426b5245183567a}\label{group__DirectedGraph_ga04769e625391a9d4f426b5245183567a}} 
+\index{DirectedGraph@{DirectedGraph}!add\_vertex@{add\_vertex}}
+\index{add\_vertex@{add\_vertex}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{add\_vertex()}{add\_vertex()}}
+{\footnotesize\ttfamily void Directed\+Face\+::add\+\_\+vertex (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{v }\end{DoxyParamCaption})}
+
+
+
+Add a vertex to face. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vertex to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_gac0f16b824c2bafc1001458e76a406d2f}\label{group__DirectedGraph_gac0f16b824c2bafc1001458e76a406d2f}} 
+\index{DirectedGraph@{DirectedGraph}!append\_cell@{append\_cell}}
+\index{append\_cell@{append\_cell}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{append\_cell()}{append\_cell()}}
+{\footnotesize\ttfamily void Directed\+Cell\+::append\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDirectedCell}{Directed\+Cell}} \&}]{K }\end{DoxyParamCaption})}
+
+Appends the vector of faces and partition vector of a cell to the faces and partition of this cell 
+\begin{DoxyParams}{Parameters}
+{\em K} & Cell to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_ga66192ac33aed1728eff86b4225ea6536}\label{group__DirectedGraph_ga66192ac33aed1728eff86b4225ea6536}} 
+\index{DirectedGraph@{DirectedGraph}!CellNodeArray@{CellNodeArray}}
+\index{CellNodeArray@{CellNodeArray}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{CellNodeArray()}{CellNodeArray()}}
+{\footnotesize\ttfamily Cell\+Node\+Array\+::\+Cell\+Node\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__DirectedGraph_ga773decc3b1a80d48cafcc5529b4a2b52}{Array}} \&}]{\+\_\+A }\end{DoxyParamCaption})}
+
+
+
+Class Constructor\+: Initialises the Node\+Array with the cell-\/node array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+A} & The cell-\/node array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_gac57136d1331d11fcd447293ee9e18304}\label{group__DirectedGraph_gac57136d1331d11fcd447293ee9e18304}} 
+\index{DirectedGraph@{DirectedGraph}!DirectedCell@{DirectedCell}}
+\index{DirectedCell@{DirectedCell}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{DirectedCell()}{DirectedCell()}}
+{\footnotesize\ttfamily Directed\+Cell\+::\+Directed\+Cell (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classDirectedFace}{Directed\+Face}} $>$ \&}]{\+\_\+T,  }\item[{std\+::size\+\_\+t}]{cell\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Class Constructor\+: Initialises the cell with a vector of faces and the cell ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+T} & A reference to the faces that the cell consists of \\
+\hline
+{\em cell\+\_\+num} & Initial cell ID \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_gacc2e4b9901d188b39ed07b344721cd16}\label{group__DirectedGraph_gacc2e4b9901d188b39ed07b344721cd16}} 
+\index{DirectedGraph@{DirectedGraph}!DirectedGraph@{DirectedGraph}}
+\index{DirectedGraph@{DirectedGraph}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{DirectedGraph()}{DirectedGraph()}}
+{\footnotesize\ttfamily Directed\+Graph\+::\+Directed\+Graph (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classDirectedCell}{Directed\+Cell}} $>$ \&}]{\+\_\+G }\end{DoxyParamCaption})}
+
+
+
+Class Constructor\+: Initialises the \mbox{\hyperlink{classDirectedGraph}{Directed\+Graph}} with the cells. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+G} & Initial cells \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_gabf8791778b5d306cab8e52ac388264dd}\label{group__DirectedGraph_gabf8791778b5d306cab8e52ac388264dd}} 
+\index{DirectedGraph@{DirectedGraph}!GraphNodeArray@{GraphNodeArray}}
+\index{GraphNodeArray@{GraphNodeArray}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{GraphNodeArray()}{GraphNodeArray()}}
+{\footnotesize\ttfamily Graph\+Node\+Array\+::\+Graph\+Node\+Array (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classCellNodeArray}{Cell\+Node\+Array}} $>$ \&}]{\+\_\+\+GA }\end{DoxyParamCaption})}
+
+
+
+Class Constructor\+: Initialises the Node\+Array with the cell-\/node array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+GA} & The graph-\/node array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_ga53b9c1643f956bcd5ab002056378c6b3}\label{group__DirectedGraph_ga53b9c1643f956bcd5ab002056378c6b3}} 
+\index{DirectedGraph@{DirectedGraph}!has\_face@{has\_face}}
+\index{has\_face@{has\_face}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{has\_face()}{has\_face()}}
+{\footnotesize\ttfamily bool Directed\+Cell\+::has\+\_\+face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDirectedFace}{Directed\+Face}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Tests if cell has an face. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Face to check for \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_gaeaa08c422428f795a4b3061010fa32fc}\label{group__DirectedGraph_gaeaa08c422428f795a4b3061010fa32fc}} 
+\index{DirectedGraph@{DirectedGraph}!node\_exists@{node\_exists}}
+\index{node\_exists@{node\_exists}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{node\_exists()}{node\_exists()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Cell\+Node\+Array\+::node\+\_\+exists (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{node }\end{DoxyParamCaption})}
+
+
+
+Test if a given node exists in the cell-\/node array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Node to test for \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_ga643e4b8829864ecd3bc5e6dcc904bfd6}\label{group__DirectedGraph_ga643e4b8829864ecd3bc5e6dcc904bfd6}} 
+\index{DirectedGraph@{DirectedGraph}!node\_exists@{node\_exists}}
+\index{node\_exists@{node\_exists}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{node\_exists()}{node\_exists()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Graph\+Node\+Array\+::node\+\_\+exists (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{node }\end{DoxyParamCaption})}
+
+
+
+Test if a given node exists in the cell-\/node array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Node to test for \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_ga622917e9b97c39772ea8614f1b387a4f}\label{group__DirectedGraph_ga622917e9b97c39772ea8614f1b387a4f}} 
+\index{DirectedGraph@{DirectedGraph}!print@{print}}
+\index{print@{print}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Graph\+Node\+Array\+::print (\begin{DoxyParamCaption}\item[{std\+::ofstream $\ast$}]{out }\end{DoxyParamCaption})}
+
+
+
+Prints the cell node array to an out file stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Pointer to the file stream to print to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_gaf20261ec61d394e94036de8b6c9fc614}\label{group__DirectedGraph_gaf20261ec61d394e94036de8b6c9fc614}} 
+\index{DirectedGraph@{DirectedGraph}!print@{print}}
+\index{print@{print}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Cell\+Node\+Array\+::print (\begin{DoxyParamCaption}\item[{std\+::ofstream $\ast$}]{out,  }\item[{std\+::size\+\_\+t}]{cell\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Prints the cell node array to an out file stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Pointer to the file stream to print to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_ga628418a842a138d4f116eb896884313d}\label{group__DirectedGraph_ga628418a842a138d4f116eb896884313d}} 
+\index{DirectedGraph@{DirectedGraph}!remove\_cell@{remove\_cell}}
+\index{remove\_cell@{remove\_cell}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{remove\_cell()}{remove\_cell()}}
+{\footnotesize\ttfamily void Directed\+Graph\+::remove\+\_\+cell (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{pos }\end{DoxyParamCaption})}
+
+
+
+Removes cell from a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Cell to be removed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_ga9ceda9914cec89310175777aca20fac2}\label{group__DirectedGraph_ga9ceda9914cec89310175777aca20fac2}} 
+\index{DirectedGraph@{DirectedGraph}!remove\_face@{remove\_face}}
+\index{remove\_face@{remove\_face}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{remove\_face()}{remove\_face()}}
+{\footnotesize\ttfamily void Directed\+Cell\+::remove\+\_\+face (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{pos }\end{DoxyParamCaption})}
+
+
+
+Remove face at a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Position of face to be removed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_ga1feae939ac3c412f801bde4b738f8f78}\label{group__DirectedGraph_ga1feae939ac3c412f801bde4b738f8f78}} 
+\index{DirectedGraph@{DirectedGraph}!renum\_nodes@{renum\_nodes}}
+\index{renum\_nodes@{renum\_nodes}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{renum\_nodes()}{renum\_nodes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Cell\+Node\+Array\+::renum\+\_\+nodes (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{node }\end{DoxyParamCaption})}
+
+
+
+Subtracts one from all nodes greater than a given node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Node given \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DirectedGraph_ga67a2f20e27976bc80ce97361e6978c1a}\label{group__DirectedGraph_ga67a2f20e27976bc80ce97361e6978c1a}} 
+\index{DirectedGraph@{DirectedGraph}!renum\_nodes@{renum\_nodes}}
+\index{renum\_nodes@{renum\_nodes}!DirectedGraph@{DirectedGraph}}
+\doxysubsubsection{\texorpdfstring{renum\_nodes()}{renum\_nodes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Graph\+Node\+Array\+::renum\+\_\+nodes (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{node }\end{DoxyParamCaption})}
+
+
+
+Subtracts one from all nodes greater than a given node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Node given \\
+\hline
+\end{DoxyParams}

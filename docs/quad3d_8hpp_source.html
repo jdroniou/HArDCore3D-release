@@ -97,25 +97,25 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;tetra_quad.hpp&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;tetra_quad.hpp&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">  </span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">  cq0[0..nqn-1],  barycentric coordinates of tetrahedron&#39;s vertices V0,V1,V2,V3</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">  cq1[0..nqn-1],</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">  cq2[0..nqn-1],</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">  cq3[0..nqn-1],</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">  cqw[0..nqn-1],  weights</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">  </span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">  </span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">  cq0[0..nqn-1],  barycentric coordinates of tetrahedron&#39;s vertices V0,V1,V2,V3</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">  cq1[0..nqn-1],</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">  cq2[0..nqn-1],</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">  cq3[0..nqn-1],</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">  cqw[0..nqn-1],  weights</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">  </span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>HArDCore3D {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classHArDCore3D_1_1QuadRuleTetra.html">   47</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHArDCore3D_1_1QuadRuleTetra.html">QuadRuleTetra</a> {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> max_doe = 14;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>HArDCore3D {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classHArDCore3D_1_1QuadRuleTetra.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHArDCore3D_1_1QuadRuleTetra.html">QuadRuleTetra</a> {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> num_rules = 15;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">size_t</span> rule;</div>
@@ -170,9 +170,9 @@ $(function() {
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif // end of _QUADTD_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="agroup__Quadratures_html_gaa9690d2663c19c67d52b3cd176afa4b9"><div class="ttname"><a href="group__Quadratures.html#gaa9690d2663c19c67d52b3cd176afa4b9">HArDCore3D::QuadRuleTetra::QuadRuleTetra</a></div><div class="ttdeci">QuadRuleTetra(size_t doe, bool warn)</div><div class="ttdoc">Create a quadrature rule with at least the given degree of exactness (if available).</div><div class="ttdef"><b>Definition:</b> quad3d.cpp:32</div></div>
-<div class="ttc" id="aclassHArDCore3D_1_1QuadRuleTetra_html"><div class="ttname"><a href="classHArDCore3D_1_1QuadRuleTetra.html">HArDCore3D::QuadRuleTetra</a></div><div class="ttdef"><b>Definition:</b> quad3d.hpp:47</div></div>
-<div class="ttc" id="agroup__Quadratures_html_gaaa2822c1275680abfc0ee93690b1a9b7"><div class="ttname"><a href="group__Quadratures.html#gaaa2822c1275680abfc0ee93690b1a9b7">HArDCore3D::QuadRuleTetra::required_rule</a></div><div class="ttdeci">size_t required_rule(size_t doe) const</div><div class="ttdoc">Compute the minimum rule required to achieve the desired degree of exactness.</div><div class="ttdef"><b>Definition:</b> quad3d.cpp:68</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gaa9690d2663c19c67d52b3cd176afa4b9"><div class="ttname"><a href="group__Quadratures.html#gaa9690d2663c19c67d52b3cd176afa4b9">HArDCore3D::QuadRuleTetra::QuadRuleTetra</a></div><div class="ttdeci">QuadRuleTetra(size_t doe, bool warn)</div><div class="ttdoc">Create a quadrature rule with at least the given degree of exactness (if available).</div><div class="ttdef"><b>Definition:</b> quad3d.cpp:33</div></div>
+<div class="ttc" id="aclassHArDCore3D_1_1QuadRuleTetra_html"><div class="ttname"><a href="classHArDCore3D_1_1QuadRuleTetra.html">HArDCore3D::QuadRuleTetra</a></div><div class="ttdef"><b>Definition:</b> quad3d.hpp:48</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gaaa2822c1275680abfc0ee93690b1a9b7"><div class="ttname"><a href="group__Quadratures.html#gaaa2822c1275680abfc0ee93690b1a9b7">HArDCore3D::QuadRuleTetra::required_rule</a></div><div class="ttdeci">size_t required_rule(size_t doe) const</div><div class="ttdoc">Compute the minimum rule required to achieve the desired degree of exactness.</div><div class="ttdef"><b>Definition:</b> quad3d.cpp:69</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

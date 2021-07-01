@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['geometricsupport_861',['GeometricSupport',['../group__DDRCore.html#ga7bfe17a4d1d277d8d6ac477854eee603',1,'HArDCore3D::DDRCore::CellBases::GeometricSupport()'],['../group__DDRCore.html#ga4c4848897f3ce92237db78fa7e128a9c',1,'HArDCore3D::DDRCore::FaceBases::GeometricSupport()'],['../group__DDRCore.html#ga5c2f5b518ce75d13934e75a541a327d8',1,'HArDCore3D::DDRCore::EdgeBases::GeometricSupport()']]]
+  ['cell_618',['Cell',['../group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7',1,'MeshND']]],
+  ['cellftype_619',['CellFType',['../group__Common.html#ga523c09e1cb40e9357025dd81596ad752',1,'HArDCore3D']]]
 ];

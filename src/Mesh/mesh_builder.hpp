@@ -1,57 +1,43 @@
-// Class to build the mesh data after having read the mesh file
-//
-// Author: Jerome Droniou (jerome.droniou@monash.edu)
-//
+#include "mesh_reader.hpp"
+#include <algorithm> 
+#include <memory> // for std::unique_pointer
+#include <mesh.hpp>
+
+#include <stdlib.h>     /* exit, EXIT_FAILURE */
 
 #ifndef MESH_BUILDER_HPP
 #define MESH_BUILDER_HPP
-//#include "mesh.hpp"
-//#include "cell.hpp"
-//#include "edge.hpp"
-//#include "vertex.hpp"
-#include <string>
-#include <vector>
-#include <Eigen/Dense>
-#include <memory>
 
-namespace HArDCore3D { // Forward declaration
-  class Mesh;
-}
 
 namespace HArDCore3D {
 
-  /*!
-   *       @addtogroup Mesh
-   * @{
-   */
+// ----------------------------------------------------------------------------
+//                            Class definition
+// ----------------------------------------------------------------------------
 
-  // ----------------------------------------------------------------------------
-  //                            Class definition
-  // ----------------------------------------------------------------------------
-
-  /// The MeshBuilder class provides build tools to create a full mesh with all connectivities
-  class MeshBuilder {
-  public:
+/// The MeshBuilder class provides build tools to create a full mesh with all connectivities
+class MeshBuilder {
+public:
     /**
-     * Constructor for MeshBuilder.
-     */
-    MeshBuilder(
-		std::string mesh_file,  ///< the mesh file to read
-		std::string mesh_type           ///< type of mesh file: TG, MSH, RF
-                );
+    * Constructor for MeshBuilder.
+    */
+    MeshBuilder();
     /**
-     * Build a mesh from a mesh file
-     *
-     * @return a pointer to the mesh that was build
+    * Overloaded constructor for MeshBuilder so import_mesh can be called from build_the_mesh().
+    */
+    MeshBuilder(const std::string mesh_file);
+    
+    /**
+     *  Build mesh
      */
-    std::unique_ptr<Mesh> build_the_mesh();  ///< construct the connectivity in the mesh
+    std::unique_ptr<Mesh> build_the_mesh();
 
-  private:
-    std::string _mesh_file;  
-    std::string _mesh_type;         
-  };
+private:
+    void build_boundary(Mesh* mesh);  
+    const std::string _mesh_file;
+};
 
-  /*@}*/
-}
-#endif /* MESH_BUILDER_HPP */
+
+} // end namespace HArDCore3D
+#endif 
 

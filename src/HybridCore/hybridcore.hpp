@@ -30,8 +30,6 @@
 #include <string>
 #include <vector>
 #include <mesh.hpp>
-#include <cell.hpp>
-#include <face.hpp>
 #include <quadraturerule.hpp>
 #include <basis.hpp>
 #include <iostream>

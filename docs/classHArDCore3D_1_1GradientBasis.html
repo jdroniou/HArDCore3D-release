@@ -120,12 +120,19 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga21186eb9b6825da3867965bd2e046b23">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga21186eb9b6825da3867965bd2e046b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at point x. <br /></td></tr>
 <tr class="separator:ga21186eb9b6825da3867965bd2e046b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8792890c12bacd446176f4602056417e"><td class="memItemLeft" align="right" valign="top">
+constexpr const BasisType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga8792890c12bacd446176f4602056417e">ancestor</a> () const</td></tr>
+<tr class="memdesc:ga8792890c12bacd446176f4602056417e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ancestor (basis that the gradient was taken of) <br /></td></tr>
+<tr class="separator:ga8792890c12bacd446176f4602056417e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:gae15ea33e6d492df490f202061e73a5c7"><td class="memItemLeft" align="right" valign="top">
-static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = Vector</td></tr>
-<tr class="separator:gae15ea33e6d492df490f202061e73a5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacee6ade35c9c1c43ae84d947a3a22d90"><td class="memItemLeft" align="right" valign="top">
+constexpr static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = Vector</td></tr>
+<tr class="separator:gacee6ade35c9c1c43ae84d947a3a22d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2272fbf955936e9bcc825603b0449643"><td class="memItemLeft" align="right" valign="top">
+constexpr static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasAncestor</b> = true</td></tr>
+<tr class="separator:ga2272fbf955936e9bcc825603b0449643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac70395c81f9bb7ec168fc77cb287f6b8"><td class="memItemLeft" align="right" valign="top">
 static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasFunction</b> = true</td></tr>
 <tr class="separator:gac70395c81f9bb7ec168fc77cb287f6b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,7 +151,7 @@ static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasDiver
 class HArDCore3D::GradientBasis&lt; BasisType &gt;</h3>
 
 <p>Basis for the space of gradients of polynomials. </p>
-<p>To construct a basis of G^k, this assumes that the scalar basis it is constructed from is a basis of P^{k+1}/P^0, space of polynomials of degree k+1 without trivial polynomial with zero gradient (e.g. polynomials with zero average, or a hierarchical basis of P^{k+1} in which we have removed the first, constant, polynomial) </p>
+<p>To construct a basis of G^k, this assumes that the scalar basis it is constructed from is an ancestor basis of P^{k+1}/P^0, space of polynomials of degree k+1 without trivial polynomial with zero gradient (e.g. polynomials with zero average, or a hierarchical basis of P^{k+1} in which we have removed the first, constant, polynomial). This can also be used to create a family of gradients (not necessarily linearly independent, if the ancestor basis is not a basis of P^{k+1}/P^0) </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Common/<a class="el" href="basis_8hpp_source.html">basis.hpp</a></li>
 </ul>

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['polycellbasistype_863',['PolyCellBasisType',['../group__HybridCore.html#ga5c478c9953257f154d2ea98f115fba0d',1,'HArDCore3D::HybridCore']]],
-  ['polyedgebasistype_864',['PolyEdgeBasisType',['../group__HybridCore.html#gad3123dceabd79eec7cdb57ba1014fc17',1,'HArDCore3D::HybridCore']]],
-  ['polyfacebasistype_865',['PolyFaceBasisType',['../group__HybridCore.html#gab02b7a4490b6a739e2d084e9a70dbcc5',1,'HArDCore3D::HybridCore']]]
+  ['face_621',['Face',['../group__Mesh.html#ga50ded5b393fb1cc9159dc166d9158dfc',1,'MeshND']]],
+  ['ftype_622',['FType',['../group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1',1,'HArDCore3D']]]
 ];

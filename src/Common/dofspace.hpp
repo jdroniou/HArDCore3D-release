@@ -2,10 +2,6 @@
 #define DOFSPACE_HPP
 
 #include <mesh.hpp>
-#include <vertex.hpp>
-#include <edge.hpp>
-#include <face.hpp>
-#include <cell.hpp>
 
 namespace HArDCore3D {
 

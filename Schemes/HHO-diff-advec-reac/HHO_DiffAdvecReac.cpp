@@ -3,14 +3,14 @@
 int main(const int argc, const char *argv[])
 {
     // Set options
-    if (!program_options(argc, argv, mesh_name, mesh_type, bc_id, id_tcase, L, K, plot_file, use_threads, export_matrix))
+    if (!program_options(argc, argv, mesh_name, bc_id, id_tcase, L, K, plot_file, use_threads, export_matrix))
     {
         return 0;
     }
 
     // Build mesh and reorder faces
     const std::string mesh_file = mesh_dir + mesh_name;
-    MeshBuilder builder = MeshBuilder(mesh_file, mesh_type);
+    MeshBuilder builder = MeshBuilder(mesh_file);
     std::unique_ptr<Mesh> mesh_ptr = builder.build_the_mesh();
 
     BoundaryConditions BC(bc_id, *mesh_ptr.get());
@@ -79,7 +79,6 @@ int main(const int argc, const char *argv[])
         QuadratureRule quadT = elquad.get_quadT();
         BasisQuad<double> phiT_quadT = elquad.get_phiT_quadT();
         BasisQuad<VectorRd> dphiT_quadT = elquad.get_dphiT_quadT();
-
         // cell mass matrix
         Eigen::MatrixXd MTT = compute_gram_matrix(phiT_quadT, phiT_quadT, quadT, n_local_cell_dofs, n_local_highorder_dofs, "sym");
 
@@ -307,7 +306,7 @@ int main(const int argc, const char *argv[])
     out << "MeshSize: " << mesh_ptr->h_max() << "\n";
     out << "NbCells: " << mesh_ptr->n_cells() << "\n";
     out << "NbFaces: " << mesh_ptr->n_faces() << "\n";
-    out << "MeshReg: " << mesh_ptr->regularity() << "\n";
+    out << "MeshReg: " << mesh_ptr->regularity()[0] << "\n";
     out << std::flush;
     out.close();
 
@@ -317,13 +316,13 @@ int main(const int argc, const char *argv[])
     return 0;
 }
 
-bool program_options(int argc, const char *argv[], std::string &mesh_name, std::string &mesh_type, std::string &bc_id, std::vector<int> &id_tcase, size_t &L, size_t &K, std::string &plot_file, bool &use_threads, bool &export_matrix)
+bool program_options(int argc, const char *argv[], std::string &mesh_name, std::string &bc_id, std::vector<int> &id_tcase, size_t &L, size_t &K, std::string &plot_file, bool &use_threads, bool &export_matrix)
 {
   namespace po = boost::program_options;
 
   // Program options
   po::options_description desc("Allowed options");
-  desc.add_options()("help,h", "Produce help message")("mesh,m", po::value<std::string>(), "Set the mesh")("meshtype,t", po::value<std::string>(), "Set the mesh type (TG,MSH,RF)")("bc,b", po::value<std::string>(), "Set the boundary conditions (D=Dirichlet, N=Neumann, M0=Mixed)")("testcase,c", po::value<std::vector<int>>()->multitoken(), "Set the test case (sol diff advec reac)")("celldegree,l", po::value<size_t>(), "Set the degree of the cell polynomials")("facedegree,k", po::value<size_t>(), "Set the degree of the face polynomials")("plot,p", po::value<std::string>(), "Plot to file")("use_threads,u", po::value<bool>(), "Using multithreading")("export_matrix,e", po::value<bool>(), "Export matrix to Matrix Market format");
+  desc.add_options()("help,h", "Produce help message")("mesh,m", po::value<std::string>(), "Set the mesh")("bc,b", po::value<std::string>(), "Set the boundary conditions (D=Dirichlet, N=Neumann, M0=Mixed)")("testcase,c", po::value<std::vector<int>>()->multitoken(), "Set the test case (sol diff advec reac)")("celldegree,l", po::value<size_t>(), "Set the degree of the cell polynomials")("facedegree,k", po::value<size_t>(), "Set the degree of the face polynomials")("plot,p", po::value<std::string>(), "Plot to file")("use_threads,u", po::value<bool>(), "Using multithreading")("export_matrix,e", po::value<bool>(), "Export matrix to Matrix Market format");
 
   po::variables_map vm;
   po::store(po::parse_command_line(argc, argv, desc), vm);
@@ -338,7 +337,6 @@ bool program_options(int argc, const char *argv[], std::string &mesh_name, std::
 
   // Get mesh name and type
   mesh_name = (vm.count("mesh") ? vm["mesh"].as<std::string>() : "Voro-small-0/RF_fmt/voro-4");
-  mesh_type = (vm.count("meshtype") ? vm["meshtype"].as<std::string>() : "RF");
 
   // Get bc
   bc_id = (vm.count("bc") ? vm["bc"].as<std::string>() : "D");

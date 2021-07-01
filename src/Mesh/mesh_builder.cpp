@@ -1,222 +1,380 @@
-// Class to build the mesh data after having read the mesh file
-//
-// Author: Jerome Droniou (jerome.droniou@monash.edu)
-//
-
 #include "mesh_builder.hpp"
-#include "mesh.hpp"
-#include "cell.hpp"
-#include "face.hpp"
-#include "edge.hpp"
-#include "vertex.hpp"
-
-#include "StemMesh/mesh3D_greader.hh"
-#include "StemMesh/mesh3D.hh"
-#include <iostream>
-#include <deque>
 
 using namespace HArDCore3D;
-MeshBuilder::MeshBuilder(std::string mesh_file, std::string mesh_type)
-  : _mesh_file(mesh_file),
-    _mesh_type(mesh_type) 
-{}
 
-std::unique_ptr<Mesh> MeshBuilder::build_the_mesh() {
+// Split 2D object into simplices
+Simplices<2> simplify(std::vector<VectorRd> vertices)
+{
+    assert(vertices.size() >= 3);
+    Simplices<2> simplices;
+    std::size_t pos = 0;
+    while (vertices.size() > 3)
+    {
+        std::size_t pos_next = (pos < vertices.size() - 1) ? pos + 1 : 0;
+        std::size_t pos_last = (pos_next < vertices.size() - 1) ? pos_next + 1 : 0;
 
-  // Create the stem of the mesh
-  StemMesh3D::mesh_3Dv stem_mesh;  
-  StemMesh3D::ExtFileInput input_mesh;
-  int offset = 1;
-  if (_mesh_type=="TG") {
-    input_mesh.TETGEN_format(stem_mesh, _mesh_file, offset);
-  }
-  else if (_mesh_type=="MSH") {
-    input_mesh.MSH_format(stem_mesh, _mesh_file, offset);
-  }
-  else if (_mesh_type=="RF") {
-    offset = 0;
-    input_mesh.REGN_FACE_format(stem_mesh, _mesh_file, offset);
-  }
-  else {
-    std::cout << "Unknown mesh type: " << _mesh_type << std::endl;
-    std::exit(EXIT_FAILURE);
-  }
+        Simplex<2> simplex = {vertices[pos], vertices[pos_next], vertices[pos_last]}; // convexity assumption here
+        simplices.push_back(simplex);
+        vertices.erase(vertices.begin() + pos_next);
 
-  // Create the mesh, empty first
-  std::unique_ptr<Mesh> mesh = std::make_unique<Mesh>();
-
-  // Create vertices
-  for (size_t iV = 0; iV < stem_mesh.n_vertex(); iV++){
-    Vector3d coords = Vector3d(stem_mesh.coords_V(iV, 0), stem_mesh.coords_V(iV, 1), stem_mesh.coords_V(iV, 2));
-    bool boundary = stem_mesh.is_boundary_vrtx(iV);
-    Vertex* vertex = new Vertex(iV, mesh.get(), coords, boundary);
-    mesh->add_vertex(vertex);
-    if (boundary) {
-      mesh->add_b_vertex(vertex);
-    } else {
-      mesh->add_i_vertex(vertex);
+        pos = (pos_next < vertices.size() - 1) ? pos_next : 0;
     }
-  }
-  // list connected vertices
-  for (auto& v : mesh->get_vertices()){
-    size_t iV = v->global_index();
-    std::vector<size_t> idx_v(0);
-    stem_mesh.get_vrtx_vrtx(iV, idx_v);
-    for (size_t ilV = 0; ilV < idx_v.size(); ilV++){
-      Vertex* vert = mesh->vertex(idx_v[ilV]);
-      v->add_vertex(vert);
+    Simplex<2> last_simplex;
+    for (std::size_t i = 0; i < 3; ++i)
+    {
+        last_simplex[i] = vertices[i];
     }
-  }
+    simplices.push_back(last_simplex);
 
-  // Create edges
-  for (size_t iE = 0; iE < stem_mesh.n_edge(); iE++){
-    // parameters for constructor
-    std::vector<Vertex *> vertices(0);
-    std::vector<size_t> idx_v(0);
-    stem_mesh.get_edge_vrtx(iE, idx_v);
-    for (size_t ilV = 0; ilV < idx_v.size(); ilV++){
-      Vertex* vertex = mesh->vertex(idx_v[ilV]);
-      vertices.push_back(vertex);
-    }
-    bool boundary = stem_mesh.is_boundary_edge(iE);
-    double measure = stem_mesh.get_edge_measure(iE);
-    Vector3d center_mass = Vector3d(stem_mesh.coords_E(iE, 0), stem_mesh.coords_E(iE, 1), stem_mesh.coords_E(iE, 2));
-
-    // Construct new edge
-    Edge* edge = new Edge(iE, mesh.get(), vertices, boundary, measure, center_mass);
-    mesh->add_edge(edge);
-    if (boundary) {
-      mesh->add_b_edge(edge);
-    } else {
-      mesh->add_i_edge(edge);
-    }
-
-    // Add the edge to its vertices
-    for (auto& v : vertices){
-      v->add_edge(edge);
-    }
-
-  }
-
-  // Create faces
-  for (size_t iF = 0; iF < stem_mesh.n_face(); iF++){
-    // parameters for constructor
-    std::vector<Edge *> edges(0);
-    std::vector<size_t> idx_e(0);
-    stem_mesh.get_face_edge(iF, idx_e);
-    for (size_t ilE = 0; ilE < idx_e.size(); ilE++){
-      Edge* edge = mesh->edge(idx_e[ilE]);
-      edges.push_back(edge);
-    }
-    std::vector<Vertex *> vertices(0);
-    std::vector<size_t> idx_v(0);
-    stem_mesh.get_face_vrtx(iF, idx_v);
-    for (size_t ilV = 0; ilV < idx_v.size(); ilV++){
-      Vertex* vertex = mesh->vertex(idx_v[ilV]);
-      vertices.push_back(vertex);
-    }
-    bool boundary = stem_mesh.is_boundary_face(iF);
-    double measure = stem_mesh.get_face_measure(iF);
-    double diam = stem_mesh.get_face_diam(iF);
-    Vector3d center_mass = Vector3d(stem_mesh.coords_F(iF, 0), stem_mesh.coords_F(iF, 1), stem_mesh.coords_F(iF, 2));
-    Vector3d normal = Vector3d(stem_mesh.get_nor(iF, 0), stem_mesh.get_nor(iF, 1), stem_mesh.get_nor(iF, 2));
-
-
-    // Construct new face
-    Face* face = new Face(iF, mesh.get(), edges, vertices, boundary, measure, diam, center_mass, normal);
-    mesh->add_face(face);
-    if (boundary) {
-      mesh->add_b_face(face);
-    } else {
-      mesh->add_i_face(face);
-    }
-
-    // Add the face to its vertices, and edges
-    for (auto& v : vertices){
-      v->add_face(face);
-    }
-    for (auto& e : edges){
-      e->add_face(face);
-    }
-  }
-
-  // Create cells
-  for (size_t iC = 0; iC < stem_mesh.n_region(); iC++){
-    // parameters for constructor
-    std::vector<Face *> faces(0);
-    std::vector<Vector3d> face_normals(0);
-    std::vector<size_t> idx_f(0);
-    stem_mesh.get_regn_face(iC, idx_f);
-    for (size_t ilF = 0; ilF < idx_f.size(); ilF++){
-      Face* face = mesh->face(idx_f[ilF]);
-      faces.push_back(face);
-
-      // normal to the face, and then we check orientation
-      size_t iF = face->global_index();
-      Vector3d nor_face = Vector3d(stem_mesh.get_nor(iF, 0), stem_mesh.get_nor(iF, 1), stem_mesh.get_nor(iF, 2));
-      if (!stem_mesh.ok_regn_face(iC, ilF)){
-        nor_face = -nor_face;
-      }
-      face_normals.push_back(nor_face);
-    }
-    std::vector<Edge *> edges(0);
-    std::vector<size_t> idx_e(0);
-    stem_mesh.get_regn_edge(iC, idx_e);
-    for (size_t ilE = 0; ilE < idx_e.size(); ilE++){
-      Edge* edge = mesh->edge(idx_e[ilE]);
-      edges.push_back(edge);
-    }
-    std::vector<Vertex *> vertices(0);
-    std::vector<size_t> idx_v(0);
-    stem_mesh.get_regn_vrtx(iC, idx_v);
-    for (size_t ilV = 0; ilV < idx_v.size(); ilV++){
-      Vertex* vertex = mesh->vertex(idx_v[ilV]);
-      vertices.push_back(vertex);
-    }
-
-    bool boundary = stem_mesh.is_boundary_regn(iC);
-    double measure = stem_mesh.get_regn_measure(iC);
-    double diam = stem_mesh.get_regn_diam(iC);
-    Vector3d center_mass = Vector3d(stem_mesh.coords_R(iC, 0), stem_mesh.coords_R(iC, 1), stem_mesh.coords_R(iC, 2));
-
-    // Construct new cell
-    Cell* cell = new Cell(iC, mesh.get(), faces, edges, vertices, face_normals, boundary, measure, diam, center_mass);
-    mesh->add_cell(cell);
-    if (boundary) {
-      mesh->add_b_cell(cell);
-    } else {
-      mesh->add_i_cell(cell);
-    }
-
-    // Add the cell to its vertices, edges and faces
-    for (auto& v : vertices){
-      v->add_cell(cell);
-    }
-    for (auto& e : edges){
-      e->add_cell(cell);
-    }
-    for (auto& f : faces){
-      f->add_cell(cell);
-    }
-
-  }
-
-  // Create cell neighbours
-  for (auto& c : mesh->get_cells()){
-    size_t iC = c->global_index();
-    std::vector<size_t> idx_n(0);
-    stem_mesh.get_regn_regn(iC, idx_n);
-    for (size_t ilN = 0; ilN < idx_n.size(); ilN++){
-      Cell* neigh = mesh->cell(idx_n[ilN]);
-      c->add_neighbour(neigh);
-    }
-  }
-
-  // Mesh size
-  mesh->set_h_max(stem_mesh.h_max()); 
-
-  return mesh;
+    return simplices;
 }
 
+MeshBuilder::MeshBuilder() {}
+MeshBuilder::MeshBuilder(const std::string mesh_file) : _mesh_file(mesh_file) {}
 
+std::unique_ptr<Mesh> MeshBuilder::build_the_mesh()
+{
+    MeshReaderRF mesh_reader(_mesh_file);
 
+    std::size_t find_coarse = _mesh_file.find(".coarse.");
+
+    std::vector<std::vector<double>> vertices;
+    std::vector<std::vector<std::vector<size_t>>> cells;
+    std::vector<std::vector<size_t>> partition;
+
+    mesh_reader.read_node_file(vertices);
+    mesh_reader.read_ele_file(cells);
+
+    bool coarse_mesh = (find_coarse != std::string::npos);
+
+    if (coarse_mesh) //coarse mesh
+    {
+        mesh_reader.read_partition_file(partition);
+    }
+
+    if (vertices.size() > 0 && cells.size() > 0)
+    {
+        std::unique_ptr<Mesh> mesh = std::make_unique<Mesh>(); // make a pointer to the mesh so that it outlives the builder
+        std::unique_ptr<Mesh> fine_mesh = std::make_unique<Mesh>();
+        if (coarse_mesh)
+        {
+            // build the fine mesh first
+            std::string fine_mesh_file = _mesh_file.substr(0, find_coarse);
+            MeshBuilder fine_mesh_builder(fine_mesh_file);
+            fine_mesh = fine_mesh_builder.build_the_mesh();
+            std::cout << "     Coarse ";
+        }
+        else
+        {
+            std::cout << "     ";
+        }
+
+        std::cout << "Mesh: ";
+
+        // Create vertices
+        for (auto &v : vertices)
+        {
+            VectorRd vert(v[0], v[1], v[2]);
+            Vertex *vertex = new Vertex(mesh->n_vertices(), vert);
+            mesh->add_vertex(vertex);
+        }
+
+        // Create cells
+        double total_vol = 0.0;
+        for (auto &c : cells)
+        {
+            // build edges and faces of cell
+            std::vector<Face *> cell_faces;
+            std::vector<Edge *> cell_edges;
+            std::vector<VectorRd> cell_vertex_coords;
+            std::vector<std::size_t> cell_vertex_ids;
+            for (auto &f : c)
+            {
+                std::vector<std::size_t> vertex_ids;
+                std::vector<VectorRd> vertex_coords;
+                for (auto &vertID : f)
+                {
+                    vertex_ids.push_back(vertID);
+                    VectorRd coord({vertices[vertID][0], vertices[vertID][1], vertices[vertID][2]});
+                    vertex_coords.push_back(coord);
+                    if (std::find(cell_vertex_ids.begin(), cell_vertex_ids.end(), vertID) == cell_vertex_ids.end())
+                    {
+                        cell_vertex_ids.push_back(vertID);
+                        cell_vertex_coords.push_back(coord);
+                    }
+                }
+
+                // make edges
+                bool make_face_flag = true;
+                std::vector<Edge *> face_edges;
+                std::vector<std::size_t> need_to_add;
+                Face *face;
+                for (std::size_t i = 0; i < vertex_ids.size(); ++i)
+                {
+                    std::size_t plus = (i + 1) % vertex_ids.size();
+                    Eigen::Vector2d e(vertex_ids[i], vertex_ids[plus]);
+
+                    bool flag = true;
+
+                    std::vector<Vertex *> vlist = mesh->vertex(e(0))->get_vertices();
+                    for (size_t j = 0; j < vlist.size(); j++)
+                    {
+                        if (vlist[j]->global_index() == e(1)) // The edge exists in the mesh
+                        {
+                            std::vector<Edge *> elist = mesh->vertex(e(0))->get_edges();
+                            Edge *edge = elist[j];
+                            need_to_add.push_back(face_edges.size());
+                            face_edges.push_back(edge);
+                            if (std::find(cell_edges.begin(), cell_edges.end(), edge) == cell_edges.end())
+                            {
+                                cell_edges.push_back(edge);
+                            }
+                            flag = false;
+                            break;
+                        }
+                    }
+
+                    if (flag)
+                    {
+                        VectorRd coords1({vertices[e(0)][0], vertices[e(0)][1], vertices[e(0)][2]});
+                        VectorRd coords2({vertices[e(1)][0], vertices[e(1)][1], vertices[e(1)][2]});
+
+                        Simplex<1> edge_coords({coords1, coords2});
+                        Edge *edge = new Edge(mesh->n_edges(), edge_coords);
+
+                        cell_edges.push_back(edge);
+                        face_edges.push_back(edge);
+
+                        mesh->add_edge(edge);
+
+                        Vertex *vertex1 = mesh->vertex(e(0));
+                        Vertex *vertex2 = mesh->vertex(e(1));
+
+                        edge->add_vertex(vertex1);
+                        edge->add_vertex(vertex2);
+                        vertex1->add_edge(edge);
+                        vertex2->add_edge(edge);
+
+                        // if vertices are not already connected, connect them
+                        std::vector<Vertex *> verts_of_vert1 = vertex1->get_vertices();
+                        if (std::find(verts_of_vert1.begin(), verts_of_vert1.end(), vertex2) == verts_of_vert1.end())
+                        {
+                            vertex1->add_vertex(vertex2);
+                            vertex2->add_vertex(vertex1);
+                        }
+
+                        if (make_face_flag)
+                        {
+                            face = new Face(mesh->n_faces(), simplify(vertex_coords));
+                            make_face_flag = false;
+                            mesh->add_face(face);
+                            for (auto &vertID : vertex_ids)
+                            {
+                                face->add_vertex(mesh->vertex(vertID));
+                                mesh->vertex(vertID)->add_face(face);
+                            }
+                        }
+
+                        face->add_edge(edge);
+                        edge->add_face(face);
+                    }
+                }
+
+                if (make_face_flag) // face has not been made
+                {
+                    // check if face exists, look in faces of edges
+                    bool found = false;
+                    for (auto &edge_face : face_edges[0]->get_faces())
+                    {
+                        std::size_t count = 0;
+                        for (auto &e : edge_face->get_edges())
+                        {
+                            if (std::find(face_edges.begin(), face_edges.end(), e) == face_edges.end())
+                            {
+                                break;
+                            }
+                            ++count;
+                        }
+                        if (count == edge_face->n_edges())
+                        {
+                            face = edge_face;
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found)
+                    {
+                        // make face
+                        face = new Face(mesh->n_faces(), simplify(vertex_coords));
+                        mesh->add_face(face);
+                        for (auto &e : face_edges)
+                        {
+                            face->add_edge(e);
+                            e->add_face(face);
+                        }
+                        for (auto &vertID : vertex_ids)
+                        {
+                            face->add_vertex(mesh->vertex(vertID));
+                            mesh->vertex(vertID)->add_face(face);
+                        }
+                    }
+                }
+                else // need to add remaining edges to the face
+                {
+                    for (auto &add : need_to_add)
+                    {
+                        face->add_edge(face_edges[add]);
+                        face_edges[add]->add_face(face);
+                    }
+                }
+                cell_faces.push_back(face);
+            }
+
+            Simplices<3> cell_simplices;
+
+            if (coarse_mesh)
+            {
+                for (auto &part : partition[mesh->n_cells()])
+                {
+                    for (auto &simplex : fine_mesh->cell(part)->get_simplices())
+                    {
+                        cell_simplices.push_back(simplex);
+                    }
+                }
+            }
+            else
+            {
+                // to create cell simplices, need point in cell
+                // use average of vertices - guarenteed to be in cell if cell is convex
+                VectorRd point_in_cell({0, 0, 0});
+                for (std::size_t i = 0; i < 3; ++i)
+                {
+                    for (auto &vert_coord : cell_vertex_coords)
+                    {
+                        point_in_cell[i] += vert_coord[i];
+                    }
+                    point_in_cell[i] /= cell_vertex_coords.size();
+                }
+
+                for (auto &face : cell_faces)
+                {
+                    for (auto &face_simplex : face->get_simplices())
+                    {
+                        Simplex<3> cell_simplex;
+                        cell_simplex[0] = point_in_cell;
+                        for (std::size_t i = 0; i < 3; ++i)
+                        {
+                            cell_simplex[i + 1] = face_simplex[i];
+                        }
+                        cell_simplices.push_back(cell_simplex);
+                    }
+                }
+            }
+
+            Cell *cell = new Cell(mesh->n_cells(), cell_simplices);
+            total_vol += cell->measure();
+            mesh->add_cell(cell);
+
+            for (auto &face : cell_faces)
+            {
+                cell->add_face(face);
+                face->add_cell(cell);
+            }
+
+            for (auto &edge : cell_edges)
+            {
+                cell->add_edge(edge);
+                edge->add_cell(cell);
+            }
+
+            for (auto &vertID : cell_vertex_ids)
+            {
+                cell->add_vertex(mesh->vertex(vertID));
+                mesh->vertex(vertID)->add_cell(cell);
+            }
+            cell->construct_face_normals();
+        }
+
+        // // build boundary
+        build_boundary(mesh.get());
+
+        std::cout << "added " << mesh->n_cells() << " cells; Total volume = " << total_vol << std::endl;
+        return mesh;
+    }
+    else
+    {
+        throw "     Cannot build mesh. Check input file\n";
+    }
+    return NULL;
+}
+
+void MeshBuilder::build_boundary(Mesh *mesh)
+{
+    // Here we fill in the _boundary variables of the cells and vertices, and the lists of boundary
+    // edges, cells and vertices
+    for (auto &face : mesh->get_faces())
+    {
+        std::vector<Cell *> cells = face->get_cells();
+        if (cells.size() == 1)
+        {
+            // The cell has a boundary edge, so it is a boundary cell
+            cells[0]->set_boundary(true);
+            face->set_boundary(true);
+            // mesh->add_b_cell(cells[0]);
+            mesh->add_b_face(face);
+
+            std::vector<Vertex *> face_verts = face->get_vertices();
+            std::vector<Edge *> face_edges = face->get_edges();
+
+            for (auto &v : face->get_vertices())
+            {
+                std::vector<Vertex *> b_verts = mesh->get_b_vertices();
+                if (std::find(b_verts.begin(), b_verts.end(), v) == b_verts.end()) // if vert not in b_verts, add to b_verts
+                {
+                    v->set_boundary(true);
+                    mesh->add_b_vertex(v);
+                }
+            }
+            for (auto &e : face->get_edges())
+            {
+                std::vector<Edge *> b_edges = mesh->get_b_edges();
+                if (std::find(b_edges.begin(), b_edges.end(), e) == b_edges.end()) // if edge not in b_edges, add to b_edges
+                {
+                    e->set_boundary(true);
+                    mesh->add_b_edge(e);
+                }
+            }
+        }
+        else
+        {
+            mesh->add_i_face(face);
+        }
+    }
+
+    // Pass to fill in interior elements
+    for (auto &cell : mesh->get_cells())
+    {
+        if (!(cell->is_boundary()))
+        {
+            mesh->add_i_cell(cell);
+        }
+        else
+        {
+            mesh->add_b_cell(cell);
+        }
+    }
+    for (auto &edge : mesh->get_edges())
+    {
+        if (!(edge->is_boundary()))
+        {
+            mesh->add_i_edge(edge);
+        }
+    }
+    for (auto &vertex : mesh->get_vertices())
+    {
+        if (!(vertex->is_boundary()))
+        {
+            mesh->add_i_vertex(vertex);
+        }
+    }
+}

@@ -88,11 +88,11 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga37173e331cdc5fa65f30562ccb17ca8c"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::MatrixXd(<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *, <a class="el" href="classHArDCore3D_1_1ElementQuad.html">ElementQuad</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga37173e331cdc5fa65f30562ccb17ca8c">MatrixFType</a></td></tr>
+<tr class="memitem:ga37173e331cdc5fa65f30562ccb17ca8c"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::MatrixXd(Cell *, <a class="el" href="classHArDCore3D_1_1ElementQuad.html">ElementQuad</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga37173e331cdc5fa65f30562ccb17ca8c">MatrixFType</a></td></tr>
 <tr class="memdesc:ga37173e331cdc5fa65f30562ccb17ca8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">type for the global operator as a function of a Cell and an ElementQuad  <a href="group__HHO3D.html#ga37173e331cdc5fa65f30562ccb17ca8c">More...</a><br /></td></tr>
 <tr class="separator:ga37173e331cdc5fa65f30562ccb17ca8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga12f4db66d2596fe2ed7e1384d412479a"><td class="memItemLeft" align="right" valign="top"><a id="ga12f4db66d2596fe2ed7e1384d412479a"></a>
-typedef std::function&lt; Eigen::VectorXd(<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *, <a class="el" href="classHArDCore3D_1_1ElementQuad.html">ElementQuad</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a></td></tr>
+typedef std::function&lt; Eigen::VectorXd(Cell *, <a class="el" href="classHArDCore3D_1_1ElementQuad.html">ElementQuad</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a></td></tr>
 <tr class="memdesc:ga12f4db66d2596fe2ed7e1384d412479a"><td class="mdescLeft">&#160;</td><td class="mdescRight">type for the load vector as a function of a Cell and an ElementQuad <br /></td></tr>
 <tr class="separator:ga12f4db66d2596fe2ed7e1384d412479a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -125,19 +125,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga900c704c67fc0dff437a377e19a18017">HHO3D::set_load_vector</a> (const <a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a> &amp;)</td></tr>
 <tr class="memdesc:ga900c704c67fc0dff437a377e19a18017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the load vector. <br /></td></tr>
 <tr class="separator:ga900c704c67fc0dff437a377e19a18017"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga90c52326056fd34a01bae961af6173de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga90c52326056fd34a01bae961af6173de">HHO3D::plot</a> (const std::string, const <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a> &amp;, const <a class="el" href="group__Common.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt; &amp;)</td></tr>
+<tr class="memitem:ga90c52326056fd34a01bae961af6173de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga90c52326056fd34a01bae961af6173de">HHO3D::plot</a> (const std::string, const <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a> &amp;, const <a class="el" href="group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt; &amp;)</td></tr>
 <tr class="memdesc:ga90c52326056fd34a01bae961af6173de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plot the numerical and exact solutions.  <a href="group__HHO3D.html#ga90c52326056fd34a01bae961af6173de">More...</a><br /></td></tr>
 <tr class="separator:ga90c52326056fd34a01bae961af6173de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf67d049ac7cf172cfaf81e95772d891d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#gaf67d049ac7cf172cfaf81e95772d891d">HHO3D::standard_load_vector</a> (const CellFType&lt; double &gt; &amp;)</td></tr>
+<tr class="memitem:gaf67d049ac7cf172cfaf81e95772d891d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#gaf67d049ac7cf172cfaf81e95772d891d">HHO3D::standard_load_vector</a> (const <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt; &amp;)</td></tr>
 <tr class="memdesc:gaf67d049ac7cf172cfaf81e95772d891d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the standard load vector (f, v_T)_T with no Neumann boundary conditions.  <a href="group__HHO3D.html#gaf67d049ac7cf172cfaf81e95772d891d">More...</a><br /></td></tr>
 <tr class="separator:gaf67d049ac7cf172cfaf81e95772d891d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga643e5c8c486212fc65eac391648c0bf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga643e5c8c486212fc65eac391648c0bf9">HHO3D::standard_load_vector</a> (const CellFType&lt; double &gt; &amp;, const CellFType&lt; VectorRd &gt; &amp;, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> &amp;)</td></tr>
+<tr class="memitem:ga643e5c8c486212fc65eac391648c0bf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga643e5c8c486212fc65eac391648c0bf9">HHO3D::standard_load_vector</a> (const <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt; &amp;, const <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; VectorRd &gt; &amp;, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> &amp;)</td></tr>
 <tr class="memdesc:ga643e5c8c486212fc65eac391648c0bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the standard load vector (f, v_T)_T.  <a href="group__HHO3D.html#ga643e5c8c486212fc65eac391648c0bf9">More...</a><br /></td></tr>
 <tr class="separator:ga643e5c8c486212fc65eac391648c0bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacb59e83557de3bc5266ddfa7bd7fd481"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#gacb59e83557de3bc5266ddfa7bd7fd481">HHO3D::standard_load_vector</a> (const CellFType&lt; double &gt; &amp;, const <a class="el" href="group__Common.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt; &amp;, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> &amp;)</td></tr>
+<tr class="memitem:gacb59e83557de3bc5266ddfa7bd7fd481"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#gacb59e83557de3bc5266ddfa7bd7fd481">HHO3D::standard_load_vector</a> (const <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt; &amp;, const <a class="el" href="group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt; &amp;, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> &amp;)</td></tr>
 <tr class="memdesc:gacb59e83557de3bc5266ddfa7bd7fd481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the standard load vector (f, v_T)_T.  <a href="group__HHO3D.html#gacb59e83557de3bc5266ddfa7bd7fd481">More...</a><br /></td></tr>
 <tr class="separator:gacb59e83557de3bc5266ddfa7bd7fd481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2230426ff92810893168177ddd623f35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga2230426ff92810893168177ddd623f35">HHO3D::set_dirichlet</a> (const <a class="el" href="group__Common.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt; &amp;, const size_t)</td></tr>
+<tr class="memitem:ga2230426ff92810893168177ddd623f35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga2230426ff92810893168177ddd623f35">HHO3D::set_dirichlet</a> (const <a class="el" href="group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt; &amp;, const size_t)</td></tr>
 <tr class="memdesc:ga2230426ff92810893168177ddd623f35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Dirichlet boundary conditions.  <a href="group__HHO3D.html#ga2230426ff92810893168177ddd623f35">More...</a><br /></td></tr>
 <tr class="separator:ga2230426ff92810893168177ddd623f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1dc0ef5581cfb16964e86963086f0d4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO3D.html#ga1dc0ef5581cfb16964e86963086f0d4d">HHO3D::set_dirichlet</a> (const size_t)</td></tr>
@@ -170,7 +170,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::function&lt;Eigen::MatrixXd(<a class="el" href="classHArDCore3D_1_1Cell.html">Cell</a> *, <a class="el" href="classHArDCore3D_1_1ElementQuad.html">ElementQuad</a> &amp;)&gt; <a class="el" href="group__HHO3D.html#ga37173e331cdc5fa65f30562ccb17ca8c">MatrixFType</a></td>
+          <td class="memname">typedef std::function&lt;Eigen::MatrixXd(Cell *, <a class="el" href="classHArDCore3D_1_1ElementQuad.html">ElementQuad</a> &amp;)&gt; <a class="el" href="group__HHO3D.html#ga37173e331cdc5fa65f30562ccb17ca8c">MatrixFType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -267,7 +267,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__Common.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>exact_sol</em>&#160;</td>
         </tr>
         <tr>
@@ -299,7 +299,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
         <tr>
           <td class="memname">void HHO3D::set_dirichlet </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Common.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
@@ -362,7 +362,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
         <tr>
           <td class="memname"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a> HHO3D::standard_load_vector </td>
           <td>(</td>
-          <td class="paramtype">const CellFType&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>source</em></td><td>)</td>
           <td></td>
         </tr>
@@ -388,13 +388,13 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
         <tr>
           <td class="memname"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a> HHO3D::standard_load_vector </td>
           <td>(</td>
-          <td class="paramtype">const CellFType&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>source</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const CellFType&lt; VectorRd &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; VectorRd &gt; &amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
@@ -432,13 +432,13 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
         <tr>
           <td class="memname"><a class="el" href="group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a">VectorFType</a> HHO3D::standard_load_vector </td>
           <td>(</td>
-          <td class="paramtype">const CellFType&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>source</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__Common.html#gaf7ef55817c2af72faaaa416170fba181">FType</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>

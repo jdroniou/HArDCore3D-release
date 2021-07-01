@@ -18,7 +18,8 @@
 #include <iostream>
 #include <vector>
 
-#include "tetra_quad.hpp"
+#include <tetra_quad.hpp>
+
 
 /*
   
@@ -46,7 +47,6 @@ namespace HArDCore3D {
 
 class QuadRuleTetra {
 protected:
-  static constexpr size_t max_doe = 14;
   static constexpr size_t num_rules = 15;
 
   const size_t rule;

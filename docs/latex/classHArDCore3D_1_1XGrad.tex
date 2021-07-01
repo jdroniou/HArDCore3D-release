@@ -11,7 +11,8 @@ Discrete H1 space\+: local operators, L2 product and global interpolator.
 
 
 
-Inheritance diagram for H\+Ar\+D\+Core3D\+::X\+Grad\+:\nopagebreak
+Inheritance diagram for H\+Ar\+D\+Core3D\+::X\+Grad\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,11 +21,12 @@ Inheritance diagram for H\+Ar\+D\+Core3D\+::X\+Grad\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for H\+Ar\+D\+Core3D\+::X\+Grad\+:\nopagebreak
+Collaboration diagram for H\+Ar\+D\+Core3D\+::X\+Grad\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=211pt]{classHArDCore3D_1_1XGrad__coll__graph}
+\includegraphics[width=228pt]{classHArDCore3D_1_1XGrad__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Classes}
@@ -42,38 +44,40 @@ typedef std\+::function$<$ double(const Eigen\+::\+Vector3d \&)$>$ {\bfseries Fu
 \item 
 \mbox{\hyperlink{group__DDRCore_gaa324e5f72366f9c2fe7326384986269c}{X\+Grad}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, bool use\+\_\+threads=true, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRCore_ga90b1a980d171c5622cbfd2b289fede2f}{mesh}} () const
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRCore_ga90b1a980d171c5622cbfd2b289fede2f}{mesh}} () const
 \begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
 const size\+\_\+t \& \mbox{\hyperlink{group__DDRCore_ga0e82338c483d5dc11bc0b84adb52998b}{degree}} () const
 \begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_gafa11408a74e8545c1bcb817a7d1ac87e}{interpolate}} (const Function\+Type \&q) const
-\begin{DoxyCompactList}\small\item\em Interpolator. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_gaee9fe9c6833a783c3994ed123704c1ce}{interpolate}} (const Function\+Type \&q, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRCore_ga6342c6d44a0b08b3a9b3728384204fde}{edge\+Operators}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Return edge operators for the edge of index iE. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRCore_ga9b5cca5f857fe8c1f48ecd8e29b687a5}{edge\+Operators}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E) const
+const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRCore_ga9b5cca5f857fe8c1f48ecd8e29b687a5}{edge\+Operators}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Return edge operators for edge E. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRCore_gadaecb7d1ca4811b5cf0ddfb64520a6b0}{face\+Operators}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Return face operators for the face of index iF. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRCore_ga39c8365e893f692f285fe15be8b7162b}{face\+Operators}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F) const
+const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRCore_ga39c8365e893f692f285fe15be8b7162b}{face\+Operators}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Return face operators for face F. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRCore_gac7cac3064e3d00e3073899338577dd0a}{cell\+Operators}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Return cell operators for the cell of index iT. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRCore_ga3b0c3f70a1fc5d518f8a87eaef38ae05}{cell\+Operators}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T) const
+const \mbox{\hyperlink{structHArDCore3D_1_1XGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRCore_ga3b0c3f70a1fc5d518f8a87eaef38ae05}{cell\+Operators}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gaedbe0171512eca325eee8d91cbf558d9}{cell\+Bases}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Return cell bases for the cell of index iT. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga793170ec5942e367325fc3b5611c8e3d}{cell\+Bases}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga793170ec5942e367325fc3b5611c8e3d}{cell\+Bases}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gab71562dccfe07e1bafed18660115729c}{face\+Bases}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gacd58fb250bc2a93bd6f2e1c7a2f6ae6d}{face\+Bases}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gacd58fb250bc2a93bd6f2e1c7a2f6ae6d}{face\+Bases}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga9255b8206ebb7727738398276e518a61}{edge\+Bases}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga6fd06c440bb5efafe04dbcd56a7db847}{edge\+Bases}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga6fd06c440bb5efafe04dbcd56a7db847}{edge\+Bases}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga6dabd0bfb09f39ede54dafdab4a47f9e}{compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pkpo\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product for the cell of index iT. The stabilisation here is based on cell and face potentials. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga7dfaad4204a1a7916077d3469d311d2d}{build\+Gradient\+Components\+Cell}} (size\+\_\+t iT) const
-\begin{DoxyCompactList}\small\item\em Build the components of the gradient operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Build the components of the gradient operator (probably not useful in practice to implement schemes) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 

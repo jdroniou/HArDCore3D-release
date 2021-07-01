@@ -6,8 +6,6 @@
 
 
 #include "hybridcore.hpp"
-#include <vertex.hpp>
-#include <edge.hpp>
 #include <quad3d.hpp>
 #include <quad3d_face.hpp>
 #include <Eigen/Dense>

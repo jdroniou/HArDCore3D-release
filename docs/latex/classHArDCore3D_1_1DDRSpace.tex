@@ -11,7 +11,8 @@ Base class for D\+DR spaces. Provides functions to manipulate global D\+O\+Fs (t
 
 
 
-Inheritance diagram for H\+Ar\+D\+Core3D\+::D\+D\+R\+Space\+:\nopagebreak
+Inheritance diagram for H\+Ar\+D\+Core3D\+::D\+D\+R\+Space\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,25 +21,26 @@ Inheritance diagram for H\+Ar\+D\+Core3D\+::D\+D\+R\+Space\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for H\+Ar\+D\+Core3D\+::D\+D\+R\+Space\+:\nopagebreak
+Collaboration diagram for H\+Ar\+D\+Core3D\+::D\+D\+R\+Space\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=211pt]{classHArDCore3D_1_1DDRSpace__coll__graph}
+\includegraphics[width=228pt]{classHArDCore3D_1_1DDRSpace__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__DDRCore_gaa10443a50b2b275741e3e494a8aa7b7a}{D\+D\+R\+Space}} (const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga2bf25204b5238ee2cb8386980b4d3d23}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
+\mbox{\hyperlink{group__DDRCore_gaa10443a50b2b275741e3e494a8aa7b7a}{D\+D\+R\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga2bf25204b5238ee2cb8386980b4d3d23}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga0616b0eda8b68353b4b2c46428456c52}{global\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}} \&V) const
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga0616b0eda8b68353b4b2c46428456c52}{global\+Offset}} (const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the vertex V. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDRCore_gaabbbc3c672e298647779b2c02d05833d}{global\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E) const
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_gaabbbc3c672e298647779b2c02d05833d}{global\+Offset}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the edge E. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga54b3a679971d6c1d69f2865140ea8666}{global\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F) const
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga54b3a679971d6c1d69f2865140ea8666}{global\+Offset}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga35b699da0ccdc9e08678cbbecbbb990a}{global\+Offset}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T) const
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga35b699da0ccdc9e08678cbbecbbb990a}{global\+Offset}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the cell T. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_gaa2bf0aa56bb500a1104603593506229a}{restrict\+Edge}} (size\+\_\+t iE, const Eigen\+::\+Vector\+Xd \&vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to the edge (including its vertices) of index iE. \end{DoxyCompactList}\item 
@@ -46,19 +48,19 @@ Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga51ee63c6cc37dc07bcbd1122
 \begin{DoxyCompactList}\small\item\em Restrict to the face (including vertices and edges) of index iF. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga699cc19f55f535fd8349fe552676a525}{restrict\+Cell}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to the cell (including vertices, edges and faces) of index iT. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga9f11b7b2aca1a8155bc4106199041e78}{restrict}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E, const Eigen\+::\+Vector\+Xd vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga9f11b7b2aca1a8155bc4106199041e78}{restrict}} (const Edge \&E, const Eigen\+::\+Vector\+Xd vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to an edge. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga7a86b45176a2440d3c36d03c61b33fad}{restrict}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F, const Eigen\+::\+Vector\+Xd vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga7a86b45176a2440d3c36d03c61b33fad}{restrict}} (const Face \&F, const Eigen\+::\+Vector\+Xd vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to a face. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga1745cc3a6b663671f103e90592fbdcbd}{restrict}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, const Eigen\+::\+Vector\+Xd vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga1745cc3a6b663671f103e90592fbdcbd}{restrict}} (const Cell \&T, const Eigen\+::\+Vector\+Xd vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to a cell. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gab8a272908727eac60b4eeb89720c008f}{extend\+Operator}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F, const Eigen\+::\+Matrix\+Xd \&opF) const
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gab8a272908727eac60b4eeb89720c008f}{extend\+Operator}} (const Cell \&T, const Face \&F, const Eigen\+::\+Matrix\+Xd \&opF) const
 \item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga9824954470f62049f40e4d5cc2a66e6e}{extend\+Operator}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga9824954470f62049f40e4d5cc2a66e6e}{extend\+Operator}} (const Cell \&T, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a cell. \end{DoxyCompactList}\item 
-std\+::vector$<$ size\+\_\+t $>$ {\bfseries global\+D\+O\+F\+Indices} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T) const
+std\+::vector$<$ size\+\_\+t $>$ {\bfseries global\+D\+O\+F\+Indices} (const Cell \&T) const
 \item 
-std\+::vector$<$ size\+\_\+t $>$ {\bfseries global\+D\+O\+F\+Indices} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F) const
+std\+::vector$<$ size\+\_\+t $>$ {\bfseries global\+D\+O\+F\+Indices} (const Face \&F) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 

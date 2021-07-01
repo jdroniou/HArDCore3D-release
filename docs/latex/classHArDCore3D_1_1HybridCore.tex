@@ -16,9 +16,9 @@ typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__HybridCore_ga0afcdbfe52e163c27b24ec93d336dc53}{Hybrid\+Core}} (const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} $\ast$mesh\+\_\+ptr, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg, const int edge\+\_\+deg, const bool use\+\_\+threads=true, std\+::ostream \&output=std\+::cout, const bool ortho=true)
+\mbox{\hyperlink{group__HybridCore_ga0afcdbfe52e163c27b24ec93d336dc53}{Hybrid\+Core}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} $\ast$mesh\+\_\+ptr, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg, const int edge\+\_\+deg, const bool use\+\_\+threads=true, std\+::ostream \&output=std\+::cout, const bool ortho=true)
 \begin{DoxyCompactList}\small\item\em Class constructor\+: initialises the data structure with the given mesh, and desired polynomial degrees of the basis functions. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} $\ast$ \mbox{\hyperlink{group__HybridCore_gaf9413be657df06123c1544d16df6b137}{get\+\_\+mesh}} () const
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} $\ast$ \mbox{\hyperlink{group__HybridCore_gaf9413be657df06123c1544d16df6b137}{get\+\_\+mesh}} () const
 \begin{DoxyCompactList}\small\item\em Returns a pointer to the mesh. \end{DoxyCompactList}\item 
 const int \mbox{\hyperlink{group__HybridCore_ga10e8b9bd521b54042cccd84520011fe9}{Cell\+Degree}} () const
 \begin{DoxyCompactList}\small\item\em Return the degree of cell polynomials. \end{DoxyCompactList}\item 
@@ -53,9 +53,9 @@ The \mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} class provide
 
 The current implementation has the following behaviours/expectations\+:
 \begin{DoxyItemize}
-\item \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} polynomials must be at least of degree 0, and face basis functions are always generated
-\item \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} polynomials could be of degree -\/1, or 0+. In the former case, basis functions of degree 0 are generated, but a function is provided to compute weights to express the cell values in terms of linearly exact averages of face values. This function is used, e.\+g., when interpolating a continuous function.
-\item \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} polynomials could be of degree 0+, or -\/1 in which case the edge basis functions are not generated 
+\item Face polynomials must be at least of degree 0, and face basis functions are always generated
+\item Cell polynomials could be of degree -\/1, or 0+. In the former case, basis functions of degree 0 are generated, but a function is provided to compute weights to express the cell values in terms of linearly exact averages of face values. This function is used, e.\+g., when interpolating a continuous function.
+\item Edge polynomials could be of degree 0+, or -\/1 in which case the edge basis functions are not generated 
 \end{DoxyItemize}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

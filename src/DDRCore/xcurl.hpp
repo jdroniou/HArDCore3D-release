@@ -51,8 +51,13 @@ namespace HArDCore3D
       return m_ddr_core.degree();
     }
 
-    /// Interpolator
-    Eigen::VectorXd interpolate(const FunctionType & v) const;
+    /// Interpolator of a continuous function
+    Eigen::VectorXd interpolate(
+          const FunctionType & v, ///< The function to interpolate
+          const int doe_cell = -1, ///< The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
+          const int doe_face = -1, ///< The optional degre of face quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
+          const int doe_edge = -1 ///< The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
+          ) const;
 
     /// Return cell operators for the cell of index iT
     inline const LocalOperators & cellOperators(size_t iT) const

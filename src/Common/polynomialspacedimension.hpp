@@ -32,9 +32,7 @@
 #ifndef POLYNOMIALSPACEDIMENSION_HPP
 #define POLYNOMIALSPACEDIMENSION_HPP
 
-#include <cell.hpp>
-#include <face.hpp>
-#include <edge.hpp>
+#include <mesh.hpp>
 
 namespace HArDCore3D
 {
@@ -89,6 +87,16 @@ namespace HArDCore3D
     static size_t Poly(int k)
     {
       return (k >= 0 ? (k + 1) * (k + 2) / 2 : 0);
+    }
+    /// Dimension of Gk(F)
+    static size_t Goly(int k)
+    {
+      return (k >= 0 ? PolynomialSpaceDimension<Face>::Poly(k + 1) - 1 : 0);
+    }
+    /// Dimension of Gck(F)
+    static size_t GolyCompl(int k)
+    {
+      return 2 * PolynomialSpaceDimension<Face>::Poly(k) - PolynomialSpaceDimension<Face>::Goly(k);
     }
     /// Dimension of Rk(F)
     static size_t Roly(int k)

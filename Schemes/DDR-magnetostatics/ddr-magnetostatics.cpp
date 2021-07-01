@@ -4,6 +4,7 @@
 #include <thread>
 
 #include "ddr-magnetostatics.hpp"
+#include <parallel_for.hpp>
 
 #include <boost/program_options.hpp>
 #include <boost/timer/timer.hpp>
@@ -25,9 +26,8 @@ using namespace HArDCore3D;
 // Mesh filenames
 //------------------------------------------------------------------------------
 
-const std::string mesh_dir = "../HArDCore3D/meshes/";
+const std::string mesh_dir = "../../meshes/";
 std::string default_mesh = mesh_dir + "Voro-small-0/RF_fmt/voro-2";
-std::string default_meshtype = "RF";
 
 //------------------------------------------------------------------------------
 
@@ -38,7 +38,6 @@ int main(int argc, const char* argv[])
   desc.add_options()
     ("help,h", "Display this help message")
     ("mesh,m", boost::program_options::value<std::string>(), "Set the mesh")
-    ("meshtype,t", boost::program_options::value<std::string>(), "Set the mesh type (TG,MSH,RF)")
     ("degree,k", boost::program_options::value<size_t>()->default_value(1), "The polynomial degree of the sequence")
     ("pthread,p", boost::program_options::value<bool>()->default_value(true), "Use thread-based parallelism")
     ("solution,s", boost::program_options::value<int>()->default_value(0), "Select the solution")
@@ -58,7 +57,6 @@ int main(int argc, const char* argv[])
 
   // Select the mesh
   std::string mesh_file = (vm.count("mesh") ? vm["mesh"].as<std::string>() : default_mesh);
-  std::string mesh_type = (vm.count("meshtype") ? vm["meshtype"].as<std::string>() : default_meshtype);
 
   std::cout << "[main] Mesh file: " << mesh_file << std::endl;
   
@@ -112,7 +110,7 @@ int main(int argc, const char* argv[])
   }
 
   // Build the mesh
-  MeshBuilder meshbuilder = MeshBuilder(mesh_file, mesh_type);
+  MeshBuilder meshbuilder = MeshBuilder(mesh_file);
   std::unique_ptr<Mesh> mesh_ptr = meshbuilder.build_the_mesh();
 
   boost::timer::cpu_timer timer;
@@ -147,7 +145,7 @@ int main(int argc, const char* argv[])
 
   // Solve the problem
   timer.start();
-  Eigen::VectorXd uh;
+  Eigen::VectorXd uh_condensed;
   if (vm.count("iterative-solver")) {
     std::cout << "[main] Solving the linear system using BiCGSTAB" << std::endl;
     
@@ -158,7 +156,7 @@ int main(int argc, const char* argv[])
       std::cerr << "[main] ERROR: Could not factorize matrix" << std::endl;
       exit(1);
     }
-    uh = solver.solve(ms.systemVector());
+    uh_condensed = solver.solve(ms.systemVector());
     if (solver.info() != Eigen::Success) {
       std::cerr << "[main] ERROR: Could not solve direct system" << std::endl;
       exit(1);
@@ -178,24 +176,31 @@ int main(int argc, const char* argv[])
     if (solver.info() != Eigen::Success) {
       std::cerr << "[main] ERROR: Could not factorize matrix" << std::endl;
     }
-    uh = solver.solve(ms.systemVector());
+    uh_condensed = solver.solve(ms.systemVector());
     if (solver.info() != Eigen::Success) {
       std::cerr << "[main] ERROR: Could not solve linear system" << std::endl;
     }
   }
+  // Re-create statically condensed unknowns
+  Eigen::VectorXd uh = Eigen::VectorXd::Zero(ms.dimensionSpace());
+  uh.head(ms.xCurl().dimension() - ms.nbSCDOFs()) = uh_condensed.head(ms.xCurl().dimension() - ms.nbSCDOFs()); 
+  uh.segment(ms.xCurl().dimension() - ms.nbSCDOFs(), ms.nbSCDOFs()) = ms.scVector() + ms.scMatrix() * uh_condensed;
+  uh.tail(ms.xDiv().dimension()) = uh_condensed.segment(ms.xCurl().dimension()-ms.nbSCDOFs(), ms.xDiv().dimension());
+
   timer.stop();
   double t_wall_solve = double(timer.elapsed().wall) * pow(10, -9);
   double t_proc_solve = double(timer.elapsed().user + timer.elapsed().system) * pow(10, -9);
   std::cout << "[main] Time solve (wall/proc) " << t_wall_solve << "/" << t_proc_solve << std::endl;
   
   // Compute the error in the energy norm
-  Eigen::VectorXd uI = Eigen::VectorXd::Zero(ms.dimension());  
+  Eigen::VectorXd uI = Eigen::VectorXd::Zero(ms.dimensionSpace());  
   uI.head(ms.xCurl().dimension()) = ms.xCurl().interpolate(sigma);
   uI.tail(ms.xDiv().dimension()) = ms.xDiv().interpolate(u);
   Eigen::VectorXd eh = uh - uI;
-  double en_err = std::sqrt( eh.transpose() * ms.systemMatrix() * eh );
+//////  double en_err = std::sqrt( eh.transpose() * ms.systemMatrix() * eh );  // no longer valid in statically condensed system
   // Error in Hcurl x Hdiv norm
   double hcurlhdiv_err = ms.computeNorm(eh) / ms.computeNorm(uI);
+  double en_err = hcurlhdiv_err;
   std::cout << "[main] Hcurl-Hdiv error " << hcurlhdiv_err << std::endl;
   std::cout << "[main] Energy error " << en_err << std::endl;
   std::cout << "[main] Mesh diameter " << mesh_ptr->h_max() << std::endl;
@@ -241,8 +246,10 @@ Magnetostatics::Magnetostatics(
     m_output(output),
     m_xcurl(ddrcore, use_threads),
     m_xdiv(ddrcore, use_threads),
-    m_A(dimension(), dimension()),
-    m_b(Eigen::VectorXd::Zero(dimension())),
+    m_A(sizeSystem(), sizeSystem()),
+    m_b(Eigen::VectorXd::Zero(sizeSystem())),
+    m_sc_A(nbSCDOFs(), sizeSystem()),
+    m_sc_b(Eigen::VectorXd::Zero(nbSCDOFs())),
     m_stab_par(1.)
     
 {
@@ -261,74 +268,31 @@ void Magnetostatics::assembleLinearSystem(
   auto assemble_all = [this, f, mu, u](
                                        size_t start,
                                        size_t end,
-                                       std::list<Eigen::Triplet<double> > * my_triplets,
-                                       Eigen::VectorXd * my_rhs
+                                       std::list<Eigen::Triplet<double> > * triplets_system,
+                                       Eigen::VectorXd * rhs_system,
+                                       std::list<Eigen::Triplet<double> > * triplets_sc,
+                                       Eigen::VectorXd * rhs_sc
                                        )->void
                       {
                         for (size_t iT = start; iT < end; iT++) {
                           this->_assemble_local_contribution(
                                                              iT,
                                                              this->_compute_local_contribution(iT, f, mu, u),
-                                                             *my_triplets,
-                                                             *my_rhs
+                                                             *triplets_system,
+                                                             *rhs_system,
+                                                             *triplets_sc,
+                                                             *rhs_sc
                                                              );
                         } // for iT
                       };
-  
+                      
+  // Assemble the matrix and rhs
   if (m_use_threads) {
     m_output << "[Magnetostatics] Parallel assembly" << std::endl;
-   
-    // Select the number of threads
-    unsigned nb_threads_hint = std::thread::hardware_concurrency();
-    unsigned nb_threads = nb_threads_hint == 0 ? 8 : (nb_threads_hint);
-
-    // Compute the batch size and the remainder
-    unsigned nb_elements = m_ddrcore.mesh().n_cells();
-    unsigned batch_size = nb_elements / nb_threads;
-    unsigned batch_remainder = nb_elements % nb_threads;
- 
-    // Create vectors of triplets and vectors
-    std::vector<std::list<Eigen::Triplet<double> > > triplets(nb_threads + 1);
-    std::vector<Eigen::VectorXd> rhs(nb_threads + 1);
-
-    for (unsigned i = 0; i < nb_threads + 1; i++) {
-      rhs[i] = Eigen::VectorXd::Zero(this->dimension());
-    } // for i
-
-    // Assign a task to each thread
-    std::vector<std::thread> my_threads(nb_threads);
-    for (unsigned i = 0; i < nb_threads; ++i) {
-      int start = i * batch_size;
-      my_threads[i] = std::thread(assemble_all, start, start + batch_size, &triplets[i], &rhs[i]);
-    }
-
-    // Execute the elements left
-    int start = nb_threads * batch_size;
-    assemble_all(start, start + batch_remainder, &triplets[nb_threads], &rhs[nb_threads]);
-
-    // Wait for the other threads to finish their task
-    std::for_each(my_threads.begin(), my_threads.end(), std::mem_fn(&std::thread::join));
-
-    // Create matrix from triplets
-    size_t n_triplets = 0;
-    for (auto triplets_thread : triplets) {
-      n_triplets += triplets_thread.size();
-    }
-    std::vector<Eigen::Triplet<double> > all_triplets(n_triplets);
-    auto triplet_index = all_triplets.begin();
-    for (auto triplets_thread : triplets) {
-      triplet_index = std::copy(triplets_thread.begin(), triplets_thread.end(), triplet_index);
-    }
-    m_A.setFromTriplets(all_triplets.begin(), all_triplets.end());
-    for (auto rhs_thread : rhs) {
-      m_b += rhs_thread;
-    }
-  } else {
+  }else{
     m_output << "[Magnetostatics] Sequential assembly" << std::endl;
-    std::list<Eigen::Triplet<double> > triplets;
-    assemble_all(0, m_ddrcore.mesh().n_cells(), &triplets, &m_b);
-    m_A.setFromTriplets(triplets.begin(), triplets.end());
   }
+  std::tie(m_A, m_b, m_sc_A, m_sc_b) = parallel_assembly_system(m_ddrcore.mesh().n_cells(), this->sizeSystem(), std::make_pair(this->nbSCDOFs(), this->sizeSystem()), this->nbSCDOFs(), assemble_all, m_use_threads);
     
   // Assemble boundary conditions
   for (auto iF : m_ddrcore.mesh().get_b_faces()) {
@@ -406,31 +370,78 @@ Magnetostatics::_compute_local_contribution(
 void Magnetostatics::_assemble_local_contribution(
                                                   size_t iT,
                                                   const std::pair<Eigen::MatrixXd, Eigen::VectorXd> & lsT,
-                                                  std::list<Eigen::Triplet<double> > & my_triplets,
-                                                  Eigen::VectorXd & my_rhs
+                                                  std::list<Eigen::Triplet<double> > & triplets_system,
+                                                  Eigen::VectorXd & rhs_system,
+                                                  std::list<Eigen::Triplet<double> > & triplets_sc,
+                                                  Eigen::VectorXd & rhs_sc
                                                   )
 {
   const Cell & T = *m_ddrcore.mesh().cell(iT);
 
-  size_t dim_T = m_xcurl.dimensionCell(iT) + m_xdiv.dimensionCell(iT);
-  size_t dim_xcurl = m_xcurl.dimension();
+  // AT and bT are made of 3 components: H skeleton (face+edges), H cells, and A
+  // We want to condense the 2nd component H cell. We first transform AT and bT with a permutation to put
+  // all these unknowns in the bottom right corner
+  size_t dim1 = m_xcurl.localOffset(T);                // dimension of skeletal unknowns for H
+  size_t dim_sc = m_xcurl.numLocalDofsCell();    // dimension of cell unknowns for H (sc DOFs)
+  size_t dim3 = m_xdiv.dimensionCell(iT);         // dimension of A
+  size_t dim_dofs = dim1+dim3;      // nb of dofs remaining after SC
+  // Permutation matrix
+  Eigen::MatrixXd Perm = Eigen::MatrixXd::Zero(dim_dofs+dim_sc, dim_dofs+dim_sc);
+  Perm.topLeftCorner(dim1, dim1) = Eigen::MatrixXd::Identity(dim1, dim1);
+  Perm.block(dim1+dim3, dim1, dim_sc, dim_sc) = Eigen::MatrixXd::Identity(dim_sc, dim_sc);
+  Perm.block(dim1, dim1+dim_sc, dim3, dim3) = Eigen::MatrixXd::Identity(dim3, dim3);
+  // Permuted local matrix and rhs, the velocity cell unknowns are at the end
+  Eigen::MatrixXd AT = Perm * lsT.first * Perm.transpose();
+  Eigen::VectorXd bT = Perm * lsT.second;
 
-  // Create the vector of DOF indices
+  // Extract 4 blocks of AT, bT for static condensation
+  Eigen::MatrixXd A11 = AT.topLeftCorner(dim_dofs, dim_dofs);  
+  Eigen::MatrixXd A12 = AT.topRightCorner(dim_dofs, dim_sc);
+  Eigen::MatrixXd A21 = AT.bottomLeftCorner(dim_sc, dim_dofs);
+  Eigen::MatrixXd A22 = AT.bottomRightCorner(dim_sc, dim_sc);
+  Eigen::VectorXd b1 = bT.head(dim_dofs);
+  Eigen::VectorXd b2 = bT.tail(dim_sc);
+  
+  // Create condensed system (AT_reduced, bT_reduced) and SC recovery operator (RT, cT)
+  Eigen::MatrixXd A22inv_A21 = A22.ldlt().solve(A21);
+  Eigen::VectorXd A22inv_b2 = A22.ldlt().solve(b2);
+  Eigen::MatrixXd AT_reduced = A11 - A12 * A22inv_A21;
+  Eigen::VectorXd bT_reduced = b1 - A12 * A22inv_b2;
+  Eigen::MatrixXd RT = -A22inv_A21;
+  Eigen::VectorXd cT = A22inv_b2;
+
+  // STATICALLY CONDENSED SYSTEM
+  //
+  // Create the vector of global DOF indices for the SC system: Idofs_T contains the skeletal dofs of u, dofs of p, and lambda
+  std::vector<size_t> Idofs_T(dim_dofs, 0);
   auto I_xcurl_T = m_xcurl.globalDOFIndices(T);
-  auto I_xdiv_T = m_xdiv.globalDOFIndices(T);
-  std::vector<size_t> I_T(dim_T);
-  auto it_I_T = std::copy(I_xcurl_T.begin(), I_xcurl_T.end(), I_T.begin());
-  std::transform(I_xdiv_T.begin(), I_xdiv_T.end(), it_I_T, [dim_xcurl](const size_t & index) { return index + dim_xcurl; });
+  auto I_xgrad_T = m_xdiv.globalDOFIndices(T);
+  auto it_Idofs_T = std::copy(I_xcurl_T.begin(), I_xcurl_T.begin()+dim1, Idofs_T.begin()); // put skeletal DOFs of H in Idofs_T
+  size_t offset = m_xcurl.dimension() - nbSCDOFs();     // nb total of skeletal DOFs for H (where global dofs of A start)
+  std::transform(I_xgrad_T.begin(), I_xgrad_T.end(), it_Idofs_T, [&offset](const size_t & index) { return index + offset; });
+  
+  // Assemble statically condensed system  
+  for (size_t i = 0; i < dim_dofs; i++){
+    rhs_system(Idofs_T[i]) += bT_reduced(i);
+    for (size_t j = 0; j < dim_dofs; j++){    
+      triplets_system.emplace_back(Idofs_T[i], Idofs_T[j], AT_reduced(i,j));
+    }
+  }
 
-  // Assemble
-  const Eigen::MatrixXd & AT = lsT.first;
-  const Eigen::VectorXd & bT = lsT.second;
-  for (size_t i = 0; i < dim_T; i++) {
-    my_rhs(I_T[i]) += bT(i);
-    for (size_t j = 0; j < dim_T; j++) {
-      my_triplets.push_back( Eigen::Triplet<double>(I_T[i], I_T[j], AT(i,j)) );
-    } // for j
-  } // for i
+  // RECOVERY OPERATOR
+  //
+  // Create the vector of DOF indices: Isc_T contains global cell dofs of H (offset to start at 0)
+  std::vector<size_t> Isc_T(dim_sc);
+  std::transform(I_xcurl_T.begin()+dim1, I_xcurl_T.end(), Isc_T.begin(), [&offset](const size_t & index) { return index - offset; });
+ 
+  // Assemble recovery operator
+  for (size_t i = 0; i < dim_sc; i++){
+    rhs_sc(Isc_T[i]) += cT(i);
+    for (size_t j = 0; j < dim_dofs; j++){
+      triplets_sc.emplace_back(Isc_T[i], Idofs_T[j], RT(i,j));
+    }
+  }
+
 }
 
 
@@ -438,33 +449,36 @@ void Magnetostatics::_assemble_local_contribution(
 
 double Magnetostatics::computeNorm( const Eigen::VectorXd & v ) const
 {
-  double val = 0.;
+  Eigen::VectorXd local_sqnorms = Eigen::VectorXd::Zero(m_ddrcore.mesh().n_cells());
 
   // Xcurl correspond to the first components of v, Xdiv to the last ones
   Eigen::VectorXd v_curl = v.head(m_xcurl.dimension());
   Eigen::VectorXd v_div = v.tail(m_xdiv.dimension());
   
-  // Loop over cells
-  for (size_t iT = 0; iT < m_ddrcore.mesh().n_cells(); iT++){
-    Cell & T = *m_ddrcore.mesh().cell(iT);
-    // Mass matrix for (P^k(T))^3
-    QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2*m_ddrcore.degree() );
-    Eigen::MatrixXd mass_Pk3_T = compute_gram_matrix(evaluate_quad<Function>::compute(*m_ddrcore.cellBases(iT).Polyk3, quad_2k_T), quad_2k_T);
-    Eigen::VectorXd v_curl_T = m_xcurl.restrict(T, v_curl);
-    Eigen::VectorXd v_div_T = m_xdiv.restrict(T, v_div);
+  std::function<void(size_t, size_t)> compute_local_squarednorms
+    = [this, &v_curl, &v_div, &local_sqnorms](size_t start, size_t end)->void
+    {
+      for (size_t iT = start; iT < end; iT++){
+        Cell & T = *m_ddrcore.mesh().cell(iT);
+        // Mass matrix for (P^k(T))^3
+        QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2*m_ddrcore.degree() );
+        Eigen::MatrixXd mass_Pk3_T = compute_gram_matrix(evaluate_quad<Function>::compute(*m_ddrcore.cellBases(iT).Polyk3, quad_2k_T), quad_2k_T);
+        Eigen::VectorXd v_curl_T = m_xcurl.restrict(T, v_curl);
+        Eigen::VectorXd v_div_T = m_xdiv.restrict(T, v_div);
 
-    // Contribution of L2 norms, without any weight (no permeability)
-    val += v_curl_T.transpose() * m_xcurl.computeL2Product(iT, m_stab_par, mass_Pk3_T) * v_curl_T;
-    val += v_div_T.transpose() * m_xdiv.computeL2Product(iT, m_stab_par, mass_Pk3_T) * v_div_T;
+        // Contribution of L2 norms, without any weight (no permeability)
+        local_sqnorms(iT) += v_curl_T.transpose() * m_xcurl.computeL2Product(iT, m_stab_par, mass_Pk3_T) * v_curl_T;
+        local_sqnorms(iT) += v_div_T.transpose() * m_xdiv.computeL2Product(iT, m_stab_par, mass_Pk3_T) * v_div_T;
 
-    // Contribution of L2 norms of curl and div
-    val += v_curl_T.transpose() * m_xdiv.computeL2ProductCurl(iT, m_xcurl, "both", m_stab_par, mass_Pk3_T) * v_curl_T;
-    Eigen::MatrixXd DT = m_xdiv.cellOperators(iT).divergence;
-    val += v_div_T.transpose() * DT.transpose() * compute_gram_matrix(evaluate_quad<Function>::compute(*m_ddrcore.cellBases(iT).Polyk, quad_2k_T), quad_2k_T) * DT * v_div_T;
-
-  }
-
-  return std::sqrt(val);
+        // Contribution of L2 norms of curl and div
+        local_sqnorms(iT) += v_curl_T.transpose() * m_xdiv.computeL2ProductCurl(iT, m_xcurl, "both", m_stab_par, mass_Pk3_T) * v_curl_T;
+        Eigen::MatrixXd DT = m_xdiv.cellOperators(iT).divergence;
+        local_sqnorms(iT) += v_div_T.transpose() * DT.transpose() * compute_gram_matrix(evaluate_quad<Function>::compute(*m_ddrcore.cellBases(iT).Polyk, quad_2k_T), quad_2k_T) * DT * v_div_T;
+      }
+    };
+  parallel_for(m_ddrcore.mesh().n_cells(), compute_local_squarednorms, m_use_threads);
+  
+  return std::sqrt(std::abs(local_sqnorms.sum()));
 }
 
 

@@ -1,4 +1,4 @@
-H\+Ar\+D\+::\+Core (sources\+: \href{https://github.com/jdroniou/HArDCore}{\texttt{ https\+://github.\+com/jdroniou/\+H\+Ar\+D\+Core}}) provides a suite of C++ tools to implement numerical schemes whose unknowns are polynomials in the cells, on the edges, and on the faces. The focus is on dealing on generic polytopal meshes. This documentation addresses the 3D version of H\+Ar\+D\+::\+Core, but similar principles are valid for the 2D version. Transferring a scheme\textquotesingle{}s implementation from 3D to 2D or vice-\/versa is very straightforward, provided that the scheme\textquotesingle{}s mathematical definition does not depend on the dimension and that the generic types provided in {\ttfamily \mbox{\hyperlink{basis_8hpp_source}{basis.\+hpp}}} are used; see readme file of the H\+Ar\+D\+::\+Core github depository \href{https://github.com/jdroniou/HArDCore}{\texttt{ https\+://github.\+com/jdroniou/\+H\+Ar\+D\+Core}}.
+H\+Ar\+D\+::\+Core (sources\+: \href{https://github.com/jdroniou/HArDCore}{\texttt{ https\+://github.\+com/jdroniou/\+H\+Ar\+D\+Core}}) provides a suite of C++ tools to implement numerical schemes whose unknowns are polynomials in the cells, on the edges, and on the faces. The focus is on dealing on generic polytopal meshes. This documentation addresses the 3D version of H\+Ar\+D\+::\+Core, but similar principles are valid for the 2D version. Transferring a scheme\textquotesingle{}s implementation from 3D to 2D or vice-\/versa is very straightforward, provided that the scheme\textquotesingle{}s mathematical definition does not depend on the dimension and that the generic types provided in {\ttfamily \mbox{\hyperlink{basis_8hpp_source}{basis.\+hpp}}} and {\ttfamily \mbox{\hyperlink{MeshObject_8hpp_source}{Mesh\+Object.\+hpp}}} are used; see readme file of the H\+Ar\+D\+::\+Core github depository \href{https://github.com/jdroniou/HArDCore}{\texttt{ https\+://github.\+com/jdroniou/\+H\+Ar\+D\+Core}}.
 
 \label{_build}%
  \hypertarget{index_build}{}\doxysection{Build instructions}\label{index_build}
@@ -28,21 +28,21 @@ Once you have installed all of the required dependencies, set up the build direc
 \end{DoxyCode}
 
 
-After this, {\ttfamily build/\+Schemes} will contain the executables (e.\+g. {\ttfamily hho-\/diffusion}) to run the schemes. These executables need to access the typ2 meshes, which they should naturally find if you put the {\ttfamily typ2\+\_\+meshes} directory at the root of the project\textquotesingle{}s files.\hypertarget{index_doco}{}\doxysubsection{Building the Documentation}\label{index_doco}
+After this, {\ttfamily build/\+Schemes} will contain the executables (e.\+g. {\ttfamily hho-\/diffusion}) to run the schemes. These executables need to access the meshes, which they should naturally find if you have left the {\ttfamily meshes} directory at the root of the project\textquotesingle{}s files.\hypertarget{index_doco}{}\doxysubsection{Building the Documentation}\label{index_doco}
 The mesh documentation is built with Doxygen (\href{http://www.stack.nl/~dimitri/doxygen/}{\texttt{ http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/}}). If you are reading this then somebody has already built it for you. If you modify the code and wish to rebuild the documentation, simply run {\ttfamily doxygen} from the root directory. The H\+T\+ML version of the documentation is generated inside {\ttfamily documentation/html} and the La\+TeX version is generated inside {\ttfamily documentation/latex} and can be compiled using the generated Makefile.
 
 \label{_mesh}%
  \hypertarget{index_mesh}{}\doxysection{Mesh module}\label{index_mesh}
 \hypertarget{index_meshpple}{}\doxysubsection{Principles}\label{index_meshpple}
-After it is loaded, the mesh is represented by classes describing a vertex, an edge, a face, and a cell\+: \mbox{\hyperlink{classHArDCore3D_1_1Vertex}{Vertex}}, \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}}, \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}}, and \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}}. Each of these classes contains methods to access useful information for the corresponding element, including other geometrical quantities it is related to. The mesh itself is represented by an element of the \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} class with methods to access all the vertices, edges, faces and cells (or a particular vertex, edge, face or cell).
+After it is loaded, the mesh is represented by classes describing a vertex, an edge, a face, and a cell\+: Vertex, Edge, Face, and Cell. Each of these classes contains methods to access useful information for the corresponding element, including other geometrical quantities it is related to. The mesh itself is represented by an element of the Mesh class with methods to access all the vertices, edges, faces and cells (or a particular vertex, edge, face or cell).
 
 For example, if {\ttfamily mesh\+\_\+ptr} is a pointer to a Mesh class, the lines 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Vertex* vertex = mesh\_ptr-\/>vertex(5);}
+\DoxyCodeLine{\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}* vertex = mesh\_ptr-\/>vertex(5);}
 \DoxyCodeLine{}
 \DoxyCodeLine{Eigen::Vector3d vert\_coord = vertex-\/>coords()}
 \end{DoxyCode}
- store the coordinates of the fifth vertex into the Eigen vector vert\+\_\+coord. As a generic rule, all geometrical vectors are {\ttfamily Eigen\+::\+Vector3d}. We also use {\ttfamily Eigen\+::\+Vector\{3,X\}d} and {\ttfamily Eigen\+::\+Matrix\{3,X\}d} for objects on which linear algebraic operations are performed. Lists (e.\+g. of cells, of functions...) are usually instances of {\ttfamily std\+::vector$<$...$>$}. Finally, {\ttfamily Eigen\+::multi\textbackslash{}\+\_\+array} is used for lists of values of basis functions or their gradients at quadrature nodes.
+ store the coordinates of the fifth vertex into the Eigen vector vert\+\_\+coord. As a generic rule, all geometrical vectors are {\ttfamily Eigen\+::\+Vector3d}. We also use {\ttfamily Eigen\+::\+Vector\{3,X\}d} and {\ttfamily Eigen\+::\+Matrix\{3,X\}d} for objects on which linear algebraic operations are performed. Lists (e.\+g. of cells, of functions...) are usually instances of {\ttfamily std\+::vector$<$...$>$}. Finally, {\ttfamily Eigen\+::multi\+\_\+array} is used for lists of values of basis functions or their gradients at quadrature nodes.
 
 Here is an example that loops over all cells, grabs all the faces of the cell, and loops over these faces to output their diameter. Here, {\ttfamily mesh\+\_\+ptr} is a pointer to the mesh.
 
@@ -68,7 +68,7 @@ Here is an example that loops over all cells, grabs all the faces of the cell, a
 The mesh classes and other auxilliary classes are located inside the namespace H\+Ar\+D\+Core3D.
 
 There is no direct access from a high-\/level geometrical entity to elements purely associated with lower-\/level entities. For example, if {\ttfamily mesh\+\_\+ptr} is a pointer to the mesh, there is no direct method to access the coordinates of the i-\/th vertex of the mesh (no {\ttfamily mesh\+\_\+ptr-\/$>$coords\+\_\+vertex()} exists). Instead, this is done through {\ttfamily mesh\+\_\+ptr-\/$>$vertex(i)-\/$>$coords()}. This choice is deliberate as it preserves the logical organisation of the data structure, and facilitates the memorisation of the various methods. Of course, writing a wrapper providing such a direct access is easy...\hypertarget{index_loading_mesh}{}\doxysubsection{Loading a mesh}\label{index_loading_mesh}
-H\+Ar\+D\+Core3D can currently read meshes in {\ttfamily TG}, {\ttfamily RF} and {\ttfamily M\+SH}. The loader and all geometrical computations are performed using {\ttfamily Stem\+Mesh}, based on G. Manzini\textquotesingle{}s mesh library \href{https://github.com/gmanzini-LANL/PDE-Mesh-Manager}{\texttt{ https\+://github.\+com/gmanzini-\/\+L\+A\+N\+L/\+P\+D\+E-\/\+Mesh-\/\+Manager}}.
+H\+Ar\+D\+Core3D can read meshes in {\ttfamily RF} format. Previous versions could read {\ttfamily TG} and {\ttfamily M\+SH} files and were based on G. Manzini\textquotesingle{}s mesh library \href{https://github.com/gmanzini-LANL/PDE-Mesh-Manager}{\texttt{ https\+://github.\+com/gmanzini-\/\+L\+A\+N\+L/\+P\+D\+E-\/\+Mesh-\/\+Manager}}. From Version 4.\+1, H\+Ar\+D\+Core3D uses an independent mesh reader written by L. Yemm.
 
 A mesh file must be read using an instance of the {\ttfamily meshbuilder} class, and then built using {\ttfamily build\+\_\+the\+\_\+mesh}. A working example is given below (assuming the executable will be in {\ttfamily build/\+Schemes} for example).
 
@@ -81,13 +81,12 @@ A mesh file must be read using an instance of the {\ttfamily meshbuilder} class,
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
 \DoxyCodeLine{}
-\DoxyCodeLine{    \textcolor{comment}{// Mesh file to read, with type}}
+\DoxyCodeLine{    \textcolor{comment}{// Mesh file to read}}
 \DoxyCodeLine{    std::string default\_mesh = \textcolor{stringliteral}{"../../meshes/Voro-\/small-\/0/RF\_fmt/voro-\/4"};}
-\DoxyCodeLine{    std::string default\_meshtype = \textcolor{stringliteral}{"RF"};}
 \DoxyCodeLine{}
-\DoxyCodeLine{    \textcolor{comment}{// Read the mesh file and build the mesh}}
-\DoxyCodeLine{    \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder}{MeshBuilder}} meshbuilder = \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder}{MeshBuilder}}(mesh\_file, mesh\_type);}
-\DoxyCodeLine{    std::unique\_ptr<Mesh> mesh\_ptr = meshbuilder.\mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder_a208c94e8cb6490226215b59eb67e7911}{build\_the\_mesh}}();}
+\DoxyCodeLine{  \textcolor{comment}{// Build the mesh}}
+\DoxyCodeLine{  \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder}{MeshBuilder}} meshbuilder = \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder}{MeshBuilder}}(mesh\_file);}
+\DoxyCodeLine{  std::unique\_ptr<Mesh> mesh\_ptr = meshbuilder.\mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder_a208c94e8cb6490226215b59eb67e7911}{build\_the\_mesh}}();}
 \DoxyCodeLine{}
 \DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"There are "} << mesh\_ptr-\/>n\_cells() << \textcolor{stringliteral}{" cells in the mesh.\(\backslash\)n"};}
 \DoxyCodeLine{\}}
@@ -102,7 +101,7 @@ Note that the builder returns a {\ttfamily unique\+\_\+ptr} for the mesh. This e
  \hypertarget{index_quad_rules}{}\doxysection{Quadrature rules}\label{index_quad_rules}
 H\+Ar\+D\+::\+Core deals with quite arbitrary cell geometries. As a consequence, no reference element can be used, and the quadrature rules have to be adjusted to each particular cell/face/edge. For the cells, for example, this is done by partitioning each cell into tetrahedra and by using classical quadrature rules on tetrahedras. The choice was also made not to pre-\/compute all quadrature rules for all cells, faces and edges, but rather to compute them -- with a locally chosen degree of exactness -- when needed in the code. To reduce the computational cost, quadrature rules -- and the values of basis functions at quadrature nodes -- should only be computed once when looping over each cell, before being used, e.\+g., to form mass matrices.
 
-The Quadratures module provides routines to do that. The key method is generate\+\_\+quadrature\+\_\+rule(C\+FE,doe) calculates quadrature nodes and weights, exact up to the polynomial degree {\ttfamily doe}, for an integration over cell/face/edge C\+FE (passed as a reference of \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}}, \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} or \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} class). At present, the quadrature rules available in the code support a total degree of exactness in the cells up to 14 in the cells and 20 on the faces and the edges (the quadrature rules on the faces come from \href{https://people.sc.fsu.edu/~jburkardt/cpp_src/triangle_dunavant_rule/triangle_dunavant_rule.html}{\texttt{ John Burkardt\textquotesingle{}s implementation of the Dunavant rules}}). The generated quadrature rule is stored in a structure Quadrature\+Rule, which is a vector of quadrature nodes (weights and position).
+The Quadratures module provides routines to do that. The key method is generate\+\_\+quadrature\+\_\+rule(C\+FE,doe) calculates quadrature nodes and weights, exact up to the polynomial degree {\ttfamily doe}, for an integration over cell/face/edge C\+FE (passed as a reference of Cell, Face or Edge class). At present, the quadrature rules available in the code support a total degree of exactness in the cells up to 14 in the cells and 20 on the faces and the edges (the quadrature rules on the faces come from \href{https://people.sc.fsu.edu/~jburkardt/cpp_src/triangle_dunavant_rule/triangle_dunavant_rule.html}{\texttt{ John Burkardt\textquotesingle{}s implementation of the Dunavant rules}}). The generated quadrature rule is stored in a structure Quadrature\+Rule, which is a vector of quadrature nodes (weights and position).
 
 \label{_common}%
  \hypertarget{index_common_module}{}\doxysection{Common module}\label{index_common_module}

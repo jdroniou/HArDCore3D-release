@@ -1,5 +1,6 @@
 # Library: mesh
 
-FILE(GLOB source_list mesh.* mesh_builder.* cell.* face.* edge.* vertex.*)
+FILE(GLOB source_list mesh.* mesh_builder.* mesh_reader.*)
 ADD_LIBRARY(mesh ${source_list})
-TARGET_LINK_LIBRARIES(mesh quadrature)
+
+

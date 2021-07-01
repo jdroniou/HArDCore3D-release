@@ -1,0 +1,45 @@
+\hypertarget{classDirectedCell}{}\doxysection{Directed\+Cell Class Reference}
+\label{classDirectedCell}\index{DirectedCell@{DirectedCell}}
+
+
+{\ttfamily \#include $<$Directed\+Graph.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__DirectedGraph_ga225e167654e33677739daa8b4024ecec}{Directed\+Cell}} ()
+\begin{DoxyCompactList}\small\item\em Null Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DirectedGraph_ga253ec3c1e27f3448f4c027dc939d23ca}{Directed\+Cell}} (std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DirectedGraph_ga6d3d90db9d33b062dbc1a5bb8e3a7ac5}{$\sim$\+Directed\+Cell}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DirectedGraph_gac57136d1331d11fcd447293ee9e18304}{Directed\+Cell}} (std\+::vector$<$ \mbox{\hyperlink{classDirectedFace}{Directed\+Face}} $>$ \&, std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Class Constructor\+: Initialises the cell with a vector of faces and the cell ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_gab13a6a2baf680da049d74571d5754c7a}{add\+\_\+face}} (\mbox{\hyperlink{classDirectedFace}{Directed\+Face}} \&)
+\begin{DoxyCompactList}\small\item\em Method to append an face to the end of the cell. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_ga9ceda9914cec89310175777aca20fac2}{remove\+\_\+face}} (std\+::size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Remove face at a given position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_gac0f16b824c2bafc1001458e76a406d2f}{append\+\_\+cell}} (\mbox{\hyperlink{classDirectedCell}{Directed\+Cell}} \&)
+\item 
+bool {\bfseries check\+\_\+cell} ()
+\item 
+bool \mbox{\hyperlink{group__DirectedGraph_ga53b9c1643f956bcd5ab002056378c6b3}{has\+\_\+face}} (\mbox{\hyperlink{classDirectedFace}{Directed\+Face}})
+\begin{DoxyCompactList}\small\item\em Tests if cell has an face. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DirectedGraph_gaf5ae2eecc2289036fec988e6ac17b28a}{print}} ()
+\begin{DoxyCompactList}\small\item\em Prints all the faces of the cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classDirectedFace}{Directed\+Face}} $>$ \mbox{\hyperlink{group__DirectedGraph_gac695fd50528ac35bdf04e1d31fb73def}{T}}
+\begin{DoxyCompactList}\small\item\em The faces the cell consists of. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::size\+\_\+t $>$ \mbox{\hyperlink{group__DirectedGraph_ga7076a03ed5eab5b98a7d74cce0a4d4e9}{part}}
+\begin{DoxyCompactList}\small\item\em The cell ID\textquotesingle{}s of the cell\textquotesingle{}s that have formed this cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDirectedCell}{Directed\+Cell}} class is the defining element of a \mbox{\hyperlink{classDirectedGraph}{Directed\+Graph}}. It is defined by a vector of \mbox{\hyperlink{classDirectedFace}{Directed\+Face}}\textquotesingle{}s, and a vector of unsigned int\textquotesingle{}s describing the fine cells that make up the cell upon coarsening. The class contains functions related to cell manipulation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Schemes/\+Mesh\+Coarsen/Directed\+Graph.\+hpp\item 
+Schemes/\+Mesh\+Coarsen/Directed\+Graph.\+cpp\end{DoxyCompactItemize}

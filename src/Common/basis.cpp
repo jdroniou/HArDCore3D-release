@@ -1,7 +1,6 @@
 #include <iostream>
 
 #include <basis.hpp>
-#include <vertex.hpp>
 
 namespace HArDCore3D
 {
@@ -11,10 +10,11 @@ namespace HArDCore3D
   //------------------------------------------------------------------------------
 
   MonomialScalarBasisCell::MonomialScalarBasisCell(const Cell &T, size_t degree)
-      : m_degree(degree),
+      : m_T(T),
+        m_degree(degree),
         m_xT(T.center_mass()),
         m_hT(T.diam()),
-        m_powers(MonomialPowers<Cell>::compute(degree))
+        m_powers(MonomialPowers<Cell>::complete(degree))
   {
     // do nothing
   }
@@ -37,6 +37,7 @@ namespace HArDCore3D
     return grad / m_hT;
   }
 
+
   //------------------------------------------------------------------------------
   // Scalar monomial basis on a face
   //------------------------------------------------------------------------------
@@ -47,7 +48,7 @@ namespace HArDCore3D
         m_hF(F.diam()),
         m_nF(F.normal()),
         m_jacobian(Eigen::Matrix<double, 2, dimspace>::Zero()),
-        m_powers(MonomialPowers<Face>::compute(degree))
+        m_powers(MonomialPowers<Face>::complete(degree))
   {
     // Compute change of variables
     m_jacobian.row(0) = F.edge(0)->tangent();
@@ -110,8 +111,8 @@ namespace HArDCore3D
         m_hT(T.diam())
   {
     // Monomial powers for P^{k-1}(T)
-    if (degree >= 1){
-      m_powers = MonomialPowers<Cell>::compute(degree-1);
+    if (m_degree >= 1){
+      m_powers = MonomialPowers<Cell>::complete(m_degree-1);
     }else{
       std::cout << "Attempting to construct RckT with degree 0, stopping" << std::endl;
       exit(1);
@@ -146,8 +147,8 @@ namespace HArDCore3D
     if (degree >= 1){
       m_dimPkmo3D = PolynomialSpaceDimension<Cell>::Poly(m_degree-1);
       m_dimPkmo2D = PolynomialSpaceDimension<Face>::Poly(m_degree-1);
-      std::vector<VectorZd> powers3D = MonomialPowers<Cell>::compute(m_degree-1);
-      std::vector<Eigen::Vector2i> powers2D = MonomialPowers<Face>::compute(m_degree-1);
+      std::vector<VectorZd> powers3D = MonomialPowers<Cell>::complete(m_degree-1);
+      std::vector<Eigen::Vector2i> powers2D = MonomialPowers<Face>::complete(m_degree-1);
       m_powers.resize(2 * m_dimPkmo3D + m_dimPkmo2D);
       for (size_t i = 0; i < m_dimPkmo3D; i++){
         m_powers[i] = powers3D[i];
@@ -226,7 +227,7 @@ namespace HArDCore3D
   {
     // Compute monomial powers for P^{k-1}(F)
     if (degree>=1){
-      m_powers = MonomialPowers<Face>::compute(degree-1);
+      m_powers = MonomialPowers<Face>::complete(degree-1);
     }else{
       std::cout << "Attempting to construct RckF with degree 0 (possibly while constructing GckF), stopping" << std::endl;
       exit(1);
@@ -283,17 +284,6 @@ namespace HArDCore3D
   double scalar_product(const VectorRd &x, const VectorRd &y)
   {
     return x.dot(y);
-  }
-
-  boost::multi_array<double, 2>
-  scalar_product(
-      const boost::multi_array<VectorRd, 2> &basis_quad,
-      const VectorRd &v)
-  {
-    boost::multi_array<double, 2> basis_dot_v_quad(boost::extents[basis_quad.shape()[0]][basis_quad.shape()[1]]);
-    std::transform(basis_quad.origin(), basis_quad.origin() + basis_quad.num_elements(),
-                   basis_dot_v_quad.origin(), [&v](const VectorRd &x) -> double { return x.dot(v); });
-    return basis_dot_v_quad;
   }
 
   boost::multi_array<VectorRd, 2>

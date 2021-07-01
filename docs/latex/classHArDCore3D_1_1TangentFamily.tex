@@ -14,13 +14,13 @@ Vector family for polynomial functions that are tangent to a certain place (dete
 \item 
 typedef Vector\+Rd {\bfseries Function\+Value}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries Gradient\+Value}
+typedef Vector\+Rd {\bfseries Gradient\+Value}
 \item 
 typedef Vector\+Rd {\bfseries Curl\+Value}
 \item 
 typedef double {\bfseries Divergence\+Value}
 \item 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} {\bfseries Geometric\+Support}
+typedef Face {\bfseries Geometric\+Support}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -32,11 +32,17 @@ size\+\_\+t \mbox{\hyperlink{group__Common_ga0c8e2840a23a7f9703ca75a9504b2423}{d
 Function\+Value \mbox{\hyperlink{group__Common_ga77132c1ffe753b76526c730aac3eec1e}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 Divergence\+Value \mbox{\hyperlink{group__Common_ga7b41039db007f6410867f68954b69ede}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
-\begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+constexpr const Scalar\+Family\+Type \& \mbox{\hyperlink{group__Common_ga66fe0b4776e9c60b1f39e751cede2324}{ancestor}} () const
+\begin{DoxyCompactList}\small\item\em Return the ancestor (family used for the tangent) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gad753134cb7b00af29f2430a524978d12}{max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+constexpr static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+\item 
+constexpr static const bool {\bfseries has\+Ancestor} = true
 \item 
 static const bool {\bfseries has\+Function} = true
 \item 

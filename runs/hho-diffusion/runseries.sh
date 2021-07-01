@@ -69,11 +69,10 @@ echo -e "test case: solution=$tcsol, diffusion=$tcdiff\n"
 nbmesh=${#mesh[@]}
 for i in `seq 1 $nbmesh`; 
 do
-	meshtype=$(echo ${mesh[$i]} | cut -d ':' -f 1)
 	meshfile=$meshdir"/"$(echo ${mesh[$i]} | cut -d ':' -f 2)
 	echo -e "\n*************************\nmesh $i out of $nbmesh: ${mesh[$i]}"
 	# Execute code
-	$executable -t $meshtype -m $meshfile -k $k -l $l -b $bc -c $tcsol $tcdiff --solver_type $solver_type --use_threads $use_threads
+	$executable -m $meshfile -k $k -l $l -b $bc -c $tcsol $tcdiff --solver_type $solver_type --use_threads $use_threads
 	r=$?
 	if [ "$r" != "0" ]; then
 		exit

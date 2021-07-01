@@ -22,17 +22,17 @@ tcreac=1
 solver_type="bicgstab"
 
 # Meshes (with type)
-#mesh[1]="TG:Tetgen-Cube-0/TG_fmt/cube.1"
-#mesh[2]="TG:Tetgen-Cube-0/TG_fmt/cube.2"
-#mesh[3]="TG:Tetgen-Cube-0/TG_fmt/cube.3"
-#mesh[4]="TG:Tetgen-Cube-0/TG_fmt/cube.4"
-#mesh[5]="TG:Tetgen-Cube-0/TG_fmt/cube.5"
-#mesh[6]="TG:Tetgen-Cube-0/TG_fmt/cube.6"
+#mesh[1]="RF:Tetgen-Cube-0/RF_fmt/cube.1"
+#mesh[2]="RF:Tetgen-Cube-0/RF_fmt/cube.2"
+#mesh[3]="RF:Tetgen-Cube-0/RF_fmt/cube.3"
+#mesh[4]="RF:Tetgen-Cube-0/RF_fmt/cube.4"
+#mesh[5]="RF:Tetgen-Cube-0/RF_fmt/cube.5"
+#mesh[6]="RF:Tetgen-Cube-0/RF_fmt/cube.6"
 
-#mesh[1]="TG:Tetgen-Cube-1/TG_fmt/cube.2"
-#mesh[2]="TG:Tetgen-Cube-1/TG_fmt/cube.3"
-#mesh[3]="TG:Tetgen-Cube-1/TG_fmt/cube.4"
-#mesh[4]="TG:Tetgen-Cube-1/TG_fmt/cube.5"
+#mesh[1]="RF:Tetgen-Cube-1/RF_fmt/cube.2"
+#mesh[2]="RF:Tetgen-Cube-1/RF_fmt/cube.3"
+#mesh[3]="RF:Tetgen-Cube-1/RF_fmt/cube.4"
+#mesh[4]="RF:Tetgen-Cube-1/RF_fmt/cube.5"
 
 #mesh[1]="RF:Random-Hexahedra/RF_fmt/gcube.1"
 #mesh[2]="RF:Random-Hexahedra/RF_fmt/gcube.2"

@@ -44,11 +44,10 @@ echo -e "test case: solution = $tcsol, diffusion = $tcdiff, advection = $tcadvec
 nbmesh=${#mesh[@]}
 for i in `seq 1 $nbmesh`; 
 do
-  meshtype=$(echo ${mesh[$i]} | cut -d ':' -f 1)
   meshfile=$(echo ${mesh[$i]} | cut -d ':' -f 2)
   echo -e "\n*************************\nmesh $i out of $nbmesh: ${mesh[$i]}"
 	# Execute code
-  	$executable --mesh $meshfile --meshtype $meshtype --bc $bc --testcase $tcsol $tcdiff $tcadvec $tcreac --facedegree $k --celldegree $l --export_matrix $export_matrix --use_threads $use_threads 
+  	$executable --mesh $meshfile --bc $bc --testcase $tcsol $tcdiff $tcadvec $tcreac --facedegree $k --celldegree $l --export_matrix $export_matrix --use_threads $use_threads 
 	# Move outputs
 	mv results.txt $outdir/results-$i.txt
 	if [ -f T-"$plotfile".vtu ]; then

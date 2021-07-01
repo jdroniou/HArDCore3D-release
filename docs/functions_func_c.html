@@ -72,20 +72,14 @@ $(function() {
 &#160;
 
 <h3><a id="index_c"></a>- c -</h3><ul>
-<li>Cell()
-: <a class="el" href="group__Mesh.html#ga512c4d7f649bc03e64292394af0eeef2">HArDCore3D::Cell</a>
-</li>
 <li>cell()
-: <a class="el" href="group__Mesh.html#gad4be0bfb981ccf2c1e02e870772dbdc3">HArDCore3D::Edge</a>
-, <a class="el" href="group__Mesh.html#gab463b4972c43d6f62f034cf8c0ed70c2">HArDCore3D::Face</a>
-, <a class="el" href="group__Mesh.html#gae07b938c57cf57e3bb9c76d3df1eb549">HArDCore3D::Mesh</a>
-, <a class="el" href="group__Mesh.html#ga5054b903ff91506cc7d75afa44fd864b">HArDCore3D::Vertex</a>
+: <a class="el" href="group__Mesh.html#ga59a73d89c5469a10a6d7e2d0a25a3789">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
 <li>cellBases()
 : <a class="el" href="group__DDRCore.html#ga222dbade666f7ab10e5bfae0f0579b09">HArDCore3D::DDRCore</a>
 , <a class="el" href="group__DDRCore.html#gad68c6a604d3f0c3075627adc5acdb01c">HArDCore3D::XCurl</a>
 , <a class="el" href="group__DDRCore.html#gaf61e3557d62fa2da1489ee0f6a9df9fc">HArDCore3D::XDiv</a>
-, <a class="el" href="group__DDRCore.html#gaedbe0171512eca325eee8d91cbf558d9">HArDCore3D::XGrad</a>
+, <a class="el" href="group__DDRCore.html#ga793170ec5942e367325fc3b5611c8e3d">HArDCore3D::XGrad</a>
 </li>
 <li>CellBasis()
 : <a class="el" href="group__HybridCore.html#gafb3d4f37c8aef9a9b74f015bd2da41ea">HArDCore3D::HybridCore</a>
@@ -93,15 +87,16 @@ $(function() {
 <li>CellDegree()
 : <a class="el" href="group__HybridCore.html#ga10e8b9bd521b54042cccd84520011fe9">HArDCore3D::HybridCore</a>
 </li>
+<li>CellNodeArray()
+: <a class="el" href="group__DirectedGraph.html#gae81ef934a632a10c321924e0ee0c2cdd">CellNodeArray</a>
+</li>
 <li>cellOperators()
-: <a class="el" href="group__DDRCore.html#ga424318b521892012fb029a6e5e045bba">HArDCore3D::XCurl</a>
-, <a class="el" href="group__DDRCore.html#gad0d0527952b8e6499b1c2c043a878876">HArDCore3D::XDiv</a>
+: <a class="el" href="group__DDRCore.html#ga48236bc63d16af7e925e50665967d718">HArDCore3D::XCurl</a>
+, <a class="el" href="group__DDRCore.html#ga7e53ba95de71fe3e6878a838d492af78">HArDCore3D::XDiv</a>
 , <a class="el" href="group__DDRCore.html#gac7cac3064e3d00e3073899338577dd0a">HArDCore3D::XGrad</a>
 </li>
-<li>center_mass()
-: <a class="el" href="group__Mesh.html#ga3eb9c83b9578d3d93e94a698c37a980e">HArDCore3D::Cell</a>
-, <a class="el" href="group__Mesh.html#gac7aee988662d982ab3fd81704af7842c">HArDCore3D::Edge</a>
-, <a class="el" href="group__Mesh.html#gac5d883f4f09a9af506924638939bb35a">HArDCore3D::Face</a>
+<li>coarsen()
+: <a class="el" href="group__DirectedGraph.html#gaeefb904651b206753259331ba674792b">DirectedGraph</a>
 </li>
 <li>compute()
 : <a class="el" href="group__Common.html#ga1abe06df2a8a25ad4de2f738930ec143">HArDCore3D::evaluate_quad&lt; BasisFunction &gt;</a>
@@ -112,6 +107,7 @@ $(function() {
 <li>computeL2Product()
 : <a class="el" href="group__DDRCore.html#gac080d9dcebdb9d90ae135539cd7659d9">HArDCore3D::XCurl</a>
 , <a class="el" href="group__DDRCore.html#ga91e09b919a73bc9e7121874eb2c87376">HArDCore3D::XDiv</a>
+, <a class="el" href="group__DDRCore.html#ga6dabd0bfb09f39ede54dafdab4a47f9e">HArDCore3D::XGrad</a>
 </li>
 <li>computeL2Product_with_Ops()
 : <a class="el" href="group__DDRCore.html#ga137829073110c7ae04ef13e67bf15727">HArDCore3D::XCurl</a>
@@ -129,23 +125,14 @@ $(function() {
 <li>computeNorm()
 : <a class="el" href="group__DDR__magnetostatic.html#ga26c61a8a5522d09c07d2a20eecb15925">HArDCore3D::Magnetostatics</a>
 </li>
+<li>construct_face_normals()
+: <a class="el" href="group__Mesh.html#gaa55eff2444eb070396dcab2871f1c234">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
+</li>
 <li>coords()
-: <a class="el" href="group__Mesh.html#ga8b06a63ada3bfd88e6429e5cfd028c0b">HArDCore3D::Vertex</a>
-</li>
-<li>coords_E()
-: <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a10101184cb1bbc5e8b552dc53bb6a832">StemMesh3D::mesh_3Dv</a>
-</li>
-<li>coords_F()
-: <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#ac7c814c45152936451a8d5da7606fb76">StemMesh3D::mesh_3Dv</a>
-</li>
-<li>coords_R()
-: <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a93c53cc79d88193b65fa5206082720e2">StemMesh3D::mesh_3Dv</a>
-</li>
-<li>coords_V()
-: <a class="el" href="classStemMesh3D_1_1mesh__3Dv.html#a29503e2b5f21281a0fd14ec774c1c5da">StemMesh3D::mesh_3Dv</a>
+: <a class="el" href="group__Mesh.html#ga70e525257730123d4c331d11468c66bb">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
 <li>curl()
-: <a class="el" href="group__Common.html#ga8aa52ddcc2c74db8fb176319d5691eec">HArDCore3D::Family&lt; BasisType &gt;</a>
+: <a class="el" href="group__Common.html#gaf5aac63dc865a440eb25c6b41b8d66d1">HArDCore3D::Family&lt; BasisType &gt;</a>
 , <a class="el" href="group__Common.html#ga9e70209fbb1c756097eecd4e820d387b">HArDCore3D::GolyComplBasisCell</a>
 , <a class="el" href="group__Common.html#gaadba906ff906d86d97cfcc1a5fbc505f">HArDCore3D::MonomialScalarBasisFace</a>
 , <a class="el" href="group__Common.html#ga6886d8130d38f8e0cdeac3c53fe9e177">HArDCore3D::RestrictedBasis&lt; BasisType &gt;</a>

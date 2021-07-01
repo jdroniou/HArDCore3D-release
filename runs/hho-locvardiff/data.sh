@@ -2,7 +2,7 @@
 #
 
 # Face and cell degrees
-k=1
+k=2
 l=1
 
 # Use threads
@@ -12,7 +12,7 @@ use_threads="true"
 bc="M0"
 
 # Test case
-tcsol=2
+tcsol=1
 tcdiff=2
 
 # Solver
@@ -20,17 +20,17 @@ solver_type="bicgstab"
 #solver_type="ma41"
 
 # Meshes (with type)
-#mesh[1]="TG:Tetgen-Cube-0/TG_fmt/cube.1"
-#mesh[2]="TG:Tetgen-Cube-0/TG_fmt/cube.2"
-#mesh[3]="TG:Tetgen-Cube-0/TG_fmt/cube.3"
-#mesh[4]="TG:Tetgen-Cube-0/TG_fmt/cube.4"
-#mesh[5]="TG:Tetgen-Cube-0/TG_fmt/cube.5"
-#mesh[6]="TG:Tetgen-Cube-0/TG_fmt/cube.6"
+#mesh[1]="RF:Tetgen-Cube-0/RF_fmt/cube.1"
+#mesh[2]="RF:Tetgen-Cube-0/RF_fmt/cube.2"
+#mesh[3]="RF:Tetgen-Cube-0/RF_fmt/cube.3"
+#mesh[4]="RF:Tetgen-Cube-0/RF_fmt/cube.4"
+#mesh[5]="RF:Tetgen-Cube-0/RF_fmt/cube.5"
+#mesh[6]="RF:Tetgen-Cube-0/RF_fmt/cube.6"
 
-#mesh[1]="TG:Tetgen-Cube-1/TG_fmt/cube.2"
-#mesh[2]="TG:Tetgen-Cube-1/TG_fmt/cube.3"
-#mesh[3]="TG:Tetgen-Cube-1/TG_fmt/cube.4"
-#mesh[4]="TG:Tetgen-Cube-1/TG_fmt/cube.5"
+#mesh[1]="RF:Tetgen-Cube-1/RF_fmt/cube.2"
+#mesh[2]="RF:Tetgen-Cube-1/RF_fmt/cube.3"
+#mesh[3]="RF:Tetgen-Cube-1/RF_fmt/cube.4"
+#mesh[4]="RF:Tetgen-Cube-1/RF_fmt/cube.5"
 
 #mesh[1]="RF:Random-Hexahedra/RF_fmt/gcube.1"
 #mesh[2]="RF:Random-Hexahedra/RF_fmt/gcube.2"

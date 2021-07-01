@@ -22,9 +22,6 @@
 
 #include "basis.hpp"
 
-namespace HArDCore3D { 		// Forward declaration
-	class Cell;
-}
 
 using namespace HArDCore3D;
 
@@ -40,8 +37,6 @@ using namespace HArDCore3D;
 // @addtogroup TestCases
 //@{
 
-// Types  
-template<typename T> using CellFType = std::function<T(const VectorRd &, const Cell*)>; ///< type for function of a point, that could be discontinuous between cells. T is the type of value of the function
 
 
 /// The TestCase class provides definition of test cases

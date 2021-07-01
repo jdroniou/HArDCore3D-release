@@ -153,11 +153,11 @@ double {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Triangle\+::area} (double 
 \mbox{\Hypertarget{group__Quadratures_gac0d94c3725c0502056333f314fb48fc9}\label{group__Quadratures_gac0d94c3725c0502056333f314fb48fc9}} 
 Eigen\+::\+Vector3d \mbox{\hyperlink{group__Quadratures_gac0d94c3725c0502056333f314fb48fc9}{H\+Ar\+D\+Core3\+D\+::\+Quadrature\+Node\+::vector}} () const
 \begin{DoxyCompactList}\small\item\em Returns the quadrature point as an Eigen vector. \end{DoxyCompactList}\item 
-Quadrature\+Rule \mbox{\hyperlink{group__Quadratures_ga18d0a2cf574bef7d6e83760de2f38152}{H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule}} (const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&T, const int doe, const bool force\+\_\+split=false)
+Quadrature\+Rule \mbox{\hyperlink{group__Quadratures_ga18d0a2cf574bef7d6e83760de2f38152}{H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule}} (const Cell \&T, const int doe, const bool force\+\_\+split=false)
 \begin{DoxyCompactList}\small\item\em Generate quadrature rule on mesh element. \end{DoxyCompactList}\item 
-Quadrature\+Rule \mbox{\hyperlink{group__Quadratures_gae0e89136814758912e6e93fa0a260bd6}{H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule}} (const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&F, const int doe)
+Quadrature\+Rule \mbox{\hyperlink{group__Quadratures_gae0e89136814758912e6e93fa0a260bd6}{H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule}} (const Face \&F, const int doe)
 \begin{DoxyCompactList}\small\item\em Generate quadrature rule on mesh face. \end{DoxyCompactList}\item 
-Quadrature\+Rule \mbox{\hyperlink{group__Quadratures_ga1516d2ddf96226cbcbacf93675e6678f}{H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule}} (const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&E, const int doe)
+Quadrature\+Rule \mbox{\hyperlink{group__Quadratures_ga1516d2ddf96226cbcbacf93675e6678f}{H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule}} (const Edge \&E, const int doe)
 \begin{DoxyCompactList}\small\item\em Generate quadrature rule on mesh edge. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Quadratures_ga721ceca09ec55725a59f484412041546}\label{group__Quadratures_ga721ceca09ec55725a59f484412041546}} 
 double {\bfseries H\+Ar\+D\+Core3\+D\+::tetra\+\_\+volume} (double x\mbox{[}4\mbox{]}, double y\mbox{[}4\mbox{]}, double z\mbox{[}4\mbox{]})
@@ -183,9 +183,15 @@ double {\bfseries H\+Ar\+D\+Core3\+D\+::tetra\+\_\+unit\+\_\+sum} (double func(d
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{group__Quadratures_gab26709dc12bd459dcabe7c64a6976509}\label{group__Quadratures_gab26709dc12bd459dcabe7c64a6976509}} 
-static constexpr size\+\_\+t {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Tetra\+::max\+\_\+doe} = 14
-\item 
+\mbox{\Hypertarget{group__Quadratures_ga42cd568704af2ca021084dfb35c11abc}\label{group__Quadratures_ga42cd568704af2ca021084dfb35c11abc}} 
+static constexpr size\+\_\+t \mbox{\hyperlink{group__Quadratures_ga42cd568704af2ca021084dfb35c11abc}{H\+Ar\+D\+Core3\+D\+::\+M\+A\+X\+\_\+\+D\+O\+E\+\_\+\+C\+E\+LL}} = 14
+\begin{DoxyCompactList}\small\item\em Maximum degree of the cell quadrature rules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Quadratures_ga76634865816c45f31ab501baeb9e3739}\label{group__Quadratures_ga76634865816c45f31ab501baeb9e3739}} 
+static constexpr size\+\_\+t \mbox{\hyperlink{group__Quadratures_ga76634865816c45f31ab501baeb9e3739}{H\+Ar\+D\+Core3\+D\+::\+M\+A\+X\+\_\+\+D\+O\+E\+\_\+\+F\+A\+CE}} = 20
+\begin{DoxyCompactList}\small\item\em Maximum degree of the face quadrature rules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Quadratures_ga832a740b74e194aea85378e27ffc903d}\label{group__Quadratures_ga832a740b74e194aea85378e27ffc903d}} 
+static constexpr size\+\_\+t \mbox{\hyperlink{group__Quadratures_ga832a740b74e194aea85378e27ffc903d}{H\+Ar\+D\+Core3\+D\+::\+M\+A\+X\+\_\+\+D\+O\+E\+\_\+\+E\+D\+GE}} = 20
+\begin{DoxyCompactList}\small\item\em Maximum degree of the edge quadrature rules. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__Quadratures_gab0c5c48d113c568e34353ccb1a9c5321}\label{group__Quadratures_gab0c5c48d113c568e34353ccb1a9c5321}} 
 static constexpr size\+\_\+t {\bfseries H\+Ar\+D\+Core3\+D\+::\+Quad\+Rule\+Tetra\+::num\+\_\+rules} = 15
 \item 
@@ -267,7 +273,7 @@ Classes providing quadratures on edges and in cells.
 \index{Quadratures@{Quadratures}!generate\_quadrature\_rule@{generate\_quadrature\_rule}}
 \index{generate\_quadrature\_rule@{generate\_quadrature\_rule}!Quadratures@{Quadratures}}
 \doxysubsubsection{\texorpdfstring{generate\_quadrature\_rule()}{generate\_quadrature\_rule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Quadrature\+Rule H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} \&}]{T,  }\item[{const int}]{doe,  }\item[{const bool}]{force\+\_\+split = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Quadrature\+Rule H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const int}]{doe,  }\item[{const bool}]{force\+\_\+split = {\ttfamily false} }\end{DoxyParamCaption})}
 
 
 
@@ -289,7 +295,7 @@ list of quadrature nodes and weights
 \index{Quadratures@{Quadratures}!generate\_quadrature\_rule@{generate\_quadrature\_rule}}
 \index{generate\_quadrature\_rule@{generate\_quadrature\_rule}!Quadratures@{Quadratures}}
 \doxysubsubsection{\texorpdfstring{generate\_quadrature\_rule()}{generate\_quadrature\_rule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Quadrature\+Rule H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} \&}]{E,  }\item[{const int}]{doe }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Quadrature\+Rule H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const int}]{doe }\end{DoxyParamCaption})}
 
 
 
@@ -309,7 +315,7 @@ list of quadrature nodes and weights
 \index{Quadratures@{Quadratures}!generate\_quadrature\_rule@{generate\_quadrature\_rule}}
 \index{generate\_quadrature\_rule@{generate\_quadrature\_rule}!Quadratures@{Quadratures}}
 \doxysubsubsection{\texorpdfstring{generate\_quadrature\_rule()}{generate\_quadrature\_rule()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Quadrature\+Rule H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} \&}]{F,  }\item[{const int}]{doe }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Quadrature\+Rule H\+Ar\+D\+Core3\+D\+::generate\+\_\+quadrature\+\_\+rule (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const int}]{doe }\end{DoxyParamCaption})}
 
 
 

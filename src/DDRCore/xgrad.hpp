@@ -3,6 +3,7 @@
 
 #include <ddrcore.hpp>
 #include <ddrspace.hpp>
+#include <integralweight.hpp>
 
 namespace HArDCore3D
 {
@@ -49,8 +50,13 @@ namespace HArDCore3D
       return m_ddr_core.degree();
     }
     
-    /// Interpolator
-    Eigen::VectorXd interpolate(const FunctionType & q) const;
+    /// Interpolator of a continuous function
+    Eigen::VectorXd interpolate(
+          const FunctionType & q, ///< The function to interpolate
+          const int doe_cell = -1, ///< The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
+          const int doe_face = -1, ///< The optional degre of face quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
+          const int doe_edge = -1 ///< The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
+          ) const;
 
     /// Return edge operators for the edge of index iE
     inline const LocalOperators & edgeOperators(size_t iE) const
@@ -124,7 +130,17 @@ namespace HArDCore3D
       return m_ddr_core.edgeBases(E.global_index());
     }
 
-    /// Build the components of the gradient operator
+    /// Compute the matrix of the (weighted) L2-product for the cell of index iT. The stabilisation here is based on cell and face potentials.
+    // The mass matrix of P^{k+1}(T) is the most expensive mass matrix in the calculation of this norm, which
+    // is why there's the option of passing it as parameter if it's been already pre-computed when the norm is called.
+    Eigen::MatrixXd computeL2Product(
+                                     const size_t iT, ///< index of the cell
+                                     const double & penalty_factor = 1., ///< pre-factor for stabilisation term
+                                     const Eigen::MatrixXd & mass_Pkpo_T = Eigen::MatrixXd::Zero(1,1), ///< if pre-computed, the mass matrix of P^{k+1}(T); if none is pre-computed, passing Eigen::MatrixXd::Zero(1,1) will force the calculation
+                                     const IntegralWeight & weight = IntegralWeight(1.) ///< weight function in the L2 product, defaults to 1
+                                     ) const;
+
+    /// Build the components of the gradient operator (probably not useful in practice to implement schemes)
     Eigen::MatrixXd buildGradientComponentsCell(size_t iT) const;
     
   private:    

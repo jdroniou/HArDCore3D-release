@@ -26,14 +26,10 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include "mesh.hpp"
 
 #include <Eigen/Dense>
 
-namespace HArDCore3D { // Forward declaration
-	class Mesh;
-	class Cell;
-	class Vertex;
-}
 
 /*!	
 *	@defgroup Plot 

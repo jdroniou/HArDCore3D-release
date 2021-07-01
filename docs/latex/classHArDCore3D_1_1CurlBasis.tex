@@ -30,11 +30,15 @@ typedef Basis\+Type\+::\+Geometric\+Support {\bfseries Geometric\+Support}
 size\+\_\+t \mbox{\hyperlink{group__Common_gaf49ecdf88a5895335f602276d81a805b}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Compute the dimension of the basis. \end{DoxyCompactList}\item 
 Function\+Value \mbox{\hyperlink{group__Common_ga5476b7c9f36899f48fdb549f25974b27}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
-\begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+constexpr const Basis\+Type \& \mbox{\hyperlink{group__Common_ga374cf617bb34d3952d2bbe3f0cf05857}{ancestor}} () const
+\begin{DoxyCompactList}\small\item\em Return the ancestor (basis that the gradient was taken of) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+constexpr static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+\item 
+constexpr static const bool {\bfseries has\+Ancestor} = true
 \item 
 static const bool {\bfseries has\+Function} = true
 \item 
@@ -52,7 +56,7 @@ class H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$}
 
 Basis for the space of curls of polynomials. 
 
-To construct a basis of R$^\wedge$k, assumes that the vector basis from which it is constructed is a basis for G$^\wedge$\{k+1,c\} (in 3D) or P$^\wedge$\{k+1\}/\+P$^\wedge$0 (in 2D) 
+To construct a basis of R$^\wedge$k, assumes that the vector basis from which it is constructed is a basis for G$^\wedge$\{k+1,c\} (in 3D) or P$^\wedge$\{k+1\}/\+P$^\wedge$0 (in 2D). This can also be used to create a family of curl (not necessarily linearly independent) 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

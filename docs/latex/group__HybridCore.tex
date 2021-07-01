@@ -67,7 +67,7 @@ template$<$$>$ const size\+\_\+t \mbox{\hyperlink{group__HybridCore_ga54992ff646
 \begin{DoxyCompactList}\small\item\em Compute the size of the basis of 2-\/variate polynomials up to degree m. \end{DoxyCompactList}\item 
 template$<$$>$ const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gacd3736783277672d9dd3ed154727f3bf}{H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Edge $>$}} (const int m)
 \begin{DoxyCompactList}\small\item\em Compute the size of the basis of 1-\/variate polynomials up to degree m. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__HybridCore_gae2a9aa60d46161d5cbba31dfd1c5eccd}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::\+U\+Vector}} (const Eigen\+::\+Vector\+Xd values, const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \&mesh, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg)
+\mbox{\hyperlink{group__HybridCore_gae2a9aa60d46161d5cbba31dfd1c5eccd}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::\+U\+Vector}} (const Eigen\+::\+Vector\+Xd values, const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&mesh, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg)
 \item 
 \mbox{\Hypertarget{group__HybridCore_gac44c85c6f56c0c6f2b66f0ed630574dd}\label{group__HybridCore_gac44c85c6f56c0c6f2b66f0ed630574dd}} 
 Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HybridCore_gac44c85c6f56c0c6f2b66f0ed630574dd}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::as\+Vector\+Xd}} () const
@@ -99,10 +99,10 @@ Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HybridCore_ga24a0a68f8f1e8bdc4845b
 \mbox{\Hypertarget{group__HybridCore_gac5679636cd20ff654b96a941b742c3fe}\label{group__HybridCore_gac5679636cd20ff654b96a941b742c3fe}} 
 double \mbox{\hyperlink{group__HybridCore_gac5679636cd20ff654b96a941b742c3fe}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::operator()}} (size\+\_\+t index) const
 \begin{DoxyCompactList}\small\item\em Overloads the ()\+: returns the corresponding coefficient. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__HybridCore_ga0afcdbfe52e163c27b24ec93d336dc53}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Hybrid\+Core}} (const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} $\ast$mesh\+\_\+ptr, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg, const int edge\+\_\+deg, const bool use\+\_\+threads=true, std\+::ostream \&output=std\+::cout, const bool ortho=true)
+\mbox{\hyperlink{group__HybridCore_ga0afcdbfe52e163c27b24ec93d336dc53}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Hybrid\+Core}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} $\ast$mesh\+\_\+ptr, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg, const int edge\+\_\+deg, const bool use\+\_\+threads=true, std\+::ostream \&output=std\+::cout, const bool ortho=true)
 \begin{DoxyCompactList}\small\item\em Class constructor\+: initialises the data structure with the given mesh, and desired polynomial degrees of the basis functions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__HybridCore_gaf9413be657df06123c1544d16df6b137}\label{group__HybridCore_gaf9413be657df06123c1544d16df6b137}} 
-const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} $\ast$ \mbox{\hyperlink{group__HybridCore_gaf9413be657df06123c1544d16df6b137}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::get\+\_\+mesh}} () const
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} $\ast$ \mbox{\hyperlink{group__HybridCore_gaf9413be657df06123c1544d16df6b137}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::get\+\_\+mesh}} () const
 \begin{DoxyCompactList}\small\item\em Returns a pointer to the mesh. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__HybridCore_ga10e8b9bd521b54042cccd84520011fe9}\label{group__HybridCore_ga10e8b9bd521b54042cccd84520011fe9}} 
 const int \mbox{\hyperlink{group__HybridCore_ga10e8b9bd521b54042cccd84520011fe9}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Cell\+Degree}} () const
@@ -152,7 +152,7 @@ Classes providing tools to implement schemes having polynomial unknowns in the c
 \index{DimPoly$<$ Cell $>$@{DimPoly$<$ Cell $>$}!HybridCore@{HybridCore}}
 \doxysubsubsection{\texorpdfstring{DimPoly$<$ Cell $>$()}{DimPoly< Cell >()}}
 {\footnotesize\ttfamily template$<$$>$ \\
-const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ \mbox{\hyperlink{classHArDCore3D_1_1Cell}{Cell}} $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Cell $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -168,7 +168,7 @@ Compute the size of the basis of 3-\/variate polynomials up to degree m.
 \index{DimPoly$<$ Edge $>$@{DimPoly$<$ Edge $>$}!HybridCore@{HybridCore}}
 \doxysubsubsection{\texorpdfstring{DimPoly$<$ Edge $>$()}{DimPoly< Edge >()}}
 {\footnotesize\ttfamily template$<$$>$ \\
-const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ \mbox{\hyperlink{classHArDCore3D_1_1Edge}{Edge}} $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Edge $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -184,7 +184,7 @@ Compute the size of the basis of 1-\/variate polynomials up to degree m.
 \index{DimPoly$<$ Face $>$@{DimPoly$<$ Face $>$}!HybridCore@{HybridCore}}
 \doxysubsubsection{\texorpdfstring{DimPoly$<$ Face $>$()}{DimPoly< Face >()}}
 {\footnotesize\ttfamily template$<$$>$ \\
-const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ \mbox{\hyperlink{classHArDCore3D_1_1Face}{Face}} $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Face $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -289,7 +289,7 @@ Compute discrete H1 norm of a discrete function.
 \index{HybridCore@{HybridCore}!HybridCore@{HybridCore}}
 \index{HybridCore@{HybridCore}!HybridCore@{HybridCore}}
 \doxysubsubsection{\texorpdfstring{HybridCore()}{HybridCore()}}
-{\footnotesize\ttfamily Hybrid\+Core\+::\+Hybrid\+Core (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} $\ast$}]{mesh\+\_\+ptr,  }\item[{const int}]{cell\+\_\+deg,  }\item[{const size\+\_\+t}]{face\+\_\+deg,  }\item[{const int}]{edge\+\_\+deg,  }\item[{const bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout},  }\item[{const bool}]{ortho = {\ttfamily true} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Hybrid\+Core\+::\+Hybrid\+Core (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} $\ast$}]{mesh\+\_\+ptr,  }\item[{const int}]{cell\+\_\+deg,  }\item[{const size\+\_\+t}]{face\+\_\+deg,  }\item[{const int}]{edge\+\_\+deg,  }\item[{const bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout},  }\item[{const bool}]{ortho = {\ttfamily true} }\end{DoxyParamCaption})}
 
 
 
@@ -356,7 +356,7 @@ Compute L2 norm of a discrete function (using cell values)
 \index{HybridCore@{HybridCore}!UVector@{UVector}}
 \index{UVector@{UVector}!HybridCore@{HybridCore}}
 \doxysubsubsection{\texorpdfstring{UVector()}{UVector()}}
-{\footnotesize\ttfamily U\+Vector\+::\+U\+Vector (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd}]{values,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{const int}]{cell\+\_\+deg,  }\item[{const size\+\_\+t}]{face\+\_\+deg }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily U\+Vector\+::\+U\+Vector (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd}]{values,  }\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{const int}]{cell\+\_\+deg,  }\item[{const size\+\_\+t}]{face\+\_\+deg }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}

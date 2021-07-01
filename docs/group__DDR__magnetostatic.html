@@ -72,7 +72,8 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">DDR_magnetostatic</div>  </div>
 </div><!--header-->
@@ -114,10 +115,18 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad138164f173610fb861cef714646edae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble the global system <br  />
   <a href="group__DDR__magnetostatic.html#gad138164f173610fb861cef714646edae">More...</a><br /></td></tr>
 <tr class="separator:gad138164f173610fb861cef714646edae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8da4c0eb850477b856bbdf115045266f"><td class="memItemLeft" align="right" valign="top"><a id="ga8da4c0eb850477b856bbdf115045266f"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga8da4c0eb850477b856bbdf115045266f">HArDCore3D::Magnetostatics::dimension</a> () const</td></tr>
-<tr class="memdesc:ga8da4c0eb850477b856bbdf115045266f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the global problem dimension. <br /></td></tr>
-<tr class="separator:ga8da4c0eb850477b856bbdf115045266f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d4739fa01b264a573909bb69488487f"><td class="memItemLeft" align="right" valign="top"><a id="ga9d4739fa01b264a573909bb69488487f"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga9d4739fa01b264a573909bb69488487f">HArDCore3D::Magnetostatics::dimensionSpace</a> () const</td></tr>
+<tr class="memdesc:ga9d4739fa01b264a573909bb69488487f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension of the magnetic field + potential space. <br /></td></tr>
+<tr class="separator:ga9d4739fa01b264a573909bb69488487f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a501f243a498fd6567c2b7b71c9be98"><td class="memItemLeft" align="right" valign="top"><a id="ga4a501f243a498fd6567c2b7b71c9be98"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga4a501f243a498fd6567c2b7b71c9be98">HArDCore3D::Magnetostatics::nbSCDOFs</a> () const</td></tr>
+<tr class="memdesc:ga4a501f243a498fd6567c2b7b71c9be98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of statically condensed DOFs (here, the cell magnetic field DOFs) <br /></td></tr>
+<tr class="separator:ga4a501f243a498fd6567c2b7b71c9be98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9bdfe696d9b36cca0546e85ee73eed4"><td class="memItemLeft" align="right" valign="top"><a id="gab9bdfe696d9b36cca0546e85ee73eed4"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gab9bdfe696d9b36cca0546e85ee73eed4">HArDCore3D::Magnetostatics::sizeSystem</a> () const</td></tr>
+<tr class="memdesc:gab9bdfe696d9b36cca0546e85ee73eed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the statically condensed system. <br /></td></tr>
+<tr class="separator:gab9bdfe696d9b36cca0546e85ee73eed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga19b0cd652147b495285bece47378342c"><td class="memItemLeft" align="right" valign="top"><a id="ga19b0cd652147b495285bece47378342c"></a>
 const <a class="el" href="classHArDCore3D_1_1XCurl.html">XCurl</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga19b0cd652147b495285bece47378342c">HArDCore3D::Magnetostatics::xCurl</a> () const</td></tr>
 <tr class="memdesc:ga19b0cd652147b495285bece47378342c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1XCurl.html" title="Discrete Hcurl space: local operators, L2 product and global interpolator.">XCurl</a>. <br /></td></tr>
@@ -150,9 +159,58 @@ const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga36ff2404c85e550ad25907ec8ba188db">HArDCore3D::Magnetostatics::stabilizationParameter</a> ()</td></tr>
 <tr class="memdesc:ga36ff2404c85e550ad25907ec8ba188db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the stabilization parameter. <br /></td></tr>
 <tr class="separator:ga36ff2404c85e550ad25907ec8ba188db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c5f649d4c5d14b11f52033b4cfff644"><td class="memItemLeft" align="right" valign="top"><a id="ga7c5f649d4c5d14b11f52033b4cfff644"></a>
+const SystemMatrixType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga7c5f649d4c5d14b11f52033b4cfff644">HArDCore3D::Magnetostatics::scMatrix</a> () const</td></tr>
+<tr class="memdesc:ga7c5f649d4c5d14b11f52033b4cfff644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the static condensation recovery operator. <br /></td></tr>
+<tr class="separator:ga7c5f649d4c5d14b11f52033b4cfff644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5cc8800c0cea12e57a31a8f97f58ce7"><td class="memItemLeft" align="right" valign="top"><a id="gac5cc8800c0cea12e57a31a8f97f58ce7"></a>
+Eigen::VectorXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gac5cc8800c0cea12e57a31a8f97f58ce7">HArDCore3D::Magnetostatics::scVector</a> ()</td></tr>
+<tr class="memdesc:gac5cc8800c0cea12e57a31a8f97f58ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the static condensation rhs. <br /></td></tr>
+<tr class="separator:gac5cc8800c0cea12e57a31a8f97f58ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga26c61a8a5522d09c07d2a20eecb15925"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga26c61a8a5522d09c07d2a20eecb15925">HArDCore3D::Magnetostatics::computeNorm</a> (const Eigen::VectorXd &amp;v) const</td></tr>
 <tr class="memdesc:ga26c61a8a5522d09c07d2a20eecb15925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the discrete Hcurl \times Hdiv norm.  <a href="group__DDR__magnetostatic.html#ga26c61a8a5522d09c07d2a20eecb15925">More...</a><br /></td></tr>
 <tr class="separator:ga26c61a8a5522d09c07d2a20eecb15925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga05c87d0a93c5df840c07c09ded686aeb"><td class="memItemLeft" align="right" valign="top"><a id="ga05c87d0a93c5df840c07c09ded686aeb"></a>
+static const double&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::PI</b> = boost::math::constants::pi&lt;double&gt;()</td></tr>
+<tr class="separator:ga05c87d0a93c5df840c07c09ded686aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56502747527cbdd90d18686a6776369d"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::SolutionPotentialType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::constant_u</b></td></tr>
+<tr class="separator:ga56502747527cbdd90d18686a6776369d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa162d494a097b3c3168641f5472a92ec"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::SolutionCurlType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::constant_sigma</b></td></tr>
+<tr class="separator:gaa162d494a097b3c3168641f5472a92ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f39f1d0235748ae953abb3a9f1af08a"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::ForcingTermType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::constant_f</b></td></tr>
+<tr class="separator:ga8f39f1d0235748ae953abb3a9f1af08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f8b5b95cddcc14ada040ff1b8caebf7"><td class="memItemLeft" align="right" valign="top"><a id="ga3f8b5b95cddcc14ada040ff1b8caebf7"></a>
+static <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">Magnetostatics::PermeabilityType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::constant_mu</b> = <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">Magnetostatics::PermeabilityType</a>(1.)</td></tr>
+<tr class="separator:ga3f8b5b95cddcc14ada040ff1b8caebf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b83cbc5fa63f2dd2e4ca7781c8dac5b"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::SolutionPotentialType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::linear_u</b></td></tr>
+<tr class="separator:ga1b83cbc5fa63f2dd2e4ca7781c8dac5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25711e256e87167ef3e392f477ae4008"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::SolutionCurlType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::linear_sigma</b></td></tr>
+<tr class="separator:ga25711e256e87167ef3e392f477ae4008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafacd77f29b93a3d1950bf37e7d4c9205"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::ForcingTermType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::linear_f</b></td></tr>
+<tr class="separator:gafacd77f29b93a3d1950bf37e7d4c9205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga415ee30bd823542e7f21c5f78914a085"><td class="memItemLeft" align="right" valign="top"><a id="ga415ee30bd823542e7f21c5f78914a085"></a>
+static <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">Magnetostatics::PermeabilityType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::linear_mu</b> = <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">Magnetostatics::PermeabilityType</a>(1.)</td></tr>
+<tr class="separator:ga415ee30bd823542e7f21c5f78914a085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f8102524d5dd3728c5216dcbfc32e59"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::SolutionPotentialType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::trigonometric_u</b></td></tr>
+<tr class="separator:ga5f8102524d5dd3728c5216dcbfc32e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ff49b34b95c197d3c6ba8f9c0c0f184"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::SolutionCurlType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::trigonometric_sigma</b></td></tr>
+<tr class="separator:ga2ff49b34b95c197d3c6ba8f9c0c0f184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8c33ab7880b971d36f915f1e835ad1e"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::ForcingTermType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::trigonometric_f</b></td></tr>
+<tr class="separator:gaf8c33ab7880b971d36f915f1e835ad1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaac36ad19f84a1e0d36852cf04278a21"><td class="memItemLeft" align="right" valign="top"><a id="gaaac36ad19f84a1e0d36852cf04278a21"></a>
+static <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">Magnetostatics::PermeabilityType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::trigonometric_mu</b> = <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">Magnetostatics::PermeabilityType</a>(1.)</td></tr>
+<tr class="separator:gaaac36ad19f84a1e0d36852cf04278a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8861771b7a4aec46677d2333abfcbe3"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::SolutionPotentialType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::variable_permeability_u</b></td></tr>
+<tr class="separator:gaf8861771b7a4aec46677d2333abfcbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1b6ed3b881e6ea7bb3fb070b97989f0"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::SolutionCurlType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::variable_permeability_sigma</b></td></tr>
+<tr class="separator:gac1b6ed3b881e6ea7bb3fb070b97989f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff788533b63baa15115e358130484877"><td class="memItemLeft" align="right" valign="top">static Magnetostatics::ForcingTermType&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::variable_permeability_f</b></td></tr>
+<tr class="separator:gaff788533b63baa15115e358130484877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8544d138a24d03889b511f2bfd62e7d4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">Magnetostatics::PermeabilityType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::variable_permeability_mu</b></td></tr>
+<tr class="separator:ga8544d138a24d03889b511f2bfd62e7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Implementation of the DDR scheme for the magnetostatic problem. </p>
@@ -272,7 +330,377 @@ double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga8f39f1d0235748ae953abb3a9f1af08a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f39f1d0235748ae953abb3a9f1af08a">&#9670;&nbsp;</a></span>constant_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::ForcingTermType HArDCore3D::constant_f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                 <span class="keywordflow">return</span> Eigen::Vector3d::Zero();</div>
+<div class="line">               }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gaa162d494a097b3c3168641f5472a92ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa162d494a097b3c3168641f5472a92ec">&#9670;&nbsp;</a></span>constant_sigma</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::SolutionCurlType HArDCore3D::constant_sigma</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                     <span class="keywordflow">return</span> Eigen::Vector3d::Zero();</div>
+<div class="line">                   }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga56502747527cbdd90d18686a6776369d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56502747527cbdd90d18686a6776369d">&#9670;&nbsp;</a></span>constant_u</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::SolutionPotentialType HArDCore3D::constant_u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                 <span class="keywordflow">return</span> Eigen::Vector3d(1., 2., 3.);</div>
+<div class="line">               }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gafacd77f29b93a3d1950bf37e7d4c9205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafacd77f29b93a3d1950bf37e7d4c9205">&#9670;&nbsp;</a></span>linear_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::ForcingTermType HArDCore3D::linear_f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">               <span class="keywordflow">return</span> Eigen::Vector3d::Zero();</div>
+<div class="line">             }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga25711e256e87167ef3e392f477ae4008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25711e256e87167ef3e392f477ae4008">&#9670;&nbsp;</a></span>linear_sigma</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::SolutionCurlType HArDCore3D::linear_sigma</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                   <span class="keywordflow">return</span> Eigen::Vector3d(-3., 2., 1.);</div>
+<div class="line">                 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga1b83cbc5fa63f2dd2e4ca7781c8dac5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b83cbc5fa63f2dd2e4ca7781c8dac5b">&#9670;&nbsp;</a></span>linear_u</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::SolutionPotentialType HArDCore3D::linear_u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">               <span class="keywordflow">return</span> Eigen::Vector3d(</div>
+<div class="line">                                      x(0) + x(1) + x(2),</div>
+<div class="line">                                      2.*(x(0)-x(1)+x(2)),</div>
+<div class="line">                                      -x(0) - x(1) + x(2)</div>
+<div class="line">                                      );</div>
+<div class="line">             }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gaf8c33ab7880b971d36f915f1e835ad1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8c33ab7880b971d36f915f1e835ad1e">&#9670;&nbsp;</a></span>trigonometric_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::ForcingTermType HArDCore3D::trigonometric_f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                      <span class="keywordflow">return</span> 3. * std::pow(PI, 2) * Eigen::Vector3d(</div>
+<div class="line">                                                                    cos(PI*x(0)) * sin(PI*x(1)) * sin(PI*x(2)),</div>
+<div class="line">                                                                    -2. * sin(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2)),</div>
+<div class="line">                                                                    sin(PI*x(0)) * sin(PI*x(1)) * cos(PI*x(2))</div>
+<div class="line">                                                                    );</div>
+<div class="line">                    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga2ff49b34b95c197d3c6ba8f9c0c0f184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ff49b34b95c197d3c6ba8f9c0c0f184">&#9670;&nbsp;</a></span>trigonometric_sigma</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::SolutionCurlType HArDCore3D::trigonometric_sigma</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                          <span class="keywordflow">return</span> 3. * PI * Eigen::Vector3d(</div>
+<div class="line">                                                           sin(PI*x(0)) * cos(PI*x(1)) * cos(PI*x(2)),</div>
+<div class="line">                                                           0.,</div>
+<div class="line">                                                           -cos(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2))</div>
+<div class="line">                                                           );</div>
+<div class="line">                        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga5f8102524d5dd3728c5216dcbfc32e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f8102524d5dd3728c5216dcbfc32e59">&#9670;&nbsp;</a></span>trigonometric_u</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::SolutionPotentialType HArDCore3D::trigonometric_u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                      <span class="keywordflow">return</span> Eigen::Vector3d(</div>
+<div class="line">                                             cos(PI*x(0)) * sin(PI*x(1)) * sin(PI*x(2)),</div>
+<div class="line">                                             -2. * sin(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2)),</div>
+<div class="line">                                             sin(PI*x(0)) * sin(PI*x(1)) * cos(PI*x(2))</div>
+<div class="line">                                             );</div>
+<div class="line">                    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gaff788533b63baa15115e358130484877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff788533b63baa15115e358130484877">&#9670;&nbsp;</a></span>variable_permeability_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::ForcingTermType HArDCore3D::variable_permeability_f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                              <span class="keywordtype">double</span> a = 3 * PI / std::pow(1. + x(0) + x(1) + x(2), 2);</div>
+<div class="line">                              <span class="keywordtype">double</span> b = 3 * std::pow(PI, 2) / (1. + x(0) + x(1) + x(2));</div>
+<div class="line">                              <span class="keywordtype">double</span> dy_sigmax = -a * sin(PI*x(0)) * cos(PI*x(1)) * cos(PI*x(2))</div>
+<div class="line">                                - b * sin(PI*x(0)) * sin(PI*x(1)) * cos(PI*x(2));</div>
+<div class="line">                              <span class="keywordtype">double</span> dz_sigmax = -a * sin(PI*x(0)) * cos(PI*x(1)) * cos(PI*x(2))</div>
+<div class="line">                                - b * sin(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2));</div>
+<div class="line">                              ;</div>
+<div class="line">                              <span class="keywordtype">double</span> dx_sigmaz = a * cos(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2))</div>
+<div class="line">                                + b * sin(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2));</div>
+<div class="line"> </div>
+<div class="line">                              <span class="keywordtype">double</span> dy_sigmaz = a * cos(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2))</div>
+<div class="line">                                + b * cos(PI*x(0)) * sin(PI*x(1)) * sin(PI*x(2));</div>
+<div class="line"> </div>
+<div class="line">                              <span class="keywordflow">return</span> Eigen::Vector3d(</div>
+<div class="line">                                                     dy_sigmaz,</div>
+<div class="line">                                                     dz_sigmax - dx_sigmaz,</div>
+<div class="line">                                                     -dy_sigmax</div>
+<div class="line">                                                     );</div>
+<div class="line">                            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga8544d138a24d03889b511f2bfd62e7d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8544d138a24d03889b511f2bfd62e7d4">&#9670;&nbsp;</a></span>variable_permeability_mu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">Magnetostatics::PermeabilityType</a> HArDCore3D::variable_permeability_mu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= Magnetostatics::PermeabilityType(</div>
+<div class="line">                        [](<span class="keyword">const</span> <a class="code" href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">Cell</a> &amp; T, <span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; <span class="keywordtype">double</span> { <span class="keywordflow">return</span> 1. + x(0) + x(1) + x(2); },</div>
+<div class="line">                        [](<span class="keyword">const</span> <a class="code" href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">Cell</a> &amp; T) -&gt; <span class="keywordtype">size_t</span> { <span class="keywordflow">return</span> 1; }</div>
+<div class="line">                        )</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gac1b6ed3b881e6ea7bb3fb070b97989f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac1b6ed3b881e6ea7bb3fb070b97989f0">&#9670;&nbsp;</a></span>variable_permeability_sigma</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::SolutionCurlType HArDCore3D::variable_permeability_sigma</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                                  <span class="keywordflow">return</span> 3 * PI / (1. + x(0) + x(1) + x(2))</div>
+<div class="line">                                    * Eigen::Vector3d(</div>
+<div class="line">                                                      sin(PI*x(0)) * cos(PI*x(1)) * cos(PI*x(2)),</div>
+<div class="line">                                                      0.,</div>
+<div class="line">                                                      -cos(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2))</div>
+<div class="line">                                                      );</div>
+<div class="line">                                }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gaf8861771b7a4aec46677d2333abfcbe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8861771b7a4aec46677d2333abfcbe3">&#9670;&nbsp;</a></span>variable_permeability_u</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Magnetostatics::SolutionPotentialType HArDCore3D::variable_permeability_u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                              <span class="keywordflow">return</span> Eigen::Vector3d(</div>
+<div class="line">                                                     cos(PI*x(0)) * sin(PI*x(1)) * sin(PI*x(2)),</div>
+<div class="line">                                                     -2. * sin(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2)),</div>
+<div class="line">                                                     sin(PI*x(0)) * sin(PI*x(1)) * cos(PI*x(2))</div>
+<div class="line">                                                     );</div>
+<div class="line">                            }</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
+<div class="ttc" id="agroup__Mesh_html_gaccc346b5620989466f9bb142c1680ac7"><div class="ttname"><a href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">MeshND::Cell</a></div><div class="ttdeci">MeshObject&lt; space_dim, space_dim &gt; Cell</div><div class="ttdoc">A Cell is a MeshObject with object_dim = space_dim.</div><div class="ttdef"><b>Definition:</b> MeshObject.hpp:152</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

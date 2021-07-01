@@ -25,7 +25,6 @@ using namespace HArDCore3D;
 // Mesh filenames
 const std::string mesh_dir = "../../meshes/";
 std::string default_mesh = mesh_dir + "Voro-small-0/RF_fmt/voro-4";
-std::string default_meshtype = "RF";
 const std::string default_solver_type = "bicgstab";
 
 // Max number of cells to plot a graph
@@ -40,7 +39,6 @@ int main(int argc, const char* argv[]) {
   desc.add_options()
     ("help,h", "Display this help message")
     ("mesh,m", boost::program_options::value<std::string>(), "Set the mesh")
-    ("meshtype,t", boost::program_options::value<std::string>(), "Set the mesh type (TG,MSH,RF)")
     ("facedegree,k", boost::program_options::value<size_t>()->default_value(1), "The polynomial degree on the faces")
     ("celldegree,l", boost::program_options::value<size_t>()->default_value(1), "The polynomial degree in the cells")
     ("bc_id,b", boost::program_options::value<std::string>()->default_value("D"), "Set the boundary conditions (D=Dirichlet, N=Neumann, Mx=Mixed number x)")
@@ -63,7 +61,6 @@ int main(int argc, const char* argv[]) {
 
   // Select the mesh
   std::string mesh_file = (vm.count("mesh") ? vm["mesh"].as<std::string>() : default_mesh);
-  std::string mesh_type = (vm.count("meshtype") ? vm["meshtype"].as<std::string>() : default_meshtype);
 
   // Select the degree
   size_t K = vm["facedegree"].as<size_t>();
@@ -86,7 +83,7 @@ int main(int argc, const char* argv[]) {
   // --------------------------------------------------------------------------
   //                        Create the HHO data structure
   // --------------------------------------------------------------------------
-  MeshBuilder meshbuilder = MeshBuilder(mesh_file, mesh_type);
+  MeshBuilder meshbuilder = MeshBuilder(mesh_file);
   std::unique_ptr<Mesh> mesh_ptr = meshbuilder.build_the_mesh();
 
   // Re-index the mesh faces, to facilitate treatment of boundary conditions (the Dirichlet faces are put at the end)
@@ -124,7 +121,7 @@ int main(int argc, const char* argv[]) {
   output << " Test case: solution = " << id_tcase[0] << "; diffusion = " << id_tcase[1] << "\n";
   size_t found = mesh_file.find_last_of("/\\");
   std::string mesh_name = mesh_file.substr(found+1);
-  double meshreg = mesh_ptr->regularity();
+  double meshreg = mesh_ptr->regularity()[0];
   output << "  Mesh = " << mesh_name << " (nb cells= " << mesh_ptr->n_cells() << ", nb faces= " << mesh_ptr->n_faces() << ", reg= " << meshreg << ")\n";
   size_t nbfacedofs = model.get_ntotal_face_dofs();
   output << "  Degrees: face = " << K << "; cell = " << L << " [Nb face DOFs = " << nbfacedofs << "]\n";

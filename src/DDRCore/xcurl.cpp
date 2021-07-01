@@ -58,13 +58,18 @@ XCurl::XCurl(const DDRCore & ddr_core, bool use_threads, std::ostream & output)
 // Interpolator
 //------------------------------------------------------------------------------
 
-Eigen::VectorXd XCurl::interpolate(const FunctionType & v) const
+Eigen::VectorXd XCurl::interpolate(const FunctionType & v, const int doe_cell, const int doe_face, const int doe_edge) const
 {
   Eigen::VectorXd vh = Eigen::VectorXd::Zero(dimension());
-
+  
+  // Degrees of quadrature rules
+  size_t dqr_cell = (doe_cell >= 0 ? doe_cell : 2 * degree() + 3);
+  size_t dqr_face = (doe_face >= 0 ? doe_face : 2 * degree() + 3);
+  size_t dqr_edge = (doe_edge >= 0 ? doe_edge : 2 * degree() + 3);
+  
   // Interpolate at edges
   std::function<void(size_t, size_t)> interpolate_edges
-    = [this, &vh, v](size_t start, size_t end)->void
+    = [this, &vh, v, &dqr_edge](size_t start, size_t end)->void
       {
 	      for (size_t iE = start; iE < end; iE++) {
 	        const Edge & E = *mesh().edge(iE);
@@ -74,10 +79,10 @@ Eigen::VectorXd XCurl::interpolate(const FunctionType & v) const
 			          return v(x).dot(tE);
 			        };
 
-	        QuadratureRule quad_2k_E = generate_quadrature_rule(E, 2 * degree());
-	        auto basis_Pk_E_quad = evaluate_quad<Function>::compute(*edgeBases(iE).Polyk, quad_2k_E);
+	        QuadratureRule quad_dqr_E = generate_quadrature_rule(E, dqr_edge);
+	        auto basis_Pk_E_quad = evaluate_quad<Function>::compute(*edgeBases(iE).Polyk, quad_dqr_E);
 	        vh.segment(globalOffset(E), edgeBases(iE).Polyk->dimension())
-	          = l2_projection(v_dot_tE, *edgeBases(iE).Polyk, quad_2k_E, basis_Pk_E_quad);
+	          = l2_projection(v_dot_tE, *edgeBases(iE).Polyk, quad_dqr_E, basis_Pk_E_quad);
 	      } // for iE
       };
   parallel_for(mesh().n_edges(), interpolate_edges, m_use_threads);
@@ -85,7 +90,7 @@ Eigen::VectorXd XCurl::interpolate(const FunctionType & v) const
   if (degree() > 0 ) {
     // Interpolate at faces
     std::function<void(size_t, size_t)> interpolate_faces
-      = [this, &vh, v](size_t start, size_t end)->void
+      = [this, &vh, v, &dqr_face](size_t start, size_t end)->void
 	      {
 	        for (size_t iF = start; iF < end; iF++) {
 	          const Face & F = *mesh().face(iF);
@@ -95,39 +100,39 @@ Eigen::VectorXd XCurl::interpolate(const FunctionType & v) const
                                          return nF.cross(v(x).cross(nF));
                                        };
 
-	          QuadratureRule quad_2k_F = generate_quadrature_rule(F, 2 * degree());
+	          QuadratureRule quad_dqr_F = generate_quadrature_rule(F, dqr_face);
 
 	          size_t offset_F = globalOffset(F);
-	          auto basis_Rkmo_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).Rolykmo, quad_2k_F);
+	          auto basis_Rkmo_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).Rolykmo, quad_dqr_F);
 	          vh.segment(offset_F, PolynomialSpaceDimension<Face>::Roly(degree() - 1))
-	            = l2_projection(nF_cross_v_cross_nF, *faceBases(iF).Rolykmo, quad_2k_F, basis_Rkmo_F_quad);
+	            = l2_projection(nF_cross_v_cross_nF, *faceBases(iF).Rolykmo, quad_dqr_F, basis_Rkmo_F_quad);
 
 	          offset_F += PolynomialSpaceDimension<Face>::Roly(degree() - 1);
-	          auto basis_Rck_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).RolyComplk, quad_2k_F);
+	          auto basis_Rck_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).RolyComplk, quad_dqr_F);
 	          vh.segment(offset_F, PolynomialSpaceDimension<Face>::RolyCompl(degree()))
-	            = l2_projection(nF_cross_v_cross_nF, *faceBases(iF).RolyComplk, quad_2k_F, basis_Rck_F_quad);
+	            = l2_projection(nF_cross_v_cross_nF, *faceBases(iF).RolyComplk, quad_dqr_F, basis_Rck_F_quad);
 	        } // for iF
 	      };
     parallel_for(mesh().n_faces(), interpolate_faces, m_use_threads);
 
     // Interpolate at cells
     std::function<void(size_t, size_t)> interpolate_cells
-      = [this, &vh, v](size_t start, size_t end)->void
+      = [this, &vh, v, &dqr_cell](size_t start, size_t end)->void
 	      {
 	        for (size_t iT = start; iT < end; iT++) {
 	          const Cell & T = *mesh().cell(iT);
 
-	          QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2 * degree());
+	          QuadratureRule quad_dqr_T = generate_quadrature_rule(T, dqr_cell);
 
 	          Eigen::Index offset_T = globalOffset(T);
-	          auto basis_Rkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Rolykmo, quad_2k_T);
+	          auto basis_Rkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Rolykmo, quad_dqr_T);
 	          vh.segment(offset_T, PolynomialSpaceDimension<Cell>::Roly(degree() - 1))
-	            = l2_projection(v, *cellBases(iT).Rolykmo, quad_2k_T, basis_Rkmo_T_quad);
+	            = l2_projection(v, *cellBases(iT).Rolykmo, quad_dqr_T, basis_Rkmo_T_quad);
 
 	          offset_T += PolynomialSpaceDimension<Cell>::Roly(degree() - 1);
-	          auto basis_Rck_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).RolyComplk, quad_2k_T);
+	          auto basis_Rck_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).RolyComplk, quad_dqr_T);
 	          vh.segment(offset_T, PolynomialSpaceDimension<Cell>::RolyCompl(degree()))
-	            = l2_projection(v, *cellBases(iT).RolyComplk, quad_2k_T, basis_Rck_T_quad);
+	            = l2_projection(v, *cellBases(iT).RolyComplk, quad_dqr_T, basis_Rck_T_quad);
 	        } // for iT
 	      };
     parallel_for(mesh().n_cells(), interpolate_cells, m_use_threads);
@@ -529,7 +534,7 @@ Eigen::MatrixXd XCurl::computeL2Product_with_Ops(
   // Edge penalty terms
   for (size_t iE = 0; iE < T.n_edges(); iE++) {
     const Edge & E = *T.edge(iE);
-    Eigen::VectorXd tE = E.tangent();
+    VectorRd tE = E.tangent();
         
     QuadratureRule quad_2k_E = generate_quadrature_rule(E, 2 * degree());
     
@@ -618,7 +623,7 @@ Eigen::MatrixXd XCurl::computeL2ProductDOFs(
   // Edge penalty terms
   for (size_t iE = 0; iE < T.n_edges(); iE++) {
     const Edge & E = *T.edge(iE);
-    Eigen::VectorXd tE = E.tangent();
+    VectorRd tE = E.tangent();
 
     // Shortcuts
     size_t dim_Pk_E = edgeBases(E.global_index()).Polyk->dimension();

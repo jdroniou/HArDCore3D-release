@@ -115,6 +115,14 @@ Public Member Functions</h2></td></tr>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga0d1ffbb1cb714755de9035fcb9d5f183">dimension</a> () const</td></tr>
 <tr class="memdesc:ga0d1ffbb1cb714755de9035fcb9d5f183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimension of the basis. <br /></td></tr>
 <tr class="separator:ga0d1ffbb1cb714755de9035fcb9d5f183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1b993c85fac9bfdca68021040099c2a"><td class="memItemLeft" align="right" valign="top">
+constexpr const BasisType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gac1b993c85fac9bfdca68021040099c2a">ancestor</a> () const</td></tr>
+<tr class="memdesc:gac1b993c85fac9bfdca68021040099c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the underlying complete basis. <br /></td></tr>
+<tr class="separator:gac1b993c85fac9bfdca68021040099c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga456b3898a7ee7d67c75c45bba1c21c4b"><td class="memItemLeft" align="right" valign="top">
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga456b3898a7ee7d67c75c45bba1c21c4b">max_degree</a> () const</td></tr>
+<tr class="memdesc:ga456b3898a7ee7d67c75c45bba1c21c4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum degree of the basis functions. <br /></td></tr>
+<tr class="separator:ga456b3898a7ee7d67c75c45bba1c21c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga67db64c53524c17389e1928ff7288101"><td class="memItemLeft" align="right" valign="top">
 FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga67db64c53524c17389e1928ff7288101">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga67db64c53524c17389e1928ff7288101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at point x. <br /></td></tr>
@@ -134,9 +142,12 @@ DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ga3aed71a500126a2f56662ca9e4cc8788"><td class="memItemLeft" align="right" valign="top">
-static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = BasisType::tensorRank</td></tr>
-<tr class="separator:ga3aed71a500126a2f56662ca9e4cc8788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga146c6b7ee1d90b25fbfec315a73a4e33"><td class="memItemLeft" align="right" valign="top">
+constexpr static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = BasisType::tensorRank</td></tr>
+<tr class="separator:ga146c6b7ee1d90b25fbfec315a73a4e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf3a9cd82dcbaf5ce5ea60809723d7f51"><td class="memItemLeft" align="right" valign="top">
+constexpr static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasAncestor</b> = true</td></tr>
+<tr class="separator:gaf3a9cd82dcbaf5ce5ea60809723d7f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac37f96b17e6954da1571f16593fcf0c6"><td class="memItemLeft" align="right" valign="top">
 static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasFunction</b> = BasisType::hasFunction</td></tr>
 <tr class="separator:gac37f96b17e6954da1571f16593fcf0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>

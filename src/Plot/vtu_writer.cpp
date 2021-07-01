@@ -7,10 +7,6 @@
 //
 
 #include "vtu_writer.hpp"
-#include "mesh.hpp"
-#include "cell.hpp"
-#include "face.hpp"
-#include "vertex.hpp"
 #include <memory>
 #include <string>
 #include <iostream>

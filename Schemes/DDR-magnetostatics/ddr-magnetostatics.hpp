@@ -67,10 +67,24 @@ namespace HArDCore3D
                               const SolutionPotentialType & u ///< Boundary condition
                               );
 
-    /// Returns the global problem dimension
-    inline size_t dimension() const
+
+    /// Returns the dimension of the magnetic field + potential space
+    inline size_t dimensionSpace() const
     {
       return m_xcurl.dimension() + m_xdiv.dimension();
+    }
+
+    /// Returns the number of statically condensed DOFs (here, the cell magnetic field DOFs)
+    inline size_t nbSCDOFs() const
+    {
+      return m_ddrcore.mesh().n_cells() * 
+          (PolynomialSpaceDimension<Cell>::Roly(m_ddrcore.degree() - 1) + PolynomialSpaceDimension<Cell>::RolyCompl(m_ddrcore.degree()));
+    }
+
+    /// Returns the size of the statically condensed system
+    inline size_t sizeSystem() const
+    {
+      return dimensionSpace() - nbSCDOFs();
     }
 
     /// Returns the space XCurl
@@ -115,6 +129,16 @@ namespace HArDCore3D
       return m_stab_par;
     }
 
+    /// Returns the static condensation recovery operator
+    inline const SystemMatrixType & scMatrix() const {
+      return m_sc_A;
+    }
+
+    /// Returns the static condensation rhs
+    inline Eigen::VectorXd & scVector() {
+      return m_sc_b;
+    }
+
     /// Compute the discrete Hcurl \times Hdiv norm
     double computeNorm(
                        const Eigen::VectorXd & v ///< The vector
@@ -134,8 +158,10 @@ namespace HArDCore3D
     void _assemble_local_contribution(
                                       size_t iT,                                               ///< Element index
                                       const std::pair<Eigen::MatrixXd, Eigen::VectorXd> & lsT, ///< Local contribution
-                                      std::list<Eigen::Triplet<double> > & A,                  ///< List of triplets
-                                      Eigen::VectorXd & b                                      ///< Vector
+                                      std::list<Eigen::Triplet<double> > & A1,                 ///< List of triplets for system
+                                      Eigen::VectorXd & b1,                                    ///< Vector for RHS for sysem
+                                      std::list<Eigen::Triplet<double> > & A2,                 ///< List of triplets for sc
+                                      Eigen::VectorXd & b2                                     ///< Vector for RHS for sc
                                       );
     
     const DDRCore & m_ddrcore;
@@ -143,8 +169,10 @@ namespace HArDCore3D
     std::ostream & m_output;
     XCurl m_xcurl;
     XDiv m_xdiv;
-    SystemMatrixType m_A;
+    SystemMatrixType m_A;   // Matrix and RHS of statically condensed system
     Eigen::VectorXd m_b;
+    SystemMatrixType m_sc_A; // Static condensation operator and RHS (to recover statically condensed DOFs)
+    Eigen::VectorXd m_sc_b;
     double m_stab_par;
   };
 

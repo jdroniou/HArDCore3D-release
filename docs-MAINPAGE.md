@@ -1,5 +1,5 @@
 
-HArD::Core (sources: https://github.com/jdroniou/HArDCore) provides a suite of C++ tools to implement numerical schemes whose unknowns are polynomials in the cells, on the edges, and on the faces. The focus is on dealing on generic polytopal meshes. This documentation addresses the 3D version of HArD::Core, but similar principles are valid for the 2D version. Transferring a scheme's implementation from 3D to 2D or vice-versa is very straightforward, provided that the scheme's mathematical definition does not depend on the dimension and that the generic types provided in `basis.hpp` are used; see readme file of the HArD::Core github depository https://github.com/jdroniou/HArDCore.
+HArD::Core (sources: https://github.com/jdroniou/HArDCore) provides a suite of C++ tools to implement numerical schemes whose unknowns are polynomials in the cells, on the edges, and on the faces. The focus is on dealing on generic polytopal meshes. This documentation addresses the 3D version of HArD::Core, but similar principles are valid for the 2D version. Transferring a scheme's implementation from 3D to 2D or vice-versa is very straightforward, provided that the scheme's mathematical definition does not depend on the dimension and that the generic types provided in `basis.hpp` and `MeshObject.hpp` are used; see readme file of the HArD::Core github depository https://github.com/jdroniou/HArDCore.
 
 \tableofcontents
 
@@ -53,7 +53,7 @@ Vertex* vertex = mesh_ptr->vertex(5);
 
 Eigen::Vector3d vert_coord = vertex->coords()
 \endcode
-store the coordinates of the fifth vertex into the Eigen vector vert_coord. As a generic rule, all geometrical vectors are `Eigen::Vector3d`. We also use `Eigen::Vector{3,X}d` and `Eigen::Matrix{3,X}d` for objects on which linear algebraic operations are performed. Lists (e.g. of cells, of functions...) are usually instances of `std::vector<...>`. Finally, `Eigen::multi\_array` is used for lists of values of basis functions or their gradients at quadrature nodes.
+store the coordinates of the fifth vertex into the Eigen vector vert_coord. As a generic rule, all geometrical vectors are `Eigen::Vector3d`. We also use `Eigen::Vector{3,X}d` and `Eigen::Matrix{3,X}d` for objects on which linear algebraic operations are performed. Lists (e.g. of cells, of functions...) are usually instances of `std::vector<...>`. Finally, `Eigen::multi_array` is used for lists of values of basis functions or their gradients at quadrature nodes.
 
 Here is an example that loops over all cells, grabs all the faces of the cell, and loops over these faces to output their diameter. Here, `mesh_ptr` is a pointer to the mesh.
 
@@ -81,7 +81,7 @@ There is no direct access from a high-level geometrical entity to elements purel
 
 \subsection loading_mesh Loading a mesh
 
-HArDCore3D can currently read meshes in `TG`, `RF` and `MSH`. The loader and all geometrical computations are performed using `StemMesh`, based on G. Manzini's mesh library https://github.com/gmanzini-LANL/PDE-Mesh-Manager.
+HArDCore3D can read meshes in `RF` format. Previous versions could read `TG` and `MSH` files and were based on G. Manzini's mesh library https://github.com/gmanzini-LANL/PDE-Mesh-Manager. From Version 4.1, HArDCore3D uses an independent mesh reader written by L. Yemm.
 
 A mesh file must be read using an instance of the `meshbuilder` class, and then built using `build_the_mesh`.  A working example is given below (assuming the executable will be in `build/Schemes` for example).
 
@@ -93,13 +93,12 @@ using namespace HArDCore3D;
 
 int main() {
 
-	// Mesh file to read, with type
+	// Mesh file to read
 	std::string default_mesh = "../../meshes/Voro-small-0/RF_fmt/voro-4";
-	std::string default_meshtype = "RF";
 
-	// Read the mesh file and build the mesh
-	MeshBuilder meshbuilder = MeshBuilder(mesh_file, mesh_type);
-	std::unique_ptr<Mesh> mesh_ptr = meshbuilder.build_the_mesh();
+  // Build the mesh
+  MeshBuilder meshbuilder = MeshBuilder(mesh_file);
+  std::unique_ptr<Mesh> mesh_ptr = meshbuilder.build_the_mesh();
 
 	std::cout << "There are " << mesh_ptr->n_cells() << " cells in the mesh.\n";
 }

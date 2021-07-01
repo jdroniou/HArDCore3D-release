@@ -30,6 +30,7 @@
 #include <Eigen/Dense>
 #include <hybridcore.hpp>
 #include <quadraturerule.hpp>
+#include <mesh.hpp>
 
 
 /*!	

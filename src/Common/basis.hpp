@@ -26,10 +26,7 @@
 
 #include <boost/multi_array.hpp>
 
-#include <cell.hpp>
-#include <face.hpp>
-#include <edge.hpp>
-#include <vertex.hpp>
+#include <mesh.hpp>
 #include <iostream>
 
 #include <polynomialspacedimension.hpp>
@@ -52,14 +49,15 @@ namespace HArDCore3D
   /// Dimension, and generic types for vector in correct dimension (makes it easier to translate a code between 2D and 3D)
   constexpr int dimspace = 3;
   typedef Eigen::Matrix3d MatrixRd;
-  typedef Eigen::Vector3d VectorRd;
-  typedef Eigen::Vector3i VectorZd;
+
+  template <typename T>
+  using FType = std::function<T(const VectorRd&)>; ///< type for function of point. T is the return type of the function
+
+  template <typename T>
+  using CellFType = std::function<T(const VectorRd&, const Cell *)>; ///< type for function of point. T is the return type of the function
 
   template <typename T>
   using BasisQuad = boost::multi_array<T, 2>; ///< type for bases evaluated on quadrature nodes
-
-  template <typename T>
-  using FType = std::function<T(const VectorRd &)>; ///< type for function of point. T is the type of value of the function
 
   enum TensorRankE
   {
@@ -82,19 +80,32 @@ namespace HArDCore3D
   template<>
   struct MonomialPowers<Cell>
   {
-    static std::vector<VectorZd> compute(size_t degree)
+    // Powers of homogeneous polynomials of degree L
+    static std::vector<VectorZd> homogeneous(const size_t L) 
+    {
+      std::vector<VectorZd> powers;
+      powers.reserve( PolynomialSpaceDimension<Cell>::Poly(L) - PolynomialSpaceDimension<Cell>::Poly(L-1) );
+      for (size_t i = 0; i <= L; i++)
+      {
+        for (size_t j = 0; i + j <= L; j++)
+        {
+          powers.push_back(VectorZd(i, j, L - i - j));
+        } // for j
+      }   // for i
+      return powers;
+    }
+  
+    // Powers for degrees from 0 to degree
+    static std::vector<VectorZd> complete(const size_t degree)
     {
       std::vector<VectorZd> powers;
       powers.reserve( PolynomialSpaceDimension<Cell>::Poly(degree) );
       for (size_t l = 0; l <= degree; l++)
       {
-        for (size_t i = 0; i <= l; i++)
-        {
-          for (size_t j = 0; i + j <= l; j++)
-          {
-            powers.push_back(VectorZd(i, j, l - i - j));
-          } // for j
-        }   // for i
+        std::vector<VectorZd> pow_hom = homogeneous(l);
+        for (VectorZd p : pow_hom){
+          powers.push_back(p);
+        }
       }     // for l
       return powers;
     }
@@ -103,16 +114,29 @@ namespace HArDCore3D
   template<>
   struct MonomialPowers<Face>
   {
-    static std::vector<Eigen::Vector2i> compute(size_t degree)
+    // Powers of homogeneous polynomials of degree L
+    static std::vector<Eigen::Vector2i> homogeneous(const size_t L) 
+    {
+      std::vector<Eigen::Vector2i> powers;
+      powers.reserve( PolynomialSpaceDimension<Face>::Poly(L) - PolynomialSpaceDimension<Face>::Poly(L-1) );
+      for (size_t i = 0; i <= L; i++)
+      {
+        powers.push_back(Eigen::Vector2i(i, L - i));
+      }   // for i
+      return powers;
+    }
+
+    // Powers for degrees from 0 to degree
+    static std::vector<Eigen::Vector2i> complete(size_t degree)
     {
       std::vector<Eigen::Vector2i> powers;
       powers.reserve( PolynomialSpaceDimension<Face>::Poly(degree) );
       for (size_t l = 0; l <= degree; l++)
       {
-        for (size_t i = 0; i <= l; i++)
-        {
-          powers.push_back(Eigen::Vector2i(i, l - i));
-        } // for i
+        std::vector<Eigen::Vector2i> pow_hom = homogeneous(l);
+        for (Eigen::Vector2i p : pow_hom){
+          powers.push_back(p);
+        }
       }   // for l
 
       return powers;
@@ -136,7 +160,8 @@ namespace HArDCore3D
 
     typedef Cell GeometricSupport;
 
-    static const TensorRankE tensorRank = Scalar;
+    constexpr static const TensorRankE tensorRank = Scalar;
+    constexpr static const bool hasAncestor = false;
     static const bool hasFunction = true;
     static const bool hasGradient = true;
     static const bool hasCurl = false;
@@ -159,7 +184,19 @@ namespace HArDCore3D
 
     /// Evaluate the gradient of the i-th basis function at point x
     GradientValue gradient(size_t i, const VectorRd &x) const;
+    
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_degree;
+    }
 
+    /// Returns the powers of the i-th basis function (its degree can be found using powers(i).sum())
+    inline VectorZd powers(size_t i) const
+    {
+      return m_powers[i];
+    }
+    
   private:
     /// Coordinate transformation
     inline VectorRd _coordinate_transform(const VectorRd &x) const
@@ -167,6 +204,7 @@ namespace HArDCore3D
       return (x - m_xT) / m_hT;
     }
 
+    Cell m_T;
     size_t m_degree;
     VectorRd m_xT;
     double m_hT;
@@ -189,7 +227,8 @@ namespace HArDCore3D
 
     typedef Eigen::Matrix<double, 2, dimspace> JacobianType;
 
-    static const TensorRankE tensorRank = Scalar;
+    constexpr static const TensorRankE tensorRank = Scalar;
+    constexpr static const bool hasAncestor = false;
     static const bool hasFunction = true;
     static const bool hasGradient = true;
     static const bool hasCurl = true;
@@ -215,6 +254,12 @@ namespace HArDCore3D
 
     /// Evaluate the two-dimensional curl of the i-th basis function at point x
     CurlValue curl(size_t i, const VectorRd &x) const;
+
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_degree;
+    }
 
     /// Return the normal to the face used in the computation of the curl
     inline const VectorRd &normal() const
@@ -256,7 +301,8 @@ namespace HArDCore3D
 
     typedef Edge GeometricSupport;
 
-    static const TensorRankE tensorRank = Scalar;
+    constexpr static const TensorRankE tensorRank = Scalar;
+    constexpr static const bool hasAncestor = false;
     static const bool hasFunction = true;
     static const bool hasGradient = true;
     static const bool hasCurl = false;
@@ -280,6 +326,12 @@ namespace HArDCore3D
     /// Evaluate the gradient of the i-th basis function at point x
     GradientValue gradient(size_t i, const VectorRd &x) const;
 
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_degree;
+    }
+
   private:
     inline double _coordinate_transform(const VectorRd &x) const
     {
@@ -301,6 +353,10 @@ namespace HArDCore3D
   //----------------------------FAMILY------------------------------------------
   //
   /// Family of functions expressed as linear combination of the functions of a given basis
+  ///
+  /// If \f$(f_1,...,f_r)\f$ is the basis, then the family is \f$(\phi_1,...,\phi_l)\f$ where
+  ///     \f$\phi_i = \sum_j M_ij f_j\f$.
+  /// The matrix \f$M\f$ is the member m_matrix.
   template <typename BasisType>
   class Family
   {
@@ -312,7 +368,8 @@ namespace HArDCore3D
 
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
-    static const TensorRankE tensorRank = BasisType::tensorRank;
+    constexpr static const TensorRankE tensorRank = BasisType::tensorRank;
+    constexpr static const bool hasAncestor = true;
     static const bool hasFunction = BasisType::hasFunction;
     static const bool hasGradient = BasisType::hasGradient;
     static const bool hasCurl = BasisType::hasCurl;
@@ -447,9 +504,15 @@ namespace HArDCore3D
     }
 
     /// Return the ancestor
-    inline const BasisType &ancestor() const
+    constexpr inline const BasisType &ancestor() const
     {
       return m_basis;
+    }
+
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_basis.max_degree();
     }
 
   private:
@@ -495,7 +558,8 @@ namespace HArDCore3D
 
     typedef typename ScalarFamilyType::GeometricSupport GeometricSupport;
 
-    static const TensorRankE tensorRank = Vector;
+    constexpr static const TensorRankE tensorRank = Vector;
+    constexpr static const bool hasAncestor = true;
     static const bool hasFunction = ScalarFamilyType::hasFunction;
     static const bool hasGradient = ScalarFamilyType::hasGradient;
     // We know how to compute the curl and divergence if gradient is available, and
@@ -593,11 +657,16 @@ namespace HArDCore3D
     }
 
     /// Return the ancestor (family that has been tensorized)
-    inline const ScalarFamilyType &ancestor() const
+    constexpr inline const ScalarFamilyType &ancestor() const
     {
       return m_scalar_family;
     }
 
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_scalar_family.max_degree();
+    }
 
   private:
     ScalarFamilyType m_scalar_family;
@@ -611,13 +680,14 @@ namespace HArDCore3D
   {
   public:
     typedef VectorRd FunctionValue;
-    typedef Eigen::Matrix<double, dimspace, dimspace> GradientValue;
+    typedef VectorRd GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
 
     typedef Face GeometricSupport;
 
-    static const TensorRankE tensorRank = Vector;
+    constexpr static const TensorRankE tensorRank = Vector;
+    constexpr static const bool hasAncestor = true;
     static const bool hasFunction = true;
     static const bool hasGradient = false;
     static const bool hasCurl = false;
@@ -653,6 +723,19 @@ namespace HArDCore3D
     {
       return m_generators.row(i / m_scalar_family.dimension()).dot(m_scalar_family.gradient(i % m_scalar_family.dimension(), x));
     }
+    
+    /// Return the ancestor (family used for the tangent)
+    constexpr inline const ScalarFamilyType &ancestor() const
+    {
+      return m_scalar_family;
+    }
+
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_scalar_family.max_degree();
+    }
+
 
   private:
     ScalarFamilyType m_scalar_family;
@@ -674,7 +757,8 @@ namespace HArDCore3D
 
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
-    static const TensorRankE tensorRank = BasisType::tensorRank;
+    constexpr static const TensorRankE tensorRank = BasisType::tensorRank;
+    constexpr static const bool hasAncestor = true;
     static const bool hasFunction = BasisType::hasFunction;
     static const bool hasGradient = BasisType::hasGradient;
     static const bool hasCurl = BasisType::hasCurl;
@@ -696,7 +780,19 @@ namespace HArDCore3D
     {
       return m_basis.dimension() - m_shift;
     }
+    
+    /// Return the underlying complete basis
+    constexpr inline const BasisType &ancestor() const
+    {
+      return m_basis;
+    }
 
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_basis.max_degree();
+    }
+    
     /// Evaluate the i-th basis function at point x
     inline FunctionValue function(size_t i, const VectorRd &x) const
     {
@@ -749,7 +845,8 @@ namespace HArDCore3D
 
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
-    static const TensorRankE tensorRank = BasisType::tensorRank;
+    constexpr static const TensorRankE tensorRank = BasisType::tensorRank;
+    constexpr static const bool hasAncestor = true;
     static const bool hasFunction = BasisType::hasFunction;
     static const bool hasGradient = BasisType::hasGradient;
     static const bool hasCurl = BasisType::hasCurl;
@@ -775,9 +872,15 @@ namespace HArDCore3D
     }
     
     /// Return the underlying complete basis
-    inline const BasisType &ancestor() const
+    constexpr inline const BasisType &ancestor() const
     {
       return m_basis;
+    }
+    
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_basis.max_degree();
     }
 
     /// Evaluate the i-th basis function at point x
@@ -820,7 +923,8 @@ namespace HArDCore3D
   //--------------------GRADIENT BASIS----------------------------------------------------------
 
   /// Basis for the space of gradients of polynomials.
-  /** To construct a basis of G^k, this assumes that the scalar basis it is constructed from is a basis of P^{k+1}/P^0, space of polynomials of degree k+1 without trivial polynomial with zero gradient (e.g. polynomials with zero average, or a hierarchical basis of P^{k+1} in which we have removed the first, constant, polynomial) */
+  /** To construct a basis of G^k, this assumes that the scalar basis it is constructed from is an ancestor basis of P^{k+1}/P^0, space of polynomials of degree k+1 without trivial polynomial with zero gradient (e.g. polynomials with zero average, or a hierarchical basis of P^{k+1} in which we have removed the first, constant, polynomial).
+  This can also be used to create a family of gradients (not necessarily linearly independent, if the ancestor basis is not a basis of P^{k+1}/P^0) */
   template <typename BasisType>
   class GradientBasis
   {
@@ -832,7 +936,8 @@ namespace HArDCore3D
 
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
-    static const TensorRankE tensorRank = Vector;
+    constexpr static const TensorRankE tensorRank = Vector;
+    constexpr static const bool hasAncestor = true;
     static const bool hasFunction = true;
     static const bool hasGradient = false;
     static const bool hasCurl = false;
@@ -861,6 +966,13 @@ namespace HArDCore3D
       return m_scalar_basis.gradient(i, x);
     }
 
+    /// Return the ancestor (basis that the gradient was taken of)
+    constexpr inline const BasisType &ancestor() const
+    {
+      return m_scalar_basis;
+    }
+
+
   private:
     BasisType m_scalar_basis;
   };
@@ -868,7 +980,8 @@ namespace HArDCore3D
   //-------------------CURL BASIS-----------------------------------------------------------
 
   /// Basis for the space of curls of polynomials.
-  /** To construct a basis of R^k, assumes that the vector basis from which it is constructed is a basis for G^{k+1,c} (in 3D) or P^{k+1}/P^0 (in 2D) */
+  /** To construct a basis of R^k, assumes that the vector basis from which it is constructed is a basis for G^{k+1,c} (in 3D) or P^{k+1}/P^0 (in 2D).
+    This can also be used to create a family of curl (not necessarily linearly independent) */
   template <typename BasisType>
   class CurlBasis
   {
@@ -880,7 +993,8 @@ namespace HArDCore3D
 
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
-    static const TensorRankE tensorRank = Vector;
+    constexpr static const TensorRankE tensorRank = Vector;
+    constexpr static const bool hasAncestor = true;
     static const bool hasFunction = true;
     static const bool hasGradient = false;
     static const bool hasCurl = false;
@@ -908,11 +1022,76 @@ namespace HArDCore3D
     {
       return m_basis.curl(i, x);
     }
+    
+    /// Return the ancestor (basis that the gradient was taken of)
+    constexpr inline const BasisType &ancestor() const
+    {
+      return m_basis;
+    }
+
 
   private:
     size_t m_degree;
     BasisType m_basis;
   };
+  
+  
+  //--------------------DIVERGENCE BASIS----------------------------------------------------------
+
+  /// Basis (or rather family) of divergence of an existing basis
+  /** This will be a real basis of the range of divergence (which is just P^k) if the ancestor basis is taken as a basis of R^{c,k+1} */
+  template <typename BasisType>
+  class DivergenceBasis
+  {
+  public:
+    typedef double FunctionValue;
+    typedef VectorRd GradientValue;
+    typedef VectorRd CurlValue;
+    typedef double DivergenceValue;
+
+    typedef typename BasisType::GeometricSupport GeometricSupport;
+
+    constexpr static const TensorRankE tensorRank = Scalar;
+    constexpr static const bool hasAncestor = true;
+    static const bool hasFunction = true;
+    static const bool hasGradient = false;
+    static const bool hasCurl = false;
+    static const bool hasDivergence = false;
+
+    /// Constructor
+    DivergenceBasis(const BasisType &basis)
+        : m_vector_basis(basis)
+    {
+      static_assert(BasisType::tensorRank == Vector,
+                    "Divergence basis can only be constructed starting from vector bases");
+      static_assert(BasisType::hasDivergence,
+                    "Divergence basis requires divergence() for the original basis to be available");
+      // Do nothing
+    }
+
+    /// Compute the dimension of the basis
+    inline size_t dimension() const
+    {
+      return m_vector_basis.dimension();
+    }
+
+    /// Evaluate the i-th basis function at point x
+    inline FunctionValue function(size_t i, const VectorRd &x) const
+    {
+      return m_vector_basis.divergence(i, x);
+    }
+
+    /// Return the ancestor (basis that the gradient was taken of)
+    constexpr inline const BasisType &ancestor() const
+    {
+      return m_vector_basis;
+    }
+
+
+  private:
+    BasisType m_vector_basis;
+  };
+
 
   //---------------------------------------------------------------------
   //      BASES FOR THE KOSZUL COMPLEMENTS OF G^k, R^k 
@@ -929,7 +1108,8 @@ namespace HArDCore3D
 
     typedef Cell GeometricSupport;
 
-    static const TensorRankE tensorRank = Vector;
+    constexpr static const TensorRankE tensorRank = Vector;
+    constexpr static const bool hasAncestor = false;
     static const bool hasFunction = true;
     static const bool hasGradient = false;
     static const bool hasCurl = false;
@@ -952,6 +1132,18 @@ namespace HArDCore3D
 
     /// Evaluate the divergence of the i-th basis function at point x
     DivergenceValue divergence(size_t i, const VectorRd &x) const;
+    
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_degree;
+    }
+    
+    /// Returns the powers of the i-th basis function (not including the vector part)
+    inline VectorZd powers(size_t i) const
+    {
+      return m_powers[i];
+    }
     
   private:
     /// Coordinate transformation
@@ -984,7 +1176,8 @@ namespace HArDCore3D
 
     typedef Cell GeometricSupport;
 
-    static const TensorRankE tensorRank = Vector;
+    constexpr static const TensorRankE tensorRank = Vector;
+    constexpr static const bool hasAncestor = false;
     static const bool hasFunction = true;
     static const bool hasGradient = false;
     static const bool hasCurl = true;
@@ -999,7 +1192,7 @@ namespace HArDCore3D
     /// Compute the dimension of the basis
     inline size_t dimension() const
     {
-      return m_powers.size();
+      return PolynomialSpaceDimension<Cell>::GolyCompl(m_degree);;
     }
 
     /// Evaluate the i-th basis function at point x
@@ -1007,6 +1200,24 @@ namespace HArDCore3D
 
     /// Evaluate the curl of the i-th basis function at point x
     CurlValue curl(size_t i, const VectorRd &x) const;
+    
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_degree;
+    }
+    
+    /// Returns the powers of the i-th basis function (not including the vector part)
+    inline VectorZd powers(size_t i) const
+    {
+      return m_powers[i];
+    }
+    
+    /// Returns the dimension of P^{k-1}(R^3)
+    inline size_t dimPkmo() const
+    {
+      return m_dimPkmo3D;
+    }
     
   private:
     /// Coordinate transformation
@@ -1041,7 +1252,8 @@ namespace HArDCore3D
 
     typedef Eigen::Matrix<double, 2, dimspace> JacobianType;
 
-    static const TensorRankE tensorRank = Vector;
+    constexpr static const TensorRankE tensorRank = Vector;
+    constexpr static const bool hasAncestor = false;
     static const bool hasFunction = true;
     static const bool hasGradient = false;
     static const bool hasCurl = false;
@@ -1056,7 +1268,7 @@ namespace HArDCore3D
     /// Dimension of the basis
     inline size_t dimension() const
     {
-      return m_degree * (m_degree + 1) / 2;
+      return PolynomialSpaceDimension<Face>::RolyCompl(m_degree);;
     }
 
     /// Evaluate the i-th basis function at point x
@@ -1099,7 +1311,8 @@ namespace HArDCore3D
 
     typedef Eigen::Matrix<double, 2, dimspace> JacobianType;
 
-    static const TensorRankE tensorRank = Vector;
+    constexpr static const TensorRankE tensorRank = Vector;
+    constexpr static const bool hasAncestor = false;
     static const bool hasFunction = true;
     static const bool hasGradient = false;
     static const bool hasCurl = false;
@@ -1114,7 +1327,7 @@ namespace HArDCore3D
     /// Dimension of the basis
     inline size_t dimension() const
     {
-      return m_degree * (m_degree + 1) / 2;
+      return PolynomialSpaceDimension<Face>::GolyCompl(m_degree);;
     }
 
     /// Evaluate the i-th basis function at point x
@@ -1551,15 +1764,21 @@ namespace HArDCore3D
   /// Scalar product between two vectors
   double scalar_product(const VectorRd &x, const VectorRd &y);
 
-  /// This overloading of the scalar_product function computes the scalar product
-  /// between an evaluation of a basis and a constant vector
-  boost::multi_array<double, 2>
-  scalar_product(
-      const boost::multi_array<VectorRd, 2> &basis_quad, ///< The basis evaluation
-      const VectorRd &v                                  ///< The vector to take the scalar product with
-  );
+  /// This overloading of the scalar_product function computes the scalar product between an evaluation of a basis and a constant value; both basis values and constant value must be of type Value
+  template <typename Value>
+  boost::multi_array<double, 2> scalar_product(
+          const boost::multi_array<Value, 2> &basis_quad, ///< The basis evaluation
+          const Value &v                                  ///< The vector to take the scalar product with
+          )
+  {
+    boost::multi_array<double, 2> basis_dot_v_quad(boost::extents[basis_quad.shape()[0]][basis_quad.shape()[1]]);
+    std::transform(basis_quad.origin(), basis_quad.origin() + basis_quad.num_elements(),
+                   basis_dot_v_quad.origin(), [&v](const Value &x) -> double { return scalar_product(x,v); });
+    return basis_dot_v_quad;
+  }
 
-  /// Compute the vector product between the evaluation of a basis and a constant vector
+  
+  /// Compute the vector (cross) product between the evaluation of a basis and a constant vector
   boost::multi_array<VectorRd, 2>
   vector_product(
       const boost::multi_array<VectorRd, 2> &basis_quad, ///< The basis evaluation

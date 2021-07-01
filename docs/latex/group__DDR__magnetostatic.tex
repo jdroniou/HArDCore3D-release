@@ -36,9 +36,15 @@ typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} 
 void \mbox{\hyperlink{group__DDR__magnetostatic_gad138164f173610fb861cef714646edae}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::assemble\+Linear\+System}} (const Forcing\+Term\+Type \&f, const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Permeability\+Type}} \&mu, const Solution\+Potential\+Type \&u)
 \begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
  \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}\label{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}} 
-size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga8da4c0eb850477b856bbdf115045266f}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::dimension}} () const
-\begin{DoxyCompactList}\small\item\em Returns the global problem dimension. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga9d4739fa01b264a573909bb69488487f}\label{group__DDR__magnetostatic_ga9d4739fa01b264a573909bb69488487f}} 
+size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga9d4739fa01b264a573909bb69488487f}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::dimension\+Space}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the magnetic field + potential space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga4a501f243a498fd6567c2b7b71c9be98}\label{group__DDR__magnetostatic_ga4a501f243a498fd6567c2b7b71c9be98}} 
+size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga4a501f243a498fd6567c2b7b71c9be98}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::nb\+S\+C\+D\+O\+Fs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (here, the cell magnetic field D\+O\+Fs) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gab9bdfe696d9b36cca0546e85ee73eed4}\label{group__DDR__magnetostatic_gab9bdfe696d9b36cca0546e85ee73eed4}} 
+size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_gab9bdfe696d9b36cca0546e85ee73eed4}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::size\+System}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the statically condensed system. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__DDR__magnetostatic_ga19b0cd652147b495285bece47378342c}\label{group__DDR__magnetostatic_ga19b0cd652147b495285bece47378342c}} 
 const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga19b0cd652147b495285bece47378342c}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::x\+Curl}} () const
 \begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}}. \end{DoxyCompactList}\item 
@@ -63,8 +69,55 @@ const double \& \mbox{\hyperlink{group__DDR__magnetostatic_gaa900b40958daa559bdf
 \mbox{\Hypertarget{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}\label{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}} 
 double \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36ff2404c85e550ad25907ec8ba188db}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::stabilization\+Parameter}} ()
 \begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga7c5f649d4c5d14b11f52033b4cfff644}\label{group__DDR__magnetostatic_ga7c5f649d4c5d14b11f52033b4cfff644}} 
+const System\+Matrix\+Type \& \mbox{\hyperlink{group__DDR__magnetostatic_ga7c5f649d4c5d14b11f52033b4cfff644}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::sc\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the static condensation recovery operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gac5cc8800c0cea12e57a31a8f97f58ce7}\label{group__DDR__magnetostatic_gac5cc8800c0cea12e57a31a8f97f58ce7}} 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__magnetostatic_gac5cc8800c0cea12e57a31a8f97f58ce7}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::sc\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the static condensation rhs. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__DDR__magnetostatic_ga26c61a8a5522d09c07d2a20eecb15925}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::compute\+Norm}} (const Eigen\+::\+Vector\+Xd \&v) const
 \begin{DoxyCompactList}\small\item\em Compute the discrete Hcurl \textbackslash{}times Hdiv norm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga05c87d0a93c5df840c07c09ded686aeb}\label{group__DDR__magnetostatic_ga05c87d0a93c5df840c07c09ded686aeb}} 
+static const double {\bfseries H\+Ar\+D\+Core3\+D\+::\+PI} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+static Magnetostatics\+::\+Solution\+Potential\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::constant\+\_\+u}
+\item 
+static Magnetostatics\+::\+Solution\+Curl\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::constant\+\_\+sigma}
+\item 
+static Magnetostatics\+::\+Forcing\+Term\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::constant\+\_\+f}
+\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga3f8b5b95cddcc14ada040ff1b8caebf7}\label{group__DDR__magnetostatic_ga3f8b5b95cddcc14ada040ff1b8caebf7}} 
+static \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Magnetostatics\+::\+Permeability\+Type}} {\bfseries H\+Ar\+D\+Core3\+D\+::constant\+\_\+mu} = \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Magnetostatics\+::\+Permeability\+Type}}(1.)
+\item 
+static Magnetostatics\+::\+Solution\+Potential\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::linear\+\_\+u}
+\item 
+static Magnetostatics\+::\+Solution\+Curl\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::linear\+\_\+sigma}
+\item 
+static Magnetostatics\+::\+Forcing\+Term\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::linear\+\_\+f}
+\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga415ee30bd823542e7f21c5f78914a085}\label{group__DDR__magnetostatic_ga415ee30bd823542e7f21c5f78914a085}} 
+static \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Magnetostatics\+::\+Permeability\+Type}} {\bfseries H\+Ar\+D\+Core3\+D\+::linear\+\_\+mu} = \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Magnetostatics\+::\+Permeability\+Type}}(1.)
+\item 
+static Magnetostatics\+::\+Solution\+Potential\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+u}
+\item 
+static Magnetostatics\+::\+Solution\+Curl\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+sigma}
+\item 
+static Magnetostatics\+::\+Forcing\+Term\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+f}
+\item 
+\mbox{\Hypertarget{group__DDR__magnetostatic_gaaac36ad19f84a1e0d36852cf04278a21}\label{group__DDR__magnetostatic_gaaac36ad19f84a1e0d36852cf04278a21}} 
+static \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Magnetostatics\+::\+Permeability\+Type}} {\bfseries H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+mu} = \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Magnetostatics\+::\+Permeability\+Type}}(1.)
+\item 
+static Magnetostatics\+::\+Solution\+Potential\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+u}
+\item 
+static Magnetostatics\+::\+Solution\+Curl\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+sigma}
+\item 
+static Magnetostatics\+::\+Forcing\+Term\+Type {\bfseries H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+f}
+\item 
+static \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Magnetostatics\+::\+Permeability\+Type}} {\bfseries H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+mu}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -127,3 +180,218 @@ Constructor.
 {\em output} & Output stream to print status messages \\
 \hline
 \end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga8f39f1d0235748ae953abb3a9f1af08a}\label{group__DDR__magnetostatic_ga8f39f1d0235748ae953abb3a9f1af08a}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!constant\_f@{constant\_f}}
+\index{constant\_f@{constant\_f}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{constant\_f}{constant\_f}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Forcing\+Term\+Type H\+Ar\+D\+Core3\+D\+::constant\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                 \textcolor{keywordflow}{return} Eigen::Vector3d::Zero();}
+\DoxyCodeLine{               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_gaa162d494a097b3c3168641f5472a92ec}\label{group__DDR__magnetostatic_gaa162d494a097b3c3168641f5472a92ec}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!constant\_sigma@{constant\_sigma}}
+\index{constant\_sigma@{constant\_sigma}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{constant\_sigma}{constant\_sigma}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Solution\+Curl\+Type H\+Ar\+D\+Core3\+D\+::constant\+\_\+sigma\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                     \textcolor{keywordflow}{return} Eigen::Vector3d::Zero();}
+\DoxyCodeLine{                   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga56502747527cbdd90d18686a6776369d}\label{group__DDR__magnetostatic_ga56502747527cbdd90d18686a6776369d}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!constant\_u@{constant\_u}}
+\index{constant\_u@{constant\_u}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{constant\_u}{constant\_u}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Solution\+Potential\+Type H\+Ar\+D\+Core3\+D\+::constant\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                 \textcolor{keywordflow}{return} Eigen::Vector3d(1., 2., 3.);}
+\DoxyCodeLine{               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_gafacd77f29b93a3d1950bf37e7d4c9205}\label{group__DDR__magnetostatic_gafacd77f29b93a3d1950bf37e7d4c9205}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!linear\_f@{linear\_f}}
+\index{linear\_f@{linear\_f}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{linear\_f}{linear\_f}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Forcing\+Term\+Type H\+Ar\+D\+Core3\+D\+::linear\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{               \textcolor{keywordflow}{return} Eigen::Vector3d::Zero();}
+\DoxyCodeLine{             \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga25711e256e87167ef3e392f477ae4008}\label{group__DDR__magnetostatic_ga25711e256e87167ef3e392f477ae4008}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!linear\_sigma@{linear\_sigma}}
+\index{linear\_sigma@{linear\_sigma}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{linear\_sigma}{linear\_sigma}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Solution\+Curl\+Type H\+Ar\+D\+Core3\+D\+::linear\+\_\+sigma\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                   \textcolor{keywordflow}{return} Eigen::Vector3d(-\/3., 2., 1.);}
+\DoxyCodeLine{                 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga1b83cbc5fa63f2dd2e4ca7781c8dac5b}\label{group__DDR__magnetostatic_ga1b83cbc5fa63f2dd2e4ca7781c8dac5b}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!linear\_u@{linear\_u}}
+\index{linear\_u@{linear\_u}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{linear\_u}{linear\_u}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Solution\+Potential\+Type H\+Ar\+D\+Core3\+D\+::linear\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{               \textcolor{keywordflow}{return} Eigen::Vector3d(}
+\DoxyCodeLine{                                      x(0) + x(1) + x(2),}
+\DoxyCodeLine{                                      2.*(x(0)-\/x(1)+x(2)),}
+\DoxyCodeLine{                                      -\/x(0) -\/ x(1) + x(2)}
+\DoxyCodeLine{                                      );}
+\DoxyCodeLine{             \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_gaf8c33ab7880b971d36f915f1e835ad1e}\label{group__DDR__magnetostatic_gaf8c33ab7880b971d36f915f1e835ad1e}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!trigonometric\_f@{trigonometric\_f}}
+\index{trigonometric\_f@{trigonometric\_f}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_f}{trigonometric\_f}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Forcing\+Term\+Type H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} 3. * std::pow(PI, 2) * Eigen::Vector3d(}
+\DoxyCodeLine{                                                                    cos(PI*x(0)) * sin(PI*x(1)) * sin(PI*x(2)),}
+\DoxyCodeLine{                                                                    -\/2. * sin(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2)),}
+\DoxyCodeLine{                                                                    sin(PI*x(0)) * sin(PI*x(1)) * cos(PI*x(2))}
+\DoxyCodeLine{                                                                    );}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga2ff49b34b95c197d3c6ba8f9c0c0f184}\label{group__DDR__magnetostatic_ga2ff49b34b95c197d3c6ba8f9c0c0f184}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!trigonometric\_sigma@{trigonometric\_sigma}}
+\index{trigonometric\_sigma@{trigonometric\_sigma}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_sigma}{trigonometric\_sigma}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Solution\+Curl\+Type H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+sigma\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                          \textcolor{keywordflow}{return} 3. * PI * Eigen::Vector3d(}
+\DoxyCodeLine{                                                           sin(PI*x(0)) * cos(PI*x(1)) * cos(PI*x(2)),}
+\DoxyCodeLine{                                                           0.,}
+\DoxyCodeLine{                                                           -\/cos(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2))}
+\DoxyCodeLine{                                                           );}
+\DoxyCodeLine{                        \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga5f8102524d5dd3728c5216dcbfc32e59}\label{group__DDR__magnetostatic_ga5f8102524d5dd3728c5216dcbfc32e59}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!trigonometric\_u@{trigonometric\_u}}
+\index{trigonometric\_u@{trigonometric\_u}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_u}{trigonometric\_u}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Solution\+Potential\+Type H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} Eigen::Vector3d(}
+\DoxyCodeLine{                                             cos(PI*x(0)) * sin(PI*x(1)) * sin(PI*x(2)),}
+\DoxyCodeLine{                                             -\/2. * sin(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2)),}
+\DoxyCodeLine{                                             sin(PI*x(0)) * sin(PI*x(1)) * cos(PI*x(2))}
+\DoxyCodeLine{                                             );}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_gaff788533b63baa15115e358130484877}\label{group__DDR__magnetostatic_gaff788533b63baa15115e358130484877}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!variable\_permeability\_f@{variable\_permeability\_f}}
+\index{variable\_permeability\_f@{variable\_permeability\_f}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{variable\_permeability\_f}{variable\_permeability\_f}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Forcing\+Term\+Type H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                              \textcolor{keywordtype}{double} a = 3 * PI / std::pow(1. + x(0) + x(1) + x(2), 2);}
+\DoxyCodeLine{                              \textcolor{keywordtype}{double} b = 3 * std::pow(PI, 2) / (1. + x(0) + x(1) + x(2));}
+\DoxyCodeLine{                              \textcolor{keywordtype}{double} dy\_sigmax = -\/a * sin(PI*x(0)) * cos(PI*x(1)) * cos(PI*x(2))}
+\DoxyCodeLine{                                -\/ b * sin(PI*x(0)) * sin(PI*x(1)) * cos(PI*x(2));}
+\DoxyCodeLine{                              \textcolor{keywordtype}{double} dz\_sigmax = -\/a * sin(PI*x(0)) * cos(PI*x(1)) * cos(PI*x(2))}
+\DoxyCodeLine{                                -\/ b * sin(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2));}
+\DoxyCodeLine{                              ;}
+\DoxyCodeLine{                              \textcolor{keywordtype}{double} dx\_sigmaz = a * cos(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2))}
+\DoxyCodeLine{                                + b * sin(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2));}
+\DoxyCodeLine{}
+\DoxyCodeLine{                              \textcolor{keywordtype}{double} dy\_sigmaz = a * cos(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2))}
+\DoxyCodeLine{                                + b * cos(PI*x(0)) * sin(PI*x(1)) * sin(PI*x(2));}
+\DoxyCodeLine{}
+\DoxyCodeLine{                              \textcolor{keywordflow}{return} Eigen::Vector3d(}
+\DoxyCodeLine{                                                     dy\_sigmaz,}
+\DoxyCodeLine{                                                     dz\_sigmax -\/ dx\_sigmaz,}
+\DoxyCodeLine{                                                     -\/dy\_sigmax}
+\DoxyCodeLine{                                                     );}
+\DoxyCodeLine{                            \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_ga8544d138a24d03889b511f2bfd62e7d4}\label{group__DDR__magnetostatic_ga8544d138a24d03889b511f2bfd62e7d4}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!variable\_permeability\_mu@{variable\_permeability\_mu}}
+\index{variable\_permeability\_mu@{variable\_permeability\_mu}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{variable\_permeability\_mu}{variable\_permeability\_mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Magnetostatics\+::\+Permeability\+Type}} H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+mu\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= Magnetostatics::PermeabilityType(}
+\DoxyCodeLine{                        [](\textcolor{keyword}{const} \mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}} \& T, \textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> \textcolor{keywordtype}{double} \{ \textcolor{keywordflow}{return} 1. + x(0) + x(1) + x(2); \},}
+\DoxyCodeLine{                        [](\textcolor{keyword}{const} \mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}} \& T) -\/> \textcolor{keywordtype}{size\_t} \{ \textcolor{keywordflow}{return} 1; \}}
+\DoxyCodeLine{                        )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_gac1b6ed3b881e6ea7bb3fb070b97989f0}\label{group__DDR__magnetostatic_gac1b6ed3b881e6ea7bb3fb070b97989f0}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!variable\_permeability\_sigma@{variable\_permeability\_sigma}}
+\index{variable\_permeability\_sigma@{variable\_permeability\_sigma}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{variable\_permeability\_sigma}{variable\_permeability\_sigma}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Solution\+Curl\+Type H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+sigma\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                                  \textcolor{keywordflow}{return} 3 * PI / (1. + x(0) + x(1) + x(2))}
+\DoxyCodeLine{                                    * Eigen::Vector3d(}
+\DoxyCodeLine{                                                      sin(PI*x(0)) * cos(PI*x(1)) * cos(PI*x(2)),}
+\DoxyCodeLine{                                                      0.,}
+\DoxyCodeLine{                                                      -\/cos(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2))}
+\DoxyCodeLine{                                                      );}
+\DoxyCodeLine{                                \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__magnetostatic_gaf8861771b7a4aec46677d2333abfcbe3}\label{group__DDR__magnetostatic_gaf8861771b7a4aec46677d2333abfcbe3}} 
+\index{DDR\_magnetostatic@{DDR\_magnetostatic}!variable\_permeability\_u@{variable\_permeability\_u}}
+\index{variable\_permeability\_u@{variable\_permeability\_u}!DDR\_magnetostatic@{DDR\_magnetostatic}}
+\doxysubsubsection{\texorpdfstring{variable\_permeability\_u}{variable\_permeability\_u}}
+{\footnotesize\ttfamily Magnetostatics\+::\+Solution\+Potential\+Type H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                              \textcolor{keywordflow}{return} Eigen::Vector3d(}
+\DoxyCodeLine{                                                     cos(PI*x(0)) * sin(PI*x(1)) * sin(PI*x(2)),}
+\DoxyCodeLine{                                                     -\/2. * sin(PI*x(0)) * cos(PI*x(1)) * sin(PI*x(2)),}
+\DoxyCodeLine{                                                     sin(PI*x(0)) * sin(PI*x(1)) * cos(PI*x(2))}
+\DoxyCodeLine{                                                     );}
+\DoxyCodeLine{                            \}}
+
+\end{DoxyCode}

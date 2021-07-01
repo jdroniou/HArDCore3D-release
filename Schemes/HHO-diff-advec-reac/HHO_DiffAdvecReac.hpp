@@ -31,7 +31,6 @@ bool program_options(
     const int,          ///< The number of options passed to the main function
     const char *[],     ///< An array of all options passed to the main function
     std::string &,      ///< The mesh name
-    std::string &,      ///< The mesh type
     std::string &,      ///< The boundary condition ID
     std::vector<int> &, ///< The test case ID
     size_t &,           ///< Cell polynomial degree

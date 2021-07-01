@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrixftype_862',['MatrixFType',['../group__HHO3D.html#ga37173e331cdc5fa65f30562ccb17ca8c',1,'HHO3D.hpp']]]
+  ['edge_620',['Edge',['../group__Mesh.html#gaf356f9fa5a1a50c9cfffcb111586dfdd',1,'MeshND']]]
 ];

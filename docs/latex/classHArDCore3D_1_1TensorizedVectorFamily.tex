@@ -45,12 +45,16 @@ Divergence\+Value \mbox{\hyperlink{group__Common_ga7c792e5a5a1c364a53d9da3ac7d4b
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 Divergence\+Value \mbox{\hyperlink{group__Common_gaaf8de8320203975aa548709d455a6ec4}{divergence}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&ancestor\+\_\+gradient\+\_\+quad) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
-const Scalar\+Family\+Type \& \mbox{\hyperlink{group__Common_gaa98332fb236225d4e17bc64aecf1eb30}{ancestor}} () const
-\begin{DoxyCompactList}\small\item\em Return the ancestor (family that has been tensorized) \end{DoxyCompactList}\end{DoxyCompactItemize}
+constexpr const Scalar\+Family\+Type \& \mbox{\hyperlink{group__Common_ga2fa5d0c533a652d4e64400b3cffb9029}{ancestor}} () const
+\begin{DoxyCompactList}\small\item\em Return the ancestor (family that has been tensorized) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga649326979292f0ff66afc7040516363c}{max\+\_\+degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+constexpr static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+\item 
+constexpr static const bool {\bfseries has\+Ancestor} = true
 \item 
 static const bool {\bfseries has\+Function} = Scalar\+Family\+Type\+::has\+Function
 \item 
