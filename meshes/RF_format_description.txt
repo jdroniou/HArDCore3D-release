@@ -1,0 +1,27 @@
+Brief description of the RF format:
+
+** Each mesh is described by a .ele and a .node file. All lines starting with # are comments
+
+** .node file: describes the vertices of the mesh
+
+  - first line: header specifying the following:
+       <number of vertices> <dimension> <flag1> <flag2>
+    (with dimension=3, flag1=flag2=0)
+  - following lines: one line per vertex with this syntax:
+        <vertex id> <x coordinate> <y coordinate> <z coordinate>
+    (verted ids should start at 0)
+    
+** .ele file: describes the cells (elements), through their faces
+
+  - first line: header with the following syntax:
+      <number of cells> <flag1>
+    (with flag1=0)
+  - then, for each cell:
+      (i) a line with the the cell header; syntax:
+          <cell id> <number of faces>
+      (ii) a line for each face with the list of the vertices of the face:
+          <face id, local to the cell> <number of vertices> <id of first vertex> <id of second vertex> ...
+      (ids should be consistent with vertex ids and start at 0)
+
+
+
