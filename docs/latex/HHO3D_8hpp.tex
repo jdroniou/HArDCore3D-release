@@ -1,0 +1,41 @@
+\hypertarget{HHO3D_8hpp}{}\doxysection{Schemes/\+H\+H\+O-\/general/\+H\+H\+O3D.hpp File Reference}
+\label{HHO3D_8hpp}\index{Schemes/HHO-\/general/HHO3D.hpp@{Schemes/HHO-\/general/HHO3D.hpp}}
+{\ttfamily \#include $<$basis.\+hpp$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$parallel\+\_\+for.\+hpp$>$}\newline
+{\ttfamily \#include $<$mesh\+\_\+builder.\+hpp$>$}\newline
+{\ttfamily \#include $<$hybridcore.\+hpp$>$}\newline
+{\ttfamily \#include $<$elementquad.\+hpp$>$}\newline
+{\ttfamily \#include $<$Test\+Case/\+Test\+Case.\+hpp$>$}\newline
+{\ttfamily \#include $<$Boundary\+Conditions/\+Boundary\+Conditions.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/timer/timer.\+hpp$>$}\newline
+{\ttfamily \#include $<$vtu\+\_\+writer.\+hpp$>$}\newline
+Include dependency graph for H\+H\+O3\+D.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{HHO3D_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{HHO3D_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHHO3D}{H\+H\+O3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Matrix\+Xd(Cell $\ast$, \mbox{\hyperlink{classHArDCore3D_1_1ElementQuad}{Element\+Quad}} \&)$>$ \mbox{\hyperlink{group__HHO3D_ga37173e331cdc5fa65f30562ccb17ca8c}{Matrix\+F\+Type}}
+\begin{DoxyCompactList}\small\item\em type for the global operator as a function of a Cell and an Element\+Quad \end{DoxyCompactList}\item 
+typedef std\+::function$<$ Eigen\+::\+Vector\+Xd(Cell $\ast$, \mbox{\hyperlink{classHArDCore3D_1_1ElementQuad}{Element\+Quad}} \&)$>$ \mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}}
+\begin{DoxyCompactList}\small\item\em type for the load vector as a function of a Cell and an Element\+Quad \end{DoxyCompactList}\end{DoxyCompactItemize}

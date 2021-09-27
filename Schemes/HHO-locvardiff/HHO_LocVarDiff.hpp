@@ -201,6 +201,7 @@ namespace HArDCore3D {
       GlobRHS(Eigen::VectorXd::Zero(m_ntotal_face_dofs)),
       ScRHS(Eigen::VectorXd::Zero(m_ntotal_cell_dofs))
  {
+      m_output << "[HHO_LocVarDiff] Initializing" << std::endl;
       GlobMat.resize(m_ntotal_face_dofs, m_ntotal_face_dofs);        
       ScBeMat.resize(m_ntotal_cell_dofs, m_ntotal_face_dofs);
     // Do nothing

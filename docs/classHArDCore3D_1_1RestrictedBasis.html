@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1RestrictedBasis.html">RestrictedBasis</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1RestrictedBasis.html">RestrictedBasis</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -79,7 +79,7 @@ $(function() {
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classHArDCore3D_1_1RestrictedBasis-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">HArDCore3D::RestrictedBasis&lt; BasisType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Common.html">Common</a></div></div>  </div>
+<div class="title">HArDCore3D::RestrictedBasis&lt; BasisType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Basis.html">Basis</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -90,75 +90,59 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ga18961cbc662cb9fb42904da5d95203ea"><td class="memItemLeft" align="right" valign="top">
-typedef BasisType::FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><b>FunctionValue</b></td></tr>
+<tr class="memitem:ga18961cbc662cb9fb42904da5d95203ea"><td class="memItemLeft" align="right" valign="top">typedef BasisType::FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga18961cbc662cb9fb42904da5d95203ea">FunctionValue</a></td></tr>
 <tr class="separator:ga18961cbc662cb9fb42904da5d95203ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7f6e5f17678f51833321612e93f4963b"><td class="memItemLeft" align="right" valign="top">
-typedef BasisType::GradientValue&#160;</td><td class="memItemRight" valign="bottom"><b>GradientValue</b></td></tr>
+<tr class="memitem:ga7f6e5f17678f51833321612e93f4963b"><td class="memItemLeft" align="right" valign="top">typedef BasisType::GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga7f6e5f17678f51833321612e93f4963b">GradientValue</a></td></tr>
 <tr class="separator:ga7f6e5f17678f51833321612e93f4963b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6bcd1c81b6198d9db1d5e9342c5625fe"><td class="memItemLeft" align="right" valign="top">
-typedef VectorRd&#160;</td><td class="memItemRight" valign="bottom"><b>CurlValue</b></td></tr>
+<tr class="memitem:ga6bcd1c81b6198d9db1d5e9342c5625fe"><td class="memItemLeft" align="right" valign="top">typedef VectorRd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga6bcd1c81b6198d9db1d5e9342c5625fe">CurlValue</a></td></tr>
 <tr class="separator:ga6bcd1c81b6198d9db1d5e9342c5625fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7139d7ecaa9d2985dabf2a0a0c2022f4"><td class="memItemLeft" align="right" valign="top">
-typedef double&#160;</td><td class="memItemRight" valign="bottom"><b>DivergenceValue</b></td></tr>
+<tr class="memitem:ga7139d7ecaa9d2985dabf2a0a0c2022f4"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga7139d7ecaa9d2985dabf2a0a0c2022f4">DivergenceValue</a></td></tr>
 <tr class="separator:ga7139d7ecaa9d2985dabf2a0a0c2022f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga96c46cc3be4f7fde66e70a1001c670d0"><td class="memItemLeft" align="right" valign="top">
-typedef BasisType::GeometricSupport&#160;</td><td class="memItemRight" valign="bottom"><b>GeometricSupport</b></td></tr>
+<tr class="memitem:ga96c46cc3be4f7fde66e70a1001c670d0"><td class="memItemLeft" align="right" valign="top">typedef BasisType::GeometricSupport&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga96c46cc3be4f7fde66e70a1001c670d0">GeometricSupport</a></td></tr>
 <tr class="separator:ga96c46cc3be4f7fde66e70a1001c670d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga280427dc599002fc9047925fd4aac97f"><td class="memItemLeft" align="right" valign="top">typedef BasisType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga280427dc599002fc9047925fd4aac97f">AncestorType</a></td></tr>
+<tr class="separator:ga280427dc599002fc9047925fd4aac97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:gac9623c0deb32ee33cb10de45f4f75702"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gac9623c0deb32ee33cb10de45f4f75702">RestrictedBasis</a> (const BasisType &amp;basis, const size_t &amp;<a class="el" href="group__Common.html#gaf281956665b32bc8613043e4f303182e">dimension</a>)</td></tr>
-<tr class="memdesc:gac9623c0deb32ee33cb10de45f4f75702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Common.html#gac9623c0deb32ee33cb10de45f4f75702">More...</a><br /></td></tr>
+<tr class="memitem:gac9623c0deb32ee33cb10de45f4f75702"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gac9623c0deb32ee33cb10de45f4f75702">RestrictedBasis</a> (const BasisType &amp;basis, const size_t &amp;<a class="el" href="group__Basis.html#gaf281956665b32bc8613043e4f303182e">dimension</a>)</td></tr>
+<tr class="memdesc:gac9623c0deb32ee33cb10de45f4f75702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Basis.html#gac9623c0deb32ee33cb10de45f4f75702">More...</a><br /></td></tr>
 <tr class="separator:gac9623c0deb32ee33cb10de45f4f75702"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf281956665b32bc8613043e4f303182e"><td class="memItemLeft" align="right" valign="top">
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaf281956665b32bc8613043e4f303182e">dimension</a> () const</td></tr>
-<tr class="memdesc:gaf281956665b32bc8613043e4f303182e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimension of the basis. <br /></td></tr>
+<tr class="memitem:gaf281956665b32bc8613043e4f303182e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaf281956665b32bc8613043e4f303182e">dimension</a> () const</td></tr>
+<tr class="memdesc:gaf281956665b32bc8613043e4f303182e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimension of the basis.  <a href="group__Basis.html#gaf281956665b32bc8613043e4f303182e">More...</a><br /></td></tr>
 <tr class="separator:gaf281956665b32bc8613043e4f303182e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga992e1072f409f356ee437ab57a9d195a"><td class="memItemLeft" align="right" valign="top">
-constexpr const BasisType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga992e1072f409f356ee437ab57a9d195a">ancestor</a> () const</td></tr>
-<tr class="memdesc:ga992e1072f409f356ee437ab57a9d195a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the underlying complete basis. <br /></td></tr>
+<tr class="memitem:ga992e1072f409f356ee437ab57a9d195a"><td class="memItemLeft" align="right" valign="top">constexpr const BasisType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga992e1072f409f356ee437ab57a9d195a">ancestor</a> () const</td></tr>
+<tr class="memdesc:ga992e1072f409f356ee437ab57a9d195a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the underlying complete basis.  <a href="group__Basis.html#ga992e1072f409f356ee437ab57a9d195a">More...</a><br /></td></tr>
 <tr class="separator:ga992e1072f409f356ee437ab57a9d195a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafea55bfd37fcfe53c1b6ebe6a9212df8"><td class="memItemLeft" align="right" valign="top">
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gafea55bfd37fcfe53c1b6ebe6a9212df8">max_degree</a> () const</td></tr>
-<tr class="memdesc:gafea55bfd37fcfe53c1b6ebe6a9212df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum degree of the basis functions. <br /></td></tr>
+<tr class="memitem:gafea55bfd37fcfe53c1b6ebe6a9212df8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gafea55bfd37fcfe53c1b6ebe6a9212df8">max_degree</a> () const</td></tr>
+<tr class="memdesc:gafea55bfd37fcfe53c1b6ebe6a9212df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum degree of the basis functions.  <a href="group__Basis.html#gafea55bfd37fcfe53c1b6ebe6a9212df8">More...</a><br /></td></tr>
 <tr class="separator:gafea55bfd37fcfe53c1b6ebe6a9212df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacb26aa08f1f3d62deb174e82dc9c2046"><td class="memItemLeft" align="right" valign="top">
-FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gacb26aa08f1f3d62deb174e82dc9c2046">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
-<tr class="memdesc:gacb26aa08f1f3d62deb174e82dc9c2046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at point x. <br /></td></tr>
+<tr class="memitem:gacb26aa08f1f3d62deb174e82dc9c2046"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga18961cbc662cb9fb42904da5d95203ea">FunctionValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gacb26aa08f1f3d62deb174e82dc9c2046">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+<tr class="memdesc:gacb26aa08f1f3d62deb174e82dc9c2046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at point x.  <a href="group__Basis.html#gacb26aa08f1f3d62deb174e82dc9c2046">More...</a><br /></td></tr>
 <tr class="separator:gacb26aa08f1f3d62deb174e82dc9c2046"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae191627737010694521dc5aae42744cd"><td class="memItemLeft" align="right" valign="top">
-GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gae191627737010694521dc5aae42744cd">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
-<tr class="memdesc:gae191627737010694521dc5aae42744cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th basis function at point x. <br /></td></tr>
+<tr class="memitem:gae191627737010694521dc5aae42744cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga7f6e5f17678f51833321612e93f4963b">GradientValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gae191627737010694521dc5aae42744cd">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+<tr class="memdesc:gae191627737010694521dc5aae42744cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th basis function at point x.  <a href="group__Basis.html#gae191627737010694521dc5aae42744cd">More...</a><br /></td></tr>
 <tr class="separator:gae191627737010694521dc5aae42744cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6886d8130d38f8e0cdeac3c53fe9e177"><td class="memItemLeft" align="right" valign="top">
-CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga6886d8130d38f8e0cdeac3c53fe9e177">curl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
-<tr class="memdesc:ga6886d8130d38f8e0cdeac3c53fe9e177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th basis function at point x. <br /></td></tr>
+<tr class="memitem:ga6886d8130d38f8e0cdeac3c53fe9e177"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga6bcd1c81b6198d9db1d5e9342c5625fe">CurlValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga6886d8130d38f8e0cdeac3c53fe9e177">curl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+<tr class="memdesc:ga6886d8130d38f8e0cdeac3c53fe9e177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th basis function at point x.  <a href="group__Basis.html#ga6886d8130d38f8e0cdeac3c53fe9e177">More...</a><br /></td></tr>
 <tr class="separator:ga6886d8130d38f8e0cdeac3c53fe9e177"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga06c5ecd7cb9ce4c52891c355a5dc2108"><td class="memItemLeft" align="right" valign="top">
-DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga06c5ecd7cb9ce4c52891c355a5dc2108">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
-<tr class="memdesc:ga06c5ecd7cb9ce4c52891c355a5dc2108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at point x. <br /></td></tr>
+<tr class="memitem:ga06c5ecd7cb9ce4c52891c355a5dc2108"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga7139d7ecaa9d2985dabf2a0a0c2022f4">DivergenceValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga06c5ecd7cb9ce4c52891c355a5dc2108">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+<tr class="memdesc:ga06c5ecd7cb9ce4c52891c355a5dc2108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at point x.  <a href="group__Basis.html#ga06c5ecd7cb9ce4c52891c355a5dc2108">More...</a><br /></td></tr>
 <tr class="separator:ga06c5ecd7cb9ce4c52891c355a5dc2108"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ga3f9ce91f8e07c56e0ac2a08c92293ec9"><td class="memItemLeft" align="right" valign="top">
-constexpr static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = BasisType::tensorRank</td></tr>
+<tr class="memitem:ga3f9ce91f8e07c56e0ac2a08c92293ec9"><td class="memItemLeft" align="right" valign="top">constexpr static const <a class="el" href="group__Basis.html#ga81eb4732214b7560fbfa4ee9495c6da4">TensorRankE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga3f9ce91f8e07c56e0ac2a08c92293ec9">tensorRank</a> = BasisType::tensorRank</td></tr>
 <tr class="separator:ga3f9ce91f8e07c56e0ac2a08c92293ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9b0f9cad6af430adde892c2f013b036f"><td class="memItemLeft" align="right" valign="top">
-constexpr static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasAncestor</b> = true</td></tr>
+<tr class="memitem:ga9b0f9cad6af430adde892c2f013b036f"><td class="memItemLeft" align="right" valign="top">constexpr static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga9b0f9cad6af430adde892c2f013b036f">hasAncestor</a> = true</td></tr>
 <tr class="separator:ga9b0f9cad6af430adde892c2f013b036f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac69eacd2dade777041c3320d4b830131"><td class="memItemLeft" align="right" valign="top">
-static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasFunction</b> = BasisType::hasFunction</td></tr>
+<tr class="memitem:gac69eacd2dade777041c3320d4b830131"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gac69eacd2dade777041c3320d4b830131">hasFunction</a> = BasisType::hasFunction</td></tr>
 <tr class="separator:gac69eacd2dade777041c3320d4b830131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6674593e65b0d4b08fec501f5f8030c9"><td class="memItemLeft" align="right" valign="top">
-static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasGradient</b> = BasisType::hasGradient</td></tr>
+<tr class="memitem:ga6674593e65b0d4b08fec501f5f8030c9"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga6674593e65b0d4b08fec501f5f8030c9">hasGradient</a> = BasisType::hasGradient</td></tr>
 <tr class="separator:ga6674593e65b0d4b08fec501f5f8030c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac2fb5928f5487a216fd108f333790461"><td class="memItemLeft" align="right" valign="top">
-static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasCurl</b> = BasisType::hasCurl</td></tr>
+<tr class="memitem:gac2fb5928f5487a216fd108f333790461"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gac2fb5928f5487a216fd108f333790461">hasCurl</a> = BasisType::hasCurl</td></tr>
 <tr class="separator:gac2fb5928f5487a216fd108f333790461"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf5b965b1943c028721975f8044ec9b87"><td class="memItemLeft" align="right" valign="top">
-static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasDivergence</b> = BasisType::hasDivergence</td></tr>
+<tr class="memitem:gaf5b965b1943c028721975f8044ec9b87"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaf5b965b1943c028721975f8044ec9b87">hasDivergence</a> = BasisType::hasDivergence</td></tr>
 <tr class="separator:gaf5b965b1943c028721975f8044ec9b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

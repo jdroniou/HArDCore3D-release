@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['quadraturenode_344',['QuadratureNode',['../structHArDCore3D_1_1QuadratureNode.html',1,'HArDCore3D']]],
-  ['quadruleedge_345',['QuadRuleEdge',['../classHArDCore3D_1_1QuadRuleEdge.html',1,'HArDCore3D']]],
-  ['quadruletetra_346',['QuadRuleTetra',['../classHArDCore3D_1_1QuadRuleTetra.html',1,'HArDCore3D']]],
-  ['quadruletriangle_347',['QuadRuleTriangle',['../classHArDCore3D_1_1QuadRuleTriangle.html',1,'HArDCore3D']]]
+  ['polynomialspacedimension_681',['PolynomialSpaceDimension',['../structHArDCore3D_1_1PolynomialSpaceDimension.html',1,'HArDCore3D']]],
+  ['polynomialspacedimension_3c_20cell_20_3e_682',['PolynomialSpaceDimension&lt; Cell &gt;',['../structHArDCore3D_1_1PolynomialSpaceDimension_3_01Cell_01_4.html',1,'HArDCore3D']]],
+  ['polynomialspacedimension_3c_20edge_20_3e_683',['PolynomialSpaceDimension&lt; Edge &gt;',['../structHArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01_4.html',1,'HArDCore3D']]],
+  ['polynomialspacedimension_3c_20face_20_3e_684',['PolynomialSpaceDimension&lt; Face &gt;',['../structHArDCore3D_1_1PolynomialSpaceDimension_3_01Face_01_4.html',1,'HArDCore3D']]]
 ];

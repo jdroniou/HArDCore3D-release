@@ -2,6 +2,8 @@
 
 #include <ddrcore.hpp>
 #include <parallel_for.hpp>
+#include <GMpoly_cell.hpp>
+#include <GMpoly_face.hpp>
 
 using namespace HArDCore3D;
 
@@ -62,15 +64,14 @@ DDRCore::CellBases DDRCore::_construct_cell_bases(size_t iT)
 
   CellBases bases_T;
   
+  MonomialIntegralsType int_monoT_2kp2 = IntegrateCellMonomials(T, 2*(m_K+2));
+  
   //------------------------------------------------------------------------------
   // Basis for Pk+1(T)
   //------------------------------------------------------------------------------
   
   MonomialScalarBasisCell basis_Pkpo_T(T, m_K + 1);
-  QuadratureRule quad_2kpo_T = generate_quadrature_rule(T, 2 * (m_K + 1));
-  boost::multi_array<double, 2> on_basis_Pkpo_T_quad = evaluate_quad<Function>::compute(basis_Pkpo_T, quad_2kpo_T);
-  // Orthonormalize and store
-  bases_T.Polykpo.reset( new PolyBasisCellType(l2_orthonormalize(basis_Pkpo_T, quad_2kpo_T, on_basis_Pkpo_T_quad)) );   
+  bases_T.Polykpo.reset( new PolyBasisCellType(l2_orthonormalize(basis_Pkpo_T, GramMatrix(T, basis_Pkpo_T, int_monoT_2kp2))) );  
   // Check that we got the dimension right
   assert( bases_T.Polykpo->dimension() == PolynomialSpaceDimension<Cell>::Poly(m_K + 1) );
 
@@ -95,10 +96,10 @@ DDRCore::CellBases DDRCore::_construct_cell_bases(size_t iT)
   if (PolynomialSpaceDimension<Cell>::Goly(m_K - 1) > 0) {
     GradientBasis<ShiftedBasis<MonomialScalarBasisCell> >
       basis_Gkmo_T(ShiftedBasis<MonomialScalarBasisCell>(MonomialScalarBasisCell(T, m_K), 1));
-    QuadratureRule quad_2kmo_T = generate_quadrature_rule(T, 2 * (m_K -1));  
-    auto basis_Gkmo_T_quad = evaluate_quad<Function>::compute(basis_Gkmo_T, quad_2kmo_T);
+
     // Orthonormalize and store the basis
-    bases_T.Golykmo.reset( new GolyBasisCellType(l2_orthonormalize(basis_Gkmo_T, quad_2kmo_T, basis_Gkmo_T_quad)) );
+    bases_T.Golykmo.reset( new GolyBasisCellType(l2_orthonormalize(basis_Gkmo_T, GramMatrix(T, basis_Gkmo_T, int_monoT_2kp2))) );
+
     // Check that we got the dimension right
     assert( bases_T.Golykmo->dimension() == PolynomialSpaceDimension<Cell>::Goly(m_K - 1) );
   } // if
@@ -106,50 +107,43 @@ DDRCore::CellBases DDRCore::_construct_cell_bases(size_t iT)
   //------------------------------------------------------------------------------
   // Bases for Gck(T), Gck+1(T), and Rk-1(T)
   //------------------------------------------------------------------------------
-
+ 
   // Gck+1(T) (orthonormalised)
   GolyComplBasisCell basis_Gckpo_T(T, m_K+1);
-  auto on_basis_Gckpo_T_quad = evaluate_quad<Function>::compute(basis_Gckpo_T, quad_2kpo_T);
-  bases_T.GolyComplkpo.reset( new GolyComplBasisCellType(l2_orthonormalize(basis_Gckpo_T, quad_2kpo_T, on_basis_Gckpo_T_quad)) );
+  bases_T.GolyComplkpo.reset( new GolyComplBasisCellType(l2_orthonormalize(basis_Gckpo_T, GramMatrix(T, basis_Gckpo_T, int_monoT_2kp2))) );
+
   // check dimension
   assert( bases_T.GolyComplkpo->dimension() == PolynomialSpaceDimension<Cell>::GolyCompl(m_K + 1) );
  
-  // A quadrature of order 2k could be also useful below, so we create it here
-  QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2 * m_K);
+
   if (PolynomialSpaceDimension<Cell>::GolyCompl(m_K) > 0) {
     // Gck(T)
     GolyComplBasisCell basis_Gck_T(T, m_K);
-    auto on_basis_Gck_T_quad = evaluate_quad<Function>::compute(basis_Gck_T, quad_2k_T); 
-    bases_T.GolyComplk.reset( new GolyComplBasisCellType(l2_orthonormalize(basis_Gck_T, quad_2k_T, on_basis_Gck_T_quad)) );
+    bases_T.GolyComplk.reset( new GolyComplBasisCellType(l2_orthonormalize(basis_Gck_T, GramMatrix(T, basis_Gck_T, int_monoT_2kp2))) );
     assert( bases_T.GolyComplk->dimension() == PolynomialSpaceDimension<Cell>::GolyCompl(m_K) );
 
     // Basis for curl Gck. We do not want to restart from bases_T.GolyComplk because it is orthonormalised (so a 
     // Family of other bases); if we started from this one, after orthonormalisation, the basis of Rk-1(T) would be
     // a Family of a Family, for which any evaluation could be quite expensive. 
     CurlBasis<GolyComplBasisCell> basis_curl_Gck_T(basis_Gck_T);
-    auto basis_curl_Gck_T_quad = evaluate_quad<Function>::compute(basis_curl_Gck_T, quad_2k_T);
-    // Orthonormalize and store as basis of Rk-1(T), then check dimension
-    bases_T.Rolykmo.reset( new RolyBasisCellType(l2_orthonormalize(basis_curl_Gck_T, quad_2k_T, basis_curl_Gck_T_quad)) );   
+    bases_T.Rolykmo.reset( new RolyBasisCellType(l2_orthonormalize(basis_curl_Gck_T, GramMatrix(T, basis_curl_Gck_T, int_monoT_2kp2))) );   
     assert( bases_T.Rolykmo->dimension() == PolynomialSpaceDimension<Cell>::Roly(m_K - 1));
-
   } // if
+
 
   //------------------------------------------------------------------------------
   // Basis for Rck(T) and Rck+2(T)
   //------------------------------------------------------------------------------
   // Rck+2(T) (orthonormalised)
   RolyComplBasisCell basis_Rckp2_T(T, m_K+2);
-  QuadratureRule quad_2kp2_T = generate_quadrature_rule(T, 2 * (m_K+2));
-  auto on_basis_Rckp2_T_quad = evaluate_quad<Function>::compute(basis_Rckp2_T, quad_2kp2_T);
-  bases_T.RolyComplkp2.reset( new RolyComplBasisCellType(l2_orthonormalize(basis_Rckp2_T, quad_2kp2_T, on_basis_Rckp2_T_quad)) );
+  bases_T.RolyComplkp2.reset( new RolyComplBasisCellType(l2_orthonormalize(basis_Rckp2_T, GramMatrix(T, basis_Rckp2_T, int_monoT_2kp2))) );
   assert ( bases_T.RolyComplkp2->dimension() == PolynomialSpaceDimension<Cell>::RolyCompl(m_K+2) );
 
   // Rck(T) (orthonormalised). Could probably also be obtained as a RestrictedBasis of the previous one, but would
   // need to check if the basis for Rck are indeed hierarchical
   if (PolynomialSpaceDimension<Cell>::RolyCompl(m_K) > 0) { 
     RolyComplBasisCell basis_Rck_T(T, m_K);
-    auto on_basis_Rck_T_quad = evaluate_quad<Function>::compute(basis_Rck_T, quad_2k_T);
-    bases_T.RolyComplk.reset( new RolyComplBasisCellType(l2_orthonormalize(basis_Rck_T, quad_2k_T, on_basis_Rck_T_quad)) );
+    bases_T.RolyComplk.reset( new RolyComplBasisCellType(l2_orthonormalize(basis_Rck_T, GramMatrix(T, basis_Rck_T, int_monoT_2kp2))) );
     assert ( bases_T.RolyComplk->dimension() == PolynomialSpaceDimension<Cell>::RolyCompl(m_K) );
   } // if
 
@@ -164,17 +158,16 @@ DDRCore::FaceBases DDRCore::_construct_face_bases(size_t iF)
   
   FaceBases bases_F;
 
+  MonomialFaceIntegralsType int_monoF_2kp2 = IntegrateFaceMonomials(F, 2*(m_K+2));
+
   //------------------------------------------------------------------------------
   // Basis for Pk+1(F)
   //------------------------------------------------------------------------------
-  
   MonomialScalarBasisFace basis_Pkpo_F(F, m_K + 1);
-  QuadratureRule quad_2kpo_F = generate_quadrature_rule(F, 2 * (m_K + 1));
-  auto basis_Pkpo_F_quad = evaluate_quad<Function>::compute(basis_Pkpo_F, quad_2kpo_F);
-  // Orthonormalize and store the basis
-  bases_F.Polykpo.reset( new PolyBasisFaceType(l2_orthonormalize(basis_Pkpo_F, quad_2kpo_F, basis_Pkpo_F_quad)) );
+  bases_F.Polykpo.reset( new PolyBasisFaceType(l2_orthonormalize(basis_Pkpo_F, GramMatrix(F, basis_Pkpo_F, int_monoF_2kp2))) );
   // Check that we got the dimension right
   assert( bases_F.Polykpo->dimension() == PolynomialSpaceDimension<Face>::Poly(m_K + 1) );
+
 
   //------------------------------------------------------------------------------
   // Basis for Pk(F), Pk-1(F) and Pk(F)^2
@@ -186,18 +179,15 @@ DDRCore::FaceBases DDRCore::_construct_face_bases(size_t iF)
   if (PolynomialSpaceDimension<Face>::Poly(m_K - 1) > 0) {
     bases_F.Polykmo.reset( new RestrictedBasis<PolyBasisFaceType>(*bases_F.Polykpo, PolynomialSpaceDimension<Face>::Poly(m_K - 1)) );
   }
-  // Basis of Pk(F)^2 as TangentFamily. The two "ancestor" come back to the original MonomialScalarBasisFace, to get its jacobian  
-  bases_F.Polyk2.reset( new Poly2BasisFaceType(*bases_F.Polyk,bases_F.Polyk->ancestor().ancestor().jacobian()) );
+  // Basis of Pk(F)^2 as TangentFamily. We use the system of coordinates of the basis on the face as generators of the face
+  bases_F.Polyk2.reset( new Poly2BasisFaceType(*bases_F.Polyk, basis_Pkpo_F.coordinates_system()) );
   // Check dimension
   assert( bases_F.Polyk2->dimension() == 2 * PolynomialSpaceDimension<Face>::Poly(m_K) );
+  
   
   //------------------------------------------------------------------------------
   // Basis for Rk-1(F)
   //------------------------------------------------------------------------------
-
-  // Quadrature useful for various spaces to follow (degree might be too large in certain cases, but that is
-  // not a major additional cost in 2D)
-  QuadratureRule quad_2k_F = generate_quadrature_rule(F, 2 * m_K);
 
   if (PolynomialSpaceDimension<Face>::Roly(m_K - 1) > 0) {
     // Non-orthonormalised basis of Rk-1(F). 
@@ -205,8 +195,7 @@ DDRCore::FaceBases DDRCore::_construct_face_bases(size_t iF)
     ShiftedBasis<MonomialScalarBasisFace> basis_Pk0_F(basis_Pk_F,1);
     CurlBasis<ShiftedBasis<MonomialScalarBasisFace>> basis_Rkmo_F(basis_Pk0_F);
     // Orthonormalise, store and check dimension
-    auto basis_Rkmo_F_quad = evaluate_quad<Function>::compute(basis_Rkmo_F, quad_2k_F);
-    bases_F.Rolykmo.reset( new RolyBasisFaceType(l2_orthonormalize(basis_Rkmo_F, quad_2k_F, basis_Rkmo_F_quad)) );
+    bases_F.Rolykmo.reset( new RolyBasisFaceType(l2_orthonormalize(basis_Rkmo_F, GramMatrix(F, basis_Rkmo_F, int_monoF_2kp2))) );
     assert( bases_F.Rolykmo->dimension() == PolynomialSpaceDimension<Face>::Roly(m_K - 1) );
   }
   
@@ -215,11 +204,8 @@ DDRCore::FaceBases DDRCore::_construct_face_bases(size_t iF)
   //------------------------------------------------------------------------------
 
   if (PolynomialSpaceDimension<Face>::RolyCompl(m_K) > 0) {
-    // Non-orthonormalised
     RolyComplBasisFace basis_Rck_F(F, m_K);
-    auto basis_Rck_F_quad = evaluate_quad<Function>::compute(basis_Rck_F, quad_2k_F);
-    // Orthonormalise, store and check dimension
-    bases_F.RolyComplk.reset( new RolyComplBasisFaceType(l2_orthonormalize(basis_Rck_F, quad_2k_F, basis_Rck_F_quad)) );
+    bases_F.RolyComplk.reset( new RolyComplBasisFaceType(l2_orthonormalize(basis_Rck_F, GramMatrix(F, basis_Rck_F, int_monoF_2kp2))) );
     assert ( bases_F.RolyComplk->dimension() == PolynomialSpaceDimension<Face>::RolyCompl(m_K) );
   }
 
@@ -227,15 +213,10 @@ DDRCore::FaceBases DDRCore::_construct_face_bases(size_t iF)
   // Basis for Rck+2(F)
   //------------------------------------------------------------------------------
 
-  // Non-orthonormalised
   RolyComplBasisFace basis_Rckp2_F(F, m_K+2);
-  QuadratureRule quad_2kp2_F = generate_quadrature_rule(F, 2 * (m_K+2) );
-  auto basis_Rckp2_F_quad = evaluate_quad<Function>::compute(basis_Rckp2_F, quad_2kp2_F);
-  // Orthonormalise, store and check dimension
-  bases_F.RolyComplkp2.reset( new RolyComplBasisFaceType(l2_orthonormalize(basis_Rckp2_F, quad_2kp2_F, basis_Rckp2_F_quad)) );
+  bases_F.RolyComplkp2.reset( new RolyComplBasisFaceType(l2_orthonormalize(basis_Rckp2_F, GramMatrix(F, basis_Rckp2_F, int_monoF_2kp2))) );
   assert ( bases_F.RolyComplkp2->dimension() == PolynomialSpaceDimension<Face>::RolyCompl(m_K+2) );
 
-  
   return bases_F;
 }
 

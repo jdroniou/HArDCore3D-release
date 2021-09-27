@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['hho3d_634',['HHO3D',['../group__HHO3D.html',1,'']]],
-  ['hho_5fdiffadvecreac_635',['HHO_DiffAdvecReac',['../group__HHO__DiffAdvecReac.html',1,'']]],
-  ['hho_5fdiffusion_636',['HHO_Diffusion',['../group__HHO__Diffusion.html',1,'']]],
-  ['hho_5flocvardiff_637',['HHO_LocVarDiff',['../group__HHO__LocVarDiff.html',1,'']]],
-  ['hybridcore_638',['HybridCore',['../group__HybridCore.html',1,'']]]
+  ['ddr_5fmagnetostatic_1327',['DDR_magnetostatic',['../group__DDR__magnetostatic.html',1,'']]],
+  ['ddrcore_1328',['DDRCore',['../group__DDRCore.html',1,'']]],
+  ['directedgraph_1329',['DirectedGraph',['../group__DirectedGraph.html',1,'']]]
 ];

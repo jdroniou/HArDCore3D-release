@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['a_606',['A',['../group__DirectedGraph.html#ga2c55773429d4c6d9411607795cc9b340',1,'CellNodeArray']]]
+  ['_5fnpts_1147',['_npts',['../group__Quadratures.html#gaecf0514e3812232ca758bab779318ca3',1,'HArDCore3D::QuadRuleTriangle']]],
+  ['_5fw_1148',['_w',['../group__Quadratures.html#gafdb1f7da129756e5ca6ff329cd366928',1,'HArDCore3D::QuadRuleTriangle']]],
+  ['_5fxy_1149',['_xy',['../group__Quadratures.html#ga23e20aac779af8eb9a8d75b2e330b706',1,'HArDCore3D::QuadRuleTriangle']]]
 ];

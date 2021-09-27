@@ -77,21 +77,21 @@ $(function() {
 <div class="title">math.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _MATH_HPP</span></div>
+<a href="math_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _MATH_HPP</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _MATH_HPP</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>Math</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespaceMath.html">    5</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceMath.html">Math</a></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;     <span class="keyword">const</span> <span class="keywordtype">double</span> PI = acos(-1);</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespaceMath.html#ab940eb2360ac3c29182d1fe5b841c645">    9</a></span>&#160;     <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespaceMath.html#ab940eb2360ac3c29182d1fe5b841c645">PI</a> = acos(-1);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;     <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> factorial(<span class="keywordtype">size_t</span> n)</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespaceMath.html#ac0ab702ff8c669eb58b63a87a67003a1">   11</a></span>&#160;     <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="namespaceMath.html#ac0ab702ff8c669eb58b63a87a67003a1">factorial</a>(<span class="keywordtype">size_t</span> n)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;     {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;          <span class="keywordflow">return</span> (n == 1 || n == 0) ? 1 : factorial(n - 1) * n;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;          <span class="keywordflow">return</span> (n == 1 || n == 0) ? 1 : <a class="code" href="namespaceMath.html#ac0ab702ff8c669eb58b63a87a67003a1">factorial</a>(n - 1) * n;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;     }</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;     <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> nChoosek(<span class="keywordtype">size_t</span> n, <span class="keywordtype">size_t</span> k)</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespaceMath.html#a9fca2b36820c63bc7393d2d4695eeae5">   16</a></span>&#160;     <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="namespaceMath.html#a9fca2b36820c63bc7393d2d4695eeae5">nChoosek</a>(<span class="keywordtype">size_t</span> n, <span class="keywordtype">size_t</span> k)</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;     {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;          <span class="keywordflow">if</span> (k &gt; n)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          {</div>
@@ -116,7 +116,7 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;     }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;     <span class="keyword">const</span> <span class="keywordtype">int</span> sgn(T val)</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespaceMath.html#a2120af6e1bdae00b158ae1777adc5685">   41</a></span>&#160;     <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceMath.html#a2120af6e1bdae00b158ae1777adc5685">sgn</a>(T val)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;     {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;          <span class="keywordflow">return</span> (T(0) &lt; val) - (val &lt; T(0));</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;     }</div>
@@ -124,25 +124,25 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;     <span class="comment">// branch -1: -2\pi &lt; \theta \le 0</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;     <span class="comment">// branch 0:  -\pi &lt; \theta \le \pi</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;     <span class="comment">// branch 1:  0 \le \theta &lt; 2\pi</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;     <span class="keyword">inline</span> <span class="keywordtype">double</span> atan2(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> x, <span class="keywordtype">int</span> branch = 0)</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespaceMath.html#a75b9445812f3d8c8d380e2a19c0b09d2">   49</a></span>&#160;     <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="namespaceMath.html#a75b9445812f3d8c8d380e2a19c0b09d2">atan2</a>(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> x, <span class="keywordtype">int</span> branch = 0)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;     {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;          <span class="keywordtype">double</span> val = (((x != 0) || (y != 0)) ? std::atan2(y, x) : 0.0);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;          <span class="keywordtype">double</span> val = (((x != 0) || (y != 0)) ? <a class="code" href="namespaceMath.html#a75b9445812f3d8c8d380e2a19c0b09d2">std::atan2</a>(y, x) : 0.0);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;          <span class="keywordflow">if</span> (branch == 1)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;               <span class="keywordflow">if</span> (y &lt; 0)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;               {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    val += 2.0 * PI;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    val += 2.0 * <a class="code" href="namespaceMath.html#ab940eb2360ac3c29182d1fe5b841c645">PI</a>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;               }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          <span class="keywordflow">if</span> (branch == -1)</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;               <span class="keywordflow">if</span> (y &gt; 0)</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;               {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    val -= 2.0 * PI;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    val -= 2.0 * <a class="code" href="namespaceMath.html#ab940eb2360ac3c29182d1fe5b841c645">PI</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;               }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;               <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((y == 0) &amp;&amp; (x &lt; 0))</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;               {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    val -= 2.0 * PI;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    val -= 2.0 * <a class="code" href="namespaceMath.html#ab940eb2360ac3c29182d1fe5b841c645">PI</a>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;               }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;          }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          <span class="keywordflow">return</span> val;</div>
@@ -151,6 +151,12 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceMath_html_a9fca2b36820c63bc7393d2d4695eeae5"><div class="ttname"><a href="namespaceMath.html#a9fca2b36820c63bc7393d2d4695eeae5">Math::nChoosek</a></div><div class="ttdeci">const size_t nChoosek(size_t n, size_t k)</div><div class="ttdef"><b>Definition:</b> math.hpp:16</div></div>
+<div class="ttc" id="anamespaceMath_html_ab940eb2360ac3c29182d1fe5b841c645"><div class="ttname"><a href="namespaceMath.html#ab940eb2360ac3c29182d1fe5b841c645">Math::PI</a></div><div class="ttdeci">const double PI</div><div class="ttdoc">Free math functions and global variables ///.</div><div class="ttdef"><b>Definition:</b> math.hpp:9</div></div>
+<div class="ttc" id="anamespaceMath_html_ac0ab702ff8c669eb58b63a87a67003a1"><div class="ttname"><a href="namespaceMath.html#ac0ab702ff8c669eb58b63a87a67003a1">Math::factorial</a></div><div class="ttdeci">const size_t factorial(size_t n)</div><div class="ttdef"><b>Definition:</b> math.hpp:11</div></div>
+<div class="ttc" id="anamespaceMath_html_a75b9445812f3d8c8d380e2a19c0b09d2"><div class="ttname"><a href="namespaceMath.html#a75b9445812f3d8c8d380e2a19c0b09d2">Math::atan2</a></div><div class="ttdeci">double atan2(double y, double x, int branch=0)</div><div class="ttdef"><b>Definition:</b> math.hpp:49</div></div>
+<div class="ttc" id="anamespaceMath_html_a2120af6e1bdae00b158ae1777adc5685"><div class="ttname"><a href="namespaceMath.html#a2120af6e1bdae00b158ae1777adc5685">Math::sgn</a></div><div class="ttdeci">const int sgn(T val)</div><div class="ttdef"><b>Definition:</b> math.hpp:41</div></div>
+<div class="ttc" id="anamespaceMath_html"><div class="ttname"><a href="namespaceMath.html">Math</a></div><div class="ttdef"><b>Definition:</b> math.hpp:5</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

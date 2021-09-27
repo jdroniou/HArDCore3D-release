@@ -1,0 +1,52 @@
+\hypertarget{hybridcore_8hpp}{}\doxysection{src/\+Hybrid\+Core/hybridcore.hpp File Reference}
+\label{hybridcore_8hpp}\index{src/HybridCore/hybridcore.hpp@{src/HybridCore/hybridcore.hpp}}
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$mesh.\+hpp$>$}\newline
+{\ttfamily \#include $<$quadraturerule.\+hpp$>$}\newline
+{\ttfamily \#include $<$basis.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$parallel\+\_\+for.\+hpp$>$}\newline
+Include dependency graph for hybridcore.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hybridcore_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hybridcore_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1UVector}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector}}
+\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceHArDCore3D}{H\+Ar\+D\+Core3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Geometric\+Support $>$ }\\const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gac0ae8087a2aec77c7bf42b35becef286}{H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly}} (int m)
+\item 
+template$<$$>$ const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gac24ef7d804b2e6401b814a9cb51dc38c}{H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Cell $>$}} (const int m)
+\begin{DoxyCompactList}\small\item\em Compute the size of the basis of 3-\/variate polynomials up to degree m. \end{DoxyCompactList}\item 
+template$<$$>$ const size\+\_\+t \mbox{\hyperlink{group__HybridCore_ga54992ff646d6a458520e588efa649cc6}{H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Face $>$}} (const int m)
+\begin{DoxyCompactList}\small\item\em Compute the size of the basis of 2-\/variate polynomials up to degree m. \end{DoxyCompactList}\item 
+template$<$$>$ const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gacd3736783277672d9dd3ed154727f3bf}{H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Edge $>$}} (const int m)
+\begin{DoxyCompactList}\small\item\em Compute the size of the basis of 1-\/variate polynomials up to degree m. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,16 +1,14 @@
 var searchData=
 [
-  ['n_5fcell_5fdofs_192',['n_cell_dofs',['../group__HybridCore.html#ga0ca65e887f268ac464d45c45f2d1c4a4',1,'HArDCore3D::UVector']]],
-  ['n_5fdir_5ffaces_193',['n_dir_faces',['../classBoundaryConditions.html#af9e9493f0ba9be92b7299838bc08f0bf',1,'BoundaryConditions']]],
-  ['n_5fface_5fdofs_194',['n_face_dofs',['../group__HybridCore.html#gaa1f68faa5324ceceee6d49e66e766fc3',1,'HArDCore3D::UVector']]],
-  ['n_5ftotal_5fcell_5fdofs_195',['n_total_cell_dofs',['../group__HybridCore.html#ga5a48f281a6cdabd298d5f2edf4c04022',1,'HArDCore3D::UVector']]],
-  ['name_196',['name',['../classBoundaryConditions.html#ac3609733d5e7e43e9240d0a8b05d17ba',1,'BoundaryConditions']]],
-  ['nbscdofs_197',['nbSCDOFs',['../group__DDR__magnetostatic.html#ga4a501f243a498fd6567c2b7b71c9be98',1,'HArDCore3D::Magnetostatics']]],
-  ['neumann_5fsolve_198',['neumann_solve',['../group__HHO3D.html#gaacf2c087a7d345451faf00bf789c2149',1,'HHO3D']]],
-  ['node_5fexists_199',['node_exists',['../group__DirectedGraph.html#gaeaa08c422428f795a4b3061010fa32fc',1,'CellNodeArray::node_exists()'],['../group__DirectedGraph.html#ga643e4b8829864ecd3bc5e6dcc904bfd6',1,'GraphNodeArray::node_exists()']]],
-  ['normal_200',['normal',['../group__Mesh.html#gadaf3f7f4977287819dc61cc845cbb900',1,'MeshND::MeshObject::normal()'],['../group__Common.html#ga299c04e82954cd6bd69a31de664d1150',1,'HArDCore3D::MonomialScalarBasisFace::normal()'],['../group__Common.html#ga942d185d76dc58075a5db479eb3c0e14',1,'HArDCore3D::GolyComplBasisFace::normal()']]],
-  ['numlocaldofscell_201',['numLocalDofsCell',['../group__Common.html#ga3ec18049e568f17ccbf04ae9216db601',1,'HArDCore3D::DOFSpace']]],
-  ['numlocaldofsedge_202',['numLocalDofsEdge',['../group__Common.html#ga7321aa89e3ad93fe1ef8f561219c9fa5',1,'HArDCore3D::DOFSpace']]],
-  ['numlocaldofsface_203',['numLocalDofsFace',['../group__Common.html#gadc8f600c487fc36a3251f785431f50f5',1,'HArDCore3D::DOFSpace']]],
-  ['numlocaldofsvertex_204',['numLocalDofsVertex',['../group__Common.html#gab3cbb4fe1085b32192baf757864a12d2',1,'HArDCore3D::DOFSpace']]]
+  ['l_323',['L',['../group__HHO__DiffAdvecReac.html#ga91a0b997ce3aa9aa56b8cba3620fed15',1,'HHO_DiffAdvecReac.hpp']]],
+  ['l2_5forthonormalize_324',['l2_orthonormalize',['../group__Basis.html#ga087cb67abbfba7c2d90f67a4e05abc20',1,'HArDCore3D::l2_orthonormalize(const BasisType &amp;basis, const QuadratureRule &amp;qr, boost::multi_array&lt; typename BasisType::FunctionValue, 2 &gt; &amp;basis_quad)'],['../group__Basis.html#ga568161021efb47bf500bc9b4eee9ce5e',1,'HArDCore3D::l2_orthonormalize(const BasisType &amp;basis, const Eigen::MatrixXd &amp;GM)']]],
+  ['l2_5fprojection_325',['l2_projection',['../group__Basis.html#ga658cc3dbb96110d2a295ef85e6d85ecc',1,'HArDCore3D']]],
+  ['l2norm_326',['L2norm',['../group__HybridCore.html#gab37ab89bf946e237821dd978f475b7c8',1,'HArDCore3D::HybridCore']]],
+  ['legendregauss_327',['LegendreGauss',['../classHArDCore3D_1_1LegendreGauss.html',1,'HArDCore3D::LegendreGauss'],['../group__Quadratures.html#ga4df4c78f50b0116cb68151073a45e08a',1,'HArDCore3D::LegendreGauss::LegendreGauss()']]],
+  ['linear_5ff_328',['linear_f',['../group__DDR__magnetostatic.html#gafacd77f29b93a3d1950bf37e7d4c9205',1,'HArDCore3D']]],
+  ['linear_5fmu_329',['linear_mu',['../group__DDR__magnetostatic.html#ga415ee30bd823542e7f21c5f78914a085',1,'HArDCore3D']]],
+  ['linear_5fsigma_330',['linear_sigma',['../group__DDR__magnetostatic.html#ga25711e256e87167ef3e392f477ae4008',1,'HArDCore3D']]],
+  ['linear_5fu_331',['linear_u',['../group__DDR__magnetostatic.html#ga1b83cbc5fa63f2dd2e4ca7781c8dac5b',1,'HArDCore3D']]],
+  ['localoffset_332',['localOffset',['../group__Common.html#ga48882a60b19f7a2a6fdb6131a6a1f555',1,'HArDCore3D::DOFSpace::localOffset(const Edge &amp;E, const Vertex &amp;V) const'],['../group__Common.html#gaf5461326d116945f36c43696079ddcf7',1,'HArDCore3D::DOFSpace::localOffset(const Edge &amp;E) const'],['../group__Common.html#gaff0c032a9f7f742b08023015e09f4a65',1,'HArDCore3D::DOFSpace::localOffset(const Face &amp;F, const Vertex &amp;V) const'],['../group__Common.html#ga2d0c748052389a75d261b8a22d2e77fc',1,'HArDCore3D::DOFSpace::localOffset(const Face &amp;F, const Edge &amp;E) const'],['../group__Common.html#ga6b808cb9c2188eefd660994dcdc21dfb',1,'HArDCore3D::DOFSpace::localOffset(const Face &amp;F) const'],['../group__Common.html#gae3d61c6860ac8b8e0be93106ff0f334a',1,'HArDCore3D::DOFSpace::localOffset(const Cell &amp;T, const Vertex &amp;V) const'],['../group__Common.html#ga9f90bbc7123b42a9f5e46ee01467e401',1,'HArDCore3D::DOFSpace::localOffset(const Cell &amp;T, const Edge &amp;E) const'],['../group__Common.html#gac482cd7e8c15b56548b57993e753c1c7',1,'HArDCore3D::DOFSpace::localOffset(const Cell &amp;T, const Face &amp;F) const'],['../group__Common.html#ga1780a89a433818e0d7adc3c16dc4b0c1',1,'HArDCore3D::DOFSpace::localOffset(const Cell &amp;T) const']]],
+  ['localoperators_333',['LocalOperators',['../structHArDCore3D_1_1XCurl_1_1LocalOperators.html',1,'HArDCore3D::XCurl::LocalOperators'],['../structHArDCore3D_1_1XDiv_1_1LocalOperators.html',1,'HArDCore3D::XDiv::LocalOperators'],['../structHArDCore3D_1_1XGrad_1_1LocalOperators.html',1,'HArDCore3D::XGrad::LocalOperators'],['../group__DDRCore.html#gaea4f00813cd819f8d6b4246a95d523e0',1,'HArDCore3D::XCurl::LocalOperators::LocalOperators()'],['../group__DDRCore.html#gae3e67d2c8a03204068df005ae75ea771',1,'HArDCore3D::XDiv::LocalOperators::LocalOperators()'],['../group__DDRCore.html#ga21b5a4a95584f8f4a37941be1ebe89f1',1,'HArDCore3D::XGrad::LocalOperators::LocalOperators()']]]
 ];

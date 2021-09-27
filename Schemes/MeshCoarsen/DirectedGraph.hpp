@@ -15,7 +15,7 @@
 
 /*!	
  * @defgroup DirectedGraph 
- * @brief The DirectedGraph class as well as classes that make it up and the NodeArray class
+ * @brief Provides tools to coarsen a mesh
  */
 
 /*!

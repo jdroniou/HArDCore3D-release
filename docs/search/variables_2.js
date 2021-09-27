@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['g_608',['G',['../group__DirectedGraph.html#ga607e96aec2a7672a9ba375f38c0288dc',1,'DirectedGraph']]],
-  ['ga_609',['GA',['../group__DirectedGraph.html#gab4fb0c81bc08201a646916657ec67b0f',1,'GraphNodeArray']]]
+  ['bc_5fid_1152',['bc_id',['../group__HHO__DiffAdvecReac.html#ga13b5a180bd74bcc66c3e5429b4171d33',1,'HHO_DiffAdvecReac.hpp']]]
 ];

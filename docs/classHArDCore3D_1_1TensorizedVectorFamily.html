@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -79,7 +79,7 @@ $(function() {
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classHArDCore3D_1_1TensorizedVectorFamily-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Common.html">Common</a></div></div>  </div>
+<div class="title">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__Basis.html">Basis</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -90,91 +90,70 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ga5a0fe2c82baec8624b201a536551fba1"><td class="memItemLeft" align="right" valign="top">
-typedef Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FunctionValue</b></td></tr>
+<tr class="memitem:ga5a0fe2c82baec8624b201a536551fba1"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga5a0fe2c82baec8624b201a536551fba1">FunctionValue</a></td></tr>
 <tr class="separator:ga5a0fe2c82baec8624b201a536551fba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga882d73f02d56827fc7f051ebf2a6befb"><td class="memItemLeft" align="right" valign="top">
-typedef Eigen::Matrix&lt; double, N, dimspace &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GradientValue</b></td></tr>
+<tr class="memitem:ga882d73f02d56827fc7f051ebf2a6befb"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; double, N, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga882d73f02d56827fc7f051ebf2a6befb">GradientValue</a></td></tr>
 <tr class="separator:ga882d73f02d56827fc7f051ebf2a6befb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2a99d3ad58e081c33fe712c019b0d704"><td class="memItemLeft" align="right" valign="top">
-typedef VectorRd&#160;</td><td class="memItemRight" valign="bottom"><b>CurlValue</b></td></tr>
+<tr class="memitem:ga2a99d3ad58e081c33fe712c019b0d704"><td class="memItemLeft" align="right" valign="top">typedef VectorRd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga2a99d3ad58e081c33fe712c019b0d704">CurlValue</a></td></tr>
 <tr class="separator:ga2a99d3ad58e081c33fe712c019b0d704"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga375f5cfa1074a92ef276ba76145d2b83"><td class="memItemLeft" align="right" valign="top">
-typedef double&#160;</td><td class="memItemRight" valign="bottom"><b>DivergenceValue</b></td></tr>
+<tr class="memitem:ga375f5cfa1074a92ef276ba76145d2b83"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga375f5cfa1074a92ef276ba76145d2b83">DivergenceValue</a></td></tr>
 <tr class="separator:ga375f5cfa1074a92ef276ba76145d2b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac71379becbe0edb006c5df44660bf3aa"><td class="memItemLeft" align="right" valign="top">
-typedef ScalarFamilyType::GeometricSupport&#160;</td><td class="memItemRight" valign="bottom"><b>GeometricSupport</b></td></tr>
+<tr class="memitem:gac71379becbe0edb006c5df44660bf3aa"><td class="memItemLeft" align="right" valign="top">typedef ScalarFamilyType::GeometricSupport&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gac71379becbe0edb006c5df44660bf3aa">GeometricSupport</a></td></tr>
 <tr class="separator:gac71379becbe0edb006c5df44660bf3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga746de3efad21ba2e602237c4c2badc26"><td class="memItemLeft" align="right" valign="top">typedef ScalarFamilyType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga746de3efad21ba2e602237c4c2badc26">AncestorType</a></td></tr>
+<tr class="separator:ga746de3efad21ba2e602237c4c2badc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga2f34ec8677412c819a7a49b91401c70f"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><b>TensorizedVectorFamily</b> (const ScalarFamilyType &amp;scalar_family)</td></tr>
+<tr class="memitem:ga2f34ec8677412c819a7a49b91401c70f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga2f34ec8677412c819a7a49b91401c70f">TensorizedVectorFamily</a> (const ScalarFamilyType &amp;scalar_family)</td></tr>
 <tr class="separator:ga2f34ec8677412c819a7a49b91401c70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1f8e17599e9b38b58ef247317783c51f"><td class="memItemLeft" align="right" valign="top">
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga1f8e17599e9b38b58ef247317783c51f">dimension</a> () const</td></tr>
-<tr class="memdesc:ga1f8e17599e9b38b58ef247317783c51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimension of the family. <br /></td></tr>
+<tr class="memitem:ga1f8e17599e9b38b58ef247317783c51f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga1f8e17599e9b38b58ef247317783c51f">dimension</a> () const</td></tr>
+<tr class="memdesc:ga1f8e17599e9b38b58ef247317783c51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimension of the family.  <a href="group__Basis.html#ga1f8e17599e9b38b58ef247317783c51f">More...</a><br /></td></tr>
 <tr class="separator:ga1f8e17599e9b38b58ef247317783c51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac34ef60810b5d9641458c640bb66b3b4"><td class="memItemLeft" align="right" valign="top">
-FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gac34ef60810b5d9641458c640bb66b3b4">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
-<tr class="memdesc:gac34ef60810b5d9641458c640bb66b3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at point x. <br /></td></tr>
+<tr class="memitem:gac34ef60810b5d9641458c640bb66b3b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga5a0fe2c82baec8624b201a536551fba1">FunctionValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gac34ef60810b5d9641458c640bb66b3b4">function</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+<tr class="memdesc:gac34ef60810b5d9641458c640bb66b3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at point x.  <a href="group__Basis.html#gac34ef60810b5d9641458c640bb66b3b4">More...</a><br /></td></tr>
 <tr class="separator:gac34ef60810b5d9641458c640bb66b3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2a76b33d6046e1bd46409ec3aacbd425"><td class="memItemLeft" align="right" valign="top">
-FunctionValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2a76b33d6046e1bd46409ec3aacbd425">function</a> (size_t i, size_t iqn, const boost::multi_array&lt; double, 2 &gt; &amp;ancestor_value_quad) const</td></tr>
-<tr class="memdesc:ga2a76b33d6046e1bd46409ec3aacbd425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at a quadrature point iqn, knowing all the values of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="memitem:ga2a76b33d6046e1bd46409ec3aacbd425"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga5a0fe2c82baec8624b201a536551fba1">FunctionValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga2a76b33d6046e1bd46409ec3aacbd425">function</a> (size_t i, size_t iqn, const boost::multi_array&lt; double, 2 &gt; &amp;ancestor_value_quad) const</td></tr>
+<tr class="memdesc:ga2a76b33d6046e1bd46409ec3aacbd425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the i-th basis function at a quadrature point iqn, knowing all the values of ancestor basis functions at the quadrature nodes (provided by eval_quad)  <a href="group__Basis.html#ga2a76b33d6046e1bd46409ec3aacbd425">More...</a><br /></td></tr>
 <tr class="separator:ga2a76b33d6046e1bd46409ec3aacbd425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga42238c95ed27a327d0291c67a1c6196b"><td class="memItemLeft" align="right" valign="top">
-GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga42238c95ed27a327d0291c67a1c6196b">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
-<tr class="memdesc:ga42238c95ed27a327d0291c67a1c6196b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th basis function at point x. <br /></td></tr>
+<tr class="memitem:ga42238c95ed27a327d0291c67a1c6196b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga882d73f02d56827fc7f051ebf2a6befb">GradientValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga42238c95ed27a327d0291c67a1c6196b">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+<tr class="memdesc:ga42238c95ed27a327d0291c67a1c6196b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th basis function at point x.  <a href="group__Basis.html#ga42238c95ed27a327d0291c67a1c6196b">More...</a><br /></td></tr>
 <tr class="separator:ga42238c95ed27a327d0291c67a1c6196b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga77afc35bfef1864de71abdb78d6a9c36"><td class="memItemLeft" align="right" valign="top">
-GradientValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga77afc35bfef1864de71abdb78d6a9c36">gradient</a> (size_t i, size_t iqn, const boost::multi_array&lt; VectorRd, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
-<tr class="memdesc:ga77afc35bfef1864de71abdb78d6a9c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="memitem:ga77afc35bfef1864de71abdb78d6a9c36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga882d73f02d56827fc7f051ebf2a6befb">GradientValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga77afc35bfef1864de71abdb78d6a9c36">gradient</a> (size_t i, size_t iqn, const boost::multi_array&lt; VectorRd, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
+<tr class="memdesc:ga77afc35bfef1864de71abdb78d6a9c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad)  <a href="group__Basis.html#ga77afc35bfef1864de71abdb78d6a9c36">More...</a><br /></td></tr>
 <tr class="separator:ga77afc35bfef1864de71abdb78d6a9c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2ed39faecc4dbb67d0ec8125f9a61366"><td class="memItemLeft" align="right" valign="top">
-CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2ed39faecc4dbb67d0ec8125f9a61366">curl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
-<tr class="memdesc:ga2ed39faecc4dbb67d0ec8125f9a61366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th basis function at point x. <br /></td></tr>
+<tr class="memitem:ga2ed39faecc4dbb67d0ec8125f9a61366"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga2a99d3ad58e081c33fe712c019b0d704">CurlValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga2ed39faecc4dbb67d0ec8125f9a61366">curl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+<tr class="memdesc:ga2ed39faecc4dbb67d0ec8125f9a61366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th basis function at point x.  <a href="group__Basis.html#ga2ed39faecc4dbb67d0ec8125f9a61366">More...</a><br /></td></tr>
 <tr class="separator:ga2ed39faecc4dbb67d0ec8125f9a61366"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga607c5bdebb107065e41883e46f1bfc13"><td class="memItemLeft" align="right" valign="top">
-CurlValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga607c5bdebb107065e41883e46f1bfc13">curl</a> (size_t i, size_t iqn, const boost::multi_array&lt; VectorRd, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
-<tr class="memdesc:ga607c5bdebb107065e41883e46f1bfc13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="memitem:ga607c5bdebb107065e41883e46f1bfc13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga2a99d3ad58e081c33fe712c019b0d704">CurlValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga607c5bdebb107065e41883e46f1bfc13">curl</a> (size_t i, size_t iqn, const boost::multi_array&lt; VectorRd, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
+<tr class="memdesc:ga607c5bdebb107065e41883e46f1bfc13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl of the i-th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad)  <a href="group__Basis.html#ga607c5bdebb107065e41883e46f1bfc13">More...</a><br /></td></tr>
 <tr class="separator:ga607c5bdebb107065e41883e46f1bfc13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7c792e5a5a1c364a53d9da3ac7d4ba11"><td class="memItemLeft" align="right" valign="top">
-DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga7c792e5a5a1c364a53d9da3ac7d4ba11">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
-<tr class="memdesc:ga7c792e5a5a1c364a53d9da3ac7d4ba11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at point x. <br /></td></tr>
+<tr class="memitem:ga7c792e5a5a1c364a53d9da3ac7d4ba11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga375f5cfa1074a92ef276ba76145d2b83">DivergenceValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga7c792e5a5a1c364a53d9da3ac7d4ba11">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+<tr class="memdesc:ga7c792e5a5a1c364a53d9da3ac7d4ba11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at point x.  <a href="group__Basis.html#ga7c792e5a5a1c364a53d9da3ac7d4ba11">More...</a><br /></td></tr>
 <tr class="separator:ga7c792e5a5a1c364a53d9da3ac7d4ba11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaf8de8320203975aa548709d455a6ec4"><td class="memItemLeft" align="right" valign="top">
-DivergenceValue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaaf8de8320203975aa548709d455a6ec4">divergence</a> (size_t i, size_t iqn, const boost::multi_array&lt; VectorRd, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
-<tr class="memdesc:gaaf8de8320203975aa548709d455a6ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad) <br /></td></tr>
+<tr class="memitem:gaaf8de8320203975aa548709d455a6ec4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga375f5cfa1074a92ef276ba76145d2b83">DivergenceValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaaf8de8320203975aa548709d455a6ec4">divergence</a> (size_t i, size_t iqn, const boost::multi_array&lt; VectorRd, 2 &gt; &amp;ancestor_gradient_quad) const</td></tr>
+<tr class="memdesc:gaaf8de8320203975aa548709d455a6ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval_quad)  <a href="group__Basis.html#gaaf8de8320203975aa548709d455a6ec4">More...</a><br /></td></tr>
 <tr class="separator:gaaf8de8320203975aa548709d455a6ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2fa5d0c533a652d4e64400b3cffb9029"><td class="memItemLeft" align="right" valign="top">
-constexpr const ScalarFamilyType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2fa5d0c533a652d4e64400b3cffb9029">ancestor</a> () const</td></tr>
-<tr class="memdesc:ga2fa5d0c533a652d4e64400b3cffb9029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ancestor (family that has been tensorized) <br /></td></tr>
+<tr class="memitem:ga2fa5d0c533a652d4e64400b3cffb9029"><td class="memItemLeft" align="right" valign="top">constexpr const ScalarFamilyType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga2fa5d0c533a652d4e64400b3cffb9029">ancestor</a> () const</td></tr>
+<tr class="memdesc:ga2fa5d0c533a652d4e64400b3cffb9029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ancestor (family that has been tensorized)  <a href="group__Basis.html#ga2fa5d0c533a652d4e64400b3cffb9029">More...</a><br /></td></tr>
 <tr class="separator:ga2fa5d0c533a652d4e64400b3cffb9029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga649326979292f0ff66afc7040516363c"><td class="memItemLeft" align="right" valign="top">
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga649326979292f0ff66afc7040516363c">max_degree</a> () const</td></tr>
-<tr class="memdesc:ga649326979292f0ff66afc7040516363c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum degree of the basis functions. <br /></td></tr>
+<tr class="memitem:ga649326979292f0ff66afc7040516363c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga649326979292f0ff66afc7040516363c">max_degree</a> () const</td></tr>
+<tr class="memdesc:ga649326979292f0ff66afc7040516363c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum degree of the basis functions.  <a href="group__Basis.html#ga649326979292f0ff66afc7040516363c">More...</a><br /></td></tr>
 <tr class="separator:ga649326979292f0ff66afc7040516363c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ga6a2dd3b404ac41b88a9a690834e49b8f"><td class="memItemLeft" align="right" valign="top">
-constexpr static const TensorRankE&#160;</td><td class="memItemRight" valign="bottom"><b>tensorRank</b> = Vector</td></tr>
+<tr class="memitem:ga6a2dd3b404ac41b88a9a690834e49b8f"><td class="memItemLeft" align="right" valign="top">constexpr static const <a class="el" href="group__Basis.html#ga81eb4732214b7560fbfa4ee9495c6da4">TensorRankE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga6a2dd3b404ac41b88a9a690834e49b8f">tensorRank</a> = <a class="el" href="group__Basis.html#gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0">Vector</a></td></tr>
 <tr class="separator:ga6a2dd3b404ac41b88a9a690834e49b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadb757e1dd5cdf054f2ad08cba1c8126d"><td class="memItemLeft" align="right" valign="top">
-constexpr static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasAncestor</b> = true</td></tr>
+<tr class="memitem:gadb757e1dd5cdf054f2ad08cba1c8126d"><td class="memItemLeft" align="right" valign="top">constexpr static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gadb757e1dd5cdf054f2ad08cba1c8126d">hasAncestor</a> = true</td></tr>
 <tr class="separator:gadb757e1dd5cdf054f2ad08cba1c8126d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9b13b73400eb42f3860a261232954deb"><td class="memItemLeft" align="right" valign="top">
-static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasFunction</b> = ScalarFamilyType::hasFunction</td></tr>
+<tr class="memitem:ga9b13b73400eb42f3860a261232954deb"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga9b13b73400eb42f3860a261232954deb">hasFunction</a> = ScalarFamilyType::hasFunction</td></tr>
 <tr class="separator:ga9b13b73400eb42f3860a261232954deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad979bfdf5ecf01b03fe58afa3a367319"><td class="memItemLeft" align="right" valign="top">
-static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasGradient</b> = ScalarFamilyType::hasGradient</td></tr>
+<tr class="memitem:gad979bfdf5ecf01b03fe58afa3a367319"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gad979bfdf5ecf01b03fe58afa3a367319">hasGradient</a> = ScalarFamilyType::hasGradient</td></tr>
 <tr class="separator:gad979bfdf5ecf01b03fe58afa3a367319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf7b0b7d38444c6f5948a7af77f54cb76"><td class="memItemLeft" align="right" valign="top">
-static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasDivergence</b> = (ScalarFamilyType::hasGradient &amp;&amp; N == dimspace)</td></tr>
+<tr class="memitem:gaf7b0b7d38444c6f5948a7af77f54cb76"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaf7b0b7d38444c6f5948a7af77f54cb76">hasDivergence</a> = (ScalarFamilyType::hasGradient &amp;&amp; N == <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a>)</td></tr>
 <tr class="separator:gaf7b0b7d38444c6f5948a7af77f54cb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac508be3ba29add3055e394ea73413f3d"><td class="memItemLeft" align="right" valign="top">
-static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasCurl</b> = (ScalarFamilyType::hasGradient &amp;&amp; N == dimspace)</td></tr>
+<tr class="memitem:gac508be3ba29add3055e394ea73413f3d"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gac508be3ba29add3055e394ea73413f3d">hasCurl</a> = (ScalarFamilyType::hasGradient &amp;&amp; N == <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a>)</td></tr>
 <tr class="separator:gac508be3ba29add3055e394ea73413f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -182,7 +161,7 @@ static const bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasCurl<
 class HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</h3>
 
 <p>Vector family obtained by tensorization of a scalar family. </p>
-<p>The tensorization is done the following way: if (f_1,...,f_r) is the family of scalar functions, the tensorized family of rank N is given by (where all vectors are columns of size N):</p>
+<p>The tensorization is done the following way: if \((f_1,...,f_r)\) is the family of scalar functions, the tensorized family of rank N is given by (where all vectors are columns of size N):</p>
 <p>\(\left(\begin{array}{c}f_1\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}f_2\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}f_r\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}0\\f_1\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}0\\f_2\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}0\\f_r\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}0\\\vdots\\0\\f_1\end{array}\right)\);...; \(\left(\begin{array}{c}0\\\vdots\\0\\f_r\end{array}\right)\)</p>
 <p>The gradient values are therefore matrices of size N*r, where the gradients of the scalar functions are put in rows:</p>
 <p>\(\left(\begin{array}{c}(\nabla f_1)^t\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}(\nabla f_2)^t\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}(\nabla f_r)^t\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}0\\(\nabla f_1)^t\\0\\\vdots\\0\end{array}\right)\); \(\left(\begin{array}{c}0\\(\nabla f_2)^t\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}0\\(\nabla f_r)^t\\0\\\vdots\\0\end{array}\right)\);...; \(\left(\begin{array}{c}0\\\vdots\\0\\(\nabla f_1)^t\end{array}\right)\);...; \(\left(\begin{array}{c}0\\\vdots\\0\\(\nabla f_r)^t\end{array}\right)\) </p>

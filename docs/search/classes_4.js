@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['facebases_316',['FaceBases',['../structHArDCore3D_1_1DDRCore_1_1FaceBases.html',1,'HArDCore3D::DDRCore']]],
-  ['family_317',['Family',['../classHArDCore3D_1_1Family.html',1,'HArDCore3D']]]
+  ['edgebases_654',['EdgeBases',['../structHArDCore3D_1_1DDRCore_1_1EdgeBases.html',1,'HArDCore3D::DDRCore']]],
+  ['elementquad_655',['ElementQuad',['../classHArDCore3D_1_1ElementQuad.html',1,'HArDCore3D']]],
+  ['evaluate_5fquad_656',['evaluate_quad',['../structHArDCore3D_1_1evaluate__quad.html',1,'HArDCore3D']]]
 ];

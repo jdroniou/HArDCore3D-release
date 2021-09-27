@@ -23,11 +23,6 @@
 */
 
 
-/*!	
-*	@defgroup Quadratures 
-* @brief Classes providing quadratures on edges and in cells
-*/
-
 using namespace HArDCore3D;
 
 QuadRuleTetra::QuadRuleTetra(size_t doe, bool warn)

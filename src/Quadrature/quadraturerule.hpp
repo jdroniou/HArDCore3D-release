@@ -28,6 +28,13 @@
 
 #include <mesh.hpp>
 
+
+/*!	
+*	@defgroup Quadratures 
+* @brief Classes providing quadratures rules on cells, faces and edges,
+*   as well as cost-effective ways to compute Gram matrices of polynomial bases.
+*/
+
 namespace HArDCore3D {
 
 /*!

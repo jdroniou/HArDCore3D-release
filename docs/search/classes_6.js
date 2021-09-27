@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['hho3d_322',['HHO3D',['../classHHO3D.html',1,'']]],
-  ['hho_5fdiffusion_323',['HHO_Diffusion',['../classHArDCore3D_1_1HHO__Diffusion.html',1,'HArDCore3D']]],
-  ['hho_5flocvardiff_324',['HHO_LocVarDiff',['../classHArDCore3D_1_1HHO__LocVarDiff.html',1,'HArDCore3D']]],
-  ['hybridcore_325',['HybridCore',['../classHArDCore3D_1_1HybridCore.html',1,'HArDCore3D']]]
+  ['golycomplbasiscell_659',['GolyComplBasisCell',['../classHArDCore3D_1_1GolyComplBasisCell.html',1,'HArDCore3D']]],
+  ['golycomplbasisface_660',['GolyComplBasisFace',['../classHArDCore3D_1_1GolyComplBasisFace.html',1,'HArDCore3D']]],
+  ['gradientbasis_661',['GradientBasis',['../classHArDCore3D_1_1GradientBasis.html',1,'HArDCore3D']]],
+  ['graphnodearray_662',['GraphNodeArray',['../classGraphNodeArray.html',1,'']]]
 ];

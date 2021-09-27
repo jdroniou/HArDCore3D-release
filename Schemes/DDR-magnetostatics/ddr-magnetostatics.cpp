@@ -5,9 +5,10 @@
 
 #include "ddr-magnetostatics.hpp"
 #include <parallel_for.hpp>
+#include <GMpoly_cell.hpp>
 
 #include <boost/program_options.hpp>
-#include <boost/timer/timer.hpp>
+#include <display_timer.hpp>
 
 #ifdef WITH_UMFPACK
 #include <Eigen/UmfPackSupport>
@@ -120,9 +121,8 @@ int main(int argc, const char* argv[])
   std::cout << "[main] " << (use_threads ? "Parallel execution" : "Sequential execution") << std:: endl;
   DDRCore ddr_core(*mesh_ptr, K, use_threads);
   timer.stop();
-  double t_wall_ddrcore = double(timer.elapsed().wall) * pow(10, -9);
-  double t_proc_ddrcore = double(timer.elapsed().user + timer.elapsed().system) * pow(10, -9);
-  std::cout << "[main] Time DDRCore (wall/proc) " << t_wall_ddrcore << "/" << t_proc_ddrcore << std::endl;
+  double t_wall_ddrcore, t_proc_ddrcore;
+  std::tie(t_wall_ddrcore, t_proc_ddrcore) = store_times(timer, "[main] Time DDRCore (wall/proc) ");
 
   // Assemble the problem
   timer.start();
@@ -132,9 +132,8 @@ int main(int argc, const char* argv[])
   }
   ms.assembleLinearSystem(f, mu, u);
   timer.stop();
-  double t_wall_model = double(timer.elapsed().wall) * pow(10, -9);
-  double t_proc_model = double(timer.elapsed().user + timer.elapsed().system) * pow(10, -9);
-  std::cout << "[main] Time model (wall/proc) " << t_wall_model << "/" << t_proc_model << std::endl;
+  double t_wall_model, t_proc_model;
+  std::tie(t_wall_model, t_proc_model) = store_times(timer, "[main] Time model (wall/proc) ");
 
   // Export matrix if requested  
   if (vm.count("export-matrix")) {
@@ -188,10 +187,9 @@ int main(int argc, const char* argv[])
   uh.tail(ms.xDiv().dimension()) = uh_condensed.segment(ms.xCurl().dimension()-ms.nbSCDOFs(), ms.xDiv().dimension());
 
   timer.stop();
-  double t_wall_solve = double(timer.elapsed().wall) * pow(10, -9);
-  double t_proc_solve = double(timer.elapsed().user + timer.elapsed().system) * pow(10, -9);
-  std::cout << "[main] Time solve (wall/proc) " << t_wall_solve << "/" << t_proc_solve << std::endl;
-  
+  double t_wall_solve, t_proc_solve;
+  std::tie(t_wall_solve, t_proc_solve) = store_times(timer, "[main] Time solve (wall/proc) ");
+    
   // Compute the error in the energy norm
   Eigen::VectorXd uI = Eigen::VectorXd::Zero(ms.dimensionSpace());  
   uI.head(ms.xCurl().dimension()) = ms.xCurl().interpolate(sigma);
@@ -199,10 +197,14 @@ int main(int argc, const char* argv[])
   Eigen::VectorXd eh = uh - uI;
 //////  double en_err = std::sqrt( eh.transpose() * ms.systemMatrix() * eh );  // no longer valid in statically condensed system
   // Error in Hcurl x Hdiv norm
-  double hcurlhdiv_err = ms.computeNorm(eh) / ms.computeNorm(uI);
+  std::vector<double> list_norms = ms.computeNorms(std::vector<Eigen::VectorXd> {eh, uI});
+  double error = list_norms[0];
+  double norm = list_norms[1];
+  std::cout << norm << "norm / error " << error << std::endl;
+  double hcurlhdiv_err = error / norm;
   double en_err = hcurlhdiv_err;
   std::cout << "[main] Hcurl-Hdiv error " << hcurlhdiv_err << std::endl;
-  std::cout << "[main] Energy error " << en_err << std::endl;
+//////  std::cout << "[main] Energy error " << en_err << std::endl;
   std::cout << "[main] Mesh diameter " << mesh_ptr->h_max() << std::endl;
  
 
@@ -340,8 +342,7 @@ Magnetostatics::_compute_local_contribution(
   //------------------------------------------------------------------------------
 
   // Mass matrix for (P^k(T))^3  
-  QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2 * m_ddrcore.degree());
-  Eigen::MatrixXd mass_Pk3_T = compute_gram_matrix(evaluate_quad<Function>::compute(*m_ddrcore.cellBases(iT).Polyk3, quad_2k_T), quad_2k_T);
+  Eigen::MatrixXd mass_Pk3_T = GramMatrix(T, *m_ddrcore.cellBases(iT).Polyk3);
 
   // aT
   AT.topLeftCorner(dim_xcurl_T, dim_xcurl_T) = m_xcurl.computeL2Product(iT, m_stab_par, mass_Pk3_T, mu);
@@ -359,6 +360,7 @@ Magnetostatics::_compute_local_contribution(
   // Local vector
   //------------------------------------------------------------------------------
 
+  QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2 * m_ddrcore.degree());
   lT.tail(dim_xdiv_T) = m_xdiv.cellOperators(iT).potential.transpose()
     * integrate(f, evaluate_quad<Function>::compute(*m_ddrcore.cellBases(iT).Polyk3, quad_2k_T), quad_2k_T);
   
@@ -447,38 +449,48 @@ void Magnetostatics::_assemble_local_contribution(
 
 //------------------------------------------------------------------------------
 
-double Magnetostatics::computeNorm( const Eigen::VectorXd & v ) const
+std::vector<double> Magnetostatics::computeNorms( const std::vector<Eigen::VectorXd> & list_dofs ) const
 {
-  Eigen::VectorXd local_sqnorms = Eigen::VectorXd::Zero(m_ddrcore.mesh().n_cells());
+  size_t nb_vectors = list_dofs.size();
+  std::vector<Eigen::VectorXd> local_sqnorms(nb_vectors, Eigen::VectorXd::Zero(m_ddrcore.mesh().n_cells()));
 
-  // Xcurl correspond to the first components of v, Xdiv to the last ones
-  Eigen::VectorXd v_curl = v.head(m_xcurl.dimension());
-  Eigen::VectorXd v_div = v.tail(m_xdiv.dimension());
-  
   std::function<void(size_t, size_t)> compute_local_squarednorms
-    = [this, &v_curl, &v_div, &local_sqnorms](size_t start, size_t end)->void
+    = [this, &list_dofs, &local_sqnorms, &nb_vectors](size_t start, size_t end)->void
     {
       for (size_t iT = start; iT < end; iT++){
         Cell & T = *m_ddrcore.mesh().cell(iT);
         // Mass matrix for (P^k(T))^3
-        QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2*m_ddrcore.degree() );
-        Eigen::MatrixXd mass_Pk3_T = compute_gram_matrix(evaluate_quad<Function>::compute(*m_ddrcore.cellBases(iT).Polyk3, quad_2k_T), quad_2k_T);
-        Eigen::VectorXd v_curl_T = m_xcurl.restrict(T, v_curl);
-        Eigen::VectorXd v_div_T = m_xdiv.restrict(T, v_div);
-
-        // Contribution of L2 norms, without any weight (no permeability)
-        local_sqnorms(iT) += v_curl_T.transpose() * m_xcurl.computeL2Product(iT, m_stab_par, mass_Pk3_T) * v_curl_T;
-        local_sqnorms(iT) += v_div_T.transpose() * m_xdiv.computeL2Product(iT, m_stab_par, mass_Pk3_T) * v_div_T;
-
-        // Contribution of L2 norms of curl and div
-        local_sqnorms(iT) += v_curl_T.transpose() * m_xdiv.computeL2ProductCurl(iT, m_xcurl, "both", m_stab_par, mass_Pk3_T) * v_curl_T;
+	      MonomialIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*m_ddrcore.degree());
+        Eigen::MatrixXd mass_Pk3_T = GramMatrix(T, *m_ddrcore.cellBases(iT).Polyk3, int_mono_2k);
+        Eigen::MatrixXd mass_Pk_T = GramMatrix(T, *m_ddrcore.cellBases(iT).Polyk, int_mono_2k);
+        Eigen::MatrixXd L2curl_T = m_xcurl.computeL2Product(iT, m_stab_par, mass_Pk3_T);
+        Eigen::MatrixXd L2div_T = m_xdiv.computeL2Product(iT, m_stab_par, mass_Pk3_T);
+        Eigen::MatrixXd L2div_CC_T = m_xdiv.computeL2ProductCurl(iT, m_xcurl, "both", m_stab_par, mass_Pk3_T);
         Eigen::MatrixXd DT = m_xdiv.cellOperators(iT).divergence;
-        local_sqnorms(iT) += v_div_T.transpose() * DT.transpose() * compute_gram_matrix(evaluate_quad<Function>::compute(*m_ddrcore.cellBases(iT).Polyk, quad_2k_T), quad_2k_T) * DT * v_div_T;
+
+        for (size_t i=0; i<nb_vectors; i++){
+          Eigen::VectorXd v_curl_T = m_xcurl.restrict(T, list_dofs[i].head(m_xcurl.dimension()));
+          Eigen::VectorXd v_div_T = m_xdiv.restrict(T, list_dofs[i].tail(m_xdiv.dimension()));
+
+          // Contribution of L2 norms, without any weight (no permeability)
+          local_sqnorms[i](iT) += v_curl_T.transpose() * L2curl_T * v_curl_T;
+          local_sqnorms[i](iT) += v_div_T.transpose() * L2div_T * v_div_T;
+
+          // Contribution of L2 norms of curl and div
+          local_sqnorms[i](iT) += v_curl_T.transpose() * L2div_CC_T * v_curl_T;
+          local_sqnorms[i](iT) += v_div_T.transpose() * DT.transpose() * mass_Pk_T * DT * v_div_T;
+        }
       }
     };
   parallel_for(m_ddrcore.mesh().n_cells(), compute_local_squarednorms, m_use_threads);
   
-  return std::sqrt(std::abs(local_sqnorms.sum()));
+  // Vector of outputs
+  std::vector<double> list_norms(nb_vectors, 0.);
+  for (size_t i=0; i<nb_vectors; i++){
+    list_norms[i] = std::sqrt(std::abs(local_sqnorms[i].sum()));
+  }
+  
+  return list_norms;
 }
 
 

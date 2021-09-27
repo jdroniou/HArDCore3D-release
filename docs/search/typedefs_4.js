@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['face_621',['Face',['../group__Mesh.html#ga50ded5b393fb1cc9159dc166d9158dfc',1,'MeshND']]],
-  ['ftype_622',['FType',['../group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1',1,'HArDCore3D']]]
+  ['edge_1265',['Edge',['../namespaceMesh2D.html#aba666a81a844155083acdceb691c0050',1,'Mesh2D::Edge()'],['../namespaceMesh3D.html#ae7662dd5ea1c583d136a9cb38d8dc847',1,'Mesh3D::Edge()'],['../group__Mesh.html#gaf356f9fa5a1a50c9cfffcb111586dfdd',1,'MeshND::Edge()']]]
 ];

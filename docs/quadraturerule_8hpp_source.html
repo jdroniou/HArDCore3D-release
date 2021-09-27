@@ -77,7 +77,7 @@ $(function() {
 <div class="title">quadraturerule.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Core data structures and methods required to implement the discrete de Rham sequence in 3D</span></div>
+<a href="quadraturerule_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Core data structures and methods required to implement the discrete de Rham sequence in 3D</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Provides:</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//  - Generation of quadrature rules over cells and faces of the mesh</span></div>
@@ -105,47 +105,56 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;mesh.hpp&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="mesh_8hpp.html">mesh.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>HArDCore3D {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">struct </span>QuadratureNode</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">double</span> x, y, z, w;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    QuadratureNode(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z, <span class="keywordtype">double</span> w)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      : x(x), y(y), z(z), w(w)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="comment">// Do nothing</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group__Quadratures.html#gac0d94c3725c0502056333f314fb48fc9">   49</a></span>&#160;    <span class="keyword">inline</span> Eigen::Vector3d <a class="code" href="group__Quadratures.html#gac0d94c3725c0502056333f314fb48fc9">vector</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">return</span> Eigen::Vector3d(x,y,z);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  };</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">typedef</span> std::vector&lt;QuadratureNode&gt; QuadratureRule;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  QuadratureRule <a class="code" href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">generate_quadrature_rule</a>(</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                      <span class="keyword">const</span> <a class="code" href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">Cell</a> &amp; T,                </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> doe,              </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">bool</span> force_split = <span class="keyword">false</span> </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                      );  </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  QuadratureRule <a class="code" href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">generate_quadrature_rule</a>(</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                      <span class="keyword">const</span> <a class="code" href="group__Mesh.html#ga50ded5b393fb1cc9159dc166d9158dfc">Face</a> &amp; F,                </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> doe               </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                      );  </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  QuadratureRule <a class="code" href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">generate_quadrature_rule</a>(</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                      <span class="keyword">const</span> <a class="code" href="group__Mesh.html#gaf356f9fa5a1a50c9cfffcb111586dfdd">Edge</a> &amp; E,                </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> doe               </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                      );  </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}  <span class="comment">// end of namespace HArDCore3D</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">struct </span>QuadratureNode</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group__Quadratures.html#gac5e2438567a78de1430595b4f8ccd1fc">   48</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#ga2a30df67610b141f56b65c1324068143">x</a>, <a class="code" href="group__Quadratures.html#gad1a6b5b68c8e5bfce6d4753d091efa22">y</a>, <a class="code" href="group__Quadratures.html#gac5e2438567a78de1430595b4f8ccd1fc">z</a>, <a class="code" href="group__Quadratures.html#gace3667769fdabe08dd83fe6eb5201643">w</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group__Quadratures.html#ga7a185c689ce9f635e803694bd0e8d2e7">   49</a></span>&#160;    <a class="code" href="group__Quadratures.html#ga7a185c689ce9f635e803694bd0e8d2e7">QuadratureNode</a>(<span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#ga2a30df67610b141f56b65c1324068143">x</a>, <span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#gad1a6b5b68c8e5bfce6d4753d091efa22">y</a>, <span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#gac5e2438567a78de1430595b4f8ccd1fc">z</a>, <span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#gace3667769fdabe08dd83fe6eb5201643">w</a>)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      : <a class="code" href="group__Quadratures.html#ga2a30df67610b141f56b65c1324068143">x</a>(<a class="code" href="group__Quadratures.html#ga2a30df67610b141f56b65c1324068143">x</a>), <a class="code" href="group__Quadratures.html#gad1a6b5b68c8e5bfce6d4753d091efa22">y</a>(<a class="code" href="group__Quadratures.html#gad1a6b5b68c8e5bfce6d4753d091efa22">y</a>), <a class="code" href="group__Quadratures.html#gac5e2438567a78de1430595b4f8ccd1fc">z</a>(<a class="code" href="group__Quadratures.html#gac5e2438567a78de1430595b4f8ccd1fc">z</a>), <a class="code" href="group__Quadratures.html#gace3667769fdabe08dd83fe6eb5201643">w</a>(<a class="code" href="group__Quadratures.html#gace3667769fdabe08dd83fe6eb5201643">w</a>)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="comment">// Do nothing</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group__Quadratures.html#gac0d94c3725c0502056333f314fb48fc9">   56</a></span>&#160;    <span class="keyword">inline</span> Eigen::Vector3d <a class="code" href="group__Quadratures.html#gac0d94c3725c0502056333f314fb48fc9">vector</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordflow">return</span> Eigen::Vector3d(<a class="code" href="group__Quadratures.html#ga2a30df67610b141f56b65c1324068143">x</a>,<a class="code" href="group__Quadratures.html#gad1a6b5b68c8e5bfce6d4753d091efa22">y</a>,<a class="code" href="group__Quadratures.html#gac5e2438567a78de1430595b4f8ccd1fc">z</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">   61</a></span>&#160;  <span class="keyword">typedef</span> std::vector&lt;QuadratureNode&gt; <a class="code" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a> <a class="code" href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">generate_quadrature_rule</a>(</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                      <span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#aef0e9b3e58ded3c9586b4f565f88b523">Cell</a> &amp; T,                </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> doe,              </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">bool</span> force_split = <span class="keyword">false</span> </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                      );  </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a> <a class="code" href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">generate_quadrature_rule</a>(</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                      <span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#ad6648c771b3a13f0cfe4d73fe9c0f1e6">Face</a> &amp; F,                </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> doe               </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                      );  </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a> <a class="code" href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">generate_quadrature_rule</a>(</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                      <span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#aba666a81a844155083acdceb691c0050">Edge</a> &amp; E,                </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span> doe               </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                      );  </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}  <span class="comment">// end of namespace HArDCore3D</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="agroup__Mesh_html_ga50ded5b393fb1cc9159dc166d9158dfc"><div class="ttname"><a href="group__Mesh.html#ga50ded5b393fb1cc9159dc166d9158dfc">MeshND::Face</a></div><div class="ttdeci">MeshObject&lt; space_dim, space_dim - 1 &gt; Face</div><div class="ttdoc">A Face is a MeshObject with object_dim = space_dim - 1.</div><div class="ttdef"><b>Definition:</b> MeshObject.hpp:148</div></div>
-<div class="ttc" id="agroup__Mesh_html_gaccc346b5620989466f9bb142c1680ac7"><div class="ttname"><a href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">MeshND::Cell</a></div><div class="ttdeci">MeshObject&lt; space_dim, space_dim &gt; Cell</div><div class="ttdoc">A Cell is a MeshObject with object_dim = space_dim.</div><div class="ttdef"><b>Definition:</b> MeshObject.hpp:152</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga41055a24d71d12c64b5fddddc0bbad22"><div class="ttname"><a href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">HArDCore3D::QuadratureRule</a></div><div class="ttdeci">std::vector&lt; QuadratureNode &gt; QuadratureRule</div><div class="ttdef"><b>Definition:</b> quadraturerule.hpp:61</div></div>
+<div class="ttc" id="amesh_8hpp_html"><div class="ttname"><a href="mesh_8hpp.html">mesh.hpp</a></div></div>
+<div class="ttc" id="agroup__Quadratures_html_gad1a6b5b68c8e5bfce6d4753d091efa22"><div class="ttname"><a href="group__Quadratures.html#gad1a6b5b68c8e5bfce6d4753d091efa22">HArDCore3D::QuadratureNode::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> quadraturerule.hpp:48</div></div>
+<div class="ttc" id="anamespaceMesh2D_html_ad6648c771b3a13f0cfe4d73fe9c0f1e6"><div class="ttname"><a href="namespaceMesh2D.html#ad6648c771b3a13f0cfe4d73fe9c0f1e6">Mesh2D::Face</a></div><div class="ttdeci">MeshND::Face&lt; 2 &gt; Face</div><div class="ttdef"><b>Definition:</b> Mesh2D.hpp:12</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gac5e2438567a78de1430595b4f8ccd1fc"><div class="ttname"><a href="group__Quadratures.html#gac5e2438567a78de1430595b4f8ccd1fc">HArDCore3D::QuadratureNode::z</a></div><div class="ttdeci">double z</div><div class="ttdef"><b>Definition:</b> quadraturerule.hpp:48</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga2a30df67610b141f56b65c1324068143"><div class="ttname"><a href="group__Quadratures.html#ga2a30df67610b141f56b65c1324068143">HArDCore3D::QuadratureNode::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> quadraturerule.hpp:48</div></div>
+<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdef"><b>Definition:</b> ddr-magnetostatics.hpp:38</div></div>
 <div class="ttc" id="agroup__Quadratures_html_ga18d0a2cf574bef7d6e83760de2f38152"><div class="ttname"><a href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">HArDCore3D::generate_quadrature_rule</a></div><div class="ttdeci">QuadratureRule generate_quadrature_rule(const Cell &amp;T, const int doe, const bool force_split)</div><div class="ttdoc">Generate quadrature rule on mesh element.</div><div class="ttdef"><b>Definition:</b> quadraturerule.cpp:11</div></div>
-<div class="ttc" id="agroup__Quadratures_html_gac0d94c3725c0502056333f314fb48fc9"><div class="ttname"><a href="group__Quadratures.html#gac0d94c3725c0502056333f314fb48fc9">HArDCore3D::QuadratureNode::vector</a></div><div class="ttdeci">Eigen::Vector3d vector() const</div><div class="ttdoc">Returns the quadrature point as an Eigen vector.</div><div class="ttdef"><b>Definition:</b> quadraturerule.hpp:49</div></div>
-<div class="ttc" id="agroup__Mesh_html_gaf356f9fa5a1a50c9cfffcb111586dfdd"><div class="ttname"><a href="group__Mesh.html#gaf356f9fa5a1a50c9cfffcb111586dfdd">MeshND::Edge</a></div><div class="ttdeci">MeshObject&lt; space_dim, 1 &gt; Edge</div><div class="ttdoc">An Edge is a MeshObject with object_dim = 1.</div><div class="ttdef"><b>Definition:</b> MeshObject.hpp:144</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gac0d94c3725c0502056333f314fb48fc9"><div class="ttname"><a href="group__Quadratures.html#gac0d94c3725c0502056333f314fb48fc9">HArDCore3D::QuadratureNode::vector</a></div><div class="ttdeci">Eigen::Vector3d vector() const</div><div class="ttdoc">Returns the quadrature point as an Eigen vector.</div><div class="ttdef"><b>Definition:</b> quadraturerule.hpp:56</div></div>
+<div class="ttc" id="anamespaceMesh2D_html_aef0e9b3e58ded3c9586b4f565f88b523"><div class="ttname"><a href="namespaceMesh2D.html#aef0e9b3e58ded3c9586b4f565f88b523">Mesh2D::Cell</a></div><div class="ttdeci">MeshND::Cell&lt; 2 &gt; Cell</div><div class="ttdef"><b>Definition:</b> Mesh2D.hpp:13</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga7a185c689ce9f635e803694bd0e8d2e7"><div class="ttname"><a href="group__Quadratures.html#ga7a185c689ce9f635e803694bd0e8d2e7">HArDCore3D::QuadratureNode::QuadratureNode</a></div><div class="ttdeci">QuadratureNode(double x, double y, double z, double w)</div><div class="ttdef"><b>Definition:</b> quadraturerule.hpp:49</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gace3667769fdabe08dd83fe6eb5201643"><div class="ttname"><a href="group__Quadratures.html#gace3667769fdabe08dd83fe6eb5201643">HArDCore3D::QuadratureNode::w</a></div><div class="ttdeci">double w</div><div class="ttdef"><b>Definition:</b> quadraturerule.hpp:48</div></div>
+<div class="ttc" id="anamespaceMesh2D_html_aba666a81a844155083acdceb691c0050"><div class="ttname"><a href="namespaceMesh2D.html#aba666a81a844155083acdceb691c0050">Mesh2D::Edge</a></div><div class="ttdeci">MeshND::Edge&lt; 2 &gt; Edge</div><div class="ttdef"><b>Definition:</b> Mesh2D.hpp:11</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

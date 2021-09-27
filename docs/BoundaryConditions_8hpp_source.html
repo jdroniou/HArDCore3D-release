@@ -77,7 +77,7 @@ $(function() {
 <div class="title">BoundaryConditions.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Class to provide description of boundary conditions</span></div>
+<a href="BoundaryConditions_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Class to provide description of boundary conditions</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Author: Jerome Droniou (jerome.droniou@monash.edu)</span></div>
@@ -102,9 +102,9 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;mesh.hpp&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="mesh_8hpp.html">mesh.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using namespace </span>HArDCore3D;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//                            Class definition</span></div>
@@ -116,12 +116,12 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="classBoundaryConditions.html">BoundaryConditions</a>(</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> std::string bc_id,  </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    Mesh&amp; mesh          </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="group__HHO__DiffAdvecReac.html#ga13b5a180bd74bcc66c3e5429b4171d33">bc_id</a>,  </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="namespaceMesh2D.html#ad4c89c4141f0383ec4459426545a2414">Mesh</a>&amp; mesh          </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  );</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> std::string type(</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="group__Mesh.html#ga50ded5b393fb1cc9159dc166d9158dfc">Face</a>&amp; face    </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="namespaceMesh2D.html#ad6648c771b3a13f0cfe4d73fe9c0f1e6">Face</a>&amp; face    </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    ) <span class="keyword">const</span> ;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> n_dir_faces()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> m_n_dir_faces;</div>
@@ -154,8 +154,12 @@ $(function() {
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif //_BOUNDARY_CONDITION_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="agroup__Mesh_html_ga50ded5b393fb1cc9159dc166d9158dfc"><div class="ttname"><a href="group__Mesh.html#ga50ded5b393fb1cc9159dc166d9158dfc">MeshND::Face</a></div><div class="ttdeci">MeshObject&lt; space_dim, space_dim - 1 &gt; Face</div><div class="ttdoc">A Face is a MeshObject with object_dim = space_dim - 1.</div><div class="ttdef"><b>Definition:</b> MeshObject.hpp:148</div></div>
+<div class="ttc" id="amesh_8hpp_html"><div class="ttname"><a href="mesh_8hpp.html">mesh.hpp</a></div></div>
+<div class="ttc" id="anamespaceMesh2D_html_ad6648c771b3a13f0cfe4d73fe9c0f1e6"><div class="ttname"><a href="namespaceMesh2D.html#ad6648c771b3a13f0cfe4d73fe9c0f1e6">Mesh2D::Face</a></div><div class="ttdeci">MeshND::Face&lt; 2 &gt; Face</div><div class="ttdef"><b>Definition:</b> Mesh2D.hpp:12</div></div>
+<div class="ttc" id="agroup__HHO__DiffAdvecReac_html_ga13b5a180bd74bcc66c3e5429b4171d33"><div class="ttname"><a href="group__HHO__DiffAdvecReac.html#ga13b5a180bd74bcc66c3e5429b4171d33">bc_id</a></div><div class="ttdeci">std::string bc_id</div><div class="ttdef"><b>Definition:</b> HHO_DiffAdvecReac.hpp:44</div></div>
+<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdef"><b>Definition:</b> ddr-magnetostatics.hpp:38</div></div>
 <div class="ttc" id="aclassBoundaryConditions_html_ac3609733d5e7e43e9240d0a8b05d17ba"><div class="ttname"><a href="classBoundaryConditions.html#ac3609733d5e7e43e9240d0a8b05d17ba">BoundaryConditions::name</a></div><div class="ttdeci">const std::string name() const</div><div class="ttdoc">Returns the complete name of the boundary condition.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.hpp:68</div></div>
+<div class="ttc" id="anamespaceMesh2D_html_ad4c89c4141f0383ec4459426545a2414"><div class="ttname"><a href="namespaceMesh2D.html#ad4c89c4141f0383ec4459426545a2414">Mesh2D::Mesh</a></div><div class="ttdeci">MeshND::Mesh&lt; 2 &gt; Mesh</div><div class="ttdef"><b>Definition:</b> Mesh2D.hpp:9</div></div>
 <div class="ttc" id="aclassMeshND_1_1Mesh_html"><div class="ttname"><a href="classMeshND_1_1Mesh.html">MeshND::Mesh</a></div><div class="ttdef"><b>Definition:</b> MeshND.hpp:9</div></div>
 <div class="ttc" id="aclassBoundaryConditions_html"><div class="ttname"><a href="classBoundaryConditions.html">BoundaryConditions</a></div><div class="ttdoc">The BoundaryConditions class provides definition of boundary conditions.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.hpp:43</div></div>
 <!-- start footer part -->

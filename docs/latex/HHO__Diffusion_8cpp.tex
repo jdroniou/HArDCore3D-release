@@ -1,0 +1,70 @@
+\hypertarget{HHO__Diffusion_8cpp}{}\doxysection{Schemes/\+H\+H\+O-\/diffusion/\+H\+H\+O\+\_\+\+Diffusion.cpp File Reference}
+\label{HHO__Diffusion_8cpp}\index{Schemes/HHO-\/diffusion/HHO\_Diffusion.cpp@{Schemes/HHO-\/diffusion/HHO\_Diffusion.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$boost/program\+\_\+options.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/timer/timer.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}mesh.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mesh\+\_\+builder.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}H\+H\+O\+\_\+\+Diffusion.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vtu\+\_\+writer.\+hpp\char`\"{}}\newline
+Include dependency graph for H\+H\+O\+\_\+\+Diffusion.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{HHO__Diffusion_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{HHO__Diffusion_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{HHO__Diffusion_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} = \char`\"{}../../meshes/\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{HHO__Diffusion_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}{default\+\_\+mesh}} = \mbox{\hyperlink{HHO__LocVarDiff_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/R\+F\+\_\+fmt/voro-\/4\char`\"{}
+\item 
+const std\+::string \mbox{\hyperlink{HHO__Diffusion_8cpp_afbbd02323a0d4e307f37096efe15c2af}{default\+\_\+solver\+\_\+type}} = \char`\"{}bicgstab\char`\"{}
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{HHO__Diffusion_8cpp_af20aa8e6197a09f3cced1d8080c117c9}{max\+\_\+nb\+\_\+cells\+\_\+for\+\_\+plot}} = 5000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{HHO__Diffusion_8cpp_ac0f2228420376f4db7e1274f2b41667c}\label{HHO__Diffusion_8cpp_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{HHO\_Diffusion.cpp@{HHO\_Diffusion.cpp}!main@{main}}
+\index{main@{main}!HHO\_Diffusion.cpp@{HHO\_Diffusion.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{HHO__Diffusion_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}\label{HHO__Diffusion_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}} 
+\index{HHO\_Diffusion.cpp@{HHO\_Diffusion.cpp}!default\_mesh@{default\_mesh}}
+\index{default\_mesh@{default\_mesh}!HHO\_Diffusion.cpp@{HHO\_Diffusion.cpp}}
+\doxysubsubsection{\texorpdfstring{default\_mesh}{default\_mesh}}
+{\footnotesize\ttfamily std\+::string default\+\_\+mesh = \mbox{\hyperlink{HHO__LocVarDiff_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/R\+F\+\_\+fmt/voro-\/4\char`\"{}}
+
+\mbox{\Hypertarget{HHO__Diffusion_8cpp_afbbd02323a0d4e307f37096efe15c2af}\label{HHO__Diffusion_8cpp_afbbd02323a0d4e307f37096efe15c2af}} 
+\index{HHO\_Diffusion.cpp@{HHO\_Diffusion.cpp}!default\_solver\_type@{default\_solver\_type}}
+\index{default\_solver\_type@{default\_solver\_type}!HHO\_Diffusion.cpp@{HHO\_Diffusion.cpp}}
+\doxysubsubsection{\texorpdfstring{default\_solver\_type}{default\_solver\_type}}
+{\footnotesize\ttfamily const std\+::string default\+\_\+solver\+\_\+type = \char`\"{}bicgstab\char`\"{}}
+
+\mbox{\Hypertarget{HHO__Diffusion_8cpp_af20aa8e6197a09f3cced1d8080c117c9}\label{HHO__Diffusion_8cpp_af20aa8e6197a09f3cced1d8080c117c9}} 
+\index{HHO\_Diffusion.cpp@{HHO\_Diffusion.cpp}!max\_nb\_cells\_for\_plot@{max\_nb\_cells\_for\_plot}}
+\index{max\_nb\_cells\_for\_plot@{max\_nb\_cells\_for\_plot}!HHO\_Diffusion.cpp@{HHO\_Diffusion.cpp}}
+\doxysubsubsection{\texorpdfstring{max\_nb\_cells\_for\_plot}{max\_nb\_cells\_for\_plot}}
+{\footnotesize\ttfamily constexpr size\+\_\+t max\+\_\+nb\+\_\+cells\+\_\+for\+\_\+plot = 5000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{HHO__Diffusion_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}\label{HHO__Diffusion_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}} 
+\index{HHO\_Diffusion.cpp@{HHO\_Diffusion.cpp}!mesh\_dir@{mesh\_dir}}
+\index{mesh\_dir@{mesh\_dir}!HHO\_Diffusion.cpp@{HHO\_Diffusion.cpp}}
+\doxysubsubsection{\texorpdfstring{mesh\_dir}{mesh\_dir}}
+{\footnotesize\ttfamily const std\+::string mesh\+\_\+dir = \char`\"{}../../meshes/\char`\"{}}
+

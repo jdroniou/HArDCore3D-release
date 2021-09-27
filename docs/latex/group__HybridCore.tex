@@ -17,13 +17,10 @@ class \mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{H\+Ar\+D\+Core3\+D\+::\+Hy
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{group__HybridCore_ga5c478c9953257f154d2ea98f115fba0d}\label{group__HybridCore_ga5c478c9953257f154d2ea98f115fba0d}} 
 typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ \mbox{\hyperlink{group__HybridCore_ga5c478c9953257f154d2ea98f115fba0d}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Poly\+Cell\+Basis\+Type}}
 \begin{DoxyCompactList}\small\item\em type for cell basis \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_gab02b7a4490b6a739e2d084e9a70dbcc5}\label{group__HybridCore_gab02b7a4490b6a739e2d084e9a70dbcc5}} 
 typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ \mbox{\hyperlink{group__HybridCore_gab02b7a4490b6a739e2d084e9a70dbcc5}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Poly\+Face\+Basis\+Type}}
 \begin{DoxyCompactList}\small\item\em type for face basis \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_gad3123dceabd79eec7cdb57ba1014fc17}\label{group__HybridCore_gad3123dceabd79eec7cdb57ba1014fc17}} 
 typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} $>$ \mbox{\hyperlink{group__HybridCore_gad3123dceabd79eec7cdb57ba1014fc17}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Poly\+Edge\+Basis\+Type}}
 \begin{DoxyCompactList}\small\item\em type for edge basis \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
@@ -31,25 +28,18 @@ typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink
 \item 
 \mbox{\hyperlink{group__HybridCore_ga0d27ba99f9f3e6f2a3e5311e6be19eba}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::\+Element\+Quad}} (const \mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} \&hho, const size\+\_\+t iT, const size\+\_\+t doeT, const size\+\_\+t doeF)
 \begin{DoxyCompactList}\small\item\em Class constructor\+: loads the quadrature rules and values of basis functions/gradients at these points. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_gaf8ee9bc271f5b73902b87f68f46f51f5}\label{group__HybridCore_gaf8ee9bc271f5b73902b87f68f46f51f5}} 
-const Quadrature\+Rule \& \mbox{\hyperlink{group__HybridCore_gaf8ee9bc271f5b73902b87f68f46f51f5}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+quadT}} () const
+const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \& \mbox{\hyperlink{group__HybridCore_gaf8ee9bc271f5b73902b87f68f46f51f5}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+quadT}} () const
 \begin{DoxyCompactList}\small\item\em Returns quadrature rules in cell. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga9e734ea29a3c4e0403bb5aea2ba910e3}\label{group__HybridCore_ga9e734ea29a3c4e0403bb5aea2ba910e3}} 
-const Quadrature\+Rule \& \mbox{\hyperlink{group__HybridCore_ga9e734ea29a3c4e0403bb5aea2ba910e3}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+quadF}} (size\+\_\+t ilF) const
+const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \& \mbox{\hyperlink{group__HybridCore_ga9e734ea29a3c4e0403bb5aea2ba910e3}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+quadF}} (size\+\_\+t ilF) const
 \begin{DoxyCompactList}\small\item\em Returns quadrature rules on face with local number ilF. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_gaa56cdde521a902082ce050928893804d}\label{group__HybridCore_gaa56cdde521a902082ce050928893804d}} 
 const boost\+::multi\+\_\+array$<$ double, 2 $>$ \& \mbox{\hyperlink{group__HybridCore_gaa56cdde521a902082ce050928893804d}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+phi\+T\+\_\+quadT}} () const
 \begin{DoxyCompactList}\small\item\em Returns values of cell basis functions at cell quadrature nodes. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga4a585d06f102a8c04ebffc1f8541e778}\label{group__HybridCore_ga4a585d06f102a8c04ebffc1f8541e778}} 
 const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \& \mbox{\hyperlink{group__HybridCore_ga4a585d06f102a8c04ebffc1f8541e778}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+dphi\+T\+\_\+quadT}} () const
 \begin{DoxyCompactList}\small\item\em Returns values of gradients of cell basis functions at cell quadrature nodes. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga34cbdbaafb9fe8681474b11bc8ebfd93}\label{group__HybridCore_ga34cbdbaafb9fe8681474b11bc8ebfd93}} 
 const boost\+::multi\+\_\+array$<$ double, 2 $>$ \& \mbox{\hyperlink{group__HybridCore_ga34cbdbaafb9fe8681474b11bc8ebfd93}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+phi\+T\+\_\+quadF}} (size\+\_\+t ilF) const
 \begin{DoxyCompactList}\small\item\em Returns values of cell basis functions at face quadrature nodes, for face with local number ilF. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga561b60cc7997268260b7cd05edce20d9}\label{group__HybridCore_ga561b60cc7997268260b7cd05edce20d9}} 
 const boost\+::multi\+\_\+array$<$ double, 2 $>$ \mbox{\hyperlink{group__HybridCore_ga561b60cc7997268260b7cd05edce20d9}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+phi\+F\+\_\+quadF}} (size\+\_\+t ilF) const
 \begin{DoxyCompactList}\small\item\em Returns values of face basis functions at face quadrature nodes, for face with local number ilF. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga023175342dd0e23426348ebe2445b7cc}\label{group__HybridCore_ga023175342dd0e23426348ebe2445b7cc}} 
 const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \& \mbox{\hyperlink{group__HybridCore_ga023175342dd0e23426348ebe2445b7cc}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+dphi\+T\+\_\+quadF}} (size\+\_\+t ilF) const
 \begin{DoxyCompactList}\small\item\em Returns values of gradients of cell basis functions at face quadrature nodes, for face with local number ilF. \end{DoxyCompactList}\item 
 boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \mbox{\hyperlink{group__HybridCore_ga3c549d43c0a5171d0c14f6b56ffc843d}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+vec\+\_\+phi\+T\+\_\+quadT}} (size\+\_\+t degree) const
@@ -58,8 +48,7 @@ boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \mbox{\hyperlink{group__HybridCor
 \begin{DoxyCompactList}\small\item\em Builds on the fly the values of vector cell basis functions at face quadrature nodes. The vector basis is obtained by tensorization of the scalar one as in get\+\_\+vec\+\_\+phi\+T\+\_\+quadT. \end{DoxyCompactList}\item 
 boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \mbox{\hyperlink{group__HybridCore_ga862a7cc1c7f5e62bcb26c5a2a14bb4ea}{H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+vec\+\_\+phi\+F\+\_\+quadF}} (size\+\_\+t ilF, size\+\_\+t degree) const
 \begin{DoxyCompactList}\small\item\em Builds on the fly the values of vector face basis functions at face quadrature nodes. The vector basis is obtained by tensorization of the scalar one as in get\+\_\+vec\+\_\+phi\+T\+\_\+quadT. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_gac0ae8087a2aec77c7bf42b35becef286}\label{group__HybridCore_gac0ae8087a2aec77c7bf42b35becef286}} 
-{\footnotesize template$<$typename Geometric\+Support $>$ }\\const size\+\_\+t {\bfseries H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly} (int m)
+{\footnotesize template$<$typename Geometric\+Support $>$ }\\const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gac0ae8087a2aec77c7bf42b35becef286}{H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly}} (int m)
 \item 
 template$<$$>$ const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gac24ef7d804b2e6401b814a9cb51dc38c}{H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Cell $>$}} (const int m)
 \begin{DoxyCompactList}\small\item\em Compute the size of the basis of 3-\/variate polynomials up to degree m. \end{DoxyCompactList}\item 
@@ -69,57 +58,40 @@ template$<$$>$ const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gacd37367832
 \begin{DoxyCompactList}\small\item\em Compute the size of the basis of 1-\/variate polynomials up to degree m. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__HybridCore_gae2a9aa60d46161d5cbba31dfd1c5eccd}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::\+U\+Vector}} (const Eigen\+::\+Vector\+Xd values, const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&mesh, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg)
 \item 
-\mbox{\Hypertarget{group__HybridCore_gac44c85c6f56c0c6f2b66f0ed630574dd}\label{group__HybridCore_gac44c85c6f56c0c6f2b66f0ed630574dd}} 
 Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HybridCore_gac44c85c6f56c0c6f2b66f0ed630574dd}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::as\+Vector\+Xd}} () const
 \begin{DoxyCompactList}\small\item\em Return the values as an Eigen vector. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga4621feb28406aad90512e4a0b6ec5662}\label{group__HybridCore_ga4621feb28406aad90512e4a0b6ec5662}} 
 const int \mbox{\hyperlink{group__HybridCore_ga4621feb28406aad90512e4a0b6ec5662}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::get\+\_\+cell\+\_\+deg}} () const
 \begin{DoxyCompactList}\small\item\em Return the cell degree. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga8f9826e319a633d697fb7fe50ffa2799}\label{group__HybridCore_ga8f9826e319a633d697fb7fe50ffa2799}} 
 const size\+\_\+t \mbox{\hyperlink{group__HybridCore_ga8f9826e319a633d697fb7fe50ffa2799}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::get\+\_\+face\+\_\+deg}} () const
 \begin{DoxyCompactList}\small\item\em Return the face degree. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga0ca65e887f268ac464d45c45f2d1c4a4}\label{group__HybridCore_ga0ca65e887f268ac464d45c45f2d1c4a4}} 
 const size\+\_\+t \mbox{\hyperlink{group__HybridCore_ga0ca65e887f268ac464d45c45f2d1c4a4}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::n\+\_\+cell\+\_\+dofs}} () const
 \begin{DoxyCompactList}\small\item\em Number of dofs in each cell. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_gaa1f68faa5324ceceee6d49e66e766fc3}\label{group__HybridCore_gaa1f68faa5324ceceee6d49e66e766fc3}} 
 const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gaa1f68faa5324ceceee6d49e66e766fc3}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::n\+\_\+face\+\_\+dofs}} () const
 \begin{DoxyCompactList}\small\item\em Number of dofs on each face. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga5a48f281a6cdabd298d5f2edf4c04022}\label{group__HybridCore_ga5a48f281a6cdabd298d5f2edf4c04022}} 
 const size\+\_\+t \mbox{\hyperlink{group__HybridCore_ga5a48f281a6cdabd298d5f2edf4c04022}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::n\+\_\+total\+\_\+cell\+\_\+dofs}} () const
 \begin{DoxyCompactList}\small\item\em Total number of cell dofs (in the vector, this is where the face dofs start) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga24a0a68f8f1e8bdc4845bee48b7ce8d2}\label{group__HybridCore_ga24a0a68f8f1e8bdc4845bee48b7ce8d2}} 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HybridCore_ga24a0a68f8f1e8bdc4845bee48b7ce8d2}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::restr}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Extract the restriction of the unknowns corresponding to cell iT and its faces. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga7b9eb68a1bd6c64cedffe79bd7c9dc1b}\label{group__HybridCore_ga7b9eb68a1bd6c64cedffe79bd7c9dc1b}} 
 \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \mbox{\hyperlink{group__HybridCore_ga7b9eb68a1bd6c64cedffe79bd7c9dc1b}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::operator+}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&b)
 \begin{DoxyCompactList}\small\item\em Overloads the addition\+: adds the coefficients. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_gafacf1951576154d9eb79770ddee87aa0}\label{group__HybridCore_gafacf1951576154d9eb79770ddee87aa0}} 
 \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \mbox{\hyperlink{group__HybridCore_gafacf1951576154d9eb79770ddee87aa0}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::operator-\/}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&b)
 \begin{DoxyCompactList}\small\item\em Overloads the subtraction\+: subtracts the coefficients. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_gac5679636cd20ff654b96a941b742c3fe}\label{group__HybridCore_gac5679636cd20ff654b96a941b742c3fe}} 
 double \mbox{\hyperlink{group__HybridCore_gac5679636cd20ff654b96a941b742c3fe}{H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::operator()}} (size\+\_\+t index) const
 \begin{DoxyCompactList}\small\item\em Overloads the ()\+: returns the corresponding coefficient. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__HybridCore_ga0afcdbfe52e163c27b24ec93d336dc53}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Hybrid\+Core}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} $\ast$mesh\+\_\+ptr, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg, const int edge\+\_\+deg, const bool use\+\_\+threads=true, std\+::ostream \&output=std\+::cout, const bool ortho=true)
+\mbox{\hyperlink{group__HybridCore_ga0afcdbfe52e163c27b24ec93d336dc53}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Hybrid\+Core}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} $\ast$mesh\+\_\+ptr, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg, const int edge\+\_\+deg, const bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout, const bool ortho=true)
 \begin{DoxyCompactList}\small\item\em Class constructor\+: initialises the data structure with the given mesh, and desired polynomial degrees of the basis functions. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_gaf9413be657df06123c1544d16df6b137}\label{group__HybridCore_gaf9413be657df06123c1544d16df6b137}} 
 const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} $\ast$ \mbox{\hyperlink{group__HybridCore_gaf9413be657df06123c1544d16df6b137}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::get\+\_\+mesh}} () const
 \begin{DoxyCompactList}\small\item\em Returns a pointer to the mesh. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga10e8b9bd521b54042cccd84520011fe9}\label{group__HybridCore_ga10e8b9bd521b54042cccd84520011fe9}} 
 const int \mbox{\hyperlink{group__HybridCore_ga10e8b9bd521b54042cccd84520011fe9}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Cell\+Degree}} () const
 \begin{DoxyCompactList}\small\item\em Return the degree of cell polynomials. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga3ddad16b636a2322ba97829304ce8781}\label{group__HybridCore_ga3ddad16b636a2322ba97829304ce8781}} 
-const int {\bfseries H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Cell\+Degree\+Pos} () const
+const int \mbox{\hyperlink{group__HybridCore_ga3ddad16b636a2322ba97829304ce8781}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Cell\+Degree\+Pos}} () const
 \item 
-\mbox{\Hypertarget{group__HybridCore_gabd72ee1721337185ed3c39da286e2928}\label{group__HybridCore_gabd72ee1721337185ed3c39da286e2928}} 
 const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gabd72ee1721337185ed3c39da286e2928}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Face\+Degree}} () const
 \begin{DoxyCompactList}\small\item\em Return the degree of face polynomials. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_gafb3d4f37c8aef9a9b74f015bd2da41ea}\label{group__HybridCore_gafb3d4f37c8aef9a9b74f015bd2da41ea}} 
 const \mbox{\hyperlink{group__HybridCore_ga5c478c9953257f154d2ea98f115fba0d}{Poly\+Cell\+Basis\+Type}} \& \mbox{\hyperlink{group__HybridCore_gafb3d4f37c8aef9a9b74f015bd2da41ea}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Cell\+Basis}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Return cell basis for element with global index iT. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga5db5bc8811abd5cb2a264486f61c0ad2}\label{group__HybridCore_ga5db5bc8811abd5cb2a264486f61c0ad2}} 
 const \mbox{\hyperlink{group__HybridCore_gab02b7a4490b6a739e2d084e9a70dbcc5}{Poly\+Face\+Basis\+Type}} \& \mbox{\hyperlink{group__HybridCore_ga5db5bc8811abd5cb2a264486f61c0ad2}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Face\+Basis}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Return face basis for face with global index iF. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga21071e365011fbb477a70475f7642f02}\label{group__HybridCore_ga21071e365011fbb477a70475f7642f02}} 
 const \mbox{\hyperlink{group__HybridCore_gad3123dceabd79eec7cdb57ba1014fc17}{Poly\+Edge\+Basis\+Type}} \& \mbox{\hyperlink{group__HybridCore_ga21071e365011fbb477a70475f7642f02}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Edge\+Basis}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Return edge basis for edge with global index iE. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__HybridCore_gab37ab89bf946e237821dd978f475b7c8}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+L2norm}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&Xh) const
@@ -128,13 +100,10 @@ double \mbox{\hyperlink{group__HybridCore_gad6672e0691764ec5752eb1a9a7257792}{H\
 \begin{DoxyCompactList}\small\item\em Compute discrete H1 norm of a discrete function. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Continuous\+Function $>$ }\\\mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \mbox{\hyperlink{group__HybridCore_gadce852531f9197a35e11e1bf9995e827}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::interpolate}} (const Continuous\+Function \&f, const int deg\+\_\+cell, const size\+\_\+t deg\+\_\+face, size\+\_\+t doe) const
 \begin{DoxyCompactList}\small\item\em Compute the interpolant in the discrete space of a continuous function. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga06825c5d156026d465a2798389aa952b}\label{group__HybridCore_ga06825c5d156026d465a2798389aa952b}} 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HybridCore_ga06825c5d156026d465a2798389aa952b}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::compute\+\_\+weights}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Computes the weights to get cell values from face values when l=-\/1. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga9c76abf42a1d56fbf863d8258690497c}\label{group__HybridCore_ga9c76abf42a1d56fbf863d8258690497c}} 
 double \mbox{\hyperlink{group__HybridCore_ga9c76abf42a1d56fbf863d8258690497c}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::evaluate\+\_\+in\+\_\+cell}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} Xh, size\+\_\+t iT, Vector\+Rd x) const
 \begin{DoxyCompactList}\small\item\em Evaluates a discrete function in the cell iT at point x. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__HybridCore_ga088adb7dbbde4b63229b404ee72ed9ea}\label{group__HybridCore_ga088adb7dbbde4b63229b404ee72ed9ea}} 
 double \mbox{\hyperlink{group__HybridCore_ga088adb7dbbde4b63229b404ee72ed9ea}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::evaluate\+\_\+in\+\_\+face}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} Xh, size\+\_\+t iF, Vector\+Rd x) const
 \begin{DoxyCompactList}\small\item\em Evaluates a discrete function on the face iF at point x. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HybridCore_ga1d33ec0786b8127a161384ecf8f04018}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Vertex\+Values}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} Xh, const std\+::string from\+\_\+dofs)
@@ -146,13 +115,99 @@ Classes providing cell and face quadrature rules, and values of basis functions 
 
 Classes providing tools to implement schemes having polynomial unknowns in the cells, on the faces, and on the edges.
 
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__HybridCore_ga5c478c9953257f154d2ea98f115fba0d}\label{group__HybridCore_ga5c478c9953257f154d2ea98f115fba0d}} 
+\index{HybridCore@{HybridCore}!PolyCellBasisType@{PolyCellBasisType}}
+\index{PolyCellBasisType@{PolyCellBasisType}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{PolyCellBasisType}{PolyCellBasisType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}$>$ \mbox{\hyperlink{group__HybridCore_ga5c478c9953257f154d2ea98f115fba0d}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Poly\+Cell\+Basis\+Type}}}
+
+
+
+type for cell basis 
+
+\mbox{\Hypertarget{group__HybridCore_gad3123dceabd79eec7cdb57ba1014fc17}\label{group__HybridCore_gad3123dceabd79eec7cdb57ba1014fc17}} 
+\index{HybridCore@{HybridCore}!PolyEdgeBasisType@{PolyEdgeBasisType}}
+\index{PolyEdgeBasisType@{PolyEdgeBasisType}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{PolyEdgeBasisType}{PolyEdgeBasisType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}}$>$ \mbox{\hyperlink{group__HybridCore_gad3123dceabd79eec7cdb57ba1014fc17}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Poly\+Edge\+Basis\+Type}}}
+
+
+
+type for edge basis 
+
+\mbox{\Hypertarget{group__HybridCore_gab02b7a4490b6a739e2d084e9a70dbcc5}\label{group__HybridCore_gab02b7a4490b6a739e2d084e9a70dbcc5}} 
+\index{HybridCore@{HybridCore}!PolyFaceBasisType@{PolyFaceBasisType}}
+\index{PolyFaceBasisType@{PolyFaceBasisType}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{PolyFaceBasisType}{PolyFaceBasisType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}}$>$ \mbox{\hyperlink{group__HybridCore_gab02b7a4490b6a739e2d084e9a70dbcc5}{H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Poly\+Face\+Basis\+Type}}}
+
+
+
+type for face basis 
+
+
+
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__HybridCore_gac44c85c6f56c0c6f2b66f0ed630574dd}\label{group__HybridCore_gac44c85c6f56c0c6f2b66f0ed630574dd}} 
+\index{HybridCore@{HybridCore}!asVectorXd@{asVectorXd}}
+\index{asVectorXd@{asVectorXd}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{asVectorXd()}{asVectorXd()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::as\+Vector\+Xd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the values as an Eigen vector. 
+
+\mbox{\Hypertarget{group__HybridCore_gafb3d4f37c8aef9a9b74f015bd2da41ea}\label{group__HybridCore_gafb3d4f37c8aef9a9b74f015bd2da41ea}} 
+\index{HybridCore@{HybridCore}!CellBasis@{CellBasis}}
+\index{CellBasis@{CellBasis}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{CellBasis()}{CellBasis()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__HybridCore_ga5c478c9953257f154d2ea98f115fba0d}{Poly\+Cell\+Basis\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Cell\+Basis (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell basis for element with global index iT. 
+
+\mbox{\Hypertarget{group__HybridCore_ga10e8b9bd521b54042cccd84520011fe9}\label{group__HybridCore_ga10e8b9bd521b54042cccd84520011fe9}} 
+\index{HybridCore@{HybridCore}!CellDegree@{CellDegree}}
+\index{CellDegree@{CellDegree}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{CellDegree()}{CellDegree()}}
+{\footnotesize\ttfamily const int H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Cell\+Degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the degree of cell polynomials. 
+
+\mbox{\Hypertarget{group__HybridCore_ga3ddad16b636a2322ba97829304ce8781}\label{group__HybridCore_ga3ddad16b636a2322ba97829304ce8781}} 
+\index{HybridCore@{HybridCore}!CellDegreePos@{CellDegreePos}}
+\index{CellDegreePos@{CellDegreePos}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{CellDegreePos()}{CellDegreePos()}}
+{\footnotesize\ttfamily const int H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Cell\+Degree\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{group__HybridCore_ga06825c5d156026d465a2798389aa952b}\label{group__HybridCore_ga06825c5d156026d465a2798389aa952b}} 
+\index{HybridCore@{HybridCore}!compute\_weights@{compute\_weights}}
+\index{compute\_weights@{compute\_weights}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{compute\_weights()}{compute\_weights()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Hybrid\+Core\+::compute\+\_\+weights (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const}
+
+
+
+Computes the weights to get cell values from face values when l=-\/1. 
+
+\mbox{\Hypertarget{group__HybridCore_gac0ae8087a2aec77c7bf42b35becef286}\label{group__HybridCore_gac0ae8087a2aec77c7bf42b35becef286}} 
+\index{HybridCore@{HybridCore}!DimPoly@{DimPoly}}
+\index{DimPoly@{DimPoly}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{DimPoly()}{DimPoly()}}
+{\footnotesize\ttfamily template$<$typename Geometric\+Support $>$ \\
+const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{group__HybridCore_gac24ef7d804b2e6401b814a9cb51dc38c}\label{group__HybridCore_gac24ef7d804b2e6401b814a9cb51dc38c}} 
 \index{HybridCore@{HybridCore}!DimPoly$<$ Cell $>$@{DimPoly$<$ Cell $>$}}
 \index{DimPoly$<$ Cell $>$@{DimPoly$<$ Cell $>$}!HybridCore@{HybridCore}}
 \doxysubsubsection{\texorpdfstring{DimPoly$<$ Cell $>$()}{DimPoly< Cell >()}}
 {\footnotesize\ttfamily template$<$$>$ \\
-const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Cell $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gac0ae8087a2aec77c7bf42b35becef286}{H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly}}$<$ Cell $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -168,7 +223,7 @@ Compute the size of the basis of 3-\/variate polynomials up to degree m.
 \index{DimPoly$<$ Edge $>$@{DimPoly$<$ Edge $>$}!HybridCore@{HybridCore}}
 \doxysubsubsection{\texorpdfstring{DimPoly$<$ Edge $>$()}{DimPoly< Edge >()}}
 {\footnotesize\ttfamily template$<$$>$ \\
-const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Edge $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gac0ae8087a2aec77c7bf42b35becef286}{H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly}}$<$ Edge $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -184,7 +239,7 @@ Compute the size of the basis of 1-\/variate polynomials up to degree m.
 \index{DimPoly$<$ Face $>$@{DimPoly$<$ Face $>$}!HybridCore@{HybridCore}}
 \doxysubsubsection{\texorpdfstring{DimPoly$<$ Face $>$()}{DimPoly< Face >()}}
 {\footnotesize\ttfamily template$<$$>$ \\
-const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly$<$ Face $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+const size\+\_\+t \mbox{\hyperlink{group__HybridCore_gac0ae8087a2aec77c7bf42b35becef286}{H\+Ar\+D\+Core3\+D\+::\+Dim\+Poly}}$<$ Face $>$ (\begin{DoxyParamCaption}\item[{const int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -195,6 +250,16 @@ Compute the size of the basis of 2-\/variate polynomials up to degree m.
 {\em m} & Polynomial degree \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__HybridCore_ga21071e365011fbb477a70475f7642f02}\label{group__HybridCore_ga21071e365011fbb477a70475f7642f02}} 
+\index{HybridCore@{HybridCore}!EdgeBasis@{EdgeBasis}}
+\index{EdgeBasis@{EdgeBasis}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{EdgeBasis()}{EdgeBasis()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__HybridCore_gad3123dceabd79eec7cdb57ba1014fc17}{Poly\+Edge\+Basis\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Edge\+Basis (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return edge basis for edge with global index iE. 
+
 \mbox{\Hypertarget{group__HybridCore_ga0d27ba99f9f3e6f2a3e5311e6be19eba}\label{group__HybridCore_ga0d27ba99f9f3e6f2a3e5311e6be19eba}} 
 \index{HybridCore@{HybridCore}!ElementQuad@{ElementQuad}}
 \index{ElementQuad@{ElementQuad}!HybridCore@{HybridCore}}
@@ -216,6 +281,146 @@ Class constructor\+: loads the quadrature rules and values of basis functions/gr
 {\em doeF} & The degree of exactness of face quadratures \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__HybridCore_ga9c76abf42a1d56fbf863d8258690497c}\label{group__HybridCore_ga9c76abf42a1d56fbf863d8258690497c}} 
+\index{HybridCore@{HybridCore}!evaluate\_in\_cell@{evaluate\_in\_cell}}
+\index{evaluate\_in\_cell@{evaluate\_in\_cell}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{evaluate\_in\_cell()}{evaluate\_in\_cell()}}
+{\footnotesize\ttfamily double Hybrid\+Core\+::evaluate\+\_\+in\+\_\+cell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}}}]{Xh,  }\item[{size\+\_\+t}]{iT,  }\item[{Vector\+Rd}]{x }\end{DoxyParamCaption}) const}
+
+
+
+Evaluates a discrete function in the cell iT at point x. 
+
+\mbox{\Hypertarget{group__HybridCore_ga088adb7dbbde4b63229b404ee72ed9ea}\label{group__HybridCore_ga088adb7dbbde4b63229b404ee72ed9ea}} 
+\index{HybridCore@{HybridCore}!evaluate\_in\_face@{evaluate\_in\_face}}
+\index{evaluate\_in\_face@{evaluate\_in\_face}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{evaluate\_in\_face()}{evaluate\_in\_face()}}
+{\footnotesize\ttfamily double Hybrid\+Core\+::evaluate\+\_\+in\+\_\+face (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}}}]{Xh,  }\item[{size\+\_\+t}]{iF,  }\item[{Vector\+Rd}]{x }\end{DoxyParamCaption}) const}
+
+
+
+Evaluates a discrete function on the face iF at point x. 
+
+\mbox{\Hypertarget{group__HybridCore_ga5db5bc8811abd5cb2a264486f61c0ad2}\label{group__HybridCore_ga5db5bc8811abd5cb2a264486f61c0ad2}} 
+\index{HybridCore@{HybridCore}!FaceBasis@{FaceBasis}}
+\index{FaceBasis@{FaceBasis}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{FaceBasis()}{FaceBasis()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__HybridCore_gab02b7a4490b6a739e2d084e9a70dbcc5}{Poly\+Face\+Basis\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Face\+Basis (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return face basis for face with global index iF. 
+
+\mbox{\Hypertarget{group__HybridCore_gabd72ee1721337185ed3c39da286e2928}\label{group__HybridCore_gabd72ee1721337185ed3c39da286e2928}} 
+\index{HybridCore@{HybridCore}!FaceDegree@{FaceDegree}}
+\index{FaceDegree@{FaceDegree}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{FaceDegree()}{FaceDegree()}}
+{\footnotesize\ttfamily const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::\+Face\+Degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the degree of face polynomials. 
+
+\mbox{\Hypertarget{group__HybridCore_ga4621feb28406aad90512e4a0b6ec5662}\label{group__HybridCore_ga4621feb28406aad90512e4a0b6ec5662}} 
+\index{HybridCore@{HybridCore}!get\_cell\_deg@{get\_cell\_deg}}
+\index{get\_cell\_deg@{get\_cell\_deg}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{get\_cell\_deg()}{get\_cell\_deg()}}
+{\footnotesize\ttfamily const int H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::get\+\_\+cell\+\_\+deg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the cell degree. 
+
+\mbox{\Hypertarget{group__HybridCore_ga023175342dd0e23426348ebe2445b7cc}\label{group__HybridCore_ga023175342dd0e23426348ebe2445b7cc}} 
+\index{HybridCore@{HybridCore}!get\_dphiT\_quadF@{get\_dphiT\_quadF}}
+\index{get\_dphiT\_quadF@{get\_dphiT\_quadF}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{get\_dphiT\_quadF()}{get\_dphiT\_quadF()}}
+{\footnotesize\ttfamily const boost\+::multi\+\_\+array$<$Vector\+Rd, 2$>$\& H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+dphi\+T\+\_\+quadF (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ilF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns values of gradients of cell basis functions at face quadrature nodes, for face with local number ilF. 
+
+\mbox{\Hypertarget{group__HybridCore_ga4a585d06f102a8c04ebffc1f8541e778}\label{group__HybridCore_ga4a585d06f102a8c04ebffc1f8541e778}} 
+\index{HybridCore@{HybridCore}!get\_dphiT\_quadT@{get\_dphiT\_quadT}}
+\index{get\_dphiT\_quadT@{get\_dphiT\_quadT}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{get\_dphiT\_quadT()}{get\_dphiT\_quadT()}}
+{\footnotesize\ttfamily const boost\+::multi\+\_\+array$<$Vector\+Rd, 2$>$\& H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+dphi\+T\+\_\+quadT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns values of gradients of cell basis functions at cell quadrature nodes. 
+
+\mbox{\Hypertarget{group__HybridCore_ga8f9826e319a633d697fb7fe50ffa2799}\label{group__HybridCore_ga8f9826e319a633d697fb7fe50ffa2799}} 
+\index{HybridCore@{HybridCore}!get\_face\_deg@{get\_face\_deg}}
+\index{get\_face\_deg@{get\_face\_deg}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{get\_face\_deg()}{get\_face\_deg()}}
+{\footnotesize\ttfamily const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::get\+\_\+face\+\_\+deg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the face degree. 
+
+\mbox{\Hypertarget{group__HybridCore_gaf9413be657df06123c1544d16df6b137}\label{group__HybridCore_gaf9413be657df06123c1544d16df6b137}} 
+\index{HybridCore@{HybridCore}!get\_mesh@{get\_mesh}}
+\index{get\_mesh@{get\_mesh}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{get\_mesh()}{get\_mesh()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}$\ast$ H\+Ar\+D\+Core3\+D\+::\+Hybrid\+Core\+::get\+\_\+mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a pointer to the mesh. 
+
+\mbox{\Hypertarget{group__HybridCore_ga561b60cc7997268260b7cd05edce20d9}\label{group__HybridCore_ga561b60cc7997268260b7cd05edce20d9}} 
+\index{HybridCore@{HybridCore}!get\_phiF\_quadF@{get\_phiF\_quadF}}
+\index{get\_phiF\_quadF@{get\_phiF\_quadF}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{get\_phiF\_quadF()}{get\_phiF\_quadF()}}
+{\footnotesize\ttfamily const boost\+::multi\+\_\+array$<$double, 2$>$ H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+phi\+F\+\_\+quadF (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ilF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns values of face basis functions at face quadrature nodes, for face with local number ilF. 
+
+\mbox{\Hypertarget{group__HybridCore_ga34cbdbaafb9fe8681474b11bc8ebfd93}\label{group__HybridCore_ga34cbdbaafb9fe8681474b11bc8ebfd93}} 
+\index{HybridCore@{HybridCore}!get\_phiT\_quadF@{get\_phiT\_quadF}}
+\index{get\_phiT\_quadF@{get\_phiT\_quadF}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{get\_phiT\_quadF()}{get\_phiT\_quadF()}}
+{\footnotesize\ttfamily const boost\+::multi\+\_\+array$<$double, 2$>$\& H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+phi\+T\+\_\+quadF (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ilF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns values of cell basis functions at face quadrature nodes, for face with local number ilF. 
+
+\mbox{\Hypertarget{group__HybridCore_gaa56cdde521a902082ce050928893804d}\label{group__HybridCore_gaa56cdde521a902082ce050928893804d}} 
+\index{HybridCore@{HybridCore}!get\_phiT\_quadT@{get\_phiT\_quadT}}
+\index{get\_phiT\_quadT@{get\_phiT\_quadT}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{get\_phiT\_quadT()}{get\_phiT\_quadT()}}
+{\footnotesize\ttfamily const boost\+::multi\+\_\+array$<$double, 2$>$\& H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+phi\+T\+\_\+quadT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns values of cell basis functions at cell quadrature nodes. 
+
+\mbox{\Hypertarget{group__HybridCore_ga9e734ea29a3c4e0403bb5aea2ba910e3}\label{group__HybridCore_ga9e734ea29a3c4e0403bb5aea2ba910e3}} 
+\index{HybridCore@{HybridCore}!get\_quadF@{get\_quadF}}
+\index{get\_quadF@{get\_quadF}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{get\_quadF()}{get\_quadF()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}}\& H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+quadF (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ilF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns quadrature rules on face with local number ilF. 
+
+\mbox{\Hypertarget{group__HybridCore_gaf8ee9bc271f5b73902b87f68f46f51f5}\label{group__HybridCore_gaf8ee9bc271f5b73902b87f68f46f51f5}} 
+\index{HybridCore@{HybridCore}!get\_quadT@{get\_quadT}}
+\index{get\_quadT@{get\_quadT}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{get\_quadT()}{get\_quadT()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}}\& H\+Ar\+D\+Core3\+D\+::\+Element\+Quad\+::get\+\_\+quadT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns quadrature rules in cell. 
+
 \mbox{\Hypertarget{group__HybridCore_ga862a7cc1c7f5e62bcb26c5a2a14bb4ea}\label{group__HybridCore_ga862a7cc1c7f5e62bcb26c5a2a14bb4ea}} 
 \index{HybridCore@{HybridCore}!get\_vec\_phiF\_quadF@{get\_vec\_phiF\_quadF}}
 \index{get\_vec\_phiF\_quadF@{get\_vec\_phiF\_quadF}!HybridCore@{HybridCore}}
@@ -352,6 +557,76 @@ Compute L2 norm of a discrete function (using cell values)
 {\em Xh} & Vector of unknowns \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__HybridCore_ga0ca65e887f268ac464d45c45f2d1c4a4}\label{group__HybridCore_ga0ca65e887f268ac464d45c45f2d1c4a4}} 
+\index{HybridCore@{HybridCore}!n\_cell\_dofs@{n\_cell\_dofs}}
+\index{n\_cell\_dofs@{n\_cell\_dofs}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{n\_cell\_dofs()}{n\_cell\_dofs()}}
+{\footnotesize\ttfamily const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::n\+\_\+cell\+\_\+dofs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of dofs in each cell. 
+
+\mbox{\Hypertarget{group__HybridCore_gaa1f68faa5324ceceee6d49e66e766fc3}\label{group__HybridCore_gaa1f68faa5324ceceee6d49e66e766fc3}} 
+\index{HybridCore@{HybridCore}!n\_face\_dofs@{n\_face\_dofs}}
+\index{n\_face\_dofs@{n\_face\_dofs}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{n\_face\_dofs()}{n\_face\_dofs()}}
+{\footnotesize\ttfamily const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::n\+\_\+face\+\_\+dofs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of dofs on each face. 
+
+\mbox{\Hypertarget{group__HybridCore_ga5a48f281a6cdabd298d5f2edf4c04022}\label{group__HybridCore_ga5a48f281a6cdabd298d5f2edf4c04022}} 
+\index{HybridCore@{HybridCore}!n\_total\_cell\_dofs@{n\_total\_cell\_dofs}}
+\index{n\_total\_cell\_dofs@{n\_total\_cell\_dofs}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{n\_total\_cell\_dofs()}{n\_total\_cell\_dofs()}}
+{\footnotesize\ttfamily const size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::n\+\_\+total\+\_\+cell\+\_\+dofs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Total number of cell dofs (in the vector, this is where the face dofs start) 
+
+\mbox{\Hypertarget{group__HybridCore_gac5679636cd20ff654b96a941b742c3fe}\label{group__HybridCore_gac5679636cd20ff654b96a941b742c3fe}} 
+\index{HybridCore@{HybridCore}!operator()@{operator()}}
+\index{operator()@{operator()}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily double H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloads the ()\+: returns the corresponding coefficient. 
+
+\mbox{\Hypertarget{group__HybridCore_ga7b9eb68a1bd6c64cedffe79bd7c9dc1b}\label{group__HybridCore_ga7b9eb68a1bd6c64cedffe79bd7c9dc1b}} 
+\index{HybridCore@{HybridCore}!operator+@{operator+}}
+\index{operator+@{operator+}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloads the addition\+: adds the coefficients. 
+
+\mbox{\Hypertarget{group__HybridCore_gafacf1951576154d9eb79770ddee87aa0}\label{group__HybridCore_gafacf1951576154d9eb79770ddee87aa0}} 
+\index{HybridCore@{HybridCore}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} H\+Ar\+D\+Core3\+D\+::\+U\+Vector\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloads the subtraction\+: subtracts the coefficients. 
+
+\mbox{\Hypertarget{group__HybridCore_ga24a0a68f8f1e8bdc4845bee48b7ce8d2}\label{group__HybridCore_ga24a0a68f8f1e8bdc4845bee48b7ce8d2}} 
+\index{HybridCore@{HybridCore}!restr@{restr}}
+\index{restr@{restr}!HybridCore@{HybridCore}}
+\doxysubsubsection{\texorpdfstring{restr()}{restr()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd U\+Vector\+::restr (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const}
+
+
+
+Extract the restriction of the unknowns corresponding to cell iT and its faces. 
+
 \mbox{\Hypertarget{group__HybridCore_gae2a9aa60d46161d5cbba31dfd1c5eccd}\label{group__HybridCore_gae2a9aa60d46161d5cbba31dfd1c5eccd}} 
 \index{HybridCore@{HybridCore}!UVector@{UVector}}
 \index{UVector@{UVector}!HybridCore@{HybridCore}}

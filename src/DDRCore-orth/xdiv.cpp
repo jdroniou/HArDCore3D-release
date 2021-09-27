@@ -1,6 +1,8 @@
 #include <xdiv.hpp>
 #include <basis.hpp>
 #include <parallel_for.hpp>
+#include <GMpoly_cell.hpp>
+#include <GMpoly_face.hpp>
 
 using namespace HArDCore3D;
 
@@ -109,9 +111,8 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
   //-----------------------------------------------------------------------------------------
   // Left-hand side matrix
 
-  QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2 * degree());						       
-  auto basis_Pk_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polyk, quad_2k_T);
-  Eigen::MatrixXd MDT = compute_gram_matrix(basis_Pk_T_quad, basis_Pk_T_quad, quad_2k_T, "sym");
+  MonomialIntegralsType int_mono_2kpo = IntegrateCellMonomials(T, 2*degree()+1);
+  Eigen::MatrixXd MDT = GramMatrix(T, *cellBases(iT).Polyk, int_mono_2kpo);
 
   //------------------------------------------------------------------------------
   // Right-hand side matrix
@@ -134,13 +135,9 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
 
   // Element contribution
   if (degree() > 0) {
-    QuadratureRule quad_2kmo_T = generate_quadrature_rule(T, 2 * (degree() - 1));
+    GradientBasis<RestrictedBasis<DDRCore::PolyBasisCellType>> grad_Polyk(*cellBases(iT).Polyk);
     BDT.block(0, localOffset(T), PolynomialSpaceDimension<Cell>::Poly(degree()), PolynomialSpaceDimension<Cell>::Goly(degree() - 1))
-      -= compute_gram_matrix(
-			     evaluate_quad<Gradient>::compute(*cellBases(iT).Polyk, quad_2kmo_T),
-			     evaluate_quad<Function>::compute(*cellBases(iT).Golykmo, quad_2kmo_T),
-			     quad_2kmo_T
-			     );
+      			           -= GramMatrix(T, grad_Polyk, *cellBases(iT).Golykmo);
   } // if degree() > 0
 
   Eigen::MatrixXd DT = MDT.ldlt().solve(BDT);
@@ -158,30 +155,23 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
   Eigen::MatrixXd BPT
     = Eigen::MatrixXd::Zero(cellBases(iT).Polyk3->dimension(), dimensionCell(iT));
 
-  auto basis_Pk3_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_T);
-    
-  MPT.topRows(Poly0kpo.dimension())
-    =  compute_gram_matrix(
-			   evaluate_quad<Gradient>::compute(Poly0kpo, quad_2k_T),
-			   basis_Pk3_T_quad,
-			   quad_2k_T
-			   );
+////  auto basis_Pk3_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_T);
+  
+  GradientBasis<ShiftedBasis<DDRCore::PolyBasisCellType>> grad_Poly0kpo(Poly0kpo);
+  MPT.topRows(Poly0kpo.dimension()) = GramMatrix(T, grad_Poly0kpo, *cellBases(iT).Polyk3, int_mono_2kpo);
 
   if (degree() > 0) {
-    auto basis_GOk_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).GolyComplk, quad_2k_T);
-    MPT.bottomRows(cellBases(iT).GolyComplk->dimension())
-      = compute_gram_matrix(basis_GOk_T_quad, basis_Pk3_T_quad, quad_2k_T);
+////    auto basis_GOk_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).GolyComplk, quad_2k_T);
+////    MPT.bottomRows(cellBases(iT).GolyComplk->dimension())
+////      = compute_gram_matrix(basis_GOk_T_quad, basis_Pk3_T_quad, quad_2k_T);
+////    BPT.bottomRightCorner(cellBases(iT).GolyComplk->dimension(), cellBases(iT).GolyComplk->dimension())
+////      = compute_gram_matrix(basis_GOk_T_quad, quad_2k_T);		   
+    MPT.bottomRows(cellBases(iT).GolyComplk->dimension()) = GramMatrix(T, *cellBases(iT).GolyComplk, *cellBases(iT).Polyk3, int_mono_2kpo);
     BPT.bottomRightCorner(cellBases(iT).GolyComplk->dimension(), cellBases(iT).GolyComplk->dimension())
-      = compute_gram_matrix(basis_GOk_T_quad, quad_2k_T);		   
+          = GramMatrix(T, *cellBases(iT).GolyComplk, int_mono_2kpo);
   } // if degree() > 0
 
-  auto quad_2kpo_T = generate_quadrature_rule(T, 2 * degree() + 1);
-  BPT.topRows(Poly0kpo.dimension())
-    -= compute_gram_matrix(
-			   evaluate_quad<Function>::compute(Poly0kpo, quad_2kpo_T),
-			   evaluate_quad<Function>::compute(*cellBases(iT).Polyk, quad_2kpo_T),
-			   quad_2kpo_T
-			   ) * DT;
+  BPT.topRows(Poly0kpo.dimension()) -= GramMatrix(T, Poly0kpo, *cellBases(iT).Polyk, int_mono_2kpo) * DT;
 
   for (size_t iF = 0; iF < T.n_faces(); iF++) {
     const Face & F = *T.face(iF);
@@ -291,7 +281,7 @@ Eigen::MatrixXd XDiv::computeL2Product_with_Ops(
                                         std::vector<Eigen::MatrixXd> & leftOp,
                                         std::vector<Eigen::MatrixXd> & rightOp,
                                         const double & penalty_factor,
-                                        const Eigen::MatrixXd & mass_Pk3_T,
+                                        const Eigen::MatrixXd & w_mass_Pk3_T,
                                         const IntegralWeight & weight
                                         ) const
 {
@@ -315,15 +305,22 @@ Eigen::MatrixXd XDiv::computeL2Product_with_Ops(
     const Face & F = *T.face(iF);
 
     // Compute gram matrices
-    QuadratureRule quad_2k_F = generate_quadrature_rule(F, 2 * degree());
-    auto basis_Pk3_T_dot_nF_quad
-      = scalar_product(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_F), F.normal());
-    auto basis_Pk_F_quad
-      = evaluate_quad<Function>::compute(*faceBases(F.global_index()).Polyk, quad_2k_F);
-    Eigen::MatrixXd mass_PkF_PkF = compute_gram_matrix(basis_Pk_F_quad, quad_2k_F);
-    Eigen::MatrixXd gram_PkF_Pk3T_dot_nF = compute_gram_matrix(basis_Pk_F_quad, basis_Pk3_T_dot_nF_quad, quad_2k_F, "nonsym");
-    
+////    QuadratureRule quad_2k_F = generate_quadrature_rule(F, 2 * degree());
+////    auto basis_Pk3_T_dot_nF_quad
+////      = scalar_product(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_F), F.normal());
+////    auto basis_Pk_F_quad
+////      = evaluate_quad<Function>::compute(*faceBases(F.global_index()).Polyk, quad_2k_F);
+////    Eigen::MatrixXd mass_PkF_PkF = compute_gram_matrix(basis_Pk_F_quad, quad_2k_F);
+////    Eigen::MatrixXd gram_PkF_Pk3T_dot_nF = compute_gram_matrix(basis_Pk_F_quad, basis_Pk3_T_dot_nF_quad, quad_2k_F, "nonsym");
+    MonomialFaceIntegralsType int_monoF_2k = IntegrateFaceMonomials(F, 2*degree());
+    DecomposePoly dec(F, MonomialScalarBasisFace(F, degree()));
+    auto Pk3_T_dot_nF_nodes = scalar_product(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, dec.get_nodes()), F.normal());
+    auto Pk3_T_dot_nF_family_PkF = dec.family(Pk3_T_dot_nF_nodes);
+    Eigen::MatrixXd mass_PkF_PkF = GramMatrix(F, *faceBases(F).Polyk, int_monoF_2k);
+    Eigen::MatrixXd gram_PkF_Pk3T_dot_nF = GramMatrix(F, *faceBases(F).Polyk, Pk3_T_dot_nF_family_PkF, int_monoF_2k);
+
     // Weight including scaling hF
+    QuadratureRule quad_2k_F = generate_quadrature_rule(F, 2 * degree());
     double max_weight_quad_F = weight.value(T, quad_2k_F[0].vector());
     // If the weight is not constant, we want to take the largest along the edge
     if (weight.deg(T)>0){
@@ -346,27 +343,29 @@ Eigen::MatrixXd XDiv::computeL2Product_with_Ops(
   L2P *= penalty_factor;
   
   // Consistent term, two calculations depending if weight is constant or not.
-  if (weight.deg(T)==0){
-    // weight is constant so the calculation is based on the standard mass matrix multiplied by the weight. 
-    Eigen::MatrixXd M_Pk3_T = mass_Pk3_T;
-    if (M_Pk3_T.rows()==1){
-      // Mass matrix not passed as parameter, we compute it
-      QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2 * degree());
-      M_Pk3_T.resize(cellBases(iT).Polyk3->dimension(), cellBases(iT).Polyk3->dimension());
-      M_Pk3_T = compute_gram_matrix(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_T), quad_2k_T);
-    }
-    L2P += weight.value(T, T.center_mass()) * leftOp[offset_T].transpose() * M_Pk3_T * rightOp[offset_T];
-  }else{
-    // Weight is not constant, we use a weighted gram matrix
-    QuadratureRule quad_2kpw_T = generate_quadrature_rule(T, 2 * degree() + weight.deg(T));
-    auto basis_Pk3_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2kpw_T);
-    std::function<double(const Eigen::Vector3d &)> weight_T 
-              = [&T, &weight](const Eigen::Vector3d &x)->double {
-                  return weight.value(T, x);
-                };
-    L2P += leftOp[offset_T].transpose() * compute_weighted_gram_matrix(weight_T, basis_Pk3_T_quad, basis_Pk3_T_quad, quad_2kpw_T, "sym") * rightOp[offset_T];
+////  if (weight.deg(T)==0){
+////    // weight is constant so the calculation is based on the standard mass matrix multiplied by the weight. 
+////    Eigen::MatrixXd M_Pk3_T = mass_Pk3_T;
+////    if (M_Pk3_T.rows()==1){
+////      // Mass matrix not passed as parameter, we compute it
+////      QuadratureRule quad_2k_T = generate_quadrature_rule(T, 2 * degree());
+////      M_Pk3_T.resize(cellBases(iT).Polyk3->dimension(), cellBases(iT).Polyk3->dimension());
+////      M_Pk3_T = compute_gram_matrix(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_T), quad_2k_T);
+////    }
+////    L2P += weight.value(T, T.center_mass()) * leftOp[offset_T].transpose() * M_Pk3_T * rightOp[offset_T];
+////  }else{
+////    // Weight is not constant, we use a weighted gram matrix
+////    QuadratureRule quad_2kpw_T = generate_quadrature_rule(T, 2 * degree() + weight.deg(T));
+////    auto basis_Pk3_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2kpw_T);
+////    std::function<double(const Eigen::Vector3d &)> weight_T 
+////              = [&T, &weight](const Eigen::Vector3d &x)->double {
+////                  return weight.value(T, x);
+////                };
+////    L2P += leftOp[offset_T].transpose() * compute_weighted_gram_matrix(weight_T, basis_Pk3_T_quad, basis_Pk3_T_quad, quad_2kpw_T, "sym") * rightOp[offset_T];
 
-  }
+////  }
+   L2P += leftOp[offset_T].transpose() * w_mass_Pk3_T * rightOp[offset_T];
+
  
   return L2P;
 }

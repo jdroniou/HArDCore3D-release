@@ -69,7 +69,7 @@ $(function() {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_f"></a>- f -</h3><ul>
 <li>face()
@@ -97,25 +97,53 @@ $(function() {
 : <a class="el" href="group__DDRCore.html#ga23a50dcc144bba2abe9742ad016ca58e">HArDCore3D::XCurl</a>
 , <a class="el" href="group__DDRCore.html#ga39c8365e893f692f285fe15be8b7162b">HArDCore3D::XGrad</a>
 </li>
+<li>family()
+: <a class="el" href="group__Basis.html#gaaa367eb17707155e1920822cfb60b334">HArDCore3D::DecomposePoly&lt; BasisType &gt;</a>
+</li>
 <li>Family()
-: <a class="el" href="group__Common.html#gaa0576f3bfd8f5cdbdd863f147b646d15">HArDCore3D::Family&lt; BasisType &gt;</a>
+: <a class="el" href="group__Basis.html#gaa0576f3bfd8f5cdbdd863f147b646d15">HArDCore3D::Family&lt; BasisType &gt;</a>
+</li>
+<li>ForcingTermType
+: <a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">HArDCore3D::Magnetostatics</a>
 </li>
 <li>function()
-: <a class="el" href="group__Common.html#ga5476b7c9f36899f48fdb549f25974b27">HArDCore3D::CurlBasis&lt; BasisType &gt;</a>
-, <a class="el" href="group__Common.html#gaf611392a524e727e43d25fccf953314b">HArDCore3D::DivergenceBasis&lt; BasisType &gt;</a>
-, <a class="el" href="group__Common.html#ga3616bf77a028e9e7638af28820370931">HArDCore3D::Family&lt; BasisType &gt;</a>
-, <a class="el" href="group__Common.html#ga6814a80c622c8cf9ee9b7a2ab93473c4">HArDCore3D::GolyComplBasisCell</a>
-, <a class="el" href="group__Common.html#gaee2b5550bf8fc5e23172c08848b82125">HArDCore3D::GolyComplBasisFace</a>
-, <a class="el" href="group__Common.html#ga21186eb9b6825da3867965bd2e046b23">HArDCore3D::GradientBasis&lt; BasisType &gt;</a>
-, <a class="el" href="group__Common.html#gaed6372e890152e660a20b73b6949fa28">HArDCore3D::MonomialScalarBasisCell</a>
-, <a class="el" href="group__Common.html#gafa89fccabeee35112f4aec3bb8bd212b">HArDCore3D::MonomialScalarBasisEdge</a>
-, <a class="el" href="group__Common.html#ga5dcaa7bcfc2afaf3615556f83bf1076b">HArDCore3D::MonomialScalarBasisFace</a>
-, <a class="el" href="group__Common.html#gacb26aa08f1f3d62deb174e82dc9c2046">HArDCore3D::RestrictedBasis&lt; BasisType &gt;</a>
-, <a class="el" href="group__Common.html#gaa030621a604f2d2402a83719b14e40aa">HArDCore3D::RolyComplBasisCell</a>
-, <a class="el" href="group__Common.html#ga3dae19bae2306aa96952ea24158a944c">HArDCore3D::RolyComplBasisFace</a>
-, <a class="el" href="group__Common.html#ga67db64c53524c17389e1928ff7288101">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
-, <a class="el" href="group__Common.html#ga77132c1ffe753b76526c730aac3eec1e">HArDCore3D::TangentFamily&lt; ScalarFamilyType &gt;</a>
-, <a class="el" href="group__Common.html#gac34ef60810b5d9641458c640bb66b3b4">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
+: <a class="el" href="group__Basis.html#ga5476b7c9f36899f48fdb549f25974b27">HArDCore3D::CurlBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#gaf611392a524e727e43d25fccf953314b">HArDCore3D::DivergenceBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga3616bf77a028e9e7638af28820370931">HArDCore3D::Family&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga6814a80c622c8cf9ee9b7a2ab93473c4">HArDCore3D::GolyComplBasisCell</a>
+, <a class="el" href="group__Basis.html#gaee2b5550bf8fc5e23172c08848b82125">HArDCore3D::GolyComplBasisFace</a>
+, <a class="el" href="group__Basis.html#ga21186eb9b6825da3867965bd2e046b23">HArDCore3D::GradientBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#gaed6372e890152e660a20b73b6949fa28">HArDCore3D::MonomialScalarBasisCell</a>
+, <a class="el" href="group__Basis.html#gafa89fccabeee35112f4aec3bb8bd212b">HArDCore3D::MonomialScalarBasisEdge</a>
+, <a class="el" href="group__Basis.html#ga5dcaa7bcfc2afaf3615556f83bf1076b">HArDCore3D::MonomialScalarBasisFace</a>
+, <a class="el" href="group__Basis.html#gacb26aa08f1f3d62deb174e82dc9c2046">HArDCore3D::RestrictedBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#gaa030621a604f2d2402a83719b14e40aa">HArDCore3D::RolyComplBasisCell</a>
+, <a class="el" href="group__Basis.html#ga3dae19bae2306aa96952ea24158a944c">HArDCore3D::RolyComplBasisFace</a>
+, <a class="el" href="group__Basis.html#ga67db64c53524c17389e1928ff7288101">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga77132c1ffe753b76526c730aac3eec1e">HArDCore3D::TangentFamily&lt; ScalarFamilyType &gt;</a>
+, <a class="el" href="group__Basis.html#gac34ef60810b5d9641458c640bb66b3b4">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
+</li>
+<li>FunctionType
+: <a class="el" href="group__DDRCore.html#ga658aabe4f545b51aff33349bd52cae87">HArDCore3D::XCurl</a>
+, <a class="el" href="group__DDRCore.html#ga1d6aa9967789c546122bd19871e022eb">HArDCore3D::XDiv</a>
+, <a class="el" href="group__DDRCore.html#ga433efca9d7ce661d4bc9e5386d131cf8">HArDCore3D::XGrad</a>
+</li>
+<li>FunctionValue
+: <a class="el" href="group__Basis.html#ga7e5eb1482d6efca49471b2800a5efe40">HArDCore3D::CurlBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga7d28a7719ad0329ee8dfc4d8d418a571">HArDCore3D::DivergenceBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga2d87c9bf83c4dd0574dc399506d4870c">HArDCore3D::Family&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga7f8d7bbc1ed611fe07fd43548d6cf8a2">HArDCore3D::GolyComplBasisCell</a>
+, <a class="el" href="group__Basis.html#gafbc2bb4ee025ad38891635564b57cf56">HArDCore3D::GolyComplBasisFace</a>
+, <a class="el" href="group__Basis.html#gafc6d347c3c4e36a9090cc91638bebfb4">HArDCore3D::GradientBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga7ee03d626d3f1844ca9e7a2273cbf060">HArDCore3D::MonomialScalarBasisCell</a>
+, <a class="el" href="group__Basis.html#ga9f25382e95345bc802c4f1db2376a71f">HArDCore3D::MonomialScalarBasisEdge</a>
+, <a class="el" href="group__Basis.html#ga71bec97252664e36ca3ad118d9d21c5f">HArDCore3D::MonomialScalarBasisFace</a>
+, <a class="el" href="group__Basis.html#ga18961cbc662cb9fb42904da5d95203ea">HArDCore3D::RestrictedBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga086bb5008eb8c8d382effe2775bfece6">HArDCore3D::RolyComplBasisCell</a>
+, <a class="el" href="group__Basis.html#ga0fbe83978b2d84c505aa065ba6749a62">HArDCore3D::RolyComplBasisFace</a>
+, <a class="el" href="group__Basis.html#gadfb11a56f0804ecdf268b8523abd450b">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga1124b8f08d201215ca7b2158460ad7f5">HArDCore3D::TangentFamily&lt; ScalarFamilyType &gt;</a>
+, <a class="el" href="group__Basis.html#ga5a0fe2c82baec8624b201a536551fba1">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

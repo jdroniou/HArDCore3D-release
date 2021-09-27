@@ -101,6 +101,9 @@ namespace HArDCore3D
     /// Extend an edge operator to a cell
     Eigen::MatrixXd extendOperator(const Cell & T, const Edge & E, const Eigen::MatrixXd & opE) const;
 
+    /// Extend an edge operator to a face
+    Eigen::MatrixXd extendOperator(const Face & F, const Edge & E, const Eigen::MatrixXd & opE) const;
+
     //------------------------------------------------------------------------------
     // Global DOF indices for an element T
     //------------------------------------------------------------------------------

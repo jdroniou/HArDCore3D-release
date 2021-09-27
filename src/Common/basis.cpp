@@ -281,6 +281,11 @@ namespace HArDCore3D
     return x * y;
   }
 
+  double scalar_product(const double &x, const Eigen::Matrix<double, 1, 1> &y)
+  {
+    return x * y(0);
+  }
+  
   double scalar_product(const VectorRd &x, const VectorRd &y)
   {
     return x.dot(y);

@@ -77,7 +77,7 @@ $(function() {
 <div class="title">quad1d.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Creates quadrature rule on an edge</span></div>
+<a href="quad1d_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Creates quadrature rule on an edge</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Author: Jerome Droniou (jerome.droniou@monash.edu)</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
@@ -102,25 +102,25 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define QUAD1D_HPP</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include&lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>HArDCore3D {  <span class="comment">// forward dec</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> {  <span class="comment">// forward dec</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">class </span>LegendreGauss;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>HArDCore3D {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a> {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classHArDCore3D_1_1QuadRuleEdge.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHArDCore3D_1_1QuadRuleEdge.html">QuadRuleEdge</a> {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classHArDCore3D_1_1QuadRuleEdge.html">QuadRuleEdge</a>(<span class="keywordtype">size_t</span> doe, <span class="keywordtype">bool</span> warn);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    ~<a class="code" href="classHArDCore3D_1_1QuadRuleEdge.html">QuadRuleEdge</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="group__Quadratures.html#gabb254b22a706f3781b2b8a7b3fafa288">QuadRuleEdge</a>(<span class="keywordtype">size_t</span> doe, <span class="keywordtype">bool</span> warn);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="group__Quadratures.html#ga4b5c5c3ca8408bc40a5c150f48ee2ca8">~QuadRuleEdge</a>();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">size_t</span> nq();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">double</span> xq(<span class="keywordtype">size_t</span> i);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">double</span> yq(<span class="keywordtype">size_t</span> i);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">double</span> zq(<span class="keywordtype">size_t</span> i);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">double</span> wq(<span class="keywordtype">size_t</span> i);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> setup(<span class="keywordtype">double</span> xV[], <span class="keywordtype">double</span> yV[], <span class="keywordtype">double</span> zV[]);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="group__Quadratures.html#gaf245dd9ab99a15742641d81f5508041a">nq</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#ga1b03cf6a6800470a027f570d44338a1f">xq</a>(<span class="keywordtype">size_t</span> i);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#gac272eee335dc95a46787e1a054b38cb7">yq</a>(<span class="keywordtype">size_t</span> i);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#ga2172f93f9d6679d07b37ac76f59c5282">zq</a>(<span class="keywordtype">size_t</span> i);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#ga3fc5a686c8018dbea8ec3a120ad6d9bc">wq</a>(<span class="keywordtype">size_t</span> i);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#ga362bb5fef8a2d98073605945c89aadf9">setup</a>(<span class="keywordtype">double</span> xV[], <span class="keywordtype">double</span> yV[], <span class="keywordtype">double</span> zV[]);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">size_t</span> _npts;</div>
@@ -134,23 +134,23 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classHArDCore3D_1_1LegendreGauss.html">   62</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHArDCore3D_1_1LegendreGauss.html">LegendreGauss</a> {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classHArDCore3D_1_1LegendreGauss.html">LegendreGauss</a>(<span class="keywordtype">size_t</span> doe);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ~<a class="code" href="classHArDCore3D_1_1LegendreGauss.html">LegendreGauss</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="group__Quadratures.html#ga4df4c78f50b0116cb68151073a45e08a">LegendreGauss</a>(<span class="keywordtype">size_t</span> doe);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="group__Quadratures.html#ga4cab982a50db6cc4f4ff1d7ed71deb09">~LegendreGauss</a>();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> sub_rule_01();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> sub_rule_02();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> sub_rule_03();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> sub_rule_04();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> sub_rule_05();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> sub_rule_06();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> sub_rule_07();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> sub_rule_08();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> sub_rule_09();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> sub_rule_10();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> sub_rule_11();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">size_t</span> npts();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> wq(<span class="keywordtype">size_t</span> i);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">double</span> tq(<span class="keywordtype">size_t</span> i);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#gaa60072df54f7acc9bad7362e4d6f6f72">sub_rule_01</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#ga3b20f2cc13f96879fe731e3411e118cf">sub_rule_02</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#ga0ee58d8688bfaaa7952cd7f70e06ad05">sub_rule_03</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#ga55751cb4eed2cd44b12fe7bcc505097a">sub_rule_04</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#gaa4e7cbaed5cea19a7490501e67bf728b">sub_rule_05</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#gaff68078ed4cdc77372609b56c3fcfc2a">sub_rule_06</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#ga70452a921cb1f1eb6e30d7436102ae01">sub_rule_07</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#ga50b4238c7cade3272efe46641e1d2d3f">sub_rule_08</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#gae6a8077dd8cf9fc76ed1234b93691049">sub_rule_09</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#gaad37934da18110fd078f1950a575fd3d">sub_rule_10</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__Quadratures.html#ga6b7095506bd1d218c28f5778c6dea545">sub_rule_11</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="group__Quadratures.html#ga1251635135ab00a28e128a058288e440">npts</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#ga2800eb7a7c2648b1edb77231ef42608a">wq</a>(<span class="keywordtype">size_t</span> i);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="group__Quadratures.html#gaa10e032f4ea04323773b23177b4124ee">tq</a>(<span class="keywordtype">size_t</span> i);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">size_t</span> _doe;</div>
@@ -162,8 +162,33 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* QUAD1D_HPP */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__Quadratures_html_ga0ee58d8688bfaaa7952cd7f70e06ad05"><div class="ttname"><a href="group__Quadratures.html#ga0ee58d8688bfaaa7952cd7f70e06ad05">HArDCore3D::LegendreGauss::sub_rule_03</a></div><div class="ttdeci">void sub_rule_03()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:121</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga362bb5fef8a2d98073605945c89aadf9"><div class="ttname"><a href="group__Quadratures.html#ga362bb5fef8a2d98073605945c89aadf9">HArDCore3D::QuadRuleEdge::setup</a></div><div class="ttdeci">void setup(double xV[], double yV[], double zV[])</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:43</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1LegendreGauss_html"><div class="ttname"><a href="classHArDCore3D_1_1LegendreGauss.html">HArDCore3D::LegendreGauss</a></div><div class="ttdef"><b>Definition:</b> quad1d.hpp:62</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga3b20f2cc13f96879fe731e3411e118cf"><div class="ttname"><a href="group__Quadratures.html#ga3b20f2cc13f96879fe731e3411e118cf">HArDCore3D::LegendreGauss::sub_rule_02</a></div><div class="ttdeci">void sub_rule_02()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:112</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga2172f93f9d6679d07b37ac76f59c5282"><div class="ttname"><a href="group__Quadratures.html#ga2172f93f9d6679d07b37ac76f59c5282">HArDCore3D::QuadRuleEdge::zq</a></div><div class="ttdeci">double zq(size_t i)</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:39</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gaa60072df54f7acc9bad7362e4d6f6f72"><div class="ttname"><a href="group__Quadratures.html#gaa60072df54f7acc9bad7362e4d6f6f72">HArDCore3D::LegendreGauss::sub_rule_01</a></div><div class="ttdeci">void sub_rule_01()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:106</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga55751cb4eed2cd44b12fe7bcc505097a"><div class="ttname"><a href="group__Quadratures.html#ga55751cb4eed2cd44b12fe7bcc505097a">HArDCore3D::LegendreGauss::sub_rule_04</a></div><div class="ttdeci">void sub_rule_04()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:132</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga1251635135ab00a28e128a058288e440"><div class="ttname"><a href="group__Quadratures.html#ga1251635135ab00a28e128a058288e440">HArDCore3D::LegendreGauss::npts</a></div><div class="ttdeci">size_t npts()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:303</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga4b5c5c3ca8408bc40a5c150f48ee2ca8"><div class="ttname"><a href="group__Quadratures.html#ga4b5c5c3ca8408bc40a5c150f48ee2ca8">HArDCore3D::QuadRuleEdge::~QuadRuleEdge</a></div><div class="ttdeci">~QuadRuleEdge()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:26</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga1b03cf6a6800470a027f570d44338a1f"><div class="ttname"><a href="group__Quadratures.html#ga1b03cf6a6800470a027f570d44338a1f">HArDCore3D::QuadRuleEdge::xq</a></div><div class="ttdeci">double xq(size_t i)</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:37</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga3fc5a686c8018dbea8ec3a120ad6d9bc"><div class="ttname"><a href="group__Quadratures.html#ga3fc5a686c8018dbea8ec3a120ad6d9bc">HArDCore3D::QuadRuleEdge::wq</a></div><div class="ttdeci">double wq(size_t i)</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:40</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gaa10e032f4ea04323773b23177b4124ee"><div class="ttname"><a href="group__Quadratures.html#gaa10e032f4ea04323773b23177b4124ee">HArDCore3D::LegendreGauss::tq</a></div><div class="ttdeci">double tq(size_t i)</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:311</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga6b7095506bd1d218c28f5778c6dea545"><div class="ttname"><a href="group__Quadratures.html#ga6b7095506bd1d218c28f5778c6dea545">HArDCore3D::LegendreGauss::sub_rule_11</a></div><div class="ttdeci">void sub_rule_11()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:271</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga70452a921cb1f1eb6e30d7436102ae01"><div class="ttname"><a href="group__Quadratures.html#ga70452a921cb1f1eb6e30d7436102ae01">HArDCore3D::LegendreGauss::sub_rule_07</a></div><div class="ttdeci">void sub_rule_07()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:179</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gaad37934da18110fd078f1950a575fd3d"><div class="ttname"><a href="group__Quadratures.html#gaad37934da18110fd078f1950a575fd3d">HArDCore3D::LegendreGauss::sub_rule_10</a></div><div class="ttdeci">void sub_rule_10()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:245</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga2800eb7a7c2648b1edb77231ef42608a"><div class="ttname"><a href="group__Quadratures.html#ga2800eb7a7c2648b1edb77231ef42608a">HArDCore3D::LegendreGauss::wq</a></div><div class="ttdeci">double wq(size_t i)</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:304</div></div>
+<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdef"><b>Definition:</b> ddr-magnetostatics.hpp:38</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1QuadRuleEdge_html"><div class="ttname"><a href="classHArDCore3D_1_1QuadRuleEdge.html">HArDCore3D::QuadRuleEdge</a></div><div class="ttdef"><b>Definition:</b> quad1d.hpp:39</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga4df4c78f50b0116cb68151073a45e08a"><div class="ttname"><a href="group__Quadratures.html#ga4df4c78f50b0116cb68151073a45e08a">HArDCore3D::LegendreGauss::LegendreGauss</a></div><div class="ttdeci">LegendreGauss(size_t doe)</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:57</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gabb254b22a706f3781b2b8a7b3fafa288"><div class="ttname"><a href="group__Quadratures.html#gabb254b22a706f3781b2b8a7b3fafa288">HArDCore3D::QuadRuleEdge::QuadRuleEdge</a></div><div class="ttdeci">QuadRuleEdge(size_t doe, bool warn)</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:15</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gae6a8077dd8cf9fc76ed1234b93691049"><div class="ttname"><a href="group__Quadratures.html#gae6a8077dd8cf9fc76ed1234b93691049">HArDCore3D::LegendreGauss::sub_rule_09</a></div><div class="ttdeci">void sub_rule_09()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:221</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gac272eee335dc95a46787e1a054b38cb7"><div class="ttname"><a href="group__Quadratures.html#gac272eee335dc95a46787e1a054b38cb7">HArDCore3D::QuadRuleEdge::yq</a></div><div class="ttdeci">double yq(size_t i)</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:38</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gaa4e7cbaed5cea19a7490501e67bf728b"><div class="ttname"><a href="group__Quadratures.html#gaa4e7cbaed5cea19a7490501e67bf728b">HArDCore3D::LegendreGauss::sub_rule_05</a></div><div class="ttdeci">void sub_rule_05()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:145</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gaf245dd9ab99a15742641d81f5508041a"><div class="ttname"><a href="group__Quadratures.html#gaf245dd9ab99a15742641d81f5508041a">HArDCore3D::QuadRuleEdge::nq</a></div><div class="ttdeci">size_t nq()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:34</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga4cab982a50db6cc4f4ff1d7ed71deb09"><div class="ttname"><a href="group__Quadratures.html#ga4cab982a50db6cc4f4ff1d7ed71deb09">HArDCore3D::LegendreGauss::~LegendreGauss</a></div><div class="ttdeci">~LegendreGauss()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:101</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga50b4238c7cade3272efe46641e1d2d3f"><div class="ttname"><a href="group__Quadratures.html#ga50b4238c7cade3272efe46641e1d2d3f">HArDCore3D::LegendreGauss::sub_rule_08</a></div><div class="ttdeci">void sub_rule_08()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:199</div></div>
+<div class="ttc" id="agroup__Quadratures_html_gaff68078ed4cdc77372609b56c3fcfc2a"><div class="ttname"><a href="group__Quadratures.html#gaff68078ed4cdc77372609b56c3fcfc2a">HArDCore3D::LegendreGauss::sub_rule_06</a></div><div class="ttdeci">void sub_rule_06()</div><div class="ttdef"><b>Definition:</b> quad1d.cpp:161</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

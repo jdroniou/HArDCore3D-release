@@ -14,9 +14,10 @@
  *  This implementation of HHO was developped following the principles described in 
  * Appendix B of the book
  *
- * The Hybrid High-Order Method for Polytopal Meshes: Design, Analysis, and Applications.
- * D. A. Di Pietro and J. Droniou. 2019, 516p. 
- * url: https://hal.archives-ouvertes.fr/hal-02151813.
+ * The Hybrid High-Order Method for Polytopal Meshes: Design, Analysis, and Applications. 
+ *  D. A. Di Pietro and J. Droniou. Modeling, Simulation and Applications, vol. 19. 
+ *  Springer International Publishing, 2020, xxxi + 525p. doi: 10.1007/978-3-030-37203-3. 
+ *  url: https://hal.archives-ouvertes.fr/hal-02151813.
  *
  * If you use this code or part of it for a scientific publication, please cite the book
  * above as a reference for the implementation.
@@ -199,6 +200,7 @@ namespace HArDCore3D {
       GlobRHS(Eigen::VectorXd::Zero(m_ntotal_face_dofs)),
       ScRHS(Eigen::VectorXd::Zero(m_ntotal_cell_dofs))
  {
+      m_output << "[HHO_Diffusion] Initializing" << std::endl;
       GlobMat.resize(m_ntotal_face_dofs, m_ntotal_face_dofs);        
       ScBeMat.resize(m_ntotal_cell_dofs, m_ntotal_face_dofs);
     // Do nothing

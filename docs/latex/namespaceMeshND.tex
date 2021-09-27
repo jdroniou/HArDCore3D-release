@@ -1,0 +1,66 @@
+\hypertarget{namespaceMeshND}{}\doxysection{Mesh\+ND Namespace Reference}
+\label{namespaceMeshND}\index{MeshND@{MeshND}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}
+\item 
+class \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}
+\begin{DoxyCompactList}\small\item\em Generic class to describe a cell, face, edge or vertex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}} = Eigen\+::\+Matrix$<$ double, space\+\_\+dim, 1 $>$
+\item 
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{namespaceMeshND_a3a7bca838b20b12907ede1859c88affd}{Vector\+Zd}} = Eigen\+::\+Matrix$<$ int, space\+\_\+dim, 1 $>$
+\item 
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ }\\using \mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}} = std\+::array$<$ \mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$, object\+\_\+dim+1 $>$
+\item 
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ }\\using \mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Simplices}} = std\+::vector$<$ \mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$ $>$
+\item 
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$
+\begin{DoxyCompactList}\small\item\em A Vertex is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with object\+\_\+dim = 0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$
+\begin{DoxyCompactList}\small\item\em An Edge is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with object\+\_\+dim = 1. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$
+\begin{DoxyCompactList}\small\item\em A Face is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with object\+\_\+dim = space\+\_\+dim -\/ 1. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$
+\begin{DoxyCompactList}\small\item\em A Cell is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with object\+\_\+dim = space\+\_\+dim. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ }\\\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga5012e8065ccdd5fae18b8ed6d49831a9}{simplex\+\_\+center\+\_\+mass}} (\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplex)
+\begin{DoxyCompactList}\small\item\em Method to find the center mass of an arbitrary simplex in arbitrary space. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ }\\double \mbox{\hyperlink{group__Mesh_ga220351b3c86d8dff266cce6ab5a97b68}{simplex\+\_\+measure}} (\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplex)
+\begin{DoxyCompactList}\small\item\em Method to find the Lebesgue measure of an arbitrary simplex in arbitrary space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}\label{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}} 
+\index{MeshND@{MeshND}!Simplex@{Simplex}}
+\index{Simplex@{Simplex}!MeshND@{MeshND}}
+\doxysubsubsection{\texorpdfstring{Simplex}{Simplex}}
+{\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
+using \mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Mesh\+N\+D\+::\+Simplex}} = typedef std\+::array$<$\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$space\+\_\+dim$>$, object\+\_\+dim + 1$>$}
+
+\mbox{\Hypertarget{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}\label{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}} 
+\index{MeshND@{MeshND}!Simplices@{Simplices}}
+\index{Simplices@{Simplices}!MeshND@{MeshND}}
+\doxysubsubsection{\texorpdfstring{Simplices}{Simplices}}
+{\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
+using \mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Mesh\+N\+D\+::\+Simplices}} = typedef std\+::vector$<$\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$space\+\_\+dim, object\+\_\+dim$>$ $>$}
+
+\mbox{\Hypertarget{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}\label{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}} 
+\index{MeshND@{MeshND}!VectorRd@{VectorRd}}
+\index{VectorRd@{VectorRd}!MeshND@{MeshND}}
+\doxysubsubsection{\texorpdfstring{VectorRd}{VectorRd}}
+{\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim$>$ \\
+using \mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Mesh\+N\+D\+::\+Vector\+Rd}} = typedef Eigen\+::\+Matrix$<$double, space\+\_\+dim, 1$>$}
+
+\mbox{\Hypertarget{namespaceMeshND_a3a7bca838b20b12907ede1859c88affd}\label{namespaceMeshND_a3a7bca838b20b12907ede1859c88affd}} 
+\index{MeshND@{MeshND}!VectorZd@{VectorZd}}
+\index{VectorZd@{VectorZd}!MeshND@{MeshND}}
+\doxysubsubsection{\texorpdfstring{VectorZd}{VectorZd}}
+{\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim$>$ \\
+using \mbox{\hyperlink{namespaceMeshND_a3a7bca838b20b12907ede1859c88affd}{Mesh\+N\+D\+::\+Vector\+Zd}} = typedef Eigen\+::\+Matrix$<$int, space\+\_\+dim, 1$>$}
+

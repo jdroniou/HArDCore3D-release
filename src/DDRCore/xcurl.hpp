@@ -169,6 +169,7 @@ namespace HArDCore3D
     // Containers for local operators
     std::vector<std::unique_ptr<LocalOperators> > m_cell_operators;
     std::vector<std::unique_ptr<LocalOperators> > m_face_operators;
+    
   };
 
 } // end of namespace HArDCore3D

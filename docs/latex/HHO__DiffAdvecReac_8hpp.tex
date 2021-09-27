@@ -1,0 +1,59 @@
+\hypertarget{HHO__DiffAdvecReac_8hpp}{}\doxysection{Schemes/\+H\+H\+O-\/diff-\/advec-\/reac/\+H\+H\+O\+\_\+\+Diff\+Advec\+Reac.hpp File Reference}
+\label{HHO__DiffAdvecReac_8hpp}\index{Schemes/HHO-\/diff-\/advec-\/reac/HHO\_DiffAdvecReac.hpp@{Schemes/HHO-\/diff-\/advec-\/reac/HHO\_DiffAdvecReac.hpp}}
+{\ttfamily \#include \char`\"{}H\+H\+O-\/general/\+H\+H\+O3\+D.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}boost/program\+\_\+options.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$unsupported/\+Eigen/\+Sparse\+Extra$>$}\newline
+Include dependency graph for H\+H\+O\+\_\+\+Diff\+Advec\+Reac.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{HHO__DiffAdvecReac_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{HHO__DiffAdvecReac_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga8c5880d59e869c99c2b73face3d582df}{program\+\_\+options}} (const int, const char $\ast$\mbox{[}$\,$\mbox{]}, std\+::string \&, std\+::string \&, std\+::vector$<$ int $>$ \&, size\+\_\+t \&, size\+\_\+t \&, std\+::string \&, bool \&, bool \&)
+\begin{DoxyCompactList}\small\item\em A method to set all program paramters from options passed to the main function. Returns true if options are valid, false otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{HHO__DiffAdvecReac_8hpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} = \char`\"{}../../meshes/\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga9781d1b74956d5fe6ad475f041e483a8}{mesh\+\_\+name}}
+\item 
+std\+::string \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga8db5788d43fd0ba9d84a900714939107}{mesh\+\_\+type}}
+\item 
+std\+::string \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga13b5a180bd74bcc66c3e5429b4171d33}{bc\+\_\+id}}
+\item 
+std\+::string \mbox{\hyperlink{group__HHO__DiffAdvecReac_gac996c6d099eb228866a60f97bd4e7cd7}{plot\+\_\+file}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga33560882cdbc46b667c0bb8b44856663}{id\+\_\+tcase}}
+\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga91a0b997ce3aa9aa56b8cba3620fed15}{L}}
+\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_gaf169764abf85f85bec428e43dc60274b}{K}}
+\item 
+bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}
+\item 
+bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga52a6597e4532a190b869cddd4b52916d}{export\+\_\+matrix}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{HHO__DiffAdvecReac_8hpp_a43fed21b5f1b68d8d93bfda38c651ba2}\label{HHO__DiffAdvecReac_8hpp_a43fed21b5f1b68d8d93bfda38c651ba2}} 
+\index{HHO\_DiffAdvecReac.hpp@{HHO\_DiffAdvecReac.hpp}!mesh\_dir@{mesh\_dir}}
+\index{mesh\_dir@{mesh\_dir}!HHO\_DiffAdvecReac.hpp@{HHO\_DiffAdvecReac.hpp}}
+\doxysubsubsection{\texorpdfstring{mesh\_dir}{mesh\_dir}}
+{\footnotesize\ttfamily const std\+::string mesh\+\_\+dir = \char`\"{}../../meshes/\char`\"{}}
+
+The H\+H\+O\+\_\+\+Diff\+Advec\+Reac code uses a Hybrid High-\/\+Order method to solve the equation -\/div(K \textbackslash{}grad(u) + \textbackslash{}beta u) + \textbackslash{}mu u = f with K piecewise constant, \textbackslash{}beta \textbackslash{}in H$^\wedge$1(\textbackslash{}\+Omega)$^\wedge$d and \textbackslash{}mu piecewise continuous. 

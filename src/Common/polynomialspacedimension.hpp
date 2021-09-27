@@ -37,6 +37,11 @@
 namespace HArDCore3D
 {
 
+  /*!	
+ * @defgroup Common 
+ * @brief Various general functions and classes
+ */
+
   /*!
    *	\addtogroup Common
    * @{
@@ -56,7 +61,7 @@ namespace HArDCore3D
     /// Dimension of Pk(T)
     static size_t Poly(int k)
     {
-      return (k >= 0 ? (k * (k + 1) * (2 * k + 1) + 9 * k * (k + 1) + 12 * (k + 1)) / 12 : 0);
+      return (k >= 0 ? (k+1)*(k+2)*(k+3)/6 : 0);
     }
     /// Dimension of Gk(T)
     static size_t Goly(int k)

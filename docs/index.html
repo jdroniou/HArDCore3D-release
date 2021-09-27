@@ -82,10 +82,11 @@ $(function() {
 <li class="level2"><a href="#loading_mesh">Loading a mesh</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#quad_rules">Quadrature rules</a></li>
-<li class="level1"><a href="#common_module">Common module</a><ul><li class="level2"><a href="#usage_quad">Usage of quadrature rules.</a></li>
+<li class="level1"><a href="#common_module">Common module</a></li>
+<li class="level1"><a href="#quad_rules">Integration over mesh geometric entities</a><ul><li class="level2"><a href="#usage_quad">Generic quadrature rules.</a></li>
 </ul>
 </li>
+<li class="level1"><a href="#monomial_integration">Homogeneous Numerical Integration (HNI) of polynomials, and Gram matrices</a></li>
 <li class="level1"><a href="#hybridcore">Hybridcore module</a><ul><li class="level2"><a href="#basisfunc">Basis functions</a></li>
 <li class="level2"><a href="#qr_hcore">Quadrature rules evaluations in HybridCore</a></li>
 </ul>
@@ -95,7 +96,18 @@ $(function() {
 <li class="level1"><a href="#schemes">Schemes</a></li>
 </ul>
 </div>
-<div class="textblock"><p>HArD::Core (sources: <a href="https://github.com/jdroniou/HArDCore">https://github.com/jdroniou/HArDCore</a>) provides a suite of C++ tools to implement numerical schemes whose unknowns are polynomials in the cells, on the edges, and on the faces. The focus is on dealing on generic polytopal meshes. This documentation addresses the 3D version of HArD::Core, but similar principles are valid for the 2D version. Transferring a scheme's implementation from 3D to 2D or vice-versa is very straightforward, provided that the scheme's mathematical definition does not depend on the dimension and that the generic types provided in <code><a class="el" href="basis_8hpp_source.html">basis.hpp</a></code> and <code><a class="el" href="MeshObject_8hpp_source.html">MeshObject.hpp</a></code> are used; see readme file of the HArD::Core github depository <a href="https://github.com/jdroniou/HArDCore">https://github.com/jdroniou/HArDCore</a>.</p>
+<div class="textblock"><p>HArD::Core (sources: <a href="https://github.com/jdroniou/HArDCore">https://github.com/jdroniou/HArDCore</a>) provides a suite of C++ tools to implement numerical schemes whose unknowns are polynomials in the cells, on the edges, and on the faces. The focus is on dealing on generic polytopal meshes. This documentation addresses the 3D version of HArD::Core, but similar principles are valid for the 2D version. Transferring a scheme's implementation from 3D to 2D or vice-versa is very straightforward, provided that the scheme's mathematical definition does not depend on the dimension and that the generic types provided in <code><a class="el" href="basis_8hpp.html">basis.hpp</a></code> and <code><a class="el" href="MeshObject_8hpp.html">MeshObject.hpp</a></code> are used; see readme file of the HArD::Core github depository <a href="https://github.com/jdroniou/HArDCore">https://github.com/jdroniou/HArDCore</a>.</p>
+<p>You will find on this page the following sections:</p>
+<ul>
+<li><a href="#build">Build instructions</a> &ndash; How to build the library.</li>
+<li><a href="#mesh">Mesh module</a> &ndash; Principle to load and handle a mesh and its geometric entities.</li>
+<li><a href="#common">Common module</a> &ndash; Polynomial bases, and other generic simple helper functions and structures.</li>
+<li><a href="#quad_rules">Quadratures</a> &ndash; Quadrature rules to integrate generic functions, and cost-effective integration methods to compute Gram matrices of polynomial functions.</li>
+<li><a href="#hybridcore">HybridCore</a> &ndash; Create polynomial basis functions on mesh geometric entities, and a vector structure of degrees of freedom. Mostly useful for Hybrid High-Order (HHO) and similar methods.</li>
+<li><a href="#hho3D">HHO3D</a> &ndash; Core methods to implement HHO schemes.</li>
+<li><a href="#ddr">DDRCore</a> &ndash; Methods (specific basis functions, and discrete spaces and operators) for schemes based on the Discrete De Rham sequence (DDR).</li>
+<li><a href="#schemes">Schemes</a> &ndash; List of schemes currently implemented in <a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a>.</li>
+</ul>
 <p><a class="anchor" id="build"></a> </p>
 <h1><a class="anchor" id="build"></a>
 Build instructions</h1>
@@ -118,17 +130,17 @@ Building the libraries and the schemes</h2>
 </div><!-- fragment --><p>After this, <code>build/Schemes</code> will contain the executables (e.g. <code>hho-diffusion</code>) to run the schemes. These executables need to access the meshes, which they should naturally find if you have left the <code>meshes</code> directory at the root of the project's files.</p>
 <h2><a class="anchor" id="doco"></a>
 Building the Documentation</h2>
-<p>The mesh documentation is built with Doxygen (<a href="http://www.stack.nl/~dimitri/doxygen/">http://www.stack.nl/~dimitri/doxygen/</a>). If you are reading this then somebody has already built it for you. If you modify the code and wish to rebuild the documentation, simply run <code>doxygen</code> from the root directory. The HTML version of the documentation is generated inside <code>documentation/html</code> and the LaTeX version is generated inside <code>documentation/latex</code> and can be compiled using the generated Makefile.</p>
+<p>The mesh documentation is built with Doxygen (<a href="http://www.stack.nl/~dimitri/doxygen/">http://www.stack.nl/~dimitri/doxygen/</a>). If you are reading this then somebody has already built it for you. If you modify the code and wish to rebuild the documentation, simply run <code>doxygen</code> from the root directory. The HTML version of the documentation is generated inside <code>docs</code> and the LaTeX version is generated inside <code>docs/latex</code> and can be compiled using the generated Makefile.</p>
 <p><a class="anchor" id="mesh"></a> </p>
 <h1><a class="anchor" id="mesh"></a>
 Mesh module</h1>
 <h2><a class="anchor" id="meshpple"></a>
 Principles</h2>
-<p>After it is loaded, the mesh is represented by classes describing a vertex, an edge, a face, and a cell: Vertex, Edge, Face, and Cell. Each of these classes contains methods to access useful information for the corresponding element, including other geometrical quantities it is related to. The mesh itself is represented by an element of the Mesh class with methods to access all the vertices, edges, faces and cells (or a particular vertex, edge, face or cell).</p>
-<p>For example, if <code>mesh_ptr</code> is a pointer to a Mesh class, the lines </p><div class="fragment"><div class="line"><a class="code" href="group__Mesh.html#ga69b766413004e6e89503f8b6c2f541f6">Vertex</a>* vertex = mesh_ptr-&gt;vertex(5);</div>
+<p>After it is loaded, the mesh is represented by typedefs of <a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a> describing a Vertex, an Edge, a Face, and a Cell. Each of these classes contains methods to access useful information for the corresponding element, including other geometrical quantities it is related to. The mesh itself is represented by an element of the <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> class with methods to access all the vertices, edges, faces and cells (or a particular vertex, edge, face or cell).</p>
+<p>For example, if <code>mesh_ptr</code> is a pointer to a <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> instance, the lines </p><div class="fragment"><div class="line"><a class="code" href="namespaceMesh2D.html#aff8af6d9e4621304984811aba3c8691f">Vertex</a>* vertex = mesh_ptr-&gt;vertex(5);</div>
 <div class="line"> </div>
 <div class="line">Eigen::Vector3d vert_coord = vertex-&gt;coords()</div>
-</div><!-- fragment --><p> store the coordinates of the fifth vertex into the Eigen vector vert_coord. As a generic rule, all geometrical vectors are <code>Eigen::Vector3d</code>. We also use <code>Eigen::Vector{3,X}d</code> and <code>Eigen::Matrix{3,X}d</code> for objects on which linear algebraic operations are performed. Lists (e.g. of cells, of functions...) are usually instances of <code>std::vector&lt;...&gt;</code>. Finally, <code>Eigen::multi_array</code> is used for lists of values of basis functions or their gradients at quadrature nodes.</p>
+</div><!-- fragment --><p> store the coordinates of the fifth vertex into the Eigen vector <code>vert_coord</code>. As a generic rule, all geometrical vectors are <code>Eigen::Vector3d</code>. We also use <code>Eigen::Vector{3,X}d</code> and <code>Eigen::Matrix{3,X}d</code> for objects on which linear algebraic operations are performed. Lists (e.g. of cells, of functions...) are usually instances of <code>std::vector&lt;...&gt;</code>. Finally, <code>Eigen::multi_array</code> is used for lists of values of functions at quadrature nodes.</p>
 <p>Here is an example that loops over all cells, grabs all the faces of the cell, and loops over these faces to output their diameter. Here, <code>mesh_ptr</code> is a pointer to the mesh.</p>
 <div class="fragment"><div class="line"><span class="comment">// Loop over all cells of the mesh</span></div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> iT = 0; iT &lt; mesh_ptr-&gt;n_cells() iT++) {</div>
@@ -140,79 +152,137 @@ Principles</h2>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> ilF = 0; ilF &lt; cell-&gt;n_faces(); ilF++) {</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// Write the face diameter on the standard output</span></div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;The diameter of face &quot;</span> &lt;&lt; ilF+1 &lt;&lt; <span class="stringliteral">&quot; in cell &quot;</span> &lt;&lt; iT+1 &lt;&lt; <span class="stringliteral">&quot; is: &quot;</span> &lt;&lt; faces(ilE)-&gt;diam() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;The diameter of face &quot;</span> &lt;&lt; ilF+1 &lt;&lt; <span class="stringliteral">&quot; in cell &quot;</span> &lt;&lt; iT+1 &lt;&lt; <span class="stringliteral">&quot; is: &quot;</span> &lt;&lt; faces(ilF)-&gt;diam() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">}</div>
-</div><!-- fragment --><p>The mesh classes and other auxilliary classes are located inside the namespace HArDCore3D.</p>
-<p>There is no direct access from a high-level geometrical entity to elements purely associated with lower-level entities. For example, if <code>mesh_ptr</code> is a pointer to the mesh, there is no direct method to access the coordinates of the i-th vertex of the mesh (no <code>mesh_ptr-&gt;coords_vertex()</code> exists). Instead, this is done through <code>mesh_ptr-&gt;vertex(i)-&gt;coords()</code>. This choice is deliberate as it preserves the logical organisation of the data structure, and facilitates the memorisation of the various methods. Of course, writing a wrapper providing such a direct access is easy...</p>
+</div><!-- fragment --><p>There is no direct access from a high-level geometrical entity to elements purely associated with lower-level entities. For example, if <code>mesh_ptr</code> is a pointer to the mesh, there is no direct method to access the coordinates of the i-th vertex of the mesh (no <code>mesh_ptr-&gt;coords_vertex()</code> exists). Instead, this is done through <code>mesh_ptr-&gt;vertex(i)-&gt;coords()</code>. This choice is deliberate as it preserves the logical organisation of the data structure, and facilitates the memorisation of the various methods. Of course, writing a wrapper providing such a direct access is easy...</p>
 <h2><a class="anchor" id="loading_mesh"></a>
 Loading a mesh</h2>
-<p>HArDCore3D can read meshes in <code>RF</code> format. Previous versions could read <code>TG</code> and <code>MSH</code> files and were based on G. Manzini's mesh library <a href="https://github.com/gmanzini-LANL/PDE-Mesh-Manager">https://github.com/gmanzini-LANL/PDE-Mesh-Manager</a>. From Version 4.1, HArDCore3D uses an independent mesh reader written by L. Yemm.</p>
+<p><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a> can read meshes in <code>RF</code> format. Previous versions could read <code>TG</code> and <code>MSH</code> files and were based on G. Manzini's mesh library <a href="https://github.com/gmanzini-LANL/PDE-Mesh-Manager">https://github.com/gmanzini-LANL/PDE-Mesh-Manager</a>. From Version 4.1, <a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a> uses an independent mesh reader written by L. Yemm.</p>
 <p>A mesh file must be read using an instance of the <code>meshbuilder</code> class, and then built using <code>build_the_mesh</code>. A working example is given below (assuming the executable will be in <code>build/Schemes</code> for example).</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;mesh.hpp&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;mesh_builder.hpp&quot;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mesh_8hpp.html">mesh.hpp</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mesh__builder_8hpp.html">mesh_builder.hpp</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>HArDCore3D;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceHArDCore3D.html">HArDCore3D</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="CMakeCCompilerId_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>() {</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// Mesh file to read</span></div>
-<div class="line">    std::string default_mesh = <span class="stringliteral">&quot;../../meshes/Voro-small-0/RF_fmt/voro-4&quot;</span>;</div>
+<div class="line">  <span class="comment">// Mesh file to read</span></div>
+<div class="line">  std::string mesh_file = <span class="stringliteral">&quot;../../meshes/Voro-small-0/RF_fmt/voro-4&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Build the mesh</span></div>
 <div class="line">  <a class="code" href="classHArDCore3D_1_1MeshBuilder.html">MeshBuilder</a> meshbuilder = <a class="code" href="classHArDCore3D_1_1MeshBuilder.html">MeshBuilder</a>(mesh_file);</div>
 <div class="line">  std::unique_ptr&lt;Mesh&gt; mesh_ptr = meshbuilder.<a class="code" href="classHArDCore3D_1_1MeshBuilder.html#a208c94e8cb6490226215b59eb67e7911">build_the_mesh</a>();</div>
 <div class="line"> </div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;There are &quot;</span> &lt;&lt; mesh_ptr-&gt;n_cells() &lt;&lt; <span class="stringliteral">&quot; cells in the mesh.\n&quot;</span>;</div>
+<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;There are &quot;</span> &lt;&lt; mesh_ptr-&gt;n_cells() &lt;&lt; <span class="stringliteral">&quot; cells in the mesh.\n&quot;</span>;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>Note that the builder returns a <code>unique_ptr</code> for the mesh. This ensures that, at the end of the code, the mesh destructor is called (which destroys all cells, faces, edges, vertices...). Some classes and functions use a raw pointer to the mesh, so the <code>.get()</code> method should be used when passing the mesh as argument to the class constructors or functions.</p>
+</div><!-- fragment --><p>Note that the builder returns a <code>unique_ptr</code> for the mesh. This ensures that, at the end of the execution, the mesh destructor is called (which destroys all cells, faces, edges, vertices...). Some classes and functions use a raw pointer to the mesh, so the <code>.get()</code> method should be used when passing the mesh as argument to the class constructors or functions.</p>
 <p><em>Note</em>: the mesh formats allow for meshes with very generic polygonal cells, including non-convex cells. However, the builder assumes that each cell is star-shaped with respect to the isobarycenter of its vertices &ndash; otherwise, the calculation of the center of mass may be incorrect. Similarly, the quadrature rules (see <a href="#quad_rules">Quadrature rules</a>) assume that each cell is star-shaped with respect to its center of mass.</p>
-<p><a class="anchor" id="quad_rules"></a> </p>
-<h1><a class="anchor" id="quad_rules"></a>
-Quadrature rules</h1>
-<p>HArD::Core deals with quite arbitrary cell geometries. As a consequence, no reference element can be used, and the quadrature rules have to be adjusted to each particular cell/face/edge. For the cells, for example, this is done by partitioning each cell into tetrahedra and by using classical quadrature rules on tetrahedras. The choice was also made not to pre-compute all quadrature rules for all cells, faces and edges, but rather to compute them &ndash; with a locally chosen degree of exactness &ndash; when needed in the code. To reduce the computational cost, quadrature rules &ndash; and the values of basis functions at quadrature nodes &ndash; should only be computed once when looping over each cell, before being used, e.g., to form mass matrices.</p>
-<p>The Quadratures module provides routines to do that. The key method is generate_quadrature_rule(CFE,doe) calculates quadrature nodes and weights, exact up to the polynomial degree <code>doe</code>, for an integration over cell/face/edge CFE (passed as a reference of Cell, Face or Edge class). At present, the quadrature rules available in the code support a total degree of exactness in the cells up to 14 in the cells and 20 on the faces and the edges (the quadrature rules on the faces come from <a href="https://people.sc.fsu.edu/~jburkardt/cpp_src/triangle_dunavant_rule/triangle_dunavant_rule.html">John Burkardt's implementation of the Dunavant rules</a>). The generated quadrature rule is stored in a structure QuadratureRule, which is a vector of quadrature nodes (weights and position).</p>
 <p><a class="anchor" id="common"></a> </p>
 <h1><a class="anchor" id="common_module"></a>
 Common module</h1>
-<p>The main class in the <a class="el" href="group__Common.html">Common</a> module is Basis, which provides classes and functions that define and manipulate polynomial basis functions on a cell, face, or edge, of full polynomial spaces \(\mathbb{P}^k\) as well as various derived quantities (image of gradient, image of curl, complements, etc.). The underlying basis functions are monomial, but families of functions defined as linear combination of monomial basis functions are also handled via the <code>Family</code> class. See examples in <a href="#hybridcore">HybridCore</a> or <a href="#ddr">DDRCore</a>.</p>
+<p>The main classes in the <a class="el" href="group__Common.html">Common</a> describe polynomial basis functions on a cell, face, or edge. These could be bases of full polynomial spaces \(\mathbb{P}^k\), or other related spaces (vector-valued polynomials, subspaces, image of gradient, image of curl, complements, etc.). The underlying basis functions are monomial (<a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a> and <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisFace.html">MonomialScalarBasisFace</a>), but derived bases (or set of non-necessarily linearly independent polynomial functions) can be handled through various classes, such as <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>, <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>, <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>, etc.</p>
 <p>Free functions are also available to compute basis functions at quadrature nodes (using the <a href="#quad_rules">Quadrature rules</a> module), orthonormalise basis functions, and compute Gram-like matrices between various families of functions. These matrices are essential in the design of high-order methods on polytopal meshes. Again, see examples in the <a href="#hybridcore">HybridCore</a>, <a href="#ddr">DDRCore</a> and the various schemes built on them.</p>
 <p>This module also contains:</p><ul>
 <li><a class="el" href="structHArDCore3D_1_1PolynomialSpaceDimension.html">PolynomialSpaceDimension</a>: structure to compute the dimensions of various polynomial spaces on edges, faces and cell,</li>
-<li><a class="el" href="classHArDCore3D_1_1DOFSpace.html">DOFSpace</a>: class to access the local degrees of freedom associated with a geometric entity (vertex, edge, face, or cell) and all its associated entities of smaller dimension. This class determines how the local degrees of freedom are ordered (in the current setting, it's by increasing dimension of the associated geometric entities: DOFs of vertices, DOFs of edges, DOFs of faces and finally DOFs of cells). DOFSpace is currently only used in DDRCore and its derived schemes, but could potentially be used for other hybrid schemes.</li>
+<li><a class="el" href="classHArDCore3D_1_1DOFSpace.html">DOFSpace</a>: class to access the local degrees of freedom associated with a geometric entity (vertex, edge, face, or cell) and all its associated entities of smaller dimension. This class determines how the local degrees of freedom are ordered (in the current setting, it's by increasing dimension of the associated geometric entities: DOFs of vertices, DOFs of edges, DOFs of faces and finally DOFs of cells).</li>
 </ul>
+<p><a class="anchor" id="quad_rules"></a> </p>
+<h1><a class="anchor" id="quad_rules"></a>
+Integration over mesh geometric entities</h1>
 <h2><a class="anchor" id="usage_quad"></a>
-Usage of quadrature rules.</h2>
-<p>The <a class="el" href="structHArDCore3D_1_1evaluate__quad.html">evaluate_quad</a> template function evaluate basis functions, or gradients, etc. at provided quadrature nodes. The <code>boost::multi_array</code> provided by this function can then be passed to compute_gram_matrix to create a matrix of inner products of two families of basis functions. Here is an example.</p>
+Generic quadrature rules.</h2>
+<p>HArD::Core deals with quite arbitrary cell geometries. As a consequence, no reference element can be used, and the quadrature rules have to be adjusted to each particular cell/face/edge. For the cells, for example, this is done by partitioning each cell into tetrahedra and by using classical quadrature rules on tetrahedras. The choice was also made not to pre-compute all quadrature rules for all cells, faces and edges, but rather to compute them &ndash; with a locally chosen degree of exactness &ndash; when needed in the code. To reduce the computational cost, quadrature rules &ndash; and the values of basis functions at quadrature nodes &ndash; should only be computed once when looping over each cell, before being used, e.g., to form mass matrices.</p>
+<p>The <a class="el" href="group__Quadratures.html">Quadratures</a> module provides routines to do that. The key method, <a class="el" href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">generate_quadrature_rule(CFE,doe)</a>, calculates quadrature nodes and weights, exact up to the polynomial degree <code>doe</code>, for an integration over cell/face/edge CFE (passed as a reference of Cell, Face or Edge class). At present, the quadrature rules available in the code support a total degree of exactness in the cells up to 14 in the cells and 20 on the faces and the edges (the quadrature rules on the faces come from <a href="https://people.sc.fsu.edu/~jburkardt/cpp_src/triangle_dunavant_rule/triangle_dunavant_rule.html">John Burkardt's implementation of the Dunavant rules</a>). The generated quadrature rule is stored in a structure <a class="el" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a>, which is a vector of quadrature nodes (weights and position).</p>
+<p>The <a class="el" href="structHArDCore3D_1_1evaluate__quad.html">evaluate_quad</a> template function evaluate basis functions (their value, gradients, etc.) at provided quadrature nodes. The <code>boost::multi_array</code> provided by this function can then be passed to <a class="el" href="group__Basis.html#gaf5cc3ed71949b5d7adc5877e6bfebcb4">compute_gram_matrix</a> to create a matrix of inner products of two families of basis functions. Here is an example.</p>
 <div class="fragment"><div class="line"><span class="comment">// Create basis (f_1,...,f_r) of degree k in cell T</span></div>
 <div class="line">MonomialScalarBasisCell basisT(T, k);</div>
 <div class="line"><span class="comment">// Create quadrature rules of degree 2*k in cell T</span></div>
-<div class="line">QuadratureRule quadT = <a class="code" href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">generate_quadrature_rule</a>(T, 2*k);</div>
+<div class="line"><a class="code" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a> quadT = <a class="code" href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">generate_quadrature_rule</a>(T, 2*k);</div>
 <div class="line"><span class="comment">// Compute values of gradients of basis functions at the quadrature nodes</span></div>
 <div class="line">boost::multi_array&lt;VectorRd, 2&gt; gradbasis_on_quadT = evaluate_quad&lt;Gradient&gt;::compute(basisT, quadT);</div>
-<div class="line"><span class="comment">// Create Gram-like matrix (here, a stiffness matix) of (\nabla f_i,\nabla f_j)</span></div>
-<div class="line">Eigen::MatrixXd M = <a class="code" href="group__Common.html#gaf5cc3ed71949b5d7adc5877e6bfebcb4">compute_gram_matrix</a>(gradbasis_on_quadT, gradbasis_on_quadT, quadT, <span class="keyword">true</span>);</div>
-</div><!-- fragment --><p>Note the usage of the type <code>VectorRd</code> defined in <code><a class="el" href="basis_8hpp_source.html">basis.hpp</a></code>, which enables for a dimension-independent piece of code (easier to adapt to the 2D case). This procedure can also be applied, e.g., to cell basis functions on face quadrature nodes, etc.</p>
+<div class="line"><span class="comment">// Create Gram-like matrix (here, a stiffness matix) of (\nabla f_i,\nabla f_j)_ij</span></div>
+<div class="line">Eigen::MatrixXd M = <a class="code" href="group__Basis.html#gaf5cc3ed71949b5d7adc5877e6bfebcb4">compute_gram_matrix</a>(gradbasis_on_quadT, quadT);</div>
+</div><!-- fragment --><p>Note the usage of the type <code>VectorRd</code> defined in <code><a class="el" href="basis_8hpp.html">basis.hpp</a></code>, which enables for a dimension-independent piece of code (easier to adapt to the 2D case). This procedure can also be applied, e.g., to cell basis functions on face quadrature nodes, etc. Additionally, the values at quadrature nodes obtained via <a class="el" href="structHArDCore3D_1_1evaluate__quad.html">evaluate_quad</a> can be transformed using <a class="el" href="group__Basis.html#ga95949745fd93384a9364fe5df73034ca">transform_values_quad</a> (see also <a class="el" href="group__Basis.html#ga46a7162dd1acacd29421a7d8db89c96e">scalar_product</a> and <a class="el" href="group__Basis.html#ga7fd6906b30cba10f2f452b029a86ca00">vector_product</a>); this gives for example an easy way of constructing the values at quadrature nodes on a face of normal or tangential traces of cell polynomials.</p>
+<div class="fragment"><div class="line"><span class="comment">// Create a monomial basis in a cell T of degree k)</span></div>
+<div class="line">MonomialScalarBasisCell basis_Pk_T(T, k);</div>
+<div class="line"><span class="comment">// Tensorised the basis into vector-valued polynomials</span></div>
+<div class="line">TensorizedVectorFamily&lt;MonomialScalarBasisCell, 3&gt; basis_Pk3_T(basis_Pk_T);</div>
+<div class="line"><span class="comment">// Create quadrature nodes on a face F</span></div>
+<div class="line"><a class="code" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a> quad_2k_F = <a class="code" href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">generate_quadrature_rule</a>(F, 2*k);</div>
+<div class="line"><span class="comment">// Evaluate the vector-valued polynomials at the quadrature nodes, and then take the normal and tangential components of these evaluations</span></div>
+<div class="line">boost::multi_array&lt;VectorRd, 2&gt; basis_Pk3_T_quad = evaluate_quad&lt;Function&gt;::compute(basis_Pk3_T, quad_2k_F);</div>
+<div class="line"><a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> nF = F.normal();</div>
+<div class="line">boost::multi_array&lt;double, 2&gt; basis_Pk3_T_quad_nF = <a class="code" href="group__Basis.html#ga46a7162dd1acacd29421a7d8db89c96e">scalar_product</a>(basis_Pk3_T_quad, nF);</div>
+<div class="line">boost::multi_array&lt;VectorRd, 2&gt; basis_Pk3_T_quad_tangentF = </div>
+<div class="line">          transform_values_quad&lt;VectorRd&gt;(basis_Pk3_T_quad, [&amp;nF](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp;z)-&gt;<a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> { <span class="keywordflow">return</span> z-(z.dot(nF))*nF;});</div>
+</div><!-- fragment --><p><a class="anchor" id="quad_rules"></a> </p>
+<h1><a class="anchor" id="monomial_integration"></a>
+Homogeneous Numerical Integration (HNI) of polynomials, and Gram matrices</h1>
+<p>Because of the generality of some polytopal elements and the resulting need to generate quadrature rules by splitting the elements into tetrahedra, quadrature rules can very quickly reach a very large number of nodes (more than 1000 on some Voronoi cells for higher degrees of exactness). The calculation of integrals, and in particular of Gram matrices, then represent a very large amount of the computational time. To remediate this, we have implemented in <a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a> the HNI approach for monomials of <a href="https://doi.org/10.1007/s00466-015-1213-7">https://doi.org/10.1007/s00466-015-1213-7</a>. Since all the polynomial bases in the <a href="#common">Common</a> module are built from monomial polynomials, this technique actually enables us to very efficiently compute Gram matrices of many of these bases.</p>
+<p>The function <a class="el" href="group__Quadratures.html#gab5555f7ce39b1bd4d237e5322cd25dba">GramMatrix</a> precisely takes care of computing gram matrices of bases and derived sets of cell- and face-polynomials. At the moment, it properly manages all the following cases.</p>
+<a class="anchor" id="GM_cell"></a>
+<table class="doxtable">
+<caption>Pairs of cell polynomial bases handled by GramMatrix <em>(all derived bases obtained through ShiftedBasis, RestrictedBasis or Family are also ok)</em></caption>
+<tr>
+<td rowspan="3">Scalar bases:</td><td>MonomialScalarBasisCell | MonomialScalarBasisCell</td><td></td></tr>
+<tr>
+<td>DivergenceBasis&lt;T&gt; | MonomialScalarBasisCell </td><td><em>where T=TensorizedVectorFamily or RolyComplBasisCell</em>  </td></tr>
+<tr>
+<td>DivergenceBasis&lt;T1&gt; | DivergenceBasis&lt;T2&gt; </td><td><em>where T1,T2=TensorizedVectorFamily or RolyComplBasisCell</em>  </td></tr>
+<tr>
+<td rowspan="5">Vector bases:</td><td>TensorizedVectorFamily | T </td><td><em>where T is any basis with rank=Vector (TensorizedVectorFamily, GradientBasis, GolyComplBasisCell, etc.)</em>  </td></tr>
+<tr>
+<td>GradientBasis&lt;T1&gt; | GradientBasis&lt;T2&gt; </td><td><em>where T1, T2 are any scalar bases</em>  </td></tr>
+<tr>
+<td>CurlBasis&lt;T1&gt; | CurlBasis&lt;T2&gt; </td><td><em>where T1,T2=TensorizedVectorFamily or GolyComplBasisCell</em>  </td></tr>
+<tr>
+<td>GolyComplBasisCell | GolyComplBasisCell</td><td></td></tr>
+<tr>
+<td>RolyComplBasisCell | RolyComplBasisCell</td><td></td></tr>
+</table>
+<a class="anchor" id="GM_face"></a>
+<table class="doxtable">
+<caption>Pairs of face polynomial bases handled by GramMatrix <em>(all derived bases obtained through ShiftedBasis, RestrictedBasis or Family are also ok)</em></caption>
+<tr>
+<td rowspan="2">Scalar bases:</td><td>MonomialScalarBasisFace | MonomialScalarBasisFace</td><td></td></tr>
+<tr>
+<td>DivergenceBasis&lt;T&gt; | MonomialScalarBasisFace</td><td>where T=TangentFamily or RolyComplBasisFace (and derived)  </td></tr>
+<tr>
+<td rowspan="7">Vector bases:</td><td>TensorizedVectorFamily | TensorizedVectorFamily </td><td></td></tr>
+<tr>
+<td>TangentFamily | TangentFamily </td><td></td></tr>
+<tr>
+<td>CurlBasis | CurlBasis </td><td></td></tr>
+<tr>
+<td>CurlBasis | TangentFamily </td><td></td></tr>
+<tr>
+<td>TangentFamily | RolyComplBasisFace </td><td></td></tr>
+<tr>
+<td>RolyComplBasisFace | RolyComplBasisFace </td><td></td></tr>
+<tr>
+<td>GolyComplBasisCell | GolyComplBasisCell</td><td></td></tr>
+</table>
 <p><a class="anchor" id="hybridcore"></a> </p>
 <h1><a class="anchor" id="hybridcore"></a>
 Hybridcore module</h1>
 <p>This module encapsulates routines to create bases of polynomial spaces in each cell, on each face, and on each edge, and to manipulate discrete functions through the class <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a>.</p>
 <h2><a class="anchor" id="basisfunc"></a>
 Basis functions</h2>
-<p>The instantiation of an <a class="el" href="group__HybridCore.html">HybridCore</a> class creates basis functions for the polynomial spaces in the cells, on the faces and on the edges, specifying the maximum degree required for each geometric entity. The basis functions are elements of the <a class="el" href="classHArDCore3D_1_1Family.html">Family</a> class and are accessed via the CellBasis, FaceBasis and EdgeBasis method. For example, the following piece of code initialises an HybridCore instance with degrees \(K+1\) in the cells, \(K\) on the faces, and no edge basis functions, and access the value at some Eigen::Vector3d x of the i-th basis function on face iF, and the gradient of the j-th basis function in cell iT.</p>
+<p>The instantiation of an <a class="el" href="group__HybridCore.html">HybridCore</a> class creates basis functions for the full polynomial spaces \(\mathbb{P}^k\) in the cells, on the faces and on the edges, specifying the maximum degree required for each geometric entity. The basis functions are elements of the <a class="el" href="classHArDCore3D_1_1Family.html">Family</a> class and are accessed via the CellBasis, FaceBasis and EdgeBasis method. For example, the following piece of code initialises an HybridCore instance with degrees \(K+1\) in the cells, \(K\) on the faces, and no edge basis functions, and access the value at some Eigen::Vector3d x of the i-th basis function on face iF, and the gradient of the j-th basis function in cell iT.</p>
 <div class="fragment"><div class="line"><span class="comment">// Initialise the class</span></div>
-<div class="line">HybridCore hho(mesh_ptr.get(), K+1, K, -1, use_threads, output);</div>
+<div class="line">HybridCore hho(mesh_ptr.get(), <a class="code" href="group__HHO__DiffAdvecReac.html#gaf169764abf85f85bec428e43dc60274b">K</a>+1, <a class="code" href="group__HHO__DiffAdvecReac.html#gaf169764abf85f85bec428e43dc60274b">K</a>, -1, <a class="code" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>, output);</div>
 <div class="line"><span class="comment">// Access value of face basis function</span></div>
 <div class="line"><span class="keywordtype">double</span> val_face = hho.FaceBasis(iF).function(i, x);</div>
 <div class="line"><span class="comment">// Access value of gradient of cell basis function</span></div>
 <div class="line">Eigen::Vector3d grad_cell = hho.CellBasis(iT).gradient(j, x);</div>
-</div><!-- fragment --><p>The basis functions are hierarchical, which means that they are constructed by increasing degree. Hence, for example, if cell basis functions up to degree \(K+1\) have been generated, a basis of the space of polynomials of degree \(K\) in the cell is thus obtained by selecting the first \((K+1)(K+2)/2\) cell basis functions.</p>
+</div><!-- fragment --><p>The basis functions are hierarchical, which means that they are constructed by increasing degree. Hence, for example, if cell basis functions up to degree \(K+1\) have been generated, a basis of the space of polynomials of degree \(K\) in the cell is thus obtained by selecting the first <a class="el" href="structHArDCore3D_1_1PolynomialSpaceDimension.html">PolynomialSpaceDimension&lt;Cell&gt;::Poly(K)</a> cell basis functions.</p>
 <p>The <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a> class describes coefficients on cell and face basis functions. The first coefficients correspond to cell basis functions, ordered by the cells themselves, and the last coefficients correspond to face basis functions. The methods in this class provide the surrounding structure to make sense of these coefficients (degrees of considered polynomial functions in cells/on faces, restrictions to a certain cell and its faces, etc.).</p>
 <h2><a class="anchor" id="qr_hcore"></a>
 Quadrature rules evaluations in HybridCore</h2>
 <p>As explained above, the <a class="el" href="structHArDCore3D_1_1evaluate__quad.html">evaluate_quad</a> template enables the evaluation of basis functions (or their gradient, curl, or divergence) at pre-computed quadrature nodes. In the HybridCore module, however, the quadrature rules and values of basis functions (and gradients) at the quadrature nodes can be conveniently computed and stored using the <a class="el" href="classHArDCore3D_1_1ElementQuad.html">ElementQuad</a> class. Instantiating an element of this class on a cell loads these rules and values once, that can then be passed to several functions in charge of various calculations (e.g. one function computes the local cell contribution to the diffusion term, another function is in charge of computing the load term associated to the cell, etc.). This prevents recomputing these rules and values when needed by various functions. It works the following way:</p>
-<div class="fragment"><div class="line">HybridCore hho(mesh_ptr.get(), K+1, K, -1, use_threads, output);    <span class="comment">// HybridCore instantiation</span></div>
+<div class="fragment"><div class="line">HybridCore hho(mesh_ptr.get(), <a class="code" href="group__HHO__DiffAdvecReac.html#gaf169764abf85f85bec428e43dc60274b">K</a>+1, <a class="code" href="group__HHO__DiffAdvecReac.html#gaf169764abf85f85bec428e43dc60274b">K</a>, -1, <a class="code" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>, output);    <span class="comment">// HybridCore instantiation</span></div>
 <div class="line"><span class="keywordtype">size_t</span> doeT = m_Ldeg + m_K + 1;     <span class="comment">// degree of exactness for cell quadrature rules</span></div>
 <div class="line"><span class="keywordtype">size_t</span> doeF = 2*m_K + 1;            <span class="comment">// degree of exactness for edge quadrature rules</span></div>
 <div class="line">ElementQuad elquad(hho, iT, doeT, doeF);  <span class="comment">// compute local quadrature rules at quadrature points in cell iT</span></div>
@@ -226,11 +296,11 @@ Quadrature rules evaluations in HybridCore</h2>
 <div class="line"> </div>
 <div class="line">(... initialise/<span class="keywordflow">do</span> stuff ...)</div>
 <div class="line"><span class="comment">// Cell quadrature rules and values at nodes are needed, we grab them</span></div>
-<div class="line">QuadratureRule quadT = elquad.get_quadT();</div>
+<div class="line"><a class="code" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a> quadT = elquad.get_quadT();</div>
 <div class="line">boost::multi_array&lt;double, 2&gt; phiT_quadT = elquad.get_phiT_quadT();</div>
 <div class="line">boost::multi_array&lt;VectorRd, 2&gt; dphiT_quadT = elquad.get_dphiT_quadT();</div>
 <div class="line"> </div>
-<div class="line">(... the rest as in the previous example: create mass matrices, etc. ...)</div>
+<div class="line">(...)</div>
 </div><!-- fragment --><p><a class="anchor" id="hho3D"></a> </p>
 <h1><a class="anchor" id="hho_3D"></a>
 HHO3D general module</h1>
@@ -238,7 +308,7 @@ HHO3D general module</h1>
 <p><a class="anchor" id="ddr"></a> </p>
 <h1><a class="anchor" id="ddr"></a>
 DDRCore module</h1>
-<p>The <a class="el" href="group__DDRCore.html">DDRCore</a> module provides classes and functions to implement the discrete de Rham (DDR) complex. This complex is based on spaces with unknowns on all geometric entities (vertices, edges, faces and cells), and discrete differential operators acting between these spaces. It is based on the principles detailed in <a href="https://arxiv.org/abs/2101.04940">https://arxiv.org/abs/2101.04940</a> and <a href="https://arxiv.org/abs/2101.04946">https://arxiv.org/abs/2101.04946</a> (see also the founding work <a href="https://doi.org/10.1142/S0218202520500372">https://doi.org/10.1142/S0218202520500372</a>).</p>
+<p>The <a class="el" href="group__DDRCore.html">DDRCore</a> module provides classes and functions to implement the discrete de Rham (DDR) complex. This complex is based on spaces with unknowns on all geometric entities (vertices, edges, faces and cells), and discrete differential operators acting between these spaces. It is based on the principles detailed in <a href="https://arxiv.org/abs/2101.04940">https://arxiv.org/abs/2101.04940</a> (see also the founding work <a href="https://doi.org/10.1142/S0218202520500372">https://doi.org/10.1142/S0218202520500372</a>).</p>
 <p>It is built on the concepts in the <a class="el" href="group__Common.html">Common</a> module, in particular all the polynomial bases managed in the classes available in this module, as well as the local ordering of degrees of freedom defined by the <a class="el" href="classHArDCore3D_1_1DOFSpace.html">DOFSpace</a> class. The main elements of the DDRCore module are:</p>
 <ul>
 <li><a class="el" href="classHArDCore3D_1_1DDRSpace.html">DDRSpace</a>: class to manipulate global degrees of freedom. As <a href="#ref HArDCore3D::DOFSpace">DOFSpace</a> over which it's built, this class organises the DOFs by increasing order of the mesh entities dimensions (DOFs linked to all vertices, then DOFs linked to all edges, then DOFs linked to all faces, and finally all DOFs linked to cells). These DOFs only make sense when bases of polynomial spaces have been chosen on the geometric entities (such as some of the bases created by the DDRCore class below), and correspond then to the coefficients on these bases.</li>
@@ -246,7 +316,7 @@ DDRCore module</h1>
 <li><a class="el" href="classHArDCore3D_1_1XGrad.html">XGrad</a>, <a class="el" href="classHArDCore3D_1_1XCurl.html">XCurl</a> and <a class="el" href="classHArDCore3D_1_1XDiv.html">XDiv</a>: classes to compute the discrete operators, potentials, interpolators and \(L^2\)-inner products associated with each space in the DDR complex. Each of these classes uses some of the bases built in DDRCore, and is built on a corresponding DDRSpace (which determines how the degrees of freedom, corresponding to the bases, are organised in the space).</li>
 </ul>
 <p>Note that <a class="el" href="classHArDCore3D_1_1DDRSpace.html">DDRSpace</a> could potentially be used for generic schemes (not just based on the discrete de Rham sequence), perhaps with a different ordering of the DOFs.</p>
-<p><b>Important note</b>: a directory "DDRCore-orth" can be found in the repository. It corresponds to the DDR spaces using orthogonal complements to the images of the gradient and curl operators on polynomial spaces, as described in <a href="https://doi.org/10.1142/S0218202520500372">https://doi.org/10.1142/S0218202520500372</a>. This directory is not commented here, and its code is not maintained any longer. The directory "DDRCore" is the one referred to in this documentation, is based on the Kozsul complements of the images of gradient and curl, as in <a href="https://arxiv.org/abs/2101.04940,">https://arxiv.org/abs/2101.04940,</a> and is the one that is still maintained. DDRCore-orth is only provided for comparison purposes; the complements in this directory are much more expensive to create and manipulated, as explained in <a href="https://arxiv.org/abs/2101.04946">https://arxiv.org/abs/2101.04946</a>. To compile a scheme using the orthogonal complements, simply modify the main CMakeLists.txt and change all "DDRCore" into "DDRCore-orth".</p>
+<p><b>Important note</b>: <em>a directory "DDRCore-orth" can be found in the repository. It corresponds to the DDR spaces using orthogonal complements to the images of the gradient and curl operators on polynomial spaces, as described in <a href="https://doi.org/10.1142/S0218202520500372">https://doi.org/10.1142/S0218202520500372</a>. This directory is not commented here, and its code is not maintained any longer. The directory "DDRCore" is the one referred to in this documentation, is based on the Kozsul complements of the images of gradient and curl, as in <a href="https://arxiv.org/abs/2101.04940,">https://arxiv.org/abs/2101.04940,</a> and is the one that is still maintained. DDRCore-orth is only provided for comparison purposes; the complements in this directory are much more expensive to create and manipulated, as explained in <a href="https://arxiv.org/abs/2101.04946">https://arxiv.org/abs/2101.04946</a>. To compile a scheme using the orthogonal complements, simply modify the main CMakeLists.txt and change all "DDRCore" into "DDRCore-orth".</em></p>
 <p><a class="anchor" id="schemes"></a> </p>
 <h1><a class="anchor" id="schemes"></a>
 Schemes</h1>
@@ -255,16 +325,25 @@ Schemes</h1>
 <li><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html">HHO_diffusion</a>: Hybrid High-Order (HHO) for \(-\mathrm{div}(K\nabla u)=f\), for Dirichlet, Neumann or mixed boundary conditions, with \(K\) a diffusion tensor that is piecewise constant on the mesh.</li>
 <li><a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html">HHO_locvardiff</a>: HHO for \(-\mathrm{div}(K\nabla u)=f\), for Dirichlet, Neumann or mixed boundary conditions, with \(K\) a diffusion tensor that can vary in each cell.</li>
 <li><a class="el" href="group__HHO__DiffAdvecReac.html">HHO_diffadvecreac</a>: HHO for \(-\mathrm{div}(K\nabla u+\beta u)+\mu u=f\), for Dirichlet or mixed boundary conditions, with \(K\) a diffusion tensor that can vary in each cell.</li>
-<li><a class="el" href="group__DDR__magnetostatic.html">DDR_magnetostatic</a>: Discrete De Rham (DDR) scheme for the magnetostatic problem.</li>
+<li><a class="el" href="group__DDR__magnetostatic.html">DDR_magnetostatic</a>: Discrete De Rham (DDR) scheme for the magnetostatic problem, as per <a href="https://doi.org/10.1016/j.jcp.2020.109991">https://doi.org/10.1016/j.jcp.2020.109991</a> (but using Koszul complements).</li>
 </ul>
-<p>The directory <code>runs</code> contains BASH to run series of tests on families of meshes. The files <code>data.sh</code> describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the <code>output</code> directory, shows the convergence rate in the standard console output, and creates a pdf file <code>rate.pdf</code> describing the rates of convergence in various energy norms (you will need <code>pdflatex</code> to create this pdf file; commenting out the corresponding line is fine, the pdf will simply not be create). </p>
+<p>The directory <code>runs</code> contains BASH scripts to run series of tests on families of meshes. The files <code>data.sh</code> describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the <code>output</code> directory, shows the convergence rate in the standard console output, and creates a pdf file <code>rate.pdf</code> describing the rates of convergence in various energy norms (you will need <code>pdflatex</code> to create this pdf file; commenting out the corresponding line is fine, the pdf will simply not be create). </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
-<div class="ttc" id="agroup__Mesh_html_ga69b766413004e6e89503f8b6c2f541f6"><div class="ttname"><a href="group__Mesh.html#ga69b766413004e6e89503f8b6c2f541f6">MeshND::Vertex</a></div><div class="ttdeci">MeshObject&lt; space_dim, 0 &gt; Vertex</div><div class="ttdoc">A Vertex is a MeshObject with object_dim = 0.</div><div class="ttdef"><b>Definition:</b> MeshObject.hpp:140</div></div>
-<div class="ttc" id="agroup__Common_html_gaf5cc3ed71949b5d7adc5877e6bfebcb4"><div class="ttname"><a href="group__Common.html#gaf5cc3ed71949b5d7adc5877e6bfebcb4">HArDCore3D::compute_gram_matrix</a></div><div class="ttdeci">Eigen::MatrixXd compute_gram_matrix(const boost::multi_array&lt; VectorRd, 2 &gt; &amp;B1, const boost::multi_array&lt; double, 2 &gt; &amp;B2, const QuadratureRule &amp;qr)</div><div class="ttdef"><b>Definition:</b> basis.cpp:305</div></div>
+<div class="ttc" id="agroup__Quadratures_html_ga41055a24d71d12c64b5fddddc0bbad22"><div class="ttname"><a href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">HArDCore3D::QuadratureRule</a></div><div class="ttdeci">std::vector&lt; QuadratureNode &gt; QuadratureRule</div><div class="ttdef"><b>Definition:</b> quadraturerule.hpp:61</div></div>
+<div class="ttc" id="amesh_8hpp_html"><div class="ttname"><a href="mesh_8hpp.html">mesh.hpp</a></div></div>
+<div class="ttc" id="agroup__HHO__DiffAdvecReac_html_gaf169764abf85f85bec428e43dc60274b"><div class="ttname"><a href="group__HHO__DiffAdvecReac.html#gaf169764abf85f85bec428e43dc60274b">K</a></div><div class="ttdeci">size_t K</div><div class="ttdef"><b>Definition:</b> HHO_DiffAdvecReac.hpp:46</div></div>
+<div class="ttc" id="agroup__HHO__DiffAdvecReac_html_ga61c147fa3e7a4b2f35ba838ce26aa026"><div class="ttname"><a href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a></div><div class="ttdeci">bool use_threads</div><div class="ttdef"><b>Definition:</b> HHO_DiffAdvecReac.hpp:47</div></div>
+<div class="ttc" id="agroup__Basis_html_ga46a7162dd1acacd29421a7d8db89c96e"><div class="ttname"><a href="group__Basis.html#ga46a7162dd1acacd29421a7d8db89c96e">HArDCore3D::scalar_product</a></div><div class="ttdeci">double scalar_product(const double &amp;x, const double &amp;y)</div><div class="ttdoc">Scalar product between two reals.</div><div class="ttdef"><b>Definition:</b> basis.cpp:279</div></div>
+<div class="ttc" id="aCMakeCCompilerId_8c_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="CMakeCCompilerId_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> CMakeCCompilerId.c:645</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1MeshBuilder_html_a208c94e8cb6490226215b59eb67e7911"><div class="ttname"><a href="classHArDCore3D_1_1MeshBuilder.html#a208c94e8cb6490226215b59eb67e7911">HArDCore3D::MeshBuilder::build_the_mesh</a></div><div class="ttdeci">std::unique_ptr&lt; Mesh &gt; build_the_mesh()</div><div class="ttdef"><b>Definition:</b> mesh_builder.cpp:35</div></div>
+<div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdef"><b>Definition:</b> ddr-magnetostatics.hpp:38</div></div>
 <div class="ttc" id="agroup__Quadratures_html_ga18d0a2cf574bef7d6e83760de2f38152"><div class="ttname"><a href="group__Quadratures.html#ga18d0a2cf574bef7d6e83760de2f38152">HArDCore3D::generate_quadrature_rule</a></div><div class="ttdeci">QuadratureRule generate_quadrature_rule(const Cell &amp;T, const int doe, const bool force_split)</div><div class="ttdoc">Generate quadrature rule on mesh element.</div><div class="ttdef"><b>Definition:</b> quadraturerule.cpp:11</div></div>
+<div class="ttc" id="anamespaceMesh2D_html_aff8af6d9e4621304984811aba3c8691f"><div class="ttname"><a href="namespaceMesh2D.html#aff8af6d9e4621304984811aba3c8691f">Mesh2D::Vertex</a></div><div class="ttdeci">MeshND::Vertex&lt; 2 &gt; Vertex</div><div class="ttdef"><b>Definition:</b> Mesh2D.hpp:10</div></div>
+<div class="ttc" id="agroup__Basis_html_gaf5cc3ed71949b5d7adc5877e6bfebcb4"><div class="ttname"><a href="group__Basis.html#gaf5cc3ed71949b5d7adc5877e6bfebcb4">HArDCore3D::compute_gram_matrix</a></div><div class="ttdeci">Eigen::MatrixXd compute_gram_matrix(const boost::multi_array&lt; VectorRd, 2 &gt; &amp;B1, const boost::multi_array&lt; double, 2 &gt; &amp;B2, const QuadratureRule &amp;qr)</div><div class="ttdef"><b>Definition:</b> basis.cpp:310</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1MeshBuilder_html"><div class="ttname"><a href="classHArDCore3D_1_1MeshBuilder.html">HArDCore3D::MeshBuilder</a></div><div class="ttdoc">The MeshBuilder class provides build tools to create a full mesh with all connectivities.</div><div class="ttdef"><b>Definition:</b> mesh_builder.hpp:19</div></div>
+<div class="ttc" id="amesh__builder_8hpp_html"><div class="ttname"><a href="mesh__builder_8hpp.html">mesh_builder.hpp</a></div></div>
+<div class="ttc" id="anamespaceMesh2D_html_a782920a9ee0ff830630fe77e70a8f6bd"><div class="ttname"><a href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">Mesh2D::VectorRd</a></div><div class="ttdeci">MeshND::VectorRd&lt; 2 &gt; VectorRd</div><div class="ttdef"><b>Definition:</b> Mesh2D.hpp:14</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

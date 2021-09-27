@@ -12,43 +12,45 @@ Basis for the complement G$^\wedge$\{c,k\}(F) in P$^\wedge$k(F)$^\wedge$2 of the
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef Vector\+Rd {\bfseries Function\+Value}
+typedef Vector\+Rd \mbox{\hyperlink{group__Basis_gafbc2bb4ee025ad38891635564b57cf56}{Function\+Value}}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries Gradient\+Value}
+typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_gad6ec6f833d2f7d677c4bec26b9350b70}{Gradient\+Value}}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries Curl\+Value}
+typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_gae58012eaf9074237fbfd893c8b86448f}{Curl\+Value}}
 \item 
-typedef double {\bfseries Divergence\+Value}
+typedef double \mbox{\hyperlink{group__Basis_ga073abdc299819b6aa71f8ef679f71e8f}{Divergence\+Value}}
 \item 
-typedef Face {\bfseries Geometric\+Support}
+typedef Face \mbox{\hyperlink{group__Basis_gaf5ced8758911390c4eed54ba6bb41b6e}{Geometric\+Support}}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, 2, dimspace $>$ {\bfseries Jacobian\+Type}
+typedef Eigen\+::\+Matrix$<$ double, 2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga0cbdf6618e91e09a34adef7f0cef48d8}{Jacobian\+Type}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Common_gafa1a983e06c624057325da3f15d24f26}{Goly\+Compl\+Basis\+Face}} (const Face \&F, size\+\_\+t degree)
+\mbox{\hyperlink{group__Basis_gafa1a983e06c624057325da3f15d24f26}{Goly\+Compl\+Basis\+Face}} (const Face \&F, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga6e854d4617a587f4ada2e8520dd8370e}{dimension}} () const
+size\+\_\+t \mbox{\hyperlink{group__Basis_ga6e854d4617a587f4ada2e8520dd8370e}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Dimension of the basis. \end{DoxyCompactList}\item 
-Function\+Value \mbox{\hyperlink{group__Common_gaee2b5550bf8fc5e23172c08848b82125}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\mbox{\hyperlink{group__Basis_gafbc2bb4ee025ad38891635564b57cf56}{Function\+Value}} \mbox{\hyperlink{group__Basis_gaee2b5550bf8fc5e23172c08848b82125}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-const Vector\+Rd \& \mbox{\hyperlink{group__Common_ga942d185d76dc58075a5db479eb3c0e14}{normal}} () const
-\begin{DoxyCompactList}\small\item\em Return the normal to the face used in the computation of the curl. \end{DoxyCompactList}\end{DoxyCompactItemize}
+const Vector\+Rd \& \mbox{\hyperlink{group__Basis_ga942d185d76dc58075a5db479eb3c0e14}{normal}} () const
+\begin{DoxyCompactList}\small\item\em Return the normal to the face used in the computation of the curl. \end{DoxyCompactList}\item 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisFace}{Roly\+Compl\+Basis\+Face}} $>$ \& \mbox{\hyperlink{group__Basis_ga089a16168e129cca28c846ccfc5244cf}{rck}} () const
+\begin{DoxyCompactList}\small\item\em Return the Rck basis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-constexpr static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga5108b9354f683ae7be935a4ceb9569bd}{tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
 \item 
-constexpr static const bool {\bfseries has\+Ancestor} = false
+constexpr static const bool \mbox{\hyperlink{group__Basis_ga7c913291ec4bab40fad06b27b1f464f8}{has\+Ancestor}} = false
 \item 
-static const bool {\bfseries has\+Function} = true
+static const bool \mbox{\hyperlink{group__Basis_ga85658a58babb166b5460b736de871ba4}{has\+Function}} = true
 \item 
-static const bool {\bfseries has\+Gradient} = false
+static const bool \mbox{\hyperlink{group__Basis_gabe2ad5bad1ef70a6cfb73201e20eee08}{has\+Gradient}} = false
 \item 
-static const bool {\bfseries has\+Curl} = false
+static const bool \mbox{\hyperlink{group__Basis_gacc718f354bb6f0b7e69251751a57f6dd}{has\+Curl}} = false
 \item 
-static const bool {\bfseries has\+Divergence} = false
+static const bool \mbox{\hyperlink{group__Basis_ga1287b1bb152aa4ee204df6f9006542ac}{has\+Divergence}} = false
 \end{DoxyCompactItemize}
 
 
@@ -57,5 +59,5 @@ Basis for the complement G$^\wedge$\{c,k\}(F) in P$^\wedge$k(F)$^\wedge$2 of the
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/\+Common/basis.\+hpp\item 
-src/\+Common/basis.\+cpp\end{DoxyCompactItemize}
+src/\+Common/\mbox{\hyperlink{basis_8hpp}{basis.\+hpp}}\item 
+src/\+Common/\mbox{\hyperlink{basis_8cpp}{basis.\+cpp}}\end{DoxyCompactItemize}

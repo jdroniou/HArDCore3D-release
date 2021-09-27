@@ -1,4 +1,7 @@
 #include "HHO_DiffAdvecReac.hpp"
+#include <GMpoly_cell.hpp>
+#include <GMpoly_face.hpp>
+
 
 int main(const int argc, const char *argv[])
 {
@@ -20,25 +23,26 @@ int main(const int argc, const char *argv[])
     TestCase tcase(id_tcase);
 
     // Get flags to speed up assembly time in the case of zero or constant advection or reaction
-    bool advec_zero = (id_tcase[2] == 0 ? true : false);
-    bool reac_zero = (id_tcase[3] == 0 ? true : false);
-    bool reac_const = tcase.is_reac_const();
-    bool div_advec_zero = tcase.is_div_advec_zero();
-    bool div_advec_const = tcase.is_div_advec_const();
+    bool reac_zero = tcase.get_reaction().is_zero;
+    bool reac_const = tcase.get_reaction().is_constant;
+
+    bool advec_zero = tcase.get_advection().is_zero;
+    bool div_advec_zero = tcase.get_advection().is_divergence_zero;
+    bool div_advec_const = tcase.get_advection().is_divergence_constant;
 
     // Exact solution
-    const FType<double> exact_solution = tcase.sol();
-    const CellFType<VectorRd> grad_exact_solution = tcase.grad_sol();
+    const FType<double> exact_solution = tcase.get_solution().value;
+    const CellFType<VectorRd> grad_exact_solution = tcase.get_solution().gradient;
 
     // Diffusion
-    const CellFType<MatrixRd> diff = tcase.diff();
+    const CellFType<MatrixRd> diff = tcase.get_diffusion().value;
 
     // Advection
-    const CellFType<VectorRd> advec = tcase.advec();
-    const CellFType<double> div_advec = tcase.div_advec();
+    const CellFType<VectorRd> advec = tcase.get_advection().value;
+    const CellFType<double> div_advec = tcase.get_advection().divergence;
 
     // Reaction
-    const CellFType<double> reac = tcase.reac();
+    const CellFType<double> reac = tcase.get_reaction().value;
 
     // Source term
     const CellFType<double> source = ((advec_zero && reac_zero) ? tcase.diff_source() : tcase.diff_advec_reac_source());
@@ -80,7 +84,7 @@ int main(const int argc, const char *argv[])
         BasisQuad<double> phiT_quadT = elquad.get_phiT_quadT();
         BasisQuad<VectorRd> dphiT_quadT = elquad.get_dphiT_quadT();
         // cell mass matrix
-        Eigen::MatrixXd MTT = compute_gram_matrix(phiT_quadT, phiT_quadT, quadT, n_local_cell_dofs, n_local_highorder_dofs, "sym");
+        Eigen::MatrixXd MTT = GramMatrix(*cell, hho.CellBasis(cell->global_index())).topRows(n_local_cell_dofs);
 
         // Get L_T matrix to impose average condition on P_T later
         Eigen::VectorXd LT = (MTT.row(0)).transpose();
@@ -108,6 +112,7 @@ int main(const int argc, const char *argv[])
         // Loop over faces to fet face terms of the RHS of PT and GT
         for (size_t iTF = 0; iTF < n_local_faces; iTF++)
         {
+            const Face & F = *cell->face(iTF);
             const size_t offset_F = n_local_cell_dofs + iTF * n_local_face_dofs;
             const VectorRd &nTF = cell->face_normal(iTF);
 
@@ -116,7 +121,7 @@ int main(const int argc, const char *argv[])
             BasisQuad<double> phiT_quadF = elquad.get_phiT_quadF(iTF);
             BasisQuad<VectorRd> dphiT_quadF = elquad.get_dphiT_quadF(iTF);
 
-            MFF[iTF] = compute_gram_matrix(phiF_quadF, phiF_quadF, quadF, "sym");
+            MFF[iTF] = GramMatrix(F, hho.FaceBasis(F.global_index()));
             MFT[iTF] = compute_gram_matrix(phiF_quadF, phiT_quadF, quadF);
 
             if (!advec_zero)

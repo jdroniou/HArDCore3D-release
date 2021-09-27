@@ -37,12 +37,12 @@ namespace HArDCore3D
 {
 
   /*!	
- * @defgroup Common 
+ * @defgroup Basis 
  * @brief Classes and functions for polynomial basis creation and manipulation
  */
 
   /*!
-   *	\addtogroup Common
+   *	\addtogroup Basis
    * @{
    */
 
@@ -148,7 +148,7 @@ namespace HArDCore3D
   //          SCALAR MONOMIAL BASIS
   //----------------------------------------------------------------------
   //----------------------------------------------------------------------
-  
+
   /// Scalar monomial basis on a cell
   class MonomialScalarBasisCell
   {
@@ -272,7 +272,19 @@ namespace HArDCore3D
     {
       return m_jacobian;
     }
+    
+    /// Return the system of coordinates (basis in rows) on the face
+    inline const JacobianType coordinates_system() const
+    {
+      return m_jacobian * m_hF;
+    }
 
+    /// Returns the powers of the i-th basis function (its degree can be found using powers(i).sum())
+    inline Eigen::Vector2i powers(size_t i) const
+    {
+      return m_powers[i];
+    }
+    
   private:
     /// Coordinate transformation
     inline Eigen::Vector2d _coordinate_transform(const VectorRd &x) const
@@ -374,6 +386,8 @@ namespace HArDCore3D
     static const bool hasGradient = BasisType::hasGradient;
     static const bool hasCurl = BasisType::hasCurl;
     static const bool hasDivergence = BasisType::hasDivergence;
+
+    typedef BasisType AncestorType;
 
     /// Constructor
     Family(
@@ -498,7 +512,7 @@ namespace HArDCore3D
     }
 
     /// Return the coefficient matrix
-    inline const Eigen::MatrixXd &matrix() const
+    inline const Eigen::MatrixXd & matrix() const
     {
       return m_matrix;
     }
@@ -522,8 +536,8 @@ namespace HArDCore3D
 
   //----------------------TENSORIZED--------------------------------------------------------
 
-  /// Vector family obtained by tensorization of a scalar family.
-  /** The tensorization is done the following way: if (f_1,...,f_r) is the family of scalar functions,
+  /// Vector family obtained by tensorization of a scalar family
+  /** The tensorization is done the following way: if \f$(f_1,...,f_r)\f$ is the family of scalar functions,
    the tensorized family of rank N is given by (where all vectors are columns of size N):
   
      \f$\left(\begin{array}{c}f_1\\0\\\vdots\\0\end{array}\right)\f$;
@@ -566,6 +580,8 @@ namespace HArDCore3D
     // if we tensorize at the dimension of the space
     static const bool hasDivergence = (ScalarFamilyType::hasGradient && N == dimspace);
     static const bool hasCurl = (ScalarFamilyType::hasGradient && N == dimspace);
+
+    typedef ScalarFamilyType AncestorType;
 
     TensorizedVectorFamily(const ScalarFamilyType &scalar_family)
         : m_scalar_family(scalar_family)
@@ -693,6 +709,8 @@ namespace HArDCore3D
     static const bool hasCurl = false;
     static const bool hasDivergence = true;
 
+    typedef ScalarFamilyType AncestorType;
+
     /// Constructor
     TangentFamily(
         const ScalarFamilyType &scalar_family,               ///< A basis for the scalar space
@@ -736,6 +754,12 @@ namespace HArDCore3D
       return m_scalar_family.max_degree();
     }
 
+    /// Returns the generators of the basis functions
+    inline Eigen::Matrix<double, 2, dimspace> generators() const
+    {
+      return m_generators;
+    }
+
 
   private:
     ScalarFamilyType m_scalar_family;
@@ -763,6 +787,8 @@ namespace HArDCore3D
     static const bool hasGradient = BasisType::hasGradient;
     static const bool hasCurl = BasisType::hasCurl;
     static const bool hasDivergence = BasisType::hasDivergence;
+
+    typedef BasisType AncestorType;
 
     /// Constructor
     ShiftedBasis(
@@ -852,6 +878,8 @@ namespace HArDCore3D
     static const bool hasCurl = BasisType::hasCurl;
     static const bool hasDivergence = BasisType::hasDivergence;
 
+    typedef BasisType AncestorType;
+
     /// Constructor
     RestrictedBasis(
         const BasisType &basis, ///< A basis
@@ -880,7 +908,12 @@ namespace HArDCore3D
     /// Returns the maximum degree of the basis functions
     inline size_t max_degree() const
     {
-      return m_basis.max_degree();
+      // We need to find the degree based on the dimension, assumes the basis is hierarchical
+      size_t deg = 0;
+      while (PolynomialSpaceDimension<GeometricSupport>::Poly(deg) < m_dimension){
+        deg++;
+      }
+      return deg;
     }
 
     /// Evaluate the i-th basis function at point x
@@ -943,6 +976,8 @@ namespace HArDCore3D
     static const bool hasCurl = false;
     static const bool hasDivergence = false;
 
+    typedef BasisType AncestorType;
+    
     /// Constructor
     GradientBasis(const BasisType &basis)
         : m_scalar_basis(basis)
@@ -999,6 +1034,8 @@ namespace HArDCore3D
     static const bool hasGradient = false;
     static const bool hasCurl = false;
     static const bool hasDivergence = false;
+
+    typedef BasisType AncestorType;
 
     /// Constructor
     CurlBasis(const BasisType &basis)
@@ -1057,6 +1094,8 @@ namespace HArDCore3D
     static const bool hasGradient = false;
     static const bool hasCurl = false;
     static const bool hasDivergence = false;
+
+    typedef BasisType AncestorType;
 
     /// Constructor
     DivergenceBasis(const BasisType &basis)
@@ -1283,6 +1322,18 @@ namespace HArDCore3D
       return m_jacobian;
     }
 
+    /// Returns the maximum degree of the basis functions
+    inline size_t max_degree() const
+    {
+      return m_degree;
+    }
+    
+    /// Returns the powers of the i-th basis function
+    inline Eigen::Vector2i powers(size_t i) const
+    {
+      return m_powers[i];
+    }
+    
   private:
     /// Coordinate transformation
     inline Eigen::Vector2d _coordinate_transform(const VectorRd &x) const
@@ -1339,6 +1390,12 @@ namespace HArDCore3D
       return m_nF;
     }
 
+    /// Return the Rck basis
+    inline const std::shared_ptr<RolyComplBasisFace> &rck() const
+    {
+      return m_Rck_basis;
+    }
+
   private:
     size_t m_degree;
     VectorRd m_nF;
@@ -1355,6 +1412,20 @@ namespace HArDCore3D
     Gradient,
     Curl,
     Divergence
+  };
+  
+  /// Takes an array B_quad of values at quadrature nodes and applies the function F to all of them. F must take inValue and return outValue. The function must be called with outValue as template argument: transform_values_quad<outValue>(...)
+  template <typename outValue, typename inValue, typename FunctionType>
+  boost::multi_array<outValue, 2> transform_values_quad(
+          const boost::multi_array<inValue, 2> &B_quad,   ///< Evaluations to be transformed
+          const FunctionType &F                          ///< Transformation
+          )
+  {
+    boost::multi_array<outValue, 2> transformed_B_quad( boost::extents[B_quad.shape()[0]][B_quad.shape()[1]] );
+    
+    std::transform( B_quad.origin(), B_quad.origin() + B_quad.num_elements(), transformed_B_quad.origin(), F);
+
+    return transformed_B_quad;
   };
 
   //------------------------------------------------------------------------------
@@ -1761,6 +1832,9 @@ namespace HArDCore3D
   /// Scalar product between two reals
   double scalar_product(const double &x, const double &y);
 
+  /// Scalar product between one real and one 1-dimension Eigen vector
+  double scalar_product(const double &x, const Eigen::Matrix<double, 1, 1> &y);
+
   /// Scalar product between two vectors
   double scalar_product(const VectorRd &x, const VectorRd &y);
 
@@ -1809,6 +1883,22 @@ namespace HArDCore3D
     Eigen::MatrixXd B = gram_schmidt(basis_quad, inner_product);
 
     return Family<BasisType>(basis, B);
+  }
+
+  /// \f$L^2\f$-orthonormalization: when the Gram Matrix is passed, we use Cholesky. 
+  /* This method is more robust that the previous one based on values at quadrature nodes */
+  template <typename BasisType>
+  Family<BasisType> l2_orthonormalize(
+      const BasisType &basis,       ///< basis to orthonormalise
+      const Eigen::MatrixXd & GM    ///< Gram matrix of the basis
+  )
+  {
+    // Check that the basis and Gram matrix are coherent
+    assert(basis.dimension() == size_t(GM.rows()) && GM.rows() == GM.cols());
+
+    Eigen::MatrixXd L = GM.llt().matrixL();
+
+    return Family<BasisType>(basis, L.inverse());
   }
 
   //------------------------------------------------------------------------------
@@ -2075,10 +2165,15 @@ namespace HArDCore3D
       const std::function<typename BasisType::FunctionValue(const VectorRd &)> &f, ///< Function to project
       const BasisType &basis,                                                      ///< Basis for the space on which we project
       QuadratureRule &quad,                                                        ///< Quadrature rule
-      const boost::multi_array<typename BasisType::FunctionValue, 2> &basis_quad   ///< Evaluation of the basis at quadrature nodes
+      const boost::multi_array<typename BasisType::FunctionValue, 2> &basis_quad,  ///< Evaluation of the basis at quadrature nodes
+      const Eigen::MatrixXd &mass_basis = Eigen::MatrixXd::Zero(1,1)               ///< Optional: the mass matrix of the basis, if previously calculated
   )
   {
-    Eigen::LDLT<Eigen::MatrixXd> cholesky_mass(compute_gram_matrix(basis_quad, basis_quad, quad, "sym"));
+    Eigen::MatrixXd Mass = mass_basis;
+    if (Mass.norm() < 1e-13){
+      Mass = compute_gram_matrix(basis_quad, quad);
+    }
+    Eigen::LDLT<Eigen::MatrixXd> cholesky_mass(Mass);
     Eigen::VectorXd b = Eigen::VectorXd::Zero(basis.dimension());
     for (size_t i = 0; i < basis.dimension(); i++)
     {
@@ -2089,6 +2184,93 @@ namespace HArDCore3D
     }   // for i
     return cholesky_mass.solve(b);
   }
+
+  //------------------------------------------------------------------------------
+  //        Decomposition on a face polynomial basis
+  //------------------------------------------------------------------------------
+
+  /// Structure to decompose a set of polynomials on a basis on a face
+  /** The main interest of this structure is to give a decomposition of traces (scalar, normal, etc.) of
+  cell polynomials on a basis of face polynomial. This enables the usage of these traces in a face GramMatrix.
+  However, the decomposition leads to increased rouding errors compared to a straight usage of compute_gram_matrix.
+  Some tests however seem to indicate that this version of DecomposePoly is relatively robust up to degrees ~4 or 5
+  */
+  template <typename BasisType>
+  struct DecomposePoly
+  {
+    /// Constructor
+    /** The basis provided here must be of same rank (scalar, vector) as the polynomials to decompose, and of course
+    of degree equal to or higher to those. The polynomials are decomposed on this basis.
+    The method seems much more stable if we start from a straight monomial basis (possibly
+    vectorialised, but not a family of some basis).
+    */
+    DecomposePoly(
+            const Face &F,    ///< Face on which the polynomial functions are defined
+            const BasisType &basis  ///< Basis for face polynomials
+            ):
+          m_dim(basis.dimension()),
+          m_basis(basis),
+          m_on_basis(basis, Eigen::MatrixXd::Identity(m_dim,m_dim))  // Need to initialise before we compute the real ON basis
+      {
+        /* The decomposition will be performed using an orthonormalised version of m_basis, for stability.
+         The scalar product for which we orthonormalise is a minimal one (much less expensive than integrating
+         over the face): \sum_i phi(x_i) psi(x_i) where (x_i)_i are nodes that are sufficient to determine
+         entirely polynomials up to the considered degree.
+         The nodes we build here correspond to P^k nodes on a triangle on a face (the triangle being centered
+         at the face center) */
+        
+        // Create nodes
+        std::vector<Eigen::Vector2i> indices = MonomialPowers<Face>::complete(basis.max_degree());
+        VectorRd tF = F.edge(0)->tangent();
+        VectorRd nF = F.edge_normal(0);
+        VectorRd x0 = F.center_mass() - F.diam()*(tF+nF)/3.0;
+        
+        // Nodes 
+        m_nb_nodes = indices.size();
+        m_nodes.reserve(m_nb_nodes);
+        for (size_t i=0; i<m_nb_nodes; i++){
+          VectorRd xi = x0 + F.diam()*(double(indices[i](0)) * tF + double(indices[i](1)) * nF)/std::max(1.,double(basis.max_degree()));
+          m_nodes.emplace_back(xi.x(), xi.y(), xi.z(), 1.); 
+        }
+
+        // We then orthonormalise Orthonormalise basis for simple scalar product
+        m_on_basis_nodes.resize(boost::extents[m_dim][m_nb_nodes]);
+        m_on_basis_nodes = evaluate_quad<Function>::compute(m_basis, m_nodes);
+        m_on_basis = Family<BasisType>(l2_orthonormalize(m_basis, m_nodes, m_on_basis_nodes));
+      };
+      
+    /// Return the set of nodes (useful to compute value of polynomial to decompose via evaluate_quad)
+    inline QuadratureRule get_nodes() const 
+    {
+      return m_nodes;    
+    };
+
+    /// Returns the decomposed polynomials as a Family of the provided basis
+    Family<BasisType> family(
+            boost::multi_array<typename BasisType::FunctionValue, 2> &values  ///< Values of polynomials at the nodes (e.g. obtained via evaluate_quad)
+            )
+    {
+      // Gram matrix of the polynomials and the ON basis
+      Eigen::MatrixXd Gram_P_onbasis = compute_gram_matrix(values, m_on_basis_nodes, m_nodes);
+      // L=matrix of P as a family of the ON basis. In theory, Gram_onbasis is identity, but due to rounding errors it 
+      // can be a bit different. Computing L as if it's not the case improves stability 
+      Eigen::MatrixXd Gram_onbasis = compute_gram_matrix(m_on_basis_nodes, m_nodes);
+      Eigen::MatrixXd L = Gram_onbasis.ldlt().solve(Gram_P_onbasis.transpose());
+      return Family<BasisType>(m_basis, L.transpose() * m_on_basis.matrix());
+    };
+
+
+    // Member variables
+    size_t m_dim;   // dimension of basis
+    BasisType m_basis; // Basis on which we decompose
+    Family<BasisType> m_on_basis; // Orthonormalised basis (for simple scalar product)
+    boost::multi_array<typename BasisType::FunctionValue, 2> m_on_basis_nodes; // Values of ON basis at the nodes
+    size_t m_nb_nodes;    // nb of nodes
+    QuadratureRule m_nodes; ///< Nodes for the interpolation
+    
+  };
+  
+
 
   //@}
 

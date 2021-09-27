@@ -72,6 +72,12 @@ $(function() {
 &#160;
 
 <h3><a id="index_g"></a>- g -</h3><ul>
+<li>generators()
+: <a class="el" href="group__Basis.html#gab57e166ae408723200908def889dac07">HArDCore3D::TangentFamily&lt; ScalarFamilyType &gt;</a>
+</li>
+<li>get_advection()
+: <a class="el" href="classTestCase.html#a4e77d9fe331b1f1dcde9b91cd1352b30">TestCase</a>
+</li>
 <li>get_assembly_time()
 : <a class="el" href="group__HHO__Diffusion.html#gaa2bb4d069026f1604d2899031d3642f1">HArDCore3D::HHO_Diffusion</a>
 , <a class="el" href="group__HHO__LocVarDiff.html#ga4232eab7b9753215b506d5ce701c4f4f">HArDCore3D::HHO_LocVarDiff</a>
@@ -80,8 +86,8 @@ $(function() {
 <li>get_cell_deg()
 : <a class="el" href="group__HybridCore.html#ga4621feb28406aad90512e4a0b6ec5662">HArDCore3D::UVector</a>
 </li>
-<li>get_deg_diff()
-: <a class="el" href="classTestCase.html#a3dd2daaebb012281b252ab65db0045b2">TestCase</a>
+<li>get_diffusion()
+: <a class="el" href="classTestCase.html#a8df4ed0fde743c7c0f7a7885be318fad">TestCase</a>
 </li>
 <li>get_dphiT_quadF()
 : <a class="el" href="group__HybridCore.html#ga023175342dd0e23426348ebe2445b7cc">HArDCore3D::ElementQuad</a>
@@ -95,9 +101,6 @@ $(function() {
 <li>get_itime()
 : <a class="el" href="group__HHO__Diffusion.html#ga00b3b186fb915242a805c7c53e323e6e">HArDCore3D::HHO_Diffusion</a>
 , <a class="el" href="group__HHO__LocVarDiff.html#gae66d0e79903e2ca077ff2515c20d7d2e">HArDCore3D::HHO_LocVarDiff</a>
-</li>
-<li>get_lambda()
-: <a class="el" href="classTestCase.html#abb42d3b206c5e89d34ed34f5fe2546e0">TestCase</a>
 </li>
 <li>get_mesh()
 : <a class="el" href="group__HybridCore.html#gaf9413be657df06123c1544d16df6b137">HArDCore3D::HybridCore</a>
@@ -117,6 +120,9 @@ $(function() {
 <li>get_nlocal_face_dofs()
 : <a class="el" href="group__HHO__Diffusion.html#ga81f57d9aa97bcac14dbd4e0fc378bd46">HArDCore3D::HHO_Diffusion</a>
 , <a class="el" href="group__HHO__LocVarDiff.html#ga50183dd5315faafad99f94c33b3b297e">HArDCore3D::HHO_LocVarDiff</a>
+</li>
+<li>get_nodes()
+: <a class="el" href="group__Basis.html#ga9826502cd32a681c30f47a07ffedf0ff">HArDCore3D::DecomposePoly&lt; BasisType &gt;</a>
 </li>
 <li>get_ntotal_cell_dofs()
 : <a class="el" href="group__HHO__Diffusion.html#gadbbbcb3f31c94640fd926fb24cfc75c7">HArDCore3D::HHO_Diffusion</a>
@@ -145,8 +151,17 @@ $(function() {
 <li>get_quadF()
 : <a class="el" href="group__HybridCore.html#ga9e734ea29a3c4e0403bb5aea2ba910e3">HArDCore3D::ElementQuad</a>
 </li>
+<li>get_quadrule()
+: <a class="el" href="group__Quadratures.html#ga0b28a2844825ec7d4f26678ddbb119f4">HArDCore3D::QuadRuleTetra</a>
+</li>
 <li>get_quadT()
 : <a class="el" href="group__HybridCore.html#gaf8ee9bc271f5b73902b87f68f46f51f5">HArDCore3D::ElementQuad</a>
+</li>
+<li>get_reaction()
+: <a class="el" href="classTestCase.html#ad7a00087c093d0b87e9153b7b2515473">TestCase</a>
+</li>
+<li>get_solution()
+: <a class="el" href="classTestCase.html#afca541076c5752604d5fbe6c377cc734">TestCase</a>
 </li>
 <li>get_solving_error()
 : <a class="el" href="group__HHO__Diffusion.html#ga91b1ec7d73685c4a1d49d671b4b69814">HArDCore3D::HHO_Diffusion</a>
@@ -170,6 +185,9 @@ $(function() {
 <li>get_vec_phiT_quadT()
 : <a class="el" href="group__HybridCore.html#ga3c549d43c0a5171d0c14f6b56ffc843d">HArDCore3D::ElementQuad</a>
 </li>
+<li>globalDOFIndices()
+: <a class="el" href="group__DDRCore.html#ga22f398be3435e174d075617e3045d88a">HArDCore3D::DDRSpace</a>
+</li>
 <li>globalOffset()
 : <a class="el" href="group__DDRCore.html#gaabbbc3c672e298647779b2c02d05833d">HArDCore3D::DDRSpace</a>
 </li>
@@ -182,31 +200,28 @@ $(function() {
 , <a class="el" href="group__Common.html#gabf01fe85b09055f0457c7b0215eca8a0">HArDCore3D::PolynomialSpaceDimension&lt; Face &gt;</a>
 </li>
 <li>GolyComplBasisCell()
-: <a class="el" href="group__Common.html#gae888c90badbcf2878f72e4d992956836">HArDCore3D::GolyComplBasisCell</a>
+: <a class="el" href="group__Basis.html#gae888c90badbcf2878f72e4d992956836">HArDCore3D::GolyComplBasisCell</a>
 </li>
 <li>GolyComplBasisFace()
-: <a class="el" href="group__Common.html#gafa1a983e06c624057325da3f15d24f26">HArDCore3D::GolyComplBasisFace</a>
-</li>
-<li>grad_sol()
-: <a class="el" href="classTestCase.html#aae90a2722c30bdccb51c947c5a200857">TestCase</a>
+: <a class="el" href="group__Basis.html#gafa1a983e06c624057325da3f15d24f26">HArDCore3D::GolyComplBasisFace</a>
 </li>
 <li>gradient()
-: <a class="el" href="group__Common.html#gae1199c53d8ea68392eb915f4dee7ef52">HArDCore3D::Family&lt; BasisType &gt;</a>
-, <a class="el" href="group__Common.html#gafe6fb4aef0d61e720116d8ba64c94971">HArDCore3D::MonomialScalarBasisCell</a>
-, <a class="el" href="group__Common.html#gae0c76acbc1682b81cc2fe25f23d7884f">HArDCore3D::MonomialScalarBasisEdge</a>
-, <a class="el" href="group__Common.html#ga25989d831b6ca783612bc54ce0f25b66">HArDCore3D::MonomialScalarBasisFace</a>
-, <a class="el" href="group__Common.html#gae191627737010694521dc5aae42744cd">HArDCore3D::RestrictedBasis&lt; BasisType &gt;</a>
-, <a class="el" href="group__Common.html#ga1e825cd8aa68c4e1a1e3900e24be84f7">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
-, <a class="el" href="group__Common.html#ga42238c95ed27a327d0291c67a1c6196b">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
+: <a class="el" href="group__Basis.html#gae1199c53d8ea68392eb915f4dee7ef52">HArDCore3D::Family&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#gafe6fb4aef0d61e720116d8ba64c94971">HArDCore3D::MonomialScalarBasisCell</a>
+, <a class="el" href="group__Basis.html#gae0c76acbc1682b81cc2fe25f23d7884f">HArDCore3D::MonomialScalarBasisEdge</a>
+, <a class="el" href="group__Basis.html#ga25989d831b6ca783612bc54ce0f25b66">HArDCore3D::MonomialScalarBasisFace</a>
+, <a class="el" href="group__Basis.html#gae191627737010694521dc5aae42744cd">HArDCore3D::RestrictedBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga1e825cd8aa68c4e1a1e3900e24be84f7">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
+, <a class="el" href="group__Basis.html#ga77afc35bfef1864de71abdb78d6a9c36">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
 </li>
 <li>GradientBasis()
-: <a class="el" href="group__Common.html#gaf2fa9b4764b550f576aeba7e24e6c911">HArDCore3D::GradientBasis&lt; BasisType &gt;</a>
+: <a class="el" href="group__Basis.html#gaf2fa9b4764b550f576aeba7e24e6c911">HArDCore3D::GradientBasis&lt; BasisType &gt;</a>
 </li>
 <li>graph_to_array()
 : <a class="el" href="group__DirectedGraph.html#ga699690c1dc328475925d8308cdef658f">DirectedGraph</a>
 </li>
 <li>GraphNodeArray()
-: <a class="el" href="group__DirectedGraph.html#ga6c69776546c7cb4512bd70b8fe09bdf0">GraphNodeArray</a>
+: <a class="el" href="group__DirectedGraph.html#gabf8791778b5d306cab8e52ac388264dd">GraphNodeArray</a>
 </li>
 </ul>
 </div><!-- contents -->

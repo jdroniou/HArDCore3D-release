@@ -12,45 +12,45 @@ Basis for the complement R$^\wedge$\{c,k\}(T) in P$^\wedge$k(T)$^\wedge$3 of the
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef Vector\+Rd {\bfseries Function\+Value}
+typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga086bb5008eb8c8d382effe2775bfece6}{Function\+Value}}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries Gradient\+Value}
+typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_gab6e6ab638f754a5f4a631e2717df0214}{Gradient\+Value}}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, dimspace, dimspace $>$ {\bfseries Curl\+Value}
+typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga3343afa305f2e57dfc6c471735259024}{Curl\+Value}}
 \item 
-typedef double {\bfseries Divergence\+Value}
+typedef double \mbox{\hyperlink{group__Basis_ga6eacec23654d7a7f3d2c9edd1acd8646}{Divergence\+Value}}
 \item 
-typedef Cell {\bfseries Geometric\+Support}
+typedef Cell \mbox{\hyperlink{group__Basis_gaf60e0ddb281f31993143c5ab174fd9a3}{Geometric\+Support}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Common_ga98289e16109a552704685379e02a325e}{Roly\+Compl\+Basis\+Cell}} (const Cell \&T, size\+\_\+t degree)
+\mbox{\hyperlink{group__Basis_ga98289e16109a552704685379e02a325e}{Roly\+Compl\+Basis\+Cell}} (const Cell \&T, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga964b9b4b33364cbe605d03b3c0bd0f39}{dimension}} () const
+size\+\_\+t \mbox{\hyperlink{group__Basis_ga964b9b4b33364cbe605d03b3c0bd0f39}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Compute the dimension of the basis. \end{DoxyCompactList}\item 
-Function\+Value \mbox{\hyperlink{group__Common_gaa030621a604f2d2402a83719b14e40aa}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\mbox{\hyperlink{group__Basis_ga086bb5008eb8c8d382effe2775bfece6}{Function\+Value}} \mbox{\hyperlink{group__Basis_gaa030621a604f2d2402a83719b14e40aa}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-Divergence\+Value \mbox{\hyperlink{group__Common_gae9437fe66e19fd6af8474c2e66262bd2}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\mbox{\hyperlink{group__Basis_ga6eacec23654d7a7f3d2c9edd1acd8646}{Divergence\+Value}} \mbox{\hyperlink{group__Basis_gae9437fe66e19fd6af8474c2e66262bd2}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga29e6bf8800390436c3120f9b1eb65124}{max\+\_\+degree}} () const
+size\+\_\+t \mbox{\hyperlink{group__Basis_ga29e6bf8800390436c3120f9b1eb65124}{max\+\_\+degree}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
-Vector\+Zd \mbox{\hyperlink{group__Common_ga70d7abf0a77b03bc851012ed20bfb4eb}{powers}} (size\+\_\+t i) const
+Vector\+Zd \mbox{\hyperlink{group__Basis_ga70d7abf0a77b03bc851012ed20bfb4eb}{powers}} (size\+\_\+t i) const
 \begin{DoxyCompactList}\small\item\em Returns the powers of the i-\/th basis function (not including the vector part) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-constexpr static const Tensor\+RankE {\bfseries tensor\+Rank} = Vector
+constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga0dc1703854e1b7185087ce2cc41474ed}{tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
 \item 
-constexpr static const bool {\bfseries has\+Ancestor} = false
+constexpr static const bool \mbox{\hyperlink{group__Basis_gafe0d3e625e265e72bb52dfdb25a021b1}{has\+Ancestor}} = false
 \item 
-static const bool {\bfseries has\+Function} = true
+static const bool \mbox{\hyperlink{group__Basis_ga4a0f9931416601458a7b27aba31a122a}{has\+Function}} = true
 \item 
-static const bool {\bfseries has\+Gradient} = false
+static const bool \mbox{\hyperlink{group__Basis_ga70bcc9726952ec15a01243c9f1fa272d}{has\+Gradient}} = false
 \item 
-static const bool {\bfseries has\+Curl} = false
+static const bool \mbox{\hyperlink{group__Basis_ga0d279217ebc9517eeda0d1be5875a9e0}{has\+Curl}} = false
 \item 
-static const bool {\bfseries has\+Divergence} = true
+static const bool \mbox{\hyperlink{group__Basis_ga80bdfa79913245f50a4be627cd588b34}{has\+Divergence}} = true
 \end{DoxyCompactItemize}
 
 
@@ -59,5 +59,5 @@ Basis for the complement R$^\wedge$\{c,k\}(T) in P$^\wedge$k(T)$^\wedge$3 of the
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/\+Common/basis.\+hpp\item 
-src/\+Common/basis.\+cpp\end{DoxyCompactItemize}
+src/\+Common/\mbox{\hyperlink{basis_8hpp}{basis.\+hpp}}\item 
+src/\+Common/\mbox{\hyperlink{basis_8cpp}{basis.\+cpp}}\end{DoxyCompactItemize}

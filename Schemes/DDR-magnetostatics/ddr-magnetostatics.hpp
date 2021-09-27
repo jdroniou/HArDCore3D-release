@@ -139,9 +139,9 @@ namespace HArDCore3D
       return m_sc_b;
     }
 
-    /// Compute the discrete Hcurl \times Hdiv norm
-    double computeNorm(
-                       const Eigen::VectorXd & v ///< The vector
+    /// Compute the discrete Hcurl \times Hdiv norm of a family of vectors representing the dofs
+    std::vector<double> computeNorms(
+                       const std::vector<Eigen::VectorXd> & list_dofs ///< The list of vectors representing the dofs
                       ) const;
 
   private:

@@ -1,6 +1,23 @@
 var searchData=
 [
-  ['xcurl_283',['XCurl',['../classHArDCore3D_1_1XCurl.html',1,'HArDCore3D::XCurl'],['../group__DDRCore.html#gac5383b922f0967c25438f268f41a706c',1,'HArDCore3D::XCurl::XCurl()'],['../group__DDR__magnetostatic.html#ga19b0cd652147b495285bece47378342c',1,'HArDCore3D::Magnetostatics::xCurl()']]],
-  ['xdiv_284',['XDiv',['../classHArDCore3D_1_1XDiv.html',1,'HArDCore3D::XDiv'],['../group__DDRCore.html#ga0b1c78b35b73fcf374d8861e2f78b55e',1,'HArDCore3D::XDiv::XDiv()'],['../group__DDR__magnetostatic.html#ga36d240d6810c180781c7a2615a7f914e',1,'HArDCore3D::Magnetostatics::xDiv()']]],
-  ['xgrad_285',['XGrad',['../classHArDCore3D_1_1XGrad.html',1,'HArDCore3D::XGrad'],['../group__DDRCore.html#gaa324e5f72366f9c2fe7326384986269c',1,'HArDCore3D::XGrad::XGrad()']]]
+  ['v_574',['V',['../group__DirectedGraph.html#gafbf56b0f88221fadf7b137f0d3f95271',1,'DirectedFace']]],
+  ['validate_575',['validate',['../classTestCase.html#a1f428652eb476f6eb4973ef1f478e8ce',1,'TestCase']]],
+  ['value_576',['value',['../structSolution.html#a63584f98d1c74c55dcb74c92f7ba5d58',1,'Solution::value()'],['../structDiffusion.html#a01af84cf7d739ec660f7f83bb7a74118',1,'Diffusion::value()'],['../structAdvection.html#a18f333460ffc5d14269c7ecdcb1024c4',1,'Advection::value()'],['../structReaction.html#a824aa2749037c8fc10a10bc0128d0256',1,'Reaction::value()'],['../group__Common.html#ga0e64dd7fa60d788876219241162f0f6e',1,'HArDCore3D::IntegralWeight::value()']]],
+  ['variable_5fpermeability_5ff_577',['variable_permeability_f',['../group__DDR__magnetostatic.html#gaff788533b63baa15115e358130484877',1,'HArDCore3D']]],
+  ['variable_5fpermeability_5fmu_578',['variable_permeability_mu',['../group__DDR__magnetostatic.html#ga8544d138a24d03889b511f2bfd62e7d4',1,'HArDCore3D']]],
+  ['variable_5fpermeability_5fsigma_579',['variable_permeability_sigma',['../group__DDR__magnetostatic.html#gac1b6ed3b881e6ea7bb3fb070b97989f0',1,'HArDCore3D']]],
+  ['variable_5fpermeability_5fu_580',['variable_permeability_u',['../group__DDR__magnetostatic.html#gaf8861771b7a4aec46677d2333abfcbe3',1,'HArDCore3D']]],
+  ['vecfacehash_581',['VecFaceHash',['../structHArDCore3D_1_1VecFaceHash.html',1,'HArDCore3D']]],
+  ['vechash_582',['VecHash',['../structHArDCore3D_1_1VecHash.html',1,'HArDCore3D']]],
+  ['vector_583',['vector',['../group__Quadratures.html#gac0d94c3725c0502056333f314fb48fc9',1,'HArDCore3D::QuadratureNode::vector()'],['../group__Basis.html#gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0',1,'HArDCore3D::Vector()']]],
+  ['vector_5fproduct_584',['vector_product',['../group__Basis.html#ga7fd6906b30cba10f2f452b029a86ca00',1,'HArDCore3D']]],
+  ['vectorftype_585',['VectorFType',['../group__HHO3D.html#ga12f4db66d2596fe2ed7e1384d412479a',1,'HHO3D.hpp']]],
+  ['vectorrd_586',['VectorRd',['../namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd',1,'Mesh2D::VectorRd()'],['../namespaceMesh3D.html#a3bf33503cb0c5eb4e6da079c5d3091d9',1,'Mesh3D::VectorRd()'],['../namespaceMeshND.html#a36f45c57c87a9d08d94fefe52f6fad56',1,'MeshND::VectorRd()']]],
+  ['vectorzd_587',['VectorZd',['../namespaceMesh2D.html#a49b10c7258867c6d90447c6a0b8b8f16',1,'Mesh2D::VectorZd()'],['../namespaceMesh3D.html#a23e80510978ec0f73df80457f214ed4a',1,'Mesh3D::VectorZd()'],['../namespaceMeshND.html#a3a7bca838b20b12907ede1859c88affd',1,'MeshND::VectorZd()']]],
+  ['vertex_588',['vertex',['../group__Mesh.html#gacb0bf2d67d00416bcbbd60c2d1bd3781',1,'MeshND::MeshObject::vertex()'],['../namespaceMesh2D.html#aff8af6d9e4621304984811aba3c8691f',1,'Mesh2D::Vertex()'],['../namespaceMesh3D.html#ac19873df1892497347f4bf05c1c6a172',1,'Mesh3D::Vertex()'],['../group__Mesh.html#ga69b766413004e6e89503f8b6c2f541f6',1,'MeshND::Vertex()']]],
+  ['vertexvalues_589',['VertexValues',['../group__HybridCore.html#ga1d33ec0786b8127a161384ecf8f04018',1,'HArDCore3D::HybridCore']]],
+  ['vol_5ft_590',['vol_T',['../group__Quadratures.html#ga89340eddcfc957b975316e4e70122880',1,'HArDCore3D::QuadRuleTetra']]],
+  ['vtu_5fwriter_2ecpp_591',['vtu_writer.cpp',['../vtu__writer_8cpp.html',1,'']]],
+  ['vtu_5fwriter_2ehpp_592',['vtu_writer.hpp',['../vtu__writer_8hpp.html',1,'']]],
+  ['vtuwriter_593',['VtuWriter',['../classHArDCore3D_1_1VtuWriter.html',1,'HArDCore3D::VtuWriter'],['../group__Plot.html#ga24a7defcf350ceff6a48de65b6740505',1,'HArDCore3D::VtuWriter::VtuWriter()']]]
 ];

@@ -64,16 +64,17 @@ namespace HArDCore3D
   public:
     // Types for element bases
     typedef Family<MonomialScalarBasisCell> PolyBasisCellType;
-    typedef TensorizedVectorFamily<PolyBasisCellType, 3> Poly3BasisCellType;
+    typedef TensorizedVectorFamily<RestrictedBasis<PolyBasisCellType>, 3> Poly3BasisCellType;
     typedef Family<GradientBasis<ShiftedBasis<MonomialScalarBasisCell> > > GolyBasisCellType;
     typedef Family<Poly3BasisCellType> GolyComplBasisCellType;
+    typedef Family<TensorizedVectorFamily<PolyBasisCellType, 3>> GolyComplpoBasisCellType;
     typedef CurlBasis<GolyComplBasisCellType> RolyBasisCellType;
     typedef Family<Poly3BasisCellType> RolyComplBasisCellType;
 
     // Types for face bases
     typedef Family<MonomialScalarBasisFace> PolyBasisFaceType;
-    typedef TangentFamily<PolyBasisFaceType> Poly2BasisFaceType;
-    typedef CurlBasis<ShiftedBasis<PolyBasisFaceType> > RolyBasisFaceType;
+    typedef TangentFamily<RestrictedBasis<PolyBasisFaceType>> Poly2BasisFaceType;
+    typedef Family<CurlBasis<ShiftedBasis<MonomialScalarBasisFace>>> RolyBasisFaceType;
     typedef Family<Poly2BasisFaceType> RolyComplBasisFaceType;
     typedef Family<Family<TangentFamily<MonomialScalarBasisFace> > > PotentialTestFunctionBasisType;
 
@@ -92,7 +93,7 @@ namespace HArDCore3D
       std::unique_ptr<Poly3BasisCellType> Polyk3;
       std::unique_ptr<GolyBasisCellType> Golykmo;
       std::unique_ptr<GolyComplBasisCellType> GolyComplk;
-      std::unique_ptr<GolyComplBasisCellType> GolyComplkpo;
+      std::unique_ptr<GolyComplpoBasisCellType> GolyComplkpo;
       std::unique_ptr<RolyBasisCellType>  Rolykmo;
       std::unique_ptr<RolyComplBasisCellType> RolyComplk;
       std::unique_ptr<RolyComplBasisCellType> RolyComplkp2;

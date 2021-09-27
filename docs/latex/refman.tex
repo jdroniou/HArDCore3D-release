@@ -179,10 +179,14 @@
 \input{md_README}
 \chapter{Module Index}
 \input{modules}
+\chapter{Namespace Index}
+\input{namespaces}
 \chapter{Hierarchical Index}
 \input{hierarchy}
 \chapter{Class Index}
 \input{annotated}
+\chapter{File Index}
+\input{files}
 \chapter{Module Documentation}
 \input{group__Mesh}
 \include{group__TestCases}
@@ -192,12 +196,21 @@
 \include{group__HHO3D}
 \include{group__HHO__LocVarDiff}
 \include{group__DirectedGraph}
+\include{group__Basis}
 \include{group__Common}
 \include{group__DDRCore}
 \include{group__HybridCore}
 \include{group__Plot}
 \include{group__Quadratures}
+\chapter{Namespace Documentation}
+\input{namespaceHArDCore3D}
+\input{namespaceHArDCore3D_1_1detail}
+\input{namespaceMath}
+\input{namespaceMesh2D}
+\input{namespaceMesh3D}
+\input{namespaceMeshND}
 \chapter{Class Documentation}
+\input{structAdvection}
 \input{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}
 \input{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Curl_01_4}
 \input{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Divergence_01_4}
@@ -213,6 +226,8 @@
 \input{classHArDCore3D_1_1CurlBasis}
 \input{classHArDCore3D_1_1DDRCore}
 \input{classHArDCore3D_1_1DDRSpace}
+\input{structHArDCore3D_1_1DecomposePoly}
+\input{structDiffusion}
 \input{classDirectedCell}
 \input{classDirectedFace}
 \input{classDirectedGraph}
@@ -233,9 +248,9 @@
 \input{classHArDCore3D_1_1HybridCore}
 \input{structHArDCore3D_1_1IntegralWeight}
 \input{classHArDCore3D_1_1LegendreGauss}
-\input{structHArDCore3D_1_1XGrad_1_1LocalOperators}
 \input{structHArDCore3D_1_1XCurl_1_1LocalOperators}
 \input{structHArDCore3D_1_1XDiv_1_1LocalOperators}
+\input{structHArDCore3D_1_1XGrad_1_1LocalOperators}
 \input{structHArDCore3D_1_1Magnetostatics}
 \input{classMeshND_1_1Mesh}
 \input{classHArDCore3D_1_1MeshBuilder}
@@ -255,18 +270,100 @@
 \input{classHArDCore3D_1_1QuadRuleEdge}
 \input{classHArDCore3D_1_1QuadRuleTetra}
 \input{classHArDCore3D_1_1QuadRuleTriangle}
+\input{structReaction}
 \input{classHArDCore3D_1_1RestrictedBasis}
 \input{classHArDCore3D_1_1RolyComplBasisCell}
 \input{classHArDCore3D_1_1RolyComplBasisFace}
 \input{classHArDCore3D_1_1ShiftedBasis}
+\input{structSolution}
 \input{classHArDCore3D_1_1TangentFamily}
 \input{classHArDCore3D_1_1TensorizedVectorFamily}
 \input{classTestCase}
 \input{classHArDCore3D_1_1UVector}
+\input{structHArDCore3D_1_1VecFaceHash}
+\input{structHArDCore3D_1_1VecHash}
 \input{classHArDCore3D_1_1VtuWriter}
 \input{classHArDCore3D_1_1XCurl}
 \input{classHArDCore3D_1_1XDiv}
 \input{classHArDCore3D_1_1XGrad}
+\chapter{File Documentation}
+\input{CMakeCCompilerId_8c}
+\input{CMakeCXXCompilerId_8cpp}
+\input{docs-MAINPAGE_8md}
+\input{math_8hpp}
+\input{Mesh2D_8hpp}
+\input{Mesh3D_8hpp}
+\input{MeshND_8hpp}
+\input{MeshObject_8hpp}
+\input{README_8md}
+\input{hho-diff-advec-reac_2compute__rates_8cpp}
+\input{hho-diffusion_2compute__rates_8cpp}
+\input{hho-locvardiff_2compute__rates_8cpp}
+\input{BoundaryConditions_8cpp}
+\input{BoundaryConditions_8hpp}
+\input{ddr-magnetostatics_8cpp}
+\input{ddr-magnetostatics_8hpp}
+\input{HHO__DiffAdvecReac_8cpp}
+\input{HHO__DiffAdvecReac_8hpp}
+\input{HHO__Diffusion_8cpp}
+\input{HHO__Diffusion_8hpp}
+\input{HHO3D_8cpp}
+\input{HHO3D_8hpp}
+\input{HHO__LocVarDiff_8cpp}
+\input{HHO__LocVarDiff_8hpp}
+\input{DirectedGraph_8cpp}
+\input{DirectedGraph_8hpp}
+\input{MeshCoarsen_8cpp}
+\input{MeshToVTU_8cpp}
+\input{TestCase_8cpp}
+\input{TestCase_8hpp}
+\input{basis_8cpp}
+\input{basis_8hpp}
+\input{display__timer_8hpp}
+\input{dofspace_8cpp}
+\input{dofspace_8hpp}
+\input{integralweight_8hpp}
+\input{parallel__for_8hpp}
+\input{polynomialspacedimension_8hpp}
+\input{ddrcore_8cpp}
+\input{ddrcore_8hpp}
+\input{ddrspace_8cpp}
+\input{ddrspace_8hpp}
+\input{xcurl_8cpp}
+\input{xcurl_8hpp}
+\input{xdiv_8cpp}
+\input{xdiv_8hpp}
+\input{xgrad_8cpp}
+\input{xgrad_8hpp}
+\input{elementquad_8cpp}
+\input{elementquad_8hpp}
+\input{hybridcore_8cpp}
+\input{hybridcore_8hpp}
+\input{mesh_8cpp}
+\input{mesh_8hpp}
+\input{mesh__builder_8cpp}
+\input{mesh__builder_8hpp}
+\input{mesh__reader_8cpp}
+\input{mesh__reader_8hpp}
+\input{vtu__writer_8cpp}
+\input{vtu__writer_8hpp}
+\input{GMpoly__cell_8cpp}
+\input{GMpoly__cell_8hpp}
+\input{GMpoly__face_8cpp}
+\input{GMpoly__face_8hpp}
+\input{max__degrees__quadratures_8hpp}
+\input{quad1d_8cpp}
+\input{quad1d_8hpp}
+\input{quad3d_8cpp}
+\input{quad3d_8hpp}
+\input{quad3d__face_8cpp}
+\input{quad3d__face_8hpp}
+\input{quadraturerule_8cpp}
+\input{quadraturerule_8hpp}
+\input{tetra__quad_8cpp}
+\input{tetra__quad_8hpp}
+\input{triangle__dunavant__rule_8cpp}
+\input{triangle__dunavant__rule_8hpp}
 %--- End generated contents ---
 
 % Index

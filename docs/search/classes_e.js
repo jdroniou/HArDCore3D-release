@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['tangentfamily_352',['TangentFamily',['../classHArDCore3D_1_1TangentFamily.html',1,'HArDCore3D']]],
-  ['tensorizedvectorfamily_353',['TensorizedVectorFamily',['../classHArDCore3D_1_1TensorizedVectorFamily.html',1,'HArDCore3D']]],
-  ['testcase_354',['TestCase',['../classTestCase.html',1,'']]]
+  ['shiftedbasis_693',['ShiftedBasis',['../classHArDCore3D_1_1ShiftedBasis.html',1,'HArDCore3D']]],
+  ['solution_694',['Solution',['../structSolution.html',1,'']]]
 ];

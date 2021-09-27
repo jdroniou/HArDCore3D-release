@@ -88,68 +88,402 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaf4ea116d21e8e33ab8de8160d3685630"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gaf4ea116d21e8e33ab8de8160d3685630">HArDCore3D::HHO_LocVarDiff::HHO_LocVarDiff</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, size_t K, int L, <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; MatrixRd &gt; kappa, size_t deg_kappa, <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt; source, <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> BC, <a class="el" href="group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt; exact_solution, <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; VectorRd &gt; grad_exact_solution, std::string solver_type, bool use_threads, std::ostream &amp;output=std::cout)</td></tr>
+<tr class="memitem:gaf4ea116d21e8e33ab8de8160d3685630"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gaf4ea116d21e8e33ab8de8160d3685630">HArDCore3D::HHO_LocVarDiff::HHO_LocVarDiff</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, size_t <a class="el" href="group__HHO__DiffAdvecReac.html#gaf169764abf85f85bec428e43dc60274b">K</a>, int <a class="el" href="group__HHO__DiffAdvecReac.html#ga91a0b997ce3aa9aa56b8cba3620fed15">L</a>, <a class="el" href="group__Basis.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; <a class="el" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> &gt; kappa, size_t deg_kappa, <a class="el" href="group__Basis.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt; source, <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> BC, <a class="el" href="group__Basis.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt; exact_solution, <a class="el" href="group__Basis.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; VectorRd &gt; grad_exact_solution, std::string solver_type, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>, std::ostream &amp;output=std::cout)</td></tr>
 <tr class="memdesc:gaf4ea116d21e8e33ab8de8160d3685630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="group__HHO__LocVarDiff.html#gaf4ea116d21e8e33ab8de8160d3685630">More...</a><br /></td></tr>
 <tr class="separator:gaf4ea116d21e8e33ab8de8160d3685630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5fa4c3b9a58d7208198ee0d6860c093a"><td class="memItemLeft" align="right" valign="top"><a id="ga5fa4c3b9a58d7208198ee0d6860c093a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga5fa4c3b9a58d7208198ee0d6860c093a">HArDCore3D::HHO_LocVarDiff::assemble</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
-<tr class="memdesc:ga5fa4c3b9a58d7208198ee0d6860c093a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble and solve the scheme. <br /></td></tr>
+<tr class="memitem:ga5fa4c3b9a58d7208198ee0d6860c093a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga5fa4c3b9a58d7208198ee0d6860c093a">HArDCore3D::HHO_LocVarDiff::assemble</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
+<tr class="memdesc:ga5fa4c3b9a58d7208198ee0d6860c093a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble and solve the scheme.  <a href="group__HHO__LocVarDiff.html#ga5fa4c3b9a58d7208198ee0d6860c093a">More...</a><br /></td></tr>
 <tr class="separator:ga5fa4c3b9a58d7208198ee0d6860c093a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga11bf9be780b53676d2cc1ec9bb30dcc6"><td class="memItemLeft" align="right" valign="top"><a id="ga11bf9be780b53676d2cc1ec9bb30dcc6"></a>
-<a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>HArDCore3D::HHO_LocVarDiff::solve</b> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
+<tr class="memitem:ga11bf9be780b53676d2cc1ec9bb30dcc6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga11bf9be780b53676d2cc1ec9bb30dcc6">HArDCore3D::HHO_LocVarDiff::solve</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
 <tr class="separator:ga11bf9be780b53676d2cc1ec9bb30dcc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga19858d12d0b2dd817aac99a36f390e2e"><td class="memItemLeft" align="right" valign="top"><a id="ga19858d12d0b2dd817aac99a36f390e2e"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga19858d12d0b2dd817aac99a36f390e2e">HArDCore3D::HHO_LocVarDiff::EnergyNorm</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, const <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a> Xh)</td></tr>
-<tr class="memdesc:ga19858d12d0b2dd817aac99a36f390e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete energy norm (associated to the diffusion operator) of an hybrid function. <br /></td></tr>
+<tr class="memitem:ga19858d12d0b2dd817aac99a36f390e2e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga19858d12d0b2dd817aac99a36f390e2e">HArDCore3D::HHO_LocVarDiff::EnergyNorm</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, const <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a> Xh)</td></tr>
+<tr class="memdesc:ga19858d12d0b2dd817aac99a36f390e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete energy norm (associated to the diffusion operator) of an hybrid function.  <a href="group__HHO__LocVarDiff.html#ga19858d12d0b2dd817aac99a36f390e2e">More...</a><br /></td></tr>
 <tr class="separator:ga19858d12d0b2dd817aac99a36f390e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4232eab7b9753215b506d5ce701c4f4f"><td class="memItemLeft" align="right" valign="top"><a id="ga4232eab7b9753215b506d5ce701c4f4f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga4232eab7b9753215b506d5ce701c4f4f">HArDCore3D::HHO_LocVarDiff::get_assembly_time</a> () const</td></tr>
-<tr class="memdesc:ga4232eab7b9753215b506d5ce701c4f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to assemble the scheme <br /></td></tr>
+<tr class="memitem:ga4232eab7b9753215b506d5ce701c4f4f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga4232eab7b9753215b506d5ce701c4f4f">HArDCore3D::HHO_LocVarDiff::get_assembly_time</a> () const</td></tr>
+<tr class="memdesc:ga4232eab7b9753215b506d5ce701c4f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to assemble the scheme  <a href="group__HHO__LocVarDiff.html#ga4232eab7b9753215b506d5ce701c4f4f">More...</a><br /></td></tr>
 <tr class="separator:ga4232eab7b9753215b506d5ce701c4f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga10971b2952ab54d336127a43f5ed9b29"><td class="memItemLeft" align="right" valign="top"><a id="ga10971b2952ab54d336127a43f5ed9b29"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga10971b2952ab54d336127a43f5ed9b29">HArDCore3D::HHO_LocVarDiff::get_solving_time</a> () const</td></tr>
-<tr class="memdesc:ga10971b2952ab54d336127a43f5ed9b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to solve the scheme <br /></td></tr>
+<tr class="memitem:ga10971b2952ab54d336127a43f5ed9b29"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga10971b2952ab54d336127a43f5ed9b29">HArDCore3D::HHO_LocVarDiff::get_solving_time</a> () const</td></tr>
+<tr class="memdesc:ga10971b2952ab54d336127a43f5ed9b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to solve the scheme  <a href="group__HHO__LocVarDiff.html#ga10971b2952ab54d336127a43f5ed9b29">More...</a><br /></td></tr>
 <tr class="separator:ga10971b2952ab54d336127a43f5ed9b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga22542468093ee4e8e24d8c0a27946f8f"><td class="memItemLeft" align="right" valign="top"><a id="ga22542468093ee4e8e24d8c0a27946f8f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga22542468093ee4e8e24d8c0a27946f8f">HArDCore3D::HHO_LocVarDiff::get_solving_error</a> () const</td></tr>
-<tr class="memdesc:ga22542468093ee4e8e24d8c0a27946f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">residual after solving the scheme <br /></td></tr>
+<tr class="memitem:ga22542468093ee4e8e24d8c0a27946f8f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga22542468093ee4e8e24d8c0a27946f8f">HArDCore3D::HHO_LocVarDiff::get_solving_error</a> () const</td></tr>
+<tr class="memdesc:ga22542468093ee4e8e24d8c0a27946f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">residual after solving the scheme  <a href="group__HHO__LocVarDiff.html#ga22542468093ee4e8e24d8c0a27946f8f">More...</a><br /></td></tr>
 <tr class="separator:ga22542468093ee4e8e24d8c0a27946f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae66d0e79903e2ca077ff2515c20d7d2e"><td class="memItemLeft" align="right" valign="top"><a id="gae66d0e79903e2ca077ff2515c20d7d2e"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gae66d0e79903e2ca077ff2515c20d7d2e">HArDCore3D::HHO_LocVarDiff::get_itime</a> (size_t idx) const</td></tr>
-<tr class="memdesc:gae66d0e79903e2ca077ff2515c20d7d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">various intermediate assembly times <br /></td></tr>
+<tr class="memitem:gae66d0e79903e2ca077ff2515c20d7d2e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gae66d0e79903e2ca077ff2515c20d7d2e">HArDCore3D::HHO_LocVarDiff::get_itime</a> (size_t idx) const</td></tr>
+<tr class="memdesc:gae66d0e79903e2ca077ff2515c20d7d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">various intermediate assembly times  <a href="group__HHO__LocVarDiff.html#gae66d0e79903e2ca077ff2515c20d7d2e">More...</a><br /></td></tr>
 <tr class="separator:gae66d0e79903e2ca077ff2515c20d7d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab0746da36b0bebd4b112d7d43aea41c5"><td class="memItemLeft" align="right" valign="top"><a id="gab0746da36b0bebd4b112d7d43aea41c5"></a>
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gab0746da36b0bebd4b112d7d43aea41c5">HArDCore3D::HHO_LocVarDiff::get_nlocal_cell_dofs</a> ()</td></tr>
-<tr class="memdesc:gab0746da36b0bebd4b112d7d43aea41c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs in each cell. <br /></td></tr>
+<tr class="memitem:gab0746da36b0bebd4b112d7d43aea41c5"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gab0746da36b0bebd4b112d7d43aea41c5">HArDCore3D::HHO_LocVarDiff::get_nlocal_cell_dofs</a> ()</td></tr>
+<tr class="memdesc:gab0746da36b0bebd4b112d7d43aea41c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs in each cell.  <a href="group__HHO__LocVarDiff.html#gab0746da36b0bebd4b112d7d43aea41c5">More...</a><br /></td></tr>
 <tr class="separator:gab0746da36b0bebd4b112d7d43aea41c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga50183dd5315faafad99f94c33b3b297e"><td class="memItemLeft" align="right" valign="top"><a id="ga50183dd5315faafad99f94c33b3b297e"></a>
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga50183dd5315faafad99f94c33b3b297e">HArDCore3D::HHO_LocVarDiff::get_nlocal_face_dofs</a> ()</td></tr>
-<tr class="memdesc:ga50183dd5315faafad99f94c33b3b297e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs on each face. <br /></td></tr>
+<tr class="memitem:ga50183dd5315faafad99f94c33b3b297e"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga50183dd5315faafad99f94c33b3b297e">HArDCore3D::HHO_LocVarDiff::get_nlocal_face_dofs</a> ()</td></tr>
+<tr class="memdesc:ga50183dd5315faafad99f94c33b3b297e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs on each face.  <a href="group__HHO__LocVarDiff.html#ga50183dd5315faafad99f94c33b3b297e">More...</a><br /></td></tr>
 <tr class="separator:ga50183dd5315faafad99f94c33b3b297e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga745621585c09932f84dc01096997eabb"><td class="memItemLeft" align="right" valign="top"><a id="ga745621585c09932f84dc01096997eabb"></a>
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga745621585c09932f84dc01096997eabb">HArDCore3D::HHO_LocVarDiff::get_nhighorder_dofs</a> ()</td></tr>
-<tr class="memdesc:ga745621585c09932f84dc01096997eabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs per cell for high-order (K+1) polynomials. <br /></td></tr>
+<tr class="memitem:ga745621585c09932f84dc01096997eabb"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga745621585c09932f84dc01096997eabb">HArDCore3D::HHO_LocVarDiff::get_nhighorder_dofs</a> ()</td></tr>
+<tr class="memdesc:ga745621585c09932f84dc01096997eabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs per cell for high-order (K+1) polynomials.  <a href="group__HHO__LocVarDiff.html#ga745621585c09932f84dc01096997eabb">More...</a><br /></td></tr>
 <tr class="separator:ga745621585c09932f84dc01096997eabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga77c2a80e682212997d23d60712d5391e"><td class="memItemLeft" align="right" valign="top"><a id="ga77c2a80e682212997d23d60712d5391e"></a>
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga77c2a80e682212997d23d60712d5391e">HArDCore3D::HHO_LocVarDiff::get_ntotal_cell_dofs</a> ()</td></tr>
-<tr class="memdesc:ga77c2a80e682212997d23d60712d5391e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of cell DOFs over the entire mesh. <br /></td></tr>
+<tr class="memitem:ga77c2a80e682212997d23d60712d5391e"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga77c2a80e682212997d23d60712d5391e">HArDCore3D::HHO_LocVarDiff::get_ntotal_cell_dofs</a> ()</td></tr>
+<tr class="memdesc:ga77c2a80e682212997d23d60712d5391e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of cell DOFs over the entire mesh.  <a href="group__HHO__LocVarDiff.html#ga77c2a80e682212997d23d60712d5391e">More...</a><br /></td></tr>
 <tr class="separator:ga77c2a80e682212997d23d60712d5391e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae76d4ea3457115f301371430f49d8c8a"><td class="memItemLeft" align="right" valign="top"><a id="gae76d4ea3457115f301371430f49d8c8a"></a>
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gae76d4ea3457115f301371430f49d8c8a">HArDCore3D::HHO_LocVarDiff::get_ntotal_face_dofs</a> ()</td></tr>
-<tr class="memdesc:gae76d4ea3457115f301371430f49d8c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of face DOFs over the entire mesh. <br /></td></tr>
+<tr class="memitem:gae76d4ea3457115f301371430f49d8c8a"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gae76d4ea3457115f301371430f49d8c8a">HArDCore3D::HHO_LocVarDiff::get_ntotal_face_dofs</a> ()</td></tr>
+<tr class="memdesc:gae76d4ea3457115f301371430f49d8c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of face DOFs over the entire mesh.  <a href="group__HHO__LocVarDiff.html#gae76d4ea3457115f301371430f49d8c8a">More...</a><br /></td></tr>
 <tr class="separator:gae76d4ea3457115f301371430f49d8c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabfaa052588d0662fa9f2a2c771ae7229"><td class="memItemLeft" align="right" valign="top"><a id="gabfaa052588d0662fa9f2a2c771ae7229"></a>
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gabfaa052588d0662fa9f2a2c771ae7229">HArDCore3D::HHO_LocVarDiff::get_ndir_face_dofs</a> ()</td></tr>
-<tr class="memdesc:gabfaa052588d0662fa9f2a2c771ae7229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of face DOFs for Dirichlet faces. <br /></td></tr>
+<tr class="memitem:gabfaa052588d0662fa9f2a2c771ae7229"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#gabfaa052588d0662fa9f2a2c771ae7229">HArDCore3D::HHO_LocVarDiff::get_ndir_face_dofs</a> ()</td></tr>
+<tr class="memdesc:gabfaa052588d0662fa9f2a2c771ae7229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of face DOFs for Dirichlet faces.  <a href="group__HHO__LocVarDiff.html#gabfaa052588d0662fa9f2a2c771ae7229">More...</a><br /></td></tr>
 <tr class="separator:gabfaa052588d0662fa9f2a2c771ae7229"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9240e104e5b96b06040bb0f6a2e13514"><td class="memItemLeft" align="right" valign="top"><a id="ga9240e104e5b96b06040bb0f6a2e13514"></a>
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga9240e104e5b96b06040bb0f6a2e13514">HArDCore3D::HHO_LocVarDiff::get_ntotal_dofs</a> ()</td></tr>
-<tr class="memdesc:ga9240e104e5b96b06040bb0f6a2e13514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of degrees of freedom over the entire mesh. <br /></td></tr>
+<tr class="memitem:ga9240e104e5b96b06040bb0f6a2e13514"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__LocVarDiff.html#ga9240e104e5b96b06040bb0f6a2e13514">HArDCore3D::HHO_LocVarDiff::get_ntotal_dofs</a> ()</td></tr>
+<tr class="memdesc:ga9240e104e5b96b06040bb0f6a2e13514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of degrees of freedom over the entire mesh.  <a href="group__HHO__LocVarDiff.html#ga9240e104e5b96b06040bb0f6a2e13514">More...</a><br /></td></tr>
 <tr class="separator:ga9240e104e5b96b06040bb0f6a2e13514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>HHO scheme for diffusion equation -div(Diff grad u)=f, with Diff possibly varying in each cell. </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga5fa4c3b9a58d7208198ee0d6860c093a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5fa4c3b9a58d7208198ee0d6860c093a">&#9670;&nbsp;</a></span>assemble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HArDCore3D::HHO_LocVarDiff::assemble </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;&#160;</td>
+          <td class="paramname"><em>hho</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Assemble and solve the scheme. </p>
+
+</div>
+</div>
+<a id="ga19858d12d0b2dd817aac99a36f390e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga19858d12d0b2dd817aac99a36f390e2e">&#9670;&nbsp;</a></span>EnergyNorm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double HArDCore3D::HHO_LocVarDiff::EnergyNorm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;&#160;</td>
+          <td class="paramname"><em>hho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a>&#160;</td>
+          <td class="paramname"><em>Xh</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Discrete energy norm (associated to the diffusion operator) of an hybrid function. </p>
+
+</div>
+</div>
+<a id="ga4232eab7b9753215b506d5ce701c4f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4232eab7b9753215b506d5ce701c4f4f">&#9670;&nbsp;</a></span>get_assembly_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double HArDCore3D::HHO_LocVarDiff::get_assembly_time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>cpu time to assemble the scheme </p>
+
+</div>
+</div>
+<a id="gae66d0e79903e2ca077ff2515c20d7d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae66d0e79903e2ca077ff2515c20d7d2e">&#9670;&nbsp;</a></span>get_itime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double HArDCore3D::HHO_LocVarDiff::get_itime </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>various intermediate assembly times </p>
+
+</div>
+</div>
+<a id="gabfaa052588d0662fa9f2a2c771ae7229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfaa052588d0662fa9f2a2c771ae7229">&#9670;&nbsp;</a></span>get_ndir_face_dofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t HArDCore3D::HHO_LocVarDiff::get_ndir_face_dofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Total number of face DOFs for Dirichlet faces. </p>
+
+</div>
+</div>
+<a id="ga745621585c09932f84dc01096997eabb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga745621585c09932f84dc01096997eabb">&#9670;&nbsp;</a></span>get_nhighorder_dofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t HArDCore3D::HHO_LocVarDiff::get_nhighorder_dofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of DOFs per cell for high-order (K+1) polynomials. </p>
+
+</div>
+</div>
+<a id="gab0746da36b0bebd4b112d7d43aea41c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab0746da36b0bebd4b112d7d43aea41c5">&#9670;&nbsp;</a></span>get_nlocal_cell_dofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t HArDCore3D::HHO_LocVarDiff::get_nlocal_cell_dofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of DOFs in each cell. </p>
+
+</div>
+</div>
+<a id="ga50183dd5315faafad99f94c33b3b297e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50183dd5315faafad99f94c33b3b297e">&#9670;&nbsp;</a></span>get_nlocal_face_dofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t HArDCore3D::HHO_LocVarDiff::get_nlocal_face_dofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of DOFs on each face. </p>
+
+</div>
+</div>
+<a id="ga77c2a80e682212997d23d60712d5391e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga77c2a80e682212997d23d60712d5391e">&#9670;&nbsp;</a></span>get_ntotal_cell_dofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t HArDCore3D::HHO_LocVarDiff::get_ntotal_cell_dofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Total number of cell DOFs over the entire mesh. </p>
+
+</div>
+</div>
+<a id="ga9240e104e5b96b06040bb0f6a2e13514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9240e104e5b96b06040bb0f6a2e13514">&#9670;&nbsp;</a></span>get_ntotal_dofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t HArDCore3D::HHO_LocVarDiff::get_ntotal_dofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Total number of degrees of freedom over the entire mesh. </p>
+
+</div>
+</div>
+<a id="gae76d4ea3457115f301371430f49d8c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae76d4ea3457115f301371430f49d8c8a">&#9670;&nbsp;</a></span>get_ntotal_face_dofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t HArDCore3D::HHO_LocVarDiff::get_ntotal_face_dofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Total number of face DOFs over the entire mesh. </p>
+
+</div>
+</div>
+<a id="ga22542468093ee4e8e24d8c0a27946f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga22542468093ee4e8e24d8c0a27946f8f">&#9670;&nbsp;</a></span>get_solving_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double HArDCore3D::HHO_LocVarDiff::get_solving_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>residual after solving the scheme </p>
+
+</div>
+</div>
+<a id="ga10971b2952ab54d336127a43f5ed9b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga10971b2952ab54d336127a43f5ed9b29">&#9670;&nbsp;</a></span>get_solving_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double HArDCore3D::HHO_LocVarDiff::get_solving_time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>cpu time to solve the scheme </p>
+
+</div>
+</div>
 <a id="gaf4ea116d21e8e33ab8de8160d3685630"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf4ea116d21e8e33ab8de8160d3685630">&#9670;&nbsp;</a></span>HHO_LocVarDiff()</h2>
 
@@ -177,7 +511,7 @@ const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; MatrixRd &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Basis.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; <a class="el" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> &gt;&#160;</td>
           <td class="paramname"><em>kappa</em>, </td>
         </tr>
         <tr>
@@ -189,7 +523,7 @@ const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Basis.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt;&#160;</td>
           <td class="paramname"><em>source</em>, </td>
         </tr>
         <tr>
@@ -201,13 +535,13 @@ const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Basis.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt;&#160;</td>
           <td class="paramname"><em>exact_solution</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; VectorRd &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Basis.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; VectorRd &gt;&#160;</td>
           <td class="paramname"><em>grad_exact_solution</em>, </td>
         </tr>
         <tr>
@@ -254,6 +588,24 @@ const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ga11bf9be780b53676d2cc1ec9bb30dcc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga11bf9be780b53676d2cc1ec9bb30dcc6">&#9670;&nbsp;</a></span>solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a> HArDCore3D::HHO_LocVarDiff::solve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;&#160;</td>
+          <td class="paramname"><em>hho</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

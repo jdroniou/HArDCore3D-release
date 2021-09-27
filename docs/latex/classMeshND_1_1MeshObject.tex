@@ -12,11 +12,11 @@ Generic class to describe a cell, face, edge or vertex.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Mesh_gaafc035d039cf28df95b9cefd00d738dc}{Mesh\+Object}} (size\+\_\+t index, Simplices$<$ space\+\_\+dim, object\+\_\+dim $>$ simplices)
+\mbox{\hyperlink{group__Mesh_gaafc035d039cf28df95b9cefd00d738dc}{Mesh\+Object}} (size\+\_\+t index, \mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Simplices}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplices)
 \begin{DoxyCompactList}\small\item\em Constructor for a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} defined by its simplices. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Mesh_gad5402999ab9947c3233365a5d70667a2}{Mesh\+Object}} (size\+\_\+t index, Simplex$<$ space\+\_\+dim, object\+\_\+dim $>$ simplex)
+\mbox{\hyperlink{group__Mesh_gad5402999ab9947c3233365a5d70667a2}{Mesh\+Object}} (size\+\_\+t index, \mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplex)
 \begin{DoxyCompactList}\small\item\em Constructor for a Simplex. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Mesh_ga07907aedf78ac130d9e0d652202b5580}{Mesh\+Object}} (size\+\_\+t index, Vector\+Rd$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gacb0bf2d67d00416bcbbd60c2d1bd3781}{vertex}})
+\mbox{\hyperlink{group__Mesh_ga07907aedf78ac130d9e0d652202b5580}{Mesh\+Object}} (size\+\_\+t index, \mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gacb0bf2d67d00416bcbbd60c2d1bd3781}{vertex}})
 \begin{DoxyCompactList}\small\item\em Constructor for a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} defined by a single coordinate (Vertex) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Mesh_gac85c86df750542b4ea5a888075b1dcb0}{Mesh\+Object}} ()
 \begin{DoxyCompactList}\small\item\em Null constructor. \end{DoxyCompactList}\item 
@@ -46,19 +46,19 @@ int \mbox{\hyperlink{group__Mesh_gab71d5d1cdb1da02bf2d0ead9c6fd6e4f}{index\+\_\+
 \begin{DoxyCompactList}\small\item\em Returns the local index of a face. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{group__Mesh_gacba0cced3c0cd980fcee1abb80171f34}{index\+\_\+cell}} (const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga59a73d89c5469a10a6d7e2d0a25a3789}{cell}}) const
 \begin{DoxyCompactList}\small\item\em Returns the local index of a cell. \end{DoxyCompactList}\item 
-Vector\+Rd$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga70e525257730123d4c331d11468c66bb}{coords}} () const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga70e525257730123d4c331d11468c66bb}{coords}} () const
 \begin{DoxyCompactList}\small\item\em Return the coordinates of a Vertex. \end{DoxyCompactList}\item 
-Vector\+Rd$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga5a365aeca45130fd8786b88b60c00165}{face\+\_\+normal}} (const size\+\_\+t face\+\_\+index) const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga5a365aeca45130fd8786b88b60c00165}{face\+\_\+normal}} (const size\+\_\+t face\+\_\+index) const
 \begin{DoxyCompactList}\small\item\em Return the outer normal of a Cell towards the Face located at face\+\_\+index. \end{DoxyCompactList}\item 
-Vector\+Rd$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae01af9ad1f4e2b6788a69ef2d0104071}{edge\+\_\+normal}} (const size\+\_\+t edge\+\_\+index) const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae01af9ad1f4e2b6788a69ef2d0104071}{edge\+\_\+normal}} (const size\+\_\+t edge\+\_\+index) const
 \begin{DoxyCompactList}\small\item\em Return the edge normal of a 2D object. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{group__Mesh_ga228570052980385cb87564da8096d801}{face\+\_\+orientation}} (const size\+\_\+t face\+\_\+index) const
 \begin{DoxyCompactList}\small\item\em Return the orientation of a Face. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{group__Mesh_ga39f476a9ddec51e9c930c79c33641b59}{edge\+\_\+orientation}} (const size\+\_\+t edge\+\_\+index) const
 \begin{DoxyCompactList}\small\item\em Return the orientation of a Edge. \end{DoxyCompactList}\item 
-Vector\+Rd$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gadaf3f7f4977287819dc61cc845cbb900}{normal}} () const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gadaf3f7f4977287819dc61cc845cbb900}{normal}} () const
 \begin{DoxyCompactList}\small\item\em Return the normal of a Face. \end{DoxyCompactList}\item 
-Vector\+Rd$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae3cc3947e14ec1b24017b560c4720717}{tangent}} () const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae3cc3947e14ec1b24017b560c4720717}{tangent}} () const
 \begin{DoxyCompactList}\small\item\em Return the tangent of a Edge. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__Mesh_gaa55eff2444eb070396dcab2871f1c234}{construct\+\_\+face\+\_\+normals}} ()
 \begin{DoxyCompactList}\small\item\em Set the directions of the face normals of a cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -74,4 +74,4 @@ Generic class to describe a cell, face, edge or vertex.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Mesh/Mesh\+Object.\+hpp\end{DoxyCompactItemize}
+include/\+Mesh/\mbox{\hyperlink{MeshObject_8hpp}{Mesh\+Object.\+hpp}}\end{DoxyCompactItemize}

@@ -32,12 +32,6 @@
   
 */
 
-
-/*!	
-*	@defgroup Quadratures 
-* @brief Classes providing quadratures on edges and in cells
-*/
-
 namespace HArDCore3D {
 
 /*!

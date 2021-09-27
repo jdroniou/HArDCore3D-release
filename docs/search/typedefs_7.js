@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['polycellbasistype_625',['PolyCellBasisType',['../group__HybridCore.html#ga5c478c9953257f154d2ea98f115fba0d',1,'HArDCore3D::HybridCore']]],
-  ['polyedgebasistype_626',['PolyEdgeBasisType',['../group__HybridCore.html#gad3123dceabd79eec7cdb57ba1014fc17',1,'HArDCore3D::HybridCore']]],
-  ['polyfacebasistype_627',['PolyFaceBasisType',['../group__HybridCore.html#gab02b7a4490b6a739e2d084e9a70dbcc5',1,'HArDCore3D::HybridCore']]]
+  ['jacobiantype_1275',['JacobianType',['../group__Basis.html#gafe0390024b0b4c5e3581f73ff2a1ece2',1,'HArDCore3D::MonomialScalarBasisFace::JacobianType()'],['../group__Basis.html#ga9c696306169237dd8de32d9cc6c69a47',1,'HArDCore3D::RolyComplBasisFace::JacobianType()'],['../group__Basis.html#ga0cbdf6618e91e09a34adef7f0cef48d8',1,'HArDCore3D::GolyComplBasisFace::JacobianType()']]]
 ];

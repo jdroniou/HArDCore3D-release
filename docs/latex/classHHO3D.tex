@@ -1,9 +1,13 @@
 \hypertarget{classHHO3D}{}\doxysection{H\+H\+O3D Class Reference}
 \label{classHHO3D}\index{HHO3D@{HHO3D}}
+
+
+{\ttfamily \#include $<$H\+H\+O3\+D.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__HHO3D_gad01478a48ee7060c8c7664c71c709eda}{H\+H\+O3D}} (\mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} \&, const size\+\_\+t, const size\+\_\+t, const bool use\+\_\+threads=true, size\+\_\+t doeT=0, size\+\_\+t doeF=0)
+\mbox{\hyperlink{group__HHO3D_gad01478a48ee7060c8c7664c71c709eda}{H\+H\+O3D}} (\mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} \&, const size\+\_\+t, const size\+\_\+t, const bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, size\+\_\+t doeT=0, size\+\_\+t doeF=0)
 \begin{DoxyCompactList}\small\item\em Class constructor\+: initialises the model by providing a Hybrid\+Core object, and the exact solution and boundary conditions of the model. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__HHO3D_gab3b4d42b56364d7626a9bda8b2d1d36a}{assemble}} ()
 \begin{DoxyCompactList}\small\item\em A general assemble routine that calculates the statically condensed matrices required by solve. \end{DoxyCompactList}\item 
@@ -17,15 +21,15 @@ void \mbox{\hyperlink{group__HHO3D_gae58bdad281ef8980a8a3ab527c4066f7}{set\+\_\+
 \begin{DoxyCompactList}\small\item\em Set the global operator. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__HHO3D_ga900c704c67fc0dff437a377e19a18017}{set\+\_\+load\+\_\+vector}} (const \mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \&)
 \begin{DoxyCompactList}\small\item\em Set the load vector. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__HHO3D_ga90c52326056fd34a01bae961af6173de}{plot}} (const std\+::string, const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&, const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ double $>$ \&)
+void \mbox{\hyperlink{group__HHO3D_ga90c52326056fd34a01bae961af6173de}{plot}} (const std\+::string, const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&, const \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ double $>$ \&)
 \begin{DoxyCompactList}\small\item\em Plot the numerical and exact solutions. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \mbox{\hyperlink{group__HHO3D_gaf67d049ac7cf172cfaf81e95772d891d}{standard\+\_\+load\+\_\+vector}} (const \mbox{\hyperlink{group__Common_ga523c09e1cb40e9357025dd81596ad752}{Cell\+F\+Type}}$<$ double $>$ \&)
+\mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \mbox{\hyperlink{group__HHO3D_gaf67d049ac7cf172cfaf81e95772d891d}{standard\+\_\+load\+\_\+vector}} (const \mbox{\hyperlink{group__Basis_ga523c09e1cb40e9357025dd81596ad752}{Cell\+F\+Type}}$<$ double $>$ \&)
 \begin{DoxyCompactList}\small\item\em Returns the standard load vector (f, v\+\_\+T)\+\_\+T with no Neumann boundary conditions. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \mbox{\hyperlink{group__HHO3D_ga643e5c8c486212fc65eac391648c0bf9}{standard\+\_\+load\+\_\+vector}} (const \mbox{\hyperlink{group__Common_ga523c09e1cb40e9357025dd81596ad752}{Cell\+F\+Type}}$<$ double $>$ \&, const \mbox{\hyperlink{group__Common_ga523c09e1cb40e9357025dd81596ad752}{Cell\+F\+Type}}$<$ Vector\+Rd $>$ \&, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&)
+\mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \mbox{\hyperlink{group__HHO3D_ga643e5c8c486212fc65eac391648c0bf9}{standard\+\_\+load\+\_\+vector}} (const \mbox{\hyperlink{group__Basis_ga523c09e1cb40e9357025dd81596ad752}{Cell\+F\+Type}}$<$ double $>$ \&, const \mbox{\hyperlink{group__Basis_ga523c09e1cb40e9357025dd81596ad752}{Cell\+F\+Type}}$<$ Vector\+Rd $>$ \&, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&)
 \begin{DoxyCompactList}\small\item\em Returns the standard load vector (f, v\+\_\+T)\+\_\+T. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \mbox{\hyperlink{group__HHO3D_gacb59e83557de3bc5266ddfa7bd7fd481}{standard\+\_\+load\+\_\+vector}} (const \mbox{\hyperlink{group__Common_ga523c09e1cb40e9357025dd81596ad752}{Cell\+F\+Type}}$<$ double $>$ \&, const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ double $>$ \&, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&)
+\mbox{\hyperlink{group__HHO3D_ga12f4db66d2596fe2ed7e1384d412479a}{Vector\+F\+Type}} \mbox{\hyperlink{group__HHO3D_gacb59e83557de3bc5266ddfa7bd7fd481}{standard\+\_\+load\+\_\+vector}} (const \mbox{\hyperlink{group__Basis_ga523c09e1cb40e9357025dd81596ad752}{Cell\+F\+Type}}$<$ double $>$ \&, const \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ double $>$ \&, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&)
 \begin{DoxyCompactList}\small\item\em Returns the standard load vector (f, v\+\_\+T)\+\_\+T. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__HHO3D_ga2230426ff92810893168177ddd623f35}{set\+\_\+dirichlet}} (const \mbox{\hyperlink{group__Common_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ double $>$ \&, const size\+\_\+t)
+void \mbox{\hyperlink{group__HHO3D_ga2230426ff92810893168177ddd623f35}{set\+\_\+dirichlet}} (const \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ double $>$ \&, const size\+\_\+t)
 \begin{DoxyCompactList}\small\item\em Set the Dirichlet boundary conditions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__HHO3D_ga1dc0ef5581cfb16964e86963086f0d4d}{set\+\_\+dirichlet}} (const size\+\_\+t)
 \begin{DoxyCompactList}\small\item\em Set the Dirichlet boundary condition to zero. \end{DoxyCompactList}\item 
@@ -41,5 +45,5 @@ double \mbox{\hyperlink{group__HHO3D_ga2808c1957bd4df0657e06e2f2b9adf93}{get\+\_
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Schemes/\+H\+H\+O-\/general/H\+H\+O3\+D.\+hpp\item 
-Schemes/\+H\+H\+O-\/general/H\+H\+O3\+D.\+cpp\end{DoxyCompactItemize}
+Schemes/\+H\+H\+O-\/general/\mbox{\hyperlink{HHO3D_8hpp}{H\+H\+O3\+D.\+hpp}}\item 
+Schemes/\+H\+H\+O-\/general/\mbox{\hyperlink{HHO3D_8cpp}{H\+H\+O3\+D.\+cpp}}\end{DoxyCompactItemize}

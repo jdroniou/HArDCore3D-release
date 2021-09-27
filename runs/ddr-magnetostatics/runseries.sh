@@ -32,7 +32,7 @@ echo "Stabilization parameter: $stab_par"
 echo "Test case: solution    : $tcsol"
 echo "Output directory       : $outdir"
 
-outsubdir=${outdir}/${mesh_family}_${k}
+outsubdir=${outdir}/${mesh_family}_k${k}
 if [ ! -d $outsubdir ]; then
     mkdir -p $outsubdir
 else

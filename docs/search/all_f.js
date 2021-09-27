@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['quadraturenode_226',['QuadratureNode',['../structHArDCore3D_1_1QuadratureNode.html',1,'HArDCore3D']]],
-  ['quadratures_227',['Quadratures',['../group__Quadratures.html',1,'']]],
-  ['quadruleedge_228',['QuadRuleEdge',['../classHArDCore3D_1_1QuadRuleEdge.html',1,'HArDCore3D']]],
-  ['quadruletetra_229',['QuadRuleTetra',['../classHArDCore3D_1_1QuadRuleTetra.html',1,'HArDCore3D::QuadRuleTetra'],['../group__Quadratures.html#gaa9690d2663c19c67d52b3cd176afa4b9',1,'HArDCore3D::QuadRuleTetra::QuadRuleTetra()']]],
-  ['quadruletriangle_230',['QuadRuleTriangle',['../classHArDCore3D_1_1QuadRuleTriangle.html',1,'HArDCore3D::QuadRuleTriangle'],['../group__Quadratures.html#ga0d95447bb72cfc1b19cd2ea192ff6695',1,'HArDCore3D::QuadRuleTriangle::QuadRuleTriangle()']]]
+  ['operator_28_29_408',['operator()',['../group__HybridCore.html#gac5679636cd20ff654b96a941b742c3fe',1,'HArDCore3D::UVector::operator()()'],['../group__Quadratures.html#ga6ebdeb6a7dd9892b7bc73d14adb9e42e',1,'HArDCore3D::VecHash::operator()()'],['../group__Quadratures.html#ga7aad8f51e1e6ffe74d5ce067be59d6e1',1,'HArDCore3D::VecFaceHash::operator()()']]],
+  ['operator_2b_409',['operator+',['../group__HybridCore.html#ga7b9eb68a1bd6c64cedffe79bd7c9dc1b',1,'HArDCore3D::UVector']]],
+  ['operator_2d_410',['operator-',['../group__HybridCore.html#gafacf1951576154d9eb79770ddee87aa0',1,'HArDCore3D::UVector']]],
+  ['operator_3d_3d_411',['operator==',['../group__DirectedGraph.html#gae4d1522331389ab808fb12da9d99f6b8',1,'operator==(const DirectedFace &amp;lhs, const DirectedFace &amp;rhs):&#160;DirectedGraph.cpp'],['../group__DirectedGraph.html#gae4d1522331389ab808fb12da9d99f6b8',1,'operator==(const DirectedFace &amp;, const DirectedFace &amp;):&#160;DirectedGraph.cpp']]],
+  ['order_412',['order',['../group__DirectedGraph.html#ga733c67a409201b1fbcd8f81b149674e5',1,'DirectedGraph']]]
 ];

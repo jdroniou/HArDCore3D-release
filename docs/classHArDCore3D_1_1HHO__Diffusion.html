@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>HArDCore3D</b></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html">HHO_Diffusion</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceHArDCore3D.html">HArDCore3D</a></li><li class="navelem"><a class="el" href="classHArDCore3D_1_1HHO__Diffusion.html">HHO_Diffusion</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -88,63 +88,49 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:gaf93379edf8347fbe21240a2c88d0d5a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gaf93379edf8347fbe21240a2c88d0d5a2">HHO_Diffusion</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, size_t K, int L, <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; MatrixRd &gt; kappa, <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt; source, <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> BC, <a class="el" href="group__Common.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt; exact_solution, <a class="el" href="group__Common.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; VectorRd &gt; grad_exact_solution, std::string solver_type, bool use_threads, std::ostream &amp;output=std::cout)</td></tr>
+<tr class="memitem:gaf93379edf8347fbe21240a2c88d0d5a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gaf93379edf8347fbe21240a2c88d0d5a2">HHO_Diffusion</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, size_t <a class="el" href="group__HHO__DiffAdvecReac.html#gaf169764abf85f85bec428e43dc60274b">K</a>, int <a class="el" href="group__HHO__DiffAdvecReac.html#ga91a0b997ce3aa9aa56b8cba3620fed15">L</a>, <a class="el" href="group__Basis.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; <a class="el" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> &gt; kappa, <a class="el" href="group__Basis.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; double &gt; source, <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> BC, <a class="el" href="group__Basis.html#ga5bd2e067b3e9ff0eb5bf5436944076d1">FType</a>&lt; double &gt; exact_solution, <a class="el" href="group__Basis.html#ga523c09e1cb40e9357025dd81596ad752">CellFType</a>&lt; VectorRd &gt; grad_exact_solution, std::string solver_type, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>, std::ostream &amp;output=std::cout)</td></tr>
 <tr class="memdesc:gaf93379edf8347fbe21240a2c88d0d5a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="group__HHO__Diffusion.html#gaf93379edf8347fbe21240a2c88d0d5a2">More...</a><br /></td></tr>
 <tr class="separator:gaf93379edf8347fbe21240a2c88d0d5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga82476d19a0312e0b370a1f6100d863d1"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga82476d19a0312e0b370a1f6100d863d1">assemble</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
-<tr class="memdesc:ga82476d19a0312e0b370a1f6100d863d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble and solve the scheme. <br /></td></tr>
+<tr class="memitem:ga82476d19a0312e0b370a1f6100d863d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga82476d19a0312e0b370a1f6100d863d1">assemble</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
+<tr class="memdesc:ga82476d19a0312e0b370a1f6100d863d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble and solve the scheme.  <a href="group__HHO__Diffusion.html#ga82476d19a0312e0b370a1f6100d863d1">More...</a><br /></td></tr>
 <tr class="separator:ga82476d19a0312e0b370a1f6100d863d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga582be64d213833c883137e143839c370"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>solve</b> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
+<tr class="memitem:ga582be64d213833c883137e143839c370"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga582be64d213833c883137e143839c370">solve</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho)</td></tr>
 <tr class="separator:ga582be64d213833c883137e143839c370"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga18588364740b7c9a8fc25213499eaadd"><td class="memItemLeft" align="right" valign="top">
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga18588364740b7c9a8fc25213499eaadd">EnergyNorm</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, const <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a> Xh)</td></tr>
-<tr class="memdesc:ga18588364740b7c9a8fc25213499eaadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete energy norm (associated to the diffusion operator) of an hybrid function. <br /></td></tr>
+<tr class="memitem:ga18588364740b7c9a8fc25213499eaadd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga18588364740b7c9a8fc25213499eaadd">EnergyNorm</a> (<a class="el" href="classHArDCore3D_1_1HybridCore.html">HybridCore</a> &amp;hho, const <a class="el" href="classHArDCore3D_1_1UVector.html">UVector</a> Xh)</td></tr>
+<tr class="memdesc:ga18588364740b7c9a8fc25213499eaadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete energy norm (associated to the diffusion operator) of an hybrid function.  <a href="group__HHO__Diffusion.html#ga18588364740b7c9a8fc25213499eaadd">More...</a><br /></td></tr>
 <tr class="separator:ga18588364740b7c9a8fc25213499eaadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa2bb4d069026f1604d2899031d3642f1"><td class="memItemLeft" align="right" valign="top">
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gaa2bb4d069026f1604d2899031d3642f1">get_assembly_time</a> () const</td></tr>
-<tr class="memdesc:gaa2bb4d069026f1604d2899031d3642f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to assemble the scheme <br /></td></tr>
+<tr class="memitem:gaa2bb4d069026f1604d2899031d3642f1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gaa2bb4d069026f1604d2899031d3642f1">get_assembly_time</a> () const</td></tr>
+<tr class="memdesc:gaa2bb4d069026f1604d2899031d3642f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to assemble the scheme  <a href="group__HHO__Diffusion.html#gaa2bb4d069026f1604d2899031d3642f1">More...</a><br /></td></tr>
 <tr class="separator:gaa2bb4d069026f1604d2899031d3642f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadcad4a2ddc4f767a5cc59362c93adbc2"><td class="memItemLeft" align="right" valign="top">
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gadcad4a2ddc4f767a5cc59362c93adbc2">get_solving_time</a> () const</td></tr>
-<tr class="memdesc:gadcad4a2ddc4f767a5cc59362c93adbc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to solve the scheme <br /></td></tr>
+<tr class="memitem:gadcad4a2ddc4f767a5cc59362c93adbc2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gadcad4a2ddc4f767a5cc59362c93adbc2">get_solving_time</a> () const</td></tr>
+<tr class="memdesc:gadcad4a2ddc4f767a5cc59362c93adbc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu time to solve the scheme  <a href="group__HHO__Diffusion.html#gadcad4a2ddc4f767a5cc59362c93adbc2">More...</a><br /></td></tr>
 <tr class="separator:gadcad4a2ddc4f767a5cc59362c93adbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga91b1ec7d73685c4a1d49d671b4b69814"><td class="memItemLeft" align="right" valign="top">
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga91b1ec7d73685c4a1d49d671b4b69814">get_solving_error</a> () const</td></tr>
-<tr class="memdesc:ga91b1ec7d73685c4a1d49d671b4b69814"><td class="mdescLeft">&#160;</td><td class="mdescRight">residual after solving the scheme <br /></td></tr>
+<tr class="memitem:ga91b1ec7d73685c4a1d49d671b4b69814"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga91b1ec7d73685c4a1d49d671b4b69814">get_solving_error</a> () const</td></tr>
+<tr class="memdesc:ga91b1ec7d73685c4a1d49d671b4b69814"><td class="mdescLeft">&#160;</td><td class="mdescRight">residual after solving the scheme  <a href="group__HHO__Diffusion.html#ga91b1ec7d73685c4a1d49d671b4b69814">More...</a><br /></td></tr>
 <tr class="separator:ga91b1ec7d73685c4a1d49d671b4b69814"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00b3b186fb915242a805c7c53e323e6e"><td class="memItemLeft" align="right" valign="top">
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga00b3b186fb915242a805c7c53e323e6e">get_itime</a> (size_t idx) const</td></tr>
-<tr class="memdesc:ga00b3b186fb915242a805c7c53e323e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">various intermediate assembly times <br /></td></tr>
+<tr class="memitem:ga00b3b186fb915242a805c7c53e323e6e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga00b3b186fb915242a805c7c53e323e6e">get_itime</a> (size_t idx) const</td></tr>
+<tr class="memdesc:ga00b3b186fb915242a805c7c53e323e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">various intermediate assembly times  <a href="group__HHO__Diffusion.html#ga00b3b186fb915242a805c7c53e323e6e">More...</a><br /></td></tr>
 <tr class="separator:ga00b3b186fb915242a805c7c53e323e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6f5856e7137441c95a3495f2267facf3"><td class="memItemLeft" align="right" valign="top">
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga6f5856e7137441c95a3495f2267facf3">get_nlocal_cell_dofs</a> ()</td></tr>
-<tr class="memdesc:ga6f5856e7137441c95a3495f2267facf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs in each cell. <br /></td></tr>
+<tr class="memitem:ga6f5856e7137441c95a3495f2267facf3"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga6f5856e7137441c95a3495f2267facf3">get_nlocal_cell_dofs</a> ()</td></tr>
+<tr class="memdesc:ga6f5856e7137441c95a3495f2267facf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs in each cell.  <a href="group__HHO__Diffusion.html#ga6f5856e7137441c95a3495f2267facf3">More...</a><br /></td></tr>
 <tr class="separator:ga6f5856e7137441c95a3495f2267facf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga81f57d9aa97bcac14dbd4e0fc378bd46"><td class="memItemLeft" align="right" valign="top">
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga81f57d9aa97bcac14dbd4e0fc378bd46">get_nlocal_face_dofs</a> ()</td></tr>
-<tr class="memdesc:ga81f57d9aa97bcac14dbd4e0fc378bd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs on each face. <br /></td></tr>
+<tr class="memitem:ga81f57d9aa97bcac14dbd4e0fc378bd46"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga81f57d9aa97bcac14dbd4e0fc378bd46">get_nlocal_face_dofs</a> ()</td></tr>
+<tr class="memdesc:ga81f57d9aa97bcac14dbd4e0fc378bd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs on each face.  <a href="group__HHO__Diffusion.html#ga81f57d9aa97bcac14dbd4e0fc378bd46">More...</a><br /></td></tr>
 <tr class="separator:ga81f57d9aa97bcac14dbd4e0fc378bd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabfc762c3cf9a0bbaf6f7d24512352e31"><td class="memItemLeft" align="right" valign="top">
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gabfc762c3cf9a0bbaf6f7d24512352e31">get_nhighorder_dofs</a> ()</td></tr>
-<tr class="memdesc:gabfc762c3cf9a0bbaf6f7d24512352e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs per cell for high-order (K+1) polynomials. <br /></td></tr>
+<tr class="memitem:gabfc762c3cf9a0bbaf6f7d24512352e31"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gabfc762c3cf9a0bbaf6f7d24512352e31">get_nhighorder_dofs</a> ()</td></tr>
+<tr class="memdesc:gabfc762c3cf9a0bbaf6f7d24512352e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DOFs per cell for high-order (K+1) polynomials.  <a href="group__HHO__Diffusion.html#gabfc762c3cf9a0bbaf6f7d24512352e31">More...</a><br /></td></tr>
 <tr class="separator:gabfc762c3cf9a0bbaf6f7d24512352e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadbbbcb3f31c94640fd926fb24cfc75c7"><td class="memItemLeft" align="right" valign="top">
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gadbbbcb3f31c94640fd926fb24cfc75c7">get_ntotal_cell_dofs</a> ()</td></tr>
-<tr class="memdesc:gadbbbcb3f31c94640fd926fb24cfc75c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of cell DOFs over the entire mesh. <br /></td></tr>
+<tr class="memitem:gadbbbcb3f31c94640fd926fb24cfc75c7"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#gadbbbcb3f31c94640fd926fb24cfc75c7">get_ntotal_cell_dofs</a> ()</td></tr>
+<tr class="memdesc:gadbbbcb3f31c94640fd926fb24cfc75c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of cell DOFs over the entire mesh.  <a href="group__HHO__Diffusion.html#gadbbbcb3f31c94640fd926fb24cfc75c7">More...</a><br /></td></tr>
 <tr class="separator:gadbbbcb3f31c94640fd926fb24cfc75c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga22ff2e589a8b847354666ea2f9397b5b"><td class="memItemLeft" align="right" valign="top">
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga22ff2e589a8b847354666ea2f9397b5b">get_ntotal_face_dofs</a> ()</td></tr>
-<tr class="memdesc:ga22ff2e589a8b847354666ea2f9397b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of face DOFs over the entire mesh. <br /></td></tr>
+<tr class="memitem:ga22ff2e589a8b847354666ea2f9397b5b"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga22ff2e589a8b847354666ea2f9397b5b">get_ntotal_face_dofs</a> ()</td></tr>
+<tr class="memdesc:ga22ff2e589a8b847354666ea2f9397b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of face DOFs over the entire mesh.  <a href="group__HHO__Diffusion.html#ga22ff2e589a8b847354666ea2f9397b5b">More...</a><br /></td></tr>
 <tr class="separator:ga22ff2e589a8b847354666ea2f9397b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2e582a2d0dbd25ade261d160c32aa504"><td class="memItemLeft" align="right" valign="top">
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga2e582a2d0dbd25ade261d160c32aa504">get_ndir_face_dofs</a> ()</td></tr>
-<tr class="memdesc:ga2e582a2d0dbd25ade261d160c32aa504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of face DOFs for Dirichlet faces. <br /></td></tr>
+<tr class="memitem:ga2e582a2d0dbd25ade261d160c32aa504"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga2e582a2d0dbd25ade261d160c32aa504">get_ndir_face_dofs</a> ()</td></tr>
+<tr class="memdesc:ga2e582a2d0dbd25ade261d160c32aa504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of face DOFs for Dirichlet faces.  <a href="group__HHO__Diffusion.html#ga2e582a2d0dbd25ade261d160c32aa504">More...</a><br /></td></tr>
 <tr class="separator:ga2e582a2d0dbd25ade261d160c32aa504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9564d2be867b683e002bb555d397ed09"><td class="memItemLeft" align="right" valign="top">
-const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga9564d2be867b683e002bb555d397ed09">get_ntotal_dofs</a> ()</td></tr>
-<tr class="memdesc:ga9564d2be867b683e002bb555d397ed09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of degrees of freedom over the entire mesh. <br /></td></tr>
+<tr class="memitem:ga9564d2be867b683e002bb555d397ed09"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__Diffusion.html#ga9564d2be867b683e002bb555d397ed09">get_ntotal_dofs</a> ()</td></tr>
+<tr class="memdesc:ga9564d2be867b683e002bb555d397ed09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of degrees of freedom over the entire mesh.  <a href="group__HHO__Diffusion.html#ga9564d2be867b683e002bb555d397ed09">More...</a><br /></td></tr>
 <tr class="separator:ga9564d2be867b683e002bb555d397ed09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

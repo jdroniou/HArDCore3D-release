@@ -151,7 +151,7 @@ Eigen::MatrixXd DDRSpace::extendOperator(const Cell & T, const Edge & E, const E
   // Vertex DOFs
   if (m_n_local_vertex_dofs > 0) {
     for (size_t iV = 0; iV < 2; iV++) { 
-      const Vertex & V = *E.vertex(iV);     
+      const Vertex & V = *E.vertex(iV);
       opT.block(0, localOffset(T, V), opE.rows(), m_n_local_vertex_dofs)
         = opE.block(0, localOffset(E, V), opE.rows(), m_n_local_vertex_dofs);
     } // for iV
@@ -164,6 +164,29 @@ Eigen::MatrixXd DDRSpace::extendOperator(const Cell & T, const Edge & E, const E
   }
   
   return opT;
+}
+//------------------------------------------------------------------------------
+
+Eigen::MatrixXd DDRSpace::extendOperator(const Face & F, const Edge & E, const Eigen::MatrixXd & opE) const
+{
+  Eigen::MatrixXd opF = Eigen::MatrixXd::Zero(opE.rows(), dimensionFace(F));
+
+  // Vertex DOFs
+  if (m_n_local_vertex_dofs > 0) {
+    for (size_t iV = 0; iV < 2; iV++) { 
+      const Vertex & V = *E.vertex(iV);
+      opF.block(0, localOffset(F, V), opE.rows(), m_n_local_vertex_dofs)
+        = opE.block(0, localOffset(E, V), opE.rows(), m_n_local_vertex_dofs);
+    } // for iV
+  }
+  
+  // Edge DOFs
+  if (m_n_local_edge_dofs > 0) {
+      opF.block(0, localOffset(F, E), opE.rows(), m_n_local_edge_dofs)
+        = opE.block(0, localOffset(E), opE.rows(), m_n_local_edge_dofs);
+  }
+  
+  return opF;
 }
 //------------------------------------------------------------------------------
 
