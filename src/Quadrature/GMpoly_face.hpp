@@ -47,7 +47,7 @@ struct VecFaceHash
   }
 };
 
-/// Type for list of integrals of monomials
+/// Type for list of face integrals of monomials
 typedef std::unordered_map<Eigen::Vector2i, double, VecFaceHash> MonomialFaceIntegralsType;
     
 /// Compute all integrals, on the edges of a face, of the face monomials up to a total degree
@@ -61,6 +61,14 @@ MonomialFaceIntegralsType IntegrateFaceMonomials
           (const Face & F,      ///< Face
           const size_t maxdeg   ///< Maximal total degree
           );
+          
+/// Checks if the degree of an existing list of monomial integrals is sufficient, other re-compute and return a proper list
+MonomialFaceIntegralsType CheckIntegralsDegree
+         (const Face & F,              ///< Face
+           const size_t degree,         ///< Expected degree
+           const MonomialFaceIntegralsType & mono_int_map = {}    ///< Existing list, optional
+          );
+
 
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
@@ -186,12 +194,7 @@ Eigen::MatrixXd GramMatrix(
     Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(dim1, 2*dim2);
     
     // Obtain integration data from IntegrateFaceMonomials
-    MonomialFaceIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateFaceMonomials(F, totaldegree);
-    }
+    MonomialFaceIntegralsType intmap = CheckIntegralsDegree(F, totaldegree, mono_int_map);
     
     std::vector<Eigen::MatrixXd> gmrs = {GMRolyComplScalar(F, basis1, basis2.ancestor(), 0, intmap), GMRolyComplScalar(F, basis1, basis2.ancestor(), 1, intmap)};
     Eigen::Matrix<double, 2, 3> jacobian1 = basis1.jacobian();
@@ -225,7 +228,7 @@ Eigen::MatrixXd GMRolyComplScalar(
                     const RolyComplBasisFace & rolycompl_basis, ///< First basis
                     const MonomialScalarBasisFace & mono_basis, ///< Second basis
                     const size_t m, ///< Add one to the power of the mth variable
-                    MonomialFaceIntegralsType mono_int_map ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialFaceIntegralsType mono_int_map = {} ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     );
 
 /// Generic template to compute the Gram Matrix of the scalar part of a RolyCompl Basis and any basis with an extra power on the mth variable
@@ -235,7 +238,7 @@ Eigen::MatrixXd GMRolyComplScalar(
                      const RolyComplBasisFace & basis1, ///< First basis
                      const BasisType & basis2,  ///< Second basis (columns of the Gram matrix)
                      const size_t m, ///< Differentiate basis1 with respect to the mth variable
-                     MonomialFaceIntegralsType mono_int_map ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialFaceIntegralsType mono_int_map = {} ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -324,12 +327,7 @@ Eigen::MatrixXd GramMatrix(
     Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(dim1,dim2);
     
     // Obtain integration data from IntegrateFaceMonomials
-    MonomialFaceIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateFaceMonomials(F, totaldegree);
-    }
+    MonomialFaceIntegralsType intmap = CheckIntegralsDegree(F, totaldegree, mono_int_map);
     
     for (size_t m=0; m<2; m++){
       gm += GMScalarDerivative(F, basis1.ancestor(), basis2.ancestor(), m, m, intmap);
@@ -354,12 +352,7 @@ Eigen::MatrixXd GramMatrix(
     Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(dim1,dim2*2);
     
     // Obtain integration data from IntegrateFaceMonomials
-    MonomialFaceIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateFaceMonomials(F, totaldegree);
-    }
+    MonomialFaceIntegralsType intmap = CheckIntegralsDegree(F, totaldegree, mono_int_map);
     
     std::vector<Eigen::MatrixXd> gmd = {GMScalarDerivative(F, basis1.ancestor(), basis2.ancestor(), 0, intmap), GMScalarDerivative(F, basis1.ancestor(), basis2.ancestor(), 1, intmap)};
     // JF must be the jacobian (change of variable 3D->2D) of a scalar basis on the face (underlying basis1, perhaps after
@@ -434,12 +427,7 @@ Eigen::MatrixXd GramMatrixDiv(
 
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree()-1;
-    MonomialFaceIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateFaceMonomials(F, totaldegree);
-    }
+    MonomialFaceIntegralsType intmap = CheckIntegralsDegree(F, totaldegree, mono_int_map);
 
     for (size_t i = 0; i < 2; i++) {
       gm.block(i*dim1/2, 0, dim1/2, dim2) = GMScalarDerivative(F, basis1.ancestor(), basis2, i, intmap);

@@ -1,5 +1,4 @@
 #include <GMpoly_face.hpp>
-#include <max_degrees_quadratures.hpp>
 
 using namespace HArDCore3D;
 
@@ -102,6 +101,15 @@ MonomialFaceIntegralsType HArDCore3D::IntegrateFaceMonomials(const Face & F, con
   return integrals;
 }
 
+// Check integrals list
+MonomialFaceIntegralsType HArDCore3D::CheckIntegralsDegree(const Face & F, const size_t degree, const MonomialFaceIntegralsType & mono_int_map){
+  if (mono_int_map.size() >= PolynomialSpaceDimension<Face>::Poly(degree)){
+    return mono_int_map;
+  }else{
+    return IntegrateFaceMonomials(F, degree);
+  }
+}
+
 
 // GramMatrix
 Eigen::MatrixXd HArDCore3D::GramMatrix(const Face & F, const MonomialScalarBasisFace & basis1, const MonomialScalarBasisFace & basis2, MonomialFaceIntegralsType mono_int_map)
@@ -113,12 +121,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Face & F, const MonomialScalarBasis
   Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(dim1,dim2);
   
   // Obtain integration data from IntegrateFaceMonomials
-  MonomialFaceIntegralsType intmap;
-  if (mono_int_map.size()>0){
-    intmap = mono_int_map;
-  }else{
-    intmap = IntegrateFaceMonomials(F, totaldegree);
-  }
+  MonomialFaceIntegralsType intmap = CheckIntegralsDegree(F, totaldegree, mono_int_map);
   
   for (size_t i = 0; i < dim1; i++) {
     for (size_t j = 0; j < dim2; j++) {
@@ -139,12 +142,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Face & F, const RolyComplBasisFace 
   Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(dim1,dim2);
   
   // Obtain integration data from IntegrateFaceMonomials
-  MonomialFaceIntegralsType intmap;
-  if (mono_int_map.size()>0){
-    intmap = mono_int_map;
-  }else{
-    intmap = IntegrateFaceMonomials(F, totaldegree);
-  }
+  MonomialFaceIntegralsType intmap = CheckIntegralsDegree(F, totaldegree, mono_int_map);
   
   for (size_t k = 0; k < 2; k++) {
     Eigen::Vector2i powers = Eigen::Vector2i::Zero(2);
@@ -166,13 +164,17 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Face & F, const GolyComplBasisFace 
 }
 
 /// Computes the Gram Matrix of the scalar part of a RolyCompl Basis and a monomial basis with an extra power on the mth variable
-Eigen::MatrixXd HArDCore3D::GMRolyComplScalar(const Face & F, const RolyComplBasisFace & rolycompl_basis, const MonomialScalarBasisFace & mono_basis, const size_t m, MonomialFaceIntegralsType intmap )
+Eigen::MatrixXd HArDCore3D::GMRolyComplScalar(const Face & F, const RolyComplBasisFace & rolycompl_basis, const MonomialScalarBasisFace & mono_basis, const size_t m, MonomialFaceIntegralsType mono_int_map )
 {
   // Dimension of the gram matrix
   size_t dim1 = rolycompl_basis.dimension();
   size_t dim2 = mono_basis.dimension();
   Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(dim1,dim2);
   
+  // Obtain integration data from IntegrateFaceMonomials
+  size_t totaldegree = rolycompl_basis.max_degree() + mono_basis.max_degree();
+  MonomialFaceIntegralsType intmap = CheckIntegralsDegree(F, totaldegree, mono_int_map);
+
   Eigen::Vector2i powers = Eigen::Vector2i::Zero(2);
   powers(m) = 1;
   for (size_t i = 0; i < dim1; i++) {
@@ -241,12 +243,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrixDiv(const Face & F, const RolyComplBasisFa
   
   // Integrals of monomials
   size_t totaldegree = basis1.max_degree()+basis2.max_degree()-1;
-  MonomialFaceIntegralsType intmap;
-  if (mono_int_map.size()>0){
-    intmap = mono_int_map;
-  }else{
-    intmap = IntegrateFaceMonomials(F, totaldegree);
-  }
+  MonomialFaceIntegralsType intmap = CheckIntegralsDegree(F, totaldegree, mono_int_map);
   
   for (size_t i = 0; i < dim1; i++) {
     for (size_t j = 0; j < dim2; j++) {

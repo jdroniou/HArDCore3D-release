@@ -67,6 +67,13 @@ MonomialIntegralsType IntegrateCellMonomials
           const size_t maxdeg           ///< Maximal total degree
           );
 
+/// Checks if the degree of an existing list of monomial integrals is sufficient, other re-compute and return a proper list
+MonomialIntegralsType CheckIntegralsDegree
+         (const Cell & T,              ///< Cell
+           const size_t degree,         ///< Expected degree
+           const MonomialIntegralsType & mono_int_map = {}    ///< Existing list, optional
+          );
+
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 //  TRANSFORMATIONS OF GRAM MATRICES FOR DERIVED BASES
@@ -184,12 +191,7 @@ Eigen::MatrixXd GramMatrix(
 
     // Integrals of monomials
     size_t totaldegree = rolycompl_basis.max_degree()+tens_family.max_degree();
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     for (size_t m=0; m<N; m++){
       gm.block(0, m*dim2/N, dim1, dim2/N) = GMRolyComplScalar(T, rolycompl_basis, tens_family.ancestor(), m, intmap);
@@ -232,12 +234,7 @@ Eigen::MatrixXd GramMatrix(
 
     // Integrals of monomials
     size_t totaldegree = golycompl_basis.max_degree()+tens_family.max_degree();
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     size_t dim_l1 = golycompl_basis.dimPkmo();
     size_t dim_l2 = tens_family.ancestor().dimension();
@@ -269,7 +266,7 @@ Eigen::MatrixXd GMRolyComplScalar(
                     const RolyComplBasisCell & rolycompl_basis, ///< First basis
                     const MonomialScalarBasisCell & mono_basis, ///< Second basis
                     const size_t m, ///< Add one to the power of the mth variable
-                    MonomialIntegralsType mono_int_map ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialIntegralsType mono_int_map = {} ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     );
 
 /// Generic template to compute the Gram Matrix of the mth component of a RolyCompl Basis and any basis
@@ -279,7 +276,7 @@ Eigen::MatrixXd GMRolyComplScalar(
                      const RolyComplBasisCell & basis1, ///< First basis
                      const BasisType & basis2,  ///< Second basis (columns of the Gram matrix)
                      const size_t m, ///< Differentiate basis1 with respect to the mth variable
-                     MonomialIntegralsType mono_int_map ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialIntegralsType mono_int_map = {} ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -453,12 +450,7 @@ Eigen::MatrixXd GramMatrix(
 
     // Integrals of monomials
     size_t totaldegree = grad_basis.ancestor().max_degree()+tens_family.max_degree()-1;
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     for (size_t m=0; m<N; m++){
       gm.block(0, m*dim2/N, dim1, dim2/N) = GMScalarDerivative(T, grad_basis.ancestor(), tens_family.ancestor(), m, intmap);
@@ -495,12 +487,7 @@ Eigen::MatrixXd GramMatrix(
 
     // Integrals of monomials
     size_t totaldegree = grad_basis1.ancestor().max_degree()+grad_basis2.ancestor().max_degree()-2;
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     for (size_t m=0; m<3; m++){
       gm += GMScalarDerivative(T, grad_basis1.ancestor(), grad_basis2.ancestor(), m, m, intmap);
@@ -558,12 +545,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
 
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree()-2;
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
     
     Eigen::MatrixXd GMxx = GMScalarDerivative(T, basis1.ancestor(), basis2.ancestor(), 0, 0, intmap);
     Eigen::MatrixXd GMyy = GMScalarDerivative(T, basis1.ancestor(), basis2.ancestor(), 1, 1, intmap);
@@ -604,13 +586,8 @@ Eigen::MatrixXd GramMatrixCurlCurl(
     Eigen::MatrixXd gm(dim1, dim2);
     
     // Integrals of monomials
-    size_t totaldegree = basis1.max_degree()+basis2.max_degree()-2;
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    size_t totaldegree = basis1.max_degree()+basis2.max_degree();
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
     
     size_t dim_l1 = basis1.dimPkmo();
     gm.block(0, 0, dim_l1, dim2/N) = GMGolyComplScalar(T, basis1, basis2.ancestor(), 0, intmap, 1, 0, 2) - GMGolyComplScalar(T, basis1, basis2.ancestor(), 0, intmap, 2, 0, 1);
@@ -680,12 +657,7 @@ Eigen::MatrixXd GramMatrixCurl(
 
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree()-1;
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     Eigen::MatrixXd GMx = GMScalarDerivative(T, basis1.ancestor(), basis2.ancestor(), 0, intmap);
     Eigen::MatrixXd GMy = GMScalarDerivative(T, basis1.ancestor(), basis2.ancestor(), 1, intmap);
@@ -715,13 +687,8 @@ Eigen::MatrixXd GramMatrixCurl(
     Eigen::MatrixXd gm(dim1, dim2);
     
     // Integrals of monomials
-    size_t totaldegree = basis1.max_degree()+basis2.max_degree()-1;
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    size_t totaldegree = basis1.max_degree()+basis2.max_degree();
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
     
     size_t dim_l1 = basis1.dimPkmo();
     gm.block(0, 0, dim_l1, dim2/N) = -GMGolyComplScalar(T, basis1, basis2.ancestor(), 0, intmap, 1, 1)
@@ -830,12 +797,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
 
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree()-2;
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
     
     for (size_t i = 0; i < N; i++) {
       for (size_t j = 0; j < N; j++) {
@@ -880,13 +842,8 @@ Eigen::MatrixXd GramMatrixDivDiv(
     Eigen::MatrixXd gm(dim1, dim2);
     
     // Integrals of monomials
-    size_t totaldegree = basis1.max_degree()+basis2.max_degree()-2;
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    size_t totaldegree = basis1.max_degree()+basis2.max_degree();
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
     
     for (size_t i = 0; i < N; i++) {
       gm.block(i*dim1/N, 0, dim1/N, dim2) = GMRolyComplScalarDiv(T, basis1.ancestor(), basis2, i, mono_int_map);
@@ -955,12 +912,7 @@ Eigen::MatrixXd GramMatrixDiv(
 
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree()-1;
-    MonomialIntegralsType intmap;
-    if (mono_int_map.size()>0){
-      intmap = mono_int_map;
-    }else{
-      intmap = IntegrateCellMonomials(T, totaldegree);
-    }
+    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     for (size_t i = 0; i < N; i++) {
       gm.block(i*dim1/N, 0, dim1/N, dim2) = GMScalarDerivative(T, basis1.ancestor(), basis2, i, intmap);
