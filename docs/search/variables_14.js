@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['x_1251',['x',['../group__Quadratures.html#ga2a30df67610b141f56b65c1324068143',1,'HArDCore3D::QuadratureNode']]],
-  ['xv_1252',['xV',['../group__Quadratures.html#ga6a4a14f830d50341f73ebcaefcf6d2a4',1,'HArDCore3D::QuadRuleTetra']]]
+  ['w_1391',['w',['../group__Quadratures.html#gace3667769fdabe08dd83fe6eb5201643',1,'HArDCore3D::QuadratureNode']]]
 ];

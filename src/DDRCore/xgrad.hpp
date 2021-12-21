@@ -1,8 +1,8 @@
 #ifndef XGRAD_HPP
 #define XGRAD_HPP
 
+#include <globaldofspace.hpp>
 #include <ddrcore.hpp>
-#include <ddrspace.hpp>
 #include <integralweight.hpp>
 
 namespace HArDCore3D
@@ -13,7 +13,8 @@ namespace HArDCore3D
    */
 
   /// Discrete H1 space: local operators, L2 product and global interpolator
-  class XGrad : public DDRSpace
+  /** On each edge/face/element, the DOFs (if any) correspond to the polynomial bases on the edge/face/element provided by m_ddr_core */
+  class XGrad : public GlobalDOFSpace
   {
   public:
     typedef std::function<double(const Eigen::Vector3d &)> FunctionType;

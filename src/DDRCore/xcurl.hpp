@@ -1,8 +1,8 @@
 #ifndef XCURL_HPP
 #define XCURL_HPP
 
+#include <globaldofspace.hpp>
 #include <ddrcore.hpp>
-#include <ddrspace.hpp>
 #include <integralweight.hpp>
 #include <xgrad.hpp>
 
@@ -14,7 +14,8 @@ namespace HArDCore3D
    */
 
   /// Discrete Hcurl space: local operators, L2 product and global interpolator
-  class XCurl : public DDRSpace
+    /** On each edge, the DOFs correspond to the polynomial bases on the edge provided by m_ddr_core. On each face/element, the DOFs are first those of the \f$\mathcal{R}^{k-1}\f$ component and then of the \f$\mathcal{R}^{c,k}\f$ component, each one of them following the bases of these spaces provided by m_ddr_core. */
+  class XCurl : public GlobalDOFSpace
   {
   public:
     typedef std::function<Eigen::Vector3d(const Eigen::Vector3d &)> FunctionType;

@@ -46,32 +46,32 @@ struct VecHash
 };
 
 /// Type for list of integrals of monomials
-typedef std::unordered_map<VectorZd, double, VecHash> MonomialIntegralsType;
+typedef std::unordered_map<VectorZd, double, VecHash> MonomialCellIntegralsType;
     
 /// Compute all the integrals, on the edges of a cell, of this cell's monomials up to a max degree
-std::vector<MonomialIntegralsType> IntegrateCellMonomials_onEdges
+std::vector<MonomialCellIntegralsType> IntegrateCellMonomials_onEdges
           (const Cell & T,      ///< Cell
           const size_t maxdeg           ///< Maximal total degree
           );
 
 /// Compute all the integrals, on the faces of a cell, of this cell's monomials up to a max degree
-std::vector<MonomialIntegralsType> IntegrateCellMonomials_onFaces
+std::vector<MonomialCellIntegralsType> IntegrateCellMonomials_onFaces
           (const Cell & T,      ///< Cell
           const size_t maxdeg,           ///< Maximal total degree
-          std::vector<MonomialIntegralsType> & integrals_edges  ///< List of integrals of the monomials over the edges
+          std::vector<MonomialCellIntegralsType> & integrals_edges  ///< List of integrals of the monomials over the edges
           );
 
 /// Compute all the integrals of a cell's monomials on the cell
-MonomialIntegralsType IntegrateCellMonomials
+MonomialCellIntegralsType IntegrateCellMonomials
           (const Cell & T,      ///< Cell
           const size_t maxdeg           ///< Maximal total degree
           );
 
 /// Checks if the degree of an existing list of monomial integrals is sufficient, other re-compute and return a proper list
-MonomialIntegralsType CheckIntegralsDegree
+MonomialCellIntegralsType CheckIntegralsDegree
          (const Cell & T,              ///< Cell
            const size_t degree,         ///< Expected degree
-           const MonomialIntegralsType & mono_int_map = {}    ///< Existing list, optional
+           const MonomialCellIntegralsType & mono_int_map = {}    ///< Existing list, optional
           );
 
 //----------------------------------------------------------------------
@@ -110,7 +110,7 @@ inline Eigen::MatrixXd transformGM(const RestrictedBasis<BasisType> & restr_basi
 
 /// Transforms a Gram Matrix from an ancestor to a shifted basis
 template<typename BasisType>
-inline Eigen::MatrixXd transformGM(const ShiftedBasis<BasisType> & shifted_basis,     ///< Restricted basis 
+inline Eigen::MatrixXd transformGM(const ShiftedBasis<BasisType> & shifted_basis,     ///< Shifted basis 
                                const char RC,                ///< R if transformation applied on rows (left), C if applied on columns (right)
                                const Eigen::MatrixXd & anc_GM              ///< Gram matrix of the ancestor basis
                                )
@@ -137,12 +137,12 @@ Eigen::MatrixXd GramMatrix(
                     const Cell & T,                         ///< Cell to which the basis corresponds
                     const MonomialScalarBasisCell & basis1, ///< First basis
                     const MonomialScalarBasisCell & basis2, ///< Second basis
-                    MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     );
   
 /// This overload to simplify the call to GramMatrix in case the two bases are the same
 template<typename BasisType>
-Eigen::MatrixXd GramMatrix(const Cell& T, const BasisType & basis, MonomialIntegralsType mono_int_map = {})
+Eigen::MatrixXd GramMatrix(const Cell& T, const BasisType & basis, MonomialCellIntegralsType mono_int_map = {})
   {
     return GramMatrix(T, basis, basis, mono_int_map);
   };
@@ -153,7 +153,7 @@ Eigen::MatrixXd GramMatrix(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const TensorizedVectorFamily<BasisType1, N> & basis1, ///< First basis (rows of the Gram matrix)
                      const TensorizedVectorFamily<BasisType2, N> & basis2,  ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      )
   {
     Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(basis1.dimension(), basis2.dimension());
@@ -173,7 +173,7 @@ Eigen::MatrixXd GramMatrix(
                     const Cell & T,                         ///< Cell to which the basis corresponds
                     const RolyComplBasisCell & basis1,      ///< First basis
                     const RolyComplBasisCell & basis2,      ///< Second basis
-                    MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     );
 
 /// Template to compute the Gram Matrix of a RolyCompl basis and a tensorized scalar basis
@@ -182,7 +182,7 @@ Eigen::MatrixXd GramMatrix(
                     const Cell & T,                                         ///< Cell to which the basis corresponds
                     const RolyComplBasisCell & rolycompl_basis,             ///< First basis (RolyCompl basis)
                     const TensorizedVectorFamily<BasisType1, N> & tens_family,  ///< Second basis (tensorized basis)
-                    MonomialIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     )
   {
     size_t dim1 = rolycompl_basis.dimension();
@@ -191,7 +191,7 @@ Eigen::MatrixXd GramMatrix(
 
     // Integrals of monomials
     size_t totaldegree = rolycompl_basis.max_degree()+tens_family.max_degree();
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     for (size_t m=0; m<N; m++){
       gm.block(0, m*dim2/N, dim1, dim2/N) = GMRolyComplScalar(T, rolycompl_basis, tens_family.ancestor(), m, intmap);
@@ -205,7 +205,7 @@ Eigen::MatrixXd GramMatrix(
                     const Cell & T,                                         ///< Cell to which the basis corresponds
                     const TensorizedVectorFamily<BasisType1, N> & tens_family,  ///< First basis (tensorized basis)
                     const RolyComplBasisCell & rolycompl_basis,             ///< Second basis (RolyCompl basis)
-                    MonomialIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     )
   {
     return GramMatrix(T, rolycompl_basis, tens_family, mono_int_map).transpose();
@@ -216,7 +216,7 @@ Eigen::MatrixXd GramMatrix(
                     const Cell & T,                         ///< Cell to which the basis corresponds
                     const GolyComplBasisCell & basis1,      ///< First basis
                     const GolyComplBasisCell & basis2,      ///< Second basis
-                    MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     );
 
 /// Template to compute the Gram Matrix of a GolyCompl basis and a tensorized scalar basis
@@ -225,7 +225,7 @@ Eigen::MatrixXd GramMatrix(
                     const Cell & T,                                         ///< Cell to which the basis corresponds
                     const GolyComplBasisCell & golycompl_basis,             ///< First basis (GolyCompl basis)
                     const TensorizedVectorFamily<BasisType1, N> & tens_family,  ///< Second basis (tensorized basis)
-                    MonomialIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     )
   {
     size_t dim1 = golycompl_basis.dimension();
@@ -234,7 +234,7 @@ Eigen::MatrixXd GramMatrix(
 
     // Integrals of monomials
     size_t totaldegree = golycompl_basis.max_degree()+tens_family.max_degree();
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     size_t dim_l1 = golycompl_basis.dimPkmo();
     size_t dim_l2 = tens_family.ancestor().dimension();
@@ -254,7 +254,7 @@ Eigen::MatrixXd GramMatrix(
                     const Cell & T,                                         ///< Cell to which the basis corresponds
                     const TensorizedVectorFamily<BasisType1, N> & tens_family,  ///< First basis (tensorized basis)
                     const GolyComplBasisCell & golycompl_basis,             ///< Second basis (GolyCompl basis)
-                    MonomialIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     )
   {
     return GramMatrix(T, golycompl_basis, tens_family, mono_int_map).transpose();
@@ -266,7 +266,7 @@ Eigen::MatrixXd GMRolyComplScalar(
                     const RolyComplBasisCell & rolycompl_basis, ///< First basis
                     const MonomialScalarBasisCell & mono_basis, ///< Second basis
                     const size_t m, ///< Add one to the power of the mth variable
-                    MonomialIntegralsType mono_int_map = {} ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {} ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     );
 
 /// Generic template to compute the Gram Matrix of the mth component of a RolyCompl Basis and any basis
@@ -276,7 +276,7 @@ Eigen::MatrixXd GMRolyComplScalar(
                      const RolyComplBasisCell & basis1, ///< First basis
                      const BasisType & basis2,  ///< Second basis (columns of the Gram matrix)
                      const size_t m, ///< Differentiate basis1 with respect to the mth variable
-                     MonomialIntegralsType mono_int_map = {} ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map = {} ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -290,7 +290,7 @@ Eigen::MatrixXd GMGolyComplScalar(
                     const GolyComplBasisCell & golycompl_basis, ///< First basis
                     const MonomialScalarBasisCell & mono_basis, ///< Second basis
                     const size_t s, ///< the GolyCompl basis has three sections; use the sth.
-                    MonomialIntegralsType mono_int_map, ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map, ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     const size_t m = 3, ///< Optionally (m < 3), add one to the power of the mth variable
                     const size_t k1 = 3, ///< Optionally (k1 < 3), take the kth derivative of the GolyCompl scalar
                     const size_t k2 = 3 ///< Optionally (k2 < 3), take the kth derivative of the MonomialScalar scalar
@@ -303,7 +303,7 @@ Eigen::MatrixXd GMGolyComplScalar(
                      const GolyComplBasisCell & basis1, ///< First basis
                      const BasisType & basis2,  ///< Second basis (columns of the Gram matrix)
                      const size_t s, ///< the GolyCompl basis has three sections; use the sth.
-                     MonomialIntegralsType mono_int_map, ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map, ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      const size_t m = 3, ///< Optionally (m < 3), add one to the power of the mth variable
                      const size_t k1 = 3, ///< Optionally (k1 < 3), take the kth derivative of the GolyCompl scalar
                      const size_t k2 = 3 ///< Optionally (k2 < 3), take the kth derivative of the MonomialScalar scalar
@@ -321,7 +321,7 @@ Eigen::MatrixXd GMGolyCompl(
                     const GolyComplBasisCell & basis2, ///< Second basis
                     const size_t s1, ///< the first GolyCompl basis has three sections; use the s1th.
                     const size_t s2, ///< the second GolyCompl basis has three sections; use the s2th.
-                    MonomialIntegralsType mono_int_map, ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map, ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     const size_t m1 = 3, ///< Optionally (m1 < 3), add one to the power of the m1th variable
                     const size_t m2 = 3, ///< Optionally (m2 < 3), add one to the power of the m2th variable
                     const size_t k1 = 3, ///< Optionally (k1 < 3), take the k1th derivative of the first GolyCompl scalar
@@ -348,7 +348,7 @@ template<typename BasisType1, typename BasisType2>
 Eigen::MatrixXd GramMatrix(const Cell& T,         ///< Cell to which the basis corresponds
                      const BasisType1 & basis1,   ///< First basis (rows of the Gram matrix)
                      const BasisType2 & basis2,   ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -373,7 +373,7 @@ Eigen::MatrixXd GMScalarDerivative(
                   const MonomialScalarBasisCell & basis1, ///< First basis
                   const MonomialScalarBasisCell & basis2, ///< Second basis
                   const size_t m, ///< Differentiate basis1 with respect to the mth variable
-                  MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                  MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                   );
   
 /// Computes the Gram Matrix of a pair of local scalar monomial bases, taking partial derivatives of each of them (w.r.t. homogeneous coordinates, without scaling)
@@ -383,7 +383,7 @@ Eigen::MatrixXd GMScalarDerivative(
                   const MonomialScalarBasisCell & basis2, ///< Second basis
                   const size_t m, ///< Differentiate basis1 with respect to the mth variable
                   const size_t l, ///< Differentiate basis2 with respect to the lth variable
-                  MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                  MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                   );
 
 /// Generic template to compute the Gram Matrix of any pair of scalar bases, taking a partial derivative of the first (w.r.t. homogeneous coordinates, without scaling)
@@ -393,7 +393,7 @@ Eigen::MatrixXd GMScalarDerivative(
                      const BasisType1 & basis1, ///< First basis (rows of the Gram matrix)
                      const BasisType2 & basis2,  ///< Second basis (columns of the Gram matrix)
                      const size_t m, ///< Differentiate basis1 with respect to the mth variable
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                              )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -416,7 +416,7 @@ Eigen::MatrixXd GMScalarDerivative(
                      const BasisType2 & basis2,  ///< Second basis (columns of the Gram matrix)
                      const size_t m, ///< Differentiate basis1 with respect to the mth variable
                      const size_t l, ///< Differentiate basis2 with respect to the lth variable
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                              )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -441,7 +441,7 @@ Eigen::MatrixXd GramMatrix(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const GradientBasis<BasisType1> & grad_basis, ///< First basis (rows of the Gram matrix) - gradient basis
                      const TensorizedVectorFamily<BasisType2, N> & tens_family,  ///< Second basis (columns of the Gram matrix) - tensorized basis
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     size_t dim1 = grad_basis.dimension();
@@ -450,7 +450,7 @@ Eigen::MatrixXd GramMatrix(
 
     // Integrals of monomials
     size_t totaldegree = grad_basis.ancestor().max_degree()+tens_family.max_degree()-1;
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     for (size_t m=0; m<N; m++){
       gm.block(0, m*dim2/N, dim1, dim2/N) = GMScalarDerivative(T, grad_basis.ancestor(), tens_family.ancestor(), m, intmap);
@@ -465,7 +465,7 @@ Eigen::MatrixXd GramMatrix(
              const Cell& T, ///< Cell to which the basis corresponds
              const TensorizedVectorFamily<BasisType1, N> & tens_family, ///< First basis (rows of the Gram matrix) - gradient basis
              const GradientBasis<BasisType2> & grad_basis,  ///< Second basis (columns of the Gram matrix) - tensorized basis
-             MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+             MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
              )
   {
     return GramMatrix(T, grad_basis, tens_family, mono_int_map).transpose();
@@ -478,7 +478,7 @@ Eigen::MatrixXd GramMatrix(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const GradientBasis<BasisType1> & grad_basis1, ///< First basis (rows of the Gram matrix) - gradient basis
                      const GradientBasis<BasisType2> & grad_basis2,  ///< Second basis (columns of the Gram matrix) - gradient basis
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     size_t dim1 = grad_basis1.dimension();
@@ -487,7 +487,7 @@ Eigen::MatrixXd GramMatrix(
 
     // Integrals of monomials
     size_t totaldegree = grad_basis1.ancestor().max_degree()+grad_basis2.ancestor().max_degree()-2;
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     for (size_t m=0; m<3; m++){
       gm += GMScalarDerivative(T, grad_basis1.ancestor(), grad_basis2.ancestor(), m, m, intmap);
@@ -500,7 +500,7 @@ template<typename BasisType1, typename BasisType2>
 Eigen::MatrixXd GramMatrix(const Cell& T,         ///< Cell to which the basis corresponds
                      const CurlBasis<BasisType1> & basis1,   ///< First basis (rows of the Gram matrix)
                      const CurlBasis<BasisType2> & basis2,   ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      )
   {
     return GramMatrixCurlCurl(T, basis1.ancestor(), basis2.ancestor(), mono_int_map);
@@ -508,11 +508,11 @@ Eigen::MatrixXd GramMatrix(const Cell& T,         ///< Cell to which the basis c
   
 /// Generic template to compute the Gram Matrix of a Curl basis and any other basis
 template<typename BasisType1, typename BasisType2>
-typename boost::disable_if<boost::is_same<BasisType2, MonomialIntegralsType>, Eigen::MatrixXd>::type GramMatrix(
+typename boost::disable_if<boost::is_same<BasisType2, MonomialCellIntegralsType>, Eigen::MatrixXd>::type GramMatrix(
                      const Cell& T,                          ///< Cell to which the basis corresponds
                      const CurlBasis<BasisType1> & basis1,   ///< First basis (rows of the Gram matrix)
                      const BasisType2 & basis2,              ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      )
   {
     return GramMatrixCurl(T, basis1.ancestor(), basis2, mono_int_map);
@@ -524,7 +524,7 @@ Eigen::MatrixXd GramMatrix(
                     const Cell & T,                         ///< Cell to which the basis corresponds
                     const BasisType1 & basis1,                  ///< First basis (tensorized basis)
                     const CurlBasis<Basis2> & basis2,       ///< Second basis (Curl basis)
-                    MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     )
   {
     return GramMatrixCurl(T, basis2.ancestor(), basis1, mono_int_map).transpose();
@@ -536,7 +536,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const TensorizedVectorFamily<BasisType1, N> & basis1, ///< First basis (rows of the Gram matrix) - curl basis
                      const TensorizedVectorFamily<BasisType2, N> & basis2,  ///< Second basis (columns of the Gram matrix) - curl basis
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     size_t dim1 = basis1.dimension();
@@ -545,7 +545,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
 
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree()-2;
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
     
     Eigen::MatrixXd GMxx = GMScalarDerivative(T, basis1.ancestor(), basis2.ancestor(), 0, 0, intmap);
     Eigen::MatrixXd GMyy = GMScalarDerivative(T, basis1.ancestor(), basis2.ancestor(), 1, 1, intmap);
@@ -569,7 +569,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const GolyComplBasisCell & basis1, ///< First basis (rows of the Gram matrix) - curl basis
                      const GolyComplBasisCell & basis2,  ///< Second basis (columns of the Gram matrix) - curl basis
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      );
 
 /// Template to compute the Gram Matrix of the curl of a GolyCompl basis and the curl of a tensorized basis
@@ -578,7 +578,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const GolyComplBasisCell & basis1, ///< First basis (rows of the Gram matrix) - curl basis
                      const TensorizedVectorFamily<BasisType2, N> & basis2,  ///< Second basis (columns of the Gram matrix) - curl basis
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     size_t dim1 = basis1.dimension();
@@ -587,7 +587,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
     
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree();
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
     
     size_t dim_l1 = basis1.dimPkmo();
     gm.block(0, 0, dim_l1, dim2/N) = GMGolyComplScalar(T, basis1, basis2.ancestor(), 0, intmap, 1, 0, 2) - GMGolyComplScalar(T, basis1, basis2.ancestor(), 0, intmap, 2, 0, 1);
@@ -615,7 +615,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const TensorizedVectorFamily<BasisType1, N> & basis1, ///< First basis (rows of the Gram matrix) - curl basis
                      const GolyComplBasisCell & basis2,  ///< Second basis (columns of the Gram matrix) - curl basis
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     return GramMatrixCurlCurl(T, basis2, basis1, mono_int_map).transpose();
@@ -627,7 +627,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const BasisType1 & basis1, ///< First basis (rows of the Gram matrix) - curl basis
                      const BasisType2 & basis2,  ///< Second basis (columns of the Gram matrix) - curl basis
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -648,7 +648,7 @@ Eigen::MatrixXd GramMatrixCurl(
                     const Cell & T,                                         ///< Cell to which the basis corresponds
                     const TensorizedVectorFamily<BasisType1, N> & basis1,   ///< First basis (tensorized basis)
                     const TensorizedVectorFamily<BasisType2, N> & basis2,   ///< Second basis (tensorized basis)
-                    MonomialIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     )
   {
     size_t dim1 = basis1.dimension();
@@ -657,7 +657,7 @@ Eigen::MatrixXd GramMatrixCurl(
 
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree()-1;
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     Eigen::MatrixXd GMx = GMScalarDerivative(T, basis1.ancestor(), basis2.ancestor(), 0, intmap);
     Eigen::MatrixXd GMy = GMScalarDerivative(T, basis1.ancestor(), basis2.ancestor(), 1, intmap);
@@ -679,7 +679,7 @@ Eigen::MatrixXd GramMatrixCurl(
                     const Cell & T,                                         ///< Cell to which the basis corresponds
                     const GolyComplBasisCell & basis1,                      ///< First basis (GolyCompl basis)
                     const TensorizedVectorFamily<BasisType2, N> & basis2,   ///< Second basis (tensorized basis)
-                    MonomialIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     )
   {
     size_t dim1 = basis1.dimension();
@@ -688,7 +688,7 @@ Eigen::MatrixXd GramMatrixCurl(
     
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree();
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
     
     size_t dim_l1 = basis1.dimPkmo();
     gm.block(0, 0, dim_l1, dim2/N) = -GMGolyComplScalar(T, basis1, basis2.ancestor(), 0, intmap, 1, 1)
@@ -716,7 +716,7 @@ Eigen::MatrixXd GramMatrixCurl(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const BasisType1 & basis1, ///< First basis (rows of the Gram matrix)
                      const BasisType2 & basis2,  ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -737,7 +737,7 @@ Eigen::MatrixXd GramMatrixCurl(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const BasisType1 & basis1, ///< First basis (rows of the Gram matrix)
                      const CurlBasis<BasisType2> & basis2,  ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     if constexpr (!useAncestor<BasisType1>()) {
@@ -752,7 +752,7 @@ template<typename BasisType1, typename BasisType2>
 Eigen::MatrixXd GramMatrix(const Cell& T,         ///< Cell to which the basis corresponds
                      const DivergenceBasis<BasisType1> & basis1,   ///< First basis (rows of the Gram matrix)
                      const DivergenceBasis<BasisType2> & basis2,   ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      )
   {
     return GramMatrixDivDiv(T, basis1.ancestor(), basis2.ancestor(), mono_int_map);
@@ -764,7 +764,7 @@ Eigen::MatrixXd GMRolyComplScalarDiv(
                     const MonomialScalarBasisCell & mono_basis, ///< First basis
                     const RolyComplBasisCell & rolycompl_basis, ///< Second basis
                     const size_t k, ///< Take the kth derivative of the monomial scalar
-                    MonomialIntegralsType mono_int_map ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     );
   
 /// Gram Matrix of the divergence of a RolyCompl basis and the k-th derivative of any scalar basis
@@ -774,7 +774,7 @@ Eigen::MatrixXd GMRolyComplScalarDiv(
                      const BasisType & basis1, ///< First basis
                      const RolyComplBasisCell & basis2, ///< Second basis (columns of the Gram matrix)
                      const size_t k, ///< Take the kth derivative of the scalar basis
-                     MonomialIntegralsType mono_int_map ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map ///< list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -788,7 +788,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const TensorizedVectorFamily<BasisType1, N> & basis1, ///< First basis (rows of the Gram matrix)
                      const TensorizedVectorFamily<BasisType2, N> & basis2,  ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     size_t dim1 = basis1.dimension();
@@ -797,7 +797,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
 
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree()-2;
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
     
     for (size_t i = 0; i < N; i++) {
       for (size_t j = 0; j < N; j++) {
@@ -813,7 +813,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const RolyComplBasisCell & basis1, ///< First basis (rows of the Gram matrix)
                      const RolyComplBasisCell & basis2,  ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      );
 
 /// Template to compute the Gram Matrix of the divergence of a RolyCompl basis and the divergence of a tensorized basis
@@ -822,7 +822,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const RolyComplBasisCell & basis1, ///< First basis (rows of the Gram matrix)
                      const TensorizedVectorFamily<BasisType2, N> & basis2,  ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     return GramMatrixDivDiv(T, basis2, basis1, mono_int_map).transpose();
@@ -834,7 +834,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const TensorizedVectorFamily<BasisType1, N> & basis1, ///< First basis (rows of the Gram matrix)
                      const RolyComplBasisCell & basis2,  ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     size_t dim1 = basis1.dimension();
@@ -843,7 +843,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
     
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree();
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
     
     for (size_t i = 0; i < N; i++) {
       gm.block(i*dim1/N, 0, dim1/N, dim2) = GMRolyComplScalarDiv(T, basis1.ancestor(), basis2, i, mono_int_map);
@@ -858,7 +858,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const BasisType1 & basis1, ///< First basis (rows of the Gram matrix)
                      const BasisType2 & basis2,  ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -875,11 +875,11 @@ Eigen::MatrixXd GramMatrixDivDiv(
 
 /// Generic template to compute the Gram Matrix of a Divergence basis and any other basis
 template<typename BasisType1, typename BasisType2>
-typename boost::disable_if<boost::is_same<BasisType2, MonomialIntegralsType>, Eigen::MatrixXd>::type GramMatrix(
+typename boost::disable_if<boost::is_same<BasisType2, MonomialCellIntegralsType>, Eigen::MatrixXd>::type GramMatrix(
                      const Cell& T,                          ///< Cell to which the basis corresponds
                      const DivergenceBasis<BasisType1> & basis1,   ///< First basis (rows of the Gram matrix)
                      const BasisType2 & basis2,              ///< Second basis (columns of the Gram matrix)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                      )
   {
     return GramMatrixDiv(T, basis1.ancestor(), basis2, mono_int_map);
@@ -891,7 +891,7 @@ Eigen::MatrixXd GramMatrix(
                     const Cell & T,                         ///< Cell to which the basis corresponds
                     const BasisType1 & basis1,                  ///< First basis (scalar basis)
                     const DivergenceBasis<Basis2> & basis2,       ///< Second basis (divergence basis)
-                    MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     )
   {
     return GramMatrixDiv(T, basis2.ancestor(), basis1, mono_int_map).transpose();
@@ -903,7 +903,7 @@ Eigen::MatrixXd GramMatrixDiv(
                     const Cell & T,                                         ///< Cell to which the basis corresponds
                     const TensorizedVectorFamily<BasisType1, N> & basis1,   ///< First basis (divergence basis)
                     const MonomialScalarBasisCell & basis2,                 ///< Second basis (monomial scalar basis)
-                    MonomialIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {}                 ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     )
   {
     size_t dim1 = basis1.dimension();
@@ -912,7 +912,7 @@ Eigen::MatrixXd GramMatrixDiv(
 
     // Integrals of monomials
     size_t totaldegree = basis1.max_degree()+basis2.max_degree()-1;
-    MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+    MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
     for (size_t i = 0; i < N; i++) {
       gm.block(i*dim1/N, 0, dim1/N, dim2) = GMScalarDerivative(T, basis1.ancestor(), basis2, i, intmap);
@@ -926,7 +926,7 @@ Eigen::MatrixXd GramMatrixDiv(
                     const Cell & T,                           ///< Cell to which the basis corresponds
                     const RolyComplBasisCell & basis1,        ///< First basis (RolyCompl basis)
                     const MonomialScalarBasisCell & basis2,   ///< Second basis (scalar basis)
-                    MonomialIntegralsType mono_int_map = {}   ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
+                    MonomialCellIntegralsType mono_int_map = {}   ///< Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2
                     );
   
 /// Template to compute the Gram Matrix of the divergence of any basis and any other basis
@@ -935,7 +935,7 @@ Eigen::MatrixXd GramMatrixDiv(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const BasisType1 & basis1, ///< First basis (vector basis)
                      const BasisType2 & basis2,  ///< Second basis (scalar basis)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     // If no ancestor is to be used, we shouldn't be in this overload
@@ -956,7 +956,7 @@ Eigen::MatrixXd GramMatrixDiv(
                      const Cell& T, ///< Cell to which the basis corresponds
                      const BasisType1 & basis1, ///< First basis (vector basis)
                      const DivergenceBasis<BasisType2> & basis2,  ///< Second basis (divergence basis)
-                     MonomialIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
+                     MonomialCellIntegralsType mono_int_map = {} ///< Optional list of integrals of monomials up to the sum of max degree of the bases
                      )
   {
     if constexpr (!useAncestor<BasisType1>()) {

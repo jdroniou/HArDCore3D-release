@@ -1,26 +1,26 @@
 <map id="src/DDRCore/xdiv.hpp" name="src/DDRCore/xdiv.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="103,5,256,32"/>
-<area shape="rect" id="node2" href="$ddrcore_8hpp.html" title=" " alt="" coords="377,229,467,256"/>
-<area shape="rect" id="node20" href="$ddrspace_8hpp.html" title=" " alt="" coords="183,229,283,256"/>
-<area shape="rect" id="node22" href="$integralweight_8hpp.html" title=" " alt="" coords="21,229,148,256"/>
-<area shape="rect" id="node23" href="$xcurl_8hpp.html" title=" " alt="" coords="206,80,281,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="490,304,559,331"/>
-<area shape="rect" id="node4" title=" " alt="" coords="609,752,681,779"/>
-<area shape="rect" id="node5" href="$basis_8hpp.html" title=" " alt="" coords="336,304,415,331"/>
-<area shape="rect" id="node18" href="$polynomialspacedimension_8hpp.html" title=" " alt="" coords="463,379,666,405"/>
-<area shape="rect" id="node6" title=" " alt="" coords="192,379,337,405"/>
-<area shape="rect" id="node7" href="$mesh_8hpp.html" title=" " alt="" coords="109,453,188,480"/>
-<area shape="rect" id="node19" href="$quadraturerule_8hpp.html" title=" " alt="" coords="39,379,168,405"/>
-<area shape="rect" id="node8" href="$Mesh3D_8hpp.html" title=" " alt="" coords="117,528,213,555"/>
-<area shape="rect" id="node9" href="$MeshObject_8hpp.html" title=" " alt="" coords="193,677,310,704"/>
-<area shape="rect" id="node17" href="$MeshND_8hpp.html" title=" " alt="" coords="115,603,214,629"/>
-<area shape="rect" id="node10" title=" " alt="" coords="534,752,585,779"/>
-<area shape="rect" id="node11" title=" " alt="" coords="7,752,66,779"/>
-<area shape="rect" id="node12" title=" " alt="" coords="91,752,137,779"/>
-<area shape="rect" id="node13" title=" " alt="" coords="183,827,242,853"/>
-<area shape="rect" id="node14" title=" " alt="" coords="313,752,411,779"/>
-<area shape="rect" id="node15" href="$math_8hpp.html" title=" " alt="" coords="213,752,289,779"/>
-<area shape="rect" id="node16" title=" " alt="" coords="435,752,510,779"/>
-<area shape="rect" id="node21" href="$dofspace_8hpp.html" title=" " alt="" coords="177,304,277,331"/>
-<area shape="rect" id="node24" href="$xgrad_8hpp.html" title=" " alt="" coords="204,155,283,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="222,5,375,32"/>
+<area shape="rect" id="node2" href="$globaldofspace_8hpp.html" title=" " alt="" coords="167,229,302,256"/>
+<area shape="rect" id="node16" href="$ddrcore_8hpp.html" title=" " alt="" coords="361,229,452,256"/>
+<area shape="rect" id="node22" href="$integralweight_8hpp.html" title=" " alt="" coords="16,229,143,256"/>
+<area shape="rect" id="node23" href="$xcurl_8hpp.html" title=" " alt="" coords="197,80,272,107"/>
+<area shape="rect" id="node3" href="$localdofspace_8hpp.html" title=" " alt="" coords="154,304,280,331"/>
+<area shape="rect" id="node4" href="$mesh_8hpp.html" title=" " alt="" coords="230,453,308,480"/>
+<area shape="rect" id="node5" href="$Mesh3D_8hpp.html" title=" " alt="" coords="221,528,317,555"/>
+<area shape="rect" id="node6" href="$MeshObject_8hpp.html" title=" " alt="" coords="236,677,353,704"/>
+<area shape="rect" id="node15" href="$MeshND_8hpp.html" title=" " alt="" coords="178,603,277,629"/>
+<area shape="rect" id="node7" title=" " alt="" coords="345,752,396,779"/>
+<area shape="rect" id="node8" title=" " alt="" coords="492,752,550,779"/>
+<area shape="rect" id="node9" title=" " alt="" coords="420,752,467,779"/>
+<area shape="rect" id="node10" title=" " alt="" coords="746,752,818,779"/>
+<area shape="rect" id="node11" title=" " alt="" coords="56,827,114,853"/>
+<area shape="rect" id="node12" title=" " alt="" coords="24,752,122,779"/>
+<area shape="rect" id="node13" href="$math_8hpp.html" title=" " alt="" coords="146,752,222,779"/>
+<area shape="rect" id="node14" title=" " alt="" coords="246,752,321,779"/>
+<area shape="rect" id="node17" title=" " alt="" coords="372,304,441,331"/>
+<area shape="rect" id="node18" href="$basis_8hpp.html" title=" " alt="" coords="468,304,547,331"/>
+<area shape="rect" id="node20" href="$polynomialspacedimension_8hpp.html" title=" " alt="" coords="168,379,370,405"/>
+<area shape="rect" id="node19" title=" " alt="" coords="599,379,744,405"/>
+<area shape="rect" id="node21" href="$quadraturerule_8hpp.html" title=" " alt="" coords="446,379,575,405"/>
+<area shape="rect" id="node24" href="$xgrad_8hpp.html" title=" " alt="" coords="195,155,274,181"/>
 </map>

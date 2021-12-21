@@ -23,7 +23,7 @@ var searchData=
   ['area_24',['area',['../group__Quadratures.html#gad87031214049b17a0a1839507f08e8cb',1,'HArDCore3D::QuadRuleTriangle']]],
   ['array_25',['Array',['../group__DirectedGraph.html#ga773decc3b1a80d48cafcc5529b4a2b52',1,'DirectedGraph.hpp']]],
   ['assemble_26',['assemble',['../group__HHO__Diffusion.html#ga82476d19a0312e0b370a1f6100d863d1',1,'HArDCore3D::HHO_Diffusion::assemble()'],['../group__HHO3D.html#gab3b4d42b56364d7626a9bda8b2d1d36a',1,'HHO3D::assemble()'],['../group__HHO__LocVarDiff.html#ga5fa4c3b9a58d7208198ee0d6860c093a',1,'HArDCore3D::HHO_LocVarDiff::assemble()']]],
-  ['assemblelinearsystem_27',['assembleLinearSystem',['../group__DDR__magnetostatic.html#gad138164f173610fb861cef714646edae',1,'HArDCore3D::Magnetostatics']]],
+  ['assemblelinearsystem_27',['assembleLinearSystem',['../group__DDR__magnetostatic.html#gad138164f173610fb861cef714646edae',1,'HArDCore3D::Magnetostatics::assembleLinearSystem()'],['../group__DDR__stokes.html#ga110ade8eb5eaa6cad69b9651849f8c50',1,'HArDCore3D::Stokes::assembleLinearSystem(const ForcingTermType &amp;f, const VelocityType &amp;u, const VorticityType &amp;omega, const ViscosityType &amp;nu)'],['../group__VEM__stokes.html#ga1d8c22d8cb81989d314ab59fff782048',1,'HArDCore3D::Stokes::assembleLinearSystem(const ForcingTermType &amp;f, const ForcingTermType &amp;curl_f, const VelocityType &amp;u, const VorticityType &amp;omega, const ViscosityType &amp;nu)']]],
   ['asvectorxd_28',['asVectorXd',['../group__HybridCore.html#gac44c85c6f56c0c6f2b66f0ed630574dd',1,'HArDCore3D::UVector']]],
   ['atan2_29',['atan2',['../namespaceMath.html#a75b9445812f3d8c8d380e2a19c0b09d2',1,'Math']]]
 ];

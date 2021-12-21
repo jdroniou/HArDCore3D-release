@@ -1,8 +1,10 @@
 <map id="src/DDRCore/xcurl.hpp" name="src/DDRCore/xcurl.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="97,5,256,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="288,5,447,32"/>
 <area shape="rect" id="node2" href="$ddr-magnetostatics_8hpp.html" title=" " alt="" coords="5,155,209,196"/>
-<area shape="rect" id="node4" href="$xcurl_8cpp.html" title=" " alt="" coords="97,80,256,107"/>
-<area shape="rect" id="node5" href="$xdiv_8hpp.html" title=" " alt="" coords="280,80,433,107"/>
+<area shape="rect" id="node4" href="$ddr-stokes_8hpp.html" title=" " alt="" coords="411,155,566,196"/>
+<area shape="rect" id="node6" href="$xcurl_8cpp.html" title=" " alt="" coords="463,80,621,107"/>
+<area shape="rect" id="node7" href="$xdiv_8hpp.html" title=" " alt="" coords="233,80,387,107"/>
 <area shape="rect" id="node3" href="$ddr-magnetostatics_8cpp.html" title=" " alt="" coords="5,244,209,285"/>
-<area shape="rect" id="node6" href="$xdiv_8cpp.html" title=" " alt="" coords="280,162,433,189"/>
+<area shape="rect" id="node5" href="$ddr-stokes_8cpp.html" title=" " alt="" coords="411,244,566,285"/>
+<area shape="rect" id="node8" href="$xdiv_8cpp.html" title=" " alt="" coords="233,162,387,189"/>
 </map>

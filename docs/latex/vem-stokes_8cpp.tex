@@ -1,0 +1,68 @@
+\hypertarget{vem-stokes_8cpp}{}\doxysection{Schemes/\+V\+E\+M-\/stokes/vem-\/stokes.cpp File Reference}
+\label{vem-stokes_8cpp}\index{Schemes/VEM-\/stokes/vem-\/stokes.cpp@{Schemes/VEM-\/stokes/vem-\/stokes.cpp}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \char`\"{}vem-\/stokes.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$parallel\+\_\+for.\+hpp$>$}\newline
+{\ttfamily \#include $<$max\+\_\+degrees\+\_\+quadratures.\+hpp$>$}\newline
+{\ttfamily \#include $<$G\+Mpoly\+\_\+cell.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/program\+\_\+options.\+hpp$>$}\newline
+{\ttfamily \#include $<$display\+\_\+timer.\+hpp$>$}\newline
+Include dependency graph for vem-\/stokes.cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vem-stokes_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vem-stokes_8cpp_acfec7849f05710c7fb4106fea8a286fc}{F\+O\+R\+M\+AT}}(W)~std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{vem-stokes_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} = \char`\"{}../../meshes/\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{vem-stokes_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}{default\+\_\+mesh}} = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/R\+F\+\_\+fmt/voro-\/2\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{vem-stokes_8cpp_acfec7849f05710c7fb4106fea8a286fc}\label{vem-stokes_8cpp_acfec7849f05710c7fb4106fea8a286fc}} 
+\index{vem-\/stokes.cpp@{vem-\/stokes.cpp}!FORMAT@{FORMAT}}
+\index{FORMAT@{FORMAT}!vem-\/stokes.cpp@{vem-\/stokes.cpp}}
+\doxysubsubsection{\texorpdfstring{FORMAT}{FORMAT}}
+{\footnotesize\ttfamily \#define F\+O\+R\+M\+AT(\begin{DoxyParamCaption}\item[{}]{W }\end{DoxyParamCaption})~std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vem-stokes_8cpp_ac0f2228420376f4db7e1274f2b41667c}\label{vem-stokes_8cpp_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{vem-\/stokes.cpp@{vem-\/stokes.cpp}!main@{main}}
+\index{main@{main}!vem-\/stokes.cpp@{vem-\/stokes.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{vem-stokes_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}\label{vem-stokes_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}} 
+\index{vem-\/stokes.cpp@{vem-\/stokes.cpp}!default\_mesh@{default\_mesh}}
+\index{default\_mesh@{default\_mesh}!vem-\/stokes.cpp@{vem-\/stokes.cpp}}
+\doxysubsubsection{\texorpdfstring{default\_mesh}{default\_mesh}}
+{\footnotesize\ttfamily std\+::string default\+\_\+mesh = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/R\+F\+\_\+fmt/voro-\/2\char`\"{}}
+
+\mbox{\Hypertarget{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}\label{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}} 
+\index{vem-\/stokes.cpp@{vem-\/stokes.cpp}!mesh\_dir@{mesh\_dir}}
+\index{mesh\_dir@{mesh\_dir}!vem-\/stokes.cpp@{vem-\/stokes.cpp}}
+\doxysubsubsection{\texorpdfstring{mesh\_dir}{mesh\_dir}}
+{\footnotesize\ttfamily const std\+::string mesh\+\_\+dir = \char`\"{}../../meshes/\char`\"{}}
+

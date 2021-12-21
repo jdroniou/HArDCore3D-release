@@ -1,0 +1,104 @@
+\hypertarget{classHArDCore3D_1_1VCurl}{}\doxysection{H\+Ar\+D\+Core3D\+::V\+Curl Class Reference}
+\label{classHArDCore3D_1_1VCurl}\index{HArDCore3D::VCurl@{HArDCore3D::VCurl}}
+
+
+Virtual Hcurl space\+: local operators, L2 product and global interpolator.  
+
+
+
+
+{\ttfamily \#include $<$vcurl.\+hpp$>$}
+
+
+
+Inheritance diagram for H\+Ar\+D\+Core3D\+::V\+Curl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1VCurl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H\+Ar\+D\+Core3D\+::V\+Curl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1VCurl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VCurl_1_1LocalOperators}{Local\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store the local operators (projections of curl and function, dof of curl in Vdiv) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__VEMCore_gaac58f82b86370ae0e8b93d81f413297e}{Function\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__VEMCore_gac09ba55b2446d1b73a121172d9e8ce8e}{V\+Curl}} (const \mbox{\hyperlink{classHArDCore3D_1_1VEMCore}{V\+E\+M\+Core}} \&vem\+\_\+core, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__VEMCore_gaf9cd7b013ca923a33f7a1b117f0c0d42}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__VEMCore_ga4acf61cbff91ec89fa62ac2aa7404974}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__VEMCore_ga510be45311e2ff441a12d1f613a44396}{interpolate}} (const \mbox{\hyperlink{group__VEMCore_gaac58f82b86370ae0e8b93d81f413297e}{Function\+Type}} \&v, const \mbox{\hyperlink{group__VEMCore_gaac58f82b86370ae0e8b93d81f413297e}{Function\+Type}} \&curl\+\_\+v, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VCurl_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__VEMCore_ga21333175fee7ab2a18cb879534da3d21}{cell\+Operators}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VCurl_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__VEMCore_gac9833e209b66200875132aebf294dd5e}{cell\+Operators}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VCurl_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__VEMCore_ga6897fd23a59fcffcd002fe1de5b365f1}{face\+Operators}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face operators for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VCurl_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__VEMCore_gac53bfe01ed158e1be49d652ef1aef612}{face\+Operators}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return face operators for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1CellBases}{V\+E\+M\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__VEMCore_ga5b9714ed766b23b09528099efeaed155}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1CellBases}{V\+E\+M\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__VEMCore_gaaf8a872b5e71a1da037100c9edb5cbf2}{cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1FaceBases}{V\+E\+M\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__VEMCore_ga85c7d612307b9933070343e6d4b63d22}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1FaceBases}{V\+E\+M\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__VEMCore_ga7cfd59a31cb1b3707a500813950bdd0b}{face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1EdgeBases}{V\+E\+M\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__VEMCore_gac164a5e00dbbc4fad5ff78c8219f9ac1}{edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1EdgeBases}{V\+E\+M\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__VEMCore_gad84eeb3f3b5a71ef45578ebc96d7f5e7}{edge\+Bases}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__VEMCore_gad03e6c1df7e9218ad9dcb27b9f1b5236}{compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product for the cell of index iT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Virtual Hcurl space\+: local operators, L2 product and global interpolator. 
+
+The order of the D\+O\+Fs in each element are, in this order\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mesh entity }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Space }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mesh entity }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Space }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-4}
+\endhead
+E &function &$P^{k}(E)$ &tangential components of $\mathbf{v}$  \\\cline{1-4}
+F &function &$R^{c,k+1}(F)$ &projection of tangential component of $\mathbf{v}$  \\\cline{1-4}
+F &rot &$P^{k}_0(F)$ &projection of $\mathrm{rot}_F(\mathbf{v}_{t,F})$  \\\cline{1-4}
+T &function &$R^{c,k}(T)$ &projection of $\mathbf{v}$  \\\cline{1-4}
+T &curl &$G^{c,k+1}(T)$ &projection of $\mathrm{curl}\mathbf{v}$  \\\cline{1-4}
+\end{longtabu}
+
+
+No serendipity here (hence the Rck+1 on the faces) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+V\+E\+M\+Core/\mbox{\hyperlink{vcurl_8hpp}{vcurl.\+hpp}}\item 
+src/\+V\+E\+M\+Core/\mbox{\hyperlink{vcurl_8cpp}{vcurl.\+cpp}}\end{DoxyCompactItemize}

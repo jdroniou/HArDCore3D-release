@@ -11,7 +11,7 @@ using namespace HArDCore3D;
 //------------------------------------------------------------------------------
 
 XCurl::XCurl(const DDRCore & ddr_core, bool use_threads, std::ostream & output)
-  : DDRSpace(
+  : GlobalDOFSpace(
 	     ddr_core.mesh(),
 	     0,
 	     PolynomialSpaceDimension<Edge>::Poly(ddr_core.degree()),
@@ -125,7 +125,7 @@ Eigen::VectorXd XCurl::interpolate(const FunctionType & v, const int doe_cell, c
 	          const Cell & T = *mesh().cell(iT);
 
 	          QuadratureRule quad_dqr_T = generate_quadrature_rule(T, dqr_cell);
-	          MonomialIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*degree());
+	          MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*degree());
 
 	          Eigen::Index offset_T = globalOffset(T);
 	          auto basis_Rkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Rolykmo, quad_dqr_T);
@@ -159,8 +159,8 @@ XCurl::LocalOperators XCurl::_compute_face_curl_potential(size_t iF)
   //------------------------------------------------------------------------------
   // Left-hand side matrix
 
-  MonomialFaceIntegralsType int_monoF_2kp2 = IntegrateFaceMonomials(F, 2*degree()+2);
-  Eigen::MatrixXd MCF = GramMatrix(F, *faceBases(iF).Polyk, int_monoF_2kp2);
+  MonomialFaceIntegralsType int_monoF_2kpo = IntegrateFaceMonomials(F, 2*degree()+1);
+  Eigen::MatrixXd MCF = GramMatrix(F, *faceBases(iF).Polyk, int_monoF_2kpo);
   
   //------------------------------------------------------------------------------
   // Right-hand side matrix
@@ -180,9 +180,9 @@ XCurl::LocalOperators XCurl::_compute_face_curl_potential(size_t iF)
   } // for iE
 
   if (degree() > 0) {
-    CurlBasis<RestrictedBasis<DDRCore::PolyBasisFaceType>> rot_PkF(*faceBases(iF).Polyk);
+    CurlBasis<DDRCore::PolyBasisFaceType> rot_PkF(*faceBases(iF).Polyk);
     BCF.block(0, localOffset(F), faceBases(iF).Polyk->dimension(), faceBases(iF).Rolykmo->dimension())
-      += GramMatrix(F, rot_PkF, *faceBases(iF).Rolykmo, int_monoF_2kp2);
+      += GramMatrix(F, rot_PkF, *faceBases(iF).Rolykmo, int_monoF_2kpo);
   } // if degree() > 0
  
   Eigen::MatrixXd CF = MCF.ldlt().solve(BCF);
@@ -201,17 +201,17 @@ XCurl::LocalOperators XCurl::_compute_face_curl_potential(size_t iF)
 
   CurlBasis<decltype(basis_Pkpo0_F)> rot_Pkp0_F(basis_Pkpo0_F);
   MPF.topLeftCorner(basis_Pkpo0_F.dimension(), faceBases(iF).Polyk2->dimension())
-    = GramMatrix(F, rot_Pkp0_F, *faceBases(iF).Polyk2, int_monoF_2kp2);
+    = GramMatrix(F, rot_Pkp0_F, *faceBases(iF).Polyk2, int_monoF_2kpo);
 
   if (degree() > 0) {
     MPF.bottomLeftCorner(faceBases(iF).RolyComplk->dimension(), faceBases(iF).Polyk2->dimension())
-      = GramMatrix(F, *faceBases(iF).RolyComplk, *faceBases(iF).Polyk2, int_monoF_2kp2);
+      = GramMatrix(F, *faceBases(iF).RolyComplk, *faceBases(iF).Polyk2, int_monoF_2kpo);
     BPF.bottomRightCorner(faceBases(iF).RolyComplk->dimension(), faceBases(iF).RolyComplk->dimension())
-      += GramMatrix(F, *faceBases(iF).RolyComplk, int_monoF_2kp2);    
+      += GramMatrix(F, *faceBases(iF).RolyComplk, int_monoF_2kpo);    
   } // if degree() > 0
  
   BPF.topLeftCorner(basis_Pkpo0_F.dimension(), dimensionFace(iF))
-    += GramMatrix(F, basis_Pkpo0_F, *faceBases(iF).Polyk, int_monoF_2kp2) * CF;
+    += GramMatrix(F, basis_Pkpo0_F, *faceBases(iF).Polyk, int_monoF_2kpo) * CF;
  
   for (size_t iE = 0; iE < F.n_edges(); iE++) {
     const Edge & E = *F.edge(iE);
@@ -241,8 +241,8 @@ XCurl::LocalOperators XCurl::_compute_cell_curl_potential(size_t iT)
   // Left-hand side matrix
 
   // Compute all integrals of monomial powers to degree 2k and the mass matrix
-  MonomialIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*degree()+2);
-  Eigen::MatrixXd gram_Pk3_T = GramMatrix(T, *cellBases(iT).Polyk3, int_mono_2kp2);
+  MonomialCellIntegralsType int_mono_2kpo = IntegrateCellMonomials(T, 2*degree()+1);
+  Eigen::MatrixXd gram_Pk3_T = GramMatrix(T, *cellBases(iT).Polyk3, int_mono_2kpo);
   Eigen::LDLT<Eigen::MatrixXd> ldlt_gram_Pk3_T(gram_Pk3_T);
 
   //------------------------------------------------------------------------------
@@ -261,8 +261,8 @@ XCurl::LocalOperators XCurl::_compute_cell_curl_potential(size_t iT)
           = vector_product(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, dec.get_nodes()), nF);
     auto Pk3_T_cross_nF_family = dec.family(Pk3_T_cross_nF_nodes);
     Eigen::MatrixXd PF = extendOperator(T, F, m_face_operators[F.global_index()]->potential);
-    MonomialFaceIntegralsType int_mono_2kp1_F = IntegrateFaceMonomials(F, 2*degree()+1);
-    BCT += T.face_orientation(iF) * GramMatrix(F, Pk3_T_cross_nF_family, *faceBases(F).Polyk2, int_mono_2kp1_F) * PF;
+    MonomialFaceIntegralsType int_mono_2k_F = IntegrateFaceMonomials(F, 2*degree());
+    BCT += T.face_orientation(iF) * GramMatrix(F, Pk3_T_cross_nF_family, *faceBases(F).Polyk2, int_mono_2k_F) * PF;
 
     // The following commented block replaces the previous one, without using DecomposePoly
     /*
@@ -280,7 +280,7 @@ XCurl::LocalOperators XCurl::_compute_cell_curl_potential(size_t iT)
   if (degree() > 0) {
     CurlBasis<DDRCore::Poly3BasisCellType> curl_Pk3_basis(*cellBases(iT).Polyk3);
     BCT.block(0, localOffset(T), cellBases(iT).Polyk3->dimension(), cellBases(iT).Rolykmo->dimension())
-      += GramMatrix(T, curl_Pk3_basis, *cellBases(iT).Rolykmo, int_mono_2kp2);
+      += GramMatrix(T, curl_Pk3_basis, *cellBases(iT).Rolykmo, int_mono_2kpo);
   } // if degree() > 0 
 
   Eigen::MatrixXd CT = ldlt_gram_Pk3_T.solve(BCT);
@@ -297,17 +297,17 @@ XCurl::LocalOperators XCurl::_compute_cell_curl_potential(size_t iT)
     = Eigen::MatrixXd::Zero(cellBases(iT).Polyk3->dimension(), dimensionCell(iT));
 
   CurlBasis<DDRCore::GolyComplBasisCellType> Rolyk_basis(*cellBases(iT).GolyComplkpo);
-  MPT.topRows(cellBases(iT).GolyComplkpo->dimension()) = GramMatrix(T, Rolyk_basis, *cellBases(iT).Polyk3, int_mono_2kp2);
+  MPT.topRows(cellBases(iT).GolyComplkpo->dimension()) = GramMatrix(T, Rolyk_basis, *cellBases(iT).Polyk3, int_mono_2kpo);
   
   if (degree() > 0) {
-    MPT.bottomRows(cellBases(iT).RolyComplk->dimension()) = GramMatrix(T, *cellBases(iT).RolyComplk, *cellBases(iT).Polyk3, int_mono_2kp2);
+    MPT.bottomRows(cellBases(iT).RolyComplk->dimension()) = GramMatrix(T, *cellBases(iT).RolyComplk, *cellBases(iT).Polyk3, int_mono_2kpo);
     BPT.bottomRightCorner(cellBases(iT).RolyComplk->dimension(), cellBases(iT).RolyComplk->dimension())
-      = GramMatrix(T, *cellBases(iT).RolyComplk, int_mono_2kp2);
+      = GramMatrix(T, *cellBases(iT).RolyComplk, int_mono_2kpo);
   } // if degree() > 0
 
   
   BPT.topRows(cellBases(iT).GolyComplkpo->dimension())
-    += GramMatrix(T, *cellBases(iT).GolyComplkpo, *cellBases(iT).Polyk3, int_mono_2kp2) * CT;
+    += GramMatrix(T, *cellBases(iT).GolyComplkpo, *cellBases(iT).Polyk3, int_mono_2kpo) * CT;
     
   for (size_t iF = 0; iF < T.n_faces(); iF++) {
     const Face & F = *T.face(iF);
@@ -319,9 +319,9 @@ XCurl::LocalOperators XCurl::_compute_cell_curl_potential(size_t iT)
     boost::multi_array<VectorRd, 2> Gkpo_T_cross_nF_nodes 
             = vector_product(evaluate_quad<Function>::compute(*cellBases(iT).GolyComplkpo, dec.get_nodes()), nF);
     auto Gkpo_T_cross_nF_family = dec.family(Gkpo_T_cross_nF_nodes);
-    MonomialFaceIntegralsType int_mono_2kp2_F = IntegrateFaceMonomials(F, 2*degree()+2);
+    MonomialFaceIntegralsType int_mono_2kpo_F = IntegrateFaceMonomials(F, 2*degree()+1);
     BPT.topRows(cellBases(iT).GolyComplkpo->dimension())
-      -= T.face_orientation(iF) * GramMatrix(F, Gkpo_T_cross_nF_family, *faceBases(F).Polyk2, int_mono_2kp2_F) * PF;
+      -= T.face_orientation(iF) * GramMatrix(F, Gkpo_T_cross_nF_family, *faceBases(F).Polyk2, int_mono_2kpo_F) * PF;
 
     // The following commented block replaces the previous one, without DecomposePoly
     /*
@@ -358,7 +358,7 @@ Eigen::MatrixXd XCurl::computeL2Product(
     // constant weight
     if (mass_Pk3_T.rows()==1){
       // We have to compute the mass matrix
-      MonomialIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*degree()+2);
+      MonomialCellIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*degree()+2);
       w_mass_Pk3_T = weight.value(T, T.center_mass()) * GramMatrix(T, *cellBases(iT).Polyk3, int_mono_2kp2);
     }else{
       w_mass_Pk3_T = weight.value(T, T.center_mass()) * mass_Pk3_T;
@@ -409,7 +409,7 @@ Eigen::MatrixXd XCurl::computeL2ProductGradient(
     // constant weight
     if (mass_Pk3_T.rows()==1){
       // We have to compute the mass matrix
-      MonomialIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*degree()+2);
+      MonomialCellIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*degree()+2);
       w_mass_Pk3_T = weight.value(T, T.center_mass()) * GramMatrix(T, *cellBases(iT).Polyk3, int_mono_2kp2);
     }else{
       w_mass_Pk3_T = weight.value(T, T.center_mass()) * mass_Pk3_T;
@@ -486,7 +486,7 @@ Eigen::MatrixXd XCurl::computeL2Product_with_Ops(
   // To compute the Xcurl L2 product applied (left or right) to the discrete gradient,
   // leftOp or rightOp must list the edge, face and element (full) gradient operators.
   // All these operators must have the same domain, so possibly being extended appropriately
-  // using extendOperator from ddrspace.
+  // using extendOperator from globaldofspace.
 
   Eigen::MatrixXd L2P = Eigen::MatrixXd::Zero(leftOp[0].cols(), rightOp[0].cols());
   
@@ -617,16 +617,16 @@ Eigen::MatrixXd XCurl::computeL2ProductDOFs(
       } // for
     }
 
-    double w_hE2 = max_weight_quad_E * std::pow(E.measure(), 2);
+    double w_hT2 = max_weight_quad_E * std::pow(T.diam(), 2);
                                       
     auto basis_Pk3_T_dot_tE_quad = scalar_product(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_E), tE);
     auto basis_Pk_E_quad = evaluate_quad<Function>::compute(*edgeBases(E.global_index()).Polyk, quad_2k_E);
     Eigen::MatrixXd gram_Pk3_T_dot_tE_Pk_E = compute_gram_matrix(basis_Pk3_T_dot_tE_quad, basis_Pk_E_quad, quad_2k_E);
     
-    L2P += w_hE2 * PT.transpose() * compute_gram_matrix(basis_Pk3_T_dot_tE_quad, quad_2k_E) * PT;
-    L2P.middleCols(offset_E, dim_Pk_E) -= w_hE2 * PT.transpose() * gram_Pk3_T_dot_tE_Pk_E;
-    L2P.middleRows(offset_E, dim_Pk_E) -= w_hE2 * gram_Pk3_T_dot_tE_Pk_E.transpose() * PT;
-    L2P.block(offset_E, offset_E, dim_Pk_E, dim_Pk_E) += w_hE2 * compute_gram_matrix(basis_Pk_E_quad, quad_2k_E);
+    L2P += w_hT2 * PT.transpose() * compute_gram_matrix(basis_Pk3_T_dot_tE_quad, quad_2k_E) * PT;
+    L2P.middleCols(offset_E, dim_Pk_E) -= w_hT2 * PT.transpose() * gram_Pk3_T_dot_tE_Pk_E;
+    L2P.middleRows(offset_E, dim_Pk_E) -= w_hT2 * gram_Pk3_T_dot_tE_Pk_E.transpose() * PT;
+    L2P.block(offset_E, offset_E, dim_Pk_E, dim_Pk_E) += w_hT2 * compute_gram_matrix(basis_Pk_E_quad, quad_2k_E);
   } // for iE
 
   if (degree() > 0) {
@@ -669,22 +669,22 @@ Eigen::MatrixXd XCurl::computeL2ProductDOFs(
         Eigen::MatrixXd gram_Rck_F_PT = compute_gram_matrix(basis_Rck_F_quad, basis_Pk3_T_quad, quad_2k_F) * PT;
       */
       
-      double w_hF = max_weight_quad_F * F.diam();
+      double w_hT = max_weight_quad_F * T.diam();
 
       size_t dim_Rkmo_F = PolynomialSpaceDimension<Face>::Roly(degree() - 1);
-      L2P += w_hF * gram_Rkmo_F_PT.transpose() * gram_Rkmo_F.ldlt().solve(gram_Rkmo_F_PT);
-      L2P.middleCols(offset_F, dim_Rkmo_F) -= w_hF * gram_Rkmo_F_PT.transpose();
-      L2P.middleRows(offset_F, dim_Rkmo_F) -= w_hF * gram_Rkmo_F_PT;
-      L2P.block(offset_F, offset_F, dim_Rkmo_F, dim_Rkmo_F) += w_hF * gram_Rkmo_F;
+      L2P += w_hT * gram_Rkmo_F_PT.transpose() * gram_Rkmo_F.ldlt().solve(gram_Rkmo_F_PT);
+      L2P.middleCols(offset_F, dim_Rkmo_F) -= w_hT * gram_Rkmo_F_PT.transpose();
+      L2P.middleRows(offset_F, dim_Rkmo_F) -= w_hT * gram_Rkmo_F_PT;
+      L2P.block(offset_F, offset_F, dim_Rkmo_F, dim_Rkmo_F) += w_hT * gram_Rkmo_F;
 
       size_t dim_Rck_F = PolynomialSpaceDimension<Face>::RolyCompl(degree());
       offset_F += dim_Rkmo_F;
       MonomialFaceIntegralsType int_mono_2k_F = IntegrateFaceMonomials(F, 2*degree());
       Eigen::MatrixXd gram_Rck_F = GramMatrix(F, *faceBases(F.global_index()).RolyComplk, int_mono_2k_F);
-      L2P += w_hF * gram_Rck_F_PT.transpose() * gram_Rck_F.ldlt().solve(gram_Rck_F_PT);
-      L2P.middleCols(offset_F, dim_Rck_F) -= w_hF * gram_Rck_F_PT.transpose();
-      L2P.middleRows(offset_F, dim_Rck_F) -= w_hF * gram_Rck_F_PT;
-      L2P.block(offset_F, offset_F, dim_Rck_F, dim_Rck_F) += w_hF * gram_Rck_F;
+      L2P += w_hT * gram_Rck_F_PT.transpose() * gram_Rck_F.ldlt().solve(gram_Rck_F_PT);
+      L2P.middleCols(offset_F, dim_Rck_F) -= w_hT * gram_Rck_F_PT.transpose();
+      L2P.middleRows(offset_F, dim_Rck_F) -= w_hT * gram_Rck_F_PT;
+      L2P.block(offset_F, offset_F, dim_Rck_F, dim_Rck_F) += w_hT * gram_Rck_F;
     } // for iF
   } // if degree() > 0
 
@@ -697,7 +697,7 @@ Eigen::MatrixXd XCurl::computeL2ProductDOFs(
     if (M_Pk3_T.rows()==1){
       // Mass matrix not passed as parameter, we compute it
       M_Pk3_T.resize(cellBases(iT).Polyk3->dimension(), cellBases(iT).Polyk3->dimension());
-      MonomialIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*degree()+2);
+      MonomialCellIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*degree()+2);
       M_Pk3_T = GramMatrix(T, *cellBases(iT).Polyk3, int_mono_2kp2);
     }
     L2P += weight.value(T, T.center_mass()) * PT.transpose() * M_Pk3_T * PT;

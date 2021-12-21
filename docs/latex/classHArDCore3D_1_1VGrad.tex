@@ -1,0 +1,109 @@
+\hypertarget{classHArDCore3D_1_1VGrad}{}\doxysection{H\+Ar\+D\+Core3D\+::V\+Grad Class Reference}
+\label{classHArDCore3D_1_1VGrad}\index{HArDCore3D::VGrad@{HArDCore3D::VGrad}}
+
+
+Virtual H1 space\+: local operators, L2 product and global interpolator.  
+
+
+
+
+{\ttfamily \#include $<$vgrad.\+hpp$>$}
+
+
+
+Inheritance diagram for H\+Ar\+D\+Core3D\+::V\+Grad\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1VGrad__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H\+Ar\+D\+Core3D\+::V\+Grad\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1VGrad__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VGrad_1_1LocalOperators}{Local\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store local operators (projection of gradient and function, dof of gradient in Vcurl) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__VEMCore_ga5d68064e8bcf1c6ccedc55dd4ddc1524}{Function\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__VEMCore_ga9ec94824e9df1549ef583fc03550259f}{Gradient\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__VEMCore_gad7dab8c2fa81da15f57bd8a76d1d4dbb}{V\+Grad}} (const \mbox{\hyperlink{classHArDCore3D_1_1VEMCore}{V\+E\+M\+Core}} \&vem\+\_\+core, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__VEMCore_gafbc8f4c1519e39eee879870e6fadef60}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__VEMCore_ga551f09afa91da67fdbf4292738ddb5af}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__VEMCore_gaa73b48551fa42ed589dec3be91c16cb4}{interpolate}} (const \mbox{\hyperlink{group__VEMCore_ga5d68064e8bcf1c6ccedc55dd4ddc1524}{Function\+Type}} \&q, const \mbox{\hyperlink{group__VEMCore_ga9ec94824e9df1549ef583fc03550259f}{Gradient\+Type}} \&grad\+\_\+q, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__VEMCore_ga5340ba1bc9ae9adcac3cdae0f9b6beff}{edge\+Operators}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge operators for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__VEMCore_ga629a93132891f6f29042d3b0454200af}{edge\+Operators}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge operators for edge E. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__VEMCore_ga44b57909d37100aa227ad67bbce3f8e6}{face\+Operators}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face operators for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__VEMCore_gabfb0b53d5059fccfaebe59cd08ba8d5d}{face\+Operators}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return face operators for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__VEMCore_gaaddb8d9798ce149c170995e1b3da26bf}{cell\+Operators}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VGrad_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__VEMCore_ga793429240fdd2b9f6de9ea7c544c9b78}{cell\+Operators}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1CellBases}{V\+E\+M\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__VEMCore_ga6a1eda4e584fc4aabe2edad82b1d2a7d}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1CellBases}{V\+E\+M\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__VEMCore_ga446848d11333920d807a8780728f4e42}{cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1FaceBases}{V\+E\+M\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__VEMCore_ga7b07e16b99e2ffe616cc350d41d97ae8}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1FaceBases}{V\+E\+M\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__VEMCore_gab5babe7e3d48b1f7fa48e009b8d213a6}{face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1EdgeBases}{V\+E\+M\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__VEMCore_gad0d81650c893a7265e4d58074434653a}{edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1EdgeBases}{V\+E\+M\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__VEMCore_ga422543608c86d6b4b11386909286d91e}{edge\+Bases}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__VEMCore_ga1ed969e624637c1936fa06ffd6793184}{compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pkmo\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product for the cell of index iT. The stabilisation here is based on cell and face potentials. N\+OT C\+O\+M\+P\+L\+E\+TE\+: only computes the consistent component of this L2 product. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Virtual H1 space\+: local operators, L2 product and global interpolator. 
+
+The order of the D\+O\+Fs in each element are\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mesh entity }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Space }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mesh entity }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Space }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-4}
+\endhead
+V &function &$\mathbb{R}$ &vertex value of $q$  \\\cline{1-4}
+E &function &$P^{k-1}(E)$ &projection of $q$  \\\cline{1-4}
+F &gradient &$R^{c,k+1}(F)$ &projection of $\mathrm{grad}_Fq$  \\\cline{1-4}
+T &gradient &$R^{c,k}(T)$ &projection of $\mathrm{grad}q$  \\\cline{1-4}
+\end{longtabu}
+
+
+No serendipity here (hence the $R^{c,k+1}$ on the faces) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+V\+E\+M\+Core/\mbox{\hyperlink{vgrad_8hpp}{vgrad.\+hpp}}\item 
+src/\+V\+E\+M\+Core/\mbox{\hyperlink{vgrad_8cpp}{vgrad.\+cpp}}\end{DoxyCompactItemize}

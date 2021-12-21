@@ -342,8 +342,8 @@ Magnetostatics::_compute_local_contribution(
   //------------------------------------------------------------------------------
 
   // Mass matrix for (P^k(T))^3
-  MonomialIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*m_ddrcore.degree()+2);  
-  Eigen::MatrixXd mass_Pk3_T = GramMatrix(T, *m_ddrcore.cellBases(iT).Polyk3, int_mono_2kp2);
+  MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*m_ddrcore.degree());  
+  Eigen::MatrixXd mass_Pk3_T = GramMatrix(T, *m_ddrcore.cellBases(iT).Polyk3, int_mono_2k);
 
   // aT
   AT.topLeftCorner(dim_xcurl_T, dim_xcurl_T) = m_xcurl.computeL2Product(iT, m_stab_par, mass_Pk3_T, mu);
@@ -461,9 +461,9 @@ std::vector<double> Magnetostatics::computeNorms( const std::vector<Eigen::Vecto
       for (size_t iT = start; iT < end; iT++){
         Cell & T = *m_ddrcore.mesh().cell(iT);
         // Mass matrix for (P^k(T))^3
-	      MonomialIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*m_ddrcore.degree()+2);
-        Eigen::MatrixXd mass_Pk3_T = GramMatrix(T, *m_ddrcore.cellBases(iT).Polyk3, int_mono_2kp2);
-        Eigen::MatrixXd mass_Pk_T = GramMatrix(T, *m_ddrcore.cellBases(iT).Polyk, int_mono_2kp2);
+	      MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*m_ddrcore.degree());
+        Eigen::MatrixXd mass_Pk3_T = GramMatrix(T, *m_ddrcore.cellBases(iT).Polyk3, int_mono_2k);
+        Eigen::MatrixXd mass_Pk_T = GramMatrix(T, *m_ddrcore.cellBases(iT).Polyk, int_mono_2k);
         Eigen::MatrixXd L2curl_T = m_xcurl.computeL2Product(iT, m_stab_par, mass_Pk3_T);
         Eigen::MatrixXd L2div_T = m_xdiv.computeL2Product(iT, m_stab_par, mass_Pk3_T);
         Eigen::MatrixXd L2div_CC_T = m_xdiv.computeL2ProductCurl(iT, m_xcurl, "both", m_stab_par, mass_Pk3_T);

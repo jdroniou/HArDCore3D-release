@@ -1,0 +1,24 @@
+<map id="src/VEMCore/vcurl.hpp" name="src/VEMCore/vcurl.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="148,5,307,32"/>
+<area shape="rect" id="node2" href="$globaldofspace_8hpp.html" title=" " alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node16" href="$vemcore_8hpp.html" title=" " alt="" coords="453,80,551,107"/>
+<area shape="rect" id="node22" href="$integralweight_8hpp.html" title=" " alt="" coords="164,80,291,107"/>
+<area shape="rect" id="node3" href="$localdofspace_8hpp.html" title=" " alt="" coords="9,155,136,181"/>
+<area shape="rect" id="node4" href="$mesh_8hpp.html" title=" " alt="" coords="273,304,352,331"/>
+<area shape="rect" id="node5" href="$Mesh3D_8hpp.html" title=" " alt="" coords="265,379,361,405"/>
+<area shape="rect" id="node6" href="$MeshObject_8hpp.html" title=" " alt="" coords="313,528,430,555"/>
+<area shape="rect" id="node15" href="$MeshND_8hpp.html" title=" " alt="" coords="327,453,426,480"/>
+<area shape="rect" id="node7" title=" " alt="" coords="334,603,385,629"/>
+<area shape="rect" id="node8" title=" " alt="" coords="531,603,590,629"/>
+<area shape="rect" id="node9" title=" " alt="" coords="409,603,456,629"/>
+<area shape="rect" id="node10" title=" " alt="" coords="790,603,862,629"/>
+<area shape="rect" id="node11" title=" " alt="" coords="303,677,362,704"/>
+<area shape="rect" id="node12" title=" " alt="" coords="13,603,111,629"/>
+<area shape="rect" id="node13" href="$math_8hpp.html" title=" " alt="" coords="135,603,211,629"/>
+<area shape="rect" id="node14" title=" " alt="" coords="235,603,310,629"/>
+<area shape="rect" id="node17" title=" " alt="" coords="566,155,635,181"/>
+<area shape="rect" id="node18" href="$basis_8hpp.html" title=" " alt="" coords="463,155,541,181"/>
+<area shape="rect" id="node20" href="$polynomialspacedimension_8hpp.html" title=" " alt="" coords="211,229,414,256"/>
+<area shape="rect" id="node19" title=" " alt="" coords="643,229,788,256"/>
+<area shape="rect" id="node21" href="$quadraturerule_8hpp.html" title=" " alt="" coords="489,229,619,256"/>
+</map>

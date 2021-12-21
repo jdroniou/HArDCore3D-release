@@ -11,7 +11,7 @@ using namespace HArDCore3D;
 //------------------------------------------------------------------------------
 
 XDiv::XDiv(const DDRCore & ddr_core, bool use_threads, std::ostream & output)
-  : DDRSpace(
+  : GlobalDOFSpace(
 	     ddr_core.mesh(), 0, 0,
 	     PolynomialSpaceDimension<Face>::Poly(ddr_core.degree()),
 	     PolynomialSpaceDimension<Cell>::Goly(ddr_core.degree() - 1) + PolynomialSpaceDimension<Cell>::GolyCompl(ddr_core.degree())
@@ -84,7 +84,7 @@ Eigen::VectorXd XDiv::interpolate(const FunctionType & v,  const int doe_cell, c
 	    size_t offset_T = globalOffset(T);
 
 	    QuadratureRule quad_dqr_T = generate_quadrature_rule(T, dqr_cell);
-	    MonomialIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*degree());
+	    MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*degree());
 	    auto basis_Gkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Golykmo, quad_dqr_T);
 	    vh.segment(offset_T, PolynomialSpaceDimension<Cell>::Goly(degree() - 1))
 	      = l2_projection(v, *cellBases(iT).Golykmo, quad_dqr_T, basis_Gkmo_T_quad, GramMatrix(T, *cellBases(iT).Golykmo, int_mono_2k));
@@ -117,8 +117,8 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
   // Left-hand side matrix
 
   // Compute all integrals of monomial powers to degree 2k+1 and the mass matrix
-  MonomialIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*degree()+2);
-  Eigen::MatrixXd MDT = GramMatrix(T, *cellBases(iT).Polyk, int_mono_2kp2);
+  MonomialCellIntegralsType int_mono_2kpo = IntegrateCellMonomials(T, 2*degree()+1);
+  Eigen::MatrixXd MDT = GramMatrix(T, *cellBases(iT).Polyk, int_mono_2kpo);
 
   //------------------------------------------------------------------------------
   // Right-hand side matrix
@@ -133,9 +133,9 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
     DecomposePoly dec(F, MonomialScalarBasisFace(F, degree()));
     auto PkT_nodes = evaluate_quad<Function>::compute(*cellBases(iT).Polyk, dec.get_nodes());
     auto PkT_family_PkF = dec.family(PkT_nodes);
-    MonomialFaceIntegralsType int_mono_2kpo_F = IntegrateFaceMonomials(F, 2*degree()+1);
+    MonomialFaceIntegralsType int_mono_2k_F = IntegrateFaceMonomials(F, 2*degree());
     BDT.block(0, iF * PolynomialSpaceDimension<Face>::Poly(degree()), PolynomialSpaceDimension<Cell>::Poly(degree()), PolynomialSpaceDimension<Face>::Poly(degree()))
-        += T.face_orientation(iF) * GramMatrix(F, PkT_family_PkF, *faceBases(F).Polyk, int_mono_2kpo_F);
+        += T.face_orientation(iF) * GramMatrix(F, PkT_family_PkF, *faceBases(F).Polyk, int_mono_2k_F);
         
 						      
     // Following commented block could replace the block above, without DecomposePoly.
@@ -152,9 +152,9 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
 
   // Element contribution
   if (degree() > 0) {
-    GradientBasis<RestrictedBasis<DDRCore::PolyBasisCellType>> grad_Polyk(*cellBases(iT).Polyk);
+    GradientBasis<DDRCore::PolyBasisCellType> grad_Polyk(*cellBases(iT).Polyk);
     BDT.block(0, localOffset(T), PolynomialSpaceDimension<Cell>::Poly(degree()), PolynomialSpaceDimension<Cell>::Goly(degree() - 1))
-			           -= GramMatrix(T, grad_Polyk, *cellBases(iT).Golykmo, int_mono_2kp2);
+			           -= GramMatrix(T, grad_Polyk, *cellBases(iT).Golykmo, int_mono_2kpo);
   } // if degree() > 0
 
   Eigen::MatrixXd DT = MDT.ldlt().solve(BDT);
@@ -173,15 +173,15 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
     = Eigen::MatrixXd::Zero(cellBases(iT).Polyk3->dimension(), dimensionCell(iT));
 
   GradientBasis<ShiftedBasis<DDRCore::PolyBasisCellType>> grad_Poly0kpo(Poly0kpo);
-  MPT.topRows(Poly0kpo.dimension()) = GramMatrix(T, grad_Poly0kpo, *cellBases(iT).Polyk3, int_mono_2kp2);
+  MPT.topRows(Poly0kpo.dimension()) = GramMatrix(T, grad_Poly0kpo, *cellBases(iT).Polyk3, int_mono_2kpo);
 
   if (degree() > 0) {
-    MPT.bottomRows(cellBases(iT).GolyComplk->dimension()) = GramMatrix(T, *cellBases(iT).GolyComplk, *cellBases(iT).Polyk3, int_mono_2kp2);
+    MPT.bottomRows(cellBases(iT).GolyComplk->dimension()) = GramMatrix(T, *cellBases(iT).GolyComplk, *cellBases(iT).Polyk3, int_mono_2kpo);
     BPT.bottomRightCorner(cellBases(iT).GolyComplk->dimension(), cellBases(iT).GolyComplk->dimension())
-          = GramMatrix(T, *cellBases(iT).GolyComplk, int_mono_2kp2);
+          = GramMatrix(T, *cellBases(iT).GolyComplk, int_mono_2kpo);
   } // if degree() > 0
 
-  BPT.topRows(Poly0kpo.dimension()) -= GramMatrix(T, Poly0kpo, *cellBases(iT).Polyk, int_mono_2kp2) * DT;
+  BPT.topRows(Poly0kpo.dimension()) -= GramMatrix(T, Poly0kpo, *cellBases(iT).Polyk, int_mono_2kpo) * DT;
 
   for (size_t iF = 0; iF < T.n_faces(); iF++) {
     const Face & F = *T.face(iF);
@@ -189,9 +189,9 @@ XDiv::LocalOperators XDiv::_compute_cell_divergence_potential(size_t iT)
     DecomposePoly dec(F, MonomialScalarBasisFace(F, degree()+1));
     auto P0kpoT_nodes = evaluate_quad<Function>::compute(Poly0kpo, dec.get_nodes());
     auto P0kpoT_family_PkpoF = dec.family(P0kpoT_nodes);
-    MonomialFaceIntegralsType int_mono_2kp2_F = IntegrateFaceMonomials(F, 2*degree()+2);
+    MonomialFaceIntegralsType int_mono_2kpo_F = IntegrateFaceMonomials(F, 2*degree()+1);
     BPT.block(0, localOffset(T, F), Poly0kpo.dimension(), dimensionFace(F))
-      += T.face_orientation(iF) * GramMatrix(F, P0kpoT_family_PkpoF, *faceBases(F).Polyk, int_mono_2kp2_F);
+      += T.face_orientation(iF) * GramMatrix(F, P0kpoT_family_PkpoF, *faceBases(F).Polyk, int_mono_2kpo_F);
     
     // Following commented block could replace the block above, without DecomposePoly.
     /*
@@ -228,8 +228,8 @@ Eigen::MatrixXd XDiv::computeL2Product(
     // constant weight
     if (mass_Pk3_T.rows()==1){
       // We have to compute the mass matrix
-      MonomialIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*degree()+2);
-      w_mass_Pk3_T = weight.value(T, T.center_mass()) * GramMatrix(T, *cellBases(iT).Polyk3, int_mono_2kp2);
+      MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*degree());
+      w_mass_Pk3_T = weight.value(T, T.center_mass()) * GramMatrix(T, *cellBases(iT).Polyk3, int_mono_2k);
     }else{
       w_mass_Pk3_T = weight.value(T, T.center_mass()) * mass_Pk3_T;
     }
@@ -273,8 +273,8 @@ Eigen::MatrixXd XDiv::computeL2ProductCurl(
     // constant weight
     if (mass_Pk3_T.rows()==1){
       // We have to compute the mass matrix
-      MonomialIntegralsType int_mono_2kp2 = IntegrateCellMonomials(T, 2*degree()+2);
-      w_mass_Pk3_T = weight.value(T, T.center_mass()) * GramMatrix(T, *cellBases(iT).Polyk3, int_mono_2kp2);
+      MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*degree());
+      w_mass_Pk3_T = weight.value(T, T.center_mass()) * GramMatrix(T, *cellBases(iT).Polyk3, int_mono_2k);
     }else{
       w_mass_Pk3_T = weight.value(T, T.center_mass()) * mass_Pk3_T;
     }
@@ -341,7 +341,7 @@ Eigen::MatrixXd XDiv::computeL2Product_with_Ops(
   // To compute the Xdiv L2 product applied (left or right) to the discrete curl,
   // leftOp or rightOp must list the face and element (full) curl operators.
   // All these operators must have the same domain, so possibly being extended appropriately
-  // using extendOperator from ddrspace.
+  // using extendOperator from globaldofspace.
 
   Eigen::MatrixXd L2P = Eigen::MatrixXd::Zero(leftOp[0].cols(), rightOp[0].cols());
   
@@ -352,12 +352,12 @@ Eigen::MatrixXd XDiv::computeL2Product_with_Ops(
     const Face & F = *T.face(iF);
 
     // Compute gram matrices
-    MonomialFaceIntegralsType int_monoF_2kp2 = IntegrateFaceMonomials(F, 2*degree()+2);
+    MonomialFaceIntegralsType int_monoF_2k = IntegrateFaceMonomials(F, 2*degree());
     DecomposePoly dec(F, MonomialScalarBasisFace(F, degree()));
     auto Pk3_T_dot_nF_nodes = scalar_product(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, dec.get_nodes()), F.normal());
     auto Pk3_T_dot_nF_family_PkF = dec.family(Pk3_T_dot_nF_nodes);
-    Eigen::MatrixXd mass_PkF_PkF = GramMatrix(F, *faceBases(F).Polyk, int_monoF_2kp2);
-    Eigen::MatrixXd gram_PkF_Pk3T_dot_nF = GramMatrix(F, *faceBases(F).Polyk, Pk3_T_dot_nF_family_PkF, int_monoF_2kp2);
+    Eigen::MatrixXd mass_PkF_PkF = GramMatrix(F, *faceBases(F).Polyk, int_monoF_2k);
+    Eigen::MatrixXd gram_PkF_Pk3T_dot_nF = GramMatrix(F, *faceBases(F).Polyk, Pk3_T_dot_nF_family_PkF, int_monoF_2k);
 
     // Following commented block does the same as above, but without DecomposePoly (which sometimes increases errors)
     /*
@@ -367,7 +367,7 @@ Eigen::MatrixXd XDiv::computeL2Product_with_Ops(
       auto basis_Pk_F_quad
         = evaluate_quad<Function>::compute(*faceBases(F).Polyk, quad_2k_F);
       Eigen::MatrixXd gram_PkF_Pk3T_dot_nF = compute_gram_matrix(basis_Pk_F_quad, basis_Pk3_T_dot_nF_quad, quad_2k_F, "nonsym");
-      Eigen::MatrixXd mass_PkF_PkF = GramMatrix(F, *faceBases(F).Polyk, int_monoF_2kp2);
+      Eigen::MatrixXd mass_PkF_PkF = GramMatrix(F, *faceBases(F).Polyk, int_monoF_2k);
     */
     
     // Weight including scaling hF (we compute the max over quadrature nodes to get an estimate of the max of the weight over the face)
@@ -379,11 +379,11 @@ Eigen::MatrixXd XDiv::computeL2Product_with_Ops(
         max_weight_quad_F = std::max(max_weight_quad_F, weight.value(T, quad_2k_F[iqn].vector()));
       } // for
     }
-    double w_hF = max_weight_quad_F * F.diam();
+    double w_hT = max_weight_quad_F * T.diam();
 
     // The penalty term int_T (leftOp.nF - (leftOp)_F) * (rightOp.nF - (rightOp)_F) is computed by developping
     // Contribution of face F
-    L2P += w_hF * ( leftOp[offset_T].transpose() * gram_PkF_Pk3T_dot_nF.transpose() * mass_PkF_PkF.ldlt().solve(gram_PkF_Pk3T_dot_nF) * rightOp[offset_T]
+    L2P += w_hT * ( leftOp[offset_T].transpose() * gram_PkF_Pk3T_dot_nF.transpose() * mass_PkF_PkF.ldlt().solve(gram_PkF_Pk3T_dot_nF) * rightOp[offset_T]
                 - leftOp[offset_T].transpose() * gram_PkF_Pk3T_dot_nF.transpose() * rightOp[iF] 
                 - leftOp[iF].transpose() * gram_PkF_Pk3T_dot_nF * rightOp[offset_T]
                 + leftOp[iF].transpose() * mass_PkF_PkF * rightOp[iF]                  

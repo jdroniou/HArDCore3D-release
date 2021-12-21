@@ -1,0 +1,69 @@
+\hypertarget{classHArDCore3D_1_1VEMCore}{}\doxysection{H\+Ar\+D\+Core3D\+::V\+E\+M\+Core Class Reference}
+\label{classHArDCore3D_1_1VEMCore}\index{HArDCore3D::VEMCore@{HArDCore3D::VEMCore}}
+
+
+Construct all polynomial spaces for the V\+EM sequence.  
+
+
+
+
+{\ttfamily \#include $<$vemcore.\+hpp$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1CellBases}{Cell\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store element bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1EdgeBases}{Edge\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store edge bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1FaceBases}{Face\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store face bases. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ \mbox{\hyperlink{group__VEMCore_gafad647f2ca016ffc069db6023dd09f0a}{Poly\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{group__VEMCore_gafad647f2ca016ffc069db6023dd09f0a}{Poly\+Basis\+Cell\+Type}}, 3 $>$ \mbox{\hyperlink{group__VEMCore_ga8ba72d527f090b0589279cbc0b0a65d8}{Poly3\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ $>$ $>$ \mbox{\hyperlink{group__VEMCore_ga8d1313f069aa8a1ba4ce44bebfbb8746}{Goly\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{Goly\+Compl\+Basis\+Cell}} $>$ \mbox{\hyperlink{group__VEMCore_gae62a91eed8481510c5b982e0b2801002}{Goly\+Compl\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{Goly\+Compl\+Basis\+Cell}} $>$ $>$ \mbox{\hyperlink{group__VEMCore_gad7ed47ede0f29239aa653f5f551d3ca1}{Roly\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisCell}{Roly\+Compl\+Basis\+Cell}} $>$ \mbox{\hyperlink{group__VEMCore_gae2c4dde7c09c07644fe98ee614a7fd2e}{Roly\+Compl\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ \mbox{\hyperlink{group__VEMCore_ga5980be690e054feefadc441ff158ee28}{Poly\+Basis\+Face\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ \mbox{\hyperlink{group__VEMCore_ga5980be690e054feefadc441ff158ee28}{Poly\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_gafdb801f7c60644f3a094c0e5617d82b5}{Poly2\+Basis\+Face\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ $>$ $>$ \mbox{\hyperlink{group__VEMCore_gae7d6e50fc3661e4b88fd2ebbbbe0dd5a}{Roly\+Basis\+Face\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisFace}{Roly\+Compl\+Basis\+Face}} $>$ \mbox{\hyperlink{group__VEMCore_gacd233175c59a93652810ccccbea1e6d1}{Roly\+Compl\+Basis\+Face\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} $>$ \mbox{\hyperlink{group__VEMCore_ga5185e7f42a4c7cb8b4fe26308626a4a6}{Poly\+Basis\+Edge\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__VEMCore_gab28d6d2ad590cf1c4ad7099618c9232a}{V\+E\+M\+Core}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__VEMCore_ga388690b41c69c4039fa4fca3cbdc71a1}{mesh}}, size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_gaf169764abf85f85bec428e43dc60274b}{K}}, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__VEMCore_ga388690b41c69c4039fa4fca3cbdc71a1}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return a const reference to the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__VEMCore_ga7e1d0f5c484c1c8122f6a0a7c6af78d5}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1CellBases}{Cell\+Bases}} \& \mbox{\hyperlink{group__VEMCore_ga21b6445ebc5520ec9b45962c85ca5cb1}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for element iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1FaceBases}{Face\+Bases}} \& \mbox{\hyperlink{group__VEMCore_ga564344cb799478cd6a84ccd6bc8f8225}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for face iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VEMCore_1_1EdgeBases}{Edge\+Bases}} \& \mbox{\hyperlink{group__VEMCore_gae5af9eaadcdc4d0c93c5cb497c815eac}{edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge iE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Construct all polynomial spaces for the V\+EM sequence. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+V\+E\+M\+Core/\mbox{\hyperlink{vemcore_8hpp}{vemcore.\+hpp}}\item 
+src/\+V\+E\+M\+Core/\mbox{\hyperlink{vemcore_8cpp}{vemcore.\+cpp}}\end{DoxyCompactItemize}

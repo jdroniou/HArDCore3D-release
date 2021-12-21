@@ -1,0 +1,4 @@
+<map id="DDR_stokes" name="DDR_stokes">
+<area shape="rect" id="node1" title="Implementation of the DDR scheme for the Stokes problem in curl&#45;curl formulation." alt="" coords="5,22,104,47"/>
+<area shape="rect" id="node2" href="$group__VEM__stokes.html" title="Implementation of the VEM scheme for the Stokes problem in curl&#45;curl formulation." alt="" coords="319,22,416,47"/>
+</map>

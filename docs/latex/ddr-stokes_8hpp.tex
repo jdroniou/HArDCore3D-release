@@ -1,0 +1,80 @@
+\hypertarget{ddr-stokes_8hpp}{}\doxysection{Schemes/\+D\+D\+R-\/stokes/ddr-\/stokes.hpp File Reference}
+\label{ddr-stokes_8hpp}\index{Schemes/DDR-\/stokes/ddr-\/stokes.hpp@{Schemes/DDR-\/stokes/ddr-\/stokes.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$boost/math/constants/constants.\+hpp$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$unsupported/\+Eigen/\+Sparse\+Extra$>$}\newline
+{\ttfamily \#include $<$mesh.\+hpp$>$}\newline
+{\ttfamily \#include $<$mesh\+\_\+builder.\+hpp$>$}\newline
+{\ttfamily \#include $<$xgrad.\+hpp$>$}\newline
+{\ttfamily \#include $<$xcurl.\+hpp$>$}\newline
+{\ttfamily \#include $<$xdiv.\+hpp$>$}\newline
+Include dependency graph for ddr-\/stokes.hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ddr-stokes_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{ddr-stokes_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+Norms}}
+\begin{DoxyCompactList}\small\item\em Structure to store norm components (for velocity, its curl, pressure, and its gradient), as well as Hcurl and Hgrad norms of velocity and pressure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1Stokes}{H\+Ar\+D\+Core3\+D\+::\+Stokes}}
+\begin{DoxyCompactList}\small\item\em Assemble a \mbox{\hyperlink{structHArDCore3D_1_1Stokes}{Stokes}} problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceHArDCore3D}{H\+Ar\+D\+Core3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{H\+Ar\+D\+Core3\+D\+::\+PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+double \mbox{\hyperlink{group__DDR__stokes_gaf99e987dabcfb0766cf43f0b24ece487}{H\+Ar\+D\+Core3\+D\+::pressure\+\_\+scaling}} = 1.
+\item 
+static Stokes\+::\+Velocity\+Type \mbox{\hyperlink{group__DDR__stokes_gab304f8718f36a469879b29fb440bbc65}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+u}}
+\item 
+static Stokes\+::\+Vorticity\+Type \mbox{\hyperlink{group__DDR__stokes_gae0a8ae56dbd0a05fd3380e0400a92e93}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+curl\+\_\+u}}
+\item 
+static Stokes\+::\+Pressure\+Type \mbox{\hyperlink{group__DDR__stokes_ga9b7879fd3b35059edb87a8986c1c8d22}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+p}}
+\item 
+static Stokes\+::\+Pressure\+Gradient\+Type \mbox{\hyperlink{group__DDR__stokes_gaf49375adb0f87c13e5a16f3ede4d5c19}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+grad\+\_\+p}}
+\item 
+static Stokes\+::\+Forcing\+Term\+Type \mbox{\hyperlink{group__DDR__stokes_ga5f6d976e8c0d3419c6fbe4325bbadc96}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+f}}
+\item 
+static Stokes\+::\+Viscosity\+Type \mbox{\hyperlink{group__DDR__stokes_ga1870c23888bcbc96b615446fd71bbf5f}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+nu}} = Stokes\+::\+Viscosity\+Type(1.)
+\item 
+static Stokes\+::\+Velocity\+Type \mbox{\hyperlink{group__DDR__stokes_gaf7e4208b642b86353f00c8437de688f5}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+u}}
+\item 
+static Stokes\+::\+Vorticity\+Type \mbox{\hyperlink{group__DDR__stokes_gacf277e3de5ea4ffd5ac7cac0b81ce753}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+curl\+\_\+u}}
+\item 
+static Stokes\+::\+Pressure\+Type \mbox{\hyperlink{group__DDR__stokes_gaee6fac8db2ff7d11fe82ccd83d197eae}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+p}}
+\item 
+static Stokes\+::\+Pressure\+Gradient\+Type \mbox{\hyperlink{group__DDR__stokes_ga3cfc5cc140b682e0405a2a749aef7f62}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+grad\+\_\+p}}
+\item 
+static Stokes\+::\+Forcing\+Term\+Type \mbox{\hyperlink{group__DDR__stokes_ga9c31dd525678d1018c16672698e8a9dc}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+f}}
+\item 
+static Stokes\+::\+Viscosity\+Type \mbox{\hyperlink{group__DDR__stokes_ga526f1aef8b250d74a2f9414e27e02ca5}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+nu}} = Stokes\+::\+Viscosity\+Type(1.)
+\item 
+static Stokes\+::\+Velocity\+Type \mbox{\hyperlink{group__DDR__stokes_ga26c7fd411a6c68f578af155e0715ec38}{H\+Ar\+D\+Core3\+D\+::field\+\_\+u}}
+\item 
+static Stokes\+::\+Vorticity\+Type \mbox{\hyperlink{group__DDR__stokes_gac1e87c6d9be2d4cba2ca2d277aa79ff9}{H\+Ar\+D\+Core3\+D\+::field\+\_\+curl\+\_\+u}}
+\item 
+static Stokes\+::\+Pressure\+Type \mbox{\hyperlink{group__DDR__stokes_gaef6d49c147646a4c993cf08ac3c16f6c}{H\+Ar\+D\+Core3\+D\+::field\+\_\+p}}
+\item 
+static Stokes\+::\+Pressure\+Gradient\+Type \mbox{\hyperlink{group__DDR__stokes_ga2d11b56e621e72283813e9f371364849}{H\+Ar\+D\+Core3\+D\+::field\+\_\+grad\+\_\+p}}
+\item 
+static Stokes\+::\+Forcing\+Term\+Type \mbox{\hyperlink{group__DDR__stokes_ga0c58e69c29ccb4ee1697919669092a58}{H\+Ar\+D\+Core3\+D\+::field\+\_\+f}}
+\item 
+static Stokes\+::\+Viscosity\+Type \mbox{\hyperlink{group__DDR__stokes_ga11770f11edfdb5d240840ca875ad1d3e}{H\+Ar\+D\+Core3\+D\+::field\+\_\+nu}} = Stokes\+::\+Viscosity\+Type(1.)
+\end{DoxyCompactItemize}

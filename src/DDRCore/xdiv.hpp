@@ -1,8 +1,8 @@
 #ifndef XDIV_HPP
 #define XDIV_HPP
 
+#include <globaldofspace.hpp>
 #include <ddrcore.hpp>
-#include <ddrspace.hpp>
 #include <integralweight.hpp>
 #include <xcurl.hpp>
 
@@ -14,7 +14,9 @@ namespace HArDCore3D
    */
 
   /// Discrete Hdiv space: local operators, L2 product and global interpolator
-  class XDiv : public DDRSpace
+  /** On each face, the DOFs correspond to the polynomial bases on the face provided by m_ddr_core. On each element, the DOFs are first those of the \f$\mathcal{G}^{k-1}\f$ component and then of the \f$\mathcal{G}^{c,k}\f$ component, each one of them following the bases of these spaces provided by m_ddr_core. */
+
+  class XDiv : public GlobalDOFSpace
   {
   public:
     typedef std::function<Eigen::Vector3d(const Eigen::Vector3d &)> FunctionType;

@@ -2,7 +2,6 @@
 //
 // Provides:
 //  - Full and partial polynomial spaces on the element, faces, and edges
-//  - Generic routines to create quadrature nodes over cells and faces of the mesh
 //
 // Author: Daniele Di Pietro (daniele.di-pietro@umontpellier.fr)
 //
@@ -64,7 +63,7 @@ namespace HArDCore3D
   public:
     // Types for element bases
     typedef Family<MonomialScalarBasisCell> PolyBasisCellType;
-    typedef TensorizedVectorFamily<RestrictedBasis<PolyBasisCellType>, 3> Poly3BasisCellType;
+    typedef TensorizedVectorFamily<PolyBasisCellType, 3> Poly3BasisCellType;
     typedef Family<GradientBasis<ShiftedBasis<MonomialScalarBasisCell> > > GolyBasisCellType;
     typedef Family<GolyComplBasisCell> GolyComplBasisCellType;
     typedef Family<CurlBasis<GolyComplBasisCell>> RolyBasisCellType;
@@ -72,12 +71,12 @@ namespace HArDCore3D
 
     // Types for face bases
     typedef Family<MonomialScalarBasisFace> PolyBasisFaceType;
-    typedef TangentFamily<RestrictedBasis<PolyBasisFaceType>> Poly2BasisFaceType;
+    typedef TangentFamily<PolyBasisFaceType> Poly2BasisFaceType;
     typedef Family<CurlBasis<ShiftedBasis<MonomialScalarBasisFace>>> RolyBasisFaceType;
     typedef Family<RolyComplBasisFace> RolyComplBasisFaceType;
 
     // Type for edge basis
-    typedef Family<MonomialScalarBasisEdge> PolyEdgeBasisType;
+    typedef Family<MonomialScalarBasisEdge> PolyBasisEdgeType;
 
     /// Structure to store element bases
     /** 'Poly': basis of polynomial space; 'Goly': gradient basis; 'Roly': curl basis.\n
@@ -89,8 +88,8 @@ namespace HArDCore3D
       typedef Cell GeometricSupport;
 
       std::unique_ptr<PolyBasisCellType> Polykpo;
-      std::unique_ptr<RestrictedBasis<PolyBasisCellType> > Polyk;
-      std::unique_ptr<RestrictedBasis<PolyBasisCellType> > Polykmo;
+      std::unique_ptr<PolyBasisCellType> Polyk;
+      std::unique_ptr<PolyBasisCellType> Polykmo;
       std::unique_ptr<Poly3BasisCellType> Polyk3;
       std::unique_ptr<GolyBasisCellType> Golykmo;
       std::unique_ptr<GolyComplBasisCellType> GolyComplk;
@@ -108,8 +107,8 @@ namespace HArDCore3D
       typedef Face GeometricSupport;
 
       std::unique_ptr<PolyBasisFaceType> Polykpo;
-      std::unique_ptr<RestrictedBasis<PolyBasisFaceType> > Polyk;
-      std::unique_ptr<RestrictedBasis<PolyBasisFaceType> > Polykmo;
+      std::unique_ptr<PolyBasisFaceType> Polyk;
+      std::unique_ptr<PolyBasisFaceType> Polykmo;
       std::unique_ptr<Poly2BasisFaceType> Polyk2;
       std::unique_ptr<RolyBasisFaceType> Rolykmo;
       std::unique_ptr<RolyComplBasisFaceType> RolyComplk;
@@ -123,9 +122,9 @@ namespace HArDCore3D
       /// Geometric support
       typedef Edge GeometricSupport;
 
-      std::unique_ptr<PolyEdgeBasisType> Polykpo;
-      std::unique_ptr<RestrictedBasis<PolyEdgeBasisType> > Polyk;
-      std::unique_ptr<RestrictedBasis<PolyEdgeBasisType> > Polykmo;
+      std::unique_ptr<PolyBasisEdgeType> Polykpo;
+      std::unique_ptr<PolyBasisEdgeType> Polyk;
+      std::unique_ptr<PolyBasisEdgeType> Polykmo;
     };    
     
     /// Constructor

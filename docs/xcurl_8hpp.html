@@ -80,8 +80,8 @@ $(function() {
 <div class="title">xcurl.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="ddrcore_8hpp_source.html">ddrcore.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="ddrspace_8hpp_source.html">ddrspace.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="globaldofspace_8hpp_source.html">globaldofspace.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ddrcore_8hpp_source.html">ddrcore.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="integralweight_8hpp_source.html">integralweight.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="xgrad_8hpp_source.html">xgrad.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -89,29 +89,29 @@ Include dependency graph for xcurl.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="xcurl_8hpp__incl.png" border="0" usemap="#src_2DDRCore_2xcurl_8hpp" alt=""/></div>
 <map name="src_2DDRCore_2xcurl_8hpp" id="src_2DDRCore_2xcurl_8hpp">
-<area shape="rect" title=" " alt="" coords="185,5,343,32"/>
-<area shape="rect" href="ddrcore_8hpp.html" title=" " alt="" coords="356,155,447,181"/>
-<area shape="rect" href="ddrspace_8hpp.html" title=" " alt="" coords="197,155,297,181"/>
-<area shape="rect" href="integralweight_8hpp.html" title=" " alt="" coords="46,155,173,181"/>
-<area shape="rect" href="xgrad_8hpp.html" title=" " alt="" coords="186,80,265,107"/>
-<area shape="rect" title=" " alt="" coords="483,229,552,256"/>
-<area shape="rect" title=" " alt="" coords="757,677,829,704"/>
-<area shape="rect" href="basis_8hpp.html" title=" " alt="" coords="379,229,458,256"/>
-<area shape="rect" href="polynomialspacedimension_8hpp.html" title=" " alt="" coords="179,304,381,331"/>
-<area shape="rect" title=" " alt="" coords="610,304,755,331"/>
-<area shape="rect" href="mesh_8hpp.html" title=" " alt="" coords="241,379,319,405"/>
-<area shape="rect" href="quadraturerule_8hpp.html" title=" " alt="" coords="457,304,586,331"/>
-<area shape="rect" href="Mesh3D_8hpp.html" title=" " alt="" coords="232,453,328,480"/>
-<area shape="rect" href="MeshObject_8hpp.html" title=" " alt="" coords="247,603,364,629"/>
-<area shape="rect" href="MeshND_8hpp.html" title=" " alt="" coords="276,528,375,555"/>
-<area shape="rect" title=" " alt="" coords="356,677,407,704"/>
-<area shape="rect" title=" " alt="" coords="503,677,561,704"/>
-<area shape="rect" title=" " alt="" coords="431,677,478,704"/>
-<area shape="rect" title=" " alt="" coords="5,752,64,779"/>
-<area shape="rect" title=" " alt="" coords="135,677,233,704"/>
-<area shape="rect" href="math_8hpp.html" title=" " alt="" coords="35,677,111,704"/>
-<area shape="rect" title=" " alt="" coords="257,677,332,704"/>
-<area shape="rect" href="dofspace_8hpp.html" title=" " alt="" coords="166,229,266,256"/>
+<area shape="rect" title=" " alt="" coords="164,5,323,32"/>
+<area shape="rect" href="globaldofspace_8hpp.html" title=" " alt="" coords="24,155,159,181"/>
+<area shape="rect" href="ddrcore_8hpp.html" title=" " alt="" coords="379,155,470,181"/>
+<area shape="rect" href="integralweight_8hpp.html" title=" " alt="" coords="183,155,309,181"/>
+<area shape="rect" href="xgrad_8hpp.html" title=" " alt="" coords="243,80,321,107"/>
+<area shape="rect" href="localdofspace_8hpp.html" title=" " alt="" coords="5,229,132,256"/>
+<area shape="rect" href="mesh_8hpp.html" title=" " alt="" coords="269,379,348,405"/>
+<area shape="rect" href="Mesh3D_8hpp.html" title=" " alt="" coords="261,453,357,480"/>
+<area shape="rect" href="MeshObject_8hpp.html" title=" " alt="" coords="309,603,426,629"/>
+<area shape="rect" href="MeshND_8hpp.html" title=" " alt="" coords="323,528,422,555"/>
+<area shape="rect" title=" " alt="" coords="330,677,381,704"/>
+<area shape="rect" title=" " alt="" coords="527,677,586,704"/>
+<area shape="rect" title=" " alt="" coords="405,677,452,704"/>
+<area shape="rect" title=" " alt="" coords="786,677,858,704"/>
+<area shape="rect" title=" " alt="" coords="299,752,358,779"/>
+<area shape="rect" title=" " alt="" coords="9,677,107,704"/>
+<area shape="rect" href="math_8hpp.html" title=" " alt="" coords="131,677,207,704"/>
+<area shape="rect" title=" " alt="" coords="231,677,306,704"/>
+<area shape="rect" title=" " alt="" coords="511,229,581,256"/>
+<area shape="rect" href="basis_8hpp.html" title=" " alt="" coords="408,229,487,256"/>
+<area shape="rect" href="polynomialspacedimension_8hpp.html" title=" " alt="" coords="207,304,410,331"/>
+<area shape="rect" title=" " alt="" coords="639,304,784,331"/>
+<area shape="rect" href="quadraturerule_8hpp.html" title=" " alt="" coords="485,304,615,331"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -119,12 +119,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="xcurl_8hpp__dep__incl.png" border="0" usemap="#src_2DDRCore_2xcurl_8hppdep" alt=""/></div>
 <map name="src_2DDRCore_2xcurl_8hppdep" id="src_2DDRCore_2xcurl_8hppdep">
-<area shape="rect" title=" " alt="" coords="97,5,256,32"/>
+<area shape="rect" title=" " alt="" coords="288,5,447,32"/>
 <area shape="rect" href="ddr-magnetostatics_8hpp.html" title=" " alt="" coords="5,155,209,196"/>
-<area shape="rect" href="xcurl_8cpp.html" title=" " alt="" coords="97,80,256,107"/>
-<area shape="rect" href="xdiv_8hpp.html" title=" " alt="" coords="280,80,433,107"/>
+<area shape="rect" href="ddr-stokes_8hpp.html" title=" " alt="" coords="411,155,566,196"/>
+<area shape="rect" href="xcurl_8cpp.html" title=" " alt="" coords="463,80,621,107"/>
+<area shape="rect" href="xdiv_8hpp.html" title=" " alt="" coords="233,80,387,107"/>
 <area shape="rect" href="ddr-magnetostatics_8cpp.html" title=" " alt="" coords="5,244,209,285"/>
-<area shape="rect" href="xdiv_8cpp.html" title=" " alt="" coords="280,162,433,189"/>
+<area shape="rect" href="ddr-stokes_8cpp.html" title=" " alt="" coords="411,244,566,285"/>
+<area shape="rect" href="xdiv_8cpp.html" title=" " alt="" coords="233,162,387,189"/>
 </map>
 </div>
 </div>

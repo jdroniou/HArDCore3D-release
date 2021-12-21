@@ -29,3 +29,14 @@ ADD_EXECUTABLE(ddr-magnetostatics DDR-magnetostatics/ddr-magnetostatics.cpp)
 TARGET_LINK_LIBRARIES(ddr-magnetostatics mesh quadrature ddrcore plot ${EXTERNAL_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(ddr-magnetostatics PUBLIC ${EXTERNAL_INCLUDES})
 
+# DDR Stokes
+ADD_EXECUTABLE(ddr-stokes DDR-stokes/ddr-stokes.cpp)
+TARGET_LINK_LIBRARIES(ddr-stokes mesh quadrature ddrcore plot ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(ddr-stokes PUBLIC ${EXTERNAL_INCLUDES})
+
+# VEM Stokes
+ADD_EXECUTABLE(vem-stokes VEM-stokes/vem-stokes.cpp)
+TARGET_LINK_LIBRARIES(vem-stokes mesh quadrature vemcore plot ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(vem-stokes PUBLIC ${EXTERNAL_INCLUDES})
+
+

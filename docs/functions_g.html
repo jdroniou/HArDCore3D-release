@@ -100,6 +100,9 @@ $(function() {
 , <a class="el" href="group__Basis.html#ga67fe9edf4dbbff050f7965b55f1b974b">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
 , <a class="el" href="group__Basis.html#ga1b78f11229d89bdac125bd5b1f6983ef">HArDCore3D::TangentFamily&lt; ScalarFamilyType &gt;</a>
 , <a class="el" href="group__Basis.html#gac71379becbe0edb006c5df44660bf3aa">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
+, <a class="el" href="group__VEMCore.html#gad067559f1a2205ea69b0eea83363add8">HArDCore3D::VEMCore::CellBases</a>
+, <a class="el" href="group__VEMCore.html#gaa24926716c8a382725129ac3ee6e1abb">HArDCore3D::VEMCore::EdgeBases</a>
+, <a class="el" href="group__VEMCore.html#ga0c904020044a8b17513e8e9ca867818e">HArDCore3D::VEMCore::FaceBases</a>
 </li>
 <li>get_advection()
 : <a class="el" href="classTestCase.html#a4e77d9fe331b1f1dcde9b91cd1352b30">TestCase</a>
@@ -212,10 +215,13 @@ $(function() {
 : <a class="el" href="group__HybridCore.html#ga3c549d43c0a5171d0c14f6b56ffc843d">HArDCore3D::ElementQuad</a>
 </li>
 <li>globalDOFIndices()
-: <a class="el" href="group__DDRCore.html#ga22f398be3435e174d075617e3045d88a">HArDCore3D::DDRSpace</a>
+: <a class="el" href="group__Common.html#ga7cc6a020ed82c7e8bdd295d6aa94dea5">HArDCore3D::GlobalDOFSpace</a>
+</li>
+<li>GlobalDOFSpace()
+: <a class="el" href="group__Common.html#gac0ee512d7dbbce9e7aae3f2f42138470">HArDCore3D::GlobalDOFSpace</a>
 </li>
 <li>globalOffset()
-: <a class="el" href="group__DDRCore.html#ga0616b0eda8b68353b4b2c46428456c52">HArDCore3D::DDRSpace</a>
+: <a class="el" href="group__Common.html#ga44447e854ca3aad5a21ebef9aa322a56">HArDCore3D::GlobalDOFSpace</a>
 </li>
 <li>Goly()
 : <a class="el" href="group__Common.html#ga57abb72e21e949e66de29184023d604a">HArDCore3D::PolynomialSpaceDimension&lt; Cell &gt;</a>
@@ -223,6 +229,7 @@ $(function() {
 </li>
 <li>GolyBasisCellType
 : <a class="el" href="group__DDRCore.html#gace75e120d0af0cc0cec7892dac8d3df4">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#ga8d1313f069aa8a1ba4ce44bebfbb8746">HArDCore3D::VEMCore</a>
 </li>
 <li>GolyCompl()
 : <a class="el" href="group__Common.html#ga0317eb5f001e9e1004bccbb72363d8da">HArDCore3D::PolynomialSpaceDimension&lt; Cell &gt;</a>
@@ -233,18 +240,25 @@ $(function() {
 </li>
 <li>GolyComplBasisCellType
 : <a class="el" href="group__DDRCore.html#ga8d7ab3240176dab867a4e7ed77ed9158">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#gae62a91eed8481510c5b982e0b2801002">HArDCore3D::VEMCore</a>
 </li>
 <li>GolyComplBasisFace()
 : <a class="el" href="group__Basis.html#gafa1a983e06c624057325da3f15d24f26">HArDCore3D::GolyComplBasisFace</a>
 </li>
 <li>GolyComplk
 : <a class="el" href="group__DDRCore.html#gac3eeb994c59360b768df549398bd1721">HArDCore3D::DDRCore::CellBases</a>
+, <a class="el" href="group__VEMCore.html#ga8ef8df1216d4e5a55065082c7463d7ae">HArDCore3D::VEMCore::CellBases</a>
 </li>
 <li>GolyComplkpo
 : <a class="el" href="group__DDRCore.html#ga16897f8daf0372dc44c54d1d42d5be4f">HArDCore3D::DDRCore::CellBases</a>
+, <a class="el" href="group__VEMCore.html#ga802cd374d0357be8f37b6a076faf6be4">HArDCore3D::VEMCore::CellBases</a>
 </li>
 <li>Golykmo
 : <a class="el" href="group__DDRCore.html#ga409c9fefd499ef6b63ce24f06175ed28">HArDCore3D::DDRCore::CellBases</a>
+, <a class="el" href="group__VEMCore.html#ga8b30458829a6d7ec5bea75c85f9ad104">HArDCore3D::VEMCore::CellBases</a>
+</li>
+<li>grad_p
+: <a class="el" href="group__DDR__stokes.html#ga0a1866e4387fab6a566e713d6337a915">HArDCore3D::StokesNorms</a>
 </li>
 <li>gradient()
 : <a class="el" href="group__Basis.html#ga7e8e2733993bda1d5aff348d7d31cbcf">HArDCore3D::Family&lt; BasisType &gt;</a>
@@ -253,12 +267,15 @@ $(function() {
 , <a class="el" href="group__Basis.html#ga25989d831b6ca783612bc54ce0f25b66">HArDCore3D::MonomialScalarBasisFace</a>
 , <a class="el" href="group__Basis.html#gae191627737010694521dc5aae42744cd">HArDCore3D::RestrictedBasis&lt; BasisType &gt;</a>
 , <a class="el" href="group__Basis.html#ga1e825cd8aa68c4e1a1e3900e24be84f7">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
-, <a class="el" href="group__Basis.html#ga77afc35bfef1864de71abdb78d6a9c36">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
+, <a class="el" href="group__Basis.html#ga42238c95ed27a327d0291c67a1c6196b">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
 , <a class="el" href="group__DDRCore.html#ga9e9b91945b7874843a9a9c8b49f3f024">HArDCore3D::XGrad::LocalOperators</a>
 , <a class="el" href="structSolution.html#a81aa7cf907f068111c8f29d41361e225">Solution</a>
 </li>
 <li>GradientBasis()
 : <a class="el" href="group__Basis.html#gaf2fa9b4764b550f576aeba7e24e6c911">HArDCore3D::GradientBasis&lt; BasisType &gt;</a>
+</li>
+<li>GradientType
+: <a class="el" href="group__VEMCore.html#ga9ec94824e9df1549ef583fc03550259f">HArDCore3D::VGrad</a>
 </li>
 <li>GradientValue
 : <a class="el" href="group__Basis.html#ga58d6ef3138763855bc986ee8173b0d30">HArDCore3D::CurlBasis&lt; BasisType &gt;</a>
@@ -281,7 +298,7 @@ $(function() {
 : <a class="el" href="group__DirectedGraph.html#ga699690c1dc328475925d8308cdef658f">DirectedGraph</a>
 </li>
 <li>GraphNodeArray()
-: <a class="el" href="group__DirectedGraph.html#ga6c69776546c7cb4512bd70b8fe09bdf0">GraphNodeArray</a>
+: <a class="el" href="group__DirectedGraph.html#gabf8791778b5d306cab8e52ac388264dd">GraphNodeArray</a>
 </li>
 </ul>
 </div><!-- contents -->

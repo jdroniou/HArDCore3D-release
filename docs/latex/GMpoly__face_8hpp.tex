@@ -12,16 +12,14 @@
 {\ttfamily \#include $<$basis.\+hpp$>$}\newline
 {\ttfamily \#include $<$typeinfo$>$}\newline
 {\ttfamily \#include $<$G\+Mpoly\+\_\+cell.\+hpp$>$}\newline
-Include dependency graph for G\+Mpoly\+\_\+face.\+hpp\+:
-\nopagebreak
+Include dependency graph for G\+Mpoly\+\_\+face.\+hpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{GMpoly__face_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -42,7 +40,7 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1VecFaceHash}{H\+Ar\+D\+Core3\+D\+::\
 \begin{DoxyCompactItemize}
 \item 
 typedef std\+::unordered\+\_\+map$<$ Eigen\+::\+Vector2i, double, Vec\+Face\+Hash $>$ \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Face\+Integrals\+Type}}
-\begin{DoxyCompactList}\small\item\em Type for list of integrals of monomials. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Type for list of face integrals of monomials. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -50,6 +48,8 @@ std\+::vector$<$ \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188
 \begin{DoxyCompactList}\small\item\em Compute all integrals, on the edges of a face, of the face monomials up to a total degree. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_gae52c29ca8fcb533fcf14277241d5f7a1}{H\+Ar\+D\+Core3\+D\+::\+Integrate\+Face\+Monomials}} (const Face \&F, const size\+\_\+t maxdeg)
 \begin{DoxyCompactList}\small\item\em Compute all integrals on a face of face monomials up to a total degree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga41d011699310037969a736b5b967a096}{H\+Ar\+D\+Core3\+D\+::\+Check\+Integrals\+Degree}} (const Face \&F, const size\+\_\+t degree, const \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} \&mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Checks if the degree of an existing list of monomial integrals is sufficient, other re-\/compute and return a proper list. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga83e340e40c93616bf9d1670e3e8f11c6}{H\+Ar\+D\+Core3\+D\+::\+Gram\+Matrix}} (const Face \&F, const Basis\+Type1 \&basis1, const Basis\+Type2 \&basis2, Monomial\+Face\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Generic template to compute the Gram Matrix of any pair of bases. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga7b085b673f4648eecad9291fa7f894f8}{H\+Ar\+D\+Core3\+D\+::\+Gram\+Matrix}} (const Face \&F, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} \&basis2, \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
@@ -68,9 +68,9 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga7b9d799641f01101fcce
 \begin{DoxyCompactList}\small\item\em Computes the Gram Matrix of a Roly\+Compl basis and a tangent basis. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Basis\+Type $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga221ddf1a8278b1a00472067303c74ca9}{H\+Ar\+D\+Core3\+D\+::\+Gram\+Matrix}} (const Face \&F, const Tangent\+Family$<$ Basis\+Type $>$ \&basis1, const Roly\+Compl\+Basis\+Face \&basis2, Monomial\+Face\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Computes the Gram Matrix of a Roly\+Compl basis and a tangent basis. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gafff76b3927af5630298a0ddeb2af69cc}{H\+Ar\+D\+Core3\+D\+::\+G\+M\+Roly\+Compl\+Scalar}} (const Face \&F, const \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisFace}{Roly\+Compl\+Basis\+Face}} \&rolycompl\+\_\+basis, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} \&mono\+\_\+basis, const size\+\_\+t m, \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} mono\+\_\+int\+\_\+map)
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga2f12d2f4228ca508ef1dd519f5539a6b}{H\+Ar\+D\+Core3\+D\+::\+G\+M\+Roly\+Compl\+Scalar}} (const Face \&F, const \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisFace}{Roly\+Compl\+Basis\+Face}} \&rolycompl\+\_\+basis, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} \&mono\+\_\+basis, const size\+\_\+t m, \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Computes the Gram Matrix of the scalar part of a Roly\+Compl Basis and a monomial basis with an extra power on the mth variable. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Basis\+Type $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga41ae5747e37fc918a712efaa7afe01f5}{H\+Ar\+D\+Core3\+D\+::\+G\+M\+Roly\+Compl\+Scalar}} (const Face \&F, const Roly\+Compl\+Basis\+Face \&basis1, const Basis\+Type \&basis2, const size\+\_\+t m, Monomial\+Face\+Integrals\+Type mono\+\_\+int\+\_\+map)
+{\footnotesize template$<$typename Basis\+Type $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gae497df2584c68080d6c410f98f19d23a}{H\+Ar\+D\+Core3\+D\+::\+G\+M\+Roly\+Compl\+Scalar}} (const Face \&F, const Roly\+Compl\+Basis\+Face \&basis1, const Basis\+Type \&basis2, const size\+\_\+t m, Monomial\+Face\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Generic template to compute the Gram Matrix of the scalar part of a Roly\+Compl Basis and any basis with an extra power on the mth variable. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga8de6b9cdaa236af03ebd2ed6e62d94e8}{H\+Ar\+D\+Core3\+D\+::\+G\+M\+Scalar\+Derivative}} (const Face \&F, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} \&basis2, const size\+\_\+t m, \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Computes the Gram Matrix of a pair of local scalar monomial bases, taking a partial derivative of the first (w.\+r.\+t. homogeneous coordinates on the face, no change of variable) \end{DoxyCompactList}\item 

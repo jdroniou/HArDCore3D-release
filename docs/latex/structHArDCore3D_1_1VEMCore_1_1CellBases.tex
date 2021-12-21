@@ -1,0 +1,55 @@
+\hypertarget{structHArDCore3D_1_1VEMCore_1_1CellBases}{}\doxysection{H\+Ar\+D\+Core3D\+::V\+E\+M\+Core\+::Cell\+Bases Struct Reference}
+\label{structHArDCore3D_1_1VEMCore_1_1CellBases}\index{HArDCore3D::VEMCore::CellBases@{HArDCore3D::VEMCore::CellBases}}
+
+
+Structure to store element bases.  
+
+
+
+
+{\ttfamily \#include $<$vemcore.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Cell \mbox{\hyperlink{group__VEMCore_gad067559f1a2205ea69b0eea83363add8}{Geometric\+Support}}
+\begin{DoxyCompactList}\small\item\em Geometric support. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__VEMCore_gafad647f2ca016ffc069db6023dd09f0a}{Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_gae6c4e09f521f31c887759643ed33d732}{Polykpo}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__VEMCore_gafad647f2ca016ffc069db6023dd09f0a}{Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_gaa181504a1a61139daaa8115c39939a04}{Polyk}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__VEMCore_gafad647f2ca016ffc069db6023dd09f0a}{Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_ga080a7706597ae15807300ec09cba932a}{Polykmo}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ \mbox{\hyperlink{group__VEMCore_gafad647f2ca016ffc069db6023dd09f0a}{Poly\+Basis\+Cell\+Type}} $>$ $>$ \mbox{\hyperlink{group__VEMCore_gae1ac90b2b1d701ed40b5f2562314c59e}{Polyk0}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ \mbox{\hyperlink{group__VEMCore_gafad647f2ca016ffc069db6023dd09f0a}{Poly\+Basis\+Cell\+Type}} $>$ $>$ \mbox{\hyperlink{group__VEMCore_gabee583451a8223bfd4fd8e6c01143172}{Polykpo0}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__VEMCore_ga8ba72d527f090b0589279cbc0b0a65d8}{Poly3\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_gaa5e76c365aed244fe5fe4bd73f022e4e}{Polyk3}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__VEMCore_ga8d1313f069aa8a1ba4ce44bebfbb8746}{Goly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_ga8b30458829a6d7ec5bea75c85f9ad104}{Golykmo}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__VEMCore_gae62a91eed8481510c5b982e0b2801002}{Goly\+Compl\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_ga8ef8df1216d4e5a55065082c7463d7ae}{Goly\+Complk}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__VEMCore_gae62a91eed8481510c5b982e0b2801002}{Goly\+Compl\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_ga802cd374d0357be8f37b6a076faf6be4}{Goly\+Complkpo}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__VEMCore_gad7ed47ede0f29239aa653f5f551d3ca1}{Roly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_gad387bec43410663218c5a90746a6dd41}{Rolykmo}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__VEMCore_gae2c4dde7c09c07644fe98ee614a7fd2e}{Roly\+Compl\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_ga7b060bf281019bed8169c6cdf36ae715}{Roly\+Complk}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__VEMCore_gae2c4dde7c09c07644fe98ee614a7fd2e}{Roly\+Compl\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__VEMCore_ga0fa787a5ef45cc0812bebc1214282feb}{Roly\+Complkp2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to store element bases. 
+
+\textquotesingle{}Poly\textquotesingle{}\+: basis of polynomial space; \textquotesingle{}Goly\textquotesingle{}\+: gradient basis; \textquotesingle{}Roly\textquotesingle{}\+: curl basis.~\newline
+\textquotesingle{}k\textquotesingle{}, \textquotesingle{}kmo\textquotesingle{} (k-\/1) and \textquotesingle{}kpo\textquotesingle{} (k+1) determines the degree.~\newline
+\textquotesingle{}Compl\textquotesingle{} for the complement of the corresponding \textquotesingle{}Goly\textquotesingle{} or \textquotesingle{}Roly\textquotesingle{} in the \textquotesingle{}Poly\textquotesingle{} space 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+V\+E\+M\+Core/\mbox{\hyperlink{vemcore_8hpp}{vemcore.\+hpp}}\end{DoxyCompactItemize}

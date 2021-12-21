@@ -75,6 +75,7 @@ INCLUDE_DIRECTORIES(src/HybridCore)
 INCLUDE_DIRECTORIES(src/Plot)
 INCLUDE_DIRECTORIES(src/DDRCore)
 #INCLUDE_DIRECTORIES(src/DDRCore-orth)
+INCLUDE_DIRECTORIES(src/VEMCore)
 
 ADD_SUBDIRECTORY(src/Mesh)
 ADD_SUBDIRECTORY(src/Quadrature)
@@ -83,9 +84,10 @@ ADD_SUBDIRECTORY(src/HybridCore)
 ADD_SUBDIRECTORY(src/Plot)
 ADD_SUBDIRECTORY(src/DDRCore)
 #ADD_SUBDIRECTORY(src/DDRCore-orth)
+ADD_SUBDIRECTORY(src/VEMCore)
 
 #------------------------------------------------------------------------------#
-#                             Directories for methods
+#                             Directories for schemes
 #------------------------------------------------------------------------------#
 
 INCLUDE_DIRECTORIES(Schemes)

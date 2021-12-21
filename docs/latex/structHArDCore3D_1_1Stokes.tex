@@ -1,0 +1,116 @@
+\hypertarget{structHArDCore3D_1_1Stokes}{}\doxysection{H\+Ar\+D\+Core3D\+::Stokes Struct Reference}
+\label{structHArDCore3D_1_1Stokes}\index{HArDCore3D::Stokes@{HArDCore3D::Stokes}}
+
+
+Assemble a \mbox{\hyperlink{structHArDCore3D_1_1Stokes}{Stokes}} problem.  
+
+
+
+
+{\ttfamily \#include $<$ddr-\/stokes.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}}
+\item 
+typedef std\+::function$<$ double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}}
+\item 
+typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Viscosity\+Type}}
+\item 
+typedef Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{group__VEM__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__VEM__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__VEM__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__VEM__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}}
+\item 
+typedef std\+::function$<$ double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__VEM__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__VEM__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}}
+\item 
+typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__VEM__stokes_ga9c724e729821860850f61802742dbed4}{Viscosity\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__DDR__stokes_ga93fd886edeb08d1af3f2a9d6e2a519a7}{Stokes}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DDR__stokes_ga110ade8eb5eaa6cad69b9651849f8c50}{assemble\+Linear\+System}} (const \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&omega, const \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Viscosity\+Type}} \&nu)
+\begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
+ \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga9a5010aba9b8f267d4f6c59f8b7d9a8e}{dimension}} () const
+\begin{DoxyCompactList}\small\item\em Returns the global problem dimension (without Lagrange multiplier, just velocity \& pressure) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}} \& \mbox{\hyperlink{group__DDR__stokes_ga5398edb61e9b489adb456523562a2080}{x\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \& \mbox{\hyperlink{group__DDR__stokes_gaf3b13ba68b2178bb0b7a5bca32939479}{x\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}} \& \mbox{\hyperlink{group__DDR__stokes_ga891a1fb4beb1c4b6d53819ee844b478e}{x\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__DDR__stokes_ga99db170b7f151f7d37828065b02dd1a3}{system\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__DDR__stokes_ga7a7c455112aa41ea9cb6ed817b417702}{system\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__stokes_ga7fedbcceaa95a4b495c4bc9197a94940}{system\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__stokes_ga67c5932d1f6296ac1f3e4e1d4cf53e3b}{system\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{group__DDR__stokes_ga34e0c5701a7a9d2d4eec340492022a27}{stabilization\+Parameter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{group__DDR__stokes_ga7844fc93907f58dfd21bb8b7a6c1af56}{stabilization\+Parameter}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}} $>$ \mbox{\hyperlink{group__DDR__stokes_ga250e160fb47a7bcc9af2f8baf1aa7427}{compute\+Stokes\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
+\begin{DoxyCompactList}\small\item\em Compute the discrete L2 norms, for a family of Eigen\+::\+Vector\+Xd representing velocities \& pressures, of u, curl u, p and grad p. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}, \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}} $>$ \mbox{\hyperlink{group__DDR__stokes_ga152a5406c97598e8f947239291e4b12c}{compute\+Continuous\+Errors\+Norms}} (const Eigen\+::\+Vector\+Xd \&v, const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&curl\+\_\+u, const \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}} \&p, const \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}} \&grad\+\_\+p) const
+\begin{DoxyCompactList}\small\item\em Compute the continuous Hcurl errors in u and Hgrad error in p (1st component), and same with continuous norms (second component) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__DDR__stokes_ga3927e5c71c0c74dcc30627cfd0d56765}{evaluate\+Defect\+Commutation\+Grad\+Interp}} (const \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}} \&p, const \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}} \&grad\+\_\+p, const size\+\_\+t deg\+\_\+quad\+\_\+interpolate) const
+\begin{DoxyCompactList}\small\item\em Evaluate the defect of commutation G\+\_\+h (Igrad p) = Icurl (grad p) by computing the norm of the difference (which should be 0). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__VEM__stokes_ga29e675f29d332e2966aa29a66bdca068}{Stokes}} (const \mbox{\hyperlink{classHArDCore3D_1_1VEMCore}{V\+E\+M\+Core}} \&vemcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__VEM__stokes_ga1d8c22d8cb81989d314ab59fff782048}{assemble\+Linear\+System}} (const \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}} \&curl\+\_\+f, const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&omega, const \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Viscosity\+Type}} \&nu)
+\begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
+ \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga9a5010aba9b8f267d4f6c59f8b7d9a8e}{dimension}} () const
+\begin{DoxyCompactList}\small\item\em Returns the global problem dimension (without Lagrange multiplier, just velocity \& pressure) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1VGrad}{V\+Grad}} \& \mbox{\hyperlink{group__VEM__stokes_ga7ea577d8c7637493bc0f9040f82a10fa}{v\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1VGrad}{V\+Grad}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1VCurl}{V\+Curl}} \& \mbox{\hyperlink{group__VEM__stokes_ga586f5c66a88d713f3961ae219e509ee0}{v\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1VCurl}{V\+Curl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1VDiv}{V\+Div}} \& \mbox{\hyperlink{group__VEM__stokes_ga107538a825981805867c76a73ec18c1a}{v\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1VDiv}{V\+Div}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__VEM__stokes_ga99db170b7f151f7d37828065b02dd1a3}{system\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__VEM__stokes_ga7a7c455112aa41ea9cb6ed817b417702}{system\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__VEM__stokes_ga7fedbcceaa95a4b495c4bc9197a94940}{system\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__VEM__stokes_ga67c5932d1f6296ac1f3e4e1d4cf53e3b}{system\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{group__VEM__stokes_ga34e0c5701a7a9d2d4eec340492022a27}{stabilization\+Parameter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{group__VEM__stokes_ga7844fc93907f58dfd21bb8b7a6c1af56}{stabilization\+Parameter}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}} $>$ \mbox{\hyperlink{group__VEM__stokes_ga82da53009ce90bda7e81082c39836302}{compute\+Stokes\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
+\begin{DoxyCompactList}\small\item\em Compute the discrete L2 norms, for a family of Eigen\+::\+Vector\+Xd representing velocities \& pressures, of u, curl u, p and grad p. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}, \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}} $>$ \mbox{\hyperlink{group__VEM__stokes_ga123e34ab6d7a4bb5c2409264538a3770}{compute\+Continuous\+Errors\+Norms}} (const Eigen\+::\+Vector\+Xd \&v, const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&curl\+\_\+u, const \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}} \&p, const \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}} \&grad\+\_\+p) const
+\begin{DoxyCompactList}\small\item\em Compute the continuous Hcurl errors in u and Hgrad error in p (1st component), and same with continuous norms (second component) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Assemble a \mbox{\hyperlink{structHArDCore3D_1_1Stokes}{Stokes}} problem. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Schemes/\+D\+D\+R-\/stokes/\mbox{\hyperlink{ddr-stokes_8hpp}{ddr-\/stokes.\+hpp}}\item 
+Schemes/\+V\+E\+M-\/stokes/\mbox{\hyperlink{vem-stokes_8hpp}{vem-\/stokes.\+hpp}}\item 
+Schemes/\+D\+D\+R-\/stokes/\mbox{\hyperlink{ddr-stokes_8cpp}{ddr-\/stokes.\+cpp}}\item 
+Schemes/\+V\+E\+M-\/stokes/\mbox{\hyperlink{vem-stokes_8cpp}{vem-\/stokes.\+cpp}}\end{DoxyCompactItemize}

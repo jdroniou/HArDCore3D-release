@@ -125,7 +125,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Face & F, const MonomialScalarBasis
   
   for (size_t i = 0; i < dim1; i++) {
     for (size_t j = 0; j < dim2; j++) {
-      gm(i,j) = intmap[basis1.powers(i) + basis2.powers(j)];
+      gm(i,j) = intmap.at(basis1.powers(i) + basis2.powers(j));
     } // for j
   }   // for i
   
@@ -149,7 +149,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Face & F, const RolyComplBasisFace 
     powers(k) = 2;
     for (size_t i = 0; i < dim1; i++) {
       for (size_t j = 0; j < dim2; j++) {
-          gm(i,j) += intmap[powers + basis1.powers(i) + basis2.powers(j)];
+          gm(i,j) += intmap.at(powers + basis1.powers(i) + basis2.powers(j));
       } // for j
     }   // for i
   }     // for k
@@ -179,7 +179,7 @@ Eigen::MatrixXd HArDCore3D::GMRolyComplScalar(const Face & F, const RolyComplBas
   powers(m) = 1;
   for (size_t i = 0; i < dim1; i++) {
     for (size_t j = 0; j < dim2; j++) {
-      gm(i,j) = intmap[powers + rolycompl_basis.powers(i) + mono_basis.powers(j)];
+      gm(i,j) = intmap.at(powers + rolycompl_basis.powers(i) + mono_basis.powers(j));
     }   // for j
   }     // for i
   
@@ -199,7 +199,7 @@ Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Face & F, const MonomialSca
       Eigen::Vector2i powers1 = basis1.powers(i);
       powers1(m) -= 1;
       for (size_t j = 0; j < dim2; j++) {
-        gm(i,j) = basis1.powers(i)(m) * intmap[powers1 + basis2.powers(j)];
+        gm(i,j) = basis1.powers(i)(m) * intmap.at(powers1 + basis2.powers(j));
       } // for j
     }   // if
   }     // for i
@@ -223,7 +223,7 @@ Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Face & F, const MonomialSca
         if (basis2.powers(j)(l) > 0){
           Eigen::Vector2i powers2 = basis2.powers(j);
           powers2(l) -= 1;
-          gm(i,j) = basis1.powers(i)(m) * basis2.powers(j)(l) * intmap[powers1 + powers2];
+          gm(i,j) = basis1.powers(i)(m) * basis2.powers(j)(l) * intmap.at(powers1 + powers2);
         }
       } // for j
     }   // if
@@ -247,7 +247,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrixDiv(const Face & F, const RolyComplBasisFa
   
   for (size_t i = 0; i < dim1; i++) {
     for (size_t j = 0; j < dim2; j++) {
-      gm(i,j) = (2 + basis1.powers(i).sum()) * intmap[basis1.powers(i) + basis2.powers(j)];
+      gm(i,j) = (2 + basis1.powers(i).sum()) * intmap.at(basis1.powers(i) + basis2.powers(j));
     } // for j
   }   // for i
   

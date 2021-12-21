@@ -13,4 +13,6 @@ outputs/
 COMPUTE_RATES
 test/
 directories.sh
+compute_rates
+resultats_dermod
 *~

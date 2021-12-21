@@ -113,6 +113,9 @@ $(function() {
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>DivergenceType
+: <a class="el" href="group__VEMCore.html#gaaf8405367228abc4805f1078fab2671d">HArDCore3D::VDiv</a>
+</li>
 <li>DivergenceValue
 : <a class="el" href="group__Basis.html#ga5da003cb660e44eaf9a899631494503f">HArDCore3D::CurlBasis&lt; BasisType &gt;</a>
 , <a class="el" href="group__Basis.html#ga9db3db672cc9bb41f17be617269349f9">HArDCore3D::DivergenceBasis&lt; BasisType &gt;</a>
@@ -136,9 +139,13 @@ $(function() {
 <h3><a id="index_f"></a>- f -</h3><ul>
 <li>ForcingTermType
 : <a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__DDR__stokes.html#gad35466b8f55cc51dabdc88615275ac5e">HArDCore3D::Stokes</a>
 </li>
 <li>FunctionType
-: <a class="el" href="group__DDRCore.html#ga658aabe4f545b51aff33349bd52cae87">HArDCore3D::XCurl</a>
+: <a class="el" href="group__VEMCore.html#gaac58f82b86370ae0e8b93d81f413297e">HArDCore3D::VCurl</a>
+, <a class="el" href="group__VEMCore.html#gad91b3a8523d416626f2a509e4cc619ba">HArDCore3D::VDiv</a>
+, <a class="el" href="group__VEMCore.html#ga5d68064e8bcf1c6ccedc55dd4ddc1524">HArDCore3D::VGrad</a>
+, <a class="el" href="group__DDRCore.html#ga658aabe4f545b51aff33349bd52cae87">HArDCore3D::XCurl</a>
 , <a class="el" href="group__DDRCore.html#ga1d6aa9967789c546122bd19871e022eb">HArDCore3D::XDiv</a>
 , <a class="el" href="group__DDRCore.html#ga433efca9d7ce661d4bc9e5386d131cf8">HArDCore3D::XGrad</a>
 </li>
@@ -182,12 +189,20 @@ $(function() {
 , <a class="el" href="group__Basis.html#ga67fe9edf4dbbff050f7965b55f1b974b">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
 , <a class="el" href="group__Basis.html#ga1b78f11229d89bdac125bd5b1f6983ef">HArDCore3D::TangentFamily&lt; ScalarFamilyType &gt;</a>
 , <a class="el" href="group__Basis.html#gac71379becbe0edb006c5df44660bf3aa">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a>
+, <a class="el" href="group__VEMCore.html#gad067559f1a2205ea69b0eea83363add8">HArDCore3D::VEMCore::CellBases</a>
+, <a class="el" href="group__VEMCore.html#gaa24926716c8a382725129ac3ee6e1abb">HArDCore3D::VEMCore::EdgeBases</a>
+, <a class="el" href="group__VEMCore.html#ga0c904020044a8b17513e8e9ca867818e">HArDCore3D::VEMCore::FaceBases</a>
 </li>
 <li>GolyBasisCellType
 : <a class="el" href="group__DDRCore.html#gace75e120d0af0cc0cec7892dac8d3df4">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#ga8d1313f069aa8a1ba4ce44bebfbb8746">HArDCore3D::VEMCore</a>
 </li>
 <li>GolyComplBasisCellType
 : <a class="el" href="group__DDRCore.html#ga8d7ab3240176dab867a4e7ed77ed9158">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#gae62a91eed8481510c5b982e0b2801002">HArDCore3D::VEMCore</a>
+</li>
+<li>GradientType
+: <a class="el" href="group__VEMCore.html#ga9ec94824e9df1549ef583fc03550259f">HArDCore3D::VGrad</a>
 </li>
 <li>GradientValue
 : <a class="el" href="group__Basis.html#ga58d6ef3138763855bc986ee8173b0d30">HArDCore3D::CurlBasis&lt; BasisType &gt;</a>
@@ -223,26 +238,39 @@ $(function() {
 : <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">HArDCore3D::Magnetostatics</a>
 </li>
 <li>Poly2BasisFaceType
-: <a class="el" href="group__DDRCore.html#ga26ed7e32f1540e1b6512982f2305c55f">HArDCore3D::DDRCore</a>
+: <a class="el" href="group__DDRCore.html#gaf58ab2e2d275f2a0f19d32d5630d6421">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#gafdb801f7c60644f3a094c0e5617d82b5">HArDCore3D::VEMCore</a>
 </li>
 <li>Poly3BasisCellType
-: <a class="el" href="group__DDRCore.html#ga7a5513bc7820a36eda4515b81740a35d">HArDCore3D::DDRCore</a>
+: <a class="el" href="group__DDRCore.html#ga93b7460f638eb1b520354073e72535cc">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#ga8ba72d527f090b0589279cbc0b0a65d8">HArDCore3D::VEMCore</a>
 </li>
 <li>PolyBasisCellType
 : <a class="el" href="group__DDRCore.html#ga23ccbb1459084ee0576cf0c056430f58">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#gafad647f2ca016ffc069db6023dd09f0a">HArDCore3D::VEMCore</a>
+</li>
+<li>PolyBasisEdgeType
+: <a class="el" href="group__DDRCore.html#gaed144db167f522c3921b156f98f503e1">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#ga5185e7f42a4c7cb8b4fe26308626a4a6">HArDCore3D::VEMCore</a>
 </li>
 <li>PolyBasisFaceType
 : <a class="el" href="group__DDRCore.html#ga0b54c4bb8d156ae7a2e5c01a1c553655">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#ga5980be690e054feefadc441ff158ee28">HArDCore3D::VEMCore</a>
 </li>
 <li>PolyCellBasisType
 : <a class="el" href="group__HybridCore.html#ga5c478c9953257f154d2ea98f115fba0d">HArDCore3D::HybridCore</a>
 </li>
 <li>PolyEdgeBasisType
-: <a class="el" href="group__DDRCore.html#ga081f30b7ded91e984bcb6595d13cbeb0">HArDCore3D::DDRCore</a>
-, <a class="el" href="group__HybridCore.html#gad3123dceabd79eec7cdb57ba1014fc17">HArDCore3D::HybridCore</a>
+: <a class="el" href="group__HybridCore.html#gad3123dceabd79eec7cdb57ba1014fc17">HArDCore3D::HybridCore</a>
 </li>
 <li>PolyFaceBasisType
 : <a class="el" href="group__HybridCore.html#gab02b7a4490b6a739e2d084e9a70dbcc5">HArDCore3D::HybridCore</a>
+</li>
+<li>PressureGradientType
+: <a class="el" href="group__DDR__stokes.html#ga5df4d4bd5072175a8bbed22b6fe5e324">HArDCore3D::Stokes</a>
+</li>
+<li>PressureType
+: <a class="el" href="group__DDR__stokes.html#ga758780788f88b913e804a3f98dc0975b">HArDCore3D::Stokes</a>
 </li>
 </ul>
 
@@ -260,15 +288,19 @@ $(function() {
 </li>
 <li>RolyBasisCellType
 : <a class="el" href="group__DDRCore.html#ga499d1f5450341d0045d400c5f3457584">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#gad7ed47ede0f29239aa653f5f551d3ca1">HArDCore3D::VEMCore</a>
 </li>
 <li>RolyBasisFaceType
 : <a class="el" href="group__DDRCore.html#ga925dd6c4d55e4a4fa924f4c9aff4e221">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#gae7d6e50fc3661e4b88fd2ebbbbe0dd5a">HArDCore3D::VEMCore</a>
 </li>
 <li>RolyComplBasisCellType
 : <a class="el" href="group__DDRCore.html#gaeebff7b722caf50be9eafba35e65d1ec">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#gae2c4dde7c09c07644fe98ee614a7fd2e">HArDCore3D::VEMCore</a>
 </li>
 <li>RolyComplBasisFaceType
 : <a class="el" href="group__DDRCore.html#gaeee1a4e190fba39e31a9184519e1ba43">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__VEMCore.html#gacd233175c59a93652810ccccbea1e6d1">HArDCore3D::VEMCore</a>
 </li>
 </ul>
 
@@ -282,6 +314,20 @@ $(function() {
 </li>
 <li>SystemMatrixType
 : <a class="el" href="group__DDR__magnetostatic.html#ga30b00c985db10c16728d613f4b199405">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__DDR__stokes.html#ga1f6b821084f8381c776904559b8694a6">HArDCore3D::Stokes</a>
+</li>
+</ul>
+
+
+<h3><a id="index_v"></a>- v -</h3><ul>
+<li>VelocityType
+: <a class="el" href="group__DDR__stokes.html#ga52ca58b26c2693690c8c32602881ffbc">HArDCore3D::Stokes</a>
+</li>
+<li>ViscosityType
+: <a class="el" href="group__DDR__stokes.html#ga9c724e729821860850f61802742dbed4">HArDCore3D::Stokes</a>
+</li>
+<li>VorticityType
+: <a class="el" href="group__DDR__stokes.html#ga6b7d0f7c113eeecc50ce811990db5874">HArDCore3D::Stokes</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -4,11 +4,11 @@ using namespace HArDCore3D;
 
 
 // IntegrateCellMonomials_onEdges
-std::vector<MonomialIntegralsType> HArDCore3D::IntegrateCellMonomials_onEdges(const Cell & T, const size_t maxdeg) {
+std::vector<MonomialCellIntegralsType> HArDCore3D::IntegrateCellMonomials_onEdges(const Cell & T, const size_t maxdeg) {
   // Number of monomials
   const size_t nb_poly = PolynomialSpaceDimension<Cell>::Poly(maxdeg);
 
-  std::vector<MonomialIntegralsType> integrals;
+  std::vector<MonomialCellIntegralsType> integrals;
   integrals.resize(T.n_edges());
   
   // Dimension assumed
@@ -58,12 +58,12 @@ std::vector<MonomialIntegralsType> HArDCore3D::IntegrateCellMonomials_onEdges(co
 }
 
 // IntegrateCellMonomials_onFaces
-std::vector<MonomialIntegralsType> HArDCore3D::IntegrateCellMonomials_onFaces(const Cell & T, const size_t maxdeg, std::vector<MonomialIntegralsType> & integrals_edges) {
+std::vector<MonomialCellIntegralsType> HArDCore3D::IntegrateCellMonomials_onFaces(const Cell & T, const size_t maxdeg, std::vector<MonomialCellIntegralsType> & integrals_edges) {
 
   // Number of monomials
   const size_t nb_poly = PolynomialSpaceDimension<Cell>::Poly(maxdeg);
 
-  std::vector<MonomialIntegralsType> integrals;
+  std::vector<MonomialCellIntegralsType> integrals;
   integrals.resize(T.n_faces());
   
   // Dimension assumed
@@ -114,12 +114,12 @@ std::vector<MonomialIntegralsType> HArDCore3D::IntegrateCellMonomials_onFaces(co
 }
 
 // IntegrateCellMonomials
-MonomialIntegralsType HArDCore3D::IntegrateCellMonomials(const Cell & T, const size_t maxdeg) {
+MonomialCellIntegralsType HArDCore3D::IntegrateCellMonomials(const Cell & T, const size_t maxdeg) {
 
   // Number of monomials
   const size_t nb_poly = PolynomialSpaceDimension<Cell>::Poly(maxdeg);
 
-  MonomialIntegralsType integrals;
+  MonomialCellIntegralsType integrals;
   
   // Dimension assumed
   const size_t d = 3;
@@ -131,8 +131,8 @@ MonomialIntegralsType HArDCore3D::IntegrateCellMonomials(const Cell & T, const s
   std::vector<VectorZd> powers = MonomialPowers<Cell>::complete(maxdeg);
 
   // All integrals over the faces
-  std::vector<MonomialIntegralsType> integrals_edges = IntegrateCellMonomials_onEdges(T, maxdeg);
-  std::vector<MonomialIntegralsType> integrals_faces = IntegrateCellMonomials_onFaces(T, maxdeg, integrals_edges);
+  std::vector<MonomialCellIntegralsType> integrals_edges = IntegrateCellMonomials_onEdges(T, maxdeg);
+  std::vector<MonomialCellIntegralsType> integrals_faces = IntegrateCellMonomials_onFaces(T, maxdeg, integrals_edges);
 
   // Loop over all the monomials
   for (size_t m = 0; m < nb_poly; m++){
@@ -154,7 +154,7 @@ MonomialIntegralsType HArDCore3D::IntegrateCellMonomials(const Cell & T, const s
 }
 
 // Check integrals list
-MonomialIntegralsType HArDCore3D::CheckIntegralsDegree(const Cell & T, const size_t degree, const MonomialIntegralsType & mono_int_map){
+MonomialCellIntegralsType HArDCore3D::CheckIntegralsDegree(const Cell & T, const size_t degree, const MonomialCellIntegralsType & mono_int_map){
   if (mono_int_map.size() >= PolynomialSpaceDimension<Cell>::Poly(degree)){
     return mono_int_map;
   }else{
@@ -164,7 +164,7 @@ MonomialIntegralsType HArDCore3D::CheckIntegralsDegree(const Cell & T, const siz
 
 
 // GramMatrix
-Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const MonomialScalarBasisCell & basis1, const MonomialScalarBasisCell & basis2, MonomialIntegralsType mono_int_map)
+Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const MonomialScalarBasisCell & basis1, const MonomialScalarBasisCell & basis2, MonomialCellIntegralsType mono_int_map)
 {
   // Dimension of the gram matrix
   size_t dim1 = basis1.dimension();
@@ -173,11 +173,11 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const MonomialScalarBasis
   Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(dim1,dim2);
   
   // Obtain integration data from IntegrateCellMonomials
-  MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+  MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
   
   for (size_t i = 0; i < dim1; i++) {
     for (size_t j = 0; j < dim2; j++) {
-      gm(i,j) = intmap[basis1.powers(i) + basis2.powers(j)];
+      gm(i,j) = intmap.at(basis1.powers(i) + basis2.powers(j));
     } // for j
   }   // for i
   
@@ -185,7 +185,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const MonomialScalarBasis
 }
 
 // GramMatrix for RolyCompl
-Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const RolyComplBasisCell & basis1, const RolyComplBasisCell & basis2, MonomialIntegralsType mono_int_map)
+Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const RolyComplBasisCell & basis1, const RolyComplBasisCell & basis2, MonomialCellIntegralsType mono_int_map)
 {
   // Dimension of the gram matrix
   size_t dim1 = basis1.dimension();
@@ -194,14 +194,14 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const RolyComplBasisCell 
   Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(dim1,dim2);
   
   // Obtain integration data from IntegrateCellMonomials
-  MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+  MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
   
   for (size_t k = 0; k < 3; k++) {
     VectorZd powers = VectorZd::Zero(3);
     powers(k) = 2;
     for (size_t i = 0; i < dim1; i++) {
       for (size_t j = 0; j < dim2; j++) {
-          gm(i,j) += intmap[powers + basis1.powers(i) + basis2.powers(j)];
+          gm(i,j) += intmap.at(powers + basis1.powers(i) + basis2.powers(j));
       } // for j
     }   // for i
   }     // for k
@@ -210,7 +210,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const RolyComplBasisCell 
 }
 
 // GramMatrix for GolyCompl
-Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const GolyComplBasisCell & basis1, const GolyComplBasisCell & basis2, MonomialIntegralsType mono_int_map)
+Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const GolyComplBasisCell & basis1, const GolyComplBasisCell & basis2, MonomialCellIntegralsType mono_int_map)
 {
   // Dimension of the gram matrix
   size_t dim1 = basis1.dimension();
@@ -219,7 +219,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const GolyComplBasisCell 
   Eigen::MatrixXd gm(dim1,dim2);
   
   // Obtain integration data from IntegrateCellMonomials
-  MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+  MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
   
   size_t dim_l1 = basis1.dimPkmo();
   size_t dim_l2 = basis2.dimPkmo();
@@ -238,7 +238,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrix(const Cell & T, const GolyComplBasisCell 
 }
 
 // GMScalarDerivative, one derivative
-Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Cell & T, const MonomialScalarBasisCell & basis1, const MonomialScalarBasisCell & basis2, const size_t m, MonomialIntegralsType mono_int_map)
+Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Cell & T, const MonomialScalarBasisCell & basis1, const MonomialScalarBasisCell & basis2, const size_t m, MonomialCellIntegralsType mono_int_map)
 {
   // Dimension of the gram matrix
   size_t dim1 = basis1.dimension();
@@ -247,14 +247,14 @@ Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Cell & T, const MonomialSca
   Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(dim1,dim2);
   
   // Obtain integration data from IntegrateCellMonomials
-  MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+  MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
   
   for (size_t i = 0; i < dim1; i++) {
     if(basis1.powers(i)(m) > 0) {
       VectorZd powers1 = basis1.powers(i);
       powers1(m) -= 1;
       for (size_t j = 0; j < dim2; j++) {
-        gm(i,j) = basis1.powers(i)(m) * intmap[powers1 + basis2.powers(j)];
+        gm(i,j) = basis1.powers(i)(m) * intmap.at(powers1 + basis2.powers(j));
       } // for j
     }   // if
   }     // for i
@@ -263,7 +263,7 @@ Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Cell & T, const MonomialSca
 }
 
 // GMScalarDerivative, two derivatives
-Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Cell & T, const MonomialScalarBasisCell & basis1, const MonomialScalarBasisCell & basis2, const size_t m, const size_t l, MonomialIntegralsType mono_int_map)
+Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Cell & T, const MonomialScalarBasisCell & basis1, const MonomialScalarBasisCell & basis2, const size_t m, const size_t l, MonomialCellIntegralsType mono_int_map)
 {
   // Dimension of the gram matrix
   size_t dim1 = basis1.dimension();
@@ -272,7 +272,7 @@ Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Cell & T, const MonomialSca
   Eigen::MatrixXd gm = Eigen::MatrixXd::Zero(dim1,dim2);
   
   // Obtain integration data from IntegrateCellMonomials
-  MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+  MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
   
   for (size_t i = 0; i < dim1; i++) {
     if(basis1.powers(i)(m) > 0) {
@@ -282,7 +282,7 @@ Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Cell & T, const MonomialSca
         if (basis2.powers(j)(l) > 0){
           VectorZd powers2 = basis2.powers(j);
           powers2(l) -= 1;
-          gm(i,j) = basis1.powers(i)(m) * basis2.powers(j)(l) * intmap[powers1 + powers2];
+          gm(i,j) = basis1.powers(i)(m) * basis2.powers(j)(l) * intmap.at(powers1 + powers2);
         }
       } // for j
     }   // if
@@ -292,7 +292,7 @@ Eigen::MatrixXd HArDCore3D::GMScalarDerivative(const Cell & T, const MonomialSca
 }
  
 // GMRolyScalar, the mth component of RolyCompl and the scalar ancestor of a tensorized basis
-Eigen::MatrixXd HArDCore3D::GMRolyComplScalar(const Cell & T, const RolyComplBasisCell & rolycompl_basis, const MonomialScalarBasisCell & mono_basis, const size_t m, MonomialIntegralsType mono_int_map)
+Eigen::MatrixXd HArDCore3D::GMRolyComplScalar(const Cell & T, const RolyComplBasisCell & rolycompl_basis, const MonomialScalarBasisCell & mono_basis, const size_t m, MonomialCellIntegralsType mono_int_map)
 {
   // Dimension of the gram matrix
   size_t dim1 = rolycompl_basis.dimension();
@@ -301,13 +301,13 @@ Eigen::MatrixXd HArDCore3D::GMRolyComplScalar(const Cell & T, const RolyComplBas
 
   // Obtain integration data from IntegrateFaceMonomials
   size_t totaldegree = rolycompl_basis.max_degree() + mono_basis.max_degree();
-  MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+  MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
 
   VectorZd powers = VectorZd::Zero(3);
   powers(m) = 1;
   for (size_t i = 0; i < dim1; i++) {
     for (size_t j = 0; j < dim2; j++) {
-      gm(i,j) = intmap[powers + rolycompl_basis.powers(i) + mono_basis.powers(j)];
+      gm(i,j) = intmap.at(powers + rolycompl_basis.powers(i) + mono_basis.powers(j));
     }   // for j
   }     // for i
   
@@ -315,7 +315,7 @@ Eigen::MatrixXd HArDCore3D::GMRolyComplScalar(const Cell & T, const RolyComplBas
 }
 
 // GMGolyComplScalar, the (optionally k1th derivative of the) sth section of GolyCompl and the (optionally k2th derivative of the) scalar ancestor of a tensorized basis (optionally multiplied by the mth variable)
-Eigen::MatrixXd HArDCore3D::GMGolyComplScalar(const Cell & T, const GolyComplBasisCell & golycompl_basis, const MonomialScalarBasisCell & mono_basis, const size_t s, MonomialIntegralsType intmap, const size_t m, const size_t k1, const size_t k2)
+Eigen::MatrixXd HArDCore3D::GMGolyComplScalar(const Cell & T, const GolyComplBasisCell & golycompl_basis, const MonomialScalarBasisCell & mono_basis, const size_t s, MonomialCellIntegralsType intmap, const size_t m, const size_t k1, const size_t k2)
 {
   // Dimension of the gram matrix
   size_t dim_l1 = golycompl_basis.dimPkmo();
@@ -330,11 +330,11 @@ Eigen::MatrixXd HArDCore3D::GMGolyComplScalar(const Cell & T, const GolyComplBas
     if (k1 > 2) {
       for (size_t j = 0; j < dim2; j++) {
         if (k2 > 2) {
-          gm(i,j) = intmap[powers + golycompl_basis.powers(s*dim_l1+i) + mono_basis.powers(j)];
+          gm(i,j) = intmap.at(powers + golycompl_basis.powers(s*dim_l1+i) + mono_basis.powers(j));
         } else if (mono_basis.powers(j)(k2) > 0) {
           VectorZd powers2 = mono_basis.powers(j);
           powers2(k2) -= 1;
-          gm(i,j) = mono_basis.powers(j)(k2) / T.diam() * intmap[powers + golycompl_basis.powers(s*dim_l1+i) + powers2];
+          gm(i,j) = mono_basis.powers(j)(k2) / T.diam() * intmap.at(powers + golycompl_basis.powers(s*dim_l1+i) + powers2);
         }
       } // for j
     } else if (golycompl_basis.powers(s*dim_l1+i)(k1) > 0) {
@@ -342,11 +342,11 @@ Eigen::MatrixXd HArDCore3D::GMGolyComplScalar(const Cell & T, const GolyComplBas
       powers1(k1) -= 1;
       for (size_t j = 0; j < dim2; j++) {
         if (k2 > 2) {
-          gm(i,j) = golycompl_basis.powers(s*dim_l1+i)(k1) / T.diam() * intmap[powers + powers1 + mono_basis.powers(j)];
+          gm(i,j) = golycompl_basis.powers(s*dim_l1+i)(k1) / T.diam() * intmap.at(powers + powers1 + mono_basis.powers(j));
         } else if (mono_basis.powers(j)(k2) > 0) {
           VectorZd powers2 = mono_basis.powers(j);
           powers2(k2) -= 1;
-          gm(i,j) = golycompl_basis.powers(s*dim_l1+i)(k1) * mono_basis.powers(j)(k2) / std::pow(T.diam(),2) * intmap[powers + powers1 + powers2];
+          gm(i,j) = golycompl_basis.powers(s*dim_l1+i)(k1) * mono_basis.powers(j)(k2) / std::pow(T.diam(),2) * intmap.at(powers + powers1 + powers2);
         }
       } // for j
     }   // if
@@ -356,7 +356,7 @@ Eigen::MatrixXd HArDCore3D::GMGolyComplScalar(const Cell & T, const GolyComplBas
 }
 
 // GMGolyCompl, the (optionally k1th derivative of the) s1th section of GolyCompl (optionally multiplied by the m1th variable) and the (optionally k2th derivative of the) s2th section of GolyCompl (optionally multiplied by the m2th variable)
-Eigen::MatrixXd HArDCore3D::GMGolyCompl(const Cell & T, const GolyComplBasisCell & basis1, const GolyComplBasisCell & basis2, const size_t s1, const size_t s2, MonomialIntegralsType intmap, const size_t m1, const size_t m2, const size_t k1, const size_t k2)
+Eigen::MatrixXd HArDCore3D::GMGolyCompl(const Cell & T, const GolyComplBasisCell & basis1, const GolyComplBasisCell & basis2, const size_t s1, const size_t s2, MonomialCellIntegralsType intmap, const size_t m1, const size_t m2, const size_t k1, const size_t k2)
 {
   // Dimension of the gram matrix
   size_t dim_l1 = basis1.dimPkmo();
@@ -374,11 +374,11 @@ Eigen::MatrixXd HArDCore3D::GMGolyCompl(const Cell & T, const GolyComplBasisCell
     if (k1 > 2) {
       for (size_t j = 0; j < dim2; j++) {
         if (k2 > 2) {
-          gm(i,j) = intmap[powers + basis1.powers(s1*dim_l1+i) + basis2.powers(s2*dim_l2+j)];
+          gm(i,j) = intmap.at(powers + basis1.powers(s1*dim_l1+i) + basis2.powers(s2*dim_l2+j));
         } else if (basis2.powers(s2*dim_l2+j)(k2) > 0) {
           VectorZd powers2 = basis2.powers(s2*dim_l2+j);
           powers2(k2) -= 1;
-          gm(i,j) = basis2.powers(s2*dim_l2+j)(k2) / T.diam() * intmap[powers + basis1.powers(s1*dim_l1+i) + powers2];
+          gm(i,j) = basis2.powers(s2*dim_l2+j)(k2) / T.diam() * intmap.at(powers + basis1.powers(s1*dim_l1+i) + powers2);
         } // if
       } // for j
     } else if (basis1.powers(s1*dim_l1+i)(k1) > 0) {
@@ -386,11 +386,11 @@ Eigen::MatrixXd HArDCore3D::GMGolyCompl(const Cell & T, const GolyComplBasisCell
       powers1(k1) -= 1;
       for (size_t j = 0; j < dim2; j++) {
         if (k2 > 2) {
-          gm(i,j) = basis1.powers(s1*dim_l1+i)(k1) / T.diam() * intmap[powers + powers1 + basis2.powers(s2*dim_l2+j)];
+          gm(i,j) = basis1.powers(s1*dim_l1+i)(k1) / T.diam() * intmap.at(powers + powers1 + basis2.powers(s2*dim_l2+j));
         } else if (basis2.powers(s2*dim_l2+j)(k2) > 0) {
           VectorZd powers2 = basis2.powers(s2*dim_l2+j);
           powers2(k2) -= 1;
-          gm(i,j) = basis1.powers(s1*dim_l1+i)(k1) * basis2.powers(s2*dim_l2+j)(k2) / std::pow(T.diam(), 2) * intmap[powers + powers1 + powers2];
+          gm(i,j) = basis1.powers(s1*dim_l1+i)(k1) * basis2.powers(s2*dim_l2+j)(k2) / std::pow(T.diam(), 2) * intmap.at(powers + powers1 + powers2);
         } // if
       } // for j
     }   // if
@@ -400,7 +400,7 @@ Eigen::MatrixXd HArDCore3D::GMGolyCompl(const Cell & T, const GolyComplBasisCell
 }
 
 /// Compute the Gram Matrix of the curl of a GolyCompl basis and the curl of another GolyCompl basis
-Eigen::MatrixXd HArDCore3D::GramMatrixCurlCurl(const Cell& T, const GolyComplBasisCell & basis1, const GolyComplBasisCell & basis2, MonomialIntegralsType mono_int_map)
+Eigen::MatrixXd HArDCore3D::GramMatrixCurlCurl(const Cell& T, const GolyComplBasisCell & basis1, const GolyComplBasisCell & basis2, MonomialCellIntegralsType mono_int_map)
 {
   size_t dim1 = basis1.dimension();
   size_t dim2 = basis2.dimension();
@@ -408,7 +408,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrixCurlCurl(const Cell& T, const GolyComplBas
 
   // Integrals of monomials
   size_t totaldegree = basis1.max_degree()+basis2.max_degree()-2;
-  MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+  MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
   
   size_t dim_l1 = basis1.dimPkmo();
   size_t dim_l2 = basis2.dimPkmo();
@@ -460,7 +460,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrixCurlCurl(const Cell& T, const GolyComplBas
 }
 
 /// Compute the Gram Matrix of the divergence of a RolyCompl basis and the divergence of another RolyCompl basis
-Eigen::MatrixXd HArDCore3D::GramMatrixDivDiv(const Cell& T, const RolyComplBasisCell & basis1, const RolyComplBasisCell & basis2, MonomialIntegralsType mono_int_map)
+Eigen::MatrixXd HArDCore3D::GramMatrixDivDiv(const Cell& T, const RolyComplBasisCell & basis1, const RolyComplBasisCell & basis2, MonomialCellIntegralsType mono_int_map)
 {
   size_t dim1 = basis1.dimension();
   size_t dim2 = basis2.dimension();
@@ -468,11 +468,11 @@ Eigen::MatrixXd HArDCore3D::GramMatrixDivDiv(const Cell& T, const RolyComplBasis
 
   // Integrals of monomials
   size_t totaldegree = basis1.max_degree()+basis2.max_degree()-2;
-  MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+  MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
   
   for (size_t i = 0; i < dim1; i++) {
     for (size_t j = 0; j < dim2; j++) {
-      gm(i,j) = (3 + basis1.powers(i).sum()) * (3 + basis2.powers(j).sum()) * intmap[basis1.powers(i) + basis2.powers(j)];
+      gm(i,j) = (3 + basis1.powers(i).sum()) * (3 + basis2.powers(j).sum()) * intmap.at(basis1.powers(i) + basis2.powers(j));
     } // for j
   }   // for i
   
@@ -480,7 +480,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrixDivDiv(const Cell& T, const RolyComplBasis
 }
 
 /// Computes the Gram Matrix of a Divergence<RolyCompl> basis and a monomial scalar basis
-Eigen::MatrixXd HArDCore3D::GramMatrixDiv(const Cell & T, const RolyComplBasisCell & basis1, const MonomialScalarBasisCell & basis2, MonomialIntegralsType mono_int_map)
+Eigen::MatrixXd HArDCore3D::GramMatrixDiv(const Cell & T, const RolyComplBasisCell & basis1, const MonomialScalarBasisCell & basis2, MonomialCellIntegralsType mono_int_map)
 {
   size_t dim1 = basis1.dimension();
   size_t dim2 = basis2.dimension();
@@ -488,11 +488,11 @@ Eigen::MatrixXd HArDCore3D::GramMatrixDiv(const Cell & T, const RolyComplBasisCe
   
   // Integrals of monomials
   size_t totaldegree = basis1.max_degree()+basis2.max_degree()-1;
-  MonomialIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
+  MonomialCellIntegralsType intmap = CheckIntegralsDegree(T, totaldegree, mono_int_map);
   
   for (size_t i = 0; i < dim1; i++) {
     for (size_t j = 0; j < dim2; j++) {
-      gm(i,j) = (3 + basis1.powers(i).sum()) * intmap[basis1.powers(i) + basis2.powers(j)];
+      gm(i,j) = (3 + basis1.powers(i).sum()) * intmap.at(basis1.powers(i) + basis2.powers(j));
     } // for j
   }   // for i
   
@@ -500,7 +500,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrixDiv(const Cell & T, const RolyComplBasisCe
 };
    
 /// Computes the Gram Matrix of the divergence of a RolyCompl Basis and the kth derivative of a monomial basis
-Eigen::MatrixXd HArDCore3D::GMRolyComplScalarDiv(const Cell & T, const MonomialScalarBasisCell & mono_basis, const RolyComplBasisCell & rolycompl_basis, const size_t k, MonomialIntegralsType intmap)
+Eigen::MatrixXd HArDCore3D::GMRolyComplScalarDiv(const Cell & T, const MonomialScalarBasisCell & mono_basis, const RolyComplBasisCell & rolycompl_basis, const size_t k, MonomialCellIntegralsType intmap)
 {
   size_t dim1 = mono_basis.dimension();
   size_t dim2 = rolycompl_basis.dimension();
@@ -511,7 +511,7 @@ Eigen::MatrixXd HArDCore3D::GMRolyComplScalarDiv(const Cell & T, const MonomialS
       VectorZd powers = mono_basis.powers(i);
       powers (k) -= 1;
       for (size_t j = 0; j < dim2; j++) {
-        gm(i,j) = (3 + rolycompl_basis.powers(j).sum()) * mono_basis.powers(i)(k) * intmap[powers + rolycompl_basis.powers(j)];
+        gm(i,j) = (3 + rolycompl_basis.powers(j).sum()) * mono_basis.powers(i)(k) * intmap.at(powers + rolycompl_basis.powers(j));
       } // for j
     } // if
   }   // for i

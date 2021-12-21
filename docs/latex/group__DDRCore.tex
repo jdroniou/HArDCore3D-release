@@ -16,8 +16,6 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{H\+Ar\+D\+Core
 \begin{DoxyCompactList}\small\item\em Structure to store edge bases. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core}}
 \begin{DoxyCompactList}\small\item\em Construct all polynomial spaces for the D\+DR sequence. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classHArDCore3D_1_1DDRSpace}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space}}
-\begin{DoxyCompactList}\small\item\em Base class for D\+DR spaces. Provides functions to manipulate global D\+O\+Fs (the local version being provided by \mbox{\hyperlink{classHArDCore3D_1_1DOFSpace}{D\+O\+F\+Space}}). \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1XCurl_1_1LocalOperators}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+Local\+Operators}}
 \begin{DoxyCompactList}\small\item\em A structure to store the local operators (curl and potential) \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl}}
@@ -35,7 +33,7 @@ class \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{H\+Ar\+D\+Core3\+D\+::\+X\+Grad
 \item 
 typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly\+Basis\+Cell\+Type}}
 \item 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}} $>$, 3 $>$ \mbox{\hyperlink{group__DDRCore_ga7a5513bc7820a36eda4515b81740a35d}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly3\+Basis\+Cell\+Type}}
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}}, 3 $>$ \mbox{\hyperlink{group__DDRCore_ga93b7460f638eb1b520354073e72535cc}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly3\+Basis\+Cell\+Type}}
 \item 
 typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ $>$ $>$ \mbox{\hyperlink{group__DDRCore_gace75e120d0af0cc0cec7892dac8d3df4}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Goly\+Basis\+Cell\+Type}}
 \item 
@@ -47,13 +45,13 @@ typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink
 \item 
 typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly\+Basis\+Face\+Type}}
 \item 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}} $>$ $>$ \mbox{\hyperlink{group__DDRCore_ga26ed7e32f1540e1b6512982f2305c55f}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly2\+Basis\+Face\+Type}}
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gaf58ab2e2d275f2a0f19d32d5630d6421}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly2\+Basis\+Face\+Type}}
 \item 
 typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ $>$ $>$ \mbox{\hyperlink{group__DDRCore_ga925dd6c4d55e4a4fa924f4c9aff4e221}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Roly\+Basis\+Face\+Type}}
 \item 
 typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisFace}{Roly\+Compl\+Basis\+Face}} $>$ \mbox{\hyperlink{group__DDRCore_gaeee1a4e190fba39e31a9184519e1ba43}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Roly\+Compl\+Basis\+Face\+Type}}
 \item 
-typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} $>$ \mbox{\hyperlink{group__DDRCore_ga081f30b7ded91e984bcb6595d13cbeb0}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly\+Edge\+Basis\+Type}}
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} $>$ \mbox{\hyperlink{group__DDRCore_gaed144db167f522c3921b156f98f503e1}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly\+Basis\+Edge\+Type}}
 \item 
 typedef Cell \mbox{\hyperlink{group__DDRCore_ga7bfe17a4d1d277d8d6ac477854eee603}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Geometric\+Support}}
 \begin{DoxyCompactList}\small\item\em Geometric support. \end{DoxyCompactList}\item 
@@ -82,38 +80,6 @@ const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{Face\+Bases}} \
 \begin{DoxyCompactList}\small\item\em Return face bases for face iF. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga59b66dab48528b4503dcfae4128df155}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::edge\+Bases}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Return edge bases for edge iE. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__DDRCore_gaa10443a50b2b275741e3e494a8aa7b7a}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::\+D\+D\+R\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga2bf25204b5238ee2cb8386980b4d3d23}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga0616b0eda8b68353b4b2c46428456c52}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::global\+Offset}} (const Vertex \&V) const
-\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the vertex V. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDRCore_gaabbbc3c672e298647779b2c02d05833d}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::global\+Offset}} (const Edge \&E) const
-\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the edge E. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga54b3a679971d6c1d69f2865140ea8666}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::global\+Offset}} (const Face \&F) const
-\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga35b699da0ccdc9e08678cbbecbbb990a}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::global\+Offset}} (const Cell \&T) const
-\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the cell T. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_gaa2bf0aa56bb500a1104603593506229a}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::restrict\+Edge}} (size\+\_\+t iE, const Eigen\+::\+Vector\+Xd \&vh) const
-\begin{DoxyCompactList}\small\item\em Restrict to the edge (including its vertices) of index iE. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga51ee63c6cc37dc07bcbd11227bd7e820}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::restrict\+Face}} (size\+\_\+t iF, const Eigen\+::\+Vector\+Xd \&vh) const
-\begin{DoxyCompactList}\small\item\em Restrict to the face (including vertices and edges) of index iF. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga699cc19f55f535fd8349fe552676a525}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::restrict\+Cell}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&vh) const
-\begin{DoxyCompactList}\small\item\em Restrict to the cell (including vertices, edges and faces) of index iT. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga9f11b7b2aca1a8155bc4106199041e78}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::restrict}} (const Edge \&E, const Eigen\+::\+Vector\+Xd vh) const
-\begin{DoxyCompactList}\small\item\em Restrict to an edge. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga7a86b45176a2440d3c36d03c61b33fad}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::restrict}} (const Face \&F, const Eigen\+::\+Vector\+Xd vh) const
-\begin{DoxyCompactList}\small\item\em Restrict to a face. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga1745cc3a6b663671f103e90592fbdcbd}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::restrict}} (const Cell \&T, const Eigen\+::\+Vector\+Xd vh) const
-\begin{DoxyCompactList}\small\item\em Restrict to a cell. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gab8a272908727eac60b4eeb89720c008f}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::extend\+Operator}} (const Cell \&T, const Face \&F, const Eigen\+::\+Matrix\+Xd \&opF) const
-\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga9824954470f62049f40e4d5cc2a66e6e}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::extend\+Operator}} (const Cell \&T, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
-\begin{DoxyCompactList}\small\item\em Extend an edge operator to a cell. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga2ff4579ac1c8ace990fd23c7b0b244bc}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
-\begin{DoxyCompactList}\small\item\em Extend an edge operator to a face. \end{DoxyCompactList}\item 
-std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__DDRCore_ga22f398be3435e174d075617e3045d88a}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::global\+D\+O\+F\+Indices}} (const Cell \&T) const
-\item 
-std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__DDRCore_ga78c8c5aee5c6f04d5812044441362a5a}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::global\+D\+O\+F\+Indices}} (const Face \&F) const
-\item 
 \mbox{\hyperlink{group__DDRCore_gaea4f00813cd819f8d6b4246a95d523e0}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+Local\+Operators\+::\+Local\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+curl, const Eigen\+::\+Matrix\+Xd \&\+\_\+potential)
 \item 
 \mbox{\hyperlink{group__DDRCore_gac5383b922f0967c25438f268f41a706c}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+X\+Curl}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
@@ -223,11 +189,11 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga7dfaad4204a1a7916077d346
 \item 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga49b20f86da728f5728beea71777befe5}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polykpo}}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}} $>$ $>$ \mbox{\hyperlink{group__DDRCore_ga9199dc87db280f4f8185d7af509523cb}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polyk}}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gaa7c38658da8df9afc58172434dcc10ee}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polyk}}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}} $>$ $>$ \mbox{\hyperlink{group__DDRCore_ga17fe3e23a152851019e38bbe63d923fb}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polykmo}}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gaed1d3877f8ba4badcb9edd854983a23b}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polykmo}}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga7a5513bc7820a36eda4515b81740a35d}{Poly3\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gabb474b595c9ca1c490c5f33c8f2ab5ab}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polyk3}}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga93b7460f638eb1b520354073e72535cc}{Poly3\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gabb474b595c9ca1c490c5f33c8f2ab5ab}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polyk3}}
 \item 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_gace75e120d0af0cc0cec7892dac8d3df4}{Goly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga409c9fefd499ef6b63ce24f06175ed28}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Golykmo}}
 \item 
@@ -243,11 +209,11 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_gaeebff7b722caf50be9ea
 \item 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga15f720915f21371ed8c0e07a171445ac}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polykpo}}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}} $>$ $>$ \mbox{\hyperlink{group__DDRCore_ga82fd13f327f65047d6b8167ce1b4fe5d}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polyk}}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga4ff1337d665d94fd2fefba6a0ccdf091}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polyk}}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}} $>$ $>$ \mbox{\hyperlink{group__DDRCore_ga39ca65808d740e17ac50c38f38ba9a56}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polykmo}}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga93397178c23e0c01410dd1afa926a39a}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polykmo}}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga26ed7e32f1540e1b6512982f2305c55f}{Poly2\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga7e8b76b39a6c1d0f896f2b548b5e259c}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polyk2}}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_gaf58ab2e2d275f2a0f19d32d5630d6421}{Poly2\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga7e8b76b39a6c1d0f896f2b548b5e259c}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polyk2}}
 \item 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga925dd6c4d55e4a4fa924f4c9aff4e221}{Roly\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga0a89be5686a57cdb45b0f9c662fe3000}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Rolykmo}}
 \item 
@@ -255,11 +221,11 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_gaeee1a4e190fba39e31a9
 \item 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_gaeee1a4e190fba39e31a9184519e1ba43}{Roly\+Compl\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga29dfa2043b2480a20c6d8c7d5d17cdcf}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Roly\+Complkp2}}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_ga081f30b7ded91e984bcb6595d13cbeb0}{Poly\+Edge\+Basis\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga0fbfd2e5a541292fe9aad0446a2385e5}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polykpo}}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_gaed144db167f522c3921b156f98f503e1}{Poly\+Basis\+Edge\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga4497a3ad758edf6c63bd661bcff0f21e}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polykpo}}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga081f30b7ded91e984bcb6595d13cbeb0}{Poly\+Edge\+Basis\+Type}} $>$ $>$ \mbox{\hyperlink{group__DDRCore_ga5b55a8eb11bcb69a1e6c885186446ca0}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polyk}}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_gaed144db167f522c3921b156f98f503e1}{Poly\+Basis\+Edge\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gab1651469337ed01849c71830e35cfcf0}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polyk}}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga081f30b7ded91e984bcb6595d13cbeb0}{Poly\+Edge\+Basis\+Type}} $>$ $>$ \mbox{\hyperlink{group__DDRCore_gaa479462873b8a5e5d711c9430a12511c}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polykmo}}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_gaed144db167f522c3921b156f98f503e1}{Poly\+Basis\+Edge\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga9f6c4f5bf8064ecfba03a95a8668ddc6}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polykmo}}
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gac13d31db8693eb14d3e0d49fb053ed1f}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+Local\+Operators\+::curl}}
 \item 
@@ -343,17 +309,17 @@ Geometric support.
 \doxysubsubsection{\texorpdfstring{GolyComplBasisCellType}{GolyComplBasisCellType}}
 {\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{Goly\+Compl\+Basis\+Cell}}$>$ \mbox{\hyperlink{group__DDRCore_ga8d7ab3240176dab867a4e7ed77ed9158}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Goly\+Compl\+Basis\+Cell\+Type}}}
 
-\mbox{\Hypertarget{group__DDRCore_ga26ed7e32f1540e1b6512982f2305c55f}\label{group__DDRCore_ga26ed7e32f1540e1b6512982f2305c55f}} 
+\mbox{\Hypertarget{group__DDRCore_gaf58ab2e2d275f2a0f19d32d5630d6421}\label{group__DDRCore_gaf58ab2e2d275f2a0f19d32d5630d6421}} 
 \index{DDRCore@{DDRCore}!Poly2BasisFaceType@{Poly2BasisFaceType}}
 \index{Poly2BasisFaceType@{Poly2BasisFaceType}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Poly2BasisFaceType}{Poly2BasisFaceType}}
-{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}}$>$ $>$ \mbox{\hyperlink{group__DDRCore_ga26ed7e32f1540e1b6512982f2305c55f}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly2\+Basis\+Face\+Type}}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$\mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}}$>$ \mbox{\hyperlink{group__DDRCore_gaf58ab2e2d275f2a0f19d32d5630d6421}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly2\+Basis\+Face\+Type}}}
 
-\mbox{\Hypertarget{group__DDRCore_ga7a5513bc7820a36eda4515b81740a35d}\label{group__DDRCore_ga7a5513bc7820a36eda4515b81740a35d}} 
+\mbox{\Hypertarget{group__DDRCore_ga93b7460f638eb1b520354073e72535cc}\label{group__DDRCore_ga93b7460f638eb1b520354073e72535cc}} 
 \index{DDRCore@{DDRCore}!Poly3BasisCellType@{Poly3BasisCellType}}
 \index{Poly3BasisCellType@{Poly3BasisCellType}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Poly3BasisCellType}{Poly3BasisCellType}}
-{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}}$>$, 3$>$ \mbox{\hyperlink{group__DDRCore_ga7a5513bc7820a36eda4515b81740a35d}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly3\+Basis\+Cell\+Type}}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$\mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}}, 3$>$ \mbox{\hyperlink{group__DDRCore_ga93b7460f638eb1b520354073e72535cc}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly3\+Basis\+Cell\+Type}}}
 
 \mbox{\Hypertarget{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}\label{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}} 
 \index{DDRCore@{DDRCore}!PolyBasisCellType@{PolyBasisCellType}}
@@ -361,17 +327,17 @@ Geometric support.
 \doxysubsubsection{\texorpdfstring{PolyBasisCellType}{PolyBasisCellType}}
 {\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}$>$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly\+Basis\+Cell\+Type}}}
 
+\mbox{\Hypertarget{group__DDRCore_gaed144db167f522c3921b156f98f503e1}\label{group__DDRCore_gaed144db167f522c3921b156f98f503e1}} 
+\index{DDRCore@{DDRCore}!PolyBasisEdgeType@{PolyBasisEdgeType}}
+\index{PolyBasisEdgeType@{PolyBasisEdgeType}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{PolyBasisEdgeType}{PolyBasisEdgeType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}}$>$ \mbox{\hyperlink{group__DDRCore_gaed144db167f522c3921b156f98f503e1}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly\+Basis\+Edge\+Type}}}
+
 \mbox{\Hypertarget{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}\label{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}} 
 \index{DDRCore@{DDRCore}!PolyBasisFaceType@{PolyBasisFaceType}}
 \index{PolyBasisFaceType@{PolyBasisFaceType}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{PolyBasisFaceType}{PolyBasisFaceType}}
 {\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}}$>$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly\+Basis\+Face\+Type}}}
-
-\mbox{\Hypertarget{group__DDRCore_ga081f30b7ded91e984bcb6595d13cbeb0}\label{group__DDRCore_ga081f30b7ded91e984bcb6595d13cbeb0}} 
-\index{DDRCore@{DDRCore}!PolyEdgeBasisType@{PolyEdgeBasisType}}
-\index{PolyEdgeBasisType@{PolyEdgeBasisType}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{PolyEdgeBasisType}{PolyEdgeBasisType}}
-{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}}$>$ \mbox{\hyperlink{group__DDRCore_ga081f30b7ded91e984bcb6595d13cbeb0}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly\+Edge\+Basis\+Type}}}
 
 \mbox{\Hypertarget{group__DDRCore_ga499d1f5450341d0045d400c5f3457584}\label{group__DDRCore_ga499d1f5450341d0045d400c5f3457584}} 
 \index{DDRCore@{DDRCore}!RolyBasisCellType@{RolyBasisCellType}}
@@ -734,16 +700,6 @@ Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+
 
 Constructor. 
 
-\mbox{\Hypertarget{group__DDRCore_gaa10443a50b2b275741e3e494a8aa7b7a}\label{group__DDRCore_gaa10443a50b2b275741e3e494a8aa7b7a}} 
-\index{DDRCore@{DDRCore}!DDRSpace@{DDRSpace}}
-\index{DDRSpace@{DDRSpace}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{DDRSpace()}{DDRSpace()}}
-{\footnotesize\ttfamily D\+D\+R\+Space\+::\+D\+D\+R\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
-
-
-
-Constructor. 
-
 \mbox{\Hypertarget{group__DDRCore_ga0e82338c483d5dc11bc0b84adb52998b}\label{group__DDRCore_ga0e82338c483d5dc11bc0b84adb52998b}} 
 \index{DDRCore@{DDRCore}!degree@{degree}}
 \index{degree@{degree}!DDRCore@{DDRCore}}
@@ -854,32 +810,6 @@ Return edge operators for edge E.
 
 Return edge operators for the edge of index iE. 
 
-\mbox{\Hypertarget{group__DDRCore_ga9824954470f62049f40e4d5cc2a66e6e}\label{group__DDRCore_ga9824954470f62049f40e4d5cc2a66e6e}} 
-\index{DDRCore@{DDRCore}!extendOperator@{extendOperator}}
-\index{extendOperator@{extendOperator}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{extendOperator()}{extendOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd D\+D\+R\+Space\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opE }\end{DoxyParamCaption}) const}
-
-
-
-Extend an edge operator to a cell. 
-
-\mbox{\Hypertarget{group__DDRCore_gab8a272908727eac60b4eeb89720c008f}\label{group__DDRCore_gab8a272908727eac60b4eeb89720c008f}} 
-\index{DDRCore@{DDRCore}!extendOperator@{extendOperator}}
-\index{extendOperator@{extendOperator}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{extendOperator()}{extendOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd D\+D\+R\+Space\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opF }\end{DoxyParamCaption}) const}
-
-Extend a face operator to a cell\+: starting from a matrix acting on the D\+O\+Fs of F (and its edges and vertices), redistribute the coefficients in a matrix acting on the D\+O\+Fs viewed from T. \mbox{\Hypertarget{group__DDRCore_ga2ff4579ac1c8ace990fd23c7b0b244bc}\label{group__DDRCore_ga2ff4579ac1c8ace990fd23c7b0b244bc}} 
-\index{DDRCore@{DDRCore}!extendOperator@{extendOperator}}
-\index{extendOperator@{extendOperator}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{extendOperator()}{extendOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd D\+D\+R\+Space\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opE }\end{DoxyParamCaption}) const}
-
-
-
-Extend an edge operator to a face. 
-
 \mbox{\Hypertarget{group__DDRCore_ga7cb8248afff89a299f8076e3515911ea}\label{group__DDRCore_ga7cb8248afff89a299f8076e3515911ea}} 
 \index{DDRCore@{DDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!DDRCore@{DDRCore}}
@@ -989,58 +919,6 @@ Return face operators for the face of index iF.
 
 
 Return face operators for the face of index iF. 
-
-\mbox{\Hypertarget{group__DDRCore_ga22f398be3435e174d075617e3045d88a}\label{group__DDRCore_ga22f398be3435e174d075617e3045d88a}} 
-\index{DDRCore@{DDRCore}!globalDOFIndices@{globalDOFIndices}}
-\index{globalDOFIndices@{globalDOFIndices}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{globalDOFIndices()}{globalDOFIndices()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ D\+D\+R\+Space\+::global\+D\+O\+F\+Indices (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const}
-
-\mbox{\Hypertarget{group__DDRCore_ga78c8c5aee5c6f04d5812044441362a5a}\label{group__DDRCore_ga78c8c5aee5c6f04d5812044441362a5a}} 
-\index{DDRCore@{DDRCore}!globalDOFIndices@{globalDOFIndices}}
-\index{globalDOFIndices@{globalDOFIndices}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{globalDOFIndices()}{globalDOFIndices()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ D\+D\+R\+Space\+::global\+D\+O\+F\+Indices (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const}
-
-\mbox{\Hypertarget{group__DDRCore_ga35b699da0ccdc9e08678cbbecbbb990a}\label{group__DDRCore_ga35b699da0ccdc9e08678cbbecbbb990a}} 
-\index{DDRCore@{DDRCore}!globalOffset@{globalOffset}}
-\index{globalOffset@{globalOffset}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Return the global offset for the unknowns on the cell T. 
-
-\mbox{\Hypertarget{group__DDRCore_gaabbbc3c672e298647779b2c02d05833d}\label{group__DDRCore_gaabbbc3c672e298647779b2c02d05833d}} 
-\index{DDRCore@{DDRCore}!globalOffset@{globalOffset}}
-\index{globalOffset@{globalOffset}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Return the global offset for the unknowns on the edge E. 
-
-\mbox{\Hypertarget{group__DDRCore_ga54b3a679971d6c1d69f2865140ea8666}\label{group__DDRCore_ga54b3a679971d6c1d69f2865140ea8666}} 
-\index{DDRCore@{DDRCore}!globalOffset@{globalOffset}}
-\index{globalOffset@{globalOffset}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Return the global offset for the unknowns on the face F. 
-
-\mbox{\Hypertarget{group__DDRCore_ga0616b0eda8b68353b4b2c46428456c52}\label{group__DDRCore_ga0616b0eda8b68353b4b2c46428456c52}} 
-\index{DDRCore@{DDRCore}!globalOffset@{globalOffset}}
-\index{globalOffset@{globalOffset}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Return the global offset for the unknowns on the vertex V. 
 
 \mbox{\Hypertarget{group__DDRCore_gaee9fe9c6833a783c3994ed123704c1ce}\label{group__DDRCore_gaee9fe9c6833a783c3994ed123704c1ce}} 
 \index{DDRCore@{DDRCore}!interpolate@{interpolate}}
@@ -1184,66 +1062,6 @@ Return the mesh.
 
 Return a const reference to the mesh. 
 
-\mbox{\Hypertarget{group__DDRCore_ga1745cc3a6b663671f103e90592fbdcbd}\label{group__DDRCore_ga1745cc3a6b663671f103e90592fbdcbd}} 
-\index{DDRCore@{DDRCore}!restrict@{restrict}}
-\index{restrict@{restrict}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{restrict()}{restrict()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::restrict (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Restrict to a cell. 
-
-\mbox{\Hypertarget{group__DDRCore_ga9f11b7b2aca1a8155bc4106199041e78}\label{group__DDRCore_ga9f11b7b2aca1a8155bc4106199041e78}} 
-\index{DDRCore@{DDRCore}!restrict@{restrict}}
-\index{restrict@{restrict}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{restrict()}{restrict()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::restrict (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Restrict to an edge. 
-
-\mbox{\Hypertarget{group__DDRCore_ga7a86b45176a2440d3c36d03c61b33fad}\label{group__DDRCore_ga7a86b45176a2440d3c36d03c61b33fad}} 
-\index{DDRCore@{DDRCore}!restrict@{restrict}}
-\index{restrict@{restrict}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{restrict()}{restrict()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Space\+::restrict (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Restrict to a face. 
-
-\mbox{\Hypertarget{group__DDRCore_ga699cc19f55f535fd8349fe552676a525}\label{group__DDRCore_ga699cc19f55f535fd8349fe552676a525}} 
-\index{DDRCore@{DDRCore}!restrictCell@{restrictCell}}
-\index{restrictCell@{restrictCell}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{restrictCell()}{restrictCell()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd D\+D\+R\+Space\+::restrict\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
-
-
-
-Restrict to the cell (including vertices, edges and faces) of index iT. 
-
-\mbox{\Hypertarget{group__DDRCore_gaa2bf0aa56bb500a1104603593506229a}\label{group__DDRCore_gaa2bf0aa56bb500a1104603593506229a}} 
-\index{DDRCore@{DDRCore}!restrictEdge@{restrictEdge}}
-\index{restrictEdge@{restrictEdge}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{restrictEdge()}{restrictEdge()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd D\+D\+R\+Space\+::restrict\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
-
-
-
-Restrict to the edge (including its vertices) of index iE. 
-
-\mbox{\Hypertarget{group__DDRCore_ga51ee63c6cc37dc07bcbd11227bd7e820}\label{group__DDRCore_ga51ee63c6cc37dc07bcbd11227bd7e820}} 
-\index{DDRCore@{DDRCore}!restrictFace@{restrictFace}}
-\index{restrictFace@{restrictFace}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{restrictFace()}{restrictFace()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd D\+D\+R\+Space\+::restrict\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
-
-
-
-Restrict to the face (including vertices and edges) of index iF. 
-
 \mbox{\Hypertarget{group__DDRCore_gac5383b922f0967c25438f268f41a706c}\label{group__DDRCore_gac5383b922f0967c25438f268f41a706c}} 
 \index{DDRCore@{DDRCore}!XCurl@{XCurl}}
 \index{XCurl@{XCurl}!DDRCore@{DDRCore}}
@@ -1319,53 +1137,53 @@ Constructor.
 \doxysubsubsection{\texorpdfstring{gradient}{gradient}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::\+Local\+Operators\+::gradient}
 
-\mbox{\Hypertarget{group__DDRCore_ga9199dc87db280f4f8185d7af509523cb}\label{group__DDRCore_ga9199dc87db280f4f8185d7af509523cb}} 
+\mbox{\Hypertarget{group__DDRCore_gaa7c38658da8df9afc58172434dcc10ee}\label{group__DDRCore_gaa7c38658da8df9afc58172434dcc10ee}} 
 \index{DDRCore@{DDRCore}!Polyk@{Polyk}}
 \index{Polyk@{Polyk}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Polyk}{Polyk}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}}$>$ $>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polyk}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polyk}
 
-\mbox{\Hypertarget{group__DDRCore_ga82fd13f327f65047d6b8167ce1b4fe5d}\label{group__DDRCore_ga82fd13f327f65047d6b8167ce1b4fe5d}} 
+\mbox{\Hypertarget{group__DDRCore_ga4ff1337d665d94fd2fefba6a0ccdf091}\label{group__DDRCore_ga4ff1337d665d94fd2fefba6a0ccdf091}} 
 \index{DDRCore@{DDRCore}!Polyk@{Polyk}}
 \index{Polyk@{Polyk}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Polyk}{Polyk}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}}$>$ $>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polyk}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polyk}
 
-\mbox{\Hypertarget{group__DDRCore_ga5b55a8eb11bcb69a1e6c885186446ca0}\label{group__DDRCore_ga5b55a8eb11bcb69a1e6c885186446ca0}} 
+\mbox{\Hypertarget{group__DDRCore_gab1651469337ed01849c71830e35cfcf0}\label{group__DDRCore_gab1651469337ed01849c71830e35cfcf0}} 
 \index{DDRCore@{DDRCore}!Polyk@{Polyk}}
 \index{Polyk@{Polyk}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Polyk}{Polyk}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_ga081f30b7ded91e984bcb6595d13cbeb0}{Poly\+Edge\+Basis\+Type}}$>$ $>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polyk}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_gaed144db167f522c3921b156f98f503e1}{Poly\+Basis\+Edge\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polyk}
 
 \mbox{\Hypertarget{group__DDRCore_ga7e8b76b39a6c1d0f896f2b548b5e259c}\label{group__DDRCore_ga7e8b76b39a6c1d0f896f2b548b5e259c}} 
 \index{DDRCore@{DDRCore}!Polyk2@{Polyk2}}
 \index{Polyk2@{Polyk2}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Polyk2}{Polyk2}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_ga26ed7e32f1540e1b6512982f2305c55f}{Poly2\+Basis\+Face\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polyk2}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_gaf58ab2e2d275f2a0f19d32d5630d6421}{Poly2\+Basis\+Face\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polyk2}
 
 \mbox{\Hypertarget{group__DDRCore_gabb474b595c9ca1c490c5f33c8f2ab5ab}\label{group__DDRCore_gabb474b595c9ca1c490c5f33c8f2ab5ab}} 
 \index{DDRCore@{DDRCore}!Polyk3@{Polyk3}}
 \index{Polyk3@{Polyk3}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Polyk3}{Polyk3}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_ga7a5513bc7820a36eda4515b81740a35d}{Poly3\+Basis\+Cell\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polyk3}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_ga93b7460f638eb1b520354073e72535cc}{Poly3\+Basis\+Cell\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polyk3}
 
-\mbox{\Hypertarget{group__DDRCore_ga17fe3e23a152851019e38bbe63d923fb}\label{group__DDRCore_ga17fe3e23a152851019e38bbe63d923fb}} 
+\mbox{\Hypertarget{group__DDRCore_gaed1d3877f8ba4badcb9edd854983a23b}\label{group__DDRCore_gaed1d3877f8ba4badcb9edd854983a23b}} 
 \index{DDRCore@{DDRCore}!Polykmo@{Polykmo}}
 \index{Polykmo@{Polykmo}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Polykmo}{Polykmo}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}}$>$ $>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polykmo}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{Poly\+Basis\+Cell\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Cell\+Bases\+::\+Polykmo}
 
-\mbox{\Hypertarget{group__DDRCore_ga39ca65808d740e17ac50c38f38ba9a56}\label{group__DDRCore_ga39ca65808d740e17ac50c38f38ba9a56}} 
+\mbox{\Hypertarget{group__DDRCore_ga93397178c23e0c01410dd1afa926a39a}\label{group__DDRCore_ga93397178c23e0c01410dd1afa926a39a}} 
 \index{DDRCore@{DDRCore}!Polykmo@{Polykmo}}
 \index{Polykmo@{Polykmo}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Polykmo}{Polykmo}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}}$>$ $>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polykmo}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polykmo}
 
-\mbox{\Hypertarget{group__DDRCore_gaa479462873b8a5e5d711c9430a12511c}\label{group__DDRCore_gaa479462873b8a5e5d711c9430a12511c}} 
+\mbox{\Hypertarget{group__DDRCore_ga9f6c4f5bf8064ecfba03a95a8668ddc6}\label{group__DDRCore_ga9f6c4f5bf8064ecfba03a95a8668ddc6}} 
 \index{DDRCore@{DDRCore}!Polykmo@{Polykmo}}
 \index{Polykmo@{Polykmo}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Polykmo}{Polykmo}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_ga081f30b7ded91e984bcb6595d13cbeb0}{Poly\+Edge\+Basis\+Type}}$>$ $>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polykmo}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_gaed144db167f522c3921b156f98f503e1}{Poly\+Basis\+Edge\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polykmo}
 
 \mbox{\Hypertarget{group__DDRCore_ga49b20f86da728f5728beea71777befe5}\label{group__DDRCore_ga49b20f86da728f5728beea71777befe5}} 
 \index{DDRCore@{DDRCore}!Polykpo@{Polykpo}}
@@ -1379,11 +1197,11 @@ Constructor.
 \doxysubsubsection{\texorpdfstring{Polykpo}{Polykpo}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{Poly\+Basis\+Face\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Polykpo}
 
-\mbox{\Hypertarget{group__DDRCore_ga0fbfd2e5a541292fe9aad0446a2385e5}\label{group__DDRCore_ga0fbfd2e5a541292fe9aad0446a2385e5}} 
+\mbox{\Hypertarget{group__DDRCore_ga4497a3ad758edf6c63bd661bcff0f21e}\label{group__DDRCore_ga4497a3ad758edf6c63bd661bcff0f21e}} 
 \index{DDRCore@{DDRCore}!Polykpo@{Polykpo}}
 \index{Polykpo@{Polykpo}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Polykpo}{Polykpo}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_ga081f30b7ded91e984bcb6595d13cbeb0}{Poly\+Edge\+Basis\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polykpo}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_gaed144db167f522c3921b156f98f503e1}{Poly\+Basis\+Edge\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polykpo}
 
 \mbox{\Hypertarget{group__DDRCore_ga6cfebdf46e1c3067a6c195f32c2e8898}\label{group__DDRCore_ga6cfebdf46e1c3067a6c195f32c2e8898}} 
 \index{DDRCore@{DDRCore}!potential@{potential}}

@@ -1,0 +1,76 @@
+\hypertarget{classHArDCore3D_1_1GlobalDOFSpace}{}\doxysection{H\+Ar\+D\+Core3D\+::Global\+D\+O\+F\+Space Class Reference}
+\label{classHArDCore3D_1_1GlobalDOFSpace}\index{HArDCore3D::GlobalDOFSpace@{HArDCore3D::GlobalDOFSpace}}
+
+
+Base class for global D\+OF spaces. Provides functions to manipulate global D\+O\+Fs (the local version being provided by D\+O\+F\+Space).  
+
+
+
+
+{\ttfamily \#include $<$globaldofspace.\+hpp$>$}
+
+
+
+Inheritance diagram for H\+Ar\+D\+Core3D\+::Global\+D\+O\+F\+Space\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHArDCore3D_1_1GlobalDOFSpace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H\+Ar\+D\+Core3D\+::Global\+D\+O\+F\+Space\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1GlobalDOFSpace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__Common_gac0ee512d7dbbce9e7aae3f2f42138470}{Global\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga44447e854ca3aad5a21ebef9aa322a56}{global\+Offset}} (const Vertex \&V) const
+\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the vertex V. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gadbe66a72149a46edb01ff255ec600903}{global\+Offset}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the edge E. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga51495600d8dea1161e6bc23db8b99c91}{global\+Offset}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga1229b099903e229e3e63c4a56949a835}{global\+Offset}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga9cabf022121084dd0ab57de128ba953c}{restrict\+Edge}} (size\+\_\+t iE, const Eigen\+::\+Vector\+Xd \&vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to the edge (including its vertices) of index iE. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gad97efa101fd5232b63921903d4c2502f}{restrict\+Face}} (size\+\_\+t iF, const Eigen\+::\+Vector\+Xd \&vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to the face (including vertices and edges) of index iF. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga2485686662745c5481032a8d6058fd57}{restrict\+Cell}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to the cell (including vertices, edges and faces) of index iT. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga810df25ee1d0f6c5de76130e0a90a5e2}{restrict}} (const Edge \&E, const Eigen\+::\+Vector\+Xd vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to an edge. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gadeb695de566f98dfc275f19b1bd39666}{restrict}} (const Face \&F, const Eigen\+::\+Vector\+Xd vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to a face. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga87d51d92989ad5a06691db7be45908d8}{restrict}} (const Cell \&T, const Eigen\+::\+Vector\+Xd vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to a cell. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga93d06b3be5ace110a4ca1d636a4aa7f1}{extend\+Operator}} (const Cell \&T, const Face \&F, const Eigen\+::\+Matrix\+Xd \&opF) const
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gabf4eafe2cf13ad7f5eeb322cb9097d22}{extend\+Operator}} (const Cell \&T, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
+\begin{DoxyCompactList}\small\item\em Extend an edge operator to a cell. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa03cd062083ef8fbe3089d395f81338}{extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
+\begin{DoxyCompactList}\small\item\em Extend an edge operator to a face. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga253bd7addffb9686d8a71d19db88f3f2}{global\+D\+O\+F\+Indices}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Returns a vector listing the global D\+O\+Fs attached to the element T\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs and element D\+O\+Fs. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga7cc6a020ed82c7e8bdd295d6aa94dea5}{global\+D\+O\+F\+Indices}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Returns a vector listing the global D\+O\+Fs attached to the face F\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base class for global D\+OF spaces. Provides functions to manipulate global D\+O\+Fs (the local version being provided by D\+O\+F\+Space). 
+
+The D\+O\+Fs are organised by increasing geometric entities dimensions\+: D\+O\+Fs of vertices, D\+O\+Fs of edges, D\+O\+Fs of faces, D\+O\+Fs of cells. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Common/\mbox{\hyperlink{globaldofspace_8hpp}{globaldofspace.\+hpp}}\item 
+src/\+Common/\mbox{\hyperlink{globaldofspace_8cpp}{globaldofspace.\+cpp}}\end{DoxyCompactItemize}

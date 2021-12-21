@@ -1,12 +1,14 @@
 <map id="src/DDRCore/ddrcore.hpp" name="src/DDRCore/ddrcore.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="156,5,331,32"/>
-<area shape="rect" id="node2" href="$ddrcore_8cpp.html" title=" " alt="" coords="5,80,180,107"/>
-<area shape="rect" id="node3" href="$xcurl_8hpp.html" title=" " alt="" coords="272,155,431,181"/>
-<area shape="rect" id="node7" href="$xdiv_8hpp.html" title=" " alt="" coords="111,229,264,256"/>
-<area shape="rect" id="node9" href="$xgrad_8hpp.html" title=" " alt="" coords="306,80,469,107"/>
-<area shape="rect" id="node4" href="$ddr-magnetostatics_8hpp.html" title=" " alt="" coords="335,304,539,345"/>
-<area shape="rect" id="node6" href="$xcurl_8cpp.html" title=" " alt="" coords="288,229,447,256"/>
-<area shape="rect" id="node5" href="$ddr-magnetostatics_8cpp.html" title=" " alt="" coords="335,393,539,435"/>
-<area shape="rect" id="node8" href="$xdiv_8cpp.html" title=" " alt="" coords="111,311,264,338"/>
-<area shape="rect" id="node10" href="$xgrad_8cpp.html" title=" " alt="" coords="455,155,618,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="233,5,408,32"/>
+<area shape="rect" id="node2" href="$ddrcore_8cpp.html" title=" " alt="" coords="67,80,241,107"/>
+<area shape="rect" id="node3" href="$xcurl_8hpp.html" title=" " alt="" coords="317,155,476,181"/>
+<area shape="rect" id="node9" href="$xdiv_8hpp.html" title=" " alt="" coords="39,229,192,256"/>
+<area shape="rect" id="node11" href="$xgrad_8hpp.html" title=" " alt="" coords="417,80,579,107"/>
+<area shape="rect" id="node4" href="$ddr-magnetostatics_8hpp.html" title=" " alt="" coords="183,304,387,345"/>
+<area shape="rect" id="node6" href="$ddr-stokes_8hpp.html" title=" " alt="" coords="411,304,566,345"/>
+<area shape="rect" id="node8" href="$xcurl_8cpp.html" title=" " alt="" coords="216,229,375,256"/>
+<area shape="rect" id="node5" href="$ddr-magnetostatics_8cpp.html" title=" " alt="" coords="183,393,387,435"/>
+<area shape="rect" id="node7" href="$ddr-stokes_8cpp.html" title=" " alt="" coords="411,393,566,435"/>
+<area shape="rect" id="node10" href="$xdiv_8cpp.html" title=" " alt="" coords="5,311,159,338"/>
+<area shape="rect" id="node12" href="$xgrad_8cpp.html" title=" " alt="" coords="551,155,714,181"/>
 </map>

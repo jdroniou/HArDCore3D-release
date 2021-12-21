@@ -1,22 +1,13 @@
 var searchData=
 [
-  ['m_5fbasis_1198',['m_basis',['../group__Basis.html#ga7fc7d3727474cac3baea45129097e81d',1,'HArDCore3D::DecomposePoly']]],
-  ['m_5fdim_1199',['m_dim',['../group__Basis.html#gab1b77d9e6c9d597cd2600d4e4bbf1c83',1,'HArDCore3D::DecomposePoly']]],
-  ['m_5fmesh_1200',['m_mesh',['../group__Common.html#gaee6309df95b3459b1f4905c15c6239bd',1,'HArDCore3D::DOFSpace']]],
-  ['m_5fn_5flocal_5fcell_5fdofs_1201',['m_n_local_cell_dofs',['../group__Common.html#ga53ec0e9bbd195365a0729a9331abfa89',1,'HArDCore3D::DOFSpace']]],
-  ['m_5fn_5flocal_5fedge_5fdofs_1202',['m_n_local_edge_dofs',['../group__Common.html#gab72a9a1c577617dc47cb4bded4686d48',1,'HArDCore3D::DOFSpace']]],
-  ['m_5fn_5flocal_5fface_5fdofs_1203',['m_n_local_face_dofs',['../group__Common.html#gafeeefcc04f696730a56c4ed452e5452b',1,'HArDCore3D::DOFSpace']]],
-  ['m_5fn_5flocal_5fvertex_5fdofs_1204',['m_n_local_vertex_dofs',['../group__Common.html#ga56a143825b7be4349a5164d8336b5841',1,'HArDCore3D::DOFSpace']]],
-  ['m_5fnb_5fnodes_1205',['m_nb_nodes',['../group__Basis.html#gac46086dc84088d8528f675c861038d35',1,'HArDCore3D::DecomposePoly']]],
-  ['m_5fnodes_1206',['m_nodes',['../group__Basis.html#gaf7c16b339c169c86a54001ebea306a2e',1,'HArDCore3D::DecomposePoly']]],
-  ['m_5fon_5fbasis_1207',['m_on_basis',['../group__Basis.html#ga93c71a220a232726701d6c72c891d602',1,'HArDCore3D::DecomposePoly']]],
-  ['m_5fon_5fbasis_5fnodes_1208',['m_on_basis_nodes',['../group__Basis.html#ga6ea7072f1905e20f9b878a4efb5a8518',1,'HArDCore3D::DecomposePoly']]],
-  ['max_5fdoe_5fcell_1209',['MAX_DOE_CELL',['../group__Quadratures.html#ga42cd568704af2ca021084dfb35c11abc',1,'HArDCore3D']]],
-  ['max_5fdoe_5fedge_1210',['MAX_DOE_EDGE',['../group__Quadratures.html#ga832a740b74e194aea85378e27ffc903d',1,'HArDCore3D']]],
-  ['max_5fdoe_5fface_1211',['MAX_DOE_FACE',['../group__Quadratures.html#ga76634865816c45f31ab501baeb9e3739',1,'HArDCore3D']]],
-  ['max_5fnb_5fcells_5ffor_5fplot_1212',['max_nb_cells_for_plot',['../HHO__Diffusion_8cpp.html#af20aa8e6197a09f3cced1d8080c117c9',1,'max_nb_cells_for_plot():&#160;HHO_Diffusion.cpp'],['../HHO__LocVarDiff_8cpp.html#af20aa8e6197a09f3cced1d8080c117c9',1,'max_nb_cells_for_plot():&#160;HHO_LocVarDiff.cpp']]],
-  ['mesh_5fdir_1213',['mesh_dir',['../ddr-magnetostatics_8cpp.html#a43fed21b5f1b68d8d93bfda38c651ba2',1,'mesh_dir():&#160;ddr-magnetostatics.cpp'],['../HHO__DiffAdvecReac_8hpp.html#a43fed21b5f1b68d8d93bfda38c651ba2',1,'mesh_dir():&#160;HHO_DiffAdvecReac.hpp'],['../HHO__Diffusion_8cpp.html#a43fed21b5f1b68d8d93bfda38c651ba2',1,'mesh_dir():&#160;HHO_Diffusion.cpp'],['../HHO__LocVarDiff_8cpp.html#a43fed21b5f1b68d8d93bfda38c651ba2',1,'mesh_dir():&#160;HHO_LocVarDiff.cpp']]],
-  ['mesh_5fname_1214',['mesh_name',['../group__HHO__DiffAdvecReac.html#ga9781d1b74956d5fe6ad475f041e483a8',1,'HHO_DiffAdvecReac.hpp']]],
-  ['mesh_5froot_1215',['mesh_root',['../MeshCoarsen_8cpp.html#ad836f7ad2685a44967cdf2bcbde227a1',1,'MeshCoarsen.cpp']]],
-  ['mesh_5ftype_1216',['mesh_type',['../group__HHO__DiffAdvecReac.html#ga8db5788d43fd0ba9d84a900714939107',1,'HHO_DiffAdvecReac.hpp']]]
+  ['l_1311',['L',['../group__HHO__DiffAdvecReac.html#ga91a0b997ce3aa9aa56b8cba3620fed15',1,'HHO_DiffAdvecReac.hpp']]],
+  ['linear_5fcurl_5ff_1312',['linear_curl_f',['../group__VEM__stokes.html#ga4504274a0d3395a57da7da4083f50a92',1,'HArDCore3D']]],
+  ['linear_5fcurl_5fu_1313',['linear_curl_u',['../group__DDR__stokes.html#gacf277e3de5ea4ffd5ac7cac0b81ce753',1,'HArDCore3D::linear_curl_u()'],['../group__VEM__stokes.html#gacf277e3de5ea4ffd5ac7cac0b81ce753',1,'HArDCore3D::linear_curl_u()']]],
+  ['linear_5ff_1314',['linear_f',['../group__DDR__magnetostatic.html#gafacd77f29b93a3d1950bf37e7d4c9205',1,'HArDCore3D::linear_f()'],['../group__DDR__stokes.html#ga9c31dd525678d1018c16672698e8a9dc',1,'HArDCore3D::linear_f()'],['../group__VEM__stokes.html#ga9c31dd525678d1018c16672698e8a9dc',1,'HArDCore3D::linear_f()']]],
+  ['linear_5fgrad_5fp_1315',['linear_grad_p',['../group__DDR__stokes.html#ga3cfc5cc140b682e0405a2a749aef7f62',1,'HArDCore3D::linear_grad_p()'],['../group__VEM__stokes.html#ga3cfc5cc140b682e0405a2a749aef7f62',1,'HArDCore3D::linear_grad_p()']]],
+  ['linear_5fmu_1316',['linear_mu',['../group__DDR__magnetostatic.html#ga415ee30bd823542e7f21c5f78914a085',1,'HArDCore3D']]],
+  ['linear_5fnu_1317',['linear_nu',['../group__DDR__stokes.html#ga526f1aef8b250d74a2f9414e27e02ca5',1,'HArDCore3D::linear_nu()'],['../group__VEM__stokes.html#ga526f1aef8b250d74a2f9414e27e02ca5',1,'HArDCore3D::linear_nu()']]],
+  ['linear_5fp_1318',['linear_p',['../group__DDR__stokes.html#gaee6fac8db2ff7d11fe82ccd83d197eae',1,'HArDCore3D::linear_p()'],['../group__VEM__stokes.html#gaee6fac8db2ff7d11fe82ccd83d197eae',1,'HArDCore3D::linear_p()']]],
+  ['linear_5fsigma_1319',['linear_sigma',['../group__DDR__magnetostatic.html#ga25711e256e87167ef3e392f477ae4008',1,'HArDCore3D']]],
+  ['linear_5fu_1320',['linear_u',['../group__DDR__magnetostatic.html#ga1b83cbc5fa63f2dd2e4ca7781c8dac5b',1,'HArDCore3D::linear_u()'],['../group__DDR__stokes.html#gaf7e4208b642b86353f00c8437de688f5',1,'HArDCore3D::linear_u()'],['../group__VEM__stokes.html#gaf7e4208b642b86353f00c8437de688f5',1,'HArDCore3D::linear_u()']]]
 ];
