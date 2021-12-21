@@ -76,8 +76,8 @@ case ${mesh_family} in
 	mesh[2]="RF:Voro-small-0/RF_fmt/voro-4"
   mesh[3]="RF:Voro-small-0/RF_fmt/voro-6"
 	mesh[4]="RF:Voro-small-0/RF_fmt/voro-8"
-	mesh[5]="RF:Voro-small-0/RF_fmt/voro-10"
-	mesh[6]="RF:Voro-small-0/RF_fmt/voro-12"
+#	mesh[5]="RF:Voro-small-0/RF_fmt/voro-10"
+#	mesh[6]="RF:Voro-small-0/RF_fmt/voro-12"
 #	 mesh[7]="RF:Voro-small-0/RF_fmt/voro-14"
 #	 mesh[8]="RF:Voro-small-0/RF_fmt/voro-16"
 	;;
