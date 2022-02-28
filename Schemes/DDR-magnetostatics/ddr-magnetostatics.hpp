@@ -26,6 +26,7 @@
 
 #include <mesh.hpp>
 #include <mesh_builder.hpp>
+#include <local_static_condensation.hpp>
 
 #include <xdiv.hpp>
 #include <xcurl.hpp>
@@ -77,8 +78,7 @@ namespace HArDCore3D
     /// Returns the number of statically condensed DOFs (here, the cell magnetic field DOFs)
     inline size_t nbSCDOFs() const
     {
-      return m_ddrcore.mesh().n_cells() * 
-          (PolynomialSpaceDimension<Cell>::Roly(m_ddrcore.degree() - 1) + PolynomialSpaceDimension<Cell>::RolyCompl(m_ddrcore.degree()));
+      return m_ddrcore.mesh().n_cells() * m_nloc_sc_H;
     }
 
     /// Returns the size of the statically condensed system
@@ -154,6 +154,9 @@ namespace HArDCore3D
                                 const SolutionPotentialType & u ///< Boundary condition
                                 );
 
+    /// Creates the permutation matrix and the global DOFs for the local static condensation
+    LocalStaticCondensation _compute_static_condensation(const size_t & iT) const;
+
     /// Assemble the local contribution for the element of index iT into the global system
     void _assemble_local_contribution(
                                       size_t iT,                                               ///< Element index
@@ -169,6 +172,7 @@ namespace HArDCore3D
     std::ostream & m_output;
     XCurl m_xcurl;
     XDiv m_xdiv;
+    const size_t m_nloc_sc_H;   // Number of statically condensed DOFs of H in each cell
     SystemMatrixType m_A;   // Matrix and RHS of statically condensed system
     Eigen::VectorXd m_b;
     SystemMatrixType m_sc_A; // Static condensation operator and RHS (to recover statically condensed DOFs)

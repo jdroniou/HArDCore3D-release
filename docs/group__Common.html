@@ -89,6 +89,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">HArDCore3D::IntegralWeight</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for weights (scalar, at the moment) in integral.  <a href="structHArDCore3D_1_1IntegralWeight.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1LocalStaticCondensation.html">HArDCore3D::LocalStaticCondensation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to store information for, and perform, local static condensation.  <a href="structHArDCore3D_1_1LocalStaticCondensation.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1LocalDOFSpace.html">HArDCore3D::LocalDOFSpace</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to the largest) associated with each geometric entity.  <a href="classHArDCore3D_1_1LocalDOFSpace.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +161,24 @@ Functions</h2></td></tr>
 <tr class="separator:ga60ba878dc51ffe013b4cd394741d34f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaed526b573136d558b81d9be87646b5c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaed526b573136d558b81d9be87646b5c9">HArDCore3D::IntegralWeight::IntegralWeight</a> (double val)</td></tr>
 <tr class="separator:gaed526b573136d558b81d9be87646b5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9013e4ca43adf132d979e0178676eb4f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga9013e4ca43adf132d979e0178676eb4f">HArDCore3D::LocalStaticCondensation::LocalStaticCondensation</a> (const Eigen::MatrixXd &amp;Perm, const std::vector&lt; size_t &gt; &amp;<a class="el" href="group__Common.html#gada39a93d73a2096ffadb2182d696a4b2">globalDOFs_sys</a>, const std::vector&lt; size_t &gt; &amp;<a class="el" href="group__Common.html#ga02f23a4c0c6b132c91d96098deb9ca94">globalDOFs_sc</a>)</td></tr>
+<tr class="memdesc:ga9013e4ca43adf132d979e0178676eb4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Common.html#ga9013e4ca43adf132d979e0178676eb4f">More...</a><br /></td></tr>
+<tr class="separator:ga9013e4ca43adf132d979e0178676eb4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7bac2f08d274e88fdb2057d593581c90"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; Eigen::MatrixXd, Eigen::VectorXd, Eigen::MatrixXd, Eigen::VectorXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga7bac2f08d274e88fdb2057d593581c90">HArDCore3D::LocalStaticCondensation::compute</a> (const std::pair&lt; Eigen::MatrixXd, Eigen::VectorXd &gt; &amp;lsT)</td></tr>
+<tr class="memdesc:ga7bac2f08d274e88fdb2057d593581c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the local static condensation.  <a href="group__Common.html#ga7bac2f08d274e88fdb2057d593581c90">More...</a><br /></td></tr>
+<tr class="separator:ga7bac2f08d274e88fdb2057d593581c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada39a93d73a2096ffadb2182d696a4b2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gada39a93d73a2096ffadb2182d696a4b2">HArDCore3D::LocalStaticCondensation::globalDOFs_sys</a> ()</td></tr>
+<tr class="memdesc:gada39a93d73a2096ffadb2182d696a4b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns global DOFs that are not statically condensend.  <a href="group__Common.html#gada39a93d73a2096ffadb2182d696a4b2">More...</a><br /></td></tr>
+<tr class="separator:gada39a93d73a2096ffadb2182d696a4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2fd993a8010d3b907c881942186d36f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaa2fd993a8010d3b907c881942186d36f">HArDCore3D::LocalStaticCondensation::dim_sys</a> ()</td></tr>
+<tr class="memdesc:gaa2fd993a8010d3b907c881942186d36f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of DOFs that are not statically condensed.  <a href="group__Common.html#gaa2fd993a8010d3b907c881942186d36f">More...</a><br /></td></tr>
+<tr class="separator:gaa2fd993a8010d3b907c881942186d36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga02f23a4c0c6b132c91d96098deb9ca94"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga02f23a4c0c6b132c91d96098deb9ca94">HArDCore3D::LocalStaticCondensation::globalDOFs_sc</a> ()</td></tr>
+<tr class="memdesc:ga02f23a4c0c6b132c91d96098deb9ca94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns global DOFs that are statically condensend.  <a href="group__Common.html#ga02f23a4c0c6b132c91d96098deb9ca94">More...</a><br /></td></tr>
+<tr class="separator:ga02f23a4c0c6b132c91d96098deb9ca94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d683e5f0aa27a28e9eb7fd399bd24c8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga3d683e5f0aa27a28e9eb7fd399bd24c8">HArDCore3D::LocalStaticCondensation::dim_sc</a> ()</td></tr>
+<tr class="memdesc:ga3d683e5f0aa27a28e9eb7fd399bd24c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of DOFs that are statically condensed.  <a href="group__Common.html#ga3d683e5f0aa27a28e9eb7fd399bd24c8">More...</a><br /></td></tr>
+<tr class="separator:ga3d683e5f0aa27a28e9eb7fd399bd24c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa4747ac6257c084186c00efc756822c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaa4747ac6257c084186c00efc756822c8">HArDCore3D::LocalDOFSpace::LocalDOFSpace</a> (const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> &amp;<a class="el" href="group__Common.html#ga3dfecc3674cef1fb03254bc8e3ea0eff">mesh</a>, size_t n_local_vertex_dofs, size_t n_local_edge_dofs, size_t n_local_face_dofs, size_t n_local_cell_dofs)</td></tr>
 <tr class="memdesc:gaa4747ac6257c084186c00efc756822c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Common.html#gaa4747ac6257c084186c00efc756822c8">More...</a><br /></td></tr>
 <tr class="separator:gaa4747ac6257c084186c00efc756822c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -279,6 +300,16 @@ Variables</h2></td></tr>
 <tr class="separator:ga0e64dd7fa60d788876219241162f0f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6380d57e44432a9d08114c442158dc8a"><td class="memItemLeft" align="right" valign="top">std::function&lt; size_t(const Cell &amp;T)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga6380d57e44432a9d08114c442158dc8a">HArDCore3D::IntegralWeight::deg</a></td></tr>
 <tr class="separator:ga6380d57e44432a9d08114c442158dc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa868f9f56ab061eebcbc30c2dbe5295"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gafa868f9f56ab061eebcbc30c2dbe5295">HArDCore3D::LocalStaticCondensation::m_Perm</a></td></tr>
+<tr class="separator:gafa868f9f56ab061eebcbc30c2dbe5295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaccfaba0c903f41cd8dc3b1a7280eede3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaccfaba0c903f41cd8dc3b1a7280eede3">HArDCore3D::LocalStaticCondensation::m_globalDOFs_sys</a></td></tr>
+<tr class="separator:gaccfaba0c903f41cd8dc3b1a7280eede3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c686364431d55a47aca647bd2caeb49"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga0c686364431d55a47aca647bd2caeb49">HArDCore3D::LocalStaticCondensation::m_globalDOFs_sc</a></td></tr>
+<tr class="separator:ga0c686364431d55a47aca647bd2caeb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae257d6004cb03b2408967d9af3cc83ee"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gae257d6004cb03b2408967d9af3cc83ee">HArDCore3D::LocalStaticCondensation::m_dim_sys</a></td></tr>
+<tr class="separator:gae257d6004cb03b2408967d9af3cc83ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga529ae659ec36583e71ce72a5b29cb7e0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga529ae659ec36583e71ce72a5b29cb7e0">HArDCore3D::LocalStaticCondensation::m_dim_sc</a></td></tr>
+<tr class="separator:ga529ae659ec36583e71ce72a5b29cb7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf892ca81e64966ad421de137a5bc3fbb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaf892ca81e64966ad421de137a5bc3fbb">HArDCore3D::LocalDOFSpace::m_mesh</a></td></tr>
 <tr class="separator:gaf892ca81e64966ad421de137a5bc3fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7636d64533daa557cb40e3354665a376"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga7636d64533daa557cb40e3354665a376">HArDCore3D::LocalDOFSpace::m_n_local_vertex_dofs</a></td></tr>
@@ -293,6 +324,89 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Various general functions and classes. </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga7bac2f08d274e88fdb2057d593581c90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7bac2f08d274e88fdb2057d593581c90">&#9670;&nbsp;</a></span>compute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt;Eigen::MatrixXd, Eigen::VectorXd, Eigen::MatrixXd, Eigen::VectorXd&gt; HArDCore3D::LocalStaticCondensation::compute </td>
+          <td>(</td>
+          <td class="paramtype">const std::pair&lt; Eigen::MatrixXd, Eigen::VectorXd &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lsT</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the local static condensation. </p>
+<p>From a local pair of Matrix-Vector product, constructed with all the DOFs, returns a 4-tuple; the first two elements are the matrix-vector of the locally statically condensed system, the last two elements are the matrix-vector of the local recovery operator </p>
+
+</div>
+</div>
+<a id="ga3d683e5f0aa27a28e9eb7fd399bd24c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d683e5f0aa27a28e9eb7fd399bd24c8">&#9670;&nbsp;</a></span>dim_sc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::LocalStaticCondensation::dim_sc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of DOFs that are statically condensed. </p>
+
+</div>
+</div>
+<a id="gaa2fd993a8010d3b907c881942186d36f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa2fd993a8010d3b907c881942186d36f">&#9670;&nbsp;</a></span>dim_sys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::LocalStaticCondensation::dim_sys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of DOFs that are not statically condensed. </p>
+
+</div>
+</div>
 <a id="ga2f9a4f73d3d98508bb70d42a72b38943"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2f9a4f73d3d98508bb70d42a72b38943">&#9670;&nbsp;</a></span>dimension()</h2>
 
@@ -688,6 +802,60 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a vector listing the global DOFs attached to the face F: vertex DOFs, edge DOFs, face DOFs. </p>
+
+</div>
+</div>
+<a id="ga02f23a4c0c6b132c91d96098deb9ca94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02f23a4c0c6b132c91d96098deb9ca94">&#9670;&nbsp;</a></span>globalDOFs_sc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;size_t&gt; HArDCore3D::LocalStaticCondensation::globalDOFs_sc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns global DOFs that are statically condensend. </p>
+
+</div>
+</div>
+<a id="gada39a93d73a2096ffadb2182d696a4b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gada39a93d73a2096ffadb2182d696a4b2">&#9670;&nbsp;</a></span>globalDOFs_sys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;size_t&gt; HArDCore3D::LocalStaticCondensation::globalDOFs_sys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns global DOFs that are not statically condensend. </p>
 
 </div>
 </div>
@@ -1389,6 +1557,58 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the local offset of the vertex V with respect to the face F. </p>
+
+</div>
+</div>
+<a id="ga9013e4ca43adf132d979e0178676eb4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9013e4ca43adf132d979e0178676eb4f">&#9670;&nbsp;</a></span>LocalStaticCondensation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HArDCore3D::LocalStaticCondensation::LocalStaticCondensation </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>Perm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>globalDOFs_sys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>globalDOFs_sc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Perm</td><td>Permutation that moves the DOFs to condense at the end </td></tr>
+    <tr><td class="paramname">globalDOFs_sys</td><td>List of global DOFs in the final system </td></tr>
+    <tr><td class="paramname">globalDOFs_sc</td><td>List of global DOFs that are statically condensed </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2118,6 +2338,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function to store and display wall/proc timers from boost::timer::cpu_timer. </p>
+<p>Wall time is in the first element of the pair, proc time in the second </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timer</td><td>The timer </td></tr>
@@ -2137,6 +2358,62 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::function&lt;size_t (const Cell &amp; T)&gt; HArDCore3D::IntegralWeight::deg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga529ae659ec36583e71ce72a5b29cb7e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga529ae659ec36583e71ce72a5b29cb7e0">&#9670;&nbsp;</a></span>m_dim_sc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::LocalStaticCondensation::m_dim_sc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae257d6004cb03b2408967d9af3cc83ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae257d6004cb03b2408967d9af3cc83ee">&#9670;&nbsp;</a></span>m_dim_sys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::LocalStaticCondensation::m_dim_sys</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0c686364431d55a47aca647bd2caeb49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0c686364431d55a47aca647bd2caeb49">&#9670;&nbsp;</a></span>m_globalDOFs_sc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;size_t&gt; HArDCore3D::LocalStaticCondensation::m_globalDOFs_sc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaccfaba0c903f41cd8dc3b1a7280eede3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaccfaba0c903f41cd8dc3b1a7280eede3">&#9670;&nbsp;</a></span>m_globalDOFs_sys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;size_t&gt; HArDCore3D::LocalStaticCondensation::m_globalDOFs_sys</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2249,6 +2526,20 @@ Variables</h2></td></tr>
 <span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gafa868f9f56ab061eebcbc30c2dbe5295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa868f9f56ab061eebcbc30c2dbe5295">&#9670;&nbsp;</a></span>m_Perm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::LocalStaticCondensation::m_Perm</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>

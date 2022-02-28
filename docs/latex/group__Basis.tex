@@ -465,6 +465,8 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_gadf081f9b37af70f3a9870b163a727ed5}{H\
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 constexpr const Basis\+Type \& \mbox{\hyperlink{group__Basis_ga416c3d3dd9eff2a82631c853762cc50d}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the ancestor (basis that the gradient was taken of) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\+Family\+Type $>$ }\\\mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ Scalar\+Family\+Type $>$ $>$ \mbox{\hyperlink{group__Basis_ga46eb884388862e45eb2064a55905ae18}{H\+Ar\+D\+Core3\+D\+::\+Scalar\+Rot\+Family}} (const \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ Scalar\+Family\+Type $>$ \&tangent\+\_\+family, const Face \&F)
+\begin{DoxyCompactList}\small\item\em The following function creates the \char`\"{}scalar rot\char`\"{} basis of a \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}} on a face. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_ga98289e16109a552704685379e02a325e}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Roly\+Compl\+Basis\+Cell}} (const Cell \&T, size\+\_\+t degree)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_ga964b9b4b33364cbe605d03b3c0bd0f39}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::dimension}} () const
@@ -563,6 +565,8 @@ double \mbox{\hyperlink{group__Basis_gabe66f2d1efad01f907e32517c16b11f9}{H\+Ar\+
 \begin{DoxyCompactList}\small\item\em Scalar product between one real and one 1-\/dimension Eigen vector. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__Basis_ga0105ef2d1903eeddce62e6ad647a8ead}{H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product}} (const Vector\+Rd \&x, const Vector\+Rd \&y)
 \begin{DoxyCompactList}\small\item\em Scalar product between two vectors. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__Basis_gae0e17b9bcba8bbd415ff4812d44aa81f}{H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product}} (const \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \&x, const \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \&y)
+\begin{DoxyCompactList}\small\item\em Scalar product between two matrices. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Value $>$ }\\boost\+::multi\+\_\+array$<$ double, 2 $>$ \mbox{\hyperlink{group__Basis_ga7c34745cd64a55b7072c5c19e45fa3ec}{H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Value, 2 $>$ \&basis\+\_\+quad, const Value \&v)
 \begin{DoxyCompactList}\small\item\em This overloading of the scalar\+\_\+product function computes the scalar product between an evaluation of a basis and a constant value; both basis values and constant value must be of type Value. \end{DoxyCompactList}\item 
 boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \mbox{\hyperlink{group__Basis_ga7fd6906b30cba10f2f452b029a86ca00}{H\+Ar\+D\+Core3\+D\+::vector\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&basis\+\_\+quad, const Vector\+Rd \&v)
@@ -3293,7 +3297,7 @@ Constructor.
 \mbox{\Hypertarget{group__Basis_ga7c34745cd64a55b7072c5c19e45fa3ec}\label{group__Basis_ga7c34745cd64a55b7072c5c19e45fa3ec}} 
 \index{Basis@{Basis}!scalar\_product@{scalar\_product}}
 \index{scalar\_product@{scalar\_product}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{scalar\_product()}{scalar\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\doxysubsubsection{\texorpdfstring{scalar\_product()}{scalar\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily template$<$typename Value $>$ \\
 boost\+::multi\+\_\+array$<$double, 2$>$ H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product (\begin{DoxyParamCaption}\item[{const boost\+::multi\+\_\+array$<$ Value, 2 $>$ \&}]{basis\+\_\+quad,  }\item[{const Value \&}]{v }\end{DoxyParamCaption})}
 
@@ -3311,7 +3315,7 @@ This overloading of the scalar\+\_\+product function computes the scalar product
 \mbox{\Hypertarget{group__Basis_ga46a7162dd1acacd29421a7d8db89c96e}\label{group__Basis_ga46a7162dd1acacd29421a7d8db89c96e}} 
 \index{Basis@{Basis}!scalar\_product@{scalar\_product}}
 \index{scalar\_product@{scalar\_product}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{scalar\_product()}{scalar\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{scalar\_product()}{scalar\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily double H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product (\begin{DoxyParamCaption}\item[{const double \&}]{x,  }\item[{const double \&}]{y }\end{DoxyParamCaption})}
 
 
@@ -3321,22 +3325,43 @@ Scalar product between two reals.
 \mbox{\Hypertarget{group__Basis_gabe66f2d1efad01f907e32517c16b11f9}\label{group__Basis_gabe66f2d1efad01f907e32517c16b11f9}} 
 \index{Basis@{Basis}!scalar\_product@{scalar\_product}}
 \index{scalar\_product@{scalar\_product}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{scalar\_product()}{scalar\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{scalar\_product()}{scalar\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily double H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product (\begin{DoxyParamCaption}\item[{const double \&}]{x,  }\item[{const Eigen\+::\+Matrix$<$ double, 1, 1 $>$ \&}]{y }\end{DoxyParamCaption})}
 
 
 
 Scalar product between one real and one 1-\/dimension Eigen vector. 
 
+\mbox{\Hypertarget{group__Basis_gae0e17b9bcba8bbd415ff4812d44aa81f}\label{group__Basis_gae0e17b9bcba8bbd415ff4812d44aa81f}} 
+\index{Basis@{Basis}!scalar\_product@{scalar\_product}}
+\index{scalar\_product@{scalar\_product}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{scalar\_product()}{scalar\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily double H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \&}]{x,  }\item[{const \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Scalar product between two matrices. 
+
 \mbox{\Hypertarget{group__Basis_ga0105ef2d1903eeddce62e6ad647a8ead}\label{group__Basis_ga0105ef2d1903eeddce62e6ad647a8ead}} 
 \index{Basis@{Basis}!scalar\_product@{scalar\_product}}
 \index{scalar\_product@{scalar\_product}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{scalar\_product()}{scalar\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\doxysubsubsection{\texorpdfstring{scalar\_product()}{scalar\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily double H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product (\begin{DoxyParamCaption}\item[{const Vector\+Rd \&}]{x,  }\item[{const Vector\+Rd \&}]{y }\end{DoxyParamCaption})}
 
 
 
 Scalar product between two vectors. 
+
+\mbox{\Hypertarget{group__Basis_ga46eb884388862e45eb2064a55905ae18}\label{group__Basis_ga46eb884388862e45eb2064a55905ae18}} 
+\index{Basis@{Basis}!ScalarRotFamily@{ScalarRotFamily}}
+\index{ScalarRotFamily@{ScalarRotFamily}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{ScalarRotFamily()}{ScalarRotFamily()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type $>$ \\
+\mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$\mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$Scalar\+Family\+Type$>$ $>$ H\+Ar\+D\+Core3\+D\+::\+Scalar\+Rot\+Family (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ Scalar\+Family\+Type $>$ \&}]{tangent\+\_\+family,  }\item[{const Face \&}]{F }\end{DoxyParamCaption})}
+
+
+
+The following function creates the \char`\"{}scalar rot\char`\"{} basis of a \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}} on a face. 
 
 \mbox{\Hypertarget{group__Basis_gaea075c3cb8fbdd848e30d84821f23711}\label{group__Basis_gaea075c3cb8fbdd848e30d84821f23711}} 
 \index{Basis@{Basis}!ShiftedBasis@{ShiftedBasis}}

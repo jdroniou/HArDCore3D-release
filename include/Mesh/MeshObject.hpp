@@ -73,29 +73,46 @@ namespace MeshND
 
         // inline size_t dim() const { return object_dim; }
 
-        inline size_t global_index() const { return _index; }                                ///< Return the global index of the MeshObject
-        inline double diam() const { return _diameter; }                                     ///< Return the diameter of the MeshObject
-        inline VectorRd<space_dim> center_mass() const { return _center_mass; }              ///< Return the center mass of the MeshObject
-        inline double measure() const { return _measure; }                                   ///< Return the Lebesgue measure of the MeshObject
-        inline Simplices<space_dim, object_dim> get_simplices() const { return _simplices; } ///< Return the simplices making up the MeshObject
-        inline void set_global_index(const size_t idx) { _index = idx; }                           ///< Set the global index
-        inline bool is_boundary() { return _is_boundary; }                                   ///< Return true if MeshObject is a boundary object, false otherwise
-        inline void set_boundary(bool val) { _is_boundary = val; }                           ///< Set the boundary value of the MeshObject
+        /// Returns the global index of the MeshObject
+        inline size_t global_index() const { return _index; }
+        /// Returns the diameter of the MeshObject
+        inline double diam() const { return _diameter; }
+        /// Returns the center mass of the MeshObject
+        inline VectorRd<space_dim> center_mass() const { return _center_mass; }
+        ///< Returns the Lebesgue measure of the MeshObject
+        inline double measure() const { return _measure; }
 
-        inline std::vector<MeshObject<space_dim, 0>*> get_vertices() const { return _vertices; }       ///< Return the vertices of the MeshObject
-        inline std::vector<MeshObject<space_dim, 1>*> get_edges() const { return _edges; }             ///< Return the edges of the MeshObject
-        inline std::vector<MeshObject<space_dim, space_dim - 1>*> get_faces() const { return _faces; } ///< Return the faces of the MeshObject
-        inline std::vector<MeshObject<space_dim, space_dim>*> get_cells() const { return _cells; }     ///< Return the cells of the MeshObject
+        /// Returns the simplices making up the MeshObject
+        inline Simplices<space_dim, object_dim> get_simplices() const { return _simplices; }
+        /// Set the global index
+        inline void set_global_index(const size_t idx) { _index = idx; }
+        /// Returns true if MeshObject is a boundary object, false otherwise
+        inline bool is_boundary() { return _is_boundary; }
+        /// Set the boundary value of the MeshObject
+        inline void set_boundary(bool val) { _is_boundary = val; }
 
-        inline size_t n_vertices() const { return _vertices.size(); } ///< Return the number of vertices of the MeshObject
-        inline size_t n_edges() const { return _edges.size(); }       ///< Return the number of edges of the MeshObject
-        inline size_t n_faces() const { return _faces.size(); }       ///< Return the number of faces of the MeshObject
-        inline size_t n_cells() const { return _cells.size(); }       ///< Return the number of cells of the MeshObject
+        /// Returns the vertices of the MeshObject
+        inline std::vector<MeshObject<space_dim, 0>*> get_vertices() const { return _vertices; }
+        /// Returns the edges of the MeshObject
+        inline std::vector<MeshObject<space_dim, 1>*> get_edges() const { return _edges; }
+        /// Returns the faces of the MeshObject
+        inline std::vector<MeshObject<space_dim, space_dim - 1>*> get_faces() const { return _faces; }
+        /// Return the cells of the MeshObject
+        inline std::vector<MeshObject<space_dim, space_dim>*> get_cells() const { return _cells; }
 
-        MeshObject<space_dim, 0>* vertex(const size_t i) const;           ///< Return the i-th vertex of the MeshObject
-        MeshObject<space_dim, 1>* edge(const size_t i) const;             ///< Return the i-th edge of the MeshObject
-        MeshObject<space_dim, space_dim - 1>* face(const size_t i) const; ///< Return the i-th face of the MeshObject
-        MeshObject<space_dim, space_dim>* cell(const size_t i) const;     ///< Return the i-th cell of the MeshObject
+        /// Returns the number of vertices of the MeshObject
+        inline size_t n_vertices() const { return _vertices.size(); }
+        /// Returns the number of edges of the MeshObject 
+        inline size_t n_edges() const { return _edges.size(); }
+        /// Returns the number of faces of the MeshObject
+        inline size_t n_faces() const { return _faces.size(); }
+        /// Returns the number of cells of the MeshObject
+        inline size_t n_cells() const { return _cells.size(); }
+
+        MeshObject<space_dim, 0>* vertex(const size_t i) const;           ///< Returns the i-th vertex of the MeshObject
+        MeshObject<space_dim, 1>* edge(const size_t i) const;             ///< Returns the i-th edge of the MeshObject
+        MeshObject<space_dim, space_dim - 1>* face(const size_t i) const; ///< Returns the i-th face of the MeshObject
+        MeshObject<space_dim, space_dim>* cell(const size_t i) const;     ///< Returns the i-th cell of the MeshObject
 
         void add_vertex(MeshObject<space_dim, 0>* vertex);         ///< Add a vertex to the MeshObject
         void add_edge(MeshObject<space_dim, 1>* edge);             ///< Add an edge to the MeshObject
@@ -113,7 +130,7 @@ namespace MeshND
         VectorRd<space_dim> edge_normal(const size_t edge_index) const; ///< Return the edge normal of a 2D object
 
         int face_orientation(const size_t face_index) const; ///< Return the orientation of a Face
-        int edge_orientation(const size_t edge_index) const; ///< Return the orientation of a Edge
+        int edge_orientation(const size_t edge_index) const; ///< Return the orientation of a Edge (multiplied by edge_normal, gives the outer normal to the face)
 
         VectorRd<space_dim> normal() const;     ///< Return the normal of a Face
         VectorRd<space_dim> tangent() const;    ///< Return the tangent of a Edge

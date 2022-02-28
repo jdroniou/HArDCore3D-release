@@ -74,18 +74,29 @@ $(function() {
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>scMatrix()
 : <a class="el" href="group__DDR__magnetostatic.html#ga7c5f649d4c5d14b11f52033b4cfff644">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__DDR__stokes.html#ga84c005b53d8d83c1be5b078dae093d9d">HArDCore3D::Stokes</a>
 </li>
 <li>scVector()
 : <a class="el" href="group__DDR__magnetostatic.html#gac5cc8800c0cea12e57a31a8f97f58ce7">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__DDR__stokes.html#gac24f18b70fee7f0796258e2bb2c46b59">HArDCore3D::Stokes</a>
+</li>
+<li>set_boundary()
+: <a class="el" href="group__Mesh.html#ga92c44918ffcdb15e7d89b26e871db125">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
 <li>set_dirichlet()
-: <a class="el" href="group__HHO3D.html#ga1dc0ef5581cfb16964e86963086f0d4d">HHO3D</a>
+: <a class="el" href="group__HHO3D.html#ga2230426ff92810893168177ddd623f35">HHO3D</a>
+</li>
+<li>set_global_index()
+: <a class="el" href="group__Mesh.html#gad3e3369dca9c7df500afa41227bb2902">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
 <li>set_global_operator()
 : <a class="el" href="group__HHO3D.html#gae58bdad281ef8980a8a3ab527c4066f7">HHO3D</a>
 </li>
 <li>set_load_vector()
 : <a class="el" href="group__HHO3D.html#ga900c704c67fc0dff437a377e19a18017">HHO3D</a>
+</li>
+<li>set_values()
+: <a class="el" href="group__HHO__MHD.html#ga11701714647e6a25844189a2b730632c">SolutionVector</a>
 </li>
 <li>setup()
 : <a class="el" href="group__Quadratures.html#ga362bb5fef8a2d98073605945c89aadf9">HArDCore3D::QuadRuleEdge</a>
@@ -97,6 +108,7 @@ $(function() {
 </li>
 <li>sizeSystem()
 : <a class="el" href="group__DDR__magnetostatic.html#gab9bdfe696d9b36cca0546e85ee73eed4">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__DDR__stokes.html#ga5afaebf629ae7ee2b7835f544f975780">HArDCore3D::Stokes</a>
 </li>
 <li>Solution()
 : <a class="el" href="structSolution.html#aa5f16a31abf30d37a5292620abde92b9">Solution</a>
@@ -107,10 +119,16 @@ $(function() {
 <li>SolutionPotentialType
 : <a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">HArDCore3D::Magnetostatics</a>
 </li>
+<li>SolutionVector()
+: <a class="el" href="group__HHO__MHD.html#ga8e4dd529848f7f433c701cdc38c4641c">SolutionVector</a>
+</li>
 <li>solve()
 : <a class="el" href="group__HHO__Diffusion.html#ga582be64d213833c883137e143839c370">HArDCore3D::HHO_Diffusion</a>
 , <a class="el" href="group__HHO__LocVarDiff.html#ga11bf9be780b53676d2cc1ec9bb30dcc6">HArDCore3D::HHO_LocVarDiff</a>
 , <a class="el" href="group__HHO3D.html#gaa70703caa4da647cfb742750776d247c">HHO3D</a>
+</li>
+<li>solve_with_static_cond()
+: <a class="el" href="group__HHO__MHD.html#gab042b2e7ca94620b11956247a20b9afe">MHDModel</a>
 </li>
 <li>stabilizationParameter()
 : <a class="el" href="group__DDR__magnetostatic.html#gaa900b40958daa559bdf2d900e105a51c">HArDCore3D::Magnetostatics</a>
@@ -164,11 +182,11 @@ $(function() {
 </li>
 <li>SystemMatrixType
 : <a class="el" href="group__DDR__magnetostatic.html#ga30b00c985db10c16728d613f4b199405">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__DDR__stokes.html#ga1f6b821084f8381c776904559b8694a6">HArDCore3D::Stokes</a>
+, <a class="el" href="group__VEM__stokes.html#ga1f6b821084f8381c776904559b8694a6">HArDCore3D::Stokes</a>
 </li>
 <li>systemVector()
-: <a class="el" href="group__DDR__magnetostatic.html#ga29cbbcb0980b052188bb32902e57db67">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__VEM__stokes.html#ga67c5932d1f6296ac1f3e4e1d4cf53e3b">HArDCore3D::Stokes</a>
+: <a class="el" href="group__DDR__magnetostatic.html#ga4e0de6a7a5cf5f6fdd0c511b1f4776e9">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__VEM__stokes.html#ga7fedbcceaa95a4b495c4bc9197a94940">HArDCore3D::Stokes</a>
 </li>
 </ul>
 </div><!-- contents -->

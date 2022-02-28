@@ -198,6 +198,7 @@
 \include{group__HHO__DiffAdvecReac}
 \include{group__HHO__Diffusion}
 \include{group__HHO__LocVarDiff}
+\include{group__HHO__MHD}
 \include{group__HybridCore}
 \include{group__Mesh}
 \include{group__Plot}
@@ -254,17 +255,20 @@
 \input{structHArDCore3D_1_1IntegralWeight}
 \input{classHArDCore3D_1_1LegendreGauss}
 \input{classHArDCore3D_1_1LocalDOFSpace}
+\input{structHArDCore3D_1_1XCurl_1_1LocalOperators}
+\input{structHArDCore3D_1_1XDiv_1_1LocalOperators}
 \input{structHArDCore3D_1_1XGrad_1_1LocalOperators}
 \input{structHArDCore3D_1_1VCurl_1_1LocalOperators}
 \input{structHArDCore3D_1_1VDiv_1_1LocalOperators}
 \input{structHArDCore3D_1_1VGrad_1_1LocalOperators}
-\input{structHArDCore3D_1_1XCurl_1_1LocalOperators}
-\input{structHArDCore3D_1_1XDiv_1_1LocalOperators}
+\input{structHArDCore3D_1_1LocalStaticCondensation}
 \input{structHArDCore3D_1_1Magnetostatics}
 \input{classMeshND_1_1Mesh}
 \input{classHArDCore3D_1_1MeshBuilder}
 \input{classMeshND_1_1MeshObject}
 \input{classHArDCore3D_1_1MeshReaderRF}
+\input{classMHDModel}
+\input{classHArDCore3D_1_1MHDTests}
 \input{structHArDCore3D_1_1MonomialPowers}
 \input{structHArDCore3D_1_1MonomialPowers_3_01Cell_01_4}
 \input{structHArDCore3D_1_1MonomialPowers_3_01Face_01_4}
@@ -285,6 +289,7 @@
 \input{classHArDCore3D_1_1RolyComplBasisFace}
 \input{classHArDCore3D_1_1ShiftedBasis}
 \input{structSolution}
+\input{structSolutionVector}
 \input{structHArDCore3D_1_1Stokes}
 \input{structHArDCore3D_1_1StokesNorms}
 \input{classHArDCore3D_1_1TangentFamily}
@@ -314,6 +319,7 @@
 \input{hho-diff-advec-reac_2compute__rates_8cpp}
 \input{hho-diffusion_2compute__rates_8cpp}
 \input{hho-locvardiff_2compute__rates_8cpp}
+\input{hho-mhd_2compute__rates_8cpp}
 \input{BoundaryConditions_8cpp}
 \input{BoundaryConditions_8hpp}
 \input{ddr-magnetostatics_8cpp}
@@ -328,6 +334,10 @@
 \input{HHO3D_8hpp}
 \input{HHO__LocVarDiff_8cpp}
 \input{HHO__LocVarDiff_8hpp}
+\input{HHO__MHD_8cpp}
+\input{HHO__MHD_8hpp}
+\input{MHDTests_8cpp}
+\input{MHDTests_8hpp}
 \input{DirectedGraph_8cpp}
 \input{DirectedGraph_8hpp}
 \input{MeshCoarsen_8cpp}
@@ -342,6 +352,7 @@
 \input{globaldofspace_8cpp}
 \input{globaldofspace_8hpp}
 \input{integralweight_8hpp}
+\input{local__static__condensation_8hpp}
 \input{localdofspace_8cpp}
 \input{localdofspace_8hpp}
 \input{parallel__for_8hpp}

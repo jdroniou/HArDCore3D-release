@@ -279,6 +279,7 @@ The following schemes are currently available in H\+Ar\+D\+::\+Core3D. The Hybri
 \item \mbox{\hyperlink{group__DDR__magnetostatic}{D\+D\+R\+\_\+magnetostatic}}\+: Discrete De Rham (D\+DR) scheme for the magnetostatic problem, as per \href{https://doi.org/10.1016/j.jcp.2020.109991}{\texttt{ https\+://doi.\+org/10.\+1016/j.\+jcp.\+2020.\+109991}} (but using Koszul complements).
 \item \mbox{\hyperlink{group__DDR__stokes}{D\+D\+R\+\_\+stokes}}\+: Discrete De Rham (D\+DR) scheme for the Stokes problem in curl-\/curl form.
 \item \mbox{\hyperlink{group__VEM__stokes}{V\+E\+M\+\_\+stokes}}\+: Virtual Element Method (V\+EM) scheme for the Stokes problem in curl-\/curl form.
+\item \mbox{\hyperlink{group__HHO__MHD}{H\+H\+O\+\_\+\+M\+HD}}\+: H\+HO scheme for the M\+HD problem.
 \end{DoxyItemize}
 
 The directory {\ttfamily runs} contains B\+A\+SH scripts to run series of tests on families of meshes. The files {\ttfamily data.\+sh} describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the {\ttfamily output} directory, shows the convergence rate in the standard console output, and creates a pdf file {\ttfamily rate.\+pdf} describing the rates of convergence in various energy norms (you will need {\ttfamily pdflatex} to create this pdf file; commenting out the corresponding line is fine, the pdf will simply not be create). 

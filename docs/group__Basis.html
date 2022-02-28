@@ -648,6 +648,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga416c3d3dd9eff2a82631c853762cc50d"><td class="memItemLeft" align="right" valign="top">constexpr const BasisType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga416c3d3dd9eff2a82631c853762cc50d">HArDCore3D::DivergenceBasis&lt; BasisType &gt;::ancestor</a> () const</td></tr>
 <tr class="memdesc:ga416c3d3dd9eff2a82631c853762cc50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ancestor (basis that the gradient was taken of)  <a href="group__Basis.html#ga416c3d3dd9eff2a82631c853762cc50d">More...</a><br /></td></tr>
 <tr class="separator:ga416c3d3dd9eff2a82631c853762cc50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46eb884388862e45eb2064a55905ae18"><td class="memTemplParams" colspan="2">template&lt;typename ScalarFamilyType &gt; </td></tr>
+<tr class="memitem:ga46eb884388862e45eb2064a55905ae18"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classHArDCore3D_1_1DivergenceBasis.html">DivergenceBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1TangentFamily.html">TangentFamily</a>&lt; ScalarFamilyType &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga46eb884388862e45eb2064a55905ae18">HArDCore3D::ScalarRotFamily</a> (const <a class="el" href="classHArDCore3D_1_1TangentFamily.html">TangentFamily</a>&lt; ScalarFamilyType &gt; &amp;tangent_family, const Face &amp;F)</td></tr>
+<tr class="memdesc:ga46eb884388862e45eb2064a55905ae18"><td class="mdescLeft">&#160;</td><td class="mdescRight">The following function creates the "scalar rot" basis of a <a class="el" href="classHArDCore3D_1_1TangentFamily.html" title="Vector family for polynomial functions that are tangent to a certain place (determined by the generat...">TangentFamily</a> on a face.  <a href="group__Basis.html#ga46eb884388862e45eb2064a55905ae18">More...</a><br /></td></tr>
+<tr class="separator:ga46eb884388862e45eb2064a55905ae18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga98289e16109a552704685379e02a325e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga98289e16109a552704685379e02a325e">HArDCore3D::RolyComplBasisCell::RolyComplBasisCell</a> (const Cell &amp;T, size_t degree)</td></tr>
 <tr class="memdesc:ga98289e16109a552704685379e02a325e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Basis.html#ga98289e16109a552704685379e02a325e">More...</a><br /></td></tr>
 <tr class="separator:ga98289e16109a552704685379e02a325e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -783,6 +787,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga0105ef2d1903eeddce62e6ad647a8ead"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga0105ef2d1903eeddce62e6ad647a8ead">HArDCore3D::scalar_product</a> (const VectorRd &amp;x, const VectorRd &amp;y)</td></tr>
 <tr class="memdesc:ga0105ef2d1903eeddce62e6ad647a8ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar product between two vectors.  <a href="group__Basis.html#ga0105ef2d1903eeddce62e6ad647a8ead">More...</a><br /></td></tr>
 <tr class="separator:ga0105ef2d1903eeddce62e6ad647a8ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae0e17b9bcba8bbd415ff4812d44aa81f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gae0e17b9bcba8bbd415ff4812d44aa81f">HArDCore3D::scalar_product</a> (const <a class="el" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> &amp;x, const <a class="el" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> &amp;y)</td></tr>
+<tr class="memdesc:gae0e17b9bcba8bbd415ff4812d44aa81f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar product between two matrices.  <a href="group__Basis.html#gae0e17b9bcba8bbd415ff4812d44aa81f">More...</a><br /></td></tr>
+<tr class="separator:gae0e17b9bcba8bbd415ff4812d44aa81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7c34745cd64a55b7072c5c19e45fa3ec"><td class="memTemplParams" colspan="2">template&lt;typename Value &gt; </td></tr>
 <tr class="memitem:ga7c34745cd64a55b7072c5c19e45fa3ec"><td class="memTemplItemLeft" align="right" valign="top">boost::multi_array&lt; double, 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga7c34745cd64a55b7072c5c19e45fa3ec">HArDCore3D::scalar_product</a> (const boost::multi_array&lt; Value, 2 &gt; &amp;basis_quad, const Value &amp;v)</td></tr>
 <tr class="memdesc:ga7c34745cd64a55b7072c5c19e45fa3ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">This overloading of the scalar_product function computes the scalar product between an evaluation of a basis and a constant value; both basis values and constant value must be of type Value.  <a href="group__Basis.html#ga7c34745cd64a55b7072c5c19e45fa3ec">More...</a><br /></td></tr>
@@ -8131,7 +8138,7 @@ template&lt;typename BasisType &gt; </div>
 </div>
 </div>
 <a id="ga7c34745cd64a55b7072c5c19e45fa3ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7c34745cd64a55b7072c5c19e45fa3ec">&#9670;&nbsp;</a></span>scalar_product() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7c34745cd64a55b7072c5c19e45fa3ec">&#9670;&nbsp;</a></span>scalar_product() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8170,7 +8177,7 @@ template&lt;typename Value &gt; </div>
 </div>
 </div>
 <a id="ga46a7162dd1acacd29421a7d8db89c96e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga46a7162dd1acacd29421a7d8db89c96e">&#9670;&nbsp;</a></span>scalar_product() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga46a7162dd1acacd29421a7d8db89c96e">&#9670;&nbsp;</a></span>scalar_product() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8200,7 +8207,7 @@ template&lt;typename Value &gt; </div>
 </div>
 </div>
 <a id="gabe66f2d1efad01f907e32517c16b11f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabe66f2d1efad01f907e32517c16b11f9">&#9670;&nbsp;</a></span>scalar_product() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe66f2d1efad01f907e32517c16b11f9">&#9670;&nbsp;</a></span>scalar_product() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8229,8 +8236,38 @@ template&lt;typename Value &gt; </div>
 
 </div>
 </div>
+<a id="gae0e17b9bcba8bbd415ff4812d44aa81f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae0e17b9bcba8bbd415ff4812d44aa81f">&#9670;&nbsp;</a></span>scalar_product() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double HArDCore3D::scalar_product </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scalar product between two matrices. </p>
+
+</div>
+</div>
 <a id="ga0105ef2d1903eeddce62e6ad647a8ead"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0105ef2d1903eeddce62e6ad647a8ead">&#9670;&nbsp;</a></span>scalar_product() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0105ef2d1903eeddce62e6ad647a8ead">&#9670;&nbsp;</a></span>scalar_product() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8256,6 +8293,38 @@ template&lt;typename Value &gt; </div>
 </div><div class="memdoc">
 
 <p>Scalar product between two vectors. </p>
+
+</div>
+</div>
+<a id="ga46eb884388862e45eb2064a55905ae18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga46eb884388862e45eb2064a55905ae18">&#9670;&nbsp;</a></span>ScalarRotFamily()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ScalarFamilyType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHArDCore3D_1_1DivergenceBasis.html">DivergenceBasis</a>&lt;<a class="el" href="classHArDCore3D_1_1TangentFamily.html">TangentFamily</a>&lt;ScalarFamilyType&gt; &gt; HArDCore3D::ScalarRotFamily </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TangentFamily.html">TangentFamily</a>&lt; ScalarFamilyType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tangent_family</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The following function creates the "scalar rot" basis of a <a class="el" href="classHArDCore3D_1_1TangentFamily.html" title="Vector family for polynomial functions that are tangent to a certain place (determined by the generat...">TangentFamily</a> on a face. </p>
 
 </div>
 </div>

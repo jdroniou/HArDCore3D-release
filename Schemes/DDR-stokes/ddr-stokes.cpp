@@ -160,7 +160,7 @@ int main(int argc, const char* argv[])
 
   // Solve the problem
   timer.start();
-  Eigen::VectorXd uph;
+  Eigen::VectorXd uplambdah_condensed;
   if (vm.count("iterative-solver")) {
     std::cout << "[main] Solving the linear system using BiCGSTAB" << std::endl;
     
@@ -171,7 +171,7 @@ int main(int argc, const char* argv[])
       std::cerr << "[main] ERROR: Could not factorize matrix" << std::endl;
       exit(1);
     }
-    uph = solver.solve(st.systemVector()).head(st.dimension());
+    uplambdah_condensed = solver.solve(st.systemVector());
     if (solver.info() != Eigen::Success) {
       std::cerr << "[main] ERROR: Could not solve direct system" << std::endl;
       exit(1);
@@ -191,11 +191,20 @@ int main(int argc, const char* argv[])
     if (solver.info() != Eigen::Success) {
       std::cerr << "[main] ERROR: Could not factorize matrix" << std::endl;
     }
-    uph = solver.solve(st.systemVector()).head(st.dimension());
+    uplambdah_condensed = solver.solve(st.systemVector());
     if (solver.info() != Eigen::Success) {
       std::cerr << "[main] ERROR: Could not solve linear system" << std::endl;
     }
   }
+  // Re-create statically condensed unknowns
+  Eigen::VectorXd uph = Eigen::VectorXd::Zero(st.dimension());
+  Eigen::VectorXd sc_unknowns = st.scVector() + st.scMatrix() * uplambdah_condensed;
+  uph.head(st.xCurl().dimension() - st.nbSCDOFs_u()) = uplambdah_condensed.head(st.xCurl().dimension() - st.nbSCDOFs_u()); 
+  uph.segment(st.xCurl().dimension() - st.nbSCDOFs_u(), st.nbSCDOFs_u()) = sc_unknowns.head(st.nbSCDOFs_u());
+  uph.segment(st.xCurl().dimension(), st.xGrad().dimension() - st.nbSCDOFs_p()) 
+      = uplambdah_condensed.segment(st.xCurl().dimension() - st.nbSCDOFs_u(), st.xGrad().dimension() - st.nbSCDOFs_p());
+  uph.tail(st.nbSCDOFs_p()) = sc_unknowns.tail(st.nbSCDOFs_p());
+
   timer.stop();
   double t_wall_solve, t_proc_solve;
   std::tie(t_wall_solve, t_proc_solve) = store_times(timer, "[main] Time solve (wall/proc) ");
@@ -245,6 +254,7 @@ int main(int argc, const char* argv[])
   out << "NbEdges: " << mesh_ptr->n_edges() << std::endl;
   out << "DimXCurl: " << st.xCurl().dimension() << std::endl;
   out << "DimXGrad: " << st.xGrad().dimension() << std::endl;
+  out << "SizeSCsystem: " << st.systemMatrix().rows() << std::endl;
   // Discrete errors and norms
   out << "E_HcurlVel: " << error_hcurl_u << std::endl;
   out << "E_HgradPre: " << error_hgrad_p << std::endl;
@@ -307,11 +317,17 @@ Stokes::Stokes(
     m_xgrad(ddrcore, use_threads),
     m_xcurl(ddrcore, use_threads),
     m_xdiv(ddrcore, use_threads),
-    m_A(dimension()+1, dimension()+1),  // System size is dimension+1 because of Lagrange multiplier for zero-average constraint on pressure
-    m_b(Eigen::VectorXd::Zero(dimension()+1)),
+    m_nloc_sc_u( m_xcurl.numLocalDofsCell() ),
+    m_nloc_sc_p( m_xgrad.numLocalDofsCell() ),
+    m_A(sizeSystem(), sizeSystem()),
+    m_b(Eigen::VectorXd::Zero(sizeSystem())),
+    m_sc_A(nbSCDOFs(), sizeSystem()),
+    m_sc_b(Eigen::VectorXd::Zero(nbSCDOFs())),
     m_stab_par(0.1)    
 {
   m_output << "[Stokes] Initializing" << std::endl;
+
+  // To avoid performing static condensation, initialise m_nloc_sc_u and m_nloc_sc_p at 0
 }
 
 //------------------------------------------------------------------------------
@@ -330,17 +346,21 @@ void Stokes::assembleLinearSystem(
   auto assemble_all = [this, interp_f, u, nu](
                                        size_t start,
                                        size_t end,
-                                       std::list<Eigen::Triplet<double> > * my_triplets,
-                                       Eigen::VectorXd * my_rhs
+                                       std::list<Eigen::Triplet<double> > * triplets_sys,
+                                       Eigen::VectorXd * rhs_sys,
+                                       std::list<Eigen::Triplet<double> > * triplets_sc,
+                                       Eigen::VectorXd * rhs_sc
                                        )->void
                       {
                         for (size_t iT = start; iT < end; iT++) {
                           this->_assemble_local_contribution(
-                                                         iT,
-                                                         this->_compute_local_contribution(iT, interp_f, nu),
-                                                         *my_triplets,
-                                                         *my_rhs
-                                                         );
+                                                             iT,
+                                                             this->_compute_local_contribution(iT, interp_f, nu),
+                                                             *triplets_sys,
+                                                             *rhs_sys,
+                                                             *triplets_sc,
+                                                             *rhs_sc
+                                                             );
                         } // for iT
                       };
                       
@@ -350,10 +370,7 @@ void Stokes::assembleLinearSystem(
   }else{
     m_output << "[Stokes] Sequential assembly" << std::endl;
   }
-  std::pair<Eigen::SparseMatrix<double>, Eigen::VectorXd> 
-      system = parallel_assembly_system(m_ddrcore.mesh().n_cells(), this->dimension()+1, assemble_all, m_use_threads);
-  m_A = system.first;
-  m_b = system.second;
+  std::tie(m_A, m_b, m_sc_A, m_sc_b) = parallel_assembly_system(m_ddrcore.mesh().n_cells(), this->sizeSystem(), std::make_pair(this->nbSCDOFs(), this->sizeSystem()), this->nbSCDOFs(), assemble_all, m_use_threads);
 
   // Assemble boundary conditions
   for (auto iF : m_ddrcore.mesh().get_b_faces()) {
@@ -389,7 +406,7 @@ void Stokes::assembleLinearSystem(
       QuadratureRule quad_dqrbc_F = generate_quadrature_rule(F, dqrbc);
       Eigen::VectorXd bF = - integrate(u_dot_nF, evaluate_quad<Function>::compute(*m_ddrcore.faceBases(F.global_index()).Polykpo, quad_dqrbc_F), quad_dqrbc_F).transpose() * m_xgrad.faceOperators(F.global_index()).potential;
       auto I_F = m_xgrad.globalDOFIndices(F);
-      size_t dim_xcurl = m_xcurl.dimension();
+      size_t dim_xcurl = m_xcurl.dimension() - nbSCDOFs_u();  // Gradients DOFs start here after SC
       for (size_t i = 0; i < I_F.size(); i++) {
         m_b(dim_xcurl + I_F[i]) += bF(i);
       } // for i
@@ -451,35 +468,83 @@ std::pair<Eigen::MatrixXd, Eigen::VectorXd>
 
 //------------------------------------------------------------------------------
 
-void Stokes::_assemble_local_contribution(
-                                          size_t iT,
-                                          const std::pair<Eigen::MatrixXd, Eigen::VectorXd> & lsT,
-                                          std::list<Eigen::Triplet<double> > & my_triplets,
-                                          Eigen::VectorXd & my_rhs
-                                          )
+LocalStaticCondensation Stokes::_compute_static_condensation(const size_t & iT) const
 {
   const Cell & T = *m_ddrcore.mesh().cell(iT);
 
-  size_t dim_T = m_xcurl.dimensionCell(iT) + m_xgrad.dimensionCell(iT);
-  size_t dim_xcurl = m_xcurl.dimension();
+  // Dimensions
+  size_t dim_u = m_xcurl.dimensionCell(iT) - m_nloc_sc_u;     // number of velocity unknowns after SC
+  size_t dim_p = m_xgrad.dimensionCell(iT) - m_nloc_sc_p;     // number of pressure unknowns after SC
+  size_t dim_dofs = dim_u+dim_p+1;      // nb of dofs remaining after SC (including Lagrange multiplier)
+  size_t dim_sc = m_nloc_sc_u+m_nloc_sc_p;      // nb of SC dofs in total
 
-  // Create the vector of DOF indices
-  auto I_xcurl_T = m_xcurl.globalDOFIndices(T);
-  auto I_xgrad_T = m_xgrad.globalDOFIndices(T);
-  std::vector<size_t> I_T(dim_T+1);
-  auto it_I_T = std::copy(I_xcurl_T.begin(), I_xcurl_T.end(), I_T.begin());
-  std::transform(I_xgrad_T.begin(), I_xgrad_T.end(), it_I_T, [&dim_xcurl](const size_t & index) { return index + dim_xcurl; });
-  I_T[dim_T] = dimension();
+  // Creation of permutation matrix
+  Eigen::MatrixXd Perm = Eigen::MatrixXd::Zero(dim_dofs+dim_sc, dim_dofs+dim_sc);
+  Perm.topLeftCorner(dim_u, dim_u) = Eigen::MatrixXd::Identity(dim_u, dim_u);
+  Perm.block(dim_u, dim_u + m_nloc_sc_u, dim_p, dim_p) = Eigen::MatrixXd::Identity(dim_p, dim_p);
+  Perm(dim_u+dim_p, dim_u + m_nloc_sc_u + dim_p+m_nloc_sc_p) = 1.;   // Lagrange multiplier
+  Perm.block(dim_u + dim_p + 1, dim_u, m_nloc_sc_u, m_nloc_sc_u) = Eigen::MatrixXd::Identity(m_nloc_sc_u, m_nloc_sc_u);
+  Perm.block(dim_u + dim_p + 1 + m_nloc_sc_u, dim_u + m_nloc_sc_u + dim_p, m_nloc_sc_p, m_nloc_sc_p)
+      = Eigen::MatrixXd::Identity(m_nloc_sc_p, m_nloc_sc_p);
 
-  // Assemble
-  const Eigen::MatrixXd & AT = lsT.first;
-  const Eigen::VectorXd & bT = lsT.second;
-  for (size_t i = 0; i < dim_T+1; i++) {
-    my_rhs(I_T[i]) += bT(i);
-    for (size_t j = 0; j < dim_T+1; j++) {
-      my_triplets.push_back( Eigen::Triplet<double>(I_T[i], I_T[j], AT(i,j)) );
-    } // for j
-  } // for i
+  // Creation of global DOFs for system: IT_sys contains the skeletal dofs of u and of p
+  std::vector<size_t> IT_sys(dim_dofs, 0);
+  auto IT_xcurl = m_xcurl.globalDOFIndices(T);
+  auto IT_xgrad = m_xgrad.globalDOFIndices(T);
+  auto it_IT_sys = std::copy(IT_xcurl.begin(), IT_xcurl.begin()+dim_u, IT_sys.begin()); // put skeletal DOFs of u in IT_sys
+  size_t offset = m_xcurl.dimension() - nbSCDOFs_u();     // nb total of skeletal DOFs for u (where global skeletal dofs of p start)
+  std::transform(IT_xgrad.begin(), IT_xgrad.begin()+dim_p, it_IT_sys, [&offset](const size_t & index) { return index + offset; });
+  IT_sys[dim_dofs-1] = sizeSystem()-1; // Lagrange multiplier
+    
+  // Creation of global DOFs for SC operator: IT_sc contains global cell dofs of u (offset to start at 0) and p (offset to start after those of u)
+  std::vector<size_t> IT_sc(dim_sc, 0);  
+  if (dim_sc>0){
+    auto it_IT_sc = std::transform(IT_xcurl.begin()+dim_u, IT_xcurl.end(), IT_sc.begin(), [&offset](const size_t & index) { return index - offset; });
+    size_t end_u = nbSCDOFs_u();
+    offset = (m_xgrad.dimension() - nbSCDOFs_p());
+    std::transform(IT_xgrad.begin()+dim_p, IT_xgrad.end(), it_IT_sc, [&offset, &end_u](const size_t & index) { return index - offset + end_u; });
+  }  
+
+  return LocalStaticCondensation(Perm, IT_sys, IT_sc);
+}
+
+
+//------------------------------------------------------------------------------
+
+void Stokes::_assemble_local_contribution(
+                                          size_t iT,
+                                          const std::pair<Eigen::MatrixXd, Eigen::VectorXd> & lsT,
+                                          std::list<Eigen::Triplet<double> > & triplets_sys,
+                                          Eigen::VectorXd & rhs_sys,
+                                          std::list<Eigen::Triplet<double> > & triplets_sc,
+                                          Eigen::VectorXd & rhs_sc
+                                          )
+{
+  // Get information for local static condensation
+  LocalStaticCondensation locSC = _compute_static_condensation(iT);
+
+  Eigen::MatrixXd AT_sys, AT_sc;
+  Eigen::VectorXd bT_sys, bT_sc;
+  std::tie(AT_sys, bT_sys, AT_sc, bT_sc) = locSC.compute(lsT);
+  
+  // STATICALLY CONDENSED SYSTEM
+  std::vector<size_t> IT_sys = locSC.globalDOFs_sys();
+  for (size_t i = 0; i < locSC.dim_sys(); i++){
+    rhs_sys(IT_sys[i]) += bT_sys(i);
+    for (size_t j = 0; j < locSC.dim_sys(); j++){    
+      triplets_sys.emplace_back(IT_sys[i], IT_sys[j], AT_sys(i,j));
+    }
+  }
+  
+  // RECOVERY OPERATOR
+  std::vector<size_t> IT_sc = locSC.globalDOFs_sc();
+  for (size_t i = 0; i < locSC.dim_sc(); i++){
+    rhs_sc(IT_sc[i]) += bT_sc(i);
+    for (size_t j = 0; j < locSC.dim_sys(); j++){
+      triplets_sc.emplace_back(IT_sc[i], IT_sys[j], AT_sc(i,j));
+    }
+  }
+
 }
 
 

@@ -123,17 +123,61 @@ Functions</h2></td></tr>
 <tr class="memitem:ga1d57f1e307907cb47b96328c2f1705d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga1d57f1e307907cb47b96328c2f1705d6">MeshND::MeshObject&lt; space_dim, object_dim &gt;::~MeshObject</a> ()</td></tr>
 <tr class="memdesc:ga1d57f1e307907cb47b96328c2f1705d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="group__Mesh.html#ga1d57f1e307907cb47b96328c2f1705d6">More...</a><br /></td></tr>
 <tr class="separator:ga1d57f1e307907cb47b96328c2f1705d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8edaf60bec0e1645094e802fdc7211a9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga8edaf60bec0e1645094e802fdc7211a9">MeshND::MeshObject&lt; space_dim, object_dim &gt;::global_index</a> () const</td></tr>
+<tr class="memdesc:ga8edaf60bec0e1645094e802fdc7211a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the global index of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga8edaf60bec0e1645094e802fdc7211a9">More...</a><br /></td></tr>
+<tr class="separator:ga8edaf60bec0e1645094e802fdc7211a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5dd09ea688d0eb9b4cd0c8e0c970c8bf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga5dd09ea688d0eb9b4cd0c8e0c970c8bf">MeshND::MeshObject&lt; space_dim, object_dim &gt;::diam</a> () const</td></tr>
+<tr class="memdesc:ga5dd09ea688d0eb9b4cd0c8e0c970c8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the diameter of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga5dd09ea688d0eb9b4cd0c8e0c970c8bf">More...</a><br /></td></tr>
+<tr class="separator:ga5dd09ea688d0eb9b4cd0c8e0c970c8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b0f3f433486dde8fdea341f262d5053"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga8b0f3f433486dde8fdea341f262d5053">MeshND::MeshObject&lt; space_dim, object_dim &gt;::measure</a> () const</td></tr>
+<tr class="separator:ga8b0f3f433486dde8fdea341f262d5053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1c358f11ceef50222e6feaac03dae64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceMeshND.html#a4d216a3ef63fb3cf764b405b2b8e9db2">Simplices</a>&lt; space_dim, object_dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gae1c358f11ceef50222e6feaac03dae64">MeshND::MeshObject&lt; space_dim, object_dim &gt;::get_simplices</a> () const</td></tr>
+<tr class="memdesc:gae1c358f11ceef50222e6feaac03dae64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the simplices making up the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#gae1c358f11ceef50222e6feaac03dae64">More...</a><br /></td></tr>
+<tr class="separator:gae1c358f11ceef50222e6feaac03dae64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3e3369dca9c7df500afa41227bb2902"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gad3e3369dca9c7df500afa41227bb2902">MeshND::MeshObject&lt; space_dim, object_dim &gt;::set_global_index</a> (const size_t idx)</td></tr>
+<tr class="memdesc:gad3e3369dca9c7df500afa41227bb2902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global index.  <a href="group__Mesh.html#gad3e3369dca9c7df500afa41227bb2902">More...</a><br /></td></tr>
+<tr class="separator:gad3e3369dca9c7df500afa41227bb2902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfefc0d130b14c4e628d9a8c41762914"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gabfefc0d130b14c4e628d9a8c41762914">MeshND::MeshObject&lt; space_dim, object_dim &gt;::is_boundary</a> ()</td></tr>
+<tr class="memdesc:gabfefc0d130b14c4e628d9a8c41762914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a> is a boundary object, false otherwise.  <a href="group__Mesh.html#gabfefc0d130b14c4e628d9a8c41762914">More...</a><br /></td></tr>
+<tr class="separator:gabfefc0d130b14c4e628d9a8c41762914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga92c44918ffcdb15e7d89b26e871db125"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga92c44918ffcdb15e7d89b26e871db125">MeshND::MeshObject&lt; space_dim, object_dim &gt;::set_boundary</a> (bool val)</td></tr>
+<tr class="memdesc:ga92c44918ffcdb15e7d89b26e871db125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the boundary value of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga92c44918ffcdb15e7d89b26e871db125">More...</a><br /></td></tr>
+<tr class="separator:ga92c44918ffcdb15e7d89b26e871db125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga688b89ae93b45e68f46ccdbd82dd8464"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt; space_dim, 0 &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga688b89ae93b45e68f46ccdbd82dd8464">MeshND::MeshObject&lt; space_dim, object_dim &gt;::get_vertices</a> () const</td></tr>
+<tr class="memdesc:ga688b89ae93b45e68f46ccdbd82dd8464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vertices of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga688b89ae93b45e68f46ccdbd82dd8464">More...</a><br /></td></tr>
+<tr class="separator:ga688b89ae93b45e68f46ccdbd82dd8464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ee929f367a4fbd7d7ad080617288c11"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt; space_dim, 1 &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga3ee929f367a4fbd7d7ad080617288c11">MeshND::MeshObject&lt; space_dim, object_dim &gt;::get_edges</a> () const</td></tr>
+<tr class="memdesc:ga3ee929f367a4fbd7d7ad080617288c11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the edges of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga3ee929f367a4fbd7d7ad080617288c11">More...</a><br /></td></tr>
+<tr class="separator:ga3ee929f367a4fbd7d7ad080617288c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaedb6e7d26bd42351ab55b4199ddbe297"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt; space_dim, space_dim - 1 &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaedb6e7d26bd42351ab55b4199ddbe297">MeshND::MeshObject&lt; space_dim, object_dim &gt;::get_faces</a> () const</td></tr>
+<tr class="memdesc:gaedb6e7d26bd42351ab55b4199ddbe297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the faces of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#gaedb6e7d26bd42351ab55b4199ddbe297">More...</a><br /></td></tr>
+<tr class="separator:gaedb6e7d26bd42351ab55b4199ddbe297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7658f4f0aea527059523844cc2097af3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt; space_dim, space_dim &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga7658f4f0aea527059523844cc2097af3">MeshND::MeshObject&lt; space_dim, object_dim &gt;::get_cells</a> () const</td></tr>
+<tr class="memdesc:ga7658f4f0aea527059523844cc2097af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the cells of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga7658f4f0aea527059523844cc2097af3">More...</a><br /></td></tr>
+<tr class="separator:ga7658f4f0aea527059523844cc2097af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga452e8c9f4afba70dab5b668f0af3b6da"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga452e8c9f4afba70dab5b668f0af3b6da">MeshND::MeshObject&lt; space_dim, object_dim &gt;::n_vertices</a> () const</td></tr>
+<tr class="memdesc:ga452e8c9f4afba70dab5b668f0af3b6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of vertices of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga452e8c9f4afba70dab5b668f0af3b6da">More...</a><br /></td></tr>
+<tr class="separator:ga452e8c9f4afba70dab5b668f0af3b6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac47817d75ab87e8e61fcfdc2b32cb5a3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gac47817d75ab87e8e61fcfdc2b32cb5a3">MeshND::MeshObject&lt; space_dim, object_dim &gt;::n_edges</a> () const</td></tr>
+<tr class="memdesc:gac47817d75ab87e8e61fcfdc2b32cb5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of edges of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#gac47817d75ab87e8e61fcfdc2b32cb5a3">More...</a><br /></td></tr>
+<tr class="separator:gac47817d75ab87e8e61fcfdc2b32cb5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4cbd825a424dc797b81d711a3f50e22"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaa4cbd825a424dc797b81d711a3f50e22">MeshND::MeshObject&lt; space_dim, object_dim &gt;::n_faces</a> () const</td></tr>
+<tr class="memdesc:gaa4cbd825a424dc797b81d711a3f50e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of faces of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#gaa4cbd825a424dc797b81d711a3f50e22">More...</a><br /></td></tr>
+<tr class="separator:gaa4cbd825a424dc797b81d711a3f50e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga586c064e323c1c70b30dc8ea19421ce3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga586c064e323c1c70b30dc8ea19421ce3">MeshND::MeshObject&lt; space_dim, object_dim &gt;::n_cells</a> () const</td></tr>
+<tr class="memdesc:ga586c064e323c1c70b30dc8ea19421ce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of cells of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga586c064e323c1c70b30dc8ea19421ce3">More...</a><br /></td></tr>
+<tr class="separator:ga586c064e323c1c70b30dc8ea19421ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacb0bf2d67d00416bcbbd60c2d1bd3781"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt; space_dim, 0 &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gacb0bf2d67d00416bcbbd60c2d1bd3781">MeshND::MeshObject&lt; space_dim, object_dim &gt;::vertex</a> (const size_t i) const</td></tr>
-<tr class="memdesc:gacb0bf2d67d00416bcbbd60c2d1bd3781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the i-th vertex of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#gacb0bf2d67d00416bcbbd60c2d1bd3781">More...</a><br /></td></tr>
+<tr class="memdesc:gacb0bf2d67d00416bcbbd60c2d1bd3781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the i-th vertex of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#gacb0bf2d67d00416bcbbd60c2d1bd3781">More...</a><br /></td></tr>
 <tr class="separator:gacb0bf2d67d00416bcbbd60c2d1bd3781"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9cbef4ae8736a1f3aa6b7f3718de8ad2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt; space_dim, 1 &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga9cbef4ae8736a1f3aa6b7f3718de8ad2">MeshND::MeshObject&lt; space_dim, object_dim &gt;::edge</a> (const size_t i) const</td></tr>
-<tr class="memdesc:ga9cbef4ae8736a1f3aa6b7f3718de8ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the i-th edge of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga9cbef4ae8736a1f3aa6b7f3718de8ad2">More...</a><br /></td></tr>
+<tr class="memdesc:ga9cbef4ae8736a1f3aa6b7f3718de8ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the i-th edge of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga9cbef4ae8736a1f3aa6b7f3718de8ad2">More...</a><br /></td></tr>
 <tr class="separator:ga9cbef4ae8736a1f3aa6b7f3718de8ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga507f0961ffb2a8328fdc4787725602c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt; space_dim, space_dim - 1 &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga507f0961ffb2a8328fdc4787725602c7">MeshND::MeshObject&lt; space_dim, object_dim &gt;::face</a> (const size_t i) const</td></tr>
-<tr class="memdesc:ga507f0961ffb2a8328fdc4787725602c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the i-th face of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga507f0961ffb2a8328fdc4787725602c7">More...</a><br /></td></tr>
+<tr class="memdesc:ga507f0961ffb2a8328fdc4787725602c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the i-th face of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga507f0961ffb2a8328fdc4787725602c7">More...</a><br /></td></tr>
 <tr class="separator:ga507f0961ffb2a8328fdc4787725602c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga59a73d89c5469a10a6d7e2d0a25a3789"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt; space_dim, space_dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga59a73d89c5469a10a6d7e2d0a25a3789">MeshND::MeshObject&lt; space_dim, object_dim &gt;::cell</a> (const size_t i) const</td></tr>
-<tr class="memdesc:ga59a73d89c5469a10a6d7e2d0a25a3789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the i-th cell of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga59a73d89c5469a10a6d7e2d0a25a3789">More...</a><br /></td></tr>
+<tr class="memdesc:ga59a73d89c5469a10a6d7e2d0a25a3789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the i-th cell of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#ga59a73d89c5469a10a6d7e2d0a25a3789">More...</a><br /></td></tr>
 <tr class="separator:ga59a73d89c5469a10a6d7e2d0a25a3789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabe86cc9ed0583634cd3bfb8122979ea6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gabe86cc9ed0583634cd3bfb8122979ea6">MeshND::MeshObject&lt; space_dim, object_dim &gt;::add_vertex</a> (<a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt; space_dim, 0 &gt; *<a class="el" href="group__Mesh.html#gacb0bf2d67d00416bcbbd60c2d1bd3781">vertex</a>)</td></tr>
 <tr class="memdesc:gabe86cc9ed0583634cd3bfb8122979ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a vertex to the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#gabe86cc9ed0583634cd3bfb8122979ea6">More...</a><br /></td></tr>
@@ -172,7 +216,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga228570052980385cb87564da8096d801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the orientation of a Face.  <a href="group__Mesh.html#ga228570052980385cb87564da8096d801">More...</a><br /></td></tr>
 <tr class="separator:ga228570052980385cb87564da8096d801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga39f476a9ddec51e9c930c79c33641b59"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga39f476a9ddec51e9c930c79c33641b59">MeshND::MeshObject&lt; space_dim, object_dim &gt;::edge_orientation</a> (const size_t edge_index) const</td></tr>
-<tr class="memdesc:ga39f476a9ddec51e9c930c79c33641b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the orientation of a Edge.  <a href="group__Mesh.html#ga39f476a9ddec51e9c930c79c33641b59">More...</a><br /></td></tr>
+<tr class="memdesc:ga39f476a9ddec51e9c930c79c33641b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the orientation of a Edge (multiplied by edge_normal, gives the outer normal to the face)  <a href="group__Mesh.html#ga39f476a9ddec51e9c930c79c33641b59">More...</a><br /></td></tr>
 <tr class="separator:ga39f476a9ddec51e9c930c79c33641b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadaf3f7f4977287819dc61cc845cbb900"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceMeshND.html#a36f45c57c87a9d08d94fefe52f6fad56">VectorRd</a>&lt; space_dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gadaf3f7f4977287819dc61cc845cbb900">MeshND::MeshObject&lt; space_dim, object_dim &gt;::normal</a> () const</td></tr>
 <tr class="memdesc:gadaf3f7f4977287819dc61cc845cbb900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the normal of a Face.  <a href="group__Mesh.html#gadaf3f7f4977287819dc61cc845cbb900">More...</a><br /></td></tr>
@@ -374,7 +418,7 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return the i-th cell of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+<p>Returns the i-th cell of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
 
 </div>
 </div>
@@ -414,6 +458,35 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
 
 </div>
 </div>
+<a id="ga5dd09ea688d0eb9b4cd0c8e0c970c8bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5dd09ea688d0eb9b4cd0c8e0c970c8bf">&#9670;&nbsp;</a></span>diam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::diam </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the diameter of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
 <a id="ga9cbef4ae8736a1f3aa6b7f3718de8ad2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9cbef4ae8736a1f3aa6b7f3718de8ad2">&#9670;&nbsp;</a></span>edge()</h2>
 
@@ -432,7 +505,7 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return the i-th edge of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+<p>Returns the i-th edge of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
 
 </div>
 </div>
@@ -476,7 +549,7 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return the orientation of a Edge. </p>
+<p>Return the orientation of a Edge (multiplied by edge_normal, gives the outer normal to the face) </p>
 
 </div>
 </div>
@@ -498,7 +571,7 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return the i-th face of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+<p>Returns the i-th face of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
 
 </div>
 </div>
@@ -543,6 +616,180 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Return the orientation of a Face. </p>
+
+</div>
+</div>
+<a id="ga7658f4f0aea527059523844cc2097af3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7658f4f0aea527059523844cc2097af3">&#9670;&nbsp;</a></span>get_cells()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt;space_dim, space_dim&gt;*&gt; <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::get_cells </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the cells of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
+<a id="ga3ee929f367a4fbd7d7ad080617288c11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ee929f367a4fbd7d7ad080617288c11">&#9670;&nbsp;</a></span>get_edges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt;space_dim, 1&gt;*&gt; <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::get_edges </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the edges of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
+<a id="gaedb6e7d26bd42351ab55b4199ddbe297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaedb6e7d26bd42351ab55b4199ddbe297">&#9670;&nbsp;</a></span>get_faces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt;space_dim, space_dim - 1&gt;*&gt; <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::get_faces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the faces of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
+<a id="gae1c358f11ceef50222e6feaac03dae64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1c358f11ceef50222e6feaac03dae64">&#9670;&nbsp;</a></span>get_simplices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceMeshND.html#a4d216a3ef63fb3cf764b405b2b8e9db2">Simplices</a>&lt;space_dim, object_dim&gt; <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::get_simplices </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the simplices making up the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
+<a id="ga688b89ae93b45e68f46ccdbd82dd8464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga688b89ae93b45e68f46ccdbd82dd8464">&#9670;&nbsp;</a></span>get_vertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classMeshND_1_1MeshObject.html">MeshObject</a>&lt;space_dim, 0&gt;*&gt; <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::get_vertices </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the vertices of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
+<a id="ga8edaf60bec0e1645094e802fdc7211a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8edaf60bec0e1645094e802fdc7211a9">&#9670;&nbsp;</a></span>global_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::global_index </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the global index of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
 
 </div>
 </div>
@@ -631,6 +878,62 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the local index of a vertex. </p>
+
+</div>
+</div>
+<a id="gabfefc0d130b14c4e628d9a8c41762914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfefc0d130b14c4e628d9a8c41762914">&#9670;&nbsp;</a></span>is_boundary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::is_boundary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a> is a boundary object, false otherwise. </p>
+
+</div>
+</div>
+<a id="ga8b0f3f433486dde8fdea341f262d5053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8b0f3f433486dde8fdea341f262d5053">&#9670;&nbsp;</a></span>measure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::measure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -748,6 +1051,122 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
 
 </div>
 </div>
+<a id="ga586c064e323c1c70b30dc8ea19421ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga586c064e323c1c70b30dc8ea19421ce3">&#9670;&nbsp;</a></span>n_cells()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::n_cells </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of cells of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
+<a id="gac47817d75ab87e8e61fcfdc2b32cb5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac47817d75ab87e8e61fcfdc2b32cb5a3">&#9670;&nbsp;</a></span>n_edges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::n_edges </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of edges of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
+<a id="gaa4cbd825a424dc797b81d711a3f50e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4cbd825a424dc797b81d711a3f50e22">&#9670;&nbsp;</a></span>n_faces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::n_faces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of faces of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
+<a id="ga452e8c9f4afba70dab5b668f0af3b6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga452e8c9f4afba70dab5b668f0af3b6da">&#9670;&nbsp;</a></span>n_vertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::n_vertices </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of vertices of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
 <a id="gadaf3f7f4977287819dc61cc845cbb900"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gadaf3f7f4977287819dc61cc845cbb900">&#9670;&nbsp;</a></span>normal()</h2>
 
@@ -763,6 +1182,66 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Return the normal of a Face. </p>
+
+</div>
+</div>
+<a id="ga92c44918ffcdb15e7d89b26e871db125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga92c44918ffcdb15e7d89b26e871db125">&#9670;&nbsp;</a></span>set_boundary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::set_boundary </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the boundary value of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+
+</div>
+</div>
+<a id="gad3e3369dca9c7df500afa41227bb2902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad3e3369dca9c7df500afa41227bb2902">&#9670;&nbsp;</a></span>set_global_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::set_global_index </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the global index. </p>
 
 </div>
 </div>
@@ -846,7 +1325,7 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Return the i-th vertex of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
+<p>Returns the i-th vertex of the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>. </p>
 
 </div>
 </div>

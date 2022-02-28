@@ -12,6 +12,8 @@ class \mbox{\hyperlink{classHArDCore3D_1_1GlobalDOFSpace}{H\+Ar\+D\+Core3\+D\+::
 \begin{DoxyCompactList}\small\item\em Base class for global D\+OF spaces. Provides functions to manipulate global D\+O\+Fs (the local version being provided by D\+O\+F\+Space). \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight}}
 \begin{DoxyCompactList}\small\item\em Structure for weights (scalar, at the moment) in integral. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1LocalStaticCondensation}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation}}
+\begin{DoxyCompactList}\small\item\em Structure to store information for, and perform, local static condensation. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1LocalDOFSpace}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space}}
 \begin{DoxyCompactList}\small\item\em Base class for D\+OF spaces\+: functions to access local D\+O\+Fs (organised from the smallest dimension to the largest) associated with each geometric entity. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Geometric\+Support $>$}}
@@ -63,6 +65,18 @@ std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga7cc6a020ed82c7
 \item 
 \mbox{\hyperlink{group__Common_gaed526b573136d558b81d9be87646b5c9}{H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (double val)
 \item 
+\mbox{\hyperlink{group__Common_ga9013e4ca43adf132d979e0178676eb4f}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::\+Local\+Static\+Condensation}} (const Eigen\+::\+Matrix\+Xd \&Perm, const std\+::vector$<$ size\+\_\+t $>$ \&\mbox{\hyperlink{group__Common_gada39a93d73a2096ffadb2182d696a4b2}{global\+D\+O\+Fs\+\_\+sys}}, const std\+::vector$<$ size\+\_\+t $>$ \&\mbox{\hyperlink{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}{global\+D\+O\+Fs\+\_\+sc}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+std\+::tuple$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd, Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_ga7bac2f08d274e88fdb2057d593581c90}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::compute}} (const std\+::pair$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \&lsT)
+\begin{DoxyCompactList}\small\item\em Compute the local static condensation. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_gada39a93d73a2096ffadb2182d696a4b2}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::global\+D\+O\+Fs\+\_\+sys}} ()
+\begin{DoxyCompactList}\small\item\em Returns global D\+O\+Fs that are not statically condensend. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gaa2fd993a8010d3b907c881942186d36f}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sys}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of D\+O\+Fs that are not statically condensed. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::global\+D\+O\+Fs\+\_\+sc}} ()
+\begin{DoxyCompactList}\small\item\em Returns global D\+O\+Fs that are statically condensend. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga3d683e5f0aa27a28e9eb7fd399bd24c8}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sc}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of D\+O\+Fs that are statically condensed. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Common_gaa4747ac6257c084186c00efc756822c8}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::\+Local\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::mesh}} () const
@@ -146,6 +160,16 @@ std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ \mbo
 \item 
 std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ \mbox{\hyperlink{group__Common_ga6380d57e44432a9d08114c442158dc8a}{H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::deg}}
 \item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa868f9f56ab061eebcbc30c2dbe5295}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+\+Perm}}
+\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_gaccfaba0c903f41cd8dc3b1a7280eede3}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+D\+O\+Fs\+\_\+sys}}
+\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga0c686364431d55a47aca647bd2caeb49}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+D\+O\+Fs\+\_\+sc}}
+\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gae257d6004cb03b2408967d9af3cc83ee}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sys}}
+\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga529ae659ec36583e71ce72a5b29cb7e0}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sc}}
+\item 
 const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_gaf892ca81e64966ad421de137a5bc3fbb}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+mesh}}
 \item 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga7636d64533daa557cb40e3354665a376}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+vertex\+\_\+dofs}}
@@ -164,6 +188,36 @@ Various general functions and classes.
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__Common_ga7bac2f08d274e88fdb2057d593581c90}\label{group__Common_ga7bac2f08d274e88fdb2057d593581c90}} 
+\index{Common@{Common}!compute@{compute}}
+\index{compute@{compute}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily std\+::tuple$<$Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd, Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd$>$ H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::compute (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \&}]{lsT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the local static condensation. 
+
+From a local pair of Matrix-\/\+Vector product, constructed with all the D\+O\+Fs, returns a 4-\/tuple; the first two elements are the matrix-\/vector of the locally statically condensed system, the last two elements are the matrix-\/vector of the local recovery operator \mbox{\Hypertarget{group__Common_ga3d683e5f0aa27a28e9eb7fd399bd24c8}\label{group__Common_ga3d683e5f0aa27a28e9eb7fd399bd24c8}} 
+\index{Common@{Common}!dim\_sc@{dim\_sc}}
+\index{dim\_sc@{dim\_sc}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{dim\_sc()}{dim\_sc()}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of D\+O\+Fs that are statically condensed. 
+
+\mbox{\Hypertarget{group__Common_gaa2fd993a8010d3b907c881942186d36f}\label{group__Common_gaa2fd993a8010d3b907c881942186d36f}} 
+\index{Common@{Common}!dim\_sys@{dim\_sys}}
+\index{dim\_sys@{dim\_sys}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{dim\_sys()}{dim\_sys()}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of D\+O\+Fs that are not statically condensed. 
+
 \mbox{\Hypertarget{group__Common_ga2f9a4f73d3d98508bb70d42a72b38943}\label{group__Common_ga2f9a4f73d3d98508bb70d42a72b38943}} 
 \index{Common@{Common}!dimension@{dimension}}
 \index{dimension@{dimension}!Common@{Common}}
@@ -299,6 +353,26 @@ Returns a vector listing the global D\+O\+Fs attached to the element T\+: vertex
 
 
 Returns a vector listing the global D\+O\+Fs attached to the face F\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs. 
+
+\mbox{\Hypertarget{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}\label{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}} 
+\index{Common@{Common}!globalDOFs\_sc@{globalDOFs\_sc}}
+\index{globalDOFs\_sc@{globalDOFs\_sc}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{globalDOFs\_sc()}{globalDOFs\_sc()}}
+{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::global\+D\+O\+Fs\+\_\+sc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns global D\+O\+Fs that are statically condensend. 
+
+\mbox{\Hypertarget{group__Common_gada39a93d73a2096ffadb2182d696a4b2}\label{group__Common_gada39a93d73a2096ffadb2182d696a4b2}} 
+\index{Common@{Common}!globalDOFs\_sys@{globalDOFs\_sys}}
+\index{globalDOFs\_sys@{globalDOFs\_sys}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{globalDOFs\_sys()}{globalDOFs\_sys()}}
+{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::global\+D\+O\+Fs\+\_\+sys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns global D\+O\+Fs that are not statically condensend. 
 
 \mbox{\Hypertarget{group__Common_gac0ee512d7dbbce9e7aae3f2f42138470}\label{group__Common_gac0ee512d7dbbce9e7aae3f2f42138470}} 
 \index{Common@{Common}!GlobalDOFSpace@{GlobalDOFSpace}}
@@ -509,6 +583,25 @@ Returns the local offset of the edge E with respect to the face F.
 
 Returns the local offset of the vertex V with respect to the face F. 
 
+\mbox{\Hypertarget{group__Common_ga9013e4ca43adf132d979e0178676eb4f}\label{group__Common_ga9013e4ca43adf132d979e0178676eb4f}} 
+\index{Common@{Common}!LocalStaticCondensation@{LocalStaticCondensation}}
+\index{LocalStaticCondensation@{LocalStaticCondensation}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{LocalStaticCondensation()}{LocalStaticCondensation()}}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::\+Local\+Static\+Condensation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Perm,  }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{global\+D\+O\+Fs\+\_\+sys,  }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{global\+D\+O\+Fs\+\_\+sc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Perm} & Permutation that moves the D\+O\+Fs to condense at the end \\
+\hline
+{\em global\+D\+O\+Fs\+\_\+sys} & List of global D\+O\+Fs in the final system \\
+\hline
+{\em global\+D\+O\+Fs\+\_\+sc} & List of global D\+O\+Fs that are statically condensed \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}\label{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}} 
 \index{Common@{Common}!mesh@{mesh}}
 \index{mesh@{mesh}!Common@{Common}}
@@ -729,7 +822,7 @@ Dimension of Rck(\+F)
 
 Function to store and display wall/proc timers from boost\+::timer\+::cpu\+\_\+timer. 
 
-
+Wall time is in the first element of the pair, proc time in the second 
 \begin{DoxyParams}{Parameters}
 {\em timer} & The timer \\
 \hline
@@ -744,6 +837,30 @@ Function to store and display wall/proc timers from boost\+::timer\+::cpu\+\_\+t
 \index{deg@{deg}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{deg}{deg}}
 {\footnotesize\ttfamily std\+::function$<$size\+\_\+t (const Cell \& T)$>$ H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::deg}
+
+\mbox{\Hypertarget{group__Common_ga529ae659ec36583e71ce72a5b29cb7e0}\label{group__Common_ga529ae659ec36583e71ce72a5b29cb7e0}} 
+\index{Common@{Common}!m\_dim\_sc@{m\_dim\_sc}}
+\index{m\_dim\_sc@{m\_dim\_sc}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{m\_dim\_sc}{m\_dim\_sc}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sc}
+
+\mbox{\Hypertarget{group__Common_gae257d6004cb03b2408967d9af3cc83ee}\label{group__Common_gae257d6004cb03b2408967d9af3cc83ee}} 
+\index{Common@{Common}!m\_dim\_sys@{m\_dim\_sys}}
+\index{m\_dim\_sys@{m\_dim\_sys}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{m\_dim\_sys}{m\_dim\_sys}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sys}
+
+\mbox{\Hypertarget{group__Common_ga0c686364431d55a47aca647bd2caeb49}\label{group__Common_ga0c686364431d55a47aca647bd2caeb49}} 
+\index{Common@{Common}!m\_globalDOFs\_sc@{m\_globalDOFs\_sc}}
+\index{m\_globalDOFs\_sc@{m\_globalDOFs\_sc}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{m\_globalDOFs\_sc}{m\_globalDOFs\_sc}}
+{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+D\+O\+Fs\+\_\+sc}
+
+\mbox{\Hypertarget{group__Common_gaccfaba0c903f41cd8dc3b1a7280eede3}\label{group__Common_gaccfaba0c903f41cd8dc3b1a7280eede3}} 
+\index{Common@{Common}!m\_globalDOFs\_sys@{m\_globalDOFs\_sys}}
+\index{m\_globalDOFs\_sys@{m\_globalDOFs\_sys}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{m\_globalDOFs\_sys}{m\_globalDOFs\_sys}}
+{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+D\+O\+Fs\+\_\+sys}
 
 \mbox{\Hypertarget{group__Common_gaf892ca81e64966ad421de137a5bc3fbb}\label{group__Common_gaf892ca81e64966ad421de137a5bc3fbb}} 
 \index{Common@{Common}!m\_mesh@{m\_mesh}}
@@ -774,6 +891,12 @@ Function to store and display wall/proc timers from boost\+::timer\+::cpu\+\_\+t
 \index{m\_n\_local\_vertex\_dofs@{m\_n\_local\_vertex\_dofs}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_n\_local\_vertex\_dofs}{m\_n\_local\_vertex\_dofs}}
 {\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+vertex\+\_\+dofs\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{group__Common_gafa868f9f56ab061eebcbc30c2dbe5295}\label{group__Common_gafa868f9f56ab061eebcbc30c2dbe5295}} 
+\index{Common@{Common}!m\_Perm@{m\_Perm}}
+\index{m\_Perm@{m\_Perm}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{m\_Perm}{m\_Perm}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+\+Perm}
 
 \mbox{\Hypertarget{group__Common_ga0e64dd7fa60d788876219241162f0f6e}\label{group__Common_ga0e64dd7fa60d788876219241162f0f6e}} 
 \index{Common@{Common}!value@{value}}

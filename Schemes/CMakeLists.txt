@@ -3,6 +3,7 @@ ADD_LIBRARY(TestCase OBJECT TestCase/TestCase.cpp)
 ADD_LIBRARY(BoundaryConditions OBJECT BoundaryConditions/BoundaryConditions.cpp)
 ADD_LIBRARY(hho-general OBJECT HHO-general/HHO3D.cpp)
 ADD_LIBRARY(DirectedGraph OBJECT MeshCoarsen/DirectedGraph.cpp)
+ADD_LIBRARY(MHDTests HHO-MHD/MHDTests.cpp)
 
 # Mesh Coarsen
 ADD_EXECUTABLE(mesh-coarsen $<TARGET_OBJECTS:DirectedGraph> MeshCoarsen/MeshCoarsen.cpp)
@@ -38,5 +39,11 @@ TARGET_INCLUDE_DIRECTORIES(ddr-stokes PUBLIC ${EXTERNAL_INCLUDES})
 ADD_EXECUTABLE(vem-stokes VEM-stokes/vem-stokes.cpp)
 TARGET_LINK_LIBRARIES(vem-stokes mesh quadrature vemcore plot ${EXTERNAL_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(vem-stokes PUBLIC ${EXTERNAL_INCLUDES})
+
+# HHO MHD
+ADD_EXECUTABLE(hho-mhd $<TARGET_OBJECTS:MHDTests> $<TARGET_OBJECTS:BoundaryConditions> HHO-MHD/HHO_MHD.cpp)
+TARGET_LINK_LIBRARIES(hho-mhd quadrature hybridcore plot mesh ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(hho-mhd PUBLIC ${EXTERNAL_INCLUDES})
+
 
 

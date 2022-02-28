@@ -1,0 +1,371 @@
+\hypertarget{group__HHO__MHD}{}\doxysection{H\+H\+O\+\_\+\+M\+HD}
+\label{group__HHO__MHD}\index{HHO\_MHD@{HHO\_MHD}}
+
+
+Implementation of the H\+HO scheme for the M\+HD problem.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}}
+\item 
+class \mbox{\hyperlink{classMHDModel}{M\+H\+D\+Model}}
+\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1MHDTests}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__HHO__MHD_ga8e4dd529848f7f433c701cdc38c4641c}{Solution\+Vector\+::\+Solution\+Vector}} (Eigen\+::\+Vector\+Xd values, const Mesh $\ast$mesh\+\_\+ptr, const size\+\_\+t cell\+\_\+deg, const size\+\_\+t face\+\_\+deg)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_gad4dc34e2f0b59c1dab8fcd33962f6549}{Solution\+Vector\+::as\+Vector\+Xd}} () const
+\begin{DoxyCompactList}\small\item\em Return the values as an Eigen vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__HHO__MHD_ga11701714647e6a25844189a2b730632c}{Solution\+Vector\+::set\+\_\+values}} (Eigen\+::\+Vector\+Xd values) const
+\begin{DoxyCompactList}\small\item\em Return the values as an Eigen vector. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__MHD_gac7e9046483d9442386c5c98148790e22}{Solution\+Vector\+::get\+\_\+cell\+\_\+deg}} () const
+\begin{DoxyCompactList}\small\item\em Return the cell degree. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__MHD_ga1a7067f9cf6119bcf892a0156c64ef59}{Solution\+Vector\+::get\+\_\+face\+\_\+deg}} () const
+\begin{DoxyCompactList}\small\item\em Return the face degree. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga9a194958dae35aa3b2067c41ce3eddb3}{Solution\+Vector\+::velocity\+\_\+values}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga78d9f0b56c0821085ee344579e0afb02}{Solution\+Vector\+::pressure\+\_\+values}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_gaa99324007040f5712e5a8bba2bb680c2}{Solution\+Vector\+::magnetic\+\_\+values}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga711b10141559ae8af78df1abce20b27f}{Solution\+Vector\+::lagrange\+\_\+values}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_gad27301cee12943059dc2b112f00e05a7}{Solution\+Vector\+::velocity\+\_\+restr}} (size\+\_\+t iT) const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga43b0a8cf5a9f2e05c7a0d2c09a78a7df}{Solution\+Vector\+::pressure\+\_\+restr}} (size\+\_\+t iT) const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga656554a16d86296307d563ce608115e3}{Solution\+Vector\+::magnetic\+\_\+restr}} (size\+\_\+t iT) const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga01846042b074d060c2b360b97e5f6271}{Solution\+Vector\+::lagrange\+\_\+restr}} (size\+\_\+t iT) const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_gaf5003869a2741cbda966326a3659c68d}{Solution\+Vector\+::restr}} (size\+\_\+t iT) const
+\item 
+\mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \mbox{\hyperlink{group__HHO__MHD_gac467c5c7331ca0c93f92d6d2214cece4}{Solution\+Vector\+::operator+}} (const \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \&b) const
+\begin{DoxyCompactList}\small\item\em Overloads the addition\+: adds the coefficients. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \mbox{\hyperlink{group__HHO__MHD_ga5266d7765490b357347087132fbdf2bb}{Solution\+Vector\+::operator-\/}} (const \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \&b) const
+\begin{DoxyCompactList}\small\item\em Overloads the subtraction\+: subtracts the coefficients. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__HHO__MHD_gacb65e90956c5831fa2d9a2190d694487}{Solution\+Vector\+::operator()}} (size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Overloads the ()\+: returns the corresponding coefficient. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__HHO__MHD_ga0bf1518db11d4206e4f01c416bfbcf0f}{M\+H\+D\+Model\+::\+M\+H\+D\+Model}} (\mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} \&, size\+\_\+t, size\+\_\+t, char, char)
+\item 
+\mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \mbox{\hyperlink{group__HHO__MHD_gab042b2e7ca94620b11956247a20b9afe}{M\+H\+D\+Model\+::solve\+\_\+with\+\_\+static\+\_\+cond}} (\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ f\+\_\+source, \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ g\+\_\+source, double visc, double diff, double tol, bool threading=true)
+\item 
+\mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \mbox{\hyperlink{group__HHO__MHD_gae492ddaf69388c6146ba2a67a5076344}{M\+H\+D\+Model\+::global\+\_\+interpolant}} (\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ velocity, \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ double $>$ pressure, \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ magnetic)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{group__HHO__MHD_gaa324137b99f2421c33997744f823b3b8}{M\+H\+D\+Model\+::compute\+\_\+errors}} (\mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} intepolant, \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} discrete, double visc, double diff)
+\item 
+\mbox{\hyperlink{group__HHO__MHD_ga645531f08cf414927698a7915c5b2f93}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::\+M\+H\+D\+Tests}} (size\+\_\+t u\+\_\+id, size\+\_\+t b\+\_\+id, size\+\_\+t p\+\_\+id, double visc, double diff)
+\begin{DoxyCompactList}\small\item\em Initialise data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_ga678c5721552845a2a36be200a9616cfb}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::velocity}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} $>$ \mbox{\hyperlink{group__HHO__MHD_ga98c3c531d69d01359fd33417ed256c9b}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::grad\+\_\+velocity}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_gad6e0251bff010834cdfde1855008cfba}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::laplace\+\_\+velocity}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_ga5004427ea0af92fddadb8be07b86e5df}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::magnetic}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} $>$ \mbox{\hyperlink{group__HHO__MHD_gab32496ef28e02c1df49798f883eb5a41}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::grad\+\_\+magnetic}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_gae7b0093c94c83cf787cd648bb2d7bd0a}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::laplace\+\_\+magnetic}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_ga0701530d6bc686e3f1fcfe82be7683e4}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::u\+\_\+dot\+\_\+grad\+\_\+u}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_ga62855e09777a398118c163d714275251}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::u\+\_\+dot\+\_\+grad\+\_\+b}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_ga87c5ed45a591f4a472e16f6368cf6f8c}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::b\+\_\+dot\+\_\+grad\+\_\+u}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_gaa4dbb5bd7c2055293918d48bab801fac}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::b\+\_\+dot\+\_\+grad\+\_\+b}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ double $>$ \mbox{\hyperlink{group__HHO__MHD_gab1cfabcfd34b918f681d0454991d7099}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::pressure}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_ga057d8052814f95d22737fb785e30a750}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::grad\+\_\+pressure}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_ga06f0a6fee3ccfd217e6328fa2636fcbc}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::magnetic\+\_\+source}} ()
+\item 
+\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHO__MHD_ga2b5c9883c0a1f59365f2ead2c6035d39}{H\+Ar\+D\+Core3\+D\+::\+M\+H\+D\+Tests\+::velocity\+\_\+source}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the H\+HO scheme for the M\+HD problem. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__HHO__MHD_gad4dc34e2f0b59c1dab8fcd33962f6549}\label{group__HHO__MHD_gad4dc34e2f0b59c1dab8fcd33962f6549}} 
+\index{HHO\_MHD@{HHO\_MHD}!asVectorXd@{asVectorXd}}
+\index{asVectorXd@{asVectorXd}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{asVectorXd()}{asVectorXd()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Solution\+Vector\+::as\+Vector\+Xd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the values as an Eigen vector. 
+
+\mbox{\Hypertarget{group__HHO__MHD_gaa4dbb5bd7c2055293918d48bab801fac}\label{group__HHO__MHD_gaa4dbb5bd7c2055293918d48bab801fac}} 
+\index{HHO\_MHD@{HHO\_MHD}!b\_dot\_grad\_b@{b\_dot\_grad\_b}}
+\index{b\_dot\_grad\_b@{b\_dot\_grad\_b}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{b\_dot\_grad\_b()}{b\_dot\_grad\_b()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::b\+\_\+dot\+\_\+grad\+\_\+b (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga87c5ed45a591f4a472e16f6368cf6f8c}\label{group__HHO__MHD_ga87c5ed45a591f4a472e16f6368cf6f8c}} 
+\index{HHO\_MHD@{HHO\_MHD}!b\_dot\_grad\_u@{b\_dot\_grad\_u}}
+\index{b\_dot\_grad\_u@{b\_dot\_grad\_u}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{b\_dot\_grad\_u()}{b\_dot\_grad\_u()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::b\+\_\+dot\+\_\+grad\+\_\+u (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_gaa324137b99f2421c33997744f823b3b8}\label{group__HHO__MHD_gaa324137b99f2421c33997744f823b3b8}} 
+\index{HHO\_MHD@{HHO\_MHD}!compute\_errors@{compute\_errors}}
+\index{compute\_errors@{compute\_errors}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{compute\_errors()}{compute\_errors()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ M\+H\+D\+Model\+::compute\+\_\+errors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSolutionVector}{Solution\+Vector}}}]{intepolant,  }\item[{\mbox{\hyperlink{structSolutionVector}{Solution\+Vector}}}]{discrete,  }\item[{double}]{visc,  }\item[{double}]{diff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_gac7e9046483d9442386c5c98148790e22}\label{group__HHO__MHD_gac7e9046483d9442386c5c98148790e22}} 
+\index{HHO\_MHD@{HHO\_MHD}!get\_cell\_deg@{get\_cell\_deg}}
+\index{get\_cell\_deg@{get\_cell\_deg}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{get\_cell\_deg()}{get\_cell\_deg()}}
+{\footnotesize\ttfamily const size\+\_\+t Solution\+Vector\+::get\+\_\+cell\+\_\+deg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the cell degree. 
+
+\mbox{\Hypertarget{group__HHO__MHD_ga1a7067f9cf6119bcf892a0156c64ef59}\label{group__HHO__MHD_ga1a7067f9cf6119bcf892a0156c64ef59}} 
+\index{HHO\_MHD@{HHO\_MHD}!get\_face\_deg@{get\_face\_deg}}
+\index{get\_face\_deg@{get\_face\_deg}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{get\_face\_deg()}{get\_face\_deg()}}
+{\footnotesize\ttfamily const size\+\_\+t Solution\+Vector\+::get\+\_\+face\+\_\+deg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the face degree. 
+
+\mbox{\Hypertarget{group__HHO__MHD_gae492ddaf69388c6146ba2a67a5076344}\label{group__HHO__MHD_gae492ddaf69388c6146ba2a67a5076344}} 
+\index{HHO\_MHD@{HHO\_MHD}!global\_interpolant@{global\_interpolant}}
+\index{global\_interpolant@{global\_interpolant}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{global\_interpolant()}{global\_interpolant()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} M\+H\+D\+Model\+::global\+\_\+interpolant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$}]{velocity,  }\item[{\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ double $>$}]{pressure,  }\item[{\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$}]{magnetic }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_gab32496ef28e02c1df49798f883eb5a41}\label{group__HHO__MHD_gab32496ef28e02c1df49798f883eb5a41}} 
+\index{HHO\_MHD@{HHO\_MHD}!grad\_magnetic@{grad\_magnetic}}
+\index{grad\_magnetic@{grad\_magnetic}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{grad\_magnetic()}{grad\_magnetic()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} $>$ M\+H\+D\+Tests\+::grad\+\_\+magnetic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga057d8052814f95d22737fb785e30a750}\label{group__HHO__MHD_ga057d8052814f95d22737fb785e30a750}} 
+\index{HHO\_MHD@{HHO\_MHD}!grad\_pressure@{grad\_pressure}}
+\index{grad\_pressure@{grad\_pressure}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{grad\_pressure()}{grad\_pressure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::grad\+\_\+pressure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga98c3c531d69d01359fd33417ed256c9b}\label{group__HHO__MHD_ga98c3c531d69d01359fd33417ed256c9b}} 
+\index{HHO\_MHD@{HHO\_MHD}!grad\_velocity@{grad\_velocity}}
+\index{grad\_velocity@{grad\_velocity}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{grad\_velocity()}{grad\_velocity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} $>$ M\+H\+D\+Tests\+::grad\+\_\+velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga01846042b074d060c2b360b97e5f6271}\label{group__HHO__MHD_ga01846042b074d060c2b360b97e5f6271}} 
+\index{HHO\_MHD@{HHO\_MHD}!lagrange\_restr@{lagrange\_restr}}
+\index{lagrange\_restr@{lagrange\_restr}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{lagrange\_restr()}{lagrange\_restr()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Solution\+Vector\+::lagrange\+\_\+restr (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga711b10141559ae8af78df1abce20b27f}\label{group__HHO__MHD_ga711b10141559ae8af78df1abce20b27f}} 
+\index{HHO\_MHD@{HHO\_MHD}!lagrange\_values@{lagrange\_values}}
+\index{lagrange\_values@{lagrange\_values}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{lagrange\_values()}{lagrange\_values()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Solution\+Vector\+::lagrange\+\_\+values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{group__HHO__MHD_gae7b0093c94c83cf787cd648bb2d7bd0a}\label{group__HHO__MHD_gae7b0093c94c83cf787cd648bb2d7bd0a}} 
+\index{HHO\_MHD@{HHO\_MHD}!laplace\_magnetic@{laplace\_magnetic}}
+\index{laplace\_magnetic@{laplace\_magnetic}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{laplace\_magnetic()}{laplace\_magnetic()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::laplace\+\_\+magnetic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_gad6e0251bff010834cdfde1855008cfba}\label{group__HHO__MHD_gad6e0251bff010834cdfde1855008cfba}} 
+\index{HHO\_MHD@{HHO\_MHD}!laplace\_velocity@{laplace\_velocity}}
+\index{laplace\_velocity@{laplace\_velocity}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{laplace\_velocity()}{laplace\_velocity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::laplace\+\_\+velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga5004427ea0af92fddadb8be07b86e5df}\label{group__HHO__MHD_ga5004427ea0af92fddadb8be07b86e5df}} 
+\index{HHO\_MHD@{HHO\_MHD}!magnetic@{magnetic}}
+\index{magnetic@{magnetic}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{magnetic()}{magnetic()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::magnetic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga656554a16d86296307d563ce608115e3}\label{group__HHO__MHD_ga656554a16d86296307d563ce608115e3}} 
+\index{HHO\_MHD@{HHO\_MHD}!magnetic\_restr@{magnetic\_restr}}
+\index{magnetic\_restr@{magnetic\_restr}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{magnetic\_restr()}{magnetic\_restr()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Solution\+Vector\+::magnetic\+\_\+restr (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga06f0a6fee3ccfd217e6328fa2636fcbc}\label{group__HHO__MHD_ga06f0a6fee3ccfd217e6328fa2636fcbc}} 
+\index{HHO\_MHD@{HHO\_MHD}!magnetic\_source@{magnetic\_source}}
+\index{magnetic\_source@{magnetic\_source}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{magnetic\_source()}{magnetic\_source()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::magnetic\+\_\+source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_gaa99324007040f5712e5a8bba2bb680c2}\label{group__HHO__MHD_gaa99324007040f5712e5a8bba2bb680c2}} 
+\index{HHO\_MHD@{HHO\_MHD}!magnetic\_values@{magnetic\_values}}
+\index{magnetic\_values@{magnetic\_values}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{magnetic\_values()}{magnetic\_values()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Solution\+Vector\+::magnetic\+\_\+values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga0bf1518db11d4206e4f01c416bfbcf0f}\label{group__HHO__MHD_ga0bf1518db11d4206e4f01c416bfbcf0f}} 
+\index{HHO\_MHD@{HHO\_MHD}!MHDModel@{MHDModel}}
+\index{MHDModel@{MHDModel}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{MHDModel()}{MHDModel()}}
+{\footnotesize\ttfamily M\+H\+D\+Model\+::\+M\+H\+D\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}} \&}]{hho,  }\item[{size\+\_\+t}]{L,  }\item[{size\+\_\+t}]{K,  }\item[{char}]{u\+\_\+bc,  }\item[{char}]{b\+\_\+bc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga645531f08cf414927698a7915c5b2f93}\label{group__HHO__MHD_ga645531f08cf414927698a7915c5b2f93}} 
+\index{HHO\_MHD@{HHO\_MHD}!MHDTests@{MHDTests}}
+\index{MHDTests@{MHDTests}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{MHDTests()}{MHDTests()}}
+{\footnotesize\ttfamily M\+H\+D\+Tests\+::\+M\+H\+D\+Tests (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{u\+\_\+id,  }\item[{size\+\_\+t}]{b\+\_\+id,  }\item[{size\+\_\+t}]{p\+\_\+id,  }\item[{double}]{visc,  }\item[{double}]{diff }\end{DoxyParamCaption})}
+
+
+
+Initialise data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u\+\_\+id} & The id of the test case for the velocity \\
+\hline
+{\em b\+\_\+id} & The id of the test case for the magnetic field \\
+\hline
+{\em p\+\_\+id} & The id of the test case for the pressure \\
+\hline
+{\em visc} & The viscocity coefficient \\
+\hline
+{\em diff} & The magnetic diffusivity coefficient \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__MHD_gacb65e90956c5831fa2d9a2190d694487}\label{group__HHO__MHD_gacb65e90956c5831fa2d9a2190d694487}} 
+\index{HHO\_MHD@{HHO\_MHD}!operator()@{operator()}}
+\index{operator()@{operator()}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily double Solution\+Vector\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloads the ()\+: returns the corresponding coefficient. 
+
+\mbox{\Hypertarget{group__HHO__MHD_gac467c5c7331ca0c93f92d6d2214cece4}\label{group__HHO__MHD_gac467c5c7331ca0c93f92d6d2214cece4}} 
+\index{HHO\_MHD@{HHO\_MHD}!operator+@{operator+}}
+\index{operator+@{operator+}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} Solution\+Vector\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \&}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloads the addition\+: adds the coefficients. 
+
+\mbox{\Hypertarget{group__HHO__MHD_ga5266d7765490b357347087132fbdf2bb}\label{group__HHO__MHD_ga5266d7765490b357347087132fbdf2bb}} 
+\index{HHO\_MHD@{HHO\_MHD}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} Solution\+Vector\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \&}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloads the subtraction\+: subtracts the coefficients. 
+
+\mbox{\Hypertarget{group__HHO__MHD_gab1cfabcfd34b918f681d0454991d7099}\label{group__HHO__MHD_gab1cfabcfd34b918f681d0454991d7099}} 
+\index{HHO\_MHD@{HHO\_MHD}!pressure@{pressure}}
+\index{pressure@{pressure}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{pressure()}{pressure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ double $>$ M\+H\+D\+Tests\+::pressure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga43b0a8cf5a9f2e05c7a0d2c09a78a7df}\label{group__HHO__MHD_ga43b0a8cf5a9f2e05c7a0d2c09a78a7df}} 
+\index{HHO\_MHD@{HHO\_MHD}!pressure\_restr@{pressure\_restr}}
+\index{pressure\_restr@{pressure\_restr}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{pressure\_restr()}{pressure\_restr()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Solution\+Vector\+::pressure\+\_\+restr (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga78d9f0b56c0821085ee344579e0afb02}\label{group__HHO__MHD_ga78d9f0b56c0821085ee344579e0afb02}} 
+\index{HHO\_MHD@{HHO\_MHD}!pressure\_values@{pressure\_values}}
+\index{pressure\_values@{pressure\_values}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{pressure\_values()}{pressure\_values()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Solution\+Vector\+::pressure\+\_\+values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{group__HHO__MHD_gaf5003869a2741cbda966326a3659c68d}\label{group__HHO__MHD_gaf5003869a2741cbda966326a3659c68d}} 
+\index{HHO\_MHD@{HHO\_MHD}!restr@{restr}}
+\index{restr@{restr}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{restr()}{restr()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Solution\+Vector\+::restr (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga11701714647e6a25844189a2b730632c}\label{group__HHO__MHD_ga11701714647e6a25844189a2b730632c}} 
+\index{HHO\_MHD@{HHO\_MHD}!set\_values@{set\_values}}
+\index{set\_values@{set\_values}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{set\_values()}{set\_values()}}
+{\footnotesize\ttfamily void Solution\+Vector\+::set\+\_\+values (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd}]{values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the values as an Eigen vector. 
+
+\mbox{\Hypertarget{group__HHO__MHD_ga8e4dd529848f7f433c701cdc38c4641c}\label{group__HHO__MHD_ga8e4dd529848f7f433c701cdc38c4641c}} 
+\index{HHO\_MHD@{HHO\_MHD}!SolutionVector@{SolutionVector}}
+\index{SolutionVector@{SolutionVector}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{SolutionVector()}{SolutionVector()}}
+{\footnotesize\ttfamily Solution\+Vector\+::\+Solution\+Vector (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd}]{values,  }\item[{const Mesh $\ast$}]{mesh\+\_\+ptr,  }\item[{const size\+\_\+t}]{cell\+\_\+deg,  }\item[{const size\+\_\+t}]{face\+\_\+deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & values of the vector \\
+\hline
+{\em mesh\+\_\+ptr} & reference to the mesh \\
+\hline
+{\em cell\+\_\+deg} & polynomial degrees in cell \\
+\hline
+{\em face\+\_\+deg} & polynomial degrees on face \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__MHD_gab042b2e7ca94620b11956247a20b9afe}\label{group__HHO__MHD_gab042b2e7ca94620b11956247a20b9afe}} 
+\index{HHO\_MHD@{HHO\_MHD}!solve\_with\_static\_cond@{solve\_with\_static\_cond}}
+\index{solve\_with\_static\_cond@{solve\_with\_static\_cond}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{solve\_with\_static\_cond()}{solve\_with\_static\_cond()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} M\+H\+D\+Model\+::solve\+\_\+with\+\_\+static\+\_\+cond (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$}]{f\+\_\+source,  }\item[{\mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$}]{g\+\_\+source,  }\item[{double}]{visc,  }\item[{double}]{diff,  }\item[{double}]{tol,  }\item[{bool}]{threading = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga62855e09777a398118c163d714275251}\label{group__HHO__MHD_ga62855e09777a398118c163d714275251}} 
+\index{HHO\_MHD@{HHO\_MHD}!u\_dot\_grad\_b@{u\_dot\_grad\_b}}
+\index{u\_dot\_grad\_b@{u\_dot\_grad\_b}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{u\_dot\_grad\_b()}{u\_dot\_grad\_b()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::u\+\_\+dot\+\_\+grad\+\_\+b (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga0701530d6bc686e3f1fcfe82be7683e4}\label{group__HHO__MHD_ga0701530d6bc686e3f1fcfe82be7683e4}} 
+\index{HHO\_MHD@{HHO\_MHD}!u\_dot\_grad\_u@{u\_dot\_grad\_u}}
+\index{u\_dot\_grad\_u@{u\_dot\_grad\_u}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{u\_dot\_grad\_u()}{u\_dot\_grad\_u()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::u\+\_\+dot\+\_\+grad\+\_\+u (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga678c5721552845a2a36be200a9616cfb}\label{group__HHO__MHD_ga678c5721552845a2a36be200a9616cfb}} 
+\index{HHO\_MHD@{HHO\_MHD}!velocity@{velocity}}
+\index{velocity@{velocity}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{velocity()}{velocity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_gad27301cee12943059dc2b112f00e05a7}\label{group__HHO__MHD_gad27301cee12943059dc2b112f00e05a7}} 
+\index{HHO\_MHD@{HHO\_MHD}!velocity\_restr@{velocity\_restr}}
+\index{velocity\_restr@{velocity\_restr}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{velocity\_restr()}{velocity\_restr()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Solution\+Vector\+::velocity\+\_\+restr (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga2b5c9883c0a1f59365f2ead2c6035d39}\label{group__HHO__MHD_ga2b5c9883c0a1f59365f2ead2c6035d39}} 
+\index{HHO\_MHD@{HHO\_MHD}!velocity\_source@{velocity\_source}}
+\index{velocity\_source@{velocity\_source}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{velocity\_source()}{velocity\_source()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{F\+Type}}$<$ Vector\+Rd $>$ M\+H\+D\+Tests\+::velocity\+\_\+source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__HHO__MHD_ga9a194958dae35aa3b2067c41ce3eddb3}\label{group__HHO__MHD_ga9a194958dae35aa3b2067c41ce3eddb3}} 
+\index{HHO\_MHD@{HHO\_MHD}!velocity\_values@{velocity\_values}}
+\index{velocity\_values@{velocity\_values}!HHO\_MHD@{HHO\_MHD}}
+\doxysubsubsection{\texorpdfstring{velocity\_values()}{velocity\_values()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Solution\+Vector\+::velocity\+\_\+values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+

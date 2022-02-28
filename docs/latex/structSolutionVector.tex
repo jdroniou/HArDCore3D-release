@@ -1,0 +1,48 @@
+\hypertarget{structSolutionVector}{}\doxysection{Solution\+Vector Struct Reference}
+\label{structSolutionVector}\index{SolutionVector@{SolutionVector}}
+
+
+{\ttfamily \#include $<$H\+H\+O\+\_\+\+M\+H\+D.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__HHO__MHD_ga8e4dd529848f7f433c701cdc38c4641c}{Solution\+Vector}} (Eigen\+::\+Vector\+Xd values, const Mesh $\ast$mesh\+\_\+ptr, const size\+\_\+t cell\+\_\+deg, const size\+\_\+t face\+\_\+deg)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_gad4dc34e2f0b59c1dab8fcd33962f6549}{as\+Vector\+Xd}} () const
+\begin{DoxyCompactList}\small\item\em Return the values as an Eigen vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__HHO__MHD_ga11701714647e6a25844189a2b730632c}{set\+\_\+values}} (Eigen\+::\+Vector\+Xd values) const
+\begin{DoxyCompactList}\small\item\em Return the values as an Eigen vector. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__MHD_gac7e9046483d9442386c5c98148790e22}{get\+\_\+cell\+\_\+deg}} () const
+\begin{DoxyCompactList}\small\item\em Return the cell degree. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{group__HHO__MHD_ga1a7067f9cf6119bcf892a0156c64ef59}{get\+\_\+face\+\_\+deg}} () const
+\begin{DoxyCompactList}\small\item\em Return the face degree. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga9a194958dae35aa3b2067c41ce3eddb3}{velocity\+\_\+values}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga78d9f0b56c0821085ee344579e0afb02}{pressure\+\_\+values}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_gaa99324007040f5712e5a8bba2bb680c2}{magnetic\+\_\+values}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga711b10141559ae8af78df1abce20b27f}{lagrange\+\_\+values}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_gad27301cee12943059dc2b112f00e05a7}{velocity\+\_\+restr}} (size\+\_\+t iT) const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga43b0a8cf5a9f2e05c7a0d2c09a78a7df}{pressure\+\_\+restr}} (size\+\_\+t iT) const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga656554a16d86296307d563ce608115e3}{magnetic\+\_\+restr}} (size\+\_\+t iT) const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_ga01846042b074d060c2b360b97e5f6271}{lagrange\+\_\+restr}} (size\+\_\+t iT) const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__MHD_gaf5003869a2741cbda966326a3659c68d}{restr}} (size\+\_\+t iT) const
+\item 
+\mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \mbox{\hyperlink{group__HHO__MHD_gac467c5c7331ca0c93f92d6d2214cece4}{operator+}} (const \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \&b) const
+\begin{DoxyCompactList}\small\item\em Overloads the addition\+: adds the coefficients. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \mbox{\hyperlink{group__HHO__MHD_ga5266d7765490b357347087132fbdf2bb}{operator-\/}} (const \mbox{\hyperlink{structSolutionVector}{Solution\+Vector}} \&b) const
+\begin{DoxyCompactList}\small\item\em Overloads the subtraction\+: subtracts the coefficients. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__HHO__MHD_gacb65e90956c5831fa2d9a2190d694487}{operator()}} (size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Overloads the ()\+: returns the corresponding coefficient. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Schemes/\+H\+H\+O-\/\+M\+H\+D/\mbox{\hyperlink{HHO__MHD_8hpp}{H\+H\+O\+\_\+\+M\+H\+D.\+hpp}}\end{DoxyCompactItemize}

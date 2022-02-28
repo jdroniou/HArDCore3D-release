@@ -1132,6 +1132,23 @@ namespace HArDCore3D
   };
 
 
+  /// The following function creates the "scalar rot" basis of a TangentFamily on a face
+  /* It is created as the DivergenceBasis of a TangentFamily obtained rotating the generators by -pi/2 in the oriented face */
+  template <typename ScalarFamilyType>
+  DivergenceBasis<TangentFamily<ScalarFamilyType>> ScalarRotFamily(const TangentFamily<ScalarFamilyType> & tangent_family, const Face & F) 
+  {
+    // Take the generator and rotates them
+    Eigen::MatrixXd gen = tangent_family.generators();
+    VectorRd nF = F.normal();
+    Eigen::MatrixXd rotated_gen = Eigen::MatrixXd::Zero(2, 3);
+    rotated_gen.row(0) = VectorRd(gen.row(0)).cross(nF);
+    rotated_gen.row(1) = VectorRd(gen.row(1)).cross(nF);
+    
+    TangentFamily<ScalarFamilyType> rotated_tangent_family(tangent_family.ancestor(), rotated_gen);
+
+    return DivergenceBasis<TangentFamily<ScalarFamilyType>>(rotated_tangent_family);
+  };
+
   //---------------------------------------------------------------------
   //      BASES FOR THE KOSZUL COMPLEMENTS OF G^k, R^k 
   //---------------------------------------------------------------------
@@ -1837,6 +1854,9 @@ namespace HArDCore3D
 
   /// Scalar product between two vectors
   double scalar_product(const VectorRd &x, const VectorRd &y);
+
+  /// Scalar product between two matrices
+  double scalar_product(const MatrixRd &x, const MatrixRd &y);
 
   /// This overloading of the scalar_product function computes the scalar product between an evaluation of a basis and a constant value; both basis values and constant value must be of type Value
   template <typename Value>

@@ -200,7 +200,6 @@ int main(int argc, const char* argv[])
   std::vector<double> list_norms = ms.computeNorms(std::vector<Eigen::VectorXd> {eh, uI});
   double error = list_norms[0];
   double norm = list_norms[1];
-  std::cout << norm << "norm / error " << error << std::endl;
   double hcurlhdiv_err = error / norm;
   double en_err = hcurlhdiv_err;
   std::cout << "[main] Hcurl-Hdiv error " << hcurlhdiv_err << std::endl;
@@ -219,6 +218,7 @@ int main(int argc, const char* argv[])
   out << "NbEdges: " << mesh_ptr->n_edges() << std::endl;
   out << "DimXCurl: " << ms.xCurl().dimension() << std::endl;
   out << "DimXDiv: " << ms.xDiv().dimension() << std::endl;
+  out << "SizeSCsystem: " << ms.systemMatrix().rows() << std::endl;
   out << "EnergyError: " << en_err << std::endl;  
   out << "HcurlHdivError: " << hcurlhdiv_err << std::endl;  
   out << "TwallDDRCore: " << t_wall_ddrcore << std::endl;  
@@ -248,6 +248,7 @@ Magnetostatics::Magnetostatics(
     m_output(output),
     m_xcurl(ddrcore, use_threads),
     m_xdiv(ddrcore, use_threads),
+    m_nloc_sc_H(m_xcurl.numLocalDofsCell()),
     m_A(sizeSystem(), sizeSystem()),
     m_b(Eigen::VectorXd::Zero(sizeSystem())),
     m_sc_A(nbSCDOFs(), sizeSystem()),
@@ -256,6 +257,8 @@ Magnetostatics::Magnetostatics(
     
 {
   m_output << "[Magnetostatics] Initializing" << std::endl;
+  
+  // To avoid performing static condensation, initialise m_nloc_sc_H at 0
 }
 
 //------------------------------------------------------------------------------
@@ -270,8 +273,8 @@ void Magnetostatics::assembleLinearSystem(
   auto assemble_all = [this, f, mu, u](
                                        size_t start,
                                        size_t end,
-                                       std::list<Eigen::Triplet<double> > * triplets_system,
-                                       Eigen::VectorXd * rhs_system,
+                                       std::list<Eigen::Triplet<double> > * triplets_sys,
+                                       Eigen::VectorXd * rhs_sys,
                                        std::list<Eigen::Triplet<double> > * triplets_sc,
                                        Eigen::VectorXd * rhs_sc
                                        )->void
@@ -280,8 +283,8 @@ void Magnetostatics::assembleLinearSystem(
                           this->_assemble_local_contribution(
                                                              iT,
                                                              this->_compute_local_contribution(iT, f, mu, u),
-                                                             *triplets_system,
-                                                             *rhs_system,
+                                                             *triplets_sys,
+                                                             *rhs_sys,
                                                              *triplets_sc,
                                                              *rhs_sc
                                                              );
@@ -370,78 +373,69 @@ Magnetostatics::_compute_local_contribution(
 
 //------------------------------------------------------------------------------
 
+LocalStaticCondensation Magnetostatics::_compute_static_condensation(const size_t & iT) const
+{
+  const Cell & T = *m_ddrcore.mesh().cell(iT);
+
+  // Dimensions
+  size_t dim_H = m_xcurl.dimensionCell(iT) - m_nloc_sc_H;      // dimension of skeletal unknowns for H
+  size_t dim_A = m_xdiv.dimensionCell(iT);         // dimension of A
+  size_t dim_dofs = dim_H+dim_A;      // nb of dofs remaining after SC
+
+  // Creation of permutation matrix
+  Eigen::MatrixXd Perm = Eigen::MatrixXd::Zero(dim_dofs+m_nloc_sc_H, dim_dofs+m_nloc_sc_H);
+  Perm.topLeftCorner(dim_H, dim_H) = Eigen::MatrixXd::Identity(dim_H, dim_H);
+  Perm.block(dim_H+dim_A, dim_H, m_nloc_sc_H, m_nloc_sc_H) = Eigen::MatrixXd::Identity(m_nloc_sc_H, m_nloc_sc_H);
+  Perm.block(dim_H, dim_H+m_nloc_sc_H, dim_A, dim_A) = Eigen::MatrixXd::Identity(dim_A, dim_A);
+
+  // Creation of global DOFs for system: IT_sys contains the skeletal dofs of H, and dofs of A
+  std::vector<size_t> IT_sys(dim_dofs, 0);
+  auto IT_xcurl = m_xcurl.globalDOFIndices(T);
+  auto IT_xdiv = m_xdiv.globalDOFIndices(T);
+  auto it_IT_sys = std::copy(IT_xcurl.begin(), IT_xcurl.begin()+dim_H, IT_sys.begin()); // put skeletal DOFs of H in IT_sys
+  size_t offset = m_xcurl.dimension() - nbSCDOFs();     // nb total of skeletal DOFs for H (where global dofs of A start)
+  std::transform(IT_xdiv.begin(), IT_xdiv.end(), it_IT_sys, [&offset](const size_t & index) { return index + offset; });
+  
+  // Creation of global DOFs for SC operator: IT_sc contains global cell dofs of H (offset to start at 0)
+  std::vector<size_t> IT_sc(m_nloc_sc_H);
+  std::transform(IT_xcurl.begin()+dim_H, IT_xcurl.end(), IT_sc.begin(), [&offset](const size_t & index) { return index - offset; });
+ 
+  return LocalStaticCondensation(Perm, IT_sys, IT_sc);
+}
+
+//------------------------------------------------------------------------------
+
 void Magnetostatics::_assemble_local_contribution(
                                                   size_t iT,
                                                   const std::pair<Eigen::MatrixXd, Eigen::VectorXd> & lsT,
-                                                  std::list<Eigen::Triplet<double> > & triplets_system,
-                                                  Eigen::VectorXd & rhs_system,
+                                                  std::list<Eigen::Triplet<double> > & triplets_sys,
+                                                  Eigen::VectorXd & rhs_sys,
                                                   std::list<Eigen::Triplet<double> > & triplets_sc,
                                                   Eigen::VectorXd & rhs_sc
                                                   )
 {
-  const Cell & T = *m_ddrcore.mesh().cell(iT);
+  // Get information for local static condensation
+  LocalStaticCondensation locSC = _compute_static_condensation(iT);
 
-  // AT and bT are made of 3 components: H skeleton (face+edges), H cells, and A
-  // We want to condense the 2nd component H cell. We first transform AT and bT with a permutation to put
-  // all these unknowns in the bottom right corner
-  size_t dim1 = m_xcurl.localOffset(T);                // dimension of skeletal unknowns for H
-  size_t dim_sc = m_xcurl.numLocalDofsCell();    // dimension of cell unknowns for H (sc DOFs)
-  size_t dim3 = m_xdiv.dimensionCell(iT);         // dimension of A
-  size_t dim_dofs = dim1+dim3;      // nb of dofs remaining after SC
-  // Permutation matrix
-  Eigen::MatrixXd Perm = Eigen::MatrixXd::Zero(dim_dofs+dim_sc, dim_dofs+dim_sc);
-  Perm.topLeftCorner(dim1, dim1) = Eigen::MatrixXd::Identity(dim1, dim1);
-  Perm.block(dim1+dim3, dim1, dim_sc, dim_sc) = Eigen::MatrixXd::Identity(dim_sc, dim_sc);
-  Perm.block(dim1, dim1+dim_sc, dim3, dim3) = Eigen::MatrixXd::Identity(dim3, dim3);
-  // Permuted local matrix and rhs, the velocity cell unknowns are at the end
-  Eigen::MatrixXd AT = Perm * lsT.first * Perm.transpose();
-  Eigen::VectorXd bT = Perm * lsT.second;
-
-  // Extract 4 blocks of AT, bT for static condensation
-  Eigen::MatrixXd A11 = AT.topLeftCorner(dim_dofs, dim_dofs);  
-  Eigen::MatrixXd A12 = AT.topRightCorner(dim_dofs, dim_sc);
-  Eigen::MatrixXd A21 = AT.bottomLeftCorner(dim_sc, dim_dofs);
-  Eigen::MatrixXd A22 = AT.bottomRightCorner(dim_sc, dim_sc);
-  Eigen::VectorXd b1 = bT.head(dim_dofs);
-  Eigen::VectorXd b2 = bT.tail(dim_sc);
+  Eigen::MatrixXd AT_sys, AT_sc;
+  Eigen::VectorXd bT_sys, bT_sc;
+  std::tie(AT_sys, bT_sys, AT_sc, bT_sc) = locSC.compute(lsT);
   
-  // Create condensed system (AT_reduced, bT_reduced) and SC recovery operator (RT, cT)
-  Eigen::MatrixXd A22inv_A21 = A22.ldlt().solve(A21);
-  Eigen::VectorXd A22inv_b2 = A22.ldlt().solve(b2);
-  Eigen::MatrixXd AT_reduced = A11 - A12 * A22inv_A21;
-  Eigen::VectorXd bT_reduced = b1 - A12 * A22inv_b2;
-  Eigen::MatrixXd RT = -A22inv_A21;
-  Eigen::VectorXd cT = A22inv_b2;
-
   // STATICALLY CONDENSED SYSTEM
-  //
-  // Create the vector of global DOF indices for the SC system: Idofs_T contains the skeletal dofs of u, dofs of p, and lambda
-  std::vector<size_t> Idofs_T(dim_dofs, 0);
-  auto I_xcurl_T = m_xcurl.globalDOFIndices(T);
-  auto I_xgrad_T = m_xdiv.globalDOFIndices(T);
-  auto it_Idofs_T = std::copy(I_xcurl_T.begin(), I_xcurl_T.begin()+dim1, Idofs_T.begin()); // put skeletal DOFs of H in Idofs_T
-  size_t offset = m_xcurl.dimension() - nbSCDOFs();     // nb total of skeletal DOFs for H (where global dofs of A start)
-  std::transform(I_xgrad_T.begin(), I_xgrad_T.end(), it_Idofs_T, [&offset](const size_t & index) { return index + offset; });
-  
-  // Assemble statically condensed system  
-  for (size_t i = 0; i < dim_dofs; i++){
-    rhs_system(Idofs_T[i]) += bT_reduced(i);
-    for (size_t j = 0; j < dim_dofs; j++){    
-      triplets_system.emplace_back(Idofs_T[i], Idofs_T[j], AT_reduced(i,j));
+  std::vector<size_t> IT_sys = locSC.globalDOFs_sys();
+  for (size_t i = 0; i < locSC.dim_sys(); i++){
+    rhs_sys(IT_sys[i]) += bT_sys(i);
+    for (size_t j = 0; j < locSC.dim_sys(); j++){    
+      triplets_sys.emplace_back(IT_sys[i], IT_sys[j], AT_sys(i,j));
     }
   }
 
   // RECOVERY OPERATOR
-  //
-  // Create the vector of DOF indices: Isc_T contains global cell dofs of H (offset to start at 0)
-  std::vector<size_t> Isc_T(dim_sc);
-  std::transform(I_xcurl_T.begin()+dim1, I_xcurl_T.end(), Isc_T.begin(), [&offset](const size_t & index) { return index - offset; });
- 
-  // Assemble recovery operator
-  for (size_t i = 0; i < dim_sc; i++){
-    rhs_sc(Isc_T[i]) += cT(i);
-    for (size_t j = 0; j < dim_dofs; j++){
-      triplets_sc.emplace_back(Isc_T[i], Idofs_T[j], RT(i,j));
+  std::vector<size_t> IT_sc = locSC.globalDOFs_sc();
+  for (size_t i = 0; i < locSC.dim_sc(); i++){
+    rhs_sc(IT_sc[i]) += bT_sc(i);
+    for (size_t j = 0; j < locSC.dim_sys(); j++){
+      triplets_sc.emplace_back(IT_sc[i], IT_sys[j], AT_sc(i,j));
     }
   }
 

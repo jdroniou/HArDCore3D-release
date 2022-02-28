@@ -1,0 +1,55 @@
+\hypertarget{structHArDCore3D_1_1LocalStaticCondensation}{}\doxysection{H\+Ar\+D\+Core3D\+::Local\+Static\+Condensation Struct Reference}
+\label{structHArDCore3D_1_1LocalStaticCondensation}\index{HArDCore3D::LocalStaticCondensation@{HArDCore3D::LocalStaticCondensation}}
+
+
+Structure to store information for, and perform, local static condensation.  
+
+
+
+
+{\ttfamily \#include $<$local\+\_\+static\+\_\+condensation.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__Common_ga9013e4ca43adf132d979e0178676eb4f}{Local\+Static\+Condensation}} (const Eigen\+::\+Matrix\+Xd \&Perm, const std\+::vector$<$ size\+\_\+t $>$ \&\mbox{\hyperlink{group__Common_gada39a93d73a2096ffadb2182d696a4b2}{global\+D\+O\+Fs\+\_\+sys}}, const std\+::vector$<$ size\+\_\+t $>$ \&\mbox{\hyperlink{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}{global\+D\+O\+Fs\+\_\+sc}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+std\+::tuple$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd, Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_ga7bac2f08d274e88fdb2057d593581c90}{compute}} (const std\+::pair$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \&lsT)
+\begin{DoxyCompactList}\small\item\em Compute the local static condensation. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_gada39a93d73a2096ffadb2182d696a4b2}{global\+D\+O\+Fs\+\_\+sys}} ()
+\begin{DoxyCompactList}\small\item\em Returns global D\+O\+Fs that are not statically condensend. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gaa2fd993a8010d3b907c881942186d36f}{dim\+\_\+sys}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of D\+O\+Fs that are not statically condensed. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}{global\+D\+O\+Fs\+\_\+sc}} ()
+\begin{DoxyCompactList}\small\item\em Returns global D\+O\+Fs that are statically condensend. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga3d683e5f0aa27a28e9eb7fd399bd24c8}{dim\+\_\+sc}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of D\+O\+Fs that are statically condensed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa868f9f56ab061eebcbc30c2dbe5295}{m\+\_\+\+Perm}}
+\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_gaccfaba0c903f41cd8dc3b1a7280eede3}{m\+\_\+global\+D\+O\+Fs\+\_\+sys}}
+\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga0c686364431d55a47aca647bd2caeb49}{m\+\_\+global\+D\+O\+Fs\+\_\+sc}}
+\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gae257d6004cb03b2408967d9af3cc83ee}{m\+\_\+dim\+\_\+sys}}
+\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga529ae659ec36583e71ce72a5b29cb7e0}{m\+\_\+dim\+\_\+sc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to store information for, and perform, local static condensation. 
+
+This structure is used to perform, from a matrix-\/vector representing local contributions from a cell, the static condensation and produce what is necessary to fill in the global matrix-\/vector of the system and the recovery operator.
+\begin{DoxyItemize}
+\item Perm\+: permutation matrix that puts all the statically condensed D\+O\+Fs at the end
+\item global\+D\+O\+Fs\+\_\+sys\+: list, in the order (at the start) they appear after the permutation, of the global D\+O\+Fs for the unknowns that are not statically condensed (and remain in the final system) ~\newline
+
+\item global\+D\+O\+Fs\+\_\+sc\+: list, in the order (at the end) they appear after the permutation, of the global D\+O\+Fs for the unknowns that are statically condensed 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Common/\mbox{\hyperlink{local__static__condensation_8hpp}{local\+\_\+static\+\_\+condensation.\+hpp}}\end{DoxyCompactItemize}

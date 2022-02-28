@@ -115,6 +115,8 @@ enum \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{H\+Ar\+D\
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$typename Scalar\+Family\+Type $>$ }\\Divergence\+Basis$<$ Tangent\+Family$<$ Scalar\+Family\+Type $>$ $>$ \mbox{\hyperlink{group__Basis_ga46eb884388862e45eb2064a55905ae18}{H\+Ar\+D\+Core3\+D\+::\+Scalar\+Rot\+Family}} (const Tangent\+Family$<$ Scalar\+Family\+Type $>$ \&tangent\+\_\+family, const Face \&F)
+\begin{DoxyCompactList}\small\item\em The following function creates the \char`\"{}scalar rot\char`\"{} basis of a \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}} on a face. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename out\+Value , typename in\+Value , typename Function\+Type $>$ }\\boost\+::multi\+\_\+array$<$ out\+Value, 2 $>$ \mbox{\hyperlink{group__Basis_ga95949745fd93384a9364fe5df73034ca}{H\+Ar\+D\+Core3\+D\+::transform\+\_\+values\+\_\+quad}} (const boost\+::multi\+\_\+array$<$ in\+Value, 2 $>$ \&B\+\_\+quad, const Function\+Type \&F)
 \begin{DoxyCompactList}\small\item\em Takes an array B\+\_\+quad of values at quadrature nodes and applies the function F to all of them. F must take in\+Value and return out\+Value. The function must be called with out\+Value as template argument\+: transform\+\_\+values\+\_\+quad$<$out\+Value$>$(...) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga5452c71e3652aa957d105446a95826e8}{H\+Ar\+D\+Core3\+D\+::gram\+\_\+schmidt}} (boost\+::multi\+\_\+array$<$ T, 2 $>$ \&basis\+\_\+eval, const std\+::function$<$ double(size\+\_\+t, size\+\_\+t)$>$ \&inner\+\_\+product)
@@ -125,6 +127,8 @@ double \mbox{\hyperlink{group__Basis_gabe66f2d1efad01f907e32517c16b11f9}{H\+Ar\+
 \begin{DoxyCompactList}\small\item\em Scalar product between one real and one 1-\/dimension Eigen vector. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__Basis_ga0105ef2d1903eeddce62e6ad647a8ead}{H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product}} (const Vector\+Rd \&x, const Vector\+Rd \&y)
 \begin{DoxyCompactList}\small\item\em Scalar product between two vectors. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__Basis_gae0e17b9bcba8bbd415ff4812d44aa81f}{H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product}} (const Matrix\+Rd \&x, const Matrix\+Rd \&y)
+\begin{DoxyCompactList}\small\item\em Scalar product between two matrices. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Value $>$ }\\boost\+::multi\+\_\+array$<$ double, 2 $>$ \mbox{\hyperlink{group__Basis_ga7c34745cd64a55b7072c5c19e45fa3ec}{H\+Ar\+D\+Core3\+D\+::scalar\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Value, 2 $>$ \&basis\+\_\+quad, const Value \&v)
 \begin{DoxyCompactList}\small\item\em This overloading of the scalar\+\_\+product function computes the scalar product between an evaluation of a basis and a constant value; both basis values and constant value must be of type Value. \end{DoxyCompactList}\item 
 boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \mbox{\hyperlink{group__Basis_ga7fd6906b30cba10f2f452b029a86ca00}{H\+Ar\+D\+Core3\+D\+::vector\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&basis\+\_\+quad, const Vector\+Rd \&v)

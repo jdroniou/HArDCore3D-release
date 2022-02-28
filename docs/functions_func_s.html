@@ -74,18 +74,29 @@ $(function() {
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>scMatrix()
 : <a class="el" href="group__DDR__magnetostatic.html#ga7c5f649d4c5d14b11f52033b4cfff644">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__DDR__stokes.html#ga84c005b53d8d83c1be5b078dae093d9d">HArDCore3D::Stokes</a>
 </li>
 <li>scVector()
 : <a class="el" href="group__DDR__magnetostatic.html#gac5cc8800c0cea12e57a31a8f97f58ce7">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__DDR__stokes.html#gac24f18b70fee7f0796258e2bb2c46b59">HArDCore3D::Stokes</a>
+</li>
+<li>set_boundary()
+: <a class="el" href="group__Mesh.html#ga92c44918ffcdb15e7d89b26e871db125">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
 <li>set_dirichlet()
-: <a class="el" href="group__HHO3D.html#ga1dc0ef5581cfb16964e86963086f0d4d">HHO3D</a>
+: <a class="el" href="group__HHO3D.html#ga2230426ff92810893168177ddd623f35">HHO3D</a>
+</li>
+<li>set_global_index()
+: <a class="el" href="group__Mesh.html#gad3e3369dca9c7df500afa41227bb2902">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
 <li>set_global_operator()
 : <a class="el" href="group__HHO3D.html#gae58bdad281ef8980a8a3ab527c4066f7">HHO3D</a>
 </li>
 <li>set_load_vector()
 : <a class="el" href="group__HHO3D.html#ga900c704c67fc0dff437a377e19a18017">HHO3D</a>
+</li>
+<li>set_values()
+: <a class="el" href="group__HHO__MHD.html#ga11701714647e6a25844189a2b730632c">SolutionVector</a>
 </li>
 <li>setup()
 : <a class="el" href="group__Quadratures.html#ga362bb5fef8a2d98073605945c89aadf9">HArDCore3D::QuadRuleEdge</a>
@@ -97,21 +108,28 @@ $(function() {
 </li>
 <li>sizeSystem()
 : <a class="el" href="group__DDR__magnetostatic.html#gab9bdfe696d9b36cca0546e85ee73eed4">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__DDR__stokes.html#ga5afaebf629ae7ee2b7835f544f975780">HArDCore3D::Stokes</a>
 </li>
 <li>Solution()
 : <a class="el" href="structSolution.html#aa5f16a31abf30d37a5292620abde92b9">Solution</a>
+</li>
+<li>SolutionVector()
+: <a class="el" href="group__HHO__MHD.html#ga8e4dd529848f7f433c701cdc38c4641c">SolutionVector</a>
 </li>
 <li>solve()
 : <a class="el" href="group__HHO__Diffusion.html#ga582be64d213833c883137e143839c370">HArDCore3D::HHO_Diffusion</a>
 , <a class="el" href="group__HHO__LocVarDiff.html#ga11bf9be780b53676d2cc1ec9bb30dcc6">HArDCore3D::HHO_LocVarDiff</a>
 , <a class="el" href="group__HHO3D.html#gaa70703caa4da647cfb742750776d247c">HHO3D</a>
 </li>
+<li>solve_with_static_cond()
+: <a class="el" href="group__HHO__MHD.html#gab042b2e7ca94620b11956247a20b9afe">MHDModel</a>
+</li>
 <li>stabilizationParameter()
 : <a class="el" href="group__DDR__magnetostatic.html#gaa900b40958daa559bdf2d900e105a51c">HArDCore3D::Magnetostatics</a>
 , <a class="el" href="group__DDR__stokes.html#ga34e0c5701a7a9d2d4eec340492022a27">HArDCore3D::Stokes</a>
 </li>
 <li>standard_load_vector()
-: <a class="el" href="group__HHO3D.html#gaf67d049ac7cf172cfaf81e95772d891d">HHO3D</a>
+: <a class="el" href="group__HHO3D.html#gacb59e83557de3bc5266ddfa7bd7fd481">HHO3D</a>
 </li>
 <li>Stokes()
 : <a class="el" href="group__DDR__stokes.html#ga93fd886edeb08d1af3f2a9d6e2a519a7">HArDCore3D::Stokes</a>
@@ -153,12 +171,12 @@ $(function() {
 : <a class="el" href="group__Quadratures.html#ga6b7095506bd1d218c28f5778c6dea545">HArDCore3D::LegendreGauss</a>
 </li>
 <li>systemMatrix()
-: <a class="el" href="group__DDR__magnetostatic.html#gafb6670bd6c5b8a6754108f45de910a63">HArDCore3D::Magnetostatics</a>
+: <a class="el" href="group__DDR__magnetostatic.html#gaada8e4f19159b7e7ca218dffeccf6a3e">HArDCore3D::Magnetostatics</a>
 , <a class="el" href="group__VEM__stokes.html#ga99db170b7f151f7d37828065b02dd1a3">HArDCore3D::Stokes</a>
 </li>
 <li>systemVector()
 : <a class="el" href="group__DDR__magnetostatic.html#ga4e0de6a7a5cf5f6fdd0c511b1f4776e9">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__VEM__stokes.html#ga67c5932d1f6296ac1f3e4e1d4cf53e3b">HArDCore3D::Stokes</a>
+, <a class="el" href="group__DDR__stokes.html#ga67c5932d1f6296ac1f3e4e1d4cf53e3b">HArDCore3D::Stokes</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -330,6 +330,8 @@ The following schemes are currently available in HArD::Core3D. The Hybrid High-O
 
  - [VEM_stokes](@ref VEM_stokes): Virtual Element Method (VEM) scheme for the %Stokes problem in curl-curl form.
 
+ - [HHO_MHD](@ref HHO_MHD): HHO scheme for the MHD problem.
+
 The directory `runs` contains BASH scripts to run series of tests on families of meshes. The files `data.sh` describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the `output` directory, shows the convergence rate in the standard console output, and creates a pdf file `rate.pdf` describing the rates of convergence in various energy norms (you will need `pdflatex` to create this pdf file; commenting out the corresponding line is fine, the pdf will simply not be create).
 
 
