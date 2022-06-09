@@ -36,7 +36,7 @@ typedef std::vector<double> MonomialEdgeIntegralsType;
 /// Compute all integrals of edge monomials up to a total degree
 MonomialEdgeIntegralsType IntegrateEdgeMonomials
           (const Edge & E,      ///< Edge
-          const size_t maxdeg   ///< Maximal total degree
+          const int maxdeg      ///< Maximal total degree
           );
 
 

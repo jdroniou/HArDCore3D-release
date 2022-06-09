@@ -16,6 +16,18 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{H\+Ar\+D\+Core
 \begin{DoxyCompactList}\small\item\em Structure to store edge bases. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core}}
 \begin{DoxyCompactList}\small\item\em Construct all polynomial spaces for the D\+DR sequence. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem}}
+\begin{DoxyCompactList}\small\item\em Construct all polynomial spaces for the D\+DR sequence. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1SXCurl_1_1TransferOperators}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Transfer\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store the serendipity, extension and reduction operators. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl}}
+\begin{DoxyCompactList}\small\item\em Discrete Serendipity Hcurl space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Div}}
+\begin{DoxyCompactList}\small\item\em Discrete Serendipity Hdiv space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1SXGrad_1_1TransferOperators}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Transfer\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store the serendipity, extension and reduction operators. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad}}
+\begin{DoxyCompactList}\small\item\em Discrete Serendipity Hgrad space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1XCurl_1_1LocalOperators}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+Local\+Operators}}
 \begin{DoxyCompactList}\small\item\em A structure to store the local operators (curl and potential) \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl}}
@@ -59,6 +71,20 @@ typedef Face \mbox{\hyperlink{group__DDRCore_ga4c4848897f3ce92237db78fa7e128a9c}
 \begin{DoxyCompactList}\small\item\em Geometric support. \end{DoxyCompactList}\item 
 typedef Edge \mbox{\hyperlink{group__DDRCore_ga5c2f5b518ce75d13934e75a541a327d8}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Geometric\+Support}}
 \begin{DoxyCompactList}\small\item\em Geometric support. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{D\+D\+R\+Core\+::\+Poly\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Polyl\+Basis\+Face\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{D\+D\+R\+Core\+::\+Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Polyl\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_gaeee1a4e190fba39e31a9184519e1ba43}{D\+D\+R\+Core\+::\+Roly\+Compl\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Roly\+Compllpo\+Basis\+Face\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_gaeebff7b722caf50be9eafba35e65d1ec}{D\+D\+R\+Core\+::\+Roly\+Compl\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Roly\+Compllpo\+Basis\+Cell\+Type}}
+\item 
+typedef Eigen\+::\+Full\+Piv\+LU$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{group__DDRCore_gaa1053be6765fc576440ef85d6096098a}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Inverse\+Problem}}
+\begin{DoxyCompactList}\small\item\em Type for inverses of matrix for serendipity problem. \end{DoxyCompactList}\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDRCore_ga54005a93080c30da08c1ee04c12c7588}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Function\+Type}}
+\item 
+typedef std\+::function$<$ double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDRCore_gad31e6bd58000471db0da65d94f2e0c30}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Function\+Type}}
+\item 
 typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDRCore_ga658aabe4f545b51aff33349bd52cae87}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+Function\+Type}}
 \item 
 typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDRCore_ga1d6aa9967789c546122bd19871e022eb}{H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::\+Function\+Type}}
@@ -80,6 +106,212 @@ const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{Face\+Bases}} \
 \begin{DoxyCompactList}\small\item\em Return face bases for face iF. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga59b66dab48528b4503dcfae4128df155}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::edge\+Bases}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Return edge bases for edge iE. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DDRCore_gad6052eded3f2f90d3ddcd8821a7ae7e6}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Serendipity\+Problem}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const std\+::vector$<$ size\+\_\+t $>$ \& \mbox{\hyperlink{group__DDRCore_gafbb75f7f0189d2e214ed7667667a7cdb}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::serendipity\+Edges}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the list of serendipity edges in a face. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{group__DDRCore_ga1b5d1075730113a5a86b01d19d2fa4d4}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::n\+\_\+serendipity\+Edges}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the number of serendipity edges in a face. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{group__DDRCore_gac0de47116e14485de8a8a40419485c26}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::ser\+Degree\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity degree ell\+\_\+F in a face. \end{DoxyCompactList}\item 
+const std\+::vector$<$ size\+\_\+t $>$ \& \mbox{\hyperlink{group__DDRCore_gaf5720d77e757e5e52e5863faad4afe2e}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::serendipity\+Faces}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the list of serendipity face in a cell. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{group__DDRCore_ga75d725b50852aaaea86ec024167c38ba}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::n\+\_\+serendipity\+Faces}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the number of serendipity faces in a cell. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{group__DDRCore_gaaeb03ce52be3818be31f956498d06934}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::ser\+Degree\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity degree ell\+\_\+T in a cell. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga9ab970169952f69f7ad98b1c71402d22}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Face\+Polyl}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of P$^\wedge$l on face of index iF. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_gad51c189b806c57a93e039b663ad63241}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Face\+Polyl}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of P$^\wedge$\{l+1\} on face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}{Polyl\+Basis\+Face\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga127ea67d187712c1a2768fe3156bf5cd}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::face\+Basis\+Polyl}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the basis of P$^\wedge$l on face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}{Polyl\+Basis\+Face\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga52b68194f4a147cf123f8f059a3c04c4}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::face\+Basis\+Polyl}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the basis of P$^\wedge$l on face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga21dccf475588d2c9aa528022556c029a}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Cell\+Polyl}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of P$^\wedge$l on cell of index iT. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_gaa9a06aa8916438036e39cf7cee51f9e0}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Cell\+Polyl}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of P$^\wedge$l on cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}{Polyl\+Basis\+Cell\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga497858f62da0b0cdce32f4198808f99a}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::cell\+Basis\+Polyl}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the basis of P$^\wedge$l on cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}{Polyl\+Basis\+Cell\+Type}} \& \mbox{\hyperlink{group__DDRCore_gaa3f2a76797ea9bc495d9867f68dcaf71}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::cell\+Basis\+Polyl}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the basis of P$^\wedge$l on cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga3ca4a1fd7d2d06bbf64b4b953f6e1426}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::n\+D\+O\+Fs\+\_\+faces\+\_\+\+S\+X\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs on faces for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}} space. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_gaa8060fdc181785dc30c4dc3027e32677}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::n\+D\+O\+Fs\+\_\+cells\+\_\+\+S\+X\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs on cells for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}} space. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga00776d6d8c485873fca2bbe49a6871bf}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Face\+Roly\+Compllpo}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of R$^\wedge$\{c,l+1\} on face of index iF. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_gace2f098b0780f9d3c1ef5e028438232a}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Face\+Roly\+Compllpo}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of R$^\wedge$\{c,l+1\} on face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}{Roly\+Compllpo\+Basis\+Face\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga14b977b22c0eb89d2cedaf9bc418c8ba}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::face\+Basis\+Roly\+Compllpo}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the basis of R$^\wedge$\{c,l+1\} on face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}{Roly\+Compllpo\+Basis\+Face\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga80aa80f0f2328156a27940fc253ad901}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::face\+Basis\+Roly\+Compllpo}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the basis of R$^\wedge$\{c,l+1\} on face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_gafd9511d6b13c55aabd34f06414cd4204}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Cell\+Roly\+Compllpo}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of R$^\wedge$\{c,l+1\} on cell of index iT. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga04a0159883242f184ef6014855c52a9f}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Cell\+Roly\+Compllpo}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of R$^\wedge$\{c,l+1\} on cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}{Roly\+Compllpo\+Basis\+Cell\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga2e686880274abe43809889a68480c601}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::cell\+Basis\+Roly\+Compllpo}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the basis of R$^\wedge$\{c,l+1\} on cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}{Roly\+Compllpo\+Basis\+Cell\+Type}} \& \mbox{\hyperlink{group__DDRCore_gab6f4b8ece2046274a019795874c52a45}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::cell\+Basis\+Roly\+Compllpo}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the basis of R$^\wedge$\{c,l+1\} on cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga93e86ff1e38df0714504013ecd82316e}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::n\+D\+O\+Fs\+\_\+faces\+\_\+\+S\+X\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs on faces for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} space. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga6c1803556ba2ddee6d3d851fff9580e9}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::n\+D\+O\+Fs\+\_\+cells\+\_\+\+S\+X\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs on cells for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} space. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga86097c55b1aa6c6ff2446caca624cb06}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Serendipity\+Operator\+Face}} (const size\+\_\+t iF, const Eigen\+::\+Matrix\+Xd \&LF) const
+\begin{DoxyCompactList}\small\item\em Compute the serendipity operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga739d4a9b6a02535241d54b1f09a531ce}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Serendipity\+Operator\+Face}} (const Face \&F, const Eigen\+::\+Matrix\+Xd \&LF) const
+\begin{DoxyCompactList}\small\item\em Compute the serendipity operator on the face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga1034ce25ad714ae59b89ed2b4b357b36}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Serendipity\+Operator\+Cell}} (const size\+\_\+t iT, const Eigen\+::\+Matrix\+Xd \&LT) const
+\begin{DoxyCompactList}\small\item\em Compute the serendipity operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gae5c7512b1aa8229c37c3bc217992a3d3}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Serendipity\+Operator\+Cell}} (const Cell \&T, const Eigen\+::\+Matrix\+Xd \&LT) const
+\begin{DoxyCompactList}\small\item\em Compute the serendipity operator on the Cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRCore_gacc62beed649b9d3e04610d5f87ddba26}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return a const reference to the mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DDRCore_ga55d1a146393fe370c3e4542e764d39aa}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Transfer\+Operators\+::\+Transfer\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+serendipity, const Eigen\+::\+Matrix\+Xd \&\+\_\+extension, const Eigen\+::\+Matrix\+Xd \&\+\_\+reduction)
+\item 
+\mbox{\hyperlink{group__DDRCore_ga7cbee3d46504ec031f328b44cd841fc8}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+S\+X\+Curl}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \&ser\+\_\+pro, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRCore_ga89f8ff3f586b549ffc79292d25a6691a}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__DDRCore_ga59f8e6ea7c7c5121c035105c93687102}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga45d84a4ae4ee1af1acfd8a6a866aee83}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::interpolate}} (const \mbox{\hyperlink{group__DDRCore_ga54005a93080c30da08c1ee04c12c7588}{Function\+Type}} \&v, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gae10c8af996f2ec020a62c4590828a107}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Scurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga238669ee9b6d0990ac289b208ca96247}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Ecurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga3d74507620fd1263f029c8b7b8c01909}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Rcurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga753cd990ca81a0c5ee0741400cd19ba9}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Scurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gad2f4c36cef876f700d67d5e7d180c745}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Ecurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the extension for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga8ed77b60f4beec239695e753f36da982}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Rcurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gaf0b18320b658cb6b967aa992b2ceea9b}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Scurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga212a1d9c41b7a7d6b68c699bf63428c8}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Ecurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gaf3c9d642b72d125cd5d0fad71d691d5c}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Rcurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gab6242ba1702ac7893f78da5607683597}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Scurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gad246a4fb1970aefb04973ad092fbca75}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Ecurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the extension for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga8e5cf5df4e2479261480c170af01dc76}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Rcurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga2c6d7f55cce5ea64383a7fc59f145b6b}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Curl}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga4e5f1efb302219e9035017e4516eb727}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Curl}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gadf755c4880fc2e141e4956e45c8385c0}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Potential}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gaf0f2073b5621de532890119fbb42944c}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Potential}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga0ddd399509f0241e4073eedac6195a55}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Curl}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gac64987377d4d7d5b36e54cf16104b2d5}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Curl}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga200dbdbd702a0d3860ec6cd708bac132}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Potential}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga24f3081b7d875d68d73aa7f7a08d3fd9}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Potential}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga574c129bb39a42ac74f85f6b932b7194}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gaacff182d2d78705c791dcfa225b2cf84}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::compute\+L2\+Product\+Gradient}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{S\+X\+Grad}} \&sx\+\_\+grad, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete gradient on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga720a807b0c06f118248a6523c3d30ad9}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga4bd4ae84b3418bae8c39b4ac9a176056}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga2b0e7dc6974dd13814eeec08935379ee}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga44d4eedcc17f59c5c6ece58c998ed2aa}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga3b0b90e05b681758a3bd4c9fda19f109}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga41ea1833d9f73dcad8dbb4fc9aec624c}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::edge\+Bases}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DDRCore_ga8c10cba0c0e5fd822e1a91254a80852a}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Div\+::\+S\+X\+Div}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga8e0194701bde64e27f44a3f45e507fb0}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Div\+::compute\+L2\+Product\+Curl}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}} \&sx\+\_\+curl, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete serendipity curl on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DDRCore_ga45f11d366a53a9b94c41ab3fd096b95d}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Transfer\+Operators\+::\+Transfer\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+serendipity, const Eigen\+::\+Matrix\+Xd \&\+\_\+extension, const Eigen\+::\+Matrix\+Xd \&\+\_\+reduction)
+\item 
+\mbox{\hyperlink{group__DDRCore_ga4ff5e43e311e2305f5de83ad90742284}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+S\+X\+Grad}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \&ser\+\_\+pro, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRCore_ga08e833378d29205f1cc8a2094445454f}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__DDRCore_ga2e4c9f6bc7a0858aa31f59e3b396769f}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga9f142520cf80ade8e20444719aaa394f}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::interpolate}} (const \mbox{\hyperlink{group__DDRCore_gad31e6bd58000471db0da65d94f2e0c30}{Function\+Type}} \&q, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga31aa13a84a5d8fb2f0ac50fb944ebb2e}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Sgrad\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gae6f863d7f3575af373bd9670c899ba22}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Egrad\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga186b92052107d18445f7dede9f7fe6f1}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Rgrad\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga698d8df358822c86e5a4a97f0402d110}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Sgrad\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga0e6df2585f3bdf7c7983c267cfdcf06a}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Egrad\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the extension for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gaae77b01542abd204527aa7963a1ca773}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Rgrad\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga0295b3277865edf3aa18cb35cbb3c665}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Sgrad\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga35c2632d8330dd5f1c97b5d99590fff9}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Egrad\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gad78ed93cdc081122cc11090dc34983ea}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Rgrad\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga7f2c579fd5dab20ef746acaf6e37c6aa}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Sgrad\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga0574e52a3206511e4d5cb70907e6fc23}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Egrad\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the extension for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gad9c132354f1b9ec0b2a9906057593709}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Rgrad\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga710767cd42f40ee164ff0f817200efd9}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Gradient}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on the edge of index iE. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga71f1bb46c46b27065f3ee03fff59397f}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Gradient}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on edge E. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga152e48524d6b7d4716cee0bd3c5f75f0}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Potential}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the edge of index iE. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga62db193ae403a15bd0df6f5666a797e2}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Potential}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on edge E. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga8d57dd9b63ca220996eaa644b45e96ef}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Gradient}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gab4f812b1ab331b2044ea6a05e66d8707}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Gradient}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga3a174eb9197279fe1f8d6b1b9c2b99b5}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Potential}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gac0c3a606f7c8c4839b0c72ac5001ebbf}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Potential}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga903d094b01453c97e5ab82bfcbf49f81}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Gradient}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gabb853c6d0bcad7224a8d30f126736493}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Gradient}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga5b322deab08a76733c9123e9a246ebf4}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Potential}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gaca0f788410448d76a579a5159d2ba4a5}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Potential}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gaae0db72d7d991c23cd8d8d906bbc6006}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga804e1275df94f7bfe5e7be7604ada27e}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga2859b8f52c34de1f054f8aa5908d5a2d}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gaf6af54ee52b4866b350f89b81f851a61}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga471709d8ee340844e874523413a08e6b}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gabe53f9202ee0f70abbea797ec52ea51b}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gaeb4a189880f80636205ba20f16fbc0b8}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Bases}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__DDRCore_gaea4f00813cd819f8d6b4246a95d523e0}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+Local\+Operators\+::\+Local\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+curl, const Eigen\+::\+Matrix\+Xd \&\+\_\+potential)
 \item 
 \mbox{\hyperlink{group__DDRCore_gac5383b922f0967c25438f268f41a706c}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+X\+Curl}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
@@ -146,6 +378,8 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga413be9caf30e3a303b573af5
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete curl on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga1647750ac4ca8f257a7ca1fc75b08702}{H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::compute\+L2\+Product\+\_\+with\+\_\+\+Ops}} (const size\+\_\+t iT, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&left\+Op, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&right\+Op, const double \&penalty\+\_\+factor, const Eigen\+::\+Matrix\+Xd \&w\+\_\+mass\+\_\+\+Pk3\+\_\+T, const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight) const
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the L2 product, applying left\+Op and right\+Op to the variables. Probably not directly called, mostly invoked through the wrappers compute\+L2\+Product and compute\+L2\+Product\+Curl. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{Local\+Operators}} \mbox{\hyperlink{group__DDRCore_ga057d084662af494762c1ce15431393ed}{H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::\+\_\+compute\+\_\+cell\+\_\+divergence\+\_\+potential}} (size\+\_\+t iT)
+\item 
 \mbox{\hyperlink{group__DDRCore_ga21b5a4a95584f8f4a37941be1ebe89f1}{H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::\+Local\+Operators\+::\+Local\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+gradient, const Eigen\+::\+Matrix\+Xd \&\+\_\+potential)
 \item 
 \mbox{\hyperlink{group__DDRCore_gaa324e5f72366f9c2fe7326384986269c}{H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::\+X\+Grad}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
@@ -227,6 +461,18 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_gaed144db167f522c3921b
 \item 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__DDRCore_gaed144db167f522c3921b156f98f503e1}{Poly\+Basis\+Edge\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga9f6c4f5bf8064ecfba03a95a8668ddc6}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Edge\+Bases\+::\+Polykmo}}
 \item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga11fdcd5dcb6c8022c393f817e0c3e2ea}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Transfer\+Operators\+::serendipity}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga9c954f60ae0cd67ed39da39375220107}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Transfer\+Operators\+::extension}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gaf037cc66b6398a8deff123298431f6eb}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Transfer\+Operators\+::reduction}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gacd88f962d2857f287f21ed347e9c2135}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Transfer\+Operators\+::serendipity}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga58dff27856fbf48b572c7f37c36eb282}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Transfer\+Operators\+::extension}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gabbe598a9e7800cb3cf1757ce3544b92c}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Transfer\+Operators\+::reduction}}
+\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gac13d31db8693eb14d3e0d49fb053ed1f}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+Local\+Operators\+::curl}}
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga96bcc4255a9a0a22a5c80afcfb3ee313}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+Local\+Operators\+::potential}}
@@ -236,6 +482,14 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga6a5d84570428189dc4923400
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga50e84cea1582a17b597f3ae672613744}{H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::\+Local\+Operators\+::divergence\+\_\+rhs}}
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga8fdfbce5dc2c74114135ffcd302760f5}{H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::\+Local\+Operators\+::potential}}
+\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \& \mbox{\hyperlink{group__DDRCore_ga0c74caeb7ad15a81f75ef43ad66f59f9}{H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::m\+\_\+ddr\+\_\+core}}
+\item 
+bool \mbox{\hyperlink{group__DDRCore_ga7fab1dbf4301876ebbb0130b99eea346}{H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::m\+\_\+use\+\_\+threads}}
+\item 
+std\+::ostream \& \mbox{\hyperlink{group__DDRCore_ga89c73bf17fe2b30dea39f9c9b7d0e95f}{H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::m\+\_\+output}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{Local\+Operators}} $>$ $>$ \mbox{\hyperlink{group__DDRCore_gacf3ca0ec4d9dc1d2d748ef72d2f6b47f}{H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::m\+\_\+cell\+\_\+operators}}
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga9e9b91945b7874843a9a9c8b49f3f024}{H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::\+Local\+Operators\+::gradient}}
 \item 
@@ -252,20 +506,32 @@ Classes providing tools to the Discrete De Rham sequence.
 \mbox{\Hypertarget{group__DDRCore_ga433efca9d7ce661d4bc9e5386d131cf8}\label{group__DDRCore_ga433efca9d7ce661d4bc9e5386d131cf8}} 
 \index{DDRCore@{DDRCore}!FunctionType@{FunctionType}}
 \index{FunctionType@{FunctionType}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily typedef std\+::function$<$double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDRCore_ga433efca9d7ce661d4bc9e5386d131cf8}{H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::\+Function\+Type}}}
 
 \mbox{\Hypertarget{group__DDRCore_ga658aabe4f545b51aff33349bd52cae87}\label{group__DDRCore_ga658aabe4f545b51aff33349bd52cae87}} 
 \index{DDRCore@{DDRCore}!FunctionType@{FunctionType}}
 \index{FunctionType@{FunctionType}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDRCore_ga658aabe4f545b51aff33349bd52cae87}{H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::\+Function\+Type}}}
+
+\mbox{\Hypertarget{group__DDRCore_gad31e6bd58000471db0da65d94f2e0c30}\label{group__DDRCore_gad31e6bd58000471db0da65d94f2e0c30}} 
+\index{DDRCore@{DDRCore}!FunctionType@{FunctionType}}
+\index{FunctionType@{FunctionType}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily typedef std\+::function$<$double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDRCore_gad31e6bd58000471db0da65d94f2e0c30}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Function\+Type}}}
 
 \mbox{\Hypertarget{group__DDRCore_ga1d6aa9967789c546122bd19871e022eb}\label{group__DDRCore_ga1d6aa9967789c546122bd19871e022eb}} 
 \index{DDRCore@{DDRCore}!FunctionType@{FunctionType}}
 \index{FunctionType@{FunctionType}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDRCore_ga1d6aa9967789c546122bd19871e022eb}{H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::\+Function\+Type}}}
+
+\mbox{\Hypertarget{group__DDRCore_ga54005a93080c30da08c1ee04c12c7588}\label{group__DDRCore_ga54005a93080c30da08c1ee04c12c7588}} 
+\index{DDRCore@{DDRCore}!FunctionType@{FunctionType}}
+\index{FunctionType@{FunctionType}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDRCore_ga54005a93080c30da08c1ee04c12c7588}{H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Function\+Type}}}
 
 \mbox{\Hypertarget{group__DDRCore_ga7bfe17a4d1d277d8d6ac477854eee603}\label{group__DDRCore_ga7bfe17a4d1d277d8d6ac477854eee603}} 
 \index{DDRCore@{DDRCore}!GeometricSupport@{GeometricSupport}}
@@ -309,6 +575,16 @@ Geometric support.
 \doxysubsubsection{\texorpdfstring{GolyComplBasisCellType}{GolyComplBasisCellType}}
 {\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{Goly\+Compl\+Basis\+Cell}}$>$ \mbox{\hyperlink{group__DDRCore_ga8d7ab3240176dab867a4e7ed77ed9158}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Goly\+Compl\+Basis\+Cell\+Type}}}
 
+\mbox{\Hypertarget{group__DDRCore_gaa1053be6765fc576440ef85d6096098a}\label{group__DDRCore_gaa1053be6765fc576440ef85d6096098a}} 
+\index{DDRCore@{DDRCore}!InverseProblem@{InverseProblem}}
+\index{InverseProblem@{InverseProblem}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{InverseProblem}{InverseProblem}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Full\+Piv\+LU$<$Eigen\+::\+Matrix\+Xd$>$ \mbox{\hyperlink{group__DDRCore_gaa1053be6765fc576440ef85d6096098a}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Inverse\+Problem}}}
+
+
+
+Type for inverses of matrix for serendipity problem. 
+
 \mbox{\Hypertarget{group__DDRCore_gaf58ab2e2d275f2a0f19d32d5630d6421}\label{group__DDRCore_gaf58ab2e2d275f2a0f19d32d5630d6421}} 
 \index{DDRCore@{DDRCore}!Poly2BasisFaceType@{Poly2BasisFaceType}}
 \index{Poly2BasisFaceType@{Poly2BasisFaceType}!DDRCore@{DDRCore}}
@@ -339,6 +615,18 @@ Geometric support.
 \doxysubsubsection{\texorpdfstring{PolyBasisFaceType}{PolyBasisFaceType}}
 {\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}}$>$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Poly\+Basis\+Face\+Type}}}
 
+\mbox{\Hypertarget{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}\label{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}} 
+\index{DDRCore@{DDRCore}!PolylBasisCellType@{PolylBasisCellType}}
+\index{PolylBasisCellType@{PolylBasisCellType}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{PolylBasisCellType}{PolylBasisCellType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{D\+D\+R\+Core\+::\+Poly\+Basis\+Cell\+Type}}$>$ \mbox{\hyperlink{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Polyl\+Basis\+Cell\+Type}}}
+
+\mbox{\Hypertarget{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}\label{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}} 
+\index{DDRCore@{DDRCore}!PolylBasisFaceType@{PolylBasisFaceType}}
+\index{PolylBasisFaceType@{PolylBasisFaceType}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{PolylBasisFaceType}{PolylBasisFaceType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{D\+D\+R\+Core\+::\+Poly\+Basis\+Face\+Type}}$>$ \mbox{\hyperlink{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Polyl\+Basis\+Face\+Type}}}
+
 \mbox{\Hypertarget{group__DDRCore_ga499d1f5450341d0045d400c5f3457584}\label{group__DDRCore_ga499d1f5450341d0045d400c5f3457584}} 
 \index{DDRCore@{DDRCore}!RolyBasisCellType@{RolyBasisCellType}}
 \index{RolyBasisCellType@{RolyBasisCellType}!DDRCore@{DDRCore}}
@@ -363,9 +651,27 @@ Geometric support.
 \doxysubsubsection{\texorpdfstring{RolyComplBasisFaceType}{RolyComplBasisFaceType}}
 {\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisFace}{Roly\+Compl\+Basis\+Face}}$>$ \mbox{\hyperlink{group__DDRCore_gaeee1a4e190fba39e31a9184519e1ba43}{H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Roly\+Compl\+Basis\+Face\+Type}}}
 
+\mbox{\Hypertarget{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}\label{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}} 
+\index{DDRCore@{DDRCore}!RolyCompllpoBasisCellType@{RolyCompllpoBasisCellType}}
+\index{RolyCompllpoBasisCellType@{RolyCompllpoBasisCellType}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{RolyCompllpoBasisCellType}{RolyCompllpoBasisCellType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_gaeebff7b722caf50be9eafba35e65d1ec}{D\+D\+R\+Core\+::\+Roly\+Compl\+Basis\+Cell\+Type}}$>$ \mbox{\hyperlink{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Roly\+Compllpo\+Basis\+Cell\+Type}}}
+
+\mbox{\Hypertarget{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}\label{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}} 
+\index{DDRCore@{DDRCore}!RolyCompllpoBasisFaceType@{RolyCompllpoBasisFaceType}}
+\index{RolyCompllpoBasisFaceType@{RolyCompllpoBasisFaceType}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{RolyCompllpoBasisFaceType}{RolyCompllpoBasisFaceType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$\mbox{\hyperlink{group__DDRCore_gaeee1a4e190fba39e31a9184519e1ba43}{D\+D\+R\+Core\+::\+Roly\+Compl\+Basis\+Face\+Type}}$>$ \mbox{\hyperlink{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}{H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Roly\+Compllpo\+Basis\+Face\+Type}}}
+
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__DDRCore_ga057d084662af494762c1ce15431393ed}\label{group__DDRCore_ga057d084662af494762c1ce15431393ed}} 
+\index{DDRCore@{DDRCore}!\_compute\_cell\_divergence\_potential@{\_compute\_cell\_divergence\_potential}}
+\index{\_compute\_cell\_divergence\_potential@{\_compute\_cell\_divergence\_potential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{\_compute\_cell\_divergence\_potential()}{\_compute\_cell\_divergence\_potential()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{X\+Div\+::\+Local\+Operators}} X\+Div\+::\+\_\+compute\+\_\+cell\+\_\+divergence\+\_\+potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{group__DDRCore_ga7dfaad4204a1a7916077d3469d311d2d}\label{group__DDRCore_ga7dfaad4204a1a7916077d3469d311d2d}} 
 \index{DDRCore@{DDRCore}!buildGradientComponentsCell@{buildGradientComponentsCell}}
 \index{buildGradientComponentsCell@{buildGradientComponentsCell}!DDRCore@{DDRCore}}
@@ -379,7 +685,7 @@ Build the components of the gradient operator (probably not useful in practice t
 \mbox{\Hypertarget{group__DDRCore_gad25c356fbdda7e5b26db223ebf376a39}\label{group__DDRCore_gad25c356fbdda7e5b26db223ebf376a39}} 
 \index{DDRCore@{DDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -389,7 +695,7 @@ Return cell bases for cell T.
 \mbox{\Hypertarget{group__DDRCore_gad68c6a604d3f0c3075627adc5acdb01c}\label{group__DDRCore_gad68c6a604d3f0c3075627adc5acdb01c}} 
 \index{DDRCore@{DDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -399,8 +705,28 @@ Return cell bases for cell T.
 \mbox{\Hypertarget{group__DDRCore_ga793170ec5942e367325fc3b5611c8e3d}\label{group__DDRCore_ga793170ec5942e367325fc3b5611c8e3d}} 
 \index{DDRCore@{DDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga4bd4ae84b3418bae8c39b4ac9a176056}\label{group__DDRCore_ga4bd4ae84b3418bae8c39b4ac9a176056}} 
+\index{DDRCore@{DDRCore}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga2859b8f52c34de1f054f8aa5908d5a2d}\label{group__DDRCore_ga2859b8f52c34de1f054f8aa5908d5a2d}} 
+\index{DDRCore@{DDRCore}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -409,7 +735,7 @@ Return cell bases for cell T.
 \mbox{\Hypertarget{group__DDRCore_gaf61e3557d62fa2da1489ee0f6a9df9fc}\label{group__DDRCore_gaf61e3557d62fa2da1489ee0f6a9df9fc}} 
 \index{DDRCore@{DDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -419,7 +745,7 @@ Return cell bases for the face of index iT.
 \mbox{\Hypertarget{group__DDRCore_ga0cfb939bf991d0ec0cb285e8bfea03f6}\label{group__DDRCore_ga0cfb939bf991d0ec0cb285e8bfea03f6}} 
 \index{DDRCore@{DDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -429,7 +755,7 @@ Return cell bases for the face of index iT.
 \mbox{\Hypertarget{group__DDRCore_gaedbe0171512eca325eee8d91cbf558d9}\label{group__DDRCore_gaedbe0171512eca325eee8d91cbf558d9}} 
 \index{DDRCore@{DDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -439,12 +765,112 @@ Return cell bases for the cell of index iT.
 \mbox{\Hypertarget{group__DDRCore_ga222dbade666f7ab10e5bfae0f0579b09}\label{group__DDRCore_ga222dbade666f7ab10e5bfae0f0579b09}} 
 \index{DDRCore@{DDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return cell bases for element iT. 
+
+\mbox{\Hypertarget{group__DDRCore_ga720a807b0c06f118248a6523c3d30ad9}\label{group__DDRCore_ga720a807b0c06f118248a6523c3d30ad9}} 
+\index{DDRCore@{DDRCore}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for the face of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_ga804e1275df94f7bfe5e7be7604ada27e}\label{group__DDRCore_ga804e1275df94f7bfe5e7be7604ada27e}} 
+\index{DDRCore@{DDRCore}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for the face of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_gaa3f2a76797ea9bc495d9867f68dcaf71}\label{group__DDRCore_gaa3f2a76797ea9bc495d9867f68dcaf71}} 
+\index{DDRCore@{DDRCore}!cellBasisPolyl@{cellBasisPolyl}}
+\index{cellBasisPolyl@{cellBasisPolyl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBasisPolyl()}{cellBasisPolyl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}{Polyl\+Basis\+Cell\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::cell\+Basis\+Polyl (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the basis of P$^\wedge$l on cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga497858f62da0b0cdce32f4198808f99a}\label{group__DDRCore_ga497858f62da0b0cdce32f4198808f99a}} 
+\index{DDRCore@{DDRCore}!cellBasisPolyl@{cellBasisPolyl}}
+\index{cellBasisPolyl@{cellBasisPolyl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBasisPolyl()}{cellBasisPolyl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}{Polyl\+Basis\+Cell\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::cell\+Basis\+Polyl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the basis of P$^\wedge$l on cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_gab6f4b8ece2046274a019795874c52a45}\label{group__DDRCore_gab6f4b8ece2046274a019795874c52a45}} 
+\index{DDRCore@{DDRCore}!cellBasisRolyCompllpo@{cellBasisRolyCompllpo}}
+\index{cellBasisRolyCompllpo@{cellBasisRolyCompllpo}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBasisRolyCompllpo()}{cellBasisRolyCompllpo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}{Roly\+Compllpo\+Basis\+Cell\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::cell\+Basis\+Roly\+Compllpo (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the basis of R$^\wedge$\{c,l+1\} on cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga2e686880274abe43809889a68480c601}\label{group__DDRCore_ga2e686880274abe43809889a68480c601}} 
+\index{DDRCore@{DDRCore}!cellBasisRolyCompllpo@{cellBasisRolyCompllpo}}
+\index{cellBasisRolyCompllpo@{cellBasisRolyCompllpo}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBasisRolyCompllpo()}{cellBasisRolyCompllpo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}{Roly\+Compllpo\+Basis\+Cell\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::cell\+Basis\+Roly\+Compllpo (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the basis of R$^\wedge$\{c,l+1\} on cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_gac64987377d4d7d5b36e54cf16104b2d5}\label{group__DDRCore_gac64987377d4d7d5b36e54cf16104b2d5}} 
+\index{DDRCore@{DDRCore}!cellCurl@{cellCurl}}
+\index{cellCurl@{cellCurl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellCurl()}{cellCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Curl (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full curl operator on cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga0ddd399509f0241e4073eedac6195a55}\label{group__DDRCore_ga0ddd399509f0241e4073eedac6195a55}} 
+\index{DDRCore@{DDRCore}!cellCurl@{cellCurl}}
+\index{cellCurl@{cellCurl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellCurl()}{cellCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Curl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full curl operator on the cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_gabb853c6d0bcad7224a8d30f126736493}\label{group__DDRCore_gabb853c6d0bcad7224a8d30f126736493}} 
+\index{DDRCore@{DDRCore}!cellGradient@{cellGradient}}
+\index{cellGradient@{cellGradient}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellGradient()}{cellGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Gradient (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga903d094b01453c97e5ab82bfcbf49f81}\label{group__DDRCore_ga903d094b01453c97e5ab82bfcbf49f81}} 
+\index{DDRCore@{DDRCore}!cellGradient@{cellGradient}}
+\index{cellGradient@{cellGradient}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellGradient()}{cellGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Gradient (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on the cell of index iT. 
 
 \mbox{\Hypertarget{group__DDRCore_ga424318b521892012fb029a6e5e045bba}\label{group__DDRCore_ga424318b521892012fb029a6e5e045bba}} 
 \index{DDRCore@{DDRCore}!cellOperators@{cellOperators}}
@@ -506,10 +932,50 @@ Return cell operators for the cell of index iT.
 
 Return cell operators for the cell of index iT. 
 
+\mbox{\Hypertarget{group__DDRCore_ga24f3081b7d875d68d73aa7f7a08d3fd9}\label{group__DDRCore_ga24f3081b7d875d68d73aa7f7a08d3fd9}} 
+\index{DDRCore@{DDRCore}!cellPotential@{cellPotential}}
+\index{cellPotential@{cellPotential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellPotential()}{cellPotential()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Potential (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_gaca0f788410448d76a579a5159d2ba4a5}\label{group__DDRCore_gaca0f788410448d76a579a5159d2ba4a5}} 
+\index{DDRCore@{DDRCore}!cellPotential@{cellPotential}}
+\index{cellPotential@{cellPotential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellPotential()}{cellPotential()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Potential (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga200dbdbd702a0d3860ec6cd708bac132}\label{group__DDRCore_ga200dbdbd702a0d3860ec6cd708bac132}} 
+\index{DDRCore@{DDRCore}!cellPotential@{cellPotential}}
+\index{cellPotential@{cellPotential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellPotential()}{cellPotential()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::cell\+Potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on the cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_ga5b322deab08a76733c9123e9a246ebf4}\label{group__DDRCore_ga5b322deab08a76733c9123e9a246ebf4}} 
+\index{DDRCore@{DDRCore}!cellPotential@{cellPotential}}
+\index{cellPotential@{cellPotential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{cellPotential()}{cellPotential()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::cell\+Potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on the cell of index iT. 
+
 \mbox{\Hypertarget{group__DDRCore_ga91e09b919a73bc9e7121874eb2c87376}\label{group__DDRCore_ga91e09b919a73bc9e7121874eb2c87376}} 
 \index{DDRCore@{DDRCore}!computeL2Product@{computeL2Product}}
 \index{computeL2Product@{computeL2Product}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd X\+Div\+::compute\+L2\+Product (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
 
 
@@ -530,7 +996,7 @@ Compute the matrix of the (weighted) L2-\/product for the cell of index iT.
 \mbox{\Hypertarget{group__DDRCore_gac080d9dcebdb9d90ae135539cd7659d9}\label{group__DDRCore_gac080d9dcebdb9d90ae135539cd7659d9}} 
 \index{DDRCore@{DDRCore}!computeL2Product@{computeL2Product}}
 \index{computeL2Product@{computeL2Product}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd X\+Curl\+::compute\+L2\+Product (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
 
 
@@ -548,10 +1014,52 @@ Compute the matrix of the (weighted) L2-\/product for the cell of index iT. The 
 {\em weight} & weight function in the L2 product, defaults to 1 \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__DDRCore_ga574c129bb39a42ac74f85f6b932b7194}\label{group__DDRCore_ga574c129bb39a42ac74f85f6b932b7194}} 
+\index{DDRCore@{DDRCore}!computeL2Product@{computeL2Product}}
+\index{computeL2Product@{computeL2Product}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::compute\+L2\+Product (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the matrix of the (weighted) L2-\/product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iT} & index of the cell \\
+\hline
+{\em penalty\+\_\+factor} & pre-\/factor for stabilisation term \\
+\hline
+{\em mass\+\_\+\+Pk3\+\_\+T} & if pre-\/computed, the mass matrix of (P$^\wedge$k(T))$^\wedge$3; if none is pre-\/computed, passing Eigen\+::\+Matrix\+Xd\+::\+Zero(1,1) will force the calculation \\
+\hline
+{\em weight} & weight function in the L2 product, defaults to 1 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DDRCore_gaae0db72d7d991c23cd8d8d906bbc6006}\label{group__DDRCore_gaae0db72d7d991c23cd8d8d906bbc6006}} 
+\index{DDRCore@{DDRCore}!computeL2Product@{computeL2Product}}
+\index{computeL2Product@{computeL2Product}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::compute\+L2\+Product (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the matrix of the (weighted) L2-\/product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iT} & index of the cell \\
+\hline
+{\em penalty\+\_\+factor} & pre-\/factor for stabilisation term \\
+\hline
+{\em mass\+\_\+\+Pk3\+\_\+T} & if pre-\/computed, the mass matrix of (P$^\wedge$k(T))$^\wedge$3; if none is pre-\/computed, passing Eigen\+::\+Matrix\+Xd\+::\+Zero(1,1) will force the calculation \\
+\hline
+{\em weight} & weight function in the L2 product, defaults to 1 \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__DDRCore_ga6dabd0bfb09f39ede54dafdab4a47f9e}\label{group__DDRCore_ga6dabd0bfb09f39ede54dafdab4a47f9e}} 
 \index{DDRCore@{DDRCore}!computeL2Product@{computeL2Product}}
 \index{computeL2Product@{computeL2Product}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd X\+Grad\+::compute\+L2\+Product (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pkpo\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
 
 
@@ -619,10 +1127,35 @@ Compute the matrix of the L2 product, applying left\+Op and right\+Op to the var
 {\em weight} & weight function in the L2 product \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__DDRCore_ga8e0194701bde64e27f44a3f45e507fb0}\label{group__DDRCore_ga8e0194701bde64e27f44a3f45e507fb0}} 
+\index{DDRCore@{DDRCore}!computeL2ProductCurl@{computeL2ProductCurl}}
+\index{computeL2ProductCurl@{computeL2ProductCurl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{computeL2ProductCurl()}{computeL2ProductCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd S\+X\+Div\+::compute\+L2\+Product\+Curl (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}} \&}]{sx\+\_\+curl,  }\item[{const std\+::string \&}]{side,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
+
+
+
+Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete serendipity curl on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iT} & index of the cell \\
+\hline
+{\em sx\+\_\+curl} & instance of \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}} to access the serendipity curls \\
+\hline
+{\em side} & which side (left, right, both) we apply the gradient to \\
+\hline
+{\em penalty\+\_\+factor} & pre-\/factor for stabilisation term \\
+\hline
+{\em mass\+\_\+\+Pk3\+\_\+T} & if pre-\/computed, the mass matrix of (P$^\wedge$k(T))$^\wedge$3; if none is pre-\/computed, passing Eigen\+::\+Matrix\+Xd\+::\+Zero(1,1) will force the calculation \\
+\hline
+{\em weight} & weight function in the L2 product, defaults to constant 1. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__DDRCore_ga413be9caf30e3a303b573af58a43c36e}\label{group__DDRCore_ga413be9caf30e3a303b573af58a43c36e}} 
 \index{DDRCore@{DDRCore}!computeL2ProductCurl@{computeL2ProductCurl}}
 \index{computeL2ProductCurl@{computeL2ProductCurl}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{computeL2ProductCurl()}{computeL2ProductCurl()}}
+\doxysubsubsection{\texorpdfstring{computeL2ProductCurl()}{computeL2ProductCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd X\+Div\+::compute\+L2\+Product\+Curl (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \&}]{x\+\_\+curl,  }\item[{const std\+::string \&}]{side,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
 
 
@@ -665,10 +1198,35 @@ Alternate version of L2 product, using only cell potentials and \textquotesingle
 {\em weight} & weight function in the L2 product, default to constant equal to 1. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__DDRCore_gaacff182d2d78705c791dcfa225b2cf84}\label{group__DDRCore_gaacff182d2d78705c791dcfa225b2cf84}} 
+\index{DDRCore@{DDRCore}!computeL2ProductGradient@{computeL2ProductGradient}}
+\index{computeL2ProductGradient@{computeL2ProductGradient}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{computeL2ProductGradient()}{computeL2ProductGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd S\+X\+Curl\+::compute\+L2\+Product\+Gradient (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{S\+X\+Grad}} \&}]{sx\+\_\+grad,  }\item[{const std\+::string \&}]{side,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
+
+
+
+Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete gradient on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iT} & index of the cell \\
+\hline
+{\em sx\+\_\+grad} & instance of \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{S\+X\+Grad}} to access the full gradients \\
+\hline
+{\em side} & which side (left, right, both) we apply the gradient to \\
+\hline
+{\em penalty\+\_\+factor} & pre-\/factor for stabilisation term \\
+\hline
+{\em mass\+\_\+\+Pk3\+\_\+T} & if pre-\/computed, the mass matrix of (P$^\wedge$k(T))$^\wedge$3; if none is pre-\/computed, passing Eigen\+::\+Matrix\+Xd\+::\+Zero(1,1) will force the calculation \\
+\hline
+{\em weight} & weight function in the L2 product, defaults to constant 1. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__DDRCore_ga40a2151515060d6fcf511459bfdd4b09}\label{group__DDRCore_ga40a2151515060d6fcf511459bfdd4b09}} 
 \index{DDRCore@{DDRCore}!computeL2ProductGradient@{computeL2ProductGradient}}
 \index{computeL2ProductGradient@{computeL2ProductGradient}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{computeL2ProductGradient()}{computeL2ProductGradient()}}
+\doxysubsubsection{\texorpdfstring{computeL2ProductGradient()}{computeL2ProductGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd X\+Curl\+::compute\+L2\+Product\+Gradient (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}} \&}]{x\+\_\+grad,  }\item[{const std\+::string \&}]{side,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
 
 
@@ -703,7 +1261,7 @@ Constructor.
 \mbox{\Hypertarget{group__DDRCore_ga0e82338c483d5dc11bc0b84adb52998b}\label{group__DDRCore_ga0e82338c483d5dc11bc0b84adb52998b}} 
 \index{DDRCore@{DDRCore}!degree@{degree}}
 \index{degree@{degree}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
 {\footnotesize\ttfamily const size\+\_\+t\& H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -713,7 +1271,7 @@ Return the polynomial degree.
 \mbox{\Hypertarget{group__DDRCore_gae2f65831610feed4a0e376b19e000252}\label{group__DDRCore_gae2f65831610feed4a0e376b19e000252}} 
 \index{DDRCore@{DDRCore}!degree@{degree}}
 \index{degree@{degree}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
 {\footnotesize\ttfamily const size\+\_\+t\& H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -723,8 +1281,28 @@ Return the polynomial degree.
 \mbox{\Hypertarget{group__DDRCore_ga33542fcbafb007d3b3e93781abf19a29}\label{group__DDRCore_ga33542fcbafb007d3b3e93781abf19a29}} 
 \index{DDRCore@{DDRCore}!degree@{degree}}
 \index{degree@{degree}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
 {\footnotesize\ttfamily const size\+\_\+t\& H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the polynomial degree. 
+
+\mbox{\Hypertarget{group__DDRCore_ga2e4c9f6bc7a0858aa31f59e3b396769f}\label{group__DDRCore_ga2e4c9f6bc7a0858aa31f59e3b396769f}} 
+\index{DDRCore@{DDRCore}!degree@{degree}}
+\index{degree@{degree}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily const size\+\_\+t\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the polynomial degree. 
+
+\mbox{\Hypertarget{group__DDRCore_ga59f8e6ea7c7c5121c035105c93687102}\label{group__DDRCore_ga59f8e6ea7c7c5121c035105c93687102}} 
+\index{DDRCore@{DDRCore}!degree@{degree}}
+\index{degree@{degree}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily const size\+\_\+t\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -733,17 +1311,137 @@ Return the polynomial degree.
 \mbox{\Hypertarget{group__DDRCore_ga0810ab2d6dfaaedc3242d83a942acee4}\label{group__DDRCore_ga0810ab2d6dfaaedc3242d83a942acee4}} 
 \index{DDRCore@{DDRCore}!degree@{degree}}
 \index{degree@{degree}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
 {\footnotesize\ttfamily const size\+\_\+t\& H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return the polynomial degree. 
 
+\mbox{\Hypertarget{group__DDRCore_gaa9a06aa8916438036e39cf7cee51f9e0}\label{group__DDRCore_gaa9a06aa8916438036e39cf7cee51f9e0}} 
+\index{DDRCore@{DDRCore}!dimCellPolyl@{dimCellPolyl}}
+\index{dimCellPolyl@{dimCellPolyl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{dimCellPolyl()}{dimCellPolyl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Cell\+Polyl (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dimension of P$^\wedge$l on cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga21dccf475588d2c9aa528022556c029a}\label{group__DDRCore_ga21dccf475588d2c9aa528022556c029a}} 
+\index{DDRCore@{DDRCore}!dimCellPolyl@{dimCellPolyl}}
+\index{dimCellPolyl@{dimCellPolyl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{dimCellPolyl()}{dimCellPolyl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Cell\+Polyl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dimension of P$^\wedge$l on cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_ga04a0159883242f184ef6014855c52a9f}\label{group__DDRCore_ga04a0159883242f184ef6014855c52a9f}} 
+\index{DDRCore@{DDRCore}!dimCellRolyCompllpo@{dimCellRolyCompllpo}}
+\index{dimCellRolyCompllpo@{dimCellRolyCompllpo}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{dimCellRolyCompllpo()}{dimCellRolyCompllpo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Cell\+Roly\+Compllpo (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dimension of R$^\wedge$\{c,l+1\} on cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_gafd9511d6b13c55aabd34f06414cd4204}\label{group__DDRCore_gafd9511d6b13c55aabd34f06414cd4204}} 
+\index{DDRCore@{DDRCore}!dimCellRolyCompllpo@{dimCellRolyCompllpo}}
+\index{dimCellRolyCompllpo@{dimCellRolyCompllpo}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{dimCellRolyCompllpo()}{dimCellRolyCompllpo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Cell\+Roly\+Compllpo (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dimension of R$^\wedge$\{c,l+1\} on cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_gad51c189b806c57a93e039b663ad63241}\label{group__DDRCore_gad51c189b806c57a93e039b663ad63241}} 
+\index{DDRCore@{DDRCore}!dimFacePolyl@{dimFacePolyl}}
+\index{dimFacePolyl@{dimFacePolyl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{dimFacePolyl()}{dimFacePolyl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Face\+Polyl (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dimension of P$^\wedge$\{l+1\} on face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga9ab970169952f69f7ad98b1c71402d22}\label{group__DDRCore_ga9ab970169952f69f7ad98b1c71402d22}} 
+\index{DDRCore@{DDRCore}!dimFacePolyl@{dimFacePolyl}}
+\index{dimFacePolyl@{dimFacePolyl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{dimFacePolyl()}{dimFacePolyl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Face\+Polyl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dimension of P$^\wedge$l on face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_gace2f098b0780f9d3c1ef5e028438232a}\label{group__DDRCore_gace2f098b0780f9d3c1ef5e028438232a}} 
+\index{DDRCore@{DDRCore}!dimFaceRolyCompllpo@{dimFaceRolyCompllpo}}
+\index{dimFaceRolyCompllpo@{dimFaceRolyCompllpo}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{dimFaceRolyCompllpo()}{dimFaceRolyCompllpo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Face\+Roly\+Compllpo (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dimension of R$^\wedge$\{c,l+1\} on face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga00776d6d8c485873fca2bbe49a6871bf}\label{group__DDRCore_ga00776d6d8c485873fca2bbe49a6871bf}} 
+\index{DDRCore@{DDRCore}!dimFaceRolyCompllpo@{dimFaceRolyCompllpo}}
+\index{dimFaceRolyCompllpo@{dimFaceRolyCompllpo}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{dimFaceRolyCompllpo()}{dimFaceRolyCompllpo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::dim\+Face\+Roly\+Compllpo (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dimension of R$^\wedge$\{c,l+1\} on face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_gad246a4fb1970aefb04973ad092fbca75}\label{group__DDRCore_gad246a4fb1970aefb04973ad092fbca75}} 
+\index{DDRCore@{DDRCore}!EcurlCell@{EcurlCell}}
+\index{EcurlCell@{EcurlCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{EcurlCell()}{EcurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Ecurl\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga212a1d9c41b7a7d6b68c699bf63428c8}\label{group__DDRCore_ga212a1d9c41b7a7d6b68c699bf63428c8}} 
+\index{DDRCore@{DDRCore}!EcurlCell@{EcurlCell}}
+\index{EcurlCell@{EcurlCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{EcurlCell()}{EcurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Ecurl\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for the cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_gad2f4c36cef876f700d67d5e7d180c745}\label{group__DDRCore_gad2f4c36cef876f700d67d5e7d180c745}} 
+\index{DDRCore@{DDRCore}!EcurlFace@{EcurlFace}}
+\index{EcurlFace@{EcurlFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{EcurlFace()}{EcurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Ecurl\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga238669ee9b6d0990ac289b208ca96247}\label{group__DDRCore_ga238669ee9b6d0990ac289b208ca96247}} 
+\index{DDRCore@{DDRCore}!EcurlFace@{EcurlFace}}
+\index{EcurlFace@{EcurlFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{EcurlFace()}{EcurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Ecurl\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for the face of index iF. 
+
 \mbox{\Hypertarget{group__DDRCore_ga0dbd602ee8886bc0ba548a0baea64576}\label{group__DDRCore_ga0dbd602ee8886bc0ba548a0baea64576}} 
 \index{DDRCore@{DDRCore}!edgeBases@{edgeBases}}
 \index{edgeBases@{edgeBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::edge\+Bases (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -753,8 +1451,28 @@ Return edge bases for edge E.
 \mbox{\Hypertarget{group__DDRCore_ga6fd06c440bb5efafe04dbcd56a7db847}\label{group__DDRCore_ga6fd06c440bb5efafe04dbcd56a7db847}} 
 \index{DDRCore@{DDRCore}!edgeBases@{edgeBases}}
 \index{edgeBases@{edgeBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::edge\+Bases (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return edge bases for edge E. 
+
+\mbox{\Hypertarget{group__DDRCore_ga41ea1833d9f73dcad8dbb4fc9aec624c}\label{group__DDRCore_ga41ea1833d9f73dcad8dbb4fc9aec624c}} 
+\index{DDRCore@{DDRCore}!edgeBases@{edgeBases}}
+\index{edgeBases@{edgeBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::edge\+Bases (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return edge bases for edge E. 
+
+\mbox{\Hypertarget{group__DDRCore_gaeb4a189880f80636205ba20f16fbc0b8}\label{group__DDRCore_gaeb4a189880f80636205ba20f16fbc0b8}} 
+\index{DDRCore@{DDRCore}!edgeBases@{edgeBases}}
+\index{edgeBases@{edgeBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Bases (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -763,7 +1481,7 @@ Return edge bases for edge E.
 \mbox{\Hypertarget{group__DDRCore_gaf406217ddf91be90bfa3c88baf800228}\label{group__DDRCore_gaf406217ddf91be90bfa3c88baf800228}} 
 \index{DDRCore@{DDRCore}!edgeBases@{edgeBases}}
 \index{edgeBases@{edgeBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::edge\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -773,7 +1491,7 @@ Return edge bases for the edge of index iE.
 \mbox{\Hypertarget{group__DDRCore_ga9255b8206ebb7727738398276e518a61}\label{group__DDRCore_ga9255b8206ebb7727738398276e518a61}} 
 \index{DDRCore@{DDRCore}!edgeBases@{edgeBases}}
 \index{edgeBases@{edgeBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::edge\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -783,12 +1501,52 @@ Return edge bases for the edge of index iE.
 \mbox{\Hypertarget{group__DDRCore_ga59b66dab48528b4503dcfae4128df155}\label{group__DDRCore_ga59b66dab48528b4503dcfae4128df155}} 
 \index{DDRCore@{DDRCore}!edgeBases@{edgeBases}}
 \index{edgeBases@{edgeBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{Edge\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::edge\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return edge bases for edge iE. 
+
+\mbox{\Hypertarget{group__DDRCore_ga3b0b90e05b681758a3bd4c9fda19f109}\label{group__DDRCore_ga3b0b90e05b681758a3bd4c9fda19f109}} 
+\index{DDRCore@{DDRCore}!edgeBases@{edgeBases}}
+\index{edgeBases@{edgeBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::edge\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return edge bases for the edge of index iE. 
+
+\mbox{\Hypertarget{group__DDRCore_gabe53f9202ee0f70abbea797ec52ea51b}\label{group__DDRCore_gabe53f9202ee0f70abbea797ec52ea51b}} 
+\index{DDRCore@{DDRCore}!edgeBases@{edgeBases}}
+\index{edgeBases@{edgeBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return edge bases for the edge of index iE. 
+
+\mbox{\Hypertarget{group__DDRCore_ga71f1bb46c46b27065f3ee03fff59397f}\label{group__DDRCore_ga71f1bb46c46b27065f3ee03fff59397f}} 
+\index{DDRCore@{DDRCore}!edgeGradient@{edgeGradient}}
+\index{edgeGradient@{edgeGradient}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeGradient()}{edgeGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Gradient (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on edge E. 
+
+\mbox{\Hypertarget{group__DDRCore_ga710767cd42f40ee164ff0f817200efd9}\label{group__DDRCore_ga710767cd42f40ee164ff0f817200efd9}} 
+\index{DDRCore@{DDRCore}!edgeGradient@{edgeGradient}}
+\index{edgeGradient@{edgeGradient}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeGradient()}{edgeGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Gradient (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on the edge of index iE. 
 
 \mbox{\Hypertarget{group__DDRCore_ga9b5cca5f857fe8c1f48ecd8e29b687a5}\label{group__DDRCore_ga9b5cca5f857fe8c1f48ecd8e29b687a5}} 
 \index{DDRCore@{DDRCore}!edgeOperators@{edgeOperators}}
@@ -810,10 +1568,70 @@ Return edge operators for edge E.
 
 Return edge operators for the edge of index iE. 
 
+\mbox{\Hypertarget{group__DDRCore_ga62db193ae403a15bd0df6f5666a797e2}\label{group__DDRCore_ga62db193ae403a15bd0df6f5666a797e2}} 
+\index{DDRCore@{DDRCore}!edgePotential@{edgePotential}}
+\index{edgePotential@{edgePotential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{edgePotential()}{edgePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Potential (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on edge E. 
+
+\mbox{\Hypertarget{group__DDRCore_ga152e48524d6b7d4716cee0bd3c5f75f0}\label{group__DDRCore_ga152e48524d6b7d4716cee0bd3c5f75f0}} 
+\index{DDRCore@{DDRCore}!edgePotential@{edgePotential}}
+\index{edgePotential@{edgePotential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{edgePotential()}{edgePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::edge\+Potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on the edge of index iE. 
+
+\mbox{\Hypertarget{group__DDRCore_ga0574e52a3206511e4d5cb70907e6fc23}\label{group__DDRCore_ga0574e52a3206511e4d5cb70907e6fc23}} 
+\index{DDRCore@{DDRCore}!EgradCell@{EgradCell}}
+\index{EgradCell@{EgradCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{EgradCell()}{EgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Egrad\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga35c2632d8330dd5f1c97b5d99590fff9}\label{group__DDRCore_ga35c2632d8330dd5f1c97b5d99590fff9}} 
+\index{DDRCore@{DDRCore}!EgradCell@{EgradCell}}
+\index{EgradCell@{EgradCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{EgradCell()}{EgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Egrad\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for the cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_ga0e6df2585f3bdf7c7983c267cfdcf06a}\label{group__DDRCore_ga0e6df2585f3bdf7c7983c267cfdcf06a}} 
+\index{DDRCore@{DDRCore}!EgradFace@{EgradFace}}
+\index{EgradFace@{EgradFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{EgradFace()}{EgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Egrad\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for face F. 
+
+\mbox{\Hypertarget{group__DDRCore_gae6f863d7f3575af373bd9670c899ba22}\label{group__DDRCore_gae6f863d7f3575af373bd9670c899ba22}} 
+\index{DDRCore@{DDRCore}!EgradFace@{EgradFace}}
+\index{EgradFace@{EgradFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{EgradFace()}{EgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Egrad\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for the face of index iF. 
+
 \mbox{\Hypertarget{group__DDRCore_ga7cb8248afff89a299f8076e3515911ea}\label{group__DDRCore_ga7cb8248afff89a299f8076e3515911ea}} 
 \index{DDRCore@{DDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -823,7 +1641,7 @@ Return cell bases for face F.
 \mbox{\Hypertarget{group__DDRCore_ga89aa64c9b2ccae180d6444ccfce2aabf}\label{group__DDRCore_ga89aa64c9b2ccae180d6444ccfce2aabf}} 
 \index{DDRCore@{DDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -833,8 +1651,28 @@ Return cell bases for face F.
 \mbox{\Hypertarget{group__DDRCore_gacd58fb250bc2a93bd6f2e1c7a2f6ae6d}\label{group__DDRCore_gacd58fb250bc2a93bd6f2e1c7a2f6ae6d}} 
 \index{DDRCore@{DDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga44d4eedcc17f59c5c6ece58c998ed2aa}\label{group__DDRCore_ga44d4eedcc17f59c5c6ece58c998ed2aa}} 
+\index{DDRCore@{DDRCore}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga471709d8ee340844e874523413a08e6b}\label{group__DDRCore_ga471709d8ee340844e874523413a08e6b}} 
+\index{DDRCore@{DDRCore}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -843,7 +1681,7 @@ Return cell bases for face F.
 \mbox{\Hypertarget{group__DDRCore_gac8cefcb0fc66710090d254e13dac919a}\label{group__DDRCore_gac8cefcb0fc66710090d254e13dac919a}} 
 \index{DDRCore@{DDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -853,7 +1691,7 @@ Return face bases for the face of index iF.
 \mbox{\Hypertarget{group__DDRCore_ga310b45935cb310be057a64cfd06ffdf2}\label{group__DDRCore_ga310b45935cb310be057a64cfd06ffdf2}} 
 \index{DDRCore@{DDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -863,7 +1701,7 @@ Return face bases for the face of index iF.
 \mbox{\Hypertarget{group__DDRCore_gab71562dccfe07e1bafed18660115729c}\label{group__DDRCore_gab71562dccfe07e1bafed18660115729c}} 
 \index{DDRCore@{DDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -873,12 +1711,112 @@ Return face bases for the face of index iF.
 \mbox{\Hypertarget{group__DDRCore_gadd926309d1517cf7d591215afcf2dfd5}\label{group__DDRCore_gadd926309d1517cf7d591215afcf2dfd5}} 
 \index{DDRCore@{DDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return face bases for face iF. 
+
+\mbox{\Hypertarget{group__DDRCore_ga2b0e7dc6974dd13814eeec08935379ee}\label{group__DDRCore_ga2b0e7dc6974dd13814eeec08935379ee}} 
+\index{DDRCore@{DDRCore}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return face bases for the face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_gaf6af54ee52b4866b350f89b81f851a61}\label{group__DDRCore_gaf6af54ee52b4866b350f89b81f851a61}} 
+\index{DDRCore@{DDRCore}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return face bases for the face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_ga52b68194f4a147cf123f8f059a3c04c4}\label{group__DDRCore_ga52b68194f4a147cf123f8f059a3c04c4}} 
+\index{DDRCore@{DDRCore}!faceBasisPolyl@{faceBasisPolyl}}
+\index{faceBasisPolyl@{faceBasisPolyl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBasisPolyl()}{faceBasisPolyl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}{Polyl\+Basis\+Face\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::face\+Basis\+Polyl (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the basis of P$^\wedge$l on face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga127ea67d187712c1a2768fe3156bf5cd}\label{group__DDRCore_ga127ea67d187712c1a2768fe3156bf5cd}} 
+\index{DDRCore@{DDRCore}!faceBasisPolyl@{faceBasisPolyl}}
+\index{faceBasisPolyl@{faceBasisPolyl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBasisPolyl()}{faceBasisPolyl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}{Polyl\+Basis\+Face\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::face\+Basis\+Polyl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the basis of P$^\wedge$l on face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_ga80aa80f0f2328156a27940fc253ad901}\label{group__DDRCore_ga80aa80f0f2328156a27940fc253ad901}} 
+\index{DDRCore@{DDRCore}!faceBasisRolyCompllpo@{faceBasisRolyCompllpo}}
+\index{faceBasisRolyCompllpo@{faceBasisRolyCompllpo}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBasisRolyCompllpo()}{faceBasisRolyCompllpo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}{Roly\+Compllpo\+Basis\+Face\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::face\+Basis\+Roly\+Compllpo (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the basis of R$^\wedge$\{c,l+1\} on face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga14b977b22c0eb89d2cedaf9bc418c8ba}\label{group__DDRCore_ga14b977b22c0eb89d2cedaf9bc418c8ba}} 
+\index{DDRCore@{DDRCore}!faceBasisRolyCompllpo@{faceBasisRolyCompllpo}}
+\index{faceBasisRolyCompllpo@{faceBasisRolyCompllpo}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBasisRolyCompllpo()}{faceBasisRolyCompllpo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}{Roly\+Compllpo\+Basis\+Face\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::face\+Basis\+Roly\+Compllpo (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the basis of R$^\wedge$\{c,l+1\} on face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_ga4e5f1efb302219e9035017e4516eb727}\label{group__DDRCore_ga4e5f1efb302219e9035017e4516eb727}} 
+\index{DDRCore@{DDRCore}!faceCurl@{faceCurl}}
+\index{faceCurl@{faceCurl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceCurl()}{faceCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Curl (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full curl operator on face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga2c6d7f55cce5ea64383a7fc59f145b6b}\label{group__DDRCore_ga2c6d7f55cce5ea64383a7fc59f145b6b}} 
+\index{DDRCore@{DDRCore}!faceCurl@{faceCurl}}
+\index{faceCurl@{faceCurl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceCurl()}{faceCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Curl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full curl operator on the face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_gab4f812b1ab331b2044ea6a05e66d8707}\label{group__DDRCore_gab4f812b1ab331b2044ea6a05e66d8707}} 
+\index{DDRCore@{DDRCore}!faceGradient@{faceGradient}}
+\index{faceGradient@{faceGradient}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceGradient()}{faceGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Gradient (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga8d57dd9b63ca220996eaa644b45e96ef}\label{group__DDRCore_ga8d57dd9b63ca220996eaa644b45e96ef}} 
+\index{DDRCore@{DDRCore}!faceGradient@{faceGradient}}
+\index{faceGradient@{faceGradient}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{faceGradient()}{faceGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Gradient (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on the face of index iF. 
 
 \mbox{\Hypertarget{group__DDRCore_ga39c8365e893f692f285fe15be8b7162b}\label{group__DDRCore_ga39c8365e893f692f285fe15be8b7162b}} 
 \index{DDRCore@{DDRCore}!faceOperators@{faceOperators}}
@@ -920,11 +1858,72 @@ Return face operators for the face of index iF.
 
 Return face operators for the face of index iF. 
 
+\mbox{\Hypertarget{group__DDRCore_gaf0f2073b5621de532890119fbb42944c}\label{group__DDRCore_gaf0f2073b5621de532890119fbb42944c}} 
+\index{DDRCore@{DDRCore}!facePotential@{facePotential}}
+\index{facePotential@{facePotential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{facePotential()}{facePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Potential (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on face F. 
+
+\mbox{\Hypertarget{group__DDRCore_gac0c3a606f7c8c4839b0c72ac5001ebbf}\label{group__DDRCore_gac0c3a606f7c8c4839b0c72ac5001ebbf}} 
+\index{DDRCore@{DDRCore}!facePotential@{facePotential}}
+\index{facePotential@{facePotential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{facePotential()}{facePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Potential (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on face F. 
+
+\mbox{\Hypertarget{group__DDRCore_gadf755c4880fc2e141e4956e45c8385c0}\label{group__DDRCore_gadf755c4880fc2e141e4956e45c8385c0}} 
+\index{DDRCore@{DDRCore}!facePotential@{facePotential}}
+\index{facePotential@{facePotential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{facePotential()}{facePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::face\+Potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on the face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_ga3a174eb9197279fe1f8d6b1b9c2b99b5}\label{group__DDRCore_ga3a174eb9197279fe1f8d6b1b9c2b99b5}} 
+\index{DDRCore@{DDRCore}!facePotential@{facePotential}}
+\index{facePotential@{facePotential}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{facePotential()}{facePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::face\+Potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on the face of index iF. 
+
 \mbox{\Hypertarget{group__DDRCore_gaee9fe9c6833a783c3994ed123704c1ce}\label{group__DDRCore_gaee9fe9c6833a783c3994ed123704c1ce}} 
 \index{DDRCore@{DDRCore}!interpolate@{interpolate}}
 \index{interpolate@{interpolate}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Vector\+Xd X\+Grad\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__DDRCore_ga433efca9d7ce661d4bc9e5386d131cf8}{Function\+Type}} \&}]{q,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+edge = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
+
+
+
+Interpolator of a continuous function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The function to interpolate \\
+\hline
+{\em doe\+\_\+cell} & The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+face} & The optional degre of face quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+edge} & The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DDRCore_ga9f142520cf80ade8e20444719aaa394f}\label{group__DDRCore_ga9f142520cf80ade8e20444719aaa394f}} 
+\index{DDRCore@{DDRCore}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd S\+X\+Grad\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__DDRCore_gad31e6bd58000471db0da65d94f2e0c30}{Function\+Type}} \&}]{q,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+edge = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
 
 
 
@@ -944,7 +1943,7 @@ Interpolator of a continuous function.
 \mbox{\Hypertarget{group__DDRCore_gad0c7458505f62a52b2d81c4f5fe43034}\label{group__DDRCore_gad0c7458505f62a52b2d81c4f5fe43034}} 
 \index{DDRCore@{DDRCore}!interpolate@{interpolate}}
 \index{interpolate@{interpolate}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Vector\+Xd X\+Div\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__DDRCore_ga1d6aa9967789c546122bd19871e022eb}{Function\+Type}} \&}]{v,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
 
 
@@ -963,8 +1962,29 @@ Interpolator of a continuous function.
 \mbox{\Hypertarget{group__DDRCore_ga25991353c71aeb48d3061eacd42282e7}\label{group__DDRCore_ga25991353c71aeb48d3061eacd42282e7}} 
 \index{DDRCore@{DDRCore}!interpolate@{interpolate}}
 \index{interpolate@{interpolate}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Vector\+Xd X\+Curl\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__DDRCore_ga658aabe4f545b51aff33349bd52cae87}{Function\+Type}} \&}]{v,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+edge = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
+
+
+
+Interpolator of a continuous function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The function to interpolate \\
+\hline
+{\em doe\+\_\+cell} & The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+face} & The optional degre of face quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+edge} & The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DDRCore_ga45d84a4ae4ee1af1acfd8a6a866aee83}\label{group__DDRCore_ga45d84a4ae4ee1af1acfd8a6a866aee83}} 
+\index{DDRCore@{DDRCore}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd S\+X\+Curl\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__DDRCore_ga54005a93080c30da08c1ee04c12c7588}{Function\+Type}} \&}]{v,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+edge = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
 
 
 
@@ -1025,7 +2045,7 @@ Interpolator of a continuous function.
 \mbox{\Hypertarget{group__DDRCore_ga90b1a980d171c5622cbfd2b289fede2f}\label{group__DDRCore_ga90b1a980d171c5622cbfd2b289fede2f}} 
 \index{DDRCore@{DDRCore}!mesh@{mesh}}
 \index{mesh@{mesh}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -1035,7 +2055,7 @@ Return the mesh.
 \mbox{\Hypertarget{group__DDRCore_gabc06c9c069dafd40ab7f5f573eaebe66}\label{group__DDRCore_gabc06c9c069dafd40ab7f5f573eaebe66}} 
 \index{DDRCore@{DDRCore}!mesh@{mesh}}
 \index{mesh@{mesh}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Curl\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -1045,8 +2065,28 @@ Return the mesh.
 \mbox{\Hypertarget{group__DDRCore_ga53a8bec65ff15b3dcda0c597d2657b24}\label{group__DDRCore_ga53a8bec65ff15b3dcda0c597d2657b24}} 
 \index{DDRCore@{DDRCore}!mesh@{mesh}}
 \index{mesh@{mesh}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the mesh. 
+
+\mbox{\Hypertarget{group__DDRCore_ga08e833378d29205f1cc8a2094445454f}\label{group__DDRCore_ga08e833378d29205f1cc8a2094445454f}} 
+\index{DDRCore@{DDRCore}!mesh@{mesh}}
+\index{mesh@{mesh}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the mesh. 
+
+\mbox{\Hypertarget{group__DDRCore_ga89f8ff3f586b549ffc79292d25a6691a}\label{group__DDRCore_ga89f8ff3f586b549ffc79292d25a6691a}} 
+\index{DDRCore@{DDRCore}!mesh@{mesh}}
+\index{mesh@{mesh}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -1055,13 +2095,393 @@ Return the mesh.
 \mbox{\Hypertarget{group__DDRCore_ga4b3c317f8cf4193ba4b945f2b087a6f2}\label{group__DDRCore_ga4b3c317f8cf4193ba4b945f2b087a6f2}} 
 \index{DDRCore@{DDRCore}!mesh@{mesh}}
 \index{mesh@{mesh}!DDRCore@{DDRCore}}
-\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return a const reference to the mesh. 
 
+\mbox{\Hypertarget{group__DDRCore_gacc62beed649b9d3e04610d5f87ddba26}\label{group__DDRCore_gacc62beed649b9d3e04610d5f87ddba26}} 
+\index{DDRCore@{DDRCore}!mesh@{mesh}}
+\index{mesh@{mesh}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a const reference to the mesh. 
+
+\mbox{\Hypertarget{group__DDRCore_ga1b5d1075730113a5a86b01d19d2fa4d4}\label{group__DDRCore_ga1b5d1075730113a5a86b01d19d2fa4d4}} 
+\index{DDRCore@{DDRCore}!n\_serendipityEdges@{n\_serendipityEdges}}
+\index{n\_serendipityEdges@{n\_serendipityEdges}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{n\_serendipityEdges()}{n\_serendipityEdges()}}
+{\footnotesize\ttfamily const int H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::n\+\_\+serendipity\+Edges (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the number of serendipity edges in a face. 
+
+\mbox{\Hypertarget{group__DDRCore_ga75d725b50852aaaea86ec024167c38ba}\label{group__DDRCore_ga75d725b50852aaaea86ec024167c38ba}} 
+\index{DDRCore@{DDRCore}!n\_serendipityFaces@{n\_serendipityFaces}}
+\index{n\_serendipityFaces@{n\_serendipityFaces}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{n\_serendipityFaces()}{n\_serendipityFaces()}}
+{\footnotesize\ttfamily const int H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::n\+\_\+serendipity\+Faces (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the number of serendipity faces in a cell. 
+
+\mbox{\Hypertarget{group__DDRCore_ga6c1803556ba2ddee6d3d851fff9580e9}\label{group__DDRCore_ga6c1803556ba2ddee6d3d851fff9580e9}} 
+\index{DDRCore@{DDRCore}!nDOFs\_cells\_SXCurl@{nDOFs\_cells\_SXCurl}}
+\index{nDOFs\_cells\_SXCurl@{nDOFs\_cells\_SXCurl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{nDOFs\_cells\_SXCurl()}{nDOFs\_cells\_SXCurl()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Serendipity\+Problem\+::n\+D\+O\+Fs\+\_\+cells\+\_\+\+S\+X\+Curl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Number of D\+O\+Fs on cells for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} space. 
+
+\mbox{\Hypertarget{group__DDRCore_gaa8060fdc181785dc30c4dc3027e32677}\label{group__DDRCore_gaa8060fdc181785dc30c4dc3027e32677}} 
+\index{DDRCore@{DDRCore}!nDOFs\_cells\_SXGrad@{nDOFs\_cells\_SXGrad}}
+\index{nDOFs\_cells\_SXGrad@{nDOFs\_cells\_SXGrad}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{nDOFs\_cells\_SXGrad()}{nDOFs\_cells\_SXGrad()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Serendipity\+Problem\+::n\+D\+O\+Fs\+\_\+cells\+\_\+\+S\+X\+Grad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Number of D\+O\+Fs on cells for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}} space. 
+
+\mbox{\Hypertarget{group__DDRCore_ga93e86ff1e38df0714504013ecd82316e}\label{group__DDRCore_ga93e86ff1e38df0714504013ecd82316e}} 
+\index{DDRCore@{DDRCore}!nDOFs\_faces\_SXCurl@{nDOFs\_faces\_SXCurl}}
+\index{nDOFs\_faces\_SXCurl@{nDOFs\_faces\_SXCurl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{nDOFs\_faces\_SXCurl()}{nDOFs\_faces\_SXCurl()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Serendipity\+Problem\+::n\+D\+O\+Fs\+\_\+faces\+\_\+\+S\+X\+Curl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Number of D\+O\+Fs on faces for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} space. 
+
+\mbox{\Hypertarget{group__DDRCore_ga3ca4a1fd7d2d06bbf64b4b953f6e1426}\label{group__DDRCore_ga3ca4a1fd7d2d06bbf64b4b953f6e1426}} 
+\index{DDRCore@{DDRCore}!nDOFs\_faces\_SXGrad@{nDOFs\_faces\_SXGrad}}
+\index{nDOFs\_faces\_SXGrad@{nDOFs\_faces\_SXGrad}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{nDOFs\_faces\_SXGrad()}{nDOFs\_faces\_SXGrad()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Serendipity\+Problem\+::n\+D\+O\+Fs\+\_\+faces\+\_\+\+S\+X\+Grad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Number of D\+O\+Fs on faces for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}} space. 
+
+\mbox{\Hypertarget{group__DDRCore_ga8e5cf5df4e2479261480c170af01dc76}\label{group__DDRCore_ga8e5cf5df4e2479261480c170af01dc76}} 
+\index{DDRCore@{DDRCore}!RcurlCell@{RcurlCell}}
+\index{RcurlCell@{RcurlCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{RcurlCell()}{RcurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Rcurl\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_gaf3c9d642b72d125cd5d0fad71d691d5c}\label{group__DDRCore_gaf3c9d642b72d125cd5d0fad71d691d5c}} 
+\index{DDRCore@{DDRCore}!RcurlCell@{RcurlCell}}
+\index{RcurlCell@{RcurlCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{RcurlCell()}{RcurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Rcurl\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for the cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_ga8ed77b60f4beec239695e753f36da982}\label{group__DDRCore_ga8ed77b60f4beec239695e753f36da982}} 
+\index{DDRCore@{DDRCore}!RcurlFace@{RcurlFace}}
+\index{RcurlFace@{RcurlFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{RcurlFace()}{RcurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Rcurl\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell reduction for cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga3d74507620fd1263f029c8b7b8c01909}\label{group__DDRCore_ga3d74507620fd1263f029c8b7b8c01909}} 
+\index{DDRCore@{DDRCore}!RcurlFace@{RcurlFace}}
+\index{RcurlFace@{RcurlFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{RcurlFace()}{RcurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Rcurl\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for the face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_gad9c132354f1b9ec0b2a9906057593709}\label{group__DDRCore_gad9c132354f1b9ec0b2a9906057593709}} 
+\index{DDRCore@{DDRCore}!RgradCell@{RgradCell}}
+\index{RgradCell@{RgradCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{RgradCell()}{RgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Rgrad\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_gad78ed93cdc081122cc11090dc34983ea}\label{group__DDRCore_gad78ed93cdc081122cc11090dc34983ea}} 
+\index{DDRCore@{DDRCore}!RgradCell@{RgradCell}}
+\index{RgradCell@{RgradCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{RgradCell()}{RgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Rgrad\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for the cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_gaae77b01542abd204527aa7963a1ca773}\label{group__DDRCore_gaae77b01542abd204527aa7963a1ca773}} 
+\index{DDRCore@{DDRCore}!RgradFace@{RgradFace}}
+\index{RgradFace@{RgradFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{RgradFace()}{RgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Rgrad\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell reduction for cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga186b92052107d18445f7dede9f7fe6f1}\label{group__DDRCore_ga186b92052107d18445f7dede9f7fe6f1}} 
+\index{DDRCore@{DDRCore}!RgradFace@{RgradFace}}
+\index{RgradFace@{RgradFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{RgradFace()}{RgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Rgrad\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for the face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_gab6242ba1702ac7893f78da5607683597}\label{group__DDRCore_gab6242ba1702ac7893f78da5607683597}} 
+\index{DDRCore@{DDRCore}!ScurlCell@{ScurlCell}}
+\index{ScurlCell@{ScurlCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{ScurlCell()}{ScurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Scurl\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_gaf0b18320b658cb6b967aa992b2ceea9b}\label{group__DDRCore_gaf0b18320b658cb6b967aa992b2ceea9b}} 
+\index{DDRCore@{DDRCore}!ScurlCell@{ScurlCell}}
+\index{ScurlCell@{ScurlCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{ScurlCell()}{ScurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Scurl\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for the cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_ga753cd990ca81a0c5ee0741400cd19ba9}\label{group__DDRCore_ga753cd990ca81a0c5ee0741400cd19ba9}} 
+\index{DDRCore@{DDRCore}!ScurlFace@{ScurlFace}}
+\index{ScurlFace@{ScurlFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{ScurlFace()}{ScurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Scurl\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for face F. 
+
+\mbox{\Hypertarget{group__DDRCore_gae10c8af996f2ec020a62c4590828a107}\label{group__DDRCore_gae10c8af996f2ec020a62c4590828a107}} 
+\index{DDRCore@{DDRCore}!ScurlFace@{ScurlFace}}
+\index{ScurlFace@{ScurlFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{ScurlFace()}{ScurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Scurl\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for the face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_gaaeb03ce52be3818be31f956498d06934}\label{group__DDRCore_gaaeb03ce52be3818be31f956498d06934}} 
+\index{DDRCore@{DDRCore}!serDegreeCell@{serDegreeCell}}
+\index{serDegreeCell@{serDegreeCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{serDegreeCell()}{serDegreeCell()}}
+{\footnotesize\ttfamily const int H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::ser\+Degree\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity degree ell\+\_\+T in a cell. 
+
+\mbox{\Hypertarget{group__DDRCore_gac0de47116e14485de8a8a40419485c26}\label{group__DDRCore_gac0de47116e14485de8a8a40419485c26}} 
+\index{DDRCore@{DDRCore}!serDegreeFace@{serDegreeFace}}
+\index{serDegreeFace@{serDegreeFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{serDegreeFace()}{serDegreeFace()}}
+{\footnotesize\ttfamily const int H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::ser\+Degree\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity degree ell\+\_\+F in a face. 
+
+\mbox{\Hypertarget{group__DDRCore_gafbb75f7f0189d2e214ed7667667a7cdb}\label{group__DDRCore_gafbb75f7f0189d2e214ed7667667a7cdb}} 
+\index{DDRCore@{DDRCore}!serendipityEdges@{serendipityEdges}}
+\index{serendipityEdges@{serendipityEdges}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{serendipityEdges()}{serendipityEdges()}}
+{\footnotesize\ttfamily const std\+::vector$<$size\+\_\+t$>$\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::serendipity\+Edges (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the list of serendipity edges in a face. 
+
+\mbox{\Hypertarget{group__DDRCore_gaf5720d77e757e5e52e5863faad4afe2e}\label{group__DDRCore_gaf5720d77e757e5e52e5863faad4afe2e}} 
+\index{DDRCore@{DDRCore}!serendipityFaces@{serendipityFaces}}
+\index{serendipityFaces@{serendipityFaces}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{serendipityFaces()}{serendipityFaces()}}
+{\footnotesize\ttfamily const std\+::vector$<$size\+\_\+t$>$\& H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::serendipity\+Faces (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the list of serendipity face in a cell. 
+
+\mbox{\Hypertarget{group__DDRCore_gae5c7512b1aa8229c37c3bc217992a3d3}\label{group__DDRCore_gae5c7512b1aa8229c37c3bc217992a3d3}} 
+\index{DDRCore@{DDRCore}!SerendipityOperatorCell@{SerendipityOperatorCell}}
+\index{SerendipityOperatorCell@{SerendipityOperatorCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SerendipityOperatorCell()}{SerendipityOperatorCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Serendipity\+Operator\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{LT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the serendipity operator on the Cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga1034ce25ad714ae59b89ed2b4b357b36}\label{group__DDRCore_ga1034ce25ad714ae59b89ed2b4b357b36}} 
+\index{DDRCore@{DDRCore}!SerendipityOperatorCell@{SerendipityOperatorCell}}
+\index{SerendipityOperatorCell@{SerendipityOperatorCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SerendipityOperatorCell()}{SerendipityOperatorCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd Serendipity\+Problem\+::\+Serendipity\+Operator\+Cell (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{LT }\end{DoxyParamCaption}) const}
+
+
+
+Compute the serendipity operator on the cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_ga739d4a9b6a02535241d54b1f09a531ce}\label{group__DDRCore_ga739d4a9b6a02535241d54b1f09a531ce}} 
+\index{DDRCore@{DDRCore}!SerendipityOperatorFace@{SerendipityOperatorFace}}
+\index{SerendipityOperatorFace@{SerendipityOperatorFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SerendipityOperatorFace()}{SerendipityOperatorFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+Serendipity\+Problem\+::\+Serendipity\+Operator\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{LF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the serendipity operator on the face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga86097c55b1aa6c6ff2446caca624cb06}\label{group__DDRCore_ga86097c55b1aa6c6ff2446caca624cb06}} 
+\index{DDRCore@{DDRCore}!SerendipityOperatorFace@{SerendipityOperatorFace}}
+\index{SerendipityOperatorFace@{SerendipityOperatorFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SerendipityOperatorFace()}{SerendipityOperatorFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd Serendipity\+Problem\+::\+Serendipity\+Operator\+Face (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iF,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{LF }\end{DoxyParamCaption}) const}
+
+
+
+Compute the serendipity operator on the face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_gad6052eded3f2f90d3ddcd8821a7ae7e6}\label{group__DDRCore_gad6052eded3f2f90d3ddcd8821a7ae7e6}} 
+\index{DDRCore@{DDRCore}!SerendipityProblem@{SerendipityProblem}}
+\index{SerendipityProblem@{SerendipityProblem}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SerendipityProblem()}{SerendipityProblem()}}
+{\footnotesize\ttfamily Serendipity\+Problem\+::\+Serendipity\+Problem (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&}]{ddrcore,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{group__DDRCore_ga7f2c579fd5dab20ef746acaf6e37c6aa}\label{group__DDRCore_ga7f2c579fd5dab20ef746acaf6e37c6aa}} 
+\index{DDRCore@{DDRCore}!SgradCell@{SgradCell}}
+\index{SgradCell@{SgradCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SgradCell()}{SgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Sgrad\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for cell T. 
+
+\mbox{\Hypertarget{group__DDRCore_ga0295b3277865edf3aa18cb35cbb3c665}\label{group__DDRCore_ga0295b3277865edf3aa18cb35cbb3c665}} 
+\index{DDRCore@{DDRCore}!SgradCell@{SgradCell}}
+\index{SgradCell@{SgradCell}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SgradCell()}{SgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Sgrad\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for the cell of index iT. 
+
+\mbox{\Hypertarget{group__DDRCore_ga698d8df358822c86e5a4a97f0402d110}\label{group__DDRCore_ga698d8df358822c86e5a4a97f0402d110}} 
+\index{DDRCore@{DDRCore}!SgradFace@{SgradFace}}
+\index{SgradFace@{SgradFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SgradFace()}{SgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Sgrad\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for face F. 
+
+\mbox{\Hypertarget{group__DDRCore_ga31aa13a84a5d8fb2f0ac50fb944ebb2e}\label{group__DDRCore_ga31aa13a84a5d8fb2f0ac50fb944ebb2e}} 
+\index{DDRCore@{DDRCore}!SgradFace@{SgradFace}}
+\index{SgradFace@{SgradFace}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SgradFace()}{SgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Sgrad\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for the face of index iF. 
+
+\mbox{\Hypertarget{group__DDRCore_ga7cbee3d46504ec031f328b44cd841fc8}\label{group__DDRCore_ga7cbee3d46504ec031f328b44cd841fc8}} 
+\index{DDRCore@{DDRCore}!SXCurl@{SXCurl}}
+\index{SXCurl@{SXCurl}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SXCurl()}{SXCurl()}}
+{\footnotesize\ttfamily S\+X\+Curl\+::\+S\+X\+Curl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&}]{ddr\+\_\+core,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \&}]{ser\+\_\+pro,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{group__DDRCore_ga8c10cba0c0e5fd822e1a91254a80852a}\label{group__DDRCore_ga8c10cba0c0e5fd822e1a91254a80852a}} 
+\index{DDRCore@{DDRCore}!SXDiv@{SXDiv}}
+\index{SXDiv@{SXDiv}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SXDiv()}{SXDiv()}}
+{\footnotesize\ttfamily S\+X\+Div\+::\+S\+X\+Div (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&}]{ddr\+\_\+core,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{group__DDRCore_ga4ff5e43e311e2305f5de83ad90742284}\label{group__DDRCore_ga4ff5e43e311e2305f5de83ad90742284}} 
+\index{DDRCore@{DDRCore}!SXGrad@{SXGrad}}
+\index{SXGrad@{SXGrad}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{SXGrad()}{SXGrad()}}
+{\footnotesize\ttfamily S\+X\+Grad\+::\+S\+X\+Grad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&}]{ddr\+\_\+core,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \&}]{ser\+\_\+pro,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{group__DDRCore_ga45f11d366a53a9b94c41ab3fd096b95d}\label{group__DDRCore_ga45f11d366a53a9b94c41ab3fd096b95d}} 
+\index{DDRCore@{DDRCore}!TransferOperators@{TransferOperators}}
+\index{TransferOperators@{TransferOperators}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{TransferOperators()}{TransferOperators()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Transfer\+Operators\+::\+Transfer\+Operators (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+serendipity,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+extension,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+reduction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+serendipity} & Serendipity reconstruction \\
+\hline
+{\em \+\_\+extension} & Extension S\+X\+Curl-\/$>$\mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \\
+\hline
+{\em \+\_\+reduction} & Reduction X\+Curl-\/$>$\mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__DDRCore_ga55d1a146393fe370c3e4542e764d39aa}\label{group__DDRCore_ga55d1a146393fe370c3e4542e764d39aa}} 
+\index{DDRCore@{DDRCore}!TransferOperators@{TransferOperators}}
+\index{TransferOperators@{TransferOperators}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{TransferOperators()}{TransferOperators()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Transfer\+Operators\+::\+Transfer\+Operators (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+serendipity,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+extension,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+reduction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+serendipity} & Serendipity reconstruction \\
+\hline
+{\em \+\_\+extension} & Extension S\+X\+Curl-\/$>$\mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \\
+\hline
+{\em \+\_\+reduction} & Reduction X\+Curl-\/$>$\mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}} \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__DDRCore_gac5383b922f0967c25438f268f41a706c}\label{group__DDRCore_gac5383b922f0967c25438f268f41a706c}} 
 \index{DDRCore@{DDRCore}!XCurl@{XCurl}}
 \index{XCurl@{XCurl}!DDRCore@{DDRCore}}
@@ -1113,6 +2533,18 @@ Constructor.
 \doxysubsubsection{\texorpdfstring{divergence\_rhs}{divergence\_rhs}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::\+Local\+Operators\+::divergence\+\_\+rhs}
 
+\mbox{\Hypertarget{group__DDRCore_ga58dff27856fbf48b572c7f37c36eb282}\label{group__DDRCore_ga58dff27856fbf48b572c7f37c36eb282}} 
+\index{DDRCore@{DDRCore}!extension@{extension}}
+\index{extension@{extension}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{extension}{extension}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Transfer\+Operators\+::extension}
+
+\mbox{\Hypertarget{group__DDRCore_ga9c954f60ae0cd67ed39da39375220107}\label{group__DDRCore_ga9c954f60ae0cd67ed39da39375220107}} 
+\index{DDRCore@{DDRCore}!extension@{extension}}
+\index{extension@{extension}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{extension}{extension}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Transfer\+Operators\+::extension}
+
 \mbox{\Hypertarget{group__DDRCore_gac3eeb994c59360b768df549398bd1721}\label{group__DDRCore_gac3eeb994c59360b768df549398bd1721}} 
 \index{DDRCore@{DDRCore}!GolyComplk@{GolyComplk}}
 \index{GolyComplk@{GolyComplk}!DDRCore@{DDRCore}}
@@ -1136,6 +2568,30 @@ Constructor.
 \index{gradient@{gradient}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{gradient}{gradient}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+X\+Grad\+::\+Local\+Operators\+::gradient}
+
+\mbox{\Hypertarget{group__DDRCore_gacf3ca0ec4d9dc1d2d748ef72d2f6b47f}\label{group__DDRCore_gacf3ca0ec4d9dc1d2d748ef72d2f6b47f}} 
+\index{DDRCore@{DDRCore}!m\_cell\_operators@{m\_cell\_operators}}
+\index{m\_cell\_operators@{m\_cell\_operators}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{m\_cell\_operators}{m\_cell\_operators}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{Local\+Operators}}$>$ $>$ H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::m\+\_\+cell\+\_\+operators\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{group__DDRCore_ga0c74caeb7ad15a81f75ef43ad66f59f9}\label{group__DDRCore_ga0c74caeb7ad15a81f75ef43ad66f59f9}} 
+\index{DDRCore@{DDRCore}!m\_ddr\_core@{m\_ddr\_core}}
+\index{m\_ddr\_core@{m\_ddr\_core}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{m\_ddr\_core}{m\_ddr\_core}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}}\& H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::m\+\_\+ddr\+\_\+core\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{group__DDRCore_ga89c73bf17fe2b30dea39f9c9b7d0e95f}\label{group__DDRCore_ga89c73bf17fe2b30dea39f9c9b7d0e95f}} 
+\index{DDRCore@{DDRCore}!m\_output@{m\_output}}
+\index{m\_output@{m\_output}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{m\_output}{m\_output}}
+{\footnotesize\ttfamily std\+::ostream\& H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::m\+\_\+output\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{group__DDRCore_ga7fab1dbf4301876ebbb0130b99eea346}\label{group__DDRCore_ga7fab1dbf4301876ebbb0130b99eea346}} 
+\index{DDRCore@{DDRCore}!m\_use\_threads@{m\_use\_threads}}
+\index{m\_use\_threads@{m\_use\_threads}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{m\_use\_threads}{m\_use\_threads}}
+{\footnotesize\ttfamily bool H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::m\+\_\+use\+\_\+threads\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{group__DDRCore_gaa7c38658da8df9afc58172434dcc10ee}\label{group__DDRCore_gaa7c38658da8df9afc58172434dcc10ee}} 
 \index{DDRCore@{DDRCore}!Polyk@{Polyk}}
@@ -1221,6 +2677,18 @@ Constructor.
 \doxysubsubsection{\texorpdfstring{potential}{potential}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+X\+Div\+::\+Local\+Operators\+::potential}
 
+\mbox{\Hypertarget{group__DDRCore_gabbe598a9e7800cb3cf1757ce3544b92c}\label{group__DDRCore_gabbe598a9e7800cb3cf1757ce3544b92c}} 
+\index{DDRCore@{DDRCore}!reduction@{reduction}}
+\index{reduction@{reduction}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{reduction}{reduction}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Transfer\+Operators\+::reduction}
+
+\mbox{\Hypertarget{group__DDRCore_gaf037cc66b6398a8deff123298431f6eb}\label{group__DDRCore_gaf037cc66b6398a8deff123298431f6eb}} 
+\index{DDRCore@{DDRCore}!reduction@{reduction}}
+\index{reduction@{reduction}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{reduction}{reduction}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Transfer\+Operators\+::reduction}
+
 \mbox{\Hypertarget{group__DDRCore_gac6957837a0922a7744b303e802a0c7cb}\label{group__DDRCore_gac6957837a0922a7744b303e802a0c7cb}} 
 \index{DDRCore@{DDRCore}!RolyComplk@{RolyComplk}}
 \index{RolyComplk@{RolyComplk}!DDRCore@{DDRCore}}
@@ -1256,4 +2724,16 @@ Constructor.
 \index{Rolykmo@{Rolykmo}!DDRCore@{DDRCore}}
 \doxysubsubsection{\texorpdfstring{Rolykmo}{Rolykmo}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__DDRCore_ga925dd6c4d55e4a4fa924f4c9aff4e221}{Roly\+Basis\+Face\+Type}}$>$ H\+Ar\+D\+Core3\+D\+::\+D\+D\+R\+Core\+::\+Face\+Bases\+::\+Rolykmo}
+
+\mbox{\Hypertarget{group__DDRCore_gacd88f962d2857f287f21ed347e9c2135}\label{group__DDRCore_gacd88f962d2857f287f21ed347e9c2135}} 
+\index{DDRCore@{DDRCore}!serendipity@{serendipity}}
+\index{serendipity@{serendipity}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{serendipity}{serendipity}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Grad\+::\+Transfer\+Operators\+::serendipity}
+
+\mbox{\Hypertarget{group__DDRCore_ga11fdcd5dcb6c8022c393f817e0c3e2ea}\label{group__DDRCore_ga11fdcd5dcb6c8022c393f817e0c3e2ea}} 
+\index{DDRCore@{DDRCore}!serendipity@{serendipity}}
+\index{serendipity@{serendipity}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{serendipity}{serendipity}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+S\+X\+Curl\+::\+Transfer\+Operators\+::serendipity}
 

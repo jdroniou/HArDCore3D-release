@@ -12,7 +12,8 @@ Include dependency graph for basis.\+hpp\+:\nopagebreak
 \includegraphics[width=350pt]{basis_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -68,6 +69,10 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_
 \item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Divergence_01_4}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Divergence $>$}}
 \item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Hessian_01_4}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Hessian $>$}}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01CurlCurl_01_4}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Curl\+Curl $>$}}
+\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasadb35b75fb171fb1d9154a129a3c3414}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Function $>$}}
 \item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasac6dfb25d40fd254551d4194b76f2160}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Gradient $>$}}
@@ -76,10 +81,12 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_
 \item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasf7970a904fb5bf5e0964fdf032f37682}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Divergence $>$}}
 \item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBas97b5b029df1c36bf3d3b9b6dc9ed6bc8}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Curl\+Curl $>$}}
+\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1evaluate__quad}{H\+Ar\+D\+Core3\+D\+::evaluate\+\_\+quad$<$ Basis\+Function $>$}}
-\begin{DoxyCompactList}\small\item\em Evaluate a basis at quadrature nodes. \textquotesingle{}Basis\+Function\textquotesingle{} (=Function, Gradient, Curl or Divergence) determines what kind of value we want to evaluate. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Evaluate a basis at quadrature nodes. \textquotesingle{}Basis\+Function\textquotesingle{} (=Function, Gradient, Curl, Divergence or Hessian) determines what kind of value we want to evaluate. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1DecomposePoly}{H\+Ar\+D\+Core3\+D\+::\+Decompose\+Poly$<$ Basis\+Type $>$}}
-\begin{DoxyCompactList}\small\item\em Structure to decompose a set of polynomials on a basis on a face. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure to decompose a set of polynomials on a basis on a face or a cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -106,10 +113,14 @@ enum \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{H\+Ar\+D\
 \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4a1014fc33583e3e82ee81d9ca08a2d73b}{H\+Ar\+D\+Core3\+D\+::\+Matrix}} = 2
  \}
 \item 
-enum \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{H\+Ar\+D\+Core3\+D\+::\+Basis\+FunctionE}} \{ \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{H\+Ar\+D\+Core3\+D\+::\+Function}}, 
+enum \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{H\+Ar\+D\+Core3\+D\+::\+Basis\+FunctionE}} \{ \newline
+\mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{H\+Ar\+D\+Core3\+D\+::\+Function}}, 
 \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{H\+Ar\+D\+Core3\+D\+::\+Gradient}}, 
 \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ae8edfacb373a30cc4ec9136a18d99f0e}{H\+Ar\+D\+Core3\+D\+::\+Curl}}, 
-\mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{H\+Ar\+D\+Core3\+D\+::\+Divergence}}
+\mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{H\+Ar\+D\+Core3\+D\+::\+Divergence}}, 
+\newline
+\mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a65b7fdb019b27a168d64c61622abb34f}{H\+Ar\+D\+Core3\+D\+::\+Hessian}}, 
+\mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Curl}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}

@@ -1,22 +1,12 @@
 var searchData=
 [
-  ['i4_5fmax_1159',['i4_max',['../triangle__dunavant__rule_8cpp.html#a36f800e4593bdd258feaeb43cf42adf7',1,'i4_max(int i1, int i2):&#160;triangle_dunavant_rule.cpp'],['../triangle__dunavant__rule_8hpp.html#a36f800e4593bdd258feaeb43cf42adf7',1,'i4_max(int i1, int i2):&#160;triangle_dunavant_rule.cpp']]],
-  ['i4_5fmin_1160',['i4_min',['../triangle__dunavant__rule_8cpp.html#ae73c30e1658d722ce9ff2e671db331ca',1,'i4_min(int i1, int i2):&#160;triangle_dunavant_rule.cpp'],['../triangle__dunavant__rule_8hpp.html#ae73c30e1658d722ce9ff2e671db331ca',1,'i4_min(int i1, int i2):&#160;triangle_dunavant_rule.cpp']]],
-  ['i4_5fmodp_1161',['i4_modp',['../triangle__dunavant__rule_8cpp.html#a0977ecce2ec88e382435b4bbc08bbdf7',1,'i4_modp(int i, int j):&#160;triangle_dunavant_rule.cpp'],['../triangle__dunavant__rule_8hpp.html#a0977ecce2ec88e382435b4bbc08bbdf7',1,'i4_modp(int i, int j):&#160;triangle_dunavant_rule.cpp']]],
-  ['i4_5fwrap_1162',['i4_wrap',['../triangle__dunavant__rule_8cpp.html#adf604b639ecc974176142f7265829259',1,'i4_wrap(int ival, int ilo, int ihi):&#160;triangle_dunavant_rule.cpp'],['../triangle__dunavant__rule_8hpp.html#adf604b639ecc974176142f7265829259',1,'i4_wrap(int ival, int ilo, int ihi):&#160;triangle_dunavant_rule.cpp']]],
-  ['index_5fcell_1163',['index_cell',['../group__Mesh.html#gacba0cced3c0cd980fcee1abb80171f34',1,'MeshND::MeshObject']]],
-  ['index_5fedge_1164',['index_edge',['../group__Mesh.html#ga12fa290f4fea664c2de4a04b9c6b846b',1,'MeshND::MeshObject']]],
-  ['index_5fface_1165',['index_face',['../group__Mesh.html#gab71d5d1cdb1da02bf2d0ead9c6fd6e4f',1,'MeshND::MeshObject']]],
-  ['index_5fvertex_1166',['index_vertex',['../group__Mesh.html#gaffbd25261dcf7169285e4c4395ce788d',1,'MeshND::MeshObject']]],
-  ['init_1167',['init',['../group__Quadratures.html#gaea9fa6144096012c2ea7f5b220493ef8',1,'HArDCore3D::QuadRuleTetra']]],
-  ['integralweight_1168',['IntegralWeight',['../group__Common.html#ga60ba878dc51ffe013b4cd394741d34f0',1,'HArDCore3D::IntegralWeight::IntegralWeight(const std::function&lt; double(const Cell &amp;T, const Eigen::Vector3d &amp;x)&gt; _value, std::function&lt; size_t(const Cell &amp;T)&gt; _deg)'],['../group__Common.html#gaed526b573136d558b81d9be87646b5c9',1,'HArDCore3D::IntegralWeight::IntegralWeight(double val)']]],
-  ['integrate_1169',['integrate',['../group__Basis.html#ga69278468dd98b9ff1c514877f4705590',1,'HArDCore3D']]],
-  ['integratecellmonomials_1170',['IntegrateCellMonomials',['../group__Quadratures.html#ga06ba382c1236f37fb899aa43f7bc5fac',1,'HArDCore3D']]],
-  ['integratecellmonomials_5fonedges_1171',['IntegrateCellMonomials_onEdges',['../group__Quadratures.html#ga739ed0a83e9e62809fbc0bd9594802d8',1,'HArDCore3D']]],
-  ['integratecellmonomials_5fonfaces_1172',['IntegrateCellMonomials_onFaces',['../group__Quadratures.html#gaf9b77ed0d2641bf775d3ed5a1c32c458',1,'HArDCore3D']]],
-  ['integrateedgemonomials_1173',['IntegrateEdgeMonomials',['../group__Quadratures.html#gae0f78ba34621867bf742ac6d909b1285',1,'HArDCore3D']]],
-  ['integratefacemonomials_1174',['IntegrateFaceMonomials',['../group__Quadratures.html#gae52c29ca8fcb533fcf14277241d5f7a1',1,'HArDCore3D']]],
-  ['integratefacemonomials_5fonedges_1175',['IntegrateFaceMonomials_onEdges',['../group__Quadratures.html#gac099a4ce614b3e10a6e782c360ca2d3e',1,'HArDCore3D']]],
-  ['interpolate_1176',['interpolate',['../group__DDRCore.html#ga25991353c71aeb48d3061eacd42282e7',1,'HArDCore3D::XCurl::interpolate()'],['../group__DDRCore.html#gad0c7458505f62a52b2d81c4f5fe43034',1,'HArDCore3D::XDiv::interpolate()'],['../group__DDRCore.html#gaee9fe9c6833a783c3994ed123704c1ce',1,'HArDCore3D::XGrad::interpolate()'],['../group__HybridCore.html#gadce852531f9197a35e11e1bf9995e827',1,'HArDCore3D::HybridCore::interpolate()'],['../group__VEMCore.html#ga510be45311e2ff441a12d1f613a44396',1,'HArDCore3D::VCurl::interpolate()'],['../group__VEMCore.html#ga18f7b66e47a6f06bd926fec2599589ac',1,'HArDCore3D::VDiv::interpolate()'],['../group__VEMCore.html#gaa73b48551fa42ed589dec3be91c16cb4',1,'HArDCore3D::VGrad::interpolate()']]],
-  ['is_5fboundary_1177',['is_boundary',['../group__Mesh.html#gabfefc0d130b14c4e628d9a8c41762914',1,'MeshND::MeshObject']]]
+  ['h1norm_1280',['H1norm',['../group__HybridCore.html#gad6672e0691764ec5752eb1a9a7257792',1,'HArDCore3D::HybridCore']]],
+  ['h_5fmax_1281',['h_max',['../classMeshND_1_1Mesh.html#a2fcedb645de1f65f40665680557bf42f',1,'MeshND::Mesh']]],
+  ['has_5fface_1282',['has_face',['../group__DirectedGraph.html#ga53b9c1643f956bcd5ab002056378c6b3',1,'DirectedCell']]],
+  ['hessian_1283',['hessian',['../group__Basis.html#gaab95b8928c5acc4586546d9dc416a6e1',1,'HArDCore3D::MonomialScalarBasisCell::hessian()'],['../group__Basis.html#ga71500087412c8ae110deb3926a2e3c6a',1,'HArDCore3D::MonomialScalarBasisFace::hessian()'],['../group__Basis.html#gaca2bf24a1c75c9bc405c6f35a80a3ba2',1,'HArDCore3D::Family::hessian(size_t i, const VectorRd &amp;x) const'],['../group__Basis.html#gae46848f3e7ce8008071074bff14f03ca',1,'HArDCore3D::Family::hessian(size_t i, size_t iqn, const boost::multi_array&lt; HessianValue, 2 &gt; &amp;ancestor_hessian_quad) const'],['../group__Basis.html#gace185f423df845eac0f5085851fe26e6',1,'HArDCore3D::ShiftedBasis::hessian()'],['../group__Basis.html#gae1e9051253d6642132fa88f95954cfff',1,'HArDCore3D::RestrictedBasis::hessian()']]],
+  ['hho3d_1284',['HHO3D',['../group__HHO3D.html#gad01478a48ee7060c8c7664c71c709eda',1,'HHO3D']]],
+  ['hho_5fdiffusion_1285',['HHO_Diffusion',['../group__HHO__Diffusion.html#gaf93379edf8347fbe21240a2c88d0d5a2',1,'HArDCore3D::HHO_Diffusion']]],
+  ['hho_5flocvardiff_1286',['HHO_LocVarDiff',['../group__HHO__LocVarDiff.html#gaf4ea116d21e8e33ab8de8160d3685630',1,'HArDCore3D::HHO_LocVarDiff']]],
+  ['homogeneous_1287',['homogeneous',['../group__Basis.html#gad738218ef4030b3b4a46dabcc1d2b67b',1,'HArDCore3D::MonomialPowers&lt; Cell &gt;::homogeneous()'],['../group__Basis.html#ga240ab6a8139ebb79d27c3c29f34c1dd4',1,'HArDCore3D::MonomialPowers&lt; Face &gt;::homogeneous()']]],
+  ['hybridcore_1288',['HybridCore',['../group__HybridCore.html#ga0afcdbfe52e163c27b24ec93d336dc53',1,'HArDCore3D::HybridCore']]]
 ];

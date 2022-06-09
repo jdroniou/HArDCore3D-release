@@ -1,8 +1,9 @@
 <map id="src/Quadrature/max_degrees_quadratures.hpp" name="src/Quadrature/max_degrees_quadratures.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="365,5,539,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="447,5,622,47"/>
 <area shape="rect" id="node2" href="$ddr-stokes_8cpp.html" title=" " alt="" coords="5,95,160,136"/>
-<area shape="rect" id="node3" href="$vem-stokes_8cpp.html" title=" " alt="" coords="185,95,338,136"/>
-<area shape="rect" id="node4" href="$quad1d_8cpp.html" title=" " alt="" coords="363,102,541,129"/>
-<area shape="rect" id="node5" href="$quad3d_8cpp.html" title=" " alt="" coords="565,102,744,129"/>
-<area shape="rect" id="node6" href="$quad3d__face_8cpp.html" title=" " alt="" coords="768,95,923,136"/>
+<area shape="rect" id="node3" href="$sddr-stokes_8cpp.html" title=" " alt="" coords="184,95,339,136"/>
+<area shape="rect" id="node4" href="$vem-stokes_8cpp.html" title=" " alt="" coords="363,95,517,136"/>
+<area shape="rect" id="node5" href="$quad1d_8cpp.html" title=" " alt="" coords="541,102,720,129"/>
+<area shape="rect" id="node6" href="$quad3d_8cpp.html" title=" " alt="" coords="744,102,923,129"/>
+<area shape="rect" id="node7" href="$quad3d__face_8cpp.html" title=" " alt="" coords="947,95,1101,136"/>
 </map>

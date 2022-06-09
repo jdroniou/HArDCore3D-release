@@ -98,6 +98,8 @@ Public Types</h2></td></tr>
 <tr class="separator:ga849aca7abc07cabc56b61a5c112a2948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf9c94600e124f7825764aafd0827bf8b"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaf9c94600e124f7825764aafd0827bf8b">DivergenceValue</a></td></tr>
 <tr class="separator:gaf9c94600e124f7825764aafd0827bf8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90861691a89e404c24c7e3537a8dd543"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga90861691a89e404c24c7e3537a8dd543">HessianValue</a></td></tr>
+<tr class="separator:ga90861691a89e404c24c7e3537a8dd543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1b78f11229d89bdac125bd5b1f6983ef"><td class="memItemLeft" align="right" valign="top">typedef Face&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga1b78f11229d89bdac125bd5b1f6983ef">GeometricSupport</a></td></tr>
 <tr class="separator:ga1b78f11229d89bdac125bd5b1f6983ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga33da7856b3fc642423652547c60f4bab"><td class="memItemLeft" align="right" valign="top">typedef ScalarFamilyType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga33da7856b3fc642423652547c60f4bab">AncestorType</a></td></tr>
@@ -117,6 +119,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ga7b41039db007f6410867f68954b69ede"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#gaf9c94600e124f7825764aafd0827bf8b">DivergenceValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga7b41039db007f6410867f68954b69ede">divergence</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:ga7b41039db007f6410867f68954b69ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the divergence of the i-th basis function at point x.  <a href="group__Basis.html#ga7b41039db007f6410867f68954b69ede">More...</a><br /></td></tr>
 <tr class="separator:ga7b41039db007f6410867f68954b69ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c2e02ee0f552d1418384b5c846b975f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga849aca7abc07cabc56b61a5c112a2948">CurlValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga4c2e02ee0f552d1418384b5c846b975f">curlcurl</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+<tr class="memdesc:ga4c2e02ee0f552d1418384b5c846b975f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the curl curl of the i-th basis function at point x.  <a href="group__Basis.html#ga4c2e02ee0f552d1418384b5c846b975f">More...</a><br /></td></tr>
+<tr class="separator:ga4c2e02ee0f552d1418384b5c846b975f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga66fe0b4776e9c60b1f39e751cede2324"><td class="memItemLeft" align="right" valign="top">constexpr const ScalarFamilyType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga66fe0b4776e9c60b1f39e751cede2324">ancestor</a> () const</td></tr>
 <tr class="memdesc:ga66fe0b4776e9c60b1f39e751cede2324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ancestor (family used for the tangent)  <a href="group__Basis.html#ga66fe0b4776e9c60b1f39e751cede2324">More...</a><br /></td></tr>
 <tr class="separator:ga66fe0b4776e9c60b1f39e751cede2324"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,8 +144,12 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:ga24a08dabc84df4bad4a01bd0dacf65ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad060c626292c8768ac2d07e2a502843a"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gad060c626292c8768ac2d07e2a502843a">hasCurl</a> = false</td></tr>
 <tr class="separator:gad060c626292c8768ac2d07e2a502843a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc4ac75108de64702c0f59737f1b5173"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gacc4ac75108de64702c0f59737f1b5173">hasDivergence</a> = true</td></tr>
+<tr class="memitem:gacc4ac75108de64702c0f59737f1b5173"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gacc4ac75108de64702c0f59737f1b5173">hasDivergence</a> = ScalarFamilyType::hasGradient</td></tr>
 <tr class="separator:gacc4ac75108de64702c0f59737f1b5173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac05298a1f7fa647b6938ec99a704f2f1"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gac05298a1f7fa647b6938ec99a704f2f1">hasHessian</a> = false</td></tr>
+<tr class="separator:gac05298a1f7fa647b6938ec99a704f2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72c2976d348605f61d1be6516be50d26"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga72c2976d348605f61d1be6516be50d26">hasCurlCurl</a> = ScalarFamilyType::hasHessian</td></tr>
+<tr class="separator:ga72c2976d348605f61d1be6516be50d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename ScalarFamilyType&gt;<br />

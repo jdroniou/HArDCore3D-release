@@ -1,0 +1,100 @@
+\hypertarget{classHArDCore3D_1_1SerendipityProblem}{}\doxysection{H\+Ar\+D\+Core3D\+::Serendipity\+Problem Class Reference}
+\label{classHArDCore3D_1_1SerendipityProblem}\index{HArDCore3D::SerendipityProblem@{HArDCore3D::SerendipityProblem}}
+
+
+Construct all polynomial spaces for the D\+DR sequence.  
+
+
+
+
+{\ttfamily \#include $<$serendipity\+\_\+problem.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga0b54c4bb8d156ae7a2e5c01a1c553655}{D\+D\+R\+Core\+::\+Poly\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}{Polyl\+Basis\+Face\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_ga23ccbb1459084ee0576cf0c056430f58}{D\+D\+R\+Core\+::\+Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}{Polyl\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_gaeee1a4e190fba39e31a9184519e1ba43}{D\+D\+R\+Core\+::\+Roly\+Compl\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}{Roly\+Compllpo\+Basis\+Face\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{Restricted\+Basis}}$<$ \mbox{\hyperlink{group__DDRCore_gaeebff7b722caf50be9eafba35e65d1ec}{D\+D\+R\+Core\+::\+Roly\+Compl\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}{Roly\+Compllpo\+Basis\+Cell\+Type}}
+\item 
+typedef Eigen\+::\+Full\+Piv\+LU$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{group__DDRCore_gaa1053be6765fc576440ef85d6096098a}{Inverse\+Problem}}
+\begin{DoxyCompactList}\small\item\em Type for inverses of matrix for serendipity problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__DDRCore_gad6052eded3f2f90d3ddcd8821a7ae7e6}{Serendipity\+Problem}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const std\+::vector$<$ size\+\_\+t $>$ \& \mbox{\hyperlink{group__DDRCore_gafbb75f7f0189d2e214ed7667667a7cdb}{serendipity\+Edges}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the list of serendipity edges in a face. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{group__DDRCore_ga1b5d1075730113a5a86b01d19d2fa4d4}{n\+\_\+serendipity\+Edges}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the number of serendipity edges in a face. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{group__DDRCore_gac0de47116e14485de8a8a40419485c26}{ser\+Degree\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity degree ell\+\_\+F in a face. \end{DoxyCompactList}\item 
+const std\+::vector$<$ size\+\_\+t $>$ \& \mbox{\hyperlink{group__DDRCore_gaf5720d77e757e5e52e5863faad4afe2e}{serendipity\+Faces}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the list of serendipity face in a cell. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{group__DDRCore_ga75d725b50852aaaea86ec024167c38ba}{n\+\_\+serendipity\+Faces}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the number of serendipity faces in a cell. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{group__DDRCore_gaaeb03ce52be3818be31f956498d06934}{ser\+Degree\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity degree ell\+\_\+T in a cell. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga9ab970169952f69f7ad98b1c71402d22}{dim\+Face\+Polyl}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of P$^\wedge$l on face of index iF. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_gad51c189b806c57a93e039b663ad63241}{dim\+Face\+Polyl}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of P$^\wedge$\{l+1\} on face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}{Polyl\+Basis\+Face\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga127ea67d187712c1a2768fe3156bf5cd}{face\+Basis\+Polyl}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the basis of P$^\wedge$l on face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gaa099a5f7b4b5687c9fb77e7d6e913265}{Polyl\+Basis\+Face\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga52b68194f4a147cf123f8f059a3c04c4}{face\+Basis\+Polyl}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the basis of P$^\wedge$l on face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga21dccf475588d2c9aa528022556c029a}{dim\+Cell\+Polyl}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of P$^\wedge$l on cell of index iT. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_gaa9a06aa8916438036e39cf7cee51f9e0}{dim\+Cell\+Polyl}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of P$^\wedge$l on cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}{Polyl\+Basis\+Cell\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga497858f62da0b0cdce32f4198808f99a}{cell\+Basis\+Polyl}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the basis of P$^\wedge$l on cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gabfa335d5b5f2d5f3fb7e04ccb7f50c51}{Polyl\+Basis\+Cell\+Type}} \& \mbox{\hyperlink{group__DDRCore_gaa3f2a76797ea9bc495d9867f68dcaf71}{cell\+Basis\+Polyl}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the basis of P$^\wedge$l on cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga3ca4a1fd7d2d06bbf64b4b953f6e1426}{n\+D\+O\+Fs\+\_\+faces\+\_\+\+S\+X\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs on faces for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}} space. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_gaa8060fdc181785dc30c4dc3027e32677}{n\+D\+O\+Fs\+\_\+cells\+\_\+\+S\+X\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs on cells for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}} space. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga00776d6d8c485873fca2bbe49a6871bf}{dim\+Face\+Roly\+Compllpo}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of R$^\wedge$\{c,l+1\} on face of index iF. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_gace2f098b0780f9d3c1ef5e028438232a}{dim\+Face\+Roly\+Compllpo}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of R$^\wedge$\{c,l+1\} on face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}{Roly\+Compllpo\+Basis\+Face\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga14b977b22c0eb89d2cedaf9bc418c8ba}{face\+Basis\+Roly\+Compllpo}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the basis of R$^\wedge$\{c,l+1\} on face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_gabca4152eda25032be3fd75fcb01b01ce}{Roly\+Compllpo\+Basis\+Face\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga80aa80f0f2328156a27940fc253ad901}{face\+Basis\+Roly\+Compllpo}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the basis of R$^\wedge$\{c,l+1\} on face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_gafd9511d6b13c55aabd34f06414cd4204}{dim\+Cell\+Roly\+Compllpo}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of R$^\wedge$\{c,l+1\} on cell of index iT. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDRCore_ga04a0159883242f184ef6014855c52a9f}{dim\+Cell\+Roly\+Compllpo}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the dimension of R$^\wedge$\{c,l+1\} on cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}{Roly\+Compllpo\+Basis\+Cell\+Type}} \& \mbox{\hyperlink{group__DDRCore_ga2e686880274abe43809889a68480c601}{cell\+Basis\+Roly\+Compllpo}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the basis of R$^\wedge$\{c,l+1\} on cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_ga0db1a6bc2a893c80ddfefcc44e8511c5}{Roly\+Compllpo\+Basis\+Cell\+Type}} \& \mbox{\hyperlink{group__DDRCore_gab6f4b8ece2046274a019795874c52a45}{cell\+Basis\+Roly\+Compllpo}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the basis of R$^\wedge$\{c,l+1\} on cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga93e86ff1e38df0714504013ecd82316e}{n\+D\+O\+Fs\+\_\+faces\+\_\+\+S\+X\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs on faces for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} space. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga6c1803556ba2ddee6d3d851fff9580e9}{n\+D\+O\+Fs\+\_\+cells\+\_\+\+S\+X\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Number of D\+O\+Fs on cells for serendipity \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} space. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga86097c55b1aa6c6ff2446caca624cb06}{Serendipity\+Operator\+Face}} (const size\+\_\+t iF, const Eigen\+::\+Matrix\+Xd \&LF) const
+\begin{DoxyCompactList}\small\item\em Compute the serendipity operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga739d4a9b6a02535241d54b1f09a531ce}{Serendipity\+Operator\+Face}} (const Face \&F, const Eigen\+::\+Matrix\+Xd \&LF) const
+\begin{DoxyCompactList}\small\item\em Compute the serendipity operator on the face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga1034ce25ad714ae59b89ed2b4b357b36}{Serendipity\+Operator\+Cell}} (const size\+\_\+t iT, const Eigen\+::\+Matrix\+Xd \&LT) const
+\begin{DoxyCompactList}\small\item\em Compute the serendipity operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gae5c7512b1aa8229c37c3bc217992a3d3}{Serendipity\+Operator\+Cell}} (const Cell \&T, const Eigen\+::\+Matrix\+Xd \&LT) const
+\begin{DoxyCompactList}\small\item\em Compute the serendipity operator on the Cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRCore_gacc62beed649b9d3e04610d5f87ddba26}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return a const reference to the mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Construct all polynomial spaces for the D\+DR sequence. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+D\+D\+R\+Core/\mbox{\hyperlink{serendipity__problem_8hpp}{serendipity\+\_\+problem.\+hpp}}\item 
+src/\+D\+D\+R\+Core/\mbox{\hyperlink{serendipity__problem_8cpp}{serendipity\+\_\+problem.\+cpp}}\end{DoxyCompactItemize}

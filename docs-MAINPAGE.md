@@ -324,9 +324,9 @@ The following schemes are currently available in HArD::Core3D. The Hybrid High-O
 
  - [HHO_diffadvecreac](@ref HHO_DiffAdvecReac): HHO for \f$-\mathrm{div}(K\nabla u+\beta u)+\mu u=f\f$, for Dirichlet or mixed boundary conditions, with \f$K\f$ a diffusion tensor that can vary in each cell.
 
- - [DDR_magnetostatic](@ref DDR_magnetostatic): Discrete De Rham (DDR) scheme for the magnetostatic problem, as per https://doi.org/10.1016/j.jcp.2020.109991 (but using Koszul complements).
+ - [DDR_magnetostatic](@ref DDR_magnetostatic): Discrete De Rham (DDR) scheme, and serendipity version, for the magnetostatic problem, as per https://doi.org/10.1016/j.jcp.2020.109991 (but using Koszul complements).
 
- - [DDR_stokes](@ref DDR_stokes): Discrete De Rham (DDR) scheme for the %Stokes problem in curl-curl form.
+ - [DDR_stokes](@ref DDR_stokes): Discrete De Rham (DDR) scheme, and serendipity version, for the %Stokes problem in curl-curl form.
 
  - [VEM_stokes](@ref VEM_stokes): Virtual Element Method (VEM) scheme for the %Stokes problem in curl-curl form.
 

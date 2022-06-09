@@ -29,11 +29,17 @@ TARGET_INCLUDE_DIRECTORIES(hho-diff-advec-reac PUBLIC ${EIGEN3_INCLUDE_DIR})
 ADD_EXECUTABLE(ddr-magnetostatics DDR-magnetostatics/ddr-magnetostatics.cpp)
 TARGET_LINK_LIBRARIES(ddr-magnetostatics mesh quadrature ddrcore plot ${EXTERNAL_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(ddr-magnetostatics PUBLIC ${EXTERNAL_INCLUDES})
+ADD_EXECUTABLE(sddr-magnetostatics DDR-magnetostatics/sddr-magnetostatics.cpp)
+TARGET_LINK_LIBRARIES(sddr-magnetostatics mesh quadrature ddrcore plot ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(sddr-magnetostatics PUBLIC ${EXTERNAL_INCLUDES})
 
 # DDR Stokes
 ADD_EXECUTABLE(ddr-stokes DDR-stokes/ddr-stokes.cpp)
 TARGET_LINK_LIBRARIES(ddr-stokes mesh quadrature ddrcore plot ${EXTERNAL_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(ddr-stokes PUBLIC ${EXTERNAL_INCLUDES})
+ADD_EXECUTABLE(sddr-stokes DDR-stokes/sddr-stokes.cpp)
+TARGET_LINK_LIBRARIES(sddr-stokes mesh quadrature ddrcore plot ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(sddr-stokes PUBLIC ${EXTERNAL_INCLUDES})
 
 # VEM Stokes
 ADD_EXECUTABLE(vem-stokes VEM-stokes/vem-stokes.cpp)

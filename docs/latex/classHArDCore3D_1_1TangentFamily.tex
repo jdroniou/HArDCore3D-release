@@ -20,6 +20,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga849aca7abc07cabc56b61a5c112a2
 \item 
 typedef double \mbox{\hyperlink{group__Basis_gaf9c94600e124f7825764aafd0827bf8b}{Divergence\+Value}}
 \item 
+typedef Eigen\+::\+Matrix2d \mbox{\hyperlink{group__Basis_ga90861691a89e404c24c7e3537a8dd543}{Hessian\+Value}}
+\item 
 typedef Face \mbox{\hyperlink{group__Basis_ga1b78f11229d89bdac125bd5b1f6983ef}{Geometric\+Support}}
 \item 
 typedef Scalar\+Family\+Type \mbox{\hyperlink{group__Basis_ga33da7856b3fc642423652547c60f4bab}{Ancestor\+Type}}
@@ -35,6 +37,8 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_ga0c8e2840a23a7f9703ca75a9504b2423}{di
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_gaf9c94600e124f7825764aafd0827bf8b}{Divergence\+Value}} \mbox{\hyperlink{group__Basis_ga7b41039db007f6410867f68954b69ede}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga849aca7abc07cabc56b61a5c112a2948}{Curl\+Value}} \mbox{\hyperlink{group__Basis_ga4c2e02ee0f552d1418384b5c846b975f}{curlcurl}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the curl curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 constexpr const Scalar\+Family\+Type \& \mbox{\hyperlink{group__Basis_ga66fe0b4776e9c60b1f39e751cede2324}{ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the ancestor (family used for the tangent) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gad753134cb7b00af29f2430a524978d12}{max\+\_\+degree}} () const
@@ -54,7 +58,11 @@ static const bool \mbox{\hyperlink{group__Basis_ga24a08dabc84df4bad4a01bd0dacf65
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gad060c626292c8768ac2d07e2a502843a}{has\+Curl}} = false
 \item 
-static const bool \mbox{\hyperlink{group__Basis_gacc4ac75108de64702c0f59737f1b5173}{has\+Divergence}} = true
+static const bool \mbox{\hyperlink{group__Basis_gacc4ac75108de64702c0f59737f1b5173}{has\+Divergence}} = Scalar\+Family\+Type\+::has\+Gradient
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gac05298a1f7fa647b6938ec99a704f2f1}{has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga72c2976d348605f61d1be6516be50d26}{has\+Curl\+Curl}} = Scalar\+Family\+Type\+::has\+Hessian
 \end{DoxyCompactItemize}
 
 

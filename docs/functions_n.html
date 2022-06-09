@@ -90,6 +90,12 @@ $(function() {
 <li>n_faces()
 : <a class="el" href="group__Mesh.html#gaa4cbd825a424dc797b81d711a3f50e22">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
+<li>n_serendipityEdges()
+: <a class="el" href="group__DDRCore.html#ga1b5d1075730113a5a86b01d19d2fa4d4">HArDCore3D::SerendipityProblem</a>
+</li>
+<li>n_serendipityFaces()
+: <a class="el" href="group__DDRCore.html#ga75d725b50852aaaea86ec024167c38ba">HArDCore3D::SerendipityProblem</a>
+</li>
 <li>n_total_cell_dofs()
 : <a class="el" href="group__HybridCore.html#ga5a48f281a6cdabd298d5f2edf4c04022">HArDCore3D::UVector</a>
 </li>
@@ -101,13 +107,37 @@ $(function() {
 </li>
 <li>nbSCDOFs()
 : <a class="el" href="group__DDR__magnetostatic.html#ga4a501f243a498fd6567c2b7b71c9be98">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__DDR__stokes.html#ga5ac301f6b8248e2e81d720e3dcef92c2">HArDCore3D::Stokes</a>
+, <a class="el" href="group__VEM__stokes.html#ga5ac301f6b8248e2e81d720e3dcef92c2">HArDCore3D::Stokes</a>
 </li>
 <li>nbSCDOFs_p()
 : <a class="el" href="group__DDR__stokes.html#ga2c90515a4a5cc2e081cf5f7485706418">HArDCore3D::Stokes</a>
 </li>
 <li>nbSCDOFs_u()
 : <a class="el" href="group__DDR__stokes.html#ga137becabbdc3f6d87ce6a34ae934f729">HArDCore3D::Stokes</a>
+</li>
+<li>nDOFs_cells()
+: <a class="el" href="group__Common.html#ga4e943148dcbaeed5b8fc70e52f7c68d3">HArDCore3D::VariableDOFSpace</a>
+</li>
+<li>nDOFs_cells_SXCurl()
+: <a class="el" href="group__DDRCore.html#ga6c1803556ba2ddee6d3d851fff9580e9">HArDCore3D::SerendipityProblem</a>
+</li>
+<li>nDOFs_cells_SXGrad()
+: <a class="el" href="group__DDRCore.html#gaa8060fdc181785dc30c4dc3027e32677">HArDCore3D::SerendipityProblem</a>
+</li>
+<li>nDOFs_edges()
+: <a class="el" href="group__Common.html#gac77ebc2d5edbe1538f000be1faacf240">HArDCore3D::VariableDOFSpace</a>
+</li>
+<li>nDOFs_faces()
+: <a class="el" href="group__Common.html#gabc495079505d8454c5a65b7f1d02655d">HArDCore3D::VariableDOFSpace</a>
+</li>
+<li>nDOFs_faces_SXCurl()
+: <a class="el" href="group__DDRCore.html#ga93e86ff1e38df0714504013ecd82316e">HArDCore3D::SerendipityProblem</a>
+</li>
+<li>nDOFs_faces_SXGrad()
+: <a class="el" href="group__DDRCore.html#ga3ca4a1fd7d2d06bbf64b4b953f6e1426">HArDCore3D::SerendipityProblem</a>
+</li>
+<li>nDOFs_vertices()
+: <a class="el" href="group__Common.html#ga60368b26f606ab5863afac8066f3190b">HArDCore3D::VariableDOFSpace</a>
 </li>
 <li>neumann_solve()
 : <a class="el" href="group__HHO3D.html#gaacf2c087a7d345451faf00bf789c2149">HHO3D</a>
@@ -137,15 +167,19 @@ $(function() {
 </li>
 <li>numLocalDofsCell()
 : <a class="el" href="group__Common.html#ga63c9c43b9c52f18389de01b1b2669258">HArDCore3D::LocalDOFSpace</a>
+, <a class="el" href="group__Common.html#ga7e00e290fa12e7cbf824783488f5e409">HArDCore3D::VariableDOFSpace</a>
 </li>
 <li>numLocalDofsEdge()
 : <a class="el" href="group__Common.html#ga528c6d896f2ab32b50751fb22bcf8910">HArDCore3D::LocalDOFSpace</a>
+, <a class="el" href="group__Common.html#ga8a8698dc7d8ef85928880cbe71ee258e">HArDCore3D::VariableDOFSpace</a>
 </li>
 <li>numLocalDofsFace()
 : <a class="el" href="group__Common.html#gad3de9b38dbf2a2447bf4b07dea726bb5">HArDCore3D::LocalDOFSpace</a>
+, <a class="el" href="group__Common.html#ga989fad9b3dbb5fd931113428220b061f">HArDCore3D::VariableDOFSpace</a>
 </li>
 <li>numLocalDofsVertex()
 : <a class="el" href="group__Common.html#gac5ac77404d4e30ab0baf187f2cd341ba">HArDCore3D::LocalDOFSpace</a>
+, <a class="el" href="group__Common.html#ga7d3f90801708bab27d55327e3ddf940b">HArDCore3D::VariableDOFSpace</a>
 </li>
 </ul>
 </div><!-- contents -->

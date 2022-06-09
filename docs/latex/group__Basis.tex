@@ -59,6 +59,10 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_
 \item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Divergence_01_4}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Divergence $>$}}
 \item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01Hessian_01_4}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Hessian $>$}}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01BasisType_00_01CurlCurl_01_4}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Curl\+Curl $>$}}
+\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasadb35b75fb171fb1d9154a129a3c3414}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Function $>$}}
 \item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasac6dfb25d40fd254551d4194b76f2160}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Gradient $>$}}
@@ -67,10 +71,12 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_
 \item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasf7970a904fb5bf5e0964fdf032f37682}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Divergence $>$}}
 \item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBas97b5b029df1c36bf3d3b9b6dc9ed6bc8}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Curl\+Curl $>$}}
+\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1evaluate__quad}{H\+Ar\+D\+Core3\+D\+::evaluate\+\_\+quad$<$ Basis\+Function $>$}}
-\begin{DoxyCompactList}\small\item\em Evaluate a basis at quadrature nodes. \textquotesingle{}Basis\+Function\textquotesingle{} (=Function, Gradient, Curl or Divergence) determines what kind of value we want to evaluate. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Evaluate a basis at quadrature nodes. \textquotesingle{}Basis\+Function\textquotesingle{} (=Function, Gradient, Curl, Divergence or Hessian) determines what kind of value we want to evaluate. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1DecomposePoly}{H\+Ar\+D\+Core3\+D\+::\+Decompose\+Poly$<$ Basis\+Type $>$}}
-\begin{DoxyCompactList}\small\item\em Structure to decompose a set of polynomials on a basis on a face. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure to decompose a set of polynomials on a basis on a face or a cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -90,6 +96,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga51dab214529fd96b8930aeb99f94e
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga0f45b77fbbfa51f5e5aca7c90f837e05}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Divergence\+Value}}
 \item 
+typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__Basis_ga0ff5027967147941698ab94d57278d10}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Hessian\+Value}}
+\item 
 typedef Cell \mbox{\hyperlink{group__Basis_gaf1fb25612ece0a8d033134f47b5d82a4}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Geometric\+Support}}
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga71bec97252664e36ca3ad118d9d21c5f}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Function\+Value}}
@@ -99,6 +107,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga43c9548748ae2ffbda2750305a75c
 typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga1608a0cb98bc4e23f53da80bcc9b898a}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Curl\+Value}}
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga32196c4ba9262b365431669d44277b23}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Divergence\+Value}}
+\item 
+typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__Basis_gaf8bda33662d124f126782a946827430a}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Hessian\+Value}}
 \item 
 typedef Face \mbox{\hyperlink{group__Basis_ga4d8acdf73dbc7897fe23d219c1fed135}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Geometric\+Support}}
 \item 
@@ -112,6 +122,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga57374e5bd04db14ec62c734d88604
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga8c7e18d183a1db9d029e4c6b55a8b511}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Divergence\+Value}}
 \item 
+typedef double \mbox{\hyperlink{group__Basis_gafa63cc3e490d75bff696ee9e43108c14}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Hessian\+Value}}
+\item 
 typedef Edge \mbox{\hyperlink{group__Basis_gac53bd9843072d6d731dafc58c68b789e}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Geometric\+Support}}
 \item 
 typedef Basis\+Type\+::\+Function\+Value \mbox{\hyperlink{group__Basis_ga2d87c9bf83c4dd0574dc399506d4870c}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::\+Function\+Value}}
@@ -121,6 +133,8 @@ typedef Basis\+Type\+::\+Gradient\+Value \mbox{\hyperlink{group__Basis_gaa4c3dc5
 typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga7b53a354b3fad04c15ba0e35c46d3f51}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::\+Curl\+Value}}
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga48cb296e638fde22922d3a583f6cf126}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::\+Divergence\+Value}}
+\item 
+typedef Basis\+Type\+::\+Hessian\+Value \mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::\+Hessian\+Value}}
 \item 
 typedef Basis\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_ga9e16a6663722460eb003835c731bea9c}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::\+Geometric\+Support}}
 \item 
@@ -134,6 +148,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga2a99d3ad58e081c33fe712c019b0d
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga375f5cfa1074a92ef276ba76145d2b83}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::\+Divergence\+Value}}
 \item 
+typedef Eigen\+::\+Matrix$<$ double, N, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_gafab84979dac3c31f2da4822f425122d2}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::\+Hessian\+Value}}
+\item 
 typedef Scalar\+Family\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_gac71379becbe0edb006c5df44660bf3aa}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::\+Geometric\+Support}}
 \item 
 typedef Scalar\+Family\+Type \mbox{\hyperlink{group__Basis_ga746de3efad21ba2e602237c4c2badc26}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::\+Ancestor\+Type}}
@@ -145,6 +161,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga478b6317fd67433269c1a860dfdfd
 typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga849aca7abc07cabc56b61a5c112a2948}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Curl\+Value}}
 \item 
 typedef double \mbox{\hyperlink{group__Basis_gaf9c94600e124f7825764aafd0827bf8b}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Divergence\+Value}}
+\item 
+typedef Eigen\+::\+Matrix2d \mbox{\hyperlink{group__Basis_ga90861691a89e404c24c7e3537a8dd543}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Hessian\+Value}}
 \item 
 typedef Face \mbox{\hyperlink{group__Basis_ga1b78f11229d89bdac125bd5b1f6983ef}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::\+Geometric\+Support}}
 \item 
@@ -158,6 +176,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_gaa211a7a7092eadf348a9f8fc52c8a
 \item 
 typedef double \mbox{\hyperlink{group__Basis_gaddf96b150b94a4fe6db4d69d0c73c405}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::\+Divergence\+Value}}
 \item 
+typedef Basis\+Type\+::\+Hessian\+Value \mbox{\hyperlink{group__Basis_ga5d7fdeeef1be7ce42a39e8550a7af33f}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::\+Hessian\+Value}}
+\item 
 typedef Basis\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_ga67fe9edf4dbbff050f7965b55f1b974b}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::\+Geometric\+Support}}
 \item 
 typedef Basis\+Type \mbox{\hyperlink{group__Basis_gae0e8c5208eefb924ae5706861d4fff47}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::\+Ancestor\+Type}}
@@ -169,6 +189,8 @@ typedef Basis\+Type\+::\+Gradient\+Value \mbox{\hyperlink{group__Basis_ga7f6e5f1
 typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga6bcd1c81b6198d9db1d5e9342c5625fe}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::\+Curl\+Value}}
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga7139d7ecaa9d2985dabf2a0a0c2022f4}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::\+Divergence\+Value}}
+\item 
+typedef Basis\+Type\+::\+Hessian\+Value \mbox{\hyperlink{group__Basis_ga77c6a6c8654433ab4202c1d368459d88}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::\+Hessian\+Value}}
 \item 
 typedef Basis\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_ga96c46cc3be4f7fde66e70a1001c670d0}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::\+Geometric\+Support}}
 \item 
@@ -182,6 +204,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_gab588b4936d9f62067a8c2c5eb7572
 \item 
 typedef double \mbox{\hyperlink{group__Basis_gab5c51bc59aeb61c403be368c4b4d4225}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::\+Divergence\+Value}}
 \item 
+typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga10953a29191f161e020793e893a8b31f}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::\+Hessian\+Value}}
+\item 
 typedef Basis\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_gadbd840e4cc2386bbf021731e359b60b0}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::\+Geometric\+Support}}
 \item 
 typedef Basis\+Type \mbox{\hyperlink{group__Basis_gaae8fff025ca2fb9019b987e774402175}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::\+Ancestor\+Type}}
@@ -193,6 +217,8 @@ typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d7
 typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga56971e591d596083eae646d9f565e865}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::\+Curl\+Value}}
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga5da003cb660e44eaf9a899631494503f}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::\+Divergence\+Value}}
+\item 
+typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_gacb8b258a26dd64b24ce162061e82cdf2}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::\+Hessian\+Value}}
 \item 
 typedef Basis\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_ga351ef62bb74afe2ddeff23d28879634d}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::\+Geometric\+Support}}
 \item 
@@ -206,6 +232,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga6155591aa4f58e7b908a17a5b170c
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga9db3db672cc9bb41f17be617269349f9}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::\+Divergence\+Value}}
 \item 
+typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__Basis_ga8492b5f7913672c25fabb80b71331181}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::\+Hessian\+Value}}
+\item 
 typedef Basis\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_ga72110ca9be10f6ed801e138ce2dc31f3}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::\+Geometric\+Support}}
 \item 
 typedef Basis\+Type \mbox{\hyperlink{group__Basis_gae0031ce2fcad7e1f8f316ac277d8a429}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::\+Ancestor\+Type}}
@@ -218,6 +246,8 @@ typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d7
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga6eacec23654d7a7f3d2c9edd1acd8646}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Divergence\+Value}}
 \item 
+typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga0492555b967894ccc4a6e0c2ba6bcadb}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Hessian\+Value}}
+\item 
 typedef Cell \mbox{\hyperlink{group__Basis_gaf60e0ddb281f31993143c5ab174fd9a3}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Geometric\+Support}}
 \item 
 typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga7f8d7bbc1ed611fe07fd43548d6cf8a2}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Function\+Value}}
@@ -228,6 +258,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga0a23567f5b039c2b8c01302d94e27
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga077a93cc56ef67f7a0031bfb28da3e83}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Divergence\+Value}}
 \item 
+typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga2b4cd13b6b8090de344f21f6588a62da}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Hessian\+Value}}
+\item 
 typedef Cell \mbox{\hyperlink{group__Basis_gafc5f881930fe81b28773581c9b58a059}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Geometric\+Support}}
 \item 
 typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga0fbe83978b2d84c505aa065ba6749a62}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Function\+Value}}
@@ -237,6 +269,8 @@ typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d7
 typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga7654fa07941243bcce313b91f7dac5fc}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Curl\+Value}}
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga66a8859d4a4b8220e28e91d8665079cf}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Divergence\+Value}}
+\item 
+typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga0acb6d72b49fe0c62b20c08a9c0d8931}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Hessian\+Value}}
 \item 
 typedef Face \mbox{\hyperlink{group__Basis_gadb0fb3bd5248e978eca3ff472d7c6307}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Geometric\+Support}}
 \item 
@@ -250,6 +284,8 @@ typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d7
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga073abdc299819b6aa71f8ef679f71e8f}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Divergence\+Value}}
 \item 
+typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga17bd0e8d42ad295b1bc98bf90791c80b}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Hessian\+Value}}
+\item 
 typedef Face \mbox{\hyperlink{group__Basis_gaf5ced8758911390c4eed54ba6bb41b6e}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Geometric\+Support}}
 \item 
 typedef Eigen\+::\+Matrix$<$ double, 2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga0cbdf6618e91e09a34adef7f0cef48d8}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Jacobian\+Type}}
@@ -261,6 +297,10 @@ typedef Basis\+Type\+::\+Gradient\+Value \mbox{\hyperlink{group__Basis_gaebcec3c
 typedef Basis\+Type\+::\+Curl\+Value \mbox{\hyperlink{group__Basis_ga9282a3c44763e9d940a6d3161242d1c0}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Curl $>$\+::\+Return\+Value}}
 \item 
 typedef Basis\+Type\+::\+Divergence\+Value \mbox{\hyperlink{group__Basis_ga1d8393298a710a4a0233017b265119e5}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Divergence $>$\+::\+Return\+Value}}
+\item 
+typedef Basis\+Type\+::\+Hessian\+Value \mbox{\hyperlink{group__Basis_ga55f952be10139bf12bc325ab9932b2ed}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Hessian $>$\+::\+Return\+Value}}
+\item 
+typedef Basis\+Type\+::\+Curl\+Value \mbox{\hyperlink{group__Basis_ga9a4dbba5fbb48f64ab8a1afd671d13b5}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Curl\+Curl $>$\+::\+Return\+Value}}
 \item 
 typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$\+::Function\+Value \mbox{\hyperlink{group__Basis_ga067f8a9c4852d51d76f7601903897207}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Function $>$\+::\+Return\+Value}}
 \item 
@@ -277,6 +317,10 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga919e09b293dc125edc55c13c341a4
 typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$\+::Divergence\+Value \mbox{\hyperlink{group__Basis_gac66d795f291812e625e75706aa59e439}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Divergence $>$\+::\+Return\+Value}}
 \item 
 typedef Vector\+Rd \mbox{\hyperlink{group__Basis_gae08d5cc52fb73c713fa5d0722b2db711}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Divergence $>$\+::\+Ancestor\+Basis\+Function\+Value}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$\+::Curl\+Value \mbox{\hyperlink{group__Basis_gaca04070639f8536291a5a7df53ecd394}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Curl\+Curl $>$\+::\+Return\+Value}}
+\item 
+typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__Basis_ga0a05e9d40088805df9500b0446440cd7}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Curl\+Curl $>$\+::\+Ancestor\+Basis\+Function\+Value}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -286,10 +330,14 @@ enum \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{H\+Ar\+D\
 \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4a1014fc33583e3e82ee81d9ca08a2d73b}{H\+Ar\+D\+Core3\+D\+::\+Matrix}} = 2
  \}
 \item 
-enum \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{H\+Ar\+D\+Core3\+D\+::\+Basis\+FunctionE}} \{ \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{H\+Ar\+D\+Core3\+D\+::\+Function}}, 
+enum \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{H\+Ar\+D\+Core3\+D\+::\+Basis\+FunctionE}} \{ \newline
+\mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{H\+Ar\+D\+Core3\+D\+::\+Function}}, 
 \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{H\+Ar\+D\+Core3\+D\+::\+Gradient}}, 
 \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ae8edfacb373a30cc4ec9136a18d99f0e}{H\+Ar\+D\+Core3\+D\+::\+Curl}}, 
-\mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{H\+Ar\+D\+Core3\+D\+::\+Divergence}}
+\mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{H\+Ar\+D\+Core3\+D\+::\+Divergence}}, 
+\newline
+\mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a65b7fdb019b27a168d64c61622abb34f}{H\+Ar\+D\+Core3\+D\+::\+Hessian}}, 
+\mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Curl}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
@@ -311,6 +359,8 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_gaa889b63f16b51979a2fcea3253851c89}{H\
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_gac69e8499d538f283ebbd66aea3ed60ce}{Gradient\+Value}} \mbox{\hyperlink{group__Basis_gafe6fb4aef0d61e720116d8ba64c94971}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga0ff5027967147941698ab94d57278d10}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_gaab95b8928c5acc4586546d9dc416a6e1}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::hessian}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the hessian of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gaa74c15b33f8ef6b0c8eefa25a689bca9}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::max\+\_\+degree}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 Vector\+Zd \mbox{\hyperlink{group__Basis_ga382451aff0b566fb35d40fb89a156d7d}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::powers}} (size\+\_\+t i) const
@@ -323,8 +373,10 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_ga404551f2ca5ed4e605289addbc6fb9c4}{H\
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_ga43c9548748ae2ffbda2750305a75c4c4}{Gradient\+Value}} \mbox{\hyperlink{group__Basis_ga25989d831b6ca783612bc54ce0f25b66}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Basis_ga1608a0cb98bc4e23f53da80bcc9b898a}{Curl\+Value}} \mbox{\hyperlink{group__Basis_gaadba906ff906d86d97cfcc1a5fbc505f}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\mbox{\hyperlink{group__Basis_ga1608a0cb98bc4e23f53da80bcc9b898a}{Curl\+Value}} \mbox{\hyperlink{group__Basis_ga1a92cf019c2a3947c7518d04d14bba6a}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the two-\/dimensional curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_gaf8bda33662d124f126782a946827430a}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_ga71500087412c8ae110deb3926a2e3c6a}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::hessian}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the Hessian of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gac1ec7508d33707306056a7ef73be8638}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::max\+\_\+degree}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 const Vector\+Rd \& \mbox{\hyperlink{group__Basis_ga299c04e82954cd6bd69a31de664d1150}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::normal}} () const
@@ -365,6 +417,10 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_gaa71fa9b9c83346561fde4c764a1b2e72}{H\
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_ga48cb296e638fde22922d3a583f6cf126}{Divergence\+Value}} \mbox{\hyperlink{group__Basis_ga0b6dc927463e4b67215ca7503d4e15bb}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::divergence}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga48cb296e638fde22922d3a583f6cf126}{Divergence\+Value}}, 2 $>$ \&ancestor\+\_\+divergence\+\_\+quad) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th function at a quadrature point iqn, knowing all the divergences of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_gaca2bf24a1c75c9bc405c6f35a80a3ba2}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::hessian}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the hessian of the i-\/th function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_gae46848f3e7ce8008071074bff14f03ca}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::hessian}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}}, 2 $>$ \&ancestor\+\_\+hessian\+\_\+quad) const
+\begin{DoxyCompactList}\small\item\em Evaluate the hessian of the i-\/th function at a quadrature point iqn, knowing all the hessian of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
 const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__Basis_gaf056ff8a6cbf5c566c243290e72af217}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::matrix}} () const
 \begin{DoxyCompactList}\small\item\em Return the coefficient matrix. \end{DoxyCompactList}\item 
 constexpr const Basis\+Type \& \mbox{\hyperlink{group__Basis_ga0fc644171394a03fb1752ed5039a6876}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::ancestor}} () const
@@ -391,6 +447,10 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_ga1f8e17599e9b38b58ef247317783c51f}{H\
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_ga375f5cfa1074a92ef276ba76145d2b83}{Divergence\+Value}} \mbox{\hyperlink{group__Basis_gaaf8de8320203975aa548709d455a6ec4}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::divergence}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&ancestor\+\_\+gradient\+\_\+quad) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga2a99d3ad58e081c33fe712c019b0d704}{Curl\+Value}} \mbox{\hyperlink{group__Basis_ga884c79b5bb407829575ed93f38b86184}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::curlcurl}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the curl curl of the i-\/th basis function at point x. We use the formula curl curl = -\/ Laplace + grad div. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga2a99d3ad58e081c33fe712c019b0d704}{Curl\+Value}} \mbox{\hyperlink{group__Basis_ga2dd432487225d0ed106612df6b418c60}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::curlcurl}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ typename Scalar\+Family\+Type\+::\+Hessian\+Value, 2 $>$ \&ancestor\+\_\+hessian\+\_\+quad) const
+\begin{DoxyCompactList}\small\item\em Evaluate the curl curl of the i-\/th basis function at a quadrature point iqn, knowing all the values of the Hessian of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
 constexpr const Scalar\+Family\+Type \& \mbox{\hyperlink{group__Basis_ga2fa5d0c533a652d4e64400b3cffb9029}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the ancestor (family that has been tensorized) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_ga649326979292f0ff66afc7040516363c}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::max\+\_\+degree}} () const
@@ -403,6 +463,8 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_ga0c8e2840a23a7f9703ca75a9504b2423}{H\
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_gaf9c94600e124f7825764aafd0827bf8b}{Divergence\+Value}} \mbox{\hyperlink{group__Basis_ga7b41039db007f6410867f68954b69ede}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga849aca7abc07cabc56b61a5c112a2948}{Curl\+Value}} \mbox{\hyperlink{group__Basis_ga4c2e02ee0f552d1418384b5c846b975f}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::curlcurl}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the curl curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 constexpr const Scalar\+Family\+Type \& \mbox{\hyperlink{group__Basis_ga66fe0b4776e9c60b1f39e751cede2324}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the ancestor (family used for the tangent) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gad753134cb7b00af29f2430a524978d12}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::max\+\_\+degree}} () const
@@ -425,6 +487,8 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_ga456b3898a7ee7d67c75c45bba1c21c4b}{H\
 \begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_gaddf96b150b94a4fe6db4d69d0c73c405}{Divergence\+Value}} \mbox{\hyperlink{group__Basis_ga667f2913df630001dcc7d693662af926}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga5d7fdeeef1be7ce42a39e8550a7af33f}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_gace185f423df845eac0f5085851fe26e6}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::hessian}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the hessian of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_gac9623c0deb32ee33cb10de45f4f75702}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::\+Restricted\+Basis}} (const Basis\+Type \&basis, const size\+\_\+t \&\mbox{\hyperlink{group__Basis_gaf281956665b32bc8613043e4f303182e}{dimension}})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gaf281956665b32bc8613043e4f303182e}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::dimension}} () const
@@ -441,6 +505,8 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_gafea55bfd37fcfe53c1b6ebe6a9212df8}{H\
 \begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_ga7139d7ecaa9d2985dabf2a0a0c2022f4}{Divergence\+Value}} \mbox{\hyperlink{group__Basis_ga06c5ecd7cb9ce4c52891c355a5dc2108}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga77c6a6c8654433ab4202c1d368459d88}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_gae1e9051253d6642132fa88f95954cfff}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::hessian}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the hessian of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_gaf2fa9b4764b550f576aeba7e24e6c911}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::\+Gradient\+Basis}} (const Basis\+Type \&basis)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gabf5cc38208c346f4b6f6d5ca5d20d767}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::dimension}} () const
@@ -535,6 +601,14 @@ static \mbox{\hyperlink{group__Basis_ga1d8393298a710a4a0233017b265119e5}{Return\
 \item 
 static \mbox{\hyperlink{group__Basis_ga1d8393298a710a4a0233017b265119e5}{Return\+Value}} \mbox{\hyperlink{group__Basis_gaa0277e02bb8294d9da5dab64ce9618f7}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Divergence $>$\+::evaluate}} (const Basis\+Type \&basis, size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga1d8393298a710a4a0233017b265119e5}{Return\+Value}}, 2 $>$ \&ancestor\+\_\+divergence\+\_\+quad)
 \item 
+static \mbox{\hyperlink{group__Basis_ga55f952be10139bf12bc325ab9932b2ed}{Return\+Value}} \mbox{\hyperlink{group__Basis_ga6f59433199ca56012c478242da9ab583}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Hessian $>$\+::evaluate}} (const Basis\+Type \&basis, size\+\_\+t i, const Vector\+Rd \&x)
+\item 
+static \mbox{\hyperlink{group__Basis_ga55f952be10139bf12bc325ab9932b2ed}{Return\+Value}} \mbox{\hyperlink{group__Basis_ga0b9b587e8af7327c4b91b9c92fa80144}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Hessian $>$\+::evaluate}} (const Basis\+Type \&basis, size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga55f952be10139bf12bc325ab9932b2ed}{Return\+Value}}, 2 $>$ \&ancestor\+\_\+hessian\+\_\+quad)
+\item 
+static \mbox{\hyperlink{group__Basis_ga9a4dbba5fbb48f64ab8a1afd671d13b5}{Return\+Value}} \mbox{\hyperlink{group__Basis_ga8fab37eb5b43550e00ca1cc519a6dcee}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Curl\+Curl $>$\+::evaluate}} (const Basis\+Type \&basis, size\+\_\+t i, const Vector\+Rd \&x)
+\item 
+static \mbox{\hyperlink{group__Basis_ga9a4dbba5fbb48f64ab8a1afd671d13b5}{Return\+Value}} \mbox{\hyperlink{group__Basis_gac5407a5a8dcfbc9d1b0c3b91205915e9}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Basis\+Type, Curl\+Curl $>$\+::evaluate}} (const Basis\+Type \&basis, size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga9a4dbba5fbb48f64ab8a1afd671d13b5}{Return\+Value}}, 2 $>$ \&ancestor\+\_\+curlcurl\+\_\+quad)
+\item 
 static \mbox{\hyperlink{group__Basis_ga067f8a9c4852d51d76f7601903897207}{Return\+Value}} \mbox{\hyperlink{group__Basis_gadd7f294231d69b732829a59615337edb}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Function $>$\+::evaluate}} (const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&basis, size\+\_\+t i, const Vector\+Rd \&x)
 \item 
 static \mbox{\hyperlink{group__Basis_ga067f8a9c4852d51d76f7601903897207}{Return\+Value}} \mbox{\hyperlink{group__Basis_gaa357ee186cd084bea0af7b20074026be}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Function $>$\+::evaluate}} (const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&basis, size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&ancestor\+\_\+basis\+\_\+quad)
@@ -550,6 +624,10 @@ static \mbox{\hyperlink{group__Basis_gae5fa8ec74f8481aa1acff09fb614d01a}{Return\
 static \mbox{\hyperlink{group__Basis_gac66d795f291812e625e75706aa59e439}{Return\+Value}} \mbox{\hyperlink{group__Basis_gaa6d74392e9387d3e3f02234e95538936}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Divergence $>$\+::evaluate}} (const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&basis, size\+\_\+t i, const Vector\+Rd \&x)
 \item 
 static \mbox{\hyperlink{group__Basis_gac66d795f291812e625e75706aa59e439}{Return\+Value}} \mbox{\hyperlink{group__Basis_gaf1e9ab9176166f5cd91c93f93a7fa0a6}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Divergence $>$\+::evaluate}} (const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&basis, size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&ancestor\+\_\+basis\+\_\+quad)
+\item 
+static \mbox{\hyperlink{group__Basis_gaca04070639f8536291a5a7df53ecd394}{Return\+Value}} \mbox{\hyperlink{group__Basis_ga636e5738b8fade8812bf3b510dec1ef9}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Curl\+Curl $>$\+::evaluate}} (const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&basis, size\+\_\+t i, const Vector\+Rd \&x)
+\item 
+static \mbox{\hyperlink{group__Basis_gaca04070639f8536291a5a7df53ecd394}{Return\+Value}} \mbox{\hyperlink{group__Basis_ga1d081bde745ac30c6bc434c4a9bea2dd}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Curl\+Curl $>$\+::evaluate}} (const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&basis, size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}}, 2 $>$ \&ancestor\+\_\+basis\+\_\+quad)
 \item 
 {\footnotesize template$<$typename Basis\+Type $>$ }\\static boost\+::multi\+\_\+array$<$ typename \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, Basis\+Function $>$\+::Return\+Value, 2 $>$ \mbox{\hyperlink{group__Basis_ga1abe06df2a8a25ad4de2f738930ec143}{H\+Ar\+D\+Core3\+D\+::evaluate\+\_\+quad$<$ Basis\+Function $>$\+::compute}} (const Basis\+Type \&basis, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&quad)
 \begin{DoxyCompactList}\small\item\em Generic basis evaluation. \end{DoxyCompactList}\item 
@@ -604,7 +682,9 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga17118956be8fdf8f41886286d3
 {\footnotesize template$<$typename Basis\+Type $>$ }\\Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Basis_ga658cc3dbb96110d2a295ef85e6d85ecc}{H\+Ar\+D\+Core3\+D\+::l2\+\_\+projection}} (const std\+::function$<$ typename Basis\+Type\+::\+Function\+Value(const Vector\+Rd \&)$>$ \&f, const Basis\+Type \&basis, \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&quad, const boost\+::multi\+\_\+array$<$ typename Basis\+Type\+::\+Function\+Value, 2 $>$ \&basis\+\_\+quad, const Eigen\+::\+Matrix\+Xd \&mass\+\_\+basis=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1))
 \begin{DoxyCompactList}\small\item\em Compute the L2-\/projection of a function. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_ga467aae89f3550d08fc3179c38f74e36d}{H\+Ar\+D\+Core3\+D\+::\+Decompose\+Poly$<$ Basis\+Type $>$\+::\+Decompose\+Poly}} (const Face \&F, const Basis\+Type \&basis)
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor for face. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_gad1742551039eaa00b702873a704d029f}{H\+Ar\+D\+Core3\+D\+::\+Decompose\+Poly$<$ Basis\+Type $>$\+::\+Decompose\+Poly}} (const Cell \&T, const Basis\+Type \&basis)
+\begin{DoxyCompactList}\small\item\em Constructor for cell. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \mbox{\hyperlink{group__Basis_ga9826502cd32a681c30f47a07ffedf0ff}{H\+Ar\+D\+Core3\+D\+::\+Decompose\+Poly$<$ Basis\+Type $>$\+::get\+\_\+nodes}} () const
 \begin{DoxyCompactList}\small\item\em Return the set of nodes (useful to compute value of polynomial to decompose via \mbox{\hyperlink{structHArDCore3D_1_1evaluate__quad}{evaluate\+\_\+quad}}) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$ \mbox{\hyperlink{group__Basis_gaaa367eb17707155e1920822cfb60b334}{H\+Ar\+D\+Core3\+D\+::\+Decompose\+Poly$<$ Basis\+Type $>$\+::family}} (boost\+::multi\+\_\+array$<$ typename Basis\+Type\+::\+Function\+Value, 2 $>$ \&values)
@@ -626,6 +706,10 @@ static const bool \mbox{\hyperlink{group__Basis_ga4ae626adeaf1b1d8c414afe1bbe85b
 \item 
 static const bool \mbox{\hyperlink{group__Basis_ga3209c64ffde8ca1f8d63abb33ce8ee5a}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::has\+Divergence}} = false
 \item 
+static const bool \mbox{\hyperlink{group__Basis_gabdc2c38b6af9d5378ad8f5e14c4bb6b9}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::has\+Hessian}} = true
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga37936489f78f0fa5df3f0eee1c224870}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::has\+Curl\+Curl}} = false
+\item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga74bd34297effa0fe6ff25e7037e4d06e}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4af6cb6683b89de3134f2fcf98c26c5b86}{Scalar}}
 \item 
 constexpr static const bool \mbox{\hyperlink{group__Basis_ga6ef4d1c2d635ec83514467171b61e061}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::has\+Ancestor}} = false
@@ -637,6 +721,10 @@ static const bool \mbox{\hyperlink{group__Basis_gacf6b7bb1df49b58e85f0ee9058e837
 static const bool \mbox{\hyperlink{group__Basis_ga99e8f7a15ecf13d854344b34c7b0f963}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::has\+Curl}} = true
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gabded3a224b17ec37cafbebdc190889ac}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::has\+Divergence}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gaf5825ebaaa1a16a51fb9f3484ff9b812}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::has\+Hessian}} = true
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gadb1fe211acf4f5b376c37168e9d570c9}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::has\+Curl\+Curl}} = false
 \item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga388e6368e7bc42d0e537bfea5e398a53}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4af6cb6683b89de3134f2fcf98c26c5b86}{Scalar}}
 \item 
@@ -650,6 +738,10 @@ static const bool \mbox{\hyperlink{group__Basis_ga3a78726fb76de93daeb4d1d3f74be2
 \item 
 static const bool \mbox{\hyperlink{group__Basis_ga236b6c30dd086def8c0826441a5e110c}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::has\+Divergence}} = false
 \item 
+static const bool \mbox{\hyperlink{group__Basis_gad7dd8197742aa6b65c88751a3f6b9f02}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gada1c7bcbe9e5892c4868e1769cf96d29}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::has\+Curl\+Curl}} = false
+\item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_gad17d368b1c5a0b0bf2c849fd8353a374}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::tensor\+Rank}} = Basis\+Type\+::tensor\+Rank
 \item 
 constexpr static const bool \mbox{\hyperlink{group__Basis_gabb09e8ff6ea8e0c4d4498761fd872972}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::has\+Ancestor}} = true
@@ -661,6 +753,10 @@ static const bool \mbox{\hyperlink{group__Basis_ga3fcb3b85e2f26f201e608b04bdf7f9
 static const bool \mbox{\hyperlink{group__Basis_ga6c12f947e8ba8dedc3ac6809481249f0}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::has\+Curl}} = Basis\+Type\+::has\+Curl
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gac905ca089d3f75eee5a4e655544b9223}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::has\+Divergence}} = Basis\+Type\+::has\+Divergence
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gad71874bacd82eb38fa2ce50d555a5494}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::has\+Hessian}} = Basis\+Type\+::has\+Hessian
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga70d8ba5d35382ff7960692d9979f3bd6}{H\+Ar\+D\+Core3\+D\+::\+Family$<$ Basis\+Type $>$\+::has\+Curl\+Curl}} = Basis\+Type\+::has\+Curl\+Curl
 \item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga6a2dd3b404ac41b88a9a690834e49b8f}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
 \item 
@@ -674,6 +770,10 @@ static const bool \mbox{\hyperlink{group__Basis_gaf7b0b7d38444c6f5948a7af77f54cb
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gac508be3ba29add3055e394ea73413f3d}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::has\+Curl}} = (Scalar\+Family\+Type\+::has\+Gradient \&\& N == \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}})
 \item 
+static const bool \mbox{\hyperlink{group__Basis_ga53622a34ccbe5bee21d6f84d0fa9e005}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga437d858dadb41a6f1941e902445dd123}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$\+::has\+Curl\+Curl}} = (Scalar\+Family\+Type\+::has\+Hessian \&\& N == \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}})
+\item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga0c1be4966b6727e605c63552a284d5ed}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
 \item 
 constexpr static const bool \mbox{\hyperlink{group__Basis_ga99f575440e27e478c7085b4e2bcf1178}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::has\+Ancestor}} = true
@@ -684,7 +784,11 @@ static const bool \mbox{\hyperlink{group__Basis_ga24a08dabc84df4bad4a01bd0dacf65
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gad060c626292c8768ac2d07e2a502843a}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::has\+Curl}} = false
 \item 
-static const bool \mbox{\hyperlink{group__Basis_gacc4ac75108de64702c0f59737f1b5173}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::has\+Divergence}} = true
+static const bool \mbox{\hyperlink{group__Basis_gacc4ac75108de64702c0f59737f1b5173}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::has\+Divergence}} = Scalar\+Family\+Type\+::has\+Gradient
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gac05298a1f7fa647b6938ec99a704f2f1}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga72c2976d348605f61d1be6516be50d26}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::has\+Curl\+Curl}} = Scalar\+Family\+Type\+::has\+Hessian
 \item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga146c6b7ee1d90b25fbfec315a73a4e33}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank}} = Basis\+Type\+::tensor\+Rank
 \item 
@@ -698,6 +802,10 @@ static const bool \mbox{\hyperlink{group__Basis_gae6469509558a028a4125c496270cbf
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gabdca69c0f60b7e305c887e16df8e4c26}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::has\+Divergence}} = Basis\+Type\+::has\+Divergence
 \item 
+static const bool \mbox{\hyperlink{group__Basis_ga11eb5ba23bdd90e469842668f6cbeb4d}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::has\+Hessian}} = Basis\+Type\+::has\+Hessian
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gae05b3e779d954f0242f5ce94c37fea28}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::has\+Curl\+Curl}} = Basis\+Type\+::has\+Curl\+Curl
+\item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga3f9ce91f8e07c56e0ac2a08c92293ec9}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank}} = Basis\+Type\+::tensor\+Rank
 \item 
 constexpr static const bool \mbox{\hyperlink{group__Basis_ga9b0f9cad6af430adde892c2f013b036f}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::has\+Ancestor}} = true
@@ -709,6 +817,10 @@ static const bool \mbox{\hyperlink{group__Basis_ga6674593e65b0d4b08fec501f5f8030
 static const bool \mbox{\hyperlink{group__Basis_gac2fb5928f5487a216fd108f333790461}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::has\+Curl}} = Basis\+Type\+::has\+Curl
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gaf5b965b1943c028721975f8044ec9b87}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::has\+Divergence}} = Basis\+Type\+::has\+Divergence
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga42e50398603a2b52a656b1bb5906a2ab}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::has\+Hessian}} = Basis\+Type\+::has\+Hessian
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga1c82da97819f35a5fbe8e9ab372eb592}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis$<$ Basis\+Type $>$\+::has\+Curl\+Curl}} = Basis\+Type\+::has\+Curl\+Curl
 \item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_gacee6ade35c9c1c43ae84d947a3a22d90}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
 \item 
@@ -722,6 +834,10 @@ static const bool \mbox{\hyperlink{group__Basis_gab2338daf54d3c72ca49f0cc665d353
 \item 
 static const bool \mbox{\hyperlink{group__Basis_ga3be6e64c5c36d83019fdfefd249a0f3d}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::has\+Divergence}} = false
 \item 
+static const bool \mbox{\hyperlink{group__Basis_gafafc51362e71b744494278f162a63d70}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga8127bfbc73ee67eb98b1971e51af66b1}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis$<$ Basis\+Type $>$\+::has\+Curl\+Curl}} = false
+\item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga85dd7d93d82b13c5026435f1f4a8dc6d}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
 \item 
 constexpr static const bool \mbox{\hyperlink{group__Basis_ga3108160b370b596b417b3fee42148ecc}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::has\+Ancestor}} = true
@@ -733,6 +849,10 @@ static const bool \mbox{\hyperlink{group__Basis_ga4083d38b937f063c7ef81c25ad74db
 static const bool \mbox{\hyperlink{group__Basis_gabc35e5e4f2cdab3ad77de9f2ba1d32ac}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::has\+Curl}} = false
 \item 
 static const bool \mbox{\hyperlink{group__Basis_ga5a3ced55d938a4db0cb91c78b076d5e7}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::has\+Divergence}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga29597e977ab53688320da110fddd663d}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga09c9e43187e55ed593bd9b57a081d976}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis$<$ Basis\+Type $>$\+::has\+Curl\+Curl}} = false
 \item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga41facfbc83567bec73acde57a9756ec4}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4af6cb6683b89de3134f2fcf98c26c5b86}{Scalar}}
 \item 
@@ -746,6 +866,10 @@ static const bool \mbox{\hyperlink{group__Basis_gaea0d9518972367c67c8b6919184dc5
 \item 
 static const bool \mbox{\hyperlink{group__Basis_ga2ed5bdfb5a56bdd38245c86930628ca2}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::has\+Divergence}} = false
 \item 
+static const bool \mbox{\hyperlink{group__Basis_gaf04b00188213c7ca7437770c160df587}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gaf978bd6a9706a0631241bda57153b902}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis$<$ Basis\+Type $>$\+::has\+Curl\+Curl}} = false
+\item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga0dc1703854e1b7185087ce2cc41474ed}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
 \item 
 constexpr static const bool \mbox{\hyperlink{group__Basis_gafe0d3e625e265e72bb52dfdb25a021b1}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::has\+Ancestor}} = false
@@ -757,6 +881,10 @@ static const bool \mbox{\hyperlink{group__Basis_ga70bcc9726952ec15a01243c9f1fa27
 static const bool \mbox{\hyperlink{group__Basis_ga0d279217ebc9517eeda0d1be5875a9e0}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::has\+Curl}} = false
 \item 
 static const bool \mbox{\hyperlink{group__Basis_ga80bdfa79913245f50a4be627cd588b34}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::has\+Divergence}} = true
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga1b8e7b0a19e1a4261a82ad9b5365bc2e}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga986b183cc406d8e63259f74ce8c00c29}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::has\+Curl\+Curl}} = false
 \item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_gaa118913e5b978f97b6b12eb88294d60d}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
 \item 
@@ -770,6 +898,10 @@ static const bool \mbox{\hyperlink{group__Basis_ga87379deb87b44adb9e32958eb63799
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gaae600e9a23657d28bce1e6d4700b5a25}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::has\+Divergence}} = false
 \item 
+static const bool \mbox{\hyperlink{group__Basis_ga0c670397b60c1494165eb1d637d2680a}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gafdce5305599e92beed60ce551a850a54}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::has\+Curl\+Curl}} = false
+\item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga398117bc91ab19d9cdcb93be96270059}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
 \item 
 constexpr static const bool \mbox{\hyperlink{group__Basis_gaf300593008a6b4e0ea031ad65be79b07}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::has\+Ancestor}} = false
@@ -781,6 +913,10 @@ static const bool \mbox{\hyperlink{group__Basis_gaa3282fd1e26108cce826ded2ac6bc7
 static const bool \mbox{\hyperlink{group__Basis_ga446513e696bbe87289d979e35a182167}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::has\+Curl}} = false
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gad2ccb8cadd9997b4870d5a6b90d706e9}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::has\+Divergence}} = true
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga14020e4b29c15c70c3d85c8ad812a220}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga81ff30b0c487624eccb63948a2a635e9}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::has\+Curl\+Curl}} = false
 \item 
 constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_ga5108b9354f683ae7be935a4ceb9569bd}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
 \item 
@@ -794,6 +930,10 @@ static const bool \mbox{\hyperlink{group__Basis_gacc718f354bb6f0b7e69251751a57f6
 \item 
 static const bool \mbox{\hyperlink{group__Basis_ga1287b1bb152aa4ee204df6f9006542ac}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::has\+Divergence}} = false
 \item 
+static const bool \mbox{\hyperlink{group__Basis_ga7977e1eceb4e90ade80e84ba5b38e9a4}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gae2899c1a626ea4ed80bba4c223fef52c}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::has\+Curl\+Curl}} = false
+\item 
 static const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{Basis\+FunctionE}} \mbox{\hyperlink{group__Basis_ga4362c8f1a3bffe78110610b228683852}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Function $>$\+::\+Ancestor\+Basis\+Function}} = \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{Function}}
 \item 
 static const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{Basis\+FunctionE}} \mbox{\hyperlink{group__Basis_gaa90f1d73fc9f199e0de952839b955dd5}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Gradient $>$\+::\+Ancestor\+Basis\+Function}} = \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}}
@@ -801,6 +941,8 @@ static const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{B
 static const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{Basis\+FunctionE}} \mbox{\hyperlink{group__Basis_gaa77eab2309baa3ea47bfb0ffd9808d78}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Curl $>$\+::\+Ancestor\+Basis\+Function}} = \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}}
 \item 
 static const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{Basis\+FunctionE}} \mbox{\hyperlink{group__Basis_ga057d64d9d62275d04e63e8538863f08f}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Divergence $>$\+::\+Ancestor\+Basis\+Function}} = \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}}
+\item 
+static const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{Basis\+FunctionE}} \mbox{\hyperlink{group__Basis_ga8cad337a67be33c635f22d91d916bbeb}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Curl\+Curl $>$\+::\+Ancestor\+Basis\+Function}} = \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a65b7fdb019b27a168d64c61622abb34f}{Hessian}}
 \item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gab1b77d9e6c9d597cd2600d4e4bbf1c83}{H\+Ar\+D\+Core3\+D\+::\+Decompose\+Poly$<$ Basis\+Type $>$\+::m\+\_\+dim}}
 \item 
@@ -825,30 +967,37 @@ Classes and functions for polynomial basis creation and manipulation.
 \mbox{\Hypertarget{group__Basis_ga5ffc8211aa21c8ceef97fc4ff78e7c68}\label{group__Basis_ga5ffc8211aa21c8ceef97fc4ff78e7c68}} 
 \index{Basis@{Basis}!AncestorBasisFunctionValue@{AncestorBasisFunctionValue}}
 \index{AncestorBasisFunctionValue@{AncestorBasisFunctionValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{AncestorBasisFunctionValue}{AncestorBasisFunctionValue}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\doxysubsubsection{\texorpdfstring{AncestorBasisFunctionValue}{AncestorBasisFunctionValue}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 typedef double \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{Function}} $>$\+::\mbox{\hyperlink{group__Basis_ga5ffc8211aa21c8ceef97fc4ff78e7c68}{Ancestor\+Basis\+Function\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_ga5d89130525dc5f0d4a1d449760fab99a}\label{group__Basis_ga5d89130525dc5f0d4a1d449760fab99a}} 
 \index{Basis@{Basis}!AncestorBasisFunctionValue@{AncestorBasisFunctionValue}}
 \index{AncestorBasisFunctionValue@{AncestorBasisFunctionValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{AncestorBasisFunctionValue}{AncestorBasisFunctionValue}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{AncestorBasisFunctionValue}{AncestorBasisFunctionValue}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 typedef Vector\+Rd \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}} $>$\+::\mbox{\hyperlink{group__Basis_ga5d89130525dc5f0d4a1d449760fab99a}{Ancestor\+Basis\+Function\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_ga919e09b293dc125edc55c13c341a4cdf}\label{group__Basis_ga919e09b293dc125edc55c13c341a4cdf}} 
 \index{Basis@{Basis}!AncestorBasisFunctionValue@{AncestorBasisFunctionValue}}
 \index{AncestorBasisFunctionValue@{AncestorBasisFunctionValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{AncestorBasisFunctionValue}{AncestorBasisFunctionValue}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{AncestorBasisFunctionValue}{AncestorBasisFunctionValue}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 typedef Vector\+Rd \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ae8edfacb373a30cc4ec9136a18d99f0e}{Curl}} $>$\+::\mbox{\hyperlink{group__Basis_ga919e09b293dc125edc55c13c341a4cdf}{Ancestor\+Basis\+Function\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_gae08d5cc52fb73c713fa5d0722b2db711}\label{group__Basis_gae08d5cc52fb73c713fa5d0722b2db711}} 
 \index{Basis@{Basis}!AncestorBasisFunctionValue@{AncestorBasisFunctionValue}}
 \index{AncestorBasisFunctionValue@{AncestorBasisFunctionValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{AncestorBasisFunctionValue}{AncestorBasisFunctionValue}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\doxysubsubsection{\texorpdfstring{AncestorBasisFunctionValue}{AncestorBasisFunctionValue}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 typedef Vector\+Rd \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{Divergence}} $>$\+::\mbox{\hyperlink{group__Basis_gae08d5cc52fb73c713fa5d0722b2db711}{Ancestor\+Basis\+Function\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga0a05e9d40088805df9500b0446440cd7}\label{group__Basis_ga0a05e9d40088805df9500b0446440cd7}} 
+\index{Basis@{Basis}!AncestorBasisFunctionValue@{AncestorBasisFunctionValue}}
+\index{AncestorBasisFunctionValue@{AncestorBasisFunctionValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{AncestorBasisFunctionValue}{AncestorBasisFunctionValue}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
+typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}{Curl\+Curl}} $>$\+::\mbox{\hyperlink{group__Basis_ga0a05e9d40088805df9500b0446440cd7}{Ancestor\+Basis\+Function\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_gad8348d8b8671674c35ef03a43e1f280f}\label{group__Basis_gad8348d8b8671674c35ef03a43e1f280f}} 
 \index{Basis@{Basis}!AncestorType@{AncestorType}}
@@ -1429,6 +1578,104 @@ typedef Vector\+Rd \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{H\+Ar\+D
 \doxysubsubsection{\texorpdfstring{GradientValue}{GradientValue}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
 {\footnotesize\ttfamily typedef Eigen\+::\+Matrix$<$double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{group__Basis_gad6ec6f833d2f7d677c4bec26b9350b70}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Gradient\+Value}}}
 
+\mbox{\Hypertarget{group__Basis_ga0ff5027967147941698ab94d57278d10}\label{group__Basis_ga0ff5027967147941698ab94d57278d10}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [1/15]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__Basis_ga0ff5027967147941698ab94d57278d10}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::\+Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_gaf8bda33662d124f126782a946827430a}\label{group__Basis_gaf8bda33662d124f126782a946827430a}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [2/15]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__Basis_gaf8bda33662d124f126782a946827430a}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::\+Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_gafa63cc3e490d75bff696ee9e43108c14}\label{group__Basis_gafa63cc3e490d75bff696ee9e43108c14}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [3/15]}}
+{\footnotesize\ttfamily typedef double \mbox{\hyperlink{group__Basis_gafa63cc3e490d75bff696ee9e43108c14}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::\+Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}\label{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [4/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+typedef Basis\+Type\+::\+Hessian\+Value \mbox{\hyperlink{classHArDCore3D_1_1Family}{H\+Ar\+D\+Core3\+D\+::\+Family}}$<$ Basis\+Type $>$\+::\mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_gafab84979dac3c31f2da4822f425122d2}\label{group__Basis_gafab84979dac3c31f2da4822f425122d2}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [5/15]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type , size\+\_\+t N$>$ \\
+typedef Eigen\+::\+Matrix$<$double, N, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $\ast$ \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family}}$<$ Scalar\+Family\+Type, N $>$\+::\mbox{\hyperlink{group__Basis_gafab84979dac3c31f2da4822f425122d2}{Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga90861691a89e404c24c7e3537a8dd543}\label{group__Basis_ga90861691a89e404c24c7e3537a8dd543}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [6/15]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type $>$ \\
+typedef Eigen\+::\+Matrix2d \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family}}$<$ Scalar\+Family\+Type $>$\+::\mbox{\hyperlink{group__Basis_ga90861691a89e404c24c7e3537a8dd543}{Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga5d7fdeeef1be7ce42a39e8550a7af33f}\label{group__Basis_ga5d7fdeeef1be7ce42a39e8550a7af33f}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [7/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+typedef Basis\+Type\+::\+Hessian\+Value \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis}}$<$ Basis\+Type $>$\+::\mbox{\hyperlink{group__Basis_ga5d7fdeeef1be7ce42a39e8550a7af33f}{Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga77c6a6c8654433ab4202c1d368459d88}\label{group__Basis_ga77c6a6c8654433ab4202c1d368459d88}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [8/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+typedef Basis\+Type\+::\+Hessian\+Value \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis}}$<$ Basis\+Type $>$\+::\mbox{\hyperlink{group__Basis_ga77c6a6c8654433ab4202c1d368459d88}{Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga10953a29191f161e020793e893a8b31f}\label{group__Basis_ga10953a29191f161e020793e893a8b31f}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [9/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+typedef Eigen\+::\+Matrix$<$double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis}}$<$ Basis\+Type $>$\+::\mbox{\hyperlink{group__Basis_ga10953a29191f161e020793e893a8b31f}{Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_gacb8b258a26dd64b24ce162061e82cdf2}\label{group__Basis_gacb8b258a26dd64b24ce162061e82cdf2}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [10/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+typedef Eigen\+::\+Matrix$<$double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis}}$<$ Basis\+Type $>$\+::\mbox{\hyperlink{group__Basis_gacb8b258a26dd64b24ce162061e82cdf2}{Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga8492b5f7913672c25fabb80b71331181}\label{group__Basis_ga8492b5f7913672c25fabb80b71331181}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [11/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis}}$<$ Basis\+Type $>$\+::\mbox{\hyperlink{group__Basis_ga8492b5f7913672c25fabb80b71331181}{Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga0492555b967894ccc4a6e0c2ba6bcadb}\label{group__Basis_ga0492555b967894ccc4a6e0c2ba6bcadb}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [12/15]}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix$<$double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{group__Basis_ga0492555b967894ccc4a6e0c2ba6bcadb}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::\+Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga2b4cd13b6b8090de344f21f6588a62da}\label{group__Basis_ga2b4cd13b6b8090de344f21f6588a62da}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [13/15]}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix$<$double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{group__Basis_ga2b4cd13b6b8090de344f21f6588a62da}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::\+Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga0acb6d72b49fe0c62b20c08a9c0d8931}\label{group__Basis_ga0acb6d72b49fe0c62b20c08a9c0d8931}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [14/15]}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix$<$double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{group__Basis_ga0acb6d72b49fe0c62b20c08a9c0d8931}{H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::\+Hessian\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga17bd0e8d42ad295b1bc98bf90791c80b}\label{group__Basis_ga17bd0e8d42ad295b1bc98bf90791c80b}} 
+\index{Basis@{Basis}!HessianValue@{HessianValue}}
+\index{HessianValue@{HessianValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{HessianValue}{HessianValue}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix$<$double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{group__Basis_ga17bd0e8d42ad295b1bc98bf90791c80b}{H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::\+Hessian\+Value}}}
+
 \mbox{\Hypertarget{group__Basis_gafe0390024b0b4c5e3581f73ff2a1ece2}\label{group__Basis_gafe0390024b0b4c5e3581f73ff2a1ece2}} 
 \index{Basis@{Basis}!JacobianType@{JacobianType}}
 \index{JacobianType@{JacobianType}!Basis@{Basis}}
@@ -1456,58 +1703,79 @@ typedef Vector\+Rd \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{H\+Ar\+D
 \mbox{\Hypertarget{group__Basis_gadb3235548ad3a366c5f950e8bbf86083}\label{group__Basis_gadb3235548ad3a366c5f950e8bbf86083}} 
 \index{Basis@{Basis}!ReturnValue@{ReturnValue}}
 \index{ReturnValue@{ReturnValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 typedef Basis\+Type\+::\+Function\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{Function}} $>$\+::\mbox{\hyperlink{group__Basis_gadb3235548ad3a366c5f950e8bbf86083}{Return\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_gaebcec3c8eba77d1982728a44c6eb4f2e}\label{group__Basis_gaebcec3c8eba77d1982728a44c6eb4f2e}} 
 \index{Basis@{Basis}!ReturnValue@{ReturnValue}}
 \index{ReturnValue@{ReturnValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 typedef Basis\+Type\+::\+Gradient\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}} $>$\+::\mbox{\hyperlink{group__Basis_gaebcec3c8eba77d1982728a44c6eb4f2e}{Return\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_ga9282a3c44763e9d940a6d3161242d1c0}\label{group__Basis_ga9282a3c44763e9d940a6d3161242d1c0}} 
 \index{Basis@{Basis}!ReturnValue@{ReturnValue}}
 \index{ReturnValue@{ReturnValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 typedef Basis\+Type\+::\+Curl\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ae8edfacb373a30cc4ec9136a18d99f0e}{Curl}} $>$\+::\mbox{\hyperlink{group__Basis_ga9282a3c44763e9d940a6d3161242d1c0}{Return\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_ga1d8393298a710a4a0233017b265119e5}\label{group__Basis_ga1d8393298a710a4a0233017b265119e5}} 
 \index{Basis@{Basis}!ReturnValue@{ReturnValue}}
 \index{ReturnValue@{ReturnValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 typedef Basis\+Type\+::\+Divergence\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{Divergence}} $>$\+::\mbox{\hyperlink{group__Basis_ga1d8393298a710a4a0233017b265119e5}{Return\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga55f952be10139bf12bc325ab9932b2ed}\label{group__Basis_ga55f952be10139bf12bc325ab9932b2ed}} 
+\index{Basis@{Basis}!ReturnValue@{ReturnValue}}
+\index{ReturnValue@{ReturnValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+typedef Basis\+Type\+::\+Hessian\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a65b7fdb019b27a168d64c61622abb34f}{Hessian}} $>$\+::\mbox{\hyperlink{group__Basis_ga55f952be10139bf12bc325ab9932b2ed}{Return\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_ga9a4dbba5fbb48f64ab8a1afd671d13b5}\label{group__Basis_ga9a4dbba5fbb48f64ab8a1afd671d13b5}} 
+\index{Basis@{Basis}!ReturnValue@{ReturnValue}}
+\index{ReturnValue@{ReturnValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+typedef Basis\+Type\+::\+Curl\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}{Curl\+Curl}} $>$\+::\mbox{\hyperlink{group__Basis_ga9a4dbba5fbb48f64ab8a1afd671d13b5}{Return\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_ga067f8a9c4852d51d76f7601903897207}\label{group__Basis_ga067f8a9c4852d51d76f7601903897207}} 
 \index{Basis@{Basis}!ReturnValue@{ReturnValue}}
 \index{ReturnValue@{ReturnValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$Scalar\+Basis\+Type, N$>$\+::Function\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{Function}} $>$\+::\mbox{\hyperlink{group__Basis_ga067f8a9c4852d51d76f7601903897207}{Return\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_ga11eeb85e72ccd9ebef365f03d83f640e}\label{group__Basis_ga11eeb85e72ccd9ebef365f03d83f640e}} 
 \index{Basis@{Basis}!ReturnValue@{ReturnValue}}
 \index{ReturnValue@{ReturnValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$Scalar\+Basis\+Type, N$>$\+::Gradient\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}} $>$\+::\mbox{\hyperlink{group__Basis_ga11eeb85e72ccd9ebef365f03d83f640e}{Return\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_gae5fa8ec74f8481aa1acff09fb614d01a}\label{group__Basis_gae5fa8ec74f8481aa1acff09fb614d01a}} 
 \index{Basis@{Basis}!ReturnValue@{ReturnValue}}
 \index{ReturnValue@{ReturnValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$Scalar\+Basis\+Type, N$>$\+::Curl\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ae8edfacb373a30cc4ec9136a18d99f0e}{Curl}} $>$\+::\mbox{\hyperlink{group__Basis_gae5fa8ec74f8481aa1acff09fb614d01a}{Return\+Value}}}
 
 \mbox{\Hypertarget{group__Basis_gac66d795f291812e625e75706aa59e439}\label{group__Basis_gac66d795f291812e625e75706aa59e439}} 
 \index{Basis@{Basis}!ReturnValue@{ReturnValue}}
 \index{ReturnValue@{ReturnValue}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$Scalar\+Basis\+Type, N$>$\+::Divergence\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{Divergence}} $>$\+::\mbox{\hyperlink{group__Basis_gac66d795f291812e625e75706aa59e439}{Return\+Value}}}
+
+\mbox{\Hypertarget{group__Basis_gaca04070639f8536291a5a7df53ecd394}\label{group__Basis_gaca04070639f8536291a5a7df53ecd394}} 
+\index{Basis@{Basis}!ReturnValue@{ReturnValue}}
+\index{ReturnValue@{ReturnValue}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{ReturnValue}{ReturnValue}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$Scalar\+Basis\+Type, N$>$\+::Curl\+Value \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}{Curl\+Curl}} $>$\+::\mbox{\hyperlink{group__Basis_gaca04070639f8536291a5a7df53ecd394}{Return\+Value}}}
 
 
 
@@ -1533,6 +1801,14 @@ Curl&\\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Divergence@{Divergence}!Basis@{Basis}}\index{Basis@{Basis}!Divergence@{Divergence}}}\mbox{\Hypertarget{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}\label{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}} 
 Divergence&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hessian@{Hessian}!Basis@{Basis}}\index{Basis@{Basis}!Hessian@{Hessian}}}\mbox{\Hypertarget{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a65b7fdb019b27a168d64c61622abb34f}\label{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a65b7fdb019b27a168d64c61622abb34f}} 
+Hessian&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CurlCurl@{CurlCurl}!Basis@{Basis}}\index{Basis@{Basis}!CurlCurl@{CurlCurl}}}\mbox{\Hypertarget{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}\label{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}} 
+Curl\+Curl&\\
 \hline
 
 \end{DoxyEnumFields}
@@ -1973,11 +2249,11 @@ Computes the Gram-\/like matrix of integrals (f dot phi\+\_\+i, phi\+\_\+j)
 
 Return the system of coordinates (basis in rows) on the face. 
 
-\mbox{\Hypertarget{group__Basis_gaadba906ff906d86d97cfcc1a5fbc505f}\label{group__Basis_gaadba906ff906d86d97cfcc1a5fbc505f}} 
+\mbox{\Hypertarget{group__Basis_ga1a92cf019c2a3947c7518d04d14bba6a}\label{group__Basis_ga1a92cf019c2a3947c7518d04d14bba6a}} 
 \index{Basis@{Basis}!curl@{curl}}
 \index{curl@{curl}!Basis@{Basis}}
 \doxysubsubsection{\texorpdfstring{curl()}{curl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga43c9548748ae2ffbda2750305a75c4c4}{Monomial\+Scalar\+Basis\+Face\+::\+Gradient\+Value}} H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::curl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga1608a0cb98bc4e23f53da80bcc9b898a}{Monomial\+Scalar\+Basis\+Face\+::\+Curl\+Value}} H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::curl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption}) const}
 
 
 
@@ -2070,16 +2346,67 @@ Evaluate the curl of the i-\/th basis function at a quadrature point iqn, knowin
 
 Constructor. 
 
+\mbox{\Hypertarget{group__Basis_ga884c79b5bb407829575ed93f38b86184}\label{group__Basis_ga884c79b5bb407829575ed93f38b86184}} 
+\index{Basis@{Basis}!curlcurl@{curlcurl}}
+\index{curlcurl@{curlcurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{curlcurl()}{curlcurl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type , size\+\_\+t N$>$ \\
+\mbox{\hyperlink{group__Basis_ga2a99d3ad58e081c33fe712c019b0d704}{Curl\+Value}} \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family}}$<$ Scalar\+Family\+Type, N $>$\+::curlcurl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluate the curl curl of the i-\/th basis function at point x. We use the formula curl curl = -\/ Laplace + grad div. 
+
+\mbox{\Hypertarget{group__Basis_ga4c2e02ee0f552d1418384b5c846b975f}\label{group__Basis_ga4c2e02ee0f552d1418384b5c846b975f}} 
+\index{Basis@{Basis}!curlcurl@{curlcurl}}
+\index{curlcurl@{curlcurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{curlcurl()}{curlcurl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type $>$ \\
+\mbox{\hyperlink{group__Basis_ga849aca7abc07cabc56b61a5c112a2948}{Curl\+Value}} \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family}}$<$ Scalar\+Family\+Type $>$\+::curlcurl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluate the curl curl of the i-\/th basis function at point x. 
+
+\mbox{\Hypertarget{group__Basis_ga2dd432487225d0ed106612df6b418c60}\label{group__Basis_ga2dd432487225d0ed106612df6b418c60}} 
+\index{Basis@{Basis}!curlcurl@{curlcurl}}
+\index{curlcurl@{curlcurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{curlcurl()}{curlcurl()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type , size\+\_\+t N$>$ \\
+\mbox{\hyperlink{group__Basis_ga2a99d3ad58e081c33fe712c019b0d704}{Curl\+Value}} \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family}}$<$ Scalar\+Family\+Type, N $>$\+::curlcurl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ typename Scalar\+Family\+Type\+::\+Hessian\+Value, 2 $>$ \&}]{ancestor\+\_\+hessian\+\_\+quad }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluate the curl curl of the i-\/th basis function at a quadrature point iqn, knowing all the values of the Hessian of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) 
+
+\mbox{\Hypertarget{group__Basis_gad1742551039eaa00b702873a704d029f}\label{group__Basis_gad1742551039eaa00b702873a704d029f}} 
+\index{Basis@{Basis}!DecomposePoly@{DecomposePoly}}
+\index{DecomposePoly@{DecomposePoly}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{DecomposePoly()}{DecomposePoly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+\mbox{\hyperlink{structHArDCore3D_1_1DecomposePoly}{H\+Ar\+D\+Core3\+D\+::\+Decompose\+Poly}}$<$ Basis\+Type $>$\+::\mbox{\hyperlink{structHArDCore3D_1_1DecomposePoly}{Decompose\+Poly}} (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Basis\+Type \&}]{basis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell on which the polynomial functions are defined \\
+\hline
+{\em basis} & Basis for face polynomials \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__Basis_ga467aae89f3550d08fc3179c38f74e36d}\label{group__Basis_ga467aae89f3550d08fc3179c38f74e36d}} 
 \index{Basis@{Basis}!DecomposePoly@{DecomposePoly}}
 \index{DecomposePoly@{DecomposePoly}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{DecomposePoly()}{DecomposePoly()}}
+\doxysubsubsection{\texorpdfstring{DecomposePoly()}{DecomposePoly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 \mbox{\hyperlink{structHArDCore3D_1_1DecomposePoly}{H\+Ar\+D\+Core3\+D\+::\+Decompose\+Poly}}$<$ Basis\+Type $>$\+::\mbox{\hyperlink{structHArDCore3D_1_1DecomposePoly}{Decompose\+Poly}} (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Basis\+Type \&}]{basis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Constructor. 
+Constructor for face. 
 
 The basis provided here must be of same rank (scalar, vector) as the polynomials to decompose, and of course of degree equal to or higher to those. The polynomials are decomposed on this basis. The method seems much more stable if we start from a straight monomial basis (possibly vectorialised, but not a family of some basis). 
 \begin{DoxyParams}{Parameters}
@@ -2367,112 +2694,154 @@ Constructor.
 \mbox{\Hypertarget{group__Basis_gaf68cac75a57525a28bebf726e03d4037}\label{group__Basis_gaf68cac75a57525a28bebf726e03d4037}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/22]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 static \mbox{\hyperlink{group__Basis_gadb3235548ad3a366c5f950e8bbf86083}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{Function}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_ga1b36aa15e1d24a03d14e53c7f6c1fe1e}\label{group__Basis_ga1b36aa15e1d24a03d14e53c7f6c1fe1e}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/22]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 static \mbox{\hyperlink{group__Basis_gaebcec3c8eba77d1982728a44c6eb4f2e}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_ga805e1ac103be2f95768dd8131e080512}\label{group__Basis_ga805e1ac103be2f95768dd8131e080512}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/22]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 static \mbox{\hyperlink{group__Basis_ga9282a3c44763e9d940a6d3161242d1c0}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ae8edfacb373a30cc4ec9136a18d99f0e}{Curl}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gafd247472c237f7f2ef7f7cea9f887cd0}\label{group__Basis_gafd247472c237f7f2ef7f7cea9f887cd0}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/22]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 static \mbox{\hyperlink{group__Basis_ga1d8393298a710a4a0233017b265119e5}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{Divergence}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga6f59433199ca56012c478242da9ab583}\label{group__Basis_ga6f59433199ca56012c478242da9ab583}} 
+\index{Basis@{Basis}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/22]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+static \mbox{\hyperlink{group__Basis_ga55f952be10139bf12bc325ab9932b2ed}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a65b7fdb019b27a168d64c61622abb34f}{Hessian}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga8fab37eb5b43550e00ca1cc519a6dcee}\label{group__Basis_ga8fab37eb5b43550e00ca1cc519a6dcee}} 
+\index{Basis@{Basis}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [6/22]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+static \mbox{\hyperlink{group__Basis_ga9a4dbba5fbb48f64ab8a1afd671d13b5}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}{Curl\+Curl}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gad66159aab01f675ec31fe6016418aace}\label{group__Basis_gad66159aab01f675ec31fe6016418aace}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [7/22]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 static \mbox{\hyperlink{group__Basis_ga9282a3c44763e9d940a6d3161242d1c0}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ae8edfacb373a30cc4ec9136a18d99f0e}{Curl}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga9282a3c44763e9d940a6d3161242d1c0}{Return\+Value}}, 2 $>$ \&}]{ancestor\+\_\+curl\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gac5407a5a8dcfbc9d1b0c3b91205915e9}\label{group__Basis_gac5407a5a8dcfbc9d1b0c3b91205915e9}} 
+\index{Basis@{Basis}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [8/22]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+static \mbox{\hyperlink{group__Basis_ga9a4dbba5fbb48f64ab8a1afd671d13b5}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}{Curl\+Curl}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga9a4dbba5fbb48f64ab8a1afd671d13b5}{Return\+Value}}, 2 $>$ \&}]{ancestor\+\_\+curlcurl\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gaa0277e02bb8294d9da5dab64ce9618f7}\label{group__Basis_gaa0277e02bb8294d9da5dab64ce9618f7}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [6/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [9/22]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 static \mbox{\hyperlink{group__Basis_ga1d8393298a710a4a0233017b265119e5}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{Divergence}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga1d8393298a710a4a0233017b265119e5}{Return\+Value}}, 2 $>$ \&}]{ancestor\+\_\+divergence\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gaa9c92d137552e30fc1662c7cbd8f5690}\label{group__Basis_gaa9c92d137552e30fc1662c7cbd8f5690}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [7/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [10/22]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 static \mbox{\hyperlink{group__Basis_gaebcec3c8eba77d1982728a44c6eb4f2e}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_gaebcec3c8eba77d1982728a44c6eb4f2e}{Return\+Value}}, 2 $>$ \&}]{ancestor\+\_\+gradient\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga0b9b587e8af7327c4b91b9c92fa80144}\label{group__Basis_ga0b9b587e8af7327c4b91b9c92fa80144}} 
+\index{Basis@{Basis}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [11/22]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+static \mbox{\hyperlink{group__Basis_ga55f952be10139bf12bc325ab9932b2ed}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a65b7fdb019b27a168d64c61622abb34f}{Hessian}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga55f952be10139bf12bc325ab9932b2ed}{Return\+Value}}, 2 $>$ \&}]{ancestor\+\_\+hessian\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_ga9faa98223b6d239528ac8f30a20ad94f}\label{group__Basis_ga9faa98223b6d239528ac8f30a20ad94f}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [8/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [12/22]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 static \mbox{\hyperlink{group__Basis_gadb3235548ad3a366c5f950e8bbf86083}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ Basis\+Type, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{Function}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const Basis\+Type \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_gadb3235548ad3a366c5f950e8bbf86083}{Return\+Value}}, 2 $>$ \&}]{ancestor\+\_\+value\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gadd7f294231d69b732829a59615337edb}\label{group__Basis_gadd7f294231d69b732829a59615337edb}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [9/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [13/22]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 static \mbox{\hyperlink{group__Basis_ga067f8a9c4852d51d76f7601903897207}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{Function}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_ga7dbbdd0ae5553a25199be12270328913}\label{group__Basis_ga7dbbdd0ae5553a25199be12270328913}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [10/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [14/22]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 static \mbox{\hyperlink{group__Basis_ga11eeb85e72ccd9ebef365f03d83f640e}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_ga0fad09f86ac49ee5b8ee70ebbeb47225}\label{group__Basis_ga0fad09f86ac49ee5b8ee70ebbeb47225}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [11/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [15/22]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 static \mbox{\hyperlink{group__Basis_gae5fa8ec74f8481aa1acff09fb614d01a}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ae8edfacb373a30cc4ec9136a18d99f0e}{Curl}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gaa6d74392e9387d3e3f02234e95538936}\label{group__Basis_gaa6d74392e9387d3e3f02234e95538936}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [12/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [16/22]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 static \mbox{\hyperlink{group__Basis_gac66d795f291812e625e75706aa59e439}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{Divergence}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga636e5738b8fade8812bf3b510dec1ef9}\label{group__Basis_ga636e5738b8fade8812bf3b510dec1ef9}} 
+\index{Basis@{Basis}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [17/22]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
+static \mbox{\hyperlink{group__Basis_gaca04070639f8536291a5a7df53ecd394}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}{Curl\+Curl}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gaa357ee186cd084bea0af7b20074026be}\label{group__Basis_gaa357ee186cd084bea0af7b20074026be}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [13/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [18/22]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 static \mbox{\hyperlink{group__Basis_ga067f8a9c4852d51d76f7601903897207}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{Function}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&}]{ancestor\+\_\+basis\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga1d081bde745ac30c6bc434c4a9bea2dd}\label{group__Basis_ga1d081bde745ac30c6bc434c4a9bea2dd}} 
+\index{Basis@{Basis}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [19/22]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
+static \mbox{\hyperlink{group__Basis_gaca04070639f8536291a5a7df53ecd394}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}{Curl\+Curl}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}}, 2 $>$ \&}]{ancestor\+\_\+basis\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_ga8a62b37321a4ba0293c19c2b4baaf67f}\label{group__Basis_ga8a62b37321a4ba0293c19c2b4baaf67f}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [14/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [20/22]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 static \mbox{\hyperlink{group__Basis_ga11eeb85e72ccd9ebef365f03d83f640e}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&}]{ancestor\+\_\+basis\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gadb46d7748e625f9de68183275cf5b90d}\label{group__Basis_gadb46d7748e625f9de68183275cf5b90d}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [15/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [21/22]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 static \mbox{\hyperlink{group__Basis_gae5fa8ec74f8481aa1acff09fb614d01a}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ae8edfacb373a30cc4ec9136a18d99f0e}{Curl}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&}]{ancestor\+\_\+basis\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gaf1e9ab9176166f5cd91c93f93a7fa0a6}\label{group__Basis_gaf1e9ab9176166f5cd91c93f93a7fa0a6}} 
 \index{Basis@{Basis}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [16/16]}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [22/22]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 static \mbox{\hyperlink{group__Basis_gac66d795f291812e625e75706aa59e439}{Return\+Value}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{Divergence}} $>$\+::evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ \&}]{basis,  }\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&}]{ancestor\+\_\+basis\+\_\+quad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
@@ -2869,6 +3238,70 @@ The function also modifies the variable basis\+\_\+eval so that it contains the 
 {\em inner\+\_\+product} & inner product (of two original basis functions) with respect to which we orthonormalise. This inner product must only depend on the basis functions through their values basis\+\_\+eval. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__Basis_gaab95b8928c5acc4586546d9dc416a6e1}\label{group__Basis_gaab95b8928c5acc4586546d9dc416a6e1}} 
+\index{Basis@{Basis}!hessian@{hessian}}
+\index{hessian@{hessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hessian()}{hessian()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_ga0ff5027967147941698ab94d57278d10}{Monomial\+Scalar\+Basis\+Cell\+::\+Hessian\+Value}} H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::hessian (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption}) const}
+
+
+
+Evaluate the hessian of the i-\/th basis function at point x. 
+
+\mbox{\Hypertarget{group__Basis_ga71500087412c8ae110deb3926a2e3c6a}\label{group__Basis_ga71500087412c8ae110deb3926a2e3c6a}} 
+\index{Basis@{Basis}!hessian@{hessian}}
+\index{hessian@{hessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hessian()}{hessian()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Basis_gaf8bda33662d124f126782a946827430a}{Monomial\+Scalar\+Basis\+Face\+::\+Hessian\+Value}} H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::hessian (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption}) const}
+
+
+
+Evaluate the Hessian of the i-\/th basis function at point x. 
+
+\mbox{\Hypertarget{group__Basis_gaca2bf24a1c75c9bc405c6f35a80a3ba2}\label{group__Basis_gaca2bf24a1c75c9bc405c6f35a80a3ba2}} 
+\index{Basis@{Basis}!hessian@{hessian}}
+\index{hessian@{hessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hessian()}{hessian()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+\mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}} \mbox{\hyperlink{classHArDCore3D_1_1Family}{H\+Ar\+D\+Core3\+D\+::\+Family}}$<$ Basis\+Type $>$\+::hessian (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluate the hessian of the i-\/th function at point x. 
+
+\mbox{\Hypertarget{group__Basis_gace185f423df845eac0f5085851fe26e6}\label{group__Basis_gace185f423df845eac0f5085851fe26e6}} 
+\index{Basis@{Basis}!hessian@{hessian}}
+\index{hessian@{hessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hessian()}{hessian()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+\mbox{\hyperlink{group__Basis_ga5d7fdeeef1be7ce42a39e8550a7af33f}{Hessian\+Value}} \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis}}$<$ Basis\+Type $>$\+::hessian (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluate the hessian of the i-\/th basis function at point x. 
+
+\mbox{\Hypertarget{group__Basis_gae1e9051253d6642132fa88f95954cfff}\label{group__Basis_gae1e9051253d6642132fa88f95954cfff}} 
+\index{Basis@{Basis}!hessian@{hessian}}
+\index{hessian@{hessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hessian()}{hessian()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+\mbox{\hyperlink{group__Basis_ga77c6a6c8654433ab4202c1d368459d88}{Hessian\+Value}} \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis}}$<$ Basis\+Type $>$\+::hessian (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{const Vector\+Rd \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluate the hessian of the i-\/th basis function at point x. 
+
+\mbox{\Hypertarget{group__Basis_gae46848f3e7ce8008071074bff14f03ca}\label{group__Basis_gae46848f3e7ce8008071074bff14f03ca}} 
+\index{Basis@{Basis}!hessian@{hessian}}
+\index{hessian@{hessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hessian()}{hessian()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+\mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}} \mbox{\hyperlink{classHArDCore3D_1_1Family}{H\+Ar\+D\+Core3\+D\+::\+Family}}$<$ Basis\+Type $>$\+::hessian (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{size\+\_\+t}]{iqn,  }\item[{const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}}, 2 $>$ \&}]{ancestor\+\_\+hessian\+\_\+quad }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluate the hessian of the i-\/th function at a quadrature point iqn, knowing all the hessian of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) 
+
 \mbox{\Hypertarget{group__Basis_gad738218ef4030b3b4a46dabcc1d2b67b}\label{group__Basis_gad738218ef4030b3b4a46dabcc1d2b67b}} 
 \index{Basis@{Basis}!homogeneous@{homogeneous}}
 \index{homogeneous@{homogeneous}!Basis@{Basis}}
@@ -3447,30 +3880,37 @@ Compute the vector (cross) product between the evaluation of a basis and a const
 \mbox{\Hypertarget{group__Basis_ga4362c8f1a3bffe78110610b228683852}\label{group__Basis_ga4362c8f1a3bffe78110610b228683852}} 
 \index{Basis@{Basis}!AncestorBasisFunction@{AncestorBasisFunction}}
 \index{AncestorBasisFunction@{AncestorBasisFunction}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{AncestorBasisFunction}{AncestorBasisFunction}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\doxysubsubsection{\texorpdfstring{AncestorBasisFunction}{AncestorBasisFunction}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{Basis\+FunctionE}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{Function}} $>$\+::Ancestor\+Basis\+Function = \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a2238991629c6891194473c41af064389}{Function}}\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gaa90f1d73fc9f199e0de952839b955dd5}\label{group__Basis_gaa90f1d73fc9f199e0de952839b955dd5}} 
 \index{Basis@{Basis}!AncestorBasisFunction@{AncestorBasisFunction}}
 \index{AncestorBasisFunction@{AncestorBasisFunction}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{AncestorBasisFunction}{AncestorBasisFunction}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{AncestorBasisFunction}{AncestorBasisFunction}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{Basis\+FunctionE}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}} $>$\+::Ancestor\+Basis\+Function = \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}}\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gaa77eab2309baa3ea47bfb0ffd9808d78}\label{group__Basis_gaa77eab2309baa3ea47bfb0ffd9808d78}} 
 \index{Basis@{Basis}!AncestorBasisFunction@{AncestorBasisFunction}}
 \index{AncestorBasisFunction@{AncestorBasisFunction}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{AncestorBasisFunction}{AncestorBasisFunction}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{AncestorBasisFunction}{AncestorBasisFunction}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{Basis\+FunctionE}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ae8edfacb373a30cc4ec9136a18d99f0e}{Curl}} $>$\+::Ancestor\+Basis\+Function = \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}}\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_ga057d64d9d62275d04e63e8538863f08f}\label{group__Basis_ga057d64d9d62275d04e63e8538863f08f}} 
 \index{Basis@{Basis}!AncestorBasisFunction@{AncestorBasisFunction}}
 \index{AncestorBasisFunction@{AncestorBasisFunction}!Basis@{Basis}}
-\doxysubsubsection{\texorpdfstring{AncestorBasisFunction}{AncestorBasisFunction}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\doxysubsubsection{\texorpdfstring{AncestorBasisFunction}{AncestorBasisFunction}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
 const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{Basis\+FunctionE}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180ac19e39eee83c554fdc002e1747e1ab07}{Divergence}} $>$\+::Ancestor\+Basis\+Function = \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a7f9c70dbb7d5d273d385775a4d9c3acd}{Gradient}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga8cad337a67be33c635f22d91d916bbeb}\label{group__Basis_ga8cad337a67be33c635f22d91d916bbeb}} 
+\index{Basis@{Basis}!AncestorBasisFunction@{AncestorBasisFunction}}
+\index{AncestorBasisFunction@{AncestorBasisFunction}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{AncestorBasisFunction}{AncestorBasisFunction}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
+const \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{Basis\+FunctionE}} \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits}{H\+Ar\+D\+Core3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$, \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a04f70fe52c9028c78c89cf13efe6f8a5}{Curl\+Curl}} $>$\+::Ancestor\+Basis\+Function = \mbox{\hyperlink{group__Basis_gga7be971bd231f83ec8d9cfd644a374180a65b7fdb019b27a168d64c61622abb34f}{Hessian}}\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}\label{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}} 
 \index{Basis@{Basis}!dimspace@{dimspace}}
@@ -3678,6 +4118,104 @@ const bool \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{H\+Ar\+D\+Core3\
 \doxysubsubsection{\texorpdfstring{hasCurl}{hasCurl}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
 {\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::has\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
 
+\mbox{\Hypertarget{group__Basis_ga37936489f78f0fa5df3f0eee1c224870}\label{group__Basis_ga37936489f78f0fa5df3f0eee1c224870}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [1/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::has\+Curl\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gadb1fe211acf4f5b376c37168e9d570c9}\label{group__Basis_gadb1fe211acf4f5b376c37168e9d570c9}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [2/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::has\+Curl\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gada1c7bcbe9e5892c4868e1769cf96d29}\label{group__Basis_gada1c7bcbe9e5892c4868e1769cf96d29}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [3/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::has\+Curl\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga70d8ba5d35382ff7960692d9979f3bd6}\label{group__Basis_ga70d8ba5d35382ff7960692d9979f3bd6}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [4/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1Family}{H\+Ar\+D\+Core3\+D\+::\+Family}}$<$ Basis\+Type $>$\+::has\+Curl\+Curl = Basis\+Type\+::has\+Curl\+Curl\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga437d858dadb41a6f1941e902445dd123}\label{group__Basis_ga437d858dadb41a6f1941e902445dd123}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [5/15]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type , size\+\_\+t N$>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family}}$<$ Scalar\+Family\+Type, N $>$\+::has\+Curl\+Curl = (Scalar\+Family\+Type\+::has\+Hessian \&\& N == \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga72c2976d348605f61d1be6516be50d26}\label{group__Basis_ga72c2976d348605f61d1be6516be50d26}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [6/15]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family}}$<$ Scalar\+Family\+Type $>$\+::has\+Curl\+Curl = Scalar\+Family\+Type\+::has\+Hessian\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gae05b3e779d954f0242f5ce94c37fea28}\label{group__Basis_gae05b3e779d954f0242f5ce94c37fea28}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [7/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis}}$<$ Basis\+Type $>$\+::has\+Curl\+Curl = Basis\+Type\+::has\+Curl\+Curl\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga1c82da97819f35a5fbe8e9ab372eb592}\label{group__Basis_ga1c82da97819f35a5fbe8e9ab372eb592}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [8/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis}}$<$ Basis\+Type $>$\+::has\+Curl\+Curl = Basis\+Type\+::has\+Curl\+Curl\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga8127bfbc73ee67eb98b1971e51af66b1}\label{group__Basis_ga8127bfbc73ee67eb98b1971e51af66b1}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [9/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis}}$<$ Basis\+Type $>$\+::has\+Curl\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga09c9e43187e55ed593bd9b57a081d976}\label{group__Basis_ga09c9e43187e55ed593bd9b57a081d976}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [10/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis}}$<$ Basis\+Type $>$\+::has\+Curl\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gaf978bd6a9706a0631241bda57153b902}\label{group__Basis_gaf978bd6a9706a0631241bda57153b902}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [11/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis}}$<$ Basis\+Type $>$\+::has\+Curl\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga986b183cc406d8e63259f74ce8c00c29}\label{group__Basis_ga986b183cc406d8e63259f74ce8c00c29}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [12/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::has\+Curl\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gafdce5305599e92beed60ce551a850a54}\label{group__Basis_gafdce5305599e92beed60ce551a850a54}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [13/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::has\+Curl\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga81ff30b0c487624eccb63948a2a635e9}\label{group__Basis_ga81ff30b0c487624eccb63948a2a635e9}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [14/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::has\+Curl\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gae2899c1a626ea4ed80bba4c223fef52c}\label{group__Basis_gae2899c1a626ea4ed80bba4c223fef52c}} 
+\index{Basis@{Basis}!hasCurlCurl@{hasCurlCurl}}
+\index{hasCurlCurl@{hasCurlCurl}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasCurlCurl}{hasCurlCurl}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::has\+Curl\+Curl = false\hspace{0.3cm}{\ttfamily [static]}}
+
 \mbox{\Hypertarget{group__Basis_ga3209c64ffde8ca1f8d63abb33ce8ee5a}\label{group__Basis_ga3209c64ffde8ca1f8d63abb33ce8ee5a}} 
 \index{Basis@{Basis}!hasDivergence@{hasDivergence}}
 \index{hasDivergence@{hasDivergence}!Basis@{Basis}}
@@ -3715,7 +4253,7 @@ const bool \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{H\+Ar\+D\
 \index{hasDivergence@{hasDivergence}!Basis@{Basis}}
 \doxysubsubsection{\texorpdfstring{hasDivergence}{hasDivergence}\hspace{0.1cm}{\footnotesize\ttfamily [6/15]}}
 {\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type $>$ \\
-const bool \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family}}$<$ Scalar\+Family\+Type $>$\+::has\+Divergence = true\hspace{0.3cm}{\ttfamily [static]}}
+const bool \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family}}$<$ Scalar\+Family\+Type $>$\+::has\+Divergence = Scalar\+Family\+Type\+::has\+Gradient\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_gabdca69c0f60b7e305c887e16df8e4c26}\label{group__Basis_gabdca69c0f60b7e305c887e16df8e4c26}} 
 \index{Basis@{Basis}!hasDivergence@{hasDivergence}}
@@ -3971,6 +4509,104 @@ const bool \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{H\+Ar\+D\+Core3\
 \index{hasGradient@{hasGradient}!Basis@{Basis}}
 \doxysubsubsection{\texorpdfstring{hasGradient}{hasGradient}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
 {\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::has\+Gradient = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gabdc2c38b6af9d5378ad8f5e14c4bb6b9}\label{group__Basis_gabdc2c38b6af9d5378ad8f5e14c4bb6b9}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [1/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Cell\+::has\+Hessian = true\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gaf5825ebaaa1a16a51fb9f3484ff9b812}\label{group__Basis_gaf5825ebaaa1a16a51fb9f3484ff9b812}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [2/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Face\+::has\+Hessian = true\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gad7dd8197742aa6b65c88751a3f6b9f02}\label{group__Basis_gad7dd8197742aa6b65c88751a3f6b9f02}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [3/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Monomial\+Scalar\+Basis\+Edge\+::has\+Hessian = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gad71874bacd82eb38fa2ce50d555a5494}\label{group__Basis_gad71874bacd82eb38fa2ce50d555a5494}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [4/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1Family}{H\+Ar\+D\+Core3\+D\+::\+Family}}$<$ Basis\+Type $>$\+::has\+Hessian = Basis\+Type\+::has\+Hessian\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga53622a34ccbe5bee21d6f84d0fa9e005}\label{group__Basis_ga53622a34ccbe5bee21d6f84d0fa9e005}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [5/15]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type , size\+\_\+t N$>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{H\+Ar\+D\+Core3\+D\+::\+Tensorized\+Vector\+Family}}$<$ Scalar\+Family\+Type, N $>$\+::has\+Hessian = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gac05298a1f7fa647b6938ec99a704f2f1}\label{group__Basis_gac05298a1f7fa647b6938ec99a704f2f1}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [6/15]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Family\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{H\+Ar\+D\+Core3\+D\+::\+Tangent\+Family}}$<$ Scalar\+Family\+Type $>$\+::has\+Hessian = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga11eb5ba23bdd90e469842668f6cbeb4d}\label{group__Basis_ga11eb5ba23bdd90e469842668f6cbeb4d}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [7/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{H\+Ar\+D\+Core3\+D\+::\+Shifted\+Basis}}$<$ Basis\+Type $>$\+::has\+Hessian = Basis\+Type\+::has\+Hessian\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga42e50398603a2b52a656b1bb5906a2ab}\label{group__Basis_ga42e50398603a2b52a656b1bb5906a2ab}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [8/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1RestrictedBasis}{H\+Ar\+D\+Core3\+D\+::\+Restricted\+Basis}}$<$ Basis\+Type $>$\+::has\+Hessian = Basis\+Type\+::has\+Hessian\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gafafc51362e71b744494278f162a63d70}\label{group__Basis_gafafc51362e71b744494278f162a63d70}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [9/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{H\+Ar\+D\+Core3\+D\+::\+Gradient\+Basis}}$<$ Basis\+Type $>$\+::has\+Hessian = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga29597e977ab53688320da110fddd663d}\label{group__Basis_ga29597e977ab53688320da110fddd663d}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [10/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{H\+Ar\+D\+Core3\+D\+::\+Curl\+Basis}}$<$ Basis\+Type $>$\+::has\+Hessian = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_gaf04b00188213c7ca7437770c160df587}\label{group__Basis_gaf04b00188213c7ca7437770c160df587}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [11/15]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+const bool \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{H\+Ar\+D\+Core3\+D\+::\+Divergence\+Basis}}$<$ Basis\+Type $>$\+::has\+Hessian = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga1b8e7b0a19e1a4261a82ad9b5365bc2e}\label{group__Basis_ga1b8e7b0a19e1a4261a82ad9b5365bc2e}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [12/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Cell\+::has\+Hessian = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga0c670397b60c1494165eb1d637d2680a}\label{group__Basis_ga0c670397b60c1494165eb1d637d2680a}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [13/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Cell\+::has\+Hessian = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga14020e4b29c15c70c3d85c8ad812a220}\label{group__Basis_ga14020e4b29c15c70c3d85c8ad812a220}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [14/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Roly\+Compl\+Basis\+Face\+::has\+Hessian = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__Basis_ga7977e1eceb4e90ade80e84ba5b38e9a4}\label{group__Basis_ga7977e1eceb4e90ade80e84ba5b38e9a4}} 
+\index{Basis@{Basis}!hasHessian@{hasHessian}}
+\index{hasHessian@{hasHessian}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{hasHessian}{hasHessian}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
+{\footnotesize\ttfamily const bool H\+Ar\+D\+Core3\+D\+::\+Goly\+Compl\+Basis\+Face\+::has\+Hessian = false\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__Basis_ga7fc7d3727474cac3baea45129097e81d}\label{group__Basis_ga7fc7d3727474cac3baea45129097e81d}} 
 \index{Basis@{Basis}!m\_basis@{m\_basis}}

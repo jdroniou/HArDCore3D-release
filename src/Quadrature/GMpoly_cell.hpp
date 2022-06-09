@@ -64,7 +64,7 @@ std::vector<MonomialCellIntegralsType> IntegrateCellMonomials_onFaces
 /// Compute all the integrals of a cell's monomials on the cell
 MonomialCellIntegralsType IntegrateCellMonomials
           (const Cell & T,      ///< Cell
-          const size_t maxdeg           ///< Maximal total degree
+          const int maxdeg           ///< Maximal total degree
           );
 
 /// Checks if the degree of an existing list of monomial integrals is sufficient, other re-compute and return a proper list

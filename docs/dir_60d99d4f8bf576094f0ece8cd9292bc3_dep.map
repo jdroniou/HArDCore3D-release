@@ -3,9 +3,9 @@
 <area shape="rect" id="node13" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="451,315,523,363"/>
 <area shape="rect" id="edge9-headlabel" href="dir_000014_000025.html" title="1" alt="" coords="432,304,440,318"/>
 <area shape="rect" id="node3" href="dir_eb2f6eaa3944ad3ffd91aaf342b65197.html" title="DDR&#45;magnetostatics" alt="" coords="193,27,338,75"/>
-<area shape="rect" id="edge13-headlabel" href="dir_000015_000025.html" title="8" alt="" coords="538,303,546,318"/>
+<area shape="rect" id="edge13-headlabel" href="dir_000015_000025.html" title="16" alt="" coords="535,303,550,318"/>
 <area shape="rect" id="node4" href="dir_5e7824b1705d4dc770144982b33e1f76.html" title="DDR&#45;stokes" alt="" coords="362,27,457,75"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000016_000025.html" title="10" alt="" coords="536,325,550,340"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000016_000025.html" title="20" alt="" coords="536,325,550,340"/>
 <area shape="rect" id="node5" href="dir_12044902e2117d80fd356e5a2644f83a.html" title="HHO&#45;diff&#45;advec&#45;reac" alt="" coords="26,27,169,75"/>
 <area shape="rect" id="node7" href="dir_141bed8be2c4f13d23b1bb1a630fe243.html" title="HHO&#45;general" alt="" coords="401,123,500,171"/>
 <area shape="rect" id="edge11-headlabel" href="dir_000017_000019.html" title="1" alt="" coords="383,106,391,121"/>
@@ -30,6 +30,6 @@
 <area shape="rect" id="edge17-headlabel" href="dir_000022_000025.html" title="2" alt="" coords="538,335,546,350"/>
 <area shape="rect" id="edge12-headlabel" href="dir_000023_000025.html" title="1" alt="" coords="429,319,437,333"/>
 <area shape="rect" id="node12" href="dir_ff5d6230034c2dea5f2d9e2cb7fd5ac9.html" title="VEM&#45;stokes" alt="" coords="607,27,702,75"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000024_000025.html" title="9" alt="" coords="537,339,545,354"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000024_000025.html" title="10" alt="" coords="534,339,548,354"/>
 <area shape="rect" id="clust1" href="dir_60d99d4f8bf576094f0ece8cd9292bc3.html" alt="" coords="16,16,815,277"/>
 </map>

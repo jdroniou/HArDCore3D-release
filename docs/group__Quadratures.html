@@ -132,9 +132,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf9b77ed0d2641bf775d3ed5a1c32c458"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gaf9b77ed0d2641bf775d3ed5a1c32c458">HArDCore3D::IntegrateCellMonomials_onFaces</a> (const Cell &amp;T, const size_t maxdeg, std::vector&lt; <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> &gt; &amp;integrals_edges)</td></tr>
 <tr class="memdesc:gaf9b77ed0d2641bf775d3ed5a1c32c458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute all the integrals, on the faces of a cell, of this cell's monomials up to a max degree.  <a href="group__Quadratures.html#gaf9b77ed0d2641bf775d3ed5a1c32c458">More...</a><br /></td></tr>
 <tr class="separator:gaf9b77ed0d2641bf775d3ed5a1c32c458"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga06ba382c1236f37fb899aa43f7bc5fac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga06ba382c1236f37fb899aa43f7bc5fac">HArDCore3D::IntegrateCellMonomials</a> (const Cell &amp;T, const size_t maxdeg)</td></tr>
-<tr class="memdesc:ga06ba382c1236f37fb899aa43f7bc5fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute all the integrals of a cell's monomials on the cell.  <a href="group__Quadratures.html#ga06ba382c1236f37fb899aa43f7bc5fac">More...</a><br /></td></tr>
-<tr class="separator:ga06ba382c1236f37fb899aa43f7bc5fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga323801aa2c94733fbdf7e3e7dfe87914"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga323801aa2c94733fbdf7e3e7dfe87914">HArDCore3D::IntegrateCellMonomials</a> (const Cell &amp;T, const int maxdeg)</td></tr>
+<tr class="memdesc:ga323801aa2c94733fbdf7e3e7dfe87914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute all the integrals of a cell's monomials on the cell.  <a href="group__Quadratures.html#ga323801aa2c94733fbdf7e3e7dfe87914">More...</a><br /></td></tr>
+<tr class="separator:ga323801aa2c94733fbdf7e3e7dfe87914"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5df7229d77d814172a553202c73311f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga5df7229d77d814172a553202c73311f1">HArDCore3D::CheckIntegralsDegree</a> (const Cell &amp;T, const size_t degree, const <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> &amp;mono_int_map={})</td></tr>
 <tr class="memdesc:ga5df7229d77d814172a553202c73311f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the degree of an existing list of monomial integrals is sufficient, other re-compute and return a proper list.  <a href="group__Quadratures.html#ga5df7229d77d814172a553202c73311f1">More...</a><br /></td></tr>
 <tr class="separator:ga5df7229d77d814172a553202c73311f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -334,9 +334,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5427e32bad971a5401444edcc0457fbe"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga5427e32bad971a5401444edcc0457fbe">HArDCore3D::GramMatrixDiv</a> (const Cell &amp;T, const BasisType1 &amp;basis1, const <a class="el" href="classHArDCore3D_1_1DivergenceBasis.html">DivergenceBasis</a>&lt; BasisType2 &gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
 <tr class="memdesc:ga5427e32bad971a5401444edcc0457fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template to compute the Gram Matrix of the divergence of any two bases when one <a class="el" href="classHArDCore3D_1_1DivergenceBasis.html" title="Basis (or rather family) of divergence of an existing basis.">DivergenceBasis</a> is at a lower level than the other.  <a href="group__Quadratures.html#ga5427e32bad971a5401444edcc0457fbe">More...</a><br /></td></tr>
 <tr class="separator:ga5427e32bad971a5401444edcc0457fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae0f78ba34621867bf742ac6d909b1285"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga6d5b9ab76ae93fbbe5dc3c3e14537cdd">MonomialEdgeIntegralsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gae0f78ba34621867bf742ac6d909b1285">HArDCore3D::IntegrateEdgeMonomials</a> (const Edge &amp;E, const size_t maxdeg)</td></tr>
-<tr class="memdesc:gae0f78ba34621867bf742ac6d909b1285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute all integrals of edge monomials up to a total degree.  <a href="group__Quadratures.html#gae0f78ba34621867bf742ac6d909b1285">More...</a><br /></td></tr>
-<tr class="separator:gae0f78ba34621867bf742ac6d909b1285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6186042c03b027877f08708d9a8e7f10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga6d5b9ab76ae93fbbe5dc3c3e14537cdd">MonomialEdgeIntegralsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga6186042c03b027877f08708d9a8e7f10">HArDCore3D::IntegrateEdgeMonomials</a> (const Edge &amp;E, const int maxdeg)</td></tr>
+<tr class="memdesc:ga6186042c03b027877f08708d9a8e7f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute all integrals of edge monomials up to a total degree.  <a href="group__Quadratures.html#ga6186042c03b027877f08708d9a8e7f10">More...</a><br /></td></tr>
+<tr class="separator:ga6186042c03b027877f08708d9a8e7f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f77448401179e7c91990fa14843dddd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga6d5b9ab76ae93fbbe5dc3c3e14537cdd">MonomialEdgeIntegralsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga1f77448401179e7c91990fa14843dddd">HArDCore3D::CheckIntegralsDegree</a> (const Edge &amp;E, const size_t degree, const <a class="el" href="group__Quadratures.html#ga6d5b9ab76ae93fbbe5dc3c3e14537cdd">MonomialEdgeIntegralsType</a> &amp;mono_int_map={})</td></tr>
 <tr class="memdesc:ga1f77448401179e7c91990fa14843dddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the degree of an existing list of monomial integrals is sufficient, other re-compute and return a proper list.  <a href="group__Quadratures.html#ga1f77448401179e7c91990fa14843dddd">More...</a><br /></td></tr>
 <tr class="separator:ga1f77448401179e7c91990fa14843dddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -371,9 +371,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gac099a4ce614b3e10a6e782c360ca2d3e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="group__Quadratures.html#ga14161bf80013825fa5c73c188133e466">MonomialFaceIntegralsType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gac099a4ce614b3e10a6e782c360ca2d3e">HArDCore3D::IntegrateFaceMonomials_onEdges</a> (const Face &amp;F, const size_t maxdeg)</td></tr>
 <tr class="memdesc:gac099a4ce614b3e10a6e782c360ca2d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute all integrals, on the edges of a face, of the face monomials up to a total degree.  <a href="group__Quadratures.html#gac099a4ce614b3e10a6e782c360ca2d3e">More...</a><br /></td></tr>
 <tr class="separator:gac099a4ce614b3e10a6e782c360ca2d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae52c29ca8fcb533fcf14277241d5f7a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga14161bf80013825fa5c73c188133e466">MonomialFaceIntegralsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gae52c29ca8fcb533fcf14277241d5f7a1">HArDCore3D::IntegrateFaceMonomials</a> (const Face &amp;F, const size_t maxdeg)</td></tr>
-<tr class="memdesc:gae52c29ca8fcb533fcf14277241d5f7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute all integrals on a face of face monomials up to a total degree.  <a href="group__Quadratures.html#gae52c29ca8fcb533fcf14277241d5f7a1">More...</a><br /></td></tr>
-<tr class="separator:gae52c29ca8fcb533fcf14277241d5f7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga075fd696ad5de1ebf7e95a2ee978e5a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga14161bf80013825fa5c73c188133e466">MonomialFaceIntegralsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga075fd696ad5de1ebf7e95a2ee978e5a5">HArDCore3D::IntegrateFaceMonomials</a> (const Face &amp;F, const int maxdeg)</td></tr>
+<tr class="memdesc:ga075fd696ad5de1ebf7e95a2ee978e5a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute all integrals on a face of face monomials up to a total degree.  <a href="group__Quadratures.html#ga075fd696ad5de1ebf7e95a2ee978e5a5">More...</a><br /></td></tr>
+<tr class="separator:ga075fd696ad5de1ebf7e95a2ee978e5a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga41d011699310037969a736b5b967a096"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga14161bf80013825fa5c73c188133e466">MonomialFaceIntegralsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga41d011699310037969a736b5b967a096">HArDCore3D::CheckIntegralsDegree</a> (const Face &amp;F, const size_t degree, const <a class="el" href="group__Quadratures.html#ga14161bf80013825fa5c73c188133e466">MonomialFaceIntegralsType</a> &amp;mono_int_map={})</td></tr>
 <tr class="memdesc:ga41d011699310037969a736b5b967a096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the degree of an existing list of monomial integrals is sufficient, other re-compute and return a proper list.  <a href="group__Quadratures.html#ga41d011699310037969a736b5b967a096">More...</a><br /></td></tr>
 <tr class="separator:ga41d011699310037969a736b5b967a096"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5344,8 +5344,8 @@ template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="ga06ba382c1236f37fb899aa43f7bc5fac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga06ba382c1236f37fb899aa43f7bc5fac">&#9670;&nbsp;</a></span>IntegrateCellMonomials()</h2>
+<a id="ga323801aa2c94733fbdf7e3e7dfe87914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga323801aa2c94733fbdf7e3e7dfe87914">&#9670;&nbsp;</a></span>IntegrateCellMonomials()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5359,7 +5359,7 @@ template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>maxdeg</em>&#160;</td>
         </tr>
         <tr>
@@ -5462,8 +5462,8 @@ template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="gae0f78ba34621867bf742ac6d909b1285"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae0f78ba34621867bf742ac6d909b1285">&#9670;&nbsp;</a></span>IntegrateEdgeMonomials()</h2>
+<a id="ga6186042c03b027877f08708d9a8e7f10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6186042c03b027877f08708d9a8e7f10">&#9670;&nbsp;</a></span>IntegrateEdgeMonomials()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5477,7 +5477,7 @@ template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>maxdeg</em>&#160;</td>
         </tr>
         <tr>
@@ -5499,8 +5499,8 @@ template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="gae52c29ca8fcb533fcf14277241d5f7a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae52c29ca8fcb533fcf14277241d5f7a1">&#9670;&nbsp;</a></span>IntegrateFaceMonomials()</h2>
+<a id="ga075fd696ad5de1ebf7e95a2ee978e5a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga075fd696ad5de1ebf7e95a2ee978e5a5">&#9670;&nbsp;</a></span>IntegrateFaceMonomials()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5514,7 +5514,7 @@ template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>maxdeg</em>&#160;</td>
         </tr>
         <tr>

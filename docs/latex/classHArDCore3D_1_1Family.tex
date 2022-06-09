@@ -15,6 +15,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga7b53a354b3fad04c15ba0e35c46d3
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga48cb296e638fde22922d3a583f6cf126}{Divergence\+Value}}
 \item 
+typedef Basis\+Type\+::\+Hessian\+Value \mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}}
+\item 
 typedef Basis\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_ga9e16a6663722460eb003835c731bea9c}{Geometric\+Support}}
 \item 
 typedef Basis\+Type \mbox{\hyperlink{group__Basis_gad8348d8b8671674c35ef03a43e1f280f}{Ancestor\+Type}}
@@ -42,6 +44,10 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_gaa71fa9b9c83346561fde4c764a1b2e72}{di
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_ga48cb296e638fde22922d3a583f6cf126}{Divergence\+Value}} \mbox{\hyperlink{group__Basis_ga0b6dc927463e4b67215ca7503d4e15bb}{divergence}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga48cb296e638fde22922d3a583f6cf126}{Divergence\+Value}}, 2 $>$ \&ancestor\+\_\+divergence\+\_\+quad) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th function at a quadrature point iqn, knowing all the divergences of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_gaca2bf24a1c75c9bc405c6f35a80a3ba2}{hessian}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the hessian of the i-\/th function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_gae46848f3e7ce8008071074bff14f03ca}{hessian}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ \mbox{\hyperlink{group__Basis_ga5ef7857b42190ffcf43982c7445bda55}{Hessian\+Value}}, 2 $>$ \&ancestor\+\_\+hessian\+\_\+quad) const
+\begin{DoxyCompactList}\small\item\em Evaluate the hessian of the i-\/th function at a quadrature point iqn, knowing all the hessian of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
 const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__Basis_gaf056ff8a6cbf5c566c243290e72af217}{matrix}} () const
 \begin{DoxyCompactList}\small\item\em Return the coefficient matrix. \end{DoxyCompactList}\item 
 constexpr const Basis\+Type \& \mbox{\hyperlink{group__Basis_ga0fc644171394a03fb1752ed5039a6876}{ancestor}} () const
@@ -62,6 +68,10 @@ static const bool \mbox{\hyperlink{group__Basis_ga3fcb3b85e2f26f201e608b04bdf7f9
 static const bool \mbox{\hyperlink{group__Basis_ga6c12f947e8ba8dedc3ac6809481249f0}{has\+Curl}} = Basis\+Type\+::has\+Curl
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gac905ca089d3f75eee5a4e655544b9223}{has\+Divergence}} = Basis\+Type\+::has\+Divergence
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gad71874bacd82eb38fa2ce50d555a5494}{has\+Hessian}} = Basis\+Type\+::has\+Hessian
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga70d8ba5d35382ff7960692d9979f3bd6}{has\+Curl\+Curl}} = Basis\+Type\+::has\+Curl\+Curl
 \end{DoxyCompactItemize}
 
 

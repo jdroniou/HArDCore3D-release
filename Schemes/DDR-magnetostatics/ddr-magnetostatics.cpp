@@ -209,6 +209,7 @@ int main(int argc, const char* argv[])
 
   // Write results to file
   std::ofstream out("results.txt");
+  out << "Scheme: ddr-magnetostatic" << std::endl;
   out << "Solution: " << solution << std::endl;
   out << "Mesh: " << mesh_file << std::endl;
   out << "Degree: " << K << std::endl;
@@ -218,7 +219,7 @@ int main(int argc, const char* argv[])
   out << "NbEdges: " << mesh_ptr->n_edges() << std::endl;
   out << "DimXCurl: " << ms.xCurl().dimension() << std::endl;
   out << "DimXDiv: " << ms.xDiv().dimension() << std::endl;
-  out << "SizeSCsystem: " << ms.systemMatrix().rows() << std::endl;
+  out << "SizeSCsystem: " << ms.sizeSystem() << std::endl;
   out << "EnergyError: " << en_err << std::endl;  
   out << "HcurlHdivError: " << hcurlhdiv_err << std::endl;  
   out << "TwallDDRCore: " << t_wall_ddrcore << std::endl;  
@@ -282,7 +283,7 @@ void Magnetostatics::assembleLinearSystem(
                         for (size_t iT = start; iT < end; iT++) {
                           this->_assemble_local_contribution(
                                                              iT,
-                                                             this->_compute_local_contribution(iT, f, mu, u),
+                                                             this->_compute_local_contribution(iT, f, mu),
                                                              *triplets_sys,
                                                              *rhs_sys,
                                                              *triplets_sc,
@@ -327,8 +328,7 @@ void Magnetostatics::assembleLinearSystem(
 std::pair<Eigen::MatrixXd, Eigen::VectorXd>
 Magnetostatics::_compute_local_contribution(
                                             size_t iT, const ForcingTermType & f,
-                                            const PermeabilityType & mu,
-                                            const SolutionPotentialType & u
+                                            const PermeabilityType & mu
                                             )
 {
   const Cell & T = *m_ddrcore.mesh().cell(iT);

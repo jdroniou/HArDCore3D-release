@@ -11,7 +11,8 @@ Discrete Hdiv space\+: local operators, L2 product and global interpolator.
 
 
 
-Inheritance diagram for H\+Ar\+D\+Core3D\+::X\+Div\+:\nopagebreak
+Inheritance diagram for H\+Ar\+D\+Core3D\+::X\+Div\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,11 +21,12 @@ Inheritance diagram for H\+Ar\+D\+Core3D\+::X\+Div\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for H\+Ar\+D\+Core3D\+::X\+Div\+:\nopagebreak
+Collaboration diagram for H\+Ar\+D\+Core3D\+::X\+Div\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=238pt]{classHArDCore3D_1_1XDiv__coll__graph}
+\includegraphics[width=350pt]{classHArDCore3D_1_1XDiv__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Classes}
@@ -66,7 +68,22 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga413be9caf30e3a303b573af5
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete curl on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga1647750ac4ca8f257a7ca1fc75b08702}{compute\+L2\+Product\+\_\+with\+\_\+\+Ops}} (const size\+\_\+t iT, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&left\+Op, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&right\+Op, const double \&penalty\+\_\+factor, const Eigen\+::\+Matrix\+Xd \&w\+\_\+mass\+\_\+\+Pk3\+\_\+T, const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight) const
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the L2 product, applying left\+Op and right\+Op to the variables. Probably not directly called, mostly invoked through the wrappers compute\+L2\+Product and compute\+L2\+Product\+Curl. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{Local\+Operators}} \mbox{\hyperlink{group__DDRCore_ga057d084662af494762c1ce15431393ed}{\+\_\+compute\+\_\+cell\+\_\+divergence\+\_\+potential}} (size\+\_\+t iT)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \& \mbox{\hyperlink{group__DDRCore_ga0c74caeb7ad15a81f75ef43ad66f59f9}{m\+\_\+ddr\+\_\+core}}
+\item 
+bool \mbox{\hyperlink{group__DDRCore_ga7fab1dbf4301876ebbb0130b99eea346}{m\+\_\+use\+\_\+threads}}
+\item 
+std\+::ostream \& \mbox{\hyperlink{group__DDRCore_ga89c73bf17fe2b30dea39f9c9b7d0e95f}{m\+\_\+output}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{Local\+Operators}} $>$ $>$ \mbox{\hyperlink{group__DDRCore_gacf3ca0ec4d9dc1d2d748ef72d2f6b47f}{m\+\_\+cell\+\_\+operators}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

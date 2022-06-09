@@ -48,6 +48,14 @@ void \mbox{\hyperlink{group__VEM__stokes_ga1d8c22d8cb81989d314ab59fff782048}{H\+
  \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga9a5010aba9b8f267d4f6c59f8b7d9a8e}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::dimension}} () const
 \begin{DoxyCompactList}\small\item\em Returns the global problem dimension (without Lagrange multiplier, just velocity \& pressure) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga137becabbdc3f6d87ce6a34ae934f729}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::nb\+S\+C\+D\+O\+Fs\+\_\+u}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (velocity) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga2c90515a4a5cc2e081cf5f7485706418}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::nb\+S\+C\+D\+O\+Fs\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (pressure) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga5ac301f6b8248e2e81d720e3dcef92c2}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::nb\+S\+C\+D\+O\+Fs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (both velocity and pressure) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga5afaebf629ae7ee2b7835f544f975780}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::size\+System}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the statically condensed system (with Lagrange multiplier) \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classHArDCore3D_1_1VGrad}{V\+Grad}} \& \mbox{\hyperlink{group__VEM__stokes_ga7ea577d8c7637493bc0f9040f82a10fa}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::v\+Grad}} () const
 \begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1VGrad}{V\+Grad}}. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classHArDCore3D_1_1VCurl}{V\+Curl}} \& \mbox{\hyperlink{group__VEM__stokes_ga586f5c66a88d713f3961ae219e509ee0}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::v\+Curl}} () const
@@ -62,6 +70,10 @@ const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__VEM__stokes_ga7fedbcceaa9
 \begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__VEM__stokes_ga67c5932d1f6296ac1f3e4e1d4cf53e3b}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::system\+Vector}} ()
 \begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__VEM__stokes_ga84c005b53d8d83c1be5b078dae093d9d}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sc\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the static condensation recovery operator. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__VEM__stokes_gac24f18b70fee7f0796258e2bb2c46b59}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sc\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the static condensation rhs. \end{DoxyCompactList}\item 
 const double \& \mbox{\hyperlink{group__VEM__stokes_ga34e0c5701a7a9d2d4eec340492022a27}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::stabilization\+Parameter}} () const
 \begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
 double \& \mbox{\hyperlink{group__VEM__stokes_ga7844fc93907f58dfd21bb8b7a6c1af56}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::stabilization\+Parameter}} ()
@@ -241,6 +253,66 @@ Compute the discrete L2 norms, for a family of Eigen\+::\+Vector\+Xd representin
 
 
 Returns the global problem dimension (without Lagrange multiplier, just velocity \& pressure) 
+
+\mbox{\Hypertarget{group__VEM__stokes_ga5ac301f6b8248e2e81d720e3dcef92c2}\label{group__VEM__stokes_ga5ac301f6b8248e2e81d720e3dcef92c2}} 
+\index{VEM\_stokes@{VEM\_stokes}!nbSCDOFs@{nbSCDOFs}}
+\index{nbSCDOFs@{nbSCDOFs}!VEM\_stokes@{VEM\_stokes}}
+\doxysubsubsection{\texorpdfstring{nbSCDOFs()}{nbSCDOFs()}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Stokes\+::nb\+S\+C\+D\+O\+Fs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of statically condensed D\+O\+Fs (both velocity and pressure) 
+
+\mbox{\Hypertarget{group__VEM__stokes_ga2c90515a4a5cc2e081cf5f7485706418}\label{group__VEM__stokes_ga2c90515a4a5cc2e081cf5f7485706418}} 
+\index{VEM\_stokes@{VEM\_stokes}!nbSCDOFs\_p@{nbSCDOFs\_p}}
+\index{nbSCDOFs\_p@{nbSCDOFs\_p}!VEM\_stokes@{VEM\_stokes}}
+\doxysubsubsection{\texorpdfstring{nbSCDOFs\_p()}{nbSCDOFs\_p()}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Stokes\+::nb\+S\+C\+D\+O\+Fs\+\_\+p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of statically condensed D\+O\+Fs (pressure) 
+
+\mbox{\Hypertarget{group__VEM__stokes_ga137becabbdc3f6d87ce6a34ae934f729}\label{group__VEM__stokes_ga137becabbdc3f6d87ce6a34ae934f729}} 
+\index{VEM\_stokes@{VEM\_stokes}!nbSCDOFs\_u@{nbSCDOFs\_u}}
+\index{nbSCDOFs\_u@{nbSCDOFs\_u}!VEM\_stokes@{VEM\_stokes}}
+\doxysubsubsection{\texorpdfstring{nbSCDOFs\_u()}{nbSCDOFs\_u()}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Stokes\+::nb\+S\+C\+D\+O\+Fs\+\_\+u (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of statically condensed D\+O\+Fs (velocity) 
+
+\mbox{\Hypertarget{group__VEM__stokes_ga84c005b53d8d83c1be5b078dae093d9d}\label{group__VEM__stokes_ga84c005b53d8d83c1be5b078dae093d9d}} 
+\index{VEM\_stokes@{VEM\_stokes}!scMatrix@{scMatrix}}
+\index{scMatrix@{scMatrix}!VEM\_stokes@{VEM\_stokes}}
+\doxysubsubsection{\texorpdfstring{scMatrix()}{scMatrix()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sc\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the static condensation recovery operator. 
+
+\mbox{\Hypertarget{group__VEM__stokes_gac24f18b70fee7f0796258e2bb2c46b59}\label{group__VEM__stokes_gac24f18b70fee7f0796258e2bb2c46b59}} 
+\index{VEM\_stokes@{VEM\_stokes}!scVector@{scVector}}
+\index{scVector@{scVector}!VEM\_stokes@{VEM\_stokes}}
+\doxysubsubsection{\texorpdfstring{scVector()}{scVector()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sc\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the static condensation rhs. 
+
+\mbox{\Hypertarget{group__VEM__stokes_ga5afaebf629ae7ee2b7835f544f975780}\label{group__VEM__stokes_ga5afaebf629ae7ee2b7835f544f975780}} 
+\index{VEM\_stokes@{VEM\_stokes}!sizeSystem@{sizeSystem}}
+\index{sizeSystem@{sizeSystem}!VEM\_stokes@{VEM\_stokes}}
+\doxysubsubsection{\texorpdfstring{sizeSystem()}{sizeSystem()}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Stokes\+::size\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the size of the statically condensed system (with Lagrange multiplier) 
 
 \mbox{\Hypertarget{group__VEM__stokes_ga7844fc93907f58dfd21bb8b7a6c1af56}\label{group__VEM__stokes_ga7844fc93907f58dfd21bb8b7a6c1af56}} 
 \index{VEM\_stokes@{VEM\_stokes}!stabilizationParameter@{stabilizationParameter}}

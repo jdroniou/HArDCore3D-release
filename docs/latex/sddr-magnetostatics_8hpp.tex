@@ -1,0 +1,74 @@
+\hypertarget{sddr-magnetostatics_8hpp}{}\doxysection{Schemes/\+D\+D\+R-\/magnetostatics/sddr-\/magnetostatics.hpp File Reference}
+\label{sddr-magnetostatics_8hpp}\index{Schemes/DDR-\/magnetostatics/sddr-\/magnetostatics.hpp@{Schemes/DDR-\/magnetostatics/sddr-\/magnetostatics.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$boost/math/constants/constants.\+hpp$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$unsupported/\+Eigen/\+Sparse\+Extra$>$}\newline
+{\ttfamily \#include $<$mesh.\+hpp$>$}\newline
+{\ttfamily \#include $<$mesh\+\_\+builder.\+hpp$>$}\newline
+{\ttfamily \#include $<$local\+\_\+static\+\_\+condensation.\+hpp$>$}\newline
+{\ttfamily \#include $<$sxdiv.\+hpp$>$}\newline
+{\ttfamily \#include $<$sxcurl.\+hpp$>$}\newline
+Include dependency graph for sddr-\/magnetostatics.hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sddr-magnetostatics_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{sddr-magnetostatics_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics}{H\+Ar\+D\+Core3\+D\+::\+Magnetostatics}}
+\begin{DoxyCompactList}\small\item\em Assemble a magnetostatic problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceHArDCore3D}{H\+Ar\+D\+Core3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{group__DDR__magnetostatic_ga05c87d0a93c5df840c07c09ded686aeb}{H\+Ar\+D\+Core3\+D\+::\+PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+static Magnetostatics\+::\+Solution\+Potential\+Type \mbox{\hyperlink{group__DDR__magnetostatic_ga56502747527cbdd90d18686a6776369d}{H\+Ar\+D\+Core3\+D\+::constant\+\_\+u}}
+\item 
+static Magnetostatics\+::\+Solution\+Curl\+Type \mbox{\hyperlink{group__DDR__magnetostatic_gaa162d494a097b3c3168641f5472a92ec}{H\+Ar\+D\+Core3\+D\+::constant\+\_\+sigma}}
+\item 
+static Magnetostatics\+::\+Forcing\+Term\+Type \mbox{\hyperlink{group__DDR__magnetostatic_ga8f39f1d0235748ae953abb3a9f1af08a}{H\+Ar\+D\+Core3\+D\+::constant\+\_\+f}}
+\item 
+static Magnetostatics\+::\+Permeability\+Type \mbox{\hyperlink{group__DDR__magnetostatic_ga3f8b5b95cddcc14ada040ff1b8caebf7}{H\+Ar\+D\+Core3\+D\+::constant\+\_\+mu}} = Magnetostatics\+::\+Permeability\+Type(1.)
+\item 
+static Magnetostatics\+::\+Solution\+Potential\+Type \mbox{\hyperlink{group__DDR__magnetostatic_ga1b83cbc5fa63f2dd2e4ca7781c8dac5b}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+u}}
+\item 
+static Magnetostatics\+::\+Solution\+Curl\+Type \mbox{\hyperlink{group__DDR__magnetostatic_ga25711e256e87167ef3e392f477ae4008}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+sigma}}
+\item 
+static Magnetostatics\+::\+Forcing\+Term\+Type \mbox{\hyperlink{group__DDR__magnetostatic_gafacd77f29b93a3d1950bf37e7d4c9205}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+f}}
+\item 
+static Magnetostatics\+::\+Permeability\+Type \mbox{\hyperlink{group__DDR__magnetostatic_ga415ee30bd823542e7f21c5f78914a085}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+mu}} = Magnetostatics\+::\+Permeability\+Type(1.)
+\item 
+static Magnetostatics\+::\+Solution\+Potential\+Type \mbox{\hyperlink{group__DDR__magnetostatic_ga5f8102524d5dd3728c5216dcbfc32e59}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+u}}
+\item 
+static Magnetostatics\+::\+Solution\+Curl\+Type \mbox{\hyperlink{group__DDR__magnetostatic_ga2ff49b34b95c197d3c6ba8f9c0c0f184}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+sigma}}
+\item 
+static Magnetostatics\+::\+Forcing\+Term\+Type \mbox{\hyperlink{group__DDR__magnetostatic_gaf8c33ab7880b971d36f915f1e835ad1e}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+f}}
+\item 
+static Magnetostatics\+::\+Permeability\+Type \mbox{\hyperlink{group__DDR__magnetostatic_gaaac36ad19f84a1e0d36852cf04278a21}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+mu}} = Magnetostatics\+::\+Permeability\+Type(1.)
+\item 
+static Magnetostatics\+::\+Solution\+Potential\+Type \mbox{\hyperlink{group__DDR__magnetostatic_gaf8861771b7a4aec46677d2333abfcbe3}{H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+u}}
+\item 
+static Magnetostatics\+::\+Solution\+Curl\+Type \mbox{\hyperlink{group__DDR__magnetostatic_gac1b6ed3b881e6ea7bb3fb070b97989f0}{H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+sigma}}
+\item 
+static Magnetostatics\+::\+Forcing\+Term\+Type \mbox{\hyperlink{group__DDR__magnetostatic_gaff788533b63baa15115e358130484877}{H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+f}}
+\item 
+static Magnetostatics\+::\+Permeability\+Type \mbox{\hyperlink{group__DDR__magnetostatic_ga8544d138a24d03889b511f2bfd62e7d4}{H\+Ar\+D\+Core3\+D\+::variable\+\_\+permeability\+\_\+mu}}
+\end{DoxyCompactItemize}

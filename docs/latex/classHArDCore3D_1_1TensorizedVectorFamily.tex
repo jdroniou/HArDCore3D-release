@@ -20,6 +20,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga2a99d3ad58e081c33fe712c019b0d
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga375f5cfa1074a92ef276ba76145d2b83}{Divergence\+Value}}
 \item 
+typedef Eigen\+::\+Matrix$<$ double, N, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_gafab84979dac3c31f2da4822f425122d2}{Hessian\+Value}}
+\item 
 typedef Scalar\+Family\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_gac71379becbe0edb006c5df44660bf3aa}{Geometric\+Support}}
 \item 
 typedef Scalar\+Family\+Type \mbox{\hyperlink{group__Basis_ga746de3efad21ba2e602237c4c2badc26}{Ancestor\+Type}}
@@ -47,6 +49,10 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_ga1f8e17599e9b38b58ef247317783c51f}{di
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_ga375f5cfa1074a92ef276ba76145d2b83}{Divergence\+Value}} \mbox{\hyperlink{group__Basis_gaaf8de8320203975aa548709d455a6ec4}{divergence}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&ancestor\+\_\+gradient\+\_\+quad) const
 \begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at a quadrature point iqn, knowing all the gradients of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga2a99d3ad58e081c33fe712c019b0d704}{Curl\+Value}} \mbox{\hyperlink{group__Basis_ga884c79b5bb407829575ed93f38b86184}{curlcurl}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the curl curl of the i-\/th basis function at point x. We use the formula curl curl = -\/ Laplace + grad div. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga2a99d3ad58e081c33fe712c019b0d704}{Curl\+Value}} \mbox{\hyperlink{group__Basis_ga2dd432487225d0ed106612df6b418c60}{curlcurl}} (size\+\_\+t i, size\+\_\+t iqn, const boost\+::multi\+\_\+array$<$ typename Scalar\+Family\+Type\+::\+Hessian\+Value, 2 $>$ \&ancestor\+\_\+hessian\+\_\+quad) const
+\begin{DoxyCompactList}\small\item\em Evaluate the curl curl of the i-\/th basis function at a quadrature point iqn, knowing all the values of the Hessian of ancestor basis functions at the quadrature nodes (provided by eval\+\_\+quad) \end{DoxyCompactList}\item 
 constexpr const Scalar\+Family\+Type \& \mbox{\hyperlink{group__Basis_ga2fa5d0c533a652d4e64400b3cffb9029}{ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the ancestor (family that has been tensorized) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_ga649326979292f0ff66afc7040516363c}{max\+\_\+degree}} () const
@@ -65,6 +71,10 @@ static const bool \mbox{\hyperlink{group__Basis_gad979bfdf5ecf01b03fe58afa3a3673
 static const bool \mbox{\hyperlink{group__Basis_gaf7b0b7d38444c6f5948a7af77f54cb76}{has\+Divergence}} = (Scalar\+Family\+Type\+::has\+Gradient \&\& N == \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}})
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gac508be3ba29add3055e394ea73413f3d}{has\+Curl}} = (Scalar\+Family\+Type\+::has\+Gradient \&\& N == \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}})
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga53622a34ccbe5bee21d6f84d0fa9e005}{has\+Hessian}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga437d858dadb41a6f1941e902445dd123}{has\+Curl\+Curl}} = (Scalar\+Family\+Type\+::has\+Hessian \&\& N == \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}})
 \end{DoxyCompactItemize}
 
 

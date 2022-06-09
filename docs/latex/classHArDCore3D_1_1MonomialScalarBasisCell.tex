@@ -20,6 +20,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga51dab214529fd96b8930aeb99f94e
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga0f45b77fbbfa51f5e5aca7c90f837e05}{Divergence\+Value}}
 \item 
+typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__Basis_ga0ff5027967147941698ab94d57278d10}{Hessian\+Value}}
+\item 
 typedef Cell \mbox{\hyperlink{group__Basis_gaf1fb25612ece0a8d033134f47b5d82a4}{Geometric\+Support}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
@@ -33,6 +35,8 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_gaa889b63f16b51979a2fcea3253851c89}{di
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_gac69e8499d538f283ebbd66aea3ed60ce}{Gradient\+Value}} \mbox{\hyperlink{group__Basis_gafe6fb4aef0d61e720116d8ba64c94971}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga0ff5027967147941698ab94d57278d10}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_gaab95b8928c5acc4586546d9dc416a6e1}{hessian}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the hessian of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gaa74c15b33f8ef6b0c8eefa25a689bca9}{max\+\_\+degree}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 Vector\+Zd \mbox{\hyperlink{group__Basis_ga382451aff0b566fb35d40fb89a156d7d}{powers}} (size\+\_\+t i) const
@@ -51,6 +55,10 @@ static const bool \mbox{\hyperlink{group__Basis_gaaaa24785ad98f4e6c85aaa2d84b006
 static const bool \mbox{\hyperlink{group__Basis_ga4ae626adeaf1b1d8c414afe1bbe85bde}{has\+Curl}} = false
 \item 
 static const bool \mbox{\hyperlink{group__Basis_ga3209c64ffde8ca1f8d63abb33ce8ee5a}{has\+Divergence}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gabdc2c38b6af9d5378ad8f5e14c4bb6b9}{has\+Hessian}} = true
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga37936489f78f0fa5df3f0eee1c224870}{has\+Curl\+Curl}} = false
 \end{DoxyCompactItemize}
 
 

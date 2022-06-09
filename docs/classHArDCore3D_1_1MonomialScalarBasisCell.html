@@ -98,6 +98,8 @@ Public Types</h2></td></tr>
 <tr class="separator:ga51dab214529fd96b8930aeb99f94ea6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0f45b77fbbfa51f5e5aca7c90f837e05"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga0f45b77fbbfa51f5e5aca7c90f837e05">DivergenceValue</a></td></tr>
 <tr class="separator:ga0f45b77fbbfa51f5e5aca7c90f837e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ff5027967147941698ab94d57278d10"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga0ff5027967147941698ab94d57278d10">HessianValue</a></td></tr>
+<tr class="separator:ga0ff5027967147941698ab94d57278d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf1fb25612ece0a8d033134f47b5d82a4"><td class="memItemLeft" align="right" valign="top">typedef Cell&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaf1fb25612ece0a8d033134f47b5d82a4">GeometricSupport</a></td></tr>
 <tr class="separator:gaf1fb25612ece0a8d033134f47b5d82a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -115,6 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:gafe6fb4aef0d61e720116d8ba64c94971"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#gac69e8499d538f283ebbd66aea3ed60ce">GradientValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gafe6fb4aef0d61e720116d8ba64c94971">gradient</a> (size_t i, const VectorRd &amp;x) const</td></tr>
 <tr class="memdesc:gafe6fb4aef0d61e720116d8ba64c94971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the gradient of the i-th basis function at point x.  <a href="group__Basis.html#gafe6fb4aef0d61e720116d8ba64c94971">More...</a><br /></td></tr>
 <tr class="separator:gafe6fb4aef0d61e720116d8ba64c94971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab95b8928c5acc4586546d9dc416a6e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Basis.html#ga0ff5027967147941698ab94d57278d10">HessianValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaab95b8928c5acc4586546d9dc416a6e1">hessian</a> (size_t i, const VectorRd &amp;x) const</td></tr>
+<tr class="memdesc:gaab95b8928c5acc4586546d9dc416a6e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the hessian of the i-th basis function at point x.  <a href="group__Basis.html#gaab95b8928c5acc4586546d9dc416a6e1">More...</a><br /></td></tr>
+<tr class="separator:gaab95b8928c5acc4586546d9dc416a6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa74c15b33f8ef6b0c8eefa25a689bca9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaa74c15b33f8ef6b0c8eefa25a689bca9">max_degree</a> () const</td></tr>
 <tr class="memdesc:gaa74c15b33f8ef6b0c8eefa25a689bca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum degree of the basis functions.  <a href="group__Basis.html#gaa74c15b33f8ef6b0c8eefa25a689bca9">More...</a><br /></td></tr>
 <tr class="separator:gaa74c15b33f8ef6b0c8eefa25a689bca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +141,10 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:ga4ae626adeaf1b1d8c414afe1bbe85bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3209c64ffde8ca1f8d63abb33ce8ee5a"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga3209c64ffde8ca1f8d63abb33ce8ee5a">hasDivergence</a> = false</td></tr>
 <tr class="separator:ga3209c64ffde8ca1f8d63abb33ce8ee5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdc2c38b6af9d5378ad8f5e14c4bb6b9"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gabdc2c38b6af9d5378ad8f5e14c4bb6b9">hasHessian</a> = true</td></tr>
+<tr class="separator:gabdc2c38b6af9d5378ad8f5e14c4bb6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37936489f78f0fa5df3f0eee1c224870"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga37936489f78f0fa5df3f0eee1c224870">hasCurlCurl</a> = false</td></tr>
+<tr class="separator:ga37936489f78f0fa5df3f0eee1c224870"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Scalar monomial basis on a cell. </p>

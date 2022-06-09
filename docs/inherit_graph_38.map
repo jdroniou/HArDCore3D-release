@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classHArDCore3D_1_1MeshBuilder.html" title="The MeshBuilder class provides build tools to create a full mesh with all connectivities." alt="" coords="5,5,185,32"/>
+<area shape="rect" id="node1" href="$classHArDCore3D_1_1LocalDOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="5,132,209,159"/>
+<area shape="rect" id="node2" href="$classHArDCore3D_1_1GlobalDOFSpace.html" title="Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei..." alt="" coords="257,132,468,159"/>
+<area shape="rect" id="node3" href="$classHArDCore3D_1_1VCurl.html" title="Virtual Hcurl space: local operators, L2 product and global interpolator." alt="" coords="518,5,659,32"/>
+<area shape="rect" id="node4" href="$classHArDCore3D_1_1VDiv.html" title="Virtual Hdiv space: local operators, L2 product and global interpolator." alt="" coords="520,56,657,83"/>
+<area shape="rect" id="node5" href="$classHArDCore3D_1_1VGrad.html" title="Virtual H1 space: local operators, L2 product and global interpolator." alt="" coords="516,107,661,133"/>
+<area shape="rect" id="node6" href="$classHArDCore3D_1_1XCurl.html" title="Discrete Hcurl space: local operators, L2 product and global interpolator." alt="" coords="518,157,659,184"/>
+<area shape="rect" id="node7" href="$classHArDCore3D_1_1XDiv.html" title="Discrete Hdiv space: local operators, L2 product and global interpolator." alt="" coords="520,208,657,235"/>
+<area shape="rect" id="node9" href="$classHArDCore3D_1_1XGrad.html" title="Discrete H1 space: local operators, L2 product and global interpolator." alt="" coords="516,259,661,285"/>
+<area shape="rect" id="node8" href="$classHArDCore3D_1_1SXDiv.html" title="Discrete Serendipity Hdiv space: local operators, L2 product and global interpolator." alt="" coords="709,208,856,235"/>
 </map>

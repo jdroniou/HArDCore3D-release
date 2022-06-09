@@ -37,6 +37,21 @@ namespace HArDCore3D
     return grad / m_hT;
   }
 
+  MonomialScalarBasisCell::HessianValue MonomialScalarBasisCell::hessian(size_t i, const VectorRd &x) const
+  {
+    VectorRd y = _coordinate_transform(x);
+    const VectorZd &p = m_powers[i];
+    MatrixRd hess = MatrixRd::Zero();
+    
+    hess(0,0) = (p(0) < 2 ? 0. : p(0)*(p(0)-1)*std::pow(y(0), p(0)-2) * std::pow(y(1), p(1)) * std::pow(y(2), p(2)) );
+    hess(1,0) = hess(0,1) = ( p(0)*p(1) == 0 ? 0. : p(0)*std::pow(y(0),p(0)-1) * p(1)*std::pow(y(1),p(1)-1) * std::pow(y(2), p(2)) );
+    hess(2,0) = hess(0,2) = ( p(0)*p(2) == 0 ? 0. : p(0)*std::pow(y(0),p(0)-1) * std::pow(y(1),p(1)) * p(2)*std::pow(y(2), p(2)-1) );
+    hess(1,1) = (p(1) < 2 ? 0. : std::pow(y(0), p(0)) * p(1)*(p(1)-1)*std::pow(y(1), p(1)-2) * std::pow(y(2), p(2)) );
+    hess(1,2) = hess(2,1) = ( p(1)*p(2) == 0 ? 0. : std::pow(y(0), p(0)) * p(1)*std::pow(y(1),p(1)-1) * p(2)*std::pow(y(2),p(2)-1) );
+    hess(2,2) = (p(2) < 2 ? 0. : std::pow(y(0), p(0)) * std::pow(y(1), p(1)) * p(2)*(p(2)-1)*std::pow(y(2), p(2)-2) );
+
+    return hess / std::pow(m_hT, 2);
+  }
 
   //------------------------------------------------------------------------------
   // Scalar monomial basis on a face
@@ -73,9 +88,22 @@ namespace HArDCore3D
     return m_jacobian.transpose() * grad;
   }
 
-  MonomialScalarBasisFace::GradientValue MonomialScalarBasisFace::curl(size_t i, const VectorRd &x) const
+  MonomialScalarBasisFace::CurlValue MonomialScalarBasisFace::curl(size_t i, const VectorRd &x) const
   {
     return gradient(i, x).cross(m_nF);
+  }
+
+  MonomialScalarBasisFace::HessianValue MonomialScalarBasisFace::hessian(size_t i, const VectorRd &x) const
+  {
+    Eigen::Vector2d y = _coordinate_transform(x);
+    const Eigen::Vector2i &p = m_powers[i];
+
+    Eigen::Matrix2d hess2d = Eigen::Matrix2d::Zero();
+    hess2d(0,0) = (p(0) < 2 ? 0. : p(0)*(p(0)-1)*std::pow(y(0), p(0)-2) * std::pow(y(1), p(1)) );
+    hess2d(1,0) = hess2d(0,1) = ( p(0)*p(1) == 0 ? 0. : p(0)*std::pow(y(0),p(0)-1) * p(1)*std::pow(y(1),p(1)-1) );
+    hess2d(1,1) = (p(1) < 2 ? 0. : std::pow(y(0), p(0)) * p(1)*(p(1)-1)*std::pow(y(1), p(1)-2) );
+
+    return m_jacobian.transpose() * hess2d * m_jacobian;
   }
 
   //------------------------------------------------------------------------------
@@ -101,6 +129,7 @@ namespace HArDCore3D
     return (i == 0 ? 0. : i * std::pow(_coordinate_transform(x), i - 1) / m_hE) * m_tE;
   }
   
+ 
   //------------------------------------------------------------------------------
   // Basis for R^{c,k}(T)
   //------------------------------------------------------------------------------

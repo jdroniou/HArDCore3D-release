@@ -103,6 +103,20 @@ Public Types</h2></td></tr>
 <tr class="separator:ga5df4d4bd5072175a8bbed22b6fe5e324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9c724e729821860850f61802742dbed4"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga9c724e729821860850f61802742dbed4">ViscosityType</a></td></tr>
 <tr class="separator:ga9c724e729821860850f61802742dbed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1f6b821084f8381c776904559b8694a6"><td class="memItemLeft" align="right" valign="top">typedef Eigen::SparseMatrix&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga1f6b821084f8381c776904559b8694a6">SystemMatrixType</a></td></tr>
+<tr class="separator:ga1f6b821084f8381c776904559b8694a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad35466b8f55cc51dabdc88615275ac5e"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#gad35466b8f55cc51dabdc88615275ac5e">ForcingTermType</a></td></tr>
+<tr class="separator:gad35466b8f55cc51dabdc88615275ac5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52ca58b26c2693690c8c32602881ffbc"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga52ca58b26c2693690c8c32602881ffbc">VelocityType</a></td></tr>
+<tr class="separator:ga52ca58b26c2693690c8c32602881ffbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b7d0f7c113eeecc50ce811990db5874"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga6b7d0f7c113eeecc50ce811990db5874">VorticityType</a></td></tr>
+<tr class="separator:ga6b7d0f7c113eeecc50ce811990db5874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga758780788f88b913e804a3f98dc0975b"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; double(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga758780788f88b913e804a3f98dc0975b">PressureType</a></td></tr>
+<tr class="separator:ga758780788f88b913e804a3f98dc0975b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5df4d4bd5072175a8bbed22b6fe5e324"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga5df4d4bd5072175a8bbed22b6fe5e324">PressureGradientType</a></td></tr>
+<tr class="separator:ga5df4d4bd5072175a8bbed22b6fe5e324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c724e729821860850f61802742dbed4"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga9c724e729821860850f61802742dbed4">ViscosityType</a></td></tr>
+<tr class="separator:ga9c724e729821860850f61802742dbed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f6b821084f8381c776904559b8694a6"><td class="memItemLeft" align="right" valign="top">typedef Eigen::SparseMatrix&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga1f6b821084f8381c776904559b8694a6">SystemMatrixType</a></td></tr>
 <tr class="separator:ga1f6b821084f8381c776904559b8694a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad35466b8f55cc51dabdc88615275ac5e"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#gad35466b8f55cc51dabdc88615275ac5e">ForcingTermType</a></td></tr>
@@ -184,6 +198,67 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ga3927e5c71c0c74dcc30627cfd0d56765"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga3927e5c71c0c74dcc30627cfd0d56765">evaluateDefectCommutationGradInterp</a> (const <a class="el" href="group__DDR__stokes.html#ga758780788f88b913e804a3f98dc0975b">PressureType</a> &amp;p, const <a class="el" href="group__DDR__stokes.html#ga5df4d4bd5072175a8bbed22b6fe5e324">PressureGradientType</a> &amp;grad_p, const size_t deg_quad_interpolate) const</td></tr>
 <tr class="memdesc:ga3927e5c71c0c74dcc30627cfd0d56765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the defect of commutation G_h (Igrad p) = Icurl (grad p) by computing the norm of the difference (which should be 0).  <a href="group__DDR__stokes.html#ga3927e5c71c0c74dcc30627cfd0d56765">More...</a><br /></td></tr>
 <tr class="separator:ga3927e5c71c0c74dcc30627cfd0d56765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93fd886edeb08d1af3f2a9d6e2a519a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga93fd886edeb08d1af3f2a9d6e2a519a7">Stokes</a> (const <a class="el" href="classHArDCore3D_1_1DDRCore.html">DDRCore</a> &amp;ddrcore, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>, std::ostream &amp;output=std::cout)</td></tr>
+<tr class="memdesc:ga93fd886edeb08d1af3f2a9d6e2a519a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="structHArDCore3D_1_1Stokes.html#ga93fd886edeb08d1af3f2a9d6e2a519a7">More...</a><br /></td></tr>
+<tr class="separator:ga93fd886edeb08d1af3f2a9d6e2a519a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga110ade8eb5eaa6cad69b9651849f8c50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga110ade8eb5eaa6cad69b9651849f8c50">assembleLinearSystem</a> (const <a class="el" href="group__DDR__stokes.html#gad35466b8f55cc51dabdc88615275ac5e">ForcingTermType</a> &amp;f, const <a class="el" href="group__DDR__stokes.html#ga52ca58b26c2693690c8c32602881ffbc">VelocityType</a> &amp;u, const <a class="el" href="group__DDR__stokes.html#ga6b7d0f7c113eeecc50ce811990db5874">VorticityType</a> &amp;omega, const <a class="el" href="group__DDR__stokes.html#ga9c724e729821860850f61802742dbed4">ViscosityType</a> &amp;nu)</td></tr>
+<tr class="memdesc:ga110ade8eb5eaa6cad69b9651849f8c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble the global system <br  />
+  <a href="structHArDCore3D_1_1Stokes.html#ga110ade8eb5eaa6cad69b9651849f8c50">More...</a><br /></td></tr>
+<tr class="separator:ga110ade8eb5eaa6cad69b9651849f8c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga046f6c2e7945f3275072f4bdf70e0a12"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga046f6c2e7945f3275072f4bdf70e0a12">dimensionSpace</a> () const</td></tr>
+<tr class="memdesc:ga046f6c2e7945f3275072f4bdf70e0a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the global problem dimension (without Lagrange multiplier, just velocity &amp; pressure)  <a href="group__DDR__stokes.html#ga046f6c2e7945f3275072f4bdf70e0a12">More...</a><br /></td></tr>
+<tr class="separator:ga046f6c2e7945f3275072f4bdf70e0a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga137becabbdc3f6d87ce6a34ae934f729"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga137becabbdc3f6d87ce6a34ae934f729">nbSCDOFs_u</a> () const</td></tr>
+<tr class="memdesc:ga137becabbdc3f6d87ce6a34ae934f729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of statically condensed DOFs (velocity)  <a href="structHArDCore3D_1_1Stokes.html#ga137becabbdc3f6d87ce6a34ae934f729">More...</a><br /></td></tr>
+<tr class="separator:ga137becabbdc3f6d87ce6a34ae934f729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c90515a4a5cc2e081cf5f7485706418"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga2c90515a4a5cc2e081cf5f7485706418">nbSCDOFs_p</a> () const</td></tr>
+<tr class="memdesc:ga2c90515a4a5cc2e081cf5f7485706418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of statically condensed DOFs (pressure)  <a href="structHArDCore3D_1_1Stokes.html#ga2c90515a4a5cc2e081cf5f7485706418">More...</a><br /></td></tr>
+<tr class="separator:ga2c90515a4a5cc2e081cf5f7485706418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ac301f6b8248e2e81d720e3dcef92c2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga5ac301f6b8248e2e81d720e3dcef92c2">nbSCDOFs</a> () const</td></tr>
+<tr class="memdesc:ga5ac301f6b8248e2e81d720e3dcef92c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of statically condensed DOFs (both velocity and pressure)  <a href="structHArDCore3D_1_1Stokes.html#ga5ac301f6b8248e2e81d720e3dcef92c2">More...</a><br /></td></tr>
+<tr class="separator:ga5ac301f6b8248e2e81d720e3dcef92c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5afaebf629ae7ee2b7835f544f975780"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga5afaebf629ae7ee2b7835f544f975780">sizeSystem</a> () const</td></tr>
+<tr class="memdesc:ga5afaebf629ae7ee2b7835f544f975780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the statically condensed system (with Lagrange multiplier)  <a href="structHArDCore3D_1_1Stokes.html#ga5afaebf629ae7ee2b7835f544f975780">More...</a><br /></td></tr>
+<tr class="separator:ga5afaebf629ae7ee2b7835f544f975780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87eb619d608e1ec7ec40c5265daa17b7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1SXGrad.html">SXGrad</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga87eb619d608e1ec7ec40c5265daa17b7">sxGrad</a> () const</td></tr>
+<tr class="memdesc:ga87eb619d608e1ec7ec40c5265daa17b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1SXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator.">SXGrad</a>.  <a href="group__DDR__stokes.html#ga87eb619d608e1ec7ec40c5265daa17b7">More...</a><br /></td></tr>
+<tr class="separator:ga87eb619d608e1ec7ec40c5265daa17b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e49353d87310fa4212cad6acdfc986e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1SXCurl.html">SXCurl</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga0e49353d87310fa4212cad6acdfc986e">sxCurl</a> () const</td></tr>
+<tr class="memdesc:ga0e49353d87310fa4212cad6acdfc986e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator.">SXCurl</a>.  <a href="group__DDR__stokes.html#ga0e49353d87310fa4212cad6acdfc986e">More...</a><br /></td></tr>
+<tr class="separator:ga0e49353d87310fa4212cad6acdfc986e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga28d77ca8dd41503bf1b1befeeabe438c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1SXDiv.html">SXDiv</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#ga28d77ca8dd41503bf1b1befeeabe438c">sxDiv</a> () const</td></tr>
+<tr class="memdesc:ga28d77ca8dd41503bf1b1befeeabe438c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1XDiv.html" title="Discrete Hdiv space: local operators, L2 product and global interpolator.">XDiv</a>.  <a href="group__DDR__stokes.html#ga28d77ca8dd41503bf1b1befeeabe438c">More...</a><br /></td></tr>
+<tr class="separator:ga28d77ca8dd41503bf1b1befeeabe438c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99db170b7f151f7d37828065b02dd1a3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__DDR__stokes.html#ga1f6b821084f8381c776904559b8694a6">SystemMatrixType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga99db170b7f151f7d37828065b02dd1a3">systemMatrix</a> () const</td></tr>
+<tr class="memdesc:ga99db170b7f151f7d37828065b02dd1a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the linear system matrix.  <a href="structHArDCore3D_1_1Stokes.html#ga99db170b7f151f7d37828065b02dd1a3">More...</a><br /></td></tr>
+<tr class="separator:ga99db170b7f151f7d37828065b02dd1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a7c455112aa41ea9cb6ed817b417702"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__DDR__stokes.html#ga1f6b821084f8381c776904559b8694a6">SystemMatrixType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga7a7c455112aa41ea9cb6ed817b417702">systemMatrix</a> ()</td></tr>
+<tr class="memdesc:ga7a7c455112aa41ea9cb6ed817b417702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the linear system matrix.  <a href="structHArDCore3D_1_1Stokes.html#ga7a7c455112aa41ea9cb6ed817b417702">More...</a><br /></td></tr>
+<tr class="separator:ga7a7c455112aa41ea9cb6ed817b417702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fedbcceaa95a4b495c4bc9197a94940"><td class="memItemLeft" align="right" valign="top">const Eigen::VectorXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga7fedbcceaa95a4b495c4bc9197a94940">systemVector</a> () const</td></tr>
+<tr class="memdesc:ga7fedbcceaa95a4b495c4bc9197a94940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the linear system right-hand side vector.  <a href="structHArDCore3D_1_1Stokes.html#ga7fedbcceaa95a4b495c4bc9197a94940">More...</a><br /></td></tr>
+<tr class="separator:ga7fedbcceaa95a4b495c4bc9197a94940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67c5932d1f6296ac1f3e4e1d4cf53e3b"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga67c5932d1f6296ac1f3e4e1d4cf53e3b">systemVector</a> ()</td></tr>
+<tr class="memdesc:ga67c5932d1f6296ac1f3e4e1d4cf53e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the linear system right-hand side vector.  <a href="structHArDCore3D_1_1Stokes.html#ga67c5932d1f6296ac1f3e4e1d4cf53e3b">More...</a><br /></td></tr>
+<tr class="separator:ga67c5932d1f6296ac1f3e4e1d4cf53e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84c005b53d8d83c1be5b078dae093d9d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__DDR__stokes.html#ga1f6b821084f8381c776904559b8694a6">SystemMatrixType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga84c005b53d8d83c1be5b078dae093d9d">scMatrix</a> () const</td></tr>
+<tr class="memdesc:ga84c005b53d8d83c1be5b078dae093d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the static condensation recovery operator.  <a href="structHArDCore3D_1_1Stokes.html#ga84c005b53d8d83c1be5b078dae093d9d">More...</a><br /></td></tr>
+<tr class="separator:ga84c005b53d8d83c1be5b078dae093d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac24f18b70fee7f0796258e2bb2c46b59"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#gac24f18b70fee7f0796258e2bb2c46b59">scVector</a> ()</td></tr>
+<tr class="memdesc:gac24f18b70fee7f0796258e2bb2c46b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the static condensation rhs.  <a href="structHArDCore3D_1_1Stokes.html#gac24f18b70fee7f0796258e2bb2c46b59">More...</a><br /></td></tr>
+<tr class="separator:gac24f18b70fee7f0796258e2bb2c46b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga34e0c5701a7a9d2d4eec340492022a27"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga34e0c5701a7a9d2d4eec340492022a27">stabilizationParameter</a> () const</td></tr>
+<tr class="memdesc:ga34e0c5701a7a9d2d4eec340492022a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the stabilization parameter.  <a href="structHArDCore3D_1_1Stokes.html#ga34e0c5701a7a9d2d4eec340492022a27">More...</a><br /></td></tr>
+<tr class="separator:ga34e0c5701a7a9d2d4eec340492022a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7844fc93907f58dfd21bb8b7a6c1af56"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga7844fc93907f58dfd21bb8b7a6c1af56">stabilizationParameter</a> ()</td></tr>
+<tr class="memdesc:ga7844fc93907f58dfd21bb8b7a6c1af56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the stabilization parameter.  <a href="structHArDCore3D_1_1Stokes.html#ga7844fc93907f58dfd21bb8b7a6c1af56">More...</a><br /></td></tr>
+<tr class="separator:ga7844fc93907f58dfd21bb8b7a6c1af56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga250e160fb47a7bcc9af2f8baf1aa7427"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structHArDCore3D_1_1StokesNorms.html">StokesNorms</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga250e160fb47a7bcc9af2f8baf1aa7427">computeStokesNorms</a> (const std::vector&lt; Eigen::VectorXd &gt; &amp;list_dofs) const</td></tr>
+<tr class="memdesc:ga250e160fb47a7bcc9af2f8baf1aa7427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the discrete L2 norms, for a family of Eigen::VectorXd representing velocities &amp; pressures, of u, curl u, p and grad p.  <a href="structHArDCore3D_1_1Stokes.html#ga250e160fb47a7bcc9af2f8baf1aa7427">More...</a><br /></td></tr>
+<tr class="separator:ga250e160fb47a7bcc9af2f8baf1aa7427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga152a5406c97598e8f947239291e4b12c"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="structHArDCore3D_1_1StokesNorms.html">StokesNorms</a>, <a class="el" href="structHArDCore3D_1_1StokesNorms.html">StokesNorms</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1Stokes.html#ga152a5406c97598e8f947239291e4b12c">computeContinuousErrorsNorms</a> (const Eigen::VectorXd &amp;v, const <a class="el" href="group__DDR__stokes.html#ga52ca58b26c2693690c8c32602881ffbc">VelocityType</a> &amp;u, const <a class="el" href="group__DDR__stokes.html#ga6b7d0f7c113eeecc50ce811990db5874">VorticityType</a> &amp;curl_u, const <a class="el" href="group__DDR__stokes.html#ga758780788f88b913e804a3f98dc0975b">PressureType</a> &amp;p, const <a class="el" href="group__DDR__stokes.html#ga5df4d4bd5072175a8bbed22b6fe5e324">PressureGradientType</a> &amp;grad_p) const</td></tr>
+<tr class="memdesc:ga152a5406c97598e8f947239291e4b12c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the continuous Hcurl errors in u and Hgrad error in p (1st component), and same with continuous norms (second component)  <a href="structHArDCore3D_1_1Stokes.html#ga152a5406c97598e8f947239291e4b12c">More...</a><br /></td></tr>
+<tr class="separator:ga152a5406c97598e8f947239291e4b12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga29e675f29d332e2966aa29a66bdca068"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga29e675f29d332e2966aa29a66bdca068">Stokes</a> (const <a class="el" href="classHArDCore3D_1_1VEMCore.html">VEMCore</a> &amp;vemcore, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>, std::ostream &amp;output=std::cout)</td></tr>
 <tr class="memdesc:ga29e675f29d332e2966aa29a66bdca068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__VEM__stokes.html#ga29e675f29d332e2966aa29a66bdca068">More...</a><br /></td></tr>
 <tr class="separator:ga29e675f29d332e2966aa29a66bdca068"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,6 +269,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ga9a5010aba9b8f267d4f6c59f8b7d9a8e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga9a5010aba9b8f267d4f6c59f8b7d9a8e">dimension</a> () const</td></tr>
 <tr class="memdesc:ga9a5010aba9b8f267d4f6c59f8b7d9a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the global problem dimension (without Lagrange multiplier, just velocity &amp; pressure)  <a href="group__VEM__stokes.html#ga9a5010aba9b8f267d4f6c59f8b7d9a8e">More...</a><br /></td></tr>
 <tr class="separator:ga9a5010aba9b8f267d4f6c59f8b7d9a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga137becabbdc3f6d87ce6a34ae934f729"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga137becabbdc3f6d87ce6a34ae934f729">nbSCDOFs_u</a> () const</td></tr>
+<tr class="memdesc:ga137becabbdc3f6d87ce6a34ae934f729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of statically condensed DOFs (velocity)  <a href="group__VEM__stokes.html#ga137becabbdc3f6d87ce6a34ae934f729">More...</a><br /></td></tr>
+<tr class="separator:ga137becabbdc3f6d87ce6a34ae934f729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c90515a4a5cc2e081cf5f7485706418"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga2c90515a4a5cc2e081cf5f7485706418">nbSCDOFs_p</a> () const</td></tr>
+<tr class="memdesc:ga2c90515a4a5cc2e081cf5f7485706418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of statically condensed DOFs (pressure)  <a href="group__VEM__stokes.html#ga2c90515a4a5cc2e081cf5f7485706418">More...</a><br /></td></tr>
+<tr class="separator:ga2c90515a4a5cc2e081cf5f7485706418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ac301f6b8248e2e81d720e3dcef92c2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga5ac301f6b8248e2e81d720e3dcef92c2">nbSCDOFs</a> () const</td></tr>
+<tr class="memdesc:ga5ac301f6b8248e2e81d720e3dcef92c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of statically condensed DOFs (both velocity and pressure)  <a href="group__VEM__stokes.html#ga5ac301f6b8248e2e81d720e3dcef92c2">More...</a><br /></td></tr>
+<tr class="separator:ga5ac301f6b8248e2e81d720e3dcef92c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5afaebf629ae7ee2b7835f544f975780"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga5afaebf629ae7ee2b7835f544f975780">sizeSystem</a> () const</td></tr>
+<tr class="memdesc:ga5afaebf629ae7ee2b7835f544f975780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the statically condensed system (with Lagrange multiplier)  <a href="group__VEM__stokes.html#ga5afaebf629ae7ee2b7835f544f975780">More...</a><br /></td></tr>
+<tr class="separator:ga5afaebf629ae7ee2b7835f544f975780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7ea577d8c7637493bc0f9040f82a10fa"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1VGrad.html">VGrad</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga7ea577d8c7637493bc0f9040f82a10fa">vGrad</a> () const</td></tr>
 <tr class="memdesc:ga7ea577d8c7637493bc0f9040f82a10fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1VGrad.html" title="Virtual H1 space: local operators, L2 product and global interpolator.">VGrad</a>.  <a href="group__VEM__stokes.html#ga7ea577d8c7637493bc0f9040f82a10fa">More...</a><br /></td></tr>
 <tr class="separator:ga7ea577d8c7637493bc0f9040f82a10fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,6 +302,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ga67c5932d1f6296ac1f3e4e1d4cf53e3b"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga67c5932d1f6296ac1f3e4e1d4cf53e3b">systemVector</a> ()</td></tr>
 <tr class="memdesc:ga67c5932d1f6296ac1f3e4e1d4cf53e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the linear system right-hand side vector.  <a href="group__VEM__stokes.html#ga67c5932d1f6296ac1f3e4e1d4cf53e3b">More...</a><br /></td></tr>
 <tr class="separator:ga67c5932d1f6296ac1f3e4e1d4cf53e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84c005b53d8d83c1be5b078dae093d9d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__DDR__stokes.html#ga1f6b821084f8381c776904559b8694a6">SystemMatrixType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga84c005b53d8d83c1be5b078dae093d9d">scMatrix</a> () const</td></tr>
+<tr class="memdesc:ga84c005b53d8d83c1be5b078dae093d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the static condensation recovery operator.  <a href="group__VEM__stokes.html#ga84c005b53d8d83c1be5b078dae093d9d">More...</a><br /></td></tr>
+<tr class="separator:ga84c005b53d8d83c1be5b078dae093d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac24f18b70fee7f0796258e2bb2c46b59"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#gac24f18b70fee7f0796258e2bb2c46b59">scVector</a> ()</td></tr>
+<tr class="memdesc:gac24f18b70fee7f0796258e2bb2c46b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the static condensation rhs.  <a href="group__VEM__stokes.html#gac24f18b70fee7f0796258e2bb2c46b59">More...</a><br /></td></tr>
+<tr class="separator:gac24f18b70fee7f0796258e2bb2c46b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga34e0c5701a7a9d2d4eec340492022a27"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#ga34e0c5701a7a9d2d4eec340492022a27">stabilizationParameter</a> () const</td></tr>
 <tr class="memdesc:ga34e0c5701a7a9d2d4eec340492022a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the stabilization parameter.  <a href="group__VEM__stokes.html#ga34e0c5701a7a9d2d4eec340492022a27">More...</a><br /></td></tr>
 <tr class="separator:ga34e0c5701a7a9d2d4eec340492022a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,10 +323,518 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Assemble a <a class="el" href="structHArDCore3D_1_1Stokes.html" title="Assemble a Stokes problem.">Stokes</a> problem. </p>
-</div><hr/>The documentation for this struct was generated from the following files:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ga93fd886edeb08d1af3f2a9d6e2a519a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga93fd886edeb08d1af3f2a9d6e2a519a7">&#9670;&nbsp;</a></span>Stokes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HArDCore3D::Stokes::Stokes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1DDRCore.html">DDRCore</a> &amp;&#160;</td>
+          <td class="paramname"><em>ddrcore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_threads</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ddrcore</td><td>Core for the DDR space sequence </td></tr>
+    <tr><td class="paramname">use_threads</td><td>True for parallel execution, false for sequential execution </td></tr>
+    <tr><td class="paramname">output</td><td>Output stream to print status messages </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ga110ade8eb5eaa6cad69b9651849f8c50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga110ade8eb5eaa6cad69b9651849f8c50">&#9670;&nbsp;</a></span>assembleLinearSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HArDCore3D::Stokes::assembleLinearSystem </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__DDR__stokes.html#gad35466b8f55cc51dabdc88615275ac5e">ForcingTermType</a> &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__DDR__stokes.html#ga52ca58b26c2693690c8c32602881ffbc">VelocityType</a> &amp;&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__DDR__stokes.html#ga6b7d0f7c113eeecc50ce811990db5874">VorticityType</a> &amp;&#160;</td>
+          <td class="paramname"><em>omega</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__DDR__stokes.html#ga9c724e729821860850f61802742dbed4">ViscosityType</a> &amp;&#160;</td>
+          <td class="paramname"><em>nu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Assemble the global system <br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Forcing term </td></tr>
+    <tr><td class="paramname">u</td><td>Boundary condition on velocity </td></tr>
+    <tr><td class="paramname">omega</td><td>Boundary condition on vorticity </td></tr>
+    <tr><td class="paramname">nu</td><td>Viscosity </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga152a5406c97598e8f947239291e4b12c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga152a5406c97598e8f947239291e4b12c">&#9670;&nbsp;</a></span>computeContinuousErrorsNorms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="structHArDCore3D_1_1StokesNorms.html">StokesNorms</a>, <a class="el" href="structHArDCore3D_1_1StokesNorms.html">StokesNorms</a>&gt; HArDCore3D::Stokes::computeContinuousErrorsNorms </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__DDR__stokes.html#ga52ca58b26c2693690c8c32602881ffbc">VelocityType</a> &amp;&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__DDR__stokes.html#ga6b7d0f7c113eeecc50ce811990db5874">VorticityType</a> &amp;&#160;</td>
+          <td class="paramname"><em>curl_u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__DDR__stokes.html#ga758780788f88b913e804a3f98dc0975b">PressureType</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__DDR__stokes.html#ga5df4d4bd5072175a8bbed22b6fe5e324">PressureGradientType</a> &amp;&#160;</td>
+          <td class="paramname"><em>grad_p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the continuous Hcurl errors in u and Hgrad error in p (1st component), and same with continuous norms (second component) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>The vector, contains both velocity and pressure </td></tr>
+    <tr><td class="paramname">u</td><td>Continuous velocity </td></tr>
+    <tr><td class="paramname">curl_u</td><td>Curl of continuous velocity </td></tr>
+    <tr><td class="paramname">p</td><td>Continuous pressure </td></tr>
+    <tr><td class="paramname">grad_p</td><td>Grad of continuous pressure </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga250e160fb47a7bcc9af2f8baf1aa7427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga250e160fb47a7bcc9af2f8baf1aa7427">&#9670;&nbsp;</a></span>computeStokesNorms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structHArDCore3D_1_1StokesNorms.html">StokesNorms</a>&gt; HArDCore3D::Stokes::computeStokesNorms </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; Eigen::VectorXd &gt; &amp;&#160;</td>
+          <td class="paramname"><em>list_dofs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the discrete L2 norms, for a family of Eigen::VectorXd representing velocities &amp; pressures, of u, curl u, p and grad p. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list_dofs</td><td>List of vectors representing velocities and pressures </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5ac301f6b8248e2e81d720e3dcef92c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5ac301f6b8248e2e81d720e3dcef92c2">&#9670;&nbsp;</a></span>nbSCDOFs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::Stokes::nbSCDOFs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of statically condensed DOFs (both velocity and pressure) </p>
+
+</div>
+</div>
+<a id="ga2c90515a4a5cc2e081cf5f7485706418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2c90515a4a5cc2e081cf5f7485706418">&#9670;&nbsp;</a></span>nbSCDOFs_p()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::Stokes::nbSCDOFs_p </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of statically condensed DOFs (pressure) </p>
+
+</div>
+</div>
+<a id="ga137becabbdc3f6d87ce6a34ae934f729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga137becabbdc3f6d87ce6a34ae934f729">&#9670;&nbsp;</a></span>nbSCDOFs_u()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::Stokes::nbSCDOFs_u </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of statically condensed DOFs (velocity) </p>
+
+</div>
+</div>
+<a id="ga84c005b53d8d83c1be5b078dae093d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga84c005b53d8d83c1be5b078dae093d9d">&#9670;&nbsp;</a></span>scMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__DDR__stokes.html#ga1f6b821084f8381c776904559b8694a6">SystemMatrixType</a>&amp; HArDCore3D::Stokes::scMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the static condensation recovery operator. </p>
+
+</div>
+</div>
+<a id="gac24f18b70fee7f0796258e2bb2c46b59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac24f18b70fee7f0796258e2bb2c46b59">&#9670;&nbsp;</a></span>scVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd&amp; HArDCore3D::Stokes::scVector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the static condensation rhs. </p>
+
+</div>
+</div>
+<a id="ga5afaebf629ae7ee2b7835f544f975780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5afaebf629ae7ee2b7835f544f975780">&#9670;&nbsp;</a></span>sizeSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::Stokes::sizeSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the size of the statically condensed system (with Lagrange multiplier) </p>
+
+</div>
+</div>
+<a id="ga7844fc93907f58dfd21bb8b7a6c1af56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7844fc93907f58dfd21bb8b7a6c1af56">&#9670;&nbsp;</a></span>stabilizationParameter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double&amp; HArDCore3D::Stokes::stabilizationParameter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the stabilization parameter. </p>
+
+</div>
+</div>
+<a id="ga34e0c5701a7a9d2d4eec340492022a27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga34e0c5701a7a9d2d4eec340492022a27">&#9670;&nbsp;</a></span>stabilizationParameter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double&amp; HArDCore3D::Stokes::stabilizationParameter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the stabilization parameter. </p>
+
+</div>
+</div>
+<a id="ga7a7c455112aa41ea9cb6ed817b417702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7a7c455112aa41ea9cb6ed817b417702">&#9670;&nbsp;</a></span>systemMatrix() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__stokes.html#ga1f6b821084f8381c776904559b8694a6">SystemMatrixType</a>&amp; HArDCore3D::Stokes::systemMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the linear system matrix. </p>
+
+</div>
+</div>
+<a id="ga99db170b7f151f7d37828065b02dd1a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga99db170b7f151f7d37828065b02dd1a3">&#9670;&nbsp;</a></span>systemMatrix() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__DDR__stokes.html#ga1f6b821084f8381c776904559b8694a6">SystemMatrixType</a>&amp; HArDCore3D::Stokes::systemMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the linear system matrix. </p>
+
+</div>
+</div>
+<a id="ga67c5932d1f6296ac1f3e4e1d4cf53e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga67c5932d1f6296ac1f3e4e1d4cf53e3b">&#9670;&nbsp;</a></span>systemVector() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd&amp; HArDCore3D::Stokes::systemVector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the linear system right-hand side vector. </p>
+
+</div>
+</div>
+<a id="ga7fedbcceaa95a4b495c4bc9197a94940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7fedbcceaa95a4b495c4bc9197a94940">&#9670;&nbsp;</a></span>systemVector() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::VectorXd&amp; HArDCore3D::Stokes::systemVector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the linear system right-hand side vector. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>Schemes/DDR-stokes/<a class="el" href="ddr-stokes_8hpp_source.html">ddr-stokes.hpp</a></li>
+<li>Schemes/DDR-stokes/<a class="el" href="sddr-stokes_8hpp_source.html">sddr-stokes.hpp</a></li>
 <li>Schemes/VEM-stokes/<a class="el" href="vem-stokes_8hpp_source.html">vem-stokes.hpp</a></li>
 <li>Schemes/DDR-stokes/<a class="el" href="ddr-stokes_8cpp.html">ddr-stokes.cpp</a></li>
+<li>Schemes/DDR-stokes/<a class="el" href="sddr-stokes_8cpp.html">sddr-stokes.cpp</a></li>
 <li>Schemes/VEM-stokes/<a class="el" href="vem-stokes_8cpp.html">vem-stokes.cpp</a></li>
 </ul>
 </div><!-- contents -->

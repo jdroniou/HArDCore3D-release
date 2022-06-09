@@ -100,6 +100,16 @@ Typedefs</h2></td></tr>
 <tr class="separator:gab892187027bcb442d30c76dc95f84043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab9b0a0b9567472243716e8acd486d01e"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">HArDCore3D::Magnetostatics::PermeabilityType</a></td></tr>
 <tr class="separator:gab9b0a0b9567472243716e8acd486d01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30b00c985db10c16728d613f4b199405"><td class="memItemLeft" align="right" valign="top">typedef Eigen::SparseMatrix&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga30b00c985db10c16728d613f4b199405">HArDCore3D::Magnetostatics::SystemMatrixType</a></td></tr>
+<tr class="separator:ga30b00c985db10c16728d613f4b199405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebd9236e99aa83d9e5b68d9d86655a7d"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">HArDCore3D::Magnetostatics::ForcingTermType</a></td></tr>
+<tr class="separator:gaebd9236e99aa83d9e5b68d9d86655a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2a0390bd8d0403beec2119200c14964"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">HArDCore3D::Magnetostatics::SolutionPotentialType</a></td></tr>
+<tr class="separator:gad2a0390bd8d0403beec2119200c14964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab892187027bcb442d30c76dc95f84043"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gab892187027bcb442d30c76dc95f84043">HArDCore3D::Magnetostatics::SolutionCurlType</a></td></tr>
+<tr class="separator:gab892187027bcb442d30c76dc95f84043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9b0a0b9567472243716e8acd486d01e"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">HArDCore3D::Magnetostatics::PermeabilityType</a></td></tr>
+<tr class="separator:gab9b0a0b9567472243716e8acd486d01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -152,6 +162,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gaaa30c9fe81e0e6ea7078f1d92cf951ee"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gaaa30c9fe81e0e6ea7078f1d92cf951ee">HArDCore3D::Magnetostatics::computeNorms</a> (const std::vector&lt; Eigen::VectorXd &gt; &amp;list_dofs) const</td></tr>
 <tr class="memdesc:gaaa30c9fe81e0e6ea7078f1d92cf951ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the discrete Hcurl \times Hdiv norm of a family of vectors representing the dofs.  <a href="group__DDR__magnetostatic.html#gaaa30c9fe81e0e6ea7078f1d92cf951ee">More...</a><br /></td></tr>
 <tr class="separator:gaaa30c9fe81e0e6ea7078f1d92cf951ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3edac16dbe79d6677962bdaab0724af4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1SXCurl.html">SXCurl</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga3edac16dbe79d6677962bdaab0724af4">HArDCore3D::Magnetostatics::sxCurl</a> () const</td></tr>
+<tr class="memdesc:ga3edac16dbe79d6677962bdaab0724af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator.">SXCurl</a>.  <a href="group__DDR__magnetostatic.html#ga3edac16dbe79d6677962bdaab0724af4">More...</a><br /></td></tr>
+<tr class="separator:ga3edac16dbe79d6677962bdaab0724af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabaf43011cd68590a75861ebfd4e3d02e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1SXDiv.html">SXDiv</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gabaf43011cd68590a75861ebfd4e3d02e">HArDCore3D::Magnetostatics::sxDiv</a> () const</td></tr>
+<tr class="memdesc:gabaf43011cd68590a75861ebfd4e3d02e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1SXDiv.html" title="Discrete Serendipity Hdiv space: local operators, L2 product and global interpolator.">SXDiv</a>.  <a href="group__DDR__magnetostatic.html#gabaf43011cd68590a75861ebfd4e3d02e">More...</a><br /></td></tr>
+<tr class="separator:gabaf43011cd68590a75861ebfd4e3d02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -189,12 +205,61 @@ Variables</h2></td></tr>
 <tr class="separator:gaff788533b63baa15115e358130484877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8544d138a24d03889b511f2bfd62e7d4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga8544d138a24d03889b511f2bfd62e7d4">HArDCore3D::variable_permeability_mu</a></td></tr>
 <tr class="separator:ga8544d138a24d03889b511f2bfd62e7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05c87d0a93c5df840c07c09ded686aeb"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">HArDCore3D::PI</a> = boost::math::constants::pi&lt;double&gt;()</td></tr>
+<tr class="separator:ga05c87d0a93c5df840c07c09ded686aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56502747527cbdd90d18686a6776369d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">Magnetostatics::SolutionPotentialType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga56502747527cbdd90d18686a6776369d">HArDCore3D::constant_u</a></td></tr>
+<tr class="separator:ga56502747527cbdd90d18686a6776369d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa162d494a097b3c3168641f5472a92ec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gab892187027bcb442d30c76dc95f84043">Magnetostatics::SolutionCurlType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gaa162d494a097b3c3168641f5472a92ec">HArDCore3D::constant_sigma</a></td></tr>
+<tr class="separator:gaa162d494a097b3c3168641f5472a92ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f39f1d0235748ae953abb3a9f1af08a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">Magnetostatics::ForcingTermType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga8f39f1d0235748ae953abb3a9f1af08a">HArDCore3D::constant_f</a></td></tr>
+<tr class="separator:ga8f39f1d0235748ae953abb3a9f1af08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f8b5b95cddcc14ada040ff1b8caebf7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga3f8b5b95cddcc14ada040ff1b8caebf7">HArDCore3D::constant_mu</a> = <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>(1.)</td></tr>
+<tr class="separator:ga3f8b5b95cddcc14ada040ff1b8caebf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b83cbc5fa63f2dd2e4ca7781c8dac5b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">Magnetostatics::SolutionPotentialType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga1b83cbc5fa63f2dd2e4ca7781c8dac5b">HArDCore3D::linear_u</a></td></tr>
+<tr class="separator:ga1b83cbc5fa63f2dd2e4ca7781c8dac5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25711e256e87167ef3e392f477ae4008"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gab892187027bcb442d30c76dc95f84043">Magnetostatics::SolutionCurlType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga25711e256e87167ef3e392f477ae4008">HArDCore3D::linear_sigma</a></td></tr>
+<tr class="separator:ga25711e256e87167ef3e392f477ae4008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafacd77f29b93a3d1950bf37e7d4c9205"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">Magnetostatics::ForcingTermType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gafacd77f29b93a3d1950bf37e7d4c9205">HArDCore3D::linear_f</a></td></tr>
+<tr class="separator:gafacd77f29b93a3d1950bf37e7d4c9205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga415ee30bd823542e7f21c5f78914a085"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga415ee30bd823542e7f21c5f78914a085">HArDCore3D::linear_mu</a> = <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>(1.)</td></tr>
+<tr class="separator:ga415ee30bd823542e7f21c5f78914a085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f8102524d5dd3728c5216dcbfc32e59"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">Magnetostatics::SolutionPotentialType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga5f8102524d5dd3728c5216dcbfc32e59">HArDCore3D::trigonometric_u</a></td></tr>
+<tr class="separator:ga5f8102524d5dd3728c5216dcbfc32e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ff49b34b95c197d3c6ba8f9c0c0f184"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gab892187027bcb442d30c76dc95f84043">Magnetostatics::SolutionCurlType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga2ff49b34b95c197d3c6ba8f9c0c0f184">HArDCore3D::trigonometric_sigma</a></td></tr>
+<tr class="separator:ga2ff49b34b95c197d3c6ba8f9c0c0f184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8c33ab7880b971d36f915f1e835ad1e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">Magnetostatics::ForcingTermType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gaf8c33ab7880b971d36f915f1e835ad1e">HArDCore3D::trigonometric_f</a></td></tr>
+<tr class="separator:gaf8c33ab7880b971d36f915f1e835ad1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaac36ad19f84a1e0d36852cf04278a21"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gaaac36ad19f84a1e0d36852cf04278a21">HArDCore3D::trigonometric_mu</a> = <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>(1.)</td></tr>
+<tr class="separator:gaaac36ad19f84a1e0d36852cf04278a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8861771b7a4aec46677d2333abfcbe3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">Magnetostatics::SolutionPotentialType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gaf8861771b7a4aec46677d2333abfcbe3">HArDCore3D::variable_permeability_u</a></td></tr>
+<tr class="separator:gaf8861771b7a4aec46677d2333abfcbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1b6ed3b881e6ea7bb3fb070b97989f0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gab892187027bcb442d30c76dc95f84043">Magnetostatics::SolutionCurlType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gac1b6ed3b881e6ea7bb3fb070b97989f0">HArDCore3D::variable_permeability_sigma</a></td></tr>
+<tr class="separator:gac1b6ed3b881e6ea7bb3fb070b97989f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff788533b63baa15115e358130484877"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">Magnetostatics::ForcingTermType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#gaff788533b63baa15115e358130484877">HArDCore3D::variable_permeability_f</a></td></tr>
+<tr class="separator:gaff788533b63baa15115e358130484877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8544d138a24d03889b511f2bfd62e7d4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__magnetostatic.html#ga8544d138a24d03889b511f2bfd62e7d4">HArDCore3D::variable_permeability_mu</a></td></tr>
+<tr class="separator:ga8544d138a24d03889b511f2bfd62e7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Implementation of the DDR scheme for the magnetostatic problem. </p>
+<p>Implementation of the serendipity DDR scheme for the magnetostatic problem.</p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="gaebd9236e99aa83d9e5b68d9d86655a7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaebd9236e99aa83d9e5b68d9d86655a7d">&#9670;&nbsp;</a></span>ForcingTermType</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaebd9236e99aa83d9e5b68d9d86655a7d">&#9670;&nbsp;</a></span>ForcingTermType <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt; <a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">HArDCore3D::Magnetostatics::ForcingTermType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaebd9236e99aa83d9e5b68d9d86655a7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaebd9236e99aa83d9e5b68d9d86655a7d">&#9670;&nbsp;</a></span>ForcingTermType <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,7 +273,21 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gab9b0a0b9567472243716e8acd486d01e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab9b0a0b9567472243716e8acd486d01e">&#9670;&nbsp;</a></span>PermeabilityType</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9b0a0b9567472243716e8acd486d01e">&#9670;&nbsp;</a></span>PermeabilityType <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">HArDCore3D::Magnetostatics::PermeabilityType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab9b0a0b9567472243716e8acd486d01e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9b0a0b9567472243716e8acd486d01e">&#9670;&nbsp;</a></span>PermeabilityType <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,7 +301,21 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gab892187027bcb442d30c76dc95f84043"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab892187027bcb442d30c76dc95f84043">&#9670;&nbsp;</a></span>SolutionCurlType</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gab892187027bcb442d30c76dc95f84043">&#9670;&nbsp;</a></span>SolutionCurlType <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt; <a class="el" href="group__DDR__magnetostatic.html#gab892187027bcb442d30c76dc95f84043">HArDCore3D::Magnetostatics::SolutionCurlType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab892187027bcb442d30c76dc95f84043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab892187027bcb442d30c76dc95f84043">&#9670;&nbsp;</a></span>SolutionCurlType <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,7 +329,21 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gad2a0390bd8d0403beec2119200c14964"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad2a0390bd8d0403beec2119200c14964">&#9670;&nbsp;</a></span>SolutionPotentialType</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2a0390bd8d0403beec2119200c14964">&#9670;&nbsp;</a></span>SolutionPotentialType <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt; <a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">HArDCore3D::Magnetostatics::SolutionPotentialType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad2a0390bd8d0403beec2119200c14964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2a0390bd8d0403beec2119200c14964">&#9670;&nbsp;</a></span>SolutionPotentialType <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +357,21 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga30b00c985db10c16728d613f4b199405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga30b00c985db10c16728d613f4b199405">&#9670;&nbsp;</a></span>SystemMatrixType</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30b00c985db10c16728d613f4b199405">&#9670;&nbsp;</a></span>SystemMatrixType <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::SparseMatrix&lt;double&gt; <a class="el" href="group__DDR__magnetostatic.html#ga30b00c985db10c16728d613f4b199405">HArDCore3D::Magnetostatics::SystemMatrixType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga30b00c985db10c16728d613f4b199405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30b00c985db10c16728d613f4b199405">&#9670;&nbsp;</a></span>SystemMatrixType <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -568,6 +689,60 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga3edac16dbe79d6677962bdaab0724af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3edac16dbe79d6677962bdaab0724af4">&#9670;&nbsp;</a></span>sxCurl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classHArDCore3D_1_1SXCurl.html">SXCurl</a>&amp; HArDCore3D::Magnetostatics::sxCurl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the space <a class="el" href="classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator.">SXCurl</a>. </p>
+
+</div>
+</div>
+<a id="gabaf43011cd68590a75861ebfd4e3d02e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabaf43011cd68590a75861ebfd4e3d02e">&#9670;&nbsp;</a></span>sxDiv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classHArDCore3D_1_1SXDiv.html">SXDiv</a>&amp; HArDCore3D::Magnetostatics::sxDiv </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the space <a class="el" href="classHArDCore3D_1_1SXDiv.html" title="Discrete Serendipity Hdiv space: local operators, L2 product and global interpolator.">SXDiv</a>. </p>
+
+</div>
+</div>
 <a id="gaada8e4f19159b7e7ca218dffeccf6a3e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaada8e4f19159b7e7ca218dffeccf6a3e">&#9670;&nbsp;</a></span>systemMatrix() <span class="overload">[1/2]</span></h2>
 
@@ -732,7 +907,32 @@ Variables</h2></td></tr>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="ga8f39f1d0235748ae953abb3a9f1af08a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8f39f1d0235748ae953abb3a9f1af08a">&#9670;&nbsp;</a></span>constant_f</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f39f1d0235748ae953abb3a9f1af08a">&#9670;&nbsp;</a></span>constant_f <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">Magnetostatics::ForcingTermType</a> HArDCore3D::constant_f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                 <span class="keywordflow">return</span> Eigen::Vector3d::Zero();</div>
+<div class="line">               }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga8f39f1d0235748ae953abb3a9f1af08a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f39f1d0235748ae953abb3a9f1af08a">&#9670;&nbsp;</a></span>constant_f <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -757,7 +957,29 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga3f8b5b95cddcc14ada040ff1b8caebf7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3f8b5b95cddcc14ada040ff1b8caebf7">&#9670;&nbsp;</a></span>constant_mu</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f8b5b95cddcc14ada040ff1b8caebf7">&#9670;&nbsp;</a></span>constant_mu <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a> HArDCore3D::constant_mu = <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>(1.)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3f8b5b95cddcc14ada040ff1b8caebf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f8b5b95cddcc14ada040ff1b8caebf7">&#9670;&nbsp;</a></span>constant_mu <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -779,7 +1001,32 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaa162d494a097b3c3168641f5472a92ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa162d494a097b3c3168641f5472a92ec">&#9670;&nbsp;</a></span>constant_sigma</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa162d494a097b3c3168641f5472a92ec">&#9670;&nbsp;</a></span>constant_sigma <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gab892187027bcb442d30c76dc95f84043">Magnetostatics::SolutionCurlType</a> HArDCore3D::constant_sigma</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                     <span class="keywordflow">return</span> Eigen::Vector3d::Zero();</div>
+<div class="line">                   }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gaa162d494a097b3c3168641f5472a92ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa162d494a097b3c3168641f5472a92ec">&#9670;&nbsp;</a></span>constant_sigma <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -804,7 +1051,32 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga56502747527cbdd90d18686a6776369d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga56502747527cbdd90d18686a6776369d">&#9670;&nbsp;</a></span>constant_u</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56502747527cbdd90d18686a6776369d">&#9670;&nbsp;</a></span>constant_u <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">Magnetostatics::SolutionPotentialType</a> HArDCore3D::constant_u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                 <span class="keywordflow">return</span> Eigen::Vector3d(1., 2., 3.);</div>
+<div class="line">               }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga56502747527cbdd90d18686a6776369d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56502747527cbdd90d18686a6776369d">&#9670;&nbsp;</a></span>constant_u <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -829,7 +1101,32 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gafacd77f29b93a3d1950bf37e7d4c9205"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafacd77f29b93a3d1950bf37e7d4c9205">&#9670;&nbsp;</a></span>linear_f</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gafacd77f29b93a3d1950bf37e7d4c9205">&#9670;&nbsp;</a></span>linear_f <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">Magnetostatics::ForcingTermType</a> HArDCore3D::linear_f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">               <span class="keywordflow">return</span> Eigen::Vector3d::Zero();</div>
+<div class="line">             }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gafacd77f29b93a3d1950bf37e7d4c9205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafacd77f29b93a3d1950bf37e7d4c9205">&#9670;&nbsp;</a></span>linear_f <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -854,7 +1151,29 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga415ee30bd823542e7f21c5f78914a085"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga415ee30bd823542e7f21c5f78914a085">&#9670;&nbsp;</a></span>linear_mu</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga415ee30bd823542e7f21c5f78914a085">&#9670;&nbsp;</a></span>linear_mu <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a> HArDCore3D::linear_mu = <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>(1.)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga415ee30bd823542e7f21c5f78914a085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga415ee30bd823542e7f21c5f78914a085">&#9670;&nbsp;</a></span>linear_mu <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -876,7 +1195,32 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga25711e256e87167ef3e392f477ae4008"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga25711e256e87167ef3e392f477ae4008">&#9670;&nbsp;</a></span>linear_sigma</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25711e256e87167ef3e392f477ae4008">&#9670;&nbsp;</a></span>linear_sigma <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gab892187027bcb442d30c76dc95f84043">Magnetostatics::SolutionCurlType</a> HArDCore3D::linear_sigma</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                   <span class="keywordflow">return</span> Eigen::Vector3d(-3., 2., 1.);</div>
+<div class="line">                 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga25711e256e87167ef3e392f477ae4008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25711e256e87167ef3e392f477ae4008">&#9670;&nbsp;</a></span>linear_sigma <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -901,7 +1245,36 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga1b83cbc5fa63f2dd2e4ca7781c8dac5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1b83cbc5fa63f2dd2e4ca7781c8dac5b">&#9670;&nbsp;</a></span>linear_u</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b83cbc5fa63f2dd2e4ca7781c8dac5b">&#9670;&nbsp;</a></span>linear_u <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">Magnetostatics::SolutionPotentialType</a> HArDCore3D::linear_u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">               <span class="keywordflow">return</span> Eigen::Vector3d(</div>
+<div class="line">                                      x(0) + x(1) + x(2),</div>
+<div class="line">                                      2.*(x(0)-x(1)+x(2)),</div>
+<div class="line">                                      -x(0) - x(1) + x(2)</div>
+<div class="line">                                      );</div>
+<div class="line">             }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga1b83cbc5fa63f2dd2e4ca7781c8dac5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b83cbc5fa63f2dd2e4ca7781c8dac5b">&#9670;&nbsp;</a></span>linear_u <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -930,7 +1303,29 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga05c87d0a93c5df840c07c09ded686aeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga05c87d0a93c5df840c07c09ded686aeb">&#9670;&nbsp;</a></span>PI</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05c87d0a93c5df840c07c09ded686aeb">&#9670;&nbsp;</a></span>PI <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double HArDCore3D::PI = boost::math::constants::pi&lt;double&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga05c87d0a93c5df840c07c09ded686aeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05c87d0a93c5df840c07c09ded686aeb">&#9670;&nbsp;</a></span>PI <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -952,7 +1347,36 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaf8c33ab7880b971d36f915f1e835ad1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf8c33ab7880b971d36f915f1e835ad1e">&#9670;&nbsp;</a></span>trigonometric_f</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8c33ab7880b971d36f915f1e835ad1e">&#9670;&nbsp;</a></span>trigonometric_f <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">Magnetostatics::ForcingTermType</a> HArDCore3D::trigonometric_f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                      <span class="keywordflow">return</span> 3. * std::pow(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2) * Eigen::Vector3d(</div>
+<div class="line">                                                                    cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2)),</div>
+<div class="line">                                                                    -2. * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2)),</div>
+<div class="line">                                                                    sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2))</div>
+<div class="line">                                                                    );</div>
+<div class="line">                    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gaf8c33ab7880b971d36f915f1e835ad1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8c33ab7880b971d36f915f1e835ad1e">&#9670;&nbsp;</a></span>trigonometric_f <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -981,7 +1405,29 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaaac36ad19f84a1e0d36852cf04278a21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaac36ad19f84a1e0d36852cf04278a21">&#9670;&nbsp;</a></span>trigonometric_mu</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaac36ad19f84a1e0d36852cf04278a21">&#9670;&nbsp;</a></span>trigonometric_mu <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a> HArDCore3D::trigonometric_mu = <a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a>(1.)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaaac36ad19f84a1e0d36852cf04278a21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaac36ad19f84a1e0d36852cf04278a21">&#9670;&nbsp;</a></span>trigonometric_mu <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1003,7 +1449,36 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga2ff49b34b95c197d3c6ba8f9c0c0f184"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2ff49b34b95c197d3c6ba8f9c0c0f184">&#9670;&nbsp;</a></span>trigonometric_sigma</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ff49b34b95c197d3c6ba8f9c0c0f184">&#9670;&nbsp;</a></span>trigonometric_sigma <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gab892187027bcb442d30c76dc95f84043">Magnetostatics::SolutionCurlType</a> HArDCore3D::trigonometric_sigma</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                          <span class="keywordflow">return</span> 3. * <a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * Eigen::Vector3d(</div>
+<div class="line">                                                           sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2)),</div>
+<div class="line">                                                           0.,</div>
+<div class="line">                                                           -cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2))</div>
+<div class="line">                                                           );</div>
+<div class="line">                        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga2ff49b34b95c197d3c6ba8f9c0c0f184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ff49b34b95c197d3c6ba8f9c0c0f184">&#9670;&nbsp;</a></span>trigonometric_sigma <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1032,7 +1507,36 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga5f8102524d5dd3728c5216dcbfc32e59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5f8102524d5dd3728c5216dcbfc32e59">&#9670;&nbsp;</a></span>trigonometric_u</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f8102524d5dd3728c5216dcbfc32e59">&#9670;&nbsp;</a></span>trigonometric_u <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">Magnetostatics::SolutionPotentialType</a> HArDCore3D::trigonometric_u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                      <span class="keywordflow">return</span> Eigen::Vector3d(</div>
+<div class="line">                                             cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2)),</div>
+<div class="line">                                             -2. * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2)),</div>
+<div class="line">                                             sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2))</div>
+<div class="line">                                             );</div>
+<div class="line">                    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga5f8102524d5dd3728c5216dcbfc32e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f8102524d5dd3728c5216dcbfc32e59">&#9670;&nbsp;</a></span>trigonometric_u <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1061,7 +1565,49 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaff788533b63baa15115e358130484877"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaff788533b63baa15115e358130484877">&#9670;&nbsp;</a></span>variable_permeability_f</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff788533b63baa15115e358130484877">&#9670;&nbsp;</a></span>variable_permeability_f <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">Magnetostatics::ForcingTermType</a> HArDCore3D::variable_permeability_f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                              <span class="keywordtype">double</span> a = 3 * <a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> / std::pow(1. + x(0) + x(1) + x(2), 2);</div>
+<div class="line">                              <span class="keywordtype">double</span> b = 3 * std::pow(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2) / (1. + x(0) + x(1) + x(2));</div>
+<div class="line">                              <span class="keywordtype">double</span> dy_sigmax = -a * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2))</div>
+<div class="line">                                - b * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2));</div>
+<div class="line">                              <span class="keywordtype">double</span> dz_sigmax = -a * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2))</div>
+<div class="line">                                - b * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2));</div>
+<div class="line">                              ;</div>
+<div class="line">                              <span class="keywordtype">double</span> dx_sigmaz = a * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2))</div>
+<div class="line">                                + b * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2));</div>
+<div class="line"> </div>
+<div class="line">                              <span class="keywordtype">double</span> dy_sigmaz = a * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2))</div>
+<div class="line">                                + b * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2));</div>
+<div class="line"> </div>
+<div class="line">                              <span class="keywordflow">return</span> Eigen::Vector3d(</div>
+<div class="line">                                                     dy_sigmaz,</div>
+<div class="line">                                                     dz_sigmax - dx_sigmaz,</div>
+<div class="line">                                                     -dy_sigmax</div>
+<div class="line">                                                     );</div>
+<div class="line">                            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gaff788533b63baa15115e358130484877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff788533b63baa15115e358130484877">&#9670;&nbsp;</a></span>variable_permeability_f <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1103,7 +1649,33 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga8544d138a24d03889b511f2bfd62e7d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8544d138a24d03889b511f2bfd62e7d4">&#9670;&nbsp;</a></span>variable_permeability_mu</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8544d138a24d03889b511f2bfd62e7d4">&#9670;&nbsp;</a></span>variable_permeability_mu <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e">Magnetostatics::PermeabilityType</a> HArDCore3D::variable_permeability_mu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= Magnetostatics::PermeabilityType(</div>
+<div class="line">                        [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#aef0e9b3e58ded3c9586b4f565f88b523">Cell</a> &amp; T, <span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; <span class="keywordtype">double</span> { <span class="keywordflow">return</span> 1. + x(0) + x(1) + x(2); },</div>
+<div class="line">                        [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#aef0e9b3e58ded3c9586b4f565f88b523">Cell</a> &amp; T) -&gt; <span class="keywordtype">size_t</span> { <span class="keywordflow">return</span> 1; }</div>
+<div class="line">                        )</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga8544d138a24d03889b511f2bfd62e7d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8544d138a24d03889b511f2bfd62e7d4">&#9670;&nbsp;</a></span>variable_permeability_mu <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1129,7 +1701,37 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gac1b6ed3b881e6ea7bb3fb070b97989f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac1b6ed3b881e6ea7bb3fb070b97989f0">&#9670;&nbsp;</a></span>variable_permeability_sigma</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gac1b6ed3b881e6ea7bb3fb070b97989f0">&#9670;&nbsp;</a></span>variable_permeability_sigma <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gab892187027bcb442d30c76dc95f84043">Magnetostatics::SolutionCurlType</a> HArDCore3D::variable_permeability_sigma</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                                  <span class="keywordflow">return</span> 3 * <a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> / (1. + x(0) + x(1) + x(2))</div>
+<div class="line">                                    * Eigen::Vector3d(</div>
+<div class="line">                                                      sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2)),</div>
+<div class="line">                                                      0.,</div>
+<div class="line">                                                      -cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2))</div>
+<div class="line">                                                      );</div>
+<div class="line">                                }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gac1b6ed3b881e6ea7bb3fb070b97989f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac1b6ed3b881e6ea7bb3fb070b97989f0">&#9670;&nbsp;</a></span>variable_permeability_sigma <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1159,7 +1761,36 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaf8861771b7a4aec46677d2333abfcbe3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf8861771b7a4aec46677d2333abfcbe3">&#9670;&nbsp;</a></span>variable_permeability_u</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8861771b7a4aec46677d2333abfcbe3">&#9670;&nbsp;</a></span>variable_permeability_u <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__DDR__magnetostatic.html#gad2a0390bd8d0403beec2119200c14964">Magnetostatics::SolutionPotentialType</a> HArDCore3D::variable_permeability_u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> Eigen::Vector3d &amp; x) -&gt; Eigen::Vector3d {</div>
+<div class="line">                              <span class="keywordflow">return</span> Eigen::Vector3d(</div>
+<div class="line">                                                     cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2)),</div>
+<div class="line">                                                     -2. * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2)),</div>
+<div class="line">                                                     sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0)) * sin(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1)) * cos(<a class="code" href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2))</div>
+<div class="line">                                                     );</div>
+<div class="line">                            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gaf8861771b7a4aec46677d2333abfcbe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8861771b7a4aec46677d2333abfcbe3">&#9670;&nbsp;</a></span>variable_permeability_u <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1189,7 +1820,7 @@ Variables</h2></td></tr>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="anamespaceMesh2D_html_aef0e9b3e58ded3c9586b4f565f88b523"><div class="ttname"><a href="namespaceMesh2D.html#aef0e9b3e58ded3c9586b4f565f88b523">Mesh2D::Cell</a></div><div class="ttdeci">MeshND::Cell&lt; 2 &gt; Cell</div><div class="ttdef"><b>Definition:</b> Mesh2D.hpp:13</div></div>
-<div class="ttc" id="agroup__DDR__magnetostatic_html_ga05c87d0a93c5df840c07c09ded686aeb"><div class="ttname"><a href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">HArDCore3D::PI</a></div><div class="ttdeci">static const double PI</div><div class="ttdef"><b>Definition:</b> ddr-magnetostatics.hpp:187</div></div>
+<div class="ttc" id="agroup__DDR__magnetostatic_html_ga05c87d0a93c5df840c07c09ded686aeb"><div class="ttname"><a href="group__DDR__magnetostatic.html#ga05c87d0a93c5df840c07c09ded686aeb">HArDCore3D::PI</a></div><div class="ttdeci">static const double PI</div><div class="ttdef"><b>Definition:</b> ddr-magnetostatics.hpp:186</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -47,7 +47,7 @@ std\+::vector$<$ \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d
 \begin{DoxyCompactList}\small\item\em Compute all the integrals, on the edges of a cell, of this cell\textquotesingle{}s monomials up to a max degree. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} $>$ \mbox{\hyperlink{group__Quadratures_gaf9b77ed0d2641bf775d3ed5a1c32c458}{H\+Ar\+D\+Core3\+D\+::\+Integrate\+Cell\+Monomials\+\_\+on\+Faces}} (const Cell \&T, const size\+\_\+t maxdeg, std\+::vector$<$ \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} $>$ \&integrals\+\_\+edges)
 \begin{DoxyCompactList}\small\item\em Compute all the integrals, on the faces of a cell, of this cell\textquotesingle{}s monomials up to a max degree. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga06ba382c1236f37fb899aa43f7bc5fac}{H\+Ar\+D\+Core3\+D\+::\+Integrate\+Cell\+Monomials}} (const Cell \&T, const size\+\_\+t maxdeg)
+\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga323801aa2c94733fbdf7e3e7dfe87914}{H\+Ar\+D\+Core3\+D\+::\+Integrate\+Cell\+Monomials}} (const Cell \&T, const int maxdeg)
 \begin{DoxyCompactList}\small\item\em Compute all the integrals of a cell\textquotesingle{}s monomials on the cell. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga5df7229d77d814172a553202c73311f1}{H\+Ar\+D\+Core3\+D\+::\+Check\+Integrals\+Degree}} (const Cell \&T, const size\+\_\+t degree, const \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} \&mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Checks if the degree of an existing list of monomial integrals is sufficient, other re-\/compute and return a proper list. \end{DoxyCompactList}\item 
@@ -155,7 +155,7 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga4b0bbf5291db203446ef
 \begin{DoxyCompactList}\small\item\em Template to compute the Gram Matrix of the divergence of any basis and any other basis. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga5427e32bad971a5401444edcc0457fbe}{H\+Ar\+D\+Core3\+D\+::\+Gram\+Matrix\+Div}} (const Cell \&T, const Basis\+Type1 \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ Basis\+Type2 $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Template to compute the Gram Matrix of the divergence of any two bases when one \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}} is at a lower level than the other. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_gae0f78ba34621867bf742ac6d909b1285}{H\+Ar\+D\+Core3\+D\+::\+Integrate\+Edge\+Monomials}} (const Edge \&E, const size\+\_\+t maxdeg)
+\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga6186042c03b027877f08708d9a8e7f10}{H\+Ar\+D\+Core3\+D\+::\+Integrate\+Edge\+Monomials}} (const Edge \&E, const int maxdeg)
 \begin{DoxyCompactList}\small\item\em Compute all integrals of edge monomials up to a total degree. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga1f77448401179e7c91990fa14843dddd}{H\+Ar\+D\+Core3\+D\+::\+Check\+Integrals\+Degree}} (const Edge \&E, const size\+\_\+t degree, const \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \&mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Checks if the degree of an existing list of monomial integrals is sufficient, other re-\/compute and return a proper list. \end{DoxyCompactList}\item 
@@ -177,7 +177,7 @@ size\+\_\+t \mbox{\hyperlink{group__Quadratures_ga7aad8f51e1e6ffe74d5ce067be59d6
 \item 
 std\+::vector$<$ \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} $>$ \mbox{\hyperlink{group__Quadratures_gac099a4ce614b3e10a6e782c360ca2d3e}{H\+Ar\+D\+Core3\+D\+::\+Integrate\+Face\+Monomials\+\_\+on\+Edges}} (const Face \&F, const size\+\_\+t maxdeg)
 \begin{DoxyCompactList}\small\item\em Compute all integrals, on the edges of a face, of the face monomials up to a total degree. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_gae52c29ca8fcb533fcf14277241d5f7a1}{H\+Ar\+D\+Core3\+D\+::\+Integrate\+Face\+Monomials}} (const Face \&F, const size\+\_\+t maxdeg)
+\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga075fd696ad5de1ebf7e95a2ee978e5a5}{H\+Ar\+D\+Core3\+D\+::\+Integrate\+Face\+Monomials}} (const Face \&F, const int maxdeg)
 \begin{DoxyCompactList}\small\item\em Compute all integrals on a face of face monomials up to a total degree. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga41d011699310037969a736b5b967a096}{H\+Ar\+D\+Core3\+D\+::\+Check\+Integrals\+Degree}} (const Face \&F, const size\+\_\+t degree, const \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} \&mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Checks if the degree of an existing list of monomial integrals is sufficient, other re-\/compute and return a proper list. \end{DoxyCompactList}\item 
@@ -2304,11 +2304,11 @@ Template to compute the Gram Matrix of the divergence of a tensorized basis and 
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily void Quad\+Rule\+Tetra\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{group__Quadratures_ga06ba382c1236f37fb899aa43f7bc5fac}\label{group__Quadratures_ga06ba382c1236f37fb899aa43f7bc5fac}} 
+\mbox{\Hypertarget{group__Quadratures_ga323801aa2c94733fbdf7e3e7dfe87914}\label{group__Quadratures_ga323801aa2c94733fbdf7e3e7dfe87914}} 
 \index{Quadratures@{Quadratures}!IntegrateCellMonomials@{IntegrateCellMonomials}}
 \index{IntegrateCellMonomials@{IntegrateCellMonomials}!Quadratures@{Quadratures}}
 \doxysubsubsection{\texorpdfstring{IntegrateCellMonomials()}{IntegrateCellMonomials()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} H\+Ar\+D\+Core3\+D\+::\+Integrate\+Cell\+Monomials (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const size\+\_\+t}]{maxdeg }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} H\+Ar\+D\+Core3\+D\+::\+Integrate\+Cell\+Monomials (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const int}]{maxdeg }\end{DoxyParamCaption})}
 
 
 
@@ -2357,11 +2357,11 @@ Compute all the integrals, on the faces of a cell, of this cell\textquotesingle{
 {\em integrals\+\_\+edges} & List of integrals of the monomials over the edges \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{group__Quadratures_gae0f78ba34621867bf742ac6d909b1285}\label{group__Quadratures_gae0f78ba34621867bf742ac6d909b1285}} 
+\mbox{\Hypertarget{group__Quadratures_ga6186042c03b027877f08708d9a8e7f10}\label{group__Quadratures_ga6186042c03b027877f08708d9a8e7f10}} 
 \index{Quadratures@{Quadratures}!IntegrateEdgeMonomials@{IntegrateEdgeMonomials}}
 \index{IntegrateEdgeMonomials@{IntegrateEdgeMonomials}!Quadratures@{Quadratures}}
 \doxysubsubsection{\texorpdfstring{IntegrateEdgeMonomials()}{IntegrateEdgeMonomials()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} H\+Ar\+D\+Core3\+D\+::\+Integrate\+Edge\+Monomials (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const size\+\_\+t}]{maxdeg }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} H\+Ar\+D\+Core3\+D\+::\+Integrate\+Edge\+Monomials (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const int}]{maxdeg }\end{DoxyParamCaption})}
 
 
 
@@ -2374,11 +2374,11 @@ Compute all integrals of edge monomials up to a total degree.
 {\em maxdeg} & Maximal total degree \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{group__Quadratures_gae52c29ca8fcb533fcf14277241d5f7a1}\label{group__Quadratures_gae52c29ca8fcb533fcf14277241d5f7a1}} 
+\mbox{\Hypertarget{group__Quadratures_ga075fd696ad5de1ebf7e95a2ee978e5a5}\label{group__Quadratures_ga075fd696ad5de1ebf7e95a2ee978e5a5}} 
 \index{Quadratures@{Quadratures}!IntegrateFaceMonomials@{IntegrateFaceMonomials}}
 \index{IntegrateFaceMonomials@{IntegrateFaceMonomials}!Quadratures@{Quadratures}}
 \doxysubsubsection{\texorpdfstring{IntegrateFaceMonomials()}{IntegrateFaceMonomials()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} H\+Ar\+D\+Core3\+D\+::\+Integrate\+Face\+Monomials (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const size\+\_\+t}]{maxdeg }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} H\+Ar\+D\+Core3\+D\+::\+Integrate\+Face\+Monomials (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const int}]{maxdeg }\end{DoxyParamCaption})}
 
 
 

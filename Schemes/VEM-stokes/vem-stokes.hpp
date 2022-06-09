@@ -15,6 +15,7 @@
 
 #include <mesh.hpp>
 #include <mesh_builder.hpp>
+#include <local_static_condensation.hpp>
 
 #include <vdiv.hpp>
 #include <vgrad.hpp>
@@ -91,6 +92,29 @@ namespace HArDCore3D
       return m_vcurl.dimension() + m_vgrad.dimension();
     }
 
+    /// Returns the number of statically condensed DOFs (velocity)
+    inline size_t nbSCDOFs_u() const
+    {
+      return m_vemcore.mesh().n_cells() * m_nloc_sc_u;
+    }
+
+    /// Returns the number of statically condensed DOFs (pressure)
+    inline size_t nbSCDOFs_p() const
+    {
+      return m_vemcore.mesh().n_cells() * m_nloc_sc_p;
+    }
+
+    /// Returns the number of statically condensed DOFs (both velocity and pressure)
+    inline size_t nbSCDOFs() const
+    {
+      return m_vemcore.mesh().n_cells() * (m_nloc_sc_u + m_nloc_sc_p);
+    }
+
+    /// Returns the size of the statically condensed system (with Lagrange multiplier)
+    inline size_t sizeSystem() const
+    {
+      return dimension() + 1 - nbSCDOFs();
+    }
     /// Returns the space VGrad
     inline const VGrad & vGrad() const
     {
@@ -129,6 +153,16 @@ namespace HArDCore3D
       return m_b;
     }
 
+    /// Returns the static condensation recovery operator
+    inline const SystemMatrixType & scMatrix() const {
+      return m_sc_A;
+    }
+
+    /// Returns the static condensation rhs
+    inline Eigen::VectorXd & scVector() {
+      return m_sc_b;
+    }
+
     /// Returns the stabilization parameter
     inline const double & stabilizationParameter() const {
       return m_stab_par;
@@ -163,12 +197,17 @@ namespace HArDCore3D
                                 const ViscosityType & nu    ///< Permeability
                                 );
 
+    /// Creates the permutation matrix and the global DOFs for the local static condensation
+    LocalStaticCondensation _compute_static_condensation(const size_t & iT) const;
+
     /// Assemble the local contribution for the element of index iT into the global system
     void _assemble_local_contribution(
                                       size_t iT,                                               ///< Element index
                                       const std::pair<Eigen::MatrixXd, Eigen::VectorXd> & lsT, ///< Local contribution
-                                      std::list<Eigen::Triplet<double> > & A,                  ///< List of triplets
-                                      Eigen::VectorXd & b                                      ///< Vector for RHS
+                                      std::list<Eigen::Triplet<double> > & A1,                 ///< List of triplets for system
+                                      Eigen::VectorXd & b1,                                    ///< Vector for RHS for sysem
+                                      std::list<Eigen::Triplet<double> > & A2,                 ///< List of triplets for sc
+                                      Eigen::VectorXd & b2                                     ///< Vector for RHS for sc
                                       );
     
     const VEMCore & m_vemcore;
@@ -177,8 +216,12 @@ namespace HArDCore3D
     VGrad m_vgrad;
     VCurl m_vcurl;
     VDiv m_vdiv;
-    SystemMatrixType m_A;
+    const size_t m_nloc_sc_u; // Nb of statically condensed DOFs for velocity in each cell (cell unknowns)
+    const size_t m_nloc_sc_p; // Nb of statically condensed DOFs for pressure in each cell (cell unknowns)
+    SystemMatrixType m_A;   // Matrix and RHS of statically condensed system
     Eigen::VectorXd m_b;
+    SystemMatrixType m_sc_A; // Static condensation operator and RHS (to recover statically condensed DOFs)
+    Eigen::VectorXd m_sc_b;
     double m_stab_par;
   };
 

@@ -1,0 +1,119 @@
+\hypertarget{classHArDCore3D_1_1SXCurl}{}\doxysection{H\+Ar\+D\+Core3D\+::S\+X\+Curl Class Reference}
+\label{classHArDCore3D_1_1SXCurl}\index{HArDCore3D::SXCurl@{HArDCore3D::SXCurl}}
+
+
+Discrete Serendipity Hcurl space\+: local operators, L2 product and global interpolator.  
+
+
+
+
+{\ttfamily \#include $<$sxcurl.\+hpp$>$}
+
+
+
+Inheritance diagram for H\+Ar\+D\+Core3D\+::S\+X\+Curl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classHArDCore3D_1_1SXCurl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H\+Ar\+D\+Core3D\+::S\+X\+Curl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classHArDCore3D_1_1SXCurl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1SXCurl_1_1TransferOperators}{Transfer\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store the serendipity, extension and reduction operators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDRCore_ga54005a93080c30da08c1ee04c12c7588}{Function\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__DDRCore_ga7cbee3d46504ec031f328b44cd841fc8}{S\+X\+Curl}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \&ser\+\_\+pro, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRCore_ga89f8ff3f586b549ffc79292d25a6691a}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__DDRCore_ga59f8e6ea7c7c5121c035105c93687102}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga45d84a4ae4ee1af1acfd8a6a866aee83}{interpolate}} (const \mbox{\hyperlink{group__DDRCore_ga54005a93080c30da08c1ee04c12c7588}{Function\+Type}} \&v, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gae10c8af996f2ec020a62c4590828a107}{Scurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga238669ee9b6d0990ac289b208ca96247}{Ecurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga3d74507620fd1263f029c8b7b8c01909}{Rcurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga753cd990ca81a0c5ee0741400cd19ba9}{Scurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gad2f4c36cef876f700d67d5e7d180c745}{Ecurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the extension for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga8ed77b60f4beec239695e753f36da982}{Rcurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gaf0b18320b658cb6b967aa992b2ceea9b}{Scurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga212a1d9c41b7a7d6b68c699bf63428c8}{Ecurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gaf3c9d642b72d125cd5d0fad71d691d5c}{Rcurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gab6242ba1702ac7893f78da5607683597}{Scurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gad246a4fb1970aefb04973ad092fbca75}{Ecurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the extension for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga8e5cf5df4e2479261480c170af01dc76}{Rcurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga2c6d7f55cce5ea64383a7fc59f145b6b}{face\+Curl}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga4e5f1efb302219e9035017e4516eb727}{face\+Curl}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gadf755c4880fc2e141e4956e45c8385c0}{face\+Potential}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gaf0f2073b5621de532890119fbb42944c}{face\+Potential}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga0ddd399509f0241e4073eedac6195a55}{cell\+Curl}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gac64987377d4d7d5b36e54cf16104b2d5}{cell\+Curl}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga200dbdbd702a0d3860ec6cd708bac132}{cell\+Potential}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga24f3081b7d875d68d73aa7f7a08d3fd9}{cell\+Potential}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga574c129bb39a42ac74f85f6b932b7194}{compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gaacff182d2d78705c791dcfa225b2cf84}{compute\+L2\+Product\+Gradient}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{S\+X\+Grad}} \&sx\+\_\+grad, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete gradient on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga720a807b0c06f118248a6523c3d30ad9}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga4bd4ae84b3418bae8c39b4ac9a176056}{cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga2b0e7dc6974dd13814eeec08935379ee}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga44d4eedcc17f59c5c6ece58c998ed2aa}{face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga3b0b90e05b681758a3bd4c9fda19f109}{edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga41ea1833d9f73dcad8dbb4fc9aec624c}{edge\+Bases}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Discrete Serendipity Hcurl space\+: local operators, L2 product and global interpolator. 
+
+On each edge, the D\+O\+Fs correspond to the polynomial bases on the edge provided by m\+\_\+ddr\+\_\+core. On each face/element, the D\+O\+Fs are first those of the $\mathcal{R}^{k-1}$ component and then of the $\mathcal{R}^{c,\ell+1}$ component, each one of them following the bases of these spaces provided by m\+\_\+ddr\+\_\+core or restriction thereof. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+D\+D\+R\+Core/\mbox{\hyperlink{sxcurl_8hpp}{sxcurl.\+hpp}}\item 
+src/\+D\+D\+R\+Core/\mbox{\hyperlink{sxcurl_8cpp}{sxcurl.\+cpp}}\end{DoxyCompactItemize}

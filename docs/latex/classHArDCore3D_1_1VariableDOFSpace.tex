@@ -1,0 +1,137 @@
+\hypertarget{classHArDCore3D_1_1VariableDOFSpace}{}\doxysection{H\+Ar\+D\+Core3D\+::Variable\+D\+O\+F\+Space Class Reference}
+\label{classHArDCore3D_1_1VariableDOFSpace}\index{HArDCore3D::VariableDOFSpace@{HArDCore3D::VariableDOFSpace}}
+
+
+Base class for global D\+OF spaces.  
+
+
+
+
+{\ttfamily \#include $<$variabledofspace.\+hpp$>$}
+
+
+
+Inheritance diagram for H\+Ar\+D\+Core3D\+::Variable\+D\+O\+F\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classHArDCore3D_1_1VariableDOFSpace__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__Common_ga7db5411bc5570e3f43d26ac31741fbdb}{Variable\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+vertex\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+edge\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga22e4b3bcc035f5dd6e99cc2fd1b7fa09}{Variable\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+edge\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
+\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices have the same number of D\+O\+Fs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga6310fa8adeb32f40683d6b361162dcda}{Variable\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
+\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices/edges have the same number of D\+O\+Fs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga2b0bba4966c3d28a4d5b95fdcf5e866b}{Variable\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
+\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices/edges/faces have the same number of D\+O\+Fs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga037caf94774d638f1a49569ca7f2e3b4}{Variable\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
+\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices/edges/faces/cells have the same number of D\+O\+Fs. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Returns the mesh. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga7d3f90801708bab27d55327e3ddf940b}{num\+Local\+Dofs\+Vertex}} (const size\+\_\+t iV) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on vertex of index iV. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gabe988ede6f7838d5a99239e356d03cd1}{num\+Local\+Dofs\+Vertex}} (const Vertex \&V) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on vertex V. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga109a74bb5f70668d16e2530a76a1412e}{num\+Local\+Dofs\+Edge}} (const size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on edge of index iE. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga8a8698dc7d8ef85928880cbe71ee258e}{num\+Local\+Dofs\+Edge}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on edge E. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gafdbc0e60bfb3263e10f9f8514708c536}{num\+Local\+Dofs\+Face}} (const size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on face of index iF. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga989fad9b3dbb5fd931113428220b061f}{num\+Local\+Dofs\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gac090a13e6cf061000167b4cda9b75d0b}{num\+Local\+Dofs\+Cell}} (const size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on cell of index iT. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga7e00e290fa12e7cbf824783488f5e409}{num\+Local\+Dofs\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on cell T. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga60368b26f606ab5863afac8066f3190b}{n\+D\+O\+Fs\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em Total number of vertices D\+O\+Fs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gac77ebc2d5edbe1538f000be1faacf240}{n\+D\+O\+Fs\+\_\+edges}} () const
+\begin{DoxyCompactList}\small\item\em Total number of edges D\+O\+Fs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gabc495079505d8454c5a65b7f1d02655d}{n\+D\+O\+Fs\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em Total number of faces D\+O\+Fs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga4e943148dcbaeed5b8fc70e52f7c68d3}{n\+D\+O\+Fs\+\_\+cells}} () const
+\begin{DoxyCompactList}\small\item\em Total number of cells D\+O\+Fs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gaacdd0184ce59295b1251701631bfc342}{dimension}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the global space (all D\+O\+Fs for all geometric entities) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gae830302c28e000e5fcd6a9c041b6fee6}{dimension\+Vertex}} (const Vertex \&V) const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the vertex V. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga72fa368ef489664e0c48fa1c80adada7}{dimension\+Vertex}} (size\+\_\+t iV) const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the vertex of index iV. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga83a9dd7b0d9b89ee7798c10f25641d17}{dimension\+Edge}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the edge E (including vertices) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga6931b9cbdaf15f71f86199ec08eef762}{dimension\+Edge}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the edge of index iE (including vertices) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga2fa4a2cf871e6456c748b0a35b70b327}{dimension\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the face F (including edges and vertices) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga3244bf0c3e514bdd68aa2e66657fc45c}{dimension\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the face of index iF (including edges and vertices) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga063f3996e5cca65bb2db12ca124e65a6}{dimension\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the cell T (including faces, edges and vertices) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga898b697cf7e9585a2be07e1ce1e55aa2}{dimension\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the cell of index iT (including faces, edges and vertices) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gada0f8f958a4c30b102caa7d0ee209ad2}{local\+Offset}} (const Edge \&E, const Vertex \&V) const
+\begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the edge E. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gabbc5ee4b36da3dadc1304e2ce2d9ff74}{local\+Offset}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the edge E. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga54938e65d4e92ce99dc6719a3b3f1fbb}{local\+Offset}} (const Face \&F, const Vertex \&V) const
+\begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gae9981853057386a2701605c12479b96b}{local\+Offset}} (const Face \&F, const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Returns the local offset of the edge E with respect to the face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gaa16f883227da1162b2d53d9faebc6631}{local\+Offset}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gab30f67a0ce927ac5698f037a50d71a82}{local\+Offset}} (const Cell \&T, const Vertex \&V) const
+\begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the cell T. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga74f37079ef1f6fb5ae8ad4e69248a42a}{local\+Offset}} (const Cell \&T, const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Returns the local offset of the edge E with respect to the cell T. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gafac91f1e504835640a302adf41d7ffa1}{local\+Offset}} (const Cell \&T, const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Returns the local offset of the face F with respect to the cell T. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gae2ccdf220cd8d3cc94d8ac51ec73e4cf}{local\+Offset}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the element T. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gaf9fb652af8a6158c2e98526918e94e7e}{global\+Offset}} (const Vertex \&V) const
+\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the vertex V. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga274243e23cf345f52f20472a82078380}{global\+Offset}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the edge E. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga02eb01717509f06303c15a35eccb432d}{global\+Offset}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gae3c54b0329eea56b4a29217180f47216}{global\+Offset}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gaa6b9fc4957aade24d430e3e12456e529}{restrict\+Edge}} (size\+\_\+t iE, const Eigen\+::\+Vector\+Xd \&vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to the edge (including its vertices) of index iE. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gaebcec758654c21d4db4dc84704b5c66a}{restrict\+Face}} (size\+\_\+t iF, const Eigen\+::\+Vector\+Xd \&vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to the face (including vertices and edges) of index iF. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gac98a082c256695393c9d3940c339c57c}{restrict\+Cell}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to the cell (including vertices, edges and faces) of index iT. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga0cf0a2a232ee9ffa72be3875a3705790}{restrict}} (const Edge \&E, const Eigen\+::\+Vector\+Xd vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to an edge. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga2a4a88990f3cd9a1818590b5ad54249a}{restrict}} (const Face \&F, const Eigen\+::\+Vector\+Xd vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to a face. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gaeb8d2f1268456b360b0e539a4f45b30b}{restrict}} (const Cell \&T, const Eigen\+::\+Vector\+Xd vh) const
+\begin{DoxyCompactList}\small\item\em Restrict to a cell. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga7dcc8cac4dd10472c63deba64949c597}{extend\+Operator}} (const Cell \&T, const Face \&F, const Eigen\+::\+Matrix\+Xd \&opF) const
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gaa34d6a40007fb0e4ffeefe00368acb2b}{extend\+Operator}} (const Cell \&T, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
+\begin{DoxyCompactList}\small\item\em Extend an edge operator to a cell. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga23e565cc3f97d069b662128104625911}{extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
+\begin{DoxyCompactList}\small\item\em Extend an edge operator to a face. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga900f809c3b9bd97b544dbc114f5197a1}{global\+D\+O\+F\+Indices}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Returns a vector listing the global D\+O\+Fs attached to the element T\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs and element D\+O\+Fs. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga9b6de6241a74cf7f620faf8f056e3ad2}{global\+D\+O\+F\+Indices}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Returns a vector listing the global D\+O\+Fs attached to the face F\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for global D\+OF spaces. 
+
+The D\+O\+Fs are organised by increasing geometric entities dimensions\+: D\+O\+Fs of vertices, D\+O\+Fs of edges, D\+O\+Fs of faces, D\+O\+Fs of cells. This version allows for cases where the number of D\+OF on each mesh entity varies from one mesh entity to the next 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Common/\mbox{\hyperlink{variabledofspace_8hpp}{variabledofspace.\+hpp}}\item 
+src/\+Common/\mbox{\hyperlink{variabledofspace_8cpp}{variabledofspace.\+cpp}}\end{DoxyCompactItemize}

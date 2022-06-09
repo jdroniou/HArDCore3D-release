@@ -57,7 +57,7 @@ do
 done
 
 # CREATE DATA FILE FOR LATEX
-echo -e "Deg MeshSize NbCells NbFaces NbEdges DimXCurl DimXDiv EnergyError Rate HcurlHdivError Rate" > $outsubdir/$errorsfile
+echo -e "Deg MeshSize NbCells NbFaces NbEdges DimXCurl DimXDiv SizeSCsystem HcurlHdivError Rate" > $outsubdir/$errorsfile
 echo -e "TwallDDRCore TprocDDRCore TwallModel TprocModel TwallSolve TprocSolve" > $outsubdir/$timesfile
 for i in `seq 1 $nbmesh`; 
 do
@@ -68,6 +68,7 @@ do
     NbEdges=$(awk '/NbEdges:/ {print $NF}' $outsubdir/results-$i.txt)
     DimXCurl=$(awk '/DimXCurl:/ {print $NF}' $outsubdir/results-$i.txt)
     DimXDiv=$(awk '/DimXDiv:/ {print $NF}' $outsubdir/results-$i.txt)
+    SizeSCsystem=$(awk '/SizeSCsystem:/ {print $NF}' $outsubdir/results-$i.txt)
     EnergyError=$(awk '/EnergyError:/ {print $NF}' $outsubdir/results-$i.txt)
     HcurlHdivError=$(awk '/HcurlHdivError:/ {print $NF}' $outsubdir/results-$i.txt)
     TwallDDRCore=$(awk '/TwallDDRCore:/ {print $NF}' $outsubdir/results-$i.txt)
@@ -84,9 +85,9 @@ do
       EnergyErrorRate=$(perl -E "say sprintf(\"%.2f\", log($OldEnergyError/$EnergyError)/log($OldMeshSize/$MeshSize))")
       OldHcurlHdivError=$(awk '/HcurlHdivError:/ {print $NF}' $outsubdir/results-$imo.txt)
       HcurlHdivErrorRate=$(perl -E "say sprintf(\"%.2f\", log($OldHcurlHdivError/$HcurlHdivError)/log($OldMeshSize/$MeshSize))")
-      echo -e "$Degree $MeshSize $NbCells $NbFaces $NbEdges $DimXCurl $DimXDiv $EnergyError $EnergyErrorRate $HcurlHdivError $HcurlHdivErrorRate" >> $outsubdir/$errorsfile
+      echo -e "$Degree $MeshSize $NbCells $NbFaces $NbEdges $DimXCurl $DimXDiv $SizeSCsystem $HcurlHdivError $HcurlHdivErrorRate" >> $outsubdir/$errorsfile
     else
-  	  echo -e "$Degree $MeshSize $NbCells $NbFaces $NbEdges $DimXCurl $DimXDiv $EnergyError -- $HcurlHdivError -- " >> $outsubdir/$errorsfile
+  	  echo -e "$Degree $MeshSize $NbCells $NbFaces $NbEdges $DimXCurl $DimXDiv $SizeSCsystem $HcurlHdivError -- " >> $outsubdir/$errorsfile
     fi
 done;
 column -t < $outsubdir/$errorsfile | tee $outsubdir/$errorsfile

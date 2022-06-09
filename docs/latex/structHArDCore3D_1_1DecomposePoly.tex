@@ -2,7 +2,7 @@
 \label{structHArDCore3D_1_1DecomposePoly}\index{HArDCore3D::DecomposePoly$<$ BasisType $>$@{HArDCore3D::DecomposePoly$<$ BasisType $>$}}
 
 
-Structure to decompose a set of polynomials on a basis on a face.  
+Structure to decompose a set of polynomials on a basis on a face or a cell.  
 
 
 
@@ -13,7 +13,9 @@ Structure to decompose a set of polynomials on a basis on a face.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{group__Basis_ga467aae89f3550d08fc3179c38f74e36d}{Decompose\+Poly}} (const Face \&F, const Basis\+Type \&basis)
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor for face. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_gad1742551039eaa00b702873a704d029f}{Decompose\+Poly}} (const Cell \&T, const Basis\+Type \&basis)
+\begin{DoxyCompactList}\small\item\em Constructor for cell. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \mbox{\hyperlink{group__Basis_ga9826502cd32a681c30f47a07ffedf0ff}{get\+\_\+nodes}} () const
 \begin{DoxyCompactList}\small\item\em Return the set of nodes (useful to compute value of polynomial to decompose via \mbox{\hyperlink{structHArDCore3D_1_1evaluate__quad}{evaluate\+\_\+quad}}) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$ \mbox{\hyperlink{group__Basis_gaaa367eb17707155e1920822cfb60b334}{family}} (boost\+::multi\+\_\+array$<$ typename Basis\+Type\+::\+Function\+Value, 2 $>$ \&values)
@@ -39,9 +41,9 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_gac46086dc84088d8528f675c861038d35}{m\
 \subsubsection*{template$<$typename Basis\+Type$>$\newline
 struct H\+Ar\+D\+Core3\+D\+::\+Decompose\+Poly$<$ Basis\+Type $>$}
 
-Structure to decompose a set of polynomials on a basis on a face. 
+Structure to decompose a set of polynomials on a basis on a face or a cell. 
 
-The main interest of this structure is to give a decomposition of traces (scalar, normal, etc.) of cell polynomials on a basis of face polynomial. This enables the usage of these traces in a face Gram\+Matrix. However, the decomposition leads to increased rouding errors compared to a straight usage of compute\+\_\+gram\+\_\+matrix. Some tests however seem to indicate that this version of \mbox{\hyperlink{structHArDCore3D_1_1DecomposePoly}{Decompose\+Poly}} is relatively robust up to degrees $\sim$4 or 5 
+The main interest of this structure for faces is to give a decomposition of traces (scalar, normal, etc.) of cell polynomials on a basis of face polynomial. This enables the usage of these traces in a face Gram\+Matrix. However, the decomposition leads to increased rouding errors compared to a straight usage of compute\+\_\+gram\+\_\+matrix. Some tests however seem to indicate that this version of \mbox{\hyperlink{structHArDCore3D_1_1DecomposePoly}{Decompose\+Poly}} is relatively robust up to degrees $\sim$4 or 5 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

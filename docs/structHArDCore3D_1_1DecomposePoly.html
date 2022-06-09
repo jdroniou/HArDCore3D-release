@@ -82,7 +82,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Structure to decompose a set of polynomials on a basis on a face.  
+<p>Structure to decompose a set of polynomials on a basis on a face or a cell.  
  <a href="structHArDCore3D_1_1DecomposePoly.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="basis_8hpp_source.html">basis.hpp</a>&gt;</code></p>
@@ -90,10 +90,13 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ga467aae89f3550d08fc3179c38f74e36d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga467aae89f3550d08fc3179c38f74e36d">DecomposePoly</a> (const Face &amp;F, const BasisType &amp;basis)</td></tr>
-<tr class="memdesc:ga467aae89f3550d08fc3179c38f74e36d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Basis.html#ga467aae89f3550d08fc3179c38f74e36d">More...</a><br /></td></tr>
+<tr class="memdesc:ga467aae89f3550d08fc3179c38f74e36d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for face.  <a href="group__Basis.html#ga467aae89f3550d08fc3179c38f74e36d">More...</a><br /></td></tr>
 <tr class="separator:ga467aae89f3550d08fc3179c38f74e36d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1742551039eaa00b702873a704d029f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gad1742551039eaa00b702873a704d029f">DecomposePoly</a> (const Cell &amp;T, const BasisType &amp;basis)</td></tr>
+<tr class="memdesc:gad1742551039eaa00b702873a704d029f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for cell.  <a href="group__Basis.html#gad1742551039eaa00b702873a704d029f">More...</a><br /></td></tr>
+<tr class="separator:gad1742551039eaa00b702873a704d029f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9826502cd32a681c30f47a07ffedf0ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga9826502cd32a681c30f47a07ffedf0ff">get_nodes</a> () const</td></tr>
-<tr class="memdesc:ga9826502cd32a681c30f47a07ffedf0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of nodes (useful to compute value of polynomial to decompose via <a class="el" href="structHArDCore3D_1_1evaluate__quad.html" title="Evaluate a basis at quadrature nodes. &#39;BasisFunction&#39; (=Function, Gradient, Curl or Divergence) deter...">evaluate_quad</a>)  <a href="group__Basis.html#ga9826502cd32a681c30f47a07ffedf0ff">More...</a><br /></td></tr>
+<tr class="memdesc:ga9826502cd32a681c30f47a07ffedf0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of nodes (useful to compute value of polynomial to decompose via <a class="el" href="structHArDCore3D_1_1evaluate__quad.html" title="Evaluate a basis at quadrature nodes. &#39;BasisFunction&#39; (=Function, Gradient, Curl, Divergence or Hessi...">evaluate_quad</a>)  <a href="group__Basis.html#ga9826502cd32a681c30f47a07ffedf0ff">More...</a><br /></td></tr>
 <tr class="separator:ga9826502cd32a681c30f47a07ffedf0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaaa367eb17707155e1920822cfb60b334"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; BasisType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaaa367eb17707155e1920822cfb60b334">family</a> (boost::multi_array&lt; typename BasisType::FunctionValue, 2 &gt; &amp;values)</td></tr>
 <tr class="memdesc:gaaa367eb17707155e1920822cfb60b334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the decomposed polynomials as a <a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of the provided basis.  <a href="group__Basis.html#gaaa367eb17707155e1920822cfb60b334">More...</a><br /></td></tr>
@@ -119,8 +122,8 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename BasisType&gt;<br />
 struct HArDCore3D::DecomposePoly&lt; BasisType &gt;</h3>
 
-<p>Structure to decompose a set of polynomials on a basis on a face. </p>
-<p>The main interest of this structure is to give a decomposition of traces (scalar, normal, etc.) of cell polynomials on a basis of face polynomial. This enables the usage of these traces in a face GramMatrix. However, the decomposition leads to increased rouding errors compared to a straight usage of compute_gram_matrix. Some tests however seem to indicate that this version of <a class="el" href="structHArDCore3D_1_1DecomposePoly.html" title="Structure to decompose a set of polynomials on a basis on a face.">DecomposePoly</a> is relatively robust up to degrees ~4 or 5 </p>
+<p>Structure to decompose a set of polynomials on a basis on a face or a cell. </p>
+<p>The main interest of this structure for faces is to give a decomposition of traces (scalar, normal, etc.) of cell polynomials on a basis of face polynomial. This enables the usage of these traces in a face GramMatrix. However, the decomposition leads to increased rouding errors compared to a straight usage of compute_gram_matrix. Some tests however seem to indicate that this version of <a class="el" href="structHArDCore3D_1_1DecomposePoly.html" title="Structure to decompose a set of polynomials on a basis on a face or a cell.">DecomposePoly</a> is relatively robust up to degrees ~4 or 5 </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/Common/<a class="el" href="basis_8hpp_source.html">basis.hpp</a></li>
 </ul>

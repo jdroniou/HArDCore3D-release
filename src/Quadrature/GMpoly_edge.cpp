@@ -3,12 +3,15 @@
 using namespace HArDCore3D;
 
 // IntegrateEdgeMonomials
-MonomialEdgeIntegralsType HArDCore3D::IntegrateEdgeMonomials(const Edge & E, const size_t maxdeg) 
+MonomialEdgeIntegralsType HArDCore3D::IntegrateEdgeMonomials(const Edge & E, const int maxdeg) 
   {
-  MonomialEdgeIntegralsType integrals(maxdeg+1, 0.);
+  // Make sure that the degree is actually positive
+  size_t maxdegpos = (maxdeg >= 0 ? maxdeg : 0);
+
+  MonomialEdgeIntegralsType integrals(maxdegpos+1, 0.);
   
   // Loop over the monomials
-  for (size_t m = 0; m<maxdeg+1; m+=2){
+  for (size_t m = 0; m<maxdegpos+1; m+=2){
     integrals[m] = E.diam()/((m+1)*std::pow(2,m));     
   }
     

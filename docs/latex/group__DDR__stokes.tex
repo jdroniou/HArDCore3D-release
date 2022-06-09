@@ -35,6 +35,20 @@ typedef std\+::function$<$ double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperl
 typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Pressure\+Gradient\+Type}}
 \item 
 typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Viscosity\+Type}}
+\item 
+typedef Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+System\+Matrix\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Forcing\+Term\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Velocity\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Vorticity\+Type}}
+\item 
+typedef std\+::function$<$ double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Pressure\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Pressure\+Gradient\+Type}}
+\item 
+typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Viscosity\+Type}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -83,7 +97,15 @@ std\+::vector$<$ \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms
 std\+::pair$<$ \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}, \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}} $>$ \mbox{\hyperlink{group__DDR__stokes_ga152a5406c97598e8f947239291e4b12c}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::compute\+Continuous\+Errors\+Norms}} (const Eigen\+::\+Vector\+Xd \&v, const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&curl\+\_\+u, const \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}} \&p, const \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}} \&grad\+\_\+p) const
 \begin{DoxyCompactList}\small\item\em Compute the continuous Hcurl errors in u and Hgrad error in p (1st component), and same with continuous norms (second component) \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__DDR__stokes_ga3927e5c71c0c74dcc30627cfd0d56765}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::evaluate\+Defect\+Commutation\+Grad\+Interp}} (const \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}} \&p, const \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}} \&grad\+\_\+p, const size\+\_\+t deg\+\_\+quad\+\_\+interpolate) const
-\begin{DoxyCompactList}\small\item\em Evaluate the defect of commutation G\+\_\+h (Igrad p) = Icurl (grad p) by computing the norm of the difference (which should be 0). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluate the defect of commutation G\+\_\+h (Igrad p) = Icurl (grad p) by computing the norm of the difference (which should be 0). \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga046f6c2e7945f3275072f4bdf70e0a12}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::dimension\+Space}} () const
+\begin{DoxyCompactList}\small\item\em Returns the global problem dimension (without Lagrange multiplier, just velocity \& pressure) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{S\+X\+Grad}} \& \mbox{\hyperlink{group__DDR__stokes_ga87eb619d608e1ec7ec40c5265daa17b7}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sx\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{S\+X\+Grad}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}} \& \mbox{\hyperlink{group__DDR__stokes_ga0e49353d87310fa4212cad6acdfc986e}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sx\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{S\+X\+Div}} \& \mbox{\hyperlink{group__DDR__stokes_ga28d77ca8dd41503bf1b1befeeabe438c}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sx\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -138,55 +160,135 @@ static \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{S
 static \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Stokes\+::\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga0c58e69c29ccb4ee1697919669092a58}{H\+Ar\+D\+Core3\+D\+::field\+\_\+f}}
 \item 
 static \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga11770f11edfdb5d240840ca875ad1d3e}{H\+Ar\+D\+Core3\+D\+::field\+\_\+nu}} = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)
+\item 
+static const double \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{H\+Ar\+D\+Core3\+D\+::\+PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Stokes\+::\+Velocity\+Type}} \mbox{\hyperlink{group__DDR__stokes_gab304f8718f36a469879b29fb440bbc65}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Stokes\+::\+Vorticity\+Type}} \mbox{\hyperlink{group__DDR__stokes_gae0a8ae56dbd0a05fd3380e0400a92e93}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+curl\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Stokes\+::\+Pressure\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga9b7879fd3b35059edb87a8986c1c8d22}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Stokes\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__DDR__stokes_gaf49375adb0f87c13e5a16f3ede4d5c19}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+grad\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Stokes\+::\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga5f6d976e8c0d3419c6fbe4325bbadc96}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga1870c23888bcbc96b615446fd71bbf5f}{H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+nu}} = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Stokes\+::\+Velocity\+Type}} \mbox{\hyperlink{group__DDR__stokes_gaf7e4208b642b86353f00c8437de688f5}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Stokes\+::\+Vorticity\+Type}} \mbox{\hyperlink{group__DDR__stokes_gacf277e3de5ea4ffd5ac7cac0b81ce753}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+curl\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Stokes\+::\+Pressure\+Type}} \mbox{\hyperlink{group__DDR__stokes_gaee6fac8db2ff7d11fe82ccd83d197eae}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Stokes\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga3cfc5cc140b682e0405a2a749aef7f62}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+grad\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Stokes\+::\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga9c31dd525678d1018c16672698e8a9dc}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga526f1aef8b250d74a2f9414e27e02ca5}{H\+Ar\+D\+Core3\+D\+::linear\+\_\+nu}} = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Stokes\+::\+Velocity\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga26c7fd411a6c68f578af155e0715ec38}{H\+Ar\+D\+Core3\+D\+::field\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Stokes\+::\+Vorticity\+Type}} \mbox{\hyperlink{group__DDR__stokes_gac1e87c6d9be2d4cba2ca2d277aa79ff9}{H\+Ar\+D\+Core3\+D\+::field\+\_\+curl\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Stokes\+::\+Pressure\+Type}} \mbox{\hyperlink{group__DDR__stokes_gaef6d49c147646a4c993cf08ac3c16f6c}{H\+Ar\+D\+Core3\+D\+::field\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Stokes\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga2d11b56e621e72283813e9f371364849}{H\+Ar\+D\+Core3\+D\+::field\+\_\+grad\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Stokes\+::\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga0c58e69c29ccb4ee1697919669092a58}{H\+Ar\+D\+Core3\+D\+::field\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga11770f11edfdb5d240840ca875ad1d3e}{H\+Ar\+D\+Core3\+D\+::field\+\_\+nu}} = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Implementation of the D\+DR scheme for the Stokes problem in curl-\/curl formulation. 
 
-
+Implementation of the serendipity D\+DR scheme for the Stokes problem in curl-\/curl formulation.
 
 \doxysubsection{Typedef Documentation}
 \mbox{\Hypertarget{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}\label{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}} 
 \index{DDR\_stokes@{DDR\_stokes}!ForcingTermType@{ForcingTermType}}
 \index{ForcingTermType@{ForcingTermType}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{ForcingTermType}{ForcingTermType}}
+\doxysubsubsection{\texorpdfstring{ForcingTermType}{ForcingTermType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Forcing\+Term\+Type}}}
+
+\mbox{\Hypertarget{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}\label{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}} 
+\index{DDR\_stokes@{DDR\_stokes}!ForcingTermType@{ForcingTermType}}
+\index{ForcingTermType@{ForcingTermType}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{ForcingTermType}{ForcingTermType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Forcing\+Term\+Type}}}
 
 \mbox{\Hypertarget{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}\label{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}} 
 \index{DDR\_stokes@{DDR\_stokes}!PressureGradientType@{PressureGradientType}}
 \index{PressureGradientType@{PressureGradientType}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{PressureGradientType}{PressureGradientType}}
+\doxysubsubsection{\texorpdfstring{PressureGradientType}{PressureGradientType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Pressure\+Gradient\+Type}}}
+
+\mbox{\Hypertarget{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}\label{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}} 
+\index{DDR\_stokes@{DDR\_stokes}!PressureGradientType@{PressureGradientType}}
+\index{PressureGradientType@{PressureGradientType}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{PressureGradientType}{PressureGradientType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Pressure\+Gradient\+Type}}}
 
 \mbox{\Hypertarget{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}\label{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}} 
 \index{DDR\_stokes@{DDR\_stokes}!PressureType@{PressureType}}
 \index{PressureType@{PressureType}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{PressureType}{PressureType}}
+\doxysubsubsection{\texorpdfstring{PressureType}{PressureType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Pressure\+Type}}}
+
+\mbox{\Hypertarget{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}\label{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}} 
+\index{DDR\_stokes@{DDR\_stokes}!PressureType@{PressureType}}
+\index{PressureType@{PressureType}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{PressureType}{PressureType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily typedef std\+::function$<$double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Pressure\+Type}}}
 
 \mbox{\Hypertarget{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}\label{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}} 
 \index{DDR\_stokes@{DDR\_stokes}!SystemMatrixType@{SystemMatrixType}}
 \index{SystemMatrixType@{SystemMatrixType}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{SystemMatrixType}{SystemMatrixType}}
+\doxysubsubsection{\texorpdfstring{SystemMatrixType}{SystemMatrixType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Sparse\+Matrix$<$double$>$ \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+System\+Matrix\+Type}}}
+
+\mbox{\Hypertarget{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}\label{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}} 
+\index{DDR\_stokes@{DDR\_stokes}!SystemMatrixType@{SystemMatrixType}}
+\index{SystemMatrixType@{SystemMatrixType}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{SystemMatrixType}{SystemMatrixType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily typedef Eigen\+::\+Sparse\+Matrix$<$double$>$ \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+System\+Matrix\+Type}}}
 
 \mbox{\Hypertarget{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}\label{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}} 
 \index{DDR\_stokes@{DDR\_stokes}!VelocityType@{VelocityType}}
 \index{VelocityType@{VelocityType}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{VelocityType}{VelocityType}}
+\doxysubsubsection{\texorpdfstring{VelocityType}{VelocityType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Velocity\+Type}}}
+
+\mbox{\Hypertarget{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}\label{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}} 
+\index{DDR\_stokes@{DDR\_stokes}!VelocityType@{VelocityType}}
+\index{VelocityType@{VelocityType}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{VelocityType}{VelocityType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Velocity\+Type}}}
 
 \mbox{\Hypertarget{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}\label{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}} 
 \index{DDR\_stokes@{DDR\_stokes}!ViscosityType@{ViscosityType}}
 \index{ViscosityType@{ViscosityType}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{ViscosityType}{ViscosityType}}
+\doxysubsubsection{\texorpdfstring{ViscosityType}{ViscosityType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Viscosity\+Type}}}
+
+\mbox{\Hypertarget{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}\label{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}} 
+\index{DDR\_stokes@{DDR\_stokes}!ViscosityType@{ViscosityType}}
+\index{ViscosityType@{ViscosityType}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{ViscosityType}{ViscosityType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Viscosity\+Type}}}
 
 \mbox{\Hypertarget{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}\label{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}} 
 \index{DDR\_stokes@{DDR\_stokes}!VorticityType@{VorticityType}}
 \index{VorticityType@{VorticityType}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{VorticityType}{VorticityType}}
+\doxysubsubsection{\texorpdfstring{VorticityType}{VorticityType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Vorticity\+Type}}}
+
+\mbox{\Hypertarget{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}\label{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}} 
+\index{DDR\_stokes@{DDR\_stokes}!VorticityType@{VorticityType}}
+\index{VorticityType@{VorticityType}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{VorticityType}{VorticityType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Vorticity\+Type}}}
 
 
@@ -257,6 +359,16 @@ Compute the discrete L2 norms, for a family of Eigen\+::\+Vector\+Xd representin
 \index{dimension@{dimension}!DDR\_stokes@{DDR\_stokes}}
 \doxysubsubsection{\texorpdfstring{dimension()}{dimension()}}
 {\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Stokes\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the global problem dimension (without Lagrange multiplier, just velocity \& pressure) 
+
+\mbox{\Hypertarget{group__DDR__stokes_ga046f6c2e7945f3275072f4bdf70e0a12}\label{group__DDR__stokes_ga046f6c2e7945f3275072f4bdf70e0a12}} 
+\index{DDR\_stokes@{DDR\_stokes}!dimensionSpace@{dimensionSpace}}
+\index{dimensionSpace@{dimensionSpace}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{dimensionSpace()}{dimensionSpace()}}
+{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Stokes\+::dimension\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -390,6 +502,36 @@ Constructor.
 
 Constructor. 
 
+\mbox{\Hypertarget{group__DDR__stokes_ga0e49353d87310fa4212cad6acdfc986e}\label{group__DDR__stokes_ga0e49353d87310fa4212cad6acdfc986e}} 
+\index{DDR\_stokes@{DDR\_stokes}!sxCurl@{sxCurl}}
+\index{sxCurl@{sxCurl}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{sxCurl()}{sxCurl()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}}\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sx\+Curl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}}. 
+
+\mbox{\Hypertarget{group__DDR__stokes_ga28d77ca8dd41503bf1b1befeeabe438c}\label{group__DDR__stokes_ga28d77ca8dd41503bf1b1befeeabe438c}} 
+\index{DDR\_stokes@{DDR\_stokes}!sxDiv@{sxDiv}}
+\index{sxDiv@{sxDiv}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{sxDiv()}{sxDiv()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{S\+X\+Div}}\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sx\+Div (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}}. 
+
+\mbox{\Hypertarget{group__DDR__stokes_ga87eb619d608e1ec7ec40c5265daa17b7}\label{group__DDR__stokes_ga87eb619d608e1ec7ec40c5265daa17b7}} 
+\index{DDR\_stokes@{DDR\_stokes}!sxGrad@{sxGrad}}
+\index{sxGrad@{sxGrad}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{sxGrad()}{sxGrad()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{S\+X\+Grad}}\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sx\+Grad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{S\+X\+Grad}}. 
+
 \mbox{\Hypertarget{group__DDR__stokes_ga7a7c455112aa41ea9cb6ed817b417702}\label{group__DDR__stokes_ga7a7c455112aa41ea9cb6ed817b417702}} 
 \index{DDR\_stokes@{DDR\_stokes}!systemMatrix@{systemMatrix}}
 \index{systemMatrix@{systemMatrix}!DDR\_stokes@{DDR\_stokes}}
@@ -476,7 +618,24 @@ Norm of curl of velocity (vorticity)
 \mbox{\Hypertarget{group__DDR__stokes_gac1e87c6d9be2d4cba2ca2d277aa79ff9}\label{group__DDR__stokes_gac1e87c6d9be2d4cba2ca2d277aa79ff9}} 
 \index{DDR\_stokes@{DDR\_stokes}!field\_curl\_u@{field\_curl\_u}}
 \index{field\_curl\_u@{field\_curl\_u}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{field\_curl\_u}{field\_curl\_u}}
+\doxysubsubsection{\texorpdfstring{field\_curl\_u}{field\_curl\_u}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Stokes\+::\+Vorticity\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+curl\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                \textcolor{keywordtype}{double} cux = (\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0))*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2))*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),2.0)*9.0;}
+\DoxyCodeLine{                \textcolor{keywordtype}{double} cuy = (\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1))*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2))*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),2.0)*9.0;}
+\DoxyCodeLine{                \textcolor{keywordtype}{double} cuz = (\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*6.0-\/(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*pow(cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),2.0)*sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0))*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*6.0-\/(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*pow(cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),3.0)*sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1))*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*6.0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{                \textcolor{keywordflow}{return} Eigen::Vector3d(cux, cuy, cuz);}
+\DoxyCodeLine{                \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_gac1e87c6d9be2d4cba2ca2d277aa79ff9}\label{group__DDR__stokes_gac1e87c6d9be2d4cba2ca2d277aa79ff9}} 
+\index{DDR\_stokes@{DDR\_stokes}!field\_curl\_u@{field\_curl\_u}}
+\index{field\_curl\_u@{field\_curl\_u}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{field\_curl\_u}{field\_curl\_u}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Stokes\+::\+Vorticity\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+curl\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -493,7 +652,25 @@ Norm of curl of velocity (vorticity)
 \mbox{\Hypertarget{group__DDR__stokes_ga0c58e69c29ccb4ee1697919669092a58}\label{group__DDR__stokes_ga0c58e69c29ccb4ee1697919669092a58}} 
 \index{DDR\_stokes@{DDR\_stokes}!field\_f@{field\_f}}
 \index{field\_f@{field\_f}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{field\_f}{field\_f}}
+\doxysubsubsection{\texorpdfstring{field\_f}{field\_f}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Stokes\+::\+Forcing\+Term\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{              \textcolor{keywordtype}{double} fx = (\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*pow(cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*-\/6.0+(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1))*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*3.9E+1-\/(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*pow(cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),2.0)*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1))*sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0))*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*1.8E+1-\/(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1))*pow(cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),2.0)*sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2))*1.8E+1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{              \textcolor{keywordtype}{double} fy = (\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*pow(cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*6.0-\/(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0))*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*3.9E+1+(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0))*pow(cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),2.0)*sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1))*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*1.8E+1+(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}})*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0))*pow(cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),3.0)*sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2))*1.8E+1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{              \textcolor{keywordtype}{double} fz = 0.;}
+\DoxyCodeLine{               \textcolor{keywordflow}{return} Eigen::Vector3d(fx, fy, fz);}
+\DoxyCodeLine{             \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_ga0c58e69c29ccb4ee1697919669092a58}\label{group__DDR__stokes_ga0c58e69c29ccb4ee1697919669092a58}} 
+\index{DDR\_stokes@{DDR\_stokes}!field\_f@{field\_f}}
+\index{field\_f@{field\_f}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{field\_f}{field\_f}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Stokes\+::\+Forcing\+Term\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -511,7 +688,20 @@ Norm of curl of velocity (vorticity)
 \mbox{\Hypertarget{group__DDR__stokes_ga2d11b56e621e72283813e9f371364849}\label{group__DDR__stokes_ga2d11b56e621e72283813e9f371364849}} 
 \index{DDR\_stokes@{DDR\_stokes}!field\_grad\_p@{field\_grad\_p}}
 \index{field\_grad\_p@{field\_grad\_p}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{field\_grad\_p}{field\_grad\_p}}
+\doxysubsubsection{\texorpdfstring{field\_grad\_p}{field\_grad\_p}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Stokes\+::\+Pressure\+Gradient\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+grad\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{return} Eigen::Vector3d(0., 0., 0.);}
+\DoxyCodeLine{                  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_ga2d11b56e621e72283813e9f371364849}\label{group__DDR__stokes_ga2d11b56e621e72283813e9f371364849}} 
+\index{DDR\_stokes@{DDR\_stokes}!field\_grad\_p@{field\_grad\_p}}
+\index{field\_grad\_p@{field\_grad\_p}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{field\_grad\_p}{field\_grad\_p}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Stokes\+::\+Pressure\+Gradient\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+grad\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -524,13 +714,32 @@ Norm of curl of velocity (vorticity)
 \mbox{\Hypertarget{group__DDR__stokes_ga11770f11edfdb5d240840ca875ad1d3e}\label{group__DDR__stokes_ga11770f11edfdb5d240840ca875ad1d3e}} 
 \index{DDR\_stokes@{DDR\_stokes}!field\_nu@{field\_nu}}
 \index{field\_nu@{field\_nu}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{field\_nu}{field\_nu}}
+\doxysubsubsection{\texorpdfstring{field\_nu}{field\_nu}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+nu = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__DDR__stokes_ga11770f11edfdb5d240840ca875ad1d3e}\label{group__DDR__stokes_ga11770f11edfdb5d240840ca875ad1d3e}} 
+\index{DDR\_stokes@{DDR\_stokes}!field\_nu@{field\_nu}}
+\index{field\_nu@{field\_nu}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{field\_nu}{field\_nu}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+nu = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__DDR__stokes_gaef6d49c147646a4c993cf08ac3c16f6c}\label{group__DDR__stokes_gaef6d49c147646a4c993cf08ac3c16f6c}} 
 \index{DDR\_stokes@{DDR\_stokes}!field\_p@{field\_p}}
 \index{field\_p@{field\_p}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{field\_p}{field\_p}}
+\doxysubsubsection{\texorpdfstring{field\_p}{field\_p}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Stokes\+::\+Pressure\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{               \textcolor{keywordflow}{return} 0.;}
+\DoxyCodeLine{             \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_gaef6d49c147646a4c993cf08ac3c16f6c}\label{group__DDR__stokes_gaef6d49c147646a4c993cf08ac3c16f6c}} 
+\index{DDR\_stokes@{DDR\_stokes}!field\_p@{field\_p}}
+\index{field\_p@{field\_p}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{field\_p}{field\_p}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Stokes\+::\+Pressure\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -543,7 +752,22 @@ Norm of curl of velocity (vorticity)
 \mbox{\Hypertarget{group__DDR__stokes_ga26c7fd411a6c68f578af155e0715ec38}\label{group__DDR__stokes_ga26c7fd411a6c68f578af155e0715ec38}} 
 \index{DDR\_stokes@{DDR\_stokes}!field\_u@{field\_u}}
 \index{field\_u@{field\_u}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{field\_u}{field\_u}}
+\doxysubsubsection{\texorpdfstring{field\_u}{field\_u}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Stokes\+::\+Velocity\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{               \textcolor{keywordtype}{double} ux = \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1))*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*3.0;}
+\DoxyCodeLine{               \textcolor{keywordtype}{double} uy = \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*cos(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0))*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)),2.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)),3.0)*pow(sin(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),3.0)*(-\/3.0);}
+\DoxyCodeLine{               \textcolor{keywordflow}{return} Eigen::Vector3d(ux, uy, 0.);}
+\DoxyCodeLine{             \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_ga26c7fd411a6c68f578af155e0715ec38}\label{group__DDR__stokes_ga26c7fd411a6c68f578af155e0715ec38}} 
+\index{DDR\_stokes@{DDR\_stokes}!field\_u@{field\_u}}
+\index{field\_u@{field\_u}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{field\_u}{field\_u}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Stokes\+::\+Velocity\+Type}} H\+Ar\+D\+Core3\+D\+::field\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -588,7 +812,20 @@ Hgrad norm of p.
 \mbox{\Hypertarget{group__DDR__stokes_gacf277e3de5ea4ffd5ac7cac0b81ce753}\label{group__DDR__stokes_gacf277e3de5ea4ffd5ac7cac0b81ce753}} 
 \index{DDR\_stokes@{DDR\_stokes}!linear\_curl\_u@{linear\_curl\_u}}
 \index{linear\_curl\_u@{linear\_curl\_u}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{linear\_curl\_u}{linear\_curl\_u}}
+\doxysubsubsection{\texorpdfstring{linear\_curl\_u}{linear\_curl\_u}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Stokes\+::\+Vorticity\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+curl\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{return} Eigen::Vector3d::Zero();}
+\DoxyCodeLine{                  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_gacf277e3de5ea4ffd5ac7cac0b81ce753}\label{group__DDR__stokes_gacf277e3de5ea4ffd5ac7cac0b81ce753}} 
+\index{DDR\_stokes@{DDR\_stokes}!linear\_curl\_u@{linear\_curl\_u}}
+\index{linear\_curl\_u@{linear\_curl\_u}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{linear\_curl\_u}{linear\_curl\_u}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Stokes\+::\+Vorticity\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+curl\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -601,7 +838,20 @@ Hgrad norm of p.
 \mbox{\Hypertarget{group__DDR__stokes_ga9c31dd525678d1018c16672698e8a9dc}\label{group__DDR__stokes_ga9c31dd525678d1018c16672698e8a9dc}} 
 \index{DDR\_stokes@{DDR\_stokes}!linear\_f@{linear\_f}}
 \index{linear\_f@{linear\_f}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{linear\_f}{linear\_f}}
+\doxysubsubsection{\texorpdfstring{linear\_f}{linear\_f}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Stokes\+::\+Forcing\+Term\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{               \textcolor{keywordflow}{return} \mbox{\hyperlink{group__DDR__stokes_ga3cfc5cc140b682e0405a2a749aef7f62}{linear\_grad\_p}}(x);}
+\DoxyCodeLine{             \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_ga9c31dd525678d1018c16672698e8a9dc}\label{group__DDR__stokes_ga9c31dd525678d1018c16672698e8a9dc}} 
+\index{DDR\_stokes@{DDR\_stokes}!linear\_f@{linear\_f}}
+\index{linear\_f@{linear\_f}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{linear\_f}{linear\_f}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Stokes\+::\+Forcing\+Term\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -614,7 +864,20 @@ Hgrad norm of p.
 \mbox{\Hypertarget{group__DDR__stokes_ga3cfc5cc140b682e0405a2a749aef7f62}\label{group__DDR__stokes_ga3cfc5cc140b682e0405a2a749aef7f62}} 
 \index{DDR\_stokes@{DDR\_stokes}!linear\_grad\_p@{linear\_grad\_p}}
 \index{linear\_grad\_p@{linear\_grad\_p}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{linear\_grad\_p}{linear\_grad\_p}}
+\doxysubsubsection{\texorpdfstring{linear\_grad\_p}{linear\_grad\_p}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Stokes\+::\+Pressure\+Gradient\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+grad\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{return} \mbox{\hyperlink{group__DDR__stokes_gaf99e987dabcfb0766cf43f0b24ece487}{pressure\_scaling}} * Eigen::Vector3d(1., -\/1., 0.);}
+\DoxyCodeLine{                  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_ga3cfc5cc140b682e0405a2a749aef7f62}\label{group__DDR__stokes_ga3cfc5cc140b682e0405a2a749aef7f62}} 
+\index{DDR\_stokes@{DDR\_stokes}!linear\_grad\_p@{linear\_grad\_p}}
+\index{linear\_grad\_p@{linear\_grad\_p}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{linear\_grad\_p}{linear\_grad\_p}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Stokes\+::\+Pressure\+Gradient\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+grad\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -627,13 +890,32 @@ Hgrad norm of p.
 \mbox{\Hypertarget{group__DDR__stokes_ga526f1aef8b250d74a2f9414e27e02ca5}\label{group__DDR__stokes_ga526f1aef8b250d74a2f9414e27e02ca5}} 
 \index{DDR\_stokes@{DDR\_stokes}!linear\_nu@{linear\_nu}}
 \index{linear\_nu@{linear\_nu}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{linear\_nu}{linear\_nu}}
+\doxysubsubsection{\texorpdfstring{linear\_nu}{linear\_nu}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+nu = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__DDR__stokes_ga526f1aef8b250d74a2f9414e27e02ca5}\label{group__DDR__stokes_ga526f1aef8b250d74a2f9414e27e02ca5}} 
+\index{DDR\_stokes@{DDR\_stokes}!linear\_nu@{linear\_nu}}
+\index{linear\_nu@{linear\_nu}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{linear\_nu}{linear\_nu}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+nu = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__DDR__stokes_gaee6fac8db2ff7d11fe82ccd83d197eae}\label{group__DDR__stokes_gaee6fac8db2ff7d11fe82ccd83d197eae}} 
 \index{DDR\_stokes@{DDR\_stokes}!linear\_p@{linear\_p}}
 \index{linear\_p@{linear\_p}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{linear\_p}{linear\_p}}
+\doxysubsubsection{\texorpdfstring{linear\_p}{linear\_p}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Stokes\+::\+Pressure\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{               \textcolor{keywordflow}{return} \mbox{\hyperlink{group__DDR__stokes_gaf99e987dabcfb0766cf43f0b24ece487}{pressure\_scaling}} * (x(0) -\/ x(1));}
+\DoxyCodeLine{             \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_gaee6fac8db2ff7d11fe82ccd83d197eae}\label{group__DDR__stokes_gaee6fac8db2ff7d11fe82ccd83d197eae}} 
+\index{DDR\_stokes@{DDR\_stokes}!linear\_p@{linear\_p}}
+\index{linear\_p@{linear\_p}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{linear\_p}{linear\_p}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Stokes\+::\+Pressure\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -646,7 +928,20 @@ Hgrad norm of p.
 \mbox{\Hypertarget{group__DDR__stokes_gaf7e4208b642b86353f00c8437de688f5}\label{group__DDR__stokes_gaf7e4208b642b86353f00c8437de688f5}} 
 \index{DDR\_stokes@{DDR\_stokes}!linear\_u@{linear\_u}}
 \index{linear\_u@{linear\_u}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{linear\_u}{linear\_u}}
+\doxysubsubsection{\texorpdfstring{linear\_u}{linear\_u}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Stokes\+::\+Velocity\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{               \textcolor{keywordflow}{return} Eigen::Vector3d(x(0), -\/x(1), 0.);}
+\DoxyCodeLine{             \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_gaf7e4208b642b86353f00c8437de688f5}\label{group__DDR__stokes_gaf7e4208b642b86353f00c8437de688f5}} 
+\index{DDR\_stokes@{DDR\_stokes}!linear\_u@{linear\_u}}
+\index{linear\_u@{linear\_u}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{linear\_u}{linear\_u}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Stokes\+::\+Velocity\+Type}} H\+Ar\+D\+Core3\+D\+::linear\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -669,7 +964,13 @@ Norm of pressure.
 \mbox{\Hypertarget{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}\label{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}} 
 \index{DDR\_stokes@{DDR\_stokes}!PI@{PI}}
 \index{PI@{PI}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{PI}{PI}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const double H\+Ar\+D\+Core3\+D\+::\+PI = boost\+::math\+::constants\+::pi$<$double$>$()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}\label{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}} 
+\index{DDR\_stokes@{DDR\_stokes}!PI@{PI}}
+\index{PI@{PI}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily const double H\+Ar\+D\+Core3\+D\+::\+PI = boost\+::math\+::constants\+::pi$<$double$>$()\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__DDR__stokes_gaf99e987dabcfb0766cf43f0b24ece487}\label{group__DDR__stokes_gaf99e987dabcfb0766cf43f0b24ece487}} 
@@ -681,7 +982,24 @@ Norm of pressure.
 \mbox{\Hypertarget{group__DDR__stokes_gae0a8ae56dbd0a05fd3380e0400a92e93}\label{group__DDR__stokes_gae0a8ae56dbd0a05fd3380e0400a92e93}} 
 \index{DDR\_stokes@{DDR\_stokes}!trigonometric\_curl\_u@{trigonometric\_curl\_u}}
 \index{trigonometric\_curl\_u@{trigonometric\_curl\_u}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{trigonometric\_curl\_u}{trigonometric\_curl\_u}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_curl\_u}{trigonometric\_curl\_u}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Stokes\+::\+Vorticity\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+curl\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} 3. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * Eigen::Vector3d(}
+\DoxyCodeLine{                                                      cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                      -\/sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                      0.}
+\DoxyCodeLine{                                                      );}
+\DoxyCodeLine{                         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_gae0a8ae56dbd0a05fd3380e0400a92e93}\label{group__DDR__stokes_gae0a8ae56dbd0a05fd3380e0400a92e93}} 
+\index{DDR\_stokes@{DDR\_stokes}!trigonometric\_curl\_u@{trigonometric\_curl\_u}}
+\index{trigonometric\_curl\_u@{trigonometric\_curl\_u}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_curl\_u}{trigonometric\_curl\_u}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Stokes\+::\+Vorticity\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+curl\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -698,7 +1016,25 @@ Norm of pressure.
 \mbox{\Hypertarget{group__DDR__stokes_ga5f6d976e8c0d3419c6fbe4325bbadc96}\label{group__DDR__stokes_ga5f6d976e8c0d3419c6fbe4325bbadc96}} 
 \index{DDR\_stokes@{DDR\_stokes}!trigonometric\_f@{trigonometric\_f}}
 \index{trigonometric\_f@{trigonometric\_f}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{trigonometric\_f}{trigonometric\_f}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_f}{trigonometric\_f}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Stokes\+::\+Forcing\+Term\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} 6. * std::pow(\mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}, 2) * Eigen::Vector3d(}
+\DoxyCodeLine{                                                                    sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                                    cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                                    -\/2. * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2))}
+\DoxyCodeLine{                                                                    )}
+\DoxyCodeLine{                        + \mbox{\hyperlink{group__DDR__stokes_gaf49375adb0f87c13e5a16f3ede4d5c19}{trigonometric\_grad\_p}}(x);}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_ga5f6d976e8c0d3419c6fbe4325bbadc96}\label{group__DDR__stokes_ga5f6d976e8c0d3419c6fbe4325bbadc96}} 
+\index{DDR\_stokes@{DDR\_stokes}!trigonometric\_f@{trigonometric\_f}}
+\index{trigonometric\_f@{trigonometric\_f}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_f}{trigonometric\_f}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Stokes\+::\+Forcing\+Term\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -716,7 +1052,24 @@ Norm of pressure.
 \mbox{\Hypertarget{group__DDR__stokes_gaf49375adb0f87c13e5a16f3ede4d5c19}\label{group__DDR__stokes_gaf49375adb0f87c13e5a16f3ede4d5c19}} 
 \index{DDR\_stokes@{DDR\_stokes}!trigonometric\_grad\_p@{trigonometric\_grad\_p}}
 \index{trigonometric\_grad\_p@{trigonometric\_grad\_p}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{trigonometric\_grad\_p}{trigonometric\_grad\_p}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_grad\_p}{trigonometric\_grad\_p}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Stokes\+::\+Pressure\+Gradient\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+grad\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{group__DDR__stokes_gaf99e987dabcfb0766cf43f0b24ece487}{pressure\_scaling}} * 2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * Eigen::Vector3d(}
+\DoxyCodeLine{                                                      cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                      sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                      sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2))}
+\DoxyCodeLine{                                                      );}
+\DoxyCodeLine{                         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_gaf49375adb0f87c13e5a16f3ede4d5c19}\label{group__DDR__stokes_gaf49375adb0f87c13e5a16f3ede4d5c19}} 
+\index{DDR\_stokes@{DDR\_stokes}!trigonometric\_grad\_p@{trigonometric\_grad\_p}}
+\index{trigonometric\_grad\_p@{trigonometric\_grad\_p}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_grad\_p}{trigonometric\_grad\_p}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Stokes\+::\+Pressure\+Gradient\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+grad\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -733,13 +1086,32 @@ Norm of pressure.
 \mbox{\Hypertarget{group__DDR__stokes_ga1870c23888bcbc96b615446fd71bbf5f}\label{group__DDR__stokes_ga1870c23888bcbc96b615446fd71bbf5f}} 
 \index{DDR\_stokes@{DDR\_stokes}!trigonometric\_nu@{trigonometric\_nu}}
 \index{trigonometric\_nu@{trigonometric\_nu}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{trigonometric\_nu}{trigonometric\_nu}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_nu}{trigonometric\_nu}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+nu = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__DDR__stokes_ga1870c23888bcbc96b615446fd71bbf5f}\label{group__DDR__stokes_ga1870c23888bcbc96b615446fd71bbf5f}} 
+\index{DDR\_stokes@{DDR\_stokes}!trigonometric\_nu@{trigonometric\_nu}}
+\index{trigonometric\_nu@{trigonometric\_nu}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_nu}{trigonometric\_nu}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+nu = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{group__DDR__stokes_ga9b7879fd3b35059edb87a8986c1c8d22}\label{group__DDR__stokes_ga9b7879fd3b35059edb87a8986c1c8d22}} 
 \index{DDR\_stokes@{DDR\_stokes}!trigonometric\_p@{trigonometric\_p}}
 \index{trigonometric\_p@{trigonometric\_p}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{trigonometric\_p}{trigonometric\_p}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_p}{trigonometric\_p}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Stokes\+::\+Pressure\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{group__DDR__stokes_gaf99e987dabcfb0766cf43f0b24ece487}{pressure\_scaling}} * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2));}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_ga9b7879fd3b35059edb87a8986c1c8d22}\label{group__DDR__stokes_ga9b7879fd3b35059edb87a8986c1c8d22}} 
+\index{DDR\_stokes@{DDR\_stokes}!trigonometric\_p@{trigonometric\_p}}
+\index{trigonometric\_p@{trigonometric\_p}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_p}{trigonometric\_p}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Stokes\+::\+Pressure\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
@@ -752,7 +1124,24 @@ Norm of pressure.
 \mbox{\Hypertarget{group__DDR__stokes_gab304f8718f36a469879b29fb440bbc65}\label{group__DDR__stokes_gab304f8718f36a469879b29fb440bbc65}} 
 \index{DDR\_stokes@{DDR\_stokes}!trigonometric\_u@{trigonometric\_u}}
 \index{trigonometric\_u@{trigonometric\_u}!DDR\_stokes@{DDR\_stokes}}
-\doxysubsubsection{\texorpdfstring{trigonometric\_u}{trigonometric\_u}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_u}{trigonometric\_u}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Stokes\+::\+Velocity\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} Eigen::Vector3d \& x) -\/> Eigen::Vector3d \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} Eigen::Vector3d(}
+\DoxyCodeLine{                                             0.5 * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                             0.5 * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                             -\/cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__DDR__stokes_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2))}
+\DoxyCodeLine{                                             );}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__DDR__stokes_gab304f8718f36a469879b29fb440bbc65}\label{group__DDR__stokes_gab304f8718f36a469879b29fb440bbc65}} 
+\index{DDR\_stokes@{DDR\_stokes}!trigonometric\_u@{trigonometric\_u}}
+\index{trigonometric\_u@{trigonometric\_u}!DDR\_stokes@{DDR\_stokes}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_u}{trigonometric\_u}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Stokes\+::\+Velocity\+Type}} H\+Ar\+D\+Core3\+D\+::trigonometric\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}

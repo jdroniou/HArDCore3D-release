@@ -131,7 +131,7 @@ namespace HArDCore3D
                                      ) const;
 
 
-  private:
+  protected:
     LocalOperators _compute_cell_divergence_potential(size_t iT);
 
     const DDRCore & m_ddr_core;

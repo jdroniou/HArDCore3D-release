@@ -13,7 +13,7 @@ tcsol=3
 # Mesh family
 # mesh_family=Tetgen-Cube-0
 # mesh_family=Cubic-Cells
-# mesh_family=Tetgen-Cube-0
+# mesh_family=Tetgen-Cube-1
 # mesh_family=Random-Hexahedra
 # mesh_family=Prysmatic-Cells
 # mesh_family=Voro-Tets-1

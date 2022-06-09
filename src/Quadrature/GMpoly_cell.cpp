@@ -114,10 +114,13 @@ std::vector<MonomialCellIntegralsType> HArDCore3D::IntegrateCellMonomials_onFace
 }
 
 // IntegrateCellMonomials
-MonomialCellIntegralsType HArDCore3D::IntegrateCellMonomials(const Cell & T, const size_t maxdeg) {
+MonomialCellIntegralsType HArDCore3D::IntegrateCellMonomials(const Cell & T, const int maxdeg) {
+
+  // Make sure that the degree is actually positive
+  size_t maxdegpos = (maxdeg >= 0 ? maxdeg : 0);
 
   // Number of monomials
-  const size_t nb_poly = PolynomialSpaceDimension<Cell>::Poly(maxdeg);
+  const size_t nb_poly = PolynomialSpaceDimension<Cell>::Poly(maxdegpos);
 
   MonomialCellIntegralsType integrals;
   
@@ -128,11 +131,11 @@ MonomialCellIntegralsType HArDCore3D::IntegrateCellMonomials(const Cell & T, con
   VectorRd xT = T.center_mass();
   
   // Create powers of all monomials
-  std::vector<VectorZd> powers = MonomialPowers<Cell>::complete(maxdeg);
+  std::vector<VectorZd> powers = MonomialPowers<Cell>::complete(maxdegpos);
 
   // All integrals over the faces
-  std::vector<MonomialCellIntegralsType> integrals_edges = IntegrateCellMonomials_onEdges(T, maxdeg);
-  std::vector<MonomialCellIntegralsType> integrals_faces = IntegrateCellMonomials_onFaces(T, maxdeg, integrals_edges);
+  std::vector<MonomialCellIntegralsType> integrals_edges = IntegrateCellMonomials_onEdges(T, maxdegpos);
+  std::vector<MonomialCellIntegralsType> integrals_faces = IntegrateCellMonomials_onFaces(T, maxdegpos, integrals_edges);
 
   // Loop over all the monomials
   for (size_t m = 0; m < nb_poly; m++){

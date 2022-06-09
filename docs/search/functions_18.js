@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zq_1365',['zq',['../group__Quadratures.html#ga2172f93f9d6679d07b37ac76f59c5282',1,'HArDCore3D::QuadRuleEdge::zq()'],['../group__Quadratures.html#ga4693da35cc21331c2737c08b8166c54c',1,'HArDCore3D::QuadRuleTetra::zq()'],['../group__Quadratures.html#ga24bec7179e0f2f637d49f594d8bd1e2a',1,'HArDCore3D::QuadRuleTriangle::zq()']]]
+  ['yq_1524',['yq',['../group__Quadratures.html#gac272eee335dc95a46787e1a054b38cb7',1,'HArDCore3D::QuadRuleEdge::yq()'],['../group__Quadratures.html#ga0dffade47ba012f57c7ca552570e2119',1,'HArDCore3D::QuadRuleTetra::yq()'],['../group__Quadratures.html#ga0aa8f08c87bc5b2bc8180c149e16a4c2',1,'HArDCore3D::QuadRuleTriangle::yq()']]]
 ];

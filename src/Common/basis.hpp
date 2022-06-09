@@ -157,6 +157,7 @@ namespace HArDCore3D
     typedef VectorRd GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
+    typedef MatrixRd HessianValue;
 
     typedef Cell GeometricSupport;
 
@@ -166,6 +167,8 @@ namespace HArDCore3D
     static const bool hasGradient = true;
     static const bool hasCurl = false;
     static const bool hasDivergence = false;
+    static const bool hasHessian = true;
+    static const bool hasCurlCurl = false;
 
     /// Constructor
     MonomialScalarBasisCell(
@@ -185,6 +188,9 @@ namespace HArDCore3D
     /// Evaluate the gradient of the i-th basis function at point x
     GradientValue gradient(size_t i, const VectorRd &x) const;
     
+    /// Evaluate the hessian of the i-th basis function at point x
+    HessianValue hessian(size_t i, const VectorRd &x) const;
+
     /// Returns the maximum degree of the basis functions
     inline size_t max_degree() const
     {
@@ -222,6 +228,7 @@ namespace HArDCore3D
     typedef VectorRd GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
+    typedef MatrixRd HessianValue;
 
     typedef Face GeometricSupport;
 
@@ -233,7 +240,9 @@ namespace HArDCore3D
     static const bool hasGradient = true;
     static const bool hasCurl = true;
     static const bool hasDivergence = false;
-
+    static const bool hasHessian = true;
+    static const bool hasCurlCurl = false;
+    
     /// Constructor
     MonomialScalarBasisFace(
         const Face &F, ///< A mesh face
@@ -254,6 +263,9 @@ namespace HArDCore3D
 
     /// Evaluate the two-dimensional curl of the i-th basis function at point x
     CurlValue curl(size_t i, const VectorRd &x) const;
+
+    /// Evaluate the Hessian of the i-th basis function at point x
+    HessianValue hessian(size_t i, const VectorRd &x) const;
 
     /// Returns the maximum degree of the basis functions
     inline size_t max_degree() const
@@ -310,7 +322,8 @@ namespace HArDCore3D
     typedef VectorRd GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
-
+    typedef double HessianValue;
+    
     typedef Edge GeometricSupport;
 
     constexpr static const TensorRankE tensorRank = Scalar;
@@ -319,7 +332,9 @@ namespace HArDCore3D
     static const bool hasGradient = true;
     static const bool hasCurl = false;
     static const bool hasDivergence = false;
-
+    static const bool hasHessian = false;
+    static const bool hasCurlCurl = false;
+    
     /// Constructor
     MonomialScalarBasisEdge(
         const Edge &E, ///< A mesh edge
@@ -377,7 +392,8 @@ namespace HArDCore3D
     typedef typename BasisType::GradientValue GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
-
+    typedef typename BasisType::HessianValue HessianValue;
+    
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
     constexpr static const TensorRankE tensorRank = BasisType::tensorRank;
@@ -386,6 +402,8 @@ namespace HArDCore3D
     static const bool hasGradient = BasisType::hasGradient;
     static const bool hasCurl = BasisType::hasCurl;
     static const bool hasDivergence = BasisType::hasDivergence;
+    static const bool hasHessian = BasisType::hasHessian;
+    static const bool hasCurlCurl = BasisType::hasCurlCurl;
 
     typedef BasisType AncestorType;
 
@@ -511,6 +529,32 @@ namespace HArDCore3D
       return D;
     }
 
+    /// Evaluate the hessian of the i-th function at point x
+    HessianValue hessian(size_t i, const VectorRd &x) const
+    {
+      static_assert(hasHessian, "Call to hessian() not available");
+
+      HessianValue H = m_matrix(i, 0) * m_basis.hessian(0, x);
+      for (auto j = 1; j < m_matrix.cols(); j++)
+      {
+        H += m_matrix(i, j) * m_basis.hessian(j, x);
+      } // for j
+      return H;
+    }
+
+    /// Evaluate the hessian of the i-th function at a quadrature point iqn, knowing all the hessian of ancestor basis functions at the quadrature nodes (provided by eval_quad)
+    HessianValue hessian(size_t i, size_t iqn, const boost::multi_array<HessianValue, 2> &ancestor_hessian_quad) const
+    {
+      static_assert(hasHessian, "Call to hessian() not available");
+
+      HessianValue H = m_matrix(i, 0) * ancestor_hessian_quad[0][iqn];
+      for (auto j = 1; j < m_matrix.cols(); j++)
+      {
+        H += m_matrix(i, j) * ancestor_hessian_quad[j][iqn];
+      } // for j
+      return H;
+    }
+
     /// Return the coefficient matrix
     inline const Eigen::MatrixXd & matrix() const
     {
@@ -569,6 +613,7 @@ namespace HArDCore3D
     typedef typename Eigen::Matrix<double, N, dimspace> GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
+    typedef typename Eigen::Matrix<double, N, dimspace * dimspace> HessianValue;
 
     typedef typename ScalarFamilyType::GeometricSupport GeometricSupport;
 
@@ -580,6 +625,8 @@ namespace HArDCore3D
     // if we tensorize at the dimension of the space
     static const bool hasDivergence = (ScalarFamilyType::hasGradient && N == dimspace);
     static const bool hasCurl = (ScalarFamilyType::hasGradient && N == dimspace);
+    static const bool hasHessian = false;
+    static const bool hasCurlCurl = (ScalarFamilyType::hasHessian && N == dimspace);
 
     typedef ScalarFamilyType AncestorType;
 
@@ -672,6 +719,31 @@ namespace HArDCore3D
       return ancestor_gradient_quad[i % m_scalar_family.dimension()][iqn](i / m_scalar_family.dimension());      
     }
 
+    /// Evaluate the curl curl of the i-th basis function at point x. We use the formula curl curl = - Laplace + grad div
+    CurlValue curlcurl(size_t i, const VectorRd &x) const
+    {
+      static_assert(hasCurlCurl, "Call to curlcurl() not available");
+
+      FunctionValue ek = Eigen::Matrix<double, N, 1>::Zero();
+      int p = i / m_scalar_family.dimension();
+      ek(p) = 1.;
+      typename ScalarFamilyType::HessianValue hess = m_scalar_family.hessian(i % m_scalar_family.dimension(), x);
+      return - hess.trace() * ek + hess.col(p);
+    }
+
+    /// Evaluate the curl curl of the i-th basis function at a quadrature point iqn, knowing all the values of the Hessian of ancestor basis functions at the quadrature nodes (provided by eval_quad)
+    CurlValue curlcurl(size_t i, size_t iqn, const boost::multi_array<typename ScalarFamilyType::HessianValue, 2> &ancestor_hessian_quad) const
+    {
+      static_assert(hasCurlCurl, "Call to curlcurl() not available");
+
+      FunctionValue ek = Eigen::Matrix<double, N, 1>::Zero();
+      int p = i / m_scalar_family.dimension();
+      ek(p) = 1.;
+      typename ScalarFamilyType::HessianValue hess = ancestor_hessian_quad[i % m_scalar_family.dimension()][iqn];
+      return - hess.trace() * ek + hess.col(p);
+    }
+
+
     /// Return the ancestor (family that has been tensorized)
     constexpr inline const ScalarFamilyType &ancestor() const
     {
@@ -699,6 +771,7 @@ namespace HArDCore3D
     typedef VectorRd GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
+    typedef Eigen::Matrix2d HessianValue;
 
     typedef Face GeometricSupport;
 
@@ -707,8 +780,10 @@ namespace HArDCore3D
     static const bool hasFunction = true;
     static const bool hasGradient = false;
     static const bool hasCurl = false;
-    static const bool hasDivergence = true;
-
+    static const bool hasDivergence = ScalarFamilyType::hasGradient;
+    static const bool hasHessian = false;
+    static const bool hasCurlCurl = ScalarFamilyType::hasHessian;
+    
     typedef ScalarFamilyType AncestorType;
 
     /// Constructor
@@ -717,7 +792,8 @@ namespace HArDCore3D
         const Eigen::Matrix<double, 2, dimspace> &generators ///< Two generators of the plane
         )
         : m_scalar_family(scalar_family),
-          m_generators(generators)
+          m_generators(generators),
+          m_normal( ( generators.row(0).cross(generators.row(1)) ).normalized() )
     {
       static_assert(ScalarFamilyType::hasFunction, "Call to function() not available");
       static_assert(std::is_same<typename ScalarFamilyType::GeometricSupport, Face>::value,
@@ -742,6 +818,14 @@ namespace HArDCore3D
       return m_generators.row(i / m_scalar_family.dimension()).dot(m_scalar_family.gradient(i % m_scalar_family.dimension(), x));
     }
     
+    /// Evaluate the curl curl of the i-th basis function at point x
+    inline CurlValue curlcurl(size_t i, const VectorRd &x) const
+    {
+      return m_normal.cross( 
+            m_scalar_family.hessian(i % m_scalar_family.dimension(), x) * 
+              (m_normal.cross(m_generators.row(i / m_scalar_family.dimension())) ) );
+    }
+
     /// Return the ancestor (family used for the tangent)
     constexpr inline const ScalarFamilyType &ancestor() const
     {
@@ -764,6 +848,7 @@ namespace HArDCore3D
   private:
     ScalarFamilyType m_scalar_family;
     Eigen::Matrix<double, 2, dimspace> m_generators;
+    VectorRd m_normal; // unit normal
   };
 
   //--------------------SHIFTED BASIS----------------------------------------------------------
@@ -778,6 +863,7 @@ namespace HArDCore3D
     typedef typename BasisType::GradientValue GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
+    typedef typename BasisType::HessianValue HessianValue;
 
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
@@ -787,7 +873,9 @@ namespace HArDCore3D
     static const bool hasGradient = BasisType::hasGradient;
     static const bool hasCurl = BasisType::hasCurl;
     static const bool hasDivergence = BasisType::hasDivergence;
-
+    static const bool hasHessian = BasisType::hasHessian;
+    static const bool hasCurlCurl = BasisType::hasCurlCurl;
+    
     typedef BasisType AncestorType;
 
     /// Constructor
@@ -851,6 +939,14 @@ namespace HArDCore3D
       return m_basis.divergence(i + m_shift, x);
     }
 
+    /// Evaluate the hessian of the i-th basis function at point x
+    inline HessianValue hessian(size_t i, const VectorRd &x) const
+    {
+      static_assert(hasHessian, "Call to hessian() not available");
+
+      return m_basis.hessian(i + m_shift, x);
+    }
+
   private:
     BasisType m_basis;
     int m_shift;
@@ -868,6 +964,7 @@ namespace HArDCore3D
     typedef typename BasisType::GradientValue GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
+    typedef typename BasisType::HessianValue HessianValue;
 
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
@@ -877,7 +974,9 @@ namespace HArDCore3D
     static const bool hasGradient = BasisType::hasGradient;
     static const bool hasCurl = BasisType::hasCurl;
     static const bool hasDivergence = BasisType::hasDivergence;
-
+    static const bool hasHessian = BasisType::hasHessian;
+    static const bool hasCurlCurl = BasisType::hasCurlCurl;
+    
     typedef BasisType AncestorType;
 
     /// Constructor
@@ -948,6 +1047,14 @@ namespace HArDCore3D
       return m_basis.divergence(i, x);
     }
 
+    /// Evaluate the hessian of the i-th basis function at point x
+    HessianValue hessian(size_t i, const VectorRd &x) const
+    {
+      static_assert(hasHessian, "Call to hessian() not available");
+
+      return m_basis.hessian(i, x);
+    }
+
   private:
     BasisType m_basis;
     size_t m_dimension;
@@ -966,6 +1073,7 @@ namespace HArDCore3D
     typedef Eigen::Matrix<double, dimspace, dimspace> GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
+    typedef Eigen::Matrix<double, dimspace, dimspace*dimspace> HessianValue;
 
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
@@ -975,7 +1083,9 @@ namespace HArDCore3D
     static const bool hasGradient = false;
     static const bool hasCurl = false;
     static const bool hasDivergence = false;
-
+    static const bool hasHessian = false;
+    static const bool hasCurlCurl = false;
+    
     typedef BasisType AncestorType;
     
     /// Constructor
@@ -1025,6 +1135,7 @@ namespace HArDCore3D
     typedef Eigen::Matrix<double, dimspace, dimspace> GradientValue;
     typedef Eigen::Matrix<double, dimspace, dimspace> CurlValue;
     typedef double DivergenceValue;
+    typedef Eigen::Matrix<double, dimspace, dimspace*dimspace> HessianValue;
 
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
@@ -1034,6 +1145,8 @@ namespace HArDCore3D
     static const bool hasGradient = false;
     static const bool hasCurl = false;
     static const bool hasDivergence = false;
+    static const bool hasHessian = false;
+    static const bool hasCurlCurl = false;
 
     typedef BasisType AncestorType;
 
@@ -1085,6 +1198,7 @@ namespace HArDCore3D
     typedef VectorRd GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
+    typedef MatrixRd HessianValue;
 
     typedef typename BasisType::GeometricSupport GeometricSupport;
 
@@ -1094,6 +1208,8 @@ namespace HArDCore3D
     static const bool hasGradient = false;
     static const bool hasCurl = false;
     static const bool hasDivergence = false;
+    static const bool hasHessian = false;
+    static const bool hasCurlCurl = false;
 
     typedef BasisType AncestorType;
 
@@ -1161,6 +1277,7 @@ namespace HArDCore3D
     typedef Eigen::Matrix<double, dimspace, dimspace> GradientValue;
     typedef Eigen::Matrix<double, dimspace, dimspace> CurlValue;
     typedef double DivergenceValue;
+    typedef Eigen::Matrix<double, dimspace, dimspace*dimspace> HessianValue;
 
     typedef Cell GeometricSupport;
 
@@ -1170,6 +1287,8 @@ namespace HArDCore3D
     static const bool hasGradient = false;
     static const bool hasCurl = false;
     static const bool hasDivergence = true;
+    static const bool hasHessian = false;
+    static const bool hasCurlCurl = false;
 
     /// Constructor
     RolyComplBasisCell(
@@ -1229,6 +1348,7 @@ namespace HArDCore3D
     typedef Eigen::Matrix<double, dimspace, dimspace> GradientValue;
     typedef VectorRd CurlValue;
     typedef double DivergenceValue;
+    typedef Eigen::Matrix<double, dimspace, dimspace*dimspace> HessianValue;
 
     typedef Cell GeometricSupport;
 
@@ -1238,6 +1358,8 @@ namespace HArDCore3D
     static const bool hasGradient = false;
     static const bool hasCurl = true;
     static const bool hasDivergence = false;
+    static const bool hasHessian = false;
+    static const bool hasCurlCurl = false;
 
     /// Constructor
     GolyComplBasisCell(
@@ -1303,6 +1425,7 @@ namespace HArDCore3D
     typedef Eigen::Matrix<double, dimspace, dimspace> GradientValue;
     typedef Eigen::Matrix<double, dimspace, dimspace> CurlValue;
     typedef double DivergenceValue;
+    typedef Eigen::Matrix<double, dimspace, dimspace*dimspace> HessianValue;
 
     typedef Face GeometricSupport;
 
@@ -1314,6 +1437,8 @@ namespace HArDCore3D
     static const bool hasGradient = false;
     static const bool hasCurl = false;
     static const bool hasDivergence = true;
+    static const bool hasHessian = false;
+    static const bool hasCurlCurl = false;
 
     /// Constructor
     RolyComplBasisFace(
@@ -1374,6 +1499,7 @@ namespace HArDCore3D
     typedef Eigen::Matrix<double, dimspace, dimspace> GradientValue;
     typedef Eigen::Matrix<double, dimspace, dimspace> CurlValue;
     typedef double DivergenceValue;
+    typedef Eigen::Matrix<double, dimspace, dimspace*dimspace> HessianValue;
 
     typedef Face GeometricSupport;
 
@@ -1385,6 +1511,8 @@ namespace HArDCore3D
     static const bool hasGradient = false;
     static const bool hasCurl = false;
     static const bool hasDivergence = false;
+    static const bool hasHessian = false;
+    static const bool hasCurlCurl = false;
 
     /// Constructor
     GolyComplBasisFace(
@@ -1428,7 +1556,9 @@ namespace HArDCore3D
     Function,
     Gradient,
     Curl,
-    Divergence
+    Divergence,
+    Hessian,
+    CurlCurl
   };
   
   /// Takes an array B_quad of values at quadrature nodes and applies the function F to all of them. F must take inValue and return outValue. The function must be called with outValue as template argument: transform_values_quad<outValue>(...)
@@ -1555,6 +1685,54 @@ namespace HArDCore3D
 
     };
     
+    // Evaluate the hessian value at x
+    template <typename BasisType>
+    struct basis_evaluation_traits<BasisType, Hessian>
+    {
+      static_assert(BasisType::hasHessian, "Call to hessian not available");
+      typedef typename BasisType::HessianValue ReturnValue;
+      static inline ReturnValue evaluate(const BasisType &basis, size_t i, const VectorRd &x)
+      {
+        return basis.hessian(i, x);
+      }
+            
+      // Computes hessian value at quadrature node iqn, knowing hessian of ancestor basis at quadrature nodes
+      static inline ReturnValue evaluate(
+                    const BasisType &basis, 
+                    size_t i, 
+                    size_t iqn,
+                    const boost::multi_array<ReturnValue, 2> &ancestor_hessian_quad
+                    )
+      {
+        return basis.hessian(i, iqn, ancestor_hessian_quad);
+      }
+
+    };
+
+    // Evaluate the curl curl value at x
+    template <typename BasisType>
+    struct basis_evaluation_traits<BasisType, CurlCurl>
+    {
+      static_assert(BasisType::hasCurlCurl, "Call to curl curl not available");
+      typedef typename BasisType::CurlValue ReturnValue;
+      static inline ReturnValue evaluate(const BasisType &basis, size_t i, const VectorRd &x)
+      {
+        return basis.curlcurl(i, x);
+      }
+            
+      // Computes hessian value at quadrature node iqn, knowing hessian of ancestor basis at quadrature nodes
+      static inline ReturnValue evaluate(
+                    const BasisType &basis, 
+                    size_t i, 
+                    size_t iqn,
+                    const boost::multi_array<ReturnValue, 2> &ancestor_curlcurl_quad
+                    )
+      {
+        return basis.curlcurl(i, iqn, ancestor_curlcurl_quad);
+      }
+
+    };
+
     // Evaluate the value at x of a TensorizedVectorFamily (includes information on the ancestor basis, to optimise eval_quad for tensorized bases)
     template <typename ScalarBasisType, size_t N>
     struct basis_evaluation_traits<TensorizedVectorFamily<ScalarBasisType, N>, Function>
@@ -1685,12 +1863,45 @@ namespace HArDCore3D
       
     };
 
+    // Evaluate the curl curl at x of a TensorizedVectorFamily (includes information on the ancestor basis, to optimise eval_quad for tensorized bases)
+    template <typename ScalarBasisType, size_t N>
+    struct basis_evaluation_traits<TensorizedVectorFamily<ScalarBasisType, N>, CurlCurl>
+    {
+      static_assert(TensorizedVectorFamily<ScalarBasisType, N>::hasCurlCurl, "Call to curl curl not available");
+      
+      typedef typename TensorizedVectorFamily<ScalarBasisType, N>::CurlValue ReturnValue;
+      static const BasisFunctionE AncestorBasisFunction = Hessian; // Type of values needed from ancestor basis
+      typedef MatrixRd AncestorBasisFunctionValue;
+
+      // Computes curl curl value at x
+      static inline ReturnValue evaluate(
+                    const TensorizedVectorFamily<ScalarBasisType, N> &basis, 
+                    size_t i, 
+                    const VectorRd &x
+                    )
+      {
+        return basis.curlcurl(i, x);
+      }
+
+      // Computes curl curl value at quadrature node iqn, knowing ancestor basis at quadrature nodes
+      static inline ReturnValue evaluate(
+                    const TensorizedVectorFamily<ScalarBasisType, N> &basis, 
+                    size_t i, 
+                    size_t iqn,
+                    const boost::multi_array<MatrixRd, 2> &ancestor_basis_quad
+                    )
+      {
+        return basis.curlcurl(i, iqn, ancestor_basis_quad);
+      }
+      
+    };
+
   } // end of namespace detail
 
   
   //-----------------------------------EVALUATE_QUAD--------------------------------------
 
-  /// Evaluate a basis at quadrature nodes. 'BasisFunction' (=Function, Gradient, Curl or Divergence) determines what kind of value we want to evaluate.
+  /// Evaluate a basis at quadrature nodes. 'BasisFunction' (=Function, Gradient, Curl, Divergence or Hessian) determines what kind of value we want to evaluate.
   template <BasisFunctionE BasisFunction>
   struct evaluate_quad
   {
@@ -2206,11 +2417,11 @@ namespace HArDCore3D
   }
 
   //------------------------------------------------------------------------------
-  //        Decomposition on a face polynomial basis
+  //        Decomposition on a polynomial basis
   //------------------------------------------------------------------------------
 
-  /// Structure to decompose a set of polynomials on a basis on a face
-  /** The main interest of this structure is to give a decomposition of traces (scalar, normal, etc.) of
+  /// Structure to decompose a set of polynomials on a basis on a face or a cell
+  /** The main interest of this structure for faces is to give a decomposition of traces (scalar, normal, etc.) of
   cell polynomials on a basis of face polynomial. This enables the usage of these traces in a face GramMatrix.
   However, the decomposition leads to increased rouding errors compared to a straight usage of compute_gram_matrix.
   Some tests however seem to indicate that this version of DecomposePoly is relatively robust up to degrees ~4 or 5
@@ -2218,7 +2429,7 @@ namespace HArDCore3D
   template <typename BasisType>
   struct DecomposePoly
   {
-    /// Constructor
+    /// Constructor for face
     /** The basis provided here must be of same rank (scalar, vector) as the polynomials to decompose, and of course
     of degree equal to or higher to those. The polynomials are decomposed on this basis.
     The method seems much more stable if we start from a straight monomial basis (possibly
@@ -2259,6 +2470,42 @@ namespace HArDCore3D
         m_on_basis = Family<BasisType>(l2_orthonormalize(m_basis, m_nodes, m_on_basis_nodes));
       };
       
+    /// Constructor for cell
+    DecomposePoly(
+            const Cell &T,    ///< Cell on which the polynomial functions are defined
+            const BasisType &basis  ///< Basis for face polynomials
+            ):
+          m_dim(basis.dimension()),
+          m_basis(basis),
+          m_on_basis(basis, Eigen::MatrixXd::Identity(m_dim,m_dim))  // Need to initialise before we compute the real ON basis
+      {
+        /* The decomposition will be performed using an orthonormalised version of m_basis, for stability.
+         The scalar product for which we orthonormalise is a minimal one (much less expensive than integrating
+         over the cell): \sum_i phi(x_i) psi(x_i) where (x_i)_i are nodes that are sufficient to determine
+         entirely polynomials up to the considered degree.
+         The nodes we build here correspond to P^k nodes on a tetrahedron */
+        
+        // Create nodes
+        std::vector<Eigen::Vector3i> indices = MonomialPowers<Cell>::complete(basis.max_degree());
+        VectorRd e0(1., 0., 0.);
+        VectorRd e1(0., 1., 0.);
+        VectorRd e2(0., 0., 1.);
+        VectorRd xT = T.center_mass() - T.diam()*(e0+e1+e2)/3.0;
+        
+        // Nodes 
+        m_nb_nodes = indices.size();
+        m_nodes.reserve(m_nb_nodes);
+        for (size_t i=0; i<m_nb_nodes; i++){
+          VectorRd xi = xT + T.diam()*(double(indices[i](0)) * e0 + double(indices[i](1)) * e1 + double(indices[i](2)) * e2)/std::max(1.,double(basis.max_degree()));
+          m_nodes.emplace_back(xi.x(), xi.y(), xi.z(), 1.); 
+        }
+
+        // We then orthonormalise Orthonormalise basis for simple scalar product
+        m_on_basis_nodes.resize(boost::extents[m_dim][m_nb_nodes]);
+        m_on_basis_nodes = evaluate_quad<Function>::compute(m_basis, m_nodes);
+        m_on_basis = Family<BasisType>(l2_orthonormalize(m_basis, m_nodes, m_on_basis_nodes));
+      };
+
     /// Return the set of nodes (useful to compute value of polynomial to decompose via evaluate_quad)
     inline QuadratureRule get_nodes() const 
     {

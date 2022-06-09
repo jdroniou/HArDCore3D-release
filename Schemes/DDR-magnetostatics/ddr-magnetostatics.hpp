@@ -150,8 +150,7 @@ namespace HArDCore3D
     _compute_local_contribution(
                                 size_t iT,                      ///< Element index
                                 const ForcingTermType & f,      ///< Forcing term
-                                const PermeabilityType & mu,    ///< Permeability
-                                const SolutionPotentialType & u ///< Boundary condition
+                                const PermeabilityType & mu     ///< Permeability
                                 );
 
     /// Creates the permutation matrix and the global DOFs for the local static condensation

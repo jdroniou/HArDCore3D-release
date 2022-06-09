@@ -59,7 +59,7 @@ std::vector<MonomialFaceIntegralsType> IntegrateFaceMonomials_onEdges
 /// Compute all integrals on a face of face monomials up to a total degree
 MonomialFaceIntegralsType IntegrateFaceMonomials
           (const Face & F,      ///< Face
-          const size_t maxdeg   ///< Maximal total degree
+          const int maxdeg   ///< Maximal total degree
           );
           
 /// Checks if the degree of an existing list of monomial integrals is sufficient, other re-compute and return a proper list

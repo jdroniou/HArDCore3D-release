@@ -64,10 +64,13 @@ std::vector<MonomialFaceIntegralsType> HArDCore3D::IntegrateFaceMonomials_onEdge
 }
 
 // IntegrateFaceMonomials
-MonomialFaceIntegralsType HArDCore3D::IntegrateFaceMonomials(const Face & F, const size_t maxdeg) 
+MonomialFaceIntegralsType HArDCore3D::IntegrateFaceMonomials(const Face & F, const int maxdeg) 
   {
+  // Make sure that the degree is actually positive
+  size_t maxdegpos = (maxdeg >= 0 ? maxdeg : 0);
+  
   // Number of monomials
-  const size_t nb_poly = PolynomialSpaceDimension<Face>::Poly(maxdeg);
+  const size_t nb_poly = PolynomialSpaceDimension<Face>::Poly(maxdegpos);
   
   MonomialFaceIntegralsType integrals;
   
@@ -75,12 +78,12 @@ MonomialFaceIntegralsType HArDCore3D::IntegrateFaceMonomials(const Face & F, con
   const size_t d = 2;
   
   // Compute integrals on all the edges
-  std::vector<MonomialFaceIntegralsType> integrals_edges = IntegrateFaceMonomials_onEdges(F, maxdeg);
+  std::vector<MonomialFaceIntegralsType> integrals_edges = IntegrateFaceMonomials_onEdges(F, maxdegpos);
   
   VectorRd xF = F.center_mass();
   
   // Create powers and degrees of all monomials
-  std::vector<Eigen::Vector2i> powers = MonomialPowers<Face>::complete(maxdeg);
+  std::vector<Eigen::Vector2i> powers = MonomialPowers<Face>::complete(maxdegpos);
 
   // Loop over the monomials
   for (size_t m = 0; m<nb_poly; m++){

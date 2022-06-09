@@ -20,6 +20,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga6bcd1c81b6198d9db1d5e9342c562
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga7139d7ecaa9d2985dabf2a0a0c2022f4}{Divergence\+Value}}
 \item 
+typedef Basis\+Type\+::\+Hessian\+Value \mbox{\hyperlink{group__Basis_ga77c6a6c8654433ab4202c1d368459d88}{Hessian\+Value}}
+\item 
 typedef Basis\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_ga96c46cc3be4f7fde66e70a1001c670d0}{Geometric\+Support}}
 \item 
 typedef Basis\+Type \mbox{\hyperlink{group__Basis_ga280427dc599002fc9047925fd4aac97f}{Ancestor\+Type}}
@@ -42,7 +44,9 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_gafea55bfd37fcfe53c1b6ebe6a9212df8}{ma
 \mbox{\hyperlink{group__Basis_ga6bcd1c81b6198d9db1d5e9342c5625fe}{Curl\+Value}} \mbox{\hyperlink{group__Basis_ga6886d8130d38f8e0cdeac3c53fe9e177}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_ga7139d7ecaa9d2985dabf2a0a0c2022f4}{Divergence\+Value}} \mbox{\hyperlink{group__Basis_ga06c5ecd7cb9ce4c52891c355a5dc2108}{divergence}} (size\+\_\+t i, const Vector\+Rd \&x) const
-\begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluate the divergence of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_ga77c6a6c8654433ab4202c1d368459d88}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_gae1e9051253d6642132fa88f95954cfff}{hessian}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the hessian of the i-\/th basis function at point x. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,6 +61,10 @@ static const bool \mbox{\hyperlink{group__Basis_ga6674593e65b0d4b08fec501f5f8030
 static const bool \mbox{\hyperlink{group__Basis_gac2fb5928f5487a216fd108f333790461}{has\+Curl}} = Basis\+Type\+::has\+Curl
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gaf5b965b1943c028721975f8044ec9b87}{has\+Divergence}} = Basis\+Type\+::has\+Divergence
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga42e50398603a2b52a656b1bb5906a2ab}{has\+Hessian}} = Basis\+Type\+::has\+Hessian
+\item 
+static const bool \mbox{\hyperlink{group__Basis_ga1c82da97819f35a5fbe8e9ab372eb592}{has\+Curl\+Curl}} = Basis\+Type\+::has\+Curl\+Curl
 \end{DoxyCompactItemize}
 
 

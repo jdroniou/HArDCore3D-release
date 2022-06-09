@@ -20,6 +20,8 @@ typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga1608a0cb98bc4e23f53da80bcc9b8
 \item 
 typedef double \mbox{\hyperlink{group__Basis_ga32196c4ba9262b365431669d44277b23}{Divergence\+Value}}
 \item 
+typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__Basis_gaf8bda33662d124f126782a946827430a}{Hessian\+Value}}
+\item 
 typedef Face \mbox{\hyperlink{group__Basis_ga4d8acdf73dbc7897fe23d219c1fed135}{Geometric\+Support}}
 \item 
 typedef Eigen\+::\+Matrix$<$ double, 2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_gafe0390024b0b4c5e3581f73ff2a1ece2}{Jacobian\+Type}}
@@ -35,8 +37,10 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_ga404551f2ca5ed4e605289addbc6fb9c4}{di
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Basis_ga43c9548748ae2ffbda2750305a75c4c4}{Gradient\+Value}} \mbox{\hyperlink{group__Basis_ga25989d831b6ca783612bc54ce0f25b66}{gradient}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the gradient of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Basis_ga1608a0cb98bc4e23f53da80bcc9b898a}{Curl\+Value}} \mbox{\hyperlink{group__Basis_gaadba906ff906d86d97cfcc1a5fbc505f}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\mbox{\hyperlink{group__Basis_ga1608a0cb98bc4e23f53da80bcc9b898a}{Curl\+Value}} \mbox{\hyperlink{group__Basis_ga1a92cf019c2a3947c7518d04d14bba6a}{curl}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the two-\/dimensional curl of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Basis_gaf8bda33662d124f126782a946827430a}{Hessian\+Value}} \mbox{\hyperlink{group__Basis_ga71500087412c8ae110deb3926a2e3c6a}{hessian}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\begin{DoxyCompactList}\small\item\em Evaluate the Hessian of the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gac1ec7508d33707306056a7ef73be8638}{max\+\_\+degree}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 const Vector\+Rd \& \mbox{\hyperlink{group__Basis_ga299c04e82954cd6bd69a31de664d1150}{normal}} () const
@@ -61,6 +65,10 @@ static const bool \mbox{\hyperlink{group__Basis_gacf6b7bb1df49b58e85f0ee9058e837
 static const bool \mbox{\hyperlink{group__Basis_ga99e8f7a15ecf13d854344b34c7b0f963}{has\+Curl}} = true
 \item 
 static const bool \mbox{\hyperlink{group__Basis_gabded3a224b17ec37cafbebdc190889ac}{has\+Divergence}} = false
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gaf5825ebaaa1a16a51fb9f3484ff9b812}{has\+Hessian}} = true
+\item 
+static const bool \mbox{\hyperlink{group__Basis_gadb1fe211acf4f5b376c37168e9d570c9}{has\+Curl\+Curl}} = false
 \end{DoxyCompactItemize}
 
 

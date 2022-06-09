@@ -43,7 +43,7 @@ int main(int argc, const char* argv[])
     ("degree,k", boost::program_options::value<size_t>()->default_value(1), "The polynomial degree of the sequence")
     ("pthread,p", boost::program_options::value<bool>()->default_value(true), "Use thread-based parallelism")
     ("solution,s", boost::program_options::value<int>()->default_value(0), "Select the solution")
-    ("pressure_scaling", boost::program_options::value<double>()->default_value(.1), "Select the pressure scaling")
+    ("pressure_scaling", boost::program_options::value<double>()->default_value(1.), "Select the pressure scaling")
     ("export-matrix,e", "Export matrix to Matrix Market format")
     ("iterative-solver,i", "Use iterative linear solver")
     ("stabilization-parameter,x", boost::program_options::value<double>(), "Set the stabilization parameter");
@@ -121,7 +121,7 @@ int main(int argc, const char* argv[])
 
   default:
     std::cerr << "[main] ERROR: Unknown exact solution" << std::endl;
-    exit(1);    
+    exit(1);
   }
 
 
@@ -156,7 +156,6 @@ int main(int argc, const char* argv[])
     saveMarket(st.systemMatrix(), "A_stokes.mtx");
     saveMarket(st.systemVector(), "b_stokes.mtx");
   }
-
 
   // Solve the problem
   timer.start();
