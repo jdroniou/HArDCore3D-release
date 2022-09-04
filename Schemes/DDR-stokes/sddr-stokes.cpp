@@ -484,7 +484,7 @@ LocalStaticCondensation Stokes::_compute_static_condensation(const size_t & iT) 
   Eigen::MatrixXd Perm = Eigen::MatrixXd::Zero(dim_dofs+dim_sc, dim_dofs+dim_sc);
   Perm.topLeftCorner(dim_u, dim_u) = Eigen::MatrixXd::Identity(dim_u, dim_u);
   Perm.block(dim_u, dim_u + m_nloc_sc_u(iT), dim_p, dim_p) = Eigen::MatrixXd::Identity(dim_p, dim_p);
-  Perm(dim_u+dim_p, dim_u + m_nloc_sc_u(iT) + dim_p+m_nloc_sc_p(iT)) = 1.;   // Lagrange multiplier
+  Perm(dim_u+dim_p, size_t(dim_u + m_nloc_sc_u(iT) + dim_p+m_nloc_sc_p(iT))) = 1.;   // Lagrange multiplier
   Perm.block(dim_u + dim_p + 1, dim_u, m_nloc_sc_u(iT), m_nloc_sc_u(iT)) = Eigen::MatrixXd::Identity(m_nloc_sc_u(iT), m_nloc_sc_u(iT));
   Perm.block(dim_u + dim_p + 1 + m_nloc_sc_u(iT), dim_u + m_nloc_sc_u(iT) + dim_p, m_nloc_sc_p(iT), m_nloc_sc_p(iT))
       = Eigen::MatrixXd::Identity(m_nloc_sc_p(iT), m_nloc_sc_p(iT));

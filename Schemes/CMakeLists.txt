@@ -41,6 +41,11 @@ ADD_EXECUTABLE(sddr-stokes DDR-stokes/sddr-stokes.cpp)
 TARGET_LINK_LIBRARIES(sddr-stokes mesh quadrature ddrcore plot ${EXTERNAL_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(sddr-stokes PUBLIC ${EXTERNAL_INCLUDES})
 
+# LADDR Yang-Mills Lagrange multiplier
+ADD_EXECUTABLE(laddr-yangmills-lm LADDR-yangmills/laddr-yangmills-lm.cpp)
+TARGET_LINK_LIBRARIES(laddr-yangmills-lm mesh quadrature laddrcore ddrcore plot ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(laddr-yangmills-lm PUBLIC ${EXTERNAL_INCLUDES})
+
 # VEM Stokes
 ADD_EXECUTABLE(vem-stokes VEM-stokes/vem-stokes.cpp)
 TARGET_LINK_LIBRARIES(vem-stokes mesh quadrature vemcore plot ${EXTERNAL_LIBRARIES})

@@ -42,7 +42,7 @@
 
 /*!	
  * @defgroup DDRCore 
- * @brief Classes providing tools to the Discrete De Rham sequence
+ * @brief Classes defining the Discrete De Rham sequence
  */
 
 

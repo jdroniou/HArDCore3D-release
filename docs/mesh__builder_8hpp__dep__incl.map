@@ -1,5 +1,5 @@
 <map id="src/Mesh/mesh_builder.hpp" name="src/Mesh/mesh_builder.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="997,5,1178,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="1090,5,1271,32"/>
 <area shape="rect" id="node2" href="$ddr-magnetostatics_8hpp.html" title=" " alt="" coords="5,80,209,121"/>
 <area shape="rect" id="node4" href="$sddr-magnetostatics_8hpp.html" title=" " alt="" coords="233,80,437,121"/>
 <area shape="rect" id="node6" href="$ddr-stokes_8hpp.html" title=" " alt="" coords="462,80,617,121"/>
@@ -8,9 +8,10 @@
 <area shape="rect" id="node11" href="$HHO3D_8hpp.html" title=" " alt="" coords="1009,80,1166,121"/>
 <area shape="rect" id="node15" href="$HHO__LocVarDiff_8cpp.html" title=" " alt="" coords="1190,80,1358,121"/>
 <area shape="rect" id="node16" href="$HHO__MHD_8hpp.html" title=" " alt="" coords="1383,80,1563,121"/>
-<area shape="rect" id="node18" href="$MeshToVTU_8cpp.html" title=" " alt="" coords="1587,80,1750,121"/>
-<area shape="rect" id="node19" href="$vem-stokes_8hpp.html" title=" " alt="" coords="1775,80,1928,121"/>
-<area shape="rect" id="node21" href="$mesh__builder_8cpp.html" title=" " alt="" coords="1953,87,2134,114"/>
+<area shape="rect" id="node18" href="$laddr-yangmills-lm_8hpp.html" title=" " alt="" coords="1587,80,1774,121"/>
+<area shape="rect" id="node20" href="$MeshToVTU_8cpp.html" title=" " alt="" coords="1798,80,1961,121"/>
+<area shape="rect" id="node21" href="$vem-stokes_8hpp.html" title=" " alt="" coords="1985,80,2139,121"/>
+<area shape="rect" id="node23" href="$mesh__builder_8cpp.html" title=" " alt="" coords="2163,87,2345,114"/>
 <area shape="rect" id="node3" href="$ddr-magnetostatics_8cpp.html" title=" " alt="" coords="5,169,209,211"/>
 <area shape="rect" id="node5" href="$sddr-magnetostatics_8cpp.html" title=" " alt="" coords="233,169,437,211"/>
 <area shape="rect" id="node7" href="$ddr-stokes_8cpp.html" title=" " alt="" coords="462,169,617,211"/>
@@ -19,5 +20,6 @@
 <area shape="rect" id="node14" href="$HHO3D_8cpp.html" title=" " alt="" coords="1126,169,1283,211"/>
 <area shape="rect" id="node13" href="$HHO__DiffAdvecReac_8cpp.html" title=" " alt="" coords="895,259,1101,300"/>
 <area shape="rect" id="node17" href="$HHO__MHD_8cpp.html" title=" " alt="" coords="1383,169,1563,211"/>
-<area shape="rect" id="node20" href="$vem-stokes_8cpp.html" title=" " alt="" coords="1775,169,1928,211"/>
+<area shape="rect" id="node19" href="$laddr-yangmills-lm_8cpp.html" title=" " alt="" coords="1587,169,1774,211"/>
+<area shape="rect" id="node22" href="$vem-stokes_8cpp.html" title=" " alt="" coords="1985,169,2139,211"/>
 </map>

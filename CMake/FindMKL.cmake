@@ -37,7 +37,8 @@ endif()
 find_path(MKL_INCLUDES 
   NAMES mkl.h 
   HINTS $ENV{MKLROOT}/include
-        $ENV{MKLROOT}/include/mkl)
+        $ENV{MKLROOT}/include/mkl
+        )
 
 find_library(MKL_LIBRARIES
   NAMES mkl_rt

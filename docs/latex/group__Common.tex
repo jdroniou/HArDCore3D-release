@@ -8,281 +8,281 @@ Various general functions and classes.
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classHArDCore3D_1_1GlobalDOFSpace}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space}}
-\begin{DoxyCompactList}\small\item\em Base class for global D\+OF spaces. Provides functions to manipulate global D\+O\+Fs (the local version being provided by D\+O\+F\+Space). \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight}}
+class \mbox{\hyperlink{classHArDCore3D_1_1GlobalDOFSpace}{HAr\+DCore3\+D\+::\+Global\+DOFSpace}}
+\begin{DoxyCompactList}\small\item\em Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version being provided by DOFSpace). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{HAr\+DCore3\+D\+::\+Integral\+Weight}}
 \begin{DoxyCompactList}\small\item\em Structure for weights (scalar, at the moment) in integral. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structHArDCore3D_1_1LocalStaticCondensation}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation}}
+struct \mbox{\hyperlink{structHArDCore3D_1_1LocalStaticCondensation}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation}}
 \begin{DoxyCompactList}\small\item\em Structure to store information for, and perform, local static condensation. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classHArDCore3D_1_1LocalDOFSpace}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space}}
-\begin{DoxyCompactList}\small\item\em Base class for D\+OF spaces\+: functions to access local D\+O\+Fs (organised from the smallest dimension to the largest) associated with each geometric entity. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Geometric\+Support $>$}}
+class \mbox{\hyperlink{classHArDCore3D_1_1LocalDOFSpace}{HAr\+DCore3\+D\+::\+Local\+DOFSpace}}
+\begin{DoxyCompactList}\small\item\em Base class for DOF spaces\+: functions to access local DOFs (organised from the smallest dimension to the largest) associated with each geometric entity. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Geometric\+Support $>$}}
 \begin{DoxyCompactList}\small\item\em Basis dimensions for various polynomial spaces on edges/faces/elements (when relevant)\+: Pk, Gk, Rk and complements. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension_3_01Cell_01_4}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$}}
+struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension_3_01Cell_01_4}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$}}
 \item 
-struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension_3_01Face_01_4}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$}}
+struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension_3_01Face_01_4}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$}}
 \item 
-struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01_4}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Edge $>$}}
+struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01_4}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Edge $>$}}
 \item 
-class \mbox{\hyperlink{classHArDCore3D_1_1VariableDOFSpace}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space}}
-\begin{DoxyCompactList}\small\item\em Base class for global D\+OF spaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classHArDCore3D_1_1VariableDOFSpace}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace}}
+\begin{DoxyCompactList}\small\item\em Base class for global DOF spaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::pair$<$ double, double $>$ \mbox{\hyperlink{group__Common_ga274e58663037ca4b57cb61325d045caa}{H\+Ar\+D\+Core3\+D\+::store\+\_\+times}} (boost\+::timer\+::cpu\+\_\+timer \&timer, std\+::string message=\char`\"{}\char`\"{})
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{group__Common_ga274e58663037ca4b57cb61325d045caa}{HAr\+DCore3\+D\+::store\+\_\+times}} (boost\+::timer\+::cpu\+\_\+timer \&timer, std\+::string message=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Function to store and display wall/proc timers from boost\+::timer\+::cpu\+\_\+timer. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_gac0ee512d7dbbce9e7aae3f2f42138470}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::\+Global\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
+\mbox{\hyperlink{group__Common_gac0ee512d7dbbce9e7aae3f2f42138470}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::\+Global\+DOFSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga44447e854ca3aad5a21ebef9aa322a56}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::global\+Offset}} (const Vertex \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga44447e854ca3aad5a21ebef9aa322a56}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+Offset}} (const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the vertex V. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gadbe66a72149a46edb01ff255ec600903}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::global\+Offset}} (const Edge \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gadbe66a72149a46edb01ff255ec600903}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+Offset}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the edge E. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga51495600d8dea1161e6bc23db8b99c91}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::global\+Offset}} (const Face \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga51495600d8dea1161e6bc23db8b99c91}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+Offset}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga1229b099903e229e3e63c4a56949a835}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::global\+Offset}} (const Cell \&T) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga1229b099903e229e3e63c4a56949a835}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+Offset}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the cell T. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga9cabf022121084dd0ab57de128ba953c}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::restrict\+Edge}} (size\+\_\+t iE, const Eigen\+::\+Vector\+Xd \&vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga9cabf022121084dd0ab57de128ba953c}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::restrict\+Edge}} (size\+\_\+t iE, const Eigen\+::\+Vector\+Xd \&vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to the edge (including its vertices) of index iE. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gad97efa101fd5232b63921903d4c2502f}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::restrict\+Face}} (size\+\_\+t iF, const Eigen\+::\+Vector\+Xd \&vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gad97efa101fd5232b63921903d4c2502f}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::restrict\+Face}} (size\+\_\+t iF, const Eigen\+::\+Vector\+Xd \&vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to the face (including vertices and edges) of index iF. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga2485686662745c5481032a8d6058fd57}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::restrict\+Cell}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga2485686662745c5481032a8d6058fd57}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::restrict\+Cell}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to the cell (including vertices, edges and faces) of index iT. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga810df25ee1d0f6c5de76130e0a90a5e2}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::restrict}} (const Edge \&E, const Eigen\+::\+Vector\+Xd vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga810df25ee1d0f6c5de76130e0a90a5e2}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::restrict}} (const Edge \&E, const Eigen\+::\+Vector\+Xd vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to an edge. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gadeb695de566f98dfc275f19b1bd39666}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::restrict}} (const Face \&F, const Eigen\+::\+Vector\+Xd vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gadeb695de566f98dfc275f19b1bd39666}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::restrict}} (const Face \&F, const Eigen\+::\+Vector\+Xd vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to a face. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga87d51d92989ad5a06691db7be45908d8}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::restrict}} (const Cell \&T, const Eigen\+::\+Vector\+Xd vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga87d51d92989ad5a06691db7be45908d8}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::restrict}} (const Cell \&T, const Eigen\+::\+Vector\+Xd vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to a cell. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga93d06b3be5ace110a4ca1d636a4aa7f1}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::extend\+Operator}} (const Cell \&T, const Face \&F, const Eigen\+::\+Matrix\+Xd \&opF) const
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga93d06b3be5ace110a4ca1d636a4aa7f1}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::extend\+Operator}} (const Cell \&T, const Face \&F, const Eigen\+::\+Matrix\+Xd \&opF) const
 \item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gabf4eafe2cf13ad7f5eeb322cb9097d22}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::extend\+Operator}} (const Cell \&T, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gabf4eafe2cf13ad7f5eeb322cb9097d22}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::extend\+Operator}} (const Cell \&T, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a cell. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa03cd062083ef8fbe3089d395f81338}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa03cd062083ef8fbe3089d395f81338}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a face. \end{DoxyCompactList}\item 
-std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga253bd7addffb9686d8a71d19db88f3f2}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::global\+D\+O\+F\+Indices}} (const Cell \&T) const
-\begin{DoxyCompactList}\small\item\em Returns a vector listing the global D\+O\+Fs attached to the element T\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs and element D\+O\+Fs. \end{DoxyCompactList}\item 
-std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga7cc6a020ed82c7e8bdd295d6aa94dea5}{H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::global\+D\+O\+F\+Indices}} (const Face \&F) const
-\begin{DoxyCompactList}\small\item\em Returns a vector listing the global D\+O\+Fs attached to the face F\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga60ba878dc51ffe013b4cd394741d34f0}{H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (const std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ \+\_\+value, std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ \+\_\+deg)
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga253bd7addffb9686d8a71d19db88f3f2}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+DOFIndices}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Returns a vector listing the global DOFs attached to the element T\+: vertex DOFs, edge DOFs, face DOFs and element DOFs. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga7cc6a020ed82c7e8bdd295d6aa94dea5}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+DOFIndices}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Returns a vector listing the global DOFs attached to the face F\+: vertex DOFs, edge DOFs, face DOFs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga60ba878dc51ffe013b4cd394741d34f0}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (const std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ \+\_\+value, std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ \+\_\+deg)
 \item 
-\mbox{\hyperlink{group__Common_gaed526b573136d558b81d9be87646b5c9}{H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (double val)
+\mbox{\hyperlink{group__Common_gaed526b573136d558b81d9be87646b5c9}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (double val)
 \item 
-\mbox{\hyperlink{group__Common_ga9013e4ca43adf132d979e0178676eb4f}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::\+Local\+Static\+Condensation}} (const Eigen\+::\+Matrix\+Xd \&Perm, const std\+::vector$<$ size\+\_\+t $>$ \&\mbox{\hyperlink{group__Common_gada39a93d73a2096ffadb2182d696a4b2}{global\+D\+O\+Fs\+\_\+sys}}, const std\+::vector$<$ size\+\_\+t $>$ \&\mbox{\hyperlink{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}{global\+D\+O\+Fs\+\_\+sc}})
+\mbox{\hyperlink{group__Common_ga9013e4ca43adf132d979e0178676eb4f}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::\+Local\+Static\+Condensation}} (const Eigen\+::\+Matrix\+Xd \&Perm, const std\+::vector$<$ size\+\_\+t $>$ \&\mbox{\hyperlink{group__Common_gada39a93d73a2096ffadb2182d696a4b2}{global\+DOFs\+\_\+sys}}, const std\+::vector$<$ size\+\_\+t $>$ \&\mbox{\hyperlink{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}{global\+DOFs\+\_\+sc}})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-std\+::tuple$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd, Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_ga7bac2f08d274e88fdb2057d593581c90}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::compute}} (const std\+::pair$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \&lsT)
+std\+::tuple$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd, Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_ga7bac2f08d274e88fdb2057d593581c90}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::compute}} (const std\+::pair$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \&lsT)
 \begin{DoxyCompactList}\small\item\em Compute the local static condensation. \end{DoxyCompactList}\item 
-std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_gada39a93d73a2096ffadb2182d696a4b2}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::global\+D\+O\+Fs\+\_\+sys}} ()
-\begin{DoxyCompactList}\small\item\em Returns global D\+O\+Fs that are not statically condensend. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gaa2fd993a8010d3b907c881942186d36f}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sys}} ()
-\begin{DoxyCompactList}\small\item\em Returns the number of D\+O\+Fs that are not statically condensed. \end{DoxyCompactList}\item 
-std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::global\+D\+O\+Fs\+\_\+sc}} ()
-\begin{DoxyCompactList}\small\item\em Returns global D\+O\+Fs that are statically condensend. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga3d683e5f0aa27a28e9eb7fd399bd24c8}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sc}} ()
-\begin{DoxyCompactList}\small\item\em Returns the number of D\+O\+Fs that are statically condensed. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_gaa4747ac6257c084186c00efc756822c8}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::\+Local\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_gada39a93d73a2096ffadb2182d696a4b2}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::global\+DOFs\+\_\+sys}} ()
+\begin{DoxyCompactList}\small\item\em Returns global DOFs that are not statically condensend. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gaa2fd993a8010d3b907c881942186d36f}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sys}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of DOFs that are not statically condensed. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::global\+DOFs\+\_\+sc}} ()
+\begin{DoxyCompactList}\small\item\em Returns global DOFs that are statically condensend. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga3d683e5f0aa27a28e9eb7fd399bd24c8}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sc}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of DOFs that are statically condensed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_gaa4747ac6257c084186c00efc756822c8}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::\+Local\+DOFSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::mesh}} () const
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::mesh}} () const
 \begin{DoxyCompactList}\small\item\em Returns the mesh. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gac5ac77404d4e30ab0baf187f2cd341ba}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Vertex}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of local vertex D\+O\+Fs. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga528c6d896f2ab32b50751fb22bcf8910}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Edge}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of local edge D\+O\+Fs. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gad3de9b38dbf2a2447bf4b07dea726bb5}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Face}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of local face D\+O\+Fs. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga63c9c43b9c52f18389de01b1b2669258}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Cell}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of local cell D\+O\+Fs. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga2f9a4f73d3d98508bb70d42a72b38943}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension}} () const
-\begin{DoxyCompactList}\small\item\em Returns the dimension of the global space (all D\+O\+Fs for all geometric entities) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga781a84d7a062d680dac7df80a997c56e}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Vertex}} (const Vertex \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gac5ac77404d4e30ab0baf187f2cd341ba}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::num\+Local\+Dofs\+Vertex}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of local vertex DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga528c6d896f2ab32b50751fb22bcf8910}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::num\+Local\+Dofs\+Edge}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of local edge DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gad3de9b38dbf2a2447bf4b07dea726bb5}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::num\+Local\+Dofs\+Face}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of local face DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga63c9c43b9c52f18389de01b1b2669258}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::num\+Local\+Dofs\+Cell}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of local cell DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga2f9a4f73d3d98508bb70d42a72b38943}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the global space (all DOFs for all geometric entities) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga781a84d7a062d680dac7df80a997c56e}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Vertex}} (const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the vertex V. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga9bed896dcbf68ce0412847266f1dc600}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Vertex}} (size\+\_\+t iV) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga9bed896dcbf68ce0412847266f1dc600}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Vertex}} (size\+\_\+t iV) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the vertex of index iV. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gad0d2f8a3698a8f0d653d7f00b410e440}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Edge}} (const Edge \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gad0d2f8a3698a8f0d653d7f00b410e440}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Edge}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the edge E (including vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga0b15041fabce399678fd283d3f876ea8}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Edge}} (size\+\_\+t iE) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga0b15041fabce399678fd283d3f876ea8}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Edge}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the edge of index iE (including vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga3498e23a24561b293748c49fa6b3d754}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Face}} (const Face \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga3498e23a24561b293748c49fa6b3d754}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Face}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the face F (including edges and vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga7145760cd69170c89a581e092c7b08fe}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Face}} (size\+\_\+t iF) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga7145760cd69170c89a581e092c7b08fe}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Face}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the face of index iF (including edges and vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga40eef909b8ef81505b8d1ffa57372d1a}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Cell}} (const Cell \&T) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga40eef909b8ef81505b8d1ffa57372d1a}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Cell}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the cell T (including faces, edges and vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga87216ee57909d43fbd55367e66c52659}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Cell}} (size\+\_\+t iT) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga87216ee57909d43fbd55367e66c52659}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Cell}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the cell of index iT (including faces, edges and vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gad0f2767844ac3afe4e943886e81f6ee1}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset}} (const Edge \&E, const Vertex \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gad0f2767844ac3afe4e943886e81f6ee1}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset}} (const Edge \&E, const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the edge E. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gac378673095187351e3d670fa3a8e4790}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset}} (const Edge \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gac378673095187351e3d670fa3a8e4790}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the edge E. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gac1b3d73d675ee1207de89f6f7621d39d}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset}} (const Face \&F, const Vertex \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gac1b3d73d675ee1207de89f6f7621d39d}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset}} (const Face \&F, const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gad3a81107a8f5deafa8ab70023e1587cf}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset}} (const Face \&F, const Edge \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gad3a81107a8f5deafa8ab70023e1587cf}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset}} (const Face \&F, const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the edge E with respect to the face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga7f039cc6dd77ddd22c4827671aa0ba6b}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset}} (const Face \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga7f039cc6dd77ddd22c4827671aa0ba6b}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gaea63a16737c7ba89cec48a47d0fa72d7}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T, const Vertex \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gaea63a16737c7ba89cec48a47d0fa72d7}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset}} (const Cell \&T, const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the cell T. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga63e3c27bec626709a9c46d6a6e99ef3a}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T, const Edge \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga63e3c27bec626709a9c46d6a6e99ef3a}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset}} (const Cell \&T, const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the edge E with respect to the cell T. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga0dd95d4dc14c9e451f7af0ad5e795a76}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T, const Face \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga0dd95d4dc14c9e451f7af0ad5e795a76}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset}} (const Cell \&T, const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the face F with respect to the cell T. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga8ebfa6da885fecc1bb09ccac1f923149}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga8ebfa6da885fecc1bb09ccac1f923149}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the element T. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{group__Common_ga3d0b88a9cf4441b331df044ff5283323}{H\+Ar\+D\+Core3\+D\+::parallel\+\_\+for}} (unsigned nb\+\_\+elements, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end)$>$ functor, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
+static void \mbox{\hyperlink{group__Common_ga3d0b88a9cf4441b331df044ff5283323}{HAr\+DCore3\+D\+::parallel\+\_\+for}} (unsigned nb\+\_\+elements, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end)$>$ functor, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
 \begin{DoxyCompactList}\small\item\em Generic function to execute threaded processes. \end{DoxyCompactList}\item 
-static std\+::pair$<$ Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_gac77ab9801f6fcca6b81f0a069969c951}{H\+Ar\+D\+Core3\+D\+::parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, size\+\_\+t size\+\_\+system, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets, Eigen\+::\+Vector\+Xd $\ast$rhs)$>$ batch\+\_\+local\+\_\+assembly, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
+static std\+::pair$<$ Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_gac77ab9801f6fcca6b81f0a069969c951}{HAr\+DCore3\+D\+::parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, size\+\_\+t size\+\_\+system, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets, Eigen\+::\+Vector\+Xd $\ast$rhs)$>$ batch\+\_\+local\+\_\+assembly, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
 \begin{DoxyCompactList}\small\item\em Function to assemble global matrix and right-\/hand side from a procedure that compute local triplets and rhs contributions. \end{DoxyCompactList}\item 
-static std\+::tuple$<$ Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd, Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_ga96c8e29a4f63768d516460ff68a4e979}{H\+Ar\+D\+Core3\+D\+::parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, size\+\_\+t size\+\_\+system1, std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ size\+\_\+\+Mat2, size\+\_\+t size\+\_\+b2, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets1, Eigen\+::\+Vector\+Xd $\ast$vec1, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets2, Eigen\+::\+Vector\+Xd $\ast$vec2)$>$ batch\+\_\+local\+\_\+assembly, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
+static std\+::tuple$<$ Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd, Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_ga96c8e29a4f63768d516460ff68a4e979}{HAr\+DCore3\+D\+::parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, size\+\_\+t size\+\_\+system1, std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ size\+\_\+\+Mat2, size\+\_\+t size\+\_\+b2, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets1, Eigen\+::\+Vector\+Xd $\ast$vec1, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets2, Eigen\+::\+Vector\+Xd $\ast$vec2)$>$ batch\+\_\+local\+\_\+assembly, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
 \begin{DoxyCompactList}\small\item\em Function to assemble a two global matrices and vectors (such as\+: system and static condensation operator, or system and matrix for BC) from a procedure that compute local triplets and rhs contributions. \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_gaa4f1be3674586f91be75fa82b0f15c06}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Poly}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_gaa4f1be3674586f91be75fa82b0f15c06}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Poly}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Pk(\+T) \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_ga57abb72e21e949e66de29184023d604a}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Goly}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_ga57abb72e21e949e66de29184023d604a}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Goly}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Gk(\+T) \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_ga0317eb5f001e9e1004bccbb72363d8da}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Goly\+Compl}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_ga0317eb5f001e9e1004bccbb72363d8da}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Goly\+Compl}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Gck(\+T) \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_ga247ddc7c8127ff7aa9680c8192fbc747}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Roly}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_ga247ddc7c8127ff7aa9680c8192fbc747}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Roly}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Rk(\+T) \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_ga1de54f13e08a96383b30900296b6a0b9}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Roly\+Compl}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_ga1de54f13e08a96383b30900296b6a0b9}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Cell $>$\+::\+Roly\+Compl}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Rck(\+T) \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_ga22228536ce1b14bab8f448732240e06b}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Poly}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_ga22228536ce1b14bab8f448732240e06b}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Poly}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Pk(\+F) \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_gabb441ee750501ad19a56a744bb97c2ab}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Goly}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_gabb441ee750501ad19a56a744bb97c2ab}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Goly}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Gk(\+F) \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_gabf01fe85b09055f0457c7b0215eca8a0}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Goly\+Compl}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_gabf01fe85b09055f0457c7b0215eca8a0}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Goly\+Compl}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Gck(\+F) \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_gad66be33d62a1aedcdbdbeb1ab459ce6b}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Roly}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_gad66be33d62a1aedcdbdbeb1ab459ce6b}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Roly}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Rk(\+F) \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_gac8ed20d687b4a6290238a3679bceac73}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Roly\+Compl}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_gac8ed20d687b4a6290238a3679bceac73}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Face $>$\+::\+Roly\+Compl}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Rck(\+F) \end{DoxyCompactList}\item 
-static size\+\_\+t \mbox{\hyperlink{group__Common_gacd6cc9660f6f97e52d075c031cdd34a0}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension$<$ Edge $>$\+::\+Poly}} (int k)
+static size\+\_\+t \mbox{\hyperlink{group__Common_gacd6cc9660f6f97e52d075c031cdd34a0}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension$<$ Edge $>$\+::\+Poly}} (int k)
 \begin{DoxyCompactList}\small\item\em Dimension of Pk(\+E) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga7db5411bc5570e3f43d26ac31741fbdb}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::\+Variable\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+vertex\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+edge\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
+\mbox{\hyperlink{group__Common_ga7db5411bc5570e3f43d26ac31741fbdb}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::\+Variable\+DOFSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+vertex\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+edge\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga22e4b3bcc035f5dd6e99cc2fd1b7fa09}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::\+Variable\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+edge\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
-\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices have the same number of D\+O\+Fs. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga6310fa8adeb32f40683d6b361162dcda}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::\+Variable\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
-\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices/edges have the same number of D\+O\+Fs. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga2b0bba4966c3d28a4d5b95fdcf5e866b}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::\+Variable\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
-\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices/edges/faces have the same number of D\+O\+Fs. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga037caf94774d638f1a49569ca7f2e3b4}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::\+Variable\+D\+O\+F\+Space}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
-\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices/edges/faces/cells have the same number of D\+O\+Fs. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::mesh}} () const
+\mbox{\hyperlink{group__Common_ga22e4b3bcc035f5dd6e99cc2fd1b7fa09}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::\+Variable\+DOFSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+edge\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
+\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices have the same number of DOFs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga6310fa8adeb32f40683d6b361162dcda}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::\+Variable\+DOFSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
+\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices/edges have the same number of DOFs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga2b0bba4966c3d28a4d5b95fdcf5e866b}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::\+Variable\+DOFSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, const Eigen\+::\+Vector\+Xd n\+\_\+local\+\_\+cell\+\_\+dofs)
+\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices/edges/faces have the same number of DOFs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga037caf94774d638f1a49569ca7f2e3b4}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::\+Variable\+DOFSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{mesh}}, size\+\_\+t n\+\_\+local\+\_\+vertex\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+edge\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+face\+\_\+dofs, size\+\_\+t n\+\_\+local\+\_\+cell\+\_\+dofs)
+\begin{DoxyCompactList}\small\item\em Simpler constructor if all vertices/edges/faces/cells have the same number of DOFs. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_ga3d961a4cd7d2f847894f0747ce3ed840}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::mesh}} () const
 \begin{DoxyCompactList}\small\item\em Returns the mesh. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga7d3f90801708bab27d55327e3ddf940b}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Vertex}} (const size\+\_\+t iV) const
-\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on vertex of index iV. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gabe988ede6f7838d5a99239e356d03cd1}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Vertex}} (const Vertex \&V) const
-\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on vertex V. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga109a74bb5f70668d16e2530a76a1412e}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Edge}} (const size\+\_\+t iE) const
-\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on edge of index iE. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga8a8698dc7d8ef85928880cbe71ee258e}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Edge}} (const Edge \&E) const
-\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on edge E. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gafdbc0e60bfb3263e10f9f8514708c536}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Face}} (const size\+\_\+t iF) const
-\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on face of index iF. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga989fad9b3dbb5fd931113428220b061f}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Face}} (const Face \&F) const
-\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gac090a13e6cf061000167b4cda9b75d0b}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Cell}} (const size\+\_\+t iT) const
-\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on cell of index iT. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga7e00e290fa12e7cbf824783488f5e409}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Cell}} (const Cell \&T) const
-\begin{DoxyCompactList}\small\item\em Returns the number of local D\+O\+Fs on cell T. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga60368b26f606ab5863afac8066f3190b}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::n\+D\+O\+Fs\+\_\+vertices}} () const
-\begin{DoxyCompactList}\small\item\em Total number of vertices D\+O\+Fs. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gac77ebc2d5edbe1538f000be1faacf240}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::n\+D\+O\+Fs\+\_\+edges}} () const
-\begin{DoxyCompactList}\small\item\em Total number of edges D\+O\+Fs. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gabc495079505d8454c5a65b7f1d02655d}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::n\+D\+O\+Fs\+\_\+faces}} () const
-\begin{DoxyCompactList}\small\item\em Total number of faces D\+O\+Fs. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga4e943148dcbaeed5b8fc70e52f7c68d3}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::n\+D\+O\+Fs\+\_\+cells}} () const
-\begin{DoxyCompactList}\small\item\em Total number of cells D\+O\+Fs. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gaacdd0184ce59295b1251701631bfc342}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension}} () const
-\begin{DoxyCompactList}\small\item\em Returns the dimension of the global space (all D\+O\+Fs for all geometric entities) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gae830302c28e000e5fcd6a9c041b6fee6}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Vertex}} (const Vertex \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga7d3f90801708bab27d55327e3ddf940b}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Vertex}} (const size\+\_\+t iV) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local DOFs on vertex of index iV. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gabe988ede6f7838d5a99239e356d03cd1}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Vertex}} (const Vertex \&V) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local DOFs on vertex V. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga109a74bb5f70668d16e2530a76a1412e}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Edge}} (const size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local DOFs on edge of index iE. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga8a8698dc7d8ef85928880cbe71ee258e}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Edge}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local DOFs on edge E. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gafdbc0e60bfb3263e10f9f8514708c536}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Face}} (const size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local DOFs on face of index iF. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga989fad9b3dbb5fd931113428220b061f}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local DOFs on face F. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gac090a13e6cf061000167b4cda9b75d0b}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Cell}} (const size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local DOFs on cell of index iT. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga7e00e290fa12e7cbf824783488f5e409}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local DOFs on cell T. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga60368b26f606ab5863afac8066f3190b}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::n\+DOFs\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em Total number of vertices DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gac77ebc2d5edbe1538f000be1faacf240}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::n\+DOFs\+\_\+edges}} () const
+\begin{DoxyCompactList}\small\item\em Total number of edges DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gabc495079505d8454c5a65b7f1d02655d}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::n\+DOFs\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em Total number of faces DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga4e943148dcbaeed5b8fc70e52f7c68d3}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::n\+DOFs\+\_\+cells}} () const
+\begin{DoxyCompactList}\small\item\em Total number of cells DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gaacdd0184ce59295b1251701631bfc342}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the global space (all DOFs for all geometric entities) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gae830302c28e000e5fcd6a9c041b6fee6}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Vertex}} (const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the vertex V. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga72fa368ef489664e0c48fa1c80adada7}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Vertex}} (size\+\_\+t iV) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga72fa368ef489664e0c48fa1c80adada7}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Vertex}} (size\+\_\+t iV) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the vertex of index iV. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga83a9dd7b0d9b89ee7798c10f25641d17}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Edge}} (const Edge \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga83a9dd7b0d9b89ee7798c10f25641d17}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Edge}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the edge E (including vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga6931b9cbdaf15f71f86199ec08eef762}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Edge}} (size\+\_\+t iE) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga6931b9cbdaf15f71f86199ec08eef762}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Edge}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the edge of index iE (including vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga2fa4a2cf871e6456c748b0a35b70b327}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Face}} (const Face \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga2fa4a2cf871e6456c748b0a35b70b327}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Face}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the face F (including edges and vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga3244bf0c3e514bdd68aa2e66657fc45c}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Face}} (size\+\_\+t iF) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga3244bf0c3e514bdd68aa2e66657fc45c}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Face}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the face of index iF (including edges and vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga063f3996e5cca65bb2db12ca124e65a6}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Cell}} (const Cell \&T) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga063f3996e5cca65bb2db12ca124e65a6}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Cell}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the cell T (including faces, edges and vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga898b697cf7e9585a2be07e1ce1e55aa2}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Cell}} (size\+\_\+t iT) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga898b697cf7e9585a2be07e1ce1e55aa2}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Cell}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the cell of index iT (including faces, edges and vertices) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gada0f8f958a4c30b102caa7d0ee209ad2}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset}} (const Edge \&E, const Vertex \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gada0f8f958a4c30b102caa7d0ee209ad2}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset}} (const Edge \&E, const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the edge E. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gabbc5ee4b36da3dadc1304e2ce2d9ff74}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset}} (const Edge \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gabbc5ee4b36da3dadc1304e2ce2d9ff74}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the edge E. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga54938e65d4e92ce99dc6719a3b3f1fbb}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset}} (const Face \&F, const Vertex \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga54938e65d4e92ce99dc6719a3b3f1fbb}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset}} (const Face \&F, const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gae9981853057386a2701605c12479b96b}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset}} (const Face \&F, const Edge \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gae9981853057386a2701605c12479b96b}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset}} (const Face \&F, const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the edge E with respect to the face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gaa16f883227da1162b2d53d9faebc6631}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset}} (const Face \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gaa16f883227da1162b2d53d9faebc6631}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gab30f67a0ce927ac5698f037a50d71a82}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T, const Vertex \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gab30f67a0ce927ac5698f037a50d71a82}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset}} (const Cell \&T, const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the cell T. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga74f37079ef1f6fb5ae8ad4e69248a42a}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T, const Edge \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga74f37079ef1f6fb5ae8ad4e69248a42a}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset}} (const Cell \&T, const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the edge E with respect to the cell T. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gafac91f1e504835640a302adf41d7ffa1}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T, const Face \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gafac91f1e504835640a302adf41d7ffa1}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset}} (const Cell \&T, const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the face F with respect to the cell T. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gae2ccdf220cd8d3cc94d8ac51ec73e4cf}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset}} (const Cell \&T) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gae2ccdf220cd8d3cc94d8ac51ec73e4cf}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the element T. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gaf9fb652af8a6158c2e98526918e94e7e}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::global\+Offset}} (const Vertex \&V) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gaf9fb652af8a6158c2e98526918e94e7e}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::global\+Offset}} (const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the vertex V. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga274243e23cf345f52f20472a82078380}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::global\+Offset}} (const Edge \&E) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga274243e23cf345f52f20472a82078380}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::global\+Offset}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the edge E. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga02eb01717509f06303c15a35eccb432d}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::global\+Offset}} (const Face \&F) const
+size\+\_\+t \mbox{\hyperlink{group__Common_ga02eb01717509f06303c15a35eccb432d}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::global\+Offset}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the face F. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gae3c54b0329eea56b4a29217180f47216}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::global\+Offset}} (const Cell \&T) const
+size\+\_\+t \mbox{\hyperlink{group__Common_gae3c54b0329eea56b4a29217180f47216}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::global\+Offset}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the cell T. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gaa6b9fc4957aade24d430e3e12456e529}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::restrict\+Edge}} (size\+\_\+t iE, const Eigen\+::\+Vector\+Xd \&vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gaa6b9fc4957aade24d430e3e12456e529}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::restrict\+Edge}} (size\+\_\+t iE, const Eigen\+::\+Vector\+Xd \&vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to the edge (including its vertices) of index iE. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gaebcec758654c21d4db4dc84704b5c66a}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::restrict\+Face}} (size\+\_\+t iF, const Eigen\+::\+Vector\+Xd \&vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gaebcec758654c21d4db4dc84704b5c66a}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::restrict\+Face}} (size\+\_\+t iF, const Eigen\+::\+Vector\+Xd \&vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to the face (including vertices and edges) of index iF. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gac98a082c256695393c9d3940c339c57c}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::restrict\+Cell}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gac98a082c256695393c9d3940c339c57c}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::restrict\+Cell}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to the cell (including vertices, edges and faces) of index iT. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga0cf0a2a232ee9ffa72be3875a3705790}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::restrict}} (const Edge \&E, const Eigen\+::\+Vector\+Xd vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga0cf0a2a232ee9ffa72be3875a3705790}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::restrict}} (const Edge \&E, const Eigen\+::\+Vector\+Xd vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to an edge. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga2a4a88990f3cd9a1818590b5ad54249a}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::restrict}} (const Face \&F, const Eigen\+::\+Vector\+Xd vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga2a4a88990f3cd9a1818590b5ad54249a}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::restrict}} (const Face \&F, const Eigen\+::\+Vector\+Xd vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to a face. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gaeb8d2f1268456b360b0e539a4f45b30b}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::restrict}} (const Cell \&T, const Eigen\+::\+Vector\+Xd vh) const
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gaeb8d2f1268456b360b0e539a4f45b30b}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::restrict}} (const Cell \&T, const Eigen\+::\+Vector\+Xd vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to a cell. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga7dcc8cac4dd10472c63deba64949c597}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::extend\+Operator}} (const Cell \&T, const Face \&F, const Eigen\+::\+Matrix\+Xd \&opF) const
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga7dcc8cac4dd10472c63deba64949c597}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::extend\+Operator}} (const Cell \&T, const Face \&F, const Eigen\+::\+Matrix\+Xd \&opF) const
 \item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gaa34d6a40007fb0e4ffeefe00368acb2b}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::extend\+Operator}} (const Cell \&T, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gaa34d6a40007fb0e4ffeefe00368acb2b}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::extend\+Operator}} (const Cell \&T, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a cell. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga23e565cc3f97d069b662128104625911}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga23e565cc3f97d069b662128104625911}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a face. \end{DoxyCompactList}\item 
-std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga900f809c3b9bd97b544dbc114f5197a1}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::global\+D\+O\+F\+Indices}} (const Cell \&T) const
-\begin{DoxyCompactList}\small\item\em Returns a vector listing the global D\+O\+Fs attached to the element T\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs and element D\+O\+Fs. \end{DoxyCompactList}\item 
-std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga9b6de6241a74cf7f620faf8f056e3ad2}{H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::global\+D\+O\+F\+Indices}} (const Face \&F) const
-\begin{DoxyCompactList}\small\item\em Returns a vector listing the global D\+O\+Fs attached to the face F\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga900f809c3b9bd97b544dbc114f5197a1}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::global\+DOFIndices}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Returns a vector listing the global DOFs attached to the element T\+: vertex DOFs, edge DOFs, face DOFs and element DOFs. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga9b6de6241a74cf7f620faf8f056e3ad2}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::global\+DOFIndices}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Returns a vector listing the global DOFs attached to the face F\+: vertex DOFs, edge DOFs, face DOFs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ \mbox{\hyperlink{group__Common_ga0e64dd7fa60d788876219241162f0f6e}{H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::value}}
+std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ \mbox{\hyperlink{group__Common_ga0e64dd7fa60d788876219241162f0f6e}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::value}}
 \item 
-std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ \mbox{\hyperlink{group__Common_ga6380d57e44432a9d08114c442158dc8a}{H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::deg}}
+std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ \mbox{\hyperlink{group__Common_ga6380d57e44432a9d08114c442158dc8a}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::deg}}
 \item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa868f9f56ab061eebcbc30c2dbe5295}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+\+Perm}}
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa868f9f56ab061eebcbc30c2dbe5295}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+\+Perm}}
 \item 
-std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_gaccfaba0c903f41cd8dc3b1a7280eede3}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+D\+O\+Fs\+\_\+sys}}
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_gaccfaba0c903f41cd8dc3b1a7280eede3}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+DOFs\+\_\+sys}}
 \item 
-std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga0c686364431d55a47aca647bd2caeb49}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+D\+O\+Fs\+\_\+sc}}
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga0c686364431d55a47aca647bd2caeb49}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+DOFs\+\_\+sc}}
 \item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gae257d6004cb03b2408967d9af3cc83ee}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sys}}
+size\+\_\+t \mbox{\hyperlink{group__Common_gae257d6004cb03b2408967d9af3cc83ee}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sys}}
 \item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga529ae659ec36583e71ce72a5b29cb7e0}{H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sc}}
+size\+\_\+t \mbox{\hyperlink{group__Common_ga529ae659ec36583e71ce72a5b29cb7e0}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sc}}
 \item 
-const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_gaf892ca81e64966ad421de137a5bc3fbb}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+mesh}}
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__Common_gaf892ca81e64966ad421de137a5bc3fbb}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::m\+\_\+mesh}}
 \item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga7636d64533daa557cb40e3354665a376}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+vertex\+\_\+dofs}}
+size\+\_\+t \mbox{\hyperlink{group__Common_ga7636d64533daa557cb40e3354665a376}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::m\+\_\+n\+\_\+local\+\_\+vertex\+\_\+dofs}}
 \item 
-size\+\_\+t \mbox{\hyperlink{group__Common_ga66f59cd5d20ce07b325ed14befc3f44b}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+edge\+\_\+dofs}}
+size\+\_\+t \mbox{\hyperlink{group__Common_ga66f59cd5d20ce07b325ed14befc3f44b}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::m\+\_\+n\+\_\+local\+\_\+edge\+\_\+dofs}}
 \item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gab452b6bcab9670d9ceb6f0497ec9aa40}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+face\+\_\+dofs}}
+size\+\_\+t \mbox{\hyperlink{group__Common_gab452b6bcab9670d9ceb6f0497ec9aa40}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::m\+\_\+n\+\_\+local\+\_\+face\+\_\+dofs}}
 \item 
-size\+\_\+t \mbox{\hyperlink{group__Common_gacc921ba72df56713816eb806bf498cca}{H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+cell\+\_\+dofs}}
+size\+\_\+t \mbox{\hyperlink{group__Common_gacc921ba72df56713816eb806bf498cca}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::m\+\_\+n\+\_\+local\+\_\+cell\+\_\+dofs}}
 \end{DoxyCompactItemize}
 
 
@@ -296,57 +296,57 @@ Various general functions and classes.
 \index{Common@{Common}!compute@{compute}}
 \index{compute@{compute}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{compute()}{compute()}}
-{\footnotesize\ttfamily std\+::tuple$<$Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd, Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd$>$ H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::compute (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \&}]{lsT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::tuple$<$Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd, Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd$>$ HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::compute (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \&}]{lsT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Compute the local static condensation. 
 
-From a local pair of Matrix-\/\+Vector product, constructed with all the D\+O\+Fs, returns a 4-\/tuple; the first two elements are the matrix-\/vector of the locally statically condensed system, the last two elements are the matrix-\/vector of the local recovery operator \mbox{\Hypertarget{group__Common_ga3d683e5f0aa27a28e9eb7fd399bd24c8}\label{group__Common_ga3d683e5f0aa27a28e9eb7fd399bd24c8}} 
+From a local pair of Matrix-\/\+Vector product, constructed with all the DOFs, returns a 4-\/tuple; the first two elements are the matrix-\/vector of the locally statically condensed system, the last two elements are the matrix-\/vector of the local recovery operator \mbox{\Hypertarget{group__Common_ga3d683e5f0aa27a28e9eb7fd399bd24c8}\label{group__Common_ga3d683e5f0aa27a28e9eb7fd399bd24c8}} 
 \index{Common@{Common}!dim\_sc@{dim\_sc}}
 \index{dim\_sc@{dim\_sc}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dim\_sc()}{dim\_sc()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of D\+O\+Fs that are statically condensed. 
+Returns the number of DOFs that are statically condensed. 
 
 \mbox{\Hypertarget{group__Common_gaa2fd993a8010d3b907c881942186d36f}\label{group__Common_gaa2fd993a8010d3b907c881942186d36f}} 
 \index{Common@{Common}!dim\_sys@{dim\_sys}}
 \index{dim\_sys@{dim\_sys}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dim\_sys()}{dim\_sys()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::dim\+\_\+sys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of D\+O\+Fs that are not statically condensed. 
+Returns the number of DOFs that are not statically condensed. 
 
 \mbox{\Hypertarget{group__Common_ga2f9a4f73d3d98508bb70d42a72b38943}\label{group__Common_ga2f9a4f73d3d98508bb70d42a72b38943}} 
 \index{Common@{Common}!dimension@{dimension}}
 \index{dimension@{dimension}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimension()}{dimension()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the dimension of the global space (all D\+O\+Fs for all geometric entities) 
+Returns the dimension of the global space (all DOFs for all geometric entities) 
 
 \mbox{\Hypertarget{group__Common_gaacdd0184ce59295b1251701631bfc342}\label{group__Common_gaacdd0184ce59295b1251701631bfc342}} 
 \index{Common@{Common}!dimension@{dimension}}
 \index{dimension@{dimension}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimension()}{dimension()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the dimension of the global space (all D\+O\+Fs for all geometric entities) 
+Returns the dimension of the global space (all DOFs for all geometric entities) 
 
 \mbox{\Hypertarget{group__Common_ga40eef909b8ef81505b8d1ffa57372d1a}\label{group__Common_ga40eef909b8ef81505b8d1ffa57372d1a}} 
 \index{Common@{Common}!dimensionCell@{dimensionCell}}
 \index{dimensionCell@{dimensionCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionCell()}{dimensionCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -356,7 +356,7 @@ Returns the dimension of the local space on the cell T (including faces, edges a
 \index{Common@{Common}!dimensionCell@{dimensionCell}}
 \index{dimensionCell@{dimensionCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionCell()}{dimensionCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -366,7 +366,7 @@ Returns the dimension of the local space on the cell T (including faces, edges a
 \index{Common@{Common}!dimensionCell@{dimensionCell}}
 \index{dimensionCell@{dimensionCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionCell()}{dimensionCell()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -376,7 +376,7 @@ Returns the dimension of the local space on the cell of index iT (including face
 \index{Common@{Common}!dimensionCell@{dimensionCell}}
 \index{dimensionCell@{dimensionCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionCell()}{dimensionCell()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -386,7 +386,7 @@ Returns the dimension of the local space on the cell of index iT (including face
 \index{Common@{Common}!dimensionEdge@{dimensionEdge}}
 \index{dimensionEdge@{dimensionEdge}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionEdge()}{dimensionEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Edge (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Edge (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -396,7 +396,7 @@ Returns the dimension of the local space on the edge E (including vertices)
 \index{Common@{Common}!dimensionEdge@{dimensionEdge}}
 \index{dimensionEdge@{dimensionEdge}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionEdge()}{dimensionEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Edge (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Edge (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -406,7 +406,7 @@ Returns the dimension of the local space on the edge E (including vertices)
 \index{Common@{Common}!dimensionEdge@{dimensionEdge}}
 \index{dimensionEdge@{dimensionEdge}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionEdge()}{dimensionEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -416,7 +416,7 @@ Returns the dimension of the local space on the edge of index iE (including vert
 \index{Common@{Common}!dimensionEdge@{dimensionEdge}}
 \index{dimensionEdge@{dimensionEdge}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionEdge()}{dimensionEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -426,7 +426,7 @@ Returns the dimension of the local space on the edge of index iE (including vert
 \index{Common@{Common}!dimensionFace@{dimensionFace}}
 \index{dimensionFace@{dimensionFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionFace()}{dimensionFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -436,7 +436,7 @@ Returns the dimension of the local space on the face F (including edges and vert
 \index{Common@{Common}!dimensionFace@{dimensionFace}}
 \index{dimensionFace@{dimensionFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionFace()}{dimensionFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -446,7 +446,7 @@ Returns the dimension of the local space on the face F (including edges and vert
 \index{Common@{Common}!dimensionFace@{dimensionFace}}
 \index{dimensionFace@{dimensionFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionFace()}{dimensionFace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -456,7 +456,7 @@ Returns the dimension of the local space on the face of index iF (including edge
 \index{Common@{Common}!dimensionFace@{dimensionFace}}
 \index{dimensionFace@{dimensionFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionFace()}{dimensionFace()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -466,7 +466,7 @@ Returns the dimension of the local space on the face of index iF (including edge
 \index{Common@{Common}!dimensionVertex@{dimensionVertex}}
 \index{dimensionVertex@{dimensionVertex}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionVertex()}{dimensionVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Vertex (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Vertex (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -476,7 +476,7 @@ Returns the dimension of the local space on the vertex V.
 \index{Common@{Common}!dimensionVertex@{dimensionVertex}}
 \index{dimensionVertex@{dimensionVertex}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionVertex()}{dimensionVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Vertex (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Vertex (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -486,7 +486,7 @@ Returns the dimension of the local space on the vertex V.
 \index{Common@{Common}!dimensionVertex@{dimensionVertex}}
 \index{dimensionVertex@{dimensionVertex}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionVertex()}{dimensionVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::dimension\+Vertex (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::dimension\+Vertex (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -496,7 +496,7 @@ Returns the dimension of the local space on the vertex of index iV.
 \index{Common@{Common}!dimensionVertex@{dimensionVertex}}
 \index{dimensionVertex@{dimensionVertex}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{dimensionVertex()}{dimensionVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::dimension\+Vertex (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::dimension\+Vertex (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iV }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -506,7 +506,7 @@ Returns the dimension of the local space on the vertex of index iV.
 \index{Common@{Common}!extendOperator@{extendOperator}}
 \index{extendOperator@{extendOperator}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{extendOperator()}{extendOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Global\+D\+O\+F\+Space\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opE }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Global\+DOFSpace\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opE }\end{DoxyParamCaption}) const}
 
 
 
@@ -516,7 +516,7 @@ Extend an edge operator to a cell.
 \index{Common@{Common}!extendOperator@{extendOperator}}
 \index{extendOperator@{extendOperator}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{extendOperator()}{extendOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Variable\+D\+O\+F\+Space\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opE }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Variable\+DOFSpace\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opE }\end{DoxyParamCaption}) const}
 
 
 
@@ -526,19 +526,19 @@ Extend an edge operator to a cell.
 \index{Common@{Common}!extendOperator@{extendOperator}}
 \index{extendOperator@{extendOperator}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{extendOperator()}{extendOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Global\+D\+O\+F\+Space\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opF }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Global\+DOFSpace\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opF }\end{DoxyParamCaption}) const}
 
-Extend a face operator to a cell\+: starting from a matrix acting on the D\+O\+Fs of F (and its edges and vertices), redistribute the coefficients in a matrix acting on the D\+O\+Fs viewed from T. \mbox{\Hypertarget{group__Common_ga7dcc8cac4dd10472c63deba64949c597}\label{group__Common_ga7dcc8cac4dd10472c63deba64949c597}} 
+Extend a face operator to a cell\+: starting from a matrix acting on the DOFs of F (and its edges and vertices), redistribute the coefficients in a matrix acting on the DOFs viewed from T. \mbox{\Hypertarget{group__Common_ga7dcc8cac4dd10472c63deba64949c597}\label{group__Common_ga7dcc8cac4dd10472c63deba64949c597}} 
 \index{Common@{Common}!extendOperator@{extendOperator}}
 \index{extendOperator@{extendOperator}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{extendOperator()}{extendOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Variable\+D\+O\+F\+Space\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opF }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Variable\+DOFSpace\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opF }\end{DoxyParamCaption}) const}
 
-Extend a face operator to a cell\+: starting from a matrix acting on the D\+O\+Fs of F (and its edges and vertices), redistribute the coefficients in a matrix acting on the D\+O\+Fs viewed from T. \mbox{\Hypertarget{group__Common_gafa03cd062083ef8fbe3089d395f81338}\label{group__Common_gafa03cd062083ef8fbe3089d395f81338}} 
+Extend a face operator to a cell\+: starting from a matrix acting on the DOFs of F (and its edges and vertices), redistribute the coefficients in a matrix acting on the DOFs viewed from T. \mbox{\Hypertarget{group__Common_gafa03cd062083ef8fbe3089d395f81338}\label{group__Common_gafa03cd062083ef8fbe3089d395f81338}} 
 \index{Common@{Common}!extendOperator@{extendOperator}}
 \index{extendOperator@{extendOperator}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{extendOperator()}{extendOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Global\+D\+O\+F\+Space\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opE }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Global\+DOFSpace\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opE }\end{DoxyParamCaption}) const}
 
 
 
@@ -548,7 +548,7 @@ Extend an edge operator to a face.
 \index{Common@{Common}!extendOperator@{extendOperator}}
 \index{extendOperator@{extendOperator}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{extendOperator()}{extendOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Variable\+D\+O\+F\+Space\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opE }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Variable\+DOFSpace\+::extend\+Operator (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{opE }\end{DoxyParamCaption}) const}
 
 
 
@@ -558,67 +558,67 @@ Extend an edge operator to a face.
 \index{Common@{Common}!globalDOFIndices@{globalDOFIndices}}
 \index{globalDOFIndices@{globalDOFIndices}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalDOFIndices()}{globalDOFIndices()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ Global\+D\+O\+F\+Space\+::global\+D\+O\+F\+Indices (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ Global\+DOFSpace\+::global\+DOFIndices (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const}
 
 
 
-Returns a vector listing the global D\+O\+Fs attached to the element T\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs and element D\+O\+Fs. 
+Returns a vector listing the global DOFs attached to the element T\+: vertex DOFs, edge DOFs, face DOFs and element DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga900f809c3b9bd97b544dbc114f5197a1}\label{group__Common_ga900f809c3b9bd97b544dbc114f5197a1}} 
 \index{Common@{Common}!globalDOFIndices@{globalDOFIndices}}
 \index{globalDOFIndices@{globalDOFIndices}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalDOFIndices()}{globalDOFIndices()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ Variable\+D\+O\+F\+Space\+::global\+D\+O\+F\+Indices (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ Variable\+DOFSpace\+::global\+DOFIndices (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const}
 
 
 
-Returns a vector listing the global D\+O\+Fs attached to the element T\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs and element D\+O\+Fs. 
+Returns a vector listing the global DOFs attached to the element T\+: vertex DOFs, edge DOFs, face DOFs and element DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga7cc6a020ed82c7e8bdd295d6aa94dea5}\label{group__Common_ga7cc6a020ed82c7e8bdd295d6aa94dea5}} 
 \index{Common@{Common}!globalDOFIndices@{globalDOFIndices}}
 \index{globalDOFIndices@{globalDOFIndices}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalDOFIndices()}{globalDOFIndices()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ Global\+D\+O\+F\+Space\+::global\+D\+O\+F\+Indices (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ Global\+DOFSpace\+::global\+DOFIndices (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const}
 
 
 
-Returns a vector listing the global D\+O\+Fs attached to the face F\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs. 
+Returns a vector listing the global DOFs attached to the face F\+: vertex DOFs, edge DOFs, face DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga9b6de6241a74cf7f620faf8f056e3ad2}\label{group__Common_ga9b6de6241a74cf7f620faf8f056e3ad2}} 
 \index{Common@{Common}!globalDOFIndices@{globalDOFIndices}}
 \index{globalDOFIndices@{globalDOFIndices}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalDOFIndices()}{globalDOFIndices()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ Variable\+D\+O\+F\+Space\+::global\+D\+O\+F\+Indices (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ Variable\+DOFSpace\+::global\+DOFIndices (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const}
 
 
 
-Returns a vector listing the global D\+O\+Fs attached to the face F\+: vertex D\+O\+Fs, edge D\+O\+Fs, face D\+O\+Fs. 
+Returns a vector listing the global DOFs attached to the face F\+: vertex DOFs, edge DOFs, face DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}\label{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}} 
 \index{Common@{Common}!globalDOFs\_sc@{globalDOFs\_sc}}
 \index{globalDOFs\_sc@{globalDOFs\_sc}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalDOFs\_sc()}{globalDOFs\_sc()}}
-{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::global\+D\+O\+Fs\+\_\+sc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::global\+DOFs\+\_\+sc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns global D\+O\+Fs that are statically condensend. 
+Returns global DOFs that are statically condensend. 
 
 \mbox{\Hypertarget{group__Common_gada39a93d73a2096ffadb2182d696a4b2}\label{group__Common_gada39a93d73a2096ffadb2182d696a4b2}} 
 \index{Common@{Common}!globalDOFs\_sys@{globalDOFs\_sys}}
 \index{globalDOFs\_sys@{globalDOFs\_sys}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalDOFs\_sys()}{globalDOFs\_sys()}}
-{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::global\+D\+O\+Fs\+\_\+sys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::global\+DOFs\+\_\+sys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns global D\+O\+Fs that are not statically condensend. 
+Returns global DOFs that are not statically condensend. 
 
 \mbox{\Hypertarget{group__Common_gac0ee512d7dbbce9e7aae3f2f42138470}\label{group__Common_gac0ee512d7dbbce9e7aae3f2f42138470}} 
 \index{Common@{Common}!GlobalDOFSpace@{GlobalDOFSpace}}
 \index{GlobalDOFSpace@{GlobalDOFSpace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{GlobalDOFSpace()}{GlobalDOFSpace()}}
-{\footnotesize\ttfamily Global\+D\+O\+F\+Space\+::\+Global\+D\+O\+F\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Global\+DOFSpace\+::\+Global\+DOFSpace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
 
 
 
@@ -628,7 +628,7 @@ Constructor.
 \index{Common@{Common}!globalOffset@{globalOffset}}
 \index{globalOffset@{globalOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -638,7 +638,7 @@ Return the global offset for the unknowns on the cell T.
 \index{Common@{Common}!globalOffset@{globalOffset}}
 \index{globalOffset@{globalOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -648,7 +648,7 @@ Return the global offset for the unknowns on the cell T.
 \index{Common@{Common}!globalOffset@{globalOffset}}
 \index{globalOffset@{globalOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -658,7 +658,7 @@ Return the global offset for the unknowns on the edge E.
 \index{Common@{Common}!globalOffset@{globalOffset}}
 \index{globalOffset@{globalOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -668,7 +668,7 @@ Return the global offset for the unknowns on the edge E.
 \index{Common@{Common}!globalOffset@{globalOffset}}
 \index{globalOffset@{globalOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -678,7 +678,7 @@ Return the global offset for the unknowns on the face F.
 \index{Common@{Common}!globalOffset@{globalOffset}}
 \index{globalOffset@{globalOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -688,7 +688,7 @@ Return the global offset for the unknowns on the face F.
 \index{Common@{Common}!globalOffset@{globalOffset}}
 \index{globalOffset@{globalOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -698,7 +698,7 @@ Return the global offset for the unknowns on the vertex V.
 \index{Common@{Common}!globalOffset@{globalOffset}}
 \index{globalOffset@{globalOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{globalOffset()}{globalOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::global\+Offset (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -708,7 +708,7 @@ Return the global offset for the unknowns on the vertex V.
 \index{Common@{Common}!Goly@{Goly}}
 \index{Goly@{Goly}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{Goly()}{Goly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Cell $>$\+::Goly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Cell $>$\+::Goly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -718,7 +718,7 @@ Dimension of Gk(\+T)
 \index{Common@{Common}!Goly@{Goly}}
 \index{Goly@{Goly}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{Goly()}{Goly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Face $>$\+::Goly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Face $>$\+::Goly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -728,7 +728,7 @@ Dimension of Gk(\+F)
 \index{Common@{Common}!GolyCompl@{GolyCompl}}
 \index{GolyCompl@{GolyCompl}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{GolyCompl()}{GolyCompl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Cell $>$\+::Goly\+Compl (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Cell $>$\+::Goly\+Compl (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -738,7 +738,7 @@ Dimension of Gck(\+T)
 \index{Common@{Common}!GolyCompl@{GolyCompl}}
 \index{GolyCompl@{GolyCompl}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{GolyCompl()}{GolyCompl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Face $>$\+::Goly\+Compl (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Face $>$\+::Goly\+Compl (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -748,7 +748,7 @@ Dimension of Gck(\+F)
 \index{Common@{Common}!IntegralWeight@{IntegralWeight}}
 \index{IntegralWeight@{IntegralWeight}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{IntegralWeight()}{IntegralWeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$}]{\+\_\+value,  }\item[{std\+::function$<$ size\+\_\+t(const Cell \&T)$>$}]{\+\_\+deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$}]{\+\_\+value,  }\item[{std\+::function$<$ size\+\_\+t(const Cell \&T)$>$}]{\+\_\+deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -761,13 +761,13 @@ Dimension of Gck(\+F)
 \index{Common@{Common}!IntegralWeight@{IntegralWeight}}
 \index{IntegralWeight@{IntegralWeight}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{IntegralWeight()}{IntegralWeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{group__Common_gaa4747ac6257c084186c00efc756822c8}\label{group__Common_gaa4747ac6257c084186c00efc756822c8}} 
 \index{Common@{Common}!LocalDOFSpace@{LocalDOFSpace}}
 \index{LocalDOFSpace@{LocalDOFSpace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{LocalDOFSpace()}{LocalDOFSpace()}}
-{\footnotesize\ttfamily Local\+D\+O\+F\+Space\+::\+Local\+D\+O\+F\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Local\+DOFSpace\+::\+Local\+DOFSpace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
 
 
 
@@ -777,7 +777,7 @@ Constructor.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -787,7 +787,7 @@ Returns the local offset of the unknowns attached to the element T.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -797,7 +797,7 @@ Returns the local offset of the unknowns attached to the element T.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [3/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -807,7 +807,7 @@ Returns the local offset of the edge E with respect to the cell T.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [4/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -817,7 +817,7 @@ Returns the local offset of the edge E with respect to the cell T.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [5/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -827,7 +827,7 @@ Returns the local offset of the face F with respect to the cell T.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [6/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -837,7 +837,7 @@ Returns the local offset of the face F with respect to the cell T.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [7/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -847,7 +847,7 @@ Returns the local offset of the vertex V with respect to the cell T.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [8/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -857,7 +857,7 @@ Returns the local offset of the vertex V with respect to the cell T.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [9/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -867,7 +867,7 @@ Returns the local offset of the unknowns attached to the edge E.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [10/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -877,7 +877,7 @@ Returns the local offset of the unknowns attached to the edge E.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [11/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -887,7 +887,7 @@ Returns the local offset of the vertex V with respect to the edge E.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [12/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -897,7 +897,7 @@ Returns the local offset of the vertex V with respect to the edge E.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [13/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -907,7 +907,7 @@ Returns the local offset of the unknowns attached to the face F.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [14/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -917,7 +917,7 @@ Returns the local offset of the unknowns attached to the face F.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [15/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -927,7 +927,7 @@ Returns the local offset of the edge E with respect to the face F.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [16/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -937,7 +937,7 @@ Returns the local offset of the edge E with respect to the face F.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [17/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -947,7 +947,7 @@ Returns the local offset of the vertex V with respect to the face F.
 \index{Common@{Common}!localOffset@{localOffset}}
 \index{localOffset@{localOffset}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{localOffset()}{localOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [18/18]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::local\+Offset (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -957,7 +957,7 @@ Returns the local offset of the vertex V with respect to the face F.
 \index{Common@{Common}!LocalStaticCondensation@{LocalStaticCondensation}}
 \index{LocalStaticCondensation@{LocalStaticCondensation}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{LocalStaticCondensation()}{LocalStaticCondensation()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::\+Local\+Static\+Condensation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Perm,  }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{global\+D\+O\+Fs\+\_\+sys,  }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{global\+D\+O\+Fs\+\_\+sc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::\+Local\+Static\+Condensation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Perm,  }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{global\+DOFs\+\_\+sys,  }\item[{const std\+::vector$<$ size\+\_\+t $>$ \&}]{global\+DOFs\+\_\+sc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -965,18 +965,18 @@ Constructor.
 
 
 \begin{DoxyParams}{Parameters}
-{\em Perm} & Permutation that moves the D\+O\+Fs to condense at the end \\
+{\em Perm} & Permutation that moves the DOFs to condense at the end \\
 \hline
-{\em global\+D\+O\+Fs\+\_\+sys} & List of global D\+O\+Fs in the final system \\
+{\em global\+DOFs\+\_\+sys} & List of global DOFs in the final system \\
 \hline
-{\em global\+D\+O\+Fs\+\_\+sc} & List of global D\+O\+Fs that are statically condensed \\
+{\em global\+DOFs\+\_\+sc} & List of global DOFs that are statically condensed \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}\label{group__Common_ga3dfecc3674cef1fb03254bc8e3ea0eff}} 
 \index{Common@{Common}!mesh@{mesh}}
 \index{mesh@{mesh}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -986,7 +986,7 @@ Returns the mesh.
 \index{Common@{Common}!mesh@{mesh}}
 \index{mesh@{mesh}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -996,167 +996,167 @@ Returns the mesh.
 \index{Common@{Common}!nDOFs\_cells@{nDOFs\_cells}}
 \index{nDOFs\_cells@{nDOFs\_cells}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{nDOFs\_cells()}{nDOFs\_cells()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::n\+D\+O\+Fs\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::n\+DOFs\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Total number of cells D\+O\+Fs. 
+Total number of cells DOFs. 
 
 \mbox{\Hypertarget{group__Common_gac77ebc2d5edbe1538f000be1faacf240}\label{group__Common_gac77ebc2d5edbe1538f000be1faacf240}} 
 \index{Common@{Common}!nDOFs\_edges@{nDOFs\_edges}}
 \index{nDOFs\_edges@{nDOFs\_edges}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{nDOFs\_edges()}{nDOFs\_edges()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::n\+D\+O\+Fs\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::n\+DOFs\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Total number of edges D\+O\+Fs. 
+Total number of edges DOFs. 
 
 \mbox{\Hypertarget{group__Common_gabc495079505d8454c5a65b7f1d02655d}\label{group__Common_gabc495079505d8454c5a65b7f1d02655d}} 
 \index{Common@{Common}!nDOFs\_faces@{nDOFs\_faces}}
 \index{nDOFs\_faces@{nDOFs\_faces}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{nDOFs\_faces()}{nDOFs\_faces()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::n\+D\+O\+Fs\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::n\+DOFs\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Total number of faces D\+O\+Fs. 
+Total number of faces DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga60368b26f606ab5863afac8066f3190b}\label{group__Common_ga60368b26f606ab5863afac8066f3190b}} 
 \index{Common@{Common}!nDOFs\_vertices@{nDOFs\_vertices}}
 \index{nDOFs\_vertices@{nDOFs\_vertices}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{nDOFs\_vertices()}{nDOFs\_vertices()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::n\+D\+O\+Fs\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::n\+DOFs\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Total number of vertices D\+O\+Fs. 
+Total number of vertices DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga63c9c43b9c52f18389de01b1b2669258}\label{group__Common_ga63c9c43b9c52f18389de01b1b2669258}} 
 \index{Common@{Common}!numLocalDofsCell@{numLocalDofsCell}}
 \index{numLocalDofsCell@{numLocalDofsCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsCell()}{numLocalDofsCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::num\+Local\+Dofs\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local cell D\+O\+Fs. 
+Returns the number of local cell DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga7e00e290fa12e7cbf824783488f5e409}\label{group__Common_ga7e00e290fa12e7cbf824783488f5e409}} 
 \index{Common@{Common}!numLocalDofsCell@{numLocalDofsCell}}
 \index{numLocalDofsCell@{numLocalDofsCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsCell()}{numLocalDofsCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local D\+O\+Fs on cell T. 
+Returns the number of local DOFs on cell T. 
 
 \mbox{\Hypertarget{group__Common_gac090a13e6cf061000167b4cda9b75d0b}\label{group__Common_gac090a13e6cf061000167b4cda9b75d0b}} 
 \index{Common@{Common}!numLocalDofsCell@{numLocalDofsCell}}
 \index{numLocalDofsCell@{numLocalDofsCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsCell()}{numLocalDofsCell()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Cell (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Cell (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local D\+O\+Fs on cell of index iT. 
+Returns the number of local DOFs on cell of index iT. 
 
 \mbox{\Hypertarget{group__Common_ga528c6d896f2ab32b50751fb22bcf8910}\label{group__Common_ga528c6d896f2ab32b50751fb22bcf8910}} 
 \index{Common@{Common}!numLocalDofsEdge@{numLocalDofsEdge}}
 \index{numLocalDofsEdge@{numLocalDofsEdge}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsEdge()}{numLocalDofsEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::num\+Local\+Dofs\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local edge D\+O\+Fs. 
+Returns the number of local edge DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga8a8698dc7d8ef85928880cbe71ee258e}\label{group__Common_ga8a8698dc7d8ef85928880cbe71ee258e}} 
 \index{Common@{Common}!numLocalDofsEdge@{numLocalDofsEdge}}
 \index{numLocalDofsEdge@{numLocalDofsEdge}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsEdge()}{numLocalDofsEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Edge (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Edge (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local D\+O\+Fs on edge E. 
+Returns the number of local DOFs on edge E. 
 
 \mbox{\Hypertarget{group__Common_ga109a74bb5f70668d16e2530a76a1412e}\label{group__Common_ga109a74bb5f70668d16e2530a76a1412e}} 
 \index{Common@{Common}!numLocalDofsEdge@{numLocalDofsEdge}}
 \index{numLocalDofsEdge@{numLocalDofsEdge}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsEdge()}{numLocalDofsEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Edge (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Edge (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local D\+O\+Fs on edge of index iE. 
+Returns the number of local DOFs on edge of index iE. 
 
 \mbox{\Hypertarget{group__Common_gad3de9b38dbf2a2447bf4b07dea726bb5}\label{group__Common_gad3de9b38dbf2a2447bf4b07dea726bb5}} 
 \index{Common@{Common}!numLocalDofsFace@{numLocalDofsFace}}
 \index{numLocalDofsFace@{numLocalDofsFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsFace()}{numLocalDofsFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::num\+Local\+Dofs\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local face D\+O\+Fs. 
+Returns the number of local face DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga989fad9b3dbb5fd931113428220b061f}\label{group__Common_ga989fad9b3dbb5fd931113428220b061f}} 
 \index{Common@{Common}!numLocalDofsFace@{numLocalDofsFace}}
 \index{numLocalDofsFace@{numLocalDofsFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsFace()}{numLocalDofsFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local D\+O\+Fs on face F. 
+Returns the number of local DOFs on face F. 
 
 \mbox{\Hypertarget{group__Common_gafdbc0e60bfb3263e10f9f8514708c536}\label{group__Common_gafdbc0e60bfb3263e10f9f8514708c536}} 
 \index{Common@{Common}!numLocalDofsFace@{numLocalDofsFace}}
 \index{numLocalDofsFace@{numLocalDofsFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsFace()}{numLocalDofsFace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Face (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Face (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local D\+O\+Fs on face of index iF. 
+Returns the number of local DOFs on face of index iF. 
 
 \mbox{\Hypertarget{group__Common_gac5ac77404d4e30ab0baf187f2cd341ba}\label{group__Common_gac5ac77404d4e30ab0baf187f2cd341ba}} 
 \index{Common@{Common}!numLocalDofsVertex@{numLocalDofsVertex}}
 \index{numLocalDofsVertex@{numLocalDofsVertex}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsVertex()}{numLocalDofsVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Vertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::num\+Local\+Dofs\+Vertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local vertex D\+O\+Fs. 
+Returns the number of local vertex DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga7d3f90801708bab27d55327e3ddf940b}\label{group__Common_ga7d3f90801708bab27d55327e3ddf940b}} 
 \index{Common@{Common}!numLocalDofsVertex@{numLocalDofsVertex}}
 \index{numLocalDofsVertex@{numLocalDofsVertex}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsVertex()}{numLocalDofsVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Vertex (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iV }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Vertex (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iV }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local D\+O\+Fs on vertex of index iV. 
+Returns the number of local DOFs on vertex of index iV. 
 
 \mbox{\Hypertarget{group__Common_gabe988ede6f7838d5a99239e356d03cd1}\label{group__Common_gabe988ede6f7838d5a99239e356d03cd1}} 
 \index{Common@{Common}!numLocalDofsVertex@{numLocalDofsVertex}}
 \index{numLocalDofsVertex@{numLocalDofsVertex}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{numLocalDofsVertex()}{numLocalDofsVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::num\+Local\+Dofs\+Vertex (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::num\+Local\+Dofs\+Vertex (\begin{DoxyParamCaption}\item[{const Vertex \&}]{V }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of local D\+O\+Fs on vertex V. 
+Returns the number of local DOFs on vertex V. 
 
 \mbox{\Hypertarget{group__Common_gac77ab9801f6fcca6b81f0a069969c951}\label{group__Common_gac77ab9801f6fcca6b81f0a069969c951}} 
 \index{Common@{Common}!parallel\_assembly\_system@{parallel\_assembly\_system}}
 \index{parallel\_assembly\_system@{parallel\_assembly\_system}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{parallel\_assembly\_system()}{parallel\_assembly\_system()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static std\+::pair$<$Eigen\+::\+Sparse\+Matrix$<$double$>$, Eigen\+::\+Vector\+Xd$>$ H\+Ar\+D\+Core3\+D\+::parallel\+\_\+assembly\+\_\+system (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nb\+\_\+elements,  }\item[{size\+\_\+t}]{size\+\_\+system,  }\item[{std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets, Eigen\+::\+Vector\+Xd $\ast$rhs)$>$}]{batch\+\_\+local\+\_\+assembly,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static std\+::pair$<$Eigen\+::\+Sparse\+Matrix$<$double$>$, Eigen\+::\+Vector\+Xd$>$ HAr\+DCore3\+D\+::parallel\+\_\+assembly\+\_\+system (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nb\+\_\+elements,  }\item[{size\+\_\+t}]{size\+\_\+system,  }\item[{std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets, Eigen\+::\+Vector\+Xd $\ast$rhs)$>$}]{batch\+\_\+local\+\_\+assembly,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1166,7 +1166,7 @@ Function to assemble global matrix and right-\/hand side from a procedure that c
 \index{Common@{Common}!parallel\_assembly\_system@{parallel\_assembly\_system}}
 \index{parallel\_assembly\_system@{parallel\_assembly\_system}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{parallel\_assembly\_system()}{parallel\_assembly\_system()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static std\+::tuple$<$Eigen\+::\+Sparse\+Matrix$<$double$>$, Eigen\+::\+Vector\+Xd, Eigen\+::\+Sparse\+Matrix$<$double$>$, Eigen\+::\+Vector\+Xd$>$ H\+Ar\+D\+Core3\+D\+::parallel\+\_\+assembly\+\_\+system (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nb\+\_\+elements,  }\item[{size\+\_\+t}]{size\+\_\+system1,  }\item[{std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$}]{size\+\_\+\+Mat2,  }\item[{size\+\_\+t}]{size\+\_\+b2,  }\item[{std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets1, Eigen\+::\+Vector\+Xd $\ast$vec1, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets2, Eigen\+::\+Vector\+Xd $\ast$vec2)$>$}]{batch\+\_\+local\+\_\+assembly,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static std\+::tuple$<$Eigen\+::\+Sparse\+Matrix$<$double$>$, Eigen\+::\+Vector\+Xd, Eigen\+::\+Sparse\+Matrix$<$double$>$, Eigen\+::\+Vector\+Xd$>$ HAr\+DCore3\+D\+::parallel\+\_\+assembly\+\_\+system (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nb\+\_\+elements,  }\item[{size\+\_\+t}]{size\+\_\+system1,  }\item[{std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$}]{size\+\_\+\+Mat2,  }\item[{size\+\_\+t}]{size\+\_\+b2,  }\item[{std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets1, Eigen\+::\+Vector\+Xd $\ast$vec1, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets2, Eigen\+::\+Vector\+Xd $\ast$vec2)$>$}]{batch\+\_\+local\+\_\+assembly,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1176,7 +1176,7 @@ Function to assemble a two global matrices and vectors (such as\+: system and st
 \index{Common@{Common}!parallel\_for@{parallel\_for}}
 \index{parallel\_for@{parallel\_for}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{parallel\_for()}{parallel\_for()}}
-{\footnotesize\ttfamily static void H\+Ar\+D\+Core3\+D\+::parallel\+\_\+for (\begin{DoxyParamCaption}\item[{unsigned}]{nb\+\_\+elements,  }\item[{std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end)$>$}]{functor,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static void HAr\+DCore3\+D\+::parallel\+\_\+for (\begin{DoxyParamCaption}\item[{unsigned}]{nb\+\_\+elements,  }\item[{std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end)$>$}]{functor,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1186,7 +1186,7 @@ Generic function to execute threaded processes.
 \index{Common@{Common}!Poly@{Poly}}
 \index{Poly@{Poly}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{Poly()}{Poly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Cell $>$\+::Poly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Cell $>$\+::Poly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1196,7 +1196,7 @@ Dimension of Pk(\+T)
 \index{Common@{Common}!Poly@{Poly}}
 \index{Poly@{Poly}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{Poly()}{Poly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Face $>$\+::Poly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Face $>$\+::Poly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1206,7 +1206,7 @@ Dimension of Pk(\+F)
 \index{Common@{Common}!Poly@{Poly}}
 \index{Poly@{Poly}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{Poly()}{Poly()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Edge $>$\+::Poly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Edge $>$\+::Poly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1216,7 +1216,7 @@ Dimension of Pk(\+E)
 \index{Common@{Common}!restrict@{restrict}}
 \index{restrict@{restrict}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrict()}{restrict()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::restrict (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::restrict (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -1226,7 +1226,7 @@ Restrict to a cell.
 \index{Common@{Common}!restrict@{restrict}}
 \index{restrict@{restrict}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrict()}{restrict()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::restrict (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::restrict (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -1236,7 +1236,7 @@ Restrict to a cell.
 \index{Common@{Common}!restrict@{restrict}}
 \index{restrict@{restrict}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrict()}{restrict()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::restrict (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::restrict (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -1246,7 +1246,7 @@ Restrict to an edge.
 \index{Common@{Common}!restrict@{restrict}}
 \index{restrict@{restrict}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrict()}{restrict()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::restrict (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::restrict (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -1256,7 +1256,7 @@ Restrict to an edge.
 \index{Common@{Common}!restrict@{restrict}}
 \index{restrict@{restrict}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrict()}{restrict()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::\+Global\+D\+O\+F\+Space\+::restrict (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::restrict (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -1266,7 +1266,7 @@ Restrict to a face.
 \index{Common@{Common}!restrict@{restrict}}
 \index{restrict@{restrict}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrict()}{restrict()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd H\+Ar\+D\+Core3\+D\+::\+Variable\+D\+O\+F\+Space\+::restrict (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd HAr\+DCore3\+D\+::\+Variable\+DOFSpace\+::restrict (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Eigen\+::\+Vector\+Xd}]{vh }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -1276,7 +1276,7 @@ Restrict to a face.
 \index{Common@{Common}!restrictCell@{restrictCell}}
 \index{restrictCell@{restrictCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrictCell()}{restrictCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Global\+D\+O\+F\+Space\+::restrict\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Global\+DOFSpace\+::restrict\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
 
 
 
@@ -1286,7 +1286,7 @@ Restrict to the cell (including vertices, edges and faces) of index iT.
 \index{Common@{Common}!restrictCell@{restrictCell}}
 \index{restrictCell@{restrictCell}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrictCell()}{restrictCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Variable\+D\+O\+F\+Space\+::restrict\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Variable\+DOFSpace\+::restrict\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
 
 
 
@@ -1296,7 +1296,7 @@ Restrict to the cell (including vertices, edges and faces) of index iT.
 \index{Common@{Common}!restrictEdge@{restrictEdge}}
 \index{restrictEdge@{restrictEdge}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrictEdge()}{restrictEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Global\+D\+O\+F\+Space\+::restrict\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Global\+DOFSpace\+::restrict\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
 
 
 
@@ -1306,7 +1306,7 @@ Restrict to the edge (including its vertices) of index iE.
 \index{Common@{Common}!restrictEdge@{restrictEdge}}
 \index{restrictEdge@{restrictEdge}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrictEdge()}{restrictEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Variable\+D\+O\+F\+Space\+::restrict\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Variable\+DOFSpace\+::restrict\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
 
 
 
@@ -1316,7 +1316,7 @@ Restrict to the edge (including its vertices) of index iE.
 \index{Common@{Common}!restrictFace@{restrictFace}}
 \index{restrictFace@{restrictFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrictFace()}{restrictFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Global\+D\+O\+F\+Space\+::restrict\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Global\+DOFSpace\+::restrict\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
 
 
 
@@ -1326,7 +1326,7 @@ Restrict to the face (including vertices and edges) of index iF.
 \index{Common@{Common}!restrictFace@{restrictFace}}
 \index{restrictFace@{restrictFace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{restrictFace()}{restrictFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Variable\+D\+O\+F\+Space\+::restrict\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Variable\+DOFSpace\+::restrict\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{vh }\end{DoxyParamCaption}) const}
 
 
 
@@ -1336,7 +1336,7 @@ Restrict to the face (including vertices and edges) of index iF.
 \index{Common@{Common}!Roly@{Roly}}
 \index{Roly@{Roly}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{Roly()}{Roly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Cell $>$\+::Roly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Cell $>$\+::Roly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1346,7 +1346,7 @@ Dimension of Rk(\+T)
 \index{Common@{Common}!Roly@{Roly}}
 \index{Roly@{Roly}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{Roly()}{Roly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Face $>$\+::Roly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Face $>$\+::Roly (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1356,7 +1356,7 @@ Dimension of Rk(\+F)
 \index{Common@{Common}!RolyCompl@{RolyCompl}}
 \index{RolyCompl@{RolyCompl}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{RolyCompl()}{RolyCompl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Cell $>$\+::Roly\+Compl (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Cell $>$\+::Roly\+Compl (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1366,7 +1366,7 @@ Dimension of Rck(\+T)
 \index{Common@{Common}!RolyCompl@{RolyCompl}}
 \index{RolyCompl@{RolyCompl}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{RolyCompl()}{RolyCompl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{H\+Ar\+D\+Core3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Face $>$\+::Roly\+Compl (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension}{HAr\+DCore3\+D\+::\+Polynomial\+Space\+Dimension}}$<$ Face $>$\+::Roly\+Compl (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1376,7 +1376,7 @@ Dimension of Rck(\+F)
 \index{Common@{Common}!store\_times@{store\_times}}
 \index{store\_times@{store\_times}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{store\_times()}{store\_times()}}
-{\footnotesize\ttfamily std\+::pair$<$double,double$>$ H\+Ar\+D\+Core3\+D\+::store\+\_\+times (\begin{DoxyParamCaption}\item[{boost\+::timer\+::cpu\+\_\+timer \&}]{timer,  }\item[{std\+::string}]{message = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::pair$<$double,double$>$ HAr\+DCore3\+D\+::store\+\_\+times (\begin{DoxyParamCaption}\item[{boost\+::timer\+::cpu\+\_\+timer \&}]{timer,  }\item[{std\+::string}]{message = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -1393,7 +1393,7 @@ Wall time is in the first element of the pair, proc time in the second
 \index{Common@{Common}!VariableDOFSpace@{VariableDOFSpace}}
 \index{VariableDOFSpace@{VariableDOFSpace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{VariableDOFSpace()}{VariableDOFSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
-{\footnotesize\ttfamily Variable\+D\+O\+F\+Space\+::\+Variable\+D\+O\+F\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Variable\+DOFSpace\+::\+Variable\+DOFSpace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
 
 
 
@@ -1403,41 +1403,41 @@ Constructor.
 \index{Common@{Common}!VariableDOFSpace@{VariableDOFSpace}}
 \index{VariableDOFSpace@{VariableDOFSpace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{VariableDOFSpace()}{VariableDOFSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
-{\footnotesize\ttfamily Variable\+D\+O\+F\+Space\+::\+Variable\+D\+O\+F\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Variable\+DOFSpace\+::\+Variable\+DOFSpace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
 
 
 
-Simpler constructor if all vertices have the same number of D\+O\+Fs. 
+Simpler constructor if all vertices have the same number of DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga6310fa8adeb32f40683d6b361162dcda}\label{group__Common_ga6310fa8adeb32f40683d6b361162dcda}} 
 \index{Common@{Common}!VariableDOFSpace@{VariableDOFSpace}}
 \index{VariableDOFSpace@{VariableDOFSpace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{VariableDOFSpace()}{VariableDOFSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
-{\footnotesize\ttfamily Variable\+D\+O\+F\+Space\+::\+Variable\+D\+O\+F\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Variable\+DOFSpace\+::\+Variable\+DOFSpace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
 
 
 
-Simpler constructor if all vertices/edges have the same number of D\+O\+Fs. 
+Simpler constructor if all vertices/edges have the same number of DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga2b0bba4966c3d28a4d5b95fdcf5e866b}\label{group__Common_ga2b0bba4966c3d28a4d5b95fdcf5e866b}} 
 \index{Common@{Common}!VariableDOFSpace@{VariableDOFSpace}}
 \index{VariableDOFSpace@{VariableDOFSpace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{VariableDOFSpace()}{VariableDOFSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
-{\footnotesize\ttfamily Variable\+D\+O\+F\+Space\+::\+Variable\+D\+O\+F\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Variable\+DOFSpace\+::\+Variable\+DOFSpace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{const Eigen\+::\+Vector\+Xd}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
 
 
 
-Simpler constructor if all vertices/edges/faces have the same number of D\+O\+Fs. 
+Simpler constructor if all vertices/edges/faces have the same number of DOFs. 
 
 \mbox{\Hypertarget{group__Common_ga037caf94774d638f1a49569ca7f2e3b4}\label{group__Common_ga037caf94774d638f1a49569ca7f2e3b4}} 
 \index{Common@{Common}!VariableDOFSpace@{VariableDOFSpace}}
 \index{VariableDOFSpace@{VariableDOFSpace}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{VariableDOFSpace()}{VariableDOFSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
-{\footnotesize\ttfamily Variable\+D\+O\+F\+Space\+::\+Variable\+D\+O\+F\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Variable\+DOFSpace\+::\+Variable\+DOFSpace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+vertex\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+edge\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+face\+\_\+dofs,  }\item[{size\+\_\+t}]{n\+\_\+local\+\_\+cell\+\_\+dofs }\end{DoxyParamCaption})}
 
 
 
-Simpler constructor if all vertices/edges/faces/cells have the same number of D\+O\+Fs. 
+Simpler constructor if all vertices/edges/faces/cells have the same number of DOFs. 
 
 
 
@@ -1446,71 +1446,71 @@ Simpler constructor if all vertices/edges/faces/cells have the same number of D\
 \index{Common@{Common}!deg@{deg}}
 \index{deg@{deg}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{deg}{deg}}
-{\footnotesize\ttfamily std\+::function$<$size\+\_\+t (const Cell \& T)$>$ H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::deg}
+{\footnotesize\ttfamily std\+::function$<$size\+\_\+t (const Cell \& T)$>$ HAr\+DCore3\+D\+::\+Integral\+Weight\+::deg}
 
 \mbox{\Hypertarget{group__Common_ga529ae659ec36583e71ce72a5b29cb7e0}\label{group__Common_ga529ae659ec36583e71ce72a5b29cb7e0}} 
 \index{Common@{Common}!m\_dim\_sc@{m\_dim\_sc}}
 \index{m\_dim\_sc@{m\_dim\_sc}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_dim\_sc}{m\_dim\_sc}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sc}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sc}
 
 \mbox{\Hypertarget{group__Common_gae257d6004cb03b2408967d9af3cc83ee}\label{group__Common_gae257d6004cb03b2408967d9af3cc83ee}} 
 \index{Common@{Common}!m\_dim\_sys@{m\_dim\_sys}}
 \index{m\_dim\_sys@{m\_dim\_sys}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_dim\_sys}{m\_dim\_sys}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sys}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+dim\+\_\+sys}
 
 \mbox{\Hypertarget{group__Common_ga0c686364431d55a47aca647bd2caeb49}\label{group__Common_ga0c686364431d55a47aca647bd2caeb49}} 
 \index{Common@{Common}!m\_globalDOFs\_sc@{m\_globalDOFs\_sc}}
 \index{m\_globalDOFs\_sc@{m\_globalDOFs\_sc}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_globalDOFs\_sc}{m\_globalDOFs\_sc}}
-{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+D\+O\+Fs\+\_\+sc}
+{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+DOFs\+\_\+sc}
 
 \mbox{\Hypertarget{group__Common_gaccfaba0c903f41cd8dc3b1a7280eede3}\label{group__Common_gaccfaba0c903f41cd8dc3b1a7280eede3}} 
 \index{Common@{Common}!m\_globalDOFs\_sys@{m\_globalDOFs\_sys}}
 \index{m\_globalDOFs\_sys@{m\_globalDOFs\_sys}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_globalDOFs\_sys}{m\_globalDOFs\_sys}}
-{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+D\+O\+Fs\+\_\+sys}
+{\footnotesize\ttfamily std\+::vector$<$size\+\_\+t$>$ HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+global\+DOFs\+\_\+sys}
 
 \mbox{\Hypertarget{group__Common_gaf892ca81e64966ad421de137a5bc3fbb}\label{group__Common_gaf892ca81e64966ad421de137a5bc3fbb}} 
 \index{Common@{Common}!m\_mesh@{m\_mesh}}
 \index{m\_mesh@{m\_mesh}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_mesh}{m\_mesh}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+mesh\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::m\+\_\+mesh\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{group__Common_gacc921ba72df56713816eb806bf498cca}\label{group__Common_gacc921ba72df56713816eb806bf498cca}} 
 \index{Common@{Common}!m\_n\_local\_cell\_dofs@{m\_n\_local\_cell\_dofs}}
 \index{m\_n\_local\_cell\_dofs@{m\_n\_local\_cell\_dofs}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_n\_local\_cell\_dofs}{m\_n\_local\_cell\_dofs}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+cell\+\_\+dofs\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::m\+\_\+n\+\_\+local\+\_\+cell\+\_\+dofs\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{group__Common_ga66f59cd5d20ce07b325ed14befc3f44b}\label{group__Common_ga66f59cd5d20ce07b325ed14befc3f44b}} 
 \index{Common@{Common}!m\_n\_local\_edge\_dofs@{m\_n\_local\_edge\_dofs}}
 \index{m\_n\_local\_edge\_dofs@{m\_n\_local\_edge\_dofs}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_n\_local\_edge\_dofs}{m\_n\_local\_edge\_dofs}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+edge\+\_\+dofs\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::m\+\_\+n\+\_\+local\+\_\+edge\+\_\+dofs\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{group__Common_gab452b6bcab9670d9ceb6f0497ec9aa40}\label{group__Common_gab452b6bcab9670d9ceb6f0497ec9aa40}} 
 \index{Common@{Common}!m\_n\_local\_face\_dofs@{m\_n\_local\_face\_dofs}}
 \index{m\_n\_local\_face\_dofs@{m\_n\_local\_face\_dofs}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_n\_local\_face\_dofs}{m\_n\_local\_face\_dofs}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+face\+\_\+dofs\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::m\+\_\+n\+\_\+local\+\_\+face\+\_\+dofs\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{group__Common_ga7636d64533daa557cb40e3354665a376}\label{group__Common_ga7636d64533daa557cb40e3354665a376}} 
 \index{Common@{Common}!m\_n\_local\_vertex\_dofs@{m\_n\_local\_vertex\_dofs}}
 \index{m\_n\_local\_vertex\_dofs@{m\_n\_local\_vertex\_dofs}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_n\_local\_vertex\_dofs}{m\_n\_local\_vertex\_dofs}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Local\+D\+O\+F\+Space\+::m\+\_\+n\+\_\+local\+\_\+vertex\+\_\+dofs\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::m\+\_\+n\+\_\+local\+\_\+vertex\+\_\+dofs\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{group__Common_gafa868f9f56ab061eebcbc30c2dbe5295}\label{group__Common_gafa868f9f56ab061eebcbc30c2dbe5295}} 
 \index{Common@{Common}!m\_Perm@{m\_Perm}}
 \index{m\_Perm@{m\_Perm}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{m\_Perm}{m\_Perm}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd H\+Ar\+D\+Core3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+\+Perm}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+\+Perm}
 
 \mbox{\Hypertarget{group__Common_ga0e64dd7fa60d788876219241162f0f6e}\label{group__Common_ga0e64dd7fa60d788876219241162f0f6e}} 
 \index{Common@{Common}!value@{value}}
 \index{value@{value}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{value}{value}}
-{\footnotesize\ttfamily std\+::function$<$double (const Cell \& T, const Eigen\+::\+Vector3d \& x)$>$ H\+Ar\+D\+Core3\+D\+::\+Integral\+Weight\+::value}
+{\footnotesize\ttfamily std\+::function$<$double (const Cell \& T, const Eigen\+::\+Vector3d \& x)$>$ HAr\+DCore3\+D\+::\+Integral\+Weight\+::value}
 

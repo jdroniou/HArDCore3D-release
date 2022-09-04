@@ -1,16 +1,10 @@
 var searchData=
 [
-  ['permeabilitytype_1726',['PermeabilityType',['../group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e',1,'HArDCore3D::Magnetostatics::PermeabilityType()'],['../group__DDR__magnetostatic.html#gab9b0a0b9567472243716e8acd486d01e',1,'HArDCore3D::Magnetostatics::PermeabilityType()']]],
-  ['poly2basisfacetype_1727',['Poly2BasisFaceType',['../group__DDRCore.html#gaf58ab2e2d275f2a0f19d32d5630d6421',1,'HArDCore3D::DDRCore::Poly2BasisFaceType()'],['../group__VEMCore.html#gafdb801f7c60644f3a094c0e5617d82b5',1,'HArDCore3D::VEMCore::Poly2BasisFaceType()']]],
-  ['poly3basiscelltype_1728',['Poly3BasisCellType',['../group__DDRCore.html#ga93b7460f638eb1b520354073e72535cc',1,'HArDCore3D::DDRCore::Poly3BasisCellType()'],['../group__VEMCore.html#ga8ba72d527f090b0589279cbc0b0a65d8',1,'HArDCore3D::VEMCore::Poly3BasisCellType()']]],
-  ['polybasiscelltype_1729',['PolyBasisCellType',['../group__DDRCore.html#ga23ccbb1459084ee0576cf0c056430f58',1,'HArDCore3D::DDRCore::PolyBasisCellType()'],['../group__VEMCore.html#gafad647f2ca016ffc069db6023dd09f0a',1,'HArDCore3D::VEMCore::PolyBasisCellType()']]],
-  ['polybasisedgetype_1730',['PolyBasisEdgeType',['../group__DDRCore.html#gaed144db167f522c3921b156f98f503e1',1,'HArDCore3D::DDRCore::PolyBasisEdgeType()'],['../group__VEMCore.html#ga5185e7f42a4c7cb8b4fe26308626a4a6',1,'HArDCore3D::VEMCore::PolyBasisEdgeType()']]],
-  ['polybasisfacetype_1731',['PolyBasisFaceType',['../group__DDRCore.html#ga0b54c4bb8d156ae7a2e5c01a1c553655',1,'HArDCore3D::DDRCore::PolyBasisFaceType()'],['../group__VEMCore.html#ga5980be690e054feefadc441ff158ee28',1,'HArDCore3D::VEMCore::PolyBasisFaceType()']]],
-  ['polycellbasistype_1732',['PolyCellBasisType',['../group__HybridCore.html#ga5c478c9953257f154d2ea98f115fba0d',1,'HArDCore3D::HybridCore']]],
-  ['polyedgebasistype_1733',['PolyEdgeBasisType',['../group__HybridCore.html#gad3123dceabd79eec7cdb57ba1014fc17',1,'HArDCore3D::HybridCore']]],
-  ['polyfacebasistype_1734',['PolyFaceBasisType',['../group__HybridCore.html#gab02b7a4490b6a739e2d084e9a70dbcc5',1,'HArDCore3D::HybridCore']]],
-  ['polylbasiscelltype_1735',['PolylBasisCellType',['../group__DDRCore.html#gabfa335d5b5f2d5f3fb7e04ccb7f50c51',1,'HArDCore3D::SerendipityProblem']]],
-  ['polylbasisfacetype_1736',['PolylBasisFaceType',['../group__DDRCore.html#gaa099a5f7b4b5687c9fb77e7d6e913265',1,'HArDCore3D::SerendipityProblem']]],
-  ['pressuregradienttype_1737',['PressureGradientType',['../group__DDR__stokes.html#ga5df4d4bd5072175a8bbed22b6fe5e324',1,'HArDCore3D::Stokes::PressureGradientType()'],['../group__DDR__stokes.html#ga5df4d4bd5072175a8bbed22b6fe5e324',1,'HArDCore3D::Stokes::PressureGradientType()'],['../group__VEM__stokes.html#ga5df4d4bd5072175a8bbed22b6fe5e324',1,'HArDCore3D::Stokes::PressureGradientType()']]],
-  ['pressuretype_1738',['PressureType',['../group__DDR__stokes.html#ga758780788f88b913e804a3f98dc0975b',1,'HArDCore3D::Stokes::PressureType()'],['../group__DDR__stokes.html#ga758780788f88b913e804a3f98dc0975b',1,'HArDCore3D::Stokes::PressureType()'],['../group__VEM__stokes.html#ga758780788f88b913e804a3f98dc0975b',1,'HArDCore3D::Stokes::PressureType()']]]
+  ['magneticfieldtype_2227',['MagneticFieldType',['../group__DDR__yangmills.html#ga8a1cc95d30ba3e81076d1402835683b3',1,'HArDCore3D::YangMills']]],
+  ['matrixftype_2228',['MatrixFType',['../group__HHO3D.html#ga37173e331cdc5fa65f30562ccb17ca8c',1,'HHO3D.hpp']]],
+  ['matrixrd_2229',['MatrixRd',['../group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d',1,'HArDCore3D']]],
+  ['mesh_2230',['Mesh',['../namespaceMesh2D.html#ad4c89c4141f0383ec4459426545a2414',1,'Mesh2D::Mesh()'],['../namespaceMesh3D.html#a9cb128919bda258a16be392b7b9d4923',1,'Mesh3D::Mesh()']]],
+  ['monomialcellintegralstype_2231',['MonomialCellIntegralsType',['../group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c',1,'HArDCore3D']]],
+  ['monomialedgeintegralstype_2232',['MonomialEdgeIntegralsType',['../group__Quadratures.html#ga6d5b9ab76ae93fbbe5dc3c3e14537cdd',1,'HArDCore3D']]],
+  ['monomialfaceintegralstype_2233',['MonomialFaceIntegralsType',['../group__Quadratures.html#ga14161bf80013825fa5c73c188133e466',1,'HArDCore3D']]]
 ];

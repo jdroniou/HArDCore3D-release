@@ -1,12 +1,12 @@
-\hypertarget{GMpoly__edge_8hpp}{}\doxysection{src/\+Quadrature/\+G\+Mpoly\+\_\+edge.hpp File Reference}
+\hypertarget{GMpoly__edge_8hpp}{}\doxysection{src/\+Quadrature/\+GMpoly\+\_\+edge.hpp File Reference}
 \label{GMpoly__edge_8hpp}\index{src/Quadrature/GMpoly\_edge.hpp@{src/Quadrature/GMpoly\_edge.hpp}}
 {\ttfamily \#include $<$cassert$>$}\newline
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include $<$mesh.\+hpp$>$}\newline
 {\ttfamily \#include $<$quadraturerule.\+hpp$>$}\newline
 {\ttfamily \#include $<$basis.\+hpp$>$}\newline
-{\ttfamily \#include $<$G\+Mpoly\+\_\+cell.\+hpp$>$}\newline
-Include dependency graph for G\+Mpoly\+\_\+edge.\+hpp\+:\nopagebreak
+{\ttfamily \#include $<$GMpoly\+\_\+cell.\+hpp$>$}\newline
+Include dependency graph for GMpoly\+\_\+edge.\+hpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,31 +23,31 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{namespaceHArDCore3D}{H\+Ar\+D\+Core3D}}
+ \mbox{\hyperlink{namespaceHArDCore3D}{HAr\+DCore3D}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{H\+Ar\+D\+Core3\+D\+::\+Monomial\+Edge\+Integrals\+Type}}
+typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{HAr\+DCore3\+D\+::\+Monomial\+Edge\+Integrals\+Type}}
 \begin{DoxyCompactList}\small\item\em Type for list of edge integrals of monomials. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga6186042c03b027877f08708d9a8e7f10}{H\+Ar\+D\+Core3\+D\+::\+Integrate\+Edge\+Monomials}} (const Edge \&E, const int maxdeg)
+\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga6186042c03b027877f08708d9a8e7f10}{HAr\+DCore3\+D\+::\+Integrate\+Edge\+Monomials}} (const Edge \&E, const int maxdeg)
 \begin{DoxyCompactList}\small\item\em Compute all integrals of edge monomials up to a total degree. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga1f77448401179e7c91990fa14843dddd}{H\+Ar\+D\+Core3\+D\+::\+Check\+Integrals\+Degree}} (const Edge \&E, const size\+\_\+t degree, const \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \&mono\+\_\+int\+\_\+map=\{\})
+\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga1f77448401179e7c91990fa14843dddd}{HAr\+DCore3\+D\+::\+Check\+Integrals\+Degree}} (const Edge \&E, const size\+\_\+t degree, const \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \&mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Checks if the degree of an existing list of monomial integrals is sufficient, other re-\/compute and return a proper list. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gac8ac8f534397b662bf0d1182127df3c3}{H\+Ar\+D\+Core3\+D\+::\+Gram\+Matrix}} (const Edge \&E, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} \&basis2, \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gac8ac8f534397b662bf0d1182127df3c3}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Edge \&E, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} \&basis2, \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Computes the Gram Matrix of a pair of local scalar monomial bases. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga4da753dad4a35c071729f66b6104c846}{H\+Ar\+D\+Core3\+D\+::\+Gram\+Matrix}} (const Edge \&E, const Basis\+Type1 \&basis1, const Basis\+Type2 \&basis2, Monomial\+Edge\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga4da753dad4a35c071729f66b6104c846}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Edge \&E, const Basis\+Type1 \&basis1, const Basis\+Type2 \&basis2, Monomial\+Edge\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Generic template to compute the Gram Matrix of any pair of bases. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Basis\+Type $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga7c7b253c7299bc537ca60b078599a151}{H\+Ar\+D\+Core3\+D\+::\+Gram\+Matrix}} (const Edge \&E, const Basis\+Type \&basis, Monomial\+Edge\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+{\footnotesize template$<$typename Basis\+Type $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga7c7b253c7299bc537ca60b078599a151}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Edge \&E, const Basis\+Type \&basis, Monomial\+Edge\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em This overload to simplify the call to Gram\+Matrix in case the two bases are the same. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga2a317983e35202b2afa465932c21da0c}{H\+Ar\+D\+Core3\+D\+::\+G\+M\+Der}} (const Edge \&E, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} \&basis2, \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga2a317983e35202b2afa465932c21da0c}{HAr\+DCore3\+D\+::\+GMDer}} (const Edge \&E, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} \&basis2, \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Computes the Gram Matrix of the derivative of a monomial basis with another monomial basis. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga4b0c29345fd5bd4bed9a4e0096157762}{H\+Ar\+D\+Core3\+D\+::\+G\+M\+Der}} (const Edge \&E, const Basis\+Type1 \&basis1, const Basis\+Type2 \&basis2, Monomial\+Edge\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
-\begin{DoxyCompactList}\small\item\em Generic template for G\+M\+Der with derived bases. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gaf0c1ec1421126a885a91bc17aa42d63a}{H\+Ar\+D\+Core3\+D\+::\+Gram\+Matrix}} (const Edge \&E, const Gradient\+Basis$<$ Basis\+Type1 $>$ \&basis1, const Basis\+Type2 \&basis2, Monomial\+Edge\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga4b0c29345fd5bd4bed9a4e0096157762}{HAr\+DCore3\+D\+::\+GMDer}} (const Edge \&E, const Basis\+Type1 \&basis1, const Basis\+Type2 \&basis2, Monomial\+Edge\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Generic template for GMDer with derived bases. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gaf0c1ec1421126a885a91bc17aa42d63a}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Edge \&E, const Gradient\+Basis$<$ Basis\+Type1 $>$ \&basis1, const Basis\+Type2 \&basis2, Monomial\+Edge\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Computes the Gram Matrix of a gradient basis (considering the tangential gradient as a scalar) and a scalar basis. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gaea85974fe1a185c380fa20eb6635a900}{H\+Ar\+D\+Core3\+D\+::\+Gram\+Matrix}} (const Edge \&E, const Basis\+Type1 \&basis1, const Gradient\+Basis$<$ Basis\+Type2 $>$ \&basis2, Monomial\+Edge\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gaea85974fe1a185c380fa20eb6635a900}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Edge \&E, const Basis\+Type1 \&basis1, const Gradient\+Basis$<$ Basis\+Type2 $>$ \&basis2, Monomial\+Edge\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Computes the Gram Matrix of a scalar basis and a gradient basis (considering the tangential gradient as a scalar) \end{DoxyCompactList}\end{DoxyCompactItemize}

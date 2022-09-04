@@ -2,7 +2,7 @@
 \label{classMeshND_1_1Mesh}\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 
 
-{\ttfamily \#include $<$Mesh\+N\+D.\+hpp$>$}
+{\ttfamily \#include $<$Mesh\+ND.\+hpp$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -11,32 +11,110 @@
 \item 
 \mbox{\hyperlink{classMeshND_1_1Mesh_ade3acb60e2782abfc708933f5c7f29f2}{$\sim$\+Mesh}} ()
 \item 
+void \mbox{\hyperlink{classMeshND_1_1Mesh_a21927164b11699b470be658f085b04e5}{set\+\_\+name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em set the name of the mesh \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMeshND_1_1Mesh_a67dffc10a102cf6e6f7b0cdacaa8a429}{get\+\_\+name}} ()
+\begin{DoxyCompactList}\small\item\em getter for the mesh name \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classMeshND_1_1Mesh_a2fcedb645de1f65f40665680557bf42f}{h\+\_\+max}} () const
 \begin{DoxyCompactList}\small\item\em $<$ max diameter of cells \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_a83de5f0997281f049b152ec9904b269e}{add\+\_\+vertex}} (\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$vertex)
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a3135f438fd2df9e9ee14a19274948044}{dim}} () const
+\begin{DoxyCompactList}\small\item\em dimension of the mesh \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a2ba180df4453718a4576c8f5cae93bc1}{n\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em number of vertices in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a2bc88e611b399c36dd3bc29c55ba376d}{n\+\_\+edges}} () const
+\begin{DoxyCompactList}\small\item\em number of edges in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a468c3251eb5e4330256d2bf30dd1d389}{n\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em number of faces in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a5c01b1a270d5e1f8f530c530c77c4b19}{n\+\_\+cells}} () const
+\begin{DoxyCompactList}\small\item\em number of cells in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a3ace0a118f2a7899f578befc4df17a4a}{n\+\_\+b\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em number of boundary vertices in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a86ca5e17f7a886c888e118ea5cfd81e8}{n\+\_\+b\+\_\+edges}} () const
+\begin{DoxyCompactList}\small\item\em number of boundary edges in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a9be9499a0fcbbca336b32463c801bc3a}{n\+\_\+b\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em number of boundary faces in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a8d06e6176d8ce46d316a3d77e00cce66}{n\+\_\+b\+\_\+cells}} () const
+\begin{DoxyCompactList}\small\item\em number of boundary cells in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a353882394bdbe0aa0d542a1eecde55da}{n\+\_\+i\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em number of internal vertices in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a317950df1a2acfe3f5d044492f253383}{n\+\_\+i\+\_\+edges}} () const
+\begin{DoxyCompactList}\small\item\em number of internal edges in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_ad7b5e77927ea8bce2d18fd7788b0633e}{n\+\_\+i\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em number of internal faces in the mesh. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh_a634d84bce9faeca5f02d73bc22deb63c}{n\+\_\+i\+\_\+cells}} () const
+\begin{DoxyCompactList}\small\item\em number of internal cells in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_a3c1322e5efea97889d1102f1c811a702}{get\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em lists the vertices in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_a3484c4e8e7e5eae37a145adb78591555}{get\+\_\+edges}} () const
+\begin{DoxyCompactList}\small\item\em lists the edges in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_a0de7423884bf696f73d1e9ae18c9181c}{get\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em lists the faces in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_a38729434f34f1830ed3efa6430acdd62}{get\+\_\+cells}} () const
+\begin{DoxyCompactList}\small\item\em lists the cells in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_ac5b19cbd1e1dd1245947e2c10aa846b9}{get\+\_\+b\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em lists the boundary vertices in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_a4aff5d735b36bf909229586b6cfa885a}{get\+\_\+b\+\_\+edges}} () const
+\begin{DoxyCompactList}\small\item\em lists the boundary edges in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_a0e28589fe136e24529235ea6a0084a9c}{get\+\_\+b\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em lists the boundary faces in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_aff67b81da5a0272551d457a392e28998}{get\+\_\+b\+\_\+cells}} () const
+\begin{DoxyCompactList}\small\item\em lists the boundary cells in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_ad23229d039c855c4759ca74abbb028b1}{get\+\_\+i\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em lists the internal vertices in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_a090db2b7909058fd4fb9842d823f05b6}{get\+\_\+i\+\_\+edges}} () const
+\begin{DoxyCompactList}\small\item\em lists the internal edges in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_a62553296b504d42b1e3fbe79233264c3}{get\+\_\+i\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em lists the internal faces in the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$ $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_abc90f42abcbba959cac7680c7d119262}{get\+\_\+i\+\_\+cells}} () const
+\begin{DoxyCompactList}\small\item\em lists the internal cells in the mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMeshND_1_1Mesh_a83de5f0997281f049b152ec9904b269e}{add\+\_\+vertex}} (\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_a040f30c2995ff24419ec7712ceef6318}{vertex}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_a7f7a20817af585d1bbf814bb3ffe6302}{add\+\_\+edge}} (\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$edge)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_a7f7a20817af585d1bbf814bb3ffe6302}{add\+\_\+edge}} (\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_a606ac6129cbbbbed8cc503c6135aed68}{edge}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_a440456dfafd08b44b6f54b964803a454}{add\+\_\+face}} (\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$face)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_a440456dfafd08b44b6f54b964803a454}{add\+\_\+face}} (\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_a4b999656e462a1729ba958d41c4123c7}{face}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_a9f99e9db1737241f8c727a6e4f80cb84}{add\+\_\+cell}} (\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$cell)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_a9f99e9db1737241f8c727a6e4f80cb84}{add\+\_\+cell}} (\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_ad3209fbfba421a6b46b4968024ff7d19}{cell}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_a7525364aa0f790da6a5ead0d2edc8889}{add\+\_\+b\+\_\+vertex}} (\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$vertex)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_a7525364aa0f790da6a5ead0d2edc8889}{add\+\_\+b\+\_\+vertex}} (\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_a040f30c2995ff24419ec7712ceef6318}{vertex}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_ad2272d105f278b0429012e9bb6abc46a}{add\+\_\+b\+\_\+edge}} (\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$edge)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_ad2272d105f278b0429012e9bb6abc46a}{add\+\_\+b\+\_\+edge}} (\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_a606ac6129cbbbbed8cc503c6135aed68}{edge}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_aec912bb56cf0d58988693ef23a505c94}{add\+\_\+b\+\_\+face}} (\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$face)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_aec912bb56cf0d58988693ef23a505c94}{add\+\_\+b\+\_\+face}} (\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_a4b999656e462a1729ba958d41c4123c7}{face}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_a87879afcffea30082b25985a1b95d437}{add\+\_\+b\+\_\+cell}} (\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$cell)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_a87879afcffea30082b25985a1b95d437}{add\+\_\+b\+\_\+cell}} (\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_ad3209fbfba421a6b46b4968024ff7d19}{cell}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_a9169d1cbb72b04886351460ca0d6ef4a}{add\+\_\+i\+\_\+vertex}} (\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$vertex)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_a9169d1cbb72b04886351460ca0d6ef4a}{add\+\_\+i\+\_\+vertex}} (\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_a040f30c2995ff24419ec7712ceef6318}{vertex}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_af2c8a6c89aa7c6166d4f18652bdc9274}{add\+\_\+i\+\_\+edge}} (\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$edge)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_af2c8a6c89aa7c6166d4f18652bdc9274}{add\+\_\+i\+\_\+edge}} (\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_a606ac6129cbbbbed8cc503c6135aed68}{edge}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_a828267b386a9195557b69ac458960b7a}{add\+\_\+i\+\_\+face}} (\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$face)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_a828267b386a9195557b69ac458960b7a}{add\+\_\+i\+\_\+face}} (\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_a4b999656e462a1729ba958d41c4123c7}{face}})
 \item 
-void \mbox{\hyperlink{classMeshND_1_1Mesh_a0ce7508f75de24b0796d745792c24a4e}{add\+\_\+i\+\_\+cell}} (\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$cell)
+void \mbox{\hyperlink{classMeshND_1_1Mesh_a0ce7508f75de24b0796d745792c24a4e}{add\+\_\+i\+\_\+cell}} (\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$\mbox{\hyperlink{classMeshND_1_1Mesh_ad3209fbfba421a6b46b4968024ff7d19}{cell}})
 \item 
+\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_a040f30c2995ff24419ec7712ceef6318}{vertex}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to a vertex using its global index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_a606ac6129cbbbbed8cc503c6135aed68}{edge}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to a edge using its global index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_a4b999656e462a1729ba958d41c4123c7}{face}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to a face using its global index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_ad3209fbfba421a6b46b4968024ff7d19}{cell}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to a cell using its global index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_af509444b9bd1c21c3b1fe40fd9910377}{b\+\_\+vertex}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to a boundary vertex using an index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_a2aaecaebaa46a29f9762a00c73d09a3d}{b\+\_\+edge}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to boundary a edge using an index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_af84c2cf5a12cf6a2540a92e92453dd78}{b\+\_\+face}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to boundary a face using an index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_a5bc52a9754335eea5c3bffe2362329b9}{b\+\_\+cell}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to boundary a cell using an index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_a353987879223f403742ff7a83c9a1641}{i\+\_\+vertex}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to an internal vertex using an index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_a5f9641ec79fb07203dd3685299cd7b6a}{i\+\_\+edge}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to an internal edge using an index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_a3f9b20548abf70fd2b7765114c8d0b3b}{i\+\_\+face}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to an internal face using an index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh_abc52607af8a20cd7228863ac7de3ce22}{i\+\_\+cell}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em get a constant pointer to an internal cell using an index \end{DoxyCompactList}\item 
 std\+::vector$<$ double $>$ \mbox{\hyperlink{classMeshND_1_1Mesh_aee01a22cba97a303a7d61b6f01b196ef}{regularity}} ()
 \item 
 void \mbox{\hyperlink{classMeshND_1_1Mesh_a0cfa70c884b3fb337d07506717db362f}{renum}} (const char B, const std\+::vector$<$ size\+\_\+t $>$ new\+\_\+to\+\_\+old)
@@ -49,14 +127,14 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh_a0cfa70c884b3fb337d07506717db362f}{ren
 \index{Mesh@{Mesh}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-\mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::\mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::\mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{classMeshND_1_1Mesh_ade3acb60e2782abfc708933f5c7f29f2}\label{classMeshND_1_1Mesh_ade3acb60e2782abfc708933f5c7f29f2}} 
 \index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!````~Mesh@{$\sim$Mesh}}
 \index{````~Mesh@{$\sim$Mesh}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{$\sim$Mesh()}{~Mesh()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-\mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::$\sim$\mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::$\sim$\mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -66,7 +144,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh_a0cfa70c884b3fb337d07506717db362f}{ren
 \index{add\_b\_cell@{add\_b\_cell}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_b\_cell()}{add\_b\_cell()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+b\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+b\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -78,7 +156,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_b\_edge@{add\_b\_edge}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_b\_edge()}{add\_b\_edge()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+b\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$}]{edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+b\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$}]{edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -90,7 +168,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_b\_face@{add\_b\_face}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_b\_face()}{add\_b\_face()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+b\+\_\+face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$}]{face }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+b\+\_\+face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$}]{face }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -102,7 +180,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_b\_vertex@{add\_b\_vertex}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_b\_vertex()}{add\_b\_vertex()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+b\+\_\+vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$}]{vertex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+b\+\_\+vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$}]{vertex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -114,7 +192,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_cell@{add\_cell}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_cell()}{add\_cell()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -126,7 +204,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_edge@{add\_edge}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_edge()}{add\_edge()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$}]{edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$}]{edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -138,7 +216,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_face@{add\_face}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_face()}{add\_face()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$}]{face }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$}]{face }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -150,7 +228,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_i\_cell@{add\_i\_cell}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_i\_cell()}{add\_i\_cell()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+i\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+i\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$ dimension $>$ $\ast$}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -162,7 +240,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_i\_edge@{add\_i\_edge}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_i\_edge()}{add\_i\_edge()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+i\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$}]{edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+i\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$ dimension $>$ $\ast$}]{edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -174,7 +252,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_i\_face@{add\_i\_face}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_i\_face()}{add\_i\_face()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+i\+\_\+face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$}]{face }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+i\+\_\+face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$ dimension $>$ $\ast$}]{face }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -186,7 +264,7 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_i\_vertex@{add\_i\_vertex}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_i\_vertex()}{add\_i\_vertex()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+i\+\_\+vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$}]{vertex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+i\+\_\+vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$}]{vertex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -198,30 +276,437 @@ void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $
 \index{add\_vertex@{add\_vertex}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{add\_vertex()}{add\_vertex()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$}]{vertex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::add\+\_\+vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$ dimension $>$ $\ast$}]{vertex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
 {\em vertex} & adds a vertex to the mesh \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a5bc52a9754335eea5c3bffe2362329b9}\label{classMeshND_1_1Mesh_a5bc52a9754335eea5c3bffe2362329b9}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!b\_cell@{b\_cell}}
+\index{b\_cell@{b\_cell}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{b\_cell()}{b\_cell()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::b\+\_\+cell (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to boundary a cell using an index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a2aaecaebaa46a29f9762a00c73d09a3d}\label{classMeshND_1_1Mesh_a2aaecaebaa46a29f9762a00c73d09a3d}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!b\_edge@{b\_edge}}
+\index{b\_edge@{b\_edge}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{b\_edge()}{b\_edge()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::b\+\_\+edge (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to boundary a edge using an index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_af84c2cf5a12cf6a2540a92e92453dd78}\label{classMeshND_1_1Mesh_af84c2cf5a12cf6a2540a92e92453dd78}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!b\_face@{b\_face}}
+\index{b\_face@{b\_face}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{b\_face()}{b\_face()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::b\+\_\+face (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to boundary a face using an index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_af509444b9bd1c21c3b1fe40fd9910377}\label{classMeshND_1_1Mesh_af509444b9bd1c21c3b1fe40fd9910377}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!b\_vertex@{b\_vertex}}
+\index{b\_vertex@{b\_vertex}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{b\_vertex()}{b\_vertex()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::b\+\_\+vertex (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to a boundary vertex using an index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_ad3209fbfba421a6b46b4968024ff7d19}\label{classMeshND_1_1Mesh_ad3209fbfba421a6b46b4968024ff7d19}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!cell@{cell}}
+\index{cell@{cell}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{cell()}{cell()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::cell (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to a cell using its global index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a3135f438fd2df9e9ee14a19274948044}\label{classMeshND_1_1Mesh_a3135f438fd2df9e9ee14a19274948044}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!dim@{dim}}
+\index{dim@{dim}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{dim()}{dim()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+dimension of the mesh 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a606ac6129cbbbbed8cc503c6135aed68}\label{classMeshND_1_1Mesh_a606ac6129cbbbbed8cc503c6135aed68}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!edge@{edge}}
+\index{edge@{edge}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{edge()}{edge()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::edge (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to a edge using its global index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a4b999656e462a1729ba958d41c4123c7}\label{classMeshND_1_1Mesh_a4b999656e462a1729ba958d41c4123c7}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!face@{face}}
+\index{face@{face}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{face()}{face()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::face (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to a face using its global index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_aff67b81da5a0272551d457a392e28998}\label{classMeshND_1_1Mesh_aff67b81da5a0272551d457a392e28998}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_b\_cells@{get\_b\_cells}}
+\index{get\_b\_cells@{get\_b\_cells}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_b\_cells()}{get\_b\_cells()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+b\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the boundary cells in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a4aff5d735b36bf909229586b6cfa885a}\label{classMeshND_1_1Mesh_a4aff5d735b36bf909229586b6cfa885a}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_b\_edges@{get\_b\_edges}}
+\index{get\_b\_edges@{get\_b\_edges}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_b\_edges()}{get\_b\_edges()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+b\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the boundary edges in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a0e28589fe136e24529235ea6a0084a9c}\label{classMeshND_1_1Mesh_a0e28589fe136e24529235ea6a0084a9c}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_b\_faces@{get\_b\_faces}}
+\index{get\_b\_faces@{get\_b\_faces}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_b\_faces()}{get\_b\_faces()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+b\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the boundary faces in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_ac5b19cbd1e1dd1245947e2c10aa846b9}\label{classMeshND_1_1Mesh_ac5b19cbd1e1dd1245947e2c10aa846b9}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_b\_vertices@{get\_b\_vertices}}
+\index{get\_b\_vertices@{get\_b\_vertices}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_b\_vertices()}{get\_b\_vertices()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+b\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the boundary vertices in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a38729434f34f1830ed3efa6430acdd62}\label{classMeshND_1_1Mesh_a38729434f34f1830ed3efa6430acdd62}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_cells@{get\_cells}}
+\index{get\_cells@{get\_cells}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_cells()}{get\_cells()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the cells in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a3484c4e8e7e5eae37a145adb78591555}\label{classMeshND_1_1Mesh_a3484c4e8e7e5eae37a145adb78591555}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_edges@{get\_edges}}
+\index{get\_edges@{get\_edges}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_edges()}{get\_edges()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the edges in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a0de7423884bf696f73d1e9ae18c9181c}\label{classMeshND_1_1Mesh_a0de7423884bf696f73d1e9ae18c9181c}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_faces@{get\_faces}}
+\index{get\_faces@{get\_faces}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_faces()}{get\_faces()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the faces in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_abc90f42abcbba959cac7680c7d119262}\label{classMeshND_1_1Mesh_abc90f42abcbba959cac7680c7d119262}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_i\_cells@{get\_i\_cells}}
+\index{get\_i\_cells@{get\_i\_cells}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_i\_cells()}{get\_i\_cells()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+i\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the internal cells in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a090db2b7909058fd4fb9842d823f05b6}\label{classMeshND_1_1Mesh_a090db2b7909058fd4fb9842d823f05b6}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_i\_edges@{get\_i\_edges}}
+\index{get\_i\_edges@{get\_i\_edges}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_i\_edges()}{get\_i\_edges()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+i\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the internal edges in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a62553296b504d42b1e3fbe79233264c3}\label{classMeshND_1_1Mesh_a62553296b504d42b1e3fbe79233264c3}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_i\_faces@{get\_i\_faces}}
+\index{get\_i\_faces@{get\_i\_faces}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_i\_faces()}{get\_i\_faces()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+i\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the internal faces in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_ad23229d039c855c4759ca74abbb028b1}\label{classMeshND_1_1Mesh_ad23229d039c855c4759ca74abbb028b1}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_i\_vertices@{get\_i\_vertices}}
+\index{get\_i\_vertices@{get\_i\_vertices}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_i\_vertices()}{get\_i\_vertices()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+i\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the internal vertices in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a67dffc10a102cf6e6f7b0cdacaa8a429}\label{classMeshND_1_1Mesh_a67dffc10a102cf6e6f7b0cdacaa8a429}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::string \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+getter for the mesh name 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a3c1322e5efea97889d1102f1c811a702}\label{classMeshND_1_1Mesh_a3c1322e5efea97889d1102f1c811a702}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!get\_vertices@{get\_vertices}}
+\index{get\_vertices@{get\_vertices}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{get\_vertices()}{get\_vertices()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::vector$<$\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$dimension$>$ $\ast$$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::get\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+lists the vertices in the mesh. 
+
 \mbox{\Hypertarget{classMeshND_1_1Mesh_a2fcedb645de1f65f40665680557bf42f}\label{classMeshND_1_1Mesh_a2fcedb645de1f65f40665680557bf42f}} 
 \index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!h\_max@{h\_max}}
 \index{h\_max@{h\_max}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{h\_max()}{h\_max()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-double \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::h\+\_\+max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+double \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::h\+\_\+max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 $<$ max diameter of cells 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_abc52607af8a20cd7228863ac7de3ce22}\label{classMeshND_1_1Mesh_abc52607af8a20cd7228863ac7de3ce22}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!i\_cell@{i\_cell}}
+\index{i\_cell@{i\_cell}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{i\_cell()}{i\_cell()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Cell}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::i\+\_\+cell (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to an internal cell using an index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a5f9641ec79fb07203dd3685299cd7b6a}\label{classMeshND_1_1Mesh_a5f9641ec79fb07203dd3685299cd7b6a}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!i\_edge@{i\_edge}}
+\index{i\_edge@{i\_edge}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{i\_edge()}{i\_edge()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Edge}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::i\+\_\+edge (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to an internal edge using an index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a3f9b20548abf70fd2b7765114c8d0b3b}\label{classMeshND_1_1Mesh_a3f9b20548abf70fd2b7765114c8d0b3b}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!i\_face@{i\_face}}
+\index{i\_face@{i\_face}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{i\_face()}{i\_face()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Face}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::i\+\_\+face (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to an internal face using an index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a353987879223f403742ff7a83c9a1641}\label{classMeshND_1_1Mesh_a353987879223f403742ff7a83c9a1641}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!i\_vertex@{i\_vertex}}
+\index{i\_vertex@{i\_vertex}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{i\_vertex()}{i\_vertex()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::i\+\_\+vertex (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to an internal vertex using an index 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a8d06e6176d8ce46d316a3d77e00cce66}\label{classMeshND_1_1Mesh_a8d06e6176d8ce46d316a3d77e00cce66}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_b\_cells@{n\_b\_cells}}
+\index{n\_b\_cells@{n\_b\_cells}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_b\_cells()}{n\_b\_cells()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+b\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of boundary cells in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a86ca5e17f7a886c888e118ea5cfd81e8}\label{classMeshND_1_1Mesh_a86ca5e17f7a886c888e118ea5cfd81e8}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_b\_edges@{n\_b\_edges}}
+\index{n\_b\_edges@{n\_b\_edges}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_b\_edges()}{n\_b\_edges()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+b\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of boundary edges in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a9be9499a0fcbbca336b32463c801bc3a}\label{classMeshND_1_1Mesh_a9be9499a0fcbbca336b32463c801bc3a}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_b\_faces@{n\_b\_faces}}
+\index{n\_b\_faces@{n\_b\_faces}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_b\_faces()}{n\_b\_faces()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+b\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of boundary faces in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a3ace0a118f2a7899f578befc4df17a4a}\label{classMeshND_1_1Mesh_a3ace0a118f2a7899f578befc4df17a4a}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_b\_vertices@{n\_b\_vertices}}
+\index{n\_b\_vertices@{n\_b\_vertices}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_b\_vertices()}{n\_b\_vertices()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+b\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of boundary vertices in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a5c01b1a270d5e1f8f530c530c77c4b19}\label{classMeshND_1_1Mesh_a5c01b1a270d5e1f8f530c530c77c4b19}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_cells@{n\_cells}}
+\index{n\_cells@{n\_cells}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_cells()}{n\_cells()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of cells in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a2bc88e611b399c36dd3bc29c55ba376d}\label{classMeshND_1_1Mesh_a2bc88e611b399c36dd3bc29c55ba376d}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_edges@{n\_edges}}
+\index{n\_edges@{n\_edges}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_edges()}{n\_edges()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of edges in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a468c3251eb5e4330256d2bf30dd1d389}\label{classMeshND_1_1Mesh_a468c3251eb5e4330256d2bf30dd1d389}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_faces@{n\_faces}}
+\index{n\_faces@{n\_faces}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_faces()}{n\_faces()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of faces in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a634d84bce9faeca5f02d73bc22deb63c}\label{classMeshND_1_1Mesh_a634d84bce9faeca5f02d73bc22deb63c}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_i\_cells@{n\_i\_cells}}
+\index{n\_i\_cells@{n\_i\_cells}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_i\_cells()}{n\_i\_cells()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+i\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of internal cells in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a317950df1a2acfe3f5d044492f253383}\label{classMeshND_1_1Mesh_a317950df1a2acfe3f5d044492f253383}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_i\_edges@{n\_i\_edges}}
+\index{n\_i\_edges@{n\_i\_edges}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_i\_edges()}{n\_i\_edges()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+i\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of internal edges in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_ad7b5e77927ea8bce2d18fd7788b0633e}\label{classMeshND_1_1Mesh_ad7b5e77927ea8bce2d18fd7788b0633e}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_i\_faces@{n\_i\_faces}}
+\index{n\_i\_faces@{n\_i\_faces}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_i\_faces()}{n\_i\_faces()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+i\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of internal faces in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a353882394bdbe0aa0d542a1eecde55da}\label{classMeshND_1_1Mesh_a353882394bdbe0aa0d542a1eecde55da}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_i\_vertices@{n\_i\_vertices}}
+\index{n\_i\_vertices@{n\_i\_vertices}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_i\_vertices()}{n\_i\_vertices()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+i\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of internal vertices in the mesh. 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a2ba180df4453718a4576c8f5cae93bc1}\label{classMeshND_1_1Mesh_a2ba180df4453718a4576c8f5cae93bc1}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!n\_vertices@{n\_vertices}}
+\index{n\_vertices@{n\_vertices}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{n\_vertices()}{n\_vertices()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::n\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+number of vertices in the mesh. 
 
 \mbox{\Hypertarget{classMeshND_1_1Mesh_aee01a22cba97a303a7d61b6f01b196ef}\label{classMeshND_1_1Mesh_aee01a22cba97a303a7d61b6f01b196ef}} 
 \index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!regularity@{regularity}}
 \index{regularity@{regularity}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{regularity()}{regularity()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-std\+::vector$<$double$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::regularity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+std\+::vector$<$double$>$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::regularity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Regularity factor = 1st component\+: maximum of
 \begin{DoxyItemize}
@@ -234,10 +719,32 @@ Regularity factor = 1st component\+: maximum of
 \index{renum@{renum}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
 \doxysubsubsection{\texorpdfstring{renum()}{renum()}}
 {\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+N\+D\+::\+Mesh}}$<$ dimension $>$\+::renum (\begin{DoxyParamCaption}\item[{const char}]{B,  }\item[{const std\+::vector$<$ size\+\_\+t $>$}]{new\+\_\+to\+\_\+old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::renum (\begin{DoxyParamCaption}\item[{const char}]{B,  }\item[{const std\+::vector$<$ size\+\_\+t $>$}]{new\+\_\+to\+\_\+old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a21927164b11699b470be658f085b04e5}\label{classMeshND_1_1Mesh_a21927164b11699b470be658f085b04e5}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+void \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the name of the mesh 
+
+\mbox{\Hypertarget{classMeshND_1_1Mesh_a040f30c2995ff24419ec7712ceef6318}\label{classMeshND_1_1Mesh_a040f30c2995ff24419ec7712ceef6318}} 
+\index{MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}!vertex@{vertex}}
+\index{vertex@{vertex}!MeshND::Mesh$<$ dimension $>$@{MeshND::Mesh$<$ dimension $>$}}
+\doxysubsubsection{\texorpdfstring{vertex()}{vertex()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t dimension$>$ \\
+\mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Vertex}}$<$dimension$>$$\ast$ \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh\+ND\+::\+Mesh}}$<$ dimension $>$\+::vertex (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get a constant pointer to a vertex using its global index 
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Mesh/\mbox{\hyperlink{MeshND_8hpp}{Mesh\+N\+D.\+hpp}}\end{DoxyCompactItemize}
+include/\+Mesh/\mbox{\hyperlink{MeshND_8hpp}{Mesh\+ND.\+hpp}}\end{DoxyCompactItemize}

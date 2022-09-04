@@ -1,0 +1,63 @@
+\hypertarget{classHArDCore3D_1_1LAXCurl}{}\doxysection{HAr\+DCore3D\+::LAXCurl Class Reference}
+\label{classHArDCore3D_1_1LAXCurl}\index{HArDCore3D::LAXCurl@{HArDCore3D::LAXCurl}}
+
+
+Discrete Lie algebra valued Hcurl space.  
+
+
+
+
+{\ttfamily \#include $<$laxcurl.\+hpp$>$}
+
+
+
+Inheritance diagram for HAr\+DCore3D\+::LAXCurl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1LAXCurl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for HAr\+DCore3D\+::LAXCurl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1LAXCurl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__LADDRCore_gaecbef92c0d82f58b5fea98398f5672c9}{Function\+Type}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{group__LADDRCore_gaecbef92c0d82f58b5fea98398f5672c9}{Function\+Type}} $>$ \mbox{\hyperlink{group__LADDRCore_ga56d4d6afeb018bafbd088ac9eb555c28}{LAFunction\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_gaa5c1070575839e414f94f79c0a3db5f1}{lie\+Alg}} () const
+\begin{DoxyCompactList}\small\item\em Returns the Lie algebra. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \& \mbox{\hyperlink{group__LADDRCore_ga47db4eb928f4543685095e5efc8cd9a4}{x\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__LADDRCore_ga3460ba61a346924322d490258c41f144}{LAXCurl}} (const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&lie\+\_\+algebra, const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \&xcurl, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__LADDRCore_gad5872b00cc1a2f455b73fbbe4a393122}{interpolate}} (const \mbox{\hyperlink{group__LADDRCore_ga56d4d6afeb018bafbd088ac9eb555c28}{LAFunction\+Type}} \&v, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous Lie algebra valued function decomposed on the basis of the \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}}, given as a vector of functions. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gaa6f17885c3ec26554a9e54b14c4378c5}{compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga4fa07c247b0faf06d8ef9155e8579e4d}{compute\+L2\+Product\+Gradient}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}} \&x\+\_\+grad, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete gradient on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Discrete Lie algebra valued Hcurl space. 
+
+Each DOF in the \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} space corresponds to the dimension of the Lie algebra number of DOFs in the \mbox{\hyperlink{classHArDCore3D_1_1LAXCurl}{LAXCurl}} space. These DOFs are stored consecutively with overall ordering given by \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}}; they represent and are locally ordered by the basis in the \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+LADDRCore/\mbox{\hyperlink{laxcurl_8hpp}{laxcurl.\+hpp}}\item 
+src/\+LADDRCore/\mbox{\hyperlink{laxcurl_8cpp}{laxcurl.\+cpp}}\end{DoxyCompactItemize}

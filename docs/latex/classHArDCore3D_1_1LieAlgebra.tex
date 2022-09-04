@@ -1,0 +1,46 @@
+\hypertarget{classHArDCore3D_1_1LieAlgebra}{}\doxysection{HAr\+DCore3D\+::Lie\+Algebra Class Reference}
+\label{classHArDCore3D_1_1LieAlgebra}\index{HArDCore3D::LieAlgebra@{HArDCore3D::LieAlgebra}}
+
+
+Lie algebra class\+: mass matrix, structure constants and Lie bracket.  
+
+
+
+
+{\ttfamily \#include $<$liealgebra.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Matrix\+Xcd \mbox{\hyperlink{group__LADDRCore_ga4fdf08268e238651b2b9c39247a3a892}{Lie\+Alg\+Value}}
+\item 
+typedef std\+::function$<$ double(\mbox{\hyperlink{group__LADDRCore_ga4fdf08268e238651b2b9c39247a3a892}{Lie\+Alg\+Value}} \&, \mbox{\hyperlink{group__LADDRCore_ga4fdf08268e238651b2b9c39247a3a892}{Lie\+Alg\+Value}} \&)$>$ \mbox{\hyperlink{group__LADDRCore_ga024c0d76567c07d675da1ea72badb403}{Lie\+Alg\+Product}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__LADDRCore_ga2cf2fafd92b11f982cdd013f638fc112}{Lie\+Algebra}} ()
+\begin{DoxyCompactList}\small\item\em Constructors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__LADDRCore_ga9f262a998a005717fe08fefb2c819d74}{Lie\+Algebra}} (std\+::vector$<$ \mbox{\hyperlink{group__LADDRCore_ga4fdf08268e238651b2b9c39247a3a892}{Lie\+Alg\+Value}} $>$ \&\mbox{\hyperlink{group__LADDRCore_ga0e40822f5f462decf22eb214301aa05f}{basis}}, \mbox{\hyperlink{group__LADDRCore_ga024c0d76567c07d675da1ea72badb403}{Lie\+Alg\+Product}} \&product)
+\item 
+const size\+\_\+t \mbox{\hyperlink{group__LADDRCore_ga93a73060d102634875bc5184cf14f8ac}{dimension}} () const
+\begin{DoxyCompactList}\small\item\em Assuming orthonormal basis. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{group__LADDRCore_ga4fdf08268e238651b2b9c39247a3a892}{Lie\+Alg\+Value}} $>$ \& \mbox{\hyperlink{group__LADDRCore_ga0e40822f5f462decf22eb214301aa05f}{basis}} () const
+\begin{DoxyCompactList}\small\item\em Returns the basis of the Lie algebra. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga4491cc179185ceb0151defc6858dff3f}{mass\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the Gram matrix of the Lie algebra. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__LADDRCore_ga4fdf08268e238651b2b9c39247a3a892}{Lie\+Alg\+Value}} \mbox{\hyperlink{group__LADDRCore_ga94a2978e198ec1100cd10e31c4dfcd98}{lie\+Bracket}} (const \mbox{\hyperlink{group__LADDRCore_ga4fdf08268e238651b2b9c39247a3a892}{Lie\+Alg\+Value}} \&A, const \mbox{\hyperlink{group__LADDRCore_ga4fdf08268e238651b2b9c39247a3a892}{Lie\+Alg\+Value}} \&B) const
+\begin{DoxyCompactList}\small\item\em Computes the Lie bracket of two Lie algebra elements. \end{DoxyCompactList}\item 
+const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \& \mbox{\hyperlink{group__LADDRCore_ga4233d6e90607df477bd9214b12442bc2}{structure\+Const}} () const
+\begin{DoxyCompactList}\small\item\em Computes the structure constants of the Lie algebra. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lie algebra class\+: mass matrix, structure constants and Lie bracket. 
+
+Assuming orthonormal basis 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+LADDRCore/\mbox{\hyperlink{liealgebra_8hpp}{liealgebra.\+hpp}}\item 
+src/\+LADDRCore/\mbox{\hyperlink{liealgebra_8cpp}{liealgebra.\+cpp}}\end{DoxyCompactItemize}

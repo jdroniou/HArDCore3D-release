@@ -1,4 +1,4 @@
-\hypertarget{classHArDCore3D_1_1XDiv}{}\doxysection{H\+Ar\+D\+Core3D\+::X\+Div Class Reference}
+\hypertarget{classHArDCore3D_1_1XDiv}{}\doxysection{HAr\+DCore3D\+::XDiv Class Reference}
 \label{classHArDCore3D_1_1XDiv}\index{HArDCore3D::XDiv@{HArDCore3D::XDiv}}
 
 
@@ -11,8 +11,7 @@ Discrete Hdiv space\+: local operators, L2 product and global interpolator.
 
 
 
-Inheritance diagram for H\+Ar\+D\+Core3D\+::X\+Div\+:
-\nopagebreak
+Inheritance diagram for HAr\+DCore3D\+::XDiv\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for H\+Ar\+D\+Core3D\+::X\+Div\+:
 \end{figure}
 
 
-Collaboration diagram for H\+Ar\+D\+Core3D\+::X\+Div\+:
-\nopagebreak
+Collaboration diagram for HAr\+DCore3D\+::XDiv\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -42,7 +40,7 @@ typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__DDRCore_ga0b1c78b35b73fcf374d8861e2f78b55e}{X\+Div}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\mbox{\hyperlink{group__DDRCore_ga0b1c78b35b73fcf374d8861e2f78b55e}{XDiv}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \&ddr\+\_\+core, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRCore_ga53a8bec65ff15b3dcda0c597d2657b24}{mesh}} () const
 \begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
@@ -54,17 +52,17 @@ const \mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{Local\+Operat
 \begin{DoxyCompactList}\small\item\em Return cell operators for the cell of index iT. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{structHArDCore3D_1_1XDiv_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__DDRCore_ga7e53ba95de71fe3e6878a838d492af78}{cell\+Operators}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gaf61e3557d62fa2da1489ee0f6a9df9fc}{cell\+Bases}} (size\+\_\+t iT) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gaf61e3557d62fa2da1489ee0f6a9df9fc}{cell\+Bases}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gad25c356fbdda7e5b26db223ebf376a39}{cell\+Bases}} (const Cell \&T) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gad25c356fbdda7e5b26db223ebf376a39}{cell\+Bases}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gac8cefcb0fc66710090d254e13dac919a}{face\+Bases}} (size\+\_\+t iF) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gac8cefcb0fc66710090d254e13dac919a}{face\+Bases}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga7cb8248afff89a299f8076e3515911ea}{face\+Bases}} (const Face \&F) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga7cb8248afff89a299f8076e3515911ea}{face\+Bases}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga91e09b919a73bc9e7121874eb2c87376}{compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product for the cell of index iT. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga413be9caf30e3a303b573af58a43c36e}{compute\+L2\+Product\+Curl}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \&x\+\_\+curl, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga413be9caf30e3a303b573af58a43c36e}{compute\+L2\+Product\+Curl}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \&x\+\_\+curl, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete curl on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga1647750ac4ca8f257a7ca1fc75b08702}{compute\+L2\+Product\+\_\+with\+\_\+\+Ops}} (const size\+\_\+t iT, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&left\+Op, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&right\+Op, const double \&penalty\+\_\+factor, const Eigen\+::\+Matrix\+Xd \&w\+\_\+mass\+\_\+\+Pk3\+\_\+T, const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight) const
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the L2 product, applying left\+Op and right\+Op to the variables. Probably not directly called, mostly invoked through the wrappers compute\+L2\+Product and compute\+L2\+Product\+Curl. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -76,7 +74,7 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga1647750ac4ca8f257a7ca1fc
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \& \mbox{\hyperlink{group__DDRCore_ga0c74caeb7ad15a81f75ef43ad66f59f9}{m\+\_\+ddr\+\_\+core}}
+const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \& \mbox{\hyperlink{group__DDRCore_ga0c74caeb7ad15a81f75ef43ad66f59f9}{m\+\_\+ddr\+\_\+core}}
 \item 
 bool \mbox{\hyperlink{group__DDRCore_ga7fab1dbf4301876ebbb0130b99eea346}{m\+\_\+use\+\_\+threads}}
 \item 
@@ -89,9 +87,9 @@ std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structHArDCore3D_1_1
 \doxysubsection{Detailed Description}
 Discrete Hdiv space\+: local operators, L2 product and global interpolator. 
 
-On each face, the D\+O\+Fs correspond to the polynomial bases on the face provided by m\+\_\+ddr\+\_\+core. On each element, the D\+O\+Fs are first those of the $\mathcal{G}^{k-1}$ component and then of the $\mathcal{G}^{c,k}$ component, each one of them following the bases of these spaces provided by m\+\_\+ddr\+\_\+core. 
+On each face, the DOFs correspond to the polynomial bases on the face provided by m\+\_\+ddr\+\_\+core. On each element, the DOFs are first those of the $\mathcal{G}^{k-1}$ component and then of the $\mathcal{G}^{c,k}$ component, each one of them following the bases of these spaces provided by m\+\_\+ddr\+\_\+core. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/\+D\+D\+R\+Core/\mbox{\hyperlink{xdiv_8hpp}{xdiv.\+hpp}}\item 
-src/\+D\+D\+R\+Core/\mbox{\hyperlink{xdiv_8cpp}{xdiv.\+cpp}}\end{DoxyCompactItemize}
+src/\+DDRCore/\mbox{\hyperlink{xdiv_8hpp}{xdiv.\+hpp}}\item 
+src/\+DDRCore/\mbox{\hyperlink{xdiv_8cpp}{xdiv.\+cpp}}\end{DoxyCompactItemize}

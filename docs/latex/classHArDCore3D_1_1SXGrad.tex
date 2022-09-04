@@ -1,4 +1,4 @@
-\hypertarget{classHArDCore3D_1_1SXGrad}{}\doxysection{H\+Ar\+D\+Core3D\+::S\+X\+Grad Class Reference}
+\hypertarget{classHArDCore3D_1_1SXGrad}{}\doxysection{HAr\+DCore3D\+::SXGrad Class Reference}
 \label{classHArDCore3D_1_1SXGrad}\index{HArDCore3D::SXGrad@{HArDCore3D::SXGrad}}
 
 
@@ -11,8 +11,7 @@ Discrete Serendipity Hgrad space\+: local operators, L2 product and global inter
 
 
 
-Inheritance diagram for H\+Ar\+D\+Core3D\+::S\+X\+Grad\+:
-\nopagebreak
+Inheritance diagram for HAr\+DCore3D\+::SXGrad\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for H\+Ar\+D\+Core3D\+::S\+X\+Grad\+:
 \end{figure}
 
 
-Collaboration diagram for H\+Ar\+D\+Core3D\+::S\+X\+Grad\+:
-\nopagebreak
+Collaboration diagram for HAr\+DCore3D\+::SXGrad\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -42,7 +40,7 @@ typedef std\+::function$<$ double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperl
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__DDRCore_ga4ff5e43e311e2305f5de83ad90742284}{S\+X\+Grad}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \&ser\+\_\+pro, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\mbox{\hyperlink{group__DDRCore_ga4ff5e43e311e2305f5de83ad90742284}{SXGrad}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \&ddr\+\_\+core, const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \&ser\+\_\+pro, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DDRCore_ga08e833378d29205f1cc8a2094445454f}{mesh}} () const
 \begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
@@ -100,26 +98,26 @@ const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gaca0f788410448d76a5
 \begin{DoxyCompactList}\small\item\em Return the potential operator on cell T. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_gaae0db72d7d991c23cd8d8d906bbc6006}{compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga804e1275df94f7bfe5e7be7604ada27e}{cell\+Bases}} (size\+\_\+t iT) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga804e1275df94f7bfe5e7be7604ada27e}{cell\+Bases}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{D\+D\+R\+Core\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga2859b8f52c34de1f054f8aa5908d5a2d}{cell\+Bases}} (const Cell \&T) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga2859b8f52c34de1f054f8aa5908d5a2d}{cell\+Bases}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gaf6af54ee52b4866b350f89b81f851a61}{face\+Bases}} (size\+\_\+t iF) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gaf6af54ee52b4866b350f89b81f851a61}{face\+Bases}} (size\+\_\+t iF) const
 \begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{D\+D\+R\+Core\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga471709d8ee340844e874523413a08e6b}{face\+Bases}} (const Face \&F) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__DDRCore_ga471709d8ee340844e874523413a08e6b}{face\+Bases}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gabe53f9202ee0f70abbea797ec52ea51b}{edge\+Bases}} (size\+\_\+t iE) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gabe53f9202ee0f70abbea797ec52ea51b}{edge\+Bases}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{D\+D\+R\+Core\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gaeb4a189880f80636205ba20f16fbc0b8}{edge\+Bases}} (const Edge \&E) const
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__DDRCore_gaeb4a189880f80636205ba20f16fbc0b8}{edge\+Bases}} (const Edge \&E) const
 \begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Discrete Serendipity Hgrad space\+: local operators, L2 product and global interpolator. 
 
-On each edge/face/element, the D\+O\+Fs (if any) correspond to the polynomial bases on the edge/face/element provided by m\+\_\+ddr\+\_\+core 
+On each edge/face/element, the DOFs (if any) correspond to the polynomial bases on the edge/face/element provided by m\+\_\+ddr\+\_\+core 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/\+D\+D\+R\+Core/\mbox{\hyperlink{sxgrad_8hpp}{sxgrad.\+hpp}}\item 
-src/\+D\+D\+R\+Core/\mbox{\hyperlink{sxgrad_8cpp}{sxgrad.\+cpp}}\end{DoxyCompactItemize}
+src/\+DDRCore/\mbox{\hyperlink{sxgrad_8hpp}{sxgrad.\+hpp}}\item 
+src/\+DDRCore/\mbox{\hyperlink{sxgrad_8cpp}{sxgrad.\+cpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-\hypertarget{structHArDCore3D_1_1Stokes}{}\doxysection{H\+Ar\+D\+Core3D\+::Stokes Struct Reference}
+\hypertarget{structHArDCore3D_1_1Stokes}{}\doxysection{HAr\+DCore3D\+::Stokes Struct Reference}
 \label{structHArDCore3D_1_1Stokes}\index{HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 
 
@@ -57,27 +57,27 @@ typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__DDR__stokes_ga93fd886edeb08d1af3f2a9d6e2a519a7}{Stokes}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\mbox{\hyperlink{group__DDR__stokes_ga93fd886edeb08d1af3f2a9d6e2a519a7}{Stokes}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__DDR__stokes_ga110ade8eb5eaa6cad69b9651849f8c50}{assemble\+Linear\+System}} (const \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&omega, const \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Viscosity\+Type}} \&nu)
 \begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
  \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga9a5010aba9b8f267d4f6c59f8b7d9a8e}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Returns the global problem dimension (without Lagrange multiplier, just velocity \& pressure) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga137becabbdc3f6d87ce6a34ae934f729}{nb\+S\+C\+D\+O\+Fs\+\_\+u}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (velocity) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga2c90515a4a5cc2e081cf5f7485706418}{nb\+S\+C\+D\+O\+Fs\+\_\+p}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (pressure) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga5ac301f6b8248e2e81d720e3dcef92c2}{nb\+S\+C\+D\+O\+Fs}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (both velocity and pressure) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga137becabbdc3f6d87ce6a34ae934f729}{nb\+SCDOFs\+\_\+u}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (velocity) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga2c90515a4a5cc2e081cf5f7485706418}{nb\+SCDOFs\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (pressure) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga5ac301f6b8248e2e81d720e3dcef92c2}{nb\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (both velocity and pressure) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga5afaebf629ae7ee2b7835f544f975780}{size\+System}} () const
 \begin{DoxyCompactList}\small\item\em Returns the size of the statically condensed system (with Lagrange multiplier) \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}} \& \mbox{\hyperlink{group__DDR__stokes_ga5398edb61e9b489adb456523562a2080}{x\+Grad}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{X\+Grad}}. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \& \mbox{\hyperlink{group__DDR__stokes_gaf3b13ba68b2178bb0b7a5bca32939479}{x\+Curl}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}}. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}} \& \mbox{\hyperlink{group__DDR__stokes_ga891a1fb4beb1c4b6d53819ee844b478e}{x\+Div}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}} \& \mbox{\hyperlink{group__DDR__stokes_ga5398edb61e9b489adb456523562a2080}{x\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \& \mbox{\hyperlink{group__DDR__stokes_gaf3b13ba68b2178bb0b7a5bca32939479}{x\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}} \& \mbox{\hyperlink{group__DDR__stokes_ga891a1fb4beb1c4b6d53819ee844b478e}{x\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}}. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__DDR__stokes_ga99db170b7f151f7d37828065b02dd1a3}{system\+Matrix}} () const
 \begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__DDR__stokes_ga7a7c455112aa41ea9cb6ed817b417702}{system\+Matrix}} ()
@@ -100,27 +100,27 @@ std\+::pair$<$ \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}
 \begin{DoxyCompactList}\small\item\em Compute the continuous Hcurl errors in u and Hgrad error in p (1st component), and same with continuous norms (second component) \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__DDR__stokes_ga3927e5c71c0c74dcc30627cfd0d56765}{evaluate\+Defect\+Commutation\+Grad\+Interp}} (const \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}} \&p, const \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}} \&grad\+\_\+p, const size\+\_\+t deg\+\_\+quad\+\_\+interpolate) const
 \begin{DoxyCompactList}\small\item\em Evaluate the defect of commutation G\+\_\+h (Igrad p) = Icurl (grad p) by computing the norm of the difference (which should be 0). \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga93fd886edeb08d1af3f2a9d6e2a519a7}{Stokes}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga93fd886edeb08d1af3f2a9d6e2a519a7}{Stokes}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga110ade8eb5eaa6cad69b9651849f8c50}{assemble\+Linear\+System}} (const \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&omega, const \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Viscosity\+Type}} \&nu)
 \begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
  \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__DDR__stokes_ga046f6c2e7945f3275072f4bdf70e0a12}{dimension\+Space}} () const
 \begin{DoxyCompactList}\small\item\em Returns the global problem dimension (without Lagrange multiplier, just velocity \& pressure) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga137becabbdc3f6d87ce6a34ae934f729}{nb\+S\+C\+D\+O\+Fs\+\_\+u}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (velocity) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga2c90515a4a5cc2e081cf5f7485706418}{nb\+S\+C\+D\+O\+Fs\+\_\+p}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (pressure) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga5ac301f6b8248e2e81d720e3dcef92c2}{nb\+S\+C\+D\+O\+Fs}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (both velocity and pressure) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga137becabbdc3f6d87ce6a34ae934f729}{nb\+SCDOFs\+\_\+u}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (velocity) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga2c90515a4a5cc2e081cf5f7485706418}{nb\+SCDOFs\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (pressure) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga5ac301f6b8248e2e81d720e3dcef92c2}{nb\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (both velocity and pressure) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga5afaebf629ae7ee2b7835f544f975780}{size\+System}} () const
 \begin{DoxyCompactList}\small\item\em Returns the size of the statically condensed system (with Lagrange multiplier) \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{S\+X\+Grad}} \& \mbox{\hyperlink{group__DDR__stokes_ga87eb619d608e1ec7ec40c5265daa17b7}{sx\+Grad}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{S\+X\+Grad}}. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}} \& \mbox{\hyperlink{group__DDR__stokes_ga0e49353d87310fa4212cad6acdfc986e}{sx\+Curl}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}}. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{S\+X\+Div}} \& \mbox{\hyperlink{group__DDR__stokes_ga28d77ca8dd41503bf1b1befeeabe438c}{sx\+Div}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{SXGrad}} \& \mbox{\hyperlink{group__DDR__stokes_ga87eb619d608e1ec7ec40c5265daa17b7}{sx\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{SXGrad}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} \& \mbox{\hyperlink{group__DDR__stokes_ga0e49353d87310fa4212cad6acdfc986e}{sx\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{SXDiv}} \& \mbox{\hyperlink{group__DDR__stokes_ga28d77ca8dd41503bf1b1befeeabe438c}{sx\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}}. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga99db170b7f151f7d37828065b02dd1a3}{system\+Matrix}} () const
 \begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga7a7c455112aa41ea9cb6ed817b417702}{system\+Matrix}} ()
@@ -141,27 +141,27 @@ std\+::vector$<$ \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms
 \begin{DoxyCompactList}\small\item\em Compute the discrete L2 norms, for a family of Eigen\+::\+Vector\+Xd representing velocities \& pressures, of u, curl u, p and grad p. \end{DoxyCompactList}\item 
 std\+::pair$<$ \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}, \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}} $>$ \mbox{\hyperlink{structHArDCore3D_1_1Stokes_ga152a5406c97598e8f947239291e4b12c}{compute\+Continuous\+Errors\+Norms}} (const Eigen\+::\+Vector\+Xd \&v, const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&curl\+\_\+u, const \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}} \&p, const \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}} \&grad\+\_\+p) const
 \begin{DoxyCompactList}\small\item\em Compute the continuous Hcurl errors in u and Hgrad error in p (1st component), and same with continuous norms (second component) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__VEM__stokes_ga29e675f29d332e2966aa29a66bdca068}{Stokes}} (const \mbox{\hyperlink{classHArDCore3D_1_1VEMCore}{V\+E\+M\+Core}} \&vemcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\mbox{\hyperlink{group__VEM__stokes_ga29e675f29d332e2966aa29a66bdca068}{Stokes}} (const \mbox{\hyperlink{classHArDCore3D_1_1VEMCore}{VEMCore}} \&vemcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__VEM__stokes_ga1d8c22d8cb81989d314ab59fff782048}{assemble\+Linear\+System}} (const \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}} \&curl\+\_\+f, const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&omega, const \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Viscosity\+Type}} \&nu)
 \begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
  \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga9a5010aba9b8f267d4f6c59f8b7d9a8e}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Returns the global problem dimension (without Lagrange multiplier, just velocity \& pressure) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga137becabbdc3f6d87ce6a34ae934f729}{nb\+S\+C\+D\+O\+Fs\+\_\+u}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (velocity) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga2c90515a4a5cc2e081cf5f7485706418}{nb\+S\+C\+D\+O\+Fs\+\_\+p}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (pressure) \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga5ac301f6b8248e2e81d720e3dcef92c2}{nb\+S\+C\+D\+O\+Fs}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (both velocity and pressure) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga137becabbdc3f6d87ce6a34ae934f729}{nb\+SCDOFs\+\_\+u}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (velocity) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga2c90515a4a5cc2e081cf5f7485706418}{nb\+SCDOFs\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (pressure) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga5ac301f6b8248e2e81d720e3dcef92c2}{nb\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (both velocity and pressure) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__VEM__stokes_ga5afaebf629ae7ee2b7835f544f975780}{size\+System}} () const
 \begin{DoxyCompactList}\small\item\em Returns the size of the statically condensed system (with Lagrange multiplier) \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1VGrad}{V\+Grad}} \& \mbox{\hyperlink{group__VEM__stokes_ga7ea577d8c7637493bc0f9040f82a10fa}{v\+Grad}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1VGrad}{V\+Grad}}. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1VCurl}{V\+Curl}} \& \mbox{\hyperlink{group__VEM__stokes_ga586f5c66a88d713f3961ae219e509ee0}{v\+Curl}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1VCurl}{V\+Curl}}. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1VDiv}{V\+Div}} \& \mbox{\hyperlink{group__VEM__stokes_ga107538a825981805867c76a73ec18c1a}{v\+Div}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1VDiv}{V\+Div}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1VGrad}{VGrad}} \& \mbox{\hyperlink{group__VEM__stokes_ga7ea577d8c7637493bc0f9040f82a10fa}{v\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1VGrad}{VGrad}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1VCurl}{VCurl}} \& \mbox{\hyperlink{group__VEM__stokes_ga586f5c66a88d713f3961ae219e509ee0}{v\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1VCurl}{VCurl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1VDiv}{VDiv}} \& \mbox{\hyperlink{group__VEM__stokes_ga107538a825981805867c76a73ec18c1a}{v\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1VDiv}{VDiv}}. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__VEM__stokes_ga99db170b7f151f7d37828065b02dd1a3}{system\+Matrix}} () const
 \begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__VEM__stokes_ga7a7c455112aa41ea9cb6ed817b417702}{system\+Matrix}} ()
@@ -192,7 +192,7 @@ Assemble a \mbox{\hyperlink{structHArDCore3D_1_1Stokes}{Stokes}} problem.
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!Stokes@{Stokes}}
 \index{Stokes@{Stokes}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{Stokes()}{Stokes()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Stokes\+::\+Stokes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&}]{ddrcore,  }\item[{bool}]{use\+\_\+threads,  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Stokes\+::\+Stokes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \&}]{ddrcore,  }\item[{bool}]{use\+\_\+threads,  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
 
 
 
@@ -200,7 +200,7 @@ Constructor.
 
 
 \begin{DoxyParams}{Parameters}
-{\em ddrcore} & Core for the D\+DR space sequence \\
+{\em ddrcore} & Core for the DDR space sequence \\
 \hline
 {\em use\+\_\+threads} & True for parallel execution, false for sequential execution \\
 \hline
@@ -214,7 +214,7 @@ Constructor.
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!assembleLinearSystem@{assembleLinearSystem}}
 \index{assembleLinearSystem@{assembleLinearSystem}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{assembleLinearSystem()}{assembleLinearSystem()}}
-{\footnotesize\ttfamily void H\+Ar\+D\+Core3\+D\+::\+Stokes\+::assemble\+Linear\+System (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}} \&}]{f,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&}]{u,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&}]{omega,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Viscosity\+Type}} \&}]{nu }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void HAr\+DCore3\+D\+::\+Stokes\+::assemble\+Linear\+System (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{Forcing\+Term\+Type}} \&}]{f,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&}]{u,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&}]{omega,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Viscosity\+Type}} \&}]{nu }\end{DoxyParamCaption})}
 
 
 
@@ -236,7 +236,7 @@ Assemble the global system ~\newline
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!computeContinuousErrorsNorms@{computeContinuousErrorsNorms}}
 \index{computeContinuousErrorsNorms@{computeContinuousErrorsNorms}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{computeContinuousErrorsNorms()}{computeContinuousErrorsNorms()}}
-{\footnotesize\ttfamily std\+::pair$<$\mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}, \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}$>$ H\+Ar\+D\+Core3\+D\+::\+Stokes\+::compute\+Continuous\+Errors\+Norms (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{v,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&}]{u,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&}]{curl\+\_\+u,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}} \&}]{p,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}} \&}]{grad\+\_\+p }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::pair$<$\mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}, \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}$>$ HAr\+DCore3\+D\+::\+Stokes\+::compute\+Continuous\+Errors\+Norms (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{v,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga52ca58b26c2693690c8c32602881ffbc}{Velocity\+Type}} \&}]{u,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga6b7d0f7c113eeecc50ce811990db5874}{Vorticity\+Type}} \&}]{curl\+\_\+u,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga758780788f88b913e804a3f98dc0975b}{Pressure\+Type}} \&}]{p,  }\item[{const \mbox{\hyperlink{group__DDR__stokes_ga5df4d4bd5072175a8bbed22b6fe5e324}{Pressure\+Gradient\+Type}} \&}]{grad\+\_\+p }\end{DoxyParamCaption}) const}
 
 
 
@@ -259,7 +259,7 @@ Compute the continuous Hcurl errors in u and Hgrad error in p (1st component), a
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!computeStokesNorms@{computeStokesNorms}}
 \index{computeStokesNorms@{computeStokesNorms}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{computeStokesNorms()}{computeStokesNorms()}}
-{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}$>$ H\+Ar\+D\+Core3\+D\+::\+Stokes\+::compute\+Stokes\+Norms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&}]{list\+\_\+dofs }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}$>$ HAr\+DCore3\+D\+::\+Stokes\+::compute\+Stokes\+Norms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&}]{list\+\_\+dofs }\end{DoxyParamCaption}) const}
 
 
 
@@ -274,37 +274,37 @@ Compute the discrete L2 norms, for a family of Eigen\+::\+Vector\+Xd representin
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!nbSCDOFs@{nbSCDOFs}}
 \index{nbSCDOFs@{nbSCDOFs}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{nbSCDOFs()}{nbSCDOFs()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Stokes\+::nb\+S\+C\+D\+O\+Fs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Stokes\+::nb\+SCDOFs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of statically condensed D\+O\+Fs (both velocity and pressure) 
+Returns the number of statically condensed DOFs (both velocity and pressure) 
 
 \mbox{\Hypertarget{structHArDCore3D_1_1Stokes_ga2c90515a4a5cc2e081cf5f7485706418}\label{structHArDCore3D_1_1Stokes_ga2c90515a4a5cc2e081cf5f7485706418}} 
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!nbSCDOFs\_p@{nbSCDOFs\_p}}
 \index{nbSCDOFs\_p@{nbSCDOFs\_p}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{nbSCDOFs\_p()}{nbSCDOFs\_p()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Stokes\+::nb\+S\+C\+D\+O\+Fs\+\_\+p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Stokes\+::nb\+SCDOFs\+\_\+p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of statically condensed D\+O\+Fs (pressure) 
+Returns the number of statically condensed DOFs (pressure) 
 
 \mbox{\Hypertarget{structHArDCore3D_1_1Stokes_ga137becabbdc3f6d87ce6a34ae934f729}\label{structHArDCore3D_1_1Stokes_ga137becabbdc3f6d87ce6a34ae934f729}} 
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!nbSCDOFs\_u@{nbSCDOFs\_u}}
 \index{nbSCDOFs\_u@{nbSCDOFs\_u}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{nbSCDOFs\_u()}{nbSCDOFs\_u()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Stokes\+::nb\+S\+C\+D\+O\+Fs\+\_\+u (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Stokes\+::nb\+SCDOFs\+\_\+u (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of statically condensed D\+O\+Fs (velocity) 
+Returns the number of statically condensed DOFs (velocity) 
 
 \mbox{\Hypertarget{structHArDCore3D_1_1Stokes_ga84c005b53d8d83c1be5b078dae093d9d}\label{structHArDCore3D_1_1Stokes_ga84c005b53d8d83c1be5b078dae093d9d}} 
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!scMatrix@{scMatrix}}
 \index{scMatrix@{scMatrix}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{scMatrix()}{scMatrix()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sc\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Stokes\+::sc\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -314,7 +314,7 @@ Returns the static condensation recovery operator.
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!scVector@{scVector}}
 \index{scVector@{scVector}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{scVector()}{scVector()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::sc\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Stokes\+::sc\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -324,7 +324,7 @@ Returns the static condensation rhs.
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!sizeSystem@{sizeSystem}}
 \index{sizeSystem@{sizeSystem}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{sizeSystem()}{sizeSystem()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Stokes\+::size\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Stokes\+::size\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -334,7 +334,7 @@ Returns the size of the statically condensed system (with Lagrange multiplier)
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!stabilizationParameter@{stabilizationParameter}}
 \index{stabilizationParameter@{stabilizationParameter}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{stabilizationParameter()}{stabilizationParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily double\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily double\& HAr\+DCore3\+D\+::\+Stokes\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -344,7 +344,7 @@ Returns the stabilization parameter.
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!stabilizationParameter@{stabilizationParameter}}
 \index{stabilizationParameter@{stabilizationParameter}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{stabilizationParameter()}{stabilizationParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const double\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const double\& HAr\+DCore3\+D\+::\+Stokes\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -354,7 +354,7 @@ Returns the stabilization parameter.
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!systemMatrix@{systemMatrix}}
 \index{systemMatrix@{systemMatrix}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{systemMatrix()}{systemMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Stokes\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -364,7 +364,7 @@ Returns the linear system matrix.
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!systemMatrix@{systemMatrix}}
 \index{systemMatrix@{systemMatrix}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{systemMatrix()}{systemMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDR__stokes_ga1f6b821084f8381c776904559b8694a6}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Stokes\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -374,7 +374,7 @@ Returns the linear system matrix.
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!systemVector@{systemVector}}
 \index{systemVector@{systemVector}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{systemVector()}{systemVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Stokes\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -384,7 +384,7 @@ Returns the linear system right-\/hand side vector.
 \index{HArDCore3D::Stokes@{HArDCore3D::Stokes}!systemVector@{systemVector}}
 \index{systemVector@{systemVector}!HArDCore3D::Stokes@{HArDCore3D::Stokes}}
 \doxysubsubsection{\texorpdfstring{systemVector()}{systemVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd\& H\+Ar\+D\+Core3\+D\+::\+Stokes\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Stokes\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -394,9 +394,9 @@ Returns the linear system right-\/hand side vector.
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Schemes/\+D\+D\+R-\/stokes/\mbox{\hyperlink{ddr-stokes_8hpp}{ddr-\/stokes.\+hpp}}\item 
-Schemes/\+D\+D\+R-\/stokes/\mbox{\hyperlink{sddr-stokes_8hpp}{sddr-\/stokes.\+hpp}}\item 
-Schemes/\+V\+E\+M-\/stokes/\mbox{\hyperlink{vem-stokes_8hpp}{vem-\/stokes.\+hpp}}\item 
-Schemes/\+D\+D\+R-\/stokes/\mbox{\hyperlink{ddr-stokes_8cpp}{ddr-\/stokes.\+cpp}}\item 
-Schemes/\+D\+D\+R-\/stokes/\mbox{\hyperlink{sddr-stokes_8cpp}{sddr-\/stokes.\+cpp}}\item 
-Schemes/\+V\+E\+M-\/stokes/\mbox{\hyperlink{vem-stokes_8cpp}{vem-\/stokes.\+cpp}}\end{DoxyCompactItemize}
+Schemes/\+DDR-\/stokes/\mbox{\hyperlink{ddr-stokes_8hpp}{ddr-\/stokes.\+hpp}}\item 
+Schemes/\+DDR-\/stokes/\mbox{\hyperlink{sddr-stokes_8hpp}{sddr-\/stokes.\+hpp}}\item 
+Schemes/\+VEM-\/stokes/\mbox{\hyperlink{vem-stokes_8hpp}{vem-\/stokes.\+hpp}}\item 
+Schemes/\+DDR-\/stokes/\mbox{\hyperlink{ddr-stokes_8cpp}{ddr-\/stokes.\+cpp}}\item 
+Schemes/\+DDR-\/stokes/\mbox{\hyperlink{sddr-stokes_8cpp}{sddr-\/stokes.\+cpp}}\item 
+Schemes/\+VEM-\/stokes/\mbox{\hyperlink{vem-stokes_8cpp}{vem-\/stokes.\+cpp}}\end{DoxyCompactItemize}

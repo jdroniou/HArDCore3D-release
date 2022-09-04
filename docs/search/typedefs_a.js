@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['matrixftype_1720',['MatrixFType',['../group__HHO3D.html#ga37173e331cdc5fa65f30562ccb17ca8c',1,'HHO3D.hpp']]],
-  ['matrixrd_1721',['MatrixRd',['../group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d',1,'HArDCore3D']]],
-  ['mesh_1722',['Mesh',['../namespaceMesh2D.html#ad4c89c4141f0383ec4459426545a2414',1,'Mesh2D::Mesh()'],['../namespaceMesh3D.html#a9cb128919bda258a16be392b7b9d4923',1,'Mesh3D::Mesh()']]],
-  ['monomialcellintegralstype_1723',['MonomialCellIntegralsType',['../group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c',1,'HArDCore3D']]],
-  ['monomialedgeintegralstype_1724',['MonomialEdgeIntegralsType',['../group__Quadratures.html#ga6d5b9ab76ae93fbbe5dc3c3e14537cdd',1,'HArDCore3D']]],
-  ['monomialfaceintegralstype_1725',['MonomialFaceIntegralsType',['../group__Quadratures.html#ga14161bf80013825fa5c73c188133e466',1,'HArDCore3D']]]
+  ['laelectricfieldtype_2221',['LAElectricFieldType',['../group__DDR__yangmills.html#gaba2da47d3f10a8e5fef0a63989c6d907',1,'HArDCore3D::YangMills']]],
+  ['laforcingtermtype_2222',['LAForcingTermType',['../group__DDR__yangmills.html#gaedfef51bc9558c0d9e6bbbe92c556147',1,'HArDCore3D::YangMills']]],
+  ['lafunctiontype_2223',['LAFunctionType',['../group__LADDRCore.html#ga56d4d6afeb018bafbd088ac9eb555c28',1,'HArDCore3D::LAXCurl::LAFunctionType()'],['../group__LADDRCore.html#gaac4662a81a3edb112a2337f40bea422d',1,'HArDCore3D::LAXDiv::LAFunctionType()'],['../group__LADDRCore.html#gadd21e9106aadcc2ecf2d864ac06ba1dc',1,'HArDCore3D::LAXGrad::LAFunctionType()']]],
+  ['lamagneticfieldtype_2224',['LAMagneticFieldType',['../group__DDR__yangmills.html#ga78c8b03036549d6f96710471e8701372',1,'HArDCore3D::YangMills']]],
+  ['liealgproduct_2225',['LieAlgProduct',['../group__LADDRCore.html#ga024c0d76567c07d675da1ea72badb403',1,'HArDCore3D::LieAlgebra']]],
+  ['liealgvalue_2226',['LieAlgValue',['../group__LADDRCore.html#ga4fdf08268e238651b2b9c39247a3a892',1,'HArDCore3D::LieAlgebra']]]
 ];

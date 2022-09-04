@@ -1,0 +1,33 @@
+<map id="src/LADDRCore/laxdiv.cpp" name="src/LADDRCore/laxdiv.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="471,5,649,32"/>
+<area shape="rect" id="node2" href="$laxdiv_8hpp.html" title=" " alt="" coords="106,87,185,114"/>
+<area shape="rect" id="node20" href="$basis_8hpp.html" title=" " alt="" coords="475,468,554,495"/>
+<area shape="rect" id="node28" href="$parallel__for_8hpp.html" title=" " alt="" coords="552,87,661,114"/>
+<area shape="rect" id="node31" title=" " alt="" coords="686,80,879,121"/>
+<area shape="rect" id="node3" href="$globaldofspace_8hpp.html" title=" " alt="" coords="43,393,178,420"/>
+<area shape="rect" id="node17" href="$xdiv_8hpp.html" title=" " alt="" coords="227,169,296,196"/>
+<area shape="rect" id="node27" href="$liealgebra_8hpp.html" title=" " alt="" coords="202,841,305,868"/>
+<area shape="rect" id="node4" href="$localdofspace_8hpp.html" title=" " alt="" coords="45,468,171,495"/>
+<area shape="rect" id="node5" href="$mesh_8hpp.html" title=" " alt="" coords="309,617,387,644"/>
+<area shape="rect" id="node6" href="$Mesh3D_8hpp.html" title=" " alt="" coords="300,692,396,719"/>
+<area shape="rect" id="node7" href="$MeshObject_8hpp.html" title=" " alt="" coords="471,841,588,868"/>
+<area shape="rect" id="node16" href="$MeshND_8hpp.html" title=" " alt="" coords="297,767,396,793"/>
+<area shape="rect" id="node8" title=" " alt="" coords="429,916,480,943"/>
+<area shape="rect" id="node9" title=" " alt="" coords="224,916,283,943"/>
+<area shape="rect" id="node10" title=" " alt="" coords="505,916,551,943"/>
+<area shape="rect" id="node11" title=" " alt="" coords="827,916,899,943"/>
+<area shape="rect" id="node12" title=" " alt="" coords="597,991,656,1017"/>
+<area shape="rect" id="node13" title=" " alt="" coords="307,916,405,943"/>
+<area shape="rect" id="node14" href="$math_8hpp.html" title=" " alt="" coords="627,916,703,943"/>
+<area shape="rect" id="node15" title=" " alt="" coords="728,916,803,943"/>
+<area shape="rect" id="node18" href="$ddrcore_8hpp.html" title=" " alt="" coords="379,393,469,420"/>
+<area shape="rect" id="node24" href="$integralweight_8hpp.html" title=" " alt="" coords="211,393,338,420"/>
+<area shape="rect" id="node25" href="$xcurl_8hpp.html" title=" " alt="" coords="224,244,299,271"/>
+<area shape="rect" id="node19" title=" " alt="" coords="317,468,387,495"/>
+<area shape="rect" id="node22" href="$polynomialspacedimension_8hpp.html" title=" " alt="" coords="247,543,449,569"/>
+<area shape="rect" id="node21" title=" " alt="" coords="678,543,823,569"/>
+<area shape="rect" id="node23" href="$quadraturerule_8hpp.html" title=" " alt="" coords="525,543,654,569"/>
+<area shape="rect" id="node26" href="$xgrad_8hpp.html" title=" " alt="" coords="195,319,274,345"/>
+<area shape="rect" id="node29" title=" " alt="" coords="564,169,623,196"/>
+<area shape="rect" id="node30" title=" " alt="" coords="647,169,747,196"/>
+</map>

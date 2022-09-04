@@ -1,15 +1,14 @@
-\hypertarget{sddr-magnetostatics_8cpp}{}\doxysection{Schemes/\+D\+D\+R-\/magnetostatics/sddr-\/magnetostatics.cpp File Reference}
+\hypertarget{sddr-magnetostatics_8cpp}{}\doxysection{Schemes/\+DDR-\/magnetostatics/sddr-\/magnetostatics.cpp File Reference}
 \label{sddr-magnetostatics_8cpp}\index{Schemes/DDR-\/magnetostatics/sddr-\/magnetostatics.cpp@{Schemes/DDR-\/magnetostatics/sddr-\/magnetostatics.cpp}}
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$iomanip$>$}\newline
 {\ttfamily \#include $<$thread$>$}\newline
 {\ttfamily \#include \char`\"{}sddr-\/magnetostatics.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$parallel\+\_\+for.\+hpp$>$}\newline
-{\ttfamily \#include $<$G\+Mpoly\+\_\+cell.\+hpp$>$}\newline
+{\ttfamily \#include $<$GMpoly\+\_\+cell.\+hpp$>$}\newline
 {\ttfamily \#include $<$boost/program\+\_\+options.\+hpp$>$}\newline
 {\ttfamily \#include $<$display\+\_\+timer.\+hpp$>$}\newline
-Include dependency graph for sddr-\/magnetostatics.cpp\+:
-\nopagebreak
+Include dependency graph for sddr-\/magnetostatics.cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,7 +18,7 @@ Include dependency graph for sddr-\/magnetostatics.cpp\+:
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{sddr-magnetostatics_8cpp_acfec7849f05710c7fb4106fea8a286fc}{F\+O\+R\+M\+AT}}(W)~std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})
+\#define \mbox{\hyperlink{sddr-magnetostatics_8cpp_acfec7849f05710c7fb4106fea8a286fc}{FORMAT}}(W)~  std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -31,7 +30,7 @@ int \mbox{\hyperlink{sddr-magnetostatics_8cpp_ac0f2228420376f4db7e1274f2b41667c}
 \item 
 const std\+::string \mbox{\hyperlink{sddr-magnetostatics_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} = \char`\"{}../../meshes/\char`\"{}
 \item 
-std\+::string \mbox{\hyperlink{sddr-magnetostatics_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}{default\+\_\+mesh}} = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/R\+F\+\_\+fmt/voro-\/2\char`\"{}
+std\+::string \mbox{\hyperlink{sddr-magnetostatics_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}{default\+\_\+mesh}} = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}
 \end{DoxyCompactItemize}
 
 
@@ -40,7 +39,7 @@ std\+::string \mbox{\hyperlink{sddr-magnetostatics_8cpp_a21b3062739c7e8a3b0887dc
 \index{sddr-\/magnetostatics.cpp@{sddr-\/magnetostatics.cpp}!FORMAT@{FORMAT}}
 \index{FORMAT@{FORMAT}!sddr-\/magnetostatics.cpp@{sddr-\/magnetostatics.cpp}}
 \doxysubsubsection{\texorpdfstring{FORMAT}{FORMAT}}
-{\footnotesize\ttfamily \#define F\+O\+R\+M\+AT(\begin{DoxyParamCaption}\item[{}]{W }\end{DoxyParamCaption})~std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})}
+{\footnotesize\ttfamily \#define FORMAT(\begin{DoxyParamCaption}\item[{}]{W }\end{DoxyParamCaption})~  std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})}
 
 
 
@@ -58,7 +57,7 @@ std\+::string \mbox{\hyperlink{sddr-magnetostatics_8cpp_a21b3062739c7e8a3b0887dc
 \index{sddr-\/magnetostatics.cpp@{sddr-\/magnetostatics.cpp}!default\_mesh@{default\_mesh}}
 \index{default\_mesh@{default\_mesh}!sddr-\/magnetostatics.cpp@{sddr-\/magnetostatics.cpp}}
 \doxysubsubsection{\texorpdfstring{default\_mesh}{default\_mesh}}
-{\footnotesize\ttfamily std\+::string default\+\_\+mesh = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/R\+F\+\_\+fmt/voro-\/2\char`\"{}}
+{\footnotesize\ttfamily std\+::string default\+\_\+mesh = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}}
 
 \mbox{\Hypertarget{sddr-magnetostatics_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}\label{sddr-magnetostatics_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}} 
 \index{sddr-\/magnetostatics.cpp@{sddr-\/magnetostatics.cpp}!mesh\_dir@{mesh\_dir}}

@@ -1,4 +1,4 @@
-\hypertarget{classHArDCore3D_1_1UVector}{}\doxysection{H\+Ar\+D\+Core3D\+::U\+Vector Class Reference}
+\hypertarget{classHArDCore3D_1_1UVector}{}\doxysection{HAr\+DCore3D\+::UVector Class Reference}
 \label{classHArDCore3D_1_1UVector}\index{HArDCore3D::UVector@{HArDCore3D::UVector}}
 
 
@@ -7,7 +7,7 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__HybridCore_gae2a9aa60d46161d5cbba31dfd1c5eccd}{U\+Vector}} (const Eigen\+::\+Vector\+Xd values, const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&mesh, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg)
+\mbox{\hyperlink{group__HybridCore_gae2a9aa60d46161d5cbba31dfd1c5eccd}{UVector}} (const Eigen\+::\+Vector\+Xd values, const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&mesh, const int cell\+\_\+deg, const size\+\_\+t face\+\_\+deg)
 \item 
 Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HybridCore_gac44c85c6f56c0c6f2b66f0ed630574dd}{as\+Vector\+Xd}} () const
 \begin{DoxyCompactList}\small\item\em Return the values as an Eigen vector. \end{DoxyCompactList}\item 
@@ -23,16 +23,16 @@ const size\+\_\+t \mbox{\hyperlink{group__HybridCore_ga5a48f281a6cdabd298d5f2edf
 \begin{DoxyCompactList}\small\item\em Total number of cell dofs (in the vector, this is where the face dofs start) \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HybridCore_ga24a0a68f8f1e8bdc4845bee48b7ce8d2}{restr}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Extract the restriction of the unknowns corresponding to cell iT and its faces. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \mbox{\hyperlink{group__HybridCore_ga7b9eb68a1bd6c64cedffe79bd7c9dc1b}{operator+}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&b)
+\mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} \mbox{\hyperlink{group__HybridCore_ga7b9eb68a1bd6c64cedffe79bd7c9dc1b}{operator+}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} \&b)
 \begin{DoxyCompactList}\small\item\em Overloads the addition\+: adds the coefficients. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \mbox{\hyperlink{group__HybridCore_gafacf1951576154d9eb79770ddee87aa0}{operator-\/}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&b)
+\mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} \mbox{\hyperlink{group__HybridCore_gafacf1951576154d9eb79770ddee87aa0}{operator-\/}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} \&b)
 \begin{DoxyCompactList}\small\item\em Overloads the subtraction\+: subtracts the coefficients. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__HybridCore_gac5679636cd20ff654b96a941b742c3fe}{operator()}} (size\+\_\+t index) const
 \begin{DoxyCompactList}\small\item\em Overloads the ()\+: returns the corresponding coefficient. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-The \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} class describes a vector of unknowns for discrete functions defined by polynomials in the cells and polynomials on the faces (polynomials on the edges are not taken into account yet, but this can easily be changed). The class describes the respective degrees of cell and faces polynomials considered. In the values stored in an element of this class, the coefficients on the cell basis functions come first (in the order of the cells), and then all the face basis functions (in the order of the faces) 
+The \mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} class describes a vector of unknowns for discrete functions defined by polynomials in the cells and polynomials on the faces (polynomials on the edges are not taken into account yet, but this can easily be changed). The class describes the respective degrees of cell and faces polynomials considered. In the values stored in an element of this class, the coefficients on the cell basis functions come first (in the order of the cells), and then all the face basis functions (in the order of the faces) 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

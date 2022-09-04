@@ -1,4 +1,4 @@
-\hypertarget{classHArDCore3D_1_1SXDiv}{}\doxysection{H\+Ar\+D\+Core3D\+::S\+X\+Div Class Reference}
+\hypertarget{classHArDCore3D_1_1SXDiv}{}\doxysection{HAr\+DCore3D\+::SXDiv Class Reference}
 \label{classHArDCore3D_1_1SXDiv}\index{HArDCore3D::SXDiv@{HArDCore3D::SXDiv}}
 
 
@@ -11,8 +11,7 @@ Discrete Serendipity Hdiv space\+: local operators, L2 product and global interp
 
 
 
-Inheritance diagram for H\+Ar\+D\+Core3D\+::S\+X\+Div\+:
-\nopagebreak
+Inheritance diagram for HAr\+DCore3D\+::SXDiv\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for H\+Ar\+D\+Core3D\+::S\+X\+Div\+:
 \end{figure}
 
 
-Collaboration diagram for H\+Ar\+D\+Core3D\+::S\+X\+Div\+:
-\nopagebreak
+Collaboration diagram for HAr\+DCore3D\+::SXDiv\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,9 +30,9 @@ Collaboration diagram for H\+Ar\+D\+Core3D\+::S\+X\+Div\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__DDRCore_ga8c10cba0c0e5fd822e1a91254a80852a}{S\+X\+Div}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddr\+\_\+core, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\mbox{\hyperlink{group__DDRCore_ga8c10cba0c0e5fd822e1a91254a80852a}{SXDiv}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \&ddr\+\_\+core, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga8e0194701bde64e27f44a3f45e507fb0}{compute\+L2\+Product\+Curl}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}} \&sx\+\_\+curl, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga8e0194701bde64e27f44a3f45e507fb0}{compute\+L2\+Product\+Curl}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} \&sx\+\_\+curl, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete serendipity curl on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
@@ -42,9 +40,9 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDRCore_ga8e0194701bde64e27f44a3f4
 \doxysubsection{Detailed Description}
 Discrete Serendipity Hdiv space\+: local operators, L2 product and global interpolator. 
 
-This is actually just an \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}} space with additional function to compute the L2 product of discrete curl of elements in S\+Xcurl. 
+This is actually just an \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}} space with additional function to compute the L2 product of discrete curl of elements in SXcurl. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/\+D\+D\+R\+Core/\mbox{\hyperlink{sxdiv_8hpp}{sxdiv.\+hpp}}\item 
-src/\+D\+D\+R\+Core/\mbox{\hyperlink{sxdiv_8cpp}{sxdiv.\+cpp}}\end{DoxyCompactItemize}
+src/\+DDRCore/\mbox{\hyperlink{sxdiv_8hpp}{sxdiv.\+hpp}}\item 
+src/\+DDRCore/\mbox{\hyperlink{sxdiv_8cpp}{sxdiv.\+cpp}}\end{DoxyCompactItemize}

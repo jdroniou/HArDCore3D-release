@@ -332,6 +332,8 @@ The following schemes are currently available in HArD::Core3D. The Hybrid High-O
 
  - [HHO_MHD](@ref HHO_MHD): HHO scheme for the MHD problem.
 
+ - [DDR_yangmills](@ref DDR_yangmills): DDR scheme for the Yang-Mills equations (based on [LADDR](@ref LADDRCore), the extension of DDR to Lie algebra valued fields). This code requires the library Spectra (https://spectralib.org/) to compute the eigenvalues (this is optional, the corresponding lines can be commented out and the code will run).
+
 The directory `runs` contains BASH scripts to run series of tests on families of meshes. The files `data.sh` describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the `output` directory, shows the convergence rate in the standard console output, and creates a pdf file `rate.pdf` describing the rates of convergence in various energy norms (you will need `pdflatex` to create this pdf file; commenting out the corresponding line is fine, the pdf will simply not be create).
 
 

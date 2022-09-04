@@ -1,4 +1,4 @@
-\hypertarget{classHArDCore3D_1_1HybridCore}{}\doxysection{H\+Ar\+D\+Core3D\+::Hybrid\+Core Class Reference}
+\hypertarget{classHArDCore3D_1_1HybridCore}{}\doxysection{HAr\+DCore3D\+::Hybrid\+Core Class Reference}
 \label{classHArDCore3D_1_1HybridCore}\index{HArDCore3D::HybridCore@{HArDCore3D::HybridCore}}
 
 
@@ -32,19 +32,19 @@ const \mbox{\hyperlink{group__HybridCore_gab02b7a4490b6a739e2d084e9a70dbcc5}{Pol
 \begin{DoxyCompactList}\small\item\em Return face basis for face with global index iF. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{group__HybridCore_gad3123dceabd79eec7cdb57ba1014fc17}{Poly\+Edge\+Basis\+Type}} \& \mbox{\hyperlink{group__HybridCore_ga21071e365011fbb477a70475f7642f02}{Edge\+Basis}} (size\+\_\+t iE) const
 \begin{DoxyCompactList}\small\item\em Return edge basis for edge with global index iE. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{group__HybridCore_gab37ab89bf946e237821dd978f475b7c8}{L2norm}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&Xh) const
+double \mbox{\hyperlink{group__HybridCore_gab37ab89bf946e237821dd978f475b7c8}{L2norm}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} \&Xh) const
 \begin{DoxyCompactList}\small\item\em Compute L2 norm of a discrete function (using cell values) \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{group__HybridCore_gad6672e0691764ec5752eb1a9a7257792}{H1norm}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \&Xh) const
+double \mbox{\hyperlink{group__HybridCore_gad6672e0691764ec5752eb1a9a7257792}{H1norm}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} \&Xh) const
 \begin{DoxyCompactList}\small\item\em Compute discrete H1 norm of a discrete function. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Continuous\+Function $>$ }\\\mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} \mbox{\hyperlink{group__HybridCore_gadce852531f9197a35e11e1bf9995e827}{interpolate}} (const Continuous\+Function \&f, const int deg\+\_\+cell, const size\+\_\+t deg\+\_\+face, size\+\_\+t doe) const
+{\footnotesize template$<$typename Continuous\+Function $>$ }\\\mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} \mbox{\hyperlink{group__HybridCore_gadce852531f9197a35e11e1bf9995e827}{interpolate}} (const Continuous\+Function \&f, const int deg\+\_\+cell, const size\+\_\+t deg\+\_\+face, size\+\_\+t doe) const
 \begin{DoxyCompactList}\small\item\em Compute the interpolant in the discrete space of a continuous function. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HybridCore_ga06825c5d156026d465a2798389aa952b}{compute\+\_\+weights}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Computes the weights to get cell values from face values when l=-\/1. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{group__HybridCore_ga9c76abf42a1d56fbf863d8258690497c}{evaluate\+\_\+in\+\_\+cell}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} Xh, size\+\_\+t iT, Vector\+Rd x) const
+double \mbox{\hyperlink{group__HybridCore_ga9c76abf42a1d56fbf863d8258690497c}{evaluate\+\_\+in\+\_\+cell}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} Xh, size\+\_\+t iT, Vector\+Rd x) const
 \begin{DoxyCompactList}\small\item\em Evaluates a discrete function in the cell iT at point x. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{group__HybridCore_ga088adb7dbbde4b63229b404ee72ed9ea}{evaluate\+\_\+in\+\_\+face}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} Xh, size\+\_\+t iF, Vector\+Rd x) const
+double \mbox{\hyperlink{group__HybridCore_ga088adb7dbbde4b63229b404ee72ed9ea}{evaluate\+\_\+in\+\_\+face}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} Xh, size\+\_\+t iF, Vector\+Rd x) const
 \begin{DoxyCompactList}\small\item\em Evaluates a discrete function on the face iF at point x. \end{DoxyCompactList}\item 
-Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HybridCore_ga1d33ec0786b8127a161384ecf8f04018}{Vertex\+Values}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{U\+Vector}} Xh, const std\+::string from\+\_\+dofs)
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HybridCore_ga1d33ec0786b8127a161384ecf8f04018}{Vertex\+Values}} (const \mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}} Xh, const std\+::string from\+\_\+dofs)
 \begin{DoxyCompactList}\small\item\em From a hybrid function, computes a vector of values at the vertices of the mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 

@@ -1,0 +1,73 @@
+\hypertarget{laddr-yangmills-lm_8cpp}{}\doxysection{Schemes/\+LADDR-\/yangmills/laddr-\/yangmills-\/lm.cpp File Reference}
+\label{laddr-yangmills-lm_8cpp}\index{Schemes/LADDR-\/yangmills/laddr-\/yangmills-\/lm.cpp@{Schemes/LADDR-\/yangmills/laddr-\/yangmills-\/lm.cpp}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \char`\"{}laddr-\/yangmills-\/lm.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$parallel\+\_\+for.\+hpp$>$}\newline
+{\ttfamily \#include $<$max\+\_\+degrees\+\_\+quadratures.\+hpp$>$}\newline
+{\ttfamily \#include $<$GMpoly\+\_\+cell.\+hpp$>$}\newline
+{\ttfamily \#include $<$unsupported/\+Eigen/\+Kronecker\+Product$>$}\newline
+{\ttfamily \#include $<$boost/program\+\_\+options.\+hpp$>$}\newline
+{\ttfamily \#include $<$display\+\_\+timer.\+hpp$>$}\newline
+{\ttfamily \#include $<$Sym\+Eigs\+Solver.\+h$>$}\newline
+{\ttfamily \#include $<$Mat\+Op/\+Sparse\+Sym\+Shift\+Solve.\+h$>$}\newline
+{\ttfamily \#include $<$Mat\+Op/\+Sparse\+Sym\+Mat\+Prod.\+h$>$}\newline
+{\ttfamily \#include $<$Sym\+Eigs\+Shift\+Solver.\+h$>$}\newline
+Include dependency graph for laddr-\/yangmills-\/lm.cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{laddr-yangmills-lm_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{laddr-yangmills-lm_8cpp_acfec7849f05710c7fb4106fea8a286fc}{FORMAT}}(W)~  std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{laddr-yangmills-lm_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{laddr-yangmills-lm_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} = \char`\"{}../../meshes/\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{laddr-yangmills-lm_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}{default\+\_\+mesh}} = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{laddr-yangmills-lm_8cpp_acfec7849f05710c7fb4106fea8a286fc}\label{laddr-yangmills-lm_8cpp_acfec7849f05710c7fb4106fea8a286fc}} 
+\index{laddr-\/yangmills-\/lm.cpp@{laddr-\/yangmills-\/lm.cpp}!FORMAT@{FORMAT}}
+\index{FORMAT@{FORMAT}!laddr-\/yangmills-\/lm.cpp@{laddr-\/yangmills-\/lm.cpp}}
+\doxysubsubsection{\texorpdfstring{FORMAT}{FORMAT}}
+{\footnotesize\ttfamily \#define FORMAT(\begin{DoxyParamCaption}\item[{}]{W }\end{DoxyParamCaption})~  std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{laddr-yangmills-lm_8cpp_ac0f2228420376f4db7e1274f2b41667c}\label{laddr-yangmills-lm_8cpp_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{laddr-\/yangmills-\/lm.cpp@{laddr-\/yangmills-\/lm.cpp}!main@{main}}
+\index{main@{main}!laddr-\/yangmills-\/lm.cpp@{laddr-\/yangmills-\/lm.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{laddr-yangmills-lm_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}\label{laddr-yangmills-lm_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}} 
+\index{laddr-\/yangmills-\/lm.cpp@{laddr-\/yangmills-\/lm.cpp}!default\_mesh@{default\_mesh}}
+\index{default\_mesh@{default\_mesh}!laddr-\/yangmills-\/lm.cpp@{laddr-\/yangmills-\/lm.cpp}}
+\doxysubsubsection{\texorpdfstring{default\_mesh}{default\_mesh}}
+{\footnotesize\ttfamily std\+::string default\+\_\+mesh = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}}
+
+\mbox{\Hypertarget{laddr-yangmills-lm_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}\label{laddr-yangmills-lm_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}} 
+\index{laddr-\/yangmills-\/lm.cpp@{laddr-\/yangmills-\/lm.cpp}!mesh\_dir@{mesh\_dir}}
+\index{mesh\_dir@{mesh\_dir}!laddr-\/yangmills-\/lm.cpp@{laddr-\/yangmills-\/lm.cpp}}
+\doxysubsubsection{\texorpdfstring{mesh\_dir}{mesh\_dir}}
+{\footnotesize\ttfamily const std\+::string mesh\+\_\+dir = \char`\"{}../../meshes/\char`\"{}}
+

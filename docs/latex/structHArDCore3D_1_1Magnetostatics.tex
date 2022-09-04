@@ -1,4 +1,4 @@
-\hypertarget{structHArDCore3D_1_1Magnetostatics}{}\doxysection{H\+Ar\+D\+Core3D\+::Magnetostatics Struct Reference}
+\hypertarget{structHArDCore3D_1_1Magnetostatics}{}\doxysection{HAr\+DCore3D\+::Magnetostatics Struct Reference}
 \label{structHArDCore3D_1_1Magnetostatics}\index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 
 
@@ -35,21 +35,21 @@ typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__DDR__magnetostatic_ga9e47b948148096a76ef7cc8be28ac0b9}{Magnetostatics}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\mbox{\hyperlink{group__DDR__magnetostatic_ga9e47b948148096a76ef7cc8be28ac0b9}{Magnetostatics}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__DDR__magnetostatic_gad138164f173610fb861cef714646edae}{assemble\+Linear\+System}} (const \mbox{\hyperlink{group__DDR__magnetostatic_gaebd9236e99aa83d9e5b68d9d86655a7d}{Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__DDR__magnetostatic_gab9b0a0b9567472243716e8acd486d01e}{Permeability\+Type}} \&mu, const \mbox{\hyperlink{group__DDR__magnetostatic_gad2a0390bd8d0403beec2119200c14964}{Solution\+Potential\+Type}} \&u)
 \begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
  \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga9d4739fa01b264a573909bb69488487f}{dimension\+Space}} () const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the magnetic field + potential space. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga4a501f243a498fd6567c2b7b71c9be98}{nb\+S\+C\+D\+O\+Fs}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (here, the cell magnetic field D\+O\+Fs) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_ga4a501f243a498fd6567c2b7b71c9be98}{nb\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (here, the cell magnetic field DOFs) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__DDR__magnetostatic_gab9bdfe696d9b36cca0546e85ee73eed4}{size\+System}} () const
 \begin{DoxyCompactList}\small\item\em Returns the size of the statically condensed system. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga19b0cd652147b495285bece47378342c}{x\+Curl}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{X\+Curl}}. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36d240d6810c180781c7a2615a7f914e}{x\+Div}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{X\+Div}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga19b0cd652147b495285bece47378342c}{x\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga36d240d6810c180781c7a2615a7f914e}{x\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}}. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__DDR__magnetostatic_gafb6670bd6c5b8a6754108f45de910a63}{system\+Matrix}} () const
 \begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__DDR__magnetostatic_gaada8e4f19159b7e7ca218dffeccf6a3e}{system\+Matrix}} ()
@@ -68,21 +68,21 @@ Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__magnetostatic_gac5cc8800c0
 \begin{DoxyCompactList}\small\item\em Returns the static condensation rhs. \end{DoxyCompactList}\item 
 std\+::vector$<$ double $>$ \mbox{\hyperlink{group__DDR__magnetostatic_gaaa30c9fe81e0e6ea7078f1d92cf951ee}{compute\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
 \begin{DoxyCompactList}\small\item\em Compute the discrete Hcurl \textbackslash{}times Hdiv norm of a family of vectors representing the dofs. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics_ga9e47b948148096a76ef7cc8be28ac0b9}{Magnetostatics}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics_ga9e47b948148096a76ef7cc8be28ac0b9}{Magnetostatics}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \&ddrcore, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics_gad138164f173610fb861cef714646edae}{assemble\+Linear\+System}} (const \mbox{\hyperlink{group__DDR__magnetostatic_gaebd9236e99aa83d9e5b68d9d86655a7d}{Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__DDR__magnetostatic_gab9b0a0b9567472243716e8acd486d01e}{Permeability\+Type}} \&mu, const \mbox{\hyperlink{group__DDR__magnetostatic_gad2a0390bd8d0403beec2119200c14964}{Solution\+Potential\+Type}} \&u)
 \begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
  \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics_ga9d4739fa01b264a573909bb69488487f}{dimension\+Space}} () const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the magnetic field + potential space. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics_ga4a501f243a498fd6567c2b7b71c9be98}{nb\+S\+C\+D\+O\+Fs}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed D\+O\+Fs (here, the cell magnetic field D\+O\+Fs) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics_ga4a501f243a498fd6567c2b7b71c9be98}{nb\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (here, the cell magnetic field DOFs) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics_gab9bdfe696d9b36cca0546e85ee73eed4}{size\+System}} () const
 \begin{DoxyCompactList}\small\item\em Returns the size of the statically condensed system. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga3edac16dbe79d6677962bdaab0724af4}{sx\+Curl}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{S\+X\+Curl}}. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{S\+X\+Div}} \& \mbox{\hyperlink{group__DDR__magnetostatic_gabaf43011cd68590a75861ebfd4e3d02e}{sx\+Div}} () const
-\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{S\+X\+Div}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} \& \mbox{\hyperlink{group__DDR__magnetostatic_ga3edac16dbe79d6677962bdaab0724af4}{sx\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{SXDiv}} \& \mbox{\hyperlink{group__DDR__magnetostatic_gabaf43011cd68590a75861ebfd4e3d02e}{sx\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{SXDiv}}. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}{System\+Matrix\+Type}} \& \mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics_gafb6670bd6c5b8a6754108f45de910a63}{system\+Matrix}} () const
 \begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}{System\+Matrix\+Type}} \& \mbox{\hyperlink{structHArDCore3D_1_1Magnetostatics_gaada8e4f19159b7e7ca218dffeccf6a3e}{system\+Matrix}} ()
@@ -111,7 +111,7 @@ Assemble a magnetostatic problem.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!Magnetostatics@{Magnetostatics}}
 \index{Magnetostatics@{Magnetostatics}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{Magnetostatics()}{Magnetostatics()}}
-{\footnotesize\ttfamily H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::\+Magnetostatics (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{D\+D\+R\+Core}} \&}]{ddrcore,  }\item[{bool}]{use\+\_\+threads,  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Magnetostatics\+::\+Magnetostatics (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \&}]{ddrcore,  }\item[{bool}]{use\+\_\+threads,  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
 
 
 
@@ -119,7 +119,7 @@ Constructor.
 
 
 \begin{DoxyParams}{Parameters}
-{\em ddrcore} & Core for the D\+DR space sequence \\
+{\em ddrcore} & Core for the DDR space sequence \\
 \hline
 {\em use\+\_\+threads} & True for parallel execution, false for sequential execution \\
 \hline
@@ -133,7 +133,7 @@ Constructor.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!assembleLinearSystem@{assembleLinearSystem}}
 \index{assembleLinearSystem@{assembleLinearSystem}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{assembleLinearSystem()}{assembleLinearSystem()}}
-{\footnotesize\ttfamily void H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::assemble\+Linear\+System (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__DDR__magnetostatic_gaebd9236e99aa83d9e5b68d9d86655a7d}{Forcing\+Term\+Type}} \&}]{f,  }\item[{const \mbox{\hyperlink{group__DDR__magnetostatic_gab9b0a0b9567472243716e8acd486d01e}{Permeability\+Type}} \&}]{mu,  }\item[{const \mbox{\hyperlink{group__DDR__magnetostatic_gad2a0390bd8d0403beec2119200c14964}{Solution\+Potential\+Type}} \&}]{u }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void HAr\+DCore3\+D\+::\+Magnetostatics\+::assemble\+Linear\+System (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__DDR__magnetostatic_gaebd9236e99aa83d9e5b68d9d86655a7d}{Forcing\+Term\+Type}} \&}]{f,  }\item[{const \mbox{\hyperlink{group__DDR__magnetostatic_gab9b0a0b9567472243716e8acd486d01e}{Permeability\+Type}} \&}]{mu,  }\item[{const \mbox{\hyperlink{group__DDR__magnetostatic_gad2a0390bd8d0403beec2119200c14964}{Solution\+Potential\+Type}} \&}]{u }\end{DoxyParamCaption})}
 
 
 
@@ -153,7 +153,7 @@ Assemble the global system ~\newline
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!computeNorms@{computeNorms}}
 \index{computeNorms@{computeNorms}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{computeNorms()}{computeNorms()}}
-{\footnotesize\ttfamily std\+::vector$<$double$>$ H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::compute\+Norms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&}]{list\+\_\+dofs }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ HAr\+DCore3\+D\+::\+Magnetostatics\+::compute\+Norms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&}]{list\+\_\+dofs }\end{DoxyParamCaption}) const}
 
 
 
@@ -168,7 +168,7 @@ Compute the discrete Hcurl \textbackslash{}times Hdiv norm of a family of vector
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!dimensionSpace@{dimensionSpace}}
 \index{dimensionSpace@{dimensionSpace}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{dimensionSpace()}{dimensionSpace()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::dimension\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Magnetostatics\+::dimension\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -178,17 +178,17 @@ Returns the dimension of the magnetic field + potential space.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!nbSCDOFs@{nbSCDOFs}}
 \index{nbSCDOFs@{nbSCDOFs}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{nbSCDOFs()}{nbSCDOFs()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::nb\+S\+C\+D\+O\+Fs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Magnetostatics\+::nb\+SCDOFs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns the number of statically condensed D\+O\+Fs (here, the cell magnetic field D\+O\+Fs) 
+Returns the number of statically condensed DOFs (here, the cell magnetic field DOFs) 
 
 \mbox{\Hypertarget{structHArDCore3D_1_1Magnetostatics_ga7c5f649d4c5d14b11f52033b4cfff644}\label{structHArDCore3D_1_1Magnetostatics_ga7c5f649d4c5d14b11f52033b4cfff644}} 
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!scMatrix@{scMatrix}}
 \index{scMatrix@{scMatrix}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{scMatrix()}{scMatrix()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}{System\+Matrix\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::sc\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Magnetostatics\+::sc\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -198,7 +198,7 @@ Returns the static condensation recovery operator.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!scVector@{scVector}}
 \index{scVector@{scVector}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{scVector()}{scVector()}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::sc\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Magnetostatics\+::sc\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -208,7 +208,7 @@ Returns the static condensation rhs.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!sizeSystem@{sizeSystem}}
 \index{sizeSystem@{sizeSystem}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{sizeSystem()}{sizeSystem()}}
-{\footnotesize\ttfamily size\+\_\+t H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::size\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Magnetostatics\+::size\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -218,7 +218,7 @@ Returns the size of the statically condensed system.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!stabilizationParameter@{stabilizationParameter}}
 \index{stabilizationParameter@{stabilizationParameter}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{stabilizationParameter()}{stabilizationParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily double\& H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily double\& HAr\+DCore3\+D\+::\+Magnetostatics\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -228,7 +228,7 @@ Returns the stabilization parameter.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!stabilizationParameter@{stabilizationParameter}}
 \index{stabilizationParameter@{stabilizationParameter}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{stabilizationParameter()}{stabilizationParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const double\& H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const double\& HAr\+DCore3\+D\+::\+Magnetostatics\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -238,7 +238,7 @@ Returns the stabilization parameter.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!systemMatrix@{systemMatrix}}
 \index{systemMatrix@{systemMatrix}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{systemMatrix()}{systemMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}{System\+Matrix\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Magnetostatics\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -248,7 +248,7 @@ Returns the linear system matrix.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!systemMatrix@{systemMatrix}}
 \index{systemMatrix@{systemMatrix}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{systemMatrix()}{systemMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}{System\+Matrix\+Type}}\& H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDR__magnetostatic_ga30b00c985db10c16728d613f4b199405}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Magnetostatics\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -258,7 +258,7 @@ Returns the linear system matrix.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!systemVector@{systemVector}}
 \index{systemVector@{systemVector}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{systemVector()}{systemVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Magnetostatics\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -268,7 +268,7 @@ Returns the linear system right-\/hand side vector.
 \index{HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}!systemVector@{systemVector}}
 \index{systemVector@{systemVector}!HArDCore3D::Magnetostatics@{HArDCore3D::Magnetostatics}}
 \doxysubsubsection{\texorpdfstring{systemVector()}{systemVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd\& H\+Ar\+D\+Core3\+D\+::\+Magnetostatics\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Magnetostatics\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -278,7 +278,7 @@ Returns the linear system right-\/hand side vector.
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Schemes/\+D\+D\+R-\/magnetostatics/\mbox{\hyperlink{ddr-magnetostatics_8hpp}{ddr-\/magnetostatics.\+hpp}}\item 
-Schemes/\+D\+D\+R-\/magnetostatics/\mbox{\hyperlink{sddr-magnetostatics_8hpp}{sddr-\/magnetostatics.\+hpp}}\item 
-Schemes/\+D\+D\+R-\/magnetostatics/\mbox{\hyperlink{ddr-magnetostatics_8cpp}{ddr-\/magnetostatics.\+cpp}}\item 
-Schemes/\+D\+D\+R-\/magnetostatics/\mbox{\hyperlink{sddr-magnetostatics_8cpp}{sddr-\/magnetostatics.\+cpp}}\end{DoxyCompactItemize}
+Schemes/\+DDR-\/magnetostatics/\mbox{\hyperlink{ddr-magnetostatics_8hpp}{ddr-\/magnetostatics.\+hpp}}\item 
+Schemes/\+DDR-\/magnetostatics/\mbox{\hyperlink{sddr-magnetostatics_8hpp}{sddr-\/magnetostatics.\+hpp}}\item 
+Schemes/\+DDR-\/magnetostatics/\mbox{\hyperlink{ddr-magnetostatics_8cpp}{ddr-\/magnetostatics.\+cpp}}\item 
+Schemes/\+DDR-\/magnetostatics/\mbox{\hyperlink{sddr-magnetostatics_8cpp}{sddr-\/magnetostatics.\+cpp}}\end{DoxyCompactItemize}

@@ -8,105 +8,107 @@ Class providing a template for all objects (Vertex, Edge, Face, Cell) that appea
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$}}
+class \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$}}
 \begin{DoxyCompactList}\small\item\em Generic class to describe a cell, face, edge or vertex. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Mesh\+N\+D\+::\+Vertex}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Mesh\+ND\+::\+Vertex}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$
 \begin{DoxyCompactList}\small\item\em A Vertex is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with object\+\_\+dim = 0. \end{DoxyCompactList}\item 
-{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Mesh\+N\+D\+::\+Edge}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Mesh\+ND\+::\+Edge}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$
 \begin{DoxyCompactList}\small\item\em An Edge is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with object\+\_\+dim = 1. \end{DoxyCompactList}\item 
-{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Mesh\+N\+D\+::\+Face}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Mesh\+ND\+::\+Face}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$
 \begin{DoxyCompactList}\small\item\em A Face is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with object\+\_\+dim = space\+\_\+dim -\/ 1. \end{DoxyCompactList}\item 
-{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Mesh\+N\+D\+::\+Cell}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim$>$ }\\using \mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Mesh\+ND\+::\+Cell}} = \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$
 \begin{DoxyCompactList}\small\item\em A Cell is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with object\+\_\+dim = space\+\_\+dim. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Mesh_gaafc035d039cf28df95b9cefd00d738dc}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\+Mesh\+Object}} (size\+\_\+t index, \mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Simplices}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplices)
+\mbox{\hyperlink{group__Mesh_gaafc035d039cf28df95b9cefd00d738dc}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\+Mesh\+Object}} (size\+\_\+t index, \mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Simplices}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplices)
 \begin{DoxyCompactList}\small\item\em Constructor for a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} defined by its simplices. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Mesh_gad5402999ab9947c3233365a5d70667a2}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\+Mesh\+Object}} (size\+\_\+t index, \mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplex)
+\mbox{\hyperlink{group__Mesh_gad5402999ab9947c3233365a5d70667a2}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\+Mesh\+Object}} (size\+\_\+t index, \mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplex)
 \begin{DoxyCompactList}\small\item\em Constructor for a Simplex. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Mesh_ga07907aedf78ac130d9e0d652202b5580}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\+Mesh\+Object}} (size\+\_\+t index, \mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gacb0bf2d67d00416bcbbd60c2d1bd3781}{vertex}})
+\mbox{\hyperlink{group__Mesh_ga07907aedf78ac130d9e0d652202b5580}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\+Mesh\+Object}} (size\+\_\+t index, \mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gacb0bf2d67d00416bcbbd60c2d1bd3781}{vertex}})
 \begin{DoxyCompactList}\small\item\em Constructor for a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} defined by a single coordinate (Vertex) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Mesh_gac85c86df750542b4ea5a888075b1dcb0}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\+Mesh\+Object}} ()
+\mbox{\hyperlink{group__Mesh_gac85c86df750542b4ea5a888075b1dcb0}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\+Mesh\+Object}} ()
 \begin{DoxyCompactList}\small\item\em Null constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Mesh_ga1d57f1e307907cb47b96328c2f1705d6}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::$\sim$\+Mesh\+Object}} ()
+\mbox{\hyperlink{group__Mesh_ga1d57f1e307907cb47b96328c2f1705d6}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::$\sim$\+Mesh\+Object}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Mesh_ga8edaf60bec0e1645094e802fdc7211a9}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::global\+\_\+index}} () const
+size\+\_\+t \mbox{\hyperlink{group__Mesh_ga8edaf60bec0e1645094e802fdc7211a9}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::global\+\_\+index}} () const
 \begin{DoxyCompactList}\small\item\em Returns the global index of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{group__Mesh_ga5dd09ea688d0eb9b4cd0c8e0c970c8bf}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::diam}} () const
+double \mbox{\hyperlink{group__Mesh_ga5dd09ea688d0eb9b4cd0c8e0c970c8bf}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::diam}} () const
 \begin{DoxyCompactList}\small\item\em Returns the diameter of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{group__Mesh_ga8b0f3f433486dde8fdea341f262d5053}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::measure}} () const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga8955dce2ea9e95fc61751fc91763c1cd}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::center\+\_\+mass}} () const
+\begin{DoxyCompactList}\small\item\em Returns the center mass of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__Mesh_ga8b0f3f433486dde8fdea341f262d5053}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::measure}} () const
 \item 
-\mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Simplices}}$<$ space\+\_\+dim, object\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae1c358f11ceef50222e6feaac03dae64}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+simplices}} () const
+\mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Simplices}}$<$ space\+\_\+dim, object\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae1c358f11ceef50222e6feaac03dae64}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+simplices}} () const
 \begin{DoxyCompactList}\small\item\em Returns the simplices making up the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__Mesh_gad3e3369dca9c7df500afa41227bb2902}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::set\+\_\+global\+\_\+index}} (const size\+\_\+t idx)
+void \mbox{\hyperlink{group__Mesh_gad3e3369dca9c7df500afa41227bb2902}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::set\+\_\+global\+\_\+index}} (const size\+\_\+t idx)
 \begin{DoxyCompactList}\small\item\em Set the global index. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{group__Mesh_gabfefc0d130b14c4e628d9a8c41762914}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::is\+\_\+boundary}} ()
+bool \mbox{\hyperlink{group__Mesh_gabfefc0d130b14c4e628d9a8c41762914}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::is\+\_\+boundary}} ()
 \begin{DoxyCompactList}\small\item\em Returns true if \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} is a boundary object, false otherwise. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__Mesh_ga92c44918ffcdb15e7d89b26e871db125}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::set\+\_\+boundary}} (bool val)
+void \mbox{\hyperlink{group__Mesh_ga92c44918ffcdb15e7d89b26e871db125}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::set\+\_\+boundary}} (bool val)
 \begin{DoxyCompactList}\small\item\em Set the boundary value of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$ $>$ \mbox{\hyperlink{group__Mesh_ga688b89ae93b45e68f46ccdbd82dd8464}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+vertices}} () const
+std\+::vector$<$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$ $>$ \mbox{\hyperlink{group__Mesh_ga688b89ae93b45e68f46ccdbd82dd8464}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+vertices}} () const
 \begin{DoxyCompactList}\small\item\em Returns the vertices of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$ $>$ \mbox{\hyperlink{group__Mesh_ga3ee929f367a4fbd7d7ad080617288c11}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+edges}} () const
+std\+::vector$<$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$ $>$ \mbox{\hyperlink{group__Mesh_ga3ee929f367a4fbd7d7ad080617288c11}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+edges}} () const
 \begin{DoxyCompactList}\small\item\em Returns the edges of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$ $>$ \mbox{\hyperlink{group__Mesh_gaedb6e7d26bd42351ab55b4199ddbe297}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+faces}} () const
+std\+::vector$<$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$ $>$ \mbox{\hyperlink{group__Mesh_gaedb6e7d26bd42351ab55b4199ddbe297}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+faces}} () const
 \begin{DoxyCompactList}\small\item\em Returns the faces of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$ $>$ \mbox{\hyperlink{group__Mesh_ga7658f4f0aea527059523844cc2097af3}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+cells}} () const
+std\+::vector$<$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$ $>$ \mbox{\hyperlink{group__Mesh_ga7658f4f0aea527059523844cc2097af3}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+cells}} () const
 \begin{DoxyCompactList}\small\item\em Return the cells of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Mesh_ga452e8c9f4afba70dab5b668f0af3b6da}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+vertices}} () const
+size\+\_\+t \mbox{\hyperlink{group__Mesh_ga452e8c9f4afba70dab5b668f0af3b6da}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+vertices}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of vertices of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Mesh_gac47817d75ab87e8e61fcfdc2b32cb5a3}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+edges}} () const
+size\+\_\+t \mbox{\hyperlink{group__Mesh_gac47817d75ab87e8e61fcfdc2b32cb5a3}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+edges}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of edges of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Mesh_gaa4cbd825a424dc797b81d711a3f50e22}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+faces}} () const
+size\+\_\+t \mbox{\hyperlink{group__Mesh_gaa4cbd825a424dc797b81d711a3f50e22}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+faces}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of faces of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{group__Mesh_ga586c064e323c1c70b30dc8ea19421ce3}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+cells}} () const
+size\+\_\+t \mbox{\hyperlink{group__Mesh_ga586c064e323c1c70b30dc8ea19421ce3}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+cells}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of cells of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$ \mbox{\hyperlink{group__Mesh_gacb0bf2d67d00416bcbbd60c2d1bd3781}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::vertex}} (const size\+\_\+t i) const
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$ \mbox{\hyperlink{group__Mesh_gacb0bf2d67d00416bcbbd60c2d1bd3781}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::vertex}} (const size\+\_\+t i) const
 \begin{DoxyCompactList}\small\item\em Returns the i-\/th vertex of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$ \mbox{\hyperlink{group__Mesh_ga9cbef4ae8736a1f3aa6b7f3718de8ad2}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge}} (const size\+\_\+t i) const
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$ \mbox{\hyperlink{group__Mesh_ga9cbef4ae8736a1f3aa6b7f3718de8ad2}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge}} (const size\+\_\+t i) const
 \begin{DoxyCompactList}\small\item\em Returns the i-\/th edge of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$ \mbox{\hyperlink{group__Mesh_ga507f0961ffb2a8328fdc4787725602c7}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face}} (const size\+\_\+t i) const
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$ \mbox{\hyperlink{group__Mesh_ga507f0961ffb2a8328fdc4787725602c7}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face}} (const size\+\_\+t i) const
 \begin{DoxyCompactList}\small\item\em Returns the i-\/th face of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$ \mbox{\hyperlink{group__Mesh_ga59a73d89c5469a10a6d7e2d0a25a3789}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::cell}} (const size\+\_\+t i) const
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$ \mbox{\hyperlink{group__Mesh_ga59a73d89c5469a10a6d7e2d0a25a3789}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::cell}} (const size\+\_\+t i) const
 \begin{DoxyCompactList}\small\item\em Returns the i-\/th cell of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__Mesh_gabe86cc9ed0583634cd3bfb8122979ea6}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+vertex}} (\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$\mbox{\hyperlink{group__Mesh_gacb0bf2d67d00416bcbbd60c2d1bd3781}{vertex}})
+void \mbox{\hyperlink{group__Mesh_gabe86cc9ed0583634cd3bfb8122979ea6}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+vertex}} (\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$\mbox{\hyperlink{group__Mesh_gacb0bf2d67d00416bcbbd60c2d1bd3781}{vertex}})
 \begin{DoxyCompactList}\small\item\em Add a vertex to the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__Mesh_ga8769a3b78b388ecb9313c2a7d8e648cd}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+edge}} (\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga9cbef4ae8736a1f3aa6b7f3718de8ad2}{edge}})
+void \mbox{\hyperlink{group__Mesh_ga8769a3b78b388ecb9313c2a7d8e648cd}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+edge}} (\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga9cbef4ae8736a1f3aa6b7f3718de8ad2}{edge}})
 \begin{DoxyCompactList}\small\item\em Add an edge to the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__Mesh_ga28a7b6151c5bafb29ae44e6b419293ba}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+face}} (\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga507f0961ffb2a8328fdc4787725602c7}{face}})
+void \mbox{\hyperlink{group__Mesh_ga28a7b6151c5bafb29ae44e6b419293ba}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+face}} (\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga507f0961ffb2a8328fdc4787725602c7}{face}})
 \begin{DoxyCompactList}\small\item\em Add a face to the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__Mesh_gaf663efa763b4307b1b7bb2f6203e9883}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+cell}} (\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga59a73d89c5469a10a6d7e2d0a25a3789}{cell}})
+void \mbox{\hyperlink{group__Mesh_gaf663efa763b4307b1b7bb2f6203e9883}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+cell}} (\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga59a73d89c5469a10a6d7e2d0a25a3789}{cell}})
 \begin{DoxyCompactList}\small\item\em Add a cell to the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{group__Mesh_gaffbd25261dcf7169285e4c4395ce788d}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+vertex}} (const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$\mbox{\hyperlink{group__Mesh_gacb0bf2d67d00416bcbbd60c2d1bd3781}{vertex}}) const
+int \mbox{\hyperlink{group__Mesh_gaffbd25261dcf7169285e4c4395ce788d}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+vertex}} (const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$\mbox{\hyperlink{group__Mesh_gacb0bf2d67d00416bcbbd60c2d1bd3781}{vertex}}) const
 \begin{DoxyCompactList}\small\item\em Returns the local index of a vertex. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{group__Mesh_ga12fa290f4fea664c2de4a04b9c6b846b}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+edge}} (const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga9cbef4ae8736a1f3aa6b7f3718de8ad2}{edge}}) const
+int \mbox{\hyperlink{group__Mesh_ga12fa290f4fea664c2de4a04b9c6b846b}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+edge}} (const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga9cbef4ae8736a1f3aa6b7f3718de8ad2}{edge}}) const
 \begin{DoxyCompactList}\small\item\em Returns the local index of an edge. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{group__Mesh_gab71d5d1cdb1da02bf2d0ead9c6fd6e4f}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+face}} (const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga507f0961ffb2a8328fdc4787725602c7}{face}}) const
+int \mbox{\hyperlink{group__Mesh_gab71d5d1cdb1da02bf2d0ead9c6fd6e4f}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+face}} (const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga507f0961ffb2a8328fdc4787725602c7}{face}}) const
 \begin{DoxyCompactList}\small\item\em Returns the local index of a face. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{group__Mesh_gacba0cced3c0cd980fcee1abb80171f34}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+cell}} (const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga59a73d89c5469a10a6d7e2d0a25a3789}{cell}}) const
+int \mbox{\hyperlink{group__Mesh_gacba0cced3c0cd980fcee1abb80171f34}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+cell}} (const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$\mbox{\hyperlink{group__Mesh_ga59a73d89c5469a10a6d7e2d0a25a3789}{cell}}) const
 \begin{DoxyCompactList}\small\item\em Returns the local index of a cell. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga70e525257730123d4c331d11468c66bb}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::coords}} () const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga70e525257730123d4c331d11468c66bb}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::coords}} () const
 \begin{DoxyCompactList}\small\item\em Return the coordinates of a Vertex. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga5a365aeca45130fd8786b88b60c00165}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face\+\_\+normal}} (const size\+\_\+t face\+\_\+index) const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga5a365aeca45130fd8786b88b60c00165}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face\+\_\+normal}} (const size\+\_\+t face\+\_\+index) const
 \begin{DoxyCompactList}\small\item\em Return the outer normal of a Cell towards the Face located at face\+\_\+index. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae01af9ad1f4e2b6788a69ef2d0104071}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge\+\_\+normal}} (const size\+\_\+t edge\+\_\+index) const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae01af9ad1f4e2b6788a69ef2d0104071}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge\+\_\+normal}} (const size\+\_\+t edge\+\_\+index) const
 \begin{DoxyCompactList}\small\item\em Return the edge normal of a 2D object. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{group__Mesh_ga228570052980385cb87564da8096d801}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face\+\_\+orientation}} (const size\+\_\+t face\+\_\+index) const
+int \mbox{\hyperlink{group__Mesh_ga228570052980385cb87564da8096d801}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face\+\_\+orientation}} (const size\+\_\+t face\+\_\+index) const
 \begin{DoxyCompactList}\small\item\em Return the orientation of a Face. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{group__Mesh_ga39f476a9ddec51e9c930c79c33641b59}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge\+\_\+orientation}} (const size\+\_\+t edge\+\_\+index) const
+int \mbox{\hyperlink{group__Mesh_ga39f476a9ddec51e9c930c79c33641b59}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge\+\_\+orientation}} (const size\+\_\+t edge\+\_\+index) const
 \begin{DoxyCompactList}\small\item\em Return the orientation of a Edge (multiplied by edge\+\_\+normal, gives the outer normal to the face) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gadaf3f7f4977287819dc61cc845cbb900}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::normal}} () const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gadaf3f7f4977287819dc61cc845cbb900}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::normal}} () const
 \begin{DoxyCompactList}\small\item\em Return the normal of a Face. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae3cc3947e14ec1b24017b560c4720717}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::tangent}} () const
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae3cc3947e14ec1b24017b560c4720717}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::tangent}} () const
 \begin{DoxyCompactList}\small\item\em Return the tangent of a Edge. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__Mesh_gaa55eff2444eb070396dcab2871f1c234}{Mesh\+N\+D\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::construct\+\_\+face\+\_\+normals}} ()
+void \mbox{\hyperlink{group__Mesh_gaa55eff2444eb070396dcab2871f1c234}{Mesh\+ND\+::\+Mesh\+Object$<$ space\+\_\+dim, object\+\_\+dim $>$\+::construct\+\_\+face\+\_\+normals}} ()
 \begin{DoxyCompactList}\small\item\em Set the directions of the face normals of a cell. \end{DoxyCompactList}\item 
-{\footnotesize template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ }\\\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga5012e8065ccdd5fae18b8ed6d49831a9}{Mesh\+N\+D\+::simplex\+\_\+center\+\_\+mass}} (\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplex)
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ }\\\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_ga5012e8065ccdd5fae18b8ed6d49831a9}{Mesh\+ND\+::simplex\+\_\+center\+\_\+mass}} (\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplex)
 \begin{DoxyCompactList}\small\item\em Method to find the center mass of an arbitrary simplex in arbitrary space. \end{DoxyCompactList}\item 
-{\footnotesize template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ }\\double \mbox{\hyperlink{group__Mesh_ga220351b3c86d8dff266cce6ab5a97b68}{Mesh\+N\+D\+::simplex\+\_\+measure}} (\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplex)
+{\footnotesize template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ }\\double \mbox{\hyperlink{group__Mesh_ga220351b3c86d8dff266cce6ab5a97b68}{Mesh\+ND\+::simplex\+\_\+measure}} (\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$ simplex)
 \begin{DoxyCompactList}\small\item\em Method to find the Lebesgue measure of an arbitrary simplex in arbitrary space. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -121,7 +123,7 @@ Class providing a template for all objects (Vertex, Edge, Face, Cell) that appea
 \index{Cell@{Cell}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{Cell}{Cell}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim$>$ \\
-using \mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Mesh\+N\+D\+::\+Cell}} = typedef \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, space\+\_\+dim$>$}
+using \mbox{\hyperlink{group__Mesh_gaccc346b5620989466f9bb142c1680ac7}{Mesh\+ND\+::\+Cell}} = typedef \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, space\+\_\+dim$>$}
 
 
 
@@ -132,7 +134,7 @@ A Cell is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with obje
 \index{Edge@{Edge}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{Edge}{Edge}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim$>$ \\
-using \mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Mesh\+N\+D\+::\+Edge}} = typedef \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, 1$>$}
+using \mbox{\hyperlink{group__Mesh_gaf356f9fa5a1a50c9cfffcb111586dfdd}{Mesh\+ND\+::\+Edge}} = typedef \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, 1$>$}
 
 
 
@@ -143,7 +145,7 @@ An Edge is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with obj
 \index{Face@{Face}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{Face}{Face}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim$>$ \\
-using \mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Mesh\+N\+D\+::\+Face}} = typedef \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, space\+\_\+dim -\/ 1$>$}
+using \mbox{\hyperlink{group__Mesh_ga50ded5b393fb1cc9159dc166d9158dfc}{Mesh\+ND\+::\+Face}} = typedef \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, space\+\_\+dim -\/ 1$>$}
 
 
 
@@ -154,7 +156,7 @@ A Face is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with obje
 \index{Vertex@{Vertex}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{Vertex}{Vertex}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim$>$ \\
-using \mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Mesh\+N\+D\+::\+Vertex}} = typedef \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, 0$>$}
+using \mbox{\hyperlink{group__Mesh_ga69b766413004e6e89503f8b6c2f541f6}{Mesh\+ND\+::\+Vertex}} = typedef \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, 0$>$}
 
 
 
@@ -168,7 +170,7 @@ A Vertex is a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} with ob
 \index{add\_cell@{add\_cell}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{add\_cell()}{add\_cell()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$}]{cell }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$}]{cell }\end{DoxyParamCaption})}
 
 
 
@@ -179,7 +181,7 @@ Add a cell to the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}.
 \index{add\_edge@{add\_edge}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{add\_edge()}{add\_edge()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$}]{edge }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$}]{edge }\end{DoxyParamCaption})}
 
 
 
@@ -190,7 +192,7 @@ Add an edge to the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}.
 \index{add\_face@{add\_face}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{add\_face()}{add\_face()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$}]{face }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$}]{face }\end{DoxyParamCaption})}
 
 
 
@@ -201,7 +203,7 @@ Add a face to the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}.
 \index{add\_vertex@{add\_vertex}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{add\_vertex()}{add\_vertex()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$}]{vertex }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::add\+\_\+vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$}]{vertex }\end{DoxyParamCaption})}
 
 
 
@@ -212,18 +214,29 @@ Add a vertex to the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}.
 \index{cell@{cell}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{cell()}{cell()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::cell (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{i }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::cell (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{i }\end{DoxyParamCaption}) const}
 
 
 
 Returns the i-\/th cell of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. 
 
-\mbox{\Hypertarget{group__Mesh_gaa55eff2444eb070396dcab2871f1c234}\label{group__Mesh_gaa55eff2444eb070396dcab2871f1c234}} 
+\mbox{\Hypertarget{group__Mesh_ga8955dce2ea9e95fc61751fc91763c1cd}\label{group__Mesh_ga8955dce2ea9e95fc61751fc91763c1cd}} 
+\index{Mesh@{Mesh}!center\_mass@{center\_mass}}
+\index{center\_mass@{center\_mass}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{center\_mass()}{center\_mass()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$space\+\_\+dim$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::center\+\_\+mass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the center mass of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. 
+
+Returns the Lebesgue measure of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} \mbox{\Hypertarget{group__Mesh_gaa55eff2444eb070396dcab2871f1c234}\label{group__Mesh_gaa55eff2444eb070396dcab2871f1c234}} 
 \index{Mesh@{Mesh}!construct\_face\_normals@{construct\_face\_normals}}
 \index{construct\_face\_normals@{construct\_face\_normals}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{construct\_face\_normals()}{construct\_face\_normals()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::construct\+\_\+face\+\_\+normals}
+void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::construct\+\_\+face\+\_\+normals}
 
 
 
@@ -234,7 +247,7 @@ Set the directions of the face normals of a cell.
 \index{coords@{coords}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{coords()}{coords()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::coords}
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::coords}
 
 
 
@@ -245,7 +258,7 @@ Return the coordinates of a Vertex.
 \index{diam@{diam}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{diam()}{diam()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-double \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::diam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+double \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::diam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -256,7 +269,7 @@ Returns the diameter of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Ob
 \index{edge@{edge}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{edge()}{edge()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{i }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{i }\end{DoxyParamCaption}) const}
 
 
 
@@ -267,7 +280,7 @@ Returns the i-\/th edge of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\
 \index{edge\_normal@{edge\_normal}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{edge\_normal()}{edge\_normal()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge\+\_\+normal (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{edge\+\_\+index }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge\+\_\+normal (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{edge\+\_\+index }\end{DoxyParamCaption}) const}
 
 
 
@@ -278,7 +291,7 @@ Return the edge normal of a 2D object.
 \index{edge\_orientation@{edge\_orientation}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{edge\_orientation()}{edge\_orientation()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge\+\_\+orientation (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{edge\+\_\+index }\end{DoxyParamCaption}) const}
+int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::edge\+\_\+orientation (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{edge\+\_\+index }\end{DoxyParamCaption}) const}
 
 
 
@@ -289,7 +302,7 @@ Return the orientation of a Edge (multiplied by edge\+\_\+normal, gives the oute
 \index{face@{face}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{face()}{face()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{i }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{i }\end{DoxyParamCaption}) const}
 
 
 
@@ -300,7 +313,7 @@ Returns the i-\/th face of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\
 \index{face\_normal@{face\_normal}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{face\_normal()}{face\_normal()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face\+\_\+normal (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{face\+\_\+index }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face\+\_\+normal (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{face\+\_\+index }\end{DoxyParamCaption}) const}
 
 
 
@@ -311,7 +324,7 @@ Return the outer normal of a Cell towards the Face located at face\+\_\+index.
 \index{face\_orientation@{face\_orientation}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{face\_orientation()}{face\_orientation()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face\+\_\+orientation (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{face\+\_\+index }\end{DoxyParamCaption}) const}
+int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::face\+\_\+orientation (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{face\+\_\+index }\end{DoxyParamCaption}) const}
 
 
 
@@ -322,7 +335,7 @@ Return the orientation of a Face.
 \index{get\_cells@{get\_cells}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{get\_cells()}{get\_cells()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-std\+::vector$<$\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, space\+\_\+dim$>$$\ast$$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+std\+::vector$<$\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, space\+\_\+dim$>$$\ast$$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -333,7 +346,7 @@ Return the cells of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object
 \index{get\_edges@{get\_edges}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{get\_edges()}{get\_edges()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-std\+::vector$<$\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, 1$>$$\ast$$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+std\+::vector$<$\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, 1$>$$\ast$$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -344,7 +357,7 @@ Returns the edges of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Objec
 \index{get\_faces@{get\_faces}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{get\_faces()}{get\_faces()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-std\+::vector$<$\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, space\+\_\+dim -\/ 1$>$$\ast$$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+std\+::vector$<$\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, space\+\_\+dim -\/ 1$>$$\ast$$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -355,7 +368,7 @@ Returns the faces of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Objec
 \index{get\_simplices@{get\_simplices}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{get\_simplices()}{get\_simplices()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Simplices}}$<$space\+\_\+dim, object\+\_\+dim$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+simplices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Simplices}}$<$space\+\_\+dim, object\+\_\+dim$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+simplices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -366,7 +379,7 @@ Returns the simplices making up the \mbox{\hyperlink{classMeshND_1_1MeshObject}{
 \index{get\_vertices@{get\_vertices}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{get\_vertices()}{get\_vertices()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-std\+::vector$<$\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, 0$>$$\ast$$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+std\+::vector$<$\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$space\+\_\+dim, 0$>$$\ast$$>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::get\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -377,7 +390,7 @@ Returns the vertices of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Ob
 \index{global\_index@{global\_index}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{global\_index()}{global\_index()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-size\+\_\+t \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::global\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+size\+\_\+t \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::global\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -388,7 +401,7 @@ Returns the global index of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh
 \index{index\_cell@{index\_cell}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{index\_cell()}{index\_cell()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+cell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$}]{cell }\end{DoxyParamCaption}) const}
+int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+cell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim $>$ $\ast$}]{cell }\end{DoxyParamCaption}) const}
 
 
 
@@ -399,7 +412,7 @@ Returns the local index of a cell.
 \index{index\_edge@{index\_edge}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{index\_edge()}{index\_edge()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+edge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$}]{edge }\end{DoxyParamCaption}) const}
+int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+edge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$}]{edge }\end{DoxyParamCaption}) const}
 
 
 
@@ -410,7 +423,7 @@ Returns the local index of an edge.
 \index{index\_face@{index\_face}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{index\_face()}{index\_face()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+face (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$}]{face }\end{DoxyParamCaption}) const}
+int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+face (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, space\+\_\+dim -\/ 1 $>$ $\ast$}]{face }\end{DoxyParamCaption}) const}
 
 
 
@@ -421,7 +434,7 @@ Returns the local index of a face.
 \index{index\_vertex@{index\_vertex}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{index\_vertex()}{index\_vertex()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+vertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$}]{vertex }\end{DoxyParamCaption}) const}
+int \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::index\+\_\+vertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$}]{vertex }\end{DoxyParamCaption}) const}
 
 
 
@@ -432,7 +445,7 @@ Returns the local index of a vertex.
 \index{is\_boundary@{is\_boundary}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{is\_boundary()}{is\_boundary()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-bool \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::is\+\_\+boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::is\+\_\+boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -443,14 +456,14 @@ Returns true if \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} is a 
 \index{measure@{measure}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{measure()}{measure()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-double \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::measure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+double \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::measure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{group__Mesh_gac85c86df750542b4ea5a888075b1dcb0}\label{group__Mesh_gac85c86df750542b4ea5a888075b1dcb0}} 
 \index{Mesh@{Mesh}!MeshObject@{MeshObject}}
 \index{MeshObject@{MeshObject}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{MeshObject()}{MeshObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}}
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}}
 
 
 
@@ -461,7 +474,7 @@ Null constructor.
 \index{MeshObject@{MeshObject}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{MeshObject()}{MeshObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$}]{simplex }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$}]{simplex }\end{DoxyParamCaption})}
 
 
 
@@ -472,7 +485,7 @@ Constructor for a Simplex.
 \index{MeshObject@{MeshObject}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{MeshObject()}{MeshObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{\mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Simplices}}$<$ space\+\_\+dim, object\+\_\+dim $>$}]{simplices }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{\mbox{\hyperlink{namespaceMeshND_a4d216a3ef63fb3cf764b405b2b8e9db2}{Simplices}}$<$ space\+\_\+dim, object\+\_\+dim $>$}]{simplices }\end{DoxyParamCaption})}
 
 
 
@@ -483,7 +496,7 @@ Constructor for a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} def
 \index{MeshObject@{MeshObject}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{MeshObject()}{MeshObject()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$}]{vertex }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$}]{vertex }\end{DoxyParamCaption})}
 
 
 
@@ -494,7 +507,7 @@ Constructor for a \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} def
 \index{n\_cells@{n\_cells}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{n\_cells()}{n\_cells()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-size\+\_\+t \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+size\+\_\+t \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -505,7 +518,7 @@ Returns the number of cells of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{M
 \index{n\_edges@{n\_edges}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{n\_edges()}{n\_edges()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-size\+\_\+t \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+size\+\_\+t \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -516,7 +529,7 @@ Returns the number of edges of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{M
 \index{n\_faces@{n\_faces}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{n\_faces()}{n\_faces()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-size\+\_\+t \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+size\+\_\+t \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -527,7 +540,7 @@ Returns the number of faces of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{M
 \index{n\_vertices@{n\_vertices}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{n\_vertices()}{n\_vertices()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-size\+\_\+t \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+size\+\_\+t \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::n\+\_\+vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -538,7 +551,7 @@ Returns the number of vertices of the \mbox{\hyperlink{classMeshND_1_1MeshObject
 \index{normal@{normal}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{normal()}{normal()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::normal}
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::normal}
 
 
 
@@ -549,7 +562,7 @@ Return the normal of a Face.
 \index{set\_boundary@{set\_boundary}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{set\_boundary()}{set\_boundary()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::set\+\_\+boundary (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::set\+\_\+boundary (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -560,7 +573,7 @@ Set the boundary value of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+
 \index{set\_global\_index@{set\_global\_index}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{set\_global\_index()}{set\_global\_index()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::set\+\_\+global\+\_\+index (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::set\+\_\+global\+\_\+index (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -571,7 +584,7 @@ Set the global index.
 \index{simplex\_center\_mass@{simplex\_center\_mass}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{simplex\_center\_mass()}{simplex\_center\_mass()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ Mesh\+N\+D\+::simplex\+\_\+center\+\_\+mass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$}]{simplex }\end{DoxyParamCaption})}
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ Mesh\+ND\+::simplex\+\_\+center\+\_\+mass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$}]{simplex }\end{DoxyParamCaption})}
 
 
 
@@ -582,7 +595,7 @@ Method to find the center mass of an arbitrary simplex in arbitrary space.
 \index{simplex\_measure@{simplex\_measure}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{simplex\_measure()}{simplex\_measure()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-double Mesh\+N\+D\+::simplex\+\_\+measure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$}]{simplex }\end{DoxyParamCaption})}
+double Mesh\+ND\+::simplex\+\_\+measure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceMeshND_ac5a96f656e86f5a40162961d590059e4}{Simplex}}$<$ space\+\_\+dim, object\+\_\+dim $>$}]{simplex }\end{DoxyParamCaption})}
 
 
 
@@ -593,7 +606,7 @@ Method to find the Lebesgue measure of an arbitrary simplex in arbitrary space.
 \index{tangent@{tangent}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{tangent()}{tangent()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::tangent}
+\mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::tangent}
 
 
 
@@ -604,7 +617,7 @@ Return the tangent of a Edge.
 \index{vertex@{vertex}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{vertex()}{vertex()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::vertex (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{i }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::vertex (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{i }\end{DoxyParamCaption}) const}
 
 
 
@@ -615,7 +628,7 @@ Returns the i-\/th vertex of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mes
 \index{````~MeshObject@{$\sim$MeshObject}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{$\sim$MeshObject()}{~MeshObject()}}
 {\footnotesize\ttfamily template$<$size\+\_\+t space\+\_\+dim, size\+\_\+t object\+\_\+dim$>$ \\
-\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+N\+D\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::$\sim$\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}}
+\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+ND\+::\+Mesh\+Object}}$<$ space\+\_\+dim, object\+\_\+dim $>$\+::$\sim$\mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}}
 
 
 

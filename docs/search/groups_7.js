@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['testcases_1798',['TestCases',['../group__TestCases.html',1,'']]]
+  ['quadratures_2314',['Quadratures',['../group__Quadratures.html',1,'']]]
 ];

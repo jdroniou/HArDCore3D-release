@@ -1,8 +1,8 @@
-\hypertarget{group__HHO__DiffAdvecReac}{}\doxysection{H\+H\+O\+\_\+\+Diff\+Advec\+Reac}
+\hypertarget{group__HHO__DiffAdvecReac}{}\doxysection{HHO\+\_\+\+Diff\+Advec\+Reac}
 \label{group__HHO__DiffAdvecReac}\index{HHO\_DiffAdvecReac@{HHO\_DiffAdvecReac}}
 
 
-H\+HO scheme for a diffusion-\/advection-\/reaction scheme.  
+HHO scheme for a diffusion-\/advection-\/reaction scheme.  
 
 
 \doxysubsection*{Functions}
@@ -34,7 +34,7 @@ bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga52a6597e4532a190b869cddd4b5291
 
 
 \doxysubsection{Detailed Description}
-H\+HO scheme for a diffusion-\/advection-\/reaction scheme. 
+HHO scheme for a diffusion-\/advection-\/reaction scheme. 
 
 
 
@@ -43,12 +43,35 @@ H\+HO scheme for a diffusion-\/advection-\/reaction scheme.
 \index{HHO\_DiffAdvecReac@{HHO\_DiffAdvecReac}!program\_options@{program\_options}}
 \index{program\_options@{program\_options}!HHO\_DiffAdvecReac@{HHO\_DiffAdvecReac}}
 \doxysubsubsection{\texorpdfstring{program\_options()}{program\_options()}}
-{\footnotesize\ttfamily bool program\+\_\+options (\begin{DoxyParamCaption}\item[{const int}]{,  }\item[{const char $\ast$}]{\mbox{[}$\,$\mbox{]},  }\item[{std\+::string \&}]{,  }\item[{std\+::string \&}]{,  }\item[{std\+::vector$<$ int $>$ \&}]{,  }\item[{size\+\_\+t \&}]{,  }\item[{size\+\_\+t \&}]{,  }\item[{std\+::string \&}]{,  }\item[{bool \&}]{,  }\item[{bool \&}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool program\+\_\+options (\begin{DoxyParamCaption}\item[{const int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{std\+::string \&}]{mesh\+\_\+name,  }\item[{std\+::string \&}]{bc\+\_\+id,  }\item[{std\+::vector$<$ int $>$ \&}]{id\+\_\+tcase,  }\item[{size\+\_\+t \&}]{L,  }\item[{size\+\_\+t \&}]{K,  }\item[{std\+::string \&}]{plot\+\_\+file,  }\item[{bool \&}]{use\+\_\+threads,  }\item[{bool \&}]{export\+\_\+matrix }\end{DoxyParamCaption})}
 
 
 
 A method to set all program paramters from options passed to the main function. Returns true if options are valid, false otherwise. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of options passed to the main function \\
+\hline
+{\em argv} & An array of all options passed to the main function \\
+\hline
+{\em mesh\+\_\+name} & The mesh name \\
+\hline
+{\em bc\+\_\+id} & The boundary condition ID \\
+\hline
+{\em id\+\_\+tcase} & The test case ID \\
+\hline
+{\em L} & Cell polynomial degree \\
+\hline
+{\em K} & Edge polynomial degree \\
+\hline
+{\em plot\+\_\+file} & File to plot to \\
+\hline
+{\em use\+\_\+threads} & Option to use multi-\/threading \\
+\hline
+{\em export\+\_\+matrix} & Option to export the system matrix \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Variable Documentation}

@@ -1,0 +1,119 @@
+\hypertarget{structHArDCore3D_1_1YangMills}{}\doxysection{HAr\+DCore3D\+::Yang\+Mills Struct Reference}
+\label{structHArDCore3D_1_1YangMills}\index{HArDCore3D::YangMills@{HArDCore3D::YangMills}}
+
+
+Assemble a \mbox{\hyperlink{structHArDCore3D_1_1YangMills}{Yang\+Mills}} problem.  
+
+
+
+
+{\ttfamily \#include $<$laddr-\/yangmills-\/lm.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{group__DDR__yangmills_gac81bce0ff51c17ad8d2c3755c4f5606a}{System\+Matrix\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__yangmills_ga08dfffdff13e9847dc691cfe2bcae98f}{Forcing\+Term\+Type}}
+\begin{DoxyCompactList}\small\item\em Base functions. \end{DoxyCompactList}\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__yangmills_ga15d4a3f1aa8409b3cbb5a1519617de66}{Electric\+Field\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__yangmills_ga8a1cc95d30ba3e81076d1402835683b3}{Magnetic\+Field\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const double \&, const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__yangmills_ga09f17997e553127fc664f41d41bde84d}{TForcing\+Term\+Type}}
+\begin{DoxyCompactList}\small\item\em Base functions with time component. \end{DoxyCompactList}\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const double \&, const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__yangmills_ga7912caab91d255d1ca31b511eaa162b4}{TElectric\+Field\+Type}}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const double \&, const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__yangmills_gab152c940e82f73d79b196f0d1ee4f381}{TMagnetic\+Field\+Type}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{group__DDR__yangmills_ga08dfffdff13e9847dc691cfe2bcae98f}{Forcing\+Term\+Type}} $>$ \mbox{\hyperlink{group__DDR__yangmills_gaedfef51bc9558c0d9e6bbbe92c556147}{LAForcing\+Term\+Type}}
+\begin{DoxyCompactList}\small\item\em Lie algebra valued functions (vector of dim Lie algebra) \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{group__DDR__yangmills_ga15d4a3f1aa8409b3cbb5a1519617de66}{Electric\+Field\+Type}} $>$ \mbox{\hyperlink{group__DDR__yangmills_gaba2da47d3f10a8e5fef0a63989c6d907}{LAElectric\+Field\+Type}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{group__DDR__yangmills_ga8a1cc95d30ba3e81076d1402835683b3}{Magnetic\+Field\+Type}} $>$ \mbox{\hyperlink{group__DDR__yangmills_ga78c8b03036549d6f96710471e8701372}{LAMagnetic\+Field\+Type}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{group__DDR__yangmills_ga09f17997e553127fc664f41d41bde84d}{TForcing\+Term\+Type}} $>$ \mbox{\hyperlink{group__DDR__yangmills_ga4498865a52be5e989da950355f95480e}{TLAForcing\+Term\+Type}}
+\begin{DoxyCompactList}\small\item\em Lie algebra valued functions with time component. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{group__DDR__yangmills_ga7912caab91d255d1ca31b511eaa162b4}{TElectric\+Field\+Type}} $>$ \mbox{\hyperlink{group__DDR__yangmills_ga6d7e437f321bb8610012519c5a3ff09d}{TLAElectric\+Field\+Type}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{group__DDR__yangmills_gab152c940e82f73d79b196f0d1ee4f381}{TMagnetic\+Field\+Type}} $>$ \mbox{\hyperlink{group__DDR__yangmills_gaf2a356b03717a40e43597ce4457c2d45}{TLAMagnetic\+Field\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__DDR__yangmills_gad4dbf0d3a0f7b335667d296518aa1552}{Yang\+Mills}} (const \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}} \&ddrcore, const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&liealgebra, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DDR__yangmills_gaab65fd1e623305a09fa0a6ea944b3968}{assemble\+Linear\+System}} (double dt)
+\begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DDR__yangmills_gaefdb7b67445854fc078bb94553fd6227}{set\+System\+Vector}} (const Eigen\+::\+Vector\+Xd \&interp\+\_\+f, const Eigen\+::\+Vector\+Xd \&interp\+\_\+dE, const Eigen\+::\+Vector\+Xd \&interp\+\_\+A, const Eigen\+::\+Vector\+Xd \&E\+\_\+old, const Eigen\+::\+Vector\+Xd \&A\+\_\+old, double dt, double theta, double nonlinear\+\_\+coeff)
+\begin{DoxyCompactList}\small\item\em Sets system vector for the nonlinear problem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DDR__yangmills_gaef7c197c37616db0074d99ee8b4d4a2a}{assemble\+System\+Newton}} (const Eigen\+::\+Vector\+Xd \&E\+\_\+i, const Eigen\+::\+Vector\+Xd \&A\+\_\+i, const Eigen\+::\+Vector\+Xd \&Elambdac\+\_\+k, const Eigen\+::\+Vector\+Xd \&sys\+Vec, double dt, double theta, double nonlinear\+\_\+coeff)
+\begin{DoxyCompactList}\small\item\em Assembles the system for Newton iterations. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__DDR__yangmills_gaaa13f9fc6bc43edacd536035645c4956}{stopping\+Crit}} (const Eigen\+::\+Vector\+Xd \&v, const Eigen\+::\+Vector\+Xd \&u)
+\begin{DoxyCompactList}\small\item\em Stops once changes become small. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__DDR__yangmills_ga7af4415d7c07ffaed0a6ce4b258a3fd1}{stopping\+Crit2}} (const Eigen\+::\+Vector\+Xd \&Elambda\+\_\+k, const Eigen\+::\+Vector\+Xd \&E\+\_\+i, const Eigen\+::\+Vector\+Xd \&A\+\_\+i, const Eigen\+::\+Vector\+Xd \&sys\+Vec, double dt, double theta, double nonlinear\+\_\+coeff)
+\begin{DoxyCompactList}\small\item\em Stops once close enough to system vector for nonlinear problem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__DDR__yangmills_ga0c68f3a586499131815b4db280f6d5bd}{add\+Boundary\+Conditions}} (const \mbox{\hyperlink{group__DDR__yangmills_ga78c8b03036549d6f96710471e8701372}{LAMagnetic\+Field\+Type}} \&curl\+\_\+A, double dt)
+\begin{DoxyCompactList}\small\item\em Adds boundary condition for chosen solution to the system vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDR__yangmills_gab861214e7d59f4a352cc119932ccd208}{compute\+Initial\+Conditions}} (const Eigen\+::\+Matrix\+Xd \&Eh, const Eigen\+::\+Matrix\+Xd \&Ah, const double nonlinear\+\_\+coeff, const size\+\_\+t solver)
+\begin{DoxyCompactList}\small\item\em Computes the projected initial conditions that satisfy the constraint. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDR__yangmills_ga137ce38b721fa63ec052802cc37891a9}{eps\+Bkt\+\_\+v}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&v) const
+\begin{DoxyCompactList}\small\item\em Calculates the matrix of Hstar\mbox{[}v,.\mbox{]} in element index iT. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDR__yangmills_ga3730fbcd2c9fae4eee0b7a12ff07c169}{L2v\+\_\+\+Bkt}} (size\+\_\+t iT, boost\+::multi\+\_\+array$<$ double, 3 $>$ \&int\+Pci\+Pcj\+Pgk, const Eigen\+::\+Vector\+Xd \&v, const size\+\_\+t \&entry) const
+\begin{DoxyCompactList}\small\item\em Wrapper to plug vector into L2 integral product\+: int (Pcurl 1,\mbox{[}Pcurl 2, Pgrad 3\mbox{]}) \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDR__yangmills_ga709c6f792ee843147b9ad27379d76f22}{L2v\+\_\+eps\+Bkt}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&v\+\_\+T, const Eigen\+::\+Matrix\+Xd \&L2prod) const
+\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__yangmills_ga2211f57aa6040bc6ece68ecfed9af94f}{dimension}} () const
+\begin{DoxyCompactList}\small\item\em Returns the global problem dimension. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__DDR__yangmills_ga6482f6aa2cf8571951eefb1e9a3c3796}{size\+System}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the system. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__DDR__yangmills_ga106e0a2ac3ae3b6130cd22a8e72d70e5}{lie\+Alg}} () const
+\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LAXGrad}{LAXGrad}} \& \mbox{\hyperlink{group__DDR__yangmills_ga842c50789bb7dea1689b6f7c0a765207}{la\+XGrad}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1LAXGrad}{LAXGrad}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LAXCurl}{LAXCurl}} \& \mbox{\hyperlink{group__DDR__yangmills_ga016b1df7c605a8129478b1cedb7f1c85}{la\+XCurl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1LAXCurl}{LAXCurl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LAXDiv}{LAXDiv}} \& \mbox{\hyperlink{group__DDR__yangmills_gadf3a804ad9cc072e4cf3aa8565b454ec}{la\+XDiv}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1LAXCurl}{LAXCurl}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}} \& \mbox{\hyperlink{group__DDR__yangmills_ga46790f7e228d074e5c1a44129e59a7ea}{x\+Grad}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \& \mbox{\hyperlink{group__DDR__yangmills_gaab93e1e240657ef5db88a3c38d245e30}{x\+Curl}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}} \& \mbox{\hyperlink{group__DDR__yangmills_gacae463daa6a7fac48668bbb749005945}{x\+Div}} () const
+\begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDR__yangmills_gac81bce0ff51c17ad8d2c3755c4f5606a}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__DDR__yangmills_gacc657607c0c7d1ac46e78813afbd8c2c}{system\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__DDR__yangmills_gac81bce0ff51c17ad8d2c3755c4f5606a}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__DDR__yangmills_ga453b528697c354777b57a079a5ba4289}{system\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__yangmills_gae45049dcce6efd1d31e16380b52e8a24}{system\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__DDR__yangmills_ga718cbf42bc46aab26ca663a416f42c60}{system\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{group__DDR__yangmills_ga93536edcc0d544f4fa8289403c1dbe2d}{stabilization\+Parameter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{group__DDR__yangmills_gaa5c216f233ab4e8e953ef9a2243aac6d}{stabilization\+Parameter}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structHArDCore3D_1_1YangMillsNorms}{Yang\+Mills\+Norms}} $>$ \mbox{\hyperlink{group__DDR__yangmills_ga671117de555f5c6fee6be3555c7ca3fb}{compute\+Yang\+Mills\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
+\begin{DoxyCompactList}\small\item\em Compute the discrete L2 norms, for a family of Eigen\+::\+Vector\+Xd representing the electric field and potential. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename out\+Value , typename TFct $>$ }\\std\+::function$<$ out\+Value(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__DDR__yangmills_ga9bc77c809d069535189419076f0015f4}{contract\+Para}} (const TFct \&F, double t) const
+\begin{DoxyCompactList}\small\item\em Takes a two parameter function and a value and returns a function with the first parameter fixed to value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename out\+Value , typename Fct , typename TFct $>$ }\\std\+::vector$<$ Fct $>$ \mbox{\hyperlink{group__DDR__yangmills_gaf4435492b7b709de1befac2a96da9701}{contract\+Para\+LA}} (const std\+::vector$<$ TFct $>$ \&TF, double t) const
+\begin{DoxyCompactList}\small\item\em Takes a vector of two parameter functions and a value and returns a function with the first parameter fixed to value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__DDR__yangmills_ga05c5c492f5e2444e586af65cb5b80f4c}{compute\+Residual}} (const Eigen\+::\+Vector\+Xd \&x) const
+\begin{DoxyCompactList}\small\item\em Calculates residual with current matrix and rhs from given x (m\+\_\+\+A$\ast$x = m\+\_\+b) \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDR__yangmills_ga4aa8dcbe623533ef7b0555500d74db3a}{compute\+Constraint}} (const Eigen\+::\+Vector\+Xd \&E, const Eigen\+::\+Vector\+Xd \&A, const double nonlinear\+\_\+coeff)
+\begin{DoxyCompactList}\small\item\em Computes the constraint \mbox{[}E, grad P\textquotesingle{}\mbox{]} + int $<$E, \mbox{[}A, P\textquotesingle{}\mbox{]}$>$ for the DOFs. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__DDR__yangmills_gaa41aff353059359730d693c683d327fb}{compute\+Constraint\+Norm}} (const Eigen\+::\+Vector\+Xd \&Ch, const size\+\_\+t itersolver) const
+\begin{DoxyCompactList}\small\item\em Solves a system to calculate the norm of the constraint (in the dual space of La\+Xgrad) \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{group__DDR__yangmills_gac8d0608937397ae2819169856c93fcfb}{compute\+Condition\+Num}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Assemble a \mbox{\hyperlink{structHArDCore3D_1_1YangMills}{Yang\+Mills}} problem. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Schemes/\+LADDR-\/yangmills/\mbox{\hyperlink{laddr-yangmills-lm_8hpp}{laddr-\/yangmills-\/lm.\+hpp}}\item 
+Schemes/\+LADDR-\/yangmills/\mbox{\hyperlink{laddr-yangmills-lm_8cpp}{laddr-\/yangmills-\/lm.\+cpp}}\end{DoxyCompactItemize}
