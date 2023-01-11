@@ -47,7 +47,7 @@ if(UMFPACK_LIBRARIES)
 endif(UMFPACK_LIBRARIES)
 
 include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(UMFPACK DEFAULT_MSG
+find_package_handle_standard_args(Umfpack DEFAULT_MSG
                                   UMFPACK_INCLUDES UMFPACK_LIBRARIES)
 
 mark_as_advanced(UMFPACK_INCLUDES UMFPACK_LIBRARIES AMD_LIBRARY COLAMD_LIBRARY CHOLMOD_LIBRARY SUITESPARSE_LIBRARY)
