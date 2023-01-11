@@ -3,8 +3,15 @@
 #ifndef _MESHND_HPP
 #define _MESHND_HPP
 
+
+/*!
+* \addtogroup Mesh
+* @{
+*/
+
 namespace MeshND
 {
+    /// Class to describe a mesh
     template <std::size_t dimension>
     class Mesh
     {

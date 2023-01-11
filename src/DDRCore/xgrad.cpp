@@ -450,7 +450,7 @@ Eigen::MatrixXd XGrad::computeL2Product(
         max_weight_quad_E = std::max(max_weight_quad_E, weight.value(T, quad_2kpo_E[iqn].vector()));
       } // for
     }
-    double w_hT2 = max_weight_quad_E * std::pow(T.diam(), 2);
+    double w_hE2 = max_weight_quad_E * std::pow(E.diam(), 2);
 
     // The penalty term int_E (PT q - q_E) * (PT r - r_E) is computed by developping.
     auto basis_Pkpo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykpo, quad_2kpo_E);
@@ -461,7 +461,7 @@ Eigen::MatrixXd XGrad::computeL2Product(
 
     // Contribution of edge E
     Eigen::MatrixXd PTtrans_mass_PE = Potential_T.transpose() * gram_PkpoT_PkpoE * Potential_E;
-    L2P += w_hT2 * ( Potential_T.transpose() * compute_gram_matrix(basis_Pkpo_T_quad, quad_2kpo_E) * Potential_T
+    L2P += w_hE2 * ( Potential_T.transpose() * compute_gram_matrix(basis_Pkpo_T_quad, quad_2kpo_E) * Potential_T
                    - PTtrans_mass_PE - PTtrans_mass_PE.transpose()
                    + Potential_E.transpose() * compute_gram_matrix(basis_Pkpo_E_quad, quad_2kpo_E) * Potential_E );
   } // for iE
@@ -479,7 +479,7 @@ Eigen::MatrixXd XGrad::computeL2Product(
         max_weight_quad_F = std::max(max_weight_quad_F, weight.value(T, quad_2kpo_F[iqn].vector()));
       } // for
     }
-    double w_hT = max_weight_quad_F * T.diam();
+    double w_hF = max_weight_quad_F * F.diam();
 
     // The penalty term int_F (PT q - gammaF q) * (PT r - gammaF r) is computed by developping.
     MonomialFaceIntegralsType int_monoF_2kp2 = IntegrateFaceMonomials(F, 2*degree()+2);
@@ -491,7 +491,7 @@ Eigen::MatrixXd XGrad::computeL2Product(
     // Contribution of face F
     Eigen::MatrixXd Potential_F = extendOperator(T, F, faceOperators(F).potential);
     Eigen::MatrixXd PTtrans_mass_PF = Potential_T.transpose() * gram_PkpoT_PkpoF * Potential_F;
-    L2P += w_hT * ( Potential_T.transpose() * GramMatrix(F, PkpoT_family_PkpoF, int_monoF_2kp2) * Potential_T
+    L2P += w_hF * ( Potential_T.transpose() * GramMatrix(F, PkpoT_family_PkpoF, int_monoF_2kp2) * Potential_T
                  - PTtrans_mass_PF - PTtrans_mass_PF.transpose()
                  + Potential_F.transpose() * GramMatrix(F, *faceBases(F).Polykpo, int_monoF_2kp2) * Potential_F );
                    

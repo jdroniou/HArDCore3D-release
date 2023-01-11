@@ -1,0 +1,1554 @@
+\hypertarget{group__HHO__brinkman}{}\doxysection{HHO\+\_\+brinkman}
+\label{group__HHO__brinkman}\index{HHO\_brinkman@{HHO\_brinkman}}
+
+
+Implementation of the HHO scheme for the \mbox{\hyperlink{structHArDCore3D_1_1Stokes}{Stokes}} and \mbox{\hyperlink{structHArDCore3D_1_1Brinkman}{Brinkman}} equations.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanParameters}{HAr\+DCore3\+D\+::\+Brinkman\+Parameters}}
+\begin{DoxyCompactList}\small\item\em Structure to store physical parameter (and compute derived parameters) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanNorms}{HAr\+DCore3\+D\+::\+Brinkman\+Norms}}
+\begin{DoxyCompactList}\small\item\em Structure to store norm components (energy for velocity, L2 pressure, and global) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1Brinkman}{HAr\+DCore3\+D\+::\+Brinkman}}
+\begin{DoxyCompactList}\small\item\em Structure for \mbox{\hyperlink{structHArDCore3D_1_1Brinkman}{Brinkman}} model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::\+Viscosity\+Type}}
+\item 
+typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}
+\item 
+typedef Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{HAr\+DCore3\+D\+::\+Brinkman\+::\+System\+Matrix\+Type}}
+\item 
+typedef std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Momentum\+Forcing\+Term\+Type}}
+\item 
+typedef std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}}
+\item 
+typedef std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Velocity\+Type}}
+\item 
+typedef std\+::function$<$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}}(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Velocity\+Gradient\+Type}}
+\item 
+typedef std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Pressure\+Type}}
+\item 
+typedef std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Pressure\+Gradient\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__HHO__brinkman_gaa6bb5d34d181001a796ab47786f500c9}{HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::\+Brinkman\+Parameters}} (const \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Viscosity\+Type}} \&\+\_\+mu, const \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Permeability\+Inv\+Type}} \&\+\_\+kappainv)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__HHO__brinkman_ga5f0540940ce6bd166db1738936c0a601}{HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::\+Cf}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Returns the friction coefficient. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__HHO__brinkman_gaf28db00b9f0c1c5a56560e806f60832e}{HAr\+DCore3\+D\+::\+Brinkman\+Norms\+::\+Brinkman\+Norms}} (double norm\+\_\+u, double norm\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__HHO__brinkman_ga7462258ce3093aeb6d8797026e9dbf24}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Brinkman}} (const \mbox{\hyperlink{classHArDCore3D_1_1VHHOSpace}{VHHOSpace}} \&vhho\+\_\+space, const \mbox{\hyperlink{classHArDCore3D_1_1GlobalDOFSpace}{Global\+DOFSpace}} \&p\+\_\+space, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&BC, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__HHO__brinkman_gaa23e8e31b9d6e7d9a4228cff406eb541}{HAr\+DCore3\+D\+::\+Brinkman\+::assemble\+Linear\+System}} (const \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Momentum\+Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Compressibility\+Forcing\+Term\+Type}} \&g, const \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanParameters}{Brinkman\+Parameters}} \&para, const \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Velocity\+Type}} \&u, Eigen\+::\+Vector\+Xd \&UDir)
+\begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
+ \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga8e5088c0cf62210a9ab6ad97dfa3bb9d}{HAr\+DCore3\+D\+::\+Brinkman\+::nloc\+\_\+sc\+\_\+u}} () const
+\begin{DoxyCompactList}\small\item\em Returns the local number of velocity statically condensed DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_gaf66acc0b1a1713a37d3782ec66b05625}{HAr\+DCore3\+D\+::\+Brinkman\+::nloc\+\_\+sc\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns the local number of pressure statically condensed DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_gaecd9b432490f92e637c0e0a4dcb4a25b}{HAr\+DCore3\+D\+::\+Brinkman\+::num\+SCDOFs\+\_\+u}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of velocity statically condensed DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga9654c3ed104dde41815f7e52f89179a3}{HAr\+DCore3\+D\+::\+Brinkman\+::num\+SCDOFs\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of pressure statically condensed DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_gae2de15fc54fafe30f63711b1784c3c0e}{HAr\+DCore3\+D\+::\+Brinkman\+::num\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga05019596c999c88b944afeae4e6cb5fb}{HAr\+DCore3\+D\+::\+Brinkman\+::num\+Dir\+DOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of Dirichlet DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga4d5bd09a42349deda489cb9f09dc9a09}{HAr\+DCore3\+D\+::\+Brinkman\+::dim\+Velocity}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of velocity space. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_gaa7b355ebe83ec087f07161dcbaf53346}{HAr\+DCore3\+D\+::\+Brinkman\+::dim\+Pressure}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of pressure space. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga470183963cba681c77427995a9dfe79a}{HAr\+DCore3\+D\+::\+Brinkman\+::num\+Non\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of DOFs after SC and with Lagrange multiplier, but before eliminating Dirichlet DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga27b8de59c9272fb88068c7125a017b4c}{HAr\+DCore3\+D\+::\+Brinkman\+::size\+System}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the final system with Lagrange multiplier, after application of SC and removal of Dirichlet BCs. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1VHHOSpace}{VHHOSpace}} \& \mbox{\hyperlink{group__HHO__brinkman_gaf1084a8545b530bbd6dcd941bad3bba4}{HAr\+DCore3\+D\+::\+Brinkman\+::vhhospace}} () const
+\begin{DoxyCompactList}\small\item\em Returns the velocity space. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1GlobalDOFSpace}{Global\+DOFSpace}} \& \mbox{\hyperlink{group__HHO__brinkman_gaf4a7b6f3ea054b43603a17f8b1c7c8f4}{HAr\+DCore3\+D\+::\+Brinkman\+::pspace}} () const
+\begin{DoxyCompactList}\small\item\em Returns the pressure space. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__HHO__brinkman_gaff1c1e8ceea0b2dfecca62af5675c5d8}{HAr\+DCore3\+D\+::\+Brinkman\+::mesh}} () const
+\begin{DoxyCompactList}\small\item\em Returns the mesh. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__brinkman_gaf6527cd2547629da9a888792132e3269}{HAr\+DCore3\+D\+::\+Brinkman\+::system\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__brinkman_ga9b722d0ade5c239395e48b90bfecb51d}{HAr\+DCore3\+D\+::\+Brinkman\+::system\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__brinkman_ga640586cc819e4de5afd3a2edb1432b9c}{HAr\+DCore3\+D\+::\+Brinkman\+::system\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__brinkman_gad2d60af85842cc09744311d13079911f}{HAr\+DCore3\+D\+::\+Brinkman\+::system\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+const std\+::pair$<$ double, double $>$ \& \mbox{\hyperlink{group__HHO__brinkman_ga22a2df1874e7dcbff999defcf6b62cbc}{HAr\+DCore3\+D\+::\+Brinkman\+::stabilization\+Parameter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter (scaling) \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \& \mbox{\hyperlink{group__HHO__brinkman_ga6caeda81b77d830540cc47c05173b92d}{HAr\+DCore3\+D\+::\+Brinkman\+::stabilization\+Parameter}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__brinkman_gadb7d8a15587e6f86de0d72c396f71c5f}{HAr\+DCore3\+D\+::\+Brinkman\+::sc\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the static condensation recovery operator. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__brinkman_gab05765326bdd6ccfc851a50a2f671544}{HAr\+DCore3\+D\+::\+Brinkman\+::sc\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the static condensation rhs. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__brinkman_ga0d99270586d71e6ac3b885855849c10b}{HAr\+DCore3\+D\+::\+Brinkman\+::interpolate}} (const \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Pressure\+Type}} \&p, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolates velocity and pressure. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanNorms}{Brinkman\+Norms}} $>$ \mbox{\hyperlink{group__HHO__brinkman_ga972625064c9703732674e61d4718bd1c}{HAr\+DCore3\+D\+::\+Brinkman\+::compute\+Brinkman\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs, const \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanParameters}{Brinkman\+Parameters}} \&para) const
+\begin{DoxyCompactList}\small\item\em Compute the discrete energy norm of a family of vectors representing the dofs. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{group__HHO__brinkman_ga75010589205bc7b43f9afe3e8965e5aa}{HAr\+DCore3\+D\+::\+Brinkman\+::pressure\+Vertex\+Values}} (const Eigen\+::\+Vector\+Xd \&p) const
+\begin{DoxyCompactList}\small\item\em Create vertex values for the pressure (from the element values), for plotting. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{group__HHO__brinkman_ga427b126b6203ae2dfdf0b36759f4143a}{HAr\+DCore3\+D\+::\+Brinkman\+::compute\+Flux}} (const Eigen\+::\+Vector\+Xd \&u, const std\+::pair$<$ std\+::vector$<$ Vector\+Rd $>$, Vector\+Rd $>$ \&surf) const
+\begin{DoxyCompactList}\small\item\em Compute the velocity flux (integral of u.\+n) across a given surface, and the area of the surface, assumed to be star-\/shaped with respect the barycenter of its vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga4dbfbe718ae12a8a2d53fa52f45c0665}{HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::mu}}
+\item 
+\mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga4ed25afcbf6416e2c59da1d937eaa673}{HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::kappainv}}
+\item 
+double \mbox{\hyperlink{group__HHO__brinkman_ga2295ef64b8e6631692fcc672fb950d47}{HAr\+DCore3\+D\+::\+Brinkman\+Norms\+::u}}
+\begin{DoxyCompactList}\small\item\em Energy norm of velocity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__HHO__brinkman_gacd61f805dcb56081788c59e1ed6a0b06}{HAr\+DCore3\+D\+::\+Brinkman\+Norms\+::p}}
+\begin{DoxyCompactList}\small\item\em L2 norm of p. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__HHO__brinkman_ga0f4dd1a729b9cb7cd6b0ec65cc6446ec}{HAr\+DCore3\+D\+::\+Brinkman\+Norms\+::energy}}
+\begin{DoxyCompactList}\small\item\em Global energy norm ~\newline
+ \end{DoxyCompactList}\item 
+static const double \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{HAr\+DCore3\+D\+::\+PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+double \mbox{\hyperlink{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}{HAr\+DCore3\+D\+::scaling\+\_\+mu}} = 1.
+\item 
+double \mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{HAr\+DCore3\+D\+::scaling\+\_\+kappainv}} = 1.
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{HAr\+DCore3\+D\+::eps}} =1e-\/14
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga61e33ede2aa388f02412efa3caaef680}{HAr\+DCore3\+D\+::linear\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa78476ffc0d30f7a245afc004d41cca3}{HAr\+DCore3\+D\+::linear\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static const \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__HHO__brinkman_gaaf3849406952d3f00f00e814a7d5fa64}{HAr\+DCore3\+D\+::mat\+\_\+u}} = (\mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}}() $<$$<$ 1.,2.,3., 0.,-\/1.,1. , 0.,1.,1.).finished()
+\item 
+static const Vector\+Rd \mbox{\hyperlink{group__HHO__brinkman_ga249b69ca9df7a9aed6626d932a38bd44}{HAr\+DCore3\+D\+::vec\+\_\+p}} = Vector\+Rd(-\/1., 2., -\/5.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gab251e12ef6b35755be8d0e370dffd71b}{HAr\+DCore3\+D\+::linear\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga115f818e58bb663361a9f05ce444c83b}{HAr\+DCore3\+D\+::linear\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9886f14b1db2b55501a846092f02adf4}{HAr\+DCore3\+D\+::linear\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga658796573d1c3d4e3ad85d9b0d9c0042}{HAr\+DCore3\+D\+::linear\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga92b551e737e7f95438d26eeacd076e85}{HAr\+DCore3\+D\+::linear\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaf3e56fc9f17368bb285143789bf9ed51}{HAr\+DCore3\+D\+::linear\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_ga9886f14b1db2b55501a846092f02adf4}{linear\+\_\+gradu}}(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9179c6100ef8c0a83f0849b09cc2c2ad}{HAr\+DCore3\+D\+::quadratic\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga925b6a70d166bbe29bc5d4ad756e770a}{HAr\+DCore3\+D\+::quadratic\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gabed608c28beca212c8bac183f8f7306b}{HAr\+DCore3\+D\+::quadratic\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga364e6b67999711a7065e7f0a6cdbea9c}{HAr\+DCore3\+D\+::quadratic\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga66059121f9787fbf247deb23c5e8fbb9}{HAr\+DCore3\+D\+::quadratic\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gabc6363716b03c8108bd5b57a94732bdc}{HAr\+DCore3\+D\+::quadratic\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8f73ab3babb657a7c143f49a85473f79}{HAr\+DCore3\+D\+::quadratic\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gafaf522d361fe4bc1a3ca2b5be8741773}{HAr\+DCore3\+D\+::quadratic\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_ga364e6b67999711a7065e7f0a6cdbea9c}{quadratic\+\_\+gradu}}(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5f577a3dfc41024e9e5475cf7deece3b}{HAr\+DCore3\+D\+::cubic\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga583602724ec749d7700da759df53ebee}{HAr\+DCore3\+D\+::cubic\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1e58b27759c373942645ed11b97b2210}{HAr\+DCore3\+D\+::cubic\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gad1907ddcf83cfd92dfb72be9994fa5a9}{HAr\+DCore3\+D\+::cubic\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5ee2ca139a1039c55f36dff300124d12}{HAr\+DCore3\+D\+::cubic\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1cabbdbcc9977f8864e0b0a6854fd373}{HAr\+DCore3\+D\+::cubic\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa3ab6dc20246d6372bd6496e02685c7a}{HAr\+DCore3\+D\+::cubic\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga57c31a0e88a26c3d7579dc7427199953}{HAr\+DCore3\+D\+::cubic\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_gad1907ddcf83cfd92dfb72be9994fa5a9}{cubic\+\_\+gradu}}(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8849d554e4a04ab9d1cf7b270ca5856c}{HAr\+DCore3\+D\+::trigonometric\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga461efb7c4083702f8a550c49d6536003}{HAr\+DCore3\+D\+::trigonometric\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga53362b5995812993dd8f3e3ea8f16ea0}{HAr\+DCore3\+D\+::trigonometric\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}{HAr\+DCore3\+D\+::trigonometric\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8bfdfeaf16210ec8948f27db76c08321}{HAr\+DCore3\+D\+::trigonometric\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9313f57c43d447073a9b3f2ff7b417de}{HAr\+DCore3\+D\+::trigonometric\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga54770be2cc45af21b652eb90e88e8b14}{HAr\+DCore3\+D\+::trigonometric\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaae7197427c36fea1c6038771280b28d0}{HAr\+DCore3\+D\+::trigonometric\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}{trigonometric\+\_\+gradu}}(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9507833e388e0add7d72aa84d623d41d}{HAr\+DCore3\+D\+::regimes\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga05e27d4db812c4dae9e916b049782c38}{HAr\+DCore3\+D\+::regimes\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga023724a3e1a9ace65feeb59bc65976b8}{HAr\+DCore3\+D\+::regimes\+\_\+p}} = \mbox{\hyperlink{group__DDR__stokes_ga9b7879fd3b35059edb87a8986c1c8d22}{trigonometric\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga81def91a67f1d4b1fa65733c978f74be}{HAr\+DCore3\+D\+::regimes\+\_\+gradp}} = \mbox{\hyperlink{group__HHO__brinkman_ga9313f57c43d447073a9b3f2ff7b417de}{trigonometric\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga516648c4533e6458035e69b9af135ba2}{HAr\+DCore3\+D\+::regimes\+\_\+uD}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1f742df61764c1756ba739a182261d84}{HAr\+DCore3\+D\+::regimes\+\_\+graduD}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga83fbae16c582e7aedb042f49bba3fec4}{HAr\+DCore3\+D\+::regimes\+\_\+uS}} = \mbox{\hyperlink{group__DDR__magnetostatic_ga5f8102524d5dd3728c5216dcbfc32e59}{trigonometric\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gabd1c83ac3a3ddf242b5731ccea2307da}{HAr\+DCore3\+D\+::regimes\+\_\+graduS}} = \mbox{\hyperlink{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}{trigonometric\+\_\+gradu}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{HAr\+DCore3\+D\+::\+XiS}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga2504076483feb12fa68e04f91d9c660f}{HAr\+DCore3\+D\+::regimes\+\_\+u}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x) -\/$>$ Vector\+Rd \{ return \mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga83fbae16c582e7aedb042f49bba3fec4}{regimes\+\_\+uS}}(x) + (1.-\/\mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x)) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga516648c4533e6458035e69b9af135ba2}{regimes\+\_\+uD}}(x);\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga40b530d8b7189f32e56afe56ed73379b}{HAr\+DCore3\+D\+::regimes\+\_\+gradu}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x) -\/$>$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \{ return \mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_gabd1c83ac3a3ddf242b5731ccea2307da}{regimes\+\_\+graduS}}(x) + (1.-\/\mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x)) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga1f742df61764c1756ba739a182261d84}{regimes\+\_\+graduD}}(x);\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga55cee7c4814d1a1bfe68090e47048d22}{HAr\+DCore3\+D\+::regimes\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0913b4a1f3edf62a1f7f24e4c5e4d92e}{HAr\+DCore3\+D\+::regimes\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_ga40b530d8b7189f32e56afe56ed73379b}{regimes\+\_\+gradu}}(x).trace() ;\}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{HAr\+DCore3\+D\+::\+XiV}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return (x.\+z() $>$ 2$\ast$std\+::abs(x.\+x()-\/1.)+0.\+5-\/\mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{eps}}); \}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa009efff6a625fef7d557cb0bad321ab}{HAr\+DCore3\+D\+::vcracked\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(\mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 0.\+01 $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{XiV}}(x);\})
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga3de6b901bf4e75c9d991763194d7cac1}{HAr\+DCore3\+D\+::vcracked\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(\mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 1e-\/5$\ast$(1.-\/\mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{XiV}}(x)) + 0.\+001$\ast$\mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{XiV}}(x);\})
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa5eae4fe6df55d7a3c3a143cef49f542}{HAr\+DCore3\+D\+::vcracked\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gafa9ae279dd50bac31674d421f3eee481}{HAr\+DCore3\+D\+::vcracked\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga15be3b5abaf396a623f0563dc1d2b767}{HAr\+DCore3\+D\+::vcracked\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga7c2e3f78e7814de90033de5e338d22bf}{HAr\+DCore3\+D\+::vcracked\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga825b4e191e3a5a3eb0ac3502a1359cd5}{HAr\+DCore3\+D\+::vcracked\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0232ff576226b1a94d37fa9c2e00d8fc}{HAr\+DCore3\+D\+::vcracked\+\_\+g}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}{HAr\+DCore3\+D\+::\+Xi\+Cavity}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga2f21ea8a7bbe91797809288e7ddb65d9}{HAr\+DCore3\+D\+::\+Xi\+Wedge}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga251680a1b4448f4b4198b07ece3063e6}{HAr\+DCore3\+D\+::\+Xi\+Box}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 1. -\/ \mbox{\hyperlink{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}{Xi\+Cavity}}(x) -\/ \mbox{\hyperlink{group__HHO__brinkman_ga2f21ea8a7bbe91797809288e7ddb65d9}{Xi\+Wedge}}(x); \}
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga039ebb2e5436912d7323b20b63d01231}{HAr\+DCore3\+D\+::viscosity\+\_\+in\+\_\+cavity}} = 0.\+01
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga3166a588e47670f1263d6dd17e85d14b}{HAr\+DCore3\+D\+::cavity\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga039ebb2e5436912d7323b20b63d01231}{viscosity\+\_\+in\+\_\+cavity}} $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(\mbox{\hyperlink{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}{Xi\+Cavity}})
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga2dc87f28ba4daa63a8a61e003342d09c}{HAr\+DCore3\+D\+::permeability\+\_\+in\+\_\+wedge}} = 1e-\/2
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga5941bb0b014eab00f742803f43ae5e48}{HAr\+DCore3\+D\+::permeability\+\_\+in\+\_\+box}} = 1e-\/7
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa4fd1aae11bf60908b164adc8b8ea82d}{HAr\+DCore3\+D\+::cavity\+\_\+kappainv}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1717e9a923ad9e640cebb844704330c2}{HAr\+DCore3\+D\+::cavity\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga4f06950b09441f9d2b36577701dbd9f6}{HAr\+DCore3\+D\+::cavity\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5e07c6ecaee8ddd4989ac0896b436701}{HAr\+DCore3\+D\+::cavity\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga279619db84fc049f31c8f0e1c4d07713}{HAr\+DCore3\+D\+::cavity\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0c6ed50754266d08288e149561c2d19a}{HAr\+DCore3\+D\+::cavity\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8b1f7253d57bb23c2fa818d8cd31de6d}{HAr\+DCore3\+D\+::cavity\+\_\+g}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the HHO scheme for the \mbox{\hyperlink{structHArDCore3D_1_1Stokes}{Stokes}} and \mbox{\hyperlink{structHArDCore3D_1_1Brinkman}{Brinkman}} equations. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}\label{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!CompressibilityForcingTermType@{CompressibilityForcingTermType}}
+\index{CompressibilityForcingTermType@{CompressibilityForcingTermType}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{CompressibilityForcingTermType}{CompressibilityForcingTermType}}
+{\footnotesize\ttfamily typedef std\+::function$<$double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}\label{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!MomentumForcingTermType@{MomentumForcingTermType}}
+\index{MomentumForcingTermType@{MomentumForcingTermType}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{MomentumForcingTermType}{MomentumForcingTermType}}
+{\footnotesize\ttfamily typedef std\+::function$<$Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Momentum\+Forcing\+Term\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}\label{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!PermeabilityInvType@{PermeabilityInvType}}
+\index{PermeabilityInvType@{PermeabilityInvType}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{PermeabilityInvType}{PermeabilityInvType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}\label{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!PressureGradientType@{PressureGradientType}}
+\index{PressureGradientType@{PressureGradientType}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{PressureGradientType}{PressureGradientType}}
+{\footnotesize\ttfamily typedef std\+::function$<$Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Pressure\+Gradient\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}\label{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!PressureType@{PressureType}}
+\index{PressureType@{PressureType}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{PressureType}{PressureType}}
+{\footnotesize\ttfamily typedef std\+::function$<$double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Pressure\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}\label{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!SystemMatrixType@{SystemMatrixType}}
+\index{SystemMatrixType@{SystemMatrixType}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{SystemMatrixType}{SystemMatrixType}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Sparse\+Matrix$<$double$>$ \mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{HAr\+DCore3\+D\+::\+Brinkman\+::\+System\+Matrix\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}\label{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!VelocityGradientType@{VelocityGradientType}}
+\index{VelocityGradientType@{VelocityGradientType}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{VelocityGradientType}{VelocityGradientType}}
+{\footnotesize\ttfamily typedef std\+::function$<$\mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}}(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Velocity\+Gradient\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}\label{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!VelocityType@{VelocityType}}
+\index{VelocityType@{VelocityType}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{VelocityType}{VelocityType}}
+{\footnotesize\ttfamily typedef std\+::function$<$Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{HAr\+DCore3\+D\+::\+Brinkman\+::\+Velocity\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}\label{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!ViscosityType@{ViscosityType}}
+\index{ViscosityType@{ViscosityType}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{ViscosityType}{ViscosityType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::\+Viscosity\+Type}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__HHO__brinkman_gaa23e8e31b9d6e7d9a4228cff406eb541}\label{group__HHO__brinkman_gaa23e8e31b9d6e7d9a4228cff406eb541}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!assembleLinearSystem@{assembleLinearSystem}}
+\index{assembleLinearSystem@{assembleLinearSystem}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{assembleLinearSystem()}{assembleLinearSystem()}}
+{\footnotesize\ttfamily void Brinkman\+::assemble\+Linear\+System (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Momentum\+Forcing\+Term\+Type}} \&}]{f,  }\item[{const \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Compressibility\+Forcing\+Term\+Type}} \&}]{g,  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanParameters}{Brinkman\+Parameters}} \&}]{para,  }\item[{const \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Velocity\+Type}} \&}]{u,  }\item[{Eigen\+::\+Vector\+Xd \&}]{UDir }\end{DoxyParamCaption})}
+
+
+
+Assemble the global system ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Forcing term \\
+\hline
+{\em g} & Forcing term for the divergence equation \\
+\hline
+{\em para} & Viscosity and permeability \\
+\hline
+{\em u} & Exact solution for boundary condition \\
+\hline
+{\em UDir} & Vector filled in by Dirichlets BCs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__brinkman_ga7462258ce3093aeb6d8797026e9dbf24}\label{group__HHO__brinkman_ga7462258ce3093aeb6d8797026e9dbf24}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!Brinkman@{Brinkman}}
+\index{Brinkman@{Brinkman}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{Brinkman()}{Brinkman()}}
+{\footnotesize\ttfamily Brinkman\+::\+Brinkman (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1VHHOSpace}{VHHOSpace}} \&}]{vhho\+\_\+space,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GlobalDOFSpace}{Global\+DOFSpace}} \&}]{p\+\_\+space,  }\item[{const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{bool}]{use\+\_\+threads,  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vhho\+\_\+space} & Velocity space and operators \\
+\hline
+{\em p\+\_\+space} & Space for the pressure \\
+\hline
+{\em BC} & Boundary conditions \\
+\hline
+{\em use\+\_\+threads} & True for parallel execution, false for sequential execution \\
+\hline
+{\em output} & Output stream to print status messages \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__brinkman_gaf28db00b9f0c1c5a56560e806f60832e}\label{group__HHO__brinkman_gaf28db00b9f0c1c5a56560e806f60832e}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!BrinkmanNorms@{BrinkmanNorms}}
+\index{BrinkmanNorms@{BrinkmanNorms}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{BrinkmanNorms()}{BrinkmanNorms()}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Brinkman\+Norms\+::\+Brinkman\+Norms (\begin{DoxyParamCaption}\item[{double}]{norm\+\_\+u,  }\item[{double}]{norm\+\_\+p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_gaa6bb5d34d181001a796ab47786f500c9}\label{group__HHO__brinkman_gaa6bb5d34d181001a796ab47786f500c9}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!BrinkmanParameters@{BrinkmanParameters}}
+\index{BrinkmanParameters@{BrinkmanParameters}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{BrinkmanParameters()}{BrinkmanParameters()}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::\+Brinkman\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Viscosity\+Type}} \&}]{\+\_\+mu,  }\item[{const \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Permeability\+Inv\+Type}} \&}]{\+\_\+kappainv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+mu} & Viscosity \\
+\hline
+{\em \+\_\+kappainv} & Inverse of permeability \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__brinkman_ga5f0540940ce6bd166db1738936c0a601}\label{group__HHO__brinkman_ga5f0540940ce6bd166db1738936c0a601}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!Cf@{Cf}}
+\index{Cf@{Cf}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{Cf()}{Cf()}}
+{\footnotesize\ttfamily double HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::\+Cf (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the friction coefficient. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga972625064c9703732674e61d4718bd1c}\label{group__HHO__brinkman_ga972625064c9703732674e61d4718bd1c}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!computeBrinkmanNorms@{computeBrinkmanNorms}}
+\index{computeBrinkmanNorms@{computeBrinkmanNorms}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{computeBrinkmanNorms()}{computeBrinkmanNorms()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanNorms}{Brinkman\+Norms}} $>$ Brinkman\+::compute\+Brinkman\+Norms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&}]{list\+\_\+dofs,  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanParameters}{Brinkman\+Parameters}} \&}]{para }\end{DoxyParamCaption}) const}
+
+
+
+Compute the discrete energy norm of a family of vectors representing the dofs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+\_\+dofs} & The list of vectors representing the dofs \\
+\hline
+{\em para} & Viscosity and permeability \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__brinkman_ga427b126b6203ae2dfdf0b36759f4143a}\label{group__HHO__brinkman_ga427b126b6203ae2dfdf0b36759f4143a}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!computeFlux@{computeFlux}}
+\index{computeFlux@{computeFlux}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{computeFlux()}{computeFlux()}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ Brinkman\+::compute\+Flux (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{u,  }\item[{const std\+::pair$<$ std\+::vector$<$ Vector\+Rd $>$, Vector\+Rd $>$ \&}]{surf }\end{DoxyParamCaption}) const}
+
+
+
+Compute the velocity flux (integral of u.\+n) across a given surface, and the area of the surface, assumed to be star-\/shaped with respect the barycenter of its vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Vector of velocity DOFs \\
+\hline
+{\em surf} & Surface described by coplanar vertices (in order around the boundary) and one unit normal vector to indicate the flux to compute \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__brinkman_gaa7b355ebe83ec087f07161dcbaf53346}\label{group__HHO__brinkman_gaa7b355ebe83ec087f07161dcbaf53346}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!dimPressure@{dimPressure}}
+\index{dimPressure@{dimPressure}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{dimPressure()}{dimPressure()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Brinkman\+::dim\+Pressure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the dimension of pressure space. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga4d5bd09a42349deda489cb9f09dc9a09}\label{group__HHO__brinkman_ga4d5bd09a42349deda489cb9f09dc9a09}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!dimVelocity@{dimVelocity}}
+\index{dimVelocity@{dimVelocity}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{dimVelocity()}{dimVelocity()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Brinkman\+::dim\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the dimension of velocity space. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga0d99270586d71e6ac3b885855849c10b}\label{group__HHO__brinkman_ga0d99270586d71e6ac3b885855849c10b}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Brinkman\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Velocity\+Type}} \&}]{u,  }\item[{const \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Pressure\+Type}} \&}]{p,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
+
+
+
+Interpolates velocity and pressure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Continuous velocity to interpolate \\
+\hline
+{\em p} & Continuous pressure to interpolate \\
+\hline
+{\em doe\+\_\+cell} & The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+face} & The optional degre of face quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__brinkman_gaff1c1e8ceea0b2dfecca62af5675c5d8}\label{group__HHO__brinkman_gaff1c1e8ceea0b2dfecca62af5675c5d8}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!mesh@{mesh}}
+\index{mesh@{mesh}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+Brinkman\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the mesh. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_gaf66acc0b1a1713a37d3782ec66b05625}\label{group__HHO__brinkman_gaf66acc0b1a1713a37d3782ec66b05625}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!nloc\_sc\_p@{nloc\_sc\_p}}
+\index{nloc\_sc\_p@{nloc\_sc\_p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{nloc\_sc\_p()}{nloc\_sc\_p()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Brinkman\+::nloc\+\_\+sc\+\_\+p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the local number of pressure statically condensed DOFs. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga8e5088c0cf62210a9ab6ad97dfa3bb9d}\label{group__HHO__brinkman_ga8e5088c0cf62210a9ab6ad97dfa3bb9d}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!nloc\_sc\_u@{nloc\_sc\_u}}
+\index{nloc\_sc\_u@{nloc\_sc\_u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{nloc\_sc\_u()}{nloc\_sc\_u()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Brinkman\+::nloc\+\_\+sc\+\_\+u (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the local number of velocity statically condensed DOFs. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga05019596c999c88b944afeae4e6cb5fb}\label{group__HHO__brinkman_ga05019596c999c88b944afeae4e6cb5fb}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!numDirDOFs@{numDirDOFs}}
+\index{numDirDOFs@{numDirDOFs}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{numDirDOFs()}{numDirDOFs()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Brinkman\+::num\+Dir\+DOFs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of Dirichlet DOFs. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga470183963cba681c77427995a9dfe79a}\label{group__HHO__brinkman_ga470183963cba681c77427995a9dfe79a}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!numNonSCDOFs@{numNonSCDOFs}}
+\index{numNonSCDOFs@{numNonSCDOFs}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{numNonSCDOFs()}{numNonSCDOFs()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Brinkman\+::num\+Non\+SCDOFs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of DOFs after SC and with Lagrange multiplier, but before eliminating Dirichlet DOFs. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_gae2de15fc54fafe30f63711b1784c3c0e}\label{group__HHO__brinkman_gae2de15fc54fafe30f63711b1784c3c0e}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!numSCDOFs@{numSCDOFs}}
+\index{numSCDOFs@{numSCDOFs}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{numSCDOFs()}{numSCDOFs()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Brinkman\+::num\+SCDOFs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of statically condensed DOFs. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga9654c3ed104dde41815f7e52f89179a3}\label{group__HHO__brinkman_ga9654c3ed104dde41815f7e52f89179a3}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!numSCDOFs\_p@{numSCDOFs\_p}}
+\index{numSCDOFs\_p@{numSCDOFs\_p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{numSCDOFs\_p()}{numSCDOFs\_p()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Brinkman\+::num\+SCDOFs\+\_\+p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of pressure statically condensed DOFs. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_gaecd9b432490f92e637c0e0a4dcb4a25b}\label{group__HHO__brinkman_gaecd9b432490f92e637c0e0a4dcb4a25b}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!numSCDOFs\_u@{numSCDOFs\_u}}
+\index{numSCDOFs\_u@{numSCDOFs\_u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{numSCDOFs\_u()}{numSCDOFs\_u()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Brinkman\+::num\+SCDOFs\+\_\+u (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of velocity statically condensed DOFs. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga75010589205bc7b43f9afe3e8965e5aa}\label{group__HHO__brinkman_ga75010589205bc7b43f9afe3e8965e5aa}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!pressureVertexValues@{pressureVertexValues}}
+\index{pressureVertexValues@{pressureVertexValues}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{pressureVertexValues()}{pressureVertexValues()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Brinkman\+::pressure\+Vertex\+Values (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{p }\end{DoxyParamCaption}) const}
+
+
+
+Create vertex values for the pressure (from the element values), for plotting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Vector of pressure DOFs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__brinkman_gaf4a7b6f3ea054b43603a17f8b1c7c8f4}\label{group__HHO__brinkman_gaf4a7b6f3ea054b43603a17f8b1c7c8f4}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!pspace@{pspace}}
+\index{pspace@{pspace}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{pspace()}{pspace()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1GlobalDOFSpace}{Global\+DOFSpace}}\& HAr\+DCore3\+D\+::\+Brinkman\+::pspace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the pressure space. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_gadb7d8a15587e6f86de0d72c396f71c5f}\label{group__HHO__brinkman_gadb7d8a15587e6f86de0d72c396f71c5f}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!scMatrix@{scMatrix}}
+\index{scMatrix@{scMatrix}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{scMatrix()}{scMatrix()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Brinkman\+::sc\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the static condensation recovery operator. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_gab05765326bdd6ccfc851a50a2f671544}\label{group__HHO__brinkman_gab05765326bdd6ccfc851a50a2f671544}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!scVector@{scVector}}
+\index{scVector@{scVector}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{scVector()}{scVector()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Brinkman\+::sc\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the static condensation rhs. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga27b8de59c9272fb88068c7125a017b4c}\label{group__HHO__brinkman_ga27b8de59c9272fb88068c7125a017b4c}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!sizeSystem@{sizeSystem}}
+\index{sizeSystem@{sizeSystem}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{sizeSystem()}{sizeSystem()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Brinkman\+::size\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the size of the final system with Lagrange multiplier, after application of SC and removal of Dirichlet BCs. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga6caeda81b77d830540cc47c05173b92d}\label{group__HHO__brinkman_ga6caeda81b77d830540cc47c05173b92d}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!stabilizationParameter@{stabilizationParameter}}
+\index{stabilizationParameter@{stabilizationParameter}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{stabilizationParameter()}{stabilizationParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::pair$<$double,double$>$\& HAr\+DCore3\+D\+::\+Brinkman\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the stabilization parameter. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga22a2df1874e7dcbff999defcf6b62cbc}\label{group__HHO__brinkman_ga22a2df1874e7dcbff999defcf6b62cbc}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!stabilizationParameter@{stabilizationParameter}}
+\index{stabilizationParameter@{stabilizationParameter}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{stabilizationParameter()}{stabilizationParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::pair$<$double,double$>$\& HAr\+DCore3\+D\+::\+Brinkman\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the stabilization parameter (scaling) 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga9b722d0ade5c239395e48b90bfecb51d}\label{group__HHO__brinkman_ga9b722d0ade5c239395e48b90bfecb51d}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!systemMatrix@{systemMatrix}}
+\index{systemMatrix@{systemMatrix}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{systemMatrix()}{systemMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Brinkman\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the linear system matrix. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_gaf6527cd2547629da9a888792132e3269}\label{group__HHO__brinkman_gaf6527cd2547629da9a888792132e3269}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!systemMatrix@{systemMatrix}}
+\index{systemMatrix@{systemMatrix}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{systemMatrix()}{systemMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Brinkman\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the linear system matrix. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_gad2d60af85842cc09744311d13079911f}\label{group__HHO__brinkman_gad2d60af85842cc09744311d13079911f}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!systemVector@{systemVector}}
+\index{systemVector@{systemVector}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{systemVector()}{systemVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Brinkman\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the linear system right-\/hand side vector. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga640586cc819e4de5afd3a2edb1432b9c}\label{group__HHO__brinkman_ga640586cc819e4de5afd3a2edb1432b9c}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!systemVector@{systemVector}}
+\index{systemVector@{systemVector}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{systemVector()}{systemVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Brinkman\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the linear system right-\/hand side vector. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_gaf1084a8545b530bbd6dcd941bad3bba4}\label{group__HHO__brinkman_gaf1084a8545b530bbd6dcd941bad3bba4}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!vhhospace@{vhhospace}}
+\index{vhhospace@{vhhospace}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{vhhospace()}{vhhospace()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1VHHOSpace}{VHHOSpace}}\& HAr\+DCore3\+D\+::\+Brinkman\+::vhhospace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the velocity space. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__HHO__brinkman_ga0c6ed50754266d08288e149561c2d19a}\label{group__HHO__brinkman_ga0c6ed50754266d08288e149561c2d19a}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cavity\_f@{cavity\_f}}
+\index{cavity\_f@{cavity\_f}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cavity\_f}{cavity\_f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::cavity\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(0., 0., -\/.98);}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga8b1f7253d57bb23c2fa818d8cd31de6d}\label{group__HHO__brinkman_ga8b1f7253d57bb23c2fa818d8cd31de6d}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cavity\_g@{cavity\_g}}
+\index{cavity\_g@{cavity\_g}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cavity\_g}{cavity\_g}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::cavity\+\_\+g\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{ }
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} 0.;}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga279619db84fc049f31c8f0e1c4d07713}\label{group__HHO__brinkman_ga279619db84fc049f31c8f0e1c4d07713}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cavity\_gradp@{cavity\_gradp}}
+\index{cavity\_gradp@{cavity\_gradp}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cavity\_gradp}{cavity\_gradp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} HAr\+DCore3\+D\+::cavity\+\_\+gradp\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return}  VectorRd::Zero();}
+\DoxyCodeLine{                         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga4f06950b09441f9d2b36577701dbd9f6}\label{group__HHO__brinkman_ga4f06950b09441f9d2b36577701dbd9f6}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cavity\_gradu@{cavity\_gradu}}
+\index{cavity\_gradu@{cavity\_gradu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cavity\_gradu}{cavity\_gradu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} HAr\+DCore3\+D\+::cavity\+\_\+gradu\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} MatrixRd::Zero();}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gaa4fd1aae11bf60908b164adc8b8ea82d}\label{group__HHO__brinkman_gaa4fd1aae11bf60908b164adc8b8ea82d}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cavity\_kappainv@{cavity\_kappainv}}
+\index{cavity\_kappainv@{cavity\_kappainv}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cavity\_kappainv}{cavity\_kappainv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} HAr\+DCore3\+D\+::cavity\+\_\+kappainv\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= std::pow(\mbox{\hyperlink{group__HHO__brinkman_ga2dc87f28ba4daa63a8a61e003342d09c}{permeability\_in\_wedge}}, -\/1) * \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{BrinkmanParameters::ViscosityType}}(\mbox{\hyperlink{group__HHO__brinkman_ga2f21ea8a7bbe91797809288e7ddb65d9}{XiWedge}})}
+\DoxyCodeLine{            + std::pow(\mbox{\hyperlink{group__HHO__brinkman_ga5941bb0b014eab00f742803f43ae5e48}{permeability\_in\_box}}, -\/1) * \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{BrinkmanParameters::ViscosityType}}(\mbox{\hyperlink{group__HHO__brinkman_ga251680a1b4448f4b4198b07ece3063e6}{XiBox}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga3166a588e47670f1263d6dd17e85d14b}\label{group__HHO__brinkman_ga3166a588e47670f1263d6dd17e85d14b}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cavity\_mu@{cavity\_mu}}
+\index{cavity\_mu@{cavity\_mu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cavity\_mu}{cavity\_mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} HAr\+DCore3\+D\+::cavity\+\_\+mu = \mbox{\hyperlink{group__HHO__brinkman_ga039ebb2e5436912d7323b20b63d01231}{viscosity\+\_\+in\+\_\+cavity}} $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(\mbox{\hyperlink{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}{Xi\+Cavity}})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga5e07c6ecaee8ddd4989ac0896b436701}\label{group__HHO__brinkman_ga5e07c6ecaee8ddd4989ac0896b436701}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cavity\_p@{cavity\_p}}
+\index{cavity\_p@{cavity\_p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cavity\_p}{cavity\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} HAr\+DCore3\+D\+::cavity\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return}  0.;}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga1717e9a923ad9e640cebb844704330c2}\label{group__HHO__brinkman_ga1717e9a923ad9e640cebb844704330c2}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cavity\_u@{cavity\_u}}
+\index{cavity\_u@{cavity\_u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cavity\_u}{cavity\_u}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} HAr\+DCore3\+D\+::cavity\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}{XiCavity}}(x) * \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(x.x()*(1.-\/x.x()), 0., 0.);}
+\DoxyCodeLine{                     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gaa3ab6dc20246d6372bd6496e02685c7a}\label{group__HHO__brinkman_gaa3ab6dc20246d6372bd6496e02685c7a}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cubic\_f@{cubic\_f}}
+\index{cubic\_f@{cubic\_f}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cubic\_f}{cubic\_f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::cubic\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} -\/ \mbox{\hyperlink{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}{scaling\_mu}} * \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}( 6 * x(0) + 2 * x(1), 2., 6 * x(2)) + \mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}} * \mbox{\hyperlink{group__HHO__brinkman_ga1e58b27759c373942645ed11b97b2210}{cubic\_u}}(x) + \mbox{\hyperlink{group__HHO__brinkman_ga1cabbdbcc9977f8864e0b0a6854fd373}{cubic\_gradp}}(x);}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga57c31a0e88a26c3d7579dc7427199953}\label{group__HHO__brinkman_ga57c31a0e88a26c3d7579dc7427199953}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cubic\_g@{cubic\_g}}
+\index{cubic\_g@{cubic\_g}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cubic\_g}{cubic\_g}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::cubic\+\_\+g = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_gad1907ddcf83cfd92dfb72be9994fa5a9}{cubic\+\_\+gradu}}(x).trace();\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga1cabbdbcc9977f8864e0b0a6854fd373}\label{group__HHO__brinkman_ga1cabbdbcc9977f8864e0b0a6854fd373}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cubic\_gradp@{cubic\_gradp}}
+\index{cubic\_gradp@{cubic\_gradp}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cubic\_gradp}{cubic\_gradp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} HAr\+DCore3\+D\+::cubic\+\_\+gradp\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return}  \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}( 3 * std::pow(x(0), 2),}
+\DoxyCodeLine{                                        x(2),}
+\DoxyCodeLine{                                        x(1)}
+\DoxyCodeLine{                                        );}
+\DoxyCodeLine{                         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gad1907ddcf83cfd92dfb72be9994fa5a9}\label{group__HHO__brinkman_gad1907ddcf83cfd92dfb72be9994fa5a9}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cubic\_gradu@{cubic\_gradu}}
+\index{cubic\_gradu@{cubic\_gradu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cubic\_gradu}{cubic\_gradu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} HAr\+DCore3\+D\+::cubic\+\_\+gradu\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} \{}
+\DoxyCodeLine{                      \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} M = MatrixRd::Zero(); }
+\DoxyCodeLine{                      M.row(0) << 3. * std::pow(x(0), 2) + 2 * x(0) * x(1),}
+\DoxyCodeLine{                                    std::pow(x(0), 2),}
+\DoxyCodeLine{                                    0.;}
+\DoxyCodeLine{                      M.row(1) << x(1) * x(2),}
+\DoxyCodeLine{                                  2 * x(1) + x(0) * x(2),}
+\DoxyCodeLine{                                  x(0) * x(1);}
+\DoxyCodeLine{                      M.row(2) << 0.,}
+\DoxyCodeLine{                                  0.,}
+\DoxyCodeLine{                                  3 * std::pow(x(2), 2);}
+\DoxyCodeLine{                      }
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} M;}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga583602724ec749d7700da759df53ebee}\label{group__HHO__brinkman_ga583602724ec749d7700da759df53ebee}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cubic\_kappainv@{cubic\_kappainv}}
+\index{cubic\_kappainv@{cubic\_kappainv}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cubic\_kappainv}{cubic\_kappainv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} HAr\+DCore3\+D\+::cubic\+\_\+kappainv = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga5f577a3dfc41024e9e5475cf7deece3b}\label{group__HHO__brinkman_ga5f577a3dfc41024e9e5475cf7deece3b}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cubic\_mu@{cubic\_mu}}
+\index{cubic\_mu@{cubic\_mu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cubic\_mu}{cubic\_mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} HAr\+DCore3\+D\+::cubic\+\_\+mu = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga5ee2ca139a1039c55f36dff300124d12}\label{group__HHO__brinkman_ga5ee2ca139a1039c55f36dff300124d12}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cubic\_p@{cubic\_p}}
+\index{cubic\_p@{cubic\_p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cubic\_p}{cubic\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} HAr\+DCore3\+D\+::cubic\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return}  std::pow(x(0), 3) + x(1)*x(2) -\/ 1./4. -\/ 1./4.;}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga1e58b27759c373942645ed11b97b2210}\label{group__HHO__brinkman_ga1e58b27759c373942645ed11b97b2210}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!cubic\_u@{cubic\_u}}
+\index{cubic\_u@{cubic\_u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{cubic\_u}{cubic\_u}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} HAr\+DCore3\+D\+::cubic\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(}
+\DoxyCodeLine{                                     std::pow(x(0), 3) + std::pow(x(0), 2)*x(1),}
+\DoxyCodeLine{                                     std::pow(x(1), 2) + x(0) * x(1) * x(2),}
+\DoxyCodeLine{                                     std::pow(x(2), 3)}
+\DoxyCodeLine{                                     );}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga0f4dd1a729b9cb7cd6b0ec65cc6446ec}\label{group__HHO__brinkman_ga0f4dd1a729b9cb7cd6b0ec65cc6446ec}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!energy@{energy}}
+\index{energy@{energy}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{energy}{energy}}
+{\footnotesize\ttfamily double HAr\+DCore3\+D\+::\+Brinkman\+Norms\+::energy}
+
+
+
+Global energy norm ~\newline
+ 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}\label{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!eps@{eps}}
+\index{eps@{eps}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{eps}{eps}}
+{\footnotesize\ttfamily constexpr double HAr\+DCore3\+D\+::eps =1e-\/14\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga4ed25afcbf6416e2c59da1d937eaa673}\label{group__HHO__brinkman_ga4ed25afcbf6416e2c59da1d937eaa673}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!kappainv@{kappainv}}
+\index{kappainv@{kappainv}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{kappainv}{kappainv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Permeability\+Inv\+Type}} HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::kappainv}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga92b551e737e7f95438d26eeacd076e85}\label{group__HHO__brinkman_ga92b551e737e7f95438d26eeacd076e85}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!linear\_f@{linear\_f}}
+\index{linear\_f@{linear\_f}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{linear\_f}{linear\_f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::linear\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                 \textcolor{keywordflow}{return} VectorRd::Zero() + \mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}}*\mbox{\hyperlink{group__HHO__brinkman_gab251e12ef6b35755be8d0e370dffd71b}{linear\_u}}(x) + \mbox{\hyperlink{group__HHO__brinkman_ga658796573d1c3d4e3ad85d9b0d9c0042}{linear\_gradp}}(x);}
+\DoxyCodeLine{               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gaf3e56fc9f17368bb285143789bf9ed51}\label{group__HHO__brinkman_gaf3e56fc9f17368bb285143789bf9ed51}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!linear\_g@{linear\_g}}
+\index{linear\_g@{linear\_g}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{linear\_g}{linear\_g}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::linear\+\_\+g = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_ga9886f14b1db2b55501a846092f02adf4}{linear\+\_\+gradu}}(x).trace();\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga658796573d1c3d4e3ad85d9b0d9c0042}\label{group__HHO__brinkman_ga658796573d1c3d4e3ad85d9b0d9c0042}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!linear\_gradp@{linear\_gradp}}
+\index{linear\_gradp@{linear\_gradp}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{linear\_gradp}{linear\_gradp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} HAr\+DCore3\+D\+::linear\+\_\+gradp\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                     \textcolor{keywordflow}{return} \mbox{\hyperlink{group__HHO__brinkman_ga249b69ca9df7a9aed6626d932a38bd44}{vec\_p}};}
+\DoxyCodeLine{                   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga9886f14b1db2b55501a846092f02adf4}\label{group__HHO__brinkman_ga9886f14b1db2b55501a846092f02adf4}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!linear\_gradu@{linear\_gradu}}
+\index{linear\_gradu@{linear\_gradu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{linear\_gradu}{linear\_gradu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} HAr\+DCore3\+D\+::linear\+\_\+gradu\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} \{}
+\DoxyCodeLine{                     \textcolor{keywordflow}{return} \mbox{\hyperlink{group__HHO__brinkman_gaaf3849406952d3f00f00e814a7d5fa64}{mat\_u}};}
+\DoxyCodeLine{                   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gaa78476ffc0d30f7a245afc004d41cca3}\label{group__HHO__brinkman_gaa78476ffc0d30f7a245afc004d41cca3}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!linear\_kappainv@{linear\_kappainv}}
+\index{linear\_kappainv@{linear\_kappainv}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{linear\_kappainv}{linear\_kappainv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} HAr\+DCore3\+D\+::linear\+\_\+kappainv = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga61e33ede2aa388f02412efa3caaef680}\label{group__HHO__brinkman_ga61e33ede2aa388f02412efa3caaef680}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!linear\_mu@{linear\_mu}}
+\index{linear\_mu@{linear\_mu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{linear\_mu}{linear\_mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} HAr\+DCore3\+D\+::linear\+\_\+mu = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga115f818e58bb663361a9f05ce444c83b}\label{group__HHO__brinkman_ga115f818e58bb663361a9f05ce444c83b}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!linear\_p@{linear\_p}}
+\index{linear\_p@{linear\_p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{linear\_p}{linear\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} HAr\+DCore3\+D\+::linear\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                 \textcolor{keywordflow}{return} \mbox{\hyperlink{group__HHO__brinkman_ga249b69ca9df7a9aed6626d932a38bd44}{vec\_p}}.dot(x -\/ \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(.5,.5,.5));  }
+\DoxyCodeLine{               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gab251e12ef6b35755be8d0e370dffd71b}\label{group__HHO__brinkman_gab251e12ef6b35755be8d0e370dffd71b}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!linear\_u@{linear\_u}}
+\index{linear\_u@{linear\_u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{linear\_u}{linear\_u}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} HAr\+DCore3\+D\+::linear\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                 \textcolor{keywordflow}{return} \mbox{\hyperlink{group__HHO__brinkman_gaaf3849406952d3f00f00e814a7d5fa64}{mat\_u}} * x;}
+\DoxyCodeLine{               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gaaf3849406952d3f00f00e814a7d5fa64}\label{group__HHO__brinkman_gaaf3849406952d3f00f00e814a7d5fa64}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!mat\_u@{mat\_u}}
+\index{mat\_u@{mat\_u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{mat\_u}{mat\_u}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} HAr\+DCore3\+D\+::mat\+\_\+u = (\mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}}() $<$$<$ 1.,2.,3., 0.,-\/1.,1. , 0.,1.,1.).finished()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga4dbfbe718ae12a8a2d53fa52f45c0665}\label{group__HHO__brinkman_ga4dbfbe718ae12a8a2d53fa52f45c0665}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!mu@{mu}}
+\index{mu@{mu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{mu}{mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Viscosity\+Type}} HAr\+DCore3\+D\+::\+Brinkman\+Parameters\+::mu}
+
+\mbox{\Hypertarget{group__HHO__brinkman_gacd61f805dcb56081788c59e1ed6a0b06}\label{group__HHO__brinkman_gacd61f805dcb56081788c59e1ed6a0b06}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!p@{p}}
+\index{p@{p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily double HAr\+DCore3\+D\+::\+Brinkman\+Norms\+::p}
+
+
+
+L2 norm of p. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga5941bb0b014eab00f742803f43ae5e48}\label{group__HHO__brinkman_ga5941bb0b014eab00f742803f43ae5e48}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!permeability\_in\_box@{permeability\_in\_box}}
+\index{permeability\_in\_box@{permeability\_in\_box}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{permeability\_in\_box}{permeability\_in\_box}}
+{\footnotesize\ttfamily constexpr double HAr\+DCore3\+D\+::permeability\+\_\+in\+\_\+box = 1e-\/7\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga2dc87f28ba4daa63a8a61e003342d09c}\label{group__HHO__brinkman_ga2dc87f28ba4daa63a8a61e003342d09c}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!permeability\_in\_wedge@{permeability\_in\_wedge}}
+\index{permeability\_in\_wedge@{permeability\_in\_wedge}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{permeability\_in\_wedge}{permeability\_in\_wedge}}
+{\footnotesize\ttfamily constexpr double HAr\+DCore3\+D\+::permeability\+\_\+in\+\_\+wedge = 1e-\/2\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}\label{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!PI@{PI}}
+\index{PI@{PI}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily const double HAr\+DCore3\+D\+::\+PI = boost\+::math\+::constants\+::pi$<$double$>$()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga8f73ab3babb657a7c143f49a85473f79}\label{group__HHO__brinkman_ga8f73ab3babb657a7c143f49a85473f79}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!quadratic\_f@{quadratic\_f}}
+\index{quadratic\_f@{quadratic\_f}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{quadratic\_f}{quadratic\_f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::quadratic\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} -\/ \mbox{\hyperlink{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}{scaling\_mu}} * \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}( 2., 2., 2.) + \mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}} * \mbox{\hyperlink{group__HHO__brinkman_gabed608c28beca212c8bac183f8f7306b}{quadratic\_u}}(x) + \mbox{\hyperlink{group__HHO__brinkman_gabc6363716b03c8108bd5b57a94732bdc}{quadratic\_gradp}}(x);}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gafaf522d361fe4bc1a3ca2b5be8741773}\label{group__HHO__brinkman_gafaf522d361fe4bc1a3ca2b5be8741773}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!quadratic\_g@{quadratic\_g}}
+\index{quadratic\_g@{quadratic\_g}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{quadratic\_g}{quadratic\_g}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::quadratic\+\_\+g = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_ga364e6b67999711a7065e7f0a6cdbea9c}{quadratic\+\_\+gradu}}(x).trace();\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_gabc6363716b03c8108bd5b57a94732bdc}\label{group__HHO__brinkman_gabc6363716b03c8108bd5b57a94732bdc}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!quadratic\_gradp@{quadratic\_gradp}}
+\index{quadratic\_gradp@{quadratic\_gradp}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{quadratic\_gradp}{quadratic\_gradp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} HAr\+DCore3\+D\+::quadratic\+\_\+gradp\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return}  \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}( 2 * x(0),}
+\DoxyCodeLine{                                        x(2),}
+\DoxyCodeLine{                                        x(1)}
+\DoxyCodeLine{                                        );}
+\DoxyCodeLine{                         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga364e6b67999711a7065e7f0a6cdbea9c}\label{group__HHO__brinkman_ga364e6b67999711a7065e7f0a6cdbea9c}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!quadratic\_gradu@{quadratic\_gradu}}
+\index{quadratic\_gradu@{quadratic\_gradu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{quadratic\_gradu}{quadratic\_gradu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} HAr\+DCore3\+D\+::quadratic\+\_\+gradu\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} \{}
+\DoxyCodeLine{                      \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} M = MatrixRd::Zero(); }
+\DoxyCodeLine{                      M.row(0) << 2. * x(0),}
+\DoxyCodeLine{                                    0.,}
+\DoxyCodeLine{                                    0.;}
+\DoxyCodeLine{                      M.row(1) << 0.,}
+\DoxyCodeLine{                                  2 * x(1),}
+\DoxyCodeLine{                                  0.;}
+\DoxyCodeLine{                      M.row(2) << 0.,}
+\DoxyCodeLine{                                  0.,}
+\DoxyCodeLine{                                  2 * x(2);}
+\DoxyCodeLine{                      }
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} M;}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga925b6a70d166bbe29bc5d4ad756e770a}\label{group__HHO__brinkman_ga925b6a70d166bbe29bc5d4ad756e770a}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!quadratic\_kappainv@{quadratic\_kappainv}}
+\index{quadratic\_kappainv@{quadratic\_kappainv}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{quadratic\_kappainv}{quadratic\_kappainv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} HAr\+DCore3\+D\+::quadratic\+\_\+kappainv = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga9179c6100ef8c0a83f0849b09cc2c2ad}\label{group__HHO__brinkman_ga9179c6100ef8c0a83f0849b09cc2c2ad}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!quadratic\_mu@{quadratic\_mu}}
+\index{quadratic\_mu@{quadratic\_mu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{quadratic\_mu}{quadratic\_mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} HAr\+DCore3\+D\+::quadratic\+\_\+mu = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga66059121f9787fbf247deb23c5e8fbb9}\label{group__HHO__brinkman_ga66059121f9787fbf247deb23c5e8fbb9}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!quadratic\_p@{quadratic\_p}}
+\index{quadratic\_p@{quadratic\_p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{quadratic\_p}{quadratic\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} HAr\+DCore3\+D\+::quadratic\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return}  std::pow(x(0), 2) + x(1)*x(2) -\/ 1./3. -\/ 1./4.;}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gabed608c28beca212c8bac183f8f7306b}\label{group__HHO__brinkman_gabed608c28beca212c8bac183f8f7306b}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!quadratic\_u@{quadratic\_u}}
+\index{quadratic\_u@{quadratic\_u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{quadratic\_u}{quadratic\_u}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} HAr\+DCore3\+D\+::quadratic\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(}
+\DoxyCodeLine{                                     std::pow(x(0), 2),}
+\DoxyCodeLine{                                     std::pow(x(1), 2),}
+\DoxyCodeLine{                                     std::pow(x(2), 2)}
+\DoxyCodeLine{                                     );}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga55cee7c4814d1a1bfe68090e47048d22}\label{group__HHO__brinkman_ga55cee7c4814d1a1bfe68090e47048d22}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_f@{regimes\_f}}
+\index{regimes\_f@{regimes\_f}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_f}{regimes\_f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} fvalue = \mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x) * \mbox{\hyperlink{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}{scaling\_mu}} * 6. * std::pow(\mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}, 2) * \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(}
+\DoxyCodeLine{                                                            sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                            cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                            -\/2. * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2))}
+\DoxyCodeLine{                                                            )}
+\DoxyCodeLine{                                        + \mbox{\hyperlink{group__HHO__brinkman_ga81def91a67f1d4b1fa65733c978f74be}{regimes\_gradp}}(x);}
+\DoxyCodeLine{                      }
+\DoxyCodeLine{                      \textcolor{keywordflow}{if} (\mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}} > \mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{eps}})\{}
+\DoxyCodeLine{                        fvalue += \mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}} * \mbox{\hyperlink{group__HHO__brinkman_ga2504076483feb12fa68e04f91d9c660f}{regimes\_u}}(x)}
+\DoxyCodeLine{                                  -\/ \mbox{\hyperlink{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}{scaling\_mu}} * (1-\/\mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x))/\mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}} * 12. * std::pow(\mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}, 2) * \mbox{\hyperlink{group__HHO__brinkman_ga81def91a67f1d4b1fa65733c978f74be}{regimes\_gradp}}(x);}
+\DoxyCodeLine{                      \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} fvalue;}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga0913b4a1f3edf62a1f7f24e4c5e4d92e}\label{group__HHO__brinkman_ga0913b4a1f3edf62a1f7f24e4c5e4d92e}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_g@{regimes\_g}}
+\index{regimes\_g@{regimes\_g}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_g}{regimes\_g}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+g = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_ga40b530d8b7189f32e56afe56ed73379b}{regimes\+\_\+gradu}}(x).trace() ;\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga81def91a67f1d4b1fa65733c978f74be}\label{group__HHO__brinkman_ga81def91a67f1d4b1fa65733c978f74be}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_gradp@{regimes\_gradp}}
+\index{regimes\_gradp@{regimes\_gradp}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_gradp}{regimes\_gradp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+gradp = \mbox{\hyperlink{group__HHO__brinkman_ga9313f57c43d447073a9b3f2ff7b417de}{trigonometric\+\_\+gradp}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga40b530d8b7189f32e56afe56ed73379b}\label{group__HHO__brinkman_ga40b530d8b7189f32e56afe56ed73379b}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_gradu@{regimes\_gradu}}
+\index{regimes\_gradu@{regimes\_gradu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_gradu}{regimes\_gradu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+gradu = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x) -\/$>$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \{ return \mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_gabd1c83ac3a3ddf242b5731ccea2307da}{regimes\+\_\+graduS}}(x) + (1.-\/\mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x)) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga1f742df61764c1756ba739a182261d84}{regimes\+\_\+graduD}}(x);\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga1f742df61764c1756ba739a182261d84}\label{group__HHO__brinkman_ga1f742df61764c1756ba739a182261d84}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_graduD@{regimes\_graduD}}
+\index{regimes\_graduD@{regimes\_graduD}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_graduD}{regimes\_graduD}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+graduD\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} \{}
+\DoxyCodeLine{                  \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} M = MatrixRd::Zero(); }
+\DoxyCodeLine{                  }
+\DoxyCodeLine{                  \textcolor{keywordflow}{if} (\mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}}>\mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{eps}})\{}
+\DoxyCodeLine{                      M.row(0) << sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                    -\/cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                    -\/cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2));}
+\DoxyCodeLine{                      M.row(1) <<  -\/cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                   sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                   -\/sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2));}
+\DoxyCodeLine{                      M.row(2) <<  -\/cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                    -\/sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                    sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2));}
+\DoxyCodeLine{                      M *= 4. * std::pow(\mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}, 2) / \mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}};}
+\DoxyCodeLine{                   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{                   \textcolor{keywordflow}{return} M;}
+\DoxyCodeLine{                \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gabd1c83ac3a3ddf242b5731ccea2307da}\label{group__HHO__brinkman_gabd1c83ac3a3ddf242b5731ccea2307da}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_graduS@{regimes\_graduS}}
+\index{regimes\_graduS@{regimes\_graduS}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_graduS}{regimes\_graduS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+graduS = \mbox{\hyperlink{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}{trigonometric\+\_\+gradu}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga05e27d4db812c4dae9e916b049782c38}\label{group__HHO__brinkman_ga05e27d4db812c4dae9e916b049782c38}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_kappainv@{regimes\_kappainv}}
+\index{regimes\_kappainv@{regimes\_kappainv}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_kappainv}{regimes\_kappainv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+kappainv = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga9507833e388e0add7d72aa84d623d41d}\label{group__HHO__brinkman_ga9507833e388e0add7d72aa84d623d41d}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_mu@{regimes\_mu}}
+\index{regimes\_mu@{regimes\_mu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_mu}{regimes\_mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+mu = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga023724a3e1a9ace65feeb59bc65976b8}\label{group__HHO__brinkman_ga023724a3e1a9ace65feeb59bc65976b8}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_p@{regimes\_p}}
+\index{regimes\_p@{regimes\_p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_p}{regimes\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+p = \mbox{\hyperlink{group__DDR__stokes_ga9b7879fd3b35059edb87a8986c1c8d22}{trigonometric\+\_\+p}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga2504076483feb12fa68e04f91d9c660f}\label{group__HHO__brinkman_ga2504076483feb12fa68e04f91d9c660f}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_u@{regimes\_u}}
+\index{regimes\_u@{regimes\_u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_u}{regimes\_u}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+u = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x) -\/$>$ Vector\+Rd \{ return \mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga83fbae16c582e7aedb042f49bba3fec4}{regimes\+\_\+uS}}(x) + (1.-\/\mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x)) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga516648c4533e6458035e69b9af135ba2}{regimes\+\_\+uD}}(x);\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga516648c4533e6458035e69b9af135ba2}\label{group__HHO__brinkman_ga516648c4533e6458035e69b9af135ba2}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_uD@{regimes\_uD}}
+\index{regimes\_uD@{regimes\_uD}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_uD}{regimes\_uD}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+uD\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} uDvalue = VectorRd::Zero();}
+\DoxyCodeLine{                      \textcolor{keywordflow}{if} (\mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}} > \mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{eps}}) \{}
+\DoxyCodeLine{                        uDvalue = -\/ std::pow(\mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}}, -\/1) * \mbox{\hyperlink{group__HHO__brinkman_ga81def91a67f1d4b1fa65733c978f74be}{regimes\_gradp}}(x) ;}
+\DoxyCodeLine{                      \}}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} uDvalue;}
+\DoxyCodeLine{                     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga83fbae16c582e7aedb042f49bba3fec4}\label{group__HHO__brinkman_ga83fbae16c582e7aedb042f49bba3fec4}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!regimes\_uS@{regimes\_uS}}
+\index{regimes\_uS@{regimes\_uS}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{regimes\_uS}{regimes\_uS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} HAr\+DCore3\+D\+::regimes\+\_\+uS = \mbox{\hyperlink{group__DDR__magnetostatic_ga5f8102524d5dd3728c5216dcbfc32e59}{trigonometric\+\_\+u}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}\label{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!scaling\_kappainv@{scaling\_kappainv}}
+\index{scaling\_kappainv@{scaling\_kappainv}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{scaling\_kappainv}{scaling\_kappainv}}
+{\footnotesize\ttfamily double HAr\+DCore3\+D\+::scaling\+\_\+kappainv = 1.}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}\label{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!scaling\_mu@{scaling\_mu}}
+\index{scaling\_mu@{scaling\_mu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{scaling\_mu}{scaling\_mu}}
+{\footnotesize\ttfamily double HAr\+DCore3\+D\+::scaling\+\_\+mu = 1.}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga54770be2cc45af21b652eb90e88e8b14}\label{group__HHO__brinkman_ga54770be2cc45af21b652eb90e88e8b14}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!trigonometric\_f@{trigonometric\_f}}
+\index{trigonometric\_f@{trigonometric\_f}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_f}{trigonometric\_f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}{scaling\_mu}} * 6. * std::pow(\mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}, 2) * \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(}
+\DoxyCodeLine{                                                            sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                            cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                            -\/2. * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2))}
+\DoxyCodeLine{                                                            )}
+\DoxyCodeLine{                        + \mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}}*\mbox{\hyperlink{group__HHO__brinkman_ga53362b5995812993dd8f3e3ea8f16ea0}{trigonometric\_u}}(x) + \mbox{\hyperlink{group__HHO__brinkman_ga9313f57c43d447073a9b3f2ff7b417de}{trigonometric\_gradp}}(x);}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gaae7197427c36fea1c6038771280b28d0}\label{group__HHO__brinkman_gaae7197427c36fea1c6038771280b28d0}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!trigonometric\_g@{trigonometric\_g}}
+\index{trigonometric\_g@{trigonometric\_g}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_g}{trigonometric\_g}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+g = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}{trigonometric\+\_\+gradu}}(x).trace();\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga9313f57c43d447073a9b3f2ff7b417de}\label{group__HHO__brinkman_ga9313f57c43d447073a9b3f2ff7b417de}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!trigonometric\_gradp@{trigonometric\_gradp}}
+\index{trigonometric\_gradp@{trigonometric\_gradp}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_gradp}{trigonometric\_gradp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+gradp\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{group__DDR__stokes_gaf99e987dabcfb0766cf43f0b24ece487}{pressure\_scaling}} * 2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(}
+\DoxyCodeLine{                                                      cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                      sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                                      sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2))}
+\DoxyCodeLine{                                                      );}
+\DoxyCodeLine{                         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}\label{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!trigonometric\_gradu@{trigonometric\_gradu}}
+\index{trigonometric\_gradu@{trigonometric\_gradu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_gradu}{trigonometric\_gradu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+gradu\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} \{}
+\DoxyCodeLine{                      \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} M = MatrixRd::Zero(); }
+\DoxyCodeLine{                      M.row(0) << \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * cos(2 * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2 * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2 * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                    -\/\mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                    -\/\mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2));}
+\DoxyCodeLine{                      M.row(1) << -\/ \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                    \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                    -\/\mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2));}
+\DoxyCodeLine{                      M.row(2) << 2 * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                    2 * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                    -\/ 2 * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2));}
+\DoxyCodeLine{                      }
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} M;}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga461efb7c4083702f8a550c49d6536003}\label{group__HHO__brinkman_ga461efb7c4083702f8a550c49d6536003}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!trigonometric\_kappainv@{trigonometric\_kappainv}}
+\index{trigonometric\_kappainv@{trigonometric\_kappainv}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_kappainv}{trigonometric\_kappainv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+kappainv = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga8849d554e4a04ab9d1cf7b270ca5856c}\label{group__HHO__brinkman_ga8849d554e4a04ab9d1cf7b270ca5856c}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!trigonometric\_mu@{trigonometric\_mu}}
+\index{trigonometric\_mu@{trigonometric\_mu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_mu}{trigonometric\_mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+mu = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga8bfdfeaf16210ec8948f27db76c08321}\label{group__HHO__brinkman_ga8bfdfeaf16210ec8948f27db76c08321}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!trigonometric\_p@{trigonometric\_p}}
+\index{trigonometric\_p@{trigonometric\_p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_p}{trigonometric\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{group__DDR__stokes_gaf99e987dabcfb0766cf43f0b24ece487}{pressure\_scaling}} * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2));}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga53362b5995812993dd8f3e3ea8f16ea0}\label{group__HHO__brinkman_ga53362b5995812993dd8f3e3ea8f16ea0}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!trigonometric\_u@{trigonometric\_u}}
+\index{trigonometric\_u@{trigonometric\_u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_u}{trigonometric\_u}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(}
+\DoxyCodeLine{                                     0.5 * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                     0.5 * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2)),}
+\DoxyCodeLine{                                     -\/cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(0)) * cos(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(1)) * sin(2. * \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * x(2))}
+\DoxyCodeLine{                                     );}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga2295ef64b8e6631692fcc672fb950d47}\label{group__HHO__brinkman_ga2295ef64b8e6631692fcc672fb950d47}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!u@{u}}
+\index{u@{u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{u}{u}}
+{\footnotesize\ttfamily double HAr\+DCore3\+D\+::\+Brinkman\+Norms\+::u}
+
+
+
+Energy norm of velocity. 
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga825b4e191e3a5a3eb0ac3502a1359cd5}\label{group__HHO__brinkman_ga825b4e191e3a5a3eb0ac3502a1359cd5}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!vcracked\_f@{vcracked\_f}}
+\index{vcracked\_f@{vcracked\_f}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{vcracked\_f}{vcracked\_f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::vcracked\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(0., 0., -\/.98);}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga0232ff576226b1a94d37fa9c2e00d8fc}\label{group__HHO__brinkman_ga0232ff576226b1a94d37fa9c2e00d8fc}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!vcracked\_g@{vcracked\_g}}
+\index{vcracked\_g@{vcracked\_g}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{vcracked\_g}{vcracked\_g}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::vcracked\+\_\+g\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{ }
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} 0.;}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga7c2e3f78e7814de90033de5e338d22bf}\label{group__HHO__brinkman_ga7c2e3f78e7814de90033de5e338d22bf}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!vcracked\_gradp@{vcracked\_gradp}}
+\index{vcracked\_gradp@{vcracked\_gradp}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{vcracked\_gradp}{vcracked\_gradp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} HAr\+DCore3\+D\+::vcracked\+\_\+gradp\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return}  VectorRd::Zero();}
+\DoxyCodeLine{                         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gafa9ae279dd50bac31674d421f3eee481}\label{group__HHO__brinkman_gafa9ae279dd50bac31674d421f3eee481}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!vcracked\_gradu@{vcracked\_gradu}}
+\index{vcracked\_gradu@{vcracked\_gradu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{vcracked\_gradu}{vcracked\_gradu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} HAr\+DCore3\+D\+::vcracked\+\_\+gradu\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{MatrixRd}} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} MatrixRd::Zero();}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga3de6b901bf4e75c9d991763194d7cac1}\label{group__HHO__brinkman_ga3de6b901bf4e75c9d991763194d7cac1}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!vcracked\_kappainv@{vcracked\_kappainv}}
+\index{vcracked\_kappainv@{vcracked\_kappainv}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{vcracked\_kappainv}{vcracked\_kappainv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} HAr\+DCore3\+D\+::vcracked\+\_\+kappainv = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(\mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 1e-\/5$\ast$(1.-\/\mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{XiV}}(x)) + 0.\+001$\ast$\mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{XiV}}(x);\})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_gaa009efff6a625fef7d557cb0bad321ab}\label{group__HHO__brinkman_gaa009efff6a625fef7d557cb0bad321ab}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!vcracked\_mu@{vcracked\_mu}}
+\index{vcracked\_mu@{vcracked\_mu}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{vcracked\_mu}{vcracked\_mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} HAr\+DCore3\+D\+::vcracked\+\_\+mu = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(\mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 0.\+01 $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{XiV}}(x);\})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga15be3b5abaf396a623f0563dc1d2b767}\label{group__HHO__brinkman_ga15be3b5abaf396a623f0563dc1d2b767}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!vcracked\_p@{vcracked\_p}}
+\index{vcracked\_p@{vcracked\_p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{vcracked\_p}{vcracked\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} HAr\+DCore3\+D\+::vcracked\+\_\+p\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return}  0.;}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gaa5eae4fe6df55d7a3c3a143cef49f542}\label{group__HHO__brinkman_gaa5eae4fe6df55d7a3c3a143cef49f542}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!vcracked\_u@{vcracked\_u}}
+\index{vcracked\_u@{vcracked\_u}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{vcracked\_u}{vcracked\_u}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} HAr\+DCore3\+D\+::vcracked\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                      \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} value = VectorRd::Zero();}
+\DoxyCodeLine{                      \textcolor{keywordflow}{if} ( x.x() < .2) \{}
+\DoxyCodeLine{                        }
+\DoxyCodeLine{                        value = \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(.3, 0., 0.);}
+\DoxyCodeLine{                      \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( (x.z() > 0.8) \&\& (x.x() > 0.75-\/\mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{eps}}) \&\& (x.x() < 1.25+\mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{eps}}) )\{}
+\DoxyCodeLine{                        }
+\DoxyCodeLine{                        value = \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(1, 0., 0.);}
+\DoxyCodeLine{                      \}}
+\DoxyCodeLine{                      }
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{                     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga249b69ca9df7a9aed6626d932a38bd44}\label{group__HHO__brinkman_ga249b69ca9df7a9aed6626d932a38bd44}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!vec\_p@{vec\_p}}
+\index{vec\_p@{vec\_p}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{vec\_p}{vec\_p}}
+{\footnotesize\ttfamily const Vector\+Rd HAr\+DCore3\+D\+::vec\+\_\+p = Vector\+Rd(-\/1., 2., -\/5.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga039ebb2e5436912d7323b20b63d01231}\label{group__HHO__brinkman_ga039ebb2e5436912d7323b20b63d01231}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!viscosity\_in\_cavity@{viscosity\_in\_cavity}}
+\index{viscosity\_in\_cavity@{viscosity\_in\_cavity}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{viscosity\_in\_cavity}{viscosity\_in\_cavity}}
+{\footnotesize\ttfamily constexpr double HAr\+DCore3\+D\+::viscosity\+\_\+in\+\_\+cavity = 0.\+01\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga251680a1b4448f4b4198b07ece3063e6}\label{group__HHO__brinkman_ga251680a1b4448f4b4198b07ece3063e6}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!XiBox@{XiBox}}
+\index{XiBox@{XiBox}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{XiBox}{XiBox}}
+{\footnotesize\ttfamily std\+::function$<$double(const Vector\+Rd \&)$>$ HAr\+DCore3\+D\+::\+Xi\+Box = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 1. -\/ \mbox{\hyperlink{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}{Xi\+Cavity}}(x) -\/ \mbox{\hyperlink{group__HHO__brinkman_ga2f21ea8a7bbe91797809288e7ddb65d9}{Xi\+Wedge}}(x); \}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}\label{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!XiCavity@{XiCavity}}
+\index{XiCavity@{XiCavity}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{XiCavity}{XiCavity}}
+{\footnotesize\ttfamily std\+::function$<$double(const Vector\+Rd \&)$>$ HAr\+DCore3\+D\+::\+Xi\+Cavity\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x)-\/>\textcolor{keywordtype}{double} \{ }
+\DoxyCodeLine{            \textcolor{keywordflow}{return} ( (x.x()>0) \&\& (x.x()<1) \&\& (x.y()>0) \&\& (x.y()<1) \&\& (x.z()>-\/1) ? 1. : 0.); }
+\DoxyCodeLine{          \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}\label{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!XiS@{XiS}}
+\index{XiS@{XiS}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{XiS}{XiS}}
+{\footnotesize\ttfamily std\+::function$<$double(const Vector\+Rd \&)$>$ HAr\+DCore3\+D\+::\+XiS\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{              \textcolor{keywordflow}{return} (\mbox{\hyperlink{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}{scaling\_mu}} > \mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{eps}} ? std::exp(-\/\mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\_kappainv}}/\mbox{\hyperlink{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}{scaling\_mu}}) : 0.);}
+\DoxyCodeLine{          \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}\label{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!XiV@{XiV}}
+\index{XiV@{XiV}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{XiV}{XiV}}
+{\footnotesize\ttfamily std\+::function$<$double(const Vector\+Rd \&)$>$ HAr\+DCore3\+D\+::\+XiV = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return (x.\+z() $>$ 2$\ast$std\+::abs(x.\+x()-\/1.)+0.\+5-\/\mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{eps}}); \}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__brinkman_ga2f21ea8a7bbe91797809288e7ddb65d9}\label{group__HHO__brinkman_ga2f21ea8a7bbe91797809288e7ddb65d9}} 
+\index{HHO\_brinkman@{HHO\_brinkman}!XiWedge@{XiWedge}}
+\index{XiWedge@{XiWedge}!HHO\_brinkman@{HHO\_brinkman}}
+\doxysubsubsection{\texorpdfstring{XiWedge}{XiWedge}}
+{\footnotesize\ttfamily std\+::function$<$double(const Vector\+Rd \&)$>$ HAr\+DCore3\+D\+::\+Xi\+Wedge\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x)-\/>\textcolor{keywordtype}{double} \{ }
+\DoxyCodeLine{            \textcolor{keywordflow}{return} ( (x.x()>=1) \&\& (x.x()<2) \&\& (x.y()>0) \&\& (x.y()<1) \&\& (x.z()> -\/.75 + .25*(x.x()-\/1)) ? 1. : 0.); }
+\DoxyCodeLine{          \}}
+
+\end{DoxyCode}

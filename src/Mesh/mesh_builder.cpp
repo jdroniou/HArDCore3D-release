@@ -3,29 +3,30 @@
 using namespace HArDCore3D;
 
 // Split 2D object into simplices
-Simplices<2> simplify(std::vector<VectorRd> vertices)
+Simplices<2> simplexify(std::vector<VectorRd> vertices)
 {
     assert(vertices.size() >= 3);
     Simplices<2> simplices;
-    std::size_t pos = 0;
-    while (vertices.size() > 3)
-    {
-        std::size_t pos_next = (pos < vertices.size() - 1) ? pos + 1 : 0;
-        std::size_t pos_last = (pos_next < vertices.size() - 1) ? pos_next + 1 : 0;
 
-        Simplex<2> simplex = {vertices[pos], vertices[pos_next], vertices[pos_last]}; // convexity assumption here
+if(vertices.size() == 3)
+    {
+        Simplex<2> simplex = {vertices[0], vertices[1], vertices[2]};
         simplices.push_back(simplex);
-        vertices.erase(vertices.begin() + pos_next);
-
-        pos = (pos_next < vertices.size() - 1) ? pos_next : 0;
+        return simplices;
     }
-    Simplex<2> last_simplex;
-    for (std::size_t i = 0; i < 3; ++i)
+    
+    VectorRd center = VectorRd::Zero();
+    for(auto & v : vertices)
     {
-        last_simplex[i] = vertices[i];
+        center += v;
     }
-    simplices.push_back(last_simplex);
+    center /= vertices.size();
 
+    for(size_t iV = 0; iV < vertices.size(); ++iV)
+    {
+        Simplex<2> simplex = {center, vertices[iV], vertices[ (iV + 1) % vertices.size() ]}; // star shaped wrt vertex average.
+        simplices.push_back(simplex);
+    }
     return simplices;
 }
 
@@ -165,7 +166,7 @@ std::unique_ptr<Mesh> MeshBuilder::build_the_mesh()
 
                         if (make_face_flag)
                         {
-                            face = new Face(mesh->n_faces(), simplify(vertex_coords));
+                            face = new Face(mesh->n_faces(), simplexify(vertex_coords));
                             make_face_flag = false;
                             mesh->add_face(face);
                             for (auto &vertID : vertex_ids)
@@ -205,7 +206,7 @@ std::unique_ptr<Mesh> MeshBuilder::build_the_mesh()
                     if (!found)
                     {
                         // make face
-                        face = new Face(mesh->n_faces(), simplify(vertex_coords));
+                        face = new Face(mesh->n_faces(), simplexify(vertex_coords));
                         mesh->add_face(face);
                         for (auto &e : face_edges)
                         {
@@ -292,13 +293,29 @@ std::unique_ptr<Mesh> MeshBuilder::build_the_mesh()
                 cell->add_vertex(mesh->vertex(vertID));
                 mesh->vertex(vertID)->add_cell(cell);
             }
-            cell->construct_face_normals();
+            cell->construct_face_orientations();
         }
 
         // // build boundary
         build_boundary(mesh.get());
 
         std::cout << "added " << mesh->n_cells() << " cells; Total volume = " << total_vol << std::endl;
+
+        // Check that all faces are flat
+        std::vector<size_t> non_flat_faces;
+        for (auto & F : mesh->get_faces()){
+          if (!F->is_flat()){
+            non_flat_faces.push_back(F->global_index());
+          }
+        }
+        if (non_flat_faces.size()>0){
+          std::cout << "     WARNING: the following faces are not flat: ";
+          for (size_t i = 0; i < non_flat_faces.size(); ++i){
+            std::cout << non_flat_faces[i] << " ";
+          }
+          std::cout << std::endl << std::endl;
+        }
+
         return mesh;
     }
     else

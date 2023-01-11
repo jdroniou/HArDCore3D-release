@@ -150,6 +150,18 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga4b0bbf5291db203446ef
 \begin{DoxyCompactList}\small\item\em Template to compute the Gram Matrix of the divergence of any basis and any other basis. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga5427e32bad971a5401444edcc0457fbe}{HAr\+DCore3\+D\+::\+Gram\+Matrix\+Div}} (const Cell \&T, const Basis\+Type1 \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ Basis\+Type2 $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Template to compute the Gram Matrix of the divergence of any two bases when one \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}} is at a lower level than the other. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 , size\+\_\+t N$>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga81e1f873d03781c0818032de38eaed28}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type1, N $>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type2, N $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Gram Matrix of any pair of \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} bases. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gac97dc93f0d63578cd0fb04a3e8d398ce}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Gram Matrix of the divergence of a \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} and a tensorized family (only valid if, in \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} and \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}, we have N=dimspace). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gaeec2aeb512381c5f831c11ade7e18388}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Generic template to compute the Gram Matrix of a vector valued basis and the divergence of a \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga9127f671310990c51b82060711640e95}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Gram Matrix of the gradient basis of a tensorized family and a matrix family (only valid if N=dimspace in Tensorized and \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gade2eb7a985c52bc808e1ee841fc5ad9f}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Gram Matrix of a Matrix family and the gradient of a tensorized family. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 , size\+\_\+t N$>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gac74d542095d2ebe5fa9c5fc2e5ac2615}{HAr\+DCore3\+D\+::\+Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, N $>$$>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, N $>$$>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Gram Matrix of two gradient bases of tensorized families. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga6186042c03b027877f08708d9a8e7f10}{HAr\+DCore3\+D\+::\+Integrate\+Edge\+Monomials}} (const Edge \&E, const int maxdeg)
 \begin{DoxyCompactList}\small\item\em Compute all integrals of edge monomials up to a total degree. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga1f77448401179e7c91990fa14843dddd}{HAr\+DCore3\+D\+::\+Check\+Integrals\+Degree}} (const Edge \&E, const size\+\_\+t degree, const \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \&mono\+\_\+int\+\_\+map=\{\})
@@ -1042,7 +1054,7 @@ Computes the Gram Matrix of a pair of local scalar monomial bases, taking a part
 \mbox{\Hypertarget{group__Quadratures_ga9cf3980cda31ffbf4333cbd66c4174b3}\label{group__Quadratures_ga9cf3980cda31ffbf4333cbd66c4174b3}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Basis\+Type \&}]{basis,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1053,7 +1065,7 @@ This overload to simplify the call to Gram\+Matrix in case the two bases are the
 \mbox{\Hypertarget{group__Quadratures_gad6ac182fca9709053c7126272db3cbbb}\label{group__Quadratures_gad6ac182fca9709053c7126272db3cbbb}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Basis\+Type1 \&}]{basis1,  }\item[{const Basis\+Type2 \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1075,7 +1087,7 @@ Generic template to compute the Gram Matrix of any pair of bases.
 \mbox{\Hypertarget{group__Quadratures_gab2ffd87b19d082fb2caed614f39794de}\label{group__Quadratures_gab2ffd87b19d082fb2caed614f39794de}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Basis\+Type1 \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ Basis2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1097,7 +1109,7 @@ Template to compute the Gram Matrix of any basis and a Curl basis.
 \mbox{\Hypertarget{group__Quadratures_ga28855583066c49083328270621d275c5}\label{group__Quadratures_ga28855583066c49083328270621d275c5}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Basis\+Type1 \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ Basis2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1119,7 +1131,7 @@ Template to compute the Gram Matrix of any basis and a Divergence basis.
 \mbox{\Hypertarget{group__Quadratures_gac601909ecdac2724b71a4856b798a592}\label{group__Quadratures_gac601909ecdac2724b71a4856b798a592}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 boost\+::disable\+\_\+if$<$boost\+::is\+\_\+same$<$Basis\+Type2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}$>$, Eigen\+::\+Matrix\+Xd$>$\+::type HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ Basis\+Type1 $>$ \&}]{basis1,  }\item[{const Basis\+Type2 \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1141,7 +1153,7 @@ Generic template to compute the Gram Matrix of a Curl basis and any other basis.
 \mbox{\Hypertarget{group__Quadratures_ga27b2b9d44cc0de013b706705c89e5b8d}\label{group__Quadratures_ga27b2b9d44cc0de013b706705c89e5b8d}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [6/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [6/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ Basis\+Type1 $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ Basis\+Type2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1163,7 +1175,7 @@ Generic template to compute the Gram Matrix of Curl of any pair of bases.
 \mbox{\Hypertarget{group__Quadratures_ga5229fa2a6a3bfd531cc6de8f8efb9152}\label{group__Quadratures_ga5229fa2a6a3bfd531cc6de8f8efb9152}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [7/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [7/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 boost\+::disable\+\_\+if$<$boost\+::is\+\_\+same$<$Basis\+Type2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}$>$, Eigen\+::\+Matrix\+Xd$>$\+::type HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ Basis\+Type1 $>$ \&}]{basis1,  }\item[{const Basis\+Type2 \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1185,7 +1197,7 @@ Generic template to compute the Gram Matrix of a Divergence basis and any other 
 \mbox{\Hypertarget{group__Quadratures_gab53721438868aeca0e3db240700ce1a5}\label{group__Quadratures_gab53721438868aeca0e3db240700ce1a5}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [8/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [8/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ Basis\+Type1 $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ Basis\+Type2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1204,10 +1216,32 @@ Generic template to compute the Gram Matrix of Divergence of any pair of bases.
 {\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_gac97dc93f0d63578cd0fb04a3e8d398ce}\label{group__Quadratures_gac97dc93f0d63578cd0fb04a3e8d398ce}} 
+\index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
+\index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [9/44]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
+Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Gram Matrix of the divergence of a \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} and a tensorized family (only valid if, in \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} and \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}, we have N=dimspace). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & Divergence of \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} (rows of the Gram matrix) \\
+\hline
+{\em basis2} & Tensorized family (columns of the Gram matrix) \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__Quadratures_ga4a81cb7d274e50fdf96ce99f201a99a4}\label{group__Quadratures_ga4a81cb7d274e50fdf96ce99f201a99a4}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [9/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [10/44]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{Goly\+Compl\+Basis\+Cell}} \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{Goly\+Compl\+Basis\+Cell}} \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
 
@@ -1228,7 +1262,7 @@ Computes the Gram Matrix of a pair of Goly\+Compl bases.
 \mbox{\Hypertarget{group__Quadratures_ga85bd66724835004c302427553195f463}\label{group__Quadratures_ga85bd66724835004c302427553195f463}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [10/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [11/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , size\+\_\+t N$>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{Goly\+Compl\+Basis\+Cell}} \&}]{golycompl\+\_\+basis,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, N $>$ \&}]{tens\+\_\+family,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1250,7 +1284,7 @@ Template to compute the Gram Matrix of a Goly\+Compl basis and a tensorized scal
 \mbox{\Hypertarget{group__Quadratures_gae1898897b11a069ccb17db256303c9a1}\label{group__Quadratures_gae1898897b11a069ccb17db256303c9a1}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [11/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [12/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 , size\+\_\+t N$>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ Basis\+Type1 $>$ \&}]{grad\+\_\+basis,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, N $>$ \&}]{tens\+\_\+family,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1272,7 +1306,7 @@ Template to compute the Gram Matrix of a gradient basis and a tensorized scalar 
 \mbox{\Hypertarget{group__Quadratures_ga33f398013eae6749c44537d2bf0abe89}\label{group__Quadratures_ga33f398013eae6749c44537d2bf0abe89}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [12/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [13/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ Basis\+Type1 $>$ \&}]{grad\+\_\+basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ Basis\+Type2 $>$ \&}]{grad\+\_\+basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1291,10 +1325,98 @@ Template to compute the Gram Matrix of a gradient basis and another gradient bas
 {\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga9127f671310990c51b82060711640e95}\label{group__Quadratures_ga9127f671310990c51b82060711640e95}} 
+\index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
+\index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [14/44]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
+Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Gram Matrix of the gradient basis of a tensorized family and a matrix family (only valid if N=dimspace in Tensorized and \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & Gradient of tensorized (rows of the Gram matrix) \\
+\hline
+{\em basis2} & Matrix family (columns of the Gram matrix) \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_gac74d542095d2ebe5fa9c5fc2e5ac2615}\label{group__Quadratures_gac74d542095d2ebe5fa9c5fc2e5ac2615}} 
+\index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
+\index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [15/44]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 , size\+\_\+t N$>$ \\
+Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, N $>$$>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, N $>$$>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Gram Matrix of two gradient bases of tensorized families. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & First family \\
+\hline
+{\em basis2} & Second family (columns of the Gram matrix) \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_gade2eb7a985c52bc808e1ee841fc5ad9f}\label{group__Quadratures_gade2eb7a985c52bc808e1ee841fc5ad9f}} 
+\index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
+\index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [16/44]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
+Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Gram Matrix of a Matrix family and the gradient of a tensorized family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & Matrix family (rows of the Gram matrix) \\
+\hline
+{\em basis2} & Gradient of tensorized (columns of the Gram matrix) \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga81e1f873d03781c0818032de38eaed28}\label{group__Quadratures_ga81e1f873d03781c0818032de38eaed28}} 
+\index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
+\index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [17/44]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 , size\+\_\+t N$>$ \\
+Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type1, N $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type2, N $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Gram Matrix of any pair of \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} bases. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & First basis (rows of the Gram matrix) \\
+\hline
+{\em basis2} & Second basis (columns of the Gram matrix) \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__Quadratures_ga017ba781ad8f6bb51d82473d6ea16dc9}\label{group__Quadratures_ga017ba781ad8f6bb51d82473d6ea16dc9}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [13/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [18/44]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
 
@@ -1315,7 +1437,7 @@ Computes the Gram Matrix of a pair of local scalar monomial bases.
 \mbox{\Hypertarget{group__Quadratures_ga8da204a2df6276e778b3f7170fd3d238}\label{group__Quadratures_ga8da204a2df6276e778b3f7170fd3d238}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [14/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [19/44]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisCell}{Roly\+Compl\+Basis\+Cell}} \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisCell}{Roly\+Compl\+Basis\+Cell}} \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
 
@@ -1336,7 +1458,7 @@ Computes the Gram Matrix of a pair of Roly\+Compl bases.
 \mbox{\Hypertarget{group__Quadratures_ga7175e0375f1fe6c7efb890c5c938558e}\label{group__Quadratures_ga7175e0375f1fe6c7efb890c5c938558e}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [15/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [20/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , size\+\_\+t N$>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisCell}{Roly\+Compl\+Basis\+Cell}} \&}]{rolycompl\+\_\+basis,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, N $>$ \&}]{tens\+\_\+family,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1355,10 +1477,32 @@ Template to compute the Gram Matrix of a Roly\+Compl basis and a tensorized scal
 {\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_gaeec2aeb512381c5f831c11ade7e18388}\label{group__Quadratures_gaeec2aeb512381c5f831c11ade7e18388}} 
+\index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
+\index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [21/44]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
+Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Generic template to compute the Gram Matrix of a vector valued basis and the divergence of a \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & Tensorized family (rows of the Gram matrix) \\
+\hline
+{\em basis2} & Divergence of \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} (columns of the Gram matrix) \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__Quadratures_ga14ab9c5ab8f8ec4da32c1f1240535615}\label{group__Quadratures_ga14ab9c5ab8f8ec4da32c1f1240535615}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [16/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [22/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 , size\+\_\+t N$>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, N $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, N $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1380,7 +1524,7 @@ Template to compute the Gram Matrix of any pair of tensorized scalar bases.
 \mbox{\Hypertarget{group__Quadratures_gabc09f3eaf2f0f5b42054258729b2b5ff}\label{group__Quadratures_gabc09f3eaf2f0f5b42054258729b2b5ff}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [17/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [23/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , size\+\_\+t N$>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, N $>$ \&}]{tens\+\_\+family,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{Goly\+Compl\+Basis\+Cell}} \&}]{golycompl\+\_\+basis,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1402,7 +1546,7 @@ Template to compute the Gram Matrix of a tensorized scalar basis and a Goly\+Com
 \mbox{\Hypertarget{group__Quadratures_ga02b19dd0ea7c265ecde5a8b0e398d1a9}\label{group__Quadratures_ga02b19dd0ea7c265ecde5a8b0e398d1a9}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [18/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [24/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 , size\+\_\+t N$>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, N $>$ \&}]{tens\+\_\+family,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ Basis\+Type2 $>$ \&}]{grad\+\_\+basis,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1424,7 +1568,7 @@ Template to compute the Gram Matrix of a tensorized scalar basis and a gradient 
 \mbox{\Hypertarget{group__Quadratures_ga22aee1420f4e1c8bb399db6c7c5d69a1}\label{group__Quadratures_ga22aee1420f4e1c8bb399db6c7c5d69a1}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [19/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [25/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , size\+\_\+t N$>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, N $>$ \&}]{tens\+\_\+family,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisCell}{Roly\+Compl\+Basis\+Cell}} \&}]{rolycompl\+\_\+basis,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1446,7 +1590,7 @@ Template to compute the Gram Matrix of a tensorized scalar basis and a Roly\+Com
 \mbox{\Hypertarget{group__Quadratures_ga7c7b253c7299bc537ca60b078599a151}\label{group__Quadratures_ga7c7b253c7299bc537ca60b078599a151}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [20/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [26/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Basis\+Type \&}]{basis,  }\item[{\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1457,7 +1601,7 @@ This overload to simplify the call to Gram\+Matrix in case the two bases are the
 \mbox{\Hypertarget{group__Quadratures_ga4da753dad4a35c071729f66b6104c846}\label{group__Quadratures_ga4da753dad4a35c071729f66b6104c846}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [21/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [27/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Basis\+Type1 \&}]{basis1,  }\item[{const Basis\+Type2 \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1479,7 +1623,7 @@ Generic template to compute the Gram Matrix of any pair of bases.
 \mbox{\Hypertarget{group__Quadratures_gaea85974fe1a185c380fa20eb6635a900}\label{group__Quadratures_gaea85974fe1a185c380fa20eb6635a900}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [22/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [28/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const Basis\+Type1 \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ Basis\+Type2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1501,7 +1645,7 @@ Computes the Gram Matrix of a scalar basis and a gradient basis (considering the
 \mbox{\Hypertarget{group__Quadratures_gaf0c1ec1421126a885a91bc17aa42d63a}\label{group__Quadratures_gaf0c1ec1421126a885a91bc17aa42d63a}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [23/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [29/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ Basis\+Type1 $>$ \&}]{basis1,  }\item[{const Basis\+Type2 \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1523,7 +1667,7 @@ Computes the Gram Matrix of a gradient basis (considering the tangential gradien
 \mbox{\Hypertarget{group__Quadratures_gac8ac8f534397b662bf0d1182127df3c3}\label{group__Quadratures_gac8ac8f534397b662bf0d1182127df3c3}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [24/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [30/44]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Edge \&}]{E,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}} \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
 
@@ -1544,7 +1688,7 @@ Computes the Gram Matrix of a pair of local scalar monomial bases.
 \mbox{\Hypertarget{group__Quadratures_ga718b831e1f4039ab3a2e8bab4dd54637}\label{group__Quadratures_ga718b831e1f4039ab3a2e8bab4dd54637}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [25/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [31/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Basis\+Type \&}]{basis,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1555,7 +1699,7 @@ This overload to simplify the call to Gram\+Matrix in case the two bases are the
 \mbox{\Hypertarget{group__Quadratures_ga83e340e40c93616bf9d1670e3e8f11c6}\label{group__Quadratures_ga83e340e40c93616bf9d1670e3e8f11c6}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [26/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [32/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Basis\+Type1 \&}]{basis1,  }\item[{const Basis\+Type2 \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1577,7 +1721,7 @@ Generic template to compute the Gram Matrix of any pair of bases.
 \mbox{\Hypertarget{group__Quadratures_ga1325ff59975ae2a3e9feac44045fc78d}\label{group__Quadratures_ga1325ff59975ae2a3e9feac44045fc78d}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [27/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [33/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const Basis\+Type1 \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ Basis2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1599,7 +1743,7 @@ Template to compute the Gram Matrix of any basis and a Divergence basis.
 \mbox{\Hypertarget{group__Quadratures_ga14eb67585c6c023d1179f395c8d0f7cc}\label{group__Quadratures_ga14eb67585c6c023d1179f395c8d0f7cc}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [28/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [34/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ Basis\+Type1 $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ Basis\+Type2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1621,7 +1765,7 @@ Generic template to compute the Gram Matrix of a pair of Curl bases.
 \mbox{\Hypertarget{group__Quadratures_ga04e896c0a1dacf2ef79d1d126458782e}\label{group__Quadratures_ga04e896c0a1dacf2ef79d1d126458782e}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [29/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [35/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ Basis\+Type1 $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ Basis\+Type2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1643,7 +1787,7 @@ Generic template to compute the Gram Matrix of a Curl basis and a Tangent basis.
 \mbox{\Hypertarget{group__Quadratures_ga6305b0ad13382e6b8adcd7eb3b02021d}\label{group__Quadratures_ga6305b0ad13382e6b8adcd7eb3b02021d}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [30/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [36/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 boost\+::disable\+\_\+if$<$boost\+::is\+\_\+same$<$Basis\+Type2, \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}$>$, Eigen\+::\+Matrix\+Xd$>$\+::type HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ Basis\+Type1 $>$ \&}]{basis1,  }\item[{const Basis\+Type2 \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1665,7 +1809,7 @@ Generic template to compute the Gram Matrix of a Divergence basis and any other 
 \mbox{\Hypertarget{group__Quadratures_ga7b9d799641f01101fcceb0ca08f6d717}\label{group__Quadratures_ga7b9d799641f01101fcceb0ca08f6d717}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [31/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [37/44]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisFace}{Goly\+Compl\+Basis\+Face}} \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisFace}{Goly\+Compl\+Basis\+Face}} \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
 
@@ -1686,7 +1830,7 @@ Computes the Gram Matrix of a pair of Goly\+Compl bases.
 \mbox{\Hypertarget{group__Quadratures_ga7b085b673f4648eecad9291fa7f894f8}\label{group__Quadratures_ga7b085b673f4648eecad9291fa7f894f8}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [32/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [38/44]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
 
@@ -1707,7 +1851,7 @@ Computes the Gram Matrix of a pair of local scalar monomial bases.
 \mbox{\Hypertarget{group__Quadratures_ga90e767aad3601e76dc4f3c971b5cbe66}\label{group__Quadratures_ga90e767aad3601e76dc4f3c971b5cbe66}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [33/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [39/44]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisFace}{Roly\+Compl\+Basis\+Face}} \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisFace}{Roly\+Compl\+Basis\+Face}} \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
 
@@ -1728,7 +1872,7 @@ Computes the Gram Matrix of a pair of Roly\+Compl bases.
 \mbox{\Hypertarget{group__Quadratures_ga786d76effc88fac93bb58c546d322c14}\label{group__Quadratures_ga786d76effc88fac93bb58c546d322c14}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [34/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [40/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisFace}{Roly\+Compl\+Basis\+Face}} \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ Basis\+Type $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1750,7 +1894,7 @@ Computes the Gram Matrix of a Roly\+Compl basis and a tangent basis.
 \mbox{\Hypertarget{group__Quadratures_ga221ddf1a8278b1a00472067303c74ca9}\label{group__Quadratures_ga221ddf1a8278b1a00472067303c74ca9}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [35/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [41/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ Basis\+Type $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1RolyComplBasisFace}{Roly\+Compl\+Basis\+Face}} \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1772,7 +1916,7 @@ Computes the Gram Matrix of a Roly\+Compl basis and a tangent basis.
 \mbox{\Hypertarget{group__Quadratures_gaba6a921c0124eb76e52a2d29087f0999}\label{group__Quadratures_gaba6a921c0124eb76e52a2d29087f0999}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [36/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [42/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ Basis\+Type1 $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1CurlBasis}{Curl\+Basis}}$<$ Basis\+Type2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1794,7 +1938,7 @@ Generic template to compute the Gram Matrix of a Tangent basis and a Curl basis.
 \mbox{\Hypertarget{group__Quadratures_gad3cf41fc0a5a99d78f1dd529127b3e9f}\label{group__Quadratures_gad3cf41fc0a5a99d78f1dd529127b3e9f}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [37/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [43/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ Basis\+Type1 $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}$<$ Basis\+Type2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 
@@ -1816,7 +1960,7 @@ Computes the Gram Matrix of a pair of tangent bases.
 \mbox{\Hypertarget{group__Quadratures_ga0d0b5815ade415edb38261a6d856916a}\label{group__Quadratures_ga0d0b5815ade415edb38261a6d856916a}} 
 \index{Quadratures@{Quadratures}!GramMatrix@{GramMatrix}}
 \index{GramMatrix@{GramMatrix}!Quadratures@{Quadratures}}
-\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [38/38]}}
+\doxysubsubsection{\texorpdfstring{GramMatrix()}{GramMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [44/44]}}
 {\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 , size\+\_\+t N$>$ \\
 Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Gram\+Matrix (\begin{DoxyParamCaption}\item[{const Face \&}]{F,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, N $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, N $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
 

@@ -175,9 +175,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga6482f6aa2cf8571951eefb1e9a3c3796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the system.  <a href="group__DDR__yangmills.html#ga6482f6aa2cf8571951eefb1e9a3c3796">More...</a><br /></td></tr>
 <tr class="separator:ga6482f6aa2cf8571951eefb1e9a3c3796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga106e0a2ac3ae3b6130cd22a8e72d70e5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#ga106e0a2ac3ae3b6130cd22a8e72d70e5">HArDCore3D::YangMills::lieAlg</a> () const</td></tr>
+<tr class="memdesc:ga106e0a2ac3ae3b6130cd22a8e72d70e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Lie algebra.  <a href="group__DDR__yangmills.html#ga106e0a2ac3ae3b6130cd22a8e72d70e5">More...</a><br /></td></tr>
 <tr class="separator:ga106e0a2ac3ae3b6130cd22a8e72d70e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga842c50789bb7dea1689b6f7c0a765207"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1LAXGrad.html">LAXGrad</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#ga842c50789bb7dea1689b6f7c0a765207">HArDCore3D::YangMills::laXGrad</a> () const</td></tr>
-<tr class="memdesc:ga842c50789bb7dea1689b6f7c0a765207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1LAXGrad.html" title="Discrete H1 space: local operators, L2 product and global interpolator.">LAXGrad</a>.  <a href="group__DDR__yangmills.html#ga842c50789bb7dea1689b6f7c0a765207">More...</a><br /></td></tr>
+<tr class="memdesc:ga842c50789bb7dea1689b6f7c0a765207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1LAXGrad.html" title="Discrete Lie algebra valued H1 space: local operators, L2 product and global interpolator.">LAXGrad</a>.  <a href="group__DDR__yangmills.html#ga842c50789bb7dea1689b6f7c0a765207">More...</a><br /></td></tr>
 <tr class="separator:ga842c50789bb7dea1689b6f7c0a765207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga016b1df7c605a8129478b1cedb7f1c85"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1LAXCurl.html">LAXCurl</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#ga016b1df7c605a8129478b1cedb7f1c85">HArDCore3D::YangMills::laXCurl</a> () const</td></tr>
 <tr class="memdesc:ga016b1df7c605a8129478b1cedb7f1c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the space <a class="el" href="classHArDCore3D_1_1LAXCurl.html" title="Discrete Lie algebra valued Hcurl space.">LAXCurl</a>.  <a href="group__DDR__yangmills.html#ga016b1df7c605a8129478b1cedb7f1c85">More...</a><br /></td></tr>
@@ -1202,7 +1203,7 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
 <p>Wrapper to plug vector into L2 integral product: int (Pcurl 1,[Pcurl 2, Pgrad 3]) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">iT</td><td>Element index </td></tr>
+    <tr><td class="paramname">iT</td><td><a class="el" href="structElement.html" title="Structure to store elements.">Element</a> index </td></tr>
     <tr><td class="paramname">intPciPcjPgk</td><td>L2 integral product (trilinear form) </td></tr>
     <tr><td class="paramname">v</td><td>Vector to plug in </td></tr>
   </table>
@@ -1244,7 +1245,7 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">iT</td><td>Element index </td></tr>
+    <tr><td class="paramname">iT</td><td><a class="el" href="structElement.html" title="Structure to store elements.">Element</a> index </td></tr>
     <tr><td class="paramname">v_T</td><td>Local vector in T </td></tr>
     <tr><td class="paramname">L2prod</td><td>L2 product to be combined with bracket </td></tr>
   </table>
@@ -1330,7 +1331,7 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the space <a class="el" href="classHArDCore3D_1_1LAXGrad.html" title="Discrete H1 space: local operators, L2 product and global interpolator.">LAXGrad</a>. </p>
+<p>Returns the space <a class="el" href="classHArDCore3D_1_1LAXGrad.html" title="Discrete Lie algebra valued H1 space: local operators, L2 product and global interpolator.">LAXGrad</a>. </p>
 
 </div>
 </div>
@@ -1356,6 +1357,8 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the Lie algebra. </p>
 
 </div>
 </div>

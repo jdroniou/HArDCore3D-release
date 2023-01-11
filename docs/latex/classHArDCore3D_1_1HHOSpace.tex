@@ -1,0 +1,86 @@
+\hypertarget{classHArDCore3D_1_1HHOSpace}{}\doxysection{HAr\+DCore3D\+::HHOSpace Class Reference}
+\label{classHArDCore3D_1_1HHOSpace}\index{HArDCore3D::HHOSpace@{HArDCore3D::HHOSpace}}
+
+
+Class definition\+: polynomial bases and operators.  
+
+
+
+
+{\ttfamily \#include $<$hhospace.\+hpp$>$}
+
+
+
+Inheritance diagram for HAr\+DCore3D\+::HHOSpace\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1HHOSpace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for HAr\+DCore3D\+::HHOSpace\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1HHOSpace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1CellBases}{Cell\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store element bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1FaceBases}{Face\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store face bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{Local\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store local operators (gradient, potential, stabilisation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ \mbox{\hyperlink{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}{Poly\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}{Poly\+Basis\+Cell\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__HHOSpace_gab08733aa05e542598b677583284e3968}{Polyd\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ \mbox{\hyperlink{group__HHOSpace_gacfb93acaf7af9f8048edef252f5a6338}{Poly\+Basis\+Face\+Type}}
+\item 
+typedef std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHOSpace_ga7eeb28645bbbb0bfe9e6fded2a009ff6}{Function\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__HHOSpace_gaa7e8faf5a9a18a3edee2475d3d149c77}{HHOSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__HHOSpace_ga54c2b08090a641528bd512316d1b0ba3}{mesh}}, size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_gaf169764abf85f85bec428e43dc60274b}{K}}, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__HHOSpace_ga54c2b08090a641528bd512316d1b0ba3}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return a const reference to the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__HHOSpace_gafdefee237fcfd67d889c1eeb6fbb33db}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree (common face and elements) \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHOSpace_gab4db5889cd6baa4750fa1b162b8534b8}{interpolate}} (const \mbox{\hyperlink{group__HHOSpace_ga7eeb28645bbbb0bfe9e6fded2a009ff6}{Function\+Type}} \&q, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1CellBases}{Cell\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_ga41adba58adb8e64621b4949d55eb0653}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for element iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1CellBases}{Cell\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_gaf13a7d9fe5be338b8d682047850eae05}{cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1FaceBases}{Face\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_gadcf05c639501be5c640b8e7b4787e5f0}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for face iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1FaceBases}{Face\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_ga6e773e8add3a27c5ad440ba5c84b6ff1}{face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__HHOSpace_ga797ce0154359fd9d9b6f39984e41d941}{operators}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return operators for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__HHOSpace_ga6fe32dde6328ddeeb949886800183a11}{operators}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{group__HHOSpace_ga539ac4312a3aa9cfa3355287e06bd649}{compute\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
+\begin{DoxyCompactList}\small\item\em Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class definition\+: polynomial bases and operators. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+HHOCore/\mbox{\hyperlink{hhospace_8hpp}{hhospace.\+hpp}}\item 
+src/\+HHOCore/\mbox{\hyperlink{hhospace_8cpp}{hhospace.\+cpp}}\end{DoxyCompactItemize}

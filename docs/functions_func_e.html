@@ -79,7 +79,7 @@ $(function() {
 : <a class="el" href="group__DDRCore.html#gad2f4c36cef876f700d67d5e7d180c745">HArDCore3D::SXCurl</a>
 </li>
 <li>edge()
-: <a class="el" href="classMeshND_1_1Mesh.html#a606ac6129cbbbbed8cc503c6135aed68">MeshND::Mesh&lt; dimension &gt;</a>
+: <a class="el" href="group__Mesh.html#ga606ac6129cbbbbed8cc503c6135aed68">MeshND::Mesh&lt; dimension &gt;</a>
 , <a class="el" href="group__Mesh.html#ga9cbef4ae8736a1f3aa6b7f3718de8ad2">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
 <li>edge_normal()
@@ -90,9 +90,11 @@ $(function() {
 </li>
 <li>edgeBases()
 : <a class="el" href="group__DDRCore.html#ga59b66dab48528b4503dcfae4128df155">HArDCore3D::DDRCore</a>
-, <a class="el" href="group__DDRCore.html#ga3b0b90e05b681758a3bd4c9fda19f109">HArDCore3D::SXCurl</a>
+, <a class="el" href="group__LADDRCore.html#gae1cb5dbfba658a220243281f5d8a5874">HArDCore3D::LAXCurl</a>
+, <a class="el" href="group__LADDRCore.html#gaa103cd74c53e163b2f6a3bdaeea0dd49">HArDCore3D::LAXGrad</a>
+, <a class="el" href="group__DDRCore.html#ga41ea1833d9f73dcad8dbb4fc9aec624c">HArDCore3D::SXCurl</a>
 , <a class="el" href="group__DDRCore.html#gabe53f9202ee0f70abbea797ec52ea51b">HArDCore3D::SXGrad</a>
-, <a class="el" href="group__VEMCore.html#gad84eeb3f3b5a71ef45578ebc96d7f5e7">HArDCore3D::VCurl</a>
+, <a class="el" href="group__VEMCore.html#gac164a5e00dbbc4fad5ff78c8219f9ac1">HArDCore3D::VCurl</a>
 , <a class="el" href="group__VEMCore.html#gae33b9d5c4d4dc45ab7b3dde057e81949">HArDCore3D::VDiv</a>
 , <a class="el" href="group__VEMCore.html#gae5af9eaadcdc4d0c93c5cb497c815eac">HArDCore3D::VEMCore</a>
 , <a class="el" href="group__VEMCore.html#gad0d81650c893a7265e4d58074434653a">HArDCore3D::VGrad</a>
@@ -106,7 +108,8 @@ $(function() {
 : <a class="el" href="group__DDRCore.html#ga71f1bb46c46b27065f3ee03fff59397f">HArDCore3D::SXGrad</a>
 </li>
 <li>edgeOperators()
-: <a class="el" href="group__VEMCore.html#ga5340ba1bc9ae9adcac3cdae0f9b6beff">HArDCore3D::VGrad</a>
+: <a class="el" href="group__LADDRCore.html#gab916bb7e88b0a7c8a15c7ddd8e8b15d3">HArDCore3D::LAXGrad</a>
+, <a class="el" href="group__VEMCore.html#ga5340ba1bc9ae9adcac3cdae0f9b6beff">HArDCore3D::VGrad</a>
 , <a class="el" href="group__DDRCore.html#ga6342c6d44a0b08b3a9b3728384204fde">HArDCore3D::XGrad</a>
 </li>
 <li>edgePotential()
@@ -117,6 +120,9 @@ $(function() {
 </li>
 <li>EgradFace()
 : <a class="el" href="group__DDRCore.html#ga0e6df2585f3bdf7c7983c267cfdcf06a">HArDCore3D::SXGrad</a>
+</li>
+<li>Element()
+: <a class="el" href="group__TransformMeshes.html#gac1c57926e8cb46dae9aa47ae1f365531">Element</a>
 </li>
 <li>ElementQuad()
 : <a class="el" href="group__HybridCore.html#ga0d27ba99f9f3e6f2a3e5311e6be19eba">HArDCore3D::ElementQuad</a>
@@ -132,17 +138,19 @@ $(function() {
 : <a class="el" href="group__DDR__yangmills.html#ga137ce38b721fa63ec052802cc37891a9">HArDCore3D::YangMills</a>
 </li>
 <li>evaluate()
-: <a class="el" href="group__Basis.html#ga805e1ac103be2f95768dd8131e080512">HArDCore3D::detail::basis_evaluation_traits&lt; BasisType, Curl &gt;</a>
-, <a class="el" href="group__Basis.html#gac5407a5a8dcfbc9d1b0c3b91205915e9">HArDCore3D::detail::basis_evaluation_traits&lt; BasisType, CurlCurl &gt;</a>
+: <a class="el" href="group__Basis.html#gad66159aab01f675ec31fe6016418aace">HArDCore3D::detail::basis_evaluation_traits&lt; BasisType, Curl &gt;</a>
+, <a class="el" href="group__Basis.html#ga8fab37eb5b43550e00ca1cc519a6dcee">HArDCore3D::detail::basis_evaluation_traits&lt; BasisType, CurlCurl &gt;</a>
 , <a class="el" href="group__Basis.html#gafd247472c237f7f2ef7f7cea9f887cd0">HArDCore3D::detail::basis_evaluation_traits&lt; BasisType, Divergence &gt;</a>
 , <a class="el" href="group__Basis.html#ga9faa98223b6d239528ac8f30a20ad94f">HArDCore3D::detail::basis_evaluation_traits&lt; BasisType, Function &gt;</a>
 , <a class="el" href="group__Basis.html#gaa9c92d137552e30fc1662c7cbd8f5690">HArDCore3D::detail::basis_evaluation_traits&lt; BasisType, Gradient &gt;</a>
-, <a class="el" href="group__Basis.html#ga6f59433199ca56012c478242da9ab583">HArDCore3D::detail::basis_evaluation_traits&lt; BasisType, Hessian &gt;</a>
+, <a class="el" href="group__Basis.html#ga0b9b587e8af7327c4b91b9c92fa80144">HArDCore3D::detail::basis_evaluation_traits&lt; BasisType, Hessian &gt;</a>
+, <a class="el" href="group__Basis.html#ga18762528982927c44480b9cc4f7fb27d">HArDCore3D::detail::basis_evaluation_traits&lt; MatrixFamily&lt; ScalarBasisType, N &gt;, Divergence &gt;</a>
+, <a class="el" href="group__Basis.html#ga6ff237d8604b24566082497c3411b2f1">HArDCore3D::detail::basis_evaluation_traits&lt; MatrixFamily&lt; ScalarBasisType, N &gt;, Function &gt;</a>
 , <a class="el" href="group__Basis.html#ga0fad09f86ac49ee5b8ee70ebbeb47225">HArDCore3D::detail::basis_evaluation_traits&lt; TensorizedVectorFamily&lt; ScalarBasisType, N &gt;, Curl &gt;</a>
-, <a class="el" href="group__Basis.html#ga1d081bde745ac30c6bc434c4a9bea2dd">HArDCore3D::detail::basis_evaluation_traits&lt; TensorizedVectorFamily&lt; ScalarBasisType, N &gt;, CurlCurl &gt;</a>
-, <a class="el" href="group__Basis.html#gaf1e9ab9176166f5cd91c93f93a7fa0a6">HArDCore3D::detail::basis_evaluation_traits&lt; TensorizedVectorFamily&lt; ScalarBasisType, N &gt;, Divergence &gt;</a>
+, <a class="el" href="group__Basis.html#ga636e5738b8fade8812bf3b510dec1ef9">HArDCore3D::detail::basis_evaluation_traits&lt; TensorizedVectorFamily&lt; ScalarBasisType, N &gt;, CurlCurl &gt;</a>
+, <a class="el" href="group__Basis.html#gaa6d74392e9387d3e3f02234e95538936">HArDCore3D::detail::basis_evaluation_traits&lt; TensorizedVectorFamily&lt; ScalarBasisType, N &gt;, Divergence &gt;</a>
 , <a class="el" href="group__Basis.html#gadd7f294231d69b732829a59615337edb">HArDCore3D::detail::basis_evaluation_traits&lt; TensorizedVectorFamily&lt; ScalarBasisType, N &gt;, Function &gt;</a>
-, <a class="el" href="group__Basis.html#ga8a62b37321a4ba0293c19c2b4baaf67f">HArDCore3D::detail::basis_evaluation_traits&lt; TensorizedVectorFamily&lt; ScalarBasisType, N &gt;, Gradient &gt;</a>
+, <a class="el" href="group__Basis.html#ga7dbbdd0ae5553a25199be12270328913">HArDCore3D::detail::basis_evaluation_traits&lt; TensorizedVectorFamily&lt; ScalarBasisType, N &gt;, Gradient &gt;</a>
 </li>
 <li>evaluate_in_cell()
 : <a class="el" href="group__HybridCore.html#ga9c76abf42a1d56fbf863d8258690497c">HArDCore3D::HybridCore</a>

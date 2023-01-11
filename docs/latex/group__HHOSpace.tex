@@ -1,0 +1,716 @@
+\hypertarget{group__HHOSpace}{}\doxysection{HHOSpace}
+\label{group__HHOSpace}\index{HHOSpace@{HHOSpace}}
+
+
+Classes defining the HHO method (scalar and vector-\/valued)  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1HHOSpace}{HAr\+DCore3\+D\+::\+HHOSpace}}
+\begin{DoxyCompactList}\small\item\em Class definition\+: polynomial bases and operators. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1CellBases}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Cell\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store element bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1FaceBases}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Face\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store face bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Local\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store local operators (gradient, potential, stabilisation) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1VHHOSpace}{HAr\+DCore3\+D\+::\+VHHOSpace}}
+\begin{DoxyCompactList}\small\item\em Class definition\+: polynomial bases and operators. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1CellBases}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store element bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1FaceBases}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Face\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store face bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1LocalOperators}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store local operators (gradient, potential, stabilisation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ \mbox{\hyperlink{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Poly\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}{Poly\+Basis\+Cell\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__HHOSpace_gab08733aa05e542598b677583284e3968}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Polyd\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ \mbox{\hyperlink{group__HHOSpace_gacfb93acaf7af9f8048edef252f5a6338}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Poly\+Basis\+Face\+Type}}
+\item 
+typedef std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHOSpace_ga7eeb28645bbbb0bfe9e6fded2a009ff6}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Function\+Type}}
+\item 
+typedef Cell \mbox{\hyperlink{group__HHOSpace_ga5366c18df97ca507f8760e1c45a480cb}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Cell\+Bases\+::\+Geometric\+Support}}
+\begin{DoxyCompactList}\small\item\em Geometric support. \end{DoxyCompactList}\item 
+typedef Face \mbox{\hyperlink{group__HHOSpace_ga37ffb02fcebb9a0fa6e75c8a896078c9}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Face\+Bases\+::\+Geometric\+Support}}
+\begin{DoxyCompactList}\small\item\em Geometric support. \end{DoxyCompactList}\item 
+typedef std\+::function$<$ bool(const Cell \&)$>$ \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{HAr\+DCore3\+D\+::\+Cell\+Selection}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ \mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Poly\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__HHOSpace_ga2a4e3fd32513ad981f65c21c0d85127e}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Polyd\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ \mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__HHOSpace_ga41b159ba62be45488b41307176cfd40c}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Polydxd\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ \mbox{\hyperlink{group__HHOSpace_gae7a7a04423485f7e5dd167137bbc9989}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Poly\+Basis\+Face\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{group__HHOSpace_gae7a7a04423485f7e5dd167137bbc9989}{Poly\+Basis\+Face\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ $>$ \mbox{\hyperlink{group__HHOSpace_gae6bbd687cd3c14ec408f38cf56e9f1a7}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Polyd\+Basis\+Face\+Type}}
+\item 
+typedef std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHOSpace_ga66265ae1c46c2761959f5827d2e9d0e1}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Function\+Type}}
+\item 
+typedef Cell \mbox{\hyperlink{group__HHOSpace_gaabf043c0d0e1fc05a60b5c315b85daa6}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Geometric\+Support}}
+\begin{DoxyCompactList}\small\item\em Geometric support. \end{DoxyCompactList}\item 
+typedef Face \mbox{\hyperlink{group__HHOSpace_ga627f101bb1d18731d976f4de97591b2d}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Face\+Bases\+::\+Geometric\+Support}}
+\begin{DoxyCompactList}\small\item\em Geometric support. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__HHOSpace_ga58247a6f2991b3f369a1957e510433d7}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Local\+Operators\+::\+Local\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+gradient, const Eigen\+::\+Matrix\+Xd \&\+\_\+potential, const Eigen\+::\+Matrix\+Xd \&\+\_\+stabilisation)
+\item 
+\mbox{\hyperlink{group__HHOSpace_gaa7e8faf5a9a18a3edee2475d3d149c77}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+HHOSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__HHOSpace_ga54c2b08090a641528bd512316d1b0ba3}{mesh}}, size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_gaf169764abf85f85bec428e43dc60274b}{K}}, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__HHOSpace_ga54c2b08090a641528bd512316d1b0ba3}{HAr\+DCore3\+D\+::\+HHOSpace\+::mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return a const reference to the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__HHOSpace_gafdefee237fcfd67d889c1eeb6fbb33db}{HAr\+DCore3\+D\+::\+HHOSpace\+::degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree (common face and elements) \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHOSpace_gab4db5889cd6baa4750fa1b162b8534b8}{HAr\+DCore3\+D\+::\+HHOSpace\+::interpolate}} (const \mbox{\hyperlink{group__HHOSpace_ga7eeb28645bbbb0bfe9e6fded2a009ff6}{Function\+Type}} \&q, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1CellBases}{Cell\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_ga41adba58adb8e64621b4949d55eb0653}{HAr\+DCore3\+D\+::\+HHOSpace\+::cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for element iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1CellBases}{Cell\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_gaf13a7d9fe5be338b8d682047850eae05}{HAr\+DCore3\+D\+::\+HHOSpace\+::cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1FaceBases}{Face\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_gadcf05c639501be5c640b8e7b4787e5f0}{HAr\+DCore3\+D\+::\+HHOSpace\+::face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for face iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1FaceBases}{Face\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_ga6e773e8add3a27c5ad440ba5c84b6ff1}{HAr\+DCore3\+D\+::\+HHOSpace\+::face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__HHOSpace_ga797ce0154359fd9d9b6f39984e41d941}{HAr\+DCore3\+D\+::\+HHOSpace\+::operators}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return operators for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__HHOSpace_ga6fe32dde6328ddeeb949886800183a11}{HAr\+DCore3\+D\+::\+HHOSpace\+::operators}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{group__HHOSpace_ga539ac4312a3aa9cfa3355287e06bd649}{HAr\+DCore3\+D\+::\+HHOSpace\+::compute\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
+\begin{DoxyCompactList}\small\item\em Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__HHOSpace_gaca12a20f0158f29eb8f2469ebbd1c640}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::\+Local\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+gradient, const Eigen\+::\+Matrix\+Xd \&\+\_\+potential, const Eigen\+::\+Matrix\+Xd \&\+\_\+stabilisation, const Eigen\+::\+Matrix\+Xd \&\+\_\+potential\+\_\+div, const Eigen\+::\+Matrix\+Xd \&\+\_\+stabilisation\+\_\+div)
+\item 
+\mbox{\hyperlink{group__HHOSpace_gadd4f036ce349ce8939c82f207880d16e}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+VHHOSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__HHOSpace_ga8a3176833af5485a276bbb5eb86d4337}{mesh}}, size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_gaf169764abf85f85bec428e43dc60274b}{K}}, const \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}} \&Boundary\+Stab, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor (with function to select cells in which boundary faces are used in the stabilisation) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__HHOSpace_ga1054b2d48ebd8ededb8367cb99286020}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+VHHOSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__HHOSpace_ga8a3176833af5485a276bbb5eb86d4337}{mesh}}, size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_gaf169764abf85f85bec428e43dc60274b}{K}}, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor when the selection of boundary stabilisation is not entered (all boundary faces are then used) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__HHOSpace_ga8a3176833af5485a276bbb5eb86d4337}{HAr\+DCore3\+D\+::\+VHHOSpace\+::mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return a const reference to the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__HHOSpace_gaa4eb2785666673e45909c650c382ae05}{HAr\+DCore3\+D\+::\+VHHOSpace\+::degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree (common face and elements) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}} \& \mbox{\hyperlink{group__HHOSpace_gaaea4ca8c785e4df72c3a076e9012b58c}{HAr\+DCore3\+D\+::\+VHHOSpace\+::boundary\+Stab}} () const
+\begin{DoxyCompactList}\small\item\em Return the function to select the cells with boundary stabilisation. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHOSpace_ga490605ad22b8931f8cf37e45d2975cdc}{HAr\+DCore3\+D\+::\+VHHOSpace\+::interpolate}} (const \mbox{\hyperlink{group__HHOSpace_ga66265ae1c46c2761959f5827d2e9d0e1}{Function\+Type}} \&q, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1CellBases}{Cell\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_gac7d51d63cbd56b69eb9e4689a399b3b8}{HAr\+DCore3\+D\+::\+VHHOSpace\+::cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for element iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1CellBases}{Cell\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_ga98d5df4634783a77c77bc5fc71c3f052}{HAr\+DCore3\+D\+::\+VHHOSpace\+::cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1FaceBases}{Face\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_ga54f9db4d723f39602d9c51890fbce6bd}{HAr\+DCore3\+D\+::\+VHHOSpace\+::face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for face iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1FaceBases}{Face\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_ga68e7c7cba9fd6fc3dd846401353e3cb6}{HAr\+DCore3\+D\+::\+VHHOSpace\+::face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__HHOSpace_ga6e19fb2a814ca593a8b068a7a863dbfb}{HAr\+DCore3\+D\+::\+VHHOSpace\+::operators}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return operators for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__HHOSpace_gacbbe3e09579835fa01970869dbee31ab}{HAr\+DCore3\+D\+::\+VHHOSpace\+::operators}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{group__HHOSpace_gaaf8ee90280c1a50302cbcf25fc51afe6}{HAr\+DCore3\+D\+::\+VHHOSpace\+::compute\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
+\begin{DoxyCompactList}\small\item\em Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors. \end{DoxyCompactList}\item 
+std\+::vector$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHOSpace_ga6c63612c10a152389a342da02b8834e8}{HAr\+DCore3\+D\+::\+VHHOSpace\+::compute\+Vertex\+Values}} (const Eigen\+::\+Vector\+Xd \&u) const
+\begin{DoxyCompactList}\small\item\em Computes the values of the potential reconstruction at the mesh vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}{Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_ga0968f27b787f93c16514a08f8bbf8055}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Cell\+Bases\+::\+Polykpo}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}{Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_ga3968991ba41f5ab71b44d71dc3007d26}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Cell\+Bases\+::\+Polyk}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_gab08733aa05e542598b677583284e3968}{Polyd\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_gacb2fa83299daf8512a5a61f8922ced46}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Cell\+Bases\+::\+Polykd}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_gacfb93acaf7af9f8048edef252f5a6338}{Poly\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_gacabdc943548cbc06524b03944a4ca33a}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Face\+Bases\+::\+Polyk}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__HHOSpace_ga043726bfa07c99b05cbbec206ab4e215}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Local\+Operators\+::gradient}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__HHOSpace_gab0150c503462a073d5eb9d31a7153e8a}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Local\+Operators\+::potential}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__HHOSpace_ga09a826999e2a652000949e515a06738e}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Local\+Operators\+::stabilisation}}
+\item 
+static const \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}} \mbox{\hyperlink{group__HHOSpace_ga9221db7880b04f51a34b2619f3101850}{HAr\+DCore3\+D\+::allcells}} = \mbox{[}$\,$\mbox{]}(const Cell \&)-\/$>$bool \{return true;\}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_ga6fcf399e866e338a0fd446d599d4ea5a}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Polykpo}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_ga0579feca5cee40a4bc9fbfc8c968c913}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Polyk}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_ga2a4e3fd32513ad981f65c21c0d85127e}{Polyd\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_gaec98c0d77f055970f839b9e0a1d262ff}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Polykpod}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_ga2a4e3fd32513ad981f65c21c0d85127e}{Polyd\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_ga60e8bb7edfee245ed6c182fec2a6191a}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Polykd}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_ga41b159ba62be45488b41307176cfd40c}{Polydxd\+Basis\+Cell\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_ga93689d18e817661202f372adea758b97}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Polykdxd}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_gae7a7a04423485f7e5dd167137bbc9989}{Poly\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_ga20a6cc1dab09ef88e31eecf2bfa693d8}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Face\+Bases\+::\+Polyk}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{group__HHOSpace_gae6bbd687cd3c14ec408f38cf56e9f1a7}{Polyd\+Basis\+Face\+Type}} $>$ \mbox{\hyperlink{group__HHOSpace_ga838dd3cca67147e175ad985fd0c7c922}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Face\+Bases\+::\+Polykd}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__HHOSpace_gaa6a7f1e3abc8f61104fdc76ad3eb5dd5}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::gradient}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__HHOSpace_ga772171bec4a8ad7e8308f47f1622eed1}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::potential}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__HHOSpace_gadcc47c112235cf2eda571f8b0176b325}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::stabilisation}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__HHOSpace_gad692c2ae62af394df48f3c50939af9db}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::potential\+\_\+div}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__HHOSpace_ga51ef5b1bea1505ce89803728ae241f1f}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::stabilisation\+\_\+div}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes defining the HHO method (scalar and vector-\/valued) 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}\label{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}} 
+\index{HHOSpace@{HHOSpace}!CellSelection@{CellSelection}}
+\index{CellSelection@{CellSelection}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{CellSelection}{CellSelection}}
+{\footnotesize\ttfamily typedef std\+::function$<$bool(const Cell \&)$>$ \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{HAr\+DCore3\+D\+::\+Cell\+Selection}}}
+
+\mbox{\Hypertarget{group__HHOSpace_ga7eeb28645bbbb0bfe9e6fded2a009ff6}\label{group__HHOSpace_ga7eeb28645bbbb0bfe9e6fded2a009ff6}} 
+\index{HHOSpace@{HHOSpace}!FunctionType@{FunctionType}}
+\index{FunctionType@{FunctionType}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHOSpace_ga7eeb28645bbbb0bfe9e6fded2a009ff6}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Function\+Type}}}
+
+\mbox{\Hypertarget{group__HHOSpace_ga66265ae1c46c2761959f5827d2e9d0e1}\label{group__HHOSpace_ga66265ae1c46c2761959f5827d2e9d0e1}} 
+\index{HHOSpace@{HHOSpace}!FunctionType@{FunctionType}}
+\index{FunctionType@{FunctionType}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHOSpace_ga66265ae1c46c2761959f5827d2e9d0e1}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Function\+Type}}}
+
+\mbox{\Hypertarget{group__HHOSpace_ga5366c18df97ca507f8760e1c45a480cb}\label{group__HHOSpace_ga5366c18df97ca507f8760e1c45a480cb}} 
+\index{HHOSpace@{HHOSpace}!GeometricSupport@{GeometricSupport}}
+\index{GeometricSupport@{GeometricSupport}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{GeometricSupport}{GeometricSupport}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily typedef Cell \mbox{\hyperlink{group__HHOSpace_ga5366c18df97ca507f8760e1c45a480cb}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Cell\+Bases\+::\+Geometric\+Support}}}
+
+
+
+Geometric support. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga37ffb02fcebb9a0fa6e75c8a896078c9}\label{group__HHOSpace_ga37ffb02fcebb9a0fa6e75c8a896078c9}} 
+\index{HHOSpace@{HHOSpace}!GeometricSupport@{GeometricSupport}}
+\index{GeometricSupport@{GeometricSupport}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{GeometricSupport}{GeometricSupport}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily typedef Face \mbox{\hyperlink{group__HHOSpace_ga37ffb02fcebb9a0fa6e75c8a896078c9}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Face\+Bases\+::\+Geometric\+Support}}}
+
+
+
+Geometric support. 
+
+\mbox{\Hypertarget{group__HHOSpace_gaabf043c0d0e1fc05a60b5c315b85daa6}\label{group__HHOSpace_gaabf043c0d0e1fc05a60b5c315b85daa6}} 
+\index{HHOSpace@{HHOSpace}!GeometricSupport@{GeometricSupport}}
+\index{GeometricSupport@{GeometricSupport}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{GeometricSupport}{GeometricSupport}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily typedef Cell \mbox{\hyperlink{group__HHOSpace_gaabf043c0d0e1fc05a60b5c315b85daa6}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Geometric\+Support}}}
+
+
+
+Geometric support. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga627f101bb1d18731d976f4de97591b2d}\label{group__HHOSpace_ga627f101bb1d18731d976f4de97591b2d}} 
+\index{HHOSpace@{HHOSpace}!GeometricSupport@{GeometricSupport}}
+\index{GeometricSupport@{GeometricSupport}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{GeometricSupport}{GeometricSupport}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily typedef Face \mbox{\hyperlink{group__HHOSpace_ga627f101bb1d18731d976f4de97591b2d}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Face\+Bases\+::\+Geometric\+Support}}}
+
+
+
+Geometric support. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}\label{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}} 
+\index{HHOSpace@{HHOSpace}!PolyBasisCellType@{PolyBasisCellType}}
+\index{PolyBasisCellType@{PolyBasisCellType}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{PolyBasisCellType}{PolyBasisCellType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}$>$ \mbox{\hyperlink{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Poly\+Basis\+Cell\+Type}}}
+
+\mbox{\Hypertarget{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}\label{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}} 
+\index{HHOSpace@{HHOSpace}!PolyBasisCellType@{PolyBasisCellType}}
+\index{PolyBasisCellType@{PolyBasisCellType}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{PolyBasisCellType}{PolyBasisCellType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}$>$ \mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Poly\+Basis\+Cell\+Type}}}
+
+\mbox{\Hypertarget{group__HHOSpace_gacfb93acaf7af9f8048edef252f5a6338}\label{group__HHOSpace_gacfb93acaf7af9f8048edef252f5a6338}} 
+\index{HHOSpace@{HHOSpace}!PolyBasisFaceType@{PolyBasisFaceType}}
+\index{PolyBasisFaceType@{PolyBasisFaceType}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{PolyBasisFaceType}{PolyBasisFaceType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}}$>$ \mbox{\hyperlink{group__HHOSpace_gacfb93acaf7af9f8048edef252f5a6338}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Poly\+Basis\+Face\+Type}}}
+
+\mbox{\Hypertarget{group__HHOSpace_gae7a7a04423485f7e5dd167137bbc9989}\label{group__HHOSpace_gae7a7a04423485f7e5dd167137bbc9989}} 
+\index{HHOSpace@{HHOSpace}!PolyBasisFaceType@{PolyBasisFaceType}}
+\index{PolyBasisFaceType@{PolyBasisFaceType}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{PolyBasisFaceType}{PolyBasisFaceType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}}$>$ \mbox{\hyperlink{group__HHOSpace_gae7a7a04423485f7e5dd167137bbc9989}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Poly\+Basis\+Face\+Type}}}
+
+\mbox{\Hypertarget{group__HHOSpace_gab08733aa05e542598b677583284e3968}\label{group__HHOSpace_gab08733aa05e542598b677583284e3968}} 
+\index{HHOSpace@{HHOSpace}!PolydBasisCellType@{PolydBasisCellType}}
+\index{PolydBasisCellType@{PolydBasisCellType}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{PolydBasisCellType}{PolydBasisCellType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$\mbox{\hyperlink{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}{Poly\+Basis\+Cell\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{group__HHOSpace_gab08733aa05e542598b677583284e3968}{HAr\+DCore3\+D\+::\+HHOSpace\+::\+Polyd\+Basis\+Cell\+Type}}}
+
+\mbox{\Hypertarget{group__HHOSpace_ga2a4e3fd32513ad981f65c21c0d85127e}\label{group__HHOSpace_ga2a4e3fd32513ad981f65c21c0d85127e}} 
+\index{HHOSpace@{HHOSpace}!PolydBasisCellType@{PolydBasisCellType}}
+\index{PolydBasisCellType@{PolydBasisCellType}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{PolydBasisCellType}{PolydBasisCellType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$\mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{group__HHOSpace_ga2a4e3fd32513ad981f65c21c0d85127e}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Polyd\+Basis\+Cell\+Type}}}
+
+\mbox{\Hypertarget{group__HHOSpace_gae6bbd687cd3c14ec408f38cf56e9f1a7}\label{group__HHOSpace_gae6bbd687cd3c14ec408f38cf56e9f1a7}} 
+\index{HHOSpace@{HHOSpace}!PolydBasisFaceType@{PolydBasisFaceType}}
+\index{PolydBasisFaceType@{PolydBasisFaceType}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{PolydBasisFaceType}{PolydBasisFaceType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$\mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$\mbox{\hyperlink{group__HHOSpace_gae7a7a04423485f7e5dd167137bbc9989}{Poly\+Basis\+Face\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ $>$ \mbox{\hyperlink{group__HHOSpace_gae6bbd687cd3c14ec408f38cf56e9f1a7}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Polyd\+Basis\+Face\+Type}}}
+
+\mbox{\Hypertarget{group__HHOSpace_ga41b159ba62be45488b41307176cfd40c}\label{group__HHOSpace_ga41b159ba62be45488b41307176cfd40c}} 
+\index{HHOSpace@{HHOSpace}!PolydxdBasisCellType@{PolydxdBasisCellType}}
+\index{PolydxdBasisCellType@{PolydxdBasisCellType}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{PolydxdBasisCellType}{PolydxdBasisCellType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$\mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}$>$ \mbox{\hyperlink{group__HHOSpace_ga41b159ba62be45488b41307176cfd40c}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Polydxd\+Basis\+Cell\+Type}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__HHOSpace_gaaea4ca8c785e4df72c3a076e9012b58c}\label{group__HHOSpace_gaaea4ca8c785e4df72c3a076e9012b58c}} 
+\index{HHOSpace@{HHOSpace}!boundaryStab@{boundaryStab}}
+\index{boundaryStab@{boundaryStab}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{boundaryStab()}{boundaryStab()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}}\& HAr\+DCore3\+D\+::\+VHHOSpace\+::boundary\+Stab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the function to select the cells with boundary stabilisation. 
+
+\mbox{\Hypertarget{group__HHOSpace_gaf13a7d9fe5be338b8d682047850eae05}\label{group__HHOSpace_gaf13a7d9fe5be338b8d682047850eae05}} 
+\index{HHOSpace@{HHOSpace}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1CellBases}{Cell\+Bases}}\& HAr\+DCore3\+D\+::\+HHOSpace\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for cell T. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga98d5df4634783a77c77bc5fc71c3f052}\label{group__HHOSpace_ga98d5df4634783a77c77bc5fc71c3f052}} 
+\index{HHOSpace@{HHOSpace}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1CellBases}{Cell\+Bases}}\& HAr\+DCore3\+D\+::\+VHHOSpace\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for cell T. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga41adba58adb8e64621b4949d55eb0653}\label{group__HHOSpace_ga41adba58adb8e64621b4949d55eb0653}} 
+\index{HHOSpace@{HHOSpace}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1CellBases}{Cell\+Bases}}\& HAr\+DCore3\+D\+::\+HHOSpace\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for element iT. 
+
+\mbox{\Hypertarget{group__HHOSpace_gac7d51d63cbd56b69eb9e4689a399b3b8}\label{group__HHOSpace_gac7d51d63cbd56b69eb9e4689a399b3b8}} 
+\index{HHOSpace@{HHOSpace}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1CellBases}{Cell\+Bases}}\& HAr\+DCore3\+D\+::\+VHHOSpace\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for element iT. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga539ac4312a3aa9cfa3355287e06bd649}\label{group__HHOSpace_ga539ac4312a3aa9cfa3355287e06bd649}} 
+\index{HHOSpace@{HHOSpace}!computeNorms@{computeNorms}}
+\index{computeNorms@{computeNorms}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{computeNorms()}{computeNorms()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ HHOSpace\+::compute\+Norms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&}]{list\+\_\+dofs }\end{DoxyParamCaption}) const}
+
+
+
+Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+\_\+dofs} & The list of vectors representing the dofs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHOSpace_gaaf8ee90280c1a50302cbcf25fc51afe6}\label{group__HHOSpace_gaaf8ee90280c1a50302cbcf25fc51afe6}} 
+\index{HHOSpace@{HHOSpace}!computeNorms@{computeNorms}}
+\index{computeNorms@{computeNorms}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{computeNorms()}{computeNorms()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ VHHOSpace\+::compute\+Norms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&}]{list\+\_\+dofs }\end{DoxyParamCaption}) const}
+
+
+
+Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+\_\+dofs} & The list of vectors representing the dofs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHOSpace_ga6c63612c10a152389a342da02b8834e8}\label{group__HHOSpace_ga6c63612c10a152389a342da02b8834e8}} 
+\index{HHOSpace@{HHOSpace}!computeVertexValues@{computeVertexValues}}
+\index{computeVertexValues@{computeVertexValues}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{computeVertexValues()}{computeVertexValues()}}
+{\footnotesize\ttfamily std\+::vector$<$ Vector\+Rd $>$ VHHOSpace\+::compute\+Vertex\+Values (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Computes the values of the potential reconstruction at the mesh vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & DOFs in the discrete space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHOSpace_gafdefee237fcfd67d889c1eeb6fbb33db}\label{group__HHOSpace_gafdefee237fcfd67d889c1eeb6fbb33db}} 
+\index{HHOSpace@{HHOSpace}!degree@{degree}}
+\index{degree@{degree}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const size\+\_\+t\& HAr\+DCore3\+D\+::\+HHOSpace\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the polynomial degree (common face and elements) 
+
+\mbox{\Hypertarget{group__HHOSpace_gaa4eb2785666673e45909c650c382ae05}\label{group__HHOSpace_gaa4eb2785666673e45909c650c382ae05}} 
+\index{HHOSpace@{HHOSpace}!degree@{degree}}
+\index{degree@{degree}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const size\+\_\+t\& HAr\+DCore3\+D\+::\+VHHOSpace\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the polynomial degree (common face and elements) 
+
+\mbox{\Hypertarget{group__HHOSpace_ga6e773e8add3a27c5ad440ba5c84b6ff1}\label{group__HHOSpace_ga6e773e8add3a27c5ad440ba5c84b6ff1}} 
+\index{HHOSpace@{HHOSpace}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1FaceBases}{Face\+Bases}}\& HAr\+DCore3\+D\+::\+HHOSpace\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for face F. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga68e7c7cba9fd6fc3dd846401353e3cb6}\label{group__HHOSpace_ga68e7c7cba9fd6fc3dd846401353e3cb6}} 
+\index{HHOSpace@{HHOSpace}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1FaceBases}{Face\+Bases}}\& HAr\+DCore3\+D\+::\+VHHOSpace\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for face F. 
+
+\mbox{\Hypertarget{group__HHOSpace_gadcf05c639501be5c640b8e7b4787e5f0}\label{group__HHOSpace_gadcf05c639501be5c640b8e7b4787e5f0}} 
+\index{HHOSpace@{HHOSpace}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1FaceBases}{Face\+Bases}}\& HAr\+DCore3\+D\+::\+HHOSpace\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return face bases for face iF. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga54f9db4d723f39602d9c51890fbce6bd}\label{group__HHOSpace_ga54f9db4d723f39602d9c51890fbce6bd}} 
+\index{HHOSpace@{HHOSpace}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1FaceBases}{Face\+Bases}}\& HAr\+DCore3\+D\+::\+VHHOSpace\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return face bases for face iF. 
+
+\mbox{\Hypertarget{group__HHOSpace_gaa7e8faf5a9a18a3edee2475d3d149c77}\label{group__HHOSpace_gaa7e8faf5a9a18a3edee2475d3d149c77}} 
+\index{HHOSpace@{HHOSpace}!HHOSpace@{HHOSpace}}
+\index{HHOSpace@{HHOSpace}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{HHOSpace()}{HHOSpace()}}
+{\footnotesize\ttfamily HHOSpace\+::\+HHOSpace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{K,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{group__HHOSpace_gab4db5889cd6baa4750fa1b162b8534b8}\label{group__HHOSpace_gab4db5889cd6baa4750fa1b162b8534b8}} 
+\index{HHOSpace@{HHOSpace}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd HHOSpace\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__HHOSpace_ga7eeb28645bbbb0bfe9e6fded2a009ff6}{Function\+Type}} \&}]{q,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
+
+
+
+Interpolator of a continuous function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The function to interpolate \\
+\hline
+{\em doe\+\_\+cell} & The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+face} & The optional degre of face quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHOSpace_ga490605ad22b8931f8cf37e45d2975cdc}\label{group__HHOSpace_ga490605ad22b8931f8cf37e45d2975cdc}} 
+\index{HHOSpace@{HHOSpace}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd VHHOSpace\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__HHOSpace_ga66265ae1c46c2761959f5827d2e9d0e1}{Function\+Type}} \&}]{q,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
+
+
+
+Interpolator of a continuous function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The function to interpolate \\
+\hline
+{\em doe\+\_\+cell} & The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+face} & The optional degre of face quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHOSpace_ga58247a6f2991b3f369a1957e510433d7}\label{group__HHOSpace_ga58247a6f2991b3f369a1957e510433d7}} 
+\index{HHOSpace@{HHOSpace}!LocalOperators@{LocalOperators}}
+\index{LocalOperators@{LocalOperators}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{LocalOperators()}{LocalOperators()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+HHOSpace\+::\+Local\+Operators\+::\+Local\+Operators (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+gradient,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+potential,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+stabilisation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+gradient} & Gradient operator \\
+\hline
+{\em \+\_\+potential} & Potential operator \\
+\hline
+{\em \+\_\+stabilisation} & Stabilisation bilinear form \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHOSpace_gaca12a20f0158f29eb8f2469ebbd1c640}\label{group__HHOSpace_gaca12a20f0158f29eb8f2469ebbd1c640}} 
+\index{HHOSpace@{HHOSpace}!LocalOperators@{LocalOperators}}
+\index{LocalOperators@{LocalOperators}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{LocalOperators()}{LocalOperators()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::\+Local\+Operators (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+gradient,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+potential,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+stabilisation,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+potential\+\_\+div,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+stabilisation\+\_\+div }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+gradient} & Gradient operator \\
+\hline
+{\em \+\_\+potential} & HHO Potential operator \\
+\hline
+{\em \+\_\+stabilisation} & H1 Stabilisation bilinear form associated to the HHO potential \\
+\hline
+{\em \+\_\+potential\+\_\+div} & Potential reconstructed from divergence \\
+\hline
+{\em \+\_\+stabilisation\+\_\+div} & L2 Stabilisation associated to \+\_\+potential\+\_\+div \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHOSpace_ga54c2b08090a641528bd512316d1b0ba3}\label{group__HHOSpace_ga54c2b08090a641528bd512316d1b0ba3}} 
+\index{HHOSpace@{HHOSpace}!mesh@{mesh}}
+\index{mesh@{mesh}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+HHOSpace\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a const reference to the mesh. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga8a3176833af5485a276bbb5eb86d4337}\label{group__HHOSpace_ga8a3176833af5485a276bbb5eb86d4337}} 
+\index{HHOSpace@{HHOSpace}!mesh@{mesh}}
+\index{mesh@{mesh}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+VHHOSpace\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a const reference to the mesh. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga6fe32dde6328ddeeb949886800183a11}\label{group__HHOSpace_ga6fe32dde6328ddeeb949886800183a11}} 
+\index{HHOSpace@{HHOSpace}!operators@{operators}}
+\index{operators@{operators}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{operators()}{operators()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{Local\+Operators}}\& HAr\+DCore3\+D\+::\+HHOSpace\+::operators (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell operators for cell T. 
+
+\mbox{\Hypertarget{group__HHOSpace_gacbbe3e09579835fa01970869dbee31ab}\label{group__HHOSpace_gacbbe3e09579835fa01970869dbee31ab}} 
+\index{HHOSpace@{HHOSpace}!operators@{operators}}
+\index{operators@{operators}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{operators()}{operators()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1LocalOperators}{Local\+Operators}}\& HAr\+DCore3\+D\+::\+VHHOSpace\+::operators (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell operators for cell T. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga797ce0154359fd9d9b6f39984e41d941}\label{group__HHOSpace_ga797ce0154359fd9d9b6f39984e41d941}} 
+\index{HHOSpace@{HHOSpace}!operators@{operators}}
+\index{operators@{operators}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{operators()}{operators()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{Local\+Operators}}\& HAr\+DCore3\+D\+::\+HHOSpace\+::operators (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return operators for the cell of index iT. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga6e19fb2a814ca593a8b068a7a863dbfb}\label{group__HHOSpace_ga6e19fb2a814ca593a8b068a7a863dbfb}} 
+\index{HHOSpace@{HHOSpace}!operators@{operators}}
+\index{operators@{operators}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{operators()}{operators()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1LocalOperators}{Local\+Operators}}\& HAr\+DCore3\+D\+::\+VHHOSpace\+::operators (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return operators for the cell of index iT. 
+
+\mbox{\Hypertarget{group__HHOSpace_ga1054b2d48ebd8ededb8367cb99286020}\label{group__HHOSpace_ga1054b2d48ebd8ededb8367cb99286020}} 
+\index{HHOSpace@{HHOSpace}!VHHOSpace@{VHHOSpace}}
+\index{VHHOSpace@{VHHOSpace}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{VHHOSpace()}{VHHOSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+VHHOSpace\+::\+VHHOSpace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{K,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloaded constructor when the selection of boundary stabilisation is not entered (all boundary faces are then used) 
+
+\mbox{\Hypertarget{group__HHOSpace_gadd4f036ce349ce8939c82f207880d16e}\label{group__HHOSpace_gadd4f036ce349ce8939c82f207880d16e}} 
+\index{HHOSpace@{HHOSpace}!VHHOSpace@{VHHOSpace}}
+\index{VHHOSpace@{VHHOSpace}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{VHHOSpace()}{VHHOSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VHHOSpace\+::\+VHHOSpace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{K,  }\item[{const \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}} \&}]{Boundary\+Stab,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor (with function to select cells in which boundary faces are used in the stabilisation) 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__HHOSpace_ga9221db7880b04f51a34b2619f3101850}\label{group__HHOSpace_ga9221db7880b04f51a34b2619f3101850}} 
+\index{HHOSpace@{HHOSpace}!allcells@{allcells}}
+\index{allcells@{allcells}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{allcells}{allcells}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}} HAr\+DCore3\+D\+::allcells = \mbox{[}$\,$\mbox{]}(const Cell \&)-\/$>$bool \{return true;\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHOSpace_ga043726bfa07c99b05cbbec206ab4e215}\label{group__HHOSpace_ga043726bfa07c99b05cbbec206ab4e215}} 
+\index{HHOSpace@{HHOSpace}!gradient@{gradient}}
+\index{gradient@{gradient}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{gradient}{gradient}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+HHOSpace\+::\+Local\+Operators\+::gradient}
+
+\mbox{\Hypertarget{group__HHOSpace_gaa6a7f1e3abc8f61104fdc76ad3eb5dd5}\label{group__HHOSpace_gaa6a7f1e3abc8f61104fdc76ad3eb5dd5}} 
+\index{HHOSpace@{HHOSpace}!gradient@{gradient}}
+\index{gradient@{gradient}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{gradient}{gradient}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::gradient}
+
+\mbox{\Hypertarget{group__HHOSpace_ga3968991ba41f5ab71b44d71dc3007d26}\label{group__HHOSpace_ga3968991ba41f5ab71b44d71dc3007d26}} 
+\index{HHOSpace@{HHOSpace}!Polyk@{Polyk}}
+\index{Polyk@{Polyk}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polyk}{Polyk}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}{Poly\+Basis\+Cell\+Type}}$>$ HAr\+DCore3\+D\+::\+HHOSpace\+::\+Cell\+Bases\+::\+Polyk}
+
+\mbox{\Hypertarget{group__HHOSpace_gacabdc943548cbc06524b03944a4ca33a}\label{group__HHOSpace_gacabdc943548cbc06524b03944a4ca33a}} 
+\index{HHOSpace@{HHOSpace}!Polyk@{Polyk}}
+\index{Polyk@{Polyk}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polyk}{Polyk}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_gacfb93acaf7af9f8048edef252f5a6338}{Poly\+Basis\+Face\+Type}}$>$ HAr\+DCore3\+D\+::\+HHOSpace\+::\+Face\+Bases\+::\+Polyk}
+
+\mbox{\Hypertarget{group__HHOSpace_ga0579feca5cee40a4bc9fbfc8c968c913}\label{group__HHOSpace_ga0579feca5cee40a4bc9fbfc8c968c913}} 
+\index{HHOSpace@{HHOSpace}!Polyk@{Polyk}}
+\index{Polyk@{Polyk}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polyk}{Polyk}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}}$>$ HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Polyk}
+
+\mbox{\Hypertarget{group__HHOSpace_ga20a6cc1dab09ef88e31eecf2bfa693d8}\label{group__HHOSpace_ga20a6cc1dab09ef88e31eecf2bfa693d8}} 
+\index{HHOSpace@{HHOSpace}!Polyk@{Polyk}}
+\index{Polyk@{Polyk}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polyk}{Polyk}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_gae7a7a04423485f7e5dd167137bbc9989}{Poly\+Basis\+Face\+Type}}$>$ HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Face\+Bases\+::\+Polyk}
+
+\mbox{\Hypertarget{group__HHOSpace_gacb2fa83299daf8512a5a61f8922ced46}\label{group__HHOSpace_gacb2fa83299daf8512a5a61f8922ced46}} 
+\index{HHOSpace@{HHOSpace}!Polykd@{Polykd}}
+\index{Polykd@{Polykd}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polykd}{Polykd}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_gab08733aa05e542598b677583284e3968}{Polyd\+Basis\+Cell\+Type}}$>$ HAr\+DCore3\+D\+::\+HHOSpace\+::\+Cell\+Bases\+::\+Polykd}
+
+\mbox{\Hypertarget{group__HHOSpace_ga60e8bb7edfee245ed6c182fec2a6191a}\label{group__HHOSpace_ga60e8bb7edfee245ed6c182fec2a6191a}} 
+\index{HHOSpace@{HHOSpace}!Polykd@{Polykd}}
+\index{Polykd@{Polykd}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polykd}{Polykd}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_ga2a4e3fd32513ad981f65c21c0d85127e}{Polyd\+Basis\+Cell\+Type}}$>$ HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Polykd}
+
+\mbox{\Hypertarget{group__HHOSpace_ga838dd3cca67147e175ad985fd0c7c922}\label{group__HHOSpace_ga838dd3cca67147e175ad985fd0c7c922}} 
+\index{HHOSpace@{HHOSpace}!Polykd@{Polykd}}
+\index{Polykd@{Polykd}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polykd}{Polykd}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_gae6bbd687cd3c14ec408f38cf56e9f1a7}{Polyd\+Basis\+Face\+Type}}$>$ HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Face\+Bases\+::\+Polykd}
+
+\mbox{\Hypertarget{group__HHOSpace_ga93689d18e817661202f372adea758b97}\label{group__HHOSpace_ga93689d18e817661202f372adea758b97}} 
+\index{HHOSpace@{HHOSpace}!Polykdxd@{Polykdxd}}
+\index{Polykdxd@{Polykdxd}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polykdxd}{Polykdxd}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_ga41b159ba62be45488b41307176cfd40c}{Polydxd\+Basis\+Cell\+Type}}$>$ HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Polykdxd}
+
+\mbox{\Hypertarget{group__HHOSpace_ga0968f27b787f93c16514a08f8bbf8055}\label{group__HHOSpace_ga0968f27b787f93c16514a08f8bbf8055}} 
+\index{HHOSpace@{HHOSpace}!Polykpo@{Polykpo}}
+\index{Polykpo@{Polykpo}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polykpo}{Polykpo}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_ga6bec0c3473a0e5d8efdcc79ab064e8a5}{Poly\+Basis\+Cell\+Type}}$>$ HAr\+DCore3\+D\+::\+HHOSpace\+::\+Cell\+Bases\+::\+Polykpo}
+
+\mbox{\Hypertarget{group__HHOSpace_ga6fcf399e866e338a0fd446d599d4ea5a}\label{group__HHOSpace_ga6fcf399e866e338a0fd446d599d4ea5a}} 
+\index{HHOSpace@{HHOSpace}!Polykpo@{Polykpo}}
+\index{Polykpo@{Polykpo}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polykpo}{Polykpo}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}}$>$ HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Polykpo}
+
+\mbox{\Hypertarget{group__HHOSpace_gaec98c0d77f055970f839b9e0a1d262ff}\label{group__HHOSpace_gaec98c0d77f055970f839b9e0a1d262ff}} 
+\index{HHOSpace@{HHOSpace}!Polykpod@{Polykpod}}
+\index{Polykpod@{Polykpod}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{Polykpod}{Polykpod}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{group__HHOSpace_ga2a4e3fd32513ad981f65c21c0d85127e}{Polyd\+Basis\+Cell\+Type}}$>$ HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases\+::\+Polykpod}
+
+\mbox{\Hypertarget{group__HHOSpace_gab0150c503462a073d5eb9d31a7153e8a}\label{group__HHOSpace_gab0150c503462a073d5eb9d31a7153e8a}} 
+\index{HHOSpace@{HHOSpace}!potential@{potential}}
+\index{potential@{potential}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{potential}{potential}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+HHOSpace\+::\+Local\+Operators\+::potential}
+
+\mbox{\Hypertarget{group__HHOSpace_ga772171bec4a8ad7e8308f47f1622eed1}\label{group__HHOSpace_ga772171bec4a8ad7e8308f47f1622eed1}} 
+\index{HHOSpace@{HHOSpace}!potential@{potential}}
+\index{potential@{potential}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{potential}{potential}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::potential}
+
+\mbox{\Hypertarget{group__HHOSpace_gad692c2ae62af394df48f3c50939af9db}\label{group__HHOSpace_gad692c2ae62af394df48f3c50939af9db}} 
+\index{HHOSpace@{HHOSpace}!potential\_div@{potential\_div}}
+\index{potential\_div@{potential\_div}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{potential\_div}{potential\_div}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::potential\+\_\+div}
+
+\mbox{\Hypertarget{group__HHOSpace_ga09a826999e2a652000949e515a06738e}\label{group__HHOSpace_ga09a826999e2a652000949e515a06738e}} 
+\index{HHOSpace@{HHOSpace}!stabilisation@{stabilisation}}
+\index{stabilisation@{stabilisation}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{stabilisation}{stabilisation}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+HHOSpace\+::\+Local\+Operators\+::stabilisation}
+
+\mbox{\Hypertarget{group__HHOSpace_gadcc47c112235cf2eda571f8b0176b325}\label{group__HHOSpace_gadcc47c112235cf2eda571f8b0176b325}} 
+\index{HHOSpace@{HHOSpace}!stabilisation@{stabilisation}}
+\index{stabilisation@{stabilisation}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{stabilisation}{stabilisation}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::stabilisation}
+
+\mbox{\Hypertarget{group__HHOSpace_ga51ef5b1bea1505ce89803728ae241f1f}\label{group__HHOSpace_ga51ef5b1bea1505ce89803728ae241f1f}} 
+\index{HHOSpace@{HHOSpace}!stabilisation\_div@{stabilisation\_div}}
+\index{stabilisation\_div@{stabilisation\_div}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{stabilisation\_div}{stabilisation\_div}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::stabilisation\+\_\+div}
+

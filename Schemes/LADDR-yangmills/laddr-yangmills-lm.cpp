@@ -11,17 +11,20 @@
 
 #include <boost/program_options.hpp>
 #include <display_timer.hpp>
-#include <SymEigsSolver.h>
-#include <MatOp/SparseSymShiftSolve.h>
-#include <MatOp/SparseSymMatProd.h>
-#include <SymEigsShiftSolver.h>
 
 #ifdef WITH_UMFPACK
-#include <Eigen/UmfPackSupport>
+  #include <Eigen/UmfPackSupport>
 #endif
 
 #ifdef WITH_MKL
-#include <Eigen/PardisoSupport>
+  #include <Eigen/PardisoSupport>
+#endif
+
+#ifdef WITH_SPECTRA
+  #include <Spectra/SymEigsSolver.h>
+  #include <Spectra/MatOp/SparseSymShiftSolve.h>
+  #include <Spectra/MatOp/SparseSymMatProd.h>
+  #include <Spectra/SymEigsShiftSolver.h>
 #endif
 
 #define FORMAT(W)                                                       \
@@ -56,7 +59,7 @@ int main(int argc, const char* argv[])
     ("final-time,f", boost::program_options::value<double>()->default_value(1.), "Set the final time")
     ("nonlinear-scaling,l", boost::program_options::value<double>()->default_value(1.), "Degree of nonlinearity")
     ("theta,t", boost::program_options::value<double>()->default_value(1.), "Theta")
-    ("condition-numbers,c", boost::program_options::value<bool>()->default_value(false), "Calculate condition numbers")
+    ("condition-numbers,c", boost::program_options::value<bool>()->default_value(false), "Calculate condition numbers (requires the Spectra library)")
     ("exact-initial-conditions,q", boost::program_options::value<bool>()->default_value(false), "Use constrained initial conditions");
 
   boost::program_options::variables_map vm;
@@ -292,10 +295,12 @@ int main(int argc, const char* argv[])
       double res = ym.computeResidual(dElambdak);
       // std::cout << FORMAT(25) << "[main] Residual: " << res << std::endl;
       if (calculate_cond_num){
+        #ifdef WITH_SPECTRA
         auto [max_eig, min_eig] = ym.computeConditionNum();
         double cond_num = std::sqrt(max_eig/double(min_eig));
         // std::cout << FORMAT(25) << "[main] Condition number: " << cond_num << std::endl;
         cn << std::setw(5) << i << std::setw(15) << max_eig << std::setw(15) << min_eig << std::setw(15) << cond_num << std::setw(15) << res << std::endl;
+        #endif
       }
       max_res = std::max(max_res, res);
     };
@@ -533,6 +538,7 @@ void YangMills::addBoundaryConditions(
 
 std::pair<double, double> YangMills::computeConditionNum() const
 {
+  #ifdef WITH_SPECTRA
   Eigen::SparseMatrix<double> M = systemMatrix().transpose()*systemMatrix();
   // Calculate the largest eigenvalue
   Spectra::SparseSymMatProd<double> op(M);
@@ -549,6 +555,7 @@ std::pair<double, double> YangMills::computeConditionNum() const
     // std::cout << FORMAT(25) << "[main] Eigenvalues: " << eigs_max.eigenvalues()[0] << " " << eigs_min.eigenvalues()[0] << std::endl;
     return std::make_pair(eigs_max.eigenvalues()[0], eigs_min.eigenvalues()[0]);
   }
+  #endif
   return std::make_pair(-1, -1);
 }
 

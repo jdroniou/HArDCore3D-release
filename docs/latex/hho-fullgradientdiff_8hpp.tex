@@ -1,0 +1,61 @@
+\hypertarget{hho-fullgradientdiff_8hpp}{}\doxysection{Schemes/\+HHO-\/full-\/gradient-\/diff/hho-\/fullgradientdiff.hpp File Reference}
+\label{hho-fullgradientdiff_8hpp}\index{Schemes/HHO-\/full-\/gradient-\/diff/hho-\/fullgradientdiff.hpp@{Schemes/HHO-\/full-\/gradient-\/diff/hho-\/fullgradientdiff.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$boost/math/constants/constants.\+hpp$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$unsupported/\+Eigen/\+Sparse\+Extra$>$}\newline
+{\ttfamily \#include $<$mesh.\+hpp$>$}\newline
+{\ttfamily \#include $<$mesh\+\_\+builder.\+hpp$>$}\newline
+{\ttfamily \#include $<$local\+\_\+static\+\_\+condensation.\+hpp$>$}\newline
+{\ttfamily \#include $<$hhospace.\+hpp$>$}\newline
+{\ttfamily \#include $<$Boundary\+Conditions/\+Boundary\+Conditions.\+hpp$>$}\newline
+{\ttfamily \#include $<$integralweight.\+hpp$>$}\newline
+Include dependency graph for hho-\/fullgradientdiff.hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hho-fullgradientdiff_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{hho-fullgradientdiff_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1FullGradientDiffusion}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion}}
+\begin{DoxyCompactList}\small\item\em Assemble a diffusion problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceHArDCore3D}{HAr\+DCore3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{HAr\+DCore3\+D\+::\+PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+static const Vector\+Rd \mbox{\hyperlink{group__HHO__fullgradientdiff_ga84bbf9e5121be6667bdf0e97636a7c89}{HAr\+DCore3\+D\+::vec\+\_\+a}} = Vector\+Rd(1.,2.,3.)
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Full\+Gradient\+Diffusion\+::\+Solution\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga258f3b1f7f0921bebc7818cb656b1e16}{HAr\+DCore3\+D\+::linear\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{Full\+Gradient\+Diffusion\+::\+Solution\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga64d86c6442ce6cca580b685d67c8d1a8}{HAr\+DCore3\+D\+::linear\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Full\+Gradient\+Diffusion\+::\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_gac24ba2c1f388732ff5250855ed61e246}{HAr\+DCore3\+D\+::linear\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_gad4bf3933c735ee697f6c409f264281aa}{HAr\+DCore3\+D\+::linear\+\_\+kappa}} = \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Full\+Gradient\+Diffusion\+::\+Solution\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga0636e9c891b5899965f7477d4893b3f0}{HAr\+DCore3\+D\+::trigonometric\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{Full\+Gradient\+Diffusion\+::\+Solution\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga9ad3a2c9028e91fdcf920f1200c660a1}{HAr\+DCore3\+D\+::trigonometric\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Full\+Gradient\+Diffusion\+::\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga78dbf3dba74e517ba783786d2a8d3734}{HAr\+DCore3\+D\+::trigonometric\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga90e6aed5c0913152d769b0b016aeb8cf}{HAr\+DCore3\+D\+::trigonometric\+\_\+kappa}} = \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}}(1.)
+\end{DoxyCompactItemize}

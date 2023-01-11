@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_5fnpts_1948',['_npts',['../group__Quadratures.html#gaecf0514e3812232ca758bab779318ca3',1,'HArDCore3D::QuadRuleTriangle']]],
-  ['_5fw_1949',['_w',['../group__Quadratures.html#gafdb1f7da129756e5ca6ff329cd366928',1,'HArDCore3D::QuadRuleTriangle']]],
-  ['_5fxy_1950',['_xy',['../group__Quadratures.html#ga23e20aac779af8eb9a8d75b2e330b706',1,'HArDCore3D::QuadRuleTriangle']]]
+  ['_5fnpts_2155',['_npts',['../group__Quadratures.html#gaecf0514e3812232ca758bab779318ca3',1,'HArDCore3D::QuadRuleTriangle']]],
+  ['_5fw_2156',['_w',['../group__Quadratures.html#gafdb1f7da129756e5ca6ff329cd366928',1,'HArDCore3D::QuadRuleTriangle']]],
+  ['_5fxy_2157',['_xy',['../group__Quadratures.html#ga23e20aac779af8eb9a8d75b2e330b706',1,'HArDCore3D::QuadRuleTriangle']]]
 ];

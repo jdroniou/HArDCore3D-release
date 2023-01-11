@@ -379,11 +379,11 @@ Eigen::MatrixXd XDiv::computeL2Product_with_Ops(
         max_weight_quad_F = std::max(max_weight_quad_F, weight.value(T, quad_2k_F[iqn].vector()));
       } // for
     }
-    double w_hT = max_weight_quad_F * T.diam();
+    double w_hF = max_weight_quad_F * F.diam();
 
     // The penalty term int_T (leftOp.nF - (leftOp)_F) * (rightOp.nF - (rightOp)_F) is computed by developping
     // Contribution of face F
-    L2P += w_hT * ( leftOp[offset_T].transpose() * gram_PkF_Pk3T_dot_nF.transpose() * mass_PkF_PkF.ldlt().solve(gram_PkF_Pk3T_dot_nF) * rightOp[offset_T]
+    L2P += w_hF * ( leftOp[offset_T].transpose() * gram_PkF_Pk3T_dot_nF.transpose() * mass_PkF_PkF.ldlt().solve(gram_PkF_Pk3T_dot_nF) * rightOp[offset_T]
                 - leftOp[offset_T].transpose() * gram_PkF_Pk3T_dot_nF.transpose() * rightOp[iF] 
                 - leftOp[iF].transpose() * gram_PkF_Pk3T_dot_nF * rightOp[offset_T]
                 + leftOp[iF].transpose() * mass_PkF_PkF * rightOp[iF]                  

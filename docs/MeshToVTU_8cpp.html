@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>HArD::Core3D: Schemes/MeshCoarsen/MeshToVTU.cpp File Reference</title>
+<title>HArD::Core3D: src/Mesh/Transforms/MeshToVTU.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_60d99d4f8bf576094f0ece8cd9292bc3.html">Schemes</a></li><li class="navelem"><a class="el" href="dir_6f6b814225ca1c345721c182ad33b656.html">MeshCoarsen</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3e32a96ce5cfcb0c73109361e7fa459f.html">Mesh</a></li><li class="navelem"><a class="el" href="dir_3b16d5df2491bd047deec55c6c40be8c.html">Transforms</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -79,73 +79,43 @@ $(function() {
 <div class="title">MeshToVTU.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;import_mesh.hpp&quot;</code><br />
-<code>#include &quot;<a class="el" href="vtu__writer_8hpp_source.html">vtu_writer.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="vtu__writer_8hpp_source.html">vtu_writer.hpp</a>&quot;</code><br />
 <code>#include &lt;Eigen/Dense&gt;</code><br />
 <code>#include &lt;<a class="el" href="mesh__builder_8hpp_source.html">mesh_builder.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for MeshToVTU.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="MeshToVTU_8cpp__incl.png" border="0" usemap="#aSchemes_2MeshCoarsen_2MeshToVTU_8cpp" alt=""/></div>
-<map name="aSchemes_2MeshCoarsen_2MeshToVTU_8cpp" id="aSchemes_2MeshCoarsen_2MeshToVTU_8cpp">
-<area shape="rect" title=" " alt="" coords="135,5,297,47"/>
-<area shape="rect" title=" " alt="" coords="5,95,128,121"/>
-<area shape="rect" href="vtu__writer_8hpp.html" title=" " alt="" coords="241,95,343,121"/>
-<area shape="rect" title=" " alt="" coords="119,468,217,495"/>
-<area shape="rect" href="mesh__builder_8hpp.html" title=" " alt="" coords="492,95,615,121"/>
-<area shape="rect" title=" " alt="" coords="459,169,528,196"/>
-<area shape="rect" title=" " alt="" coords="305,244,359,271"/>
-<area shape="rect" title=" " alt="" coords="241,468,300,495"/>
-<area shape="rect" href="mesh_8hpp.html" title=" " alt="" coords="355,169,434,196"/>
-<area shape="rect" href="Mesh3D_8hpp.html" title=" " alt="" coords="435,244,531,271"/>
-<area shape="rect" href="MeshObject_8hpp.html" title=" " alt="" coords="427,393,544,420"/>
-<area shape="rect" href="MeshND_8hpp.html" title=" " alt="" coords="427,319,525,345"/>
-<area shape="rect" title=" " alt="" coords="324,468,375,495"/>
-<area shape="rect" title=" " alt="" coords="399,468,446,495"/>
-<area shape="rect" title=" " alt="" coords="623,468,695,495"/>
-<area shape="rect" title=" " alt="" coords="492,543,551,569"/>
-<area shape="rect" href="math_8hpp.html" title=" " alt="" coords="522,468,598,495"/>
-<area shape="rect" title=" " alt="" coords="719,468,793,495"/>
-<area shape="rect" href="mesh__reader_8hpp.html" title=" " alt="" coords="553,169,674,196"/>
-<area shape="rect" title=" " alt="" coords="792,169,856,196"/>
-<area shape="rect" title=" " alt="" coords="651,244,717,271"/>
+<div class="center"><img src="MeshToVTU_8cpp__incl.png" border="0" usemap="#asrc_2Mesh_2Transforms_2MeshToVTU_8cpp" alt=""/></div>
+<map name="asrc_2Mesh_2Transforms_2MeshToVTU_8cpp" id="asrc_2Mesh_2Transforms_2MeshToVTU_8cpp">
+<area shape="rect" title=" " alt="" coords="130,5,277,47"/>
+<area shape="rect" href="vtu__writer_8hpp.html" title=" " alt="" coords="152,95,255,121"/>
+<area shape="rect" title=" " alt="" coords="5,468,103,495"/>
+<area shape="rect" href="mesh__builder_8hpp.html" title=" " alt="" coords="378,95,501,121"/>
+<area shape="rect" title=" " alt="" coords="345,169,414,196"/>
+<area shape="rect" title=" " alt="" coords="188,244,243,271"/>
+<area shape="rect" title=" " alt="" coords="127,468,186,495"/>
+<area shape="rect" href="mesh_8hpp.html" title=" " alt="" coords="241,169,320,196"/>
+<area shape="rect" href="Mesh3D_8hpp.html" title=" " alt="" coords="318,244,414,271"/>
+<area shape="rect" href="MeshObject_8hpp.html" title=" " alt="" coords="313,393,430,420"/>
+<area shape="rect" href="MeshND_8hpp.html" title=" " alt="" coords="313,319,411,345"/>
+<area shape="rect" title=" " alt="" coords="210,468,261,495"/>
+<area shape="rect" title=" " alt="" coords="285,468,332,495"/>
+<area shape="rect" title=" " alt="" coords="509,468,581,495"/>
+<area shape="rect" title=" " alt="" coords="378,543,437,569"/>
+<area shape="rect" href="math_8hpp.html" title=" " alt="" coords="408,468,484,495"/>
+<area shape="rect" title=" " alt="" coords="605,468,679,495"/>
+<area shape="rect" href="mesh__reader_8hpp.html" title=" " alt="" coords="439,169,560,196"/>
+<area shape="rect" title=" " alt="" coords="678,169,742,196"/>
+<area shape="rect" title=" " alt="" coords="537,244,603,271"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad53223b8779f25caeddb70a3b9172967"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MeshToVTU_8cpp.html#ad53223b8779f25caeddb70a3b9172967">main</a> (const int argc, const char *argv[])</td></tr>
-<tr class="separator:ad53223b8779f25caeddb70a3b9172967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad53223b8779f25caeddb70a3b9172967"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__TransformMeshes.html#gad53223b8779f25caeddb70a3b9172967">main</a> (const int argc, const char *argv[])</td></tr>
+<tr class="memdesc:gad53223b8779f25caeddb70a3b9172967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main executable (CheckMesh) to check the sanity of an RF mesh.  <a href="group__TransformMeshes.html#gad53223b8779f25caeddb70a3b9172967">More...</a><br /></td></tr>
+<tr class="separator:gad53223b8779f25caeddb70a3b9172967"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ad53223b8779f25caeddb70a3b9172967"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad53223b8779f25caeddb70a3b9172967">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>argc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>argv</em>[]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

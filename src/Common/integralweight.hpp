@@ -27,14 +27,17 @@ namespace HArDCore3D
    * @{
    */
    
+    typedef std::function<double (const Cell &, const Eigen::Vector3d &)> IntegralWeightValueType;
+    typedef std::function<size_t (const Cell &)> IntegralWeightDegreeType;
+   
     /// Structure for weights (scalar, at the moment) in integral.
     /** Each weight is represented as a piecewise function defined cell-by-cell, together with its local polynomial degree to determine the offset for quadrature rules (degree=0 means that the weight is constant and some calculations are easier) */
     struct IntegralWeight
     {
-       // Generic constructor
+        /// Generic constructor
         IntegralWeight(
-              const std::function<double (const Cell & T, const Eigen::Vector3d & x)> _value, ///< Value of weight
-              std::function<size_t (const Cell & T)> _deg ///< Local degree of weight
+              const IntegralWeightValueType _value, ///< Value of weight
+              const IntegralWeightDegreeType _deg ///< Local degree of weight
               )
         : value(_value),
           deg(_deg)
@@ -42,16 +45,53 @@ namespace HArDCore3D
           // Do nothing
         }
 
-       // Easy constructor for constant weights
+       /// Constructor for constant weights
        IntegralWeight(double val)
         : IntegralWeight( [val](const Cell &T, const Eigen::Vector3d &x)->double {return val;}, [](const Cell &T)->size_t {return 0;} )
        {
         // Do nothing
        }
+
+       /// Constructor when the dependency on the cell T is not explicit in the value (and degree is constant)
+       IntegralWeight(const std::function<double(const VectorRd &)> & val, const size_t & deg)
+        : IntegralWeight( [val](const Cell &T, const Eigen::VectorXd &x)->double {return val(x);}, [deg](const Cell &T)->size_t {return deg;} )
+       {
+        // Do nothing
+       }
+
+       /// Constructor when the dependency on the cell T is not explicit in the value, and degree is not provided (it is assumed to be 0)
+       IntegralWeight(const std::function<double(const VectorRd &)> & val)
+        : IntegralWeight(val, 0)
+       {
+        // Do nothing
+       }
         
-      std::function<double (const Cell & T, const Eigen::Vector3d & x)> value;
-      std::function<size_t (const Cell & T)> deg;
+      IntegralWeightValueType value;
+      IntegralWeightDegreeType deg;
     };
+
+    /// Operator to multiply an IntegralWeight by a number
+    inline IntegralWeight operator* (double const & r, IntegralWeight const & weight)
+    {
+      IntegralWeightValueType r_times_value 
+          = [weight, r](const Cell & T, const Eigen::Vector3d & x)->double { return r * weight.value(T,x);};
+      IntegralWeightDegreeType deg = weight.deg;
+      
+      return IntegralWeight(r_times_value, deg);
+    }
+
+    /// Operator to add an IntegralWeight to another one
+    inline IntegralWeight operator+ (IntegralWeight const & weight1, IntegralWeight const & weight2)
+    {
+      IntegralWeightValueType plus_value 
+          = [weight1, weight2](const Cell & T, const Eigen::Vector3d & x)->double 
+                    { return weight1.value(T,x) +  weight2.value(T,x);};
+      IntegralWeightDegreeType max_deg 
+          = [weight1, weight2](const Cell & T)->size_t
+                    { return std::max(weight1.deg(T), weight2.deg(T)); };
+      
+      return IntegralWeight(plus_value, max_deg);
+    }
 
   //@}
 

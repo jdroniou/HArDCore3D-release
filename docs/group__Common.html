@@ -71,6 +71,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -107,6 +108,13 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1VariableDOFSpace.html">HArDCore3D::VariableDOFSpace</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for global DOF spaces.  <a href="classHArDCore3D_1_1VariableDOFSpace.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga0396c9c15024a70638bd9fb16712d13f"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; double(const Cell &amp;, const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga0396c9c15024a70638bd9fb16712d13f">HArDCore3D::IntegralWeightValueType</a></td></tr>
+<tr class="separator:ga0396c9c15024a70638bd9fb16712d13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f3e161295252aba5be7989e167e23d8"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; size_t(const Cell &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga5f3e161295252aba5be7989e167e23d8">HArDCore3D::IntegralWeightDegreeType</a></td></tr>
+<tr class="separator:ga5f3e161295252aba5be7989e167e23d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -160,10 +168,24 @@ Functions</h2></td></tr>
 <tr class="memitem:ga7cc6a020ed82c7e8bdd295d6aa94dea5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga7cc6a020ed82c7e8bdd295d6aa94dea5">HArDCore3D::GlobalDOFSpace::globalDOFIndices</a> (const Face &amp;F) const</td></tr>
 <tr class="memdesc:ga7cc6a020ed82c7e8bdd295d6aa94dea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector listing the global DOFs attached to the face F: vertex DOFs, edge DOFs, face DOFs.  <a href="group__Common.html#ga7cc6a020ed82c7e8bdd295d6aa94dea5">More...</a><br /></td></tr>
 <tr class="separator:ga7cc6a020ed82c7e8bdd295d6aa94dea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga60ba878dc51ffe013b4cd394741d34f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga60ba878dc51ffe013b4cd394741d34f0">HArDCore3D::IntegralWeight::IntegralWeight</a> (const std::function&lt; double(const Cell &amp;T, const Eigen::Vector3d &amp;x)&gt; _value, std::function&lt; size_t(const Cell &amp;T)&gt; _deg)</td></tr>
-<tr class="separator:ga60ba878dc51ffe013b4cd394741d34f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44a260b9d0464fe21ad59951b60ec0d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga44a260b9d0464fe21ad59951b60ec0d8">HArDCore3D::IntegralWeight::IntegralWeight</a> (const <a class="el" href="group__Common.html#ga0396c9c15024a70638bd9fb16712d13f">IntegralWeightValueType</a> _value, const <a class="el" href="group__Common.html#ga5f3e161295252aba5be7989e167e23d8">IntegralWeightDegreeType</a> _deg)</td></tr>
+<tr class="memdesc:ga44a260b9d0464fe21ad59951b60ec0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic constructor.  <a href="group__Common.html#ga44a260b9d0464fe21ad59951b60ec0d8">More...</a><br /></td></tr>
+<tr class="separator:ga44a260b9d0464fe21ad59951b60ec0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaed526b573136d558b81d9be87646b5c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaed526b573136d558b81d9be87646b5c9">HArDCore3D::IntegralWeight::IntegralWeight</a> (double val)</td></tr>
+<tr class="memdesc:gaed526b573136d558b81d9be87646b5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for constant weights.  <a href="group__Common.html#gaed526b573136d558b81d9be87646b5c9">More...</a><br /></td></tr>
 <tr class="separator:gaed526b573136d558b81d9be87646b5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga211e07bd4ac8db912880769175f29f96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga211e07bd4ac8db912880769175f29f96">HArDCore3D::IntegralWeight::IntegralWeight</a> (const std::function&lt; double(const VectorRd &amp;)&gt; &amp;val, const size_t &amp;<a class="el" href="group__Common.html#gafd9ac57a861efb87cd200c6afafca587">deg</a>)</td></tr>
+<tr class="memdesc:ga211e07bd4ac8db912880769175f29f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor when the dependency on the cell T is not explicit in the value (and degree is constant)  <a href="group__Common.html#ga211e07bd4ac8db912880769175f29f96">More...</a><br /></td></tr>
+<tr class="separator:ga211e07bd4ac8db912880769175f29f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga846c597e6085f0a1ac044c1b1c170278"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga846c597e6085f0a1ac044c1b1c170278">HArDCore3D::IntegralWeight::IntegralWeight</a> (const std::function&lt; double(const VectorRd &amp;)&gt; &amp;val)</td></tr>
+<tr class="memdesc:ga846c597e6085f0a1ac044c1b1c170278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor when the dependency on the cell T is not explicit in the value, and degree is not provided (it is assumed to be 0)  <a href="group__Common.html#ga846c597e6085f0a1ac044c1b1c170278">More...</a><br /></td></tr>
+<tr class="separator:ga846c597e6085f0a1ac044c1b1c170278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8d9e5679e91d5268e089566d164d621"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gab8d9e5679e91d5268e089566d164d621">HArDCore3D::operator*</a> (double const &amp;r, <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> const &amp;weight)</td></tr>
+<tr class="memdesc:gab8d9e5679e91d5268e089566d164d621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator to multiply an <a class="el" href="structHArDCore3D_1_1IntegralWeight.html" title="Structure for weights (scalar, at the moment) in integral.">IntegralWeight</a> by a number.  <a href="group__Common.html#gab8d9e5679e91d5268e089566d164d621">More...</a><br /></td></tr>
+<tr class="separator:gab8d9e5679e91d5268e089566d164d621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0974369272832456696f5261ab66353"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaf0974369272832456696f5261ab66353">HArDCore3D::operator+</a> (<a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> const &amp;weight1, <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> const &amp;weight2)</td></tr>
+<tr class="memdesc:gaf0974369272832456696f5261ab66353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator to add an <a class="el" href="structHArDCore3D_1_1IntegralWeight.html" title="Structure for weights (scalar, at the moment) in integral.">IntegralWeight</a> to another one.  <a href="group__Common.html#gaf0974369272832456696f5261ab66353">More...</a><br /></td></tr>
+<tr class="separator:gaf0974369272832456696f5261ab66353"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9013e4ca43adf132d979e0178676eb4f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga9013e4ca43adf132d979e0178676eb4f">HArDCore3D::LocalStaticCondensation::LocalStaticCondensation</a> (const Eigen::MatrixXd &amp;Perm, const std::vector&lt; size_t &gt; &amp;<a class="el" href="group__Common.html#gada39a93d73a2096ffadb2182d696a4b2">globalDOFs_sys</a>, const std::vector&lt; size_t &gt; &amp;<a class="el" href="group__Common.html#ga02f23a4c0c6b132c91d96098deb9ca94">globalDOFs_sc</a>)</td></tr>
 <tr class="memdesc:ga9013e4ca43adf132d979e0178676eb4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Common.html#ga9013e4ca43adf132d979e0178676eb4f">More...</a><br /></td></tr>
 <tr class="separator:ga9013e4ca43adf132d979e0178676eb4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -451,10 +473,10 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga0e64dd7fa60d788876219241162f0f6e"><td class="memItemLeft" align="right" valign="top">std::function&lt; double(const Cell &amp;T, const Eigen::Vector3d &amp;x)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga0e64dd7fa60d788876219241162f0f6e">HArDCore3D::IntegralWeight::value</a></td></tr>
-<tr class="separator:ga0e64dd7fa60d788876219241162f0f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6380d57e44432a9d08114c442158dc8a"><td class="memItemLeft" align="right" valign="top">std::function&lt; size_t(const Cell &amp;T)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga6380d57e44432a9d08114c442158dc8a">HArDCore3D::IntegralWeight::deg</a></td></tr>
-<tr class="separator:ga6380d57e44432a9d08114c442158dc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadc026ae462aa662862e53f2adb084400"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#ga0396c9c15024a70638bd9fb16712d13f">IntegralWeightValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gadc026ae462aa662862e53f2adb084400">HArDCore3D::IntegralWeight::value</a></td></tr>
+<tr class="separator:gadc026ae462aa662862e53f2adb084400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd9ac57a861efb87cd200c6afafca587"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#ga5f3e161295252aba5be7989e167e23d8">IntegralWeightDegreeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gafd9ac57a861efb87cd200c6afafca587">HArDCore3D::IntegralWeight::deg</a></td></tr>
+<tr class="separator:gafd9ac57a861efb87cd200c6afafca587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafa868f9f56ab061eebcbc30c2dbe5295"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gafa868f9f56ab061eebcbc30c2dbe5295">HArDCore3D::LocalStaticCondensation::m_Perm</a></td></tr>
 <tr class="separator:gafa868f9f56ab061eebcbc30c2dbe5295"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaccfaba0c903f41cd8dc3b1a7280eede3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaccfaba0c903f41cd8dc3b1a7280eede3">HArDCore3D::LocalStaticCondensation::m_globalDOFs_sys</a></td></tr>
@@ -478,6 +500,35 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Various general functions and classes. </p>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga5f3e161295252aba5be7989e167e23d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f3e161295252aba5be7989e167e23d8">&#9670;&nbsp;</a></span>IntegralWeightDegreeType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;size_t (const Cell &amp;)&gt; <a class="el" href="group__Common.html#ga5f3e161295252aba5be7989e167e23d8">HArDCore3D::IntegralWeightDegreeType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0396c9c15024a70638bd9fb16712d13f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0396c9c15024a70638bd9fb16712d13f">&#9670;&nbsp;</a></span>IntegralWeightValueType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;double (const Cell &amp;, const Eigen::Vector3d &amp;)&gt; <a class="el" href="group__Common.html#ga0396c9c15024a70638bd9fb16712d13f">HArDCore3D::IntegralWeightValueType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga7bac2f08d274e88fdb2057d593581c90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7bac2f08d274e88fdb2057d593581c90">&#9670;&nbsp;</a></span>compute()</h2>
@@ -1796,8 +1847,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga60ba878dc51ffe013b4cd394741d34f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga60ba878dc51ffe013b4cd394741d34f0">&#9670;&nbsp;</a></span>IntegralWeight() <span class="overload">[1/2]</span></h2>
+<a id="ga44a260b9d0464fe21ad59951b60ec0d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44a260b9d0464fe21ad59951b60ec0d8">&#9670;&nbsp;</a></span>IntegralWeight() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1808,13 +1859,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">HArDCore3D::IntegralWeight::IntegralWeight </td>
           <td>(</td>
-          <td class="paramtype">const std::function&lt; double(const Cell &amp;T, const Eigen::Vector3d &amp;x)&gt;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Common.html#ga0396c9c15024a70638bd9fb16712d13f">IntegralWeightValueType</a>&#160;</td>
           <td class="paramname"><em>_value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::function&lt; size_t(const Cell &amp;T)&gt;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Common.html#ga5f3e161295252aba5be7989e167e23d8">IntegralWeightDegreeType</a>&#160;</td>
           <td class="paramname"><em>_deg</em>&#160;</td>
         </tr>
         <tr>
@@ -1829,6 +1880,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Generic constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">_value</td><td>Value of weight </td></tr>
@@ -1839,8 +1892,74 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga846c597e6085f0a1ac044c1b1c170278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga846c597e6085f0a1ac044c1b1c170278">&#9670;&nbsp;</a></span>IntegralWeight() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HArDCore3D::IntegralWeight::IntegralWeight </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; double(const VectorRd &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor when the dependency on the cell T is not explicit in the value, and degree is not provided (it is assumed to be 0) </p>
+
+</div>
+</div>
+<a id="ga211e07bd4ac8db912880769175f29f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga211e07bd4ac8db912880769175f29f96">&#9670;&nbsp;</a></span>IntegralWeight() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HArDCore3D::IntegralWeight::IntegralWeight </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; double(const VectorRd &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>deg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor when the dependency on the cell T is not explicit in the value (and degree is constant) </p>
+
+</div>
+</div>
 <a id="gaed526b573136d558b81d9be87646b5c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaed526b573136d558b81d9be87646b5c9">&#9670;&nbsp;</a></span>IntegralWeight() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed526b573136d558b81d9be87646b5c9">&#9670;&nbsp;</a></span>IntegralWeight() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1862,6 +1981,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructor for constant weights. </p>
 
 </div>
 </div>
@@ -3083,6 +3204,82 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gab8d9e5679e91d5268e089566d164d621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8d9e5679e91d5268e089566d164d621">&#9670;&nbsp;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> HArDCore3D::operator* </td>
+          <td>(</td>
+          <td class="paramtype">double const &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> const &amp;&#160;</td>
+          <td class="paramname"><em>weight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator to multiply an <a class="el" href="structHArDCore3D_1_1IntegralWeight.html" title="Structure for weights (scalar, at the moment) in integral.">IntegralWeight</a> by a number. </p>
+
+</div>
+</div>
+<a id="gaf0974369272832456696f5261ab66353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf0974369272832456696f5261ab66353">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> HArDCore3D::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> const &amp;&#160;</td>
+          <td class="paramname"><em>weight1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> const &amp;&#160;</td>
+          <td class="paramname"><em>weight2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator to add an <a class="el" href="structHArDCore3D_1_1IntegralWeight.html" title="Structure for weights (scalar, at the moment) in integral.">IntegralWeight</a> to another one. </p>
+
+</div>
+</div>
 <a id="gac77ab9801f6fcca6b81f0a069969c951"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac77ab9801f6fcca6b81f0a069969c951">&#9670;&nbsp;</a></span>parallel_assembly_system() <span class="overload">[1/2]</span></h2>
 
@@ -4130,14 +4327,14 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ga6380d57e44432a9d08114c442158dc8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6380d57e44432a9d08114c442158dc8a">&#9670;&nbsp;</a></span>deg</h2>
+<a id="gafd9ac57a861efb87cd200c6afafca587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafd9ac57a861efb87cd200c6afafca587">&#9670;&nbsp;</a></span>deg</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt;size_t (const Cell &amp; T)&gt; HArDCore3D::IntegralWeight::deg</td>
+          <td class="memname"><a class="el" href="group__Common.html#ga5f3e161295252aba5be7989e167e23d8">IntegralWeightDegreeType</a> HArDCore3D::IntegralWeight::deg</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -4324,14 +4521,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga0e64dd7fa60d788876219241162f0f6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0e64dd7fa60d788876219241162f0f6e">&#9670;&nbsp;</a></span>value</h2>
+<a id="gadc026ae462aa662862e53f2adb084400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc026ae462aa662862e53f2adb084400">&#9670;&nbsp;</a></span>value</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt;double (const Cell &amp; T, const Eigen::Vector3d &amp; x)&gt; HArDCore3D::IntegralWeight::value</td>
+          <td class="memname"><a class="el" href="group__Common.html#ga0396c9c15024a70638bd9fb16712d13f">IntegralWeightValueType</a> HArDCore3D::IntegralWeight::value</td>
         </tr>
       </table>
 </div><div class="memdoc">

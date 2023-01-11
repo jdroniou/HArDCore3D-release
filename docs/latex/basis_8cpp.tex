@@ -23,20 +23,18 @@ double \mbox{\hyperlink{group__Basis_gabe66f2d1efad01f907e32517c16b11f9}{HAr\+DC
 \begin{DoxyCompactList}\small\item\em Scalar product between one real and one 1-\/dimension Eigen vector. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__Basis_ga0105ef2d1903eeddce62e6ad647a8ead}{HAr\+DCore3\+D\+::scalar\+\_\+product}} (const Vector\+Rd \&x, const Vector\+Rd \&y)
 \begin{DoxyCompactList}\small\item\em Scalar product between two vectors. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{group__Basis_gae0e17b9bcba8bbd415ff4812d44aa81f}{HAr\+DCore3\+D\+::scalar\+\_\+product}} (const Matrix\+Rd \&x, const Matrix\+Rd \&y)
-\begin{DoxyCompactList}\small\item\em Scalar product between two matrices. \end{DoxyCompactList}\item 
 boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \mbox{\hyperlink{group__Basis_ga7fd6906b30cba10f2f452b029a86ca00}{HAr\+DCore3\+D\+::vector\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&basis\+\_\+quad, const Vector\+Rd \&v)
 \begin{DoxyCompactList}\small\item\em Compute the vector (cross) product between the evaluation of a basis and a constant vector. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaf5cc3ed71949b5d7adc5877e6bfebcb4}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B2, const Quadrature\+Rule \&qr)
-\item 
+\begin{DoxyCompactList}\small\item\em Compute the Gram-\/like matrix given a family of vector-\/valued and one of scalar-\/valued functions by tensorizing the latter. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gac574f3b532690c1d59b2bfc48023ab3b}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const size\+\_\+t nrows, const size\+\_\+t ncols, const std\+::string sym)
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaf151d3a8c29e1b18fd67b89eae756eca}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const std\+::string sym)
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga33b9c4c2ff96b783e8096d584a3e80a9}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const size\+\_\+t nrows, const size\+\_\+t ncols, const std\+::string sym)
 \item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga70a3cd2df90246841fb82bfff01665ba}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const std\+::string sym)
-\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaee4fb375a03e1e4f7d741c6bd26c26e6}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const std\+::string sym=\char`\"{}nonsym\char`\"{})
+\begin{DoxyCompactList}\small\item\em Compute the Gram-\/like matrix given the evaluation of two families of functions at quadrature nodes. Consists in calling the Vector3d-\/valued version with nrows = nb of elements in B1, ncols = nb of elements in B2. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaccbfd425467a7d4d3212f43c29c2d6e7}{HAr\+DCore3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const FType$<$ Vector\+Rd $>$ \&f, const Basis\+Quad$<$ Vector\+Rd $>$ \&B1, const Basis\+Quad$<$ double $>$ \&B2, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0)
 \begin{DoxyCompactList}\small\item\em Computes the Gram-\/like matrix of integrals (f dot phi\+\_\+i, phi\+\_\+j) \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga17118956be8fdf8f41886286d37e4fe7}{HAr\+DCore3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const FType$<$ Vector\+Rd $>$ \&f, const Basis\+Quad$<$ double $>$ \&B1, const Basis\+Quad$<$ Vector\+Rd $>$ \&B2, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0)

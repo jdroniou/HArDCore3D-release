@@ -53,31 +53,44 @@ const std::string BoundaryConditions::type(Face& face) const
 
 
 // Reorder faces
-void BoundaryConditions::reorder_faces()
+void BoundaryConditions::reorder_faces(const std::string pos)
   {
-    // Create vector with all non-Dirichlet faces first, and all Dirichlet faces at the end
-    std::vector<size_t> new_to_old(m_mesh.n_faces(), 0);
-    // Index for non-Dirichlet faces start at 0 and increases, index for Dirichlet faces start at n_faces()-1
-    // and decreases
-    size_t idx_nondir = 0;
-    size_t idx_dir = m_mesh.n_faces()-1;
+    // Create a vector of Dirichlet boundary faces, and a vector of other faces
+    std::vector<size_t> dir_faces(m_mesh.n_faces(), 0);
+    std::vector<size_t> nondir_faces(m_mesh.n_faces(), 0);
+    size_t dir_idx = 0;
+    size_t nondir_idx = 0;
     for (Face* face : m_mesh.get_faces()){
-      if (idx_nondir > idx_dir){
-        std::cout << "Error during creation vector to renumber faces: " << idx_nondir << ", " << idx_dir << "\n";
-        exit(1);
-      }
       if (type(*face) == "dir"){
-        new_to_old[idx_dir] = face->global_index();
-        idx_dir--;
+        dir_faces[dir_idx] = face->global_index();
+        dir_idx++;
       }else{
-        new_to_old[idx_nondir] = face->global_index();
-        idx_nondir++;
+        nondir_faces[nondir_idx] = face->global_index();
+        nondir_idx++;
       }
     }
-    // Check: idx_dir and idx_nondir must just have crossed
-    if (idx_nondir != idx_dir + 1){
-      std::cout << "Error in creating vector to renumber faces: " << idx_nondir << "/" << m_mesh.n_faces() - m_n_dir_faces << " || " << idx_dir << "/" << m_mesh.n_faces() - m_n_dir_faces << "\n";
-      exit(1);
+    // check
+    if (dir_idx + nondir_idx != m_mesh.n_faces()){
+     std::cout << "Error during renumbering faces: " << dir_idx << ", " << nondir_idx << ", " << m_mesh.n_faces() << "\n";
+     exit(1);
+    }
+    
+    // Depending on "pos" we put the Dirichlet faces at the end or the start
+    std::vector<size_t> new_to_old(m_mesh.n_faces(), 0);
+    if (pos=="end"){
+      for (size_t i=0; i < nondir_idx; i++){
+        new_to_old[i] = nondir_faces[i];
+      }     
+      for (size_t i=nondir_idx; i < m_mesh.n_faces(); i++){
+        new_to_old[i] = dir_faces[i-nondir_idx];
+      }
+    }else{
+      for (size_t i=0; i < dir_idx; i++){
+        new_to_old[i] = dir_faces[i];
+      }     
+      for (size_t i=dir_idx; i < m_mesh.n_faces(); i++){
+        new_to_old[i] = nondir_faces[i-dir_idx];
+      }
     }
 
     // Reordering

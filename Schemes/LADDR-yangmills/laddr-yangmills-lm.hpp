@@ -152,7 +152,7 @@ namespace HArDCore3D
       return dimension(); 
     }
 
-    //Returns the Lie algebra
+    /// Returns the Lie algebra
     inline const LieAlgebra & lieAlg() const
     {
       return m_liealg;

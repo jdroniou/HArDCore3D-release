@@ -1,9 +1,11 @@
 <map id="src/Common/display_timer.hpp" name="src/Common/display_timer.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="557,5,700,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="739,5,881,47"/>
 <area shape="rect" id="node2" href="$ddr-magnetostatics_8cpp.html" title=" " alt="" coords="5,95,209,136"/>
 <area shape="rect" id="node3" href="$sddr-magnetostatics_8cpp.html" title=" " alt="" coords="233,95,437,136"/>
 <area shape="rect" id="node4" href="$ddr-stokes_8cpp.html" title=" " alt="" coords="462,95,617,136"/>
 <area shape="rect" id="node5" href="$sddr-stokes_8cpp.html" title=" " alt="" coords="641,95,795,136"/>
-<area shape="rect" id="node6" href="$laddr-yangmills-lm_8cpp.html" title=" " alt="" coords="819,95,1006,136"/>
-<area shape="rect" id="node7" href="$vem-stokes_8cpp.html" title=" " alt="" coords="1031,95,1184,136"/>
+<area shape="rect" id="node6" href="$hho-brinkman_8cpp.html" title=" " alt="" coords="819,95,987,136"/>
+<area shape="rect" id="node7" href="$hho-fullgradientdiff_8cpp.html" title=" " alt="" coords="1012,95,1195,136"/>
+<area shape="rect" id="node8" href="$laddr-yangmills-lm_8cpp.html" title=" " alt="" coords="1219,95,1406,136"/>
+<area shape="rect" id="node9" href="$vem-stokes_8cpp.html" title=" " alt="" coords="1431,95,1584,136"/>
 </map>

@@ -78,7 +78,7 @@ public:
   };
 
   /// Re-order faces of the mesh to put the Dirichlet faces at the end
-  void reorder_faces();
+  void reorder_faces(const std::string pos = "end");
 
 private:
   // Parameters: id of boundary condition, reference to mesh

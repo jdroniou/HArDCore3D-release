@@ -121,41 +121,82 @@ $(function() {
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="group__Plot.html#ga24a7defcf350ceff6a48de65b6740505">VtuWriter</a>(<span class="keyword">const</span> <a class="code" href="classMeshND_1_1Mesh.html">Mesh</a>* mesh);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga11ec3bf54886e6570bfe72daf3f41a5d">write_to_vtu</a>(</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keyword">const</span> std::string file_name, </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keyword">const</span> Eigen::VectorXd &amp;sol_vertex   </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                );</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#gad00c86f7a2545735f3cb5ed42f25484e">write_header</a>(FILE* pFile);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#gac7516782654b2377ec6930806c5d353a">write_vertices</a>(FILE* pFile);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga67e074b8c269a0bb476252931ebdbeae">write_solution</a>(FILE* pFile, <span class="keyword">const</span> Eigen::VectorXd &amp;sol_vertex);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga4d46a3ca45da37492e5cabda737f7399">write_cells</a>(FILE* pFile);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga2da6c9e874bb9094ddb44b3ff6a4a6a8">write_footer</a>(FILE* pFile);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//  bool write_to_vtu(std::string file_name); </span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">const</span> <a class="code" href="classMeshND_1_1Mesh.html">Mesh</a>* _mesh;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">size_t</span> ncells;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::vector&lt;int&gt; vtk_type;                      <span class="comment">// &quot;vtk types&quot; of each cell</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::vector&lt;std::vector&lt;Vertex *&gt;&gt; c_vertices;      <span class="comment">// vertices in each cell</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::vector&lt;size_t&gt; c_offset;                   <span class="comment">// cell offsets</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    std::vector&lt;std::vector&lt;std::vector&lt;Vertex *&gt;&gt;&gt; c_f_vertices;       <span class="comment">// list of vertices in each face of each cell</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    std::vector&lt;size_t&gt; c_f_offset;     <span class="comment">// cell-face offsets</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}<span class="comment">// end of namespace HArDCore3D</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//_VTU_WRITER</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="group__Plot.html#ga64be67a8509c16d7b8a703df44efe4b3">   63</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga64be67a8509c16d7b8a703df44efe4b3">write_to_vtu</a>(</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keyword">const</span> std::string filename,                        </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keyword">const</span> std::vector&lt;T&gt; &amp;sol_vrtx,                    </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;sol_names = {}     </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                )</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    FILE* pFile=fopen(filename.c_str(),<span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <a class="code" href="group__Plot.html#gad00c86f7a2545735f3cb5ed42f25484e">write_header</a>(pFile);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <a class="code" href="group__Plot.html#gac7516782654b2377ec6930806c5d353a">write_vertices</a>(pFile);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="comment">// If sol_names is too short, we re-create it</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      std::vector&lt;std::string&gt; names = sol_names;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordflow">if</span> (names.size() &lt; sol_vrtx.size()){</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        names.resize(0);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i &lt; sol_vrtx.size(); i++){</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          names.push_back(<span class="stringliteral">&quot;solution&quot;</span> + std::to_string(i));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Functions</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    fprintf (pFile,<span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;         &lt;PointData&gt;&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i &lt; sol_vrtx.size(); i++){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="group__Plot.html#ga79f35033e1ce4d9b38da1f4c5c7e98e0">write_solution</a>(pFile, sol_vrtx[i], names[i]);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    fprintf (pFile,<span class="stringliteral">&quot;%s\n&quot;</span>,<span class="stringliteral">&quot;         &lt;/PointData&gt;&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <a class="code" href="group__Plot.html#ga4d46a3ca45da37492e5cabda737f7399">write_cells</a>(pFile);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <a class="code" href="group__Plot.html#ga2da6c9e874bb9094ddb44b3ff6a4a6a8">write_footer</a>(pFile);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      fclose(pFile);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="group__Plot.html#ga6d2746af4c66716ee8de649a7cf2a5b4">   98</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga6d2746af4c66716ee8de649a7cf2a5b4">write_to_vtu</a>(</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keyword">const</span> std::string file_name, </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keyword">const</span> T &amp;sol_vertex,  </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keyword">const</span> std::string &amp;sol_name = <span class="stringliteral">&quot;solution&quot;</span>  </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                )</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          <span class="keywordflow">return</span> <a class="code" href="group__Plot.html#ga64be67a8509c16d7b8a703df44efe4b3">write_to_vtu</a>(file_name, std::vector&lt;T&gt; {sol_vertex}, std::vector&lt;std::string&gt; {sol_name});</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#gad00c86f7a2545735f3cb5ed42f25484e">write_header</a>(FILE* pFile);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#gac7516782654b2377ec6930806c5d353a">write_vertices</a>(FILE* pFile);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga79f35033e1ce4d9b38da1f4c5c7e98e0">write_solution</a>(FILE* pFile, <span class="keyword">const</span> std::vector&lt;double&gt; &amp;sol_vertex, <span class="keyword">const</span> std::string &amp;name); <span class="comment">// scalar solution</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga79f35033e1ce4d9b38da1f4c5c7e98e0">write_solution</a>(FILE* pFile, <span class="keyword">const</span> Eigen::VectorXd &amp;sol_vertex, <span class="keyword">const</span> std::string &amp;name); <span class="comment">// scalar solution (for legacy, values at the vertices should really be std::vector)</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga79f35033e1ce4d9b38da1f4c5c7e98e0">write_solution</a>(FILE* pFile, <span class="keyword">const</span> std::vector&lt;VectorRd&gt; &amp;sol_vertex, <span class="keyword">const</span> std::string &amp;name); <span class="comment">// vector-valued solution</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga4d46a3ca45da37492e5cabda737f7399">write_cells</a>(FILE* pFile);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="group__Plot.html#ga2da6c9e874bb9094ddb44b3ff6a4a6a8">write_footer</a>(FILE* pFile);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keyword">const</span> <a class="code" href="classMeshND_1_1Mesh.html">Mesh</a>* _mesh;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">size_t</span> ncells;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::vector&lt;int&gt; vtk_type;                      <span class="comment">// &quot;vtk types&quot; of each cell</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    std::vector&lt;std::vector&lt;Vertex *&gt;&gt; c_vertices;      <span class="comment">// vertices in each cell</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::vector&lt;size_t&gt; c_offset;                   <span class="comment">// cell offsets</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    std::vector&lt;std::vector&lt;std::vector&lt;Vertex *&gt;&gt;&gt; c_f_vertices;       <span class="comment">// list of vertices in each face of each cell</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    std::vector&lt;size_t&gt; c_f_offset;     <span class="comment">// cell-face offsets</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}<span class="comment">// end of namespace HArDCore3D</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//_VTU_WRITER</span></div>
 <div class="ttc" id="aclassHArDCore3D_1_1VtuWriter_html"><div class="ttname"><a href="classHArDCore3D_1_1VtuWriter.html">HArDCore3D::VtuWriter</a></div><div class="ttdoc">The VtuWriter class provides methods to plot a 3D mesh and a solution on this mesh.</div><div class="ttdef"><b>Definition:</b> vtu_writer.hpp:51</div></div>
-<div class="ttc" id="aclassMeshND_1_1Mesh_html"><div class="ttname"><a href="classMeshND_1_1Mesh.html">MeshND::Mesh</a></div><div class="ttdef"><b>Definition:</b> MeshND.hpp:10</div></div>
-<div class="ttc" id="agroup__Plot_html_ga11ec3bf54886e6570bfe72daf3f41a5d"><div class="ttname"><a href="group__Plot.html#ga11ec3bf54886e6570bfe72daf3f41a5d">HArDCore3D::VtuWriter::write_to_vtu</a></div><div class="ttdeci">bool write_to_vtu(const std::string file_name, const Eigen::VectorXd &amp;sol_vertex)</div><div class="ttdoc">Writes the plot file.</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:70</div></div>
+<div class="ttc" id="aclassMeshND_1_1Mesh_html"><div class="ttname"><a href="classMeshND_1_1Mesh.html">MeshND::Mesh</a></div><div class="ttdoc">Class to describe a mesh.</div><div class="ttdef"><b>Definition:</b> MeshND.hpp:17</div></div>
 <div class="ttc" id="agroup__Plot_html_ga24a7defcf350ceff6a48de65b6740505"><div class="ttname"><a href="group__Plot.html#ga24a7defcf350ceff6a48de65b6740505">HArDCore3D::VtuWriter::VtuWriter</a></div><div class="ttdeci">VtuWriter(const Mesh *mesh)</div><div class="ttdoc">Constructor for mesh writer.</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:17</div></div>
-<div class="ttc" id="agroup__Plot_html_ga2da6c9e874bb9094ddb44b3ff6a4a6a8"><div class="ttname"><a href="group__Plot.html#ga2da6c9e874bb9094ddb44b3ff6a4a6a8">HArDCore3D::VtuWriter::write_footer</a></div><div class="ttdeci">bool write_footer(FILE *pFile)</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:194</div></div>
-<div class="ttc" id="agroup__Plot_html_ga4d46a3ca45da37492e5cabda737f7399"><div class="ttname"><a href="group__Plot.html#ga4d46a3ca45da37492e5cabda737f7399">HArDCore3D::VtuWriter::write_cells</a></div><div class="ttdeci">bool write_cells(FILE *pFile)</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:128</div></div>
-<div class="ttc" id="agroup__Plot_html_ga67e074b8c269a0bb476252931ebdbeae"><div class="ttname"><a href="group__Plot.html#ga67e074b8c269a0bb476252931ebdbeae">HArDCore3D::VtuWriter::write_solution</a></div><div class="ttdeci">bool write_solution(FILE *pFile, const Eigen::VectorXd &amp;sol_vertex)</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:110</div></div>
-<div class="ttc" id="agroup__Plot_html_gac7516782654b2377ec6930806c5d353a"><div class="ttname"><a href="group__Plot.html#gac7516782654b2377ec6930806c5d353a">HArDCore3D::VtuWriter::write_vertices</a></div><div class="ttdeci">bool write_vertices(FILE *pFile)</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:94</div></div>
-<div class="ttc" id="agroup__Plot_html_gad00c86f7a2545735f3cb5ed42f25484e"><div class="ttname"><a href="group__Plot.html#gad00c86f7a2545735f3cb5ed42f25484e">HArDCore3D::VtuWriter::write_header</a></div><div class="ttdeci">bool write_header(FILE *pFile)</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:82</div></div>
+<div class="ttc" id="agroup__Plot_html_ga2da6c9e874bb9094ddb44b3ff6a4a6a8"><div class="ttname"><a href="group__Plot.html#ga2da6c9e874bb9094ddb44b3ff6a4a6a8">HArDCore3D::VtuWriter::write_footer</a></div><div class="ttdeci">bool write_footer(FILE *pFile)</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:192</div></div>
+<div class="ttc" id="agroup__Plot_html_ga4d46a3ca45da37492e5cabda737f7399"><div class="ttname"><a href="group__Plot.html#ga4d46a3ca45da37492e5cabda737f7399">HArDCore3D::VtuWriter::write_cells</a></div><div class="ttdeci">bool write_cells(FILE *pFile)</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:126</div></div>
+<div class="ttc" id="agroup__Plot_html_ga64be67a8509c16d7b8a703df44efe4b3"><div class="ttname"><a href="group__Plot.html#ga64be67a8509c16d7b8a703df44efe4b3">HArDCore3D::VtuWriter::write_to_vtu</a></div><div class="ttdeci">bool write_to_vtu(const std::string filename, const std::vector&lt; T &gt; &amp;sol_vrtx, const std::vector&lt; std::string &gt; &amp;sol_names={})</div><div class="ttdoc">Writes file with a series of solutions (scalar if T=std::vector&lt;double&gt; (or Eigen::VectorXd),...</div><div class="ttdef"><b>Definition:</b> vtu_writer.hpp:63</div></div>
+<div class="ttc" id="agroup__Plot_html_ga6d2746af4c66716ee8de649a7cf2a5b4"><div class="ttname"><a href="group__Plot.html#ga6d2746af4c66716ee8de649a7cf2a5b4">HArDCore3D::VtuWriter::write_to_vtu</a></div><div class="ttdeci">bool write_to_vtu(const std::string file_name, const T &amp;sol_vertex, const std::string &amp;sol_name=&quot;solution&quot;)</div><div class="ttdoc">Overload to simplify the call when only one solution is involved.</div><div class="ttdef"><b>Definition:</b> vtu_writer.hpp:98</div></div>
+<div class="ttc" id="agroup__Plot_html_ga79f35033e1ce4d9b38da1f4c5c7e98e0"><div class="ttname"><a href="group__Plot.html#ga79f35033e1ce4d9b38da1f4c5c7e98e0">HArDCore3D::VtuWriter::write_solution</a></div><div class="ttdeci">bool write_solution(FILE *pFile, const std::vector&lt; double &gt; &amp;sol_vertex, const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:97</div></div>
+<div class="ttc" id="agroup__Plot_html_gac7516782654b2377ec6930806c5d353a"><div class="ttname"><a href="group__Plot.html#gac7516782654b2377ec6930806c5d353a">HArDCore3D::VtuWriter::write_vertices</a></div><div class="ttdeci">bool write_vertices(FILE *pFile)</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:81</div></div>
+<div class="ttc" id="agroup__Plot_html_gad00c86f7a2545735f3cb5ed42f25484e"><div class="ttname"><a href="group__Plot.html#gad00c86f7a2545735f3cb5ed42f25484e">HArDCore3D::VtuWriter::write_header</a></div><div class="ttdeci">bool write_header(FILE *pFile)</div><div class="ttdef"><b>Definition:</b> vtu_writer.cpp:69</div></div>
 <div class="ttc" id="amesh_8hpp_html"><div class="ttname"><a href="mesh_8hpp.html">mesh.hpp</a></div></div>
 <div class="ttc" id="anamespaceHArDCore3D_html"><div class="ttname"><a href="namespaceHArDCore3D.html">HArDCore3D</a></div><div class="ttdef"><b>Definition:</b> ddr-magnetostatics.hpp:40</div></div>
 </div><!-- fragment --></div><!-- contents -->

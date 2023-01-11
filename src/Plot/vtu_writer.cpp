@@ -22,62 +22,49 @@ VtuWriter::VtuWriter(const Mesh* mesh)
 			c_offset(ncells),
 			c_f_vertices(ncells),
 			c_f_offset(ncells) {
-		vtk_type.assign(ncells,0);
-		for (size_t iC=0; iC<ncells; iC++){
-			Cell* cell = _mesh->cell(iC);
-		  // create vector that indicates the "vtk" type of each cell.
-			// Here, only two: tetra, or generic polyhedral
-			switch(cell->n_faces()) {
-				case 4: vtk_type[iC]=10; break;			
-				default: vtk_type[iC]=42; break;
-			}
+		    vtk_type.assign(ncells,0);
+		    for (size_t iC=0; iC<ncells; iC++){
+			    Cell* cell = _mesh->cell(iC);
+		      // create vector that indicates the "vtk" type of each cell.
+			    // Here, only two: tetra, or generic polyhedral
+			    switch(cell->n_faces()) {
+				    case 4: vtk_type[iC]=10; break;			
+				    default: vtk_type[iC]=42; break;
+			    }
 
-			// We need the list of all vertices of all cells, in order, with an indication of where the vertices of each cell finish. We create:
-			// 	(1) c_vertices[iC] = vector of vertices in cell iC
-			// 	(2) coffset[iC] = cumulated number of vertices in the cells from 0 to iC
+			    // We need the list of all vertices of all cells, in order, with an indication of where the vertices of each cell finish. We create:
+			    // 	(1) c_vertices[iC] = vector of vertices in cell iC
+			    // 	(2) coffset[iC] = cumulated number of vertices in the cells from 0 to iC
 
-			c_vertices[iC].resize(cell->n_vertices());
-			c_vertices[iC] = cell->get_vertices();
-			if (iC==0){
-				c_offset[0]=c_vertices[iC].size();
-			}else{
-				c_offset[iC]=c_offset[iC-1]+c_vertices[iC].size();
-			}
+			    c_vertices[iC].resize(cell->n_vertices());
+			    c_vertices[iC] = cell->get_vertices();
+			    if (iC==0){
+				    c_offset[0]=c_vertices[iC].size();
+			    }else{
+				    c_offset[iC]=c_offset[iC-1]+c_vertices[iC].size();
+			    }
 
-			// The "face stream" in vtu file must present itself, for each cell iC:
-			//		[nb of faces in iC] [nb vertices in face 1 of iC] [vertex 1 in face 1 of IC] [vertex 2 in face 1 of iC]... [vertex N in face 1 of iC] [nb vertices in face 2 of iC] etc.
-			// To do so, we create:
-			//	(1) c_f_vertices[iC][ilF] = vector of vertices of face ilF (local numbering) of cell iC
-			// 	(2) c_f_offset[iC] = location of end of face stream for cell iC (cumulated number of "1+nb of faces+sum over faces of nb of vertices in the faces" for all cells between 0 and iC)
-			if (iC==0){
-				c_f_offset[0]=1+cell->n_faces();
-			}else{
-				c_f_offset[iC]=c_f_offset[iC-1]+1+cell->n_faces();
-			}
+			    // The "face stream" in vtu file must present itself, for each cell iC:
+			    //		[nb of faces in iC] [nb vertices in face 1 of iC] [vertex 1 in face 1 of IC] [vertex 2 in face 1 of iC]... [vertex N in face 1 of iC] [nb vertices in face 2 of iC] etc.
+			    // To do so, we create:
+			    //	(1) c_f_vertices[iC][ilF] = vector of vertices of face ilF (local numbering) of cell iC
+			    // 	(2) c_f_offset[iC] = location of end of face stream for cell iC (cumulated number of "1+nb of faces+sum over faces of nb of vertices in the faces" for all cells between 0 and iC)
+			    if (iC==0){
+				    c_f_offset[0]=1+cell->n_faces();
+			    }else{
+				    c_f_offset[iC]=c_f_offset[iC-1]+1+cell->n_faces();
+			    }
 
-			c_f_vertices[iC].resize(cell->n_faces());
-			for (size_t ilF = 0; ilF < cell->n_faces(); ilF++){
-				Face* face = cell->face(ilF);
-				c_f_vertices[iC][ilF].resize(face->n_vertices());
-				c_f_vertices[iC][ilF] = face->get_vertices();
-				c_f_offset[iC] += face->n_vertices();
-			}
-		}
-
+			    c_f_vertices[iC].resize(cell->n_faces());
+			    for (size_t ilF = 0; ilF < cell->n_faces(); ilF++){
+				    Face* face = cell->face(ilF);
+				    c_f_vertices[iC][ilF].resize(face->n_vertices());
+				    c_f_vertices[iC][ilF] = face->get_vertices();
+				    c_f_offset[iC] += face->n_vertices();
+			    }
+		    }
 }
 
-// Method to plot a vtu file
-bool VtuWriter::write_to_vtu(const std::string filename, const Eigen::VectorXd &sol_vrtx) {
-
-  FILE* pFile=fopen(filename.c_str(),"w");
-	write_header(pFile);
-	write_vertices(pFile);
-	write_solution(pFile, sol_vrtx);
-	write_cells(pFile);
-	write_footer(pFile);
-	fclose(pFile);
-	return true;
-}
 
 bool VtuWriter::write_header(FILE* pFile){
     fprintf (pFile,"%s","<VTKFile type=\"UnstructuredGrid\"");
@@ -107,20 +94,31 @@ bool VtuWriter::write_vertices(FILE* pFile){
 		return true;
 }
 
-bool VtuWriter::write_solution(FILE* pFile, const Eigen::VectorXd &sol_vrtx){
-    // SOLUTIONS 
-    fprintf (pFile,"%s\n","         <PointData>");
-		// in case we have more than one solution, not needed yet
-		for(size_t iS=0; iS<1; iS++){
-      fprintf (pFile,"%s%s%s\n","            <DataArray type=\"Float32\" Name=\"","solution","\" NumberOfComponents=\"1\" format=\"ascii\">");
-      // write variables (u_{i=0}, u_{i=2}, ... u_{i=n}) i is the nodes index
-	    for(size_t iV = 0; iV < _mesh->n_vertices(); iV++){ 
-				fprintf (pFile,"%f ",sol_vrtx(iV));
-			}
-      fprintf (pFile,"%s\n","");
-      fprintf (pFile,"%s\n","            </DataArray>");
-    }
-    fprintf (pFile,"%s\n","         </PointData>");
+bool VtuWriter::write_solution(FILE* pFile, const std::vector<double> &sol_vrtx, const std::string &name){
+    fprintf (pFile,"%s%s%s\n","            <DataArray type=\"Float32\" Name=\"",name.c_str(),"\" NumberOfComponents=\"1\" format=\"ascii\">");
+    // write variables (u_{i=0}, u_{i=1}, ... u_{i=n}) i is the nodes index
+    for(size_t iV = 0; iV < _mesh->n_vertices(); iV++){ 
+			fprintf (pFile,"%f ",sol_vrtx[iV]);
+		}
+    fprintf (pFile,"%s\n","");
+    fprintf (pFile,"%s\n","            </DataArray>");
+
+		return true;
+}
+
+bool VtuWriter::write_solution(FILE* pFile, const Eigen::VectorXd &sol_vrtx, const std::string &name){
+    std::vector<double> sol_v(sol_vrtx.data(), sol_vrtx.data() + sol_vrtx.size());
+    return write_solution(pFile, sol_v, name); 
+}
+
+bool VtuWriter::write_solution(FILE* pFile, const std::vector<VectorRd> &sol_vrtx, const std::string &name){
+    fprintf (pFile,"%s%s%s\n","            <DataArray type=\"Float32\" Name=\"",name.c_str(),"\" NumberOfComponents=\"3\" format=\"ascii\">");
+    // write variables (ux_{i=0}, uy_{i=0}, uz_{i=0}, ux_{i=1}, ... uz_{i=n}) i is the nodes index
+    for(size_t iV = 0; iV < _mesh->n_vertices(); iV++){ 
+			fprintf (pFile,"%f %f %f ",sol_vrtx[iV].x(), sol_vrtx[iV].y(), sol_vrtx[iV].z());
+		}
+    fprintf (pFile,"%s\n","");
+    fprintf (pFile,"%s\n","            </DataArray>");
 
 		return true;
 }

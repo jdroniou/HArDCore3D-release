@@ -1,0 +1,78 @@
+\hypertarget{hho-brinkman_8cpp}{}\doxysection{Schemes/\+HHO-\/brinkman/hho-\/brinkman.cpp File Reference}
+\label{hho-brinkman_8cpp}\index{Schemes/HHO-\/brinkman/hho-\/brinkman.cpp@{Schemes/HHO-\/brinkman/hho-\/brinkman.cpp}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \char`\"{}hho-\/brinkman.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$parallel\+\_\+for.\+hpp$>$}\newline
+{\ttfamily \#include $<$GMpoly\+\_\+cell.\+hpp$>$}\newline
+{\ttfamily \#include $<$max\+\_\+degrees\+\_\+quadratures.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/program\+\_\+options.\+hpp$>$}\newline
+{\ttfamily \#include $<$display\+\_\+timer.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}vtu\+\_\+writer.\+hpp\char`\"{}}\newline
+Include dependency graph for hho-\/brinkman.cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hho-brinkman_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{hho-brinkman_8cpp_acfec7849f05710c7fb4106fea8a286fc}{FORMAT}}(W)~  std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{hho-brinkman_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{hho-brinkman_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} = \char`\"{}../../meshes/\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{hho-brinkman_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}{default\+\_\+mesh}} = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{hho-brinkman_8cpp_af20aa8e6197a09f3cced1d8080c117c9}{max\+\_\+nb\+\_\+cells\+\_\+for\+\_\+plot}} = 20000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{hho-brinkman_8cpp_acfec7849f05710c7fb4106fea8a286fc}\label{hho-brinkman_8cpp_acfec7849f05710c7fb4106fea8a286fc}} 
+\index{hho-\/brinkman.cpp@{hho-\/brinkman.cpp}!FORMAT@{FORMAT}}
+\index{FORMAT@{FORMAT}!hho-\/brinkman.cpp@{hho-\/brinkman.cpp}}
+\doxysubsubsection{\texorpdfstring{FORMAT}{FORMAT}}
+{\footnotesize\ttfamily \#define FORMAT(\begin{DoxyParamCaption}\item[{}]{W }\end{DoxyParamCaption})~  std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hho-brinkman_8cpp_ac0f2228420376f4db7e1274f2b41667c}\label{hho-brinkman_8cpp_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{hho-\/brinkman.cpp@{hho-\/brinkman.cpp}!main@{main}}
+\index{main@{main}!hho-\/brinkman.cpp@{hho-\/brinkman.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{hho-brinkman_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}\label{hho-brinkman_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}} 
+\index{hho-\/brinkman.cpp@{hho-\/brinkman.cpp}!default\_mesh@{default\_mesh}}
+\index{default\_mesh@{default\_mesh}!hho-\/brinkman.cpp@{hho-\/brinkman.cpp}}
+\doxysubsubsection{\texorpdfstring{default\_mesh}{default\_mesh}}
+{\footnotesize\ttfamily std\+::string default\+\_\+mesh = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}}
+
+\mbox{\Hypertarget{hho-brinkman_8cpp_af20aa8e6197a09f3cced1d8080c117c9}\label{hho-brinkman_8cpp_af20aa8e6197a09f3cced1d8080c117c9}} 
+\index{hho-\/brinkman.cpp@{hho-\/brinkman.cpp}!max\_nb\_cells\_for\_plot@{max\_nb\_cells\_for\_plot}}
+\index{max\_nb\_cells\_for\_plot@{max\_nb\_cells\_for\_plot}!hho-\/brinkman.cpp@{hho-\/brinkman.cpp}}
+\doxysubsubsection{\texorpdfstring{max\_nb\_cells\_for\_plot}{max\_nb\_cells\_for\_plot}}
+{\footnotesize\ttfamily constexpr size\+\_\+t max\+\_\+nb\+\_\+cells\+\_\+for\+\_\+plot = 20000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{hho-brinkman_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}\label{hho-brinkman_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}} 
+\index{hho-\/brinkman.cpp@{hho-\/brinkman.cpp}!mesh\_dir@{mesh\_dir}}
+\index{mesh\_dir@{mesh\_dir}!hho-\/brinkman.cpp@{hho-\/brinkman.cpp}}
+\doxysubsubsection{\texorpdfstring{mesh\_dir}{mesh\_dir}}
+{\footnotesize\ttfamily const std\+::string mesh\+\_\+dir = \char`\"{}../../meshes/\char`\"{}}
+

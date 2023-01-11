@@ -14,13 +14,19 @@ The \mbox{\hyperlink{classHArDCore3D_1_1VtuWriter}{Vtu\+Writer}} class provides 
 \item 
 \mbox{\hyperlink{group__Plot_ga24a7defcf350ceff6a48de65b6740505}{Vtu\+Writer}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} $\ast$mesh)
 \begin{DoxyCompactList}\small\item\em Constructor for mesh writer. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{group__Plot_ga11ec3bf54886e6570bfe72daf3f41a5d}{write\+\_\+to\+\_\+vtu}} (const std\+::string file\+\_\+name, const Eigen\+::\+Vector\+Xd \&sol\+\_\+vertex)
-\begin{DoxyCompactList}\small\item\em Writes the plot file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{group__Plot_ga64be67a8509c16d7b8a703df44efe4b3}{write\+\_\+to\+\_\+vtu}} (const std\+::string filename, const std\+::vector$<$ T $>$ \&sol\+\_\+vrtx, const std\+::vector$<$ std\+::string $>$ \&sol\+\_\+names=\{\})
+\begin{DoxyCompactList}\small\item\em Writes file with a series of solutions (scalar if T=std\+::vector$<$double$>$ (or Eigen\+::\+Vector\+Xd), vector if T=std\+::vector$<$\+Vector\+Rd$>$) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{group__Plot_ga6d2746af4c66716ee8de649a7cf2a5b4}{write\+\_\+to\+\_\+vtu}} (const std\+::string file\+\_\+name, const T \&sol\+\_\+vertex, const std\+::string \&sol\+\_\+name=\char`\"{}solution\char`\"{})
+\begin{DoxyCompactList}\small\item\em Overload to simplify the call when only one solution is involved. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{group__Plot_gad00c86f7a2545735f3cb5ed42f25484e}{write\+\_\+header}} (FILE $\ast$p\+File)
 \item 
 bool \mbox{\hyperlink{group__Plot_gac7516782654b2377ec6930806c5d353a}{write\+\_\+vertices}} (FILE $\ast$p\+File)
 \item 
-bool \mbox{\hyperlink{group__Plot_ga67e074b8c269a0bb476252931ebdbeae}{write\+\_\+solution}} (FILE $\ast$p\+File, const Eigen\+::\+Vector\+Xd \&sol\+\_\+vertex)
+bool \mbox{\hyperlink{group__Plot_ga79f35033e1ce4d9b38da1f4c5c7e98e0}{write\+\_\+solution}} (FILE $\ast$p\+File, const std\+::vector$<$ double $>$ \&sol\+\_\+vertex, const std\+::string \&name)
+\item 
+bool \mbox{\hyperlink{group__Plot_gab9739f89f499759cecc2517f2184eaad}{write\+\_\+solution}} (FILE $\ast$p\+File, const Eigen\+::\+Vector\+Xd \&sol\+\_\+vertex, const std\+::string \&name)
+\item 
+bool \mbox{\hyperlink{group__Plot_ga96cf1a48045eb74a80b5a3f3fc24e2fc}{write\+\_\+solution}} (FILE $\ast$p\+File, const std\+::vector$<$ Vector\+Rd $>$ \&sol\+\_\+vertex, const std\+::string \&name)
 \item 
 bool \mbox{\hyperlink{group__Plot_ga4d46a3ca45da37492e5cabda737f7399}{write\+\_\+cells}} (FILE $\ast$p\+File)
 \item 

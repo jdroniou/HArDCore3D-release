@@ -9,6 +9,7 @@ using namespace HArDCore3D;
 
 LieAlgebra::LieAlgebra() 
 {
+  std::cout << "[LieAlgebra] Initializing default Lie algebra su(2)" << std::endl;
   // Default Lie algebra su(2)
   Eigen::Matrix2cd e1, e2, e3;
   e1 << 0, 1, 1, 0;
@@ -27,10 +28,11 @@ LieAlgebra::LieAlgebra(std::vector<LieAlgValue> & basis, LieAlgProduct & product
     m_mass_matrix(_compute_mass_matrix()),
     m_strucConst(_compute_structure_constants())
 {
+  std::cout << "[LieAlgebra] Initializing" << std::endl;
   Eigen::MatrixXd id = Eigen::MatrixXd::Identity(dimension(), dimension());
   if ((m_mass_matrix - id).norm() > 1e-12)
   {
-    std::cout << "[Lie Algebra] Basis in Lie algebra is not orthonormal" << std::endl;
+    std::cout << "[LieAlgebra] Basis in Lie algebra is not orthonormal" << std::endl;
     exit(1);
   }
 }

@@ -1,21 +1,4 @@
 var searchData=
 [
-  ['laddr_2dyangmills_2dlm_2ecpp_1287',['laddr-yangmills-lm.cpp',['../laddr-yangmills-lm_8cpp.html',1,'']]],
-  ['laddr_2dyangmills_2dlm_2ehpp_1288',['laddr-yangmills-lm.hpp',['../laddr-yangmills-lm_8hpp.html',1,'']]],
-  ['laxcurl_2ecpp_1289',['laxcurl.cpp',['../laxcurl_8cpp.html',1,'']]],
-  ['laxcurl_2ecpp_2eo_2ed_1290',['laxcurl.cpp.o.d',['../laxcurl_8cpp_8o_8d.html',1,'']]],
-  ['laxcurl_2ehpp_1291',['laxcurl.hpp',['../laxcurl_8hpp.html',1,'']]],
-  ['laxdiv_2ecpp_1292',['laxdiv.cpp',['../laxdiv_8cpp.html',1,'']]],
-  ['laxdiv_2ecpp_2eo_2ed_1293',['laxdiv.cpp.o.d',['../laxdiv_8cpp_8o_8d.html',1,'']]],
-  ['laxdiv_2ehpp_1294',['laxdiv.hpp',['../laxdiv_8hpp.html',1,'']]],
-  ['laxgrad_2ecpp_1295',['laxgrad.cpp',['../laxgrad_8cpp.html',1,'']]],
-  ['laxgrad_2ecpp_2eo_2ed_1296',['laxgrad.cpp.o.d',['../laxgrad_8cpp_8o_8d.html',1,'']]],
-  ['laxgrad_2ehpp_1297',['laxgrad.hpp',['../laxgrad_8hpp.html',1,'']]],
-  ['liealgebra_2ecpp_1298',['liealgebra.cpp',['../liealgebra_8cpp.html',1,'']]],
-  ['liealgebra_2ecpp_2eo_2ed_1299',['liealgebra.cpp.o.d',['../liealgebra_8cpp_8o_8d.html',1,'']]],
-  ['liealgebra_2ehpp_1300',['liealgebra.hpp',['../liealgebra_8hpp.html',1,'']]],
-  ['local_5fstatic_5fcondensation_2ehpp_1301',['local_static_condensation.hpp',['../local__static__condensation_8hpp.html',1,'']]],
-  ['localdofspace_2ecpp_1302',['localdofspace.cpp',['../localdofspace_8cpp.html',1,'']]],
-  ['localdofspace_2ecpp_2eo_2ed_1303',['localdofspace.cpp.o.d',['../localdofspace_8cpp_8o_8d.html',1,'']]],
-  ['localdofspace_2ehpp_1304',['localdofspace.hpp',['../localdofspace_8hpp.html',1,'']]]
+  ['integralweight_2ehpp_1449',['integralweight.hpp',['../integralweight_8hpp.html',1,'']]]
 ];

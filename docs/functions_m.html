@@ -156,6 +156,12 @@ $(function() {
 <li>matrix()
 : <a class="el" href="group__Basis.html#gaf056ff8a6cbf5c566c243290e72af217">HArDCore3D::Family&lt; BasisType &gt;</a>
 </li>
+<li>MatrixFamily()
+: <a class="el" href="group__Basis.html#ga661542b10e212f55ec2778a756ffd151">HArDCore3D::MatrixFamily&lt; ScalarFamilyType, N &gt;</a>
+</li>
+<li>matrixSize()
+: <a class="el" href="group__Basis.html#gaa9d689a5224c20fa6ac9e2b69b2a6e5a">HArDCore3D::MatrixFamily&lt; ScalarFamilyType, N &gt;</a>
+</li>
 <li>max_degree()
 : <a class="el" href="group__Basis.html#gac5c787dd9674770eb4bffdeeb769c946">HArDCore3D::Family&lt; BasisType &gt;</a>
 , <a class="el" href="group__Basis.html#gac4e1f6061628360a9ffbad4142db2d4f">HArDCore3D::GolyComplBasisCell</a>
@@ -173,7 +179,13 @@ $(function() {
 : <a class="el" href="group__Mesh.html#ga8b0f3f433486dde8fdea341f262d5053">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
 <li>mesh()
-: <a class="el" href="group__DDRCore.html#ga4b3c317f8cf4193ba4b945f2b087a6f2">HArDCore3D::DDRCore</a>
+: <a class="el" href="group__HHO__brinkman.html#gaff1c1e8ceea0b2dfecca62af5675c5d8">HArDCore3D::Brinkman</a>
+, <a class="el" href="group__DDRCore.html#ga4b3c317f8cf4193ba4b945f2b087a6f2">HArDCore3D::DDRCore</a>
+, <a class="el" href="group__HHO__fullgradientdiff.html#ga2cbe53c007117805a876230c352f3b0e">HArDCore3D::FullGradientDiffusion</a>
+, <a class="el" href="group__HHOSpace.html#ga54c2b08090a641528bd512316d1b0ba3">HArDCore3D::HHOSpace</a>
+, <a class="el" href="group__LADDRCore.html#gac5a4f1759deed843111732c809fc06e9">HArDCore3D::LAXCurl</a>
+, <a class="el" href="group__LADDRCore.html#gabe40bfff95397588438f4ec3638fa9cc">HArDCore3D::LAXDiv</a>
+, <a class="el" href="group__LADDRCore.html#gaabbf9ab943cea8b8d8aadaea37df15e4">HArDCore3D::LAXGrad</a>
 , <a class="el" href="group__Common.html#ga3dfecc3674cef1fb03254bc8e3ea0eff">HArDCore3D::LocalDOFSpace</a>
 , <a class="el" href="group__DDRCore.html#gacc62beed649b9d3e04610d5f87ddba26">HArDCore3D::SerendipityProblem</a>
 , <a class="el" href="group__DDRCore.html#ga89f8ff3f586b549ffc79292d25a6691a">HArDCore3D::SXCurl</a>
@@ -183,12 +195,13 @@ $(function() {
 , <a class="el" href="group__VEMCore.html#ga12fd5cffde0b559fa1928015d85c564c">HArDCore3D::VDiv</a>
 , <a class="el" href="group__VEMCore.html#ga388690b41c69c4039fa4fca3cbdc71a1">HArDCore3D::VEMCore</a>
 , <a class="el" href="group__VEMCore.html#gafbc8f4c1519e39eee879870e6fadef60">HArDCore3D::VGrad</a>
+, <a class="el" href="group__HHOSpace.html#ga8a3176833af5485a276bbb5eb86d4337">HArDCore3D::VHHOSpace</a>
 , <a class="el" href="group__DDRCore.html#gabc06c9c069dafd40ab7f5f573eaebe66">HArDCore3D::XCurl</a>
 , <a class="el" href="group__DDRCore.html#ga53a8bec65ff15b3dcda0c597d2657b24">HArDCore3D::XDiv</a>
 , <a class="el" href="group__DDRCore.html#ga90b1a980d171c5622cbfd2b289fede2f">HArDCore3D::XGrad</a>
 </li>
 <li>Mesh()
-: <a class="el" href="classMeshND_1_1Mesh.html#abdd696390835486288c01d4c81d758e4">MeshND::Mesh&lt; dimension &gt;</a>
+: <a class="el" href="group__Mesh.html#gabdd696390835486288c01d4c81d758e4">MeshND::Mesh&lt; dimension &gt;</a>
 </li>
 <li>MeshBuilder()
 : <a class="el" href="classHArDCore3D_1_1MeshBuilder.html#a13fe22fd14a85f789dc9d7d4a8d2419d">HArDCore3D::MeshBuilder</a>
@@ -205,6 +218,9 @@ $(function() {
 <li>MHDTests()
 : <a class="el" href="group__HHO__MHD.html#ga645531f08cf414927698a7915c5b2f93">HArDCore3D::MHDTests</a>
 </li>
+<li>MomentumForcingTermType
+: <a class="el" href="group__HHO__brinkman.html#ga18ad36c55908aa960f11b456bdc4f899">HArDCore3D::Brinkman</a>
+</li>
 <li>MonomialScalarBasisCell()
 : <a class="el" href="group__Basis.html#ga88e7776e18ccc8e6dff40f2c0644246a">HArDCore3D::MonomialScalarBasisCell</a>
 </li>
@@ -213,6 +229,9 @@ $(function() {
 </li>
 <li>MonomialScalarBasisFace()
 : <a class="el" href="group__Basis.html#gad87f40b1e97ec1b95dcf9c56282912f3">HArDCore3D::MonomialScalarBasisFace</a>
+</li>
+<li>mu
+: <a class="el" href="group__HHO__brinkman.html#ga4dbfbe718ae12a8a2d53fa52f45c0665">HArDCore3D::BrinkmanParameters</a>
 </li>
 </ul>
 </div><!-- contents -->

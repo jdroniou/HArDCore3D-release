@@ -4,11 +4,10 @@
 #include <Eigen/Dense>
 #include <vector>
 
-
- /*!
-  * @defgroup LADDRCore
-  * @brief Classes defining the Lie Algebra-valued Discrete De Rham sequence 
-  */
+/*!	
+ * @defgroup LADDRCore 
+ * @brief Classes defining the Discrete De Rham sequence for Lie-algebra functions
+ */
 
 namespace HArDCore3D
 {

@@ -7,12 +7,16 @@ You will find on this page the following sections\+:
 
 \begin{DoxyItemize}
 \item \href{\#build}{\texttt{ Build instructions}} -- How to build the library.
-\item \href{\#mesh}{\texttt{ Mesh module}} -- Principle to load and handle a mesh and its geometric entities.
+\item \href{\#mesh}{\texttt{ Mesh module}} -- Principle to load and handle a mesh and its geometric entities, together with some functions to transform/handle meshes.
 \item \href{\#common}{\texttt{ Common module}} -- Polynomial bases, and other generic simple helper functions and structures.
 \item \href{\#quad_rules}{\texttt{ Quadratures}} -- Quadrature rules to integrate generic functions, and cost-\/effective integration methods to compute Gram matrices of polynomial functions.
-\item \href{\#hybridcore}{\texttt{ Hybrid\+Core}} -- Create polynomial basis functions on mesh geometric entities, and a vector structure of degrees of freedom. Mostly useful for Hybrid High-\/\+Order (HHO) and similar methods.
+\item \href{\#hybridcore}{\texttt{ Hybrid\+Core}} -- Create polynomial basis functions on mesh geometric entities, and a vector structure of degrees of freedom. Mostly useful for Hybrid High-\/\+Order (HHO) and similar methods; a little bit deprecated, \mbox{\hyperlink{group__HHOSpace}{HHOSpace}} is probably better.
 \item \href{\#hho3D}{\texttt{ HHO3D}} -- Core methods to implement HHO schemes.
-\item \href{\#ddr}{\texttt{ DDRCore}} -- Methods (specific basis functions, and discrete spaces and operators) for schemes based on the Discrete De Rham sequence (DDR).
+\item \href{\#dofspace}{\texttt{ DOFSpace}} -- Generic classes to handle methods with degrees of freedom at the vertices, edges, faces and cells of a mesh. The following modules are based on these classes\+:
+\begin{DoxyItemize}
+\item \href{\#hhospace}{\texttt{ HHOSpace}} -- Methods (basis functions, discrete spaces and operators) for the Hybrid High-\/\+Order method.
+\item \href{\#ddr}{\texttt{ DDRCore}} -- Methods (basis functions, discrete spaces and operators) for the Discrete De Rham sequence (DDR). This is extended in \mbox{\hyperlink{group__LADDRCore}{LADDRCore}} to cover Lie-\/algebra valued functions.
+\end{DoxyItemize}
 \item \href{\#schemes}{\texttt{ Schemes}} -- List of schemes currently implemented in \mbox{\hyperlink{namespaceHArDCore3D}{HAr\+DCore3D}}.
 \end{DoxyItemize}
 
@@ -24,14 +28,14 @@ To build the libraries and implemented schemes, the minimal requirements are\+:
 
 \begin{DoxyItemize}
 \item CMake version 2.\+6 or above (\href{https://cmake.org/}{\texttt{ https\+://cmake.\+org/}})
-\item A C++ compiler that supports the C++14 standard, eg. GCC (\href{https://gcc.gnu.org/}{\texttt{ https\+://gcc.\+gnu.\+org/}}) or Clang (\href{https://clang.llvm.org/}{\texttt{ https\+://clang.\+llvm.\+org/}})
+\item A C++ compiler that supports the C++14 standard, eg. GCC (\href{https://gcc.gnu.org/}{\texttt{ https\+://gcc.\+gnu.\+org/}}) or Clang (\href{https://clang.llvm.org/}{\texttt{ https\+://clang.\+llvm.\+org/}}).
 \item Eigen C++ library, version 3.\+3 or above (\href{http://eigen.tuxfamily.org/}{\texttt{ http\+://eigen.\+tuxfamily.\+org/}})
 \item The following Boost C++ libraries (\href{http://www.boost.org/}{\texttt{ http\+://www.\+boost.\+org/}})\+: filesystem, program options, timer, chrono.
 \end{DoxyItemize}
 
 Make sure that you have the development version of boost installed. On Linux, install {\ttfamily libboost-\/dev}, {\ttfamily libboost-\/filesystem-\/dev}, {\ttfamily libboost-\/program-\/options-\/dev}, {\ttfamily libboost-\/chrono-\/dev} and {\ttfamily libboost-\/timer-\/dev} from your package manager.
 
-The linear systems resulting from the assembled scheme are solved using the Bi\+CGStab implementation of Eigen. Alternatives are also provided, but require additional libraries (UMFPACK, SUPERLU, etc.); see the main CMake\+Lists.\+txt file.
+The linear systems resulting from the assembled scheme are solved using the Bi\+CGStab implementation of Eigen. Alternatives are also provided, but require additional libraries (UMFPACK, SUPERLU, etc.). Some schemes have procedures to compute condition numbers of matrices; these require the Spectra library (\href{https://spectralib.org/}{\texttt{ https\+://spectralib.\+org/}}). See the main CMake\+Lists.\+txt file for the libraries the code attempts to find, and the \textquotesingle{}HINTS\textquotesingle{} section of individual CMake/$\ast$.cmake files for where it tries to find them.
 
 Once you have installed all of the required dependencies, set up the build directory and generate the build files by running the following from the repository root\+:
 
@@ -96,7 +100,7 @@ A mesh file must be read using an instance of the {\ttfamily meshbuilder} class,
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceHArDCore3D}{HArDCore3D}};}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{CMakeCCompilerId_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}() \{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{CMakeCCompilerId_8c_ga0ddf1224851353fc92bfbff6f499fa97}{main}}() \{}
 \DoxyCodeLine{}
 \DoxyCodeLine{  \textcolor{comment}{// Mesh file to read}}
 \DoxyCodeLine{  std::string mesh\_file = \textcolor{stringliteral}{"{}../../meshes/Voro-\/small-\/0/RF\_fmt/voro-\/4"{}};}
@@ -113,7 +117,15 @@ A mesh file must be read using an instance of the {\ttfamily meshbuilder} class,
 
 Note that the builder returns a {\ttfamily unique\+\_\+ptr} for the mesh. This ensures that, at the end of the execution, the mesh destructor is called (which destroys all cells, faces, edges, vertices...). Some classes and functions use a raw pointer to the mesh, so the {\ttfamily .get()} method should be used when passing the mesh as argument to the class constructors or functions.
 
-{\itshape Note}\+: the mesh formats allow for meshes with very generic polygonal cells, including non-\/convex cells. However, the builder assumes that each cell is star-\/shaped with respect to the isobarycenter of its vertices -- otherwise, the calculation of the center of mass may be incorrect. Similarly, the quadrature rules (see \href{\#quad_rules}{\texttt{ Quadrature rules}}) assume that each cell is star-\/shaped with respect to its center of mass.
+{\itshape Note}\+: the mesh formats allow for meshes with very generic polygonal cells, including non-\/convex cells. However, the builder assumes that each cell is star-\/shaped with respect to the isobarycenter of its vertices -- otherwise, the calculation of the center of mass may be incorrect. Similarly, the quadrature rules (see \href{\#quad_rules}{\texttt{ Quadrature rules}}) assume that each cell is star-\/shaped with respect to its center of mass.\hypertarget{index_transform_meshes}{}\doxysubsection{Other codes associated with mesh handling.}\label{index_transform_meshes}
+Several other codes (in src/\+Mesh/\+Transforms) are provided to manipulate meshes\+:
+\begin{DoxyItemize}
+\item Create agglomerated meshes \mbox{\hyperlink{MeshCoarsen_8cpp}{Mesh\+Coarsen}},
+\item Check that an RF file produces a valid mesh \mbox{\hyperlink{CheckMesh_8cpp}{Check\+Mesh}},
+\item Flatten the faces in a mesh where they are not flat (e.\+g., generic hexahedral meshes) \mbox{\hyperlink{FlattenFaces_8cpp}{Flatten\+Faces}},
+\item Create a .vtu file from an RF mesh file \mbox{\hyperlink{MeshToVTU_8cpp}{Mesh\+To\+VTU}},
+\item Transform a .msh file (created by Gmsh, version 4.\+11) into an RF mesh file \mbox{\hyperlink{MSHToRF_8cpp}{MSHTo\+RF}}.
+\end{DoxyItemize}
 
 \label{_common}%
  \hypertarget{index_common_module}{}\doxysection{Common module}\label{index_common_module}
@@ -179,33 +191,37 @@ The function \mbox{\hyperlink{group__Quadratures_ga017ba781ad8f6bb51d82473d6ea16
 \hypertarget{index_GM_cell}{}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
-\caption{Pairs of cell polynomial bases handled by Gram\+Matrix {\itshape (all derived bases obtained through Shifted\+Basis, Restricted\+Basis or Family are also ok)}}\label{index_GM_cell}\\
+\caption{Pairs of cell polynomial bases handled by Gram\+Matrix {\itshape (swapped bases and all derived bases obtained through Shifted\+Basis, Restricted\+Basis or Family applied to the left of these bases are also ok)}}\label{index_GM_cell}\\
 \hline
-\multirow{3}{*}{Scalar bases\+:}&Monomial\+Scalar\+Basis\+Cell $\vert$ Monomial\+Scalar\+Basis\+Cell&\\\cline{2-3}
-&Divergence\+Basis$<$\+T$>$ $\vert$ Monomial\+Scalar\+Basis\+Cell &{\itshape where T=Tensorized\+Vector\+Family or Roly\+Compl\+Basis\+Cell}  \\\cline{2-3}
-&Divergence\+Basis$<$\+T1$>$ $\vert$ Divergence\+Basis$<$\+T2$>$ &{\itshape where T1,T2=Tensorized\+Vector\+Family or Roly\+Compl\+Basis\+Cell}  \\\cline{1-3}
-\multirow{5}{*}{Vector bases\+:}&Tensorized\+Vector\+Family $\vert$ T &{\itshape where T is any basis with rank=Vector (Tensorized\+Vector\+Family, Gradient\+Basis, Goly\+Compl\+Basis\+Cell, etc.)}  \\\cline{2-3}
-&Gradient\+Basis$<$\+T1$>$ $\vert$ Gradient\+Basis$<$\+T2$>$ &{\itshape where T1, T2 are any scalar bases}  \\\cline{2-3}
-&Curl\+Basis$<$\+T1$>$ $\vert$ Curl\+Basis$<$\+T2$>$ &{\itshape where T1,T2=Tensorized\+Vector\+Family or Goly\+Compl\+Basis\+Cell}  \\\cline{2-3}
-&Goly\+Compl\+Basis\+Cell $\vert$ Goly\+Compl\+Basis\+Cell&\\\cline{2-3}
-&Roly\+Compl\+Basis\+Cell $\vert$ Roly\+Compl\+Basis\+Cell&\\\cline{1-3}
+\multirow{3}{*}{Scalar bases\+:}&Monomial\+Scalar\+Basis\+Cell $\vert$$\vert$ Monomial\+Scalar\+Basis\+Cell&\\\cline{2-3}
+&Divergence\+Basis$<$\+T$>$ $\vert$$\vert$ Monomial\+Scalar\+Basis\+Cell &{\itshape where T=Tensorized\+Vector\+Family or Roly\+Compl\+Basis\+Cell}  \\\cline{2-3}
+&Divergence\+Basis$<$\+T1$>$ $\vert$$\vert$ Divergence\+Basis$<$\+T2$>$ &{\itshape where T1,T2=Tensorized\+Vector\+Family or Roly\+Compl\+Basis\+Cell}  \\\cline{1-3}
+\multirow{5}{*}{Vector bases\+:}&Tensorized\+Vector\+Family $\vert$$\vert$ T &{\itshape where T is any basis with rank=Vector (Tensorized\+Vector\+Family, Gradient\+Basis, Goly\+Compl\+Basis\+Cell, etc.)}  \\\cline{2-3}
+&Gradient\+Basis$<$\+T1$>$ $\vert$$\vert$ Gradient\+Basis$<$\+T2$>$ &{\itshape where T1, T2 are any scalar bases}  \\\cline{2-3}
+&Curl\+Basis$<$\+T1$>$ $\vert$$\vert$ Curl\+Basis$<$\+T2$>$ &{\itshape where T1,T2=Tensorized\+Vector\+Family or Goly\+Compl\+Basis\+Cell}  \\\cline{2-3}
+&Goly\+Compl\+Basis\+Cell $\vert$$\vert$ Goly\+Compl\+Basis\+Cell&\\\cline{2-3}
+&Roly\+Compl\+Basis\+Cell $\vert$$\vert$ Roly\+Compl\+Basis\+Cell&\\\cline{1-3}
+\multirow{4}{*}{Matrix bases\+:}&Matrix\+Family$<$\+T1, N$>$ $\vert$$\vert$ Matrix\+Family$<$\+T2, N$>$&{\itshape where T1, T2 are any scalar bases, and N is an integer}  \\\cline{2-3}
+&Divergence\+Basis$<$Matrix\+Family$<$\+T1, dimspace$>$$>$ $\vert$$\vert$ Tensorized\+Vector\+Family$<$\+T2, dimspace$>$&{\itshape where T1, T2 are any scalar bases}  \\\cline{2-3}
+&Gradient\+Basis$<$Tensorized\+Vector\+Family$<$\+T1, dimspace$>$$>$ $\vert$$\vert$ Matrix\+Family$<$\+T2, dimspace$>$&{\itshape where T1, T2 are any scalar bases}  \\\cline{2-3}
+&Gradient\+Basis$<$Tensorized\+Vector\+Family$<$\+T1, N$>$$>$ $\vert$$\vert$ Gradient\+Basis$<$Tensorized\+Vector\+Family$<$\+T2, N$>$$>$&{\itshape where T1, T2 are any scalar bases, N is an integer}  \\\cline{1-3}
 \end{longtabu}
 
 
 \hypertarget{index_GM_face}{}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
-\caption{Pairs of face polynomial bases handled by Gram\+Matrix {\itshape (all derived bases obtained through Shifted\+Basis, Restricted\+Basis or Family are also ok)}}\label{index_GM_face}\\
+\caption{Pairs of face polynomial bases handled by Gram\+Matrix {\itshape (swapped bases all derived bases obtained through Shifted\+Basis, Restricted\+Basis or Family applied to the left of these bases are also ok)}}\label{index_GM_face}\\
 \hline
-\multirow{2}{*}{Scalar bases\+:}&Monomial\+Scalar\+Basis\+Face $\vert$ Monomial\+Scalar\+Basis\+Face&\\\cline{2-3}
-&Divergence\+Basis$<$\+T$>$ $\vert$ Monomial\+Scalar\+Basis\+Face&where T=Tangent\+Family or Roly\+Compl\+Basis\+Face (and derived)  \\\cline{1-3}
-\multirow{7}{*}{Vector bases\+:}&Tensorized\+Vector\+Family $\vert$ Tensorized\+Vector\+Family &\\\cline{2-3}
-&Tangent\+Family $\vert$ Tangent\+Family &\\\cline{2-3}
-&Curl\+Basis $\vert$ Curl\+Basis &\\\cline{2-3}
-&Curl\+Basis $\vert$ Tangent\+Family &\\\cline{2-3}
-&Tangent\+Family $\vert$ Roly\+Compl\+Basis\+Face &\\\cline{2-3}
-&Roly\+Compl\+Basis\+Face $\vert$ Roly\+Compl\+Basis\+Face &\\\cline{2-3}
-&Goly\+Compl\+Basis\+Cell $\vert$ Goly\+Compl\+Basis\+Cell&\\\cline{1-3}
+\multirow{2}{*}{Scalar bases\+:}&Monomial\+Scalar\+Basis\+Face $\vert$$\vert$ Monomial\+Scalar\+Basis\+Face&\\\cline{2-3}
+&Divergence\+Basis$<$\+T$>$ $\vert$$\vert$ Monomial\+Scalar\+Basis\+Face&where T=Tangent\+Family or Roly\+Compl\+Basis\+Face (and derived)  \\\cline{1-3}
+\multirow{7}{*}{Vector bases\+:}&Tensorized\+Vector\+Family $\vert$$\vert$ Tensorized\+Vector\+Family &\\\cline{2-3}
+&Tangent\+Family $\vert$$\vert$ Tangent\+Family &\\\cline{2-3}
+&Curl\+Basis $\vert$$\vert$ Curl\+Basis &\\\cline{2-3}
+&Curl\+Basis $\vert$$\vert$ Tangent\+Family &\\\cline{2-3}
+&Tangent\+Family $\vert$$\vert$ Roly\+Compl\+Basis\+Face &\\\cline{2-3}
+&Roly\+Compl\+Basis\+Face $\vert$$\vert$ Roly\+Compl\+Basis\+Face &\\\cline{2-3}
+&Goly\+Compl\+Basis\+Cell $\vert$$\vert$ Goly\+Compl\+Basis\+Cell&\\\cline{1-3}
 \end{longtabu}
 
 
@@ -260,15 +276,26 @@ As explained above, the \mbox{\hyperlink{structHArDCore3D_1_1evaluate__quad}{eva
  \hypertarget{index_hho_3D}{}\doxysection{HHO3\+D general module}\label{index_hho_3D}
 The \mbox{\hyperlink{group__HHO3D}{HHO3D}} module provides typedefs, a class and functions to implement Hybrid High Order (HHO) schemes. Rules (functions) to create local bilinear forms (matrices) and loading terms (vectors) are passed to the \mbox{\hyperlink{classHHO3D}{HHO3D}} class, that takes care of the global assembly and solving of the system.
 
-\label{_ddr}%
- \hypertarget{index_ddr}{}\doxysection{DDRCore module}\label{index_ddr}
-The \mbox{\hyperlink{group__DDRCore}{DDRCore}} module provides classes and functions to implement the discrete de Rham (DDR) complex. This complex is based on spaces with unknowns on all geometric entities (vertices, edges, faces and cells), and discrete differential operators acting between these spaces. It is based on the principles detailed in \href{https://arxiv.org/abs/2101.04940}{\texttt{ https\+://arxiv.\+org/abs/2101.\+04940}} (see also the founding work \href{https://doi.org/10.1142/S0218202520500372}{\texttt{ https\+://doi.\+org/10.\+1142/\+S0218202520500372}}).
+\label{_dofspace}%
+ \hypertarget{index_dofspace}{}\doxysection{DOFSpace}\label{index_dofspace}
+The Local\+DOFSpace class provides methods to manage degrees of freedom (DOFs) attached to a cell, its faces, its edges and its vertices. The global version is Global\+DOFSpace, and there is also a version, Variable\+DOFSpace, to handle cases where the number of DOFs varies, e.\+g., from one vertex to the other, from one edge to the other, etc. These classes provide methods to access the local or global degrees of freedom (determining the correct offset), etc.
 
-It is built on the concepts in the \mbox{\hyperlink{group__Common}{Common}} module, in particular all the polynomial bases managed in the classes available in this module, as well as the local ordering of degrees of freedom defined by the DOFSpace class. The main elements of the DDRCore module are\+:
+The DOFs in these classes are organised by increasing order of the mesh entities dimensions (DOFs linked to all vertices, then DOFs linked to all edges, then DOFs linked to all faces, and finally all DOFs linked to cells). These DOFs only make sense when bases of polynomial spaces have been chosen on the geometric entities (such as some of the bases created by the HHOSpace or DDRCore classes below), and correspond then to the coefficients on these bases.
+
+The following modules are based on these classes.
+
+\label{_hhospace}%
+ \hypertarget{index_hho}{}\doxysubsection{HHOSpace module}\label{index_hho}
+The \mbox{\hyperlink{group__HHOSpace}{HHOSpace}} module provides classes and functions to construct the local basis functions and operators for HHO space, including vector-\/valued spaces.
+
+\label{_ddr}%
+ \hypertarget{index_ddr}{}\doxysubsection{DDRCore module}\label{index_ddr}
+The \mbox{\hyperlink{group__DDRCore}{DDRCore}} module provides classes and functions to implement the discrete de Rham (DDR) complex. This complex is based on spaces with unknowns on all geometric entities (vertices, edges, faces and cells), and discrete differential operators acting between these spaces. It is based on the principles detailed in \href{https://doi.org/10.1007/s10208-021-09542-8}{\texttt{ https\+://doi.\+org/10.\+1007/s10208-\/021-\/09542-\/8}} (see also the founding work \href{https://doi.org/10.1142/S0218202520500372}{\texttt{ https\+://doi.\+org/10.\+1142/\+S0218202520500372}}, and the arxiv versions \href{https://arxiv.org/abs/2101.04940}{\texttt{ https\+://arxiv.\+org/abs/2101.\+04940}}, \href{https://arxiv.org/abs/1911.03616}{\texttt{ https\+://arxiv.\+org/abs/1911.\+03616}}).
+
+The main elements of the DDRCore module are\+:
 
 
 \begin{DoxyItemize}
-\item DDRSpace\+: class to manipulate global degrees of freedom. As \href{\#ref HArDCore3D::DOFSpace}{\texttt{ DOFSpace}} over which it\textquotesingle{}s built, this class organises the DOFs by increasing order of the mesh entities dimensions (DOFs linked to all vertices, then DOFs linked to all edges, then DOFs linked to all faces, and finally all DOFs linked to cells). These DOFs only make sense when bases of polynomial spaces have been chosen on the geometric entities (such as some of the bases created by the DDRCore class below), and correspond then to the coefficients on these bases.
 \item \mbox{\hyperlink{classHArDCore3D_1_1DDRCore}{DDRCore}}\+: class to construct bases of the local polynomial spaces, on all geometric entities, that are required for DDR schemes.
 \item \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}}, \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} and \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}}\+: classes to compute the discrete operators, potentials, interpolators and $L^2$-\/inner products associated with each space in the DDR complex. Each of these classes uses some of the bases built in DDRCore, and is built on a corresponding DDRSpace (which determines how the degrees of freedom, corresponding to the bases, are organised in the space).
 \end{DoxyItemize}
@@ -288,9 +315,11 @@ The following schemes are currently available in HAr\+D\+::\+Core3D. The Hybrid 
 \item \mbox{\hyperlink{group__HHO__DiffAdvecReac}{HHO\+\_\+diffadvecreac}}\+: HHO for $-\mathrm{div}(K\nabla u+\beta u)+\mu u=f$, for Dirichlet or mixed boundary conditions, with $K$ a diffusion tensor that can vary in each cell.
 \item \mbox{\hyperlink{group__DDR__magnetostatic}{DDR\+\_\+magnetostatic}}\+: Discrete De Rham (DDR) scheme, and serendipity version, for the magnetostatic problem, as per \href{https://doi.org/10.1016/j.jcp.2020.109991}{\texttt{ https\+://doi.\+org/10.\+1016/j.\+jcp.\+2020.\+109991}} (but using Koszul complements).
 \item \mbox{\hyperlink{group__DDR__stokes}{DDR\+\_\+stokes}}\+: Discrete De Rham (DDR) scheme, and serendipity version, for the Stokes problem in curl-\/curl form.
-\item \mbox{\hyperlink{group__VEM__stokes}{VEM\+\_\+stokes}}\+: Virtual Element Method (VEM) scheme for the Stokes problem in curl-\/curl form.
+\item \mbox{\hyperlink{group__VEM__stokes}{VEM\+\_\+stokes}}\+: Virtual \mbox{\hyperlink{structElement}{Element}} Method (VEM) scheme for the Stokes problem in curl-\/curl form.
 \item \mbox{\hyperlink{group__HHO__MHD}{HHO\+\_\+\+MHD}}\+: HHO scheme for the MHD problem.
-\item \mbox{\hyperlink{group__DDR__yangmills}{DDR\+\_\+yangmills}}\+: DDR scheme for the Yang-\/\+Mills equations (based on \mbox{\hyperlink{group__LADDRCore}{LADDR}}, the extension of DDR to Lie algebra valued fields). This code requires the library Spectra (\href{https://spectralib.org/}{\texttt{ https\+://spectralib.\+org/}}) to compute the eigenvalues (this is optional, the corresponding lines can be commented out and the code will run).
+\item \mbox{\hyperlink{group__DDR__yangmills}{DDR\+\_\+yangmills}}\+: DDR scheme for the Yang-\/\+Mills equations (based on \mbox{\hyperlink{group__LADDRCore}{LADDR}}, the extension of DDR to Lie algebra valued fields).
+\item \mbox{\hyperlink{group__HHO__fullgradientdiff}{HHO\+\_\+fullgradientdiff}}\+: HHO scheme with full gradient; similar to \mbox{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{HHO\+\_\+locvardiff}} but implemented using the \href{\#hhospace}{\texttt{ HHOSpace}} module instead of the \href{\#hybridcore}{\texttt{ Hybrid\+Core}} module.
+\item \mbox{\hyperlink{group__HHO__brinkman}{HHO\+\_\+brinkman}}\+: HHO scheme for the Brinkman equation (based on \mbox{\hyperlink{group__HHOSpace}{HHOSpace}}).
 \end{DoxyItemize}
 
 The directory {\ttfamily runs} contains BASH scripts to run series of tests on families of meshes. The files {\ttfamily data.\+sh} describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the {\ttfamily output} directory, shows the convergence rate in the standard console output, and creates a pdf file {\ttfamily rate.\+pdf} describing the rates of convergence in various energy norms (you will need {\ttfamily pdflatex} to create this pdf file; commenting out the corresponding line is fine, the pdf will simply not be create). 

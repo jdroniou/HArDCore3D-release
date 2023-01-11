@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="comment">// We permute the DOFs that are statically condensed</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      Eigen::MatrixXd AT = <a class="code" href="group__Common.html#gafa868f9f56ab061eebcbc30c2dbe5295">m_Perm</a> * lsT.first * <a class="code" href="group__Common.html#gafa868f9f56ab061eebcbc30c2dbe5295">m_Perm</a>.transpose();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      Eigen::VectorXd bT = <a class="code" href="group__Common.html#gafa868f9f56ab061eebcbc30c2dbe5295">m_Perm</a> * lsT.second;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      Eigen::MatrixXd AT_sys, AT_sc;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      Eigen::VectorXd bT_sys, bT_sc;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  </div>

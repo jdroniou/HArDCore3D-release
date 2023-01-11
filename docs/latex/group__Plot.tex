@@ -15,13 +15,19 @@ class \mbox{\hyperlink{classHArDCore3D_1_1VtuWriter}{HAr\+DCore3\+D\+::\+Vtu\+Wr
 \item 
 \mbox{\hyperlink{group__Plot_ga24a7defcf350ceff6a48de65b6740505}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::\+Vtu\+Writer}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} $\ast$mesh)
 \begin{DoxyCompactList}\small\item\em Constructor for mesh writer. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{group__Plot_ga11ec3bf54886e6570bfe72daf3f41a5d}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+to\+\_\+vtu}} (const std\+::string file\+\_\+name, const Eigen\+::\+Vector\+Xd \&sol\+\_\+vertex)
-\begin{DoxyCompactList}\small\item\em Writes the plot file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{group__Plot_ga64be67a8509c16d7b8a703df44efe4b3}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+to\+\_\+vtu}} (const std\+::string filename, const std\+::vector$<$ T $>$ \&sol\+\_\+vrtx, const std\+::vector$<$ std\+::string $>$ \&sol\+\_\+names=\{\})
+\begin{DoxyCompactList}\small\item\em Writes file with a series of solutions (scalar if T=std\+::vector$<$double$>$ (or Eigen\+::\+Vector\+Xd), vector if T=std\+::vector$<$\+Vector\+Rd$>$) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{group__Plot_ga6d2746af4c66716ee8de649a7cf2a5b4}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+to\+\_\+vtu}} (const std\+::string file\+\_\+name, const T \&sol\+\_\+vertex, const std\+::string \&sol\+\_\+name=\char`\"{}solution\char`\"{})
+\begin{DoxyCompactList}\small\item\em Overload to simplify the call when only one solution is involved. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{group__Plot_gad00c86f7a2545735f3cb5ed42f25484e}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+header}} (FILE $\ast$p\+File)
 \item 
 bool \mbox{\hyperlink{group__Plot_gac7516782654b2377ec6930806c5d353a}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+vertices}} (FILE $\ast$p\+File)
 \item 
-bool \mbox{\hyperlink{group__Plot_ga67e074b8c269a0bb476252931ebdbeae}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+solution}} (FILE $\ast$p\+File, const Eigen\+::\+Vector\+Xd \&sol\+\_\+vertex)
+bool \mbox{\hyperlink{group__Plot_ga79f35033e1ce4d9b38da1f4c5c7e98e0}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+solution}} (FILE $\ast$p\+File, const std\+::vector$<$ double $>$ \&sol\+\_\+vertex, const std\+::string \&name)
+\item 
+bool \mbox{\hyperlink{group__Plot_gab9739f89f499759cecc2517f2184eaad}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+solution}} (FILE $\ast$p\+File, const Eigen\+::\+Vector\+Xd \&sol\+\_\+vertex, const std\+::string \&name)
+\item 
+bool \mbox{\hyperlink{group__Plot_ga96cf1a48045eb74a80b5a3f3fc24e2fc}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+solution}} (FILE $\ast$p\+File, const std\+::vector$<$ Vector\+Rd $>$ \&sol\+\_\+vertex, const std\+::string \&name)
 \item 
 bool \mbox{\hyperlink{group__Plot_ga4d46a3ca45da37492e5cabda737f7399}{HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+cells}} (FILE $\ast$p\+File)
 \item 
@@ -68,27 +74,62 @@ Constructor for mesh writer.
 \doxysubsubsection{\texorpdfstring{write\_header()}{write\_header()}}
 {\footnotesize\ttfamily bool HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+header (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{p\+File }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{group__Plot_ga67e074b8c269a0bb476252931ebdbeae}\label{group__Plot_ga67e074b8c269a0bb476252931ebdbeae}} 
+\mbox{\Hypertarget{group__Plot_gab9739f89f499759cecc2517f2184eaad}\label{group__Plot_gab9739f89f499759cecc2517f2184eaad}} 
 \index{Plot@{Plot}!write\_solution@{write\_solution}}
 \index{write\_solution@{write\_solution}!Plot@{Plot}}
-\doxysubsubsection{\texorpdfstring{write\_solution()}{write\_solution()}}
-{\footnotesize\ttfamily bool HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+solution (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{p\+File,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{sol\+\_\+vertex }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{write\_solution()}{write\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+solution (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{p\+File,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{sol\+\_\+vertex,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{group__Plot_ga11ec3bf54886e6570bfe72daf3f41a5d}\label{group__Plot_ga11ec3bf54886e6570bfe72daf3f41a5d}} 
+\mbox{\Hypertarget{group__Plot_ga79f35033e1ce4d9b38da1f4c5c7e98e0}\label{group__Plot_ga79f35033e1ce4d9b38da1f4c5c7e98e0}} 
+\index{Plot@{Plot}!write\_solution@{write\_solution}}
+\index{write\_solution@{write\_solution}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{write\_solution()}{write\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+solution (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{p\+File,  }\item[{const std\+::vector$<$ double $>$ \&}]{sol\+\_\+vertex,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__Plot_ga96cf1a48045eb74a80b5a3f3fc24e2fc}\label{group__Plot_ga96cf1a48045eb74a80b5a3f3fc24e2fc}} 
+\index{Plot@{Plot}!write\_solution@{write\_solution}}
+\index{write\_solution@{write\_solution}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{write\_solution()}{write\_solution()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+solution (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{p\+File,  }\item[{const std\+::vector$<$ Vector\+Rd $>$ \&}]{sol\+\_\+vertex,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__Plot_ga6d2746af4c66716ee8de649a7cf2a5b4}\label{group__Plot_ga6d2746af4c66716ee8de649a7cf2a5b4}} 
 \index{Plot@{Plot}!write\_to\_vtu@{write\_to\_vtu}}
 \index{write\_to\_vtu@{write\_to\_vtu}!Plot@{Plot}}
-\doxysubsubsection{\texorpdfstring{write\_to\_vtu()}{write\_to\_vtu()}}
-{\footnotesize\ttfamily bool HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+to\+\_\+vtu (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+\_\+name,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{sol\+\_\+vertex }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{write\_to\_vtu()}{write\_to\_vtu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+to\+\_\+vtu (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+\_\+name,  }\item[{const T \&}]{sol\+\_\+vertex,  }\item[{const std\+::string \&}]{sol\+\_\+name = {\ttfamily \char`\"{}solution\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Writes the plot file. 
+Overload to simplify the call when only one solution is involved. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em file\+\_\+name} & name of file to write to \\
 \hline
-{\em sol\+\_\+vertex} & vector of values of the solution at the mesh vertices \\
+{\em sol\+\_\+vertex} & values of the solution at the mesh vertices \\
+\hline
+{\em sol\+\_\+name} & name of the solution \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Plot_ga64be67a8509c16d7b8a703df44efe4b3}\label{group__Plot_ga64be67a8509c16d7b8a703df44efe4b3}} 
+\index{Plot@{Plot}!write\_to\_vtu@{write\_to\_vtu}}
+\index{write\_to\_vtu@{write\_to\_vtu}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{write\_to\_vtu()}{write\_to\_vtu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool HAr\+DCore3\+D\+::\+Vtu\+Writer\+::write\+\_\+to\+\_\+vtu (\begin{DoxyParamCaption}\item[{const std\+::string}]{filename,  }\item[{const std\+::vector$<$ T $>$ \&}]{sol\+\_\+vrtx,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{sol\+\_\+names = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes file with a series of solutions (scalar if T=std\+::vector$<$double$>$ (or Eigen\+::\+Vector\+Xd), vector if T=std\+::vector$<$\+Vector\+Rd$>$) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of file to write to \\
+\hline
+{\em sol\+\_\+vrtx} & each instance of T represents the values of one solution at the mesh vertices \\
+\hline
+{\em sol\+\_\+names} & each string is the name of one solution \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{group__Plot_gac7516782654b2377ec6930806c5d353a}\label{group__Plot_gac7516782654b2377ec6930806c5d353a}} 

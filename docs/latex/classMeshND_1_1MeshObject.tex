@@ -34,10 +34,12 @@ double \mbox{\hyperlink{group__Mesh_ga8b0f3f433486dde8fdea341f262d5053}{measure}
 \begin{DoxyCompactList}\small\item\em Returns the simplices making up the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__Mesh_gad3e3369dca9c7df500afa41227bb2902}{set\+\_\+global\+\_\+index}} (const size\+\_\+t idx)
 \begin{DoxyCompactList}\small\item\em Set the global index. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{group__Mesh_gabfefc0d130b14c4e628d9a8c41762914}{is\+\_\+boundary}} ()
+bool \mbox{\hyperlink{group__Mesh_gabece3008f45548acdcabcf37eb09ba5e}{is\+\_\+boundary}} () const
 \begin{DoxyCompactList}\small\item\em Returns true if \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} is a boundary object, false otherwise. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__Mesh_ga92c44918ffcdb15e7d89b26e871db125}{set\+\_\+boundary}} (bool val)
 \begin{DoxyCompactList}\small\item\em Set the boundary value of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__Mesh_gade56b205154fe9241a815dd2fba7b4a9}{is\+\_\+flat}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}} is flat (only relevant for faces), false otherwise. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 0 $>$ $\ast$ $>$ \mbox{\hyperlink{group__Mesh_ga688b89ae93b45e68f46ccdbd82dd8464}{get\+\_\+vertices}} () const
 \begin{DoxyCompactList}\small\item\em Returns the vertices of the \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classMeshND_1_1MeshObject}{Mesh\+Object}}$<$ space\+\_\+dim, 1 $>$ $\ast$ $>$ \mbox{\hyperlink{group__Mesh_ga3ee929f367a4fbd7d7ad080617288c11}{get\+\_\+edges}} () const
@@ -92,7 +94,7 @@ int \mbox{\hyperlink{group__Mesh_ga39f476a9ddec51e9c930c79c33641b59}{edge\+\_\+o
 \begin{DoxyCompactList}\small\item\em Return the normal of a Face. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceMeshND_a36f45c57c87a9d08d94fefe52f6fad56}{Vector\+Rd}}$<$ space\+\_\+dim $>$ \mbox{\hyperlink{group__Mesh_gae3cc3947e14ec1b24017b560c4720717}{tangent}} () const
 \begin{DoxyCompactList}\small\item\em Return the tangent of a Edge. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__Mesh_gaa55eff2444eb070396dcab2871f1c234}{construct\+\_\+face\+\_\+normals}} ()
+void \mbox{\hyperlink{group__Mesh_gafa3cf17d82b8f8b3930f5e2f13064628}{construct\+\_\+face\+\_\+orientations}} ()
 \begin{DoxyCompactList}\small\item\em Set the directions of the face normals of a cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 

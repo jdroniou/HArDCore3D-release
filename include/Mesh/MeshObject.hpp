@@ -87,9 +87,11 @@ namespace MeshND
         /// Set the global index
         inline void set_global_index(const size_t idx) { _index = idx; }
         /// Returns true if MeshObject is a boundary object, false otherwise
-        inline bool is_boundary() { return _is_boundary; }
+        inline bool is_boundary() const { return _is_boundary; }
         /// Set the boundary value of the MeshObject
         inline void set_boundary(bool val) { _is_boundary = val; }
+        /// Returns true if MeshObject is flat (only relevant for faces), false otherwise
+        inline bool is_flat() const { return _is_flat; }
 
         /// Returns the vertices of the MeshObject
         inline std::vector<MeshObject<space_dim, 0>*> get_vertices() const { return _vertices; }
@@ -135,7 +137,7 @@ namespace MeshND
         VectorRd<space_dim> normal() const;     ///< Return the normal of a Face
         VectorRd<space_dim> tangent() const;    ///< Return the tangent of a Edge
 
-        void construct_face_normals(); ///< Set the directions of the face normals of a cell
+        void construct_face_orientations(); ///< Set the directions of the face normals of a cell
 
     private:
         size_t _index;
@@ -143,6 +145,7 @@ namespace MeshND
         double _measure;
         double _diameter;
         bool _is_boundary;
+        bool _is_flat;  // To record non-planar faces
         Simplices<space_dim, object_dim> _simplices;
         VectorRd<space_dim> _normal;       // uninitialised unless object_dim == space_dim - 1 (face)
         std::vector<int> _face_directions; // empty unless object_dim == space_dim (cell)
@@ -219,61 +222,88 @@ namespace MeshND
     MeshObject<space_dim, object_dim>::MeshObject(size_t index, Simplices<space_dim, object_dim> simplices)
         : _index(index), _simplices(simplices)
     {
-        assert(space_dim >= object_dim);
-        assert(space_dim >= 2);
+      assert(space_dim >= object_dim);
+      assert(space_dim >= 2);
 
-        if (object_dim == 0 || object_dim == 1)
+      if (object_dim == 0 || object_dim == 1)
+      {
+          assert(simplices.size() == 1);
+      }
+
+      _is_boundary = false;
+
+      _measure = 0.0;
+      _center_mass = Eigen::VectorXd::Zero(space_dim);
+      std::vector<VectorRd<space_dim>> vertex_coords;
+      for (auto& simplex : simplices)
+      {
+          // assert(simplex.size() == _dim + 1);
+          double tmp = simplex_measure<space_dim, object_dim>(simplex);
+          _measure += tmp;
+          _center_mass += tmp * simplex_center_mass<space_dim, object_dim>(simplex);
+          for (auto& coord : simplex)
+          {
+              if (std::find(vertex_coords.begin(), vertex_coords.end(), coord) == vertex_coords.end())
+              {
+                  vertex_coords.push_back(coord); // if coord not already in vertex_coords, add it
+              }
+          }
+      }
+      _center_mass /= _measure;
+
+      _diameter = 0.0;
+      for (auto it = vertex_coords.begin(); it != vertex_coords.end(); ++it)
+      {
+          for (auto jt = it; jt != vertex_coords.end(); ++jt)
+          {
+              _diameter = std::max(_diameter, (*it - *jt).norm()); // probably more efficient methods
+          }
+      }
+
+      _is_flat = true;
+      
+      if (object_dim == space_dim - 1) // find the normal to the face and check if it is flat
+      {
+        // We compute the normal using the most perpendicular pair of vectors created from the center to any vertex
+        // Find all points in the face that are not the center of mass
+        std::vector<VectorRd<space_dim>> points_in_face;
+        for (size_t i = 0; i < _simplices.size(); ++i)
         {
-            assert(simplices.size() == 1);
-        }
-
-        _is_boundary = false;
-
-        _measure = 0.0;
-        _center_mass = Eigen::VectorXd::Zero(space_dim);
-        std::vector<VectorRd<space_dim>> vertex_coords;
-        for (auto& simplex : simplices)
-        {
-            // assert(simplex.size() == _dim + 1);
-            double tmp = simplex_measure<space_dim, object_dim>(simplex);
-            _measure += tmp;
-            _center_mass += tmp * simplex_center_mass<space_dim, object_dim>(simplex);
-            for (auto& coord : simplex)
+          for (size_t j = 0; j < space_dim; ++j)
+          {
+            if( (std::find(points_in_face.begin(), points_in_face.end(), _simplices[i][j]) == points_in_face.end()) && ( (_simplices[i][j]-_center_mass).norm()>1e-8 * _diameter) )
             {
-                if (std::find(vertex_coords.begin(), vertex_coords.end(), coord) == vertex_coords.end())
-                {
-                    vertex_coords.push_back(coord); // if coord not already in vertex_coords, add it
-                }
+              points_in_face.push_back(_simplices[i][j]);
             }
+          }
         }
-        _center_mass /= _measure;
-
-        _diameter = 0.0;
-        for (auto it = vertex_coords.begin(); it != vertex_coords.end(); ++it)
-        {
-            for (auto jt = it; jt != vertex_coords.end(); ++jt)
-            {
-                _diameter = std::max(_diameter, (*it - *jt).norm()); // probably more efficient methods
+        
+        VectorRd<space_dim> perp_vec = VectorRd<space_dim>::Zero();
+        double norm_perp_vec = 0.;
+        for (size_t iV = 0 ; iV < points_in_face.size(); iV++){
+          VectorRd<space_dim> t1 = (points_in_face[iV] - _center_mass).normalized();
+          for (size_t iVp = iV+1; iVp < points_in_face.size(); iVp++){
+            VectorRd<space_dim> t2 = (points_in_face[iVp] - _center_mass).normalized();
+            VectorRd<space_dim> tmp = t1.cross(t2);
+            double norm_tmp = tmp.norm();
+            if (norm_tmp > norm_perp_vec){ 
+              perp_vec = tmp;
+              norm_perp_vec = norm_tmp;
             }
+          }
         }
+        _normal = perp_vec / norm_perp_vec;
 
-        if (object_dim == space_dim - 1) // find the normal
-        {
-            Simplex<space_dim, object_dim> simplex = _simplices[0];
-            Eigen::MatrixXd mat = Eigen::MatrixXd::Zero(object_dim, space_dim);
-            for (size_t i = 0; i < object_dim; ++i)
-            {
-                for (size_t j = 0; j < space_dim; ++j)
-                {
-                    mat(i, j) = simplex[i + 1][j] - simplex[0][j]; // find d-1 linearly independent vectors in the face, and put them in each col of mat
-                }
-            }
-
-            // all normal vectors lie in null space of mat
-            Eigen::FullPivLU<Eigen::MatrixXd> lu(mat);
-            _normal = lu.kernel().normalized(); // not most efficient routine
+        // Checking that the face is planar: all points_in_face should lie in the plane orthogonal to _normal at the center of mass
+        for (size_t iV = 0; iV < points_in_face.size(); iV++){
+          VectorRd<space_dim> v_xF = points_in_face[iV]-_center_mass;
+          if (std::abs( v_xF.dot(_normal) ) > 1e-8 * v_xF.norm()){
+            _is_flat = false;
+          }
         }
-    }
+        
+      }
+    } 
 
     template <size_t space_dim, size_t object_dim>
     MeshObject<space_dim, object_dim>::MeshObject(size_t index, Simplex<space_dim, object_dim> simplex) // simplex
@@ -361,35 +391,35 @@ namespace MeshND
     }
 
     template <size_t space_dim, size_t object_dim>
-    void MeshObject<space_dim, object_dim>::construct_face_normals() // not very efficient - probably room for improvement
+    void MeshObject<space_dim, object_dim>::construct_face_orientations() // not very efficient - probably room for improvement
     {
         assert(object_dim == space_dim);
         for (size_t iF = 0; iF < _faces.size(); ++iF)
         {
-            VectorRd<space_dim> normal = _faces[iF]->normal();
-            Simplex<space_dim, object_dim - 1> face_simplex = _faces[iF]->get_simplices()[0];
-            VectorRd<space_dim> center = Eigen::VectorXd::Zero(space_dim);
-            double count;
-            for (auto& cell_simplex : this->get_simplices())
-            {
-                count = 0;
-                for (size_t i = 0; (i < cell_simplex.size()) && count < 2; ++i)
-                {
-                    if (std::find(face_simplex.begin(), face_simplex.end(), cell_simplex[i]) == face_simplex.end())
-                    {
-                        ++count;
-                    }
-                }
-                if (count == 1) // only don't share one coordinate
-                {
-                    center = simplex_center_mass<space_dim, object_dim>(cell_simplex);
-                    break;
-                }
-            }
-            assert(count == 1);
-            //    _face_directions.push_back(Math::sgn((_faces[iF]->center_mass() - _center_mass).dot(normal))); // star shaped wrt center mass
-            _face_directions.push_back(Math::sgn((_faces[iF]->center_mass() - center).dot(normal)));
-            assert(_face_directions[iF] != 0);
+          VectorRd<space_dim> normal = _faces[iF]->normal();
+          Simplex<space_dim, object_dim - 1> face_simplex = _faces[iF]->get_simplices()[0];
+          VectorRd<space_dim> center = Eigen::VectorXd::Zero(space_dim);
+          double count;
+          for (auto& cell_simplex : this->get_simplices())
+          {
+              count = 0;
+              for (size_t i = 0; (i < cell_simplex.size()) && count < 2; ++i)
+              {
+                  if (std::find(face_simplex.begin(), face_simplex.end(), cell_simplex[i]) == face_simplex.end())
+                  {
+                      ++count;
+                  }
+              }
+              if (count == 1) // only don't share one coordinate
+              {
+                  center = simplex_center_mass<space_dim, object_dim>(cell_simplex);
+                  break;
+              }
+          }
+          assert(count == 1);
+          //    _face_directions.push_back(Math::sgn((_faces[iF]->center_mass() - _center_mass).dot(normal))); // star shaped wrt center mass
+          _face_directions.push_back(Math::sgn((_faces[iF]->center_mass() - center).dot(normal)));
+          assert(_face_directions[iF] != 0);
         }
     }
 

@@ -74,6 +74,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classHArDCore3D_1_1LAXGrad-members.html">List of all members</a>  </div>
@@ -82,7 +83,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Discrete H1 space: local operators, L2 product and global interpolator.  
+<p>Discrete Lie algebra valued H1 space: local operators, L2 product and global interpolator.  
  <a href="classHArDCore3D_1_1LAXGrad.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="laxgrad_8hpp_source.html">laxgrad.hpp</a>&gt;</code></p>
@@ -91,7 +92,7 @@ Inheritance diagram for HArDCore3D::LAXGrad:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHArDCore3D_1_1LAXGrad__inherit__graph.png" border="0" usemap="#aHArDCore3D_1_1LAXGrad_inherit__map" alt="Inheritance graph"/></div>
 <map name="aHArDCore3D_1_1LAXGrad_inherit__map" id="aHArDCore3D_1_1LAXGrad_inherit__map">
-<area shape="rect" title="Discrete H1 space: local operators, L2 product and global interpolator." alt="" coords="30,155,191,181"/>
+<area shape="rect" title="Discrete Lie algebra valued H1 space: local operators, L2 product and global interpolator." alt="" coords="30,155,191,181"/>
 <area shape="rect" href="classHArDCore3D_1_1GlobalDOFSpace.html" title="Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei..." alt="" coords="5,80,216,107"/>
 <area shape="rect" href="classHArDCore3D_1_1LocalDOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="9,5,213,32"/>
 </map>
@@ -101,13 +102,19 @@ Collaboration diagram for HArDCore3D::LAXGrad:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHArDCore3D_1_1LAXGrad__coll__graph.png" border="0" usemap="#aHArDCore3D_1_1LAXGrad_coll__map" alt="Collaboration graph"/></div>
 <map name="aHArDCore3D_1_1LAXGrad_coll__map" id="aHArDCore3D_1_1LAXGrad_coll__map">
-<area shape="rect" title="Discrete H1 space: local operators, L2 product and global interpolator." alt="" coords="30,247,191,273"/>
+<area shape="rect" title="Discrete Lie algebra valued H1 space: local operators, L2 product and global interpolator." alt="" coords="30,247,191,273"/>
 <area shape="rect" href="classHArDCore3D_1_1GlobalDOFSpace.html" title="Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei..." alt="" coords="5,171,216,197"/>
 <area shape="rect" href="classHArDCore3D_1_1LocalDOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="9,95,213,121"/>
-<area shape="rect" href="classMeshND_1_1Mesh.html" title=" " alt="" coords="12,5,209,32"/>
+<area shape="rect" href="classMeshND_1_1Mesh.html" title="Class to describe a mesh." alt="" coords="12,5,209,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1LAXGrad_1_1LocalOperators.html">LocalOperators</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure to store local operators (gradient and potential)  <a href="structHArDCore3D_1_1LAXGrad_1_1LocalOperators.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ga0e926dbf5c9b15e6c1077cc204e21dd9"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; double(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga0e926dbf5c9b15e6c1077cc204e21dd9">FunctionType</a></td></tr>
@@ -120,9 +127,51 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ga4bf86c52d06373c2887ea81fb8f89a29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga4bf86c52d06373c2887ea81fb8f89a29">LAXGrad</a> (const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;lie_algebra, const <a class="el" href="classHArDCore3D_1_1XGrad.html">XGrad</a> &amp;xgrad, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true, std::ostream &amp;output=std::cout)</td></tr>
 <tr class="memdesc:ga4bf86c52d06373c2887ea81fb8f89a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__LADDRCore.html#ga4bf86c52d06373c2887ea81fb8f89a29">More...</a><br /></td></tr>
 <tr class="separator:ga4bf86c52d06373c2887ea81fb8f89a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaabbf9ab943cea8b8d8aadaea37df15e4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaabbf9ab943cea8b8d8aadaea37df15e4">mesh</a> () const</td></tr>
+<tr class="memdesc:gaabbf9ab943cea8b8d8aadaea37df15e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the mesh.  <a href="group__LADDRCore.html#gaabbf9ab943cea8b8d8aadaea37df15e4">More...</a><br /></td></tr>
+<tr class="separator:gaabbf9ab943cea8b8d8aadaea37df15e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5dd9116fb7d7ca41da8444f70996609c"><td class="memItemLeft" align="right" valign="top">const size_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga5dd9116fb7d7ca41da8444f70996609c">degree</a> () const</td></tr>
+<tr class="memdesc:ga5dd9116fb7d7ca41da8444f70996609c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the polynomial degree.  <a href="group__LADDRCore.html#ga5dd9116fb7d7ca41da8444f70996609c">More...</a><br /></td></tr>
+<tr class="separator:ga5dd9116fb7d7ca41da8444f70996609c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaff971b75546e5108b03ef2f00bd53bc8"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaff971b75546e5108b03ef2f00bd53bc8">interpolate</a> (const <a class="el" href="group__LADDRCore.html#gadd21e9106aadcc2ecf2d864ac06ba1dc">LAFunctionType</a> &amp;q, const int doe_cell=-1, const int doe_face=-1, const int doe_edge=-1) const</td></tr>
 <tr class="memdesc:gaff971b75546e5108b03ef2f00bd53bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolator of a continuous function.  <a href="group__LADDRCore.html#gaff971b75546e5108b03ef2f00bd53bc8">More...</a><br /></td></tr>
 <tr class="separator:gaff971b75546e5108b03ef2f00bd53bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab916bb7e88b0a7c8a15c7ddd8e8b15d3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1LAXGrad_1_1LocalOperators.html">LocalOperators</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gab916bb7e88b0a7c8a15c7ddd8e8b15d3">edgeOperators</a> (size_t iE) const</td></tr>
+<tr class="memdesc:gab916bb7e88b0a7c8a15c7ddd8e8b15d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return edge operators for the edge of index iE.  <a href="group__LADDRCore.html#gab916bb7e88b0a7c8a15c7ddd8e8b15d3">More...</a><br /></td></tr>
+<tr class="separator:gab916bb7e88b0a7c8a15c7ddd8e8b15d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd45d5c7bbf4bd0ba24bc3471bcb9bb7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1LAXGrad_1_1LocalOperators.html">LocalOperators</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gacd45d5c7bbf4bd0ba24bc3471bcb9bb7">edgeOperators</a> (const Edge &amp;E) const</td></tr>
+<tr class="memdesc:gacd45d5c7bbf4bd0ba24bc3471bcb9bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return edge operators for edge E.  <a href="group__LADDRCore.html#gacd45d5c7bbf4bd0ba24bc3471bcb9bb7">More...</a><br /></td></tr>
+<tr class="separator:gacd45d5c7bbf4bd0ba24bc3471bcb9bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga208c4222a2941ab11ba4affb70df91ee"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1LAXGrad_1_1LocalOperators.html">LocalOperators</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga208c4222a2941ab11ba4affb70df91ee">faceOperators</a> (size_t iF) const</td></tr>
+<tr class="memdesc:ga208c4222a2941ab11ba4affb70df91ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return face operators for the face of index iF.  <a href="group__LADDRCore.html#ga208c4222a2941ab11ba4affb70df91ee">More...</a><br /></td></tr>
+<tr class="separator:ga208c4222a2941ab11ba4affb70df91ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga097da45a5c1dc27d0dea2989df467672"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1LAXGrad_1_1LocalOperators.html">LocalOperators</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga097da45a5c1dc27d0dea2989df467672">faceOperators</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga097da45a5c1dc27d0dea2989df467672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return face operators for face F.  <a href="group__LADDRCore.html#ga097da45a5c1dc27d0dea2989df467672">More...</a><br /></td></tr>
+<tr class="separator:ga097da45a5c1dc27d0dea2989df467672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b5a78e3c947211764eb245a65b66967"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1LAXGrad_1_1LocalOperators.html">LocalOperators</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga4b5a78e3c947211764eb245a65b66967">cellOperators</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga4b5a78e3c947211764eb245a65b66967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell operators for the cell of index iT.  <a href="group__LADDRCore.html#ga4b5a78e3c947211764eb245a65b66967">More...</a><br /></td></tr>
+<tr class="separator:ga4b5a78e3c947211764eb245a65b66967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab58a5d94dd5b0704dc142b4794ecf045"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1LAXGrad_1_1LocalOperators.html">LocalOperators</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gab58a5d94dd5b0704dc142b4794ecf045">cellOperators</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:gab58a5d94dd5b0704dc142b4794ecf045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell operators for cell T.  <a href="group__LADDRCore.html#gab58a5d94dd5b0704dc142b4794ecf045">More...</a><br /></td></tr>
+<tr class="separator:gab58a5d94dd5b0704dc142b4794ecf045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f8f9e1ff63f73b1c892db9a53aeefe9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">DDRCore::CellBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga4f8f9e1ff63f73b1c892db9a53aeefe9">cellBases</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga4f8f9e1ff63f73b1c892db9a53aeefe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for the cell of index iT.  <a href="group__LADDRCore.html#ga4f8f9e1ff63f73b1c892db9a53aeefe9">More...</a><br /></td></tr>
+<tr class="separator:ga4f8f9e1ff63f73b1c892db9a53aeefe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec5dd607cd3d4a154d88fed3a6329980"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">DDRCore::CellBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaec5dd607cd3d4a154d88fed3a6329980">cellBases</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:gaec5dd607cd3d4a154d88fed3a6329980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for cell T.  <a href="group__LADDRCore.html#gaec5dd607cd3d4a154d88fed3a6329980">More...</a><br /></td></tr>
+<tr class="separator:gaec5dd607cd3d4a154d88fed3a6329980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga023dfafe439eb52255a2f2806f584284"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">DDRCore::FaceBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga023dfafe439eb52255a2f2806f584284">faceBases</a> (size_t iF) const</td></tr>
+<tr class="memdesc:ga023dfafe439eb52255a2f2806f584284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return face bases for the face of index iF.  <a href="group__LADDRCore.html#ga023dfafe439eb52255a2f2806f584284">More...</a><br /></td></tr>
+<tr class="separator:ga023dfafe439eb52255a2f2806f584284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga923d8748b2de6fbdb009a7f56bf49b4a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">DDRCore::FaceBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga923d8748b2de6fbdb009a7f56bf49b4a">faceBases</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga923d8748b2de6fbdb009a7f56bf49b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for face F.  <a href="group__LADDRCore.html#ga923d8748b2de6fbdb009a7f56bf49b4a">More...</a><br /></td></tr>
+<tr class="separator:ga923d8748b2de6fbdb009a7f56bf49b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43778753fa7632ab907659c4a4b7d1f2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">DDRCore::EdgeBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga43778753fa7632ab907659c4a4b7d1f2">edgeBases</a> (size_t iE) const</td></tr>
+<tr class="memdesc:ga43778753fa7632ab907659c4a4b7d1f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return edge bases for the edge of index iE.  <a href="group__LADDRCore.html#ga43778753fa7632ab907659c4a4b7d1f2">More...</a><br /></td></tr>
+<tr class="separator:ga43778753fa7632ab907659c4a4b7d1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa103cd74c53e163b2f6a3bdaeea0dd49"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">DDRCore::EdgeBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaa103cd74c53e163b2f6a3bdaeea0dd49">edgeBases</a> (const Edge &amp;E) const</td></tr>
+<tr class="memdesc:gaa103cd74c53e163b2f6a3bdaeea0dd49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return edge bases for edge E.  <a href="group__LADDRCore.html#gaa103cd74c53e163b2f6a3bdaeea0dd49">More...</a><br /></td></tr>
+<tr class="separator:gaa103cd74c53e163b2f6a3bdaeea0dd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6274b4b26e6ce1043b6982dd93c31da5"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga6274b4b26e6ce1043b6982dd93c31da5">computeL2Product</a> (const size_t iT, const double &amp;penalty_factor=1., const Eigen::MatrixXd &amp;mass_Pkpo_T=Eigen::MatrixXd::Zero(1, 1), const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> &amp;weight=<a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>(1.)) const</td></tr>
 <tr class="memdesc:ga6274b4b26e6ce1043b6982dd93c31da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the matrix of the (weighted) L2-product for the cell of index iT. The stabilisation here is based on cell and face potentials.  <a href="group__LADDRCore.html#ga6274b4b26e6ce1043b6982dd93c31da5">More...</a><br /></td></tr>
 <tr class="separator:ga6274b4b26e6ce1043b6982dd93c31da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -263,8 +312,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:gacc921ba72df56713816eb806bf498cca inherit pro_attribs_classHArDCore3D_1_1LocalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Discrete H1 space: local operators, L2 product and global interpolator. </p>
-<p>On each edge/face/element, the DOFs (if any) correspond to the polynomial bases on the edge/face/element provided by m_ddr_core </p>
+<div class="textblock"><p>Discrete Lie algebra valued H1 space: local operators, L2 product and global interpolator. </p>
+<p>Each DOF in the <a class="el" href="classHArDCore3D_1_1XGrad.html" title="Discrete H1 space: local operators, L2 product and global interpolator.">XGrad</a> space corresponds to the dimension of the Lie algebra number of DOFs in the <a class="el" href="classHArDCore3D_1_1LAXGrad.html" title="Discrete Lie algebra valued H1 space: local operators, L2 product and global interpolator.">LAXGrad</a> space. These DOFs are stored consecutively with overall ordering given by <a class="el" href="classHArDCore3D_1_1XGrad.html" title="Discrete H1 space: local operators, L2 product and global interpolator.">XGrad</a>; they represent and are locally ordered by the basis in the <a class="el" href="classHArDCore3D_1_1LieAlgebra.html" title="Lie algebra class: mass matrix, structure constants and Lie bracket.">LieAlgebra</a> </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/LADDRCore/<a class="el" href="laxgrad_8hpp_source.html">laxgrad.hpp</a></li>
 <li>src/LADDRCore/<a class="el" href="laxgrad_8cpp.html">laxgrad.cpp</a></li>

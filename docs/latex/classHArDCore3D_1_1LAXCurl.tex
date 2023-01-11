@@ -20,13 +20,19 @@ Inheritance diagram for HAr\+DCore3D\+::LAXCurl\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for HAr\+DCore3D\+::LAXCurl\+:\nopagebreak
+Collaboration diagram for HAr\+DCore3D\+::LAXCurl\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=238pt]{classHArDCore3D_1_1LAXCurl__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1LAXCurl_1_1LocalOperators}{Local\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store the local operators (curl and potential) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,14 +43,38 @@ typedef std\+::vector$<$ \mbox{\hyperlink{group__LADDRCore_gaecbef92c0d82f58b5fe
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_gaa5c1070575839e414f94f79c0a3db5f1}{lie\+Alg}} () const
+const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_gaf57f735cd1cae66888307c2e081d2df4}{lie\+Algebra}} () const
 \begin{DoxyCompactList}\small\item\em Returns the Lie algebra. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \& \mbox{\hyperlink{group__LADDRCore_ga47db4eb928f4543685095e5efc8cd9a4}{x\+Curl}} () const
 \begin{DoxyCompactList}\small\item\em Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__LADDRCore_ga3460ba61a346924322d490258c41f144}{LAXCurl}} (const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&lie\+\_\+algebra, const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \&xcurl, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__LADDRCore_gac5a4f1759deed843111732c809fc06e9}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__LADDRCore_gaa527c84aa90f1a0981ac1bbd91e74cc2}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__LADDRCore_gad5872b00cc1a2f455b73fbbe4a393122}{interpolate}} (const \mbox{\hyperlink{group__LADDRCore_ga56d4d6afeb018bafbd088ac9eb555c28}{LAFunction\+Type}} \&v, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
 \begin{DoxyCompactList}\small\item\em Interpolator of a continuous Lie algebra valued function decomposed on the basis of the \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}}, given as a vector of functions. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1LAXCurl_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__LADDRCore_ga8bae4efe7ed6ec878a6c1af05aae0c49}{cell\+Operators}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1LAXCurl_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__LADDRCore_gab5fafb0fefe8846737b77fde7d4e32dc}{cell\+Operators}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1LAXCurl_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__LADDRCore_ga192476d81c99162550bb6fd035cae86f}{face\+Operators}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face operators for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1LAXCurl_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__LADDRCore_ga38a62e6872b6503ac3ac6e3a11d0c260}{face\+Operators}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return face operators for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga5d5d7a36e623db495739a5c6514a2b3a}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_gaca9399e64f85d955eca96c7ad0d36d22}{cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga48dc68d6ba22b1070d9d2eba077208f1}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga4abede871b117c910ba85fc5381e5e3d}{face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_gad3078fe6f21e9e4f1598facfed9b8d10}{edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_gae1cb5dbfba658a220243281f5d8a5874}{edge\+Bases}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gaa6f17885c3ec26554a9e54b14c4378c5}{compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga4fa07c247b0faf06d8ef9155e8579e4d}{compute\+L2\+Product\+Gradient}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}} \&x\+\_\+grad, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const

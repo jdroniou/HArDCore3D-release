@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structHArDCore3D_1_1XGrad_1_1LocalOperators.html" title="A structure to store local operators (gradient and potential)" alt="" coords="5,5,159,47"/>
+<area shape="rect" id="node1" href="$classHArDCore3D_1_1VariableDOFSpace.html" title="Base class for global DOF spaces." alt="" coords="5,31,224,57"/>
+<area shape="rect" id="node2" href="$classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator." alt="" coords="274,5,425,32"/>
+<area shape="rect" id="node3" href="$classHArDCore3D_1_1SXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator." alt="" coords="272,56,427,83"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="HArDCore3D::VHHOSpace" name="HArDCore3D::VHHOSpace">
+<area shape="rect" id="node1" title="Class definition: polynomial bases and operators." alt="" coords="19,155,203,181"/>
+<area shape="rect" id="node2" href="$classHArDCore3D_1_1GlobalDOFSpace.html" title="Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei..." alt="" coords="5,80,216,107"/>
+<area shape="rect" id="node3" href="$classHArDCore3D_1_1LocalDOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="9,5,213,32"/>
+</map>

@@ -2,13 +2,7 @@
 ADD_LIBRARY(TestCase OBJECT TestCase/TestCase.cpp)
 ADD_LIBRARY(BoundaryConditions OBJECT BoundaryConditions/BoundaryConditions.cpp)
 ADD_LIBRARY(hho-general OBJECT HHO-general/HHO3D.cpp)
-ADD_LIBRARY(DirectedGraph OBJECT MeshCoarsen/DirectedGraph.cpp)
 ADD_LIBRARY(MHDTests HHO-MHD/MHDTests.cpp)
-
-# Mesh Coarsen
-ADD_EXECUTABLE(mesh-coarsen $<TARGET_OBJECTS:DirectedGraph> MeshCoarsen/MeshCoarsen.cpp)
-TARGET_LINK_LIBRARIES(mesh-coarsen ${Boost_LIBRARIES})
-TARGET_INCLUDE_DIRECTORIES(mesh-coarsen PUBLIC ${EIGEN3_INCLUDE_DIR})
 
 # HHO Diffusion
 ADD_EXECUTABLE(hho-diffusion $<TARGET_OBJECTS:TestCase> $<TARGET_OBJECTS:BoundaryConditions> HHO-diffusion/HHO_Diffusion.cpp)
@@ -25,7 +19,17 @@ ADD_EXECUTABLE(hho-diff-advec-reac $<TARGET_OBJECTS:hho-general> $<TARGET_OBJECT
 TARGET_LINK_LIBRARIES(hho-diff-advec-reac mesh quadrature hybridcore plot ${Boost_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(hho-diff-advec-reac PUBLIC ${EIGEN3_INCLUDE_DIR})
 
-# DDR magnetostatics
+# HHO Full Gradient Diffusion
+ADD_EXECUTABLE(hho-fullgradientdiff HHO-full-gradient-diff/hho-fullgradientdiff.cpp)
+TARGET_LINK_LIBRARIES(hho-fullgradientdiff mesh quadrature hhocore plot BoundaryConditions ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(hho-fullgradientdiff PUBLIC ${EXTERNAL_INCLUDES})
+
+# HHO Brinkman
+ADD_EXECUTABLE(hho-brinkman HHO-brinkman/hho-brinkman.cpp)
+TARGET_LINK_LIBRARIES(hho-brinkman mesh quadrature hhocore plot BoundaryConditions ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(hho-brinkman PUBLIC ${EXTERNAL_INCLUDES})
+
+# DDR magnetostatics (without and with serendipity)
 ADD_EXECUTABLE(ddr-magnetostatics DDR-magnetostatics/ddr-magnetostatics.cpp)
 TARGET_LINK_LIBRARIES(ddr-magnetostatics mesh quadrature ddrcore plot ${EXTERNAL_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(ddr-magnetostatics PUBLIC ${EXTERNAL_INCLUDES})
@@ -52,9 +56,11 @@ TARGET_LINK_LIBRARIES(vem-stokes mesh quadrature vemcore plot ${EXTERNAL_LIBRARI
 TARGET_INCLUDE_DIRECTORIES(vem-stokes PUBLIC ${EXTERNAL_INCLUDES})
 
 # HHO MHD
-ADD_EXECUTABLE(hho-mhd $<TARGET_OBJECTS:MHDTests> $<TARGET_OBJECTS:BoundaryConditions> HHO-MHD/HHO_MHD.cpp)
-TARGET_LINK_LIBRARIES(hho-mhd quadrature hybridcore plot mesh ${EXTERNAL_LIBRARIES})
-TARGET_INCLUDE_DIRECTORIES(hho-mhd PUBLIC ${EXTERNAL_INCLUDES})
+IF(MKL_FOUND)
+  ADD_EXECUTABLE(hho-mhd $<TARGET_OBJECTS:MHDTests> $<TARGET_OBJECTS:BoundaryConditions> HHO-MHD/HHO_MHD.cpp)
+  TARGET_LINK_LIBRARIES(hho-mhd quadrature hybridcore plot mesh ${EXTERNAL_LIBRARIES})
+  TARGET_INCLUDE_DIRECTORIES(hho-mhd PUBLIC ${EXTERNAL_INCLUDES})
+ENDIF() 
 
 
 

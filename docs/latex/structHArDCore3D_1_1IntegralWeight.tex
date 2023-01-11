@@ -12,16 +12,20 @@ Structure for weights (scalar, at the moment) in integral.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{group__Common_ga60ba878dc51ffe013b4cd394741d34f0}{Integral\+Weight}} (const std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ \+\_\+value, std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ \+\_\+deg)
-\item 
+\mbox{\hyperlink{group__Common_ga44a260b9d0464fe21ad59951b60ec0d8}{Integral\+Weight}} (const \mbox{\hyperlink{group__Common_ga0396c9c15024a70638bd9fb16712d13f}{Integral\+Weight\+Value\+Type}} \+\_\+value, const \mbox{\hyperlink{group__Common_ga5f3e161295252aba5be7989e167e23d8}{Integral\+Weight\+Degree\+Type}} \+\_\+deg)
+\begin{DoxyCompactList}\small\item\em Generic constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Common_gaed526b573136d558b81d9be87646b5c9}{Integral\+Weight}} (double val)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor for constant weights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga211e07bd4ac8db912880769175f29f96}{Integral\+Weight}} (const std\+::function$<$ double(const Vector\+Rd \&)$>$ \&val, const size\+\_\+t \&\mbox{\hyperlink{group__Common_gafd9ac57a861efb87cd200c6afafca587}{deg}})
+\begin{DoxyCompactList}\small\item\em Constructor when the dependency on the cell T is not explicit in the value (and degree is constant) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga846c597e6085f0a1ac044c1b1c170278}{Integral\+Weight}} (const std\+::function$<$ double(const Vector\+Rd \&)$>$ \&val)
+\begin{DoxyCompactList}\small\item\em Constructor when the dependency on the cell T is not explicit in the value, and degree is not provided (it is assumed to be 0) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ \mbox{\hyperlink{group__Common_ga0e64dd7fa60d788876219241162f0f6e}{value}}
+\mbox{\hyperlink{group__Common_ga0396c9c15024a70638bd9fb16712d13f}{Integral\+Weight\+Value\+Type}} \mbox{\hyperlink{group__Common_gadc026ae462aa662862e53f2adb084400}{value}}
 \item 
-std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ \mbox{\hyperlink{group__Common_ga6380d57e44432a9d08114c442158dc8a}{deg}}
+\mbox{\hyperlink{group__Common_ga5f3e161295252aba5be7989e167e23d8}{Integral\+Weight\+Degree\+Type}} \mbox{\hyperlink{group__Common_gafd9ac57a861efb87cd200c6afafca587}{deg}}
 \end{DoxyCompactItemize}
 
 

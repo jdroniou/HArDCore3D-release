@@ -193,8 +193,6 @@ private:
     const size_t n_total_pressure_dofs = n_cells * n_local_pressure_dofs;
     const size_t n_total_lagrange_dofs = n_cells * n_local_lagrange_dofs;
 
-    const size_t n_total_dofs = n_total_cell_velocity_dofs + n_total_face_velocity_dofs + n_total_pressure_dofs + n_total_cell_magnetic_dofs + n_total_face_magnetic_dofs + n_total_lagrange_dofs;
-
     inline size_t n_local_velocity_dofs(const size_t iT) const
     {
         return n_local_cell_velocity_dofs + m_mesh_ptr->cell(iT)->n_faces() * n_local_face_velocity_dofs;
@@ -256,8 +254,6 @@ private:
     const size_t n_total_face_vector_dofs = n_local_face_vector_dofs * n_faces;
     // const size_t n_total_vector_dofs = n_total_cell_vector_dofs +
     // n_total_face_vector_dofs;
-
-    size_t n_unknowns = 0;
 
     Eigen::SparseMatrix<double> inv_LTll_LTlg;
     Eigen::SparseMatrix<double> LTgl;

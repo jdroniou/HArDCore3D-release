@@ -12,8 +12,9 @@ namespace HArDCore3D
    * @{
    */
 
-  /// Discrete Hdiv space: local operators, L2 product and global interpolator
-  /** On each face, the DOFs correspond to the polynomial bases on the face provided by m_ddr_core. On each element, the DOFs are first those of the \f$\mathcal{G}^{k-1}\f$ component and then of the \f$\mathcal{G}^{c,k}\f$ component, each one of them following the bases of these spaces provided by m_ddr_core. */
+  /// Discrete Lie algebra valued Hdiv space: local operators, L2 product and global interpolator
+  /** Each DOF in the XDiv space corresponds to the dimension of the Lie algebra number of DOFs in the LAXDiv space. These DOFs are stored consecutively with overall ordering given by XDiv; they represent and are locally ordered by the basis in the LieAlgebra */
+
 
   class LAXDiv : public GlobalDOFSpace
   {
@@ -44,13 +45,61 @@ namespace HArDCore3D
 
     /// Constructor
     LAXDiv(const LieAlgebra & lie_algebra, const XDiv & xdiv, bool use_threads = true, std::ostream & output = std::cout);
+
+    /// Return the mesh
+    const Mesh & mesh() const
+    {
+      return m_xdiv.mesh();
+    }
     
+    /// Return the polynomial degree
+    const size_t & degree() const
+    {
+      return m_xdiv.degree();
+    }
+
     /// Interpolator of a continuous function
     Eigen::VectorXd interpolate(
           const LAFunctionType & v, ///< The Lie algebra valued function to interpolate
           const int doe_cell = -1, ///< The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
           const int doe_face = -1 ///< The optional degre of face quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
                 ) const;
+    
+    /// Return cell operators for the cell of index iT
+    inline const LocalOperators & cellOperators(size_t iT) const
+    {
+      return *m_cell_operators[iT];
+    }
+
+    /// Return cell operators for cell T
+    inline const LocalOperators & cellOperators(const Cell & T) const
+    {
+      return * m_cell_operators[T.global_index()];	
+    }
+
+    /// Return cell bases for the face of index iT
+    inline const DDRCore::CellBases & cellBases(size_t iT) const
+    {
+      return m_xdiv.cellBases(iT);
+    }
+
+    /// Return cell bases for cell T
+    inline const DDRCore::CellBases & cellBases(const Cell & T) const
+    {
+      return m_xdiv.cellBases(T.global_index());
+    }
+    
+    /// Return face bases for the face of index iF
+    inline const DDRCore::FaceBases & faceBases(size_t iF) const
+    {
+      return m_xdiv.faceBases(iF);
+    }
+
+    /// Return cell bases for face F
+    inline const DDRCore::FaceBases & faceBases(const Face & F) const
+    {
+      return m_xdiv.faceBases(F.global_index());
+    }
     
     /// Compute the matrix of the (weighted) L2-product for the cell of index iT.
     // The mass matrix of P^k(T)^3 is the most expensive mass matrix in the calculation of this norm, which
@@ -73,7 +122,7 @@ namespace HArDCore3D
                                      ) const;
 
   private:
-    // LocalOperators _compute_cell_divergence_potential(size_t iT);
+    LocalOperators _compute_cell_divergence_potential(size_t iT);
 
     const LieAlgebra & m_lie_algebra;
     const XDiv & m_xdiv;
@@ -81,7 +130,7 @@ namespace HArDCore3D
     std::ostream & m_output;
 
     // Containers for local operators
-    // std::vector<std::unique_ptr<LocalOperators> > m_cell_operators;
+    std::vector<std::unique_ptr<LocalOperators> > m_cell_operators;
   };
 } // end of namespace HArDCore3D
 

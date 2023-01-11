@@ -1,0 +1,434 @@
+\hypertarget{group__HHO__fullgradientdiff}{}\doxysection{HHO\+\_\+fullgradientdiff}
+\label{group__HHO__fullgradientdiff}\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+
+
+Implementation of the HHO scheme with full gradient for variable diffusion equations.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1FullGradientDiffusion}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion}}
+\begin{DoxyCompactList}\small\item\em Assemble a diffusion problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+System\+Matrix\+Type}}
+\item 
+typedef std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+Forcing\+Term\+Type}}
+\item 
+typedef std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+Solution\+Type}}
+\item 
+typedef std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+Solution\+Gradient\+Type}}
+\item 
+typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+Permeability\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__HHO__fullgradientdiff_gaaa736e02b09121148364d921b4d61597}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+Full\+Gradient\+Diffusion}} (const \mbox{\hyperlink{classHArDCore3D_1_1HHOSpace}{HHOSpace}} \&hho\+\_\+space, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&BC, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__HHO__fullgradientdiff_gafd2d1e29b514e2144489f5687e361678}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::assemble\+Linear\+System}} (const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Permeability\+Type}} \&kappa, const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Solution\+Type}} \&u, Eigen\+::\+Vector\+Xd \&UDir)
+\begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
+ \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__fullgradientdiff_gab268f58cf5f0a9eb95290b57ccb723d9}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::num\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (the cell DOFs) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__fullgradientdiff_gaae4bb83a8fb906f61e7f0909fa9162b2}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::num\+Dir\+DOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of Dirichlet DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__fullgradientdiff_ga7c8f4d6c740dc6091746919c93b12d33}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::num\+Skeletal\+DOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of DOFs after SC but before eliminating Dirichlet DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__fullgradientdiff_ga976f0f7fd349df05c25f477f3cff7de3}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::size\+System}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the final system, after application of SC and removal of Dirichlet BCs. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1HHOSpace}{HHOSpace}} \& \mbox{\hyperlink{group__HHO__fullgradientdiff_ga8f5dea9953372325ea65354cb5e470ce}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::hhospace}} () const
+\begin{DoxyCompactList}\small\item\em Returns the HHO space. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__HHO__fullgradientdiff_ga2cbe53c007117805a876230c352f3b0e}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::mesh}} () const
+\begin{DoxyCompactList}\small\item\em Returns the mesh. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__fullgradientdiff_ga668db5695b0e46b6ef1a6a9f560acbfd}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::system\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__fullgradientdiff_gad7e033827cd37c4c9ac6e538c3562319}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::system\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__fullgradientdiff_ga66212b5bd5f241957e47554ce0432379}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::system\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__fullgradientdiff_ga0f1fe476db6978a25aa597b9494d43a2}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::system\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{group__HHO__fullgradientdiff_gaeb93a525f7fd03c967b7718e6b9c035f}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::stabilization\+Parameter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter (scaling) \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{group__HHO__fullgradientdiff_gac286a64ac1fcd09d605a5495a4b51c35}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::stabilization\+Parameter}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__fullgradientdiff_gac4a3b0329387044edd0dc341103d2df0}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::sc\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the static condensation recovery operator. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__fullgradientdiff_gab8271c78fb7d00e7427a409c3408bad2}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::sc\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the static condensation rhs. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga2ee11924313e2d3cbc1a90e7b5f7d686}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::compute\+Energy\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
+\begin{DoxyCompactList}\small\item\em Compute the discrete energy norm of a family of vectors representing the dofs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{HAr\+DCore3\+D\+::\+PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+static const Vector\+Rd \mbox{\hyperlink{group__HHO__fullgradientdiff_ga84bbf9e5121be6667bdf0e97636a7c89}{HAr\+DCore3\+D\+::vec\+\_\+a}} = Vector\+Rd(1.,2.,3.)
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Full\+Gradient\+Diffusion\+::\+Solution\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga258f3b1f7f0921bebc7818cb656b1e16}{HAr\+DCore3\+D\+::linear\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{Full\+Gradient\+Diffusion\+::\+Solution\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga64d86c6442ce6cca580b685d67c8d1a8}{HAr\+DCore3\+D\+::linear\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Full\+Gradient\+Diffusion\+::\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_gac24ba2c1f388732ff5250855ed61e246}{HAr\+DCore3\+D\+::linear\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_gad4bf3933c735ee697f6c409f264281aa}{HAr\+DCore3\+D\+::linear\+\_\+kappa}} = \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Full\+Gradient\+Diffusion\+::\+Solution\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga0636e9c891b5899965f7477d4893b3f0}{HAr\+DCore3\+D\+::trigonometric\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{Full\+Gradient\+Diffusion\+::\+Solution\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga9ad3a2c9028e91fdcf920f1200c660a1}{HAr\+DCore3\+D\+::trigonometric\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Full\+Gradient\+Diffusion\+::\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga78dbf3dba74e517ba783786d2a8d3734}{HAr\+DCore3\+D\+::trigonometric\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga90e6aed5c0913152d769b0b016aeb8cf}{HAr\+DCore3\+D\+::trigonometric\+\_\+kappa}} = \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}}(1.)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the HHO scheme with full gradient for variable diffusion equations. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}\label{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!ForcingTermType@{ForcingTermType}}
+\index{ForcingTermType@{ForcingTermType}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{ForcingTermType}{ForcingTermType}}
+{\footnotesize\ttfamily typedef std\+::function$<$double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+Forcing\+Term\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}\label{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!PermeabilityType@{PermeabilityType}}
+\index{PermeabilityType@{PermeabilityType}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{PermeabilityType}{PermeabilityType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+Permeability\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}\label{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!SolutionGradientType@{SolutionGradientType}}
+\index{SolutionGradientType@{SolutionGradientType}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{SolutionGradientType}{SolutionGradientType}}
+{\footnotesize\ttfamily typedef std\+::function$<$Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+Solution\+Gradient\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}\label{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!SolutionType@{SolutionType}}
+\index{SolutionType@{SolutionType}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{SolutionType}{SolutionType}}
+{\footnotesize\ttfamily typedef std\+::function$<$double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+Solution\+Type}}}
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}\label{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!SystemMatrixType@{SystemMatrixType}}
+\index{SystemMatrixType@{SystemMatrixType}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{SystemMatrixType}{SystemMatrixType}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Sparse\+Matrix$<$double$>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::\+System\+Matrix\+Type}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gafd2d1e29b514e2144489f5687e361678}\label{group__HHO__fullgradientdiff_gafd2d1e29b514e2144489f5687e361678}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!assembleLinearSystem@{assembleLinearSystem}}
+\index{assembleLinearSystem@{assembleLinearSystem}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{assembleLinearSystem()}{assembleLinearSystem()}}
+{\footnotesize\ttfamily void Full\+Gradient\+Diffusion\+::assemble\+Linear\+System (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Forcing\+Term\+Type}} \&}]{f,  }\item[{const \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Permeability\+Type}} \&}]{kappa,  }\item[{const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Solution\+Type}} \&}]{u,  }\item[{Eigen\+::\+Vector\+Xd \&}]{UDir }\end{DoxyParamCaption})}
+
+
+
+Assemble the global system ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Forcing term \\
+\hline
+{\em kappa} & Permeability \\
+\hline
+{\em u} & Exact solution for boundary condition \\
+\hline
+{\em UDir} & Vector filled in by Dirichlets BCs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga2ee11924313e2d3cbc1a90e7b5f7d686}\label{group__HHO__fullgradientdiff_ga2ee11924313e2d3cbc1a90e7b5f7d686}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!computeEnergyNorms@{computeEnergyNorms}}
+\index{computeEnergyNorms@{computeEnergyNorms}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{computeEnergyNorms()}{computeEnergyNorms()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Full\+Gradient\+Diffusion\+::compute\+Energy\+Norms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&}]{list\+\_\+dofs }\end{DoxyParamCaption}) const}
+
+
+
+Compute the discrete energy norm of a family of vectors representing the dofs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+\_\+dofs} & The list of vectors representing the dofs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gaaa736e02b09121148364d921b4d61597}\label{group__HHO__fullgradientdiff_gaaa736e02b09121148364d921b4d61597}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!FullGradientDiffusion@{FullGradientDiffusion}}
+\index{FullGradientDiffusion@{FullGradientDiffusion}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{FullGradientDiffusion()}{FullGradientDiffusion()}}
+{\footnotesize\ttfamily Full\+Gradient\+Diffusion\+::\+Full\+Gradient\+Diffusion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1HHOSpace}{HHOSpace}} \&}]{hho\+\_\+space,  }\item[{const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&}]{BC,  }\item[{bool}]{use\+\_\+threads,  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hho\+\_\+space} & HHO space and operators \\
+\hline
+{\em BC} & Boundary conditions \\
+\hline
+{\em use\+\_\+threads} & True for parallel execution, false for sequential execution \\
+\hline
+{\em output} & Output stream to print status messages \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga8f5dea9953372325ea65354cb5e470ce}\label{group__HHO__fullgradientdiff_ga8f5dea9953372325ea65354cb5e470ce}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!hhospace@{hhospace}}
+\index{hhospace@{hhospace}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{hhospace()}{hhospace()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1HHOSpace}{HHOSpace}}\& HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::hhospace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the HHO space. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga2cbe53c007117805a876230c352f3b0e}\label{group__HHO__fullgradientdiff_ga2cbe53c007117805a876230c352f3b0e}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!mesh@{mesh}}
+\index{mesh@{mesh}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the mesh. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gaae4bb83a8fb906f61e7f0909fa9162b2}\label{group__HHO__fullgradientdiff_gaae4bb83a8fb906f61e7f0909fa9162b2}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!numDirDOFs@{numDirDOFs}}
+\index{numDirDOFs@{numDirDOFs}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{numDirDOFs()}{numDirDOFs()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::num\+Dir\+DOFs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of Dirichlet DOFs. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gab268f58cf5f0a9eb95290b57ccb723d9}\label{group__HHO__fullgradientdiff_gab268f58cf5f0a9eb95290b57ccb723d9}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!numSCDOFs@{numSCDOFs}}
+\index{numSCDOFs@{numSCDOFs}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{numSCDOFs()}{numSCDOFs()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::num\+SCDOFs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of statically condensed DOFs (the cell DOFs) 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga7c8f4d6c740dc6091746919c93b12d33}\label{group__HHO__fullgradientdiff_ga7c8f4d6c740dc6091746919c93b12d33}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!numSkeletalDOFs@{numSkeletalDOFs}}
+\index{numSkeletalDOFs@{numSkeletalDOFs}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{numSkeletalDOFs()}{numSkeletalDOFs()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::num\+Skeletal\+DOFs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of DOFs after SC but before eliminating Dirichlet DOFs. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gac4a3b0329387044edd0dc341103d2df0}\label{group__HHO__fullgradientdiff_gac4a3b0329387044edd0dc341103d2df0}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!scMatrix@{scMatrix}}
+\index{scMatrix@{scMatrix}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{scMatrix()}{scMatrix()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::sc\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the static condensation recovery operator. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gab8271c78fb7d00e7427a409c3408bad2}\label{group__HHO__fullgradientdiff_gab8271c78fb7d00e7427a409c3408bad2}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!scVector@{scVector}}
+\index{scVector@{scVector}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{scVector()}{scVector()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::sc\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the static condensation rhs. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga976f0f7fd349df05c25f477f3cff7de3}\label{group__HHO__fullgradientdiff_ga976f0f7fd349df05c25f477f3cff7de3}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!sizeSystem@{sizeSystem}}
+\index{sizeSystem@{sizeSystem}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{sizeSystem()}{sizeSystem()}}
+{\footnotesize\ttfamily size\+\_\+t HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::size\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the size of the final system, after application of SC and removal of Dirichlet BCs. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gac286a64ac1fcd09d605a5495a4b51c35}\label{group__HHO__fullgradientdiff_gac286a64ac1fcd09d605a5495a4b51c35}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!stabilizationParameter@{stabilizationParameter}}
+\index{stabilizationParameter@{stabilizationParameter}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{stabilizationParameter()}{stabilizationParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double\& HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the stabilization parameter. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gaeb93a525f7fd03c967b7718e6b9c035f}\label{group__HHO__fullgradientdiff_gaeb93a525f7fd03c967b7718e6b9c035f}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!stabilizationParameter@{stabilizationParameter}}
+\index{stabilizationParameter@{stabilizationParameter}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{stabilizationParameter()}{stabilizationParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const double\& HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::stabilization\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the stabilization parameter (scaling) 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gad7e033827cd37c4c9ac6e538c3562319}\label{group__HHO__fullgradientdiff_gad7e033827cd37c4c9ac6e538c3562319}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!systemMatrix@{systemMatrix}}
+\index{systemMatrix@{systemMatrix}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{systemMatrix()}{systemMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the linear system matrix. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga668db5695b0e46b6ef1a6a9f560acbfd}\label{group__HHO__fullgradientdiff_ga668db5695b0e46b6ef1a6a9f560acbfd}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!systemMatrix@{systemMatrix}}
+\index{systemMatrix@{systemMatrix}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{systemMatrix()}{systemMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{System\+Matrix\+Type}}\& HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::system\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the linear system matrix. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga0f1fe476db6978a25aa597b9494d43a2}\label{group__HHO__fullgradientdiff_ga0f1fe476db6978a25aa597b9494d43a2}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!systemVector@{systemVector}}
+\index{systemVector@{systemVector}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{systemVector()}{systemVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the linear system right-\/hand side vector. 
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga66212b5bd5f241957e47554ce0432379}\label{group__HHO__fullgradientdiff_ga66212b5bd5f241957e47554ce0432379}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!systemVector@{systemVector}}
+\index{systemVector@{systemVector}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{systemVector()}{systemVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd\& HAr\+DCore3\+D\+::\+Full\+Gradient\+Diffusion\+::system\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the linear system right-\/hand side vector. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gac24ba2c1f388732ff5250855ed61e246}\label{group__HHO__fullgradientdiff_gac24ba2c1f388732ff5250855ed61e246}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!linear\_f@{linear\_f}}
+\index{linear\_f@{linear\_f}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{linear\_f}{linear\_f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Full\+Gradient\+Diffusion\+::\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::linear\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                 \textcolor{keywordflow}{return} 0.;}
+\DoxyCodeLine{               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga64d86c6442ce6cca580b685d67c8d1a8}\label{group__HHO__fullgradientdiff_ga64d86c6442ce6cca580b685d67c8d1a8}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!linear\_gradu@{linear\_gradu}}
+\index{linear\_gradu@{linear\_gradu}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{linear\_gradu}{linear\_gradu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{Full\+Gradient\+Diffusion\+::\+Solution\+Gradient\+Type}} HAr\+DCore3\+D\+::linear\+\_\+gradu\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                     \textcolor{keywordflow}{return} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga84bbf9e5121be6667bdf0e97636a7c89}{vec\_a}};}
+\DoxyCodeLine{                   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_gad4bf3933c735ee697f6c409f264281aa}\label{group__HHO__fullgradientdiff_gad4bf3933c735ee697f6c409f264281aa}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!linear\_kappa@{linear\_kappa}}
+\index{linear\_kappa@{linear\_kappa}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{linear\_kappa}{linear\_kappa}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}} HAr\+DCore3\+D\+::linear\+\_\+kappa = \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga258f3b1f7f0921bebc7818cb656b1e16}\label{group__HHO__fullgradientdiff_ga258f3b1f7f0921bebc7818cb656b1e16}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!linear\_u@{linear\_u}}
+\index{linear\_u@{linear\_u}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{linear\_u}{linear\_u}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Full\+Gradient\+Diffusion\+::\+Solution\+Type}} HAr\+DCore3\+D\+::linear\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                 \textcolor{keywordflow}{return} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga84bbf9e5121be6667bdf0e97636a7c89}{vec\_a}}.dot(x) + 4.;}
+\DoxyCodeLine{               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}\label{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!PI@{PI}}
+\index{PI@{PI}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily const double HAr\+DCore3\+D\+::\+PI = boost\+::math\+::constants\+::pi$<$double$>$()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga78dbf3dba74e517ba783786d2a8d3734}\label{group__HHO__fullgradientdiff_ga78dbf3dba74e517ba783786d2a8d3734}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!trigonometric\_f@{trigonometric\_f}}
+\index{trigonometric\_f@{trigonometric\_f}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_f}{trigonometric\_f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Full\+Gradient\+Diffusion\+::\+Forcing\+Term\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+f\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} 3. * std::pow(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}, 2) * \mbox{\hyperlink{group__HHO__fullgradientdiff_ga0636e9c891b5899965f7477d4893b3f0}{trigonometric\_u}}(x);}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga9ad3a2c9028e91fdcf920f1200c660a1}\label{group__HHO__fullgradientdiff_ga9ad3a2c9028e91fdcf920f1200c660a1}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!trigonometric\_gradu@{trigonometric\_gradu}}
+\index{trigonometric\_gradu@{trigonometric\_gradu}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_gradu}{trigonometric\_gradu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{Full\+Gradient\+Diffusion\+::\+Solution\+Gradient\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+gradu\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \{}
+\DoxyCodeLine{                          \textcolor{keywordflow}{return} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} * \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}}(}
+\DoxyCodeLine{                                                     cos(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)) * sin(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)) * sin(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),}
+\DoxyCodeLine{                                                     sin(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)) * cos(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)) * sin(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2)),}
+\DoxyCodeLine{                                                     sin(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)) * sin(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)) * cos(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2))}
+\DoxyCodeLine{                                                     );}
+\DoxyCodeLine{                        \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga90e6aed5c0913152d769b0b016aeb8cf}\label{group__HHO__fullgradientdiff_ga90e6aed5c0913152d769b0b016aeb8cf}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!trigonometric\_kappa@{trigonometric\_kappa}}
+\index{trigonometric\_kappa@{trigonometric\_kappa}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_kappa}{trigonometric\_kappa}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+kappa = \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}}(1.)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga0636e9c891b5899965f7477d4893b3f0}\label{group__HHO__fullgradientdiff_ga0636e9c891b5899965f7477d4893b3f0}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!trigonometric\_u@{trigonometric\_u}}
+\index{trigonometric\_u@{trigonometric\_u}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{trigonometric\_u}{trigonometric\_u}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Full\+Gradient\+Diffusion\+::\+Solution\+Type}} HAr\+DCore3\+D\+::trigonometric\+\_\+u\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [](\textcolor{keyword}{const} \mbox{\hyperlink{namespaceMesh2D_a782920a9ee0ff830630fe77e70a8f6bd}{VectorRd}} \& x) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{                      \textcolor{keywordflow}{return} sin(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(0)) * sin(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(1)) * sin(\mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}}*x(2));}
+\DoxyCodeLine{                    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__HHO__fullgradientdiff_ga84bbf9e5121be6667bdf0e97636a7c89}\label{group__HHO__fullgradientdiff_ga84bbf9e5121be6667bdf0e97636a7c89}} 
+\index{HHO\_fullgradientdiff@{HHO\_fullgradientdiff}!vec\_a@{vec\_a}}
+\index{vec\_a@{vec\_a}!HHO\_fullgradientdiff@{HHO\_fullgradientdiff}}
+\doxysubsubsection{\texorpdfstring{vec\_a}{vec\_a}}
+{\footnotesize\ttfamily const Vector\+Rd HAr\+DCore3\+D\+::vec\+\_\+a = Vector\+Rd(1.,2.,3.)\hspace{0.3cm}{\ttfamily [static]}}
+

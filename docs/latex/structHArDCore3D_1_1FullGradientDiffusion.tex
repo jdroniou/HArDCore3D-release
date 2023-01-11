@@ -1,0 +1,71 @@
+\hypertarget{structHArDCore3D_1_1FullGradientDiffusion}{}\doxysection{HAr\+DCore3D\+::Full\+Gradient\+Diffusion Struct Reference}
+\label{structHArDCore3D_1_1FullGradientDiffusion}\index{HArDCore3D::FullGradientDiffusion@{HArDCore3D::FullGradientDiffusion}}
+
+
+Assemble a diffusion problem.  
+
+
+
+
+{\ttfamily \#include $<$hho-\/fullgradientdiff.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{System\+Matrix\+Type}}
+\item 
+typedef std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Forcing\+Term\+Type}}
+\item 
+typedef std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Solution\+Type}}
+\item 
+typedef std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{Solution\+Gradient\+Type}}
+\item 
+typedef \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Permeability\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__HHO__fullgradientdiff_gaaa736e02b09121148364d921b4d61597}{Full\+Gradient\+Diffusion}} (const \mbox{\hyperlink{classHArDCore3D_1_1HHOSpace}{HHOSpace}} \&hho\+\_\+space, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&BC, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__HHO__fullgradientdiff_gafd2d1e29b514e2144489f5687e361678}{assemble\+Linear\+System}} (const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Permeability\+Type}} \&kappa, const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Solution\+Type}} \&u, Eigen\+::\+Vector\+Xd \&UDir)
+\begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
+ \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__fullgradientdiff_gab268f58cf5f0a9eb95290b57ccb723d9}{num\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs (the cell DOFs) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__fullgradientdiff_gaae4bb83a8fb906f61e7f0909fa9162b2}{num\+Dir\+DOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of Dirichlet DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__fullgradientdiff_ga7c8f4d6c740dc6091746919c93b12d33}{num\+Skeletal\+DOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of DOFs after SC but before eliminating Dirichlet DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__fullgradientdiff_ga976f0f7fd349df05c25f477f3cff7de3}{size\+System}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the final system, after application of SC and removal of Dirichlet BCs. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1HHOSpace}{HHOSpace}} \& \mbox{\hyperlink{group__HHO__fullgradientdiff_ga8f5dea9953372325ea65354cb5e470ce}{hhospace}} () const
+\begin{DoxyCompactList}\small\item\em Returns the HHO space. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__HHO__fullgradientdiff_ga2cbe53c007117805a876230c352f3b0e}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Returns the mesh. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__fullgradientdiff_ga668db5695b0e46b6ef1a6a9f560acbfd}{system\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__fullgradientdiff_gad7e033827cd37c4c9ac6e538c3562319}{system\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__fullgradientdiff_ga66212b5bd5f241957e47554ce0432379}{system\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__fullgradientdiff_ga0f1fe476db6978a25aa597b9494d43a2}{system\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{group__HHO__fullgradientdiff_gaeb93a525f7fd03c967b7718e6b9c035f}{stabilization\+Parameter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter (scaling) \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{group__HHO__fullgradientdiff_gac286a64ac1fcd09d605a5495a4b51c35}{stabilization\+Parameter}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__HHO__fullgradientdiff_ga53d1e77a7d9e994cc198e6102f927ee3}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__fullgradientdiff_gac4a3b0329387044edd0dc341103d2df0}{sc\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the static condensation recovery operator. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__fullgradientdiff_gab8271c78fb7d00e7427a409c3408bad2}{sc\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the static condensation rhs. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{group__HHO__fullgradientdiff_ga2ee11924313e2d3cbc1a90e7b5f7d686}{compute\+Energy\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
+\begin{DoxyCompactList}\small\item\em Compute the discrete energy norm of a family of vectors representing the dofs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Assemble a diffusion problem. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Schemes/\+HHO-\/full-\/gradient-\/diff/\mbox{\hyperlink{hho-fullgradientdiff_8hpp}{hho-\/fullgradientdiff.\+hpp}}\item 
+Schemes/\+HHO-\/full-\/gradient-\/diff/\mbox{\hyperlink{hho-fullgradientdiff_8cpp}{hho-\/fullgradientdiff.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+\hypertarget{classHArDCore3D_1_1VHHOSpace}{}\doxysection{HAr\+DCore3D\+::VHHOSpace Class Reference}
+\label{classHArDCore3D_1_1VHHOSpace}\index{HArDCore3D::VHHOSpace@{HArDCore3D::VHHOSpace}}
+
+
+Class definition\+: polynomial bases and operators.  
+
+
+
+
+{\ttfamily \#include $<$vhhospace.\+hpp$>$}
+
+
+
+Inheritance diagram for HAr\+DCore3D\+::VHHOSpace\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1VHHOSpace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for HAr\+DCore3D\+::VHHOSpace\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classHArDCore3D_1_1VHHOSpace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1CellBases}{Cell\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store element bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1FaceBases}{Face\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store face bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1LocalOperators}{Local\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store local operators (gradient, potential, stabilisation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ \mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__HHOSpace_ga2a4e3fd32513ad981f65c21c0d85127e}{Polyd\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ \mbox{\hyperlink{group__HHOSpace_ga45ba70dc07c677cdb3db61ea9225edbf}{Poly\+Basis\+Cell\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__HHOSpace_ga41b159ba62be45488b41307176cfd40c}{Polydxd\+Basis\+Cell\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Scalar\+Basis\+Face}} $>$ \mbox{\hyperlink{group__HHOSpace_gae7a7a04423485f7e5dd167137bbc9989}{Poly\+Basis\+Face\+Type}}
+\item 
+typedef \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{group__HHOSpace_gae7a7a04423485f7e5dd167137bbc9989}{Poly\+Basis\+Face\+Type}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ $>$ \mbox{\hyperlink{group__HHOSpace_gae6bbd687cd3c14ec408f38cf56e9f1a7}{Polyd\+Basis\+Face\+Type}}
+\item 
+typedef std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHOSpace_ga66265ae1c46c2761959f5827d2e9d0e1}{Function\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__HHOSpace_gadd4f036ce349ce8939c82f207880d16e}{VHHOSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__HHOSpace_ga8a3176833af5485a276bbb5eb86d4337}{mesh}}, size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_gaf169764abf85f85bec428e43dc60274b}{K}}, const \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}} \&Boundary\+Stab, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor (with function to select cells in which boundary faces are used in the stabilisation) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__HHOSpace_ga1054b2d48ebd8ededb8367cb99286020}{VHHOSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__HHOSpace_ga8a3176833af5485a276bbb5eb86d4337}{mesh}}, size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_gaf169764abf85f85bec428e43dc60274b}{K}}, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor when the selection of boundary stabilisation is not entered (all boundary faces are then used) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__HHOSpace_ga8a3176833af5485a276bbb5eb86d4337}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return a const reference to the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__HHOSpace_gaa4eb2785666673e45909c650c382ae05}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree (common face and elements) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}} \& \mbox{\hyperlink{group__HHOSpace_gaaea4ca8c785e4df72c3a076e9012b58c}{boundary\+Stab}} () const
+\begin{DoxyCompactList}\small\item\em Return the function to select the cells with boundary stabilisation. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHOSpace_ga490605ad22b8931f8cf37e45d2975cdc}{interpolate}} (const \mbox{\hyperlink{group__HHOSpace_ga66265ae1c46c2761959f5827d2e9d0e1}{Function\+Type}} \&q, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1CellBases}{Cell\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_gac7d51d63cbd56b69eb9e4689a399b3b8}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for element iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1CellBases}{Cell\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_ga98d5df4634783a77c77bc5fc71c3f052}{cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1FaceBases}{Face\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_ga54f9db4d723f39602d9c51890fbce6bd}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for face iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1FaceBases}{Face\+Bases}} \& \mbox{\hyperlink{group__HHOSpace_ga68e7c7cba9fd6fc3dd846401353e3cb6}{face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__HHOSpace_ga6e19fb2a814ca593a8b068a7a863dbfb}{operators}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return operators for the cell of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__HHOSpace_gacbbe3e09579835fa01970869dbee31ab}{operators}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{group__HHOSpace_gaaf8ee90280c1a50302cbcf25fc51afe6}{compute\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
+\begin{DoxyCompactList}\small\item\em Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors. \end{DoxyCompactList}\item 
+std\+::vector$<$ Vector\+Rd $>$ \mbox{\hyperlink{group__HHOSpace_ga6c63612c10a152389a342da02b8834e8}{compute\+Vertex\+Values}} (const Eigen\+::\+Vector\+Xd \&u) const
+\begin{DoxyCompactList}\small\item\em Computes the values of the potential reconstruction at the mesh vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class definition\+: polynomial bases and operators. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+HHOCore/\mbox{\hyperlink{vhhospace_8hpp}{vhhospace.\+hpp}}\item 
+src/\+HHOCore/\mbox{\hyperlink{vhhospace_8cpp}{vhhospace.\+cpp}}\end{DoxyCompactItemize}

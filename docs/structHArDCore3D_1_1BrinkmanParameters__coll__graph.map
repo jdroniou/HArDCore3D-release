@@ -1,0 +1,4 @@
+<map id="HArDCore3D::BrinkmanParameters" name="HArDCore3D::BrinkmanParameters">
+<area shape="rect" id="node1" title="Structure to store physical parameter (and compute derived parameters)" alt="" coords="5,109,236,136"/>
+<area shape="rect" id="node2" href="$structHArDCore3D_1_1IntegralWeight.html" title="Structure for weights (scalar, at the moment) in integral." alt="" coords="25,5,216,32"/>
+</map>

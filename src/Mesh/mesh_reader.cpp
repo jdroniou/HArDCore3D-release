@@ -48,6 +48,14 @@ void MeshReaderRF::read_node_file(std::vector<std::vector<double>> &vertices)
     }
     inNode.close();
     // std::cout << "     Read " + std::to_string(vertices.size()) + "/" + std::to_string(n_verts) + " vertices\n";
+    
+    // Check vertices read
+//    std::cout << std::endl;
+//    for (size_t iV = 0; iV < vertices.size(); iV++){
+//      std::cout << "Vertex " << iV << " : " << vertices[iV][0] << " " << vertices[iV][1] << " " << vertices[iV][2] << std::endl; 
+//    }
+//    std::cout << std::endl;
+    
 }
 
 // cells = vector of cell (std::vector<std::vector<size_t>>)

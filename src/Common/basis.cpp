@@ -320,19 +320,6 @@ namespace HArDCore3D
     return x.dot(y);
   }
   
-  double scalar_product(const MatrixRd &x, const MatrixRd &y)
-  {
-    double val = 0.0;
-    for (int i = 0; i < x.rows(); ++i)
-    {
-        for (int j = 0; j < x.cols(); ++j)
-        {
-            val += x(i, j) * y(i, j);
-        }
-    }
-    return val;
-  }
-
   boost::multi_array<VectorRd, 2>
   vector_product(
       const boost::multi_array<VectorRd, 2> &basis_quad,

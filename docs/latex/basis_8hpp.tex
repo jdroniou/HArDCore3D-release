@@ -12,7 +12,8 @@ Include dependency graph for basis.\+hpp\+:\nopagebreak
 \includegraphics[width=350pt]{basis_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -38,6 +39,8 @@ class \mbox{\hyperlink{classHArDCore3D_1_1Family}{HAr\+DCore3\+D\+::\+Family$<$ 
 \item 
 class \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{HAr\+DCore3\+D\+::\+Tensorized\+Vector\+Family$<$ Scalar\+Family\+Type, N $>$}}
 \begin{DoxyCompactList}\small\item\em Vector family obtained by tensorization of a scalar family. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{HAr\+DCore3\+D\+::\+Matrix\+Family$<$ Scalar\+Family\+Type, N $>$}}
+\begin{DoxyCompactList}\small\item\em Matrix family obtained from a scalar family. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{HAr\+DCore3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$}}
 \begin{DoxyCompactList}\small\item\em Vector family for polynomial functions that are tangent to a certain place (determined by the generators) \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{HAr\+DCore3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$}}
@@ -81,6 +84,10 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_
 struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBasf7970a904fb5bf5e0964fdf032f37682}{HAr\+DCore3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Divergence $>$}}
 \item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01TensorizedVectorFamily_3_01ScalarBas97b5b029df1c36bf3d3b9b6dc9ed6bc8}{HAr\+DCore3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$, Curl\+Curl $>$}}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01MatrixFamily_3_01ScalarBasisType_00_01N_01_4_00_01Function_01_4}{HAr\+DCore3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Matrix\+Family$<$ Scalar\+Basis\+Type, N $>$, Function $>$}}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1detail_1_1basis__evaluation__traits_3_01MatrixFamily_3_01ScalarBasisType_00_01N_01_4_00_01Divergence_01_4}{HAr\+DCore3\+D\+::detail\+::basis\+\_\+evaluation\+\_\+traits$<$ Matrix\+Family$<$ Scalar\+Basis\+Type, N $>$, Divergence $>$}}
 \item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1evaluate__quad}{HAr\+DCore3\+D\+::evaluate\+\_\+quad$<$ Basis\+Function $>$}}
 \begin{DoxyCompactList}\small\item\em Evaluate a basis at quadrature nodes. \textquotesingle{}Basis\+Function\textquotesingle{} (=Function, Gradient, Curl, Divergence or Hessian) determines what kind of value we want to evaluate. \end{DoxyCompactList}\item 
@@ -129,6 +136,10 @@ enum \mbox{\hyperlink{group__Basis_ga7be971bd231f83ec8d9cfd644a374180}{HAr\+DCor
 \begin{DoxyCompactList}\small\item\em The following function creates the \char`\"{}scalar rot\char`\"{} basis of a \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}} on a face. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename out\+Value , typename in\+Value , typename Function\+Type $>$ }\\boost\+::multi\+\_\+array$<$ out\+Value, 2 $>$ \mbox{\hyperlink{group__Basis_ga95949745fd93384a9364fe5df73034ca}{HAr\+DCore3\+D\+::transform\+\_\+values\+\_\+quad}} (const boost\+::multi\+\_\+array$<$ in\+Value, 2 $>$ \&B\+\_\+quad, const Function\+Type \&F)
 \begin{DoxyCompactList}\small\item\em Takes an array B\+\_\+quad of values at quadrature nodes and applies the function F to all of them. F must take in\+Value and return out\+Value. The function must be called with out\+Value as template argument\+: transform\+\_\+values\+\_\+quad$<$out\+Value$>$(...) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ }\\Family$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$ $>$ \mbox{\hyperlink{group__Basis_ga458400e7ff157198d3ec64ab69c4234f}{HAr\+DCore3\+D\+::\+Generic\+Tensorization}} (const Scalar\+Basis\+Type \&B, const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&v)
+\begin{DoxyCompactList}\small\item\em From a scalar family B=(B\+\_\+1..B\+\_\+r) and vectors (v\+\_\+1..v\+\_\+k) in R$^\wedge$N, constructs a \char`\"{}\+Family\char`\"{} of \char`\"{}\+Tensorized\+Vector\+Family\char`\"{} (built on B, of size N) that represents the family (B\+\_\+1v\+\_\+1..B\+\_\+rv\+\_\+1 B\+\_\+1v\+\_\+2...B\+\_\+rv\+\_\+2... B\+\_\+1v\+\_\+k..B\+\_\+rv\+\_\+k). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ }\\Family$<$ Matrix\+Family$<$ Scalar\+Basis\+Type, N $>$ $>$ \mbox{\hyperlink{group__Basis_gac5047b78d50c3c5984a644d490e6476a}{HAr\+DCore3\+D\+::\+Isotropic\+Matrix\+Family}} (const Scalar\+Basis\+Type \&B)
+\begin{DoxyCompactList}\small\item\em From a scalar family B, constructs a \char`\"{}\+Family\char`\"{} of \char`\"{}\+Matrix\+Family\char`\"{} (built on B, of size NxN) that represents the family B Id on the \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga5452c71e3652aa957d105446a95826e8}{HAr\+DCore3\+D\+::gram\+\_\+schmidt}} (boost\+::multi\+\_\+array$<$ T, 2 $>$ \&basis\+\_\+eval, const std\+::function$<$ double(size\+\_\+t, size\+\_\+t)$>$ \&inner\+\_\+product)
 \item 
 double \mbox{\hyperlink{group__Basis_ga46a7162dd1acacd29421a7d8db89c96e}{HAr\+DCore3\+D\+::scalar\+\_\+product}} (const double \&x, const double \&y)
@@ -137,7 +148,7 @@ double \mbox{\hyperlink{group__Basis_gabe66f2d1efad01f907e32517c16b11f9}{HAr\+DC
 \begin{DoxyCompactList}\small\item\em Scalar product between one real and one 1-\/dimension Eigen vector. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__Basis_ga0105ef2d1903eeddce62e6ad647a8ead}{HAr\+DCore3\+D\+::scalar\+\_\+product}} (const Vector\+Rd \&x, const Vector\+Rd \&y)
 \begin{DoxyCompactList}\small\item\em Scalar product between two vectors. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{group__Basis_gae0e17b9bcba8bbd415ff4812d44aa81f}{HAr\+DCore3\+D\+::scalar\+\_\+product}} (const Matrix\+Rd \&x, const Matrix\+Rd \&y)
+{\footnotesize template$<$int N$>$ }\\double \mbox{\hyperlink{group__Basis_ga804af14fd89c08b725a2be1cb711fd49}{HAr\+DCore3\+D\+::scalar\+\_\+product}} (const Eigen\+::\+Matrix$<$ double, N, N $>$ \&x, const Eigen\+::\+Matrix$<$ double, N, N $>$ \&y)
 \begin{DoxyCompactList}\small\item\em Scalar product between two matrices. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Value $>$ }\\boost\+::multi\+\_\+array$<$ double, 2 $>$ \mbox{\hyperlink{group__Basis_ga7c34745cd64a55b7072c5c19e45fa3ec}{HAr\+DCore3\+D\+::scalar\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Value, 2 $>$ \&basis\+\_\+quad, const Value \&v)
 \begin{DoxyCompactList}\small\item\em This overloading of the scalar\+\_\+product function computes the scalar product between an evaluation of a basis and a constant value; both basis values and constant value must be of type Value. \end{DoxyCompactList}\item 
@@ -152,17 +163,19 @@ boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \mbox{\hyperlink{group__Basis_ga7
 {\footnotesize template$<$typename Function\+Value $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga9385a57c81b496ebabea12f8d3c2f068}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Function\+Value, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Function\+Value, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const std\+::string sym=\char`\"{}nonsym\char`\"{})
 \item 
 {\footnotesize template$<$typename Function\+Value $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gacecea1b90076ee784d7950da4d31749f}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Function\+Value, 2 $>$ \&B, const Quadrature\+Rule \&qr)
-\item 
+\begin{DoxyCompactList}\small\item\em Compute the Gram matrix given the evaluation of one family of functions at quadrature nodes. Consists in calling the generic templated version with B1=B2. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaf5cc3ed71949b5d7adc5877e6bfebcb4}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B2, const Quadrature\+Rule \&qr)
-\item 
+\begin{DoxyCompactList}\small\item\em Compute the Gram-\/like matrix given a family of vector-\/valued and one of scalar-\/valued functions by tensorizing the latter. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gac574f3b532690c1d59b2bfc48023ab3b}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const size\+\_\+t nrows, const size\+\_\+t ncols, const std\+::string sym)
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaf151d3a8c29e1b18fd67b89eae756eca}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const std\+::string sym)
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga33b9c4c2ff96b783e8096d584a3e80a9}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const size\+\_\+t nrows, const size\+\_\+t ncols, const std\+::string sym)
 \item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga70a3cd2df90246841fb82bfff01665ba}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const std\+::string sym)
-\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaee4fb375a03e1e4f7d741c6bd26c26e6}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B2, const Quadrature\+Rule \&qr, const std\+::string sym=\char`\"{}nonsym\char`\"{})
+\begin{DoxyCompactList}\small\item\em Compute the Gram-\/like matrix given the evaluation of two families of functions at quadrature nodes. Consists in calling the Vector3d-\/valued version with nrows = nb of elements in B1, ncols = nb of elements in B2. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\+Family\+Type , size\+\_\+t N$>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga190fcba1065188de744af60ae7dc6fe3}{HAr\+DCore3\+D\+::compute\+\_\+gram\+\_\+matrix}} (const Matrix\+Family$<$ Scalar\+Family\+Type, N $>$ \&Mat\+Fam, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&scalar\+\_\+family\+\_\+quad, const Quadrature\+Rule \&qr)
+\begin{DoxyCompactList}\small\item\em Compute the Gram-\/like matrix for a \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}. This overload is more efficient than the generic function as it only computes the gram matrix of the underlying scalar family, and then creates the bloc-\/diagonal gram matrix of the \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} (which is indeed bloc diagonal given the choice of m\+\_\+E elements in this class). \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Basis_ga69278468dd98b9ff1c514877f4705590}{HAr\+DCore3\+D\+::integrate}} (const FType$<$ T $>$ \&f, const Basis\+Quad$<$ T $>$ \&B, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0)
 \begin{DoxyCompactList}\small\item\em Computes the vector of integrals (f, phi\+\_\+i) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename U $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga49336d89ac16f3e9babd9df2571f5f26}{HAr\+DCore3\+D\+::compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const FType$<$ U $>$ \&f, const Basis\+Quad$<$ T $>$ \&B1, const Basis\+Quad$<$ T $>$ \&B2, const Quadrature\+Rule \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0, const std\+::string sym=\char`\"{}nonsym\char`\"{})
@@ -179,4 +192,8 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga17118956be8fdf8f41886286d3
 \begin{DoxyCompactItemize}
 \item 
 constexpr int \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{HAr\+DCore3\+D\+::dimspace}} = 3
-\begin{DoxyCompactList}\small\item\em Dimension, and generic types for vector in correct dimension (makes it easier to translate a code between 2D and 3D) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Dimension, and generic types for vector in correct dimension (makes it easier to translate a code between 2D and 3D) \end{DoxyCompactList}\item 
+static std\+::function$<$ Eigen\+::\+Matrix\+Xd(const Eigen\+::\+Matrix\+Xd \&)$>$ \mbox{\hyperlink{group__Basis_ga2955b556916319159c65a1b2e45f9364}{HAr\+DCore3\+D\+::symmetrise\+\_\+matrix}} = \mbox{[}$\,$\mbox{]}(const Eigen\+::\+Matrix\+Xd \& x)-\/$>$Eigen\+::\+Matrix\+Xd \{ return 0.\+5$\ast$(x+x.\+transpose());\}
+\begin{DoxyCompactList}\small\item\em Function to symmetrise a matrix (useful together with transform\+\_\+values\+\_\+quad) \end{DoxyCompactList}\item 
+static std\+::function$<$ Eigen\+::\+Matrix\+Xd(const Eigen\+::\+Matrix\+Xd \&)$>$ \mbox{\hyperlink{group__Basis_gaed3cea3b025e9f753fb238c826b48f84}{HAr\+DCore3\+D\+::skew\+\_\+symmetrise\+\_\+matrix}} = \mbox{[}$\,$\mbox{]}(const Eigen\+::\+Matrix\+Xd \& x)-\/$>$Eigen\+::\+Matrix\+Xd \{ return 0.\+5$\ast$(x-\/x.\+transpose());\}
+\begin{DoxyCompactList}\small\item\em Function to skew-\/symmetrise a matrix (useful together with transform\+\_\+values\+\_\+quad) \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -12,15 +12,15 @@ Basis (or rather family) of divergence of an existing basis.
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef double \mbox{\hyperlink{group__Basis_ga7d28a7719ad0329ee8dfc4d8d418a571}{Function\+Value}}
+typedef Basis\+Type\+::\+Divergence\+Value \mbox{\hyperlink{group__Basis_ga3e1dc5bbe07bf6b034603b5f4ea6ed91}{Function\+Value}}
 \item 
-typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga895dcd795d4e18c39a4eea2503483c59}{Gradient\+Value}}
+typedef void \mbox{\hyperlink{group__Basis_ga2b42501853f57a21c14ffe309beaa22a}{Gradient\+Value}}
 \item 
-typedef Vector\+Rd \mbox{\hyperlink{group__Basis_ga6155591aa4f58e7b908a17a5b170caec}{Curl\+Value}}
+typedef void \mbox{\hyperlink{group__Basis_ga8a4d0227d9e5aed4419784888c98eec8}{Curl\+Value}}
 \item 
-typedef double \mbox{\hyperlink{group__Basis_ga9db3db672cc9bb41f17be617269349f9}{Divergence\+Value}}
+typedef void \mbox{\hyperlink{group__Basis_ga644fa243ca0775d96d47027e66f7cd3b}{Divergence\+Value}}
 \item 
-typedef \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__Basis_ga8492b5f7913672c25fabb80b71331181}{Hessian\+Value}}
+typedef void \mbox{\hyperlink{group__Basis_gaa6117ce5a0455605c1c854cc0e6dbc5e}{Hessian\+Value}}
 \item 
 typedef Basis\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_ga72110ca9be10f6ed801e138ce2dc31f3}{Geometric\+Support}}
 \item 
@@ -33,7 +33,7 @@ typedef Basis\+Type \mbox{\hyperlink{group__Basis_gae0031ce2fcad7e1f8f316ac277d8
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gadf081f9b37af70f3a9870b163a727ed5}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Compute the dimension of the basis. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Basis_ga7d28a7719ad0329ee8dfc4d8d418a571}{Function\+Value}} \mbox{\hyperlink{group__Basis_gaf611392a524e727e43d25fccf953314b}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\mbox{\hyperlink{group__Basis_ga3e1dc5bbe07bf6b034603b5f4ea6ed91}{Function\+Value}} \mbox{\hyperlink{group__Basis_gaf611392a524e727e43d25fccf953314b}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 constexpr const Basis\+Type \& \mbox{\hyperlink{group__Basis_ga416c3d3dd9eff2a82631c853762cc50d}{ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the ancestor (basis that the gradient was taken of) \end{DoxyCompactList}\end{DoxyCompactItemize}

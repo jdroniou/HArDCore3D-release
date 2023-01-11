@@ -12,15 +12,15 @@ Basis for the space of gradients of polynomials.
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef Vector\+Rd \mbox{\hyperlink{group__Basis_gafc6d347c3c4e36a9090cc91638bebfb4}{Function\+Value}}
+typedef Basis\+Type\+::\+Gradient\+Value \mbox{\hyperlink{group__Basis_gabd77ae3a153b68c095283a194bc7f463}{Function\+Value}}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga587b8fe3f498ae7ec7bb6ed4242958fa}{Gradient\+Value}}
+typedef void \mbox{\hyperlink{group__Basis_ga069818c4e7b77195b4a3e45bab7310be}{Gradient\+Value}}
 \item 
-typedef Vector\+Rd \mbox{\hyperlink{group__Basis_gab588b4936d9f62067a8c2c5eb7572542}{Curl\+Value}}
+typedef void \mbox{\hyperlink{group__Basis_ga9abd087773b9992cbb4854358592ad73}{Curl\+Value}}
 \item 
-typedef double \mbox{\hyperlink{group__Basis_gab5c51bc59aeb61c403be368c4b4d4225}{Divergence\+Value}}
+typedef void \mbox{\hyperlink{group__Basis_gaa339c27e0c1c8e851e5343de506d4dd2}{Divergence\+Value}}
 \item 
-typedef Eigen\+::\+Matrix$<$ double, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}}, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $\ast$\mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_ga10953a29191f161e020793e893a8b31f}{Hessian\+Value}}
+typedef void \mbox{\hyperlink{group__Basis_gaf39db9f42eb4a341ef284b127470633f}{Hessian\+Value}}
 \item 
 typedef Basis\+Type\+::\+Geometric\+Support \mbox{\hyperlink{group__Basis_gadbd840e4cc2386bbf021731e359b60b0}{Geometric\+Support}}
 \item 
@@ -33,14 +33,14 @@ typedef Basis\+Type \mbox{\hyperlink{group__Basis_gaae8fff025ca2fb9019b987e77440
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_gabf5cc38208c346f4b6f6d5ca5d20d767}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Compute the dimension of the basis. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Basis_gafc6d347c3c4e36a9090cc91638bebfb4}{Function\+Value}} \mbox{\hyperlink{group__Basis_ga21186eb9b6825da3867965bd2e046b23}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
+\mbox{\hyperlink{group__Basis_gabd77ae3a153b68c095283a194bc7f463}{Function\+Value}} \mbox{\hyperlink{group__Basis_ga21186eb9b6825da3867965bd2e046b23}{function}} (size\+\_\+t i, const Vector\+Rd \&x) const
 \begin{DoxyCompactList}\small\item\em Evaluate the i-\/th basis function at point x. \end{DoxyCompactList}\item 
 constexpr const Basis\+Type \& \mbox{\hyperlink{group__Basis_ga8792890c12bacd446176f4602056417e}{ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the ancestor (basis that the gradient was taken of) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_gacee6ade35c9c1c43ae84d947a3a22d90}{tensor\+Rank}} = \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}}
+constexpr static const \mbox{\hyperlink{group__Basis_ga81eb4732214b7560fbfa4ee9495c6da4}{Tensor\+RankE}} \mbox{\hyperlink{group__Basis_gacee6ade35c9c1c43ae84d947a3a22d90}{tensor\+Rank}} = (Basis\+Type\+::tensor\+Rank==\mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4af6cb6683b89de3134f2fcf98c26c5b86}{Scalar}} ? \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4ad7fecc71e9ca9996ca61eee8542750c0}{Vector}} \+: \mbox{\hyperlink{group__Basis_gga81eb4732214b7560fbfa4ee9495c6da4a1014fc33583e3e82ee81d9ca08a2d73b}{Matrix}})
 \item 
 constexpr static const bool \mbox{\hyperlink{group__Basis_ga2272fbf955936e9bcc825603b0449643}{has\+Ancestor}} = true
 \item 

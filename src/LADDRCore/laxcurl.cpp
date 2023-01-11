@@ -19,33 +19,41 @@ LAXCurl::LAXCurl(const LieAlgebra & lie_algebra, const XCurl & xcurl, bool use_t
     m_xcurl(xcurl),
     m_lie_algebra(lie_algebra),
     m_use_threads(use_threads),
-    m_output(output)
-    // m_face_operators(xcurl.mesh().n_faces()),
-    // m_cell_operators(xcurl.mesh().n_cells())
+    m_output(output),
+    m_cell_operators(xcurl.mesh().n_cells()),
+    m_face_operators(xcurl.mesh().n_faces())
 {
-  // // Construct face curls and potentials
-  // std::function<void(size_t, size_t)> construct_all_face_curls_potentials
-  //   = [this](size_t start, size_t end)->void
-  //     {
-  //       for (size_t iF = start; iF < end; iF++) {
-  //         m_face_operators[iF].reset( new LocalOperators(_compute_face_curl_potential(iF)) );
-  //       } // for iF
-  //     };
 
-  // m_output << "[LAXCurl] Constructing face curls and potentials" << std::endl;
-  // parallel_for(mesh().n_faces(), construct_all_face_curls_potentials, use_threads);
+  output << "[LAXCurl] Initializing" << std::endl;
+  if (m_use_threads) {
+    m_output << "[LAXCurl] Parallel execution" << std::endl;
+  } else {
+    m_output << "[LAXCurl] Sequential execution" << std::endl;
+  }
 
-  // // Construct cell curls and potentials
-  // std::function<void(size_t, size_t)> construct_all_cell_curls_potentials
-  //   = [this](size_t start, size_t end)->void
-  //     {
-  //       for (size_t iT = start; iT < end; iT++) {
-  //         m_cell_operators[iT].reset( new LocalOperators(_compute_cell_curl_potential(iT)) );
-  //       } // for iT
-  //     };
+  // Construct face curls and potentials
+  std::function<void(size_t, size_t)> construct_all_face_curls_potentials
+   = [this](size_t start, size_t end)->void
+     {
+       for (size_t iF = start; iF < end; iF++) {
+         m_face_operators[iF].reset( new LocalOperators(_compute_face_curl_potential(iF)) );
+       } // for iF
+     };
 
-  // m_output << "[LAXCurl] Constructing cell curls and potentials" << std::endl;
-  // parallel_for(mesh().n_cells(), construct_all_cell_curls_potentials, use_threads);  
+  m_output << "[LAXCurl] Constructing face curls and potentials" << std::endl;
+  parallel_for(mesh().n_faces(), construct_all_face_curls_potentials, m_use_threads);
+
+  // Construct cell curls and potentials
+  std::function<void(size_t, size_t)> construct_all_cell_curls_potentials
+   = [this](size_t start, size_t end)->void
+     {
+       for (size_t iT = start; iT < end; iT++) {
+         m_cell_operators[iT].reset( new LocalOperators(_compute_cell_curl_potential(iT)) );
+       } // for iT
+     };
+
+  m_output << "[LAXCurl] Constructing cell curls and potentials" << std::endl;
+  parallel_for(mesh().n_cells(), construct_all_cell_curls_potentials, m_use_threads);  
 }
 
 //------------------------------------------------------------------------------
@@ -75,28 +83,28 @@ Eigen::VectorXd LAXCurl::interpolate(
 // Curl and potential reconstruction
 //------------------------------------------------------------------------------
 
-// LAXCurl::LocalOperators LAXCurl::_compute_face_curl_potential(size_t iF){
+ LAXCurl::LocalOperators LAXCurl::_compute_face_curl_potential(size_t iF){
 
-//   Eigen::MatrixXd F_pot = m_xcurl.faceOperators(iF).potential;
-//   Eigen::MatrixXd F_curl = m_xcurl.faceOperators(iF).curl;
+  Eigen::MatrixXd F_curl = m_xcurl.faceOperators(iF).curl;
+  Eigen::MatrixXd F_potential = m_xcurl.faceOperators(iF).potential;
 
-//   Eigen::MatrixXd id = Eigen::MatrixXd::Identity(m_lie_algebra.dimension(), m_lie_algebra.dimension());
+  Eigen::MatrixXd id = Eigen::MatrixXd::Identity(m_lie_algebra.dimension(), m_lie_algebra.dimension());
 
-//   return LocalOperators(Eigen::KroneckerProduct(F_pot, m_lie_algebra.massMatrix()), Eigen::KroneckerProduct(F_curl, m_lie_algebra.massMatrix()));
-// }
+  return LocalOperators(Eigen::KroneckerProduct(F_curl, id), Eigen::KroneckerProduct(F_potential, id));
+ }
 
-// LAXCurl::LocalOperators LAXCurl::_compute_cell_curl_potential(size_t iT){
+ LAXCurl::LocalOperators LAXCurl::_compute_cell_curl_potential(size_t iT){
   
-//   Eigen::MatrixXd T_pot = m_xcurl.cellOperators(iT).potential;
-//   Eigen::MatrixXd T_curl = m_xcurl.cellOperators(iT).curl;
+  Eigen::MatrixXd T_curl = m_xcurl.cellOperators(iT).curl;
+  Eigen::MatrixXd T_potential = m_xcurl.cellOperators(iT).potential;
 
-//   Eigen::MatrixXd id = Eigen::MatrixXd::Identity(m_lie_algebra.dimension(), m_lie_algebra.dimension());
+  Eigen::MatrixXd id = Eigen::MatrixXd::Identity(m_lie_algebra.dimension(), m_lie_algebra.dimension());
 
-//   return LocalOperators(Eigen::KroneckerProduct(T_pot, id), Eigen::KroneckerProduct(T_curl, id));
-// }
+  return LocalOperators(Eigen::KroneckerProduct(T_curl, id), Eigen::KroneckerProduct(T_potential, id));
+ }
 
 //------------------------------------------------------------------------------
-// local L2 products on LAXCurl
+// Local L2 products on LAXCurl
 //------------------------------------------------------------------------------
 
 Eigen::MatrixXd LAXCurl::computeL2Product(

@@ -46,7 +46,7 @@ namespace HArDCore3D
       // We permute the DOFs that are statically condensed
       Eigen::MatrixXd AT = m_Perm * lsT.first * m_Perm.transpose();
       Eigen::VectorXd bT = m_Perm * lsT.second;
-  
+    
       Eigen::MatrixXd AT_sys, AT_sc;
       Eigen::VectorXd bT_sys, bT_sc;
   

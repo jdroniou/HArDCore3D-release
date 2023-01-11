@@ -91,15 +91,24 @@ Functions</h2></td></tr>
 <tr class="memitem:ga24a7defcf350ceff6a48de65b6740505"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga24a7defcf350ceff6a48de65b6740505">HArDCore3D::VtuWriter::VtuWriter</a> (const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> *mesh)</td></tr>
 <tr class="memdesc:ga24a7defcf350ceff6a48de65b6740505"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for mesh writer.  <a href="group__Plot.html#ga24a7defcf350ceff6a48de65b6740505">More...</a><br /></td></tr>
 <tr class="separator:ga24a7defcf350ceff6a48de65b6740505"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga11ec3bf54886e6570bfe72daf3f41a5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga11ec3bf54886e6570bfe72daf3f41a5d">HArDCore3D::VtuWriter::write_to_vtu</a> (const std::string file_name, const Eigen::VectorXd &amp;sol_vertex)</td></tr>
-<tr class="memdesc:ga11ec3bf54886e6570bfe72daf3f41a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the plot file.  <a href="group__Plot.html#ga11ec3bf54886e6570bfe72daf3f41a5d">More...</a><br /></td></tr>
-<tr class="separator:ga11ec3bf54886e6570bfe72daf3f41a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64be67a8509c16d7b8a703df44efe4b3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga64be67a8509c16d7b8a703df44efe4b3"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga64be67a8509c16d7b8a703df44efe4b3">HArDCore3D::VtuWriter::write_to_vtu</a> (const std::string filename, const std::vector&lt; T &gt; &amp;sol_vrtx, const std::vector&lt; std::string &gt; &amp;sol_names={})</td></tr>
+<tr class="memdesc:ga64be67a8509c16d7b8a703df44efe4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes file with a series of solutions (scalar if T=std::vector&lt;double&gt; (or Eigen::VectorXd), vector if T=std::vector&lt;VectorRd&gt;)  <a href="group__Plot.html#ga64be67a8509c16d7b8a703df44efe4b3">More...</a><br /></td></tr>
+<tr class="separator:ga64be67a8509c16d7b8a703df44efe4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d2746af4c66716ee8de649a7cf2a5b4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga6d2746af4c66716ee8de649a7cf2a5b4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga6d2746af4c66716ee8de649a7cf2a5b4">HArDCore3D::VtuWriter::write_to_vtu</a> (const std::string file_name, const T &amp;sol_vertex, const std::string &amp;sol_name=&quot;solution&quot;)</td></tr>
+<tr class="memdesc:ga6d2746af4c66716ee8de649a7cf2a5b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload to simplify the call when only one solution is involved.  <a href="group__Plot.html#ga6d2746af4c66716ee8de649a7cf2a5b4">More...</a><br /></td></tr>
+<tr class="separator:ga6d2746af4c66716ee8de649a7cf2a5b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad00c86f7a2545735f3cb5ed42f25484e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#gad00c86f7a2545735f3cb5ed42f25484e">HArDCore3D::VtuWriter::write_header</a> (FILE *pFile)</td></tr>
 <tr class="separator:gad00c86f7a2545735f3cb5ed42f25484e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac7516782654b2377ec6930806c5d353a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#gac7516782654b2377ec6930806c5d353a">HArDCore3D::VtuWriter::write_vertices</a> (FILE *pFile)</td></tr>
 <tr class="separator:gac7516782654b2377ec6930806c5d353a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga67e074b8c269a0bb476252931ebdbeae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga67e074b8c269a0bb476252931ebdbeae">HArDCore3D::VtuWriter::write_solution</a> (FILE *pFile, const Eigen::VectorXd &amp;sol_vertex)</td></tr>
-<tr class="separator:ga67e074b8c269a0bb476252931ebdbeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga79f35033e1ce4d9b38da1f4c5c7e98e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga79f35033e1ce4d9b38da1f4c5c7e98e0">HArDCore3D::VtuWriter::write_solution</a> (FILE *pFile, const std::vector&lt; double &gt; &amp;sol_vertex, const std::string &amp;name)</td></tr>
+<tr class="separator:ga79f35033e1ce4d9b38da1f4c5c7e98e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9739f89f499759cecc2517f2184eaad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#gab9739f89f499759cecc2517f2184eaad">HArDCore3D::VtuWriter::write_solution</a> (FILE *pFile, const Eigen::VectorXd &amp;sol_vertex, const std::string &amp;name)</td></tr>
+<tr class="separator:gab9739f89f499759cecc2517f2184eaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96cf1a48045eb74a80b5a3f3fc24e2fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga96cf1a48045eb74a80b5a3f3fc24e2fc">HArDCore3D::VtuWriter::write_solution</a> (FILE *pFile, const std::vector&lt; VectorRd &gt; &amp;sol_vertex, const std::string &amp;name)</td></tr>
+<tr class="separator:ga96cf1a48045eb74a80b5a3f3fc24e2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4d46a3ca45da37492e5cabda737f7399"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga4d46a3ca45da37492e5cabda737f7399">HArDCore3D::VtuWriter::write_cells</a> (FILE *pFile)</td></tr>
 <tr class="separator:ga4d46a3ca45da37492e5cabda737f7399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2da6c9e874bb9094ddb44b3ff6a4a6a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga2da6c9e874bb9094ddb44b3ff6a4a6a8">HArDCore3D::VtuWriter::write_footer</a> (FILE *pFile)</td></tr>
@@ -188,8 +197,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga67e074b8c269a0bb476252931ebdbeae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga67e074b8c269a0bb476252931ebdbeae">&#9670;&nbsp;</a></span>write_solution()</h2>
+<a id="gab9739f89f499759cecc2517f2184eaad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9739f89f499759cecc2517f2184eaad">&#9670;&nbsp;</a></span>write_solution() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +213,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>sol_vertex</em>&#160;</td>
+          <td class="paramname"><em>sol_vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -216,11 +231,84 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga11ec3bf54886e6570bfe72daf3f41a5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga11ec3bf54886e6570bfe72daf3f41a5d">&#9670;&nbsp;</a></span>write_to_vtu()</h2>
+<a id="ga79f35033e1ce4d9b38da1f4c5c7e98e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga79f35033e1ce4d9b38da1f4c5c7e98e0">&#9670;&nbsp;</a></span>write_solution() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HArDCore3D::VtuWriter::write_solution </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>pFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sol_vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga96cf1a48045eb74a80b5a3f3fc24e2fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96cf1a48045eb74a80b5a3f3fc24e2fc">&#9670;&nbsp;</a></span>write_solution() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HArDCore3D::VtuWriter::write_solution </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>pFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; VectorRd &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sol_vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga6d2746af4c66716ee8de649a7cf2a5b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d2746af4c66716ee8de649a7cf2a5b4">&#9670;&nbsp;</a></span>write_to_vtu() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool HArDCore3D::VtuWriter::write_to_vtu </td>
@@ -231,8 +319,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>sol_vertex</em>&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>sol_vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sol_name</em> = <code>&quot;solution&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -240,13 +334,73 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Writes the plot file. </p>
+<p>Overload to simplify the call when only one solution is involved. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_name</td><td>name of file to write to </td></tr>
-    <tr><td class="paramname">sol_vertex</td><td>vector of values of the solution at the mesh vertices </td></tr>
+    <tr><td class="paramname">sol_vertex</td><td>values of the solution at the mesh vertices </td></tr>
+    <tr><td class="paramname">sol_name</td><td>name of the solution </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga64be67a8509c16d7b8a703df44efe4b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga64be67a8509c16d7b8a703df44efe4b3">&#9670;&nbsp;</a></span>write_to_vtu() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HArDCore3D::VtuWriter::write_to_vtu </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sol_vrtx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sol_names</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes file with a series of solutions (scalar if T=std::vector&lt;double&gt; (or Eigen::VectorXd), vector if T=std::vector&lt;VectorRd&gt;) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>name of file to write to </td></tr>
+    <tr><td class="paramname">sol_vrtx</td><td>each instance of T represents the values of one solution at the mesh vertices </td></tr>
+    <tr><td class="paramname">sol_names</td><td>each string is the name of one solution </td></tr>
   </table>
   </dd>
 </dl>

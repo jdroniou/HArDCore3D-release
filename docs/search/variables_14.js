@@ -1,11 +1,23 @@
 var searchData=
 [
-  ['v_2182',['V',['../group__DirectedGraph.html#gafbf56b0f88221fadf7b137f0d3f95271',1,'DirectedFace']]],
-  ['value_2183',['value',['../structSolution.html#a63584f98d1c74c55dcb74c92f7ba5d58',1,'Solution::value()'],['../structDiffusion.html#a01af84cf7d739ec660f7f83bb7a74118',1,'Diffusion::value()'],['../structAdvection.html#a18f333460ffc5d14269c7ecdcb1024c4',1,'Advection::value()'],['../structReaction.html#a824aa2749037c8fc10a10bc0128d0256',1,'Reaction::value()'],['../group__Common.html#ga0e64dd7fa60d788876219241162f0f6e',1,'HArDCore3D::IntegralWeight::value()']]],
-  ['variable_5fpermeability_5ff_2184',['variable_permeability_f',['../group__DDR__magnetostatic.html#gaff788533b63baa15115e358130484877',1,'HArDCore3D::variable_permeability_f()'],['../group__DDR__magnetostatic.html#gaff788533b63baa15115e358130484877',1,'HArDCore3D::variable_permeability_f()']]],
-  ['variable_5fpermeability_5fmu_2185',['variable_permeability_mu',['../group__DDR__magnetostatic.html#ga8544d138a24d03889b511f2bfd62e7d4',1,'HArDCore3D::variable_permeability_mu()'],['../group__DDR__magnetostatic.html#ga8544d138a24d03889b511f2bfd62e7d4',1,'HArDCore3D::variable_permeability_mu()']]],
-  ['variable_5fpermeability_5fsigma_2186',['variable_permeability_sigma',['../group__DDR__magnetostatic.html#gac1b6ed3b881e6ea7bb3fb070b97989f0',1,'HArDCore3D::variable_permeability_sigma()'],['../group__DDR__magnetostatic.html#gac1b6ed3b881e6ea7bb3fb070b97989f0',1,'HArDCore3D::variable_permeability_sigma()']]],
-  ['variable_5fpermeability_5fu_2187',['variable_permeability_u',['../group__DDR__magnetostatic.html#gaf8861771b7a4aec46677d2333abfcbe3',1,'HArDCore3D::variable_permeability_u()'],['../group__DDR__magnetostatic.html#gaf8861771b7a4aec46677d2333abfcbe3',1,'HArDCore3D::variable_permeability_u()']]],
-  ['vectors_2188',['vectors',['../group__DDR__yangmills.html#ga9f495ec911d6c96d6913047ae341b92a',1,'HArDCore3D::AssembledSystems::vectors()'],['../group__DDR__yangmills.html#ga4bd0d6fb2b0b2cb42dadb1f369cdd2d1',1,'HArDCore3D::AssembleSystems::vectors()']]],
-  ['vol_5ft_2189',['vol_T',['../group__Quadratures.html#ga89340eddcfc957b975316e4e70122880',1,'HArDCore3D::QuadRuleTetra']]]
+  ['v_2457',['V',['../group__TransformMeshes.html#gafbf56b0f88221fadf7b137f0d3f95271',1,'DirectedFace']]],
+  ['value_2458',['value',['../structSolution.html#a63584f98d1c74c55dcb74c92f7ba5d58',1,'Solution::value()'],['../structDiffusion.html#a01af84cf7d739ec660f7f83bb7a74118',1,'Diffusion::value()'],['../structAdvection.html#a18f333460ffc5d14269c7ecdcb1024c4',1,'Advection::value()'],['../structReaction.html#a824aa2749037c8fc10a10bc0128d0256',1,'Reaction::value()'],['../group__Common.html#gadc026ae462aa662862e53f2adb084400',1,'HArDCore3D::IntegralWeight::value()']]],
+  ['variable_5fpermeability_5ff_2459',['variable_permeability_f',['../group__DDR__magnetostatic.html#gaff788533b63baa15115e358130484877',1,'HArDCore3D::variable_permeability_f()'],['../group__DDR__magnetostatic.html#gaff788533b63baa15115e358130484877',1,'HArDCore3D::variable_permeability_f()']]],
+  ['variable_5fpermeability_5fmu_2460',['variable_permeability_mu',['../group__DDR__magnetostatic.html#ga8544d138a24d03889b511f2bfd62e7d4',1,'HArDCore3D::variable_permeability_mu()'],['../group__DDR__magnetostatic.html#ga8544d138a24d03889b511f2bfd62e7d4',1,'HArDCore3D::variable_permeability_mu()']]],
+  ['variable_5fpermeability_5fsigma_2461',['variable_permeability_sigma',['../group__DDR__magnetostatic.html#gac1b6ed3b881e6ea7bb3fb070b97989f0',1,'HArDCore3D::variable_permeability_sigma()'],['../group__DDR__magnetostatic.html#gac1b6ed3b881e6ea7bb3fb070b97989f0',1,'HArDCore3D::variable_permeability_sigma()']]],
+  ['variable_5fpermeability_5fu_2462',['variable_permeability_u',['../group__DDR__magnetostatic.html#gaf8861771b7a4aec46677d2333abfcbe3',1,'HArDCore3D::variable_permeability_u()'],['../group__DDR__magnetostatic.html#gaf8861771b7a4aec46677d2333abfcbe3',1,'HArDCore3D::variable_permeability_u()']]],
+  ['vcracked_5ff_2463',['vcracked_f',['../group__HHO__brinkman.html#ga825b4e191e3a5a3eb0ac3502a1359cd5',1,'HArDCore3D']]],
+  ['vcracked_5fg_2464',['vcracked_g',['../group__HHO__brinkman.html#ga0232ff576226b1a94d37fa9c2e00d8fc',1,'HArDCore3D']]],
+  ['vcracked_5fgradp_2465',['vcracked_gradp',['../group__HHO__brinkman.html#ga7c2e3f78e7814de90033de5e338d22bf',1,'HArDCore3D']]],
+  ['vcracked_5fgradu_2466',['vcracked_gradu',['../group__HHO__brinkman.html#gafa9ae279dd50bac31674d421f3eee481',1,'HArDCore3D']]],
+  ['vcracked_5fkappainv_2467',['vcracked_kappainv',['../group__HHO__brinkman.html#ga3de6b901bf4e75c9d991763194d7cac1',1,'HArDCore3D']]],
+  ['vcracked_5fmu_2468',['vcracked_mu',['../group__HHO__brinkman.html#gaa009efff6a625fef7d557cb0bad321ab',1,'HArDCore3D']]],
+  ['vcracked_5fp_2469',['vcracked_p',['../group__HHO__brinkman.html#ga15be3b5abaf396a623f0563dc1d2b767',1,'HArDCore3D']]],
+  ['vcracked_5fu_2470',['vcracked_u',['../group__HHO__brinkman.html#gaa5eae4fe6df55d7a3c3a143cef49f542',1,'HArDCore3D']]],
+  ['vec_5fa_2471',['vec_a',['../group__HHO__fullgradientdiff.html#ga84bbf9e5121be6667bdf0e97636a7c89',1,'HArDCore3D']]],
+  ['vec_5fp_2472',['vec_p',['../group__HHO__brinkman.html#ga249b69ca9df7a9aed6626d932a38bd44',1,'HArDCore3D']]],
+  ['vectors_2473',['vectors',['../group__DDR__yangmills.html#ga9f495ec911d6c96d6913047ae341b92a',1,'HArDCore3D::AssembledSystems::vectors()'],['../group__DDR__yangmills.html#ga4bd0d6fb2b0b2cb42dadb1f369cdd2d1',1,'HArDCore3D::AssembleSystems::vectors()']]],
+  ['vertices_2474',['vertices',['../group__TransformMeshes.html#gac7d003152c3d986b830c6b89d9e7ce78',1,'Element']]],
+  ['viscosity_5fin_5fcavity_2475',['viscosity_in_cavity',['../group__HHO__brinkman.html#ga039ebb2e5436912d7323b20b63d01231',1,'HArDCore3D']]],
+  ['vol_5ft_2476',['vol_T',['../group__Quadratures.html#ga89340eddcfc957b975316e4e70122880',1,'HArDCore3D::QuadRuleTetra']]]
 ];

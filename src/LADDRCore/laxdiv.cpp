@@ -20,9 +20,28 @@ LAXDiv::LAXDiv(const LieAlgebra & lie_algebra, const XDiv & xdiv, bool use_threa
     m_lie_algebra(lie_algebra),
     m_xdiv(xdiv),
     m_use_threads(use_threads),
-    m_output(output)
-    // m_cell_operators(ddr_core.mesh().n_cells())
+    m_output(output),
+    m_cell_operators(xdiv.mesh().n_cells())
 {
+
+  output << "[LAXDiv] Initializing" << std::endl;
+  if (m_use_threads) {
+    m_output << "[LAXDiv] Parallel execution" << std::endl;
+  } else {
+    m_output << "[LAXDiv] Sequential execution" << std::endl;
+  }
+
+  // Construct cell divergences and potentials
+  std::function<void(size_t, size_t)> construct_all_cell_divergences_potentials
+    = [this](size_t start, size_t end)->void
+      {
+        for (size_t iT = start; iT < end; iT++) {
+          m_cell_operators[iT].reset( new LocalOperators(_compute_cell_divergence_potential(iT)) );
+        } // for iT
+      };
+
+  m_output << "[LAXDiv] Constructing cell divergences and potentials" << std::endl;
+  parallel_for(mesh().n_cells(), construct_all_cell_divergences_potentials, m_use_threads);
 }
 
 //------------------------------------------------------------------------------
@@ -45,7 +64,24 @@ Eigen::VectorXd LAXDiv::interpolate(const LAFunctionType & v,  const int doe_cel
 }
 
 //------------------------------------------------------------------------------
-// local L2 products on LAXDiv
+// Divergence and potential reconstruction
+//------------------------------------------------------------------------------
+
+LAXDiv::LocalOperators LAXDiv::_compute_cell_divergence_potential(size_t iT)
+{
+  
+  Eigen::MatrixXd T_divergence = m_xdiv.cellOperators(iT).divergence;
+  Eigen::MatrixXd T_divergence_rhs = m_xdiv.cellOperators(iT).divergence_rhs;
+  Eigen::MatrixXd T_potential = m_xdiv.cellOperators(iT).potential;
+  
+  Eigen::MatrixXd id = Eigen::MatrixXd::Identity(m_lie_algebra.dimension(), m_lie_algebra.dimension());
+  
+  return LocalOperators(Eigen::KroneckerProduct(T_divergence, id), Eigen::KroneckerProduct(T_divergence_rhs, id), Eigen::KroneckerProduct(T_potential, id));
+  
+}
+
+//------------------------------------------------------------------------------
+// Local L2 products on LAXDiv
 //------------------------------------------------------------------------------
 
 Eigen::MatrixXd LAXDiv::computeL2Product(

@@ -1,5 +1,5 @@
-<map id="Schemes/MeshCoarsen/DirectedGraph.hpp" name="Schemes/MeshCoarsen/DirectedGraph.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="99,5,261,47"/>
-<area shape="rect" id="node2" href="$DirectedGraph_8cpp.html" title=" " alt="" coords="5,95,168,136"/>
-<area shape="rect" id="node3" href="$MeshCoarsen_8cpp.html" title=" " alt="" coords="192,95,355,136"/>
+<map id="src/Mesh/Transforms/DirectedGraph.hpp" name="src/Mesh/Transforms/DirectedGraph.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="91,5,237,47"/>
+<area shape="rect" id="node2" href="$DirectedGraph_8cpp.html" title=" " alt="" coords="5,95,152,136"/>
+<area shape="rect" id="node3" href="$MeshCoarsen_8cpp.html" title=" " alt="" coords="176,95,323,136"/>
 </map>

@@ -328,6 +328,30 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5427e32bad971a5401444edcc0457fbe"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga5427e32bad971a5401444edcc0457fbe">HArDCore3D::GramMatrixDiv</a> (const Cell &amp;T, const BasisType1 &amp;basis1, const <a class="el" href="classHArDCore3D_1_1DivergenceBasis.html">DivergenceBasis</a>&lt; BasisType2 &gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
 <tr class="memdesc:ga5427e32bad971a5401444edcc0457fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template to compute the Gram Matrix of the divergence of any two bases when one <a class="el" href="classHArDCore3D_1_1DivergenceBasis.html" title="Basis (or rather family) of divergence of an existing basis.">DivergenceBasis</a> is at a lower level than the other.  <a href="group__Quadratures.html#ga5427e32bad971a5401444edcc0457fbe">More...</a><br /></td></tr>
 <tr class="separator:ga5427e32bad971a5401444edcc0457fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga81e1f873d03781c0818032de38eaed28"><td class="memTemplParams" colspan="2">template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </td></tr>
+<tr class="memitem:ga81e1f873d03781c0818032de38eaed28"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga81e1f873d03781c0818032de38eaed28">HArDCore3D::GramMatrix</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType1, N &gt; &amp;basis1, const <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType2, N &gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="memdesc:ga81e1f873d03781c0818032de38eaed28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gram Matrix of any pair of <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a> bases.  <a href="group__Quadratures.html#ga81e1f873d03781c0818032de38eaed28">More...</a><br /></td></tr>
+<tr class="separator:ga81e1f873d03781c0818032de38eaed28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac97dc93f0d63578cd0fb04a3e8d398ce"><td class="memTemplParams" colspan="2">template&lt;typename BasisType1 , typename BasisType2 &gt; </td></tr>
+<tr class="memitem:gac97dc93f0d63578cd0fb04a3e8d398ce"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gac97dc93f0d63578cd0fb04a3e8d398ce">HArDCore3D::GramMatrix</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1DivergenceBasis.html">DivergenceBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType1, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&gt; &amp;basis1, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType2, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="memdesc:gac97dc93f0d63578cd0fb04a3e8d398ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gram Matrix of the divergence of a <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a> and a tensorized family (only valid if, in <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a> and <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html" title="Vector family obtained by tensorization of a scalar family.">TensorizedVectorFamily</a>, we have N=dimspace).  <a href="group__Quadratures.html#gac97dc93f0d63578cd0fb04a3e8d398ce">More...</a><br /></td></tr>
+<tr class="separator:gac97dc93f0d63578cd0fb04a3e8d398ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeec2aeb512381c5f831c11ade7e18388"><td class="memTemplParams" colspan="2">template&lt;typename BasisType1 , typename BasisType2 &gt; </td></tr>
+<tr class="memitem:gaeec2aeb512381c5f831c11ade7e18388"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gaeec2aeb512381c5f831c11ade7e18388">HArDCore3D::GramMatrix</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType1, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt; &amp;basis1, const <a class="el" href="classHArDCore3D_1_1DivergenceBasis.html">DivergenceBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType2, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="memdesc:gaeec2aeb512381c5f831c11ade7e18388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic template to compute the Gram Matrix of a vector valued basis and the divergence of a <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a>.  <a href="group__Quadratures.html#gaeec2aeb512381c5f831c11ade7e18388">More...</a><br /></td></tr>
+<tr class="separator:gaeec2aeb512381c5f831c11ade7e18388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9127f671310990c51b82060711640e95"><td class="memTemplParams" colspan="2">template&lt;typename BasisType1 , typename BasisType2 &gt; </td></tr>
+<tr class="memitem:ga9127f671310990c51b82060711640e95"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga9127f671310990c51b82060711640e95">HArDCore3D::GramMatrix</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType1, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&gt; &amp;basis1, const <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType2, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="memdesc:ga9127f671310990c51b82060711640e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gram Matrix of the gradient basis of a tensorized family and a matrix family (only valid if N=dimspace in Tensorized and <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a>).  <a href="group__Quadratures.html#ga9127f671310990c51b82060711640e95">More...</a><br /></td></tr>
+<tr class="separator:ga9127f671310990c51b82060711640e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade2eb7a985c52bc808e1ee841fc5ad9f"><td class="memTemplParams" colspan="2">template&lt;typename BasisType1 , typename BasisType2 &gt; </td></tr>
+<tr class="memitem:gade2eb7a985c52bc808e1ee841fc5ad9f"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gade2eb7a985c52bc808e1ee841fc5ad9f">HArDCore3D::GramMatrix</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType1, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt; &amp;basis1, const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType2, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="memdesc:gade2eb7a985c52bc808e1ee841fc5ad9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gram Matrix of a Matrix family and the gradient of a tensorized family.  <a href="group__Quadratures.html#gade2eb7a985c52bc808e1ee841fc5ad9f">More...</a><br /></td></tr>
+<tr class="separator:gade2eb7a985c52bc808e1ee841fc5ad9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac74d542095d2ebe5fa9c5fc2e5ac2615"><td class="memTemplParams" colspan="2">template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </td></tr>
+<tr class="memitem:gac74d542095d2ebe5fa9c5fc2e5ac2615"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gac74d542095d2ebe5fa9c5fc2e5ac2615">HArDCore3D::GramMatrix</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType1, N &gt;&gt; &amp;basis1, const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType2, N &gt;&gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="memdesc:gac74d542095d2ebe5fa9c5fc2e5ac2615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gram Matrix of two gradient bases of tensorized families.  <a href="group__Quadratures.html#gac74d542095d2ebe5fa9c5fc2e5ac2615">More...</a><br /></td></tr>
+<tr class="separator:gac74d542095d2ebe5fa9c5fc2e5ac2615"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6186042c03b027877f08708d9a8e7f10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga6d5b9ab76ae93fbbe5dc3c3e14537cdd">MonomialEdgeIntegralsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga6186042c03b027877f08708d9a8e7f10">HArDCore3D::IntegrateEdgeMonomials</a> (const Edge &amp;E, const int maxdeg)</td></tr>
 <tr class="memdesc:ga6186042c03b027877f08708d9a8e7f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute all integrals of edge monomials up to a total degree.  <a href="group__Quadratures.html#ga6186042c03b027877f08708d9a8e7f10">More...</a><br /></td></tr>
 <tr class="separator:ga6186042c03b027877f08708d9a8e7f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2254,7 +2278,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga9cf3980cda31ffbf4333cbd66c4174b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9cf3980cda31ffbf4333cbd66c4174b3">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[1/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9cf3980cda31ffbf4333cbd66c4174b3">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[1/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2292,7 +2316,7 @@ template&lt;typename BasisType &gt; </div>
 </div>
 </div>
 <a id="gad6ac182fca9709053c7126272db3cbbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad6ac182fca9709053c7126272db3cbbb">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[2/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gad6ac182fca9709053c7126272db3cbbb">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[2/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2345,7 +2369,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="gab2ffd87b19d082fb2caed614f39794de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab2ffd87b19d082fb2caed614f39794de">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[3/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2ffd87b19d082fb2caed614f39794de">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[3/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2398,7 +2422,7 @@ template&lt;typename BasisType1 , typename Basis2 &gt; </div>
 </div>
 </div>
 <a id="ga28855583066c49083328270621d275c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga28855583066c49083328270621d275c5">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[4/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga28855583066c49083328270621d275c5">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[4/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2451,7 +2475,7 @@ template&lt;typename BasisType1 , typename Basis2 &gt; </div>
 </div>
 </div>
 <a id="gac601909ecdac2724b71a4856b798a592"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac601909ecdac2724b71a4856b798a592">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[5/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gac601909ecdac2724b71a4856b798a592">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[5/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2504,7 +2528,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga27b2b9d44cc0de013b706705c89e5b8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga27b2b9d44cc0de013b706705c89e5b8d">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[6/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga27b2b9d44cc0de013b706705c89e5b8d">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[6/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2557,7 +2581,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga5229fa2a6a3bfd531cc6de8f8efb9152"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5229fa2a6a3bfd531cc6de8f8efb9152">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[7/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5229fa2a6a3bfd531cc6de8f8efb9152">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[7/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2610,7 +2634,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="gab53721438868aeca0e3db240700ce1a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab53721438868aeca0e3db240700ce1a5">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[8/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gab53721438868aeca0e3db240700ce1a5">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[8/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2662,8 +2686,61 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 
 </div>
 </div>
+<a id="gac97dc93f0d63578cd0fb04a3e8d398ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac97dc93f0d63578cd0fb04a3e8d398ce">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[9/44]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::GramMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1DivergenceBasis.html">DivergenceBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType1, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType2, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gram Matrix of the divergence of a <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a> and a tensorized family (only valid if, in <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a> and <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html" title="Vector family obtained by tensorization of a scalar family.">TensorizedVectorFamily</a>, we have N=dimspace). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>Divergence of <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a> (rows of the Gram matrix) </td></tr>
+    <tr><td class="paramname">basis2</td><td>Tensorized family (columns of the Gram matrix) </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga4a81cb7d274e50fdf96ce99f201a99a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4a81cb7d274e50fdf96ce99f201a99a4">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[9/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4a81cb7d274e50fdf96ce99f201a99a4">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[10/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2714,7 +2791,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga85bd66724835004c302427553195f463"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga85bd66724835004c302427553195f463">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[10/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85bd66724835004c302427553195f463">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[11/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2767,7 +2844,7 @@ template&lt;typename BasisType1 , size_t N&gt; </div>
 </div>
 </div>
 <a id="gae1898897b11a069ccb17db256303c9a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae1898897b11a069ccb17db256303c9a1">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[11/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1898897b11a069ccb17db256303c9a1">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[12/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2820,7 +2897,7 @@ template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
 </div>
 </div>
 <a id="ga33f398013eae6749c44537d2bf0abe89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga33f398013eae6749c44537d2bf0abe89">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[12/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga33f398013eae6749c44537d2bf0abe89">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[13/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2872,8 +2949,220 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 
 </div>
 </div>
+<a id="ga9127f671310990c51b82060711640e95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9127f671310990c51b82060711640e95">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[14/44]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::GramMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType1, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType2, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gram Matrix of the gradient basis of a tensorized family and a matrix family (only valid if N=dimspace in Tensorized and <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>Gradient of tensorized (rows of the Gram matrix) </td></tr>
+    <tr><td class="paramname">basis2</td><td>Matrix family (columns of the Gram matrix) </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac74d542095d2ebe5fa9c5fc2e5ac2615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac74d542095d2ebe5fa9c5fc2e5ac2615">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[15/44]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::GramMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType1, N &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType2, N &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gram Matrix of two gradient bases of tensorized families. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>First family </td></tr>
+    <tr><td class="paramname">basis2</td><td>Second family (columns of the Gram matrix) </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gade2eb7a985c52bc808e1ee841fc5ad9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade2eb7a985c52bc808e1ee841fc5ad9f">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[16/44]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::GramMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType1, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType2, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gram Matrix of a Matrix family and the gradient of a tensorized family. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>Matrix family (rows of the Gram matrix) </td></tr>
+    <tr><td class="paramname">basis2</td><td>Gradient of tensorized (columns of the Gram matrix) </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga81e1f873d03781c0818032de38eaed28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga81e1f873d03781c0818032de38eaed28">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[17/44]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::GramMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType1, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType2, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gram Matrix of any pair of <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a> bases. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>First basis (rows of the Gram matrix) </td></tr>
+    <tr><td class="paramname">basis2</td><td>Second basis (columns of the Gram matrix) </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga017ba781ad8f6bb51d82473d6ea16dc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga017ba781ad8f6bb51d82473d6ea16dc9">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[13/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga017ba781ad8f6bb51d82473d6ea16dc9">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[18/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2924,7 +3213,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga8da204a2df6276e778b3f7170fd3d238"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8da204a2df6276e778b3f7170fd3d238">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[14/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8da204a2df6276e778b3f7170fd3d238">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[19/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2975,7 +3264,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga7175e0375f1fe6c7efb890c5c938558e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7175e0375f1fe6c7efb890c5c938558e">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[15/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7175e0375f1fe6c7efb890c5c938558e">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[20/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3027,8 +3316,61 @@ template&lt;typename BasisType1 , size_t N&gt; </div>
 
 </div>
 </div>
+<a id="gaeec2aeb512381c5f831c11ade7e18388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeec2aeb512381c5f831c11ade7e18388">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[21/44]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::GramMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType1, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1DivergenceBasis.html">DivergenceBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1MatrixFamily.html">MatrixFamily</a>&lt; BasisType2, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generic template to compute the Gram Matrix of a vector valued basis and the divergence of a <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>Tensorized family (rows of the Gram matrix) </td></tr>
+    <tr><td class="paramname">basis2</td><td>Divergence of <a class="el" href="classHArDCore3D_1_1MatrixFamily.html" title="Matrix family obtained from a scalar family.">MatrixFamily</a> (columns of the Gram matrix) </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of basis1 and basis2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga14ab9c5ab8f8ec4da32c1f1240535615"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga14ab9c5ab8f8ec4da32c1f1240535615">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[16/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga14ab9c5ab8f8ec4da32c1f1240535615">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[22/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3081,7 +3423,7 @@ template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
 </div>
 </div>
 <a id="gabc09f3eaf2f0f5b42054258729b2b5ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabc09f3eaf2f0f5b42054258729b2b5ff">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[17/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gabc09f3eaf2f0f5b42054258729b2b5ff">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[23/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3134,7 +3476,7 @@ template&lt;typename BasisType1 , size_t N&gt; </div>
 </div>
 </div>
 <a id="ga02b19dd0ea7c265ecde5a8b0e398d1a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga02b19dd0ea7c265ecde5a8b0e398d1a9">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[18/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02b19dd0ea7c265ecde5a8b0e398d1a9">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[24/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3187,7 +3529,7 @@ template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
 </div>
 </div>
 <a id="ga22aee1420f4e1c8bb399db6c7c5d69a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga22aee1420f4e1c8bb399db6c7c5d69a1">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[19/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga22aee1420f4e1c8bb399db6c7c5d69a1">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[25/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3240,7 +3582,7 @@ template&lt;typename BasisType1 , size_t N&gt; </div>
 </div>
 </div>
 <a id="ga7c7b253c7299bc537ca60b078599a151"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7c7b253c7299bc537ca60b078599a151">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[20/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7c7b253c7299bc537ca60b078599a151">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[26/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3278,7 +3620,7 @@ template&lt;typename BasisType &gt; </div>
 </div>
 </div>
 <a id="ga4da753dad4a35c071729f66b6104c846"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4da753dad4a35c071729f66b6104c846">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[21/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4da753dad4a35c071729f66b6104c846">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[27/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3331,7 +3673,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="gaea85974fe1a185c380fa20eb6635a900"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaea85974fe1a185c380fa20eb6635a900">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[22/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaea85974fe1a185c380fa20eb6635a900">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[28/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3384,7 +3726,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="gaf0c1ec1421126a885a91bc17aa42d63a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf0c1ec1421126a885a91bc17aa42d63a">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[23/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf0c1ec1421126a885a91bc17aa42d63a">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[29/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3437,7 +3779,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="gac8ac8f534397b662bf0d1182127df3c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac8ac8f534397b662bf0d1182127df3c3">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[24/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8ac8f534397b662bf0d1182127df3c3">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[30/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3488,7 +3830,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga718b831e1f4039ab3a2e8bab4dd54637"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga718b831e1f4039ab3a2e8bab4dd54637">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[25/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga718b831e1f4039ab3a2e8bab4dd54637">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[31/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3526,7 +3868,7 @@ template&lt;typename BasisType &gt; </div>
 </div>
 </div>
 <a id="ga83e340e40c93616bf9d1670e3e8f11c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga83e340e40c93616bf9d1670e3e8f11c6">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[26/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83e340e40c93616bf9d1670e3e8f11c6">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[32/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3579,7 +3921,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga1325ff59975ae2a3e9feac44045fc78d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1325ff59975ae2a3e9feac44045fc78d">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[27/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1325ff59975ae2a3e9feac44045fc78d">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[33/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3632,7 +3974,7 @@ template&lt;typename BasisType1 , typename Basis2 &gt; </div>
 </div>
 </div>
 <a id="ga14eb67585c6c023d1179f395c8d0f7cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga14eb67585c6c023d1179f395c8d0f7cc">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[28/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga14eb67585c6c023d1179f395c8d0f7cc">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[34/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3685,7 +4027,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga04e896c0a1dacf2ef79d1d126458782e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga04e896c0a1dacf2ef79d1d126458782e">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[29/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04e896c0a1dacf2ef79d1d126458782e">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[35/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3738,7 +4080,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga6305b0ad13382e6b8adcd7eb3b02021d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6305b0ad13382e6b8adcd7eb3b02021d">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[30/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6305b0ad13382e6b8adcd7eb3b02021d">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[36/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3791,7 +4133,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga7b9d799641f01101fcceb0ca08f6d717"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7b9d799641f01101fcceb0ca08f6d717">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[31/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b9d799641f01101fcceb0ca08f6d717">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[37/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3842,7 +4184,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga7b085b673f4648eecad9291fa7f894f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7b085b673f4648eecad9291fa7f894f8">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[32/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b085b673f4648eecad9291fa7f894f8">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[38/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3893,7 +4235,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga90e767aad3601e76dc4f3c971b5cbe66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga90e767aad3601e76dc4f3c971b5cbe66">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[33/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga90e767aad3601e76dc4f3c971b5cbe66">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[39/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3944,7 +4286,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga786d76effc88fac93bb58c546d322c14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga786d76effc88fac93bb58c546d322c14">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[34/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga786d76effc88fac93bb58c546d322c14">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[40/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3997,7 +4339,7 @@ template&lt;typename BasisType &gt; </div>
 </div>
 </div>
 <a id="ga221ddf1a8278b1a00472067303c74ca9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga221ddf1a8278b1a00472067303c74ca9">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[35/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga221ddf1a8278b1a00472067303c74ca9">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[41/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4050,7 +4392,7 @@ template&lt;typename BasisType &gt; </div>
 </div>
 </div>
 <a id="gaba6a921c0124eb76e52a2d29087f0999"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaba6a921c0124eb76e52a2d29087f0999">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[36/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaba6a921c0124eb76e52a2d29087f0999">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[42/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4103,7 +4445,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="gad3cf41fc0a5a99d78f1dd529127b3e9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad3cf41fc0a5a99d78f1dd529127b3e9f">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[37/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gad3cf41fc0a5a99d78f1dd529127b3e9f">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[43/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4156,7 +4498,7 @@ template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
 </div>
 </div>
 <a id="ga0d0b5815ade415edb38261a6d856916a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0d0b5815ade415edb38261a6d856916a">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[38/38]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d0b5815ade415edb38261a6d856916a">&#9670;&nbsp;</a></span>GramMatrix() <span class="overload">[44/44]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

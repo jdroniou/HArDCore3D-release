@@ -14,8 +14,16 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1StokesNorms}{Stokes\+Norms}}
 \begin{DoxyCompactList}\small\item\em Structure to store norm components (for velocity, its curl, pressure, and its gradient), as well as Hcurl and Hgrad norms of velocity and pressure. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1Stokes}{Stokes}}
 \begin{DoxyCompactList}\small\item\em Assemble a \mbox{\hyperlink{structHArDCore3D_1_1Stokes}{Stokes}} problem. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanParameters}{Brinkman\+Parameters}}
+\begin{DoxyCompactList}\small\item\em Structure to store physical parameter (and compute derived parameters) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanNorms}{Brinkman\+Norms}}
+\begin{DoxyCompactList}\small\item\em Structure to store norm components (energy for velocity, L2 pressure, and global) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1Brinkman}{Brinkman}}
+\begin{DoxyCompactList}\small\item\em Structure for \mbox{\hyperlink{structHArDCore3D_1_1Brinkman}{Brinkman}} model. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1HHO__Diffusion}{HHO\+\_\+\+Diffusion}}
 \begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classHArDCore3D_1_1HHO__Diffusion}{HHO\+\_\+\+Diffusion}} class provides tools to implement the HHO method for the diffusion problem. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1FullGradientDiffusion}{Full\+Gradient\+Diffusion}}
+\begin{DoxyCompactList}\small\item\em Assemble a diffusion problem. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{HHO\+\_\+\+Loc\+Var\+Diff}}
 \begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{HHO\+\_\+\+Loc\+Var\+Diff}} class provides tools to implement the HHO method for the diffusion problem. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1MHDTests}{MHDTests}}
@@ -44,6 +52,8 @@ class \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}
 \item 
 class \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}
 \begin{DoxyCompactList}\small\item\em Vector family obtained by tensorization of a scalar family. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}
+\begin{DoxyCompactList}\small\item\em Matrix family obtained from a scalar family. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}}
 \begin{DoxyCompactList}\small\item\em Vector family for polynomial functions that are tangent to a certain place (determined by the generators) \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}
@@ -102,6 +112,10 @@ class \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}}
 \begin{DoxyCompactList}\small\item\em Discrete Hdiv space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}}
 \begin{DoxyCompactList}\small\item\em Discrete H1 space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1HHOSpace}{HHOSpace}}
+\begin{DoxyCompactList}\small\item\em Class definition\+: polynomial bases and operators. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1VHHOSpace}{VHHOSpace}}
+\begin{DoxyCompactList}\small\item\em Class definition\+: polynomial bases and operators. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1ElementQuad}{Element\+Quad}}
 \item 
 class \mbox{\hyperlink{classHArDCore3D_1_1UVector}{UVector}}
@@ -111,9 +125,9 @@ class \mbox{\hyperlink{classHArDCore3D_1_1HybridCore}{Hybrid\+Core}}
 class \mbox{\hyperlink{classHArDCore3D_1_1LAXCurl}{LAXCurl}}
 \begin{DoxyCompactList}\small\item\em Discrete Lie algebra valued Hcurl space. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1LAXDiv}{LAXDiv}}
-\begin{DoxyCompactList}\small\item\em Discrete Hdiv space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Discrete Lie algebra valued Hdiv space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1LAXGrad}{LAXGrad}}
-\begin{DoxyCompactList}\small\item\em Discrete H1 space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Discrete Lie algebra valued H1 space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}}
 \begin{DoxyCompactList}\small\item\em Lie algebra class\+: mass matrix, structure constants and Lie bracket. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1MeshBuilder}{Mesh\+Builder}}
@@ -155,6 +169,12 @@ typedef Eigen\+::\+Matrix3d \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a
 \begin{DoxyCompactList}\small\item\em type for function of point. T is the return type of the function \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{group__Basis_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}} = boost\+::multi\+\_\+array$<$ T, 2 $>$
 \begin{DoxyCompactList}\small\item\em type for bases evaluated on quadrature nodes \end{DoxyCompactList}\item 
+typedef std\+::function$<$ double(const Cell \&, const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__Common_ga0396c9c15024a70638bd9fb16712d13f}{Integral\+Weight\+Value\+Type}}
+\item 
+typedef std\+::function$<$ size\+\_\+t(const Cell \&)$>$ \mbox{\hyperlink{group__Common_ga5f3e161295252aba5be7989e167e23d8}{Integral\+Weight\+Degree\+Type}}
+\item 
+typedef std\+::function$<$ bool(const Cell \&)$>$ \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}}
+\item 
 typedef std\+::unordered\+\_\+map$<$ Vector\+Zd, double, \mbox{\hyperlink{structHArDCore3D_1_1VecHash}{Vec\+Hash}} $>$ \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}
 \begin{DoxyCompactList}\small\item\em Type for list of integrals of monomials. \end{DoxyCompactList}\item 
 typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}}
@@ -194,20 +214,18 @@ double \mbox{\hyperlink{group__Basis_gabe66f2d1efad01f907e32517c16b11f9}{scalar\
 \begin{DoxyCompactList}\small\item\em Scalar product between one real and one 1-\/dimension Eigen vector. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{group__Basis_ga0105ef2d1903eeddce62e6ad647a8ead}{scalar\+\_\+product}} (const Vector\+Rd \&x, const Vector\+Rd \&y)
 \begin{DoxyCompactList}\small\item\em Scalar product between two vectors. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{group__Basis_gae0e17b9bcba8bbd415ff4812d44aa81f}{scalar\+\_\+product}} (const \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \&x, const \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \&y)
-\begin{DoxyCompactList}\small\item\em Scalar product between two matrices. \end{DoxyCompactList}\item 
 boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \mbox{\hyperlink{group__Basis_ga7fd6906b30cba10f2f452b029a86ca00}{vector\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&basis\+\_\+quad, const Vector\+Rd \&v)
 \begin{DoxyCompactList}\small\item\em Compute the vector (cross) product between the evaluation of a basis and a constant vector. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaf5cc3ed71949b5d7adc5877e6bfebcb4}{compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B2, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr)
-\item 
+\begin{DoxyCompactList}\small\item\em Compute the Gram-\/like matrix given a family of vector-\/valued and one of scalar-\/valued functions by tensorizing the latter. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gac574f3b532690c1d59b2bfc48023ab3b}{compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B2, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, const size\+\_\+t nrows, const size\+\_\+t ncols, const std\+::string sym)
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaf151d3a8c29e1b18fd67b89eae756eca}{compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&B2, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, const std\+::string sym)
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga33b9c4c2ff96b783e8096d584a3e80a9}{compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B2, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, const size\+\_\+t nrows, const size\+\_\+t ncols, const std\+::string sym)
 \item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga70a3cd2df90246841fb82bfff01665ba}{compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B2, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, const std\+::string sym)
-\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaee4fb375a03e1e4f7d741c6bd26c26e6}{compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Vector\+Rd, 2 $>$ \&B2, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, const std\+::string sym=\char`\"{}nonsym\char`\"{})
+\begin{DoxyCompactList}\small\item\em Compute the Gram-\/like matrix given the evaluation of two families of functions at quadrature nodes. Consists in calling the Vector3d-\/valued version with nrows = nb of elements in B1, ncols = nb of elements in B2. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gaccbfd425467a7d4d3212f43c29c2d6e7}{compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{FType}}$<$ Vector\+Rd $>$ \&f, const \mbox{\hyperlink{group__Basis_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ Vector\+Rd $>$ \&B1, const \mbox{\hyperlink{group__Basis_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ double $>$ \&B2, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0)
 \begin{DoxyCompactList}\small\item\em Computes the Gram-\/like matrix of integrals (f dot phi\+\_\+i, phi\+\_\+j) \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga17118956be8fdf8f41886286d37e4fe7}{compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{FType}}$<$ Vector\+Rd $>$ \&f, const \mbox{\hyperlink{group__Basis_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ double $>$ \&B1, const \mbox{\hyperlink{group__Basis_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ Vector\+Rd $>$ \&B2, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0)
@@ -216,8 +234,14 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga17118956be8fdf8f41886286d3
 \begin{DoxyCompactList}\small\item\em The following function creates the \char`\"{}scalar rot\char`\"{} basis of a \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}} on a face. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename out\+Value , typename in\+Value , typename Function\+Type $>$ }\\boost\+::multi\+\_\+array$<$ out\+Value, 2 $>$ \mbox{\hyperlink{group__Basis_ga95949745fd93384a9364fe5df73034ca}{transform\+\_\+values\+\_\+quad}} (const boost\+::multi\+\_\+array$<$ in\+Value, 2 $>$ \&B\+\_\+quad, const Function\+Type \&F)
 \begin{DoxyCompactList}\small\item\em Takes an array B\+\_\+quad of values at quadrature nodes and applies the function F to all of them. F must take in\+Value and return out\+Value. The function must be called with out\+Value as template argument\+: transform\+\_\+values\+\_\+quad$<$out\+Value$>$(...) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ }\\\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$ $>$ \mbox{\hyperlink{group__Basis_ga458400e7ff157198d3ec64ab69c4234f}{Generic\+Tensorization}} (const Scalar\+Basis\+Type \&B, const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&v)
+\begin{DoxyCompactList}\small\item\em From a scalar family B=(B\+\_\+1..B\+\_\+r) and vectors (v\+\_\+1..v\+\_\+k) in R$^\wedge$N, constructs a \char`\"{}\+Family\char`\"{} of \char`\"{}\+Tensorized\+Vector\+Family\char`\"{} (built on B, of size N) that represents the family (B\+\_\+1v\+\_\+1..B\+\_\+rv\+\_\+1 B\+\_\+1v\+\_\+2...B\+\_\+rv\+\_\+2... B\+\_\+1v\+\_\+k..B\+\_\+rv\+\_\+k). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\+Basis\+Type , size\+\_\+t N$>$ }\\\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Scalar\+Basis\+Type, N $>$ $>$ \mbox{\hyperlink{group__Basis_gac5047b78d50c3c5984a644d490e6476a}{Isotropic\+Matrix\+Family}} (const Scalar\+Basis\+Type \&B)
+\begin{DoxyCompactList}\small\item\em From a scalar family B, constructs a \char`\"{}\+Family\char`\"{} of \char`\"{}\+Matrix\+Family\char`\"{} (built on B, of size NxN) that represents the family B Id on the \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga5452c71e3652aa957d105446a95826e8}{gram\+\_\+schmidt}} (boost\+::multi\+\_\+array$<$ T, 2 $>$ \&basis\+\_\+eval, const std\+::function$<$ double(size\+\_\+t, size\+\_\+t)$>$ \&inner\+\_\+product)
 \item 
+{\footnotesize template$<$int N$>$ }\\double \mbox{\hyperlink{group__Basis_ga804af14fd89c08b725a2be1cb711fd49}{scalar\+\_\+product}} (const Eigen\+::\+Matrix$<$ double, N, N $>$ \&x, const Eigen\+::\+Matrix$<$ double, N, N $>$ \&y)
+\begin{DoxyCompactList}\small\item\em Scalar product between two matrices. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Value $>$ }\\boost\+::multi\+\_\+array$<$ double, 2 $>$ \mbox{\hyperlink{group__Basis_ga7c34745cd64a55b7072c5c19e45fa3ec}{scalar\+\_\+product}} (const boost\+::multi\+\_\+array$<$ Value, 2 $>$ \&basis\+\_\+quad, const Value \&v)
 \begin{DoxyCompactList}\small\item\em This overloading of the scalar\+\_\+product function computes the scalar product between an evaluation of a basis and a constant value; both basis values and constant value must be of type Value. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Basis\+Type $>$ }\\\mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$ \mbox{\hyperlink{group__Basis_ga087cb67abbfba7c2d90f67a4e05abc20}{l2\+\_\+orthonormalize}} (const Basis\+Type \&basis, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, boost\+::multi\+\_\+array$<$ typename Basis\+Type\+::\+Function\+Value, 2 $>$ \&basis\+\_\+quad)
@@ -229,7 +253,9 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga17118956be8fdf8f41886286d3
 {\footnotesize template$<$typename Function\+Value $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga9385a57c81b496ebabea12f8d3c2f068}{compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Function\+Value, 2 $>$ \&B1, const boost\+::multi\+\_\+array$<$ Function\+Value, 2 $>$ \&B2, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, const std\+::string sym=\char`\"{}nonsym\char`\"{})
 \item 
 {\footnotesize template$<$typename Function\+Value $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_gacecea1b90076ee784d7950da4d31749f}{compute\+\_\+gram\+\_\+matrix}} (const boost\+::multi\+\_\+array$<$ Function\+Value, 2 $>$ \&B, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr)
-\item 
+\begin{DoxyCompactList}\small\item\em Compute the Gram matrix given the evaluation of one family of functions at quadrature nodes. Consists in calling the generic templated version with B1=B2. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\+Family\+Type , size\+\_\+t N$>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga190fcba1065188de744af60ae7dc6fe3}{compute\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Scalar\+Family\+Type, N $>$ \&Mat\+Fam, const boost\+::multi\+\_\+array$<$ double, 2 $>$ \&scalar\+\_\+family\+\_\+quad, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr)
+\begin{DoxyCompactList}\small\item\em Compute the Gram-\/like matrix for a \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}. This overload is more efficient than the generic function as it only computes the gram matrix of the underlying scalar family, and then creates the bloc-\/diagonal gram matrix of the \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} (which is indeed bloc diagonal given the choice of m\+\_\+E elements in this class). \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Basis_ga69278468dd98b9ff1c514877f4705590}{integrate}} (const \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{FType}}$<$ T $>$ \&f, const \mbox{\hyperlink{group__Basis_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, size\+\_\+t n\+\_\+rows=0)
 \begin{DoxyCompactList}\small\item\em Computes the vector of integrals (f, phi\+\_\+i) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename U $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga49336d89ac16f3e9babd9df2571f5f26}{compute\+\_\+weighted\+\_\+gram\+\_\+matrix}} (const \mbox{\hyperlink{group__Basis_ga5bd2e067b3e9ff0eb5bf5436944076d1}{FType}}$<$ U $>$ \&f, const \mbox{\hyperlink{group__Basis_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B1, const \mbox{\hyperlink{group__Basis_ga2369d54cfa073699935be349d3d5909b}{Basis\+Quad}}$<$ T $>$ \&B2, const \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{Quadrature\+Rule}} \&qr, size\+\_\+t n\+\_\+rows=0, size\+\_\+t n\+\_\+cols=0, const std\+::string sym=\char`\"{}nonsym\char`\"{})
@@ -240,6 +266,10 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Basis_ga17118956be8fdf8f41886286d3
 \begin{DoxyCompactList}\small\item\em Compute the L2-\/projection of a function. \end{DoxyCompactList}\item 
 std\+::pair$<$ double, double $>$ \mbox{\hyperlink{group__Common_ga274e58663037ca4b57cb61325d045caa}{store\+\_\+times}} (boost\+::timer\+::cpu\+\_\+timer \&timer, std\+::string message=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Function to store and display wall/proc timers from boost\+::timer\+::cpu\+\_\+timer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__Common_gab8d9e5679e91d5268e089566d164d621}{operator$\ast$}} (double const \&r, \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&weight)
+\begin{DoxyCompactList}\small\item\em Operator to multiply an \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} by a number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__Common_gaf0974369272832456696f5261ab66353}{operator+}} (\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&weight1, \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&weight2)
+\begin{DoxyCompactList}\small\item\em Operator to add an \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} to another one. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{group__Common_ga3d0b88a9cf4441b331df044ff5283323}{parallel\+\_\+for}} (unsigned nb\+\_\+elements, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end)$>$ functor, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
 \begin{DoxyCompactList}\small\item\em Generic function to execute threaded processes. \end{DoxyCompactList}\item 
 static std\+::pair$<$ Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_gac77ab9801f6fcca6b81f0a069969c951}{parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, size\+\_\+t size\+\_\+system, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets, Eigen\+::\+Vector\+Xd $\ast$rhs)$>$ batch\+\_\+local\+\_\+assembly, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
@@ -366,6 +396,18 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga4b0bbf5291db203446ef
 \begin{DoxyCompactList}\small\item\em Template to compute the Gram Matrix of the divergence of any basis and any other basis. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga5427e32bad971a5401444edcc0457fbe}{Gram\+Matrix\+Div}} (const Cell \&T, const Basis\+Type1 \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ Basis\+Type2 $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Template to compute the Gram Matrix of the divergence of any two bases when one \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}} is at a lower level than the other. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 , size\+\_\+t N$>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga81e1f873d03781c0818032de38eaed28}{Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type1, N $>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type2, N $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Gram Matrix of any pair of \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} bases. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gac97dc93f0d63578cd0fb04a3e8d398ce}{Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Gram Matrix of the divergence of a \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} and a tensorized family (only valid if, in \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}} and \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}, we have N=dimspace). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gaeec2aeb512381c5f831c11ade7e18388}{Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1DivergenceBasis}{Divergence\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Generic template to compute the Gram Matrix of a vector valued basis and the divergence of a \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_ga9127f671310990c51b82060711640e95}{Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Gram Matrix of the gradient basis of a tensorized family and a matrix family (only valid if N=dimspace in Tensorized and \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gade2eb7a985c52bc808e1ee841fc5ad9f}{Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}$<$ Basis\+Type1, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$$>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Gram Matrix of a Matrix family and the gradient of a tensorized family. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 , size\+\_\+t N$>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gac74d542095d2ebe5fa9c5fc2e5ac2615}{Gram\+Matrix}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type1, N $>$$>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Basis\+Type2, N $>$$>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Gram Matrix of two gradient bases of tensorized families. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga6186042c03b027877f08708d9a8e7f10}{Integrate\+Edge\+Monomials}} (const Edge \&E, const int maxdeg)
 \begin{DoxyCompactList}\small\item\em Compute all integrals of edge monomials up to a total degree. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \mbox{\hyperlink{group__Quadratures_ga1f77448401179e7c91990fa14843dddd}{Check\+Integrals\+Degree}} (const Edge \&E, const size\+\_\+t degree, const \mbox{\hyperlink{group__Quadratures_ga6d5b9ab76ae93fbbe5dc3c3e14537cdd}{Monomial\+Edge\+Integrals\+Type}} \&mono\+\_\+int\+\_\+map=\{\})
@@ -607,6 +649,174 @@ static \mbox{\hyperlink{group__DDR__stokes_gad35466b8f55cc51dabdc88615275ac5e}{S
 \item 
 static \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__DDR__stokes_ga11770f11edfdb5d240840ca875ad1d3e}{field\+\_\+nu}} = \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{Stokes\+::\+Viscosity\+Type}}(1.)
 \item 
+static const double \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+double \mbox{\hyperlink{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}{scaling\+\_\+mu}} = 1.
+\item 
+double \mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{scaling\+\_\+kappainv}} = 1.
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{eps}} =1e-\/14
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga61e33ede2aa388f02412efa3caaef680}{linear\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa78476ffc0d30f7a245afc004d41cca3}{linear\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static const \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__HHO__brinkman_gaaf3849406952d3f00f00e814a7d5fa64}{mat\+\_\+u}} = (\mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}}() $<$$<$ 1.,2.,3., 0.,-\/1.,1. , 0.,1.,1.).finished()
+\item 
+static const Vector\+Rd \mbox{\hyperlink{group__HHO__brinkman_ga249b69ca9df7a9aed6626d932a38bd44}{vec\+\_\+p}} = Vector\+Rd(-\/1., 2., -\/5.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gab251e12ef6b35755be8d0e370dffd71b}{linear\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga115f818e58bb663361a9f05ce444c83b}{linear\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9886f14b1db2b55501a846092f02adf4}{linear\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga658796573d1c3d4e3ad85d9b0d9c0042}{linear\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga92b551e737e7f95438d26eeacd076e85}{linear\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaf3e56fc9f17368bb285143789bf9ed51}{linear\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_ga9886f14b1db2b55501a846092f02adf4}{linear\+\_\+gradu}}(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9179c6100ef8c0a83f0849b09cc2c2ad}{quadratic\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga925b6a70d166bbe29bc5d4ad756e770a}{quadratic\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gabed608c28beca212c8bac183f8f7306b}{quadratic\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga364e6b67999711a7065e7f0a6cdbea9c}{quadratic\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga66059121f9787fbf247deb23c5e8fbb9}{quadratic\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gabc6363716b03c8108bd5b57a94732bdc}{quadratic\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8f73ab3babb657a7c143f49a85473f79}{quadratic\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gafaf522d361fe4bc1a3ca2b5be8741773}{quadratic\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_ga364e6b67999711a7065e7f0a6cdbea9c}{quadratic\+\_\+gradu}}(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5f577a3dfc41024e9e5475cf7deece3b}{cubic\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga583602724ec749d7700da759df53ebee}{cubic\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1e58b27759c373942645ed11b97b2210}{cubic\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gad1907ddcf83cfd92dfb72be9994fa5a9}{cubic\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5ee2ca139a1039c55f36dff300124d12}{cubic\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1cabbdbcc9977f8864e0b0a6854fd373}{cubic\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa3ab6dc20246d6372bd6496e02685c7a}{cubic\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga57c31a0e88a26c3d7579dc7427199953}{cubic\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_gad1907ddcf83cfd92dfb72be9994fa5a9}{cubic\+\_\+gradu}}(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8849d554e4a04ab9d1cf7b270ca5856c}{trigonometric\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga461efb7c4083702f8a550c49d6536003}{trigonometric\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga53362b5995812993dd8f3e3ea8f16ea0}{trigonometric\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}{trigonometric\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8bfdfeaf16210ec8948f27db76c08321}{trigonometric\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9313f57c43d447073a9b3f2ff7b417de}{trigonometric\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga54770be2cc45af21b652eb90e88e8b14}{trigonometric\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaae7197427c36fea1c6038771280b28d0}{trigonometric\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}{trigonometric\+\_\+gradu}}(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9507833e388e0add7d72aa84d623d41d}{regimes\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga05e27d4db812c4dae9e916b049782c38}{regimes\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga023724a3e1a9ace65feeb59bc65976b8}{regimes\+\_\+p}} = \mbox{\hyperlink{group__DDR__stokes_ga9b7879fd3b35059edb87a8986c1c8d22}{trigonometric\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga81def91a67f1d4b1fa65733c978f74be}{regimes\+\_\+gradp}} = \mbox{\hyperlink{group__HHO__brinkman_ga9313f57c43d447073a9b3f2ff7b417de}{trigonometric\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga516648c4533e6458035e69b9af135ba2}{regimes\+\_\+uD}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1f742df61764c1756ba739a182261d84}{regimes\+\_\+graduD}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga83fbae16c582e7aedb042f49bba3fec4}{regimes\+\_\+uS}} = \mbox{\hyperlink{group__DDR__magnetostatic_ga5f8102524d5dd3728c5216dcbfc32e59}{trigonometric\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gabd1c83ac3a3ddf242b5731ccea2307da}{regimes\+\_\+graduS}} = \mbox{\hyperlink{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}{trigonometric\+\_\+gradu}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga2504076483feb12fa68e04f91d9c660f}{regimes\+\_\+u}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x) -\/$>$ Vector\+Rd \{ return \mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga83fbae16c582e7aedb042f49bba3fec4}{regimes\+\_\+uS}}(x) + (1.-\/\mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x)) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga516648c4533e6458035e69b9af135ba2}{regimes\+\_\+uD}}(x);\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga40b530d8b7189f32e56afe56ed73379b}{regimes\+\_\+gradu}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x) -\/$>$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \{ return \mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_gabd1c83ac3a3ddf242b5731ccea2307da}{regimes\+\_\+graduS}}(x) + (1.-\/\mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{XiS}}(x)) $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga1f742df61764c1756ba739a182261d84}{regimes\+\_\+graduD}}(x);\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga55cee7c4814d1a1bfe68090e47048d22}{regimes\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0913b4a1f3edf62a1f7f24e4c5e4d92e}{regimes\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_ga40b530d8b7189f32e56afe56ed73379b}{regimes\+\_\+gradu}}(x).trace() ;\}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{XiV}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return (x.\+z() $>$ 2$\ast$std\+::abs(x.\+x()-\/1.)+0.\+5-\/\mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{eps}}); \}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa009efff6a625fef7d557cb0bad321ab}{vcracked\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(\mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 0.\+01 $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{XiV}}(x);\})
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga3de6b901bf4e75c9d991763194d7cac1}{vcracked\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(\mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 1e-\/5$\ast$(1.-\/\mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{XiV}}(x)) + 0.\+001$\ast$\mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{XiV}}(x);\})
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa5eae4fe6df55d7a3c3a143cef49f542}{vcracked\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gafa9ae279dd50bac31674d421f3eee481}{vcracked\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga15be3b5abaf396a623f0563dc1d2b767}{vcracked\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga7c2e3f78e7814de90033de5e338d22bf}{vcracked\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga825b4e191e3a5a3eb0ac3502a1359cd5}{vcracked\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0232ff576226b1a94d37fa9c2e00d8fc}{vcracked\+\_\+g}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}{Xi\+Cavity}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga2f21ea8a7bbe91797809288e7ddb65d9}{Xi\+Wedge}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga251680a1b4448f4b4198b07ece3063e6}{Xi\+Box}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 1. -\/ \mbox{\hyperlink{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}{Xi\+Cavity}}(x) -\/ \mbox{\hyperlink{group__HHO__brinkman_ga2f21ea8a7bbe91797809288e7ddb65d9}{Xi\+Wedge}}(x); \}
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga039ebb2e5436912d7323b20b63d01231}{viscosity\+\_\+in\+\_\+cavity}} = 0.\+01
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga3166a588e47670f1263d6dd17e85d14b}{cavity\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga039ebb2e5436912d7323b20b63d01231}{viscosity\+\_\+in\+\_\+cavity}} $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(\mbox{\hyperlink{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}{Xi\+Cavity}})
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga2dc87f28ba4daa63a8a61e003342d09c}{permeability\+\_\+in\+\_\+wedge}} = 1e-\/2
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga5941bb0b014eab00f742803f43ae5e48}{permeability\+\_\+in\+\_\+box}} = 1e-\/7
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa4fd1aae11bf60908b164adc8b8ea82d}{cavity\+\_\+kappainv}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1717e9a923ad9e640cebb844704330c2}{cavity\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga4f06950b09441f9d2b36577701dbd9f6}{cavity\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5e07c6ecaee8ddd4989ac0896b436701}{cavity\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga279619db84fc049f31c8f0e1c4d07713}{cavity\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0c6ed50754266d08288e149561c2d19a}{cavity\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8b1f7253d57bb23c2fa818d8cd31de6d}{cavity\+\_\+g}}
+\item 
+static const double \mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+static const Vector\+Rd \mbox{\hyperlink{group__HHO__fullgradientdiff_ga84bbf9e5121be6667bdf0e97636a7c89}{vec\+\_\+a}} = Vector\+Rd(1.,2.,3.)
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Full\+Gradient\+Diffusion\+::\+Solution\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga258f3b1f7f0921bebc7818cb656b1e16}{linear\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{Full\+Gradient\+Diffusion\+::\+Solution\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga64d86c6442ce6cca580b685d67c8d1a8}{linear\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Full\+Gradient\+Diffusion\+::\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_gac24ba2c1f388732ff5250855ed61e246}{linear\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_gad4bf3933c735ee697f6c409f264281aa}{linear\+\_\+kappa}} = \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga016b57f19a36dd48fe0885733dc87fa7}{Full\+Gradient\+Diffusion\+::\+Solution\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga0636e9c891b5899965f7477d4893b3f0}{trigonometric\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gadc8f36bafd9c0ad4ff5b00ec3ad47bd8}{Full\+Gradient\+Diffusion\+::\+Solution\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga9ad3a2c9028e91fdcf920f1200c660a1}{trigonometric\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_ga10437a28fba60ef381ea46fb5285f3a1}{Full\+Gradient\+Diffusion\+::\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga78dbf3dba74e517ba783786d2a8d3734}{trigonometric\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}} \mbox{\hyperlink{group__HHO__fullgradientdiff_ga90e6aed5c0913152d769b0b016aeb8cf}{trigonometric\+\_\+kappa}} = \mbox{\hyperlink{group__HHO__fullgradientdiff_gabc1b7979640ba0919406d43317e375bf}{Full\+Gradient\+Diffusion\+::\+Permeability\+Type}}(1.)
+\item 
 static const double \mbox{\hyperlink{group__DDR__yangmills_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
 \item 
 static \mbox{\hyperlink{group__DDR__yangmills_ga7912caab91d255d1ca31b511eaa162b4}{Yang\+Mills\+::\+TElectric\+Field\+Type}} \mbox{\hyperlink{group__DDR__yangmills_ga1787e89e6aed4a3409983d25ac9c22da}{trigonometric\+\_\+\+E1}}
@@ -823,6 +1033,12 @@ static \mbox{\hyperlink{group__DDR__stokes_ga9c724e729821860850f61802742dbed4}{S
 \item 
 constexpr int \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} = 3
 \begin{DoxyCompactList}\small\item\em Dimension, and generic types for vector in correct dimension (makes it easier to translate a code between 2D and 3D) \end{DoxyCompactList}\item 
+static std\+::function$<$ Eigen\+::\+Matrix\+Xd(const Eigen\+::\+Matrix\+Xd \&)$>$ \mbox{\hyperlink{group__Basis_ga2955b556916319159c65a1b2e45f9364}{symmetrise\+\_\+matrix}} = \mbox{[}$\,$\mbox{]}(const Eigen\+::\+Matrix\+Xd \& x)-\/$>$Eigen\+::\+Matrix\+Xd \{ return 0.\+5$\ast$(x+x.\+transpose());\}
+\begin{DoxyCompactList}\small\item\em Function to symmetrise a matrix (useful together with transform\+\_\+values\+\_\+quad) \end{DoxyCompactList}\item 
+static std\+::function$<$ Eigen\+::\+Matrix\+Xd(const Eigen\+::\+Matrix\+Xd \&)$>$ \mbox{\hyperlink{group__Basis_gaed3cea3b025e9f753fb238c826b48f84}{skew\+\_\+symmetrise\+\_\+matrix}} = \mbox{[}$\,$\mbox{]}(const Eigen\+::\+Matrix\+Xd \& x)-\/$>$Eigen\+::\+Matrix\+Xd \{ return 0.\+5$\ast$(x-\/x.\+transpose());\}
+\begin{DoxyCompactList}\small\item\em Function to skew-\/symmetrise a matrix (useful together with transform\+\_\+values\+\_\+quad) \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}} \mbox{\hyperlink{group__HHOSpace_ga9221db7880b04f51a34b2619f3101850}{allcells}} = \mbox{[}$\,$\mbox{]}(const Cell \&)-\/$>$bool \{return true;\}
+\item 
 static constexpr size\+\_\+t \mbox{\hyperlink{group__Quadratures_ga42cd568704af2ca021084dfb35c11abc}{MAX\+\_\+\+DOE\+\_\+\+CELL}} = 14
 \begin{DoxyCompactList}\small\item\em Maximum degree of the cell quadrature rules. \end{DoxyCompactList}\item 
 static constexpr size\+\_\+t \mbox{\hyperlink{group__Quadratures_ga76634865816c45f31ab501baeb9e3739}{MAX\+\_\+\+DOE\+\_\+\+FACE}} = 20

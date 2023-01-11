@@ -1,0 +1,193 @@
+\hypertarget{hho-brinkman_8hpp}{}\doxysection{Schemes/\+HHO-\/brinkman/hho-\/brinkman.hpp File Reference}
+\label{hho-brinkman_8hpp}\index{Schemes/HHO-\/brinkman/hho-\/brinkman.hpp@{Schemes/HHO-\/brinkman/hho-\/brinkman.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$boost/math/constants/constants.\+hpp$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$unsupported/\+Eigen/\+Sparse\+Extra$>$}\newline
+{\ttfamily \#include $<$mesh.\+hpp$>$}\newline
+{\ttfamily \#include $<$mesh\+\_\+builder.\+hpp$>$}\newline
+{\ttfamily \#include $<$local\+\_\+static\+\_\+condensation.\+hpp$>$}\newline
+{\ttfamily \#include $<$vhhospace.\+hpp$>$}\newline
+{\ttfamily \#include $<$Boundary\+Conditions/\+Boundary\+Conditions.\+hpp$>$}\newline
+{\ttfamily \#include $<$integralweight.\+hpp$>$}\newline
+Include dependency graph for hho-\/brinkman.hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hho-brinkman_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{hho-brinkman_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanParameters}{HAr\+DCore3\+D\+::\+Brinkman\+Parameters}}
+\begin{DoxyCompactList}\small\item\em Structure to store physical parameter (and compute derived parameters) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanNorms}{HAr\+DCore3\+D\+::\+Brinkman\+Norms}}
+\begin{DoxyCompactList}\small\item\em Structure to store norm components (energy for velocity, L2 pressure, and global) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1Brinkman}{HAr\+DCore3\+D\+::\+Brinkman}}
+\begin{DoxyCompactList}\small\item\em Structure for \mbox{\hyperlink{structHArDCore3D_1_1Brinkman}{Brinkman}} model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceHArDCore3D}{HAr\+DCore3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{group__HHO__brinkman_ga05c87d0a93c5df840c07c09ded686aeb}{HAr\+DCore3\+D\+::\+PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+double \mbox{\hyperlink{group__HHO__brinkman_ga72eb141275376b53504ef7b86387e559}{HAr\+DCore3\+D\+::scaling\+\_\+mu}} = 1.
+\item 
+double \mbox{\hyperlink{group__HHO__brinkman_ga95cb7f69602e9865c04c118ded64f943}{HAr\+DCore3\+D\+::scaling\+\_\+kappainv}} = 1.
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga522f322a54ff4f275104982fc3c75cf4}{HAr\+DCore3\+D\+::eps}} =1e-\/14
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga61e33ede2aa388f02412efa3caaef680}{HAr\+DCore3\+D\+::linear\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa78476ffc0d30f7a245afc004d41cca3}{HAr\+DCore3\+D\+::linear\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static const \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \mbox{\hyperlink{group__HHO__brinkman_gaaf3849406952d3f00f00e814a7d5fa64}{HAr\+DCore3\+D\+::mat\+\_\+u}} = (\mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}}() $<$$<$ 1.,2.,3., 0.,-\/1.,1. , 0.,1.,1.).finished()
+\item 
+static const Vector\+Rd \mbox{\hyperlink{group__HHO__brinkman_ga249b69ca9df7a9aed6626d932a38bd44}{HAr\+DCore3\+D\+::vec\+\_\+p}} = Vector\+Rd(-\/1., 2., -\/5.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gab251e12ef6b35755be8d0e370dffd71b}{HAr\+DCore3\+D\+::linear\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga115f818e58bb663361a9f05ce444c83b}{HAr\+DCore3\+D\+::linear\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9886f14b1db2b55501a846092f02adf4}{HAr\+DCore3\+D\+::linear\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga658796573d1c3d4e3ad85d9b0d9c0042}{HAr\+DCore3\+D\+::linear\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga92b551e737e7f95438d26eeacd076e85}{HAr\+DCore3\+D\+::linear\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaf3e56fc9f17368bb285143789bf9ed51}{HAr\+DCore3\+D\+::linear\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return linear\+\_\+gradu(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9179c6100ef8c0a83f0849b09cc2c2ad}{HAr\+DCore3\+D\+::quadratic\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga925b6a70d166bbe29bc5d4ad756e770a}{HAr\+DCore3\+D\+::quadratic\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gabed608c28beca212c8bac183f8f7306b}{HAr\+DCore3\+D\+::quadratic\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga364e6b67999711a7065e7f0a6cdbea9c}{HAr\+DCore3\+D\+::quadratic\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga66059121f9787fbf247deb23c5e8fbb9}{HAr\+DCore3\+D\+::quadratic\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gabc6363716b03c8108bd5b57a94732bdc}{HAr\+DCore3\+D\+::quadratic\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8f73ab3babb657a7c143f49a85473f79}{HAr\+DCore3\+D\+::quadratic\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gafaf522d361fe4bc1a3ca2b5be8741773}{HAr\+DCore3\+D\+::quadratic\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return quadratic\+\_\+gradu(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5f577a3dfc41024e9e5475cf7deece3b}{HAr\+DCore3\+D\+::cubic\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga583602724ec749d7700da759df53ebee}{HAr\+DCore3\+D\+::cubic\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1e58b27759c373942645ed11b97b2210}{HAr\+DCore3\+D\+::cubic\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gad1907ddcf83cfd92dfb72be9994fa5a9}{HAr\+DCore3\+D\+::cubic\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5ee2ca139a1039c55f36dff300124d12}{HAr\+DCore3\+D\+::cubic\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1cabbdbcc9977f8864e0b0a6854fd373}{HAr\+DCore3\+D\+::cubic\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa3ab6dc20246d6372bd6496e02685c7a}{HAr\+DCore3\+D\+::cubic\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga57c31a0e88a26c3d7579dc7427199953}{HAr\+DCore3\+D\+::cubic\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return cubic\+\_\+gradu(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8849d554e4a04ab9d1cf7b270ca5856c}{HAr\+DCore3\+D\+::trigonometric\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga461efb7c4083702f8a550c49d6536003}{HAr\+DCore3\+D\+::trigonometric\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga53362b5995812993dd8f3e3ea8f16ea0}{HAr\+DCore3\+D\+::trigonometric\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa6022283db65eadcae6b3ab78f062316}{HAr\+DCore3\+D\+::trigonometric\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8bfdfeaf16210ec8948f27db76c08321}{HAr\+DCore3\+D\+::trigonometric\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9313f57c43d447073a9b3f2ff7b417de}{HAr\+DCore3\+D\+::trigonometric\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga54770be2cc45af21b652eb90e88e8b14}{HAr\+DCore3\+D\+::trigonometric\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaae7197427c36fea1c6038771280b28d0}{HAr\+DCore3\+D\+::trigonometric\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return trigonometric\+\_\+gradu(x).trace();\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9507833e388e0add7d72aa84d623d41d}{HAr\+DCore3\+D\+::regimes\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga05e27d4db812c4dae9e916b049782c38}{HAr\+DCore3\+D\+::regimes\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(1.)
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga023724a3e1a9ace65feeb59bc65976b8}{HAr\+DCore3\+D\+::regimes\+\_\+p}} = trigonometric\+\_\+p
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga81def91a67f1d4b1fa65733c978f74be}{HAr\+DCore3\+D\+::regimes\+\_\+gradp}} = trigonometric\+\_\+gradp
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga516648c4533e6458035e69b9af135ba2}{HAr\+DCore3\+D\+::regimes\+\_\+uD}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1f742df61764c1756ba739a182261d84}{HAr\+DCore3\+D\+::regimes\+\_\+graduD}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga83fbae16c582e7aedb042f49bba3fec4}{HAr\+DCore3\+D\+::regimes\+\_\+uS}} = trigonometric\+\_\+u
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gabd1c83ac3a3ddf242b5731ccea2307da}{HAr\+DCore3\+D\+::regimes\+\_\+graduS}} = trigonometric\+\_\+gradu
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gaff5ad4025478686574a984b1df3d8859}{HAr\+DCore3\+D\+::\+XiS}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga2504076483feb12fa68e04f91d9c660f}{HAr\+DCore3\+D\+::regimes\+\_\+u}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x) -\/$>$ Vector\+Rd \{ return XiS(x) $\ast$ regimes\+\_\+uS(x) + (1.-\/XiS(x)) $\ast$ regimes\+\_\+uD(x);\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga40b530d8b7189f32e56afe56ed73379b}{HAr\+DCore3\+D\+::regimes\+\_\+gradu}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x) -\/$>$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}} \{ return XiS(x) $\ast$ regimes\+\_\+graduS(x) + (1.-\/XiS(x)) $\ast$ regimes\+\_\+graduD(x);\}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga55cee7c4814d1a1bfe68090e47048d22}{HAr\+DCore3\+D\+::regimes\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0913b4a1f3edf62a1f7f24e4c5e4d92e}{HAr\+DCore3\+D\+::regimes\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return regimes\+\_\+gradu(x).trace() ;\}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga4b43e538ca9454fff09c6f105a351be7}{HAr\+DCore3\+D\+::\+XiV}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return (x.\+z() $>$ 2$\ast$std\+::abs(x.\+x()-\/1.)+0.\+5-\/eps); \}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa009efff6a625fef7d557cb0bad321ab}{HAr\+DCore3\+D\+::vcracked\+\_\+mu}} = \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(\mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 0.\+01 $\ast$ XiV(x);\})
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga3de6b901bf4e75c9d991763194d7cac1}{HAr\+DCore3\+D\+::vcracked\+\_\+kappainv}} = \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}}(\mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 1e-\/5$\ast$(1.-\/XiV(x)) + 0.\+001$\ast$XiV(x);\})
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa5eae4fe6df55d7a3c3a143cef49f542}{HAr\+DCore3\+D\+::vcracked\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gafa9ae279dd50bac31674d421f3eee481}{HAr\+DCore3\+D\+::vcracked\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga15be3b5abaf396a623f0563dc1d2b767}{HAr\+DCore3\+D\+::vcracked\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga7c2e3f78e7814de90033de5e338d22bf}{HAr\+DCore3\+D\+::vcracked\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga825b4e191e3a5a3eb0ac3502a1359cd5}{HAr\+DCore3\+D\+::vcracked\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0232ff576226b1a94d37fa9c2e00d8fc}{HAr\+DCore3\+D\+::vcracked\+\_\+g}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga7e0ffa40e6b1188baac39bb7e0985f0b}{HAr\+DCore3\+D\+::\+Xi\+Cavity}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga2f21ea8a7bbe91797809288e7ddb65d9}{HAr\+DCore3\+D\+::\+Xi\+Wedge}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga251680a1b4448f4b4198b07ece3063e6}{HAr\+DCore3\+D\+::\+Xi\+Box}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return 1. -\/ Xi\+Cavity(x) -\/ Xi\+Wedge(x); \}
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga039ebb2e5436912d7323b20b63d01231}{HAr\+DCore3\+D\+::viscosity\+\_\+in\+\_\+cavity}} = 0.\+01
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga3166a588e47670f1263d6dd17e85d14b}{HAr\+DCore3\+D\+::cavity\+\_\+mu}} = viscosity\+\_\+in\+\_\+cavity $\ast$ \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}}(Xi\+Cavity)
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga2dc87f28ba4daa63a8a61e003342d09c}{HAr\+DCore3\+D\+::permeability\+\_\+in\+\_\+wedge}} = 1e-\/2
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga5941bb0b014eab00f742803f43ae5e48}{HAr\+DCore3\+D\+::permeability\+\_\+in\+\_\+box}} = 1e-\/7
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gaa4fd1aae11bf60908b164adc8b8ea82d}{HAr\+DCore3\+D\+::cavity\+\_\+kappainv}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1717e9a923ad9e640cebb844704330c2}{HAr\+DCore3\+D\+::cavity\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga4f06950b09441f9d2b36577701dbd9f6}{HAr\+DCore3\+D\+::cavity\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5e07c6ecaee8ddd4989ac0896b436701}{HAr\+DCore3\+D\+::cavity\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga279619db84fc049f31c8f0e1c4d07713}{HAr\+DCore3\+D\+::cavity\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0c6ed50754266d08288e149561c2d19a}{HAr\+DCore3\+D\+::cavity\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8b1f7253d57bb23c2fa818d8cd31de6d}{HAr\+DCore3\+D\+::cavity\+\_\+g}}
+\end{DoxyCompactItemize}

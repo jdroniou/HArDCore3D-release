@@ -1,0 +1,103 @@
+\hypertarget{structHArDCore3D_1_1Brinkman}{}\doxysection{HAr\+DCore3D\+::Brinkman Struct Reference}
+\label{structHArDCore3D_1_1Brinkman}\index{HArDCore3D::Brinkman@{HArDCore3D::Brinkman}}
+
+
+Structure for \mbox{\hyperlink{structHArDCore3D_1_1Brinkman}{Brinkman}} model.  
+
+
+
+
+{\ttfamily \#include $<$hho-\/brinkman.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{System\+Matrix\+Type}}
+\item 
+typedef std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Momentum\+Forcing\+Term\+Type}}
+\item 
+typedef std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Compressibility\+Forcing\+Term\+Type}}
+\item 
+typedef std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Velocity\+Type}}
+\item 
+typedef std\+::function$<$ \mbox{\hyperlink{group__Basis_gabc4232845eaba80e0a1a45618ed0764d}{Matrix\+Rd}}(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Velocity\+Gradient\+Type}}
+\item 
+typedef std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Pressure\+Type}}
+\item 
+typedef std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Pressure\+Gradient\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__HHO__brinkman_ga7462258ce3093aeb6d8797026e9dbf24}{Brinkman}} (const \mbox{\hyperlink{classHArDCore3D_1_1VHHOSpace}{VHHOSpace}} \&vhho\+\_\+space, const \mbox{\hyperlink{classHArDCore3D_1_1GlobalDOFSpace}{Global\+DOFSpace}} \&p\+\_\+space, const \mbox{\hyperlink{classBoundaryConditions}{Boundary\+Conditions}} \&BC, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__HHO__brinkman_gaa23e8e31b9d6e7d9a4228cff406eb541}{assemble\+Linear\+System}} (const \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Momentum\+Forcing\+Term\+Type}} \&f, const \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Compressibility\+Forcing\+Term\+Type}} \&g, const \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanParameters}{Brinkman\+Parameters}} \&para, const \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Velocity\+Type}} \&u, Eigen\+::\+Vector\+Xd \&UDir)
+\begin{DoxyCompactList}\small\item\em Assemble the global system ~\newline
+ \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga8e5088c0cf62210a9ab6ad97dfa3bb9d}{nloc\+\_\+sc\+\_\+u}} () const
+\begin{DoxyCompactList}\small\item\em Returns the local number of velocity statically condensed DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_gaf66acc0b1a1713a37d3782ec66b05625}{nloc\+\_\+sc\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns the local number of pressure statically condensed DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_gaecd9b432490f92e637c0e0a4dcb4a25b}{num\+SCDOFs\+\_\+u}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of velocity statically condensed DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga9654c3ed104dde41815f7e52f89179a3}{num\+SCDOFs\+\_\+p}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of pressure statically condensed DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_gae2de15fc54fafe30f63711b1784c3c0e}{num\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of statically condensed DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga05019596c999c88b944afeae4e6cb5fb}{num\+Dir\+DOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of Dirichlet DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga4d5bd09a42349deda489cb9f09dc9a09}{dim\+Velocity}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of velocity space. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_gaa7b355ebe83ec087f07161dcbaf53346}{dim\+Pressure}} () const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of pressure space. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga470183963cba681c77427995a9dfe79a}{num\+Non\+SCDOFs}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of DOFs after SC and with Lagrange multiplier, but before eliminating Dirichlet DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__HHO__brinkman_ga27b8de59c9272fb88068c7125a017b4c}{size\+System}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the final system with Lagrange multiplier, after application of SC and removal of Dirichlet BCs. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1VHHOSpace}{VHHOSpace}} \& \mbox{\hyperlink{group__HHO__brinkman_gaf1084a8545b530bbd6dcd941bad3bba4}{vhhospace}} () const
+\begin{DoxyCompactList}\small\item\em Returns the velocity space. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1GlobalDOFSpace}{Global\+DOFSpace}} \& \mbox{\hyperlink{group__HHO__brinkman_gaf4a7b6f3ea054b43603a17f8b1c7c8f4}{pspace}} () const
+\begin{DoxyCompactList}\small\item\em Returns the pressure space. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__HHO__brinkman_gaff1c1e8ceea0b2dfecca62af5675c5d8}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Returns the mesh. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__brinkman_gaf6527cd2547629da9a888792132e3269}{system\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__brinkman_ga9b722d0ade5c239395e48b90bfecb51d}{system\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__brinkman_ga640586cc819e4de5afd3a2edb1432b9c}{system\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__brinkman_gad2d60af85842cc09744311d13079911f}{system\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the linear system right-\/hand side vector. \end{DoxyCompactList}\item 
+const std\+::pair$<$ double, double $>$ \& \mbox{\hyperlink{group__HHO__brinkman_ga22a2df1874e7dcbff999defcf6b62cbc}{stabilization\+Parameter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter (scaling) \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \& \mbox{\hyperlink{group__HHO__brinkman_ga6caeda81b77d830540cc47c05173b92d}{stabilization\+Parameter}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stabilization parameter. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__HHO__brinkman_gab719e1cc7abc2809e7c3fc5bee5bd3db}{System\+Matrix\+Type}} \& \mbox{\hyperlink{group__HHO__brinkman_gadb7d8a15587e6f86de0d72c396f71c5f}{sc\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the static condensation recovery operator. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \& \mbox{\hyperlink{group__HHO__brinkman_gab05765326bdd6ccfc851a50a2f671544}{sc\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Returns the static condensation rhs. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__HHO__brinkman_ga0d99270586d71e6ac3b885855849c10b}{interpolate}} (const \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Velocity\+Type}} \&u, const \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Pressure\+Type}} \&p, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolates velocity and pressure. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanNorms}{Brinkman\+Norms}} $>$ \mbox{\hyperlink{group__HHO__brinkman_ga972625064c9703732674e61d4718bd1c}{compute\+Brinkman\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs, const \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanParameters}{Brinkman\+Parameters}} \&para) const
+\begin{DoxyCompactList}\small\item\em Compute the discrete energy norm of a family of vectors representing the dofs. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{group__HHO__brinkman_ga75010589205bc7b43f9afe3e8965e5aa}{pressure\+Vertex\+Values}} (const Eigen\+::\+Vector\+Xd \&p) const
+\begin{DoxyCompactList}\small\item\em Create vertex values for the pressure (from the element values), for plotting. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{group__HHO__brinkman_ga427b126b6203ae2dfdf0b36759f4143a}{compute\+Flux}} (const Eigen\+::\+Vector\+Xd \&u, const std\+::pair$<$ std\+::vector$<$ Vector\+Rd $>$, Vector\+Rd $>$ \&surf) const
+\begin{DoxyCompactList}\small\item\em Compute the velocity flux (integral of u.\+n) across a given surface, and the area of the surface, assumed to be star-\/shaped with respect the barycenter of its vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure for \mbox{\hyperlink{structHArDCore3D_1_1Brinkman}{Brinkman}} model. 
+
+The global unknowns are in the following order\+:
+\begin{DoxyItemize}
+\item Dirichlets dofs of the velocity (Dirichlet faces must be numbered first in the mesh)
+\item Face and then element unknowns of the velocity
+\item \mbox{\hyperlink{structElement}{Element}} unknowns of the pressure
+\item Lagrange multiplier The statically condenseds dofs for the velocity are the element unknowns of the velocity, and all dofs but the first one in each element for the pressure. 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Schemes/\+HHO-\/brinkman/\mbox{\hyperlink{hho-brinkman_8hpp}{hho-\/brinkman.\+hpp}}\item 
+Schemes/\+HHO-\/brinkman/\mbox{\hyperlink{hho-brinkman_8cpp}{hho-\/brinkman.\+cpp}}\end{DoxyCompactItemize}

@@ -89,17 +89,25 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga60ba878dc51ffe013b4cd394741d34f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga60ba878dc51ffe013b4cd394741d34f0">IntegralWeight</a> (const std::function&lt; double(const Cell &amp;T, const Eigen::Vector3d &amp;x)&gt; _value, std::function&lt; size_t(const Cell &amp;T)&gt; _deg)</td></tr>
-<tr class="separator:ga60ba878dc51ffe013b4cd394741d34f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44a260b9d0464fe21ad59951b60ec0d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga44a260b9d0464fe21ad59951b60ec0d8">IntegralWeight</a> (const <a class="el" href="group__Common.html#ga0396c9c15024a70638bd9fb16712d13f">IntegralWeightValueType</a> _value, const <a class="el" href="group__Common.html#ga5f3e161295252aba5be7989e167e23d8">IntegralWeightDegreeType</a> _deg)</td></tr>
+<tr class="memdesc:ga44a260b9d0464fe21ad59951b60ec0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic constructor.  <a href="group__Common.html#ga44a260b9d0464fe21ad59951b60ec0d8">More...</a><br /></td></tr>
+<tr class="separator:ga44a260b9d0464fe21ad59951b60ec0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaed526b573136d558b81d9be87646b5c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaed526b573136d558b81d9be87646b5c9">IntegralWeight</a> (double val)</td></tr>
+<tr class="memdesc:gaed526b573136d558b81d9be87646b5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for constant weights.  <a href="group__Common.html#gaed526b573136d558b81d9be87646b5c9">More...</a><br /></td></tr>
 <tr class="separator:gaed526b573136d558b81d9be87646b5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga211e07bd4ac8db912880769175f29f96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga211e07bd4ac8db912880769175f29f96">IntegralWeight</a> (const std::function&lt; double(const VectorRd &amp;)&gt; &amp;val, const size_t &amp;<a class="el" href="group__Common.html#gafd9ac57a861efb87cd200c6afafca587">deg</a>)</td></tr>
+<tr class="memdesc:ga211e07bd4ac8db912880769175f29f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor when the dependency on the cell T is not explicit in the value (and degree is constant)  <a href="group__Common.html#ga211e07bd4ac8db912880769175f29f96">More...</a><br /></td></tr>
+<tr class="separator:ga211e07bd4ac8db912880769175f29f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga846c597e6085f0a1ac044c1b1c170278"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga846c597e6085f0a1ac044c1b1c170278">IntegralWeight</a> (const std::function&lt; double(const VectorRd &amp;)&gt; &amp;val)</td></tr>
+<tr class="memdesc:ga846c597e6085f0a1ac044c1b1c170278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor when the dependency on the cell T is not explicit in the value, and degree is not provided (it is assumed to be 0)  <a href="group__Common.html#ga846c597e6085f0a1ac044c1b1c170278">More...</a><br /></td></tr>
+<tr class="separator:ga846c597e6085f0a1ac044c1b1c170278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ga0e64dd7fa60d788876219241162f0f6e"><td class="memItemLeft" align="right" valign="top">std::function&lt; double(const Cell &amp;T, const Eigen::Vector3d &amp;x)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga0e64dd7fa60d788876219241162f0f6e">value</a></td></tr>
-<tr class="separator:ga0e64dd7fa60d788876219241162f0f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6380d57e44432a9d08114c442158dc8a"><td class="memItemLeft" align="right" valign="top">std::function&lt; size_t(const Cell &amp;T)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga6380d57e44432a9d08114c442158dc8a">deg</a></td></tr>
-<tr class="separator:ga6380d57e44432a9d08114c442158dc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadc026ae462aa662862e53f2adb084400"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#ga0396c9c15024a70638bd9fb16712d13f">IntegralWeightValueType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gadc026ae462aa662862e53f2adb084400">value</a></td></tr>
+<tr class="separator:gadc026ae462aa662862e53f2adb084400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd9ac57a861efb87cd200c6afafca587"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Common.html#ga5f3e161295252aba5be7989e167e23d8">IntegralWeightDegreeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gafd9ac57a861efb87cd200c6afafca587">deg</a></td></tr>
+<tr class="separator:gafd9ac57a861efb87cd200c6afafca587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure for weights (scalar, at the moment) in integral. </p>

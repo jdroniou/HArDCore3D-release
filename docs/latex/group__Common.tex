@@ -26,6 +26,13 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1PolynomialSpaceDimension_3_01Edge_01
 \item 
 class \mbox{\hyperlink{classHArDCore3D_1_1VariableDOFSpace}{HAr\+DCore3\+D\+::\+Variable\+DOFSpace}}
 \begin{DoxyCompactList}\small\item\em Base class for global DOF spaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ double(const Cell \&, const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__Common_ga0396c9c15024a70638bd9fb16712d13f}{HAr\+DCore3\+D\+::\+Integral\+Weight\+Value\+Type}}
+\item 
+typedef std\+::function$<$ size\+\_\+t(const Cell \&)$>$ \mbox{\hyperlink{group__Common_ga5f3e161295252aba5be7989e167e23d8}{HAr\+DCore3\+D\+::\+Integral\+Weight\+Degree\+Type}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -63,10 +70,18 @@ std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga253bd7addffb96
 \begin{DoxyCompactList}\small\item\em Returns a vector listing the global DOFs attached to the element T\+: vertex DOFs, edge DOFs, face DOFs and element DOFs. \end{DoxyCompactList}\item 
 std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga7cc6a020ed82c7e8bdd295d6aa94dea5}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+DOFIndices}} (const Face \&F) const
 \begin{DoxyCompactList}\small\item\em Returns a vector listing the global DOFs attached to the face F\+: vertex DOFs, edge DOFs, face DOFs. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Common_ga60ba878dc51ffe013b4cd394741d34f0}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (const std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ \+\_\+value, std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ \+\_\+deg)
-\item 
+\mbox{\hyperlink{group__Common_ga44a260b9d0464fe21ad59951b60ec0d8}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (const \mbox{\hyperlink{group__Common_ga0396c9c15024a70638bd9fb16712d13f}{Integral\+Weight\+Value\+Type}} \+\_\+value, const \mbox{\hyperlink{group__Common_ga5f3e161295252aba5be7989e167e23d8}{Integral\+Weight\+Degree\+Type}} \+\_\+deg)
+\begin{DoxyCompactList}\small\item\em Generic constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Common_gaed526b573136d558b81d9be87646b5c9}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (double val)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for constant weights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga211e07bd4ac8db912880769175f29f96}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (const std\+::function$<$ double(const Vector\+Rd \&)$>$ \&val, const size\+\_\+t \&\mbox{\hyperlink{group__Common_gafd9ac57a861efb87cd200c6afafca587}{deg}})
+\begin{DoxyCompactList}\small\item\em Constructor when the dependency on the cell T is not explicit in the value (and degree is constant) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Common_ga846c597e6085f0a1ac044c1b1c170278}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight}} (const std\+::function$<$ double(const Vector\+Rd \&)$>$ \&val)
+\begin{DoxyCompactList}\small\item\em Constructor when the dependency on the cell T is not explicit in the value, and degree is not provided (it is assumed to be 0) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__Common_gab8d9e5679e91d5268e089566d164d621}{HAr\+DCore3\+D\+::operator$\ast$}} (double const \&r, \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&weight)
+\begin{DoxyCompactList}\small\item\em Operator to multiply an \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} by a number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__Common_gaf0974369272832456696f5261ab66353}{HAr\+DCore3\+D\+::operator+}} (\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&weight1, \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&weight2)
+\begin{DoxyCompactList}\small\item\em Operator to add an \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} to another one. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__Common_ga9013e4ca43adf132d979e0178676eb4f}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::\+Local\+Static\+Condensation}} (const Eigen\+::\+Matrix\+Xd \&Perm, const std\+::vector$<$ size\+\_\+t $>$ \&\mbox{\hyperlink{group__Common_gada39a93d73a2096ffadb2182d696a4b2}{global\+DOFs\+\_\+sys}}, const std\+::vector$<$ size\+\_\+t $>$ \&\mbox{\hyperlink{group__Common_ga02f23a4c0c6b132c91d96098deb9ca94}{global\+DOFs\+\_\+sc}})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 std\+::tuple$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd, Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_ga7bac2f08d274e88fdb2057d593581c90}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::compute}} (const std\+::pair$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Vector\+Xd $>$ \&lsT)
@@ -260,9 +275,9 @@ std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga9b6de6241a74cf
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$ \mbox{\hyperlink{group__Common_ga0e64dd7fa60d788876219241162f0f6e}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::value}}
+\mbox{\hyperlink{group__Common_ga0396c9c15024a70638bd9fb16712d13f}{Integral\+Weight\+Value\+Type}} \mbox{\hyperlink{group__Common_gadc026ae462aa662862e53f2adb084400}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::value}}
 \item 
-std\+::function$<$ size\+\_\+t(const Cell \&T)$>$ \mbox{\hyperlink{group__Common_ga6380d57e44432a9d08114c442158dc8a}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::deg}}
+\mbox{\hyperlink{group__Common_ga5f3e161295252aba5be7989e167e23d8}{Integral\+Weight\+Degree\+Type}} \mbox{\hyperlink{group__Common_gafd9ac57a861efb87cd200c6afafca587}{HAr\+DCore3\+D\+::\+Integral\+Weight\+::deg}}
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa868f9f56ab061eebcbc30c2dbe5295}{HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+\+Perm}}
 \item 
@@ -288,6 +303,21 @@ size\+\_\+t \mbox{\hyperlink{group__Common_gacc921ba72df56713816eb806bf498cca}{H
 
 \doxysubsection{Detailed Description}
 Various general functions and classes. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__Common_ga5f3e161295252aba5be7989e167e23d8}\label{group__Common_ga5f3e161295252aba5be7989e167e23d8}} 
+\index{Common@{Common}!IntegralWeightDegreeType@{IntegralWeightDegreeType}}
+\index{IntegralWeightDegreeType@{IntegralWeightDegreeType}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{IntegralWeightDegreeType}{IntegralWeightDegreeType}}
+{\footnotesize\ttfamily typedef std\+::function$<$size\+\_\+t (const Cell \&)$>$ \mbox{\hyperlink{group__Common_ga5f3e161295252aba5be7989e167e23d8}{HAr\+DCore3\+D\+::\+Integral\+Weight\+Degree\+Type}}}
+
+\mbox{\Hypertarget{group__Common_ga0396c9c15024a70638bd9fb16712d13f}\label{group__Common_ga0396c9c15024a70638bd9fb16712d13f}} 
+\index{Common@{Common}!IntegralWeightValueType@{IntegralWeightValueType}}
+\index{IntegralWeightValueType@{IntegralWeightValueType}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{IntegralWeightValueType}{IntegralWeightValueType}}
+{\footnotesize\ttfamily typedef std\+::function$<$double (const Cell \&, const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__Common_ga0396c9c15024a70638bd9fb16712d13f}{HAr\+DCore3\+D\+::\+Integral\+Weight\+Value\+Type}}}
 
 
 
@@ -744,11 +774,15 @@ Dimension of Gck(\+T)
 
 Dimension of Gck(\+F) 
 
-\mbox{\Hypertarget{group__Common_ga60ba878dc51ffe013b4cd394741d34f0}\label{group__Common_ga60ba878dc51ffe013b4cd394741d34f0}} 
+\mbox{\Hypertarget{group__Common_ga44a260b9d0464fe21ad59951b60ec0d8}\label{group__Common_ga44a260b9d0464fe21ad59951b60ec0d8}} 
 \index{Common@{Common}!IntegralWeight@{IntegralWeight}}
 \index{IntegralWeight@{IntegralWeight}!Common@{Common}}
-\doxysubsubsection{\texorpdfstring{IntegralWeight()}{IntegralWeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(const Cell \&T, const Eigen\+::\+Vector3d \&x)$>$}]{\+\_\+value,  }\item[{std\+::function$<$ size\+\_\+t(const Cell \&T)$>$}]{\+\_\+deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsubsection{\texorpdfstring{IntegralWeight()}{IntegralWeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__Common_ga0396c9c15024a70638bd9fb16712d13f}{Integral\+Weight\+Value\+Type}}}]{\+\_\+value,  }\item[{const \mbox{\hyperlink{group__Common_ga5f3e161295252aba5be7989e167e23d8}{Integral\+Weight\+Degree\+Type}}}]{\+\_\+deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generic constructor. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -757,11 +791,35 @@ Dimension of Gck(\+F)
 {\em \+\_\+deg} & Local degree of weight \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__Common_ga846c597e6085f0a1ac044c1b1c170278}\label{group__Common_ga846c597e6085f0a1ac044c1b1c170278}} 
+\index{Common@{Common}!IntegralWeight@{IntegralWeight}}
+\index{IntegralWeight@{IntegralWeight}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{IntegralWeight()}{IntegralWeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(const Vector\+Rd \&)$>$ \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor when the dependency on the cell T is not explicit in the value, and degree is not provided (it is assumed to be 0) 
+
+\mbox{\Hypertarget{group__Common_ga211e07bd4ac8db912880769175f29f96}\label{group__Common_ga211e07bd4ac8db912880769175f29f96}} 
+\index{Common@{Common}!IntegralWeight@{IntegralWeight}}
+\index{IntegralWeight@{IntegralWeight}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{IntegralWeight()}{IntegralWeight()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(const Vector\+Rd \&)$>$ \&}]{val,  }\item[{const size\+\_\+t \&}]{deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor when the dependency on the cell T is not explicit in the value (and degree is constant) 
+
 \mbox{\Hypertarget{group__Common_gaed526b573136d558b81d9be87646b5c9}\label{group__Common_gaed526b573136d558b81d9be87646b5c9}} 
 \index{Common@{Common}!IntegralWeight@{IntegralWeight}}
 \index{IntegralWeight@{IntegralWeight}!Common@{Common}}
-\doxysubsubsection{\texorpdfstring{IntegralWeight()}{IntegralWeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{IntegralWeight()}{IntegralWeight()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily HAr\+DCore3\+D\+::\+Integral\+Weight\+::\+Integral\+Weight (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for constant weights. 
 
 \mbox{\Hypertarget{group__Common_gaa4747ac6257c084186c00efc756822c8}\label{group__Common_gaa4747ac6257c084186c00efc756822c8}} 
 \index{Common@{Common}!LocalDOFSpace@{LocalDOFSpace}}
@@ -1152,6 +1210,26 @@ Returns the number of local DOFs on vertex of index iV.
 
 Returns the number of local DOFs on vertex V. 
 
+\mbox{\Hypertarget{group__Common_gab8d9e5679e91d5268e089566d164d621}\label{group__Common_gab8d9e5679e91d5268e089566d164d621}} 
+\index{Common@{Common}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} HAr\+DCore3\+D\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{double const \&}]{r,  }\item[{\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&}]{weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator to multiply an \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} by a number. 
+
+\mbox{\Hypertarget{group__Common_gaf0974369272832456696f5261ab66353}\label{group__Common_gaf0974369272832456696f5261ab66353}} 
+\index{Common@{Common}!operator+@{operator+}}
+\index{operator+@{operator+}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} HAr\+DCore3\+D\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&}]{weight1,  }\item[{\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&}]{weight2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator to add an \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} to another one. 
+
 \mbox{\Hypertarget{group__Common_gac77ab9801f6fcca6b81f0a069969c951}\label{group__Common_gac77ab9801f6fcca6b81f0a069969c951}} 
 \index{Common@{Common}!parallel\_assembly\_system@{parallel\_assembly\_system}}
 \index{parallel\_assembly\_system@{parallel\_assembly\_system}!Common@{Common}}
@@ -1442,11 +1520,11 @@ Simpler constructor if all vertices/edges/faces/cells have the same number of DO
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{group__Common_ga6380d57e44432a9d08114c442158dc8a}\label{group__Common_ga6380d57e44432a9d08114c442158dc8a}} 
+\mbox{\Hypertarget{group__Common_gafd9ac57a861efb87cd200c6afafca587}\label{group__Common_gafd9ac57a861efb87cd200c6afafca587}} 
 \index{Common@{Common}!deg@{deg}}
 \index{deg@{deg}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{deg}{deg}}
-{\footnotesize\ttfamily std\+::function$<$size\+\_\+t (const Cell \& T)$>$ HAr\+DCore3\+D\+::\+Integral\+Weight\+::deg}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Common_ga5f3e161295252aba5be7989e167e23d8}{Integral\+Weight\+Degree\+Type}} HAr\+DCore3\+D\+::\+Integral\+Weight\+::deg}
 
 \mbox{\Hypertarget{group__Common_ga529ae659ec36583e71ce72a5b29cb7e0}\label{group__Common_ga529ae659ec36583e71ce72a5b29cb7e0}} 
 \index{Common@{Common}!m\_dim\_sc@{m\_dim\_sc}}
@@ -1508,9 +1586,9 @@ Simpler constructor if all vertices/edges/faces/cells have the same number of DO
 \doxysubsubsection{\texorpdfstring{m\_Perm}{m\_Perm}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+Local\+Static\+Condensation\+::m\+\_\+\+Perm}
 
-\mbox{\Hypertarget{group__Common_ga0e64dd7fa60d788876219241162f0f6e}\label{group__Common_ga0e64dd7fa60d788876219241162f0f6e}} 
+\mbox{\Hypertarget{group__Common_gadc026ae462aa662862e53f2adb084400}\label{group__Common_gadc026ae462aa662862e53f2adb084400}} 
 \index{Common@{Common}!value@{value}}
 \index{value@{value}!Common@{Common}}
 \doxysubsubsection{\texorpdfstring{value}{value}}
-{\footnotesize\ttfamily std\+::function$<$double (const Cell \& T, const Eigen\+::\+Vector3d \& x)$>$ HAr\+DCore3\+D\+::\+Integral\+Weight\+::value}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Common_ga0396c9c15024a70638bd9fb16712d13f}{Integral\+Weight\+Value\+Type}} HAr\+DCore3\+D\+::\+Integral\+Weight\+::value}
 

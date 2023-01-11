@@ -1,12 +1,21 @@
 var searchData=
 [
-  ['testcase_2ecpp_1359',['TestCase.cpp',['../TestCase_8cpp.html',1,'']]],
-  ['testcase_2ecpp_2eo_2ed_1360',['TestCase.cpp.o.d',['../TestCase_8cpp_8o_8d.html',1,'']]],
-  ['testcase_2ehpp_1361',['TestCase.hpp',['../TestCase_8hpp.html',1,'']]],
-  ['tetra_5fquad_2ecpp_1362',['tetra_quad.cpp',['../tetra__quad_8cpp.html',1,'']]],
-  ['tetra_5fquad_2ecpp_2eo_2ed_1363',['tetra_quad.cpp.o.d',['../tetra__quad_8cpp_8o_8d.html',1,'']]],
-  ['tetra_5fquad_2ehpp_1364',['tetra_quad.hpp',['../tetra__quad_8hpp.html',1,'']]],
-  ['triangle_5fdunavant_5frule_2ecpp_1365',['triangle_dunavant_rule.cpp',['../triangle__dunavant__rule_8cpp.html',1,'']]],
-  ['triangle_5fdunavant_5frule_2ecpp_2eo_2ed_1366',['triangle_dunavant_rule.cpp.o.d',['../triangle__dunavant__rule_8cpp_8o_8d.html',1,'']]],
-  ['triangle_5fdunavant_5frule_2ehpp_1367',['triangle_dunavant_rule.hpp',['../triangle__dunavant__rule_8hpp.html',1,'']]]
+  ['sddr_2dmagnetostatics_2ecpp_1506',['sddr-magnetostatics.cpp',['../sddr-magnetostatics_8cpp.html',1,'']]],
+  ['sddr_2dmagnetostatics_2ecpp_2eo_2ed_1507',['sddr-magnetostatics.cpp.o.d',['../sddr-magnetostatics_8cpp_8o_8d.html',1,'']]],
+  ['sddr_2dmagnetostatics_2ehpp_1508',['sddr-magnetostatics.hpp',['../sddr-magnetostatics_8hpp.html',1,'']]],
+  ['sddr_2dstokes_2ecpp_1509',['sddr-stokes.cpp',['../sddr-stokes_8cpp.html',1,'']]],
+  ['sddr_2dstokes_2ecpp_2eo_2ed_1510',['sddr-stokes.cpp.o.d',['../sddr-stokes_8cpp_8o_8d.html',1,'']]],
+  ['sddr_2dstokes_2ehpp_1511',['sddr-stokes.hpp',['../sddr-stokes_8hpp.html',1,'']]],
+  ['serendipity_5fproblem_2ecpp_1512',['serendipity_problem.cpp',['../serendipity__problem_8cpp.html',1,'']]],
+  ['serendipity_5fproblem_2ecpp_2eo_2ed_1513',['serendipity_problem.cpp.o.d',['../serendipity__problem_8cpp_8o_8d.html',1,'']]],
+  ['serendipity_5fproblem_2ehpp_1514',['serendipity_problem.hpp',['../serendipity__problem_8hpp.html',1,'']]],
+  ['sxcurl_2ecpp_1515',['sxcurl.cpp',['../sxcurl_8cpp.html',1,'']]],
+  ['sxcurl_2ecpp_2eo_2ed_1516',['sxcurl.cpp.o.d',['../sxcurl_8cpp_8o_8d.html',1,'']]],
+  ['sxcurl_2ehpp_1517',['sxcurl.hpp',['../sxcurl_8hpp.html',1,'']]],
+  ['sxdiv_2ecpp_1518',['sxdiv.cpp',['../sxdiv_8cpp.html',1,'']]],
+  ['sxdiv_2ecpp_2eo_2ed_1519',['sxdiv.cpp.o.d',['../sxdiv_8cpp_8o_8d.html',1,'']]],
+  ['sxdiv_2ehpp_1520',['sxdiv.hpp',['../sxdiv_8hpp.html',1,'']]],
+  ['sxgrad_2ecpp_1521',['sxgrad.cpp',['../sxgrad_8cpp.html',1,'']]],
+  ['sxgrad_2ecpp_2eo_2ed_1522',['sxgrad.cpp.o.d',['../sxgrad_8cpp_8o_8d.html',1,'']]],
+  ['sxgrad_2ehpp_1523',['sxgrad.hpp',['../sxgrad_8hpp.html',1,'']]]
 ];

@@ -1,0 +1,48 @@
+\hypertarget{vhhospace_8hpp}{}\doxysection{src/\+HHOCore/vhhospace.hpp File Reference}
+\label{vhhospace_8hpp}\index{src/HHOCore/vhhospace.hpp@{src/HHOCore/vhhospace.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$globaldofspace.\+hpp$>$}\newline
+{\ttfamily \#include $<$basis.\+hpp$>$}\newline
+{\ttfamily \#include $<$polynomialspacedimension.\+hpp$>$}\newline
+Include dependency graph for vhhospace.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vhhospace_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vhhospace_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1VHHOSpace}{HAr\+DCore3\+D\+::\+VHHOSpace}}
+\begin{DoxyCompactList}\small\item\em Class definition\+: polynomial bases and operators. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1CellBases}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Cell\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store element bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1FaceBases}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Face\+Bases}}
+\begin{DoxyCompactList}\small\item\em Structure to store face bases. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1VHHOSpace_1_1LocalOperators}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store local operators (gradient, potential, stabilisation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceHArDCore3D}{HAr\+DCore3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ bool(const Cell \&)$>$ \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{HAr\+DCore3\+D\+::\+Cell\+Selection}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const Cell\+Selection \mbox{\hyperlink{group__HHOSpace_ga9221db7880b04f51a34b2619f3101850}{HAr\+DCore3\+D\+::allcells}} = \mbox{[}$\,$\mbox{]}(const Cell \&)-\/$>$bool \{return true;\}
+\end{DoxyCompactItemize}

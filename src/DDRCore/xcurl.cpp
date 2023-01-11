@@ -508,7 +508,7 @@ Eigen::MatrixXd XCurl::computeL2Product_with_Ops(
         max_weight_quad_E = std::max(max_weight_quad_E, weight.value(T, quad_2k_E[iqn].vector()));
       } // for
     }
-    double w_hE2 = max_weight_quad_E * std::pow(E.measure(), 2);
+    double w_hE2 = max_weight_quad_E * std::pow(E.diam(), 2);
 
     // The penalty term int_E (PT w . tE - w_E) * (PT v . tE - v_E) is computed by developping.
     auto basis_Pk3_T_dot_tE_quad = scalar_product(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_E), tE);
@@ -617,16 +617,16 @@ Eigen::MatrixXd XCurl::computeL2ProductDOFs(
       } // for
     }
 
-    double w_hT2 = max_weight_quad_E * std::pow(T.diam(), 2);
+    double w_hE2 = max_weight_quad_E * std::pow(E.diam(), 2);
                                       
     auto basis_Pk3_T_dot_tE_quad = scalar_product(evaluate_quad<Function>::compute(*cellBases(iT).Polyk3, quad_2k_E), tE);
     auto basis_Pk_E_quad = evaluate_quad<Function>::compute(*edgeBases(E.global_index()).Polyk, quad_2k_E);
     Eigen::MatrixXd gram_Pk3_T_dot_tE_Pk_E = compute_gram_matrix(basis_Pk3_T_dot_tE_quad, basis_Pk_E_quad, quad_2k_E);
     
-    L2P += w_hT2 * PT.transpose() * compute_gram_matrix(basis_Pk3_T_dot_tE_quad, quad_2k_E) * PT;
-    L2P.middleCols(offset_E, dim_Pk_E) -= w_hT2 * PT.transpose() * gram_Pk3_T_dot_tE_Pk_E;
-    L2P.middleRows(offset_E, dim_Pk_E) -= w_hT2 * gram_Pk3_T_dot_tE_Pk_E.transpose() * PT;
-    L2P.block(offset_E, offset_E, dim_Pk_E, dim_Pk_E) += w_hT2 * compute_gram_matrix(basis_Pk_E_quad, quad_2k_E);
+    L2P += w_hE2 * PT.transpose() * compute_gram_matrix(basis_Pk3_T_dot_tE_quad, quad_2k_E) * PT;
+    L2P.middleCols(offset_E, dim_Pk_E) -= w_hE2 * PT.transpose() * gram_Pk3_T_dot_tE_Pk_E;
+    L2P.middleRows(offset_E, dim_Pk_E) -= w_hE2 * gram_Pk3_T_dot_tE_Pk_E.transpose() * PT;
+    L2P.block(offset_E, offset_E, dim_Pk_E, dim_Pk_E) += w_hE2 * compute_gram_matrix(basis_Pk_E_quad, quad_2k_E);
   } // for iE
 
   if (degree() > 0) {
@@ -669,22 +669,22 @@ Eigen::MatrixXd XCurl::computeL2ProductDOFs(
         Eigen::MatrixXd gram_Rck_F_PT = compute_gram_matrix(basis_Rck_F_quad, basis_Pk3_T_quad, quad_2k_F) * PT;
       */
       
-      double w_hT = max_weight_quad_F * T.diam();
+      double w_hF = max_weight_quad_F * F.diam();
 
       size_t dim_Rkmo_F = PolynomialSpaceDimension<Face>::Roly(degree() - 1);
-      L2P += w_hT * gram_Rkmo_F_PT.transpose() * gram_Rkmo_F.ldlt().solve(gram_Rkmo_F_PT);
-      L2P.middleCols(offset_F, dim_Rkmo_F) -= w_hT * gram_Rkmo_F_PT.transpose();
-      L2P.middleRows(offset_F, dim_Rkmo_F) -= w_hT * gram_Rkmo_F_PT;
-      L2P.block(offset_F, offset_F, dim_Rkmo_F, dim_Rkmo_F) += w_hT * gram_Rkmo_F;
+      L2P += w_hF * gram_Rkmo_F_PT.transpose() * gram_Rkmo_F.ldlt().solve(gram_Rkmo_F_PT);
+      L2P.middleCols(offset_F, dim_Rkmo_F) -= w_hF * gram_Rkmo_F_PT.transpose();
+      L2P.middleRows(offset_F, dim_Rkmo_F) -= w_hF * gram_Rkmo_F_PT;
+      L2P.block(offset_F, offset_F, dim_Rkmo_F, dim_Rkmo_F) += w_hF * gram_Rkmo_F;
 
       size_t dim_Rck_F = PolynomialSpaceDimension<Face>::RolyCompl(degree());
       offset_F += dim_Rkmo_F;
       MonomialFaceIntegralsType int_mono_2k_F = IntegrateFaceMonomials(F, 2*degree());
       Eigen::MatrixXd gram_Rck_F = GramMatrix(F, *faceBases(F.global_index()).RolyComplk, int_mono_2k_F);
-      L2P += w_hT * gram_Rck_F_PT.transpose() * gram_Rck_F.ldlt().solve(gram_Rck_F_PT);
-      L2P.middleCols(offset_F, dim_Rck_F) -= w_hT * gram_Rck_F_PT.transpose();
-      L2P.middleRows(offset_F, dim_Rck_F) -= w_hT * gram_Rck_F_PT;
-      L2P.block(offset_F, offset_F, dim_Rck_F, dim_Rck_F) += w_hT * gram_Rck_F;
+      L2P += w_hF * gram_Rck_F_PT.transpose() * gram_Rck_F.ldlt().solve(gram_Rck_F_PT);
+      L2P.middleCols(offset_F, dim_Rck_F) -= w_hF * gram_Rck_F_PT.transpose();
+      L2P.middleRows(offset_F, dim_Rck_F) -= w_hF * gram_Rck_F_PT;
+      L2P.block(offset_F, offset_F, dim_Rck_F, dim_Rck_F) += w_hF * gram_Rck_F;
     } // for iF
   } // if degree() > 0
 
