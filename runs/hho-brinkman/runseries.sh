@@ -61,10 +61,16 @@ if [ $runexec == "true" ]; then
       echo -e "Mesh $i out of $nbmesh: $meshfile"
       echo -e "Output directory: $outsubdir"
       echo -e "------------------------------------------------------------------------------"
+      solutionfile="mesh"$i"_sol"
       # Execute code
       if($executable -m $meshfile -k $k -s $tcsol -x $stab_par_stokes -y $stab_par_darcy -v $scaling_viscosity -p $scaling_permeabilityinv); then
         # Move outputs
         mv results.txt $outsubdir/results-$i.txt
+        if [ -f $solutionfile"_u.vtu" ]; then
+          mv $solutionfile"_u.vtu" $outsubdir
+          mv $solutionfile"_p.vtu" $outsubdir
+        fi
+
       fi
   done
 
@@ -84,10 +90,10 @@ do
     NbCells=$(awk '/NbCells:/ {print $NF}' $outsubdir/results-$i.txt)
     NbFaces=$(awk '/NbFaces:/ {print $NF}' $outsubdir/results-$i.txt)
     SizeSystem=$(awk '/SizeSystem:/ {print $NF}' $outsubdir/results-$i.txt)
-    L2ErrorU=$(awk '/L2ErrorU:/ {print $NF}' $outsubdir/results-$i.txt)
-    H1ErrorU=$(awk '/H1ErrorU:/ {print $NF}' $outsubdir/results-$i.txt)
-    L2ErrorP=$(awk '/L2ErrorP:/ {print $NF}' $outsubdir/results-$i.txt)
-    EnergyError=$(awk '/EnergyError:/ {print $NF}' $outsubdir/results-$i.txt)
+    L2ErrorU=$(awk '/^L2ErrorU:/ {print $NF}' $outsubdir/results-$i.txt)
+    H1ErrorU=$(awk '/^H1ErrorU:/ {print $NF}' $outsubdir/results-$i.txt)
+    L2ErrorP=$(awk '/^L2ErrorP:/ {print $NF}' $outsubdir/results-$i.txt)
+    EnergyError=$(awk '/^EnergyError:/ {print $NF}' $outsubdir/results-$i.txt)
     TwallVHHOSpace=$(awk '/TwallVHHOSpace:/ {print $NF}' $outsubdir/results-$i.txt)
     TprocVHHOSpace=$(awk '/TprocVHHOSpace:/ {print $NF}' $outsubdir/results-$i.txt)
     TwallModel=$(awk '/TwallModel:/ {print $NF}' $outsubdir/results-$i.txt)
@@ -98,13 +104,13 @@ do
     if(($i > 1)); then
       imo=$(perl -E "say $i - 1")
       OldMeshSize=$(awk '/MeshSize:/ {print $NF}' $outsubdir/results-$imo.txt)
-      OldL2ErrorU=$(awk '/L2ErrorU:/ {print $NF}' $outsubdir/results-$imo.txt)
+      OldL2ErrorU=$(awk '/^L2ErrorU:/ {print $NF}' $outsubdir/results-$imo.txt)
       L2ErrorURate=$(perl -E "say sprintf(\"%.2f\", log($OldL2ErrorU/$L2ErrorU)/log($OldMeshSize/$MeshSize))")
-      OldH1ErrorU=$(awk '/H1ErrorU:/ {print $NF}' $outsubdir/results-$imo.txt)
+      OldH1ErrorU=$(awk '/^H1ErrorU:/ {print $NF}' $outsubdir/results-$imo.txt)
       H1ErrorURate=$(perl -E "say sprintf(\"%.2f\", log($OldH1ErrorU/$H1ErrorU)/log($OldMeshSize/$MeshSize))")
-      OldL2ErrorP=$(awk '/L2ErrorP:/ {print $NF}' $outsubdir/results-$imo.txt)
+      OldL2ErrorP=$(awk '/^L2ErrorP:/ {print $NF}' $outsubdir/results-$imo.txt)
       L2ErrorPrate=$(perl -E "say sprintf(\"%.2f\", log($OldL2ErrorP/$L2ErrorP)/log($OldMeshSize/$MeshSize))")
-      OldEnergyError=$(awk '/EnergyError:/ {print $NF}' $outsubdir/results-$imo.txt)
+      OldEnergyError=$(awk '/^EnergyError:/ {print $NF}' $outsubdir/results-$imo.txt)
       EnergyErrorRate=$(perl -E "say sprintf(\"%.2f\", log($OldEnergyError/$EnergyError)/log($OldMeshSize/$MeshSize))")
       echo -e "$Degree $MeshSize $NbCells $NbFaces $SizeSystem $L2ErrorU $L2ErrorURate $H1ErrorU $H1ErrorURate $L2ErrorP $L2ErrorPrate $EnergyError $EnergyErrorRate" >> $outsubdir/$errorsfile
     else

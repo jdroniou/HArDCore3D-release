@@ -183,6 +183,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga539ac4312a3aa9cfa3355287e06bd649"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHOSpace.html#ga539ac4312a3aa9cfa3355287e06bd649">HArDCore3D::HHOSpace::computeNorms</a> (const std::vector&lt; Eigen::VectorXd &gt; &amp;list_dofs) const</td></tr>
 <tr class="memdesc:ga539ac4312a3aa9cfa3355287e06bd649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors.  <a href="group__HHOSpace.html#ga539ac4312a3aa9cfa3355287e06bd649">More...</a><br /></td></tr>
 <tr class="separator:ga539ac4312a3aa9cfa3355287e06bd649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga365a8d571ae7a2c6c52c91d20f2bbed7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHOSpace.html#ga365a8d571ae7a2c6c52c91d20f2bbed7">HArDCore3D::HHOSpace::computeVertexValues</a> (const Eigen::VectorXd &amp;u) const</td></tr>
+<tr class="memdesc:ga365a8d571ae7a2c6c52c91d20f2bbed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the values of the potential reconstruction at the mesh vertices.  <a href="group__HHOSpace.html#ga365a8d571ae7a2c6c52c91d20f2bbed7">More...</a><br /></td></tr>
+<tr class="separator:ga365a8d571ae7a2c6c52c91d20f2bbed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaca12a20f0158f29eb8f2469ebbd1c640"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHOSpace.html#gaca12a20f0158f29eb8f2469ebbd1c640">HArDCore3D::VHHOSpace::LocalOperators::LocalOperators</a> (const Eigen::MatrixXd &amp;_gradient, const Eigen::MatrixXd &amp;_potential, const Eigen::MatrixXd &amp;_stabilisation, const Eigen::MatrixXd &amp;_potential_div, const Eigen::MatrixXd &amp;_stabilisation_div)</td></tr>
 <tr class="separator:gaca12a20f0158f29eb8f2469ebbd1c640"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadd4f036ce349ce8939c82f207880d16e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHOSpace.html#gadd4f036ce349ce8939c82f207880d16e">HArDCore3D::VHHOSpace::VHHOSpace</a> (const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> &amp;<a class="el" href="group__HHOSpace.html#ga8a3176833af5485a276bbb5eb86d4337">mesh</a>, size_t <a class="el" href="group__HHO__DiffAdvecReac.html#gaf169764abf85f85bec428e43dc60274b">K</a>, const <a class="el" href="group__HHOSpace.html#gac3aef56f5e68530d507db8d8d06db3e9">CellSelection</a> &amp;BoundaryStab, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true, std::ostream &amp;output=std::cout)</td></tr>
@@ -684,8 +687,34 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga365a8d571ae7a2c6c52c91d20f2bbed7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga365a8d571ae7a2c6c52c91d20f2bbed7">&#9670;&nbsp;</a></span>computeVertexValues() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; HHOSpace::computeVertexValues </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>u</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the values of the potential reconstruction at the mesh vertices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td>DOFs in the discrete space </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga6c63612c10a152389a342da02b8834e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6c63612c10a152389a342da02b8834e8">&#9670;&nbsp;</a></span>computeVertexValues()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c63612c10a152389a342da02b8834e8">&#9670;&nbsp;</a></span>computeVertexValues() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

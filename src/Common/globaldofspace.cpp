@@ -188,6 +188,76 @@ Eigen::MatrixXd GlobalDOFSpace::extendOperator(const Face & F, const Edge & E, c
   
   return opF;
 }
+
+//------------------------------------------------------------------------------
+
+void GlobalDOFSpace::addInnerProductContribution(const Cell & T, const Face & F, Eigen::MatrixXd & prodT, const Eigen::MatrixXd & prodF) const
+{
+  // vertex contributions
+  for (size_t iV=0; iV<F.n_vertices(); iV++){
+    const Vertex & V = *F.vertex(iV);
+    
+    if (numLocalDofsVertex()>0){
+      // vertex-vertex contributions (same vertex, and two different vertices)
+      prodT.block(localOffset(T, V), localOffset(T, V), numLocalDofsVertex(), numLocalDofsVertex()) 
+          += prodF.block(localOffset(F, V), localOffset(F, V), numLocalDofsVertex(), numLocalDofsVertex());
+
+      for (size_t iVp=0; iVp<iV; iVp++){
+        const Vertex & Vp = *F.vertex(iVp);
+        prodT.block(localOffset(T, V), localOffset(T, Vp), numLocalDofsVertex(), numLocalDofsVertex()) 
+          += prodF.block(localOffset(F, V), localOffset(F, Vp), numLocalDofsVertex(), numLocalDofsVertex());
+        prodT.block(localOffset(T, Vp), localOffset(T, V), numLocalDofsVertex(), numLocalDofsVertex()) 
+          += prodF.block(localOffset(F, Vp), localOffset(F, V), numLocalDofsVertex(), numLocalDofsVertex());
+      }
+    
+      // vertex-edge contributions
+      for (size_t iE=0; iE<F.n_edges(); iE++){
+        const Edge & E = *F.edge(iE);
+        prodT.block(localOffset(T, E), localOffset(T, V), numLocalDofsEdge(), numLocalDofsVertex()) 
+          += prodF.block(localOffset(F, E), localOffset(F, V), numLocalDofsEdge(), numLocalDofsVertex());
+        prodT.block(localOffset(T, V), localOffset(T, E), numLocalDofsVertex(), numLocalDofsEdge()) 
+          += prodF.block(localOffset(F, V), localOffset(F, E), numLocalDofsVertex(), numLocalDofsEdge());
+      }
+
+      // vertex-face contributions
+      prodT.block(localOffset(T, F), localOffset(T, V), numLocalDofsFace(), numLocalDofsVertex()) 
+        += prodF.block(localOffset(F), localOffset(F, V), numLocalDofsFace(), numLocalDofsVertex());
+      prodT.block(localOffset(T, V), localOffset(T, F), numLocalDofsVertex(), numLocalDofsFace()) 
+        += prodF.block(localOffset(F, V), localOffset(F), numLocalDofsVertex(), numLocalDofsFace());
+    }
+  }
+  
+  // edge contributions
+  for (size_t iE=0; iE<F.n_edges(); iE++){
+    const Edge & E = *F.edge(iE);
+
+    if (numLocalDofsEdge()>0){
+      // edge-edge contributions (same edge, and two different edges)
+      prodT.block(localOffset(T, E), localOffset(T, E), numLocalDofsEdge(), numLocalDofsEdge()) 
+          += prodF.block(localOffset(F, E), localOffset(F, E), numLocalDofsEdge(), numLocalDofsEdge());
+
+      for (size_t iEp=0; iEp<iE; iEp++){
+        const Edge & Ep = *F.edge(iEp);
+        prodT.block(localOffset(T, E), localOffset(T, Ep), numLocalDofsEdge(), numLocalDofsEdge()) 
+          += prodF.block(localOffset(F, E), localOffset(F, Ep), numLocalDofsEdge(), numLocalDofsEdge());
+        prodT.block(localOffset(T, Ep), localOffset(T, E), numLocalDofsEdge(), numLocalDofsEdge()) 
+          += prodF.block(localOffset(F, Ep), localOffset(F, E), numLocalDofsEdge(), numLocalDofsEdge());
+      }
+    
+      // edge-face contributions
+      prodT.block(localOffset(T, F), localOffset(T, E), numLocalDofsFace(), numLocalDofsEdge()) 
+        += prodF.block(localOffset(F), localOffset(F, E), numLocalDofsFace(), numLocalDofsEdge());
+      prodT.block(localOffset(T, E), localOffset(T, F), numLocalDofsEdge(), numLocalDofsFace()) 
+        += prodF.block(localOffset(F, E), localOffset(F), numLocalDofsEdge(), numLocalDofsFace());
+    }
+  }
+  
+  // face-face contibutions
+  prodT.block(localOffset(T, F), localOffset(T, F), numLocalDofsFace(), numLocalDofsFace()) 
+          += prodF.block(localOffset(F), localOffset(F), numLocalDofsFace(), numLocalDofsFace());
+          
+}
+
 //------------------------------------------------------------------------------
 
 std::vector<size_t> GlobalDOFSpace::globalDOFIndices(const Cell & T) const

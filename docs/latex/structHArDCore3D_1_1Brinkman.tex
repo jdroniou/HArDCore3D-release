@@ -82,6 +82,8 @@ std\+::vector$<$ \mbox{\hyperlink{structHArDCore3D_1_1BrinkmanNorms}{Brinkman\+N
 \begin{DoxyCompactList}\small\item\em Compute the discrete energy norm of a family of vectors representing the dofs. \end{DoxyCompactList}\item 
 std\+::vector$<$ double $>$ \mbox{\hyperlink{group__HHO__brinkman_ga75010589205bc7b43f9afe3e8965e5aa}{pressure\+Vertex\+Values}} (const Eigen\+::\+Vector\+Xd \&p) const
 \begin{DoxyCompactList}\small\item\em Create vertex values for the pressure (from the element values), for plotting. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{group__HHO__brinkman_ga81cc62cd427c34449df6ad07ae7263df}{compute\+Condition\+Num}} () const
+\begin{DoxyCompactList}\small\item\em Computes the condition number of the matrix. \end{DoxyCompactList}\item 
 std\+::pair$<$ double, double $>$ \mbox{\hyperlink{group__HHO__brinkman_ga427b126b6203ae2dfdf0b36759f4143a}{compute\+Flux}} (const Eigen\+::\+Vector\+Xd \&u, const std\+::pair$<$ std\+::vector$<$ Vector\+Rd $>$, Vector\+Rd $>$ \&surf) const
 \begin{DoxyCompactList}\small\item\em Compute the velocity flux (integral of u.\+n) across a given surface, and the area of the surface, assumed to be star-\/shaped with respect the barycenter of its vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 

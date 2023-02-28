@@ -14,11 +14,19 @@
 #include "vtu_writer.hpp"
 
 #ifdef WITH_UMFPACK
-#include <Eigen/UmfPackSupport>
+  #include <Eigen/UmfPackSupport>
 #endif
 
 #ifdef WITH_MKL
-#include <Eigen/PardisoSupport>
+  #include <Eigen/PardisoSupport>
+  #include <mkl.h>
+#endif
+
+#ifdef WITH_SPECTRA
+  #include <Spectra/SymEigsSolver.h>
+  #include <Spectra/MatOp/SparseSymShiftSolve.h>
+  #include <Spectra/MatOp/SparseSymMatProd.h>
+  #include <Spectra/SymEigsShiftSolver.h>
 #endif
 
 #define FORMAT(W)                                                       \
@@ -55,6 +63,7 @@ int main(int argc, const char* argv[])
     ("iterative-solver,i", "Use iterative linear solver")
     ("stabilization-parameter-stokes,x", boost::program_options::value<double>()->default_value(3.), "Set the stabilization parameter for Stokes terms")
     ("stabilization-parameter-darcy,y", boost::program_options::value<double>()->default_value(.3), "Set the stabilization parameter for Stokes terms")
+    ("condition-number,c", boost::program_options::value<int>()->default_value(0), "Calculate condition number if >0 (requires the Spectra library); if >1, compute condition number and exits.")
     ;
 
   boost::program_options::variables_map vm;
@@ -180,6 +189,18 @@ int main(int argc, const char* argv[])
     gradp = cavity_gradp;
     break;
 
+  case 7:
+    std::cout << "[main] Two regions split at x=1/2 ";
+    f = tworegions_f;
+    g = tworegions_g;
+    u = tworegions_u;
+    p = tworegions_p;
+    mu = scaling_mu * tworegions_mu;
+    kappainv = scaling_kappainv * tworegions_kappainv;
+    gradu = tworegions_gradu;
+    gradp = tworegions_gradp;
+    break;
+
   default:
     std::cerr << "[main] ERROR: Unknown exact solution" << std::endl;
     exit(1);
@@ -225,6 +246,20 @@ int main(int argc, const char* argv[])
     saveMarket(br.systemVector(), "b_fullgradientbr.mtx");
   }
 
+  // Compute condition number if requested
+  double cond_num = -1;
+  int calculate_cond_num = vm["condition-number"].as<int>();
+  if (calculate_cond_num > 0){
+    #ifdef WITH_SPECTRA
+    auto [max_eig, min_eig] = br.computeConditionNum();
+    cond_num = std::sqrt(max_eig/double(min_eig));
+    std::cout << FORMAT(25) << "[main] Condition number (min/max eig): " << cond_num << " (" << min_eig << "/" << max_eig << ")" << std::endl;
+    #endif
+    if (calculate_cond_num > 1){
+      exit(0);
+    }
+  }
+
   // Solve the problem
   timer.start();
   Eigen::VectorXd uph_solsystem;
@@ -246,6 +281,9 @@ int main(int argc, const char* argv[])
   } else { 
 #ifdef WITH_MKL
     std::cout << "[main] Solving the linear system using Pardiso..." ;    
+    unsigned nb_threads_hint = std::thread::hardware_concurrency();
+    mkl_set_dynamic(0);
+    mkl_set_num_threads(nb_threads_hint);
     Eigen::PardisoLU<Brinkman::SystemMatrixType> solver;
     solver.pardisoParameterArray()[9] = 6; // Pivoting perturbation (see iparm[9] in Pardiso documentation)
 #elif WITH_UMFPACK
@@ -334,7 +372,7 @@ int main(int argc, const char* argv[])
   }
 
   // --------------------------------------------------------------------------
-  //                     Creates a .vtu file of the pressure
+  //           Creates a .vtu file of the velocity and pressure
   // --------------------------------------------------------------------------
   // Only if we do not have too many cells
   if (vm.count("plot") && mesh_ptr->n_cells() <= max_nb_cells_for_plot) {
@@ -377,6 +415,7 @@ int main(int argc, const char* argv[])
   out << "Degree: " << K << std::endl;
   out << "StabilisationParameterStokes: " << br.stabilizationParameter().first << std::endl;
   out << "StabilisationParameterDarcy: " << br.stabilizationParameter().second << std::endl;
+  out << "ConditionNumber: " << cond_num << std::endl;
   out << "ResidualSolver: " << residual_solver << std::endl;
   out << "MeshSize: " << mesh_ptr->h_max() << std::endl;
   out << "NbCells: " << mesh_ptr->n_cells() << std::endl;
@@ -384,11 +423,22 @@ int main(int argc, const char* argv[])
   out << "DimVelocitySpace: " << vhho_space.dimension() << std::endl;
   out << "DimPressureSpace: " << p_space.dimension() << std::endl;
   out << "SizeSystem: " << br.sizeSystem() << std::endl;
+
   out << "L2ErrorU: " << L2_err_u << std::endl;  
+  out << "abs_L2ErrorU: " << list_disc_norms[0].first << std::endl;
+  out << "L2NormU: " << list_disc_norms[1].first << std::endl;
   out << "H1ErrorU: " << H1_err_u << std::endl;  
+  out << "abs_H1ErrorU: " << list_disc_norms[0].second << std::endl;
+  out << "H1NormU: " << list_disc_norms[1].second << std::endl;
   out << "L2ErrorP: " << L2_err_p << std::endl;  
+  out << "abs_L2ErrorP: " << list_energy_norms[0].p << std::endl;
+  out << "L2NormP: " << list_energy_norms[1].p << std::endl;
   out << "EnergyError: " << energy_err << std::endl;  
+  out << "abs_EnergyError: " << list_energy_norms[0].energy << std::endl;
+  out << "EnergyNorm: " << list_energy_norms[1].energy << std::endl;
+
   out << "FluxCavity: " << flux_cavity << std::endl;
+
   out << "TwallVHHOSpace: " << t_wall_vhhospace << std::endl;  
   out << "TprocVHHOSpace: " << t_proc_vhhospace << std::endl;  
   out << "TwallModel: " << t_wall_model << std::endl;  
@@ -785,6 +835,32 @@ std::vector<double> Brinkman::pressureVertexValues(const Eigen::VectorXd & p) co
   }
 
   return values;
+}
+
+
+//------------------------------------------------------------------------------
+
+std::pair<double, double> Brinkman::computeConditionNum() const
+{
+  #ifdef WITH_SPECTRA
+  SystemMatrixType M = systemMatrix().transpose()*systemMatrix();
+  // Calculate the largest eigenvalue
+  Spectra::SparseSymMatProd<double> op(M);
+  Spectra::SymEigsSolver<Spectra::SparseSymMatProd<double>> eigs_max(op, 1, 20);
+  eigs_max.init();
+	eigs_max.compute(Spectra::SortRule::LargestMagn);
+  // Calculate the smallest eigenvalue
+  Spectra::SparseSymShiftSolve<double> opp(M);
+  Spectra::SymEigsShiftSolver<Spectra::SparseSymShiftSolve<double>> eigs_min(opp, 1, 20, 0.0);
+  eigs_min.init();
+  eigs_min.compute(Spectra::SortRule::LargestMagn);
+  
+  if(eigs_max.info() == Spectra::CompInfo::Successful && eigs_min.info() == Spectra::CompInfo::Successful){
+    // std::cout << FORMAT(25) << "[main] Eigenvalues: " << eigs_max.eigenvalues()[0] << " " << eigs_min.eigenvalues()[0] << std::endl;
+    return std::make_pair(eigs_max.eigenvalues()[0], eigs_min.eigenvalues()[0]);
+  }
+  #endif
+  return std::make_pair(-1, -1);
 }
 
 //-----------------------------------------------------------------------------------------

@@ -104,6 +104,9 @@ namespace HArDCore3D
     /// Extend an edge operator to a face
     Eigen::MatrixXd extendOperator(const Face & F, const Edge & E, const Eigen::MatrixXd & opE) const;
 
+    /// Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T)
+    void addInnerProductContribution(const Cell & T, const Face & F, Eigen::MatrixXd & prodT, const Eigen::MatrixXd & prodF) const;
+
     //------------------------------------------------------------------------------
     // Global DOF indices for an element T
     //------------------------------------------------------------------------------

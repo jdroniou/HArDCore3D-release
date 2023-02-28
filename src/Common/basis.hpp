@@ -380,10 +380,9 @@ namespace HArDCore3D
   //----------------------------FAMILY------------------------------------------
   //
   /// Family of functions expressed as linear combination of the functions of a given basis
-  ///
-  /// If \f$(f_1,...,f_r)\f$ is the basis, then the family is \f$(\phi_1,...,\phi_l)\f$ where
-  ///     \f$\phi_i = \sum_j M_ij f_j\f$.
-  /// The matrix \f$M\f$ is the member m_matrix.
+  /** If \f$(f_1,...,f_r)\f$ is the basis, then the family is \f$(\phi_1,...,\phi_l)\f$ where
+       \f$\phi_i = \sum_j M_{ij} f_j\f$.
+   The matrix \f$M\f$ is the member m_matrix. */
   template <typename BasisType>
   class Family
   {
@@ -2739,7 +2738,7 @@ namespace HArDCore3D
 
   /// Structure to decompose a set of polynomials on a basis on a face or a cell
   /** The main interest of this structure for faces is to give a decomposition of traces (scalar, normal, etc.) of
-  cell polynomials on a basis of face polynomial. This enables the usage of these traces in a face GramMatrix.
+  cell polynomials on a basis of face polynomials. This enables the usage of these traces in a face GramMatrix.
   However, the decomposition leads to increased rouding errors compared to a straight usage of compute_gram_matrix.
   Some tests however seem to indicate that this version of DecomposePoly is relatively robust up to degrees ~4 or 5
   */

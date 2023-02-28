@@ -84,6 +84,8 @@ const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{Local\+Op
 \begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{group__HHOSpace_ga539ac4312a3aa9cfa3355287e06bd649}{HAr\+DCore3\+D\+::\+HHOSpace\+::compute\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
 \begin{DoxyCompactList}\small\item\em Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{group__HHOSpace_ga365a8d571ae7a2c6c52c91d20f2bbed7}{HAr\+DCore3\+D\+::\+HHOSpace\+::compute\+Vertex\+Values}} (const Eigen\+::\+Vector\+Xd \&u) const
+\begin{DoxyCompactList}\small\item\em Computes the values of the potential reconstruction at the mesh vertices. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__HHOSpace_gaca12a20f0158f29eb8f2469ebbd1c640}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+Local\+Operators\+::\+Local\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+gradient, const Eigen\+::\+Matrix\+Xd \&\+\_\+potential, const Eigen\+::\+Matrix\+Xd \&\+\_\+stabilisation, const Eigen\+::\+Matrix\+Xd \&\+\_\+potential\+\_\+div, const Eigen\+::\+Matrix\+Xd \&\+\_\+stabilisation\+\_\+div)
 \item 
 \mbox{\hyperlink{group__HHOSpace_gadd4f036ce349ce8939c82f207880d16e}{HAr\+DCore3\+D\+::\+VHHOSpace\+::\+VHHOSpace}} (const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__HHOSpace_ga8a3176833af5485a276bbb5eb86d4337}{mesh}}, size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_gaf169764abf85f85bec428e43dc60274b}{K}}, const \mbox{\hyperlink{group__HHOSpace_gac3aef56f5e68530d507db8d8d06db3e9}{Cell\+Selection}} \&Boundary\+Stab, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
@@ -354,10 +356,25 @@ Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors.
 {\em list\+\_\+dofs} & The list of vectors representing the dofs \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__HHOSpace_ga365a8d571ae7a2c6c52c91d20f2bbed7}\label{group__HHOSpace_ga365a8d571ae7a2c6c52c91d20f2bbed7}} 
+\index{HHOSpace@{HHOSpace}!computeVertexValues@{computeVertexValues}}
+\index{computeVertexValues@{computeVertexValues}!HHOSpace@{HHOSpace}}
+\doxysubsubsection{\texorpdfstring{computeVertexValues()}{computeVertexValues()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ HHOSpace\+::compute\+Vertex\+Values (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Computes the values of the potential reconstruction at the mesh vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & DOFs in the discrete space \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__HHOSpace_ga6c63612c10a152389a342da02b8834e8}\label{group__HHOSpace_ga6c63612c10a152389a342da02b8834e8}} 
 \index{HHOSpace@{HHOSpace}!computeVertexValues@{computeVertexValues}}
 \index{computeVertexValues@{computeVertexValues}!HHOSpace@{HHOSpace}}
-\doxysubsubsection{\texorpdfstring{computeVertexValues()}{computeVertexValues()}}
+\doxysubsubsection{\texorpdfstring{computeVertexValues()}{computeVertexValues()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily std\+::vector$<$ Vector\+Rd $>$ VHHOSpace\+::compute\+Vertex\+Values (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{u }\end{DoxyParamCaption}) const}
 
 

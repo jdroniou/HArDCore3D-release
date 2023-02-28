@@ -4,18 +4,19 @@
 # Degree
 k=1
 
-# Stabilization parameters
-stab_par_stokes=3
-stab_par_darcy=.3
+# Stabilization parameters [initial guess: (3,.3); for tcsol=7: (1,10^(-k-1))]
+stab_par_stokes=1
+#stab_par_darcy=.1
+stab_par_darcy=$(perl -E "say 10**(-$k-1)")
 
 # Test case and scalings of viscosity, permeability
-tcsol=2
+tcsol=7
 scaling_viscosity=1
 scaling_permeabilityinv=1
 
 # Mesh family
- mesh_family=Tetgen-Cube-0
-# mesh_family=Cubic-Cells
+# mesh_family=Tetgen-Cube-0
+ mesh_family=Cubic-Cells
 # mesh_family=Tetgen-Cube-1
 # mesh_family=Random-Hexahedra
 # mesh_family=Prysmatic-Cells
@@ -33,10 +34,10 @@ case ${mesh_family} in
     Tetgen-Cube-0)
 	mesh[1]="RF:Tetgen-Cube-0/RF_fmt/cube.1"
 	mesh[2]="RF:Tetgen-Cube-0/RF_fmt/cube.2"
-	mesh[3]="RF:Tetgen-Cube-0/RF_fmt/cube.3"
-	mesh[4]="RF:Tetgen-Cube-0/RF_fmt/cube.4"
-	mesh[5]="RF:Tetgen-Cube-0/RF_fmt/cube.5"
-	mesh[6]="RF:Tetgen-Cube-0/RF_fmt/cube.6"
+#	mesh[3]="RF:Tetgen-Cube-0/RF_fmt/cube.3"
+#	mesh[4]="RF:Tetgen-Cube-0/RF_fmt/cube.4"
+#	mesh[5]="RF:Tetgen-Cube-0/RF_fmt/cube.5"
+#	mesh[6]="RF:Tetgen-Cube-0/RF_fmt/cube.6"
 	;;
     Tetgen-Cube-1)
 	mesh[1]="RF:Tetgen-Cube-1/RF_fmt/cube.2"
@@ -59,7 +60,8 @@ case ${mesh_family} in
 	mesh[2]="RF:Cubic-Cells/RF_fmt/gcube_4x4x4"
 	mesh[3]="RF:Cubic-Cells/RF_fmt/gcube_8x8x8"
 #	mesh[4]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16"
-	# mesh[5]="RF:Cubic-Cells/RF_fmt/gcube_32x32x32"
+#  mesh[5]="RF:Cubic-Cells/RF_fmt/gcube_32x32x32"
+#  mesh[5]="RF:Cubic-Cells/RF_fmt/gcube_48x48x48"
 	;;
     Voro-Tets-2)
 	mesh[1]="RF:Voro-Tets-2/RF_fmt/voro.1"

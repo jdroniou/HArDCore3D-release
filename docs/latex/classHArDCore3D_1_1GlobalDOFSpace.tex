@@ -11,8 +11,7 @@ Base class for global DOF spaces. Provides functions to manipulate global DOFs (
 
 
 
-Inheritance diagram for HAr\+DCore3D\+::Global\+DOFSpace\+:
-\nopagebreak
+Inheritance diagram for HAr\+DCore3D\+::Global\+DOFSpace\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for HAr\+DCore3D\+::Global\+DOFSpace\+:
 \end{figure}
 
 
-Collaboration diagram for HAr\+DCore3D\+::Global\+DOFSpace\+:
-\nopagebreak
+Collaboration diagram for HAr\+DCore3D\+::Global\+DOFSpace\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -60,6 +58,8 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gabf4eafe2cf13ad7f5eeb322cb
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a cell. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa03cd062083ef8fbe3089d395f81338}{extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a face. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__Common_ga377359e7be24409898f4bd5b709aec76}{add\+Inner\+Product\+Contribution}} (const Cell \&T, const Face \&F, Eigen\+::\+Matrix\+Xd \&prodT, const Eigen\+::\+Matrix\+Xd \&prodF) const
+\begin{DoxyCompactList}\small\item\em Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T) \end{DoxyCompactList}\item 
 std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga253bd7addffb9686d8a71d19db88f3f2}{global\+DOFIndices}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Returns a vector listing the global DOFs attached to the element T\+: vertex DOFs, edge DOFs, face DOFs and element DOFs. \end{DoxyCompactList}\item 
 std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga7cc6a020ed82c7e8bdd295d6aa94dea5}{global\+DOFIndices}} (const Face \&F) const

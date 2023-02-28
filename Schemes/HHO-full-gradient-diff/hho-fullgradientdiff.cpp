@@ -10,12 +10,15 @@
 #include <boost/program_options.hpp>
 #include <display_timer.hpp>
 
+#include "vtu_writer.hpp"
+
 #ifdef WITH_UMFPACK
 #include <Eigen/UmfPackSupport>
 #endif
 
 #ifdef WITH_MKL
 #include <Eigen/PardisoSupport>
+#include <mkl.h>
 #endif
 
 #define FORMAT(W)                                                       \
@@ -30,6 +33,9 @@ using namespace HArDCore3D;
 const std::string mesh_dir = "../../meshes/";
 std::string default_mesh = mesh_dir + "Voro-small-0/RF_fmt/voro-2";
 
+// Max number of cells to plot a graph
+constexpr size_t max_nb_cells_for_plot = 20000;
+
 //------------------------------------------------------------------------------
 
 int main(int argc, const char* argv[])
@@ -43,6 +49,7 @@ int main(int argc, const char* argv[])
     ("pthread,p", boost::program_options::value<bool>()->default_value(true), "Use thread-based parallelism")
     ("solution,s", boost::program_options::value<int>()->default_value(0), "Select the solution")
     ("export-matrix,e", "Export matrix to Matrix Market format")
+    ("plot", boost::program_options::value<std::string>(), "Save plot of the solution to the given filename")
     ("iterative-solver,i", "Use iterative linear solver")
     ("stabilization-parameter,x", boost::program_options::value<double>(), "Set the stabilization parameter");
 
@@ -149,10 +156,13 @@ int main(int argc, const char* argv[])
     }
   } else { 
 #ifdef WITH_MKL
-    std::cout << "[main] Solving the linear system using Pardiso" << std::endl;    
+    std::cout << "[main] Solving the linear system using Pardiso" << std::endl;
+    unsigned nb_threads_hint = std::thread::hardware_concurrency();
+    mkl_set_dynamic(0);
+    mkl_set_num_threads(nb_threads_hint);
     Eigen::PardisoLU<FullGradientDiffusion::SystemMatrixType> solver;
 #elif WITH_UMFPACK
-    std::cout << "[main] Solving the linear system using Umfpack" << std::endl;    
+    std::cout << "[main] Solving the linear system using Umfpack" << std::endl;
     Eigen::UmfPackLU<FullGradientDiffusion::SystemMatrixType> solver;
 #else
     std::cout << "[main] Solving the linear system using direct solver" << std::endl;    
@@ -193,7 +203,33 @@ int main(int argc, const char* argv[])
   std::cout << "[main] Mesh diameter " << mesh_ptr->h_max() << std::endl;
  
 
-  // Write results to file
+  // --------------------------------------------------------------------------
+  //                     Creates a .vtu file of the solution
+  // --------------------------------------------------------------------------
+  // Only if we do not have too many cells
+  if (vm.count("plot") && mesh_ptr->n_cells() <= max_nb_cells_for_plot) {
+    std::cout << "[main] Writing solution to file" << std::endl;
+    std::string filename = vm["plot"].as<std::string>();
+    VtuWriter plotdata(mesh_ptr.get());
+		
+		// Exact solution at the vertices
+    std::vector<double> exact_u_vertex(mesh_ptr->n_vertices(), 0.);
+    for (size_t iV=0; iV< mesh_ptr->n_vertices(); iV++){
+      exact_u_vertex[iV] = u(mesh_ptr->vertex(iV)->coords());
+    }
+		
+    // Approximate pressure and velocity at the vertices
+    std::vector<double> u_vertex = hho_space.computeVertexValues(uh);
+    
+    // Plot
+    plotdata.write_to_vtu(filename + ".vtu", 
+                          std::vector<std::vector<double>> {u_vertex, exact_u_vertex},
+                          std::vector<std::string>{"approximate", "exact"});
+   }
+
+  // --------------------------------------------------------------------------
+  //                     Creates .txt file with data and results
+  // --------------------------------------------------------------------------
   std::ofstream out("results.txt");
   out << "Scheme: hho-fullgradientdiff" << std::endl;
   out << "Solution: " << solution << std::endl;

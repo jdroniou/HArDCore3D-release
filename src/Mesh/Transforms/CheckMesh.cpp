@@ -36,7 +36,9 @@ int main(const int argc, const char *argv[])
     // Check various properties of the mesh
     bool valid = true;
     constexpr double eps=1e-9; // relative tolerance for tests
-            
+    
+    //
+    // Number of boundary and internal elements
     std::cout << "Check that nb of internal and boundary entities match total nb of entities" << std::endl;
     if(mesh_ptr->n_i_vertices() + mesh_ptr->n_b_vertices() != mesh_ptr->n_vertices())
     {
@@ -62,6 +64,8 @@ int main(const int argc, const char *argv[])
         valid = false;
     }
 
+    /////
+    ///// Orientation of faces
     std::cout << "Check orientation of internal faces" << std::endl;
     for(size_t iF = 0; iF < mesh_ptr->n_i_faces(); ++iF)
     {
@@ -84,6 +88,7 @@ int main(const int argc, const char *argv[])
     }
 
     ////
+    //// Boundary of faces
     std::cout << "Check boundary of faces" << std::endl;
     double max_error_vol_faces = 0.;
     double max_error_int_normal_faces = 0.;
@@ -158,6 +163,7 @@ int main(const int argc, const char *argv[])
     }
 
     ////
+    //// Boundary of elements
     std::cout << "Check boundary of elements" << std::endl;
     double max_error_vol_elements = 0.;
     double max_error_int_normal_elements = 0.;
@@ -230,7 +236,7 @@ int main(const int argc, const char *argv[])
     }else{
       std::cout << "Mesh is NOT ok." << std::endl;
     }
-    std::cout << std::endl << "Faces: max rel. error area: " << max_error_vol_faces << ", max error int normal: " << max_error_int_normal_faces;// << ", min/max area: " << min_measure_F << "/" << max_measure_F << std::endl;
+    std::cout << std::endl << "Faces: max rel. error area: " << max_error_vol_faces << ", max error int normal: " << max_error_int_normal_faces << std::endl;
     std::cout << "Elements: max rel. error vol: " << max_error_vol_elements << ", max error int normal: " << max_error_int_normal_elements << std::endl;
       
     return 0;

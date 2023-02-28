@@ -234,14 +234,15 @@ VHHOSpace::LocalOperators VHHOSpace::_compute_operators(size_t iT)
     Eigen::MatrixXd PF = extendOperator(T, F, Eigen::MatrixXd::Identity(dimensionFace(F), dimensionFace(F)));
     MonomialFaceIntegralsType int_mono_2k_F = IntegrateFaceMonomials(F, 2*degree());
     BGT += GramMatrix(F, PkdxdT_nTF_family_PkdF, *faceBases(F).Polykd, int_mono_2k_F) * PF;
-
-    // Following commented block could replace the block above, without using DecomposePoly (more expensive, but sometimes better rounding errors) -- not tested here yet
+    
+    // Replaces the block above, without using DecomposePoly
     /*
       QuadratureRule quad_2k_F = generate_quadrature_rule(F, 2 * degree() );
+      VectorRd nTF = T.face_normal(iF);
       auto basis_Pkdxd_nTF_F_quad = transform_values_quad<VectorRd>(
-					         evaluate_quad<Function>::compute(*cellBases(iT).Polykdxd, quad_2k_F),
-					         [&nTF](MatrixRd &M)->VectorRd { return M*nTF;}
-					         );
+				         evaluate_quad<Function>::compute(*cellBases(iT).Polykdxd, quad_2k_F),
+				         [&nTF](const MatrixRd &M)->VectorRd { return M*nTF;}
+				         );
       auto basis_Pkd_F_quad = evaluate_quad<Function>::compute(*faceBases(F).Polykd, quad_2k_F);
       Eigen::MatrixXd PF = extendOperator(T, F, Eigen::MatrixXd::Identity(dimensionFace(F), dimensionFace(F)));
       BGT += compute_gram_matrix(basis_Pkdxd_nTF_F_quad, basis_Pkd_F_quad, quad_2k_F) * PF;
@@ -305,7 +306,6 @@ VHHOSpace::LocalOperators VHHOSpace::_compute_operators(size_t iT)
     const Face & F = *T.face(iF);
     VectorRd nF = F.normal();
     
-    // Decompose q n_F on a vector polynomial basis on the face
     DecomposePoly dec(F, TensorizedVectorFamily<MonomialScalarBasisFace, dimspace>(MonomialScalarBasisFace(F, degree()+1)));
     auto Pkpo0T_nF_nodes = transform_values_quad<VectorRd>(
                                     evaluate_quad<Function>::compute(basis_Pkpo0, dec.get_nodes()),
@@ -316,6 +316,19 @@ VHHOSpace::LocalOperators VHHOSpace::_compute_operators(size_t iT)
     MonomialFaceIntegralsType int_mono_2kpo_F = IntegrateFaceMonomials(F, 2*degree()+1);
     RHS_Pdiv.block(0, localOffset(T, F), basis_Pkpo0.dimension(), dimensionFace(F))
       += T.face_orientation(iF) * GramMatrix(F, Pkpo0T_nF_family_PkpoF, *faceBases(F).Polykd, int_mono_2kpo_F);
+
+    // Replaces the block above, without using DecomposePoly
+    /*
+      QuadratureRule quad_2kpo_F = generate_quadrature_rule(F, 2 * degree() + 1);
+      auto basis_PkpoT_nF_quad = transform_values_quad<VectorRd>(
+				         evaluate_quad<Function>::compute(basis_Pkpo0, quad_2kpo_F),
+				         [&nF](const double &q)->VectorRd { return q*nF;}
+				         );
+      auto basis_Pkd_F_quad = evaluate_quad<Function>::compute(*faceBases(F).Polykd, quad_2kpo_F);
+      RHS_Pdiv.block(0, localOffset(T, F), basis_Pkpo0.dimension(), dimensionFace(F))
+        += T.face_orientation(iF) * compute_gram_matrix(basis_PkpoT_nF_quad, basis_Pkd_F_quad, quad_2kpo_F);
+    */
+    
   }
   
   // LHS and RHS - Gck component
@@ -371,6 +384,7 @@ VHHOSpace::LocalOperators VHHOSpace::_compute_operators(size_t iT)
     // the construction of Id_minus_ITPT for these faces because that part will not be used by BilinearForm; so Id_minus_ITPT
     // is not empty on these faces but incorrect, only contain u_F)
     if ( !F.is_boundary() || m_boundary_stab(T) ){    
+
       DecomposePoly dec(F, TensorizedVectorFamily<MonomialScalarBasisFace, dimspace>(MonomialScalarBasisFace(F, degree()+1)));
       auto PkpodT_nodes = evaluate_quad<Function>::compute(*cellBases(iT).Polykpod, dec.get_nodes());
       auto PkpodT_family_PkdF = dec.family(PkpodT_nodes);
@@ -381,9 +395,21 @@ VHHOSpace::LocalOperators VHHOSpace::_compute_operators(size_t iT)
       Eigen::MatrixXd GramFkd = GramMatrix(F, *faceBases(F).Polykd, int_mono_2kpo_F);
       Eigen::MatrixXd GramFkd_Tkpod = GramMatrix(F, *faceBases(F).Polykd, PkpodT_family_PkdF, int_mono_2kpo_F);
       Eigen::MatrixXd GramFkd_Tkd = GramMatrix(F, *faceBases(F).Polykd, PkdT_family_PkdF, int_mono_2kpo_F);
+      
+      // Replaces the block above, without using DecomposePoly
+      /*
+        QuadratureRule quad_2kpo_F = generate_quadrature_rule(F, 2 * degree() + 1);
+        auto PkpodT_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykpod, quad_2kpo_F);
+        auto PkdT_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykd, quad_2kpo_F);
+        auto PkdF_quad = evaluate_quad<Function>::compute(*faceBases(F).Polykd, quad_2kpo_F);
+        Eigen::MatrixXd GramFkd_Tkpod = compute_gram_matrix(PkdF_quad, PkpodT_quad, quad_2kpo_F);
+        Eigen::MatrixXd GramFkd_Tkd = compute_gram_matrix(PkdF_quad, PkdT_quad, quad_2kpo_F);
+        Eigen::MatrixXd GramFkd = GramMatrix(F, *faceBases(F).Polykd);
+      */
+      
       Eigen::LDLT<Eigen::MatrixXd> GramFkd_inv(GramFkd);
       GramFkd_inv.compute(GramFkd);
-      
+
       // PF extracts the face unknowns corresponding to F when read among all the element & face unknowns of T
       Eigen::MatrixXd PF = extendOperator(T, F, Eigen::MatrixXd::Identity(dimensionFace(F), dimensionFace(F)));
 
@@ -460,6 +486,14 @@ std::vector<std::pair<double,double>> VHHOSpace::computeNorms( const std::vector
           auto PkdT_nodes = evaluate_quad<Function>::compute(*cellBases(iT).Polykd, dec.get_nodes());
           auto PkdT_family_PkdF = dec.family(PkdT_nodes);
           Eigen::MatrixXd mass_PkdF_PkdT = GramMatrix(F, *faceBases(F).Polykd, PkdT_family_PkdF, int_mono_2kF);
+
+          // Replaces the block above, without using DecomposePoly
+          /*
+            QuadratureRule quad_2k_F = generate_quadrature_rule(F, 2 * degree());
+            auto PkdT_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykd, quad_2k_F);
+            auto PkdF_quad = evaluate_quad<Function>::compute(*faceBases(F).Polykd, quad_2k_F);
+            Eigen::MatrixXd mass_PkdF_PkdT = compute_gram_matrix(PkdF_quad, PkdT_quad, quad_2k_F);          
+          */
           
           for (size_t i=0; i<nb_vectors; i++){
             // Decompose u_F-u_T on Polyk basis of F

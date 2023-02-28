@@ -388,3 +388,31 @@ std::vector<std::pair<double,double>> HHOSpace::computeNorms( const std::vector<
 }
 
 
+//------------------------------------------------------------------------------
+// Vertex values 
+//------------------------------------------------------------------------------
+std::vector<double> HHOSpace::computeVertexValues(const Eigen::VectorXd & u) const
+{
+  std::vector<double> values(m_mesh.n_vertices(), 0.);
+  
+  // Value at each vertex obtained averaging the values from all the cells around
+  for (Vertex * V : mesh().get_vertices()){
+    size_t iV = V->global_index();
+ 
+    for (Cell * T : V->get_cells()){
+      size_t iT = T->global_index();
+      Eigen::VectorXd pTuT = operators(iT).potential * restrict(*T, u);
+      
+      for (size_t i=0; i < cellBases(iT).Polykpo->dimension(); i++){
+        values[iV] += pTuT(i) * cellBases(iT).Polykpo->function(i, V->coords());
+      }
+    }
+    
+    values[iV] /= V->n_cells();
+
+  }
+  
+  return values;
+}                  
+
+

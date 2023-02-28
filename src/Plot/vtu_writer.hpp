@@ -30,16 +30,15 @@
 
 #include <Eigen/Dense>
 
-
-/*!	
-*	@defgroup Plot 
+/*!  
+*  @defgroup Plot 
 * @brief Classes providing tools to create vtu files to visualise solutions
 */
 
 namespace HArDCore3D {
 
 /*!
-*	@addtogroup Plot
+*  @addtogroup Plot
 * @{
 */
 

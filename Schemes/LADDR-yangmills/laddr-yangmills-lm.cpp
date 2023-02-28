@@ -18,6 +18,7 @@
 
 #ifdef WITH_MKL
   #include <Eigen/PardisoSupport>
+  #include <mkl.h>
 #endif
 
 #ifdef WITH_SPECTRA
@@ -208,7 +209,10 @@ int main(int argc, const char* argv[])
     std::cout << "[main] Solving the linear system using LeastSquaresConjugateGradient" << std::endl;
   } else { 
   #ifdef WITH_MKL
-      std::cout << "[main] Solving the linear system using Pardiso" << std::endl; 
+      std::cout << "[main] Solving the linear system using Pardiso" << std::endl;
+      unsigned nb_threads_hint = std::thread::hardware_concurrency();
+      mkl_set_dynamic(0);
+      mkl_set_num_threads(nb_threads_hint);
   #elif WITH_UMFPACK
       std::cout << "[main] Solving the linear system using Umfpack" << std::endl;
   #else
@@ -273,7 +277,7 @@ int main(int argc, const char* argv[])
           exit(1);
         }
       } else { 
-        #ifdef WITH_MKL   
+        #ifdef WITH_MKL
             Eigen::PardisoLU<YangMills::SystemMatrixType> solver;
         #elif WITH_UMFPACK   
             Eigen::UmfPackLU<YangMills::SystemMatrixType> solver;

@@ -28,7 +28,7 @@ fi
 
 # Mesh families and maximum degree
 #mesh_families="Voro-small-0 Tetgen-Cube-0"
-mesh_families="Random-Hexahedra"
+mesh_families="Cubic-Cells"
 #mesh_families="CubeCavityWedge-tet-hexa"
 
 for mesh_family in ${mesh_families}
@@ -67,8 +67,8 @@ do
 	          mesh[1]="RF:Cubic-Cells/RF_fmt/gcube_2x2x2"
 	          mesh[2]="RF:Cubic-Cells/RF_fmt/gcube_4x4x4"
 	          mesh[3]="RF:Cubic-Cells/RF_fmt/gcube_8x8x8"
-            mesh[4]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16"
-	          # mesh[5]="RF:Cubic-Cells/RF_fmt/gcube_32x32x32"
+#	          mesh[4]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16"
+#            mesh[5]="RF:Cubic-Cells/RF_fmt/gcube_32x32x32"
 	          ;;
         Cubic-Cells-coarse)
             mesh[1]="RF:Cubic-Cells/RF_fmt/gcube_16x16x16.coarse.5"
@@ -127,14 +127,21 @@ do
 	          mesh[5]="RF:ComplexGeometries/CubeCavityWedge/RF_fmt/tet-hexa.5"
             ;;
     esac
+    
+    stab_par_darcy_ori=$stab_par_darcy
 
-    for k in {1..2}
+    for k in {0..2}
     do
       
-      for scaling_viscosity in {0..1}
+      # Adjust stabilisation parameter for test case 7 (initial start: 1 for viscosity, 1 for darcy -> 10^(-(k+1)))      
+      if (( $tcsol == 7 )); then
+        stab_par_darcy=$(perl -E "say $stab_par_darcy_ori/10**$k")
+      fi
+      
+      for scaling_viscosity in {1..1}
       do
       
-       for scaling_permeabilityinv in  {0..1}
+       for scaling_permeabilityinv in  {1..1}
         do
    
          test=$(($scaling_viscosity + $scaling_permeabilityinv));
@@ -181,10 +188,10 @@ do
               NbCells=$(awk '/NbCells:/ {print $NF}' $outsubdir/results-$i.txt)
               NbFaces=$(awk '/NbFaces:/ {print $NF}' $outsubdir/results-$i.txt)
               SizeSystem=$(awk '/SizeSystem:/ {print $NF}' $outsubdir/results-$i.txt)
-              L2ErrorU=$(awk '/L2ErrorU:/ {print $NF}' $outsubdir/results-$i.txt)
-              H1ErrorU=$(awk '/H1ErrorU:/ {print $NF}' $outsubdir/results-$i.txt)
-              L2ErrorP=$(awk '/L2ErrorP:/ {print $NF}' $outsubdir/results-$i.txt)
-              EnergyError=$(awk '/EnergyError:/ {print $NF}' $outsubdir/results-$i.txt)
+              L2ErrorU=$(awk '/^L2ErrorU:/ {print $NF}' $outsubdir/results-$i.txt)
+              H1ErrorU=$(awk '/^H1ErrorU:/ {print $NF}' $outsubdir/results-$i.txt)
+              L2ErrorP=$(awk '/^L2ErrorP:/ {print $NF}' $outsubdir/results-$i.txt)
+              EnergyError=$(awk '/^EnergyError:/ {print $NF}' $outsubdir/results-$i.txt)
               TwallVHHOSpace=$(awk '/TwallVHHOSpace:/ {print $NF}' $outsubdir/results-$i.txt)
               TprocVHHOSpace=$(awk '/TprocVHHOSpace:/ {print $NF}' $outsubdir/results-$i.txt)
               TwallModel=$(awk '/TwallModel:/ {print $NF}' $outsubdir/results-$i.txt)
@@ -195,13 +202,13 @@ do
               if(($i > 1)); then
                 imo=$(perl -E "say $i - 1")
                 OldMeshSize=$(awk '/MeshSize:/ {print $NF}' $outsubdir/results-$imo.txt)
-                OldL2ErrorU=$(awk '/L2ErrorU:/ {print $NF}' $outsubdir/results-$imo.txt)
+                OldL2ErrorU=$(awk '/^L2ErrorU:/ {print $NF}' $outsubdir/results-$imo.txt)
                 L2ErrorURate=$(perl -E "say sprintf(\"%.2f\", log($OldL2ErrorU/$L2ErrorU)/log($OldMeshSize/$MeshSize))")
-                OldH1ErrorU=$(awk '/H1ErrorU:/ {print $NF}' $outsubdir/results-$imo.txt)
+                OldH1ErrorU=$(awk '/^H1ErrorU:/ {print $NF}' $outsubdir/results-$imo.txt)
                 H1ErrorURate=$(perl -E "say sprintf(\"%.2f\", log($OldH1ErrorU/$H1ErrorU)/log($OldMeshSize/$MeshSize))")
-                OldL2ErrorP=$(awk '/L2ErrorP:/ {print $NF}' $outsubdir/results-$imo.txt)
+                OldL2ErrorP=$(awk '/^L2ErrorP:/ {print $NF}' $outsubdir/results-$imo.txt)
                 L2ErrorPrate=$(perl -E "say sprintf(\"%.2f\", log($OldL2ErrorP/$L2ErrorP)/log($OldMeshSize/$MeshSize))")
-                OldEnergyError=$(awk '/EnergyError:/ {print $NF}' $outsubdir/results-$imo.txt)
+                OldEnergyError=$(awk '/^EnergyError:/ {print $NF}' $outsubdir/results-$imo.txt)
                 EnergyErrorRate=$(perl -E "say sprintf(\"%.2f\", log($OldEnergyError/$EnergyError)/log($OldMeshSize/$MeshSize))")
                 echo -e "$Degree $MeshSize $NbCells $NbFaces $SizeSystem $L2ErrorU $L2ErrorURate $H1ErrorU $H1ErrorURate $L2ErrorP $L2ErrorPrate $EnergyError $EnergyErrorRate" >> $outsubdir/$errorsfile
               else

@@ -103,6 +103,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar monomial basis on an edge.  <a href="classHArDCore3D_1_1MonomialScalarBasisEdge.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1Family.html">HArDCore3D::Family&lt; BasisType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of functions expressed as linear combination of the functions of a given basis.  <a href="classHArDCore3D_1_1Family.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">HArDCore3D::TensorizedVectorFamily&lt; ScalarFamilyType, N &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector family obtained by tensorization of a scalar family.  <a href="classHArDCore3D_1_1TensorizedVectorFamily.html#details">More...</a><br /></td></tr>
@@ -663,7 +664,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga0a49ee1b317f37603ebde6873a1c3e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the symmetrisation operator, the rN^2 square matrix that to a given vector of coefficients on the Matrix family associate the vector of coefficients corresponding to the symmetrised matrix.  <a href="group__Basis.html#ga0a49ee1b317f37603ebde6873a1c3e7f">More...</a><br /></td></tr>
 <tr class="separator:ga0a49ee1b317f37603ebde6873a1c3e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafbadbf1bbd9d5500c625dc3055d6ea62"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gafbadbf1bbd9d5500c625dc3055d6ea62">HArDCore3D::MatrixFamily&lt; ScalarFamilyType, N &gt;::symmetricBasis</a> () const</td></tr>
-<tr class="memdesc:gafbadbf1bbd9d5500c625dc3055d6ea62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the matrix that can be used, in a <a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of this MatrixBasis, to create a basis of the subspace of symmetric matrices.  <a href="group__Basis.html#gafbadbf1bbd9d5500c625dc3055d6ea62">More...</a><br /></td></tr>
+<tr class="memdesc:gafbadbf1bbd9d5500c625dc3055d6ea62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the matrix that can be used, in a <a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of this MatrixBasis, to create a basis of the subspace of symmetric matrices.  <a href="group__Basis.html#gafbadbf1bbd9d5500c625dc3055d6ea62">More...</a><br /></td></tr>
 <tr class="separator:gafbadbf1bbd9d5500c625dc3055d6ea62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadf75daa62a416097ab9c2ec133dd3553"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gadf75daa62a416097ab9c2ec133dd3553">HArDCore3D::TangentFamily&lt; ScalarFamilyType &gt;::TangentFamily</a> (const ScalarFamilyType &amp;scalar_family, const Eigen::Matrix&lt; double, 2, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt; &amp;<a class="el" href="group__Basis.html#gab57e166ae408723200908def889dac07">generators</a>)</td></tr>
 <tr class="memdesc:gadf75daa62a416097ab9c2ec133dd3553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Basis.html#gadf75daa62a416097ab9c2ec133dd3553">More...</a><br /></td></tr>
@@ -928,7 +929,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga1abe06df2a8a25ad4de2f738930ec143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa1df24802a0b4781d1c7e8203f772a52"><td class="memTemplParams" colspan="2">template&lt;typename BasisType &gt; </td></tr>
 <tr class="memitem:gaa1df24802a0b4781d1c7e8203f772a52"><td class="memTemplItemLeft" align="right" valign="top">static boost::multi_array&lt; typename <a class="el" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits.html">detail::basis_evaluation_traits</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; BasisType &gt;, BasisFunction &gt;::ReturnValue, 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaa1df24802a0b4781d1c7e8203f772a52">HArDCore3D::evaluate_quad&lt; BasisFunction &gt;::compute</a> (const <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; BasisType &gt; &amp;basis, const <a class="el" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a> &amp;quad)</td></tr>
-<tr class="memdesc:gaa1df24802a0b4781d1c7e8203f772a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate a '<a class="el" href="classHArDCore3D_1_1Family.html">Family</a>' of functions at quadrature nodes (optimised compared the generic basis evaluation, to avoid computing several times the ancestor basis at the quadrature nodes)  <a href="group__Basis.html#gaa1df24802a0b4781d1c7e8203f772a52">More...</a><br /></td></tr>
+<tr class="memdesc:gaa1df24802a0b4781d1c7e8203f772a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate a '<a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a>' of functions at quadrature nodes (optimised compared the generic basis evaluation, to avoid computing several times the ancestor basis at the quadrature nodes)  <a href="group__Basis.html#gaa1df24802a0b4781d1c7e8203f772a52">More...</a><br /></td></tr>
 <tr class="separator:gaa1df24802a0b4781d1c7e8203f772a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1d7af8de1df73bd44b137ab6e4f409ae"><td class="memTemplParams" colspan="2">template&lt;typename BasisType , size_t N&gt; </td></tr>
 <tr class="memitem:ga1d7af8de1df73bd44b137ab6e4f409ae"><td class="memTemplItemLeft" align="right" valign="top">static boost::multi_array&lt; typename <a class="el" href="structHArDCore3D_1_1detail_1_1basis__evaluation__traits.html">detail::basis_evaluation_traits</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType, N &gt;, BasisFunction &gt;::ReturnValue, 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga1d7af8de1df73bd44b137ab6e4f409ae">HArDCore3D::evaluate_quad&lt; BasisFunction &gt;::compute</a> (const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; BasisType, N &gt; &amp;basis, const <a class="el" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">QuadratureRule</a> &amp;quad)</td></tr>
@@ -1027,7 +1028,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga9826502cd32a681c30f47a07ffedf0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of nodes (useful to compute value of polynomial to decompose via <a class="el" href="structHArDCore3D_1_1evaluate__quad.html" title="Evaluate a basis at quadrature nodes. &#39;BasisFunction&#39; (=Function, Gradient, Curl, Divergence or Hessi...">evaluate_quad</a>)  <a href="group__Basis.html#ga9826502cd32a681c30f47a07ffedf0ff">More...</a><br /></td></tr>
 <tr class="separator:ga9826502cd32a681c30f47a07ffedf0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaaa367eb17707155e1920822cfb60b334"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; BasisType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaaa367eb17707155e1920822cfb60b334">HArDCore3D::DecomposePoly&lt; BasisType &gt;::family</a> (boost::multi_array&lt; typename BasisType::FunctionValue, 2 &gt; &amp;values)</td></tr>
-<tr class="memdesc:gaaa367eb17707155e1920822cfb60b334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the decomposed polynomials as a <a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of the provided basis.  <a href="group__Basis.html#gaaa367eb17707155e1920822cfb60b334">More...</a><br /></td></tr>
+<tr class="memdesc:gaaa367eb17707155e1920822cfb60b334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the decomposed polynomials as a <a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of the provided basis.  <a href="group__Basis.html#gaaa367eb17707155e1920822cfb60b334">More...</a><br /></td></tr>
 <tr class="separator:gaaa367eb17707155e1920822cfb60b334"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -3797,7 +3798,7 @@ template&lt;typename BasisType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Evaluate a '<a class="el" href="classHArDCore3D_1_1Family.html">Family</a>' of functions at quadrature nodes (optimised compared the generic basis evaluation, to avoid computing several times the ancestor basis at the quadrature nodes) </p>
+<p>Evaluate a '<a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a>' of functions at quadrature nodes (optimised compared the generic basis evaluation, to avoid computing several times the ancestor basis at the quadrature nodes) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">basis</td><td>The family </td></tr>
@@ -4059,7 +4060,7 @@ template&lt;typename FunctionValue &gt; </div>
 <p>Compute the Gram matrix given the evaluation of one family of functions at quadrature nodes. Consists in calling the generic templated version with B1=B2. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">B</td><td><a class="el" href="classHArDCore3D_1_1Family.html">Family</a> at quadrature nodes </td></tr>
+    <tr><td class="paramname">B</td><td><a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> at quadrature nodes </td></tr>
     <tr><td class="paramname">qr</td><td>Quadrature rule used for evaluation </td></tr>
   </table>
   </dd>
@@ -4578,8 +4579,8 @@ template&lt;typename T , typename U &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>Weight function </td></tr>
-    <tr><td class="paramname">B1</td><td><a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of scalar basis functions at quadrature nodes </td></tr>
-    <tr><td class="paramname">B2</td><td><a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of vector basis functions at quadrature nodes </td></tr>
+    <tr><td class="paramname">B1</td><td><a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of scalar basis functions at quadrature nodes </td></tr>
+    <tr><td class="paramname">B2</td><td><a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of vector basis functions at quadrature nodes </td></tr>
     <tr><td class="paramname">qr</td><td>Quadrature rule </td></tr>
     <tr><td class="paramname">n_rows</td><td>Optional argument for number of functions from scalar family to be integrated against. Default integrates whole family </td></tr>
     <tr><td class="paramname">n_cols</td><td>Optional argument for number of functions from vector family to be integrated against. Default integrates whole family </td></tr>
@@ -4643,8 +4644,8 @@ template&lt;typename T , typename U &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>Weight function </td></tr>
-    <tr><td class="paramname">B1</td><td><a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of vector basis functions at quadrature nodes </td></tr>
-    <tr><td class="paramname">B2</td><td><a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of scalar basis functions at quadrature nodes </td></tr>
+    <tr><td class="paramname">B1</td><td><a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of vector basis functions at quadrature nodes </td></tr>
+    <tr><td class="paramname">B2</td><td><a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of scalar basis functions at quadrature nodes </td></tr>
     <tr><td class="paramname">qr</td><td>Quadrature rule </td></tr>
     <tr><td class="paramname">n_rows</td><td>Optional argument for number of functions from vector family to be integrated against. Default integrates whole family </td></tr>
     <tr><td class="paramname">n_cols</td><td>Optional argument for number of functions from scalar family to be integrated against. Default integrates whole family </td></tr>
@@ -7437,7 +7438,7 @@ template&lt;typename BasisType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the decomposed polynomials as a <a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of the provided basis. </p>
+<p>Returns the decomposed polynomials as a <a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of the provided basis. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">values</td><td>Values of polynomials at the nodes (e.g. obtained via <a class="el" href="structHArDCore3D_1_1evaluate__quad.html" title="Evaluate a basis at quadrature nodes. &#39;BasisFunction&#39; (=Function, Gradient, Curl, Divergence or Hessi...">evaluate_quad</a>) </td></tr>
@@ -9106,7 +9107,7 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>Function to be integrated. T is any type that has a scalar_product </td></tr>
-    <tr><td class="paramname">B</td><td><a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of basis functions at quadrature nodes. Possible types of T are double and VectorRd </td></tr>
+    <tr><td class="paramname">B</td><td><a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of basis functions at quadrature nodes. Possible types of T are double and VectorRd </td></tr>
     <tr><td class="paramname">qr</td><td>Quadrature rule </td></tr>
     <tr><td class="paramname">n_rows</td><td>Optional argument for number of basis functions to be integrated. Default integrates all in the family. </td></tr>
   </table>
@@ -10454,7 +10455,7 @@ template&lt;typename ScalarFamilyType , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the matrix that can be used, in a <a class="el" href="classHArDCore3D_1_1Family.html">Family</a> of this MatrixBasis, to create a basis of the subspace of symmetric matrices. </p>
+<p>Returns the matrix that can be used, in a <a class="el" href="classHArDCore3D_1_1Family.html" title="Family of functions expressed as linear combination of the functions of a given basis.">Family</a> of this MatrixBasis, to create a basis of the subspace of symmetric matrices. </p>
 
 </div>
 </div>

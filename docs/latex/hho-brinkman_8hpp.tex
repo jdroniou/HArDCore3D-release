@@ -10,16 +10,14 @@
 {\ttfamily \#include $<$vhhospace.\+hpp$>$}\newline
 {\ttfamily \#include $<$Boundary\+Conditions/\+Boundary\+Conditions.\+hpp$>$}\newline
 {\ttfamily \#include $<$integralweight.\+hpp$>$}\newline
-Include dependency graph for hho-\/brinkman.hpp\+:
-\nopagebreak
+Include dependency graph for hho-\/brinkman.hpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{hho-brinkman_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -190,4 +188,50 @@ static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}
 static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0c6ed50754266d08288e149561c2d19a}{HAr\+DCore3\+D\+::cavity\+\_\+f}}
 \item 
 static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8b1f7253d57bb23c2fa818d8cd31de6d}{HAr\+DCore3\+D\+::cavity\+\_\+g}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gaa8545cce4482839c2e98896f70c4be1b}{HAr\+DCore3\+D\+::\+Xi\+\_\+S}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga4230e82c38bfd21bc560ec578e2cc10b}{HAr\+DCore3\+D\+::\+Xi\+\_\+D}}
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_gac4edd45fe89c7de877ebdbc8acecf781}{HAr\+DCore3\+D\+::viscosity\+\_\+S}} = 1.
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_gad48adac1d9109ac911f74b66d3d8e25e}{HAr\+DCore3\+D\+::viscosity\+\_\+D}} = 0.
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga565c73531fd3cd9f93c60d5511d40db1}{HAr\+DCore3\+D\+::tworegions\+\_\+mu}}
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_gaeefb46acb94e8bfd8d469af45f6a07b1}{HAr\+DCore3\+D\+::permeability\+\_\+S}} = 1e-\/7
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga425ab3d9733f24b5dc79022bf7e528ce}{HAr\+DCore3\+D\+::permeability\+\_\+D}} = 1e-\/2
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga3cf13f44b94f6830ad8f854653930316}{HAr\+DCore3\+D\+::tworegions\+\_\+kappainv}}
+\item 
+static std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga4d0cc9956658c25af0cff549c962f3a5}{HAr\+DCore3\+D\+::alpha}}
+\item 
+static std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga49620a2eed647f1cef43ed8379360cfe}{HAr\+DCore3\+D\+::beta\+\_\+S}}
+\item 
+static std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga008920fe674b8381d731f46d3426541c}{HAr\+DCore3\+D\+::beta\+\_\+D}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gac927fcefd9e061bbbb8427184487ff9e}{HAr\+DCore3\+D\+::tworegions\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gacc113300cbc713be91a585094313b467}{HAr\+DCore3\+D\+::grad\+\_\+alpha}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9254e4d89b73e4672445ac7f94ef4d42}{HAr\+DCore3\+D\+::grad\+\_\+beta\+\_\+S}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gad73f79e44712e7f69bfade7b1ee80b0a}{HAr\+DCore3\+D\+::grad\+\_\+beta\+\_\+D}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga2c54c85a590ba560c2f5a1879204b342}{HAr\+DCore3\+D\+::tworegions\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga7960f37bf2b5ecbb566406407d15dc6e}{HAr\+DCore3\+D\+::tworegions\+\_\+p}} = trigonometric\+\_\+p
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gab12200ed4ffe217d099cd6bbc0b39b94}{HAr\+DCore3\+D\+::tworegions\+\_\+gradp}} = trigonometric\+\_\+gradp
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1a31b0880fffab1f48bb54427f313afb}{HAr\+DCore3\+D\+::\+Div\+Grad\+\_\+alpha}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5e275cc2073668819602ffd1574f7651}{HAr\+DCore3\+D\+::\+Div\+Grad\+\_\+beta\+\_\+S}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gab89b72b33ab8483dd77564a619feb66c}{HAr\+DCore3\+D\+::\+Div\+Grad\+\_\+beta\+\_\+D}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga82d25622b0ae6e99c68fb0f8879d1a90}{HAr\+DCore3\+D\+::tworegions\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gac5702edacbd27e691088c93595b413b1}{HAr\+DCore3\+D\+::tworegions\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return tworegions\+\_\+gradu(x).trace();\}
 \end{DoxyCompactItemize}

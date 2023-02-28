@@ -66,6 +66,8 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gabf4eafe2cf13ad7f5eeb322cb
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a cell. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa03cd062083ef8fbe3089d395f81338}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a face. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__Common_ga377359e7be24409898f4bd5b709aec76}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::add\+Inner\+Product\+Contribution}} (const Cell \&T, const Face \&F, Eigen\+::\+Matrix\+Xd \&prodT, const Eigen\+::\+Matrix\+Xd \&prodF) const
+\begin{DoxyCompactList}\small\item\em Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T) \end{DoxyCompactList}\item 
 std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga253bd7addffb9686d8a71d19db88f3f2}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+DOFIndices}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Returns a vector listing the global DOFs attached to the element T\+: vertex DOFs, edge DOFs, face DOFs and element DOFs. \end{DoxyCompactList}\item 
 std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga7cc6a020ed82c7e8bdd295d6aa94dea5}{HAr\+DCore3\+D\+::\+Global\+DOFSpace\+::global\+DOFIndices}} (const Face \&F) const
@@ -142,6 +144,8 @@ size\+\_\+t \mbox{\hyperlink{group__Common_ga0dd95d4dc14c9e451f7af0ad5e795a76}{H
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the face F with respect to the cell T. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga8ebfa6da885fecc1bb09ccac1f923149}{HAr\+DCore3\+D\+::\+Local\+DOFSpace\+::local\+Offset}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the unknowns attached to the element T. \end{DoxyCompactList}\item 
+static std\+::pair$<$ std\+::vector$<$ int $>$, std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{group__Common_ga2f774534f2a50336fed81ee6278811b5}{HAr\+DCore3\+D\+::distribute\+Load}} (size\+\_\+t nb\+\_\+elements, unsigned nb\+\_\+threads)
+\begin{DoxyCompactList}\small\item\em Function to distribute elements (considered as jobs) over threads. It returns a pair of vectors indicating the start and end element of each thread. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{group__Common_ga3d0b88a9cf4441b331df044ff5283323}{HAr\+DCore3\+D\+::parallel\+\_\+for}} (unsigned nb\+\_\+elements, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end)$>$ functor, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
 \begin{DoxyCompactList}\small\item\em Generic function to execute threaded processes. \end{DoxyCompactList}\item 
 static std\+::pair$<$ Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_gac77ab9801f6fcca6b81f0a069969c951}{HAr\+DCore3\+D\+::parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, size\+\_\+t size\+\_\+system, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets, Eigen\+::\+Vector\+Xd $\ast$rhs)$>$ batch\+\_\+local\+\_\+assembly, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
@@ -322,6 +326,16 @@ Various general functions and classes.
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__Common_ga377359e7be24409898f4bd5b709aec76}\label{group__Common_ga377359e7be24409898f4bd5b709aec76}} 
+\index{Common@{Common}!addInnerProductContribution@{addInnerProductContribution}}
+\index{addInnerProductContribution@{addInnerProductContribution}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{addInnerProductContribution()}{addInnerProductContribution()}}
+{\footnotesize\ttfamily void Global\+DOFSpace\+::add\+Inner\+Product\+Contribution (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Face \&}]{F,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{prodT,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{prodF }\end{DoxyParamCaption}) const}
+
+
+
+Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T) 
+
 \mbox{\Hypertarget{group__Common_ga7bac2f08d274e88fdb2057d593581c90}\label{group__Common_ga7bac2f08d274e88fdb2057d593581c90}} 
 \index{Common@{Common}!compute@{compute}}
 \index{compute@{compute}!Common@{Common}}
@@ -531,6 +545,16 @@ Returns the dimension of the local space on the vertex of index iV.
 
 
 Returns the dimension of the local space on the vertex of index iV. 
+
+\mbox{\Hypertarget{group__Common_ga2f774534f2a50336fed81ee6278811b5}\label{group__Common_ga2f774534f2a50336fed81ee6278811b5}} 
+\index{Common@{Common}!distributeLoad@{distributeLoad}}
+\index{distributeLoad@{distributeLoad}!Common@{Common}}
+\doxysubsubsection{\texorpdfstring{distributeLoad()}{distributeLoad()}}
+{\footnotesize\ttfamily static std\+::pair$<$std\+::vector$<$int$>$, std\+::vector$<$int$>$ $>$ HAr\+DCore3\+D\+::distribute\+Load (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nb\+\_\+elements,  }\item[{unsigned}]{nb\+\_\+threads }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function to distribute elements (considered as jobs) over threads. It returns a pair of vectors indicating the start and end element of each thread. 
 
 \mbox{\Hypertarget{group__Common_gabf4eafe2cf13ad7f5eeb322cb9097d22}\label{group__Common_gabf4eafe2cf13ad7f5eeb322cb9097d22}} 
 \index{Common@{Common}!extendOperator@{extendOperator}}

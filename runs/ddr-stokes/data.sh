@@ -9,7 +9,7 @@ stab_par=.1
 
 # Test case
 tcsol=0
-pressure_scaling=1e5
+pressure_scaling=1
 
 # Mesh family
 #mesh_family=Tetgen-Cube-0
@@ -75,8 +75,8 @@ case ${mesh_family} in
 	mesh[1]="RF:Voro-small-0/RF_fmt/voro-2"
 	mesh[2]="RF:Voro-small-0/RF_fmt/voro-4"
   mesh[3]="RF:Voro-small-0/RF_fmt/voro-6"
-#	mesh[4]="RF:Voro-small-0/RF_fmt/voro-8"
-#	mesh[5]="RF:Voro-small-0/RF_fmt/voro-10"
+	mesh[4]="RF:Voro-small-0/RF_fmt/voro-8"
+	mesh[5]="RF:Voro-small-0/RF_fmt/voro-10"
 #	mesh[6]="RF:Voro-small-0/RF_fmt/voro-12"
 #	 mesh[7]="RF:Voro-small-0/RF_fmt/voro-14"
 #	 mesh[8]="RF:Voro-small-0/RF_fmt/voro-16"

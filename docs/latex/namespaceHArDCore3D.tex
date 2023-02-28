@@ -49,7 +49,7 @@ class \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisFace}{Monomial\+Sca
 class \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisEdge}{Monomial\+Scalar\+Basis\+Edge}}
 \begin{DoxyCompactList}\small\item\em Scalar monomial basis on an edge. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}} of functions expressed as linear combination of the functions of a given basis. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}
 \begin{DoxyCompactList}\small\item\em Vector family obtained by tensorization of a scalar family. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1MatrixFamily}{Matrix\+Family}}
@@ -270,6 +270,8 @@ std\+::pair$<$ double, double $>$ \mbox{\hyperlink{group__Common_ga274e58663037c
 \begin{DoxyCompactList}\small\item\em Operator to multiply an \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} by a number. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \mbox{\hyperlink{group__Common_gaf0974369272832456696f5261ab66353}{operator+}} (\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&weight1, \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} const \&weight2)
 \begin{DoxyCompactList}\small\item\em Operator to add an \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} to another one. \end{DoxyCompactList}\item 
+static std\+::pair$<$ std\+::vector$<$ int $>$, std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{group__Common_ga2f774534f2a50336fed81ee6278811b5}{distribute\+Load}} (size\+\_\+t nb\+\_\+elements, unsigned nb\+\_\+threads)
+\begin{DoxyCompactList}\small\item\em Function to distribute elements (considered as jobs) over threads. It returns a pair of vectors indicating the start and end element of each thread. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{group__Common_ga3d0b88a9cf4441b331df044ff5283323}{parallel\+\_\+for}} (unsigned nb\+\_\+elements, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end)$>$ functor, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
 \begin{DoxyCompactList}\small\item\em Generic function to execute threaded processes. \end{DoxyCompactList}\item 
 static std\+::pair$<$ Eigen\+::\+Sparse\+Matrix$<$ double $>$, Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__Common_gac77ab9801f6fcca6b81f0a069969c951}{parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, size\+\_\+t size\+\_\+system, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$ $\ast$triplets, Eigen\+::\+Vector\+Xd $\ast$rhs)$>$ batch\+\_\+local\+\_\+assembly, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
@@ -796,6 +798,52 @@ static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}
 static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga0c6ed50754266d08288e149561c2d19a}{cavity\+\_\+f}}
 \item 
 static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga8b1f7253d57bb23c2fa818d8cd31de6d}{cavity\+\_\+g}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_gaa8545cce4482839c2e98896f70c4be1b}{Xi\+\_\+S}}
+\item 
+static std\+::function$<$ double(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga4230e82c38bfd21bc560ec578e2cc10b}{Xi\+\_\+D}}
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_gac4edd45fe89c7de877ebdbc8acecf781}{viscosity\+\_\+S}} = 1.
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_gad48adac1d9109ac911f74b66d3d8e25e}{viscosity\+\_\+D}} = 0.
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga3846df1dbe3bd18f776206c3ee77a061}{Brinkman\+Parameters\+::\+Viscosity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga565c73531fd3cd9f93c60d5511d40db1}{tworegions\+\_\+mu}}
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_gaeefb46acb94e8bfd8d469af45f6a07b1}{permeability\+\_\+S}} = 1e-\/7
+\item 
+constexpr double \mbox{\hyperlink{group__HHO__brinkman_ga425ab3d9733f24b5dc79022bf7e528ce}{permeability\+\_\+D}} = 1e-\/2
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga270e2d085177b384fed62936f3cbe986}{Brinkman\+Parameters\+::\+Permeability\+Inv\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga3cf13f44b94f6830ad8f854653930316}{tworegions\+\_\+kappainv}}
+\item 
+static std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga4d0cc9956658c25af0cff549c962f3a5}{alpha}}
+\item 
+static std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga49620a2eed647f1cef43ed8379360cfe}{beta\+\_\+S}}
+\item 
+static std\+::function$<$ Vector\+Rd(const Vector\+Rd \&)$>$ \mbox{\hyperlink{group__HHO__brinkman_ga008920fe674b8381d731f46d3426541c}{beta\+\_\+D}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga773b98571fa45b5c7ff7480a0469274b}{Brinkman\+::\+Velocity\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gac927fcefd9e061bbbb8427184487ff9e}{tworegions\+\_\+u}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gacc113300cbc713be91a585094313b467}{grad\+\_\+alpha}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga9254e4d89b73e4672445ac7f94ef4d42}{grad\+\_\+beta\+\_\+S}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gad73f79e44712e7f69bfade7b1ee80b0a}{grad\+\_\+beta\+\_\+D}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga65058e6c4877761b554eb2e45b2a3e47}{Brinkman\+::\+Velocity\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga2c54c85a590ba560c2f5a1879204b342}{tworegions\+\_\+gradu}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga275ed9bfc3cad658469141e5bf1b95f8}{Brinkman\+::\+Pressure\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga7960f37bf2b5ecbb566406407d15dc6e}{tworegions\+\_\+p}} = \mbox{\hyperlink{group__DDR__stokes_ga9b7879fd3b35059edb87a8986c1c8d22}{trigonometric\+\_\+p}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gab00d73fc1ba1eec6a4fc5f41462e2459}{Brinkman\+::\+Pressure\+Gradient\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gab12200ed4ffe217d099cd6bbc0b39b94}{tworegions\+\_\+gradp}} = \mbox{\hyperlink{group__HHO__brinkman_ga9313f57c43d447073a9b3f2ff7b417de}{trigonometric\+\_\+gradp}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga1a31b0880fffab1f48bb54427f313afb}{Div\+Grad\+\_\+alpha}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga5e275cc2073668819602ffd1574f7651}{Div\+Grad\+\_\+beta\+\_\+S}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gab89b72b33ab8483dd77564a619feb66c}{Div\+Grad\+\_\+beta\+\_\+D}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_ga18ad36c55908aa960f11b456bdc4f899}{Brinkman\+::\+Momentum\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_ga82d25622b0ae6e99c68fb0f8879d1a90}{tworegions\+\_\+f}}
+\item 
+static \mbox{\hyperlink{group__HHO__brinkman_gac4403abe12637e21b0cd8f1ad1cd46aa}{Brinkman\+::\+Compressibility\+Forcing\+Term\+Type}} \mbox{\hyperlink{group__HHO__brinkman_gac5702edacbd27e691088c93595b413b1}{tworegions\+\_\+g}} = \mbox{[}$\,$\mbox{]}(const Vector\+Rd \& x)-\/$>$double \{ return \mbox{\hyperlink{group__HHO__brinkman_ga2c54c85a590ba560c2f5a1879204b342}{tworegions\+\_\+gradu}}(x).trace();\}
 \item 
 static const double \mbox{\hyperlink{group__HHO__fullgradientdiff_ga05c87d0a93c5df840c07c09ded686aeb}{PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
 \item 

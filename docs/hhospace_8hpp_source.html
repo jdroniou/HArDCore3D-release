@@ -222,46 +222,50 @@ $(function() {
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                   <span class="keyword">const</span> std::vector&lt;Eigen::VectorXd&gt; &amp; list_dofs   </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                  ) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    CellBases _construct_cell_bases(<span class="keywordtype">size_t</span> iT);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    FaceBases _construct_face_bases(<span class="keywordtype">size_t</span> iF);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    LocalOperators _compute_operators(<span class="keywordtype">size_t</span> iT);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">// Pointer to the mesh</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">const</span> <a class="code" href="classMeshND_1_1Mesh.html">Mesh</a> &amp; m_mesh;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// Degrees</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> m_K;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">// Parallel or not</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">bool</span> m_use_threads;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// Output stream</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    std::ostream &amp; m_output;    </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// Cell bases</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    std::vector&lt;std::unique_ptr&lt;CellBases&gt; &gt; m_cell_bases;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// Face bases</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    std::vector&lt;std::unique_ptr&lt;FaceBases&gt; &gt; m_face_bases;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// Local operators</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    std::vector&lt;std::unique_ptr&lt;LocalOperators&gt; &gt; m_operators;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  };</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;} <span class="comment">// end of namespace HArDCore3D</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// HHOSPACE_HPP</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    std::vector&lt;double&gt; <a class="code" href="group__HHOSpace.html#ga365a8d571ae7a2c6c52c91d20f2bbed7">computeVertexValues</a>(</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                  <span class="keyword">const</span> Eigen::VectorXd &amp; u   </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                  ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    CellBases _construct_cell_bases(<span class="keywordtype">size_t</span> iT);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    FaceBases _construct_face_bases(<span class="keywordtype">size_t</span> iF);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    LocalOperators _compute_operators(<span class="keywordtype">size_t</span> iT);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">// Pointer to the mesh</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keyword">const</span> <a class="code" href="classMeshND_1_1Mesh.html">Mesh</a> &amp; m_mesh;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// Degrees</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> m_K;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="comment">// Parallel or not</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">bool</span> m_use_threads;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">// Output stream</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    std::ostream &amp; m_output;    </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// Cell bases</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    std::vector&lt;std::unique_ptr&lt;CellBases&gt; &gt; m_cell_bases;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// Face bases</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    std::vector&lt;std::unique_ptr&lt;FaceBases&gt; &gt; m_face_bases;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">// Local operators</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    std::vector&lt;std::unique_ptr&lt;LocalOperators&gt; &gt; m_operators;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  };</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;} <span class="comment">// end of namespace HArDCore3D</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// HHOSPACE_HPP</span></div>
 <div class="ttc" id="abasis_8hpp_html"><div class="ttname"><a href="basis_8hpp.html">basis.hpp</a></div></div>
-<div class="ttc" id="aclassHArDCore3D_1_1Family_html"><div class="ttname"><a href="classHArDCore3D_1_1Family.html">HArDCore3D::Family</a></div><div class="ttdef"><b>Definition:</b> basis.hpp:389</div></div>
+<div class="ttc" id="aclassHArDCore3D_1_1Family_html"><div class="ttname"><a href="classHArDCore3D_1_1Family.html">HArDCore3D::Family</a></div><div class="ttdoc">Family of functions expressed as linear combination of the functions of a given basis.</div><div class="ttdef"><b>Definition:</b> basis.hpp:388</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1GlobalDOFSpace_html"><div class="ttname"><a href="classHArDCore3D_1_1GlobalDOFSpace.html">HArDCore3D::GlobalDOFSpace</a></div><div class="ttdoc">Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei...</div><div class="ttdef"><b>Definition:</b> globaldofspace.hpp:16</div></div>
 <div class="ttc" id="aclassHArDCore3D_1_1HHOSpace_html"><div class="ttname"><a href="classHArDCore3D_1_1HHOSpace.html">HArDCore3D::HHOSpace</a></div><div class="ttdoc">Class definition: polynomial bases and operators.</div><div class="ttdef"><b>Definition:</b> hhospace.hpp:53</div></div>
-<div class="ttc" id="aclassHArDCore3D_1_1TensorizedVectorFamily_html"><div class="ttname"><a href="classHArDCore3D_1_1TensorizedVectorFamily.html">HArDCore3D::TensorizedVectorFamily</a></div><div class="ttdoc">Vector family obtained by tensorization of a scalar family.</div><div class="ttdef"><b>Definition:</b> basis.hpp:610</div></div>
+<div class="ttc" id="aclassHArDCore3D_1_1TensorizedVectorFamily_html"><div class="ttname"><a href="classHArDCore3D_1_1TensorizedVectorFamily.html">HArDCore3D::TensorizedVectorFamily</a></div><div class="ttdoc">Vector family obtained by tensorization of a scalar family.</div><div class="ttdef"><b>Definition:</b> basis.hpp:609</div></div>
 <div class="ttc" id="aclassMeshND_1_1Mesh_html"><div class="ttname"><a href="classMeshND_1_1Mesh.html">MeshND::Mesh</a></div><div class="ttdoc">Class to describe a mesh.</div><div class="ttdef"><b>Definition:</b> MeshND.hpp:17</div></div>
 <div class="ttc" id="aglobaldofspace_8hpp_html"><div class="ttname"><a href="globaldofspace_8hpp.html">globaldofspace.hpp</a></div></div>
 <div class="ttc" id="agroup__HHOSpace_html_ga043726bfa07c99b05cbbec206ab4e215"><div class="ttname"><a href="group__HHOSpace.html#ga043726bfa07c99b05cbbec206ab4e215">HArDCore3D::HHOSpace::LocalOperators::gradient</a></div><div class="ttdeci">Eigen::MatrixXd gradient</div><div class="ttdef"><b>Definition:</b> hhospace.hpp:105</div></div>
 <div class="ttc" id="agroup__HHOSpace_html_ga0968f27b787f93c16514a08f8bbf8055"><div class="ttname"><a href="group__HHOSpace.html#ga0968f27b787f93c16514a08f8bbf8055">HArDCore3D::HHOSpace::CellBases::Polykpo</a></div><div class="ttdeci">std::unique_ptr&lt; PolyBasisCellType &gt; Polykpo</div><div class="ttdef"><b>Definition:</b> hhospace.hpp:75</div></div>
 <div class="ttc" id="agroup__HHOSpace_html_ga09a826999e2a652000949e515a06738e"><div class="ttname"><a href="group__HHOSpace.html#ga09a826999e2a652000949e515a06738e">HArDCore3D::HHOSpace::LocalOperators::stabilisation</a></div><div class="ttdeci">Eigen::MatrixXd stabilisation</div><div class="ttdef"><b>Definition:</b> hhospace.hpp:107</div></div>
+<div class="ttc" id="agroup__HHOSpace_html_ga365a8d571ae7a2c6c52c91d20f2bbed7"><div class="ttname"><a href="group__HHOSpace.html#ga365a8d571ae7a2c6c52c91d20f2bbed7">HArDCore3D::HHOSpace::computeVertexValues</a></div><div class="ttdeci">std::vector&lt; double &gt; computeVertexValues(const Eigen::VectorXd &amp;u) const</div><div class="ttdoc">Computes the values of the potential reconstruction at the mesh vertices.</div><div class="ttdef"><b>Definition:</b> hhospace.cpp:394</div></div>
 <div class="ttc" id="agroup__HHOSpace_html_ga37ffb02fcebb9a0fa6e75c8a896078c9"><div class="ttname"><a href="group__HHOSpace.html#ga37ffb02fcebb9a0fa6e75c8a896078c9">HArDCore3D::HHOSpace::FaceBases::GeometricSupport</a></div><div class="ttdeci">Face GeometricSupport</div><div class="ttdoc">Geometric support.</div><div class="ttdef"><b>Definition:</b> hhospace.hpp:85</div></div>
 <div class="ttc" id="agroup__HHOSpace_html_ga3968991ba41f5ab71b44d71dc3007d26"><div class="ttname"><a href="group__HHOSpace.html#ga3968991ba41f5ab71b44d71dc3007d26">HArDCore3D::HHOSpace::CellBases::Polyk</a></div><div class="ttdeci">std::unique_ptr&lt; PolyBasisCellType &gt; Polyk</div><div class="ttdef"><b>Definition:</b> hhospace.hpp:76</div></div>
 <div class="ttc" id="agroup__HHOSpace_html_ga41adba58adb8e64621b4949d55eb0653"><div class="ttname"><a href="group__HHOSpace.html#ga41adba58adb8e64621b4949d55eb0653">HArDCore3D::HHOSpace::cellBases</a></div><div class="ttdeci">const CellBases &amp; cellBases(size_t iT) const</div><div class="ttdoc">Return cell bases for element iT.</div><div class="ttdef"><b>Definition:</b> hhospace.hpp:133</div></div>

@@ -280,6 +280,9 @@ namespace HArDCore3D
                        const Eigen::VectorXd & p    ///< Vector of pressure DOFs
                        ) const;
 
+    /// Computes the condition number of the matrix
+    std::pair<double, double> computeConditionNum() const;
+
     /// Compute the velocity flux (integral of u.n) across a given surface, and the area of the surface, assumed to be star-shaped with respect the barycenter of its vertices
     std::pair<double,double> computeFlux(
                    const Eigen::VectorXd & u,    ///< Vector of velocity DOFs
@@ -487,6 +490,7 @@ namespace HArDCore3D
 
   static Brinkman::CompressibilityForcingTermType 
   cubic_g = [](const VectorRd & x)->double { return cubic_gradu(x).trace();};
+
 
   //---------------- Trigonometric ------------------------------------------------
   static BrinkmanParameters::ViscosityType
@@ -744,6 +748,174 @@ namespace HArDCore3D
   cavity_g = [](const VectorRd & x) -> double { 
                       return 0.;
                     };
+
+
+  //---------------- Two regions ------------------------------------------------
+  // Two regions with different parameters, separated by x=1/2 (region S is x<1/2, D is x>1/2)
+  //    u = alpha(y,z) + cos(pi x) beta_i(y,z) where i=S or D
+  // This ensures that u is continuous, and that nu \nabla u n is continuous across x=1/2
+
+  // Characteristic functions
+  static std::function<double(const VectorRd &)>
+      Xi_S = [](const VectorRd & x)->double { 
+            return ( (x.x()<0.5) ? 1. : 0.); 
+          };
+  static std::function<double(const VectorRd &)>
+      Xi_D = [](const VectorRd & x)->double { 
+            return 1.-Xi_S(x); 
+          };
+
+  // Viscosity and permeability
+  constexpr double viscosity_S = 1.;
+  constexpr double viscosity_D = 0.;
+  static BrinkmanParameters::ViscosityType tworegions_mu 
+         = viscosity_S * BrinkmanParameters::ViscosityType(Xi_S)
+            + viscosity_D * BrinkmanParameters::ViscosityType(Xi_D); 
+
+  constexpr double permeability_S = 1e-7;
+  constexpr double permeability_D = 1e-2;
+  static BrinkmanParameters::PermeabilityInvType tworegions_kappainv 
+        = std::pow(permeability_S, -1) * BrinkmanParameters::ViscosityType(Xi_S)
+            + std::pow(permeability_D, -1) * BrinkmanParameters::ViscosityType(Xi_D);
+
+  // Velocity (alpha and beta only depend on y,z)
+  static std::function<VectorRd(const VectorRd &)>
+      alpha = [](const VectorRd & x)->VectorRd {
+        return VectorRd(
+                        exp(-x.y()-x.z()),
+                        sin(PI * x.y()) * sin(PI * x.z()),
+                        x.y() * x.z()
+                       );
+      };
+
+  static std::function<VectorRd(const VectorRd &)>
+      beta_S = [](const VectorRd & x)->VectorRd {
+        return cos(PI * x.x()) * (x.x() - 0.5)
+                    * VectorRd(
+                          x.y() + x.z(),
+                          x.y() + cos(PI * x.z()),
+                          sin(PI * x.y())
+                         );
+      };
+
+  static std::function<VectorRd(const VectorRd &)>
+      beta_D = [](const VectorRd & x)->VectorRd {
+        return cos(PI * x.x()) * (x.x() - 0.5)
+                    * VectorRd(
+                        sin(PI * x.y()) + cos(PI * x.z()),
+                        std::pow(x.z(), 3),
+                        std::pow(x.y(), 2) * std::pow(x.z(), 2)
+                       );
+      }; 
+
+  static Brinkman::VelocityType
+  tworegions_u = [](const VectorRd & x) -> VectorRd {
+                      return alpha(x) + Xi_S(x) * beta_S(x) + Xi_D(x) * beta_D(x);
+                    };
+
+  static Brinkman::VelocityGradientType
+  grad_alpha = [](const VectorRd & x) -> MatrixRd {
+                      MatrixRd M = MatrixRd::Zero(); 
+                      M.row(0) << 0, -exp(-x.y() - x.z()), -exp(-x.y() - x.z());
+                      M.row(1) << 0, PI*sin(PI*x.z())*cos(PI*x.y()), PI*sin(PI*x.y())*cos(PI*x.z());
+                      M.row(2) << 0, x.z(), x.y();
+                      
+                      return M;
+                    };
+
+  static Brinkman::VelocityGradientType
+  grad_beta_S = [](const VectorRd & x) -> MatrixRd {
+                      MatrixRd M = MatrixRd::Zero(); 
+                      M.row(0) << -PI*(x.x() - 0.5)*(x.y() + x.z())*sin(PI*x.x()) + (x.y() + x.z())*cos(PI*x.x()),
+                                  (x.x() - 0.5)*cos(PI*x.x()), 
+                                  (x.x() - 0.5)*cos(PI*x.x());
+                      M.row(1) << -PI*(x.x() - 0.5)*(x.y() + cos(PI*x.z()))*sin(PI*x.x()) + (x.y() + cos(PI*x.z()))*cos(PI*x.x()),
+                                  (x.x() - 0.5)*cos(PI*x.x()),
+                                  -PI*(x.x() - 0.5)*sin(PI*x.z())*cos(PI*x.x());
+                      M.row(2) << -PI*(x.x() - 0.5)*sin(PI*x.x())*sin(PI*x.y()) + sin(PI*x.y())*cos(PI*x.x()), 
+                                  PI*(x.x() - 0.5)*cos(PI*x.x())*cos(PI*x.y()),
+                                  0;
+
+                      return M;
+                    };
+
+  static Brinkman::VelocityGradientType
+  grad_beta_D = [](const VectorRd & x) -> MatrixRd {
+                      MatrixRd M = MatrixRd::Zero(); 
+                      M.row(0) << -PI*(x.x() - 0.5)*(sin(PI*x.y()) + cos(PI*x.z()))*sin(PI*x.x()) + (sin(PI*x.y()) + cos(PI*x.z()))*cos(PI*x.x()),
+                                   PI*(x.x() - 0.5)*cos(PI*x.x())*cos(PI*x.y()), 
+                                   -PI*(x.x() - 0.5)*sin(PI*x.z())*cos(PI*x.x());
+                      M.row(1) << -PI*pow(x.z(), 3)*(x.x() - 0.5)*sin(PI*x.x()) + pow(x.z(), 3)*cos(PI*x.x()), 
+                                  0, 
+                                  3*pow(x.z(), 2)*(x.x() - 0.5)*cos(PI*x.x());
+                      M.row(2) << -PI*pow(x.y(), 2)*pow(x.z(), 2)*(x.x() - 0.5)*sin(PI*x.x()) + pow(x.y(), 2)*pow(x.z(), 2)*cos(PI*x.x()),
+                                  2*x.y()*pow(x.z(), 2)*(x.x() - 0.5)*cos(PI*x.x()), 
+                                  2*pow(x.y(), 2)*x.z()*(x.x() - 0.5)*cos(PI*x.x());
+                      
+                      return M;
+                    };
+
+  static Brinkman::VelocityGradientType
+  tworegions_gradu = [](const VectorRd & x) -> MatrixRd {
+                      return grad_alpha(x) + Xi_S(x) * grad_beta_S(x) + Xi_D(x) * grad_beta_D(x);
+                    };
+
+  static Brinkman::PressureType
+  tworegions_p = trigonometric_p;
+
+  static Brinkman::PressureGradientType
+  tworegions_gradp = trigonometric_gradp;
+
+//  static Brinkman::PressureType
+//  tworegions_p = [](const VectorRd & x) -> double {
+//                      return  (x.x()-0.5) * x.y() * x.z();
+//                    };
+
+//  static Brinkman::PressureGradientType
+//  tworegions_gradp = [](const VectorRd & x) -> VectorRd {
+//                      return  VectorRd( x.y() * x.z(), (x.x()-0.5) * x.z(), (x.x()-0.5) * x.y());
+//                    };
+
+  static Brinkman::MomentumForcingTermType
+  DivGrad_alpha = [](const VectorRd & x) -> VectorRd {
+         return VectorRd(
+                      2*exp(-x.y() - x.z()),
+                  	 -2*pow(PI, 2)*sin(PI*x.y())*sin(PI*x.z()),
+	                    0 
+                     );
+          };
+                     
+  static Brinkman::MomentumForcingTermType
+  DivGrad_beta_S = [](const VectorRd & x) -> VectorRd {
+         return VectorRd(
+                      -pow(PI, 2)*(x.x() - 0.5)*(x.y() + x.z())*cos(PI*x.x()) - 2*PI*(x.y() + x.z())*sin(PI*x.x()), 
+                    	-pow(PI, 2)*(x.x() - 0.5)*(x.y() + cos(PI*x.z()))*cos(PI*x.x()) - pow(PI, 2)*(x.x() - 0.5)*cos(PI*x.x())*cos(PI*x.z()) - 2*PI*(x.y() + cos(PI*x.z()))*sin(PI*x.x()),
+                      -2*pow(PI, 2)*(x.x() - 0.5)*sin(PI*x.y())*cos(PI*x.x()) - 2*PI*sin(PI*x.x())*sin(PI*x.y()) 
+                     );
+ 
+          };
+
+  static Brinkman::MomentumForcingTermType
+  DivGrad_beta_D = [](const VectorRd & x) -> VectorRd {
+         return VectorRd(
+                       -pow(PI, 2)*(x.x() - 0.5)*(sin(PI*x.y()) + cos(PI*x.z()))*cos(PI*x.x()) - pow(PI, 2)*(x.x() - 0.5)*sin(PI*x.y())*cos(PI*x.x()) - pow(PI, 2)*(x.x() - 0.5)*cos(PI*x.x())*cos(PI*x.z()) - 2*PI*(sin(PI*x.y()) + cos(PI*x.z()))*sin(PI*x.x()),
+                       -pow(PI, 2)*pow(x.z(), 3)*(x.x() - 0.5)*cos(PI*x.x()) - 2*PI*pow(x.z(), 3)*sin(PI*x.x()) + 6*x.z()*(x.x() - 0.5)*cos(PI*x.x()),
+                       -pow(PI, 2)*pow(x.y(), 2)*pow(x.z(), 2)*(x.x() - 0.5)*cos(PI*x.x()) - 2*PI*pow(x.y(), 2)*pow(x.z(), 2)*sin(PI*x.x()) + 2*pow(x.y(), 2)*(x.x() - 0.5)*cos(PI*x.x()) + 2*pow(x.z(), 2)*(x.x() - 0.5)*cos(PI*x.x())
+                     );
+          };
+
+  static Brinkman::MomentumForcingTermType
+  tworegions_f = [](const VectorRd & x) -> VectorRd {
+         return - scaling_mu * ( viscosity_S * Xi_S(x) * (DivGrad_alpha(x) + DivGrad_beta_S(x)) + 
+                                  viscosity_D * Xi_D(x) * (DivGrad_alpha(x) + DivGrad_beta_D(x)) )
+                 + scaling_kappainv * 
+                      ( std::pow(permeability_S, -1) * Xi_S(x) + std::pow(permeability_D, -1) * Xi_D(x) ) * tworegions_u(x)
+                 + tworegions_gradp(x);
+                    };
+
+  static Brinkman::CompressibilityForcingTermType 
+  tworegions_g = [](const VectorRd & x)->double { return tworegions_gradu(x).trace();};
+
 
 } // end of namespace HArDCore3D
 

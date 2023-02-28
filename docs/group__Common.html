@@ -162,6 +162,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gafa03cd062083ef8fbe3089d395f81338"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gafa03cd062083ef8fbe3089d395f81338">HArDCore3D::GlobalDOFSpace::extendOperator</a> (const Face &amp;F, const Edge &amp;E, const Eigen::MatrixXd &amp;opE) const</td></tr>
 <tr class="memdesc:gafa03cd062083ef8fbe3089d395f81338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extend an edge operator to a face.  <a href="group__Common.html#gafa03cd062083ef8fbe3089d395f81338">More...</a><br /></td></tr>
 <tr class="separator:gafa03cd062083ef8fbe3089d395f81338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga377359e7be24409898f4bd5b709aec76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga377359e7be24409898f4bd5b709aec76">HArDCore3D::GlobalDOFSpace::addInnerProductContribution</a> (const Cell &amp;T, const Face &amp;F, Eigen::MatrixXd &amp;prodT, const Eigen::MatrixXd &amp;prodF) const</td></tr>
+<tr class="memdesc:ga377359e7be24409898f4bd5b709aec76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T)  <a href="group__Common.html#ga377359e7be24409898f4bd5b709aec76">More...</a><br /></td></tr>
+<tr class="separator:ga377359e7be24409898f4bd5b709aec76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga253bd7addffb9686d8a71d19db88f3f2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga253bd7addffb9686d8a71d19db88f3f2">HArDCore3D::GlobalDOFSpace::globalDOFIndices</a> (const Cell &amp;T) const</td></tr>
 <tr class="memdesc:ga253bd7addffb9686d8a71d19db88f3f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector listing the global DOFs attached to the element T: vertex DOFs, edge DOFs, face DOFs and element DOFs.  <a href="group__Common.html#ga253bd7addffb9686d8a71d19db88f3f2">More...</a><br /></td></tr>
 <tr class="separator:ga253bd7addffb9686d8a71d19db88f3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,6 +279,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8ebfa6da885fecc1bb09ccac1f923149"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga8ebfa6da885fecc1bb09ccac1f923149">HArDCore3D::LocalDOFSpace::localOffset</a> (const Cell &amp;T) const</td></tr>
 <tr class="memdesc:ga8ebfa6da885fecc1bb09ccac1f923149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the local offset of the unknowns attached to the element T.  <a href="group__Common.html#ga8ebfa6da885fecc1bb09ccac1f923149">More...</a><br /></td></tr>
 <tr class="separator:ga8ebfa6da885fecc1bb09ccac1f923149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f774534f2a50336fed81ee6278811b5"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; std::vector&lt; int &gt;, std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2f774534f2a50336fed81ee6278811b5">HArDCore3D::distributeLoad</a> (size_t nb_elements, unsigned nb_threads)</td></tr>
+<tr class="memdesc:ga2f774534f2a50336fed81ee6278811b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to distribute elements (considered as jobs) over threads. It returns a pair of vectors indicating the start and end element of each thread.  <a href="group__Common.html#ga2f774534f2a50336fed81ee6278811b5">More...</a><br /></td></tr>
+<tr class="separator:ga2f774534f2a50336fed81ee6278811b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3d0b88a9cf4441b331df044ff5283323"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga3d0b88a9cf4441b331df044ff5283323">HArDCore3D::parallel_for</a> (unsigned nb_elements, std::function&lt; void(size_t start, size_t end)&gt; functor, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true)</td></tr>
 <tr class="memdesc:ga3d0b88a9cf4441b331df044ff5283323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic function to execute threaded processes.  <a href="group__Common.html#ga3d0b88a9cf4441b331df044ff5283323">More...</a><br /></td></tr>
 <tr class="separator:ga3d0b88a9cf4441b331df044ff5283323"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -530,6 +536,48 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga377359e7be24409898f4bd5b709aec76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga377359e7be24409898f4bd5b709aec76">&#9670;&nbsp;</a></span>addInnerProductContribution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GlobalDOFSpace::addInnerProductContribution </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>prodT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>prodF</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T) </p>
+
+</div>
+</div>
 <a id="ga7bac2f08d274e88fdb2057d593581c90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7bac2f08d274e88fdb2057d593581c90">&#9670;&nbsp;</a></span>compute()</h2>
 
@@ -1112,6 +1160,44 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the dimension of the local space on the vertex of index iV. </p>
+
+</div>
+</div>
+<a id="ga2f774534f2a50336fed81ee6278811b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f774534f2a50336fed81ee6278811b5">&#9670;&nbsp;</a></span>distributeLoad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::pair&lt;std::vector&lt;int&gt;, std::vector&lt;int&gt; &gt; HArDCore3D::distributeLoad </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nb_elements</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>nb_threads</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function to distribute elements (considered as jobs) over threads. It returns a pair of vectors indicating the start and end element of each thread. </p>
 
 </div>
 </div>

@@ -83,7 +83,7 @@ do
     TwallSolve=$(awk '/^TwallSolve:/ {print $NF}' $outsubdir/results-$i.txt)
     TprocSolve=$(awk '/^TprocSolve:/ {print $NF}' $outsubdir/results-$i.txt)
     echo -e "$TwallDDRCore $TprocDDRCore $TwallModel $TprocModel $TwallSolve $TprocSolve" >> $outsubdir/$timesfile
-    if(($i \> 1)); then
+    if(($i > 1)); then
       imo=$(perl -E "say $i - 1")
       OldMeshSize=$(awk '/^MeshSize:/ {print $NF}' $outsubdir/results-$imo.txt)
       OldE_HcurlVel=$(awk '/^E_HcurlVel:/ {print $NF}' $outsubdir/results-$imo.txt)

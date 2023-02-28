@@ -2,7 +2,7 @@
 #
 
 # Degree
-k=2
+k=1
 
 # Stabilization parameter
 stab_par=1.0

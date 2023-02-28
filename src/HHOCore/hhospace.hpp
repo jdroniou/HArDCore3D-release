@@ -175,6 +175,10 @@ namespace HArDCore3D
                    const std::vector<Eigen::VectorXd> & list_dofs   ///< The list of vectors representing the dofs
                   ) const;
 
+    /// Computes the values of the potential reconstruction at the mesh vertices
+    std::vector<double> computeVertexValues(
+                  const Eigen::VectorXd & u   ///< DOFs in the discrete space
+                  ) const;
     
   private:
     /// Compute the bases on an element T

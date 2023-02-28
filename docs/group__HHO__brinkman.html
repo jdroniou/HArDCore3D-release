@@ -205,6 +205,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga75010589205bc7b43f9afe3e8965e5aa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga75010589205bc7b43f9afe3e8965e5aa">HArDCore3D::Brinkman::pressureVertexValues</a> (const Eigen::VectorXd &amp;p) const</td></tr>
 <tr class="memdesc:ga75010589205bc7b43f9afe3e8965e5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create vertex values for the pressure (from the element values), for plotting.  <a href="group__HHO__brinkman.html#ga75010589205bc7b43f9afe3e8965e5aa">More...</a><br /></td></tr>
 <tr class="separator:ga75010589205bc7b43f9afe3e8965e5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga81cc62cd427c34449df6ad07ae7263df"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga81cc62cd427c34449df6ad07ae7263df">HArDCore3D::Brinkman::computeConditionNum</a> () const</td></tr>
+<tr class="memdesc:ga81cc62cd427c34449df6ad07ae7263df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the condition number of the matrix.  <a href="group__HHO__brinkman.html#ga81cc62cd427c34449df6ad07ae7263df">More...</a><br /></td></tr>
+<tr class="separator:ga81cc62cd427c34449df6ad07ae7263df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga427b126b6203ae2dfdf0b36759f4143a"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga427b126b6203ae2dfdf0b36759f4143a">HArDCore3D::Brinkman::computeFlux</a> (const Eigen::VectorXd &amp;u, const std::pair&lt; std::vector&lt; VectorRd &gt;, VectorRd &gt; &amp;surf) const</td></tr>
 <tr class="memdesc:ga427b126b6203ae2dfdf0b36759f4143a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the velocity flux (integral of u.n) across a given surface, and the area of the surface, assumed to be star-shaped with respect the barycenter of its vertices.  <a href="group__HHO__brinkman.html#ga427b126b6203ae2dfdf0b36759f4143a">More...</a><br /></td></tr>
 <tr class="separator:ga427b126b6203ae2dfdf0b36759f4143a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -373,6 +376,52 @@ Variables</h2></td></tr>
 <tr class="separator:ga0c6ed50754266d08288e149561c2d19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8b1f7253d57bb23c2fa818d8cd31de6d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#gac4403abe12637e21b0cd8f1ad1cd46aa">Brinkman::CompressibilityForcingTermType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga8b1f7253d57bb23c2fa818d8cd31de6d">HArDCore3D::cavity_g</a></td></tr>
 <tr class="separator:ga8b1f7253d57bb23c2fa818d8cd31de6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8545cce4482839c2e98896f70c4be1b"><td class="memItemLeft" align="right" valign="top">static std::function&lt; double(const VectorRd &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#gaa8545cce4482839c2e98896f70c4be1b">HArDCore3D::Xi_S</a></td></tr>
+<tr class="separator:gaa8545cce4482839c2e98896f70c4be1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4230e82c38bfd21bc560ec578e2cc10b"><td class="memItemLeft" align="right" valign="top">static std::function&lt; double(const VectorRd &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga4230e82c38bfd21bc560ec578e2cc10b">HArDCore3D::Xi_D</a></td></tr>
+<tr class="separator:ga4230e82c38bfd21bc560ec578e2cc10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4edd45fe89c7de877ebdbc8acecf781"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#gac4edd45fe89c7de877ebdbc8acecf781">HArDCore3D::viscosity_S</a> = 1.</td></tr>
+<tr class="separator:gac4edd45fe89c7de877ebdbc8acecf781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad48adac1d9109ac911f74b66d3d8e25e"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#gad48adac1d9109ac911f74b66d3d8e25e">HArDCore3D::viscosity_D</a> = 0.</td></tr>
+<tr class="separator:gad48adac1d9109ac911f74b66d3d8e25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga565c73531fd3cd9f93c60d5511d40db1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga3846df1dbe3bd18f776206c3ee77a061">BrinkmanParameters::ViscosityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga565c73531fd3cd9f93c60d5511d40db1">HArDCore3D::tworegions_mu</a></td></tr>
+<tr class="separator:ga565c73531fd3cd9f93c60d5511d40db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeefb46acb94e8bfd8d469af45f6a07b1"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#gaeefb46acb94e8bfd8d469af45f6a07b1">HArDCore3D::permeability_S</a> = 1e-7</td></tr>
+<tr class="separator:gaeefb46acb94e8bfd8d469af45f6a07b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga425ab3d9733f24b5dc79022bf7e528ce"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga425ab3d9733f24b5dc79022bf7e528ce">HArDCore3D::permeability_D</a> = 1e-2</td></tr>
+<tr class="separator:ga425ab3d9733f24b5dc79022bf7e528ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3cf13f44b94f6830ad8f854653930316"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga270e2d085177b384fed62936f3cbe986">BrinkmanParameters::PermeabilityInvType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga3cf13f44b94f6830ad8f854653930316">HArDCore3D::tworegions_kappainv</a></td></tr>
+<tr class="separator:ga3cf13f44b94f6830ad8f854653930316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d0cc9956658c25af0cff549c962f3a5"><td class="memItemLeft" align="right" valign="top">static std::function&lt; VectorRd(const VectorRd &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga4d0cc9956658c25af0cff549c962f3a5">HArDCore3D::alpha</a></td></tr>
+<tr class="separator:ga4d0cc9956658c25af0cff549c962f3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga49620a2eed647f1cef43ed8379360cfe"><td class="memItemLeft" align="right" valign="top">static std::function&lt; VectorRd(const VectorRd &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga49620a2eed647f1cef43ed8379360cfe">HArDCore3D::beta_S</a></td></tr>
+<tr class="separator:ga49620a2eed647f1cef43ed8379360cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga008920fe674b8381d731f46d3426541c"><td class="memItemLeft" align="right" valign="top">static std::function&lt; VectorRd(const VectorRd &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga008920fe674b8381d731f46d3426541c">HArDCore3D::beta_D</a></td></tr>
+<tr class="separator:ga008920fe674b8381d731f46d3426541c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac927fcefd9e061bbbb8427184487ff9e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga773b98571fa45b5c7ff7480a0469274b">Brinkman::VelocityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#gac927fcefd9e061bbbb8427184487ff9e">HArDCore3D::tworegions_u</a></td></tr>
+<tr class="separator:gac927fcefd9e061bbbb8427184487ff9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc113300cbc713be91a585094313b467"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga65058e6c4877761b554eb2e45b2a3e47">Brinkman::VelocityGradientType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#gacc113300cbc713be91a585094313b467">HArDCore3D::grad_alpha</a></td></tr>
+<tr class="separator:gacc113300cbc713be91a585094313b467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9254e4d89b73e4672445ac7f94ef4d42"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga65058e6c4877761b554eb2e45b2a3e47">Brinkman::VelocityGradientType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga9254e4d89b73e4672445ac7f94ef4d42">HArDCore3D::grad_beta_S</a></td></tr>
+<tr class="separator:ga9254e4d89b73e4672445ac7f94ef4d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad73f79e44712e7f69bfade7b1ee80b0a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga65058e6c4877761b554eb2e45b2a3e47">Brinkman::VelocityGradientType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#gad73f79e44712e7f69bfade7b1ee80b0a">HArDCore3D::grad_beta_D</a></td></tr>
+<tr class="separator:gad73f79e44712e7f69bfade7b1ee80b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c54c85a590ba560c2f5a1879204b342"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga65058e6c4877761b554eb2e45b2a3e47">Brinkman::VelocityGradientType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga2c54c85a590ba560c2f5a1879204b342">HArDCore3D::tworegions_gradu</a></td></tr>
+<tr class="separator:ga2c54c85a590ba560c2f5a1879204b342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7960f37bf2b5ecbb566406407d15dc6e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga275ed9bfc3cad658469141e5bf1b95f8">Brinkman::PressureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga7960f37bf2b5ecbb566406407d15dc6e">HArDCore3D::tworegions_p</a> = <a class="el" href="group__DDR__stokes.html#ga9b7879fd3b35059edb87a8986c1c8d22">trigonometric_p</a></td></tr>
+<tr class="separator:ga7960f37bf2b5ecbb566406407d15dc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab12200ed4ffe217d099cd6bbc0b39b94"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#gab00d73fc1ba1eec6a4fc5f41462e2459">Brinkman::PressureGradientType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#gab12200ed4ffe217d099cd6bbc0b39b94">HArDCore3D::tworegions_gradp</a> = <a class="el" href="group__HHO__brinkman.html#ga9313f57c43d447073a9b3f2ff7b417de">trigonometric_gradp</a></td></tr>
+<tr class="separator:gab12200ed4ffe217d099cd6bbc0b39b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a31b0880fffab1f48bb54427f313afb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga18ad36c55908aa960f11b456bdc4f899">Brinkman::MomentumForcingTermType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga1a31b0880fffab1f48bb54427f313afb">HArDCore3D::DivGrad_alpha</a></td></tr>
+<tr class="separator:ga1a31b0880fffab1f48bb54427f313afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e275cc2073668819602ffd1574f7651"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga18ad36c55908aa960f11b456bdc4f899">Brinkman::MomentumForcingTermType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga5e275cc2073668819602ffd1574f7651">HArDCore3D::DivGrad_beta_S</a></td></tr>
+<tr class="separator:ga5e275cc2073668819602ffd1574f7651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab89b72b33ab8483dd77564a619feb66c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga18ad36c55908aa960f11b456bdc4f899">Brinkman::MomentumForcingTermType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#gab89b72b33ab8483dd77564a619feb66c">HArDCore3D::DivGrad_beta_D</a></td></tr>
+<tr class="separator:gab89b72b33ab8483dd77564a619feb66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82d25622b0ae6e99c68fb0f8879d1a90"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#ga18ad36c55908aa960f11b456bdc4f899">Brinkman::MomentumForcingTermType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#ga82d25622b0ae6e99c68fb0f8879d1a90">HArDCore3D::tworegions_f</a></td></tr>
+<tr class="separator:ga82d25622b0ae6e99c68fb0f8879d1a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5702edacbd27e691088c93595b413b1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__HHO__brinkman.html#gac4403abe12637e21b0cd8f1ad1cd46aa">Brinkman::CompressibilityForcingTermType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__HHO__brinkman.html#gac5702edacbd27e691088c93595b413b1">HArDCore3D::tworegions_g</a> = [](const VectorRd &amp; x)-&gt;double { return <a class="el" href="group__HHO__brinkman.html#ga2c54c85a590ba560c2f5a1879204b342">tworegions_gradu</a>(x).trace();}</td></tr>
+<tr class="separator:gac5702edacbd27e691088c93595b413b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Implementation of the HHO scheme for the <a class="el" href="structHArDCore3D_1_1Stokes.html" title="Assemble a Stokes problem.">Stokes</a> and <a class="el" href="structHArDCore3D_1_1Brinkman.html" title="Structure for Brinkman model.">Brinkman</a> equations. </p>
@@ -766,6 +815,25 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ga81cc62cd427c34449df6ad07ae7263df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga81cc62cd427c34449df6ad07ae7263df">&#9670;&nbsp;</a></span>computeConditionNum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; double, double &gt; Brinkman::computeConditionNum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the condition number of the matrix. </p>
 
 </div>
 </div>
@@ -1451,6 +1519,97 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ga4d0cc9956658c25af0cff549c962f3a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d0cc9956658c25af0cff549c962f3a5">&#9670;&nbsp;</a></span>alpha</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;VectorRd(const VectorRd &amp;)&gt; HArDCore3D::alpha</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x)-&gt;<a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a>(</div>
+<div class="line">                        exp(-x.y()-x.z()),</div>
+<div class="line">                        sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x.y()) * sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x.z()),</div>
+<div class="line">                        x.y() * x.z()</div>
+<div class="line">                       );</div>
+<div class="line">      }</div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga05c87d0a93c5df840c07c09ded686aeb"><div class="ttname"><a href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">HArDCore3D::PI</a></div><div class="ttdeci">static const double PI</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:336</div></div>
+<div class="ttc" id="anamespaceMesh2D_html_a782920a9ee0ff830630fe77e70a8f6bd"><div class="ttname"><a href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">Mesh2D::VectorRd</a></div><div class="ttdeci">MeshND::VectorRd&lt; 2 &gt; VectorRd</div><div class="ttdef"><b>Definition:</b> Mesh2D.hpp:14</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga008920fe674b8381d731f46d3426541c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga008920fe674b8381d731f46d3426541c">&#9670;&nbsp;</a></span>beta_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;VectorRd(const VectorRd &amp;)&gt; HArDCore3D::beta_D</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x)-&gt;<a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
+<div class="line">        <span class="keywordflow">return</span> cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x.x()) * (x.x() - 0.5)</div>
+<div class="line">                    * <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a>(</div>
+<div class="line">                        sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x.y()) + cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x.z()),</div>
+<div class="line">                        std::pow(x.z(), 3),</div>
+<div class="line">                        std::pow(x.y(), 2) * std::pow(x.z(), 2)</div>
+<div class="line">                       );</div>
+<div class="line">      }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga49620a2eed647f1cef43ed8379360cfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga49620a2eed647f1cef43ed8379360cfe">&#9670;&nbsp;</a></span>beta_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;VectorRd(const VectorRd &amp;)&gt; HArDCore3D::beta_S</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x)-&gt;<a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
+<div class="line">        <span class="keywordflow">return</span> cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x.x()) * (x.x() - 0.5)</div>
+<div class="line">                    * <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a>(</div>
+<div class="line">                          x.y() + x.z(),</div>
+<div class="line">                          x.y() + cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x.z()),</div>
+<div class="line">                          sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x.y())</div>
+<div class="line">                         );</div>
+<div class="line">      }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ga0c6ed50754266d08288e149561c2d19a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga0c6ed50754266d08288e149561c2d19a">&#9670;&nbsp;</a></span>cavity_f</h2>
 
@@ -1473,7 +1632,6 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
 <div class="line">                      <span class="keywordflow">return</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a>(0., 0., -.98);</div>
 <div class="line">                    }</div>
-<div class="ttc" id="anamespaceMesh2D_html_a782920a9ee0ff830630fe77e70a8f6bd"><div class="ttname"><a href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">Mesh2D::VectorRd</a></div><div class="ttdeci">MeshND::VectorRd&lt; 2 &gt; VectorRd</div><div class="ttdef"><b>Definition:</b> Mesh2D.hpp:14</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1574,10 +1732,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= std::pow(<a class="code" href="group__HHO__brinkman.html#ga2dc87f28ba4daa63a8a61e003342d09c">permeability_in_wedge</a>, -1) * <a class="code" href="structHArDCore3D_1_1IntegralWeight.html">BrinkmanParameters::ViscosityType</a>(<a class="code" href="group__HHO__brinkman.html#ga2f21ea8a7bbe91797809288e7ddb65d9">XiWedge</a>)</div>
 <div class="line">            + std::pow(<a class="code" href="group__HHO__brinkman.html#ga5941bb0b014eab00f742803f43ae5e48">permeability_in_box</a>, -1) * <a class="code" href="structHArDCore3D_1_1IntegralWeight.html">BrinkmanParameters::ViscosityType</a>(<a class="code" href="group__HHO__brinkman.html#ga251680a1b4448f4b4198b07ece3063e6">XiBox</a>)</div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga251680a1b4448f4b4198b07ece3063e6"><div class="ttname"><a href="group__HHO__brinkman.html#ga251680a1b4448f4b4198b07ece3063e6">HArDCore3D::XiBox</a></div><div class="ttdeci">static std::function&lt; double(const VectorRd &amp;)&gt; XiBox</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:703</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga2dc87f28ba4daa63a8a61e003342d09c"><div class="ttname"><a href="group__HHO__brinkman.html#ga2dc87f28ba4daa63a8a61e003342d09c">HArDCore3D::permeability_in_wedge</a></div><div class="ttdeci">constexpr double permeability_in_wedge</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:710</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga2f21ea8a7bbe91797809288e7ddb65d9"><div class="ttname"><a href="group__HHO__brinkman.html#ga2f21ea8a7bbe91797809288e7ddb65d9">HArDCore3D::XiWedge</a></div><div class="ttdeci">static std::function&lt; double(const VectorRd &amp;)&gt; XiWedge</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:699</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga5941bb0b014eab00f742803f43ae5e48"><div class="ttname"><a href="group__HHO__brinkman.html#ga5941bb0b014eab00f742803f43ae5e48">HArDCore3D::permeability_in_box</a></div><div class="ttdeci">constexpr double permeability_in_box</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:711</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga251680a1b4448f4b4198b07ece3063e6"><div class="ttname"><a href="group__HHO__brinkman.html#ga251680a1b4448f4b4198b07ece3063e6">HArDCore3D::XiBox</a></div><div class="ttdeci">static std::function&lt; double(const VectorRd &amp;)&gt; XiBox</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:707</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga2dc87f28ba4daa63a8a61e003342d09c"><div class="ttname"><a href="group__HHO__brinkman.html#ga2dc87f28ba4daa63a8a61e003342d09c">HArDCore3D::permeability_in_wedge</a></div><div class="ttdeci">constexpr double permeability_in_wedge</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:714</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga2f21ea8a7bbe91797809288e7ddb65d9"><div class="ttname"><a href="group__HHO__brinkman.html#ga2f21ea8a7bbe91797809288e7ddb65d9">HArDCore3D::XiWedge</a></div><div class="ttdeci">static std::function&lt; double(const VectorRd &amp;)&gt; XiWedge</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:703</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga5941bb0b014eab00f742803f43ae5e48"><div class="ttname"><a href="group__HHO__brinkman.html#ga5941bb0b014eab00f742803f43ae5e48">HArDCore3D::permeability_in_box</a></div><div class="ttdeci">constexpr double permeability_in_box</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:715</div></div>
 <div class="ttc" id="astructHArDCore3D_1_1IntegralWeight_html"><div class="ttname"><a href="structHArDCore3D_1_1IntegralWeight.html">HArDCore3D::IntegralWeight</a></div><div class="ttdoc">Structure for weights (scalar, at the moment) in integral.</div><div class="ttdef"><b>Definition:</b> integralweight.hpp:36</div></div>
 </div><!-- fragment -->
 </div>
@@ -1651,7 +1809,7 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
 <div class="line">                      <span class="keywordflow">return</span> <a class="code" href="group__HHO__brinkman.html#ga7e0ffa40e6b1188baac39bb7e0985f0b">XiCavity</a>(x) * <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a>(x.x()*(1.-x.x()), 0., 0.);</div>
 <div class="line">                     }</div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga7e0ffa40e6b1188baac39bb7e0985f0b"><div class="ttname"><a href="group__HHO__brinkman.html#ga7e0ffa40e6b1188baac39bb7e0985f0b">HArDCore3D::XiCavity</a></div><div class="ttdeci">static std::function&lt; double(const VectorRd &amp;)&gt; XiCavity</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:695</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga7e0ffa40e6b1188baac39bb7e0985f0b"><div class="ttname"><a href="group__HHO__brinkman.html#ga7e0ffa40e6b1188baac39bb7e0985f0b">HArDCore3D::XiCavity</a></div><div class="ttdeci">static std::function&lt; double(const VectorRd &amp;)&gt; XiCavity</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:699</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1677,10 +1835,10 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
 <div class="line">                      <span class="keywordflow">return</span> - <a class="code" href="group__HHO__brinkman.html#ga72eb141275376b53504ef7b86387e559">scaling_mu</a> * <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a>( 6 * x(0) + 2 * x(1), 2., 6 * x(2)) + <a class="code" href="group__HHO__brinkman.html#ga95cb7f69602e9865c04c118ded64f943">scaling_kappainv</a> * <a class="code" href="group__HHO__brinkman.html#ga1e58b27759c373942645ed11b97b2210">cubic_u</a>(x) + <a class="code" href="group__HHO__brinkman.html#ga1cabbdbcc9977f8864e0b0a6854fd373">cubic_gradp</a>(x);</div>
 <div class="line">                    }</div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga1cabbdbcc9977f8864e0b0a6854fd373"><div class="ttname"><a href="group__HHO__brinkman.html#ga1cabbdbcc9977f8864e0b0a6854fd373">HArDCore3D::cubic_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType cubic_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:476</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga1e58b27759c373942645ed11b97b2210"><div class="ttname"><a href="group__HHO__brinkman.html#ga1e58b27759c373942645ed11b97b2210">HArDCore3D::cubic_u</a></div><div class="ttdeci">static Brinkman::VelocityType cubic_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:446</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga72eb141275376b53504ef7b86387e559"><div class="ttname"><a href="group__HHO__brinkman.html#ga72eb141275376b53504ef7b86387e559">HArDCore3D::scaling_mu</a></div><div class="ttdeci">double scaling_mu</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:337</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga95cb7f69602e9865c04c118ded64f943"><div class="ttname"><a href="group__HHO__brinkman.html#ga95cb7f69602e9865c04c118ded64f943">HArDCore3D::scaling_kappainv</a></div><div class="ttdeci">double scaling_kappainv</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:338</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga1cabbdbcc9977f8864e0b0a6854fd373"><div class="ttname"><a href="group__HHO__brinkman.html#ga1cabbdbcc9977f8864e0b0a6854fd373">HArDCore3D::cubic_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType cubic_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:479</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga1e58b27759c373942645ed11b97b2210"><div class="ttname"><a href="group__HHO__brinkman.html#ga1e58b27759c373942645ed11b97b2210">HArDCore3D::cubic_u</a></div><div class="ttdeci">static Brinkman::VelocityType cubic_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:449</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga72eb141275376b53504ef7b86387e559"><div class="ttname"><a href="group__HHO__brinkman.html#ga72eb141275376b53504ef7b86387e559">HArDCore3D::scaling_mu</a></div><div class="ttdeci">double scaling_mu</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:340</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga95cb7f69602e9865c04c118ded64f943"><div class="ttname"><a href="group__HHO__brinkman.html#ga95cb7f69602e9865c04c118ded64f943">HArDCore3D::scaling_kappainv</a></div><div class="ttdeci">double scaling_kappainv</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:341</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1868,6 +2026,94 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ga1a31b0880fffab1f48bb54427f313afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a31b0880fffab1f48bb54427f313afb">&#9670;&nbsp;</a></span>DivGrad_alpha</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga18ad36c55908aa960f11b456bdc4f899">Brinkman::MomentumForcingTermType</a> HArDCore3D::DivGrad_alpha</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
+<div class="line">         <span class="keywordflow">return</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a>(</div>
+<div class="line">                      2*exp(-x.y() - x.z()),</div>
+<div class="line">                     -2*pow(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2)*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y())*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()),</div>
+<div class="line">                        0 </div>
+<div class="line">                     );</div>
+<div class="line">          }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gab89b72b33ab8483dd77564a619feb66c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab89b72b33ab8483dd77564a619feb66c">&#9670;&nbsp;</a></span>DivGrad_beta_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga18ad36c55908aa960f11b456bdc4f899">Brinkman::MomentumForcingTermType</a> HArDCore3D::DivGrad_beta_D</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
+<div class="line">         <span class="keywordflow">return</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a>(</div>
+<div class="line">                       -pow(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2)*(x.x() - 0.5)*(sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y()) + cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()))*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) - pow(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2)*(x.x() - 0.5)*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) - pow(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2)*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()) - 2*<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y()) + cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()))*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()),</div>
+<div class="line">                       -pow(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2)*pow(x.z(), 3)*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) - 2*<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*pow(x.z(), 3)*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) + 6*x.z()*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()),</div>
+<div class="line">                       -pow(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2)*pow(x.y(), 2)*pow(x.z(), 2)*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) - 2*<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*pow(x.y(), 2)*pow(x.z(), 2)*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) + 2*pow(x.y(), 2)*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) + 2*pow(x.z(), 2)*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x())</div>
+<div class="line">                     );</div>
+<div class="line">          }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga5e275cc2073668819602ffd1574f7651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5e275cc2073668819602ffd1574f7651">&#9670;&nbsp;</a></span>DivGrad_beta_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga18ad36c55908aa960f11b456bdc4f899">Brinkman::MomentumForcingTermType</a> HArDCore3D::DivGrad_beta_S</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
+<div class="line">         <span class="keywordflow">return</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a>(</div>
+<div class="line">                      -pow(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2)*(x.x() - 0.5)*(x.y() + x.z())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) - 2*<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(x.y() + x.z())*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()), </div>
+<div class="line">                        -pow(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2)*(x.x() - 0.5)*(x.y() + cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()))*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) - pow(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2)*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()) - 2*<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(x.y() + cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()))*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()),</div>
+<div class="line">                      -2*pow(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>, 2)*(x.x() - 0.5)*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) - 2*<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x())*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y()) </div>
+<div class="line">                     );</div>
+<div class="line"> </div>
+<div class="line">          }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ga0f4dd1a729b9cb7cd6b0ec65cc6446ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga0f4dd1a729b9cb7cd6b0ec65cc6446ec">&#9670;&nbsp;</a></span>energy</h2>
 
@@ -1907,6 +2153,108 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gacc113300cbc713be91a585094313b467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacc113300cbc713be91a585094313b467">&#9670;&nbsp;</a></span>grad_alpha</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga65058e6c4877761b554eb2e45b2a3e47">Brinkman::VelocityGradientType</a> HArDCore3D::grad_alpha</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> {</div>
+<div class="line">                      <a class="code" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> M = MatrixRd::Zero(); </div>
+<div class="line">                      M.row(0) &lt;&lt; 0, -exp(-x.y() - x.z()), -exp(-x.y() - x.z());</div>
+<div class="line">                      M.row(1) &lt;&lt; 0, <a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y()), <a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z());</div>
+<div class="line">                      M.row(2) &lt;&lt; 0, x.z(), x.y();</div>
+<div class="line">                      </div>
+<div class="line">                      <span class="keywordflow">return</span> M;</div>
+<div class="line">                    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gad73f79e44712e7f69bfade7b1ee80b0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad73f79e44712e7f69bfade7b1ee80b0a">&#9670;&nbsp;</a></span>grad_beta_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga65058e6c4877761b554eb2e45b2a3e47">Brinkman::VelocityGradientType</a> HArDCore3D::grad_beta_D</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> {</div>
+<div class="line">                      <a class="code" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> M = MatrixRd::Zero(); </div>
+<div class="line">                      M.row(0) &lt;&lt; -<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(x.x() - 0.5)*(sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y()) + cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()))*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) + (sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y()) + cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()))*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()),</div>
+<div class="line">                                   <a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y()), </div>
+<div class="line">                                   -<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(x.x() - 0.5)*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x());</div>
+<div class="line">                      M.row(1) &lt;&lt; -<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*pow(x.z(), 3)*(x.x() - 0.5)*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) + pow(x.z(), 3)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()), </div>
+<div class="line">                                  0, </div>
+<div class="line">                                  3*pow(x.z(), 2)*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x());</div>
+<div class="line">                      M.row(2) &lt;&lt; -<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*pow(x.y(), 2)*pow(x.z(), 2)*(x.x() - 0.5)*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) + pow(x.y(), 2)*pow(x.z(), 2)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()),</div>
+<div class="line">                                  2*x.y()*pow(x.z(), 2)*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()), </div>
+<div class="line">                                  2*pow(x.y(), 2)*x.z()*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x());</div>
+<div class="line">                      </div>
+<div class="line">                      <span class="keywordflow">return</span> M;</div>
+<div class="line">                    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga9254e4d89b73e4672445ac7f94ef4d42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9254e4d89b73e4672445ac7f94ef4d42">&#9670;&nbsp;</a></span>grad_beta_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga65058e6c4877761b554eb2e45b2a3e47">Brinkman::VelocityGradientType</a> HArDCore3D::grad_beta_S</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> {</div>
+<div class="line">                      <a class="code" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> M = MatrixRd::Zero(); </div>
+<div class="line">                      M.row(0) &lt;&lt; -<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(x.x() - 0.5)*(x.y() + x.z())*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) + (x.y() + x.z())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()),</div>
+<div class="line">                                  (x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()), </div>
+<div class="line">                                  (x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x());</div>
+<div class="line">                      M.row(1) &lt;&lt; -<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(x.x() - 0.5)*(x.y() + cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()))*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()) + (x.y() + cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z()))*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()),</div>
+<div class="line">                                  (x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()),</div>
+<div class="line">                                  -<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(x.x() - 0.5)*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.z())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x());</div>
+<div class="line">                      M.row(2) &lt;&lt; -<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(x.x() - 0.5)*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x())*sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y()) + sin(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x()), </div>
+<div class="line">                                  <a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*(x.x() - 0.5)*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.x())*cos(<a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x.y()),</div>
+<div class="line">                                  0;</div>
+<div class="line"> </div>
+<div class="line">                      <span class="keywordflow">return</span> M;</div>
+<div class="line">                    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ga4ed25afcbf6416e2c59da1d937eaa673"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4ed25afcbf6416e2c59da1d937eaa673">&#9670;&nbsp;</a></span>kappainv</h2>
 
@@ -1943,8 +2291,8 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
 <div class="line">                 <span class="keywordflow">return</span> VectorRd::Zero() + <a class="code" href="group__HHO__brinkman.html#ga95cb7f69602e9865c04c118ded64f943">scaling_kappainv</a>*<a class="code" href="group__HHO__brinkman.html#gab251e12ef6b35755be8d0e370dffd71b">linear_u</a>(x) + <a class="code" href="group__HHO__brinkman.html#ga658796573d1c3d4e3ad85d9b0d9c0042">linear_gradp</a>(x);</div>
 <div class="line">               }</div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga658796573d1c3d4e3ad85d9b0d9c0042"><div class="ttname"><a href="group__HHO__brinkman.html#ga658796573d1c3d4e3ad85d9b0d9c0042">HArDCore3D::linear_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType linear_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:371</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_gab251e12ef6b35755be8d0e370dffd71b"><div class="ttname"><a href="group__HHO__brinkman.html#gab251e12ef6b35755be8d0e370dffd71b">HArDCore3D::linear_u</a></div><div class="ttdeci">static Brinkman::VelocityType linear_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:356</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga658796573d1c3d4e3ad85d9b0d9c0042"><div class="ttname"><a href="group__HHO__brinkman.html#ga658796573d1c3d4e3ad85d9b0d9c0042">HArDCore3D::linear_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType linear_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:374</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gab251e12ef6b35755be8d0e370dffd71b"><div class="ttname"><a href="group__HHO__brinkman.html#gab251e12ef6b35755be8d0e370dffd71b">HArDCore3D::linear_u</a></div><div class="ttdeci">static Brinkman::VelocityType linear_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:359</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1992,7 +2340,7 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
 <div class="line">                     <span class="keywordflow">return</span> <a class="code" href="group__HHO__brinkman.html#ga249b69ca9df7a9aed6626d932a38bd44">vec_p</a>;</div>
 <div class="line">                   }</div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga249b69ca9df7a9aed6626d932a38bd44"><div class="ttname"><a href="group__HHO__brinkman.html#ga249b69ca9df7a9aed6626d932a38bd44">HArDCore3D::vec_p</a></div><div class="ttdeci">static const VectorRd vec_p</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:353</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga249b69ca9df7a9aed6626d932a38bd44"><div class="ttname"><a href="group__HHO__brinkman.html#ga249b69ca9df7a9aed6626d932a38bd44">HArDCore3D::vec_p</a></div><div class="ttdeci">static const VectorRd vec_p</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:356</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2018,7 +2366,7 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> {</div>
 <div class="line">                     <span class="keywordflow">return</span> <a class="code" href="group__HHO__brinkman.html#gaaf3849406952d3f00f00e814a7d5fa64">mat_u</a>;</div>
 <div class="line">                   }</div>
-<div class="ttc" id="agroup__HHO__brinkman_html_gaaf3849406952d3f00f00e814a7d5fa64"><div class="ttname"><a href="group__HHO__brinkman.html#gaaf3849406952d3f00f00e814a7d5fa64">HArDCore3D::mat_u</a></div><div class="ttdeci">static const MatrixRd mat_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:352</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gaaf3849406952d3f00f00e814a7d5fa64"><div class="ttname"><a href="group__HHO__brinkman.html#gaaf3849406952d3f00f00e814a7d5fa64">HArDCore3D::mat_u</a></div><div class="ttdeci">static const MatrixRd mat_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:355</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2168,6 +2516,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga425ab3d9733f24b5dc79022bf7e528ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga425ab3d9733f24b5dc79022bf7e528ce">&#9670;&nbsp;</a></span>permeability_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double HArDCore3D::permeability_D = 1e-2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga5941bb0b014eab00f742803f43ae5e48"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga5941bb0b014eab00f742803f43ae5e48">&#9670;&nbsp;</a></span>permeability_in_box</h2>
 
@@ -2201,6 +2571,28 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">constexpr double HArDCore3D::permeability_in_wedge = 1e-2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaeefb46acb94e8bfd8d469af45f6a07b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeefb46acb94e8bfd8d469af45f6a07b1">&#9670;&nbsp;</a></span>permeability_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double HArDCore3D::permeability_S = 1e-7</td>
         </tr>
       </table>
   </td>
@@ -2256,8 +2648,8 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
 <div class="line">                      <span class="keywordflow">return</span> - <a class="code" href="group__HHO__brinkman.html#ga72eb141275376b53504ef7b86387e559">scaling_mu</a> * <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a>( 2., 2., 2.) + <a class="code" href="group__HHO__brinkman.html#ga95cb7f69602e9865c04c118ded64f943">scaling_kappainv</a> * <a class="code" href="group__HHO__brinkman.html#gabed608c28beca212c8bac183f8f7306b">quadratic_u</a>(x) + <a class="code" href="group__HHO__brinkman.html#gabc6363716b03c8108bd5b57a94732bdc">quadratic_gradp</a>(x);</div>
 <div class="line">                    }</div>
-<div class="ttc" id="agroup__HHO__brinkman_html_gabc6363716b03c8108bd5b57a94732bdc"><div class="ttname"><a href="group__HHO__brinkman.html#gabc6363716b03c8108bd5b57a94732bdc">HArDCore3D::quadratic_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType quadratic_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:422</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_gabed608c28beca212c8bac183f8f7306b"><div class="ttname"><a href="group__HHO__brinkman.html#gabed608c28beca212c8bac183f8f7306b">HArDCore3D::quadratic_u</a></div><div class="ttdeci">static Brinkman::VelocityType quadratic_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:392</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gabc6363716b03c8108bd5b57a94732bdc"><div class="ttname"><a href="group__HHO__brinkman.html#gabc6363716b03c8108bd5b57a94732bdc">HArDCore3D::quadratic_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType quadratic_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:425</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gabed608c28beca212c8bac183f8f7306b"><div class="ttname"><a href="group__HHO__brinkman.html#gabed608c28beca212c8bac183f8f7306b">HArDCore3D::quadratic_u</a></div><div class="ttdeci">static Brinkman::VelocityType quadratic_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:395</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2479,11 +2871,10 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">                      <span class="keywordflow">return</span> fvalue;</div>
 <div class="line">                    }</div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga05c87d0a93c5df840c07c09ded686aeb"><div class="ttname"><a href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">HArDCore3D::PI</a></div><div class="ttdeci">static const double PI</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:333</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga2504076483feb12fa68e04f91d9c660f"><div class="ttname"><a href="group__HHO__brinkman.html#ga2504076483feb12fa68e04f91d9c660f">HArDCore3D::regimes_u</a></div><div class="ttdeci">static Brinkman::VelocityType regimes_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:608</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga522f322a54ff4f275104982fc3c75cf4"><div class="ttname"><a href="group__HHO__brinkman.html#ga522f322a54ff4f275104982fc3c75cf4">HArDCore3D::eps</a></div><div class="ttdeci">constexpr double eps</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:341</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga81def91a67f1d4b1fa65733c978f74be"><div class="ttname"><a href="group__HHO__brinkman.html#ga81def91a67f1d4b1fa65733c978f74be">HArDCore3D::regimes_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType regimes_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:566</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_gaff5ad4025478686574a984b1df3d8859"><div class="ttname"><a href="group__HHO__brinkman.html#gaff5ad4025478686574a984b1df3d8859">HArDCore3D::XiS</a></div><div class="ttdeci">static std::function&lt; double(const VectorRd &amp;)&gt; XiS</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:603</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga2504076483feb12fa68e04f91d9c660f"><div class="ttname"><a href="group__HHO__brinkman.html#ga2504076483feb12fa68e04f91d9c660f">HArDCore3D::regimes_u</a></div><div class="ttdeci">static Brinkman::VelocityType regimes_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:612</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga522f322a54ff4f275104982fc3c75cf4"><div class="ttname"><a href="group__HHO__brinkman.html#ga522f322a54ff4f275104982fc3c75cf4">HArDCore3D::eps</a></div><div class="ttdeci">constexpr double eps</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:344</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga81def91a67f1d4b1fa65733c978f74be"><div class="ttname"><a href="group__HHO__brinkman.html#ga81def91a67f1d4b1fa65733c978f74be">HArDCore3D::regimes_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType regimes_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:570</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gaff5ad4025478686574a984b1df3d8859"><div class="ttname"><a href="group__HHO__brinkman.html#gaff5ad4025478686574a984b1df3d8859">HArDCore3D::XiS</a></div><div class="ttdeci">static std::function&lt; double(const VectorRd &amp;)&gt; XiS</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:607</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2809,8 +3200,8 @@ Variables</h2></td></tr>
 <div class="line">                                                            )</div>
 <div class="line">                        + <a class="code" href="group__HHO__brinkman.html#ga95cb7f69602e9865c04c118ded64f943">scaling_kappainv</a>*<a class="code" href="group__HHO__brinkman.html#ga53362b5995812993dd8f3e3ea8f16ea0">trigonometric_u</a>(x) + <a class="code" href="group__HHO__brinkman.html#ga9313f57c43d447073a9b3f2ff7b417de">trigonometric_gradp</a>(x);</div>
 <div class="line">                    }</div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga53362b5995812993dd8f3e3ea8f16ea0"><div class="ttname"><a href="group__HHO__brinkman.html#ga53362b5995812993dd8f3e3ea8f16ea0">HArDCore3D::trigonometric_u</a></div><div class="ttdeci">static Brinkman::VelocityType trigonometric_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:501</div></div>
-<div class="ttc" id="agroup__HHO__brinkman_html_ga9313f57c43d447073a9b3f2ff7b417de"><div class="ttname"><a href="group__HHO__brinkman.html#ga9313f57c43d447073a9b3f2ff7b417de">HArDCore3D::trigonometric_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType trigonometric_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:531</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga53362b5995812993dd8f3e3ea8f16ea0"><div class="ttname"><a href="group__HHO__brinkman.html#ga53362b5995812993dd8f3e3ea8f16ea0">HArDCore3D::trigonometric_u</a></div><div class="ttdeci">static Brinkman::VelocityType trigonometric_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:505</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga9313f57c43d447073a9b3f2ff7b417de"><div class="ttname"><a href="group__HHO__brinkman.html#ga9313f57c43d447073a9b3f2ff7b417de">HArDCore3D::trigonometric_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType trigonometric_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:535</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2997,6 +3388,216 @@ Variables</h2></td></tr>
 <div class="line">                                     -cos(2. * <a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x(0)) * cos(2. * <a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x(1)) * sin(2. * <a class="code" href="group__HHO__brinkman.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a> * x(2))</div>
 <div class="line">                                     );</div>
 <div class="line">                    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga82d25622b0ae6e99c68fb0f8879d1a90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga82d25622b0ae6e99c68fb0f8879d1a90">&#9670;&nbsp;</a></span>tworegions_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga18ad36c55908aa960f11b456bdc4f899">Brinkman::MomentumForcingTermType</a> HArDCore3D::tworegions_f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
+<div class="line">         <span class="keywordflow">return</span> - <a class="code" href="group__HHO__brinkman.html#ga72eb141275376b53504ef7b86387e559">scaling_mu</a> * ( <a class="code" href="group__HHO__brinkman.html#gac4edd45fe89c7de877ebdbc8acecf781">viscosity_S</a> * <a class="code" href="group__HHO__brinkman.html#gaa8545cce4482839c2e98896f70c4be1b">Xi_S</a>(x) * (<a class="code" href="group__HHO__brinkman.html#ga1a31b0880fffab1f48bb54427f313afb">DivGrad_alpha</a>(x) + <a class="code" href="group__HHO__brinkman.html#ga5e275cc2073668819602ffd1574f7651">DivGrad_beta_S</a>(x)) + </div>
+<div class="line">                                  <a class="code" href="group__HHO__brinkman.html#gad48adac1d9109ac911f74b66d3d8e25e">viscosity_D</a> * <a class="code" href="group__HHO__brinkman.html#ga4230e82c38bfd21bc560ec578e2cc10b">Xi_D</a>(x) * (<a class="code" href="group__HHO__brinkman.html#ga1a31b0880fffab1f48bb54427f313afb">DivGrad_alpha</a>(x) + <a class="code" href="group__HHO__brinkman.html#gab89b72b33ab8483dd77564a619feb66c">DivGrad_beta_D</a>(x)) )</div>
+<div class="line">                 + <a class="code" href="group__HHO__brinkman.html#ga95cb7f69602e9865c04c118ded64f943">scaling_kappainv</a> * </div>
+<div class="line">                      ( std::pow(<a class="code" href="group__HHO__brinkman.html#gaeefb46acb94e8bfd8d469af45f6a07b1">permeability_S</a>, -1) * <a class="code" href="group__HHO__brinkman.html#gaa8545cce4482839c2e98896f70c4be1b">Xi_S</a>(x) + std::pow(<a class="code" href="group__HHO__brinkman.html#ga425ab3d9733f24b5dc79022bf7e528ce">permeability_D</a>, -1) * <a class="code" href="group__HHO__brinkman.html#ga4230e82c38bfd21bc560ec578e2cc10b">Xi_D</a>(x) ) * <a class="code" href="group__HHO__brinkman.html#gac927fcefd9e061bbbb8427184487ff9e">tworegions_u</a>(x)</div>
+<div class="line">                 + <a class="code" href="group__HHO__brinkman.html#gab12200ed4ffe217d099cd6bbc0b39b94">tworegions_gradp</a>(x);</div>
+<div class="line">                    }</div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga1a31b0880fffab1f48bb54427f313afb"><div class="ttname"><a href="group__HHO__brinkman.html#ga1a31b0880fffab1f48bb54427f313afb">HArDCore3D::DivGrad_alpha</a></div><div class="ttdeci">static Brinkman::MomentumForcingTermType DivGrad_alpha</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:880</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga4230e82c38bfd21bc560ec578e2cc10b"><div class="ttname"><a href="group__HHO__brinkman.html#ga4230e82c38bfd21bc560ec578e2cc10b">HArDCore3D::Xi_D</a></div><div class="ttdeci">static std::function&lt; double(const VectorRd &amp;)&gt; Xi_D</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:764</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga425ab3d9733f24b5dc79022bf7e528ce"><div class="ttname"><a href="group__HHO__brinkman.html#ga425ab3d9733f24b5dc79022bf7e528ce">HArDCore3D::permeability_D</a></div><div class="ttdeci">constexpr double permeability_D</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:776</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga5e275cc2073668819602ffd1574f7651"><div class="ttname"><a href="group__HHO__brinkman.html#ga5e275cc2073668819602ffd1574f7651">HArDCore3D::DivGrad_beta_S</a></div><div class="ttdeci">static Brinkman::MomentumForcingTermType DivGrad_beta_S</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:889</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gaa8545cce4482839c2e98896f70c4be1b"><div class="ttname"><a href="group__HHO__brinkman.html#gaa8545cce4482839c2e98896f70c4be1b">HArDCore3D::Xi_S</a></div><div class="ttdeci">static std::function&lt; double(const VectorRd &amp;)&gt; Xi_S</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:760</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gab12200ed4ffe217d099cd6bbc0b39b94"><div class="ttname"><a href="group__HHO__brinkman.html#gab12200ed4ffe217d099cd6bbc0b39b94">HArDCore3D::tworegions_gradp</a></div><div class="ttdeci">static Brinkman::PressureGradientType tworegions_gradp</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:867</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gab89b72b33ab8483dd77564a619feb66c"><div class="ttname"><a href="group__HHO__brinkman.html#gab89b72b33ab8483dd77564a619feb66c">HArDCore3D::DivGrad_beta_D</a></div><div class="ttdeci">static Brinkman::MomentumForcingTermType DivGrad_beta_D</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:899</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gac4edd45fe89c7de877ebdbc8acecf781"><div class="ttname"><a href="group__HHO__brinkman.html#gac4edd45fe89c7de877ebdbc8acecf781">HArDCore3D::viscosity_S</a></div><div class="ttdeci">constexpr double viscosity_S</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:769</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gac927fcefd9e061bbbb8427184487ff9e"><div class="ttname"><a href="group__HHO__brinkman.html#gac927fcefd9e061bbbb8427184487ff9e">HArDCore3D::tworegions_u</a></div><div class="ttdeci">static Brinkman::VelocityType tworegions_u</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:812</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gad48adac1d9109ac911f74b66d3d8e25e"><div class="ttname"><a href="group__HHO__brinkman.html#gad48adac1d9109ac911f74b66d3d8e25e">HArDCore3D::viscosity_D</a></div><div class="ttdeci">constexpr double viscosity_D</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:770</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gaeefb46acb94e8bfd8d469af45f6a07b1"><div class="ttname"><a href="group__HHO__brinkman.html#gaeefb46acb94e8bfd8d469af45f6a07b1">HArDCore3D::permeability_S</a></div><div class="ttdeci">constexpr double permeability_S</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:775</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gac5702edacbd27e691088c93595b413b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5702edacbd27e691088c93595b413b1">&#9670;&nbsp;</a></span>tworegions_g</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#gac4403abe12637e21b0cd8f1ad1cd46aa">Brinkman::CompressibilityForcingTermType</a> HArDCore3D::tworegions_g = [](const VectorRd &amp; x)-&gt;double { return <a class="el" href="group__HHO__brinkman.html#ga2c54c85a590ba560c2f5a1879204b342">tworegions_gradu</a>(x).trace();}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab12200ed4ffe217d099cd6bbc0b39b94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab12200ed4ffe217d099cd6bbc0b39b94">&#9670;&nbsp;</a></span>tworegions_gradp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#gab00d73fc1ba1eec6a4fc5f41462e2459">Brinkman::PressureGradientType</a> HArDCore3D::tworegions_gradp = <a class="el" href="group__HHO__brinkman.html#ga9313f57c43d447073a9b3f2ff7b417de">trigonometric_gradp</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga2c54c85a590ba560c2f5a1879204b342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2c54c85a590ba560c2f5a1879204b342">&#9670;&nbsp;</a></span>tworegions_gradu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga65058e6c4877761b554eb2e45b2a3e47">Brinkman::VelocityGradientType</a> HArDCore3D::tworegions_gradu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="group__Basis.html#gabc4232845eaba80e0a1a45618ed0764d">MatrixRd</a> {</div>
+<div class="line">                      <span class="keywordflow">return</span> <a class="code" href="group__HHO__brinkman.html#gacc113300cbc713be91a585094313b467">grad_alpha</a>(x) + <a class="code" href="group__HHO__brinkman.html#gaa8545cce4482839c2e98896f70c4be1b">Xi_S</a>(x) * <a class="code" href="group__HHO__brinkman.html#ga9254e4d89b73e4672445ac7f94ef4d42">grad_beta_S</a>(x) + <a class="code" href="group__HHO__brinkman.html#ga4230e82c38bfd21bc560ec578e2cc10b">Xi_D</a>(x) * <a class="code" href="group__HHO__brinkman.html#gad73f79e44712e7f69bfade7b1ee80b0a">grad_beta_D</a>(x);</div>
+<div class="line">                    }</div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga9254e4d89b73e4672445ac7f94ef4d42"><div class="ttname"><a href="group__HHO__brinkman.html#ga9254e4d89b73e4672445ac7f94ef4d42">HArDCore3D::grad_beta_S</a></div><div class="ttdeci">static Brinkman::VelocityGradientType grad_beta_S</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:827</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gacc113300cbc713be91a585094313b467"><div class="ttname"><a href="group__HHO__brinkman.html#gacc113300cbc713be91a585094313b467">HArDCore3D::grad_alpha</a></div><div class="ttdeci">static Brinkman::VelocityGradientType grad_alpha</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:817</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_gad73f79e44712e7f69bfade7b1ee80b0a"><div class="ttname"><a href="group__HHO__brinkman.html#gad73f79e44712e7f69bfade7b1ee80b0a">HArDCore3D::grad_beta_D</a></div><div class="ttdeci">static Brinkman::VelocityGradientType grad_beta_D</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:843</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga3cf13f44b94f6830ad8f854653930316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3cf13f44b94f6830ad8f854653930316">&#9670;&nbsp;</a></span>tworegions_kappainv</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga270e2d085177b384fed62936f3cbe986">BrinkmanParameters::PermeabilityInvType</a> HArDCore3D::tworegions_kappainv</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= std::pow(<a class="code" href="group__HHO__brinkman.html#gaeefb46acb94e8bfd8d469af45f6a07b1">permeability_S</a>, -1) * <a class="code" href="structHArDCore3D_1_1IntegralWeight.html">BrinkmanParameters::ViscosityType</a>(<a class="code" href="group__HHO__brinkman.html#gaa8545cce4482839c2e98896f70c4be1b">Xi_S</a>)</div>
+<div class="line">            + std::pow(<a class="code" href="group__HHO__brinkman.html#ga425ab3d9733f24b5dc79022bf7e528ce">permeability_D</a>, -1) * <a class="code" href="structHArDCore3D_1_1IntegralWeight.html">BrinkmanParameters::ViscosityType</a>(<a class="code" href="group__HHO__brinkman.html#ga4230e82c38bfd21bc560ec578e2cc10b">Xi_D</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga565c73531fd3cd9f93c60d5511d40db1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga565c73531fd3cd9f93c60d5511d40db1">&#9670;&nbsp;</a></span>tworegions_mu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga3846df1dbe3bd18f776206c3ee77a061">BrinkmanParameters::ViscosityType</a> HArDCore3D::tworegions_mu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="group__HHO__brinkman.html#gac4edd45fe89c7de877ebdbc8acecf781">viscosity_S</a> * <a class="code" href="structHArDCore3D_1_1IntegralWeight.html">BrinkmanParameters::ViscosityType</a>(<a class="code" href="group__HHO__brinkman.html#gaa8545cce4482839c2e98896f70c4be1b">Xi_S</a>)</div>
+<div class="line">            + <a class="code" href="group__HHO__brinkman.html#gad48adac1d9109ac911f74b66d3d8e25e">viscosity_D</a> * <a class="code" href="structHArDCore3D_1_1IntegralWeight.html">BrinkmanParameters::ViscosityType</a>(<a class="code" href="group__HHO__brinkman.html#ga4230e82c38bfd21bc560ec578e2cc10b">Xi_D</a>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga7960f37bf2b5ecbb566406407d15dc6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7960f37bf2b5ecbb566406407d15dc6e">&#9670;&nbsp;</a></span>tworegions_p</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga275ed9bfc3cad658469141e5bf1b95f8">Brinkman::PressureType</a> HArDCore3D::tworegions_p = <a class="el" href="group__DDR__stokes.html#ga9b7879fd3b35059edb87a8986c1c8d22">trigonometric_p</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac927fcefd9e061bbbb8427184487ff9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac927fcefd9e061bbbb8427184487ff9e">&#9670;&nbsp;</a></span>tworegions_u</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__HHO__brinkman.html#ga773b98571fa45b5c7ff7480a0469274b">Brinkman::VelocityType</a> HArDCore3D::tworegions_u</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x) -&gt; <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> {</div>
+<div class="line">                      <span class="keywordflow">return</span> <a class="code" href="group__HHO__brinkman.html#ga4d0cc9956658c25af0cff549c962f3a5">alpha</a>(x) + <a class="code" href="group__HHO__brinkman.html#gaa8545cce4482839c2e98896f70c4be1b">Xi_S</a>(x) * <a class="code" href="group__HHO__brinkman.html#ga49620a2eed647f1cef43ed8379360cfe">beta_S</a>(x) + <a class="code" href="group__HHO__brinkman.html#ga4230e82c38bfd21bc560ec578e2cc10b">Xi_D</a>(x) * <a class="code" href="group__HHO__brinkman.html#ga008920fe674b8381d731f46d3426541c">beta_D</a>(x);</div>
+<div class="line">                    }</div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga008920fe674b8381d731f46d3426541c"><div class="ttname"><a href="group__HHO__brinkman.html#ga008920fe674b8381d731f46d3426541c">HArDCore3D::beta_D</a></div><div class="ttdeci">static std::function&lt; VectorRd(const VectorRd &amp;)&gt; beta_D</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:802</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga49620a2eed647f1cef43ed8379360cfe"><div class="ttname"><a href="group__HHO__brinkman.html#ga49620a2eed647f1cef43ed8379360cfe">HArDCore3D::beta_S</a></div><div class="ttdeci">static std::function&lt; VectorRd(const VectorRd &amp;)&gt; beta_S</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:792</div></div>
+<div class="ttc" id="agroup__HHO__brinkman_html_ga4d0cc9956658c25af0cff549c962f3a5"><div class="ttname"><a href="group__HHO__brinkman.html#ga4d0cc9956658c25af0cff549c962f3a5">HArDCore3D::alpha</a></div><div class="ttdeci">static std::function&lt; VectorRd(const VectorRd &amp;)&gt; alpha</div><div class="ttdef"><b>Definition:</b> hho-brinkman.hpp:783</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3241,6 +3842,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gad48adac1d9109ac911f74b66d3d8e25e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad48adac1d9109ac911f74b66d3d8e25e">&#9670;&nbsp;</a></span>viscosity_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double HArDCore3D::viscosity_D = 0.</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga039ebb2e5436912d7323b20b63d01231"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga039ebb2e5436912d7323b20b63d01231">&#9670;&nbsp;</a></span>viscosity_in_cavity</h2>
 
@@ -3261,6 +3884,78 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a id="gac4edd45fe89c7de877ebdbc8acecf781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac4edd45fe89c7de877ebdbc8acecf781">&#9670;&nbsp;</a></span>viscosity_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double HArDCore3D::viscosity_S = 1.</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga4230e82c38bfd21bc560ec578e2cc10b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4230e82c38bfd21bc560ec578e2cc10b">&#9670;&nbsp;</a></span>Xi_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;double(const VectorRd &amp;)&gt; HArDCore3D::Xi_D</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x)-&gt;<span class="keywordtype">double</span> { </div>
+<div class="line">            <span class="keywordflow">return</span> 1.-<a class="code" href="group__HHO__brinkman.html#gaa8545cce4482839c2e98896f70c4be1b">Xi_S</a>(x); </div>
+<div class="line">          }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gaa8545cce4482839c2e98896f70c4be1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa8545cce4482839c2e98896f70c4be1b">&#9670;&nbsp;</a></span>Xi_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;double(const VectorRd &amp;)&gt; HArDCore3D::Xi_S</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#a782920a9ee0ff830630fe77e70a8f6bd">VectorRd</a> &amp; x)-&gt;<span class="keywordtype">double</span> { </div>
+<div class="line">            <span class="keywordflow">return</span> ( (x.x()&lt;0.5) ? 1. : 0.); </div>
+<div class="line">          }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ga251680a1b4448f4b4198b07ece3063e6"></a>

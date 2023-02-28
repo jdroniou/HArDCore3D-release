@@ -68,10 +68,12 @@ var menudata={children:[
 {text:"v",url:"namespacemembers_func.html#index_v"}]},
 {text:"Variables",url:"namespacemembers_vars.html",children:[
 {text:"a",url:"namespacemembers_vars.html#index_a"},
+{text:"b",url:"namespacemembers_vars_b.html#index_b"},
 {text:"c",url:"namespacemembers_vars_c.html#index_c"},
 {text:"d",url:"namespacemembers_vars_d.html#index_d"},
 {text:"e",url:"namespacemembers_vars_e.html#index_e"},
 {text:"f",url:"namespacemembers_vars_f.html#index_f"},
+{text:"g",url:"namespacemembers_vars_g.html#index_g"},
 {text:"l",url:"namespacemembers_vars_l.html#index_l"},
 {text:"m",url:"namespacemembers_vars_m.html#index_m"},
 {text:"p",url:"namespacemembers_vars_p.html#index_p"},

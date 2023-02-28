@@ -11,8 +11,7 @@ Class definition\+: polynomial bases and operators.
 
 
 
-Inheritance diagram for HAr\+DCore3D\+::HHOSpace\+:
-\nopagebreak
+Inheritance diagram for HAr\+DCore3D\+::HHOSpace\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for HAr\+DCore3D\+::HHOSpace\+:
 \end{figure}
 
 
-Collaboration diagram for HAr\+DCore3D\+::HHOSpace\+:
-\nopagebreak
+Collaboration diagram for HAr\+DCore3D\+::HHOSpace\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -73,7 +71,9 @@ const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{Local\+Op
 const \mbox{\hyperlink{structHArDCore3D_1_1HHOSpace_1_1LocalOperators}{Local\+Operators}} \& \mbox{\hyperlink{group__HHOSpace_ga6fe32dde6328ddeeb949886800183a11}{operators}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Return cell operators for cell T. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{group__HHOSpace_ga539ac4312a3aa9cfa3355287e06bd649}{compute\+Norms}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&list\+\_\+dofs) const
-\begin{DoxyCompactList}\small\item\em Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Computes the discrete L2 (cell unknowns only) and H1 norms of a list of vectors. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{group__HHOSpace_ga365a8d571ae7a2c6c52c91d20f2bbed7}{compute\+Vertex\+Values}} (const Eigen\+::\+Vector\+Xd \&u) const
+\begin{DoxyCompactList}\small\item\em Computes the values of the potential reconstruction at the mesh vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
