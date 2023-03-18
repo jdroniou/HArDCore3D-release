@@ -25,8 +25,8 @@ ADD_EXECUTABLE(check-mesh Transforms/CheckMesh.cpp)
 TARGET_LINK_LIBRARIES(check-mesh mesh plot ${Boost_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(check-mesh PUBLIC ${EIGEN3_INCLUDE_DIR})
 
-# Flatten faces in a mesh
-ADD_EXECUTABLE(flatten-faces Transforms/FlattenFaces.cpp)
-TARGET_LINK_LIBRARIES(flatten-faces mesh ${Boost_LIBRARIES})
-TARGET_INCLUDE_DIRECTORIES(flatten-faces PUBLIC ${EIGEN3_INCLUDE_DIR})
+# Make flat faces in a mesh
+ADD_EXECUTABLE(make-flat-faces Transforms/MakeFlatFaces.cpp)
+TARGET_LINK_LIBRARIES(make-flat-faces mesh ${Boost_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(make-flat-faces PUBLIC ${EIGEN3_INCLUDE_DIR})
 

@@ -10,14 +10,20 @@
  * @{
  */
 
-constexpr size_t dimspace=3;
-//typedef Eigen::Vector3d VectorRd;
 using namespace HArDCore3D;
 
-/// Given a family of points, returns the maximum index N such that the first N points are co-planar
+/// Given a family of points, returns the maximum N such that the first N points are co-planar
 size_t coplanar_idx(const std::vector<VectorRd> & points)
 {
-  assert(points.size() > 2);
+  if (points.size() <= 2){
+    std::cout << "2 points do not form a face" << std::endl;
+    exit(1);
+  }
+  
+  // Get rid of obvious case when we only have 3 points
+  if (points.size() == 3){
+    return 3;
+  }
 
   // The tolerance for the test should depend on the local scale (max distance between any two points)
   double tol = 0.;
@@ -27,33 +33,42 @@ size_t coplanar_idx(const std::vector<VectorRd> & points)
     }
   }
   tol *= 1e-8;
-  
-  // Find N by looking for families of vectors (vi-v0)_i of maximal rank
-  Eigen::MatrixXd M = Eigen::MatrixXd::Zero(2, dimspace);
-  M.row(0) << points[1]-points[0];
-  M.row(1) << points[2]-points[0];
-  size_t nrows=2;  
-  bool found=false;
-  do {
-    if (M.fullPivLu().rank() == 2){
-      found=true;
-    }else{
-      nrows++;
-      M.conservativeResize(nrows, Eigen::NoChange_t());
-      M.row(nrows-1) = points[nrows]-points[0];
-    }
+
+  // Fill in vectors points[i]-points[0]
+  std::vector<VectorRd> v(points.size()-1);
+  for (size_t i=1; i < points.size(); i++){
+    v[i-1] = points[i] - points[0];
+  }  
+
+  // Start by finding vectors that are not colinear, and a normal to the plane they span
+  size_t nbv = 1;
+  VectorRd normal = VectorRd::Zero();
+  do{
+    normal = v[0].cross(v[nbv]);
+    nbv++;
+  } while (normal.norm()<tol && nbv < v.size());
+  if (nbv==v.size() && normal.norm()<tol){
+    std::cout << "All points are colinear, does not form a face" << std::endl;
+    exit(1);
   }
-  while(!found && nrows<points.size());
+  normal = normal.normalized();
   
-  return nrows;
+  // nbv here is the number of vectors we have already passed (colinear, up to first non-colinear)
+  // We continue advancing, looking for the first vector that is not in the plane orthogonal to normal
+  while (nbv<v.size() && std::abs(normal.dot(v[nbv]))<tol){
+    nbv++;
+  }
+    
+  // We have one more point than the current position in v (difference of points)
+  return nbv+1;
 }
 
 
-/// Main executable (FlattenFaces) to try and flatten the faces in a mesh
+/// Main executable (MakeFlatFaces) to try and create a mesh with flat faces (by subdivision)
 int main(const int argc, const char *argv[])
 {
     if (argc == 1){
-      std::cout << "Attempts to flatten the faces in the mesh, writes RF files with the flattened mesh.\n Usage: flatten-faces <name of mesh>\n\n This is not a completely full-proof method, it will fail if the faces have re-entrant corners etc. Read the source, section 'Algorithm'." << std::endl;
+      std::cout << "Attempts to make the faces flat by splitting them, writes output in RF files.\n Usage: make-flat-faces <name of mesh>\n\n This is not a completely full-proof method, it will fail if the faces have re-entrant corners etc. Read the source, section 'Algorithm'." << std::endl;
       exit(0);
     }
     std::cout << "Mesh: " << argv[1] << std::endl;
@@ -63,6 +78,8 @@ int main(const int argc, const char *argv[])
     HArDCore3D::MeshBuilder meshbuilder = HArDCore3D::MeshBuilder(mesh_file);
     std::unique_ptr<HArDCore3D::Mesh> mesh_ptr = meshbuilder.build_the_mesh();
 
+    std::cout << mesh_ptr->n_faces() << " faces in the mesh. Starting the splitting..." << std::endl;
+    size_t nb_faces_split = 0;
     // Required information to write the RF files
     std::vector<VectorRd> nodes;       // List of node coordinates
     std::vector<std::vector<std::vector<size_t>>> cell_faces; // Each cell is described by a list of face, with each face being a list of nodes
@@ -76,6 +93,7 @@ int main(const int argc, const char *argv[])
     std::vector<std::vector<std::vector<size_t>>> flat_face(mesh_ptr->n_faces());
     for (size_t iF = 0; iF < mesh_ptr->n_faces(); ++iF){
       const Face * F = mesh_ptr->face(iF);
+            
       if (F->is_flat()){
         // Face is flat, only one subface
         flat_face[iF].resize(1);
@@ -84,6 +102,7 @@ int main(const int argc, const char *argv[])
           flat_face[iF][0][iV] = F->vertex(iV)->global_index();
         }
       }else{
+        nb_faces_split++;
         // ALGORITHM:
         // The face is not flat we cut it by the following process:
         //    - Starting from the first vertex, we find the maximum number of vertices that are co-planar
@@ -103,16 +122,25 @@ int main(const int argc, const char *argv[])
         do {
           std::vector<VectorRd> tail_coords_vertices_F(coords_vertices_F.begin()+p1, coords_vertices_F.end());
           size_t N = coplanar_idx(tail_coords_vertices_F);
+          
+          if (N == coords_vertices_F.size()){
+            // All vertices of F are coplanar; this shouldn't happen (F has been identified as non-flat), but just in case,
+            // we need to reduce N to avoid counting the first vertex twice (as it appears at the start and end of coords_vertices_F
+            N--;
+          }
+          
           std::vector<size_t> subface(N);
           for (size_t i=0; i<N; ++i){
             subface[i] = F->vertex( (p1 + i) % F->n_vertices())->global_index();
           }
           flat_face[iF].push_back(subface);
           p1 += N-1;
-        } while (p1 < coords_vertices_F.size()-1);
+        } while (p1 < coords_vertices_F.size()-2);
         
       }
     }    
+    
+    std::cout << nb_faces_split << " faces have been split" << std::endl << std::endl;
     
     // Create the vectors of cell_faces
     cell_faces.resize(mesh_ptr->n_cells());

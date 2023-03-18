@@ -109,7 +109,7 @@ std\+::string \mbox{\hyperlink{group__TransformMeshes_ga9c6c96b6359f0110be53d7eb
 void \mbox{\hyperlink{group__TransformMeshes_ga2f26c8e89557dfc44ff6473530a19d21}{Directed\+Graph\+::plotfile}} (std\+::ofstream $\ast$, std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \&)
 \begin{DoxyCompactList}\small\item\em Outputs to a .dat file for gnuplot to read. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__TransformMeshes_ga0f168c17698b0d8dbfef6d2ccde8f859}{coplanar\+\_\+idx}} (const std\+::vector$<$ Vector\+Rd $>$ \&points)
-\begin{DoxyCompactList}\small\item\em Given a family of points, returns the maximum index N such that the first N points are co-\/planar. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Given a family of points, returns the maximum N such that the first N points are co-\/planar. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{group__TransformMeshes_ga0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em Main executable (Mesh\+Coarsen) to coarsen a mesh. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__TransformMeshes_gac1c57926e8cb46dae9aa47ae1f365531}{Element\+::\+Element}} (const size\+\_\+t \&\+\_\+type, const size\+\_\+t \&\+\_\+id, const std\+::vector$<$ size\+\_\+t $>$ \&\+\_\+vertices)
@@ -133,8 +133,6 @@ std\+::vector$<$ \mbox{\hyperlink{classCellNodeArray}{Cell\+Node\+Array}} $>$ \m
 \begin{DoxyCompactList}\small\item\em The cell-\/node array. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classDirectedCell}{Directed\+Cell}} $>$ \mbox{\hyperlink{group__TransformMeshes_ga607e96aec2a7672a9ba375f38c0288dc}{Directed\+Graph\+::G}}
 \begin{DoxyCompactList}\small\item\em Vector of cells that form the graph. \end{DoxyCompactList}\item 
-constexpr size\+\_\+t \mbox{\hyperlink{group__TransformMeshes_gacde4e54e8adc08871acefedae6c187b5}{dimspace}} =3
-\item 
 const std\+::string \mbox{\hyperlink{group__TransformMeshes_gad836f7ad2685a44967cdf2bcbde227a1}{mesh\+\_\+root}} = \char`\"{}\char`\"{}
 \item 
 const size\+\_\+t \mbox{\hyperlink{group__TransformMeshes_ga1c2e293f4b6af009ba84d6c19b01436a}{Element\+::type}}
@@ -273,7 +271,7 @@ Coarsen the graph by merging cells.
 
 
 
-Given a family of points, returns the maximum index N such that the first N points are co-\/planar. 
+Given a family of points, returns the maximum N such that the first N points are co-\/planar. 
 
 \mbox{\Hypertarget{group__TransformMeshes_ga225e167654e33677739daa8b4024ecec}\label{group__TransformMeshes_ga225e167654e33677739daa8b4024ecec}} 
 \index{TransformMeshes@{TransformMeshes}!DirectedCell@{DirectedCell}}
@@ -448,7 +446,7 @@ Main executable (Check\+Mesh) to check the sanity of an RF mesh.
 
 Main executable (Mesh\+To\+VTU) to transform an RF mesh into a VTU file.
 
-Main executable (Flatten\+Faces) to try and flatten the faces in a mesh. \mbox{\Hypertarget{group__TransformMeshes_ga0ddf1224851353fc92bfbff6f499fa97}\label{group__TransformMeshes_ga0ddf1224851353fc92bfbff6f499fa97}} 
+Main executable (Make\+Flat\+Faces) to try and create a mesh with flat faces (by subdivision) \mbox{\Hypertarget{group__TransformMeshes_ga0ddf1224851353fc92bfbff6f499fa97}\label{group__TransformMeshes_ga0ddf1224851353fc92bfbff6f499fa97}} 
 \index{TransformMeshes@{TransformMeshes}!main@{main}}
 \index{main@{main}!TransformMeshes@{TransformMeshes}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -714,14 +712,8 @@ The cell-\/node array.
 \mbox{\Hypertarget{group__TransformMeshes_gac8b49d50768157bdc66b02643f71377f}\label{group__TransformMeshes_gac8b49d50768157bdc66b02643f71377f}} 
 \index{TransformMeshes@{TransformMeshes}!dimspace@{dimspace}}
 \index{dimspace@{dimspace}!TransformMeshes@{TransformMeshes}}
-\doxysubsubsection{\texorpdfstring{dimspace}{dimspace}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{dimspace}{dimspace}}
 {\footnotesize\ttfamily constexpr int dimspace = 3\hspace{0.3cm}{\ttfamily [constexpr]}}
-
-\mbox{\Hypertarget{group__TransformMeshes_gacde4e54e8adc08871acefedae6c187b5}\label{group__TransformMeshes_gacde4e54e8adc08871acefedae6c187b5}} 
-\index{TransformMeshes@{TransformMeshes}!dimspace@{dimspace}}
-\index{dimspace@{dimspace}!TransformMeshes@{TransformMeshes}}
-\doxysubsubsection{\texorpdfstring{dimspace}{dimspace}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily constexpr size\+\_\+t dimspace =3\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 \mbox{\Hypertarget{group__TransformMeshes_ga607e96aec2a7672a9ba375f38c0288dc}\label{group__TransformMeshes_ga607e96aec2a7672a9ba375f38c0288dc}} 
 \index{TransformMeshes@{TransformMeshes}!G@{G}}

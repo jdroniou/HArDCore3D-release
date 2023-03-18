@@ -125,7 +125,7 @@ However, the builder assumes that each cell is star-shaped with respect to the i
 Several other codes (in src/Mesh/Transforms) are provided to manipulate meshes:
 * Create agglomerated meshes [MeshCoarsen](@ref MeshCoarsen.cpp),
 * Check that an RF file produces a valid mesh [CheckMesh](@ref CheckMesh.cpp),
-* Flatten the faces in a mesh where they are not flat (e.g., generic hexahedral meshes) [FlattenFaces](@ref FlattenFaces.cpp), 
+* Make flat faces in a mesh where some are not (e.g., generic hexahedral meshes) [MakeFlatFaces](@ref MakeFlatFaces.cpp), 
 * Create a .vtu file from an RF mesh file [MeshToVTU](@ref MeshToVTU.cpp),
 * Transform a .msh file (created by Gmsh, version 4.11) into an RF mesh file [MSHToRF](@ref MSHToRF.cpp).
 

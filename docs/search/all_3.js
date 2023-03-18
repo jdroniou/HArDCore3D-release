@@ -99,7 +99,7 @@ var searchData=
   ['contractparala_176',['contractParaLA',['../group__DDR__yangmills.html#gaf4435492b7b709de1befac2a96da9701',1,'HArDCore3D::YangMills']]],
   ['coordinates_5fsystem_177',['coordinates_system',['../group__Basis.html#ga6198168220e364f560ce845d8ae39986',1,'HArDCore3D::MonomialScalarBasisFace']]],
   ['coords_178',['coords',['../group__Mesh.html#ga70e525257730123d4c331d11468c66bb',1,'MeshND::MeshObject']]],
-  ['coplanar_5fidx_179',['coplanar_idx',['../group__TransformMeshes.html#ga0f168c17698b0d8dbfef6d2ccde8f859',1,'FlattenFaces.cpp']]],
+  ['coplanar_5fidx_179',['coplanar_idx',['../group__TransformMeshes.html#ga0f168c17698b0d8dbfef6d2ccde8f859',1,'MakeFlatFaces.cpp']]],
   ['cq0_180',['cq0',['../group__Quadratures.html#gacf9bd31067eedbde378811923330002e',1,'HArDCore3D::QuadRuleTetra']]],
   ['cq1_181',['cq1',['../group__Quadratures.html#ga4ac6c16943d4a2f8670cbf7ee4a975cf',1,'HArDCore3D::QuadRuleTetra']]],
   ['cq2_182',['cq2',['../group__Quadratures.html#ga05ec9999eee3a2f2abfd89d556c07bcd',1,'HArDCore3D::QuadRuleTetra']]],

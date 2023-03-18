@@ -225,7 +225,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga2f26c8e89557dfc44ff6473530a19d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs to a .dat file for gnuplot to read.  <a href="group__TransformMeshes.html#ga2f26c8e89557dfc44ff6473530a19d21">More...</a><br /></td></tr>
 <tr class="separator:ga2f26c8e89557dfc44ff6473530a19d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0f168c17698b0d8dbfef6d2ccde8f859"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__TransformMeshes.html#ga0f168c17698b0d8dbfef6d2ccde8f859">coplanar_idx</a> (const std::vector&lt; VectorRd &gt; &amp;points)</td></tr>
-<tr class="memdesc:ga0f168c17698b0d8dbfef6d2ccde8f859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a family of points, returns the maximum index N such that the first N points are co-planar.  <a href="group__TransformMeshes.html#ga0f168c17698b0d8dbfef6d2ccde8f859">More...</a><br /></td></tr>
+<tr class="memdesc:ga0f168c17698b0d8dbfef6d2ccde8f859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a family of points, returns the maximum N such that the first N points are co-planar.  <a href="group__TransformMeshes.html#ga0f168c17698b0d8dbfef6d2ccde8f859">More...</a><br /></td></tr>
 <tr class="separator:ga0f168c17698b0d8dbfef6d2ccde8f859"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__TransformMeshes.html#ga0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="memdesc:ga0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main executable (MeshCoarsen) to coarsen a mesh.  <a href="group__TransformMeshes.html#ga0ddf1224851353fc92bfbff6f499fa97">More...</a><br /></td></tr>
@@ -259,8 +259,6 @@ Variables</h2></td></tr>
 <tr class="memitem:ga607e96aec2a7672a9ba375f38c0288dc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classDirectedCell.html">DirectedCell</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__TransformMeshes.html#ga607e96aec2a7672a9ba375f38c0288dc">DirectedGraph::G</a></td></tr>
 <tr class="memdesc:ga607e96aec2a7672a9ba375f38c0288dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of cells that form the graph.  <a href="group__TransformMeshes.html#ga607e96aec2a7672a9ba375f38c0288dc">More...</a><br /></td></tr>
 <tr class="separator:ga607e96aec2a7672a9ba375f38c0288dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacde4e54e8adc08871acefedae6c187b5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__TransformMeshes.html#gacde4e54e8adc08871acefedae6c187b5">dimspace</a> =3</td></tr>
-<tr class="separator:gacde4e54e8adc08871acefedae6c187b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad836f7ad2685a44967cdf2bcbde227a1"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__TransformMeshes.html#gad836f7ad2685a44967cdf2bcbde227a1">mesh_root</a> = &quot;&quot;</td></tr>
 <tr class="separator:gad836f7ad2685a44967cdf2bcbde227a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1c2e293f4b6af009ba84d6c19b01436a"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__TransformMeshes.html#ga1c2e293f4b6af009ba84d6c19b01436a">Element::type</a></td></tr>
@@ -494,7 +492,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Given a family of points, returns the maximum index N such that the first N points are co-planar. </p>
+<p>Given a family of points, returns the maximum N such that the first N points are co-planar. </p>
 
 </div>
 </div>
@@ -847,7 +845,7 @@ Variables</h2></td></tr>
 
 <p>Main executable (CheckMesh) to check the sanity of an RF mesh. </p>
 <p>Main executable (MeshToVTU) to transform an RF mesh into a VTU file.</p>
-<p>Main executable (FlattenFaces) to try and flatten the faces in a mesh. </p>
+<p>Main executable (MakeFlatFaces) to try and create a mesh with flat faces (by subdivision) </p>
 
 </div>
 </div>
@@ -1377,7 +1375,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gac8b49d50768157bdc66b02643f71377f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac8b49d50768157bdc66b02643f71377f">&#9670;&nbsp;</a></span>dimspace <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8b49d50768157bdc66b02643f71377f">&#9670;&nbsp;</a></span>dimspace</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1387,28 +1385,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">constexpr int dimspace = 3</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gacde4e54e8adc08871acefedae6c187b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacde4e54e8adc08871acefedae6c187b5">&#9670;&nbsp;</a></span>dimspace <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr size_t dimspace =3</td>
         </tr>
       </table>
   </td>
