@@ -1,0 +1,221 @@
+\hypertarget{lasddr-yangmills_8hpp}{}\doxysection{Schemes/\+LADDR-\/yangmills/lasddr-\/yangmills.hpp File Reference}
+\label{lasddr-yangmills_8hpp}\index{Schemes/LADDR-\/yangmills/lasddr-\/yangmills.hpp@{Schemes/LADDR-\/yangmills/lasddr-\/yangmills.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$boost/math/constants/constants.\+hpp$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$unsupported/\+Eigen/\+Sparse\+Extra$>$}\newline
+{\ttfamily \#include $<$local\+\_\+static\+\_\+condensation.\+hpp$>$}\newline
+{\ttfamily \#include $<$mesh.\+hpp$>$}\newline
+{\ttfamily \#include $<$mesh\+\_\+builder.\+hpp$>$}\newline
+{\ttfamily \#include $<$GMpoly\+\_\+cell.\+hpp$>$}\newline
+{\ttfamily \#include $<$parallel\+\_\+for.\+hpp$>$}\newline
+{\ttfamily \#include $<$laddrcore.\+hpp$>$}\newline
+{\ttfamily \#include $<$lasxgrad.\+hpp$>$}\newline
+{\ttfamily \#include $<$lasxcurl.\+hpp$>$}\newline
+{\ttfamily \#include $<$lasxdiv.\+hpp$>$}\newline
+Include dependency graph for lasddr-\/yangmills.hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lasddr-yangmills_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{lasddr-yangmills_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1YangMillsNorms}{HAr\+DCore3\+D\+::\+Yang\+Mills\+Norms}}
+\begin{DoxyCompactList}\small\item\em Structure to store norm components. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1YangMills}{HAr\+DCore3\+D\+::\+Yang\+Mills}}
+\begin{DoxyCompactList}\small\item\em Assemble a \mbox{\hyperlink{structHArDCore3D_1_1YangMills}{Yang\+Mills}} problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceHArDCore3D}{HAr\+DCore3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename out\+Value , typename Fct $>$ }\\std\+::vector$<$ Fct $>$ \mbox{\hyperlink{group__DDR__yangmills_gaff33e708e3b03a979ca95abfea149f67}{HAr\+DCore3\+D\+::sum\+LA}} (const std\+::vector$<$ Fct $>$ \&LAF, const std\+::vector$<$ Fct $>$ \&LAG, double lambda)
+\begin{DoxyCompactList}\small\item\em Template to evaluate a vector of functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{group__SDDR__yangmills_ga05c87d0a93c5df840c07c09ded686aeb}{HAr\+DCore3\+D\+::\+PI}} = boost\+::math\+::constants\+::pi$<$double$>$()
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga1787e89e6aed4a3409983d25ac9c22da}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+E1}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga9be18ff9d0b77652cb1a7c1fb1b89be4}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+E2}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gadaaeb8e2fd155058967b16e344371ee6}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+E3}}
+\item 
+static Yang\+Mills\+::\+TLAElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga59a9135a195ff1e3eafca8e757b560ad}{HAr\+DCore3\+D\+::trigonometric\+\_\+E}} = \{trigonometric\+\_\+\+E1, trigonometric\+\_\+\+E2, trigonometric\+\_\+\+E3\}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga2d354f7b1d0f60a8f81c4353e71bfcd3}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+A1}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga312bbea9f95da0390cbbb9eeed720c41}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+A2}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gaff1196b8cc7f8091f3664029850a6b4e}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+A3}}
+\item 
+static Yang\+Mills\+::\+TLAElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga1d969bb338ec84db6ea925ba3e270e8b}{HAr\+DCore3\+D\+::trigonometric\+\_\+A}} = \{trigonometric\+\_\+\+A1, trigonometric\+\_\+\+A2, trigonometric\+\_\+\+A3\}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga0f9c0f40566c403eaa7ffa97412fc452}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+B1\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga0628bc85c4d5f667fecec90abe14dcd6}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+B2\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga160327e1cf4bff1ef9ef270b57b27fbf}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+B3\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TLAMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga9fdb61bcee97d9ebed6edd1925f254db}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+B\+\_\+linear}} = \{trigonometric\+\_\+\+B1\+\_\+linear, trigonometric\+\_\+\+B2\+\_\+linear, trigonometric\+\_\+\+B3\+\_\+linear\}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga571cbac20a7fb97e5ae75044f4c5b42e}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+B1\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gac46a97abb7bad426bd5a4c3a669bcdfb}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+B2\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga567c18036eb7dcb4c2643331c3410197}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+B3\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TLAMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gab7b47dce207bf9cd4a421aff0910cca0}{HAr\+DCore3\+D\+::trigonometric\+\_\+\+B\+\_\+nonlinear}} = \{trigonometric\+\_\+\+B1\+\_\+nonlinear, trigonometric\+\_\+\+B2\+\_\+nonlinear, trigonometric\+\_\+\+B3\+\_\+nonlinear\}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga517a92c90c17820ed7818b9473c9062c}{HAr\+DCore3\+D\+::trigonometric\+\_\+dt\+E1}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga882281c1e719e96f316e3aca2d24a782}{HAr\+DCore3\+D\+::trigonometric\+\_\+dt\+E2}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga01fdd1d7d07c7111f593f1c53a4a4077}{HAr\+DCore3\+D\+::trigonometric\+\_\+dt\+E3}}
+\item 
+static Yang\+Mills\+::\+TLAElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gaa54db4ad3eca94c7f0b033362a05ea2a}{HAr\+DCore3\+D\+::trigonometric\+\_\+dtE}} = \{trigonometric\+\_\+dt\+E1, trigonometric\+\_\+dt\+E2, trigonometric\+\_\+dt\+E3\}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga7b5346cec096c1becf8a8fb69eff76b9}{HAr\+DCore3\+D\+::trigonometric\+\_\+f1\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_gae895e59927eccc9e9fe23908f318b6b1}{HAr\+DCore3\+D\+::trigonometric\+\_\+f2\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga2f46fadfa2cb17674d83999dd987213e}{HAr\+DCore3\+D\+::trigonometric\+\_\+f3\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TLAForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga5f13ccc5738b536da3d852d028050551}{HAr\+DCore3\+D\+::trigonometric\+\_\+f\+\_\+linear}} = \{trigonometric\+\_\+f1\+\_\+linear, trigonometric\+\_\+f2\+\_\+linear, trigonometric\+\_\+f3\+\_\+linear\}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga7221d38610c1f5a71c04470a87d0a406}{HAr\+DCore3\+D\+::trigonometric\+\_\+f1\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga262f39a22874f1d5b95817535a06e6fc}{HAr\+DCore3\+D\+::trigonometric\+\_\+f2\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga5849ed9317d8bddd59e86f4c01badef7}{HAr\+DCore3\+D\+::trigonometric\+\_\+f3\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TLAForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_gaf6aa01008887d491b57e35d1489b7bf5}{HAr\+DCore3\+D\+::trigonometric\+\_\+f\+\_\+nonlinear}} = \{trigonometric\+\_\+f1\+\_\+nonlinear, trigonometric\+\_\+f2\+\_\+nonlinear, trigonometric\+\_\+f3\+\_\+nonlinear\}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga41c0262b109a478c01d6e619350928b3}{HAr\+DCore3\+D\+::linear\+\_\+\+E1}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga61f5892ba3d3f9b0a5320191e32ea67d}{HAr\+DCore3\+D\+::linear\+\_\+\+E2}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gad91c99c06489c22057afa2ad617b38ab}{HAr\+DCore3\+D\+::linear\+\_\+\+E3}}
+\item 
+static Yang\+Mills\+::\+TLAElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga1961d655e2f896ebd7dbfa44cac04612}{HAr\+DCore3\+D\+::linear\+\_\+E}} = \{linear\+\_\+\+E1, linear\+\_\+\+E2, linear\+\_\+\+E3\}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga6f30ea73dd286209edd3b3a32f863995}{HAr\+DCore3\+D\+::linear\+\_\+\+A1}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga6d6476aa09ff08a2a8d87447993cb511}{HAr\+DCore3\+D\+::linear\+\_\+\+A2}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga5ccbd185b112a3481edf5ec0254b4bd9}{HAr\+DCore3\+D\+::linear\+\_\+\+A3}}
+\item 
+static Yang\+Mills\+::\+TLAElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gad15db96997118b5eb54b0fd122a84331}{HAr\+DCore3\+D\+::linear\+\_\+A}} = \{linear\+\_\+\+A1, linear\+\_\+\+A2, linear\+\_\+\+A3\}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga8d4292f306cbcc884dee6c0036a596a7}{HAr\+DCore3\+D\+::linear\+\_\+\+B1\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga1bebfe724c23d05ae41fe7dce3f1a38d}{HAr\+DCore3\+D\+::linear\+\_\+\+B2\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga8d68f3be78cdb0bc7d1d0fb7e47487c2}{HAr\+DCore3\+D\+::linear\+\_\+\+B3\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TLAMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gabbe2279123ea8ef089a3ecb9d68cec4b}{HAr\+DCore3\+D\+::linear\+\_\+\+B\+\_\+linear}} = \{linear\+\_\+\+B1\+\_\+linear, linear\+\_\+\+B2\+\_\+linear, linear\+\_\+\+B3\+\_\+linear\}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga38d1094223f76af56a0ef791d3aa300c}{HAr\+DCore3\+D\+::linear\+\_\+\+B1\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga006e94a89624bb14dd8ad77f2566eb22}{HAr\+DCore3\+D\+::linear\+\_\+\+B2\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gaf2edbbe697895c2fa1d700e0d2aab7f6}{HAr\+DCore3\+D\+::linear\+\_\+\+B3\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TLAMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga8aade2ca720b24a3d947e54225dc0b23}{HAr\+DCore3\+D\+::linear\+\_\+\+B\+\_\+nonlinear}} = \{linear\+\_\+\+B1\+\_\+nonlinear, linear\+\_\+\+B2\+\_\+nonlinear, linear\+\_\+\+B3\+\_\+nonlinear\}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga5009943cd8020fa36d6ad6378d03ae34}{HAr\+DCore3\+D\+::linear\+\_\+dt\+E1}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga3fd3f27828bcdea71061bdc824483ddb}{HAr\+DCore3\+D\+::linear\+\_\+dt\+E2}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gaffa30b9a189fbd3888a18e5907865995}{HAr\+DCore3\+D\+::linear\+\_\+dt\+E3}}
+\item 
+static Yang\+Mills\+::\+TLAElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gac355766085b8888502588b27b14181c0}{HAr\+DCore3\+D\+::linear\+\_\+dtE}} = \{linear\+\_\+dt\+E1, linear\+\_\+dt\+E2, linear\+\_\+dt\+E3\}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga35b8ed16eb48166d01e61e1feaf1878d}{HAr\+DCore3\+D\+::linear\+\_\+f1\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga28a23bbd0eb9aebac6958b399e6dad96}{HAr\+DCore3\+D\+::linear\+\_\+f2\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga17c601762851cd0903283442046ac198}{HAr\+DCore3\+D\+::linear\+\_\+f3\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TLAForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga991befa93992177670d4774f997b62a3}{HAr\+DCore3\+D\+::linear\+\_\+f\+\_\+linear}} = \{linear\+\_\+f1\+\_\+linear, linear\+\_\+f2\+\_\+linear, linear\+\_\+f3\+\_\+linear\}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga11312a3a6bacecf0517091f6bea8b49d}{HAr\+DCore3\+D\+::linear\+\_\+f1\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga8f588039ce6187770da71da1e35957e2}{HAr\+DCore3\+D\+::linear\+\_\+f2\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_gadffe3ec5c280349f52df2147633b0655}{HAr\+DCore3\+D\+::linear\+\_\+f3\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TLAForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_gaf5a6f44f58160cbe6b74dc1c1bf3df0d}{HAr\+DCore3\+D\+::linear\+\_\+f\+\_\+nonlinear}} = \{linear\+\_\+f1\+\_\+nonlinear, linear\+\_\+f2\+\_\+nonlinear, linear\+\_\+f3\+\_\+nonlinear\}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga6d7f8f5696de28bd820a5982d636a2eb}{HAr\+DCore3\+D\+::const\+\_\+\+E1}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gae630b2b698b31fb8c49063b4a75ef368}{HAr\+DCore3\+D\+::const\+\_\+\+E2}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gab95d698d7e239a50b2d608aec988348c}{HAr\+DCore3\+D\+::const\+\_\+\+E3}}
+\item 
+static Yang\+Mills\+::\+TLAElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gad9f07cbe128aa8adb8257e28f6c7f34f}{HAr\+DCore3\+D\+::const\+\_\+E}} = \{const\+\_\+\+E1, const\+\_\+\+E2, const\+\_\+\+E3\}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga226f6214b993ffcd9c17783c7efaa019}{HAr\+DCore3\+D\+::const\+\_\+\+A1}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gab87aab61e9ed52feb22a217fc24d6125}{HAr\+DCore3\+D\+::const\+\_\+\+A2}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gae8772dedc2f30483d11c3ebdf7e7ff39}{HAr\+DCore3\+D\+::const\+\_\+\+A3}}
+\item 
+static Yang\+Mills\+::\+TLAElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga6ab5ad5073eb7a4414f3f580aacf95b5}{HAr\+DCore3\+D\+::const\+\_\+A}} = \{const\+\_\+\+A1, const\+\_\+\+A2, const\+\_\+\+A3\}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga8f6ef1f9bf5dd0790ff22bb2ee341250}{HAr\+DCore3\+D\+::const\+\_\+\+B1\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga19c4784477fcb977f82e60ccb8873bb0}{HAr\+DCore3\+D\+::const\+\_\+\+B2\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gaa94dfca2e7f7226c3fa4db24ed45c978}{HAr\+DCore3\+D\+::const\+\_\+\+B3\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TLAMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gaddd2f2ca72c808a295be5c48fc08a6c1}{HAr\+DCore3\+D\+::const\+\_\+\+B\+\_\+linear}} = \{const\+\_\+\+B1\+\_\+linear, const\+\_\+\+B2\+\_\+linear, const\+\_\+\+B3\+\_\+linear\}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga0ab8d2405eeb00f13d95a9b2efaa59ae}{HAr\+DCore3\+D\+::const\+\_\+\+B1\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga44d11387899f25f86c1bb14562178995}{HAr\+DCore3\+D\+::const\+\_\+\+B2\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga682e90c8d1fcee01a9f107c5542ecefd}{HAr\+DCore3\+D\+::const\+\_\+\+B3\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TLAMagnetic\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gaeb39945599327d7c3c1d90ba63d3aa97}{HAr\+DCore3\+D\+::const\+\_\+\+B\+\_\+nonlinear}} = \{const\+\_\+\+B1\+\_\+nonlinear, const\+\_\+\+B2\+\_\+nonlinear, const\+\_\+\+B3\+\_\+nonlinear\}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga4bf4563ca7fa96f01f8aed17bb3c4525}{HAr\+DCore3\+D\+::const\+\_\+dt\+E1}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gab686956bd086fa6ff51dce2b9a872c71}{HAr\+DCore3\+D\+::const\+\_\+dt\+E2}}
+\item 
+static Yang\+Mills\+::\+TElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gad5ebb107f6b9c0a96e3a6c6d9fd728ad}{HAr\+DCore3\+D\+::const\+\_\+dt\+E3}}
+\item 
+static Yang\+Mills\+::\+TLAElectric\+Field\+Type \mbox{\hyperlink{group__SDDR__yangmills_gac8f38bcf4b1e3a54ee93b835fef9bea8}{HAr\+DCore3\+D\+::const\+\_\+dtE}} = \{const\+\_\+dt\+E1, const\+\_\+dt\+E2, const\+\_\+dt\+E3\}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_gace108111d027d072dbb1a13490183415}{HAr\+DCore3\+D\+::const\+\_\+f1\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_gad38cb279602812617b487a027e7c5406}{HAr\+DCore3\+D\+::const\+\_\+f2\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_gae694f44862942fd98810673f87ec2d6b}{HAr\+DCore3\+D\+::const\+\_\+f3\+\_\+linear}}
+\item 
+static Yang\+Mills\+::\+TLAForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga0332064767024b3142e12b827643302d}{HAr\+DCore3\+D\+::const\+\_\+f\+\_\+linear}} = \{const\+\_\+f1\+\_\+linear, const\+\_\+f2\+\_\+linear, const\+\_\+f3\+\_\+linear\}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga5b25c89c1e7b12d909ca4b657509f1f2}{HAr\+DCore3\+D\+::const\+\_\+f1\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga246ac21961a4c2a8fe0cdc069a57c349}{HAr\+DCore3\+D\+::const\+\_\+f2\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_ga60dadecef66c2c9d709e1e4005f2c5af}{HAr\+DCore3\+D\+::const\+\_\+f3\+\_\+nonlinear}}
+\item 
+static Yang\+Mills\+::\+TLAForcing\+Term\+Type \mbox{\hyperlink{group__SDDR__yangmills_gafc52aa9466787d8e154649d072dfb132}{HAr\+DCore3\+D\+::const\+\_\+f\+\_\+nonlinear}} = \{const\+\_\+f1\+\_\+nonlinear, const\+\_\+f2\+\_\+nonlinear, const\+\_\+f3\+\_\+nonlinear\}
+\end{DoxyCompactItemize}

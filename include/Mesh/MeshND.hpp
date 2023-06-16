@@ -58,6 +58,19 @@ namespace MeshND
         inline std::size_t n_edges() const { return _edges.size(); }       ///< number of edges in the mesh.
         inline std::size_t n_faces() const { return _faces.size(); }       ///< number of faces in the mesh.
         inline std::size_t n_cells() const { return _cells.size(); }       ///< number of cells in the mesh.
+        inline std::size_t n_elems(size_t d) const  ///< number of d-cells in the mesh
+        {
+          assert(d <= dimension && dimension < 4);
+          if (d == dimension) {
+            return n_cells();
+          } else if (d == 2) {
+            return n_faces(); 
+          } else if (d == 1) {
+            return n_edges();
+          } else {
+            return n_vertices();
+          }
+        }
 
         inline std::size_t n_b_vertices() const { return _b_vertices.size(); } ///< number of boundary vertices in the mesh.
         inline std::size_t n_b_edges() const { return _b_edges.size(); }       ///< number of boundary edges in the mesh.
@@ -192,6 +205,52 @@ namespace MeshND
         inline Edge<dimension> *i_edge(std::size_t index) const { assert(index < _i_edges.size()); return _i_edges[index]; }        ///<  get a constant pointer to an internal edge using an index
         inline Face<dimension> *i_face(std::size_t index) const { assert(index < _i_faces.size()); return _i_faces[index]; }        ///<  get a constant pointer to an internal face using an index
         inline Cell<dimension> *i_cell(std::size_t index) const { assert(index < _i_cells.size()); return _i_cells[index]; }        ///<  get a constant pointer to an internal cell using an index
+
+        // Return the indices of the boundary of the i-th top dimensionnal cell of the MeshObject
+        std::vector<size_t> get_boundary(size_t d,size_t index) const
+        {
+          std::vector<size_t> rv;
+          static_assert(dimension < 4);
+          assert(d <= dimension);
+          if (d == dimension) {
+            assert(index < _cells.size());
+            const Cell<dimension> & T = *_cells[index];
+            rv.reserve(T.n_faces());
+            for (size_t j = 0; j < T.n_faces(); ++j) {
+              rv.push_back(T.face(j)->global_index());
+            }
+          } else if (d == 2) { // Only reached for dimension = 3
+            assert(index < _faces.size());
+            const Face<dimension> & F = *_faces[index];
+            rv.reserve(F.n_edges());
+            for (size_t j = 0; j < F.n_edges(); ++j) {
+              rv.push_back(F.edge(j)->global_index());
+            }
+          } else if (d == 1) {
+            assert(index < _edges.size());
+            const Edge<dimension> & E = *_edges[index];
+            rv.reserve(2);
+            rv.push_back(E.vertex(0)->global_index());
+            rv.push_back(E.vertex(1)->global_index());
+          } 
+          return rv;
+        }
+        // Return the orientation of the j-th boundary element of the i-th d-cell 
+        int boundary_orientation(size_t d,size_t i, size_t j) const 
+        {
+          static_assert(dimension < 4);
+          assert(d <= dimension);
+          if (d == dimension) {
+            assert(i < _cells.size());
+            return _cells[i]->induced_orientation(j);
+          } else if (d == 2) { // Only reached for dimension = 3
+            assert(i < _faces.size());
+            return _faces[i]->induced_orientation(j);
+          } else { // Special case for degenerate boundary
+            assert(d == 1);
+            return (j%2==0?-1:1);
+          } 
+        }
 
         std::vector<double> regularity()
         {

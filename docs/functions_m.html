@@ -76,7 +76,8 @@ $(function() {
 : <a class="el" href="group__Basis.html#ga7fc7d3727474cac3baea45129097e81d">HArDCore3D::DecomposePoly&lt; BasisType &gt;</a>
 </li>
 <li>m_cell_operators
-: <a class="el" href="group__DDRCore.html#gacf3ca0ec4d9dc1d2d748ef72d2f6b47f">HArDCore3D::XDiv</a>
+: <a class="el" href="group__LADDRCore.html#gaf250a4da2c9bf23440d2ca5c64648ffd">HArDCore3D::LAXDiv</a>
+, <a class="el" href="group__DDRCore.html#gacf3ca0ec4d9dc1d2d748ef72d2f6b47f">HArDCore3D::XDiv</a>
 </li>
 <li>m_ddr_core
 : <a class="el" href="group__DDRCore.html#ga0c74caeb7ad15a81f75ef43ad66f59f9">HArDCore3D::XDiv</a>
@@ -95,6 +96,9 @@ $(function() {
 </li>
 <li>m_globalDOFs_sys
 : <a class="el" href="group__Common.html#gaccfaba0c903f41cd8dc3b1a7280eede3">HArDCore3D::LocalStaticCondensation</a>
+</li>
+<li>m_lie_algebra
+: <a class="el" href="group__LADDRCore.html#ga0a1ab8b334914b4b45412b49dd6a6eb1">HArDCore3D::LAXDiv</a>
 </li>
 <li>m_mesh
 : <a class="el" href="group__Common.html#gaf892ca81e64966ad421de137a5bc3fbb">HArDCore3D::LocalDOFSpace</a>
@@ -124,13 +128,18 @@ $(function() {
 : <a class="el" href="group__Basis.html#ga6ea7072f1905e20f9b878a4efb5a8518">HArDCore3D::DecomposePoly&lt; BasisType &gt;</a>
 </li>
 <li>m_output
-: <a class="el" href="group__DDRCore.html#ga89c73bf17fe2b30dea39f9c9b7d0e95f">HArDCore3D::XDiv</a>
+: <a class="el" href="group__LADDRCore.html#ga247b23c5fcc0d18a8a6801f7e1cf24a0">HArDCore3D::LAXDiv</a>
+, <a class="el" href="group__DDRCore.html#ga89c73bf17fe2b30dea39f9c9b7d0e95f">HArDCore3D::XDiv</a>
 </li>
 <li>m_Perm
 : <a class="el" href="group__Common.html#gafa868f9f56ab061eebcbc30c2dbe5295">HArDCore3D::LocalStaticCondensation</a>
 </li>
 <li>m_use_threads
-: <a class="el" href="group__DDRCore.html#ga7fab1dbf4301876ebbb0130b99eea346">HArDCore3D::XDiv</a>
+: <a class="el" href="group__LADDRCore.html#gaaa69a6bd1344404d08098ecd6e14cd18">HArDCore3D::LAXDiv</a>
+, <a class="el" href="group__DDRCore.html#ga7fab1dbf4301876ebbb0130b99eea346">HArDCore3D::XDiv</a>
+</li>
+<li>m_xdiv
+: <a class="el" href="group__LADDRCore.html#gacb1be18a8d6db3c23d84eaeac203437d">HArDCore3D::LAXDiv</a>
 </li>
 <li>magnetic()
 : <a class="el" href="group__HHO__MHD.html#ga5004427ea0af92fddadb8be07b86e5df">HArDCore3D::MHDTests</a>
@@ -183,6 +192,8 @@ $(function() {
 , <a class="el" href="group__DDRCore.html#ga4b3c317f8cf4193ba4b945f2b087a6f2">HArDCore3D::DDRCore</a>
 , <a class="el" href="group__HHO__fullgradientdiff.html#ga2cbe53c007117805a876230c352f3b0e">HArDCore3D::FullGradientDiffusion</a>
 , <a class="el" href="group__HHOSpace.html#ga54c2b08090a641528bd512316d1b0ba3">HArDCore3D::HHOSpace</a>
+, <a class="el" href="group__LADDRCore.html#ga0a0e05509ae834ad751344d862ae59a6">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__LADDRCore.html#ga646a0a5e34def85ef9a6223f7c1d0d71">HArDCore3D::LASXGrad</a>
 , <a class="el" href="group__LADDRCore.html#gac5a4f1759deed843111732c809fc06e9">HArDCore3D::LAXCurl</a>
 , <a class="el" href="group__LADDRCore.html#gabe40bfff95397588438f4ec3638fa9cc">HArDCore3D::LAXDiv</a>
 , <a class="el" href="group__LADDRCore.html#gaabbf9ab943cea8b8d8aadaea37df15e4">HArDCore3D::LAXGrad</a>
@@ -207,7 +218,7 @@ $(function() {
 : <a class="el" href="classHArDCore3D_1_1MeshBuilder.html#a13fe22fd14a85f789dc9d7d4a8d2419d">HArDCore3D::MeshBuilder</a>
 </li>
 <li>MeshObject()
-: <a class="el" href="group__Mesh.html#ga07907aedf78ac130d9e0d652202b5580">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
+: <a class="el" href="group__Mesh.html#gac85c86df750542b4ea5a888075b1dcb0">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
 <li>MeshReaderRF()
 : <a class="el" href="classHArDCore3D_1_1MeshReaderRF.html#a12b1657e23db5db0f698525cf9008b6f">HArDCore3D::MeshReaderRF</a>

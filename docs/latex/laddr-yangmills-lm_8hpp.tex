@@ -6,10 +6,12 @@
 {\ttfamily \#include $<$unsupported/\+Eigen/\+Sparse\+Extra$>$}\newline
 {\ttfamily \#include $<$mesh.\+hpp$>$}\newline
 {\ttfamily \#include $<$mesh\+\_\+builder.\+hpp$>$}\newline
+{\ttfamily \#include $<$GMpoly\+\_\+cell.\+hpp$>$}\newline
 {\ttfamily \#include $<$laxgrad.\+hpp$>$}\newline
 {\ttfamily \#include $<$laxcurl.\+hpp$>$}\newline
 {\ttfamily \#include $<$laxdiv.\+hpp$>$}\newline
-Include dependency graph for laddr-\/yangmills-\/lm.hpp\+:\nopagebreak
+Include dependency graph for laddr-\/yangmills-\/lm.hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -42,10 +44,8 @@ struct \mbox{\hyperlink{structHArDCore3D_1_1AssembledSystems}{HAr\+DCore3\+D\+::
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename out\+Value , typename Fct $>$ }\\std\+::vector$<$ Fct $>$ \mbox{\hyperlink{group__DDR__yangmills_ga31920634bc32f12292abafb48ee47983}{HAr\+DCore3\+D\+::sum\+LA}} (const std\+::vector$<$ Fct $>$ \&LAF, const std\+::vector$<$ Fct $>$ \&LAG, double lambda)
-\begin{DoxyCompactList}\small\item\em Template to evaluate a vector of functions. \end{DoxyCompactList}\item 
-static Assembled\+Systems \mbox{\hyperlink{group__DDR__yangmills_gaf588f2f452bfcfb504349ff3bbae1037}{HAr\+DCore3\+D\+::parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, std\+::vector$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$$>$ size\+\_\+systems, std\+::vector$<$ size\+\_\+t $>$ size\+\_\+vectors, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::vector$<$ std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$$>$ $\ast$triplets, std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ $\ast$vecs)$>$ batch\+\_\+local\+\_\+assembly, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
-\begin{DoxyCompactList}\small\item\em Function to assemble global matrices from a procedure that compute local triplets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename out\+Value , typename Fct $>$ }\\std\+::vector$<$ Fct $>$ \mbox{\hyperlink{group__DDR__yangmills_gaff33e708e3b03a979ca95abfea149f67}{HAr\+DCore3\+D\+::sum\+LA}} (const std\+::vector$<$ Fct $>$ \&LAF, const std\+::vector$<$ Fct $>$ \&LAG, double lambda)
+\begin{DoxyCompactList}\small\item\em Template to evaluate a vector of functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 

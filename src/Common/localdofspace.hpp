@@ -56,6 +56,21 @@ namespace HArDCore3D {
     {
       return m_n_local_cell_dofs;
     }
+
+    /// Returns the number of local d-cell DOFs
+    inline size_t numLocalDofs(size_t d) const 
+    {
+      assert(d < 4);
+      if (d == 0) {
+        return m_n_local_vertex_dofs;
+      } else if (d == 1) {
+        return m_n_local_edge_dofs;
+      } else if (d == 2) {
+        return m_n_local_face_dofs;
+      } else {
+        return m_n_local_cell_dofs;
+      }
+    }
     
     //------------------------------------------------------------------------------
     // Dimensions
@@ -122,6 +137,21 @@ namespace HArDCore3D {
     inline size_t dimensionCell(size_t iT) const
     {
       return dimensionCell(*m_mesh.cell(iT));
+    }
+
+    /// Returns the dimension of the local space on the d-cell of index i (including its boundary)
+    inline size_t dimension(size_t d, size_t i) const 
+    {
+      assert(d < 4);
+      if (d == 0) {
+        return dimensionVertex(i);
+      } else if (d == 1) {
+        return dimensionEdge(i);
+      } else if (d == 2) {
+        return dimensionFace(i);
+      } else {
+        return dimensionCell(i);
+      }
     }
 
     //------------------------------------------------------------------------------

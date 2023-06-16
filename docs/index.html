@@ -198,8 +198,13 @@ Other codes associated with mesh handling.</h2>
 <li>Create agglomerated meshes <a class="el" href="MeshCoarsen_8cpp.html">MeshCoarsen</a>,</li>
 <li>Check that an RF file produces a valid mesh <a class="el" href="CheckMesh_8cpp.html">CheckMesh</a>,</li>
 <li>Make flat faces in a mesh where some are not (e.g., generic hexahedral meshes) <a class="el" href="MakeFlatFaces_8cpp.html">MakeFlatFaces</a>,</li>
-<li>Create a .vtu file from an RF mesh file <a class="el" href="MeshToVTU_8cpp.html">MeshToVTU</a>,</li>
-<li>Transform a .msh file (created by Gmsh, version 4.11) into an RF mesh file <a class="el" href="MSHToRF_8cpp.html">MSHToRF</a>.</li>
+<li>Move the vertices of a mesh <a class="el" href="MoveVertices_8cpp.html">MoveVertices</a>,</li>
+<li>Various transformations of mesh format:<ul>
+<li>Gmsh .msh file (version 4.11) into an RF mesh file <a class="el" href="MSHToRF_8cpp.html">MSHToRF</a>.</li>
+<li>RF mesh into a .vtu file <a class="el" href="RFToVTU_8cpp.html">RFToVTU</a>,</li>
+<li>RF mesh into an FVCA10 format .msh file <a class="el" href="RFToFVCA10format_8cpp.html">RFToFVCA10format</a>,</li>
+</ul>
+</li>
 </ul>
 <p><a class="anchor" id="common"></a> </p>
 <h1><a class="anchor" id="common_module"></a>
@@ -372,10 +377,10 @@ Schemes</h1>
 <li><a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html">HHO_locvardiff</a>: HHO for \(-\mathrm{div}(K\nabla u)=f\), for Dirichlet, Neumann or mixed boundary conditions, with \(K\) a diffusion tensor that can vary in each cell.</li>
 <li><a class="el" href="group__HHO__DiffAdvecReac.html">HHO_diffadvecreac</a>: HHO for \(-\mathrm{div}(K\nabla u+\beta u)+\mu u=f\), for Dirichlet or mixed boundary conditions, with \(K\) a diffusion tensor that can vary in each cell.</li>
 <li><a class="el" href="group__DDR__magnetostatic.html">DDR_magnetostatic</a>: Discrete De Rham (DDR) scheme, and serendipity version, for the magnetostatic problem, as per <a href="https://doi.org/10.1016/j.jcp.2020.109991">https://doi.org/10.1016/j.jcp.2020.109991</a> (but using Koszul complements).</li>
-<li><a class="el" href="group__DDR__stokes.html">DDR_stokes</a>: Discrete De Rham (DDR) scheme, and serendipity version, for the Stokes problem in curl-curl form.</li>
+<li><a class="el" href="group__DDR__stokes.html">DDR_stokes</a>: Discrete De Rham (DDR) scheme for the Stokes problem in curl-curl form. See also <a class="el" href="group__SDDR__stokes.html">SDDR_stokes</a> for the serendipity version.</li>
 <li><a class="el" href="group__VEM__stokes.html">VEM_stokes</a>: Virtual <a class="el" href="structElement.html" title="Structure to store elements.">Element</a> Method (VEM) scheme for the Stokes problem in curl-curl form.</li>
 <li><a class="el" href="group__HHO__MHD.html">HHO_MHD</a>: HHO scheme for the MHD problem.</li>
-<li><a class="el" href="group__DDR__yangmills.html">DDR_yangmills</a>: DDR scheme for the Yang-Mills equations (based on <a class="el" href="group__LADDRCore.html">LADDR</a>, the extension of DDR to Lie algebra valued fields).</li>
+<li><a class="el" href="group__DDR__yangmills.html">DDR_yangmills</a>: lowest-order DDR scheme for the Yang-Mills equations (based on <a class="el" href="group__LADDRCore.html">LADDR</a>, the extension of DDR to Lie algebra valued fields). See also <a class="el" href="group__SDDR__yangmills.html">SDDR_yangmills</a> for the arbitrary order serendipity version.</li>
 <li><a class="el" href="group__HHO__fullgradientdiff.html">HHO_fullgradientdiff</a>: HHO scheme with full gradient; similar to <a class="el" href="classHArDCore3D_1_1HHO__LocVarDiff.html">HHO_locvardiff</a> but implemented using the <a href="#hhospace">HHOSpace</a> module instead of the <a href="#hybridcore">HybridCore</a> module.</li>
 <li><a class="el" href="group__HHO__brinkman.html">HHO_brinkman</a>: HHO scheme for the Brinkman equation (based on <a class="el" href="group__HHOSpace.html">HHOSpace</a>).</li>
 </ul>

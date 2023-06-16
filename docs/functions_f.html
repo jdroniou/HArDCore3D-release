@@ -82,18 +82,23 @@ $(function() {
 <li>face_orientation()
 : <a class="el" href="group__Mesh.html#ga228570052980385cb87564da8096d801">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
+<li>face_tangent()
+: <a class="el" href="group__Mesh.html#ga87d738ce75e7f6b548431641c532eb1f">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
+</li>
 <li>faceBases()
 : <a class="el" href="group__DDRCore.html#gadd926309d1517cf7d591215afcf2dfd5">HArDCore3D::DDRCore</a>
 , <a class="el" href="group__HHOSpace.html#ga6e773e8add3a27c5ad440ba5c84b6ff1">HArDCore3D::HHOSpace</a>
+, <a class="el" href="group__LADDRCore.html#ga07cb952ad67ae364cc3da65aa76ef8b8">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__LADDRCore.html#ga928d7e5b8e295a946573e5c0e75b33d0">HArDCore3D::LASXGrad</a>
 , <a class="el" href="group__LADDRCore.html#ga4abede871b117c910ba85fc5381e5e3d">HArDCore3D::LAXCurl</a>
-, <a class="el" href="group__LADDRCore.html#ga68841c1f74f9d8ff0f2538fcad67c593">HArDCore3D::LAXDiv</a>
-, <a class="el" href="group__LADDRCore.html#ga023dfafe439eb52255a2f2806f584284">HArDCore3D::LAXGrad</a>
+, <a class="el" href="group__LADDRCore.html#gae2cf5b9165e8541aef140353b30721cd">HArDCore3D::LAXDiv</a>
+, <a class="el" href="group__LADDRCore.html#ga923d8748b2de6fbdb009a7f56bf49b4a">HArDCore3D::LAXGrad</a>
 , <a class="el" href="group__DDRCore.html#ga44d4eedcc17f59c5c6ece58c998ed2aa">HArDCore3D::SXCurl</a>
 , <a class="el" href="group__DDRCore.html#ga471709d8ee340844e874523413a08e6b">HArDCore3D::SXGrad</a>
-, <a class="el" href="group__VEMCore.html#ga7cfd59a31cb1b3707a500813950bdd0b">HArDCore3D::VCurl</a>
+, <a class="el" href="group__VEMCore.html#ga85c7d612307b9933070343e6d4b63d22">HArDCore3D::VCurl</a>
 , <a class="el" href="group__VEMCore.html#gae906e9cbc7fcb5d15847ac8e4f6bb3c7">HArDCore3D::VDiv</a>
 , <a class="el" href="group__VEMCore.html#ga564344cb799478cd6a84ccd6bc8f8225">HArDCore3D::VEMCore</a>
-, <a class="el" href="group__VEMCore.html#gab5babe7e3d48b1f7fa48e009b8d213a6">HArDCore3D::VGrad</a>
+, <a class="el" href="group__VEMCore.html#ga7b07e16b99e2ffe616cc350d41d97ae8">HArDCore3D::VGrad</a>
 , <a class="el" href="group__HHOSpace.html#ga54f9db4d723f39602d9c51890fbce6bd">HArDCore3D::VHHOSpace</a>
 , <a class="el" href="group__DDRCore.html#ga89aa64c9b2ccae180d6444ccfce2aabf">HArDCore3D::XCurl</a>
 , <a class="el" href="group__DDRCore.html#ga7cb8248afff89a299f8076e3515911ea">HArDCore3D::XDiv</a>
@@ -103,32 +108,36 @@ $(function() {
 : <a class="el" href="group__HybridCore.html#ga5db5bc8811abd5cb2a264486f61c0ad2">HArDCore3D::HybridCore</a>
 </li>
 <li>faceBasisPolyl()
-: <a class="el" href="group__DDRCore.html#ga127ea67d187712c1a2768fe3156bf5cd">HArDCore3D::SerendipityProblem</a>
+: <a class="el" href="group__DDRCore.html#ga52b68194f4a147cf123f8f059a3c04c4">HArDCore3D::SerendipityProblem</a>
 </li>
 <li>faceBasisRolyCompllpo()
 : <a class="el" href="group__DDRCore.html#ga14b977b22c0eb89d2cedaf9bc418c8ba">HArDCore3D::SerendipityProblem</a>
 </li>
 <li>faceCurl()
-: <a class="el" href="group__DDRCore.html#ga2c6d7f55cce5ea64383a7fc59f145b6b">HArDCore3D::SXCurl</a>
+: <a class="el" href="group__LADDRCore.html#ga9397753a99e6840106570c812ec3e063">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__DDRCore.html#ga2c6d7f55cce5ea64383a7fc59f145b6b">HArDCore3D::SXCurl</a>
 </li>
 <li>FaceDegree()
 : <a class="el" href="group__HybridCore.html#gabd72ee1721337185ed3c39da286e2928">HArDCore3D::HybridCore</a>
 </li>
 <li>faceGradient()
-: <a class="el" href="group__DDRCore.html#gab4f812b1ab331b2044ea6a05e66d8707">HArDCore3D::SXGrad</a>
+: <a class="el" href="group__LADDRCore.html#ga6080deb84f24daa43dc5b3d359265b22">HArDCore3D::LASXGrad</a>
+, <a class="el" href="group__DDRCore.html#ga8d57dd9b63ca220996eaa644b45e96ef">HArDCore3D::SXGrad</a>
 </li>
 <li>faceOperators()
 : <a class="el" href="group__LADDRCore.html#ga192476d81c99162550bb6fd035cae86f">HArDCore3D::LAXCurl</a>
-, <a class="el" href="group__LADDRCore.html#ga208c4222a2941ab11ba4affb70df91ee">HArDCore3D::LAXGrad</a>
-, <a class="el" href="group__VEMCore.html#ga6897fd23a59fcffcd002fe1de5b365f1">HArDCore3D::VCurl</a>
-, <a class="el" href="group__VEMCore.html#ga2e1d3f246a9876aa162234add5366a12">HArDCore3D::VDiv</a>
-, <a class="el" href="group__VEMCore.html#gabfb0b53d5059fccfaebe59cd08ba8d5d">HArDCore3D::VGrad</a>
-, <a class="el" href="group__DDRCore.html#ga23a50dcc144bba2abe9742ad016ca58e">HArDCore3D::XCurl</a>
+, <a class="el" href="group__LADDRCore.html#ga097da45a5c1dc27d0dea2989df467672">HArDCore3D::LAXGrad</a>
+, <a class="el" href="group__VEMCore.html#gac53bfe01ed158e1be49d652ef1aef612">HArDCore3D::VCurl</a>
+, <a class="el" href="group__VEMCore.html#ga8502c77ce53539beec2d5677acc0d097">HArDCore3D::VDiv</a>
+, <a class="el" href="group__VEMCore.html#ga44b57909d37100aa227ad67bbce3f8e6">HArDCore3D::VGrad</a>
+, <a class="el" href="group__DDRCore.html#ga720ee0d479c61a59b4192899f4d8610a">HArDCore3D::XCurl</a>
 , <a class="el" href="group__DDRCore.html#ga39c8365e893f692f285fe15be8b7162b">HArDCore3D::XGrad</a>
 </li>
 <li>facePotential()
-: <a class="el" href="group__DDRCore.html#gadf755c4880fc2e141e4956e45c8385c0">HArDCore3D::SXCurl</a>
-, <a class="el" href="group__DDRCore.html#gac0c3a606f7c8c4839b0c72ac5001ebbf">HArDCore3D::SXGrad</a>
+: <a class="el" href="group__LADDRCore.html#ga6b8920eecf1210b72402e552aec58d76">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__LADDRCore.html#ga1ce22db1151975f65b93a53192814754">HArDCore3D::LASXGrad</a>
+, <a class="el" href="group__DDRCore.html#gadf755c4880fc2e141e4956e45c8385c0">HArDCore3D::SXCurl</a>
+, <a class="el" href="group__DDRCore.html#ga3a174eb9197279fe1f8d6b1b9c2b99b5">HArDCore3D::SXGrad</a>
 </li>
 <li>family()
 : <a class="el" href="group__Basis.html#gaaa367eb17707155e1920822cfb60b334">HArDCore3D::DecomposePoly&lt; BasisType &gt;</a>
@@ -139,7 +148,7 @@ $(function() {
 <li>ForcingTermType
 : <a class="el" href="group__HHO__fullgradientdiff.html#ga10437a28fba60ef381ea46fb5285f3a1">HArDCore3D::FullGradientDiffusion</a>
 , <a class="el" href="group__DDR__magnetostatic.html#gaebd9236e99aa83d9e5b68d9d86655a7d">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__DDR__stokes.html#gad35466b8f55cc51dabdc88615275ac5e">HArDCore3D::Stokes</a>
+, <a class="el" href="group__VEM__stokes.html#gad35466b8f55cc51dabdc88615275ac5e">HArDCore3D::Stokes</a>
 , <a class="el" href="group__DDR__yangmills.html#ga08dfffdff13e9847dc691cfe2bcae98f">HArDCore3D::YangMills</a>
 </li>
 <li>FullGradientDiffusion()
@@ -165,6 +174,8 @@ $(function() {
 </li>
 <li>FunctionType
 : <a class="el" href="group__HHOSpace.html#ga7eeb28645bbbb0bfe9e6fded2a009ff6">HArDCore3D::HHOSpace</a>
+, <a class="el" href="group__LADDRCore.html#gacc211870202c8800c9e896121d81eab6">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__LADDRCore.html#ga3cfb70b6cdd23bd2273bf1af7b1e87eb">HArDCore3D::LASXGrad</a>
 , <a class="el" href="group__LADDRCore.html#gaecbef92c0d82f58b5fea98398f5672c9">HArDCore3D::LAXCurl</a>
 , <a class="el" href="group__LADDRCore.html#ga8b8d7bcc5412c1f13ee667ed55a461c4">HArDCore3D::LAXDiv</a>
 , <a class="el" href="group__LADDRCore.html#ga0e926dbf5c9b15e6c1077cc204e21dd9">HArDCore3D::LAXGrad</a>

@@ -11,7 +11,8 @@ Base class for DOF spaces\+: functions to access local DOFs (organised from the 
 
 
 
-Inheritance diagram for HAr\+DCore3D\+::Local\+DOFSpace\+:\nopagebreak
+Inheritance diagram for HAr\+DCore3D\+::Local\+DOFSpace\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -42,6 +43,8 @@ size\+\_\+t \mbox{\hyperlink{group__Common_gad3de9b38dbf2a2447bf4b07dea726bb5}{n
 \begin{DoxyCompactList}\small\item\em Returns the number of local face DOFs. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga63c9c43b9c52f18389de01b1b2669258}{num\+Local\+Dofs\+Cell}} () const
 \begin{DoxyCompactList}\small\item\em Returns the number of local cell DOFs. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gaaa9ed015a37af834c23a84e16af10876}{num\+Local\+Dofs}} (size\+\_\+t d) const
+\begin{DoxyCompactList}\small\item\em Returns the number of local d-\/cell DOFs. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga2f9a4f73d3d98508bb70d42a72b38943}{dimension}} () const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the global space (all DOFs for all geometric entities) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga781a84d7a062d680dac7df80a997c56e}{dimension\+Vertex}} (const Vertex \&V) const
@@ -60,6 +63,8 @@ size\+\_\+t \mbox{\hyperlink{group__Common_ga40eef909b8ef81505b8d1ffa57372d1a}{d
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the cell T (including faces, edges and vertices) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga87216ee57909d43fbd55367e66c52659}{dimension\+Cell}} (size\+\_\+t iT) const
 \begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the cell of index iT (including faces, edges and vertices) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_gae945c5d213bbb493cfd7a2e6bc14e480}{dimension}} (size\+\_\+t d, size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the local space on the d-\/cell of index i (including its boundary) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Common_gad0f2767844ac3afe4e943886e81f6ee1}{local\+Offset}} (const Edge \&E, const Vertex \&V) const
 \begin{DoxyCompactList}\small\item\em Returns the local offset of the vertex V with respect to the edge E. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Common_gac378673095187351e3d670fa3a8e4790}{local\+Offset}} (const Edge \&E) const

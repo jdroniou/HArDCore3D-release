@@ -58,6 +58,23 @@ namespace HArDCore3D
         + m_mesh.n_faces() * m_n_local_face_dofs
         + T.global_index() * m_n_local_cell_dofs;
     }
+
+    /// Return the global offset for the unknows on the i-th element of dimension d
+    inline size_t globalOffset(size_t d,size_t i) const 
+    {
+      size_t rv = i*numLocalDofs(d);
+      switch(d) {
+        case(3):
+          rv += m_mesh.n_faces() * m_n_local_face_dofs;
+        case(2):
+          rv += m_mesh.n_edges() * m_n_local_edge_dofs;
+        case(1):
+          rv += m_mesh.n_vertices() * m_n_local_vertex_dofs;
+        default:
+          ;
+      }
+      return rv;
+    }
     
     //------------------------------------------------------------------------------
     // Restrictions
@@ -103,6 +120,9 @@ namespace HArDCore3D
 
     /// Extend an edge operator to a face
     Eigen::MatrixXd extendOperator(const Face & F, const Edge & E, const Eigen::MatrixXd & opE) const;
+
+    /// Generic extension operator from the i2-th d2-cell to the i1-th d1-cell
+    Eigen::MatrixXd extendOperator(size_t d1, size_t i1, size_t d2, size_t i2, const Eigen::MatrixXd & op) const;
 
     /// Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T)
     void addInnerProductContribution(const Cell & T, const Face & F, Eigen::MatrixXd & prodT, const Eigen::MatrixXd & prodF) const;

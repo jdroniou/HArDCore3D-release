@@ -189,6 +189,41 @@ Eigen::MatrixXd GlobalDOFSpace::extendOperator(const Face & F, const Edge & E, c
   return opF;
 }
 
+Eigen::MatrixXd GlobalDOFSpace::extendOperator(size_t d1, size_t i1, size_t d2, size_t i2, const Eigen::MatrixXd & op) const 
+{
+  assert((d1==3 && (d2==1||d2==2)) || (d1==2 && d2==1) || (d1==1 && d2==0));
+  if (d1==1) {
+    Eigen::MatrixXd opExtended = Eigen::MatrixXd::Zero(op.rows(),dimensionEdge(i1));
+    assert(i1 < m_mesh.n_edges());
+    const Edge &E = *m_mesh.edge(i1);
+    if (m_n_local_vertex_dofs > 0) {
+      const Vertex &V = *m_mesh.vertex(i2);
+      opExtended.middleCols(localOffset(E,V), m_n_local_vertex_dofs) = op.middleCols(0,m_n_local_vertex_dofs);
+    }
+    return opExtended;
+  } else if (d1==2) {
+    assert(i1 < m_mesh.n_faces());
+    assert(i2 < m_mesh.n_edges());
+    const Face &F = *m_mesh.face(i1);
+    const Edge &E = *m_mesh.edge(i2);
+    return extendOperator(F,E,op);
+  } else {
+    assert(d1==3);
+    assert(i1 < m_mesh.n_cells());
+    const Cell &T = *m_mesh.cell(i1);
+    if (d2==2) {
+      assert(i2 < m_mesh.n_faces());
+      const Face &F = *m_mesh.face(i2);
+      return extendOperator(T,F,op);
+    } else {
+      assert(d2==1);
+      assert(i2 < m_mesh.n_edges());
+      const Edge &E = *m_mesh.edge(i2);
+      return extendOperator(T,E,op);
+    }
+  }
+}
+
 //------------------------------------------------------------------------------
 
 void GlobalDOFSpace::addInnerProductContribution(const Cell & T, const Face & F, Eigen::MatrixXd & prodT, const Eigen::MatrixXd & prodF) const

@@ -1,6 +1,9 @@
 <map id="HArDCore3D::LAXDiv" name="HArDCore3D::LAXDiv">
-<area shape="rect" id="node1" title="Discrete Lie algebra valued Hdiv space: local operators, L2 product and global interpolator." alt="" coords="34,247,187,273"/>
-<area shape="rect" id="node2" href="$classHArDCore3D_1_1GlobalDOFSpace.html" title="Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei..." alt="" coords="5,171,216,197"/>
-<area shape="rect" id="node3" href="$classHArDCore3D_1_1LocalDOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="9,95,213,121"/>
-<area shape="rect" id="node4" href="$classMeshND_1_1Mesh.html" title="Class to describe a mesh." alt="" coords="12,5,209,32"/>
+<area shape="rect" id="node1" title="Discrete Lie algebra valued Hdiv space: local operators, L2 product and global interpolator." alt="" coords="225,349,379,376"/>
+<area shape="rect" id="node2" href="$classHArDCore3D_1_1GlobalDOFSpace.html" title="Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei..." alt="" coords="197,171,407,197"/>
+<area shape="rect" id="node5" href="$classHArDCore3D_1_1XDiv.html" title="Discrete Hdiv space: local operators, L2 product and global interpolator." alt="" coords="127,260,264,287"/>
+<area shape="rect" id="node3" href="$classHArDCore3D_1_1LocalDOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="200,95,404,121"/>
+<area shape="rect" id="node4" href="$classMeshND_1_1Mesh.html" title="Class to describe a mesh." alt="" coords="203,5,401,32"/>
+<area shape="rect" id="node6" href="$classHArDCore3D_1_1DDRCore.html" title="Construct all polynomial spaces for the DDR sequence." alt="" coords="5,171,172,197"/>
+<area shape="rect" id="node7" href="$classHArDCore3D_1_1LieAlgebra.html" title="Lie algebra class: mass matrix, structure constants and Lie bracket." alt="" coords="340,260,509,287"/>
 </map>

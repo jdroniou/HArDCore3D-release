@@ -9,7 +9,8 @@ The DDR scheme implemented here is designed and analysed in
 The serendipity DDR scheme is described and analysed in
   
   Homological- and analytical-preserving serendipity framework for polytopal complexes, with application to the DDR method. 
-  D. A. Di Pietro and J. Droniou, 31p, 2022. https://arxiv.org/abs/2203.02939.
+  D. A. Di Pietro and J. Droniou, M2AN Math. Model. Numer. Anal. 57, pp. 191–225, 1 2023. 
+  doi: 10.1051/m2an/2022067. url: https://arxiv.org/abs/2203.02939.
 
 
 If you use these schemes for a scientific publication, please mention the above articles.

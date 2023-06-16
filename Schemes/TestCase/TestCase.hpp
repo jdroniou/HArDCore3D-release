@@ -201,10 +201,10 @@ private:
 
 };
 
-inline Solution TestCase::get_solution() { return m_sol; };
-inline Diffusion TestCase::get_diffusion() { return m_diff; };
-inline Advection TestCase::get_advection() { return m_advec; };
-inline Reaction TestCase::get_reaction() { return m_reac; };
+inline Solution TestCase::get_solution() { return m_sol; }
+inline Diffusion TestCase::get_diffusion() { return m_diff; }
+inline Advection TestCase::get_advection() { return m_advec; }
+inline Reaction TestCase::get_reaction() { return m_reac; }
 
 //@}
 

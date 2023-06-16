@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['quadraturenode_2028',['QuadratureNode',['../group__Quadratures.html#ga7a185c689ce9f635e803694bd0e8d2e7',1,'HArDCore3D::QuadratureNode']]],
-  ['quadruleedge_2029',['QuadRuleEdge',['../group__Quadratures.html#gabb254b22a706f3781b2b8a7b3fafa288',1,'HArDCore3D::QuadRuleEdge']]],
-  ['quadruletetra_2030',['QuadRuleTetra',['../group__Quadratures.html#gaa9690d2663c19c67d52b3cd176afa4b9',1,'HArDCore3D::QuadRuleTetra::QuadRuleTetra(size_t doe, bool warn)'],['../group__Quadratures.html#ga7a95e2c4005af1f7dc71da864d1e79e3',1,'HArDCore3D::QuadRuleTetra::QuadRuleTetra(size_t _rule=0)']]],
-  ['quadruletriangle_2031',['QuadRuleTriangle',['../group__Quadratures.html#ga0d95447bb72cfc1b19cd2ea192ff6695',1,'HArDCore3D::QuadRuleTriangle']]]
+  ['quadraturenode_2128',['QuadratureNode',['../group__Quadratures.html#ga7a185c689ce9f635e803694bd0e8d2e7',1,'HArDCore3D::QuadratureNode']]],
+  ['quadruleedge_2129',['QuadRuleEdge',['../group__Quadratures.html#gabb254b22a706f3781b2b8a7b3fafa288',1,'HArDCore3D::QuadRuleEdge']]],
+  ['quadruletetra_2130',['QuadRuleTetra',['../group__Quadratures.html#gaa9690d2663c19c67d52b3cd176afa4b9',1,'HArDCore3D::QuadRuleTetra::QuadRuleTetra(size_t doe, bool warn)'],['../group__Quadratures.html#ga7a95e2c4005af1f7dc71da864d1e79e3',1,'HArDCore3D::QuadRuleTetra::QuadRuleTetra(size_t _rule=0)']]],
+  ['quadruletriangle_2131',['QuadRuleTriangle',['../group__Quadratures.html#ga0d95447bb72cfc1b19cd2ea192ff6695',1,'HArDCore3D::QuadRuleTriangle']]]
 ];

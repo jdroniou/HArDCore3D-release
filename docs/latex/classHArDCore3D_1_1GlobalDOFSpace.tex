@@ -11,7 +11,8 @@ Base class for global DOF spaces. Provides functions to manipulate global DOFs (
 
 
 
-Inheritance diagram for HAr\+DCore3D\+::Global\+DOFSpace\+:\nopagebreak
+Inheritance diagram for HAr\+DCore3D\+::Global\+DOFSpace\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -40,6 +41,8 @@ size\+\_\+t \mbox{\hyperlink{group__Common_ga51495600d8dea1161e6bc23db8b99c91}{g
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the face F. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Common_ga1229b099903e229e3e63c4a56949a835}{global\+Offset}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Return the global offset for the unknowns on the cell T. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Common_ga44f26c88e322ca732450e8669891225d}{global\+Offset}} (size\+\_\+t d, size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Return the global offset for the unknows on the i-\/th element of dimension d. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_ga9cabf022121084dd0ab57de128ba953c}{restrict\+Edge}} (size\+\_\+t iE, const Eigen\+::\+Vector\+Xd \&vh) const
 \begin{DoxyCompactList}\small\item\em Restrict to the edge (including its vertices) of index iE. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__Common_gad97efa101fd5232b63921903d4c2502f}{restrict\+Face}} (size\+\_\+t iF, const Eigen\+::\+Vector\+Xd \&vh) const
@@ -58,6 +61,8 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gabf4eafe2cf13ad7f5eeb322cb
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a cell. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gafa03cd062083ef8fbe3089d395f81338}{extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a face. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga44cae72166e12dd00a3dd673bf2a5d06}{extend\+Operator}} (size\+\_\+t d1, size\+\_\+t i1, size\+\_\+t d2, size\+\_\+t i2, const Eigen\+::\+Matrix\+Xd \&op) const
+\begin{DoxyCompactList}\small\item\em Generic extension operator from the i2-\/th d2-\/cell to the i1-\/th d1-\/cell. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__Common_ga377359e7be24409898f4bd5b709aec76}{add\+Inner\+Product\+Contribution}} (const Cell \&T, const Face \&F, Eigen\+::\+Matrix\+Xd \&prodT, const Eigen\+::\+Matrix\+Xd \&prodF) const
 \begin{DoxyCompactList}\small\item\em Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T) \end{DoxyCompactList}\item 
 std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga253bd7addffb9686d8a71d19db88f3f2}{global\+DOFIndices}} (const Cell \&T) const

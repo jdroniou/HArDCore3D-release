@@ -78,12 +78,27 @@ $(function() {
 <div class="title">LADDRCore</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Classes defining the Discrete De Rham sequence for Lie-algebra functions.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1LADDRCore.html">HArDCore3D::LADDRCore</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the spaces for the LADDR sequence.  <a href="classHArDCore3D_1_1LADDRCore.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1LASXCurl.html">HArDCore3D::LASXCurl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete Lie algebra valued Serendipity Hcurl space: local operators, L2 product and global interpolator.  <a href="classHArDCore3D_1_1LASXCurl.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1LASXCurl_1_1TransferOperators.html">HArDCore3D::LASXCurl::TransferOperators</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure to store the serendipity, extension and reduction operators.  <a href="structHArDCore3D_1_1LASXCurl_1_1TransferOperators.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1LASXDiv.html">HArDCore3D::LASXDiv</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete Serendipity Hdiv space: local operators, L2 product and global interpolator.  <a href="classHArDCore3D_1_1LASXDiv.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1LASXGrad.html">HArDCore3D::LASXGrad</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator.  <a href="classHArDCore3D_1_1LASXGrad.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1LASXGrad_1_1TransferOperators.html">HArDCore3D::LASXGrad::TransferOperators</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure to store the serendipity, extension and reduction operators.  <a href="structHArDCore3D_1_1LASXGrad_1_1TransferOperators.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1LAXCurl.html">HArDCore3D::LAXCurl</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discrete Lie algebra valued Hcurl space.  <a href="classHArDCore3D_1_1LAXCurl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,6 +123,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:gacc211870202c8800c9e896121d81eab6"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gacc211870202c8800c9e896121d81eab6">HArDCore3D::LASXCurl::FunctionType</a></td></tr>
+<tr class="separator:gacc211870202c8800c9e896121d81eab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f0be8a26f5e09132d5be25e389499cd"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="group__LADDRCore.html#gacc211870202c8800c9e896121d81eab6">FunctionType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga2f0be8a26f5e09132d5be25e389499cd">HArDCore3D::LASXCurl::LAFunctionType</a></td></tr>
+<tr class="separator:ga2f0be8a26f5e09132d5be25e389499cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3cfb70b6cdd23bd2273bf1af7b1e87eb"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; double(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga3cfb70b6cdd23bd2273bf1af7b1e87eb">HArDCore3D::LASXGrad::FunctionType</a></td></tr>
+<tr class="separator:ga3cfb70b6cdd23bd2273bf1af7b1e87eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab30d96b69c36d139f71cdfee3ba6dae3"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="group__LADDRCore.html#ga3cfb70b6cdd23bd2273bf1af7b1e87eb">FunctionType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gab30d96b69c36d139f71cdfee3ba6dae3">HArDCore3D::LASXGrad::LAFunctionType</a></td></tr>
+<tr class="separator:gab30d96b69c36d139f71cdfee3ba6dae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaecbef92c0d82f58b5fea98398f5672c9"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaecbef92c0d82f58b5fea98398f5672c9">HArDCore3D::LAXCurl::FunctionType</a></td></tr>
 <tr class="separator:gaecbef92c0d82f58b5fea98398f5672c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga56d4d6afeb018bafbd088ac9eb555c28"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="group__LADDRCore.html#gaecbef92c0d82f58b5fea98398f5672c9">FunctionType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga56d4d6afeb018bafbd088ac9eb555c28">HArDCore3D::LAXCurl::LAFunctionType</a></td></tr>
@@ -127,6 +150,243 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gad56d6b4df393c6473a4f03213cd938f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gad56d6b4df393c6473a4f03213cd938f5">HArDCore3D::LADDRCore::LADDRCore</a> (const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;lie_algebra, const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> &amp;<a class="el" href="group__DDRCore.html#ga4b3c317f8cf4193ba4b945f2b087a6f2">mesh</a>, size_t <a class="el" href="group__HHO__DiffAdvecReac.html#gaf169764abf85f85bec428e43dc60274b">K</a>, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true, std::ostream &amp;output=std::cout)</td></tr>
+<tr class="memdesc:gad56d6b4df393c6473a4f03213cd938f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__LADDRCore.html#gad56d6b4df393c6473a4f03213cd938f5">More...</a><br /></td></tr>
+<tr class="separator:gad56d6b4df393c6473a4f03213cd938f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85217548bdfd69242e37173feccbe917"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__DDRCore.html#ga93b7460f638eb1b520354073e72535cc">DDRCore::Poly3BasisCellType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga85217548bdfd69242e37173feccbe917">HArDCore3D::LADDRCore::P2k3</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga85217548bdfd69242e37173feccbe917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for element iT.  <a href="group__LADDRCore.html#ga85217548bdfd69242e37173feccbe917">More...</a><br /></td></tr>
+<tr class="separator:ga85217548bdfd69242e37173feccbe917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6773deee9a1a8e045b45dfbb0d7e0365"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga6773deee9a1a8e045b45dfbb0d7e0365">HArDCore3D::LADDRCore::lieAlg</a> () const</td></tr>
+<tr class="memdesc:ga6773deee9a1a8e045b45dfbb0d7e0365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Lie algebra.  <a href="group__LADDRCore.html#ga6773deee9a1a8e045b45dfbb0d7e0365">More...</a><br /></td></tr>
+<tr class="separator:ga6773deee9a1a8e045b45dfbb0d7e0365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96aee755c1d55da296f84cfaa3b1c2b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga96aee755c1d55da296f84cfaa3b1c2b3">HArDCore3D::LASXCurl::TransferOperators::TransferOperators</a> (const Eigen::MatrixXd &amp;_serendipity, const Eigen::MatrixXd &amp;_extension, const Eigen::MatrixXd &amp;_reduction)</td></tr>
+<tr class="separator:ga96aee755c1d55da296f84cfaa3b1c2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8c61ad4f6658560b06a68e50714e202"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaf8c61ad4f6658560b06a68e50714e202">HArDCore3D::LASXCurl::LASXCurl</a> (const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;lie_algebra, const <a class="el" href="classHArDCore3D_1_1SXCurl.html">SXCurl</a> &amp;sx_curl, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true, std::ostream &amp;output=std::cout)</td></tr>
+<tr class="memdesc:gaf8c61ad4f6658560b06a68e50714e202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__LADDRCore.html#gaf8c61ad4f6658560b06a68e50714e202">More...</a><br /></td></tr>
+<tr class="separator:gaf8c61ad4f6658560b06a68e50714e202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a0e05509ae834ad751344d862ae59a6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga0a0e05509ae834ad751344d862ae59a6">HArDCore3D::LASXCurl::mesh</a> () const</td></tr>
+<tr class="memdesc:ga0a0e05509ae834ad751344d862ae59a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the mesh.  <a href="group__LADDRCore.html#ga0a0e05509ae834ad751344d862ae59a6">More...</a><br /></td></tr>
+<tr class="separator:ga0a0e05509ae834ad751344d862ae59a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4163a08fb0bbfdfe6a37006e0d1faadf"><td class="memItemLeft" align="right" valign="top">const size_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga4163a08fb0bbfdfe6a37006e0d1faadf">HArDCore3D::LASXCurl::degree</a> () const</td></tr>
+<tr class="memdesc:ga4163a08fb0bbfdfe6a37006e0d1faadf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the polynomial degree.  <a href="group__LADDRCore.html#ga4163a08fb0bbfdfe6a37006e0d1faadf">More...</a><br /></td></tr>
+<tr class="separator:ga4163a08fb0bbfdfe6a37006e0d1faadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e12345cff8637d0cfdc5d03a2b72ac5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga7e12345cff8637d0cfdc5d03a2b72ac5">HArDCore3D::LASXCurl::lieAlg</a> () const</td></tr>
+<tr class="memdesc:ga7e12345cff8637d0cfdc5d03a2b72ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Lie algebra.  <a href="group__LADDRCore.html#ga7e12345cff8637d0cfdc5d03a2b72ac5">More...</a><br /></td></tr>
+<tr class="separator:ga7e12345cff8637d0cfdc5d03a2b72ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4d5892a9d91dda701b5b42297387e5d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1SerendipityProblem.html">SerendipityProblem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gac4d5892a9d91dda701b5b42297387e5d">HArDCore3D::LASXCurl::serPro</a> () const</td></tr>
+<tr class="memdesc:gac4d5892a9d91dda701b5b42297387e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the serendipity operators.  <a href="group__LADDRCore.html#gac4d5892a9d91dda701b5b42297387e5d">More...</a><br /></td></tr>
+<tr class="separator:gac4d5892a9d91dda701b5b42297387e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2efc5016d215b73f10a5cdb3dcda34a"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gad2efc5016d215b73f10a5cdb3dcda34a">HArDCore3D::LASXCurl::interpolate</a> (const <a class="el" href="group__LADDRCore.html#ga2f0be8a26f5e09132d5be25e389499cd">LAFunctionType</a> &amp;v, const int doe_cell=-1, const int doe_face=-1, const int doe_edge=-1) const</td></tr>
+<tr class="memdesc:gad2efc5016d215b73f10a5cdb3dcda34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolator of a continuous function.  <a href="group__LADDRCore.html#gad2efc5016d215b73f10a5cdb3dcda34a">More...</a><br /></td></tr>
+<tr class="separator:gad2efc5016d215b73f10a5cdb3dcda34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80dcab088b935d14aa4b0416ec5238f5"><td class="memItemLeft" align="right" valign="top">const Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga80dcab088b935d14aa4b0416ec5238f5">HArDCore3D::LASXCurl::LaxcurlI</a> (size_t iG, Eigen::VectorXd &amp;v) const</td></tr>
+<tr class="separator:ga80dcab088b935d14aa4b0416ec5238f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2370e761bd432b6d0fcf44c6db6819e4"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga2370e761bd432b6d0fcf44c6db6819e4">HArDCore3D::LASXCurl::ScurlFace</a> (size_t iF) const</td></tr>
+<tr class="memdesc:ga2370e761bd432b6d0fcf44c6db6819e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the serendipity reconstruction for the face of index iF.  <a href="group__LADDRCore.html#ga2370e761bd432b6d0fcf44c6db6819e4">More...</a><br /></td></tr>
+<tr class="separator:ga2370e761bd432b6d0fcf44c6db6819e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f483807f15c9c9d89474cf9202fb084"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga5f483807f15c9c9d89474cf9202fb084">HArDCore3D::LASXCurl::EcurlFace</a> (size_t iF) const</td></tr>
+<tr class="memdesc:ga5f483807f15c9c9d89474cf9202fb084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the extension for the face of index iF.  <a href="group__LADDRCore.html#ga5f483807f15c9c9d89474cf9202fb084">More...</a><br /></td></tr>
+<tr class="separator:ga5f483807f15c9c9d89474cf9202fb084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa29a2d7abd8292591357744ceb2e9a7b"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaa29a2d7abd8292591357744ceb2e9a7b">HArDCore3D::LASXCurl::RcurlFace</a> (size_t iF) const</td></tr>
+<tr class="memdesc:gaa29a2d7abd8292591357744ceb2e9a7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reduction for the face of index iF.  <a href="group__LADDRCore.html#gaa29a2d7abd8292591357744ceb2e9a7b">More...</a><br /></td></tr>
+<tr class="separator:gaa29a2d7abd8292591357744ceb2e9a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e0d1f923e06e18a06449d204cb6086d"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga2e0d1f923e06e18a06449d204cb6086d">HArDCore3D::LASXCurl::ScurlFace</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga2e0d1f923e06e18a06449d204cb6086d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the serendipity reconstruction for face F.  <a href="group__LADDRCore.html#ga2e0d1f923e06e18a06449d204cb6086d">More...</a><br /></td></tr>
+<tr class="separator:ga2e0d1f923e06e18a06449d204cb6086d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48b2135f06fc896a0816292842b7aaae"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga48b2135f06fc896a0816292842b7aaae">HArDCore3D::LASXCurl::EcurlFace</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga48b2135f06fc896a0816292842b7aaae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the extension for face F.  <a href="group__LADDRCore.html#ga48b2135f06fc896a0816292842b7aaae">More...</a><br /></td></tr>
+<tr class="separator:ga48b2135f06fc896a0816292842b7aaae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga482e9b1f2e0b094284b5809da1317fa2"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga482e9b1f2e0b094284b5809da1317fa2">HArDCore3D::LASXCurl::RcurlFace</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga482e9b1f2e0b094284b5809da1317fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell reduction for cell T.  <a href="group__LADDRCore.html#ga482e9b1f2e0b094284b5809da1317fa2">More...</a><br /></td></tr>
+<tr class="separator:ga482e9b1f2e0b094284b5809da1317fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c1227164f66756975a96cd3df8302bc"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga8c1227164f66756975a96cd3df8302bc">HArDCore3D::LASXCurl::ScurlCell</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga8c1227164f66756975a96cd3df8302bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the serendipity reconstruction for the cell of index iT.  <a href="group__LADDRCore.html#ga8c1227164f66756975a96cd3df8302bc">More...</a><br /></td></tr>
+<tr class="separator:ga8c1227164f66756975a96cd3df8302bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa27852c13a282c9bb6f04b8768537c82"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaa27852c13a282c9bb6f04b8768537c82">HArDCore3D::LASXCurl::EcurlCell</a> (size_t iT) const</td></tr>
+<tr class="memdesc:gaa27852c13a282c9bb6f04b8768537c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the extension for the cell of index iT.  <a href="group__LADDRCore.html#gaa27852c13a282c9bb6f04b8768537c82">More...</a><br /></td></tr>
+<tr class="separator:gaa27852c13a282c9bb6f04b8768537c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac09899407551a6210e184c4464258371"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gac09899407551a6210e184c4464258371">HArDCore3D::LASXCurl::RcurlCell</a> (size_t iT) const</td></tr>
+<tr class="memdesc:gac09899407551a6210e184c4464258371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reduction for the cell of index iT.  <a href="group__LADDRCore.html#gac09899407551a6210e184c4464258371">More...</a><br /></td></tr>
+<tr class="separator:gac09899407551a6210e184c4464258371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafb7c3a298b8237a280a55d7fb72c1eaa"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gafb7c3a298b8237a280a55d7fb72c1eaa">HArDCore3D::LASXCurl::ScurlCell</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:gafb7c3a298b8237a280a55d7fb72c1eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the serendipity reconstruction for cell T.  <a href="group__LADDRCore.html#gafb7c3a298b8237a280a55d7fb72c1eaa">More...</a><br /></td></tr>
+<tr class="separator:gafb7c3a298b8237a280a55d7fb72c1eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93fefc98e0a33648480fa95b2dd34bce"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga93fefc98e0a33648480fa95b2dd34bce">HArDCore3D::LASXCurl::EcurlCell</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:ga93fefc98e0a33648480fa95b2dd34bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the extension for cell T.  <a href="group__LADDRCore.html#ga93fefc98e0a33648480fa95b2dd34bce">More...</a><br /></td></tr>
+<tr class="separator:ga93fefc98e0a33648480fa95b2dd34bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae055d18efc496d8a1acb025733a37c75"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gae055d18efc496d8a1acb025733a37c75">HArDCore3D::LASXCurl::RcurlCell</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:gae055d18efc496d8a1acb025733a37c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reduction for cell T.  <a href="group__LADDRCore.html#gae055d18efc496d8a1acb025733a37c75">More...</a><br /></td></tr>
+<tr class="separator:gae055d18efc496d8a1acb025733a37c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9397753a99e6840106570c812ec3e063"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga9397753a99e6840106570c812ec3e063">HArDCore3D::LASXCurl::faceCurl</a> (size_t iF) const</td></tr>
+<tr class="memdesc:ga9397753a99e6840106570c812ec3e063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the full curl operator on the face of index iF.  <a href="group__LADDRCore.html#ga9397753a99e6840106570c812ec3e063">More...</a><br /></td></tr>
+<tr class="separator:ga9397753a99e6840106570c812ec3e063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad05483652f4972e0477abb1a8d0d6b03"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gad05483652f4972e0477abb1a8d0d6b03">HArDCore3D::LASXCurl::faceCurl</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:gad05483652f4972e0477abb1a8d0d6b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the full curl operator on face F.  <a href="group__LADDRCore.html#gad05483652f4972e0477abb1a8d0d6b03">More...</a><br /></td></tr>
+<tr class="separator:gad05483652f4972e0477abb1a8d0d6b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b8920eecf1210b72402e552aec58d76"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga6b8920eecf1210b72402e552aec58d76">HArDCore3D::LASXCurl::facePotential</a> (size_t iF) const</td></tr>
+<tr class="memdesc:ga6b8920eecf1210b72402e552aec58d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the potential operator on the face of index iF.  <a href="group__LADDRCore.html#ga6b8920eecf1210b72402e552aec58d76">More...</a><br /></td></tr>
+<tr class="separator:ga6b8920eecf1210b72402e552aec58d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga229284bab8798245ed7966f16be38dde"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga229284bab8798245ed7966f16be38dde">HArDCore3D::LASXCurl::facePotential</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga229284bab8798245ed7966f16be38dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the potential operator on face F.  <a href="group__LADDRCore.html#ga229284bab8798245ed7966f16be38dde">More...</a><br /></td></tr>
+<tr class="separator:ga229284bab8798245ed7966f16be38dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17b8891a96b8bf5c155b7600ff6648af"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga17b8891a96b8bf5c155b7600ff6648af">HArDCore3D::LASXCurl::cellCurl</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga17b8891a96b8bf5c155b7600ff6648af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the full curl operator on the cell of index iT.  <a href="group__LADDRCore.html#ga17b8891a96b8bf5c155b7600ff6648af">More...</a><br /></td></tr>
+<tr class="separator:ga17b8891a96b8bf5c155b7600ff6648af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6087b6c7f912af19c5033147eaf562ad"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga6087b6c7f912af19c5033147eaf562ad">HArDCore3D::LASXCurl::cellCurl</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:ga6087b6c7f912af19c5033147eaf562ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the full curl operator on cell T.  <a href="group__LADDRCore.html#ga6087b6c7f912af19c5033147eaf562ad">More...</a><br /></td></tr>
+<tr class="separator:ga6087b6c7f912af19c5033147eaf562ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab20051acf6ff247c7527614f3a4ca2dc"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gab20051acf6ff247c7527614f3a4ca2dc">HArDCore3D::LASXCurl::cellPotential</a> (size_t iT) const</td></tr>
+<tr class="memdesc:gab20051acf6ff247c7527614f3a4ca2dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the potential operator on the cell of index iT.  <a href="group__LADDRCore.html#gab20051acf6ff247c7527614f3a4ca2dc">More...</a><br /></td></tr>
+<tr class="separator:gab20051acf6ff247c7527614f3a4ca2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga270159011a635a007c331456abf5eb7d"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga270159011a635a007c331456abf5eb7d">HArDCore3D::LASXCurl::cellPotential</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:ga270159011a635a007c331456abf5eb7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the potential operator on cell T.  <a href="group__LADDRCore.html#ga270159011a635a007c331456abf5eb7d">More...</a><br /></td></tr>
+<tr class="separator:ga270159011a635a007c331456abf5eb7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3fc9b4714c90a51322ae730e83d84337"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga3fc9b4714c90a51322ae730e83d84337">HArDCore3D::LASXCurl::computeL2Product</a> (const size_t iT, const double &amp;penalty_factor=1., const Eigen::MatrixXd &amp;mass_Pk3_T=Eigen::MatrixXd::Zero(1, 1), const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> &amp;weight=<a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>(1.)) const</td></tr>
+<tr class="memdesc:ga3fc9b4714c90a51322ae730e83d84337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the matrix of the (weighted) L2-product.  <a href="group__LADDRCore.html#ga3fc9b4714c90a51322ae730e83d84337">More...</a><br /></td></tr>
+<tr class="separator:ga3fc9b4714c90a51322ae730e83d84337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac69d0f379101aa9bb78393058ad14856"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gac69d0f379101aa9bb78393058ad14856">HArDCore3D::LASXCurl::computeL2ProductGradient</a> (const size_t iT, const <a class="el" href="classHArDCore3D_1_1SXGrad.html">SXGrad</a> &amp;sx_grad, const std::string &amp;side, const double &amp;penalty_factor=1., const Eigen::MatrixXd &amp;mass_Pk3_T=Eigen::MatrixXd::Zero(1, 1), const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> &amp;weight=<a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>(1.)) const</td></tr>
+<tr class="memdesc:gac69d0f379101aa9bb78393058ad14856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the matrix of the (weighted) L2-product as 'computeL2Product', with application of the discrete gradient on the left/right/both sides (depending on argument "side").  <a href="group__LADDRCore.html#gac69d0f379101aa9bb78393058ad14856">More...</a><br /></td></tr>
+<tr class="separator:gac69d0f379101aa9bb78393058ad14856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f11d9866d4fa5f53ccf08a0ad2b6ad5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">DDRCore::CellBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga6f11d9866d4fa5f53ccf08a0ad2b6ad5">HArDCore3D::LASXCurl::cellBases</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga6f11d9866d4fa5f53ccf08a0ad2b6ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for the face of index iT.  <a href="group__LADDRCore.html#ga6f11d9866d4fa5f53ccf08a0ad2b6ad5">More...</a><br /></td></tr>
+<tr class="separator:ga6f11d9866d4fa5f53ccf08a0ad2b6ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga483fe1b95def6939a96ce0836ae80f14"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">DDRCore::CellBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga483fe1b95def6939a96ce0836ae80f14">HArDCore3D::LASXCurl::cellBases</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:ga483fe1b95def6939a96ce0836ae80f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for cell T.  <a href="group__LADDRCore.html#ga483fe1b95def6939a96ce0836ae80f14">More...</a><br /></td></tr>
+<tr class="separator:ga483fe1b95def6939a96ce0836ae80f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga245232eb9434dab02db541581caa852d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">DDRCore::FaceBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga245232eb9434dab02db541581caa852d">HArDCore3D::LASXCurl::faceBases</a> (size_t iF) const</td></tr>
+<tr class="memdesc:ga245232eb9434dab02db541581caa852d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return face bases for the face of index iF.  <a href="group__LADDRCore.html#ga245232eb9434dab02db541581caa852d">More...</a><br /></td></tr>
+<tr class="separator:ga245232eb9434dab02db541581caa852d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga07cb952ad67ae364cc3da65aa76ef8b8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">DDRCore::FaceBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga07cb952ad67ae364cc3da65aa76ef8b8">HArDCore3D::LASXCurl::faceBases</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga07cb952ad67ae364cc3da65aa76ef8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for face F.  <a href="group__LADDRCore.html#ga07cb952ad67ae364cc3da65aa76ef8b8">More...</a><br /></td></tr>
+<tr class="separator:ga07cb952ad67ae364cc3da65aa76ef8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4a8015c4ebb5a4e77f7322f2a944ddf"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">DDRCore::EdgeBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaa4a8015c4ebb5a4e77f7322f2a944ddf">HArDCore3D::LASXCurl::edgeBases</a> (size_t iE) const</td></tr>
+<tr class="memdesc:gaa4a8015c4ebb5a4e77f7322f2a944ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return edge bases for the edge of index iE.  <a href="group__LADDRCore.html#gaa4a8015c4ebb5a4e77f7322f2a944ddf">More...</a><br /></td></tr>
+<tr class="separator:gaa4a8015c4ebb5a4e77f7322f2a944ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85e7077a12cb9ea0cb8c33fa3bc24774"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">DDRCore::EdgeBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga85e7077a12cb9ea0cb8c33fa3bc24774">HArDCore3D::LASXCurl::edgeBases</a> (const Edge &amp;E) const</td></tr>
+<tr class="memdesc:ga85e7077a12cb9ea0cb8c33fa3bc24774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return edge bases for edge E.  <a href="group__LADDRCore.html#ga85e7077a12cb9ea0cb8c33fa3bc24774">More...</a><br /></td></tr>
+<tr class="separator:ga85e7077a12cb9ea0cb8c33fa3bc24774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3943bf09c9a0dba06d56960fa731947e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga3943bf09c9a0dba06d56960fa731947e">HArDCore3D::LASXDiv::LASXDiv</a> (const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;lie_algebra, const <a class="el" href="classHArDCore3D_1_1XDiv.html">XDiv</a> &amp;xdiv, const <a class="el" href="classHArDCore3D_1_1SXDiv.html">SXDiv</a> &amp;sxdiv, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true, std::ostream &amp;output=std::cout)</td></tr>
+<tr class="memdesc:ga3943bf09c9a0dba06d56960fa731947e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__LADDRCore.html#ga3943bf09c9a0dba06d56960fa731947e">More...</a><br /></td></tr>
+<tr class="separator:ga3943bf09c9a0dba06d56960fa731947e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae02ef8baf53dc136a77df5c66b9e0e8f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gae02ef8baf53dc136a77df5c66b9e0e8f">HArDCore3D::LASXDiv::lieAlg</a> () const</td></tr>
+<tr class="memdesc:gae02ef8baf53dc136a77df5c66b9e0e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Lie algebra.  <a href="group__LADDRCore.html#gae02ef8baf53dc136a77df5c66b9e0e8f">More...</a><br /></td></tr>
+<tr class="separator:gae02ef8baf53dc136a77df5c66b9e0e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74f291de5bbb2c162b357b52f29b8387"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga74f291de5bbb2c162b357b52f29b8387">HArDCore3D::LASXDiv::computeL2ProductCurl</a> (const size_t iT, const <a class="el" href="classHArDCore3D_1_1SXCurl.html">SXCurl</a> &amp;sx_curl, const std::string &amp;side, const double &amp;penalty_factor=1., const Eigen::MatrixXd &amp;mass_Pk3_T=Eigen::MatrixXd::Zero(1, 1), const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> &amp;weight=<a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>(1.)) const</td></tr>
+<tr class="memdesc:ga74f291de5bbb2c162b357b52f29b8387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the matrix of the (weighted) L2-product as 'computeL2Product', with application of the discrete serendipity curl on the left/right/both sides (depending on argument "side").  <a href="group__LADDRCore.html#ga74f291de5bbb2c162b357b52f29b8387">More...</a><br /></td></tr>
+<tr class="separator:ga74f291de5bbb2c162b357b52f29b8387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga877a35995e3ecbee10f27df5c7bb9cf9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga877a35995e3ecbee10f27df5c7bb9cf9">HArDCore3D::LASXGrad::TransferOperators::TransferOperators</a> (const Eigen::MatrixXd &amp;_serendipity, const Eigen::MatrixXd &amp;_extension, const Eigen::MatrixXd &amp;_reduction)</td></tr>
+<tr class="separator:ga877a35995e3ecbee10f27df5c7bb9cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86b4f8c226218993ad411699f3dc416e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga86b4f8c226218993ad411699f3dc416e">HArDCore3D::LASXGrad::LASXGrad</a> (const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;lie_algebra, const <a class="el" href="classHArDCore3D_1_1SXGrad.html">SXGrad</a> &amp;sxgrad, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true, std::ostream &amp;output=std::cout)</td></tr>
+<tr class="memdesc:ga86b4f8c226218993ad411699f3dc416e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__LADDRCore.html#ga86b4f8c226218993ad411699f3dc416e">More...</a><br /></td></tr>
+<tr class="separator:ga86b4f8c226218993ad411699f3dc416e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga646a0a5e34def85ef9a6223f7c1d0d71"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga646a0a5e34def85ef9a6223f7c1d0d71">HArDCore3D::LASXGrad::mesh</a> () const</td></tr>
+<tr class="memdesc:ga646a0a5e34def85ef9a6223f7c1d0d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the mesh.  <a href="group__LADDRCore.html#ga646a0a5e34def85ef9a6223f7c1d0d71">More...</a><br /></td></tr>
+<tr class="separator:ga646a0a5e34def85ef9a6223f7c1d0d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e72da58f032e9fe5494b78201d3c9a9"><td class="memItemLeft" align="right" valign="top">const size_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga0e72da58f032e9fe5494b78201d3c9a9">HArDCore3D::LASXGrad::degree</a> () const</td></tr>
+<tr class="memdesc:ga0e72da58f032e9fe5494b78201d3c9a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the polynomial degree.  <a href="group__LADDRCore.html#ga0e72da58f032e9fe5494b78201d3c9a9">More...</a><br /></td></tr>
+<tr class="separator:ga0e72da58f032e9fe5494b78201d3c9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga942f7dcb136c9ed04e627be7e89aafc3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga942f7dcb136c9ed04e627be7e89aafc3">HArDCore3D::LASXGrad::lieAlg</a> () const</td></tr>
+<tr class="memdesc:ga942f7dcb136c9ed04e627be7e89aafc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Lie algebra.  <a href="group__LADDRCore.html#ga942f7dcb136c9ed04e627be7e89aafc3">More...</a><br /></td></tr>
+<tr class="separator:ga942f7dcb136c9ed04e627be7e89aafc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae232f319c551d4464a1765d0ae860ba3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1SerendipityProblem.html">SerendipityProblem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gae232f319c551d4464a1765d0ae860ba3">HArDCore3D::LASXGrad::serPro</a> () const</td></tr>
+<tr class="memdesc:gae232f319c551d4464a1765d0ae860ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the serendipity operators.  <a href="group__LADDRCore.html#gae232f319c551d4464a1765d0ae860ba3">More...</a><br /></td></tr>
+<tr class="separator:gae232f319c551d4464a1765d0ae860ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63933ab9549ab0f9a4e90a74504ef13f"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga63933ab9549ab0f9a4e90a74504ef13f">HArDCore3D::LASXGrad::interpolate</a> (const <a class="el" href="group__LADDRCore.html#gab30d96b69c36d139f71cdfee3ba6dae3">LAFunctionType</a> &amp;q, const int doe_cell=-1, const int doe_face=-1, const int doe_edge=-1) const</td></tr>
+<tr class="memdesc:ga63933ab9549ab0f9a4e90a74504ef13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolator of a continuous function.  <a href="group__LADDRCore.html#ga63933ab9549ab0f9a4e90a74504ef13f">More...</a><br /></td></tr>
+<tr class="separator:ga63933ab9549ab0f9a4e90a74504ef13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9d003bb6422cde2e7d9eec9dcd33bdb"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaf9d003bb6422cde2e7d9eec9dcd33bdb">HArDCore3D::LASXGrad::SgradFace</a> (size_t iF) const</td></tr>
+<tr class="memdesc:gaf9d003bb6422cde2e7d9eec9dcd33bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the serendipity reconstruction for the face of index iF.  <a href="group__LADDRCore.html#gaf9d003bb6422cde2e7d9eec9dcd33bdb">More...</a><br /></td></tr>
+<tr class="separator:gaf9d003bb6422cde2e7d9eec9dcd33bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad444fce53ea80e0c0cb66b8a52c410fb"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gad444fce53ea80e0c0cb66b8a52c410fb">HArDCore3D::LASXGrad::EgradFace</a> (size_t iF) const</td></tr>
+<tr class="memdesc:gad444fce53ea80e0c0cb66b8a52c410fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the extension for the face of index iF.  <a href="group__LADDRCore.html#gad444fce53ea80e0c0cb66b8a52c410fb">More...</a><br /></td></tr>
+<tr class="separator:gad444fce53ea80e0c0cb66b8a52c410fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae94f490d50a6a709a5ce76c9ed9ff593"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gae94f490d50a6a709a5ce76c9ed9ff593">HArDCore3D::LASXGrad::RgradFace</a> (size_t iF) const</td></tr>
+<tr class="memdesc:gae94f490d50a6a709a5ce76c9ed9ff593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reduction for the face of index iF.  <a href="group__LADDRCore.html#gae94f490d50a6a709a5ce76c9ed9ff593">More...</a><br /></td></tr>
+<tr class="separator:gae94f490d50a6a709a5ce76c9ed9ff593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48d2c4c7566616731f2f4e102604c8b0"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga48d2c4c7566616731f2f4e102604c8b0">HArDCore3D::LASXGrad::SgradFace</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga48d2c4c7566616731f2f4e102604c8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the serendipity reconstruction for face F.  <a href="group__LADDRCore.html#ga48d2c4c7566616731f2f4e102604c8b0">More...</a><br /></td></tr>
+<tr class="separator:ga48d2c4c7566616731f2f4e102604c8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5d8822209e5b02258883ee64d5f4432"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gac5d8822209e5b02258883ee64d5f4432">HArDCore3D::LASXGrad::EgradFace</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:gac5d8822209e5b02258883ee64d5f4432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the extension for face F.  <a href="group__LADDRCore.html#gac5d8822209e5b02258883ee64d5f4432">More...</a><br /></td></tr>
+<tr class="separator:gac5d8822209e5b02258883ee64d5f4432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67da8796974bc8b79c8361cf7978c6f7"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga67da8796974bc8b79c8361cf7978c6f7">HArDCore3D::LASXGrad::RgradFace</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga67da8796974bc8b79c8361cf7978c6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell reduction for cell T.  <a href="group__LADDRCore.html#ga67da8796974bc8b79c8361cf7978c6f7">More...</a><br /></td></tr>
+<tr class="separator:ga67da8796974bc8b79c8361cf7978c6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70a2aa4e091d6cb3edbd754c1244075e"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga70a2aa4e091d6cb3edbd754c1244075e">HArDCore3D::LASXGrad::SgradCell</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga70a2aa4e091d6cb3edbd754c1244075e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the serendipity reconstruction for the cell of index iT.  <a href="group__LADDRCore.html#ga70a2aa4e091d6cb3edbd754c1244075e">More...</a><br /></td></tr>
+<tr class="separator:ga70a2aa4e091d6cb3edbd754c1244075e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab42256bc0a6b3a40df0d32d35e4c4bf8"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gab42256bc0a6b3a40df0d32d35e4c4bf8">HArDCore3D::LASXGrad::EgradCell</a> (size_t iT) const</td></tr>
+<tr class="memdesc:gab42256bc0a6b3a40df0d32d35e4c4bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the extension for the cell of index iT.  <a href="group__LADDRCore.html#gab42256bc0a6b3a40df0d32d35e4c4bf8">More...</a><br /></td></tr>
+<tr class="separator:gab42256bc0a6b3a40df0d32d35e4c4bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b36e7aaa6233e1735e2f554cb3d7111"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga0b36e7aaa6233e1735e2f554cb3d7111">HArDCore3D::LASXGrad::RgradCell</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga0b36e7aaa6233e1735e2f554cb3d7111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reduction for the cell of index iT.  <a href="group__LADDRCore.html#ga0b36e7aaa6233e1735e2f554cb3d7111">More...</a><br /></td></tr>
+<tr class="separator:ga0b36e7aaa6233e1735e2f554cb3d7111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb9192fadb7a6bea205cfc63a71d5446"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gadb9192fadb7a6bea205cfc63a71d5446">HArDCore3D::LASXGrad::SgradCell</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:gadb9192fadb7a6bea205cfc63a71d5446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the serendipity reconstruction for cell T.  <a href="group__LADDRCore.html#gadb9192fadb7a6bea205cfc63a71d5446">More...</a><br /></td></tr>
+<tr class="separator:gadb9192fadb7a6bea205cfc63a71d5446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab292b5f7109ec2cecfba1b3d32ecfc19"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gab292b5f7109ec2cecfba1b3d32ecfc19">HArDCore3D::LASXGrad::EgradCell</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:gab292b5f7109ec2cecfba1b3d32ecfc19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the extension for cell T.  <a href="group__LADDRCore.html#gab292b5f7109ec2cecfba1b3d32ecfc19">More...</a><br /></td></tr>
+<tr class="separator:gab292b5f7109ec2cecfba1b3d32ecfc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaedb43d8b39878e803493805cc462317b"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaedb43d8b39878e803493805cc462317b">HArDCore3D::LASXGrad::RgradCell</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:gaedb43d8b39878e803493805cc462317b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reduction for cell T.  <a href="group__LADDRCore.html#gaedb43d8b39878e803493805cc462317b">More...</a><br /></td></tr>
+<tr class="separator:gaedb43d8b39878e803493805cc462317b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53210234622a9e9355a53108e63c19cb"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga53210234622a9e9355a53108e63c19cb">HArDCore3D::LASXGrad::edgeGradient</a> (size_t iE) const</td></tr>
+<tr class="memdesc:ga53210234622a9e9355a53108e63c19cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the full gradient operator on the edge of index iE.  <a href="group__LADDRCore.html#ga53210234622a9e9355a53108e63c19cb">More...</a><br /></td></tr>
+<tr class="separator:ga53210234622a9e9355a53108e63c19cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga633f6aca0fc668bc53c6ef7863d10e69"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga633f6aca0fc668bc53c6ef7863d10e69">HArDCore3D::LASXGrad::edgeGradient</a> (const Edge &amp;E) const</td></tr>
+<tr class="memdesc:ga633f6aca0fc668bc53c6ef7863d10e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the full gradient operator on edge E.  <a href="group__LADDRCore.html#ga633f6aca0fc668bc53c6ef7863d10e69">More...</a><br /></td></tr>
+<tr class="separator:ga633f6aca0fc668bc53c6ef7863d10e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2ecca6ac55198abe29864acbfe83c1b"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaf2ecca6ac55198abe29864acbfe83c1b">HArDCore3D::LASXGrad::edgePotential</a> (size_t iE) const</td></tr>
+<tr class="memdesc:gaf2ecca6ac55198abe29864acbfe83c1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the potential operator on the edge of index iE.  <a href="group__LADDRCore.html#gaf2ecca6ac55198abe29864acbfe83c1b">More...</a><br /></td></tr>
+<tr class="separator:gaf2ecca6ac55198abe29864acbfe83c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15d74dc860e1c1a9e17dbf294835885b"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga15d74dc860e1c1a9e17dbf294835885b">HArDCore3D::LASXGrad::edgePotential</a> (const Edge &amp;E) const</td></tr>
+<tr class="memdesc:ga15d74dc860e1c1a9e17dbf294835885b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the potential operator on edge E.  <a href="group__LADDRCore.html#ga15d74dc860e1c1a9e17dbf294835885b">More...</a><br /></td></tr>
+<tr class="separator:ga15d74dc860e1c1a9e17dbf294835885b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43643d156f59f37fdaef271ba6e785a6"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga43643d156f59f37fdaef271ba6e785a6">HArDCore3D::LASXGrad::faceGradient</a> (size_t iF) const</td></tr>
+<tr class="memdesc:ga43643d156f59f37fdaef271ba6e785a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the full gradient operator on the face of index iF.  <a href="group__LADDRCore.html#ga43643d156f59f37fdaef271ba6e785a6">More...</a><br /></td></tr>
+<tr class="separator:ga43643d156f59f37fdaef271ba6e785a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6080deb84f24daa43dc5b3d359265b22"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga6080deb84f24daa43dc5b3d359265b22">HArDCore3D::LASXGrad::faceGradient</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga6080deb84f24daa43dc5b3d359265b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the full gradient operator on face F.  <a href="group__LADDRCore.html#ga6080deb84f24daa43dc5b3d359265b22">More...</a><br /></td></tr>
+<tr class="separator:ga6080deb84f24daa43dc5b3d359265b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf11caddde66ea874a37db0b3ac0948ea"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaf11caddde66ea874a37db0b3ac0948ea">HArDCore3D::LASXGrad::facePotential</a> (size_t iF) const</td></tr>
+<tr class="memdesc:gaf11caddde66ea874a37db0b3ac0948ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the potential operator on the face of index iF.  <a href="group__LADDRCore.html#gaf11caddde66ea874a37db0b3ac0948ea">More...</a><br /></td></tr>
+<tr class="separator:gaf11caddde66ea874a37db0b3ac0948ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ce22db1151975f65b93a53192814754"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga1ce22db1151975f65b93a53192814754">HArDCore3D::LASXGrad::facePotential</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga1ce22db1151975f65b93a53192814754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the potential operator on face F.  <a href="group__LADDRCore.html#ga1ce22db1151975f65b93a53192814754">More...</a><br /></td></tr>
+<tr class="separator:ga1ce22db1151975f65b93a53192814754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78c0b6efdffa25e25244c5d91a9c75dd"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga78c0b6efdffa25e25244c5d91a9c75dd">HArDCore3D::LASXGrad::cellGradient</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga78c0b6efdffa25e25244c5d91a9c75dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the full gradient operator on the cell of index iT.  <a href="group__LADDRCore.html#ga78c0b6efdffa25e25244c5d91a9c75dd">More...</a><br /></td></tr>
+<tr class="separator:ga78c0b6efdffa25e25244c5d91a9c75dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga585e62d0079530fb1398abeef698995a"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga585e62d0079530fb1398abeef698995a">HArDCore3D::LASXGrad::cellGradient</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:ga585e62d0079530fb1398abeef698995a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the full gradient operator on cell T.  <a href="group__LADDRCore.html#ga585e62d0079530fb1398abeef698995a">More...</a><br /></td></tr>
+<tr class="separator:ga585e62d0079530fb1398abeef698995a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga142b7065a13ef2198c37e10c9dc26d49"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga142b7065a13ef2198c37e10c9dc26d49">HArDCore3D::LASXGrad::cellPotential</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga142b7065a13ef2198c37e10c9dc26d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the potential operator on the cell of index iT.  <a href="group__LADDRCore.html#ga142b7065a13ef2198c37e10c9dc26d49">More...</a><br /></td></tr>
+<tr class="separator:ga142b7065a13ef2198c37e10c9dc26d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga752253b293426b3210f2ea3fffdbd075"><td class="memItemLeft" align="right" valign="top">const Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga752253b293426b3210f2ea3fffdbd075">HArDCore3D::LASXGrad::cellPotential</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:ga752253b293426b3210f2ea3fffdbd075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the potential operator on cell T.  <a href="group__LADDRCore.html#ga752253b293426b3210f2ea3fffdbd075">More...</a><br /></td></tr>
+<tr class="separator:ga752253b293426b3210f2ea3fffdbd075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e58b6e5182d0db77c3576a040f2eede"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga6e58b6e5182d0db77c3576a040f2eede">HArDCore3D::LASXGrad::computeL2Product</a> (const size_t iT, const double &amp;penalty_factor=1., const Eigen::MatrixXd &amp;mass_Pk3_T=Eigen::MatrixXd::Zero(1, 1), const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> &amp;weight=<a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>(1.)) const</td></tr>
+<tr class="memdesc:ga6e58b6e5182d0db77c3576a040f2eede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the matrix of the (weighted) L2-product.  <a href="group__LADDRCore.html#ga6e58b6e5182d0db77c3576a040f2eede">More...</a><br /></td></tr>
+<tr class="separator:ga6e58b6e5182d0db77c3576a040f2eede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6519627287caa0665d2102cc9fbfcbd7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">DDRCore::CellBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga6519627287caa0665d2102cc9fbfcbd7">HArDCore3D::LASXGrad::cellBases</a> (size_t iT) const</td></tr>
+<tr class="memdesc:ga6519627287caa0665d2102cc9fbfcbd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for the face of index iT.  <a href="group__LADDRCore.html#ga6519627287caa0665d2102cc9fbfcbd7">More...</a><br /></td></tr>
+<tr class="separator:ga6519627287caa0665d2102cc9fbfcbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadad571e6fb187b7626fa0b282d76d3e6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">DDRCore::CellBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gadad571e6fb187b7626fa0b282d76d3e6">HArDCore3D::LASXGrad::cellBases</a> (const Cell &amp;T) const</td></tr>
+<tr class="memdesc:gadad571e6fb187b7626fa0b282d76d3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for cell T.  <a href="group__LADDRCore.html#gadad571e6fb187b7626fa0b282d76d3e6">More...</a><br /></td></tr>
+<tr class="separator:gadad571e6fb187b7626fa0b282d76d3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaddf29469ce9e0c7502a60a66428e8d19"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">DDRCore::FaceBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaddf29469ce9e0c7502a60a66428e8d19">HArDCore3D::LASXGrad::faceBases</a> (size_t iF) const</td></tr>
+<tr class="memdesc:gaddf29469ce9e0c7502a60a66428e8d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return face bases for the face of index iF.  <a href="group__LADDRCore.html#gaddf29469ce9e0c7502a60a66428e8d19">More...</a><br /></td></tr>
+<tr class="separator:gaddf29469ce9e0c7502a60a66428e8d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga928d7e5b8e295a946573e5c0e75b33d0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">DDRCore::FaceBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga928d7e5b8e295a946573e5c0e75b33d0">HArDCore3D::LASXGrad::faceBases</a> (const Face &amp;F) const</td></tr>
+<tr class="memdesc:ga928d7e5b8e295a946573e5c0e75b33d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell bases for face F.  <a href="group__LADDRCore.html#ga928d7e5b8e295a946573e5c0e75b33d0">More...</a><br /></td></tr>
+<tr class="separator:ga928d7e5b8e295a946573e5c0e75b33d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2c8219129914ac69718353e9e8f52f4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">DDRCore::EdgeBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gab2c8219129914ac69718353e9e8f52f4">HArDCore3D::LASXGrad::edgeBases</a> (size_t iE) const</td></tr>
+<tr class="memdesc:gab2c8219129914ac69718353e9e8f52f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return edge bases for the edge of index iE.  <a href="group__LADDRCore.html#gab2c8219129914ac69718353e9e8f52f4">More...</a><br /></td></tr>
+<tr class="separator:gab2c8219129914ac69718353e9e8f52f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae27db70cbf4a1ae82f0a9bd49017c555"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">DDRCore::EdgeBases</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gae27db70cbf4a1ae82f0a9bd49017c555">HArDCore3D::LASXGrad::edgeBases</a> (const Edge &amp;E) const</td></tr>
+<tr class="memdesc:gae27db70cbf4a1ae82f0a9bd49017c555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return edge bases for edge E.  <a href="group__LADDRCore.html#gae27db70cbf4a1ae82f0a9bd49017c555">More...</a><br /></td></tr>
+<tr class="separator:gae27db70cbf4a1ae82f0a9bd49017c555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf57f735cd1cae66888307c2e081d2df4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaf57f735cd1cae66888307c2e081d2df4">HArDCore3D::LAXCurl::lieAlgebra</a> () const</td></tr>
 <tr class="memdesc:gaf57f735cd1cae66888307c2e081d2df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Lie algebra.  <a href="group__LADDRCore.html#gaf57f735cd1cae66888307c2e081d2df4">More...</a><br /></td></tr>
 <tr class="separator:gaf57f735cd1cae66888307c2e081d2df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,6 +480,8 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa08771eaa0678ce7db39685aab3d1f2a"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaa08771eaa0678ce7db39685aab3d1f2a">HArDCore3D::LAXDiv::computeL2ProductCurl</a> (const size_t iT, const <a class="el" href="classHArDCore3D_1_1XCurl.html">XCurl</a> &amp;x_curl, const std::string &amp;side, const double &amp;penalty_factor=1., const Eigen::MatrixXd &amp;mass_Pk3_T=Eigen::MatrixXd::Zero(1, 1), const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> &amp;weight=<a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>(1.)) const</td></tr>
 <tr class="memdesc:gaa08771eaa0678ce7db39685aab3d1f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the matrix of the (weighted) L2-product as 'computeL2Product', with application of the discrete curl on the left/right/both sides (depending on argument "side").  <a href="group__LADDRCore.html#gaa08771eaa0678ce7db39685aab3d1f2a">More...</a><br /></td></tr>
 <tr class="separator:gaa08771eaa0678ce7db39685aab3d1f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0d7f0b51f050d1936bf33a636659f28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHArDCore3D_1_1LAXDiv_1_1LocalOperators.html">LocalOperators</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaf0d7f0b51f050d1936bf33a636659f28">HArDCore3D::LAXDiv::_compute_cell_divergence_potential</a> (size_t iT)</td></tr>
+<tr class="separator:gaf0d7f0b51f050d1936bf33a636659f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabc15e4cb947556645b56e223814824cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gabc15e4cb947556645b56e223814824cf">HArDCore3D::LAXGrad::LocalOperators::LocalOperators</a> (const Eigen::MatrixXd &amp;_gradient, const Eigen::MatrixXd &amp;_potential)</td></tr>
 <tr class="separator:gabc15e4cb947556645b56e223814824cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4bf86c52d06373c2887ea81fb8f89a29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga4bf86c52d06373c2887ea81fb8f89a29">HArDCore3D::LAXGrad::LAXGrad</a> (const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;lie_algebra, const <a class="el" href="classHArDCore3D_1_1XGrad.html">XGrad</a> &amp;xgrad, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true, std::ostream &amp;output=std::cout)</td></tr>
@@ -296,6 +558,18 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:ga76cf2745ba304d5909d9b59e17c4adc6"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga76cf2745ba304d5909d9b59e17c4adc6">HArDCore3D::LASXCurl::TransferOperators::serendipity</a></td></tr>
+<tr class="separator:ga76cf2745ba304d5909d9b59e17c4adc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0648faf34046cd15825d40b15eeb47f5"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga0648faf34046cd15825d40b15eeb47f5">HArDCore3D::LASXCurl::TransferOperators::extension</a></td></tr>
+<tr class="separator:ga0648faf34046cd15825d40b15eeb47f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e9fa206ea22f371bd2d5f81119b8911"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga9e9fa206ea22f371bd2d5f81119b8911">HArDCore3D::LASXCurl::TransferOperators::reduction</a></td></tr>
+<tr class="separator:ga9e9fa206ea22f371bd2d5f81119b8911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaafe956aa360d99cd80e5cccdc0c65e93"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaafe956aa360d99cd80e5cccdc0c65e93">HArDCore3D::LASXGrad::TransferOperators::serendipity</a></td></tr>
+<tr class="separator:gaafe956aa360d99cd80e5cccdc0c65e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa211e444f05f2c50a524203315530a21"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaa211e444f05f2c50a524203315530a21">HArDCore3D::LASXGrad::TransferOperators::extension</a></td></tr>
+<tr class="separator:gaa211e444f05f2c50a524203315530a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga68a5e1bd01ec55f8b7e52abd72625085"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga68a5e1bd01ec55f8b7e52abd72625085">HArDCore3D::LASXGrad::TransferOperators::reduction</a></td></tr>
+<tr class="separator:ga68a5e1bd01ec55f8b7e52abd72625085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3049acbe78c1bb5fb9959cc12ec417ec"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga3049acbe78c1bb5fb9959cc12ec417ec">HArDCore3D::LAXCurl::LocalOperators::curl</a></td></tr>
 <tr class="separator:ga3049acbe78c1bb5fb9959cc12ec417ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga692976197e302565abfe6ea53dac15ad"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga692976197e302565abfe6ea53dac15ad">HArDCore3D::LAXCurl::LocalOperators::potential</a></td></tr>
@@ -306,16 +580,53 @@ Variables</h2></td></tr>
 <tr class="separator:ga81d0100f6541a28d3d75add87f5cedbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab955d9602d1c41f90f6eb5ef1ee512b9"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gab955d9602d1c41f90f6eb5ef1ee512b9">HArDCore3D::LAXDiv::LocalOperators::potential</a></td></tr>
 <tr class="separator:gab955d9602d1c41f90f6eb5ef1ee512b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a1ab8b334914b4b45412b49dd6a6eb1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga0a1ab8b334914b4b45412b49dd6a6eb1">HArDCore3D::LAXDiv::m_lie_algebra</a></td></tr>
+<tr class="separator:ga0a1ab8b334914b4b45412b49dd6a6eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb1be18a8d6db3c23d84eaeac203437d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1XDiv.html">XDiv</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gacb1be18a8d6db3c23d84eaeac203437d">HArDCore3D::LAXDiv::m_xdiv</a></td></tr>
+<tr class="separator:gacb1be18a8d6db3c23d84eaeac203437d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa69a6bd1344404d08098ecd6e14cd18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaaa69a6bd1344404d08098ecd6e14cd18">HArDCore3D::LAXDiv::m_use_threads</a></td></tr>
+<tr class="separator:gaaa69a6bd1344404d08098ecd6e14cd18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga247b23c5fcc0d18a8a6801f7e1cf24a0"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga247b23c5fcc0d18a8a6801f7e1cf24a0">HArDCore3D::LAXDiv::m_output</a></td></tr>
+<tr class="separator:ga247b23c5fcc0d18a8a6801f7e1cf24a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf250a4da2c9bf23440d2ca5c64648ffd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="structHArDCore3D_1_1LAXDiv_1_1LocalOperators.html">LocalOperators</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaf250a4da2c9bf23440d2ca5c64648ffd">HArDCore3D::LAXDiv::m_cell_operators</a></td></tr>
+<tr class="separator:gaf250a4da2c9bf23440d2ca5c64648ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9743285329382fd9b922177cee669638"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga9743285329382fd9b922177cee669638">HArDCore3D::LAXGrad::LocalOperators::gradient</a></td></tr>
 <tr class="separator:ga9743285329382fd9b922177cee669638"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga73bb1889c41629a822be5964596a6448"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga73bb1889c41629a822be5964596a6448">HArDCore3D::LAXGrad::LocalOperators::potential</a></td></tr>
 <tr class="separator:ga73bb1889c41629a822be5964596a6448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Classes defining the Discrete De Rham sequence for Lie-algebra functions. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="gacc211870202c8800c9e896121d81eab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacc211870202c8800c9e896121d81eab6">&#9670;&nbsp;</a></span>FunctionType <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;Eigen::Vector3d(const Eigen::Vector3d &amp;)&gt; <a class="el" href="group__LADDRCore.html#gacc211870202c8800c9e896121d81eab6">HArDCore3D::LASXCurl::FunctionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3cfb70b6cdd23bd2273bf1af7b1e87eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3cfb70b6cdd23bd2273bf1af7b1e87eb">&#9670;&nbsp;</a></span>FunctionType <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;double(const Eigen::Vector3d &amp;)&gt; <a class="el" href="group__LADDRCore.html#ga3cfb70b6cdd23bd2273bf1af7b1e87eb">HArDCore3D::LASXGrad::FunctionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="gaecbef92c0d82f58b5fea98398f5672c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaecbef92c0d82f58b5fea98398f5672c9">&#9670;&nbsp;</a></span>FunctionType <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaecbef92c0d82f58b5fea98398f5672c9">&#9670;&nbsp;</a></span>FunctionType <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -329,7 +640,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga8b8d7bcc5412c1f13ee667ed55a461c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8b8d7bcc5412c1f13ee667ed55a461c4">&#9670;&nbsp;</a></span>FunctionType <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8b8d7bcc5412c1f13ee667ed55a461c4">&#9670;&nbsp;</a></span>FunctionType <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -343,7 +654,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga0e926dbf5c9b15e6c1077cc204e21dd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0e926dbf5c9b15e6c1077cc204e21dd9">&#9670;&nbsp;</a></span>FunctionType <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e926dbf5c9b15e6c1077cc204e21dd9">&#9670;&nbsp;</a></span>FunctionType <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,8 +667,36 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga2f0be8a26f5e09132d5be25e389499cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f0be8a26f5e09132d5be25e389499cd">&#9670;&nbsp;</a></span>LAFunctionType <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="group__LADDRCore.html#gacc211870202c8800c9e896121d81eab6">FunctionType</a>&gt; <a class="el" href="group__LADDRCore.html#ga2f0be8a26f5e09132d5be25e389499cd">HArDCore3D::LASXCurl::LAFunctionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab30d96b69c36d139f71cdfee3ba6dae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab30d96b69c36d139f71cdfee3ba6dae3">&#9670;&nbsp;</a></span>LAFunctionType <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="group__LADDRCore.html#ga3cfb70b6cdd23bd2273bf1af7b1e87eb">FunctionType</a>&gt; <a class="el" href="group__LADDRCore.html#gab30d96b69c36d139f71cdfee3ba6dae3">HArDCore3D::LASXGrad::LAFunctionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga56d4d6afeb018bafbd088ac9eb555c28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga56d4d6afeb018bafbd088ac9eb555c28">&#9670;&nbsp;</a></span>LAFunctionType <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56d4d6afeb018bafbd088ac9eb555c28">&#9670;&nbsp;</a></span>LAFunctionType <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +710,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaac4662a81a3edb112a2337f40bea422d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaac4662a81a3edb112a2337f40bea422d">&#9670;&nbsp;</a></span>LAFunctionType <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaac4662a81a3edb112a2337f40bea422d">&#9670;&nbsp;</a></span>LAFunctionType <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -385,7 +724,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gadd21e9106aadcc2ecf2d864ac06ba1dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadd21e9106aadcc2ecf2d864ac06ba1dc">&#9670;&nbsp;</a></span>LAFunctionType <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd21e9106aadcc2ecf2d864ac06ba1dc">&#9670;&nbsp;</a></span>LAFunctionType <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -427,6 +766,32 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="gaf0d7f0b51f050d1936bf33a636659f28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf0d7f0b51f050d1936bf33a636659f28">&#9670;&nbsp;</a></span>_compute_cell_divergence_potential()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structHArDCore3D_1_1LAXDiv_1_1LocalOperators.html">LAXDiv::LocalOperators</a> LAXDiv::_compute_cell_divergence_potential </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga0e40822f5f462decf22eb214301aa05f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga0e40822f5f462decf22eb214301aa05f">&#9670;&nbsp;</a></span>basis()</h2>
 
@@ -454,8 +819,64 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga483fe1b95def6939a96ce0836ae80f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga483fe1b95def6939a96ce0836ae80f14">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[1/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">DDRCore::CellBases</a>&amp; HArDCore3D::LASXCurl::cellBases </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return cell bases for cell T. </p>
+
+</div>
+</div>
+<a id="gadad571e6fb187b7626fa0b282d76d3e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadad571e6fb187b7626fa0b282d76d3e6">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[2/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">DDRCore::CellBases</a>&amp; HArDCore3D::LASXGrad::cellBases </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return cell bases for cell T. </p>
+
+</div>
+</div>
 <a id="gaca9399e64f85d955eca96c7ad0d36d22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaca9399e64f85d955eca96c7ad0d36d22">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca9399e64f85d955eca96c7ad0d36d22">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[3/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -483,7 +904,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaeccaa68b92571bba75c1147d5f994c58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeccaa68b92571bba75c1147d5f994c58">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeccaa68b92571bba75c1147d5f994c58">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[4/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -511,7 +932,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaec5dd607cd3d4a154d88fed3a6329980"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaec5dd607cd3d4a154d88fed3a6329980">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec5dd607cd3d4a154d88fed3a6329980">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[5/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -538,8 +959,64 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga6f11d9866d4fa5f53ccf08a0ad2b6ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f11d9866d4fa5f53ccf08a0ad2b6ad5">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">DDRCore::CellBases</a>&amp; HArDCore3D::LASXCurl::cellBases </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return cell bases for the face of index iT. </p>
+
+</div>
+</div>
+<a id="ga6519627287caa0665d2102cc9fbfcbd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6519627287caa0665d2102cc9fbfcbd7">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[7/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1CellBases.html">DDRCore::CellBases</a>&amp; HArDCore3D::LASXGrad::cellBases </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return cell bases for the face of index iT. </p>
+
+</div>
+</div>
 <a id="ga5d5d7a36e623db495739a5c6514a2b3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5d5d7a36e623db495739a5c6514a2b3a">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5d5d7a36e623db495739a5c6514a2b3a">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[8/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -567,7 +1044,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga7a395f381c4865ae94192c5489b07ad9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7a395f381c4865ae94192c5489b07ad9">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7a395f381c4865ae94192c5489b07ad9">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[9/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -595,7 +1072,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga4f8f9e1ff63f73b1c892db9a53aeefe9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4f8f9e1ff63f73b1c892db9a53aeefe9">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f8f9e1ff63f73b1c892db9a53aeefe9">&#9670;&nbsp;</a></span>cellBases() <span class="overload">[10/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -619,6 +1096,118 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return cell bases for the cell of index iT. </p>
+
+</div>
+</div>
+<a id="ga6087b6c7f912af19c5033147eaf562ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6087b6c7f912af19c5033147eaf562ad">&#9670;&nbsp;</a></span>cellCurl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXCurl::cellCurl </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the full curl operator on cell T. </p>
+
+</div>
+</div>
+<a id="ga17b8891a96b8bf5c155b7600ff6648af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17b8891a96b8bf5c155b7600ff6648af">&#9670;&nbsp;</a></span>cellCurl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXCurl::cellCurl </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the full curl operator on the cell of index iT. </p>
+
+</div>
+</div>
+<a id="ga585e62d0079530fb1398abeef698995a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga585e62d0079530fb1398abeef698995a">&#9670;&nbsp;</a></span>cellGradient() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::cellGradient </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the full gradient operator on cell T. </p>
+
+</div>
+</div>
+<a id="ga78c0b6efdffa25e25244c5d91a9c75dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78c0b6efdffa25e25244c5d91a9c75dd">&#9670;&nbsp;</a></span>cellGradient() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::cellGradient </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the full gradient operator on the cell of index iT. </p>
 
 </div>
 </div>
@@ -790,8 +1379,238 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga270159011a635a007c331456abf5eb7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga270159011a635a007c331456abf5eb7d">&#9670;&nbsp;</a></span>cellPotential() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXCurl::cellPotential </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the potential operator on cell T. </p>
+
+</div>
+</div>
+<a id="ga752253b293426b3210f2ea3fffdbd075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga752253b293426b3210f2ea3fffdbd075">&#9670;&nbsp;</a></span>cellPotential() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::cellPotential </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the potential operator on cell T. </p>
+
+</div>
+</div>
+<a id="gab20051acf6ff247c7527614f3a4ca2dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab20051acf6ff247c7527614f3a4ca2dc">&#9670;&nbsp;</a></span>cellPotential() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXCurl::cellPotential </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the potential operator on the cell of index iT. </p>
+
+</div>
+</div>
+<a id="ga142b7065a13ef2198c37e10c9dc26d49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga142b7065a13ef2198c37e10c9dc26d49">&#9670;&nbsp;</a></span>cellPotential() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::cellPotential </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the potential operator on the cell of index iT. </p>
+
+</div>
+</div>
+<a id="ga3fc9b4714c90a51322ae730e83d84337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3fc9b4714c90a51322ae730e83d84337">&#9670;&nbsp;</a></span>computeL2Product() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::LASXCurl::computeL2Product </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>iT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>penalty_factor</em> = <code>1.</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>mass_Pk3_T</em> = <code>Eigen::MatrixXd::Zero(1,1)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> &amp;&#160;</td>
+          <td class="paramname"><em>weight</em> = <code><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>(1.)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the matrix of the (weighted) L2-product. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iT</td><td>index of the cell </td></tr>
+    <tr><td class="paramname">penalty_factor</td><td>pre-factor for stabilisation term </td></tr>
+    <tr><td class="paramname">mass_Pk3_T</td><td>if pre-computed, the mass matrix of (P^k(T))^3; if none is pre-computed, passing Eigen::MatrixXd::Zero(1,1) will force the calculation </td></tr>
+    <tr><td class="paramname">weight</td><td>weight function in the L2 product, defaults to 1 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6e58b6e5182d0db77c3576a040f2eede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6e58b6e5182d0db77c3576a040f2eede">&#9670;&nbsp;</a></span>computeL2Product() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::LASXGrad::computeL2Product </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>iT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>penalty_factor</em> = <code>1.</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>mass_Pk3_T</em> = <code>Eigen::MatrixXd::Zero(1,1)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> &amp;&#160;</td>
+          <td class="paramname"><em>weight</em> = <code><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>(1.)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the matrix of the (weighted) L2-product. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iT</td><td>index of the cell </td></tr>
+    <tr><td class="paramname">penalty_factor</td><td>pre-factor for stabilisation term </td></tr>
+    <tr><td class="paramname">mass_Pk3_T</td><td>if pre-computed, the mass matrix of (P^k(T))^3; if none is pre-computed, passing Eigen::MatrixXd::Zero(1,1) will force the calculation </td></tr>
+    <tr><td class="paramname">weight</td><td>weight function in the L2 product, defaults to 1 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gaa6f17885c3ec26554a9e54b14c4378c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa6f17885c3ec26554a9e54b14c4378c5">&#9670;&nbsp;</a></span>computeL2Product() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa6f17885c3ec26554a9e54b14c4378c5">&#9670;&nbsp;</a></span>computeL2Product() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -841,7 +1660,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gad05e305a92714d93a69d369ce56e15a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad05e305a92714d93a69d369ce56e15a6">&#9670;&nbsp;</a></span>computeL2Product() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gad05e305a92714d93a69d369ce56e15a6">&#9670;&nbsp;</a></span>computeL2Product() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -892,7 +1711,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga6274b4b26e6ce1043b6982dd93c31da5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6274b4b26e6ce1043b6982dd93c31da5">&#9670;&nbsp;</a></span>computeL2Product() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6274b4b26e6ce1043b6982dd93c31da5">&#9670;&nbsp;</a></span>computeL2Product() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -942,8 +1761,73 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga74f291de5bbb2c162b357b52f29b8387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74f291de5bbb2c162b357b52f29b8387">&#9670;&nbsp;</a></span>computeL2ProductCurl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd LASXDiv::computeL2ProductCurl </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>iT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1SXCurl.html">SXCurl</a> &amp;&#160;</td>
+          <td class="paramname"><em>sx_curl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>side</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>penalty_factor</em> = <code>1.</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>mass_Pk3_T</em> = <code>Eigen::MatrixXd::Zero(1,1)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> &amp;&#160;</td>
+          <td class="paramname"><em>weight</em> = <code><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>(1.)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the matrix of the (weighted) L2-product as 'computeL2Product', with application of the discrete serendipity curl on the left/right/both sides (depending on argument "side"). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iT</td><td>index of the cell </td></tr>
+    <tr><td class="paramname">sx_curl</td><td>instance of <a class="el" href="classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator.">SXCurl</a> to access the serendipity curls </td></tr>
+    <tr><td class="paramname">side</td><td>which side (left, right, both) we apply the gradient to </td></tr>
+    <tr><td class="paramname">penalty_factor</td><td>pre-factor for stabilisation term </td></tr>
+    <tr><td class="paramname">mass_Pk3_T</td><td>if pre-computed, the mass matrix of (P^k(T))^3; if none is pre-computed, passing Eigen::MatrixXd::Zero(1,1) will force the calculation </td></tr>
+    <tr><td class="paramname">weight</td><td>weight function in the L2 product, defaults to constant 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gaa08771eaa0678ce7db39685aab3d1f2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa08771eaa0678ce7db39685aab3d1f2a">&#9670;&nbsp;</a></span>computeL2ProductCurl()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa08771eaa0678ce7db39685aab3d1f2a">&#9670;&nbsp;</a></span>computeL2ProductCurl() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1007,8 +1891,73 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gac69d0f379101aa9bb78393058ad14856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac69d0f379101aa9bb78393058ad14856">&#9670;&nbsp;</a></span>computeL2ProductGradient() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd LASXCurl::computeL2ProductGradient </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>iT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1SXGrad.html">SXGrad</a> &amp;&#160;</td>
+          <td class="paramname"><em>sx_grad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>side</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>penalty_factor</em> = <code>1.</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>mass_Pk3_T</em> = <code>Eigen::MatrixXd::Zero(1,1)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a> &amp;&#160;</td>
+          <td class="paramname"><em>weight</em> = <code><a class="el" href="structHArDCore3D_1_1IntegralWeight.html">IntegralWeight</a>(1.)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the matrix of the (weighted) L2-product as 'computeL2Product', with application of the discrete gradient on the left/right/both sides (depending on argument "side"). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iT</td><td>index of the cell </td></tr>
+    <tr><td class="paramname">sx_grad</td><td>instance of <a class="el" href="classHArDCore3D_1_1SXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator.">SXGrad</a> to access the full gradients </td></tr>
+    <tr><td class="paramname">side</td><td>which side (left, right, both) we apply the gradient to </td></tr>
+    <tr><td class="paramname">penalty_factor</td><td>pre-factor for stabilisation term </td></tr>
+    <tr><td class="paramname">mass_Pk3_T</td><td>if pre-computed, the mass matrix of (P^k(T))^3; if none is pre-computed, passing Eigen::MatrixXd::Zero(1,1) will force the calculation </td></tr>
+    <tr><td class="paramname">weight</td><td>weight function in the L2 product, defaults to constant 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga4fa07c247b0faf06d8ef9155e8579e4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4fa07c247b0faf06d8ef9155e8579e4d">&#9670;&nbsp;</a></span>computeL2ProductGradient()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4fa07c247b0faf06d8ef9155e8579e4d">&#9670;&nbsp;</a></span>computeL2ProductGradient() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1072,8 +2021,62 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga4163a08fb0bbfdfe6a37006e0d1faadf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4163a08fb0bbfdfe6a37006e0d1faadf">&#9670;&nbsp;</a></span>degree() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t&amp; HArDCore3D::LASXCurl::degree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the polynomial degree. </p>
+
+</div>
+</div>
+<a id="ga0e72da58f032e9fe5494b78201d3c9a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e72da58f032e9fe5494b78201d3c9a9">&#9670;&nbsp;</a></span>degree() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t&amp; HArDCore3D::LASXGrad::degree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the polynomial degree. </p>
+
+</div>
+</div>
 <a id="gaa527c84aa90f1a0981ac1bbd91e74cc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa527c84aa90f1a0981ac1bbd91e74cc2">&#9670;&nbsp;</a></span>degree() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa527c84aa90f1a0981ac1bbd91e74cc2">&#9670;&nbsp;</a></span>degree() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1100,7 +2103,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga8743e1f3dd391bf50949e2fc6c1fb970"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8743e1f3dd391bf50949e2fc6c1fb970">&#9670;&nbsp;</a></span>degree() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8743e1f3dd391bf50949e2fc6c1fb970">&#9670;&nbsp;</a></span>degree() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1127,7 +2130,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga5dd9116fb7d7ca41da8444f70996609c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5dd9116fb7d7ca41da8444f70996609c">&#9670;&nbsp;</a></span>degree() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5dd9116fb7d7ca41da8444f70996609c">&#9670;&nbsp;</a></span>degree() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1181,8 +2184,176 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga93fefc98e0a33648480fa95b2dd34bce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga93fefc98e0a33648480fa95b2dd34bce">&#9670;&nbsp;</a></span>EcurlCell() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::EcurlCell </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the extension for cell T. </p>
+
+</div>
+</div>
+<a id="gaa27852c13a282c9bb6f04b8768537c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa27852c13a282c9bb6f04b8768537c82">&#9670;&nbsp;</a></span>EcurlCell() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::EcurlCell </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the extension for the cell of index iT. </p>
+
+</div>
+</div>
+<a id="ga48b2135f06fc896a0816292842b7aaae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48b2135f06fc896a0816292842b7aaae">&#9670;&nbsp;</a></span>EcurlFace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::EcurlFace </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the extension for face F. </p>
+
+</div>
+</div>
+<a id="ga5f483807f15c9c9d89474cf9202fb084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f483807f15c9c9d89474cf9202fb084">&#9670;&nbsp;</a></span>EcurlFace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::EcurlFace </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the extension for the face of index iF. </p>
+
+</div>
+</div>
+<a id="ga85e7077a12cb9ea0cb8c33fa3bc24774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85e7077a12cb9ea0cb8c33fa3bc24774">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[1/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">DDRCore::EdgeBases</a>&amp; HArDCore3D::LASXCurl::edgeBases </td>
+          <td>(</td>
+          <td class="paramtype">const Edge &amp;&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return edge bases for edge E. </p>
+
+</div>
+</div>
+<a id="gae27db70cbf4a1ae82f0a9bd49017c555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae27db70cbf4a1ae82f0a9bd49017c555">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[2/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">DDRCore::EdgeBases</a>&amp; HArDCore3D::LASXGrad::edgeBases </td>
+          <td>(</td>
+          <td class="paramtype">const Edge &amp;&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return edge bases for edge E. </p>
+
+</div>
+</div>
 <a id="gae1cb5dbfba658a220243281f5d8a5874"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae1cb5dbfba658a220243281f5d8a5874">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1cb5dbfba658a220243281f5d8a5874">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1210,7 +2381,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaa103cd74c53e163b2f6a3bdaeea0dd49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa103cd74c53e163b2f6a3bdaeea0dd49">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa103cd74c53e163b2f6a3bdaeea0dd49">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1237,8 +2408,64 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gaa4a8015c4ebb5a4e77f7322f2a944ddf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4a8015c4ebb5a4e77f7322f2a944ddf">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[5/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">DDRCore::EdgeBases</a>&amp; HArDCore3D::LASXCurl::edgeBases </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iE</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return edge bases for the edge of index iE. </p>
+
+</div>
+</div>
+<a id="gab2c8219129914ac69718353e9e8f52f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2c8219129914ac69718353e9e8f52f4">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[6/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1EdgeBases.html">DDRCore::EdgeBases</a>&amp; HArDCore3D::LASXGrad::edgeBases </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iE</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return edge bases for the edge of index iE. </p>
+
+</div>
+</div>
 <a id="gad3078fe6f21e9e4f1598facfed9b8d10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad3078fe6f21e9e4f1598facfed9b8d10">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gad3078fe6f21e9e4f1598facfed9b8d10">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1266,7 +2493,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga43778753fa7632ab907659c4a4b7d1f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga43778753fa7632ab907659c4a4b7d1f2">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga43778753fa7632ab907659c4a4b7d1f2">&#9670;&nbsp;</a></span>edgeBases() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1290,6 +2517,62 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return edge bases for the edge of index iE. </p>
+
+</div>
+</div>
+<a id="ga633f6aca0fc668bc53c6ef7863d10e69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga633f6aca0fc668bc53c6ef7863d10e69">&#9670;&nbsp;</a></span>edgeGradient() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::edgeGradient </td>
+          <td>(</td>
+          <td class="paramtype">const Edge &amp;&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the full gradient operator on edge E. </p>
+
+</div>
+</div>
+<a id="ga53210234622a9e9355a53108e63c19cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga53210234622a9e9355a53108e63c19cb">&#9670;&nbsp;</a></span>edgeGradient() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::edgeGradient </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iE</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the full gradient operator on the edge of index iE. </p>
 
 </div>
 </div>
@@ -1349,8 +2632,232 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga15d74dc860e1c1a9e17dbf294835885b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga15d74dc860e1c1a9e17dbf294835885b">&#9670;&nbsp;</a></span>edgePotential() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::edgePotential </td>
+          <td>(</td>
+          <td class="paramtype">const Edge &amp;&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the potential operator on edge E. </p>
+
+</div>
+</div>
+<a id="gaf2ecca6ac55198abe29864acbfe83c1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf2ecca6ac55198abe29864acbfe83c1b">&#9670;&nbsp;</a></span>edgePotential() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::edgePotential </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iE</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the potential operator on the edge of index iE. </p>
+
+</div>
+</div>
+<a id="gab292b5f7109ec2cecfba1b3d32ecfc19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab292b5f7109ec2cecfba1b3d32ecfc19">&#9670;&nbsp;</a></span>EgradCell() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::EgradCell </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the extension for cell T. </p>
+
+</div>
+</div>
+<a id="gab42256bc0a6b3a40df0d32d35e4c4bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab42256bc0a6b3a40df0d32d35e4c4bf8">&#9670;&nbsp;</a></span>EgradCell() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::EgradCell </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the extension for the cell of index iT. </p>
+
+</div>
+</div>
+<a id="gac5d8822209e5b02258883ee64d5f4432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5d8822209e5b02258883ee64d5f4432">&#9670;&nbsp;</a></span>EgradFace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::EgradFace </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the extension for face F. </p>
+
+</div>
+</div>
+<a id="gad444fce53ea80e0c0cb66b8a52c410fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad444fce53ea80e0c0cb66b8a52c410fb">&#9670;&nbsp;</a></span>EgradFace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::EgradFace </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the extension for the face of index iF. </p>
+
+</div>
+</div>
+<a id="ga07cb952ad67ae364cc3da65aa76ef8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga07cb952ad67ae364cc3da65aa76ef8b8">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[1/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">DDRCore::FaceBases</a>&amp; HArDCore3D::LASXCurl::faceBases </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return cell bases for face F. </p>
+
+</div>
+</div>
+<a id="ga928d7e5b8e295a946573e5c0e75b33d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga928d7e5b8e295a946573e5c0e75b33d0">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[2/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">DDRCore::FaceBases</a>&amp; HArDCore3D::LASXGrad::faceBases </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return cell bases for face F. </p>
+
+</div>
+</div>
 <a id="ga4abede871b117c910ba85fc5381e5e3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4abede871b117c910ba85fc5381e5e3d">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4abede871b117c910ba85fc5381e5e3d">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[3/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1378,7 +2885,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga68841c1f74f9d8ff0f2538fcad67c593"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga68841c1f74f9d8ff0f2538fcad67c593">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga68841c1f74f9d8ff0f2538fcad67c593">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[4/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1406,7 +2913,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga923d8748b2de6fbdb009a7f56bf49b4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga923d8748b2de6fbdb009a7f56bf49b4a">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga923d8748b2de6fbdb009a7f56bf49b4a">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[5/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1433,8 +2940,64 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga245232eb9434dab02db541581caa852d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga245232eb9434dab02db541581caa852d">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">DDRCore::FaceBases</a>&amp; HArDCore3D::LASXCurl::faceBases </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return face bases for the face of index iF. </p>
+
+</div>
+</div>
+<a id="gaddf29469ce9e0c7502a60a66428e8d19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaddf29469ce9e0c7502a60a66428e8d19">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[7/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structHArDCore3D_1_1DDRCore_1_1FaceBases.html">DDRCore::FaceBases</a>&amp; HArDCore3D::LASXGrad::faceBases </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return face bases for the face of index iF. </p>
+
+</div>
+</div>
 <a id="ga48dc68d6ba22b1070d9d2eba077208f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga48dc68d6ba22b1070d9d2eba077208f1">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48dc68d6ba22b1070d9d2eba077208f1">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[8/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1462,7 +3025,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gae2cf5b9165e8541aef140353b30721cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae2cf5b9165e8541aef140353b30721cd">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gae2cf5b9165e8541aef140353b30721cd">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[9/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1490,7 +3053,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga023dfafe439eb52255a2f2806f584284"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga023dfafe439eb52255a2f2806f584284">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga023dfafe439eb52255a2f2806f584284">&#9670;&nbsp;</a></span>faceBases() <span class="overload">[10/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1514,6 +3077,118 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return face bases for the face of index iF. </p>
+
+</div>
+</div>
+<a id="gad05483652f4972e0477abb1a8d0d6b03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad05483652f4972e0477abb1a8d0d6b03">&#9670;&nbsp;</a></span>faceCurl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXCurl::faceCurl </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the full curl operator on face F. </p>
+
+</div>
+</div>
+<a id="ga9397753a99e6840106570c812ec3e063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9397753a99e6840106570c812ec3e063">&#9670;&nbsp;</a></span>faceCurl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXCurl::faceCurl </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the full curl operator on the face of index iF. </p>
+
+</div>
+</div>
+<a id="ga6080deb84f24daa43dc5b3d359265b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6080deb84f24daa43dc5b3d359265b22">&#9670;&nbsp;</a></span>faceGradient() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::faceGradient </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the full gradient operator on face F. </p>
+
+</div>
+</div>
+<a id="ga43643d156f59f37fdaef271ba6e785a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga43643d156f59f37fdaef271ba6e785a6">&#9670;&nbsp;</a></span>faceGradient() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::faceGradient </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the full gradient operator on the face of index iF. </p>
 
 </div>
 </div>
@@ -1629,8 +3304,171 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga229284bab8798245ed7966f16be38dde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga229284bab8798245ed7966f16be38dde">&#9670;&nbsp;</a></span>facePotential() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXCurl::facePotential </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the potential operator on face F. </p>
+
+</div>
+</div>
+<a id="ga1ce22db1151975f65b93a53192814754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ce22db1151975f65b93a53192814754">&#9670;&nbsp;</a></span>facePotential() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::facePotential </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the potential operator on face F. </p>
+
+</div>
+</div>
+<a id="ga6b8920eecf1210b72402e552aec58d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b8920eecf1210b72402e552aec58d76">&#9670;&nbsp;</a></span>facePotential() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXCurl::facePotential </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the potential operator on the face of index iF. </p>
+
+</div>
+</div>
+<a id="gaf11caddde66ea874a37db0b3ac0948ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf11caddde66ea874a37db0b3ac0948ea">&#9670;&nbsp;</a></span>facePotential() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd HArDCore3D::LASXGrad::facePotential </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the potential operator on the face of index iF. </p>
+
+</div>
+</div>
+<a id="ga63933ab9549ab0f9a4e90a74504ef13f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63933ab9549ab0f9a4e90a74504ef13f">&#9670;&nbsp;</a></span>interpolate() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd LASXGrad::interpolate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__LADDRCore.html#gab30d96b69c36d139f71cdfee3ba6dae3">LAFunctionType</a> &amp;&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>doe_cell</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>doe_face</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>doe_edge</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interpolator of a continuous function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>The function to interpolate </td></tr>
+    <tr><td class="paramname">doe_cell</td><td>The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used. </td></tr>
+    <tr><td class="paramname">doe_face</td><td>The optional degre of face quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used. </td></tr>
+    <tr><td class="paramname">doe_edge</td><td>The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gaff971b75546e5108b03ef2f00bd53bc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaff971b75546e5108b03ef2f00bd53bc8">&#9670;&nbsp;</a></span>interpolate() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff971b75546e5108b03ef2f00bd53bc8">&#9670;&nbsp;</a></span>interpolate() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1681,7 +3519,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga8e17d6062eb2281275cdaa9577d4aea3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8e17d6062eb2281275cdaa9577d4aea3">&#9670;&nbsp;</a></span>interpolate() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e17d6062eb2281275cdaa9577d4aea3">&#9670;&nbsp;</a></span>interpolate() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1724,8 +3562,59 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gad2efc5016d215b73f10a5cdb3dcda34a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2efc5016d215b73f10a5cdb3dcda34a">&#9670;&nbsp;</a></span>interpolate() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd LASXCurl::interpolate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__LADDRCore.html#ga2f0be8a26f5e09132d5be25e389499cd">LAFunctionType</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>doe_cell</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>doe_face</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>doe_edge</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interpolator of a continuous function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>The function to interpolate </td></tr>
+    <tr><td class="paramname">doe_cell</td><td>The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used. </td></tr>
+    <tr><td class="paramname">doe_face</td><td>The optional degre of face quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used. </td></tr>
+    <tr><td class="paramname">doe_edge</td><td>The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gad5872b00cc1a2f455b73fbbe4a393122"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad5872b00cc1a2f455b73fbbe4a393122">&#9670;&nbsp;</a></span>interpolate() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gad5872b00cc1a2f455b73fbbe4a393122">&#9670;&nbsp;</a></span>interpolate() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1775,6 +3664,186 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gad56d6b4df393c6473a4f03213cd938f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad56d6b4df393c6473a4f03213cd938f5">&#9670;&nbsp;</a></span>LADDRCore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LADDRCore::LADDRCore </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td>
+          <td class="paramname"><em>lie_algebra</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> &amp;&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>K</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_threads</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a id="gaf8c61ad4f6658560b06a68e50714e202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8c61ad4f6658560b06a68e50714e202">&#9670;&nbsp;</a></span>LASXCurl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LASXCurl::LASXCurl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td>
+          <td class="paramname"><em>lie_algebra</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1SXCurl.html">SXCurl</a> &amp;&#160;</td>
+          <td class="paramname"><em>sx_curl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_threads</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a id="ga3943bf09c9a0dba06d56960fa731947e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3943bf09c9a0dba06d56960fa731947e">&#9670;&nbsp;</a></span>LASXDiv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LASXDiv::LASXDiv </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td>
+          <td class="paramname"><em>lie_algebra</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1XDiv.html">XDiv</a> &amp;&#160;</td>
+          <td class="paramname"><em>xdiv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1SXDiv.html">SXDiv</a> &amp;&#160;</td>
+          <td class="paramname"><em>sxdiv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_threads</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<a id="ga86b4f8c226218993ad411699f3dc416e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga86b4f8c226218993ad411699f3dc416e">&#9670;&nbsp;</a></span>LASXGrad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LASXGrad::LASXGrad </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td>
+          <td class="paramname"><em>lie_algebra</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1SXGrad.html">SXGrad</a> &amp;&#160;</td>
+          <td class="paramname"><em>sxgrad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_threads</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
 <a id="ga3460ba61a346924322d490258c41f144"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3460ba61a346924322d490258c41f144">&#9670;&nbsp;</a></span>LAXCurl()</h2>
 
@@ -1814,6 +3883,42 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+
+</div>
+</div>
+<a id="ga80dcab088b935d14aa4b0416ec5238f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga80dcab088b935d14aa4b0416ec5238f5">&#9670;&nbsp;</a></span>LaxcurlI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::VectorXd HArDCore3D::LASXCurl::LaxcurlI </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iG</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1898,6 +4003,114 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+
+</div>
+</div>
+<a id="ga6773deee9a1a8e045b45dfbb0d7e0365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6773deee9a1a8e045b45dfbb0d7e0365">&#9670;&nbsp;</a></span>lieAlg() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a>&amp; HArDCore3D::LADDRCore::lieAlg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the Lie algebra. </p>
+
+</div>
+</div>
+<a id="ga7e12345cff8637d0cfdc5d03a2b72ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e12345cff8637d0cfdc5d03a2b72ac5">&#9670;&nbsp;</a></span>lieAlg() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a>&amp; HArDCore3D::LASXCurl::lieAlg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the Lie algebra. </p>
+
+</div>
+</div>
+<a id="gae02ef8baf53dc136a77df5c66b9e0e8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae02ef8baf53dc136a77df5c66b9e0e8f">&#9670;&nbsp;</a></span>lieAlg() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a>&amp; HArDCore3D::LASXDiv::lieAlg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the Lie algebra. </p>
+
+</div>
+</div>
+<a id="ga942f7dcb136c9ed04e627be7e89aafc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga942f7dcb136c9ed04e627be7e89aafc3">&#9670;&nbsp;</a></span>lieAlg() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a>&amp; HArDCore3D::LASXGrad::lieAlg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the Lie algebra. </p>
 
 </div>
 </div>
@@ -2176,8 +4389,62 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga0a0e05509ae834ad751344d862ae59a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a0e05509ae834ad751344d862ae59a6">&#9670;&nbsp;</a></span>mesh() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a>&amp; HArDCore3D::LASXCurl::mesh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the mesh. </p>
+
+</div>
+</div>
+<a id="ga646a0a5e34def85ef9a6223f7c1d0d71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga646a0a5e34def85ef9a6223f7c1d0d71">&#9670;&nbsp;</a></span>mesh() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a>&amp; HArDCore3D::LASXGrad::mesh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the mesh. </p>
+
+</div>
+</div>
 <a id="gac5a4f1759deed843111732c809fc06e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac5a4f1759deed843111732c809fc06e9">&#9670;&nbsp;</a></span>mesh() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5a4f1759deed843111732c809fc06e9">&#9670;&nbsp;</a></span>mesh() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2204,7 +4471,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gabe40bfff95397588438f4ec3638fa9cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabe40bfff95397588438f4ec3638fa9cc">&#9670;&nbsp;</a></span>mesh() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe40bfff95397588438f4ec3638fa9cc">&#9670;&nbsp;</a></span>mesh() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2231,7 +4498,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaabbf9ab943cea8b8d8aadaea37df15e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaabbf9ab943cea8b8d8aadaea37df15e4">&#9670;&nbsp;</a></span>mesh() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaabbf9ab943cea8b8d8aadaea37df15e4">&#9670;&nbsp;</a></span>mesh() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2254,6 +4521,536 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the mesh. </p>
+
+</div>
+</div>
+<a id="ga85217548bdfd69242e37173feccbe917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85217548bdfd69242e37173feccbe917">&#9670;&nbsp;</a></span>P2k3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__DDRCore.html#ga93b7460f638eb1b520354073e72535cc">DDRCore::Poly3BasisCellType</a>&amp; HArDCore3D::LADDRCore::P2k3 </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return cell bases for element iT. </p>
+
+</div>
+</div>
+<a id="gae055d18efc496d8a1acb025733a37c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae055d18efc496d8a1acb025733a37c75">&#9670;&nbsp;</a></span>RcurlCell() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::RcurlCell </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the reduction for cell T. </p>
+
+</div>
+</div>
+<a id="gac09899407551a6210e184c4464258371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac09899407551a6210e184c4464258371">&#9670;&nbsp;</a></span>RcurlCell() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::RcurlCell </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the reduction for the cell of index iT. </p>
+
+</div>
+</div>
+<a id="ga482e9b1f2e0b094284b5809da1317fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga482e9b1f2e0b094284b5809da1317fa2">&#9670;&nbsp;</a></span>RcurlFace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::RcurlFace </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return cell reduction for cell T. </p>
+
+</div>
+</div>
+<a id="gaa29a2d7abd8292591357744ceb2e9a7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa29a2d7abd8292591357744ceb2e9a7b">&#9670;&nbsp;</a></span>RcurlFace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::RcurlFace </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the reduction for the face of index iF. </p>
+
+</div>
+</div>
+<a id="gaedb43d8b39878e803493805cc462317b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaedb43d8b39878e803493805cc462317b">&#9670;&nbsp;</a></span>RgradCell() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::RgradCell </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the reduction for cell T. </p>
+
+</div>
+</div>
+<a id="ga0b36e7aaa6233e1735e2f554cb3d7111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0b36e7aaa6233e1735e2f554cb3d7111">&#9670;&nbsp;</a></span>RgradCell() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::RgradCell </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the reduction for the cell of index iT. </p>
+
+</div>
+</div>
+<a id="ga67da8796974bc8b79c8361cf7978c6f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga67da8796974bc8b79c8361cf7978c6f7">&#9670;&nbsp;</a></span>RgradFace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::RgradFace </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return cell reduction for cell T. </p>
+
+</div>
+</div>
+<a id="gae94f490d50a6a709a5ce76c9ed9ff593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae94f490d50a6a709a5ce76c9ed9ff593">&#9670;&nbsp;</a></span>RgradFace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::RgradFace </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the reduction for the face of index iF. </p>
+
+</div>
+</div>
+<a id="gafb7c3a298b8237a280a55d7fb72c1eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafb7c3a298b8237a280a55d7fb72c1eaa">&#9670;&nbsp;</a></span>ScurlCell() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::ScurlCell </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the serendipity reconstruction for cell T. </p>
+
+</div>
+</div>
+<a id="ga8c1227164f66756975a96cd3df8302bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8c1227164f66756975a96cd3df8302bc">&#9670;&nbsp;</a></span>ScurlCell() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::ScurlCell </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the serendipity reconstruction for the cell of index iT. </p>
+
+</div>
+</div>
+<a id="ga2e0d1f923e06e18a06449d204cb6086d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2e0d1f923e06e18a06449d204cb6086d">&#9670;&nbsp;</a></span>ScurlFace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::ScurlFace </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the serendipity reconstruction for face F. </p>
+
+</div>
+</div>
+<a id="ga2370e761bd432b6d0fcf44c6db6819e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2370e761bd432b6d0fcf44c6db6819e4">&#9670;&nbsp;</a></span>ScurlFace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXCurl::ScurlFace </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the serendipity reconstruction for the face of index iF. </p>
+
+</div>
+</div>
+<a id="gac4d5892a9d91dda701b5b42297387e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac4d5892a9d91dda701b5b42297387e5d">&#9670;&nbsp;</a></span>serPro() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classHArDCore3D_1_1SerendipityProblem.html">SerendipityProblem</a>&amp; HArDCore3D::LASXCurl::serPro </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the serendipity operators. </p>
+
+</div>
+</div>
+<a id="gae232f319c551d4464a1765d0ae860ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae232f319c551d4464a1765d0ae860ba3">&#9670;&nbsp;</a></span>serPro() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classHArDCore3D_1_1SerendipityProblem.html">SerendipityProblem</a>&amp; HArDCore3D::LASXGrad::serPro </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the serendipity operators. </p>
+
+</div>
+</div>
+<a id="gadb9192fadb7a6bea205cfc63a71d5446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadb9192fadb7a6bea205cfc63a71d5446">&#9670;&nbsp;</a></span>SgradCell() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::SgradCell </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the serendipity reconstruction for cell T. </p>
+
+</div>
+</div>
+<a id="ga70a2aa4e091d6cb3edbd754c1244075e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga70a2aa4e091d6cb3edbd754c1244075e">&#9670;&nbsp;</a></span>SgradCell() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::SgradCell </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iT</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the serendipity reconstruction for the cell of index iT. </p>
+
+</div>
+</div>
+<a id="ga48d2c4c7566616731f2f4e102604c8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48d2c4c7566616731f2f4e102604c8b0">&#9670;&nbsp;</a></span>SgradFace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::SgradFace </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the serendipity reconstruction for face F. </p>
+
+</div>
+</div>
+<a id="gaf9d003bb6422cde2e7d9eec9dcd33bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf9d003bb6422cde2e7d9eec9dcd33bdb">&#9670;&nbsp;</a></span>SgradFace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Eigen::MatrixXd&amp; HArDCore3D::LASXGrad::SgradFace </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iF</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the serendipity reconstruction for the face of index iF. </p>
 
 </div>
 </div>
@@ -2281,6 +5078,106 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the structure constants of the Lie algebra. </p>
+
+</div>
+</div>
+<a id="ga96aee755c1d55da296f84cfaa3b1c2b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96aee755c1d55da296f84cfaa3b1c2b3">&#9670;&nbsp;</a></span>TransferOperators() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HArDCore3D::LASXCurl::TransferOperators::TransferOperators </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>_serendipity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>_extension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>_reduction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_serendipity</td><td>Serendipity reconstruction </td></tr>
+    <tr><td class="paramname">_extension</td><td>Extension SXCurl-&gt;<a class="el" href="classHArDCore3D_1_1XCurl.html" title="Discrete Hcurl space: local operators, L2 product and global interpolator.">XCurl</a> </td></tr>
+    <tr><td class="paramname">_reduction</td><td>Reduction XCurl-&gt;<a class="el" href="classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator.">SXCurl</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga877a35995e3ecbee10f27df5c7bb9cf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga877a35995e3ecbee10f27df5c7bb9cf9">&#9670;&nbsp;</a></span>TransferOperators() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HArDCore3D::LASXGrad::TransferOperators::TransferOperators </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>_serendipity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>_extension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>_reduction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_serendipity</td><td>Serendipity reconstruction </td></tr>
+    <tr><td class="paramname">_extension</td><td>Extension SXCurl-&gt;<a class="el" href="classHArDCore3D_1_1XCurl.html" title="Discrete Hcurl space: local operators, L2 product and global interpolator.">XCurl</a> </td></tr>
+    <tr><td class="paramname">_reduction</td><td>Reduction XCurl-&gt;<a class="el" href="classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator.">SXCurl</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2354,6 +5251,34 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga0648faf34046cd15825d40b15eeb47f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0648faf34046cd15825d40b15eeb47f5">&#9670;&nbsp;</a></span>extension <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::LASXCurl::TransferOperators::extension</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa211e444f05f2c50a524203315530a21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa211e444f05f2c50a524203315530a21">&#9670;&nbsp;</a></span>extension <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::LASXGrad::TransferOperators::extension</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga9743285329382fd9b922177cee669638"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9743285329382fd9b922177cee669638">&#9670;&nbsp;</a></span>gradient</h2>
 
@@ -2364,6 +5289,116 @@ Variables</h2></td></tr>
           <td class="memname">Eigen::MatrixXd HArDCore3D::LAXGrad::LocalOperators::gradient</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaf250a4da2c9bf23440d2ca5c64648ffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf250a4da2c9bf23440d2ca5c64648ffd">&#9670;&nbsp;</a></span>m_cell_operators</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="structHArDCore3D_1_1LAXDiv_1_1LocalOperators.html">LocalOperators</a>&gt; &gt; HArDCore3D::LAXDiv::m_cell_operators</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0a1ab8b334914b4b45412b49dd6a6eb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a1ab8b334914b4b45412b49dd6a6eb1">&#9670;&nbsp;</a></span>m_lie_algebra</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a>&amp; HArDCore3D::LAXDiv::m_lie_algebra</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga247b23c5fcc0d18a8a6801f7e1cf24a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga247b23c5fcc0d18a8a6801f7e1cf24a0">&#9670;&nbsp;</a></span>m_output</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; HArDCore3D::LAXDiv::m_output</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaaa69a6bd1344404d08098ecd6e14cd18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaa69a6bd1344404d08098ecd6e14cd18">&#9670;&nbsp;</a></span>m_use_threads</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HArDCore3D::LAXDiv::m_use_threads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gacb1be18a8d6db3c23d84eaeac203437d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb1be18a8d6db3c23d84eaeac203437d">&#9670;&nbsp;</a></span>m_xdiv</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classHArDCore3D_1_1XDiv.html">XDiv</a>&amp; HArDCore3D::LAXDiv::m_xdiv</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -2404,6 +5439,62 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">Eigen::MatrixXd HArDCore3D::LAXGrad::LocalOperators::potential</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga9e9fa206ea22f371bd2d5f81119b8911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e9fa206ea22f371bd2d5f81119b8911">&#9670;&nbsp;</a></span>reduction <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::LASXCurl::TransferOperators::reduction</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga68a5e1bd01ec55f8b7e52abd72625085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga68a5e1bd01ec55f8b7e52abd72625085">&#9670;&nbsp;</a></span>reduction <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::LASXGrad::TransferOperators::reduction</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga76cf2745ba304d5909d9b59e17c4adc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76cf2745ba304d5909d9b59e17c4adc6">&#9670;&nbsp;</a></span>serendipity <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::LASXCurl::TransferOperators::serendipity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaafe956aa360d99cd80e5cccdc0c65e93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaafe956aa360d99cd80e5cccdc0c65e93">&#9670;&nbsp;</a></span>serendipity <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd HArDCore3D::LASXGrad::TransferOperators::serendipity</td>
         </tr>
       </table>
 </div><div class="memdoc">

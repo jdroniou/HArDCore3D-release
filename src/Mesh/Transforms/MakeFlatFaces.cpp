@@ -3,7 +3,7 @@
 #include <mesh_builder.hpp>
 #include <iostream>
 #include <iomanip>
-
+#include <boost/program_options.hpp>
 
 /*!
  * \addtogroup TransformMeshes
@@ -64,138 +64,158 @@ size_t coplanar_idx(const std::vector<VectorRd> & points)
 }
 
 
+//*** Default mesh
+const std::string mesh_dir = "../../../meshes/";
+std::string default_mesh = mesh_dir + "Cubic-Cells/RF_fmt/gcube_2x2x2";
+
 /// Main executable (MakeFlatFaces) to try and create a mesh with flat faces (by subdivision)
 int main(const int argc, const char *argv[])
 {
-    if (argc == 1){
-      std::cout << "Attempts to make the faces flat by splitting them, writes output in RF files.\n Usage: make-flat-faces <name of mesh>\n\n This is not a completely full-proof method, it will fail if the faces have re-entrant corners etc. Read the source, section 'Algorithm'." << std::endl;
-      exit(0);
-    }
-    std::cout << "Mesh: " << argv[1] << std::endl;
-    const std::string mesh_file = argv[1];
+  // Program options
+  boost::program_options::options_description desc("Allowed options");
+  desc.add_options()
+    ("help,h", "Make faces flat by splitting them; not completely full-proof, needs to be checked afterwards.")
+    ("mesh,m", boost::program_options::value<std::string>(), "Input mesh file (complete path but without extension)")
+    ("outfile,o", boost::program_options::value<std::string>(), "Output mesh file (without extension)");
 
-    // Build the mesh    
-    HArDCore3D::MeshBuilder meshbuilder = HArDCore3D::MeshBuilder(mesh_file);
-    std::unique_ptr<HArDCore3D::Mesh> mesh_ptr = meshbuilder.build_the_mesh();
+  boost::program_options::variables_map vm;
+  boost::program_options::store(boost::program_options::parse_command_line(argc, argv, desc), vm);
+  boost::program_options::notify(vm);
 
-    std::cout << mesh_ptr->n_faces() << " faces in the mesh. Starting the splitting..." << std::endl;
-    size_t nb_faces_split = 0;
-    // Required information to write the RF files
-    std::vector<VectorRd> nodes;       // List of node coordinates
-    std::vector<std::vector<std::vector<size_t>>> cell_faces; // Each cell is described by a list of face, with each face being a list of nodes
-    
-    // Fill in nodes with existing vertices (none will be removed)
-    for (size_t iV = 0; iV < mesh_ptr->n_vertices(); iV++){
-      nodes.push_back(mesh_ptr->vertex(iV)->coords());
-    }
-    
-    // For each face, we create flat subfaces (identified by their node indices)
-    std::vector<std::vector<std::vector<size_t>>> flat_face(mesh_ptr->n_faces());
-    for (size_t iF = 0; iF < mesh_ptr->n_faces(); ++iF){
-      const Face * F = mesh_ptr->face(iF);
-            
-      if (F->is_flat()){
-        // Face is flat, only one subface
-        flat_face[iF].resize(1);
-        flat_face[iF][0].resize(F->n_vertices());
-        for (size_t iV=0; iV < F->n_vertices(); ++iV){
-          flat_face[iF][0][iV] = F->vertex(iV)->global_index();
-        }
-      }else{
-        nb_faces_split++;
-        // ALGORITHM:
-        // The face is not flat we cut it by the following process:
-        //    - Starting from the first vertex, we find the maximum number of vertices that are co-planar
-        //    - We use those to create a subface
-        //    - Then we re-start from the last vertex taken to form that subface.
-
-        // List of coordinates of vertices of F, the last one repeated at the end to loop
-        std::vector<VectorRd> coords_vertices_F;
-        for (size_t iV = 0; iV < F->n_vertices(); iV++){
-          coords_vertices_F.push_back(F->vertex(iV)->coords());
-        } 
-        coords_vertices_F.push_back(F->vertex(0)->coords());
-
-        // We create subfaces starting from one vertex (at position p1), grabbing the maximum number of vertices from p1 that
-        // are coplanar, and creating the subface from them; then we re-start from this position
-        size_t p1=0;
-        do {
-          std::vector<VectorRd> tail_coords_vertices_F(coords_vertices_F.begin()+p1, coords_vertices_F.end());
-          size_t N = coplanar_idx(tail_coords_vertices_F);
-          
-          if (N == coords_vertices_F.size()){
-            // All vertices of F are coplanar; this shouldn't happen (F has been identified as non-flat), but just in case,
-            // we need to reduce N to avoid counting the first vertex twice (as it appears at the start and end of coords_vertices_F
-            N--;
-          }
-          
-          std::vector<size_t> subface(N);
-          for (size_t i=0; i<N; ++i){
-            subface[i] = F->vertex( (p1 + i) % F->n_vertices())->global_index();
-          }
-          flat_face[iF].push_back(subface);
-          p1 += N-1;
-        } while (p1 < coords_vertices_F.size()-2);
-        
-      }
-    }    
-    
-    std::cout << nb_faces_split << " faces have been split" << std::endl << std::endl;
-    
-    // Create the vectors of cell_faces
-    cell_faces.resize(mesh_ptr->n_cells());
-    for (size_t iT = 0; iT < mesh_ptr->n_cells(); ++iT){
-      const Cell * T = mesh_ptr->cell(iT);
-      for (size_t iF = 0; iF < T->n_faces(); ++iF){
-        size_t global_iF = T->face(iF)->global_index();
-        for (size_t subF = 0; subF < flat_face[global_iF].size(); ++subF){
-          cell_faces[iT].push_back(flat_face[global_iF][subF]);
-        }
-      }
-    }
-  
-    //------
-    // File to write RF
-    //------
-    std::string filename_core = mesh_file.substr(mesh_file.find_last_of("/\\") + 1);
-    std::string filename_node = filename_core + "-flat.node";
-    std::string filename_ele = filename_core + "-flat.ele";
-
-    // Write .node and .ele files
-    std::cout << "Writing .node file" << std::endl;
-    std::ofstream outNode(filename_node.c_str());
-    outNode << "# *.node file of 3D-mesh in REGN_FACE format" << std::endl;
-    outNode << "# " << filename_node.c_str() << " created from " << filename_core << std::endl;
-    outNode << nodes.size() << " " << "3  0  0" << std::endl;
-    for (size_t iV = 0; iV < nodes.size(); iV++){
-      outNode << std::setprecision(16) << iV;
-      outNode << " ";
-      outNode << std::setprecision(16) << nodes[iV](0);
-      outNode << " ";
-      outNode << std::setprecision(16) << nodes[iV](1);
-      outNode << " ";
-      outNode << std::setprecision(16) << nodes[iV](2);
-      outNode << std::endl;
-    }
-    outNode.close();
-
-    // write .ele file
-    std::cout << "Writing .ele file" << std::endl;
-    std::ofstream outEle(filename_ele.c_str());
-    outEle << "# *.ele file of 3D-mesh in REGN_FACE format" << std::endl;
-    outEle << "# " << filename_ele.c_str() << " created from " << filename_core << std::endl;
-    outEle << cell_faces.size() << " " << " 0" << std::endl;
-    for (size_t iT = 0; iT < cell_faces.size(); ++iT){
-      outEle << iT << " " << cell_faces[iT].size() << std::endl;
-      for (size_t iF = 0; iF < cell_faces[iT].size(); ++iF){
-        outEle << iF << " " << cell_faces[iT][iF].size() << " ";
-        for (size_t iV = 0; iV < cell_faces[iT][iF].size(); ++iV){
-          outEle << cell_faces[iT][iF][iV] << " ";
-        }
-        outEle << std::endl;
-      }
-    }
-    outEle.close();
-        
+  // Display the help options
+  if (vm.count("help")) {
+    std::cout << desc << std::endl;
     return 0;
+  }
+
+  // Select the mesh 
+  std::string mesh_file = (vm.count("mesh") ? vm["mesh"].as<std::string>() : default_mesh);
+
+  std::cout << "Mesh: " << mesh_file << std::endl;
+
+  // Build the mesh    
+  HArDCore3D::MeshBuilder meshbuilder = HArDCore3D::MeshBuilder(mesh_file);
+  std::unique_ptr<HArDCore3D::Mesh> mesh_ptr = meshbuilder.build_the_mesh();
+
+  std::cout << mesh_ptr->n_faces() << " faces in the mesh. Starting the splitting..." << std::endl;
+  size_t nb_faces_split = 0;
+  // Required information to write the RF files
+  std::vector<VectorRd> nodes;       // List of node coordinates
+  std::vector<std::vector<std::vector<size_t>>> cell_faces; // Each cell is described by a list of face, with each face being a list of nodes
+  
+  // Fill in nodes with existing vertices (none will be removed)
+  for (size_t iV = 0; iV < mesh_ptr->n_vertices(); iV++){
+    nodes.push_back(mesh_ptr->vertex(iV)->coords());
+  }
+  
+  // For each face, we create flat subfaces (identified by their node indices)
+  std::vector<std::vector<std::vector<size_t>>> flat_face(mesh_ptr->n_faces());
+  for (size_t iF = 0; iF < mesh_ptr->n_faces(); ++iF){
+    const Face * F = mesh_ptr->face(iF);
+          
+    if (F->is_flat()){
+      // Face is flat, only one subface
+      flat_face[iF].resize(1);
+      flat_face[iF][0].resize(F->n_vertices());
+      for (size_t iV=0; iV < F->n_vertices(); ++iV){
+        flat_face[iF][0][iV] = F->vertex(iV)->global_index();
+      }
+    }else{
+      nb_faces_split++;
+      // ALGORITHM:
+      // The face is not flat we cut it by the following process:
+      //    - Starting from the first vertex, we find the maximum number of vertices that are co-planar
+      //    - We use those to create a subface
+      //    - Then we re-start from the last vertex taken to form that subface.
+
+      // List of coordinates of vertices of F, the last one repeated at the end to loop
+      std::vector<VectorRd> coords_vertices_F;
+      for (size_t iV = 0; iV < F->n_vertices(); iV++){
+        coords_vertices_F.push_back(F->vertex(iV)->coords());
+      } 
+      coords_vertices_F.push_back(F->vertex(0)->coords());
+
+      // We create subfaces starting from one vertex (at position p1), grabbing the maximum number of vertices from p1 that
+      // are coplanar, and creating the subface from them; then we re-start from this position
+      size_t p1=0;
+      do {
+        std::vector<VectorRd> tail_coords_vertices_F(coords_vertices_F.begin()+p1, coords_vertices_F.end());
+        size_t N = coplanar_idx(tail_coords_vertices_F);
+        
+        if (N == coords_vertices_F.size()){
+          // All vertices of F are coplanar; this shouldn't happen (F has been identified as non-flat), but just in case,
+          // we need to reduce N to avoid counting the first vertex twice (as it appears at the start and end of coords_vertices_F
+          N--;
+        }
+        
+        std::vector<size_t> subface(N);
+        for (size_t i=0; i<N; ++i){
+          subface[i] = F->vertex( (p1 + i) % F->n_vertices())->global_index();
+        }
+        flat_face[iF].push_back(subface);
+        p1 += N-1;
+      } while (p1 < coords_vertices_F.size()-2);
+      
+    }
+  }    
+  
+  std::cout << nb_faces_split << " faces have been split" << std::endl << std::endl;
+  
+  // Create the vectors of cell_faces
+  cell_faces.resize(mesh_ptr->n_cells());
+  for (size_t iT = 0; iT < mesh_ptr->n_cells(); ++iT){
+    const Cell * T = mesh_ptr->cell(iT);
+    for (size_t iF = 0; iF < T->n_faces(); ++iF){
+      size_t global_iF = T->face(iF)->global_index();
+      for (size_t subF = 0; subF < flat_face[global_iF].size(); ++subF){
+        cell_faces[iT].push_back(flat_face[global_iF][subF]);
+      }
+    }
+  }
+
+  //------
+  // File to write RF
+  //------
+  const std::string original_meshfile = mesh_file.substr(mesh_file.find_last_of("/\\") + 1);
+  const std::string filename_core = (vm.count("outfile") ? vm["outfile"].as<std::string>() : original_meshfile + "-flat");
+  const std::string filename_node = filename_core + ".node";
+  const std::string filename_ele = filename_core + ".ele";
+
+  // Write .node and .ele files
+  std::cout << "Writing .node file" << std::endl;
+  std::ofstream outNode(filename_node.c_str());
+  outNode << "# *.node file of 3D-mesh in REGN_FACE format" << std::endl;
+  outNode << "# " << filename_node.c_str() << " created from " << original_meshfile << std::endl;
+  outNode << nodes.size() << " " << "3  0  0" << std::endl;
+  for (size_t iV = 0; iV < nodes.size(); iV++){
+    outNode << std::setprecision(16) << iV;
+    outNode << " ";
+    outNode << std::setprecision(16) << nodes[iV](0);
+    outNode << " ";
+    outNode << std::setprecision(16) << nodes[iV](1);
+    outNode << " ";
+    outNode << std::setprecision(16) << nodes[iV](2);
+    outNode << std::endl;
+  }
+  outNode.close();
+
+  // write .ele file
+  std::cout << "Writing .ele file" << std::endl;
+  std::ofstream outEle(filename_ele.c_str());
+  outEle << "# *.ele file of 3D-mesh in REGN_FACE format" << std::endl;
+  outEle << "# " << filename_ele.c_str() << " created from " << original_meshfile << std::endl;
+  outEle << cell_faces.size() << " " << " 0" << std::endl;
+  for (size_t iT = 0; iT < cell_faces.size(); ++iT){
+    outEle << iT << " " << cell_faces[iT].size() << std::endl;
+    for (size_t iF = 0; iF < cell_faces[iT].size(); ++iF){
+      outEle << iF << " " << cell_faces[iT][iF].size() << " ";
+      for (size_t iV = 0; iV < cell_faces[iT][iF].size(); ++iV){
+        outEle << cell_faces[iT][iF][iV] << " ";
+      }
+      outEle << std::endl;
+    }
+  }
+  outEle.close();
+      
+  return 0;
 }

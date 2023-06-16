@@ -317,7 +317,7 @@ std::unique_ptr<Mesh> MeshBuilder::build_the_mesh()
             std::cout << "etc. ";
           }
           std::cout << "(" << non_flat_faces.size() << " faces in total)" << std::endl;
-          std::cout << "  You might want to consider using FlattenFaces (in the repository) to solve that issue." << std::endl << std::endl;
+          std::cout << "  You might want to consider using MakeFlatFaces (in the repository) to solve that issue." << std::endl << std::endl;
         }
 
         return mesh;

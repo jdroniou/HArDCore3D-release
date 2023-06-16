@@ -1,0 +1,6 @@
+<map id="HArDCore3D::LASXDiv" name="HArDCore3D::LASXDiv">
+<area shape="rect" id="node1" title="Discrete Serendipity Hdiv space: local operators, L2 product and global interpolator." alt="" coords="29,229,192,256"/>
+<area shape="rect" id="node2" href="$classHArDCore3D_1_1LAXDiv.html" title="Discrete Lie algebra valued Hdiv space: local operators, L2 product and global interpolator." alt="" coords="34,155,187,181"/>
+<area shape="rect" id="node3" href="$classHArDCore3D_1_1GlobalDOFSpace.html" title="Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei..." alt="" coords="5,80,216,107"/>
+<area shape="rect" id="node4" href="$classHArDCore3D_1_1LocalDOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="9,5,213,32"/>
+</map>

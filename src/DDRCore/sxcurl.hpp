@@ -58,6 +58,11 @@ namespace HArDCore3D
       return m_ddr_core.degree();
     }
 
+    const SerendipityProblem & serPro() const
+    {
+      return m_ser_pro;
+    }
+
     /// Interpolator of a continuous function
     Eigen::VectorXd interpolate(
           const FunctionType & v, ///< The function to interpolate

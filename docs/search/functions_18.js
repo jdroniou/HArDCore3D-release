@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['yangmills_2184',['YangMills',['../group__DDR__yangmills.html#gad4dbf0d3a0f7b335667d296518aa1552',1,'HArDCore3D::YangMills']]],
-  ['yangmillsnorms_2185',['YangMillsNorms',['../group__DDR__yangmills.html#ga34f22b330c821f95df8ef0bfb1096427',1,'HArDCore3D::YangMillsNorms']]],
-  ['yq_2186',['yq',['../group__Quadratures.html#gac272eee335dc95a46787e1a054b38cb7',1,'HArDCore3D::QuadRuleEdge::yq()'],['../group__Quadratures.html#ga0dffade47ba012f57c7ca552570e2119',1,'HArDCore3D::QuadRuleTetra::yq()'],['../group__Quadratures.html#ga0aa8f08c87bc5b2bc8180c149e16a4c2',1,'HArDCore3D::QuadRuleTriangle::yq()']]]
+  ['yangmills_2299',['YangMills',['../group__DDR__yangmills.html#gad4dbf0d3a0f7b335667d296518aa1552',1,'HArDCore3D::YangMills::YangMills(const DDRCore &amp;ddrcore, const LieAlgebra &amp;liealgebra, bool use_threads, std::ostream &amp;output=std::cout)'],['../group__SDDR__yangmills.html#gafd5d2168101b8cf861168d149f27fc5f',1,'HArDCore3D::YangMills::YangMills(const DDRCore &amp;ddrcore, const LADDRCore &amp;laddrcore, const LieAlgebra &amp;liealgebra, size_t nonlinear_discretisation, bool use_threads, std::ostream &amp;output=std::cout)']]],
+  ['yangmillsnorms_2300',['YangMillsNorms',['../group__DDR__yangmills.html#ga34f22b330c821f95df8ef0bfb1096427',1,'HArDCore3D::YangMillsNorms::YangMillsNorms(double norm_E, double norm_A, double norm_lambda)'],['../group__SDDR__yangmills.html#ga34f22b330c821f95df8ef0bfb1096427',1,'HArDCore3D::YangMillsNorms::YangMillsNorms(double norm_E, double norm_A, double norm_lambda)']]],
+  ['yq_2301',['yq',['../group__Quadratures.html#gac272eee335dc95a46787e1a054b38cb7',1,'HArDCore3D::QuadRuleEdge::yq()'],['../group__Quadratures.html#ga0dffade47ba012f57c7ca552570e2119',1,'HArDCore3D::QuadRuleTetra::yq()'],['../group__Quadratures.html#ga0aa8f08c87bc5b2bc8180c149e16a4c2',1,'HArDCore3D::QuadRuleTriangle::yq()']]]
 ];

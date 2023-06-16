@@ -2,9 +2,17 @@
 \label{group__DDR__yangmills}\index{DDR\_yangmills@{DDR\_yangmills}}
 
 
-Implementation of the DDR scheme for the Yang-\/Mills problem.  
+Implementation of the lowest order DDR scheme for the Yang-\/Mills problem.  
 
 
+Collaboration diagram for DDR\+\_\+yangmills\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__DDR__yangmills}
+\end{center}
+\end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -67,12 +75,12 @@ void \mbox{\hyperlink{group__DDR__yangmills_ga0c68f3a586499131815b4db280f6d5bd}{
 \begin{DoxyCompactList}\small\item\em Adds boundary condition for chosen solution to the system vector. \end{DoxyCompactList}\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDR__yangmills_gab861214e7d59f4a352cc119932ccd208}{HAr\+DCore3\+D\+::\+Yang\+Mills\+::compute\+Initial\+Conditions}} (const Eigen\+::\+Matrix\+Xd \&Eh, const Eigen\+::\+Matrix\+Xd \&Ah, const double nonlinear\+\_\+coeff, const size\+\_\+t solver)
 \begin{DoxyCompactList}\small\item\em Computes the projected initial conditions that satisfy the constraint. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDR__yangmills_ga137ce38b721fa63ec052802cc37891a9}{HAr\+DCore3\+D\+::\+Yang\+Mills\+::eps\+Bkt\+\_\+v}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&v) const
-\begin{DoxyCompactList}\small\item\em Calculates the matrix of Hstar\mbox{[}v,.\mbox{]} in element index iT. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDR__yangmills_gadb5ef41fbc8ed9ad41589ce8ac99865f}{HAr\+DCore3\+D\+::\+Yang\+Mills\+::eps\+Bkt\+\_\+v}} (size\+\_\+t iT, boost\+::multi\+\_\+array$<$ double, 3 $>$ \&ebkt\+\_\+T, const Eigen\+::\+Vector\+Xd \&v) const
+\begin{DoxyCompactList}\small\item\em Calculates the matrix of $\ast$\mbox{[}v,.\mbox{]}$^\wedge$div in element index iT. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDR__yangmills_ga3730fbcd2c9fae4eee0b7a12ff07c169}{HAr\+DCore3\+D\+::\+Yang\+Mills\+::\+L2v\+\_\+\+Bkt}} (size\+\_\+t iT, boost\+::multi\+\_\+array$<$ double, 3 $>$ \&int\+Pci\+Pcj\+Pgk, const Eigen\+::\+Vector\+Xd \&v, const size\+\_\+t \&entry) const
 \begin{DoxyCompactList}\small\item\em Wrapper to plug vector into L2 integral product\+: int (Pcurl 1,\mbox{[}Pcurl 2, Pgrad 3\mbox{]}) \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDR__yangmills_ga709c6f792ee843147b9ad27379d76f22}{HAr\+DCore3\+D\+::\+Yang\+Mills\+::\+L2v\+\_\+eps\+Bkt}} (size\+\_\+t iT, const Eigen\+::\+Vector\+Xd \&v\+\_\+T, const Eigen\+::\+Matrix\+Xd \&L2prod) const
-\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__DDR__yangmills_gae2d071b99eaacbcfd7548f9e7cf6c739}{HAr\+DCore3\+D\+::\+Yang\+Mills\+::\+L2v\+\_\+eps\+Bkt}} (size\+\_\+t iT, boost\+::multi\+\_\+array$<$ double, 3 $>$ \&ebkt\+\_\+T, const Eigen\+::\+Vector\+Xd \&v\+\_\+T, const Eigen\+::\+Matrix\+Xd \&L2prod) const
+\begin{DoxyCompactList}\small\item\em Calculates the bracket inside the L2prod with v. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__DDR__yangmills_ga2211f57aa6040bc6ece68ecfed9af94f}{HAr\+DCore3\+D\+::\+Yang\+Mills\+::dimension}} () const
 \begin{DoxyCompactList}\small\item\em Returns the global problem dimension. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__DDR__yangmills_ga6482f6aa2cf8571951eefb1e9a3c3796}{HAr\+DCore3\+D\+::\+Yang\+Mills\+::size\+System}} () const
@@ -117,14 +125,12 @@ double \mbox{\hyperlink{group__DDR__yangmills_gaa41aff353059359730d693c683d327fb
 \begin{DoxyCompactList}\small\item\em Solves a system to calculate the norm of the constraint (in the dual space of La\+Xgrad) \end{DoxyCompactList}\item 
 std\+::pair$<$ double, double $>$ \mbox{\hyperlink{group__DDR__yangmills_gac8d0608937397ae2819169856c93fcfb}{HAr\+DCore3\+D\+::\+Yang\+Mills\+::compute\+Condition\+Num}} () const
 \item 
-{\footnotesize template$<$typename out\+Value , typename Fct $>$ }\\std\+::vector$<$ Fct $>$ \mbox{\hyperlink{group__DDR__yangmills_ga31920634bc32f12292abafb48ee47983}{HAr\+DCore3\+D\+::sum\+LA}} (const std\+::vector$<$ Fct $>$ \&LAF, const std\+::vector$<$ Fct $>$ \&LAG, double lambda)
+{\footnotesize template$<$typename out\+Value , typename Fct $>$ }\\std\+::vector$<$ Fct $>$ \mbox{\hyperlink{group__DDR__yangmills_gaff33e708e3b03a979ca95abfea149f67}{HAr\+DCore3\+D\+::sum\+LA}} (const std\+::vector$<$ Fct $>$ \&LAF, const std\+::vector$<$ Fct $>$ \&LAG, double lambda)
 \begin{DoxyCompactList}\small\item\em Template to evaluate a vector of functions. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__DDR__yangmills_ga0090492baa5464ee3adcb28f0d0e3e76}{HAr\+DCore3\+D\+::\+Assemble\+Systems\+::\+Assemble\+Systems}} (std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ sys, std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ vec)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__DDR__yangmills_ga567baa1497a74d8b906927a994b2629e}{HAr\+DCore3\+D\+::\+Assembled\+Systems\+::\+Assembled\+Systems}} (std\+::vector$<$ Eigen\+::\+Sparse\+Matrix$<$ double $>$$>$ sys, std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ vec)
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{structHArDCore3D_1_1AssembledSystems}{Assembled\+Systems}} \mbox{\hyperlink{group__DDR__yangmills_gaf588f2f452bfcfb504349ff3bbae1037}{HAr\+DCore3\+D\+::parallel\+\_\+assembly\+\_\+system}} (size\+\_\+t nb\+\_\+elements, std\+::vector$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$$>$ size\+\_\+systems, std\+::vector$<$ size\+\_\+t $>$ size\+\_\+vectors, std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::vector$<$ std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$$>$ $\ast$triplets, std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ $\ast$vecs)$>$ batch\+\_\+local\+\_\+assembly, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true)
-\begin{DoxyCompactList}\small\item\em Function to assemble global matrices from a procedure that compute local triplets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -315,7 +321,7 @@ std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ \mbox{\hyperlink{group__DDR__yangmill
 
 
 \doxysubsection{Detailed Description}
-Implementation of the DDR scheme for the Yang-\/Mills problem. 
+Implementation of the lowest order DDR scheme for the Yang-\/Mills problem. 
 
 
 
@@ -601,16 +607,25 @@ Takes a vector of two parameter functions and a value and returns a function wit
 
 Returns the global problem dimension. 
 
-\mbox{\Hypertarget{group__DDR__yangmills_ga137ce38b721fa63ec052802cc37891a9}\label{group__DDR__yangmills_ga137ce38b721fa63ec052802cc37891a9}} 
+\mbox{\Hypertarget{group__DDR__yangmills_gadb5ef41fbc8ed9ad41589ce8ac99865f}\label{group__DDR__yangmills_gadb5ef41fbc8ed9ad41589ce8ac99865f}} 
 \index{DDR\_yangmills@{DDR\_yangmills}!epsBkt\_v@{epsBkt\_v}}
 \index{epsBkt\_v@{epsBkt\_v}!DDR\_yangmills@{DDR\_yangmills}}
 \doxysubsubsection{\texorpdfstring{epsBkt\_v()}{epsBkt\_v()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Yang\+Mills\+::eps\+Bkt\+\_\+v (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{v }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Yang\+Mills\+::eps\+Bkt\+\_\+v (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT,  }\item[{boost\+::multi\+\_\+array$<$ double, 3 $>$ \&}]{ebkt\+\_\+T,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{v }\end{DoxyParamCaption}) const}
 
 
 
-Calculates the matrix of Hstar\mbox{[}v,.\mbox{]} in element index iT. 
+Calculates the matrix of $\ast$\mbox{[}v,.\mbox{]}$^\wedge$div in element index iT. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em iT} & \mbox{\hyperlink{structElement}{Element}} index \\
+\hline
+{\em ebkt\+\_\+T} & The $\ast$\mbox{[}.,.\mbox{]}$^\wedge$div operator for cell values (doesn\textquotesingle{}t include faces) \\
+\hline
+{\em v} & Vector to plug in \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__DDR__yangmills_ga3730fbcd2c9fae4eee0b7a12ff07c169}\label{group__DDR__yangmills_ga3730fbcd2c9fae4eee0b7a12ff07c169}} 
 \index{DDR\_yangmills@{DDR\_yangmills}!L2v\_Bkt@{L2v\_Bkt}}
 \index{L2v\_Bkt@{L2v\_Bkt}!DDR\_yangmills@{DDR\_yangmills}}
@@ -629,18 +644,26 @@ Wrapper to plug vector into L2 integral product\+: int (Pcurl 1,\mbox{[}Pcurl 2,
 \hline
 {\em v} & Vector to plug in \\
 \hline
+{\em entry} & Position to put vector (1, 2, 3) \\
+\hline
 \end{DoxyParams}
-\mbox{\Hypertarget{group__DDR__yangmills_ga709c6f792ee843147b9ad27379d76f22}\label{group__DDR__yangmills_ga709c6f792ee843147b9ad27379d76f22}} 
+\mbox{\Hypertarget{group__DDR__yangmills_gae2d071b99eaacbcfd7548f9e7cf6c739}\label{group__DDR__yangmills_gae2d071b99eaacbcfd7548f9e7cf6c739}} 
 \index{DDR\_yangmills@{DDR\_yangmills}!L2v\_epsBkt@{L2v\_epsBkt}}
 \index{L2v\_epsBkt@{L2v\_epsBkt}!DDR\_yangmills@{DDR\_yangmills}}
 \doxysubsubsection{\texorpdfstring{L2v\_epsBkt()}{L2v\_epsBkt()}}
-{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Yang\+Mills\+::\+L2v\+\_\+eps\+Bkt (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{v\+\_\+T,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{L2prod }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd Yang\+Mills\+::\+L2v\+\_\+eps\+Bkt (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT,  }\item[{boost\+::multi\+\_\+array$<$ double, 3 $>$ \&}]{ebkt\+\_\+T,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{v\+\_\+T,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{L2prod }\end{DoxyParamCaption}) const}
+
+
+
+Calculates the bracket inside the L2prod with v. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em iT} & \mbox{\hyperlink{structElement}{Element}} index \\
 \hline
-{\em v\+\_\+T} & Local vector in T \\
+{\em ebkt\+\_\+T} & The $\ast$\mbox{[}.,.\mbox{]}$^\wedge$div operator for cell values (doesn\textquotesingle{}t include faces) \\
+\hline
+{\em v\+\_\+T} & Local vector in T (because we often only have the local part of the vector e.\+g. ($\ast$\mbox{[}A,A\mbox{]}$^\wedge$div)\+\_\+T ) \\
 \hline
 {\em L2prod} & L2 product to be combined with bracket \\
 \hline
@@ -684,16 +707,6 @@ Returns the space \mbox{\hyperlink{classHArDCore3D_1_1LAXGrad}{LAXGrad}}.
 
 
 Returns the Lie algebra. 
-
-\mbox{\Hypertarget{group__DDR__yangmills_gaf588f2f452bfcfb504349ff3bbae1037}\label{group__DDR__yangmills_gaf588f2f452bfcfb504349ff3bbae1037}} 
-\index{DDR\_yangmills@{DDR\_yangmills}!parallel\_assembly\_system@{parallel\_assembly\_system}}
-\index{parallel\_assembly\_system@{parallel\_assembly\_system}!DDR\_yangmills@{DDR\_yangmills}}
-\doxysubsubsection{\texorpdfstring{parallel\_assembly\_system()}{parallel\_assembly\_system()}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{structHArDCore3D_1_1AssembledSystems}{Assembled\+Systems}} HAr\+DCore3\+D\+::parallel\+\_\+assembly\+\_\+system (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nb\+\_\+elements,  }\item[{std\+::vector$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$$>$}]{size\+\_\+systems,  }\item[{std\+::vector$<$ size\+\_\+t $>$}]{size\+\_\+vectors,  }\item[{std\+::function$<$ void(size\+\_\+t start, size\+\_\+t end, std\+::vector$<$ std\+::list$<$ Eigen\+::\+Triplet$<$ double $>$$>$$>$ $\ast$triplets, std\+::vector$<$ Eigen\+::\+Vector\+Xd $>$ $\ast$vecs)$>$}]{batch\+\_\+local\+\_\+assembly,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Function to assemble global matrices from a procedure that compute local triplets. 
 
 \mbox{\Hypertarget{group__DDR__yangmills_gaefdb7b67445854fc078bb94553fd6227}\label{group__DDR__yangmills_gaefdb7b67445854fc078bb94553fd6227}} 
 \index{DDR\_yangmills@{DDR\_yangmills}!setSystemVector@{setSystemVector}}
@@ -791,12 +804,12 @@ Stops once close enough to system vector for nonlinear problem.
 {\em nonlinear\+\_\+coeff} & Scaling of the nonlinear terms (0 for Maxwell) \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{group__DDR__yangmills_ga31920634bc32f12292abafb48ee47983}\label{group__DDR__yangmills_ga31920634bc32f12292abafb48ee47983}} 
+\mbox{\Hypertarget{group__DDR__yangmills_gaff33e708e3b03a979ca95abfea149f67}\label{group__DDR__yangmills_gaff33e708e3b03a979ca95abfea149f67}} 
 \index{DDR\_yangmills@{DDR\_yangmills}!sumLA@{sumLA}}
 \index{sumLA@{sumLA}!DDR\_yangmills@{DDR\_yangmills}}
 \doxysubsubsection{\texorpdfstring{sumLA()}{sumLA()}}
 {\footnotesize\ttfamily template$<$typename out\+Value , typename Fct $>$ \\
-std\+::vector$<$Fct$>$ HAr\+DCore3\+D\+::sum\+LA (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Fct $>$ \&}]{LAF,  }\item[{const std\+::vector$<$ Fct $>$ \&}]{LAG,  }\item[{double}]{lambda }\end{DoxyParamCaption})}
+std\+::vector$<$ Fct $>$ HAr\+DCore3\+D\+::sum\+LA (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Fct $>$ \&}]{LAF,  }\item[{const std\+::vector$<$ Fct $>$ \&}]{LAG,  }\item[{double}]{lambda }\end{DoxyParamCaption})}
 
 
 

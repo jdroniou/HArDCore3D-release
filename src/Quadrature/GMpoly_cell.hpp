@@ -145,7 +145,7 @@ template<typename BasisType>
 Eigen::MatrixXd GramMatrix(const Cell& T, const BasisType & basis, MonomialCellIntegralsType mono_int_map = {})
   {
     return GramMatrix(T, basis, basis, mono_int_map);
-  };
+  }
 
 /// Template to compute the Gram Matrix of any pair of tensorized scalar bases
 template<typename BasisType1, typename BasisType2, size_t N>
@@ -166,7 +166,7 @@ Eigen::MatrixXd GramMatrix(
       gm.block(i*dim1, i*dim2, dim1, dim2) = anc_gm;    
     }
     return gm;
-  };
+  }
 
 
 /// Computes the Gram Matrix of a pair of RolyCompl bases
@@ -198,7 +198,7 @@ Eigen::MatrixXd GramMatrix(
       gm.block(0, m*dim2/N, dim1, dim2/N) = GMRolyComplScalar(T, rolycompl_basis, tens_family.ancestor(), m, intmap);
     }
     return gm;
-  };
+  }
   
 /// Template to compute the Gram Matrix of a tensorized scalar basis and a RolyCompl basis
 template<typename BasisType1, size_t N>
@@ -210,7 +210,7 @@ Eigen::MatrixXd GramMatrix(
                     )
   {
     return GramMatrix(T, rolycompl_basis, tens_family, mono_int_map).transpose();
-  };
+  }
   
 /// Computes the Gram Matrix of a pair of GolyCompl bases
 Eigen::MatrixXd GramMatrix(
@@ -247,7 +247,7 @@ Eigen::MatrixXd GramMatrix(
     gm.block(2*dim_l1, dim_l2, dim1-2*dim_l1, dim_l2) = -GMGolyComplScalar(T, golycompl_basis, tens_family.ancestor(), 2, intmap, 0);
     
     return gm;
-  };
+  }
   
 /// Template to compute the Gram Matrix of a tensorized scalar basis and a GolyCompl basis
 template<typename BasisType1, size_t N>
@@ -259,7 +259,7 @@ Eigen::MatrixXd GramMatrix(
                     )
   {
     return GramMatrix(T, golycompl_basis, tens_family, mono_int_map).transpose();
-  };
+  }
   
 /// Computes the Gram Matrix of the mth component of a RolyCompl Basis and a monomial basis
 Eigen::MatrixXd GMRolyComplScalar(
@@ -283,7 +283,7 @@ Eigen::MatrixXd GMRolyComplScalar(
     // If no ancestor is to be used, we shouldn't be in this overload
     static_assert(BasisType::hasAncestor, "No method to compute this Gram matrix of derivatives");
     return transformGM(basis2, 'C', GMRolyComplScalar(T, basis1, basis2.ancestor(), m, mono_int_map) );
-  };
+  }
   
 /// Computes the Gram Matrix of the sth section of a GolyCompl Basis and a monomial basis
 Eigen::MatrixXd GMGolyComplScalar(
@@ -313,7 +313,7 @@ Eigen::MatrixXd GMGolyComplScalar(
     // If no ancestor is to be used, we shouldn't be in this overload
     static_assert(BasisType::hasAncestor, "No method to compute this Gram matrix of derivatives");
     return transformGM(basis2, 'C', GMGolyComplScalar(T, basis1, basis2.ancestor(), s, mono_int_map, m, k1, k2) );
-  };
+  }
   
 /// Computes the Gram Matrix of the (optionally k1th derivative of the) s1th section of GolyCompl (optionally multiplied by the m1th variable) and the (optionally k2th derivative of the) s2th section of GolyCompl (optionally multiplied by the m2th variable)
 Eigen::MatrixXd GMGolyCompl(
@@ -342,7 +342,7 @@ constexpr bool useAncestor()
     } else {
       return false;
     }
-  };
+  }
 
 /// Generic template to compute the Gram Matrix of any pair of bases
 template<typename BasisType1, typename BasisType2>
@@ -363,7 +363,7 @@ Eigen::MatrixXd GramMatrix(const Cell& T,         ///< Cell to which the basis c
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GramMatrix(T, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );
     }
 
-  };
+  }
   
 //
 /* Gram matrix of scalar basis with one or two derivatives */
@@ -407,7 +407,7 @@ Eigen::MatrixXd GMScalarDerivative(
     } else {
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GMScalarDerivative(T, basis1.ancestor(), basis2.ancestor(), m, mono_int_map) ) );
     }
-  };
+  }
   
 /// Generic template to compute the Gram Matrix of any pair of scalar bases, taking partial derivatives of each of them  (w.r.t. homogeneous coordinates, without scaling)
 template<typename BasisType1, typename BasisType2>
@@ -431,7 +431,7 @@ Eigen::MatrixXd GMScalarDerivative(
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GMScalarDerivative(T, basis1.ancestor(), basis2.ancestor(), m, l, mono_int_map) ) );
     }
     
-  };
+  }
   
 //
 /* Gram matrices of vector-valued basis with gradient, curl... */
@@ -457,7 +457,7 @@ Eigen::MatrixXd GramMatrix(
       gm.block(0, m*dim2/N, dim1, dim2/N) = GMScalarDerivative(T, grad_basis.ancestor(), tens_family.ancestor(), m, intmap);
     }
     return gm/T.diam();
-  };
+  }
 
 
 /// Template to compute the Gram Matrix of a tensorized scalar basis and a gradient basis
@@ -470,7 +470,7 @@ Eigen::MatrixXd GramMatrix(
              )
   {
     return GramMatrix(T, grad_basis, tens_family, mono_int_map).transpose();
-  };
+  }
 
 
 /// Template to compute the Gram Matrix of a gradient basis and another gradient basis
@@ -494,7 +494,7 @@ Eigen::MatrixXd GramMatrix(
       gm += GMScalarDerivative(T, grad_basis1.ancestor(), grad_basis2.ancestor(), m, m, intmap);
     }
     return gm/std::pow(T.diam(), 2);
-  };
+  }
   
 /// Generic template to compute the Gram Matrix of Curl of any pair of bases
 template<typename BasisType1, typename BasisType2>
@@ -505,7 +505,7 @@ Eigen::MatrixXd GramMatrix(const Cell& T,         ///< Cell to which the basis c
                      )
   {
     return GramMatrixCurlCurl(T, basis1.ancestor(), basis2.ancestor(), mono_int_map);
-  };
+  }
   
 /// Generic template to compute the Gram Matrix of a Curl basis and any other basis
 template<typename BasisType1, typename BasisType2>
@@ -517,7 +517,7 @@ typename boost::disable_if<boost::is_same<BasisType2, MonomialCellIntegralsType>
                      )
   {
     return GramMatrixCurl(T, basis1.ancestor(), basis2, mono_int_map);
-  };
+  }
   
 /// Template to compute the Gram Matrix of any basis and a Curl basis
 template<typename BasisType1, typename Basis2>
@@ -529,7 +529,7 @@ Eigen::MatrixXd GramMatrix(
                     )
   {
     return GramMatrixCurl(T, basis2.ancestor(), basis1, mono_int_map).transpose();
-  };
+  }
   
 /// Template to compute the Gram Matrix of the curl of a tensorized basis and the curl of another tensorized basis
 template<typename BasisType1, typename BasisType2, size_t N>
@@ -563,7 +563,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
     gm.block(2*dim1/N, 2*dim2/N, dim1/N, dim2/N) = GMyy + GMxx;
     
     return gm/std::pow(T.diam(), 2);
-  };
+  }
 
 /// Compute the Gram Matrix of the curl of a GolyCompl basis and the curl of another GolyCompl basis
 Eigen::MatrixXd GramMatrixCurlCurl(
@@ -608,7 +608,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
     gm.block(2*dim_l1, 2*dim2/N, dim1-2*dim_l1, dim2/N) = GMGolyComplScalar(T, basis1, basis2.ancestor(), 2, intmap, 0, 2, 1) - GMGolyComplScalar(T, basis1, basis2.ancestor(), 2, intmap, 1, 2, 0);
     
     return gm;
-  };
+  }
 
 /// Template to compute the Gram Matrix of the curl of a tensorized basis and the curl of a GolyCompl basis
 template<typename BasisType1, size_t N>
@@ -620,7 +620,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
                      )
   {
     return GramMatrixCurlCurl(T, basis2, basis1, mono_int_map).transpose();
-  };
+  }
 
 /// Template to compute the Gram Matrix of the curl of any basis and the curl of any other basis
 template<typename BasisType1, typename BasisType2>
@@ -641,7 +641,7 @@ Eigen::MatrixXd GramMatrixCurlCurl(
     } else {
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GramMatrixCurlCurl(T, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );
     }
-  };
+  }
 
 /// Template to compute the Gram Matrix of a Curl<Tensorized> basis and a tensorized scalar basis
 template<typename BasisType1, typename BasisType2, size_t N>
@@ -672,7 +672,7 @@ Eigen::MatrixXd GramMatrixCurl(
     gm.block(2*dim1/N, dim2/N, dim1/N, dim2/N) = -GMx;
     
     return gm/T.diam();
-  };
+  }
   
 /// Template to compute the Gram Matrix of a Curl<GolyCompl> basis and a tensorized scalar basis
 template<typename BasisType2, size_t N>
@@ -709,7 +709,7 @@ Eigen::MatrixXd GramMatrixCurl(
                                                           -2*GMGolyComplScalar(T, basis1, basis2.ancestor(), 2, intmap)/T.diam();
     
     return gm;
-  };
+  }
   
 /// Template to compute the Gram Matrix of the curl of any basis and any other basis
 template<typename BasisType1, typename BasisType2>
@@ -730,7 +730,7 @@ Eigen::MatrixXd GramMatrixCurl(
     } else {
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GramMatrixCurl(T, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );
     }
-  };
+  }
 
 /// Template to compute the Gram Matrix of the curl of any two bases when one CurlBasis is at a lower level than the other
 template<typename BasisType1, typename BasisType2>
@@ -746,7 +746,7 @@ Eigen::MatrixXd GramMatrixCurl(
     } else {
       return transformGM(basis1, 'R', GramMatrixCurlCurl(T, basis1.ancestor(), basis2.ancestor(), mono_int_map) );
     }
-  };
+  }
  
 /// Generic template to compute the Gram Matrix of Divergence of any pair of bases
 template<typename BasisType1, typename BasisType2>
@@ -757,7 +757,7 @@ Eigen::MatrixXd GramMatrix(const Cell& T,         ///< Cell to which the basis c
                      )
   {
     return GramMatrixDivDiv(T, basis1.ancestor(), basis2.ancestor(), mono_int_map);
-  };
+  }
  
 /// Gram Matrix of the divergence of a RolyCompl Basis and the kth derivative of a monomial basis
 Eigen::MatrixXd GMRolyComplScalarDiv(
@@ -781,7 +781,7 @@ Eigen::MatrixXd GMRolyComplScalarDiv(
     // If no ancestor is to be used, we shouldn't be in this overload
     static_assert(BasisType::hasAncestor, "No method to compute this Gram matrix of derivatives");
     return transformGM(basis1, 'R', GMRolyComplScalarDiv(T, basis1.ancestor(), basis2, k, mono_int_map) );
-  };
+  }
   
 /// Template to compute the Gram Matrix of the divergence of a tensorized basis and the divergence of another tensorized basis
 template<typename BasisType1, typename BasisType2, size_t N>
@@ -807,7 +807,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
     }
     
     return gm/std::pow(T.diam(), 2);
-  };
+  }
  
 /// Compute the Gram Matrix of the divergence of a RolyCompl basis and the divergence of another RolyCompl basis
 Eigen::MatrixXd GramMatrixDivDiv(
@@ -827,7 +827,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
                      )
   {
     return GramMatrixDivDiv(T, basis2, basis1, mono_int_map).transpose();
-  };
+  }
 
 /// Template to compute the Gram Matrix of the divergence of a tensorized basis and the divergence of a RolyCompl basis
 template<typename BasisType1, size_t N>
@@ -851,7 +851,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
     }
     
     return gm;
-  };
+  }
 
 /// Template to compute the Gram Matrix of the divergence of any basis and the divergence of any other basis
 template<typename BasisType1, typename BasisType2>
@@ -872,7 +872,7 @@ Eigen::MatrixXd GramMatrixDivDiv(
     } else {
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GramMatrixDivDiv(T, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );
     }
-  };
+  }
 
 /// Generic template to compute the Gram Matrix of a Divergence basis and any other basis
 template<typename BasisType1, typename BasisType2>
@@ -884,7 +884,7 @@ typename boost::disable_if<boost::is_same<BasisType2, MonomialCellIntegralsType>
                      )
   {
     return GramMatrixDiv(T, basis1.ancestor(), basis2, mono_int_map);
-  };
+  }
   
 /// Template to compute the Gram Matrix of any basis and a Divergence basis
 template<typename BasisType1, typename Basis2>
@@ -896,7 +896,7 @@ Eigen::MatrixXd GramMatrix(
                     )
   {
     return GramMatrixDiv(T, basis2.ancestor(), basis1, mono_int_map).transpose();
-  };
+  }
   
 /// Template to compute the Gram Matrix of a Divergence<Tensorized> basis and a monomial scalar basis
 template<typename BasisType1, size_t N>
@@ -920,7 +920,7 @@ Eigen::MatrixXd GramMatrixDiv(
     }
     
     return gm/T.diam();
-  };
+  }
   
 /// Computes the Gram Matrix of a Divergence<RolyCompl> basis and a monomial scalar basis
 Eigen::MatrixXd GramMatrixDiv(
@@ -949,7 +949,7 @@ Eigen::MatrixXd GramMatrixDiv(
     } else {
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GramMatrixDiv(T, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );
     }
-  };
+  }
 
 /// Template to compute the Gram Matrix of the divergence of any two bases when one DivergenceBasis is at a lower level than the other
 template<typename BasisType1, typename BasisType2>
@@ -965,7 +965,7 @@ Eigen::MatrixXd GramMatrixDiv(
     } else {
       return transformGM(basis1, 'R', GramMatrixDivDiv(T, basis1.ancestor(), basis2.ancestor(), mono_int_map) );
     }
-  };
+  }
  
 /*------------- Templates for MatrixFamily (including Divergence thereof, and vs Gradient<Tensorized> --------------------*/
  
@@ -988,7 +988,7 @@ Eigen::MatrixXd GramMatrix(
       gm.block(i*dim1, i*dim2, dim1, dim2) = anc_gm;    
     }
     return gm;
-  };
+  }
 
 /// Gram Matrix of the divergence of a MatrixFamily and a tensorized family (only valid if, in MatrixFamily and TensorizedVectorFamily, we have N=dimspace).
 template<typename BasisType1, typename BasisType2>
@@ -1019,7 +1019,7 @@ Eigen::MatrixXd GramMatrix(
     }
   
     return gm/T.diam();
-  };
+  }
 
 
 /// Generic template to compute the Gram Matrix of a vector valued basis and the divergence of a MatrixFamily
@@ -1032,7 +1032,7 @@ Eigen::MatrixXd GramMatrix(
                   )
   {
     return GramMatrix(T, basis2, basis1, mono_int_map).transpose();
-  };
+  }
 
 
 /// Gram Matrix of the gradient basis of a tensorized family and a matrix family (only valid if N=dimspace in Tensorized and MatrixFamily).
@@ -1064,7 +1064,7 @@ Eigen::MatrixXd GramMatrix(
     }
   
     return gm/T.diam();
-  };
+  }
 
 /// Gram Matrix of a Matrix family and the gradient of a tensorized family
 template<typename BasisType1, typename BasisType2>
@@ -1076,7 +1076,7 @@ Eigen::MatrixXd GramMatrix(
                      )
   {
     return GramMatrix(T, basis2, basis1, mono_int_map).transpose();
-  };
+  }
 
 /// Gram Matrix of two gradient bases of tensorized families.
 template<typename BasisType1, typename BasisType2, size_t N>
@@ -1110,7 +1110,7 @@ Eigen::MatrixXd GramMatrix(
     }
   
     return gm/(std::pow(T.diam(),2));
-  };
+  }
 
 /*@}*/
 } // end of namespace HArDCore3D

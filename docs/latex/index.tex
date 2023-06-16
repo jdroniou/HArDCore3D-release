@@ -123,8 +123,13 @@ Several other codes (in src/\+Mesh/\+Transforms) are provided to manipulate mesh
 \item Create agglomerated meshes \mbox{\hyperlink{MeshCoarsen_8cpp}{Mesh\+Coarsen}},
 \item Check that an RF file produces a valid mesh \mbox{\hyperlink{CheckMesh_8cpp}{Check\+Mesh}},
 \item Make flat faces in a mesh where some are not (e.\+g., generic hexahedral meshes) \mbox{\hyperlink{MakeFlatFaces_8cpp}{Make\+Flat\+Faces}},
-\item Create a .vtu file from an RF mesh file \mbox{\hyperlink{MeshToVTU_8cpp}{Mesh\+To\+VTU}},
-\item Transform a .msh file (created by Gmsh, version 4.\+11) into an RF mesh file \mbox{\hyperlink{MSHToRF_8cpp}{MSHTo\+RF}}.
+\item Move the vertices of a mesh \mbox{\hyperlink{MoveVertices_8cpp}{Move\+Vertices}},
+\item Various transformations of mesh format\+:
+\begin{DoxyItemize}
+\item Gmsh .msh file (version 4.\+11) into an RF mesh file \mbox{\hyperlink{MSHToRF_8cpp}{MSHTo\+RF}}.
+\item RF mesh into a .vtu file \mbox{\hyperlink{RFToVTU_8cpp}{RFTo\+VTU}},
+\item RF mesh into an FVCA10 format .msh file \mbox{\hyperlink{RFToFVCA10format_8cpp}{RFTo\+FVCA10format}},
+\end{DoxyItemize}
 \end{DoxyItemize}
 
 \label{_common}%
@@ -314,10 +319,10 @@ The following schemes are currently available in HAr\+D\+::\+Core3D. The Hybrid 
 \item \mbox{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{HHO\+\_\+locvardiff}}\+: HHO for $-\mathrm{div}(K\nabla u)=f$, for Dirichlet, Neumann or mixed boundary conditions, with $K$ a diffusion tensor that can vary in each cell.
 \item \mbox{\hyperlink{group__HHO__DiffAdvecReac}{HHO\+\_\+diffadvecreac}}\+: HHO for $-\mathrm{div}(K\nabla u+\beta u)+\mu u=f$, for Dirichlet or mixed boundary conditions, with $K$ a diffusion tensor that can vary in each cell.
 \item \mbox{\hyperlink{group__DDR__magnetostatic}{DDR\+\_\+magnetostatic}}\+: Discrete De Rham (DDR) scheme, and serendipity version, for the magnetostatic problem, as per \href{https://doi.org/10.1016/j.jcp.2020.109991}{\texttt{ https\+://doi.\+org/10.\+1016/j.\+jcp.\+2020.\+109991}} (but using Koszul complements).
-\item \mbox{\hyperlink{group__DDR__stokes}{DDR\+\_\+stokes}}\+: Discrete De Rham (DDR) scheme, and serendipity version, for the Stokes problem in curl-\/curl form.
+\item \mbox{\hyperlink{group__DDR__stokes}{DDR\+\_\+stokes}}\+: Discrete De Rham (DDR) scheme for the Stokes problem in curl-\/curl form. See also \mbox{\hyperlink{group__SDDR__stokes}{SDDR\+\_\+stokes}} for the serendipity version.
 \item \mbox{\hyperlink{group__VEM__stokes}{VEM\+\_\+stokes}}\+: Virtual \mbox{\hyperlink{structElement}{Element}} Method (VEM) scheme for the Stokes problem in curl-\/curl form.
 \item \mbox{\hyperlink{group__HHO__MHD}{HHO\+\_\+\+MHD}}\+: HHO scheme for the MHD problem.
-\item \mbox{\hyperlink{group__DDR__yangmills}{DDR\+\_\+yangmills}}\+: DDR scheme for the Yang-\/\+Mills equations (based on \mbox{\hyperlink{group__LADDRCore}{LADDR}}, the extension of DDR to Lie algebra valued fields).
+\item \mbox{\hyperlink{group__DDR__yangmills}{DDR\+\_\+yangmills}}\+: lowest-\/order DDR scheme for the Yang-\/\+Mills equations (based on \mbox{\hyperlink{group__LADDRCore}{LADDR}}, the extension of DDR to Lie algebra valued fields). See also \mbox{\hyperlink{group__SDDR__yangmills}{SDDR\+\_\+yangmills}} for the arbitrary order serendipity version.
 \item \mbox{\hyperlink{group__HHO__fullgradientdiff}{HHO\+\_\+fullgradientdiff}}\+: HHO scheme with full gradient; similar to \mbox{\hyperlink{classHArDCore3D_1_1HHO__LocVarDiff}{HHO\+\_\+locvardiff}} but implemented using the \href{\#hhospace}{\texttt{ HHOSpace}} module instead of the \href{\#hybridcore}{\texttt{ Hybrid\+Core}} module.
 \item \mbox{\hyperlink{group__HHO__brinkman}{HHO\+\_\+brinkman}}\+: HHO scheme for the Brinkman equation (based on \mbox{\hyperlink{group__HHOSpace}{HHOSpace}}).
 \end{DoxyItemize}

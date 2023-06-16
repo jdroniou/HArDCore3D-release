@@ -1,6 +1,10 @@
 <map id="src/LADDRCore/laxdiv.hpp" name="src/LADDRCore/laxdiv.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="112,5,291,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="220,5,399,32"/>
 <area shape="rect" id="node2" href="$laddr-yangmills-lm_8hpp.html" title=" " alt="" coords="5,80,192,121"/>
-<area shape="rect" id="node4" href="$laxdiv_8cpp.html" title=" " alt="" coords="216,87,395,114"/>
+<area shape="rect" id="node4" href="$lasxdiv_8hpp.html" title=" " alt="" coords="216,87,403,114"/>
+<area shape="rect" id="node8" href="$laxdiv_8cpp.html" title=" " alt="" coords="427,87,605,114"/>
 <area shape="rect" id="node3" href="$laddr-yangmills-lm_8cpp.html" title=" " alt="" coords="5,169,192,211"/>
+<area shape="rect" id="node5" href="$lasddr-yangmills_8hpp.html" title=" " alt="" coords="216,169,403,211"/>
+<area shape="rect" id="node7" href="$lasxdiv_8cpp.html" title=" " alt="" coords="427,177,613,203"/>
+<area shape="rect" id="node6" href="$lasddr-yangmills_8cpp.html" title=" " alt="" coords="216,259,403,300"/>
 </map>

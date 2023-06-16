@@ -690,12 +690,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gab57e166ae408723200908def889dac07"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; double, 2, <a class="el" href="group__Basis.html#ga23a211ab9d745e2e803ad606e1df445f">dimspace</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gab57e166ae408723200908def889dac07">HArDCore3D::TangentFamily&lt; ScalarFamilyType &gt;::generators</a> () const</td></tr>
 <tr class="memdesc:gab57e166ae408723200908def889dac07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the generators of the basis functions.  <a href="group__Basis.html#gab57e166ae408723200908def889dac07">More...</a><br /></td></tr>
 <tr class="separator:gab57e166ae408723200908def889dac07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea075c3cb8fbdd848e30d84821f23711"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaea075c3cb8fbdd848e30d84821f23711">HArDCore3D::ShiftedBasis&lt; BasisType &gt;::ShiftedBasis</a> (const BasisType &amp;basis, const int shift)</td></tr>
+<tr class="memitem:gaea075c3cb8fbdd848e30d84821f23711"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gaea075c3cb8fbdd848e30d84821f23711">HArDCore3D::ShiftedBasis&lt; BasisType &gt;::ShiftedBasis</a> (const BasisType &amp;basis, const int <a class="el" href="group__Basis.html#gacabfeb04455e7b982b532014af8ce9f4">shift</a>)</td></tr>
 <tr class="memdesc:gaea075c3cb8fbdd848e30d84821f23711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Basis.html#gaea075c3cb8fbdd848e30d84821f23711">More...</a><br /></td></tr>
 <tr class="separator:gaea075c3cb8fbdd848e30d84821f23711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0d1ffbb1cb714755de9035fcb9d5f183"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#ga0d1ffbb1cb714755de9035fcb9d5f183">HArDCore3D::ShiftedBasis&lt; BasisType &gt;::dimension</a> () const</td></tr>
 <tr class="memdesc:ga0d1ffbb1cb714755de9035fcb9d5f183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimension of the basis.  <a href="group__Basis.html#ga0d1ffbb1cb714755de9035fcb9d5f183">More...</a><br /></td></tr>
 <tr class="separator:ga0d1ffbb1cb714755de9035fcb9d5f183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacabfeb04455e7b982b532014af8ce9f4"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gacabfeb04455e7b982b532014af8ce9f4">HArDCore3D::ShiftedBasis&lt; BasisType &gt;::shift</a> () const</td></tr>
+<tr class="memdesc:gacabfeb04455e7b982b532014af8ce9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the shift.  <a href="group__Basis.html#gacabfeb04455e7b982b532014af8ce9f4">More...</a><br /></td></tr>
+<tr class="separator:gacabfeb04455e7b982b532014af8ce9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac1b993c85fac9bfdca68021040099c2a"><td class="memItemLeft" align="right" valign="top">constexpr const BasisType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Basis.html#gac1b993c85fac9bfdca68021040099c2a">HArDCore3D::ShiftedBasis&lt; BasisType &gt;::ancestor</a> () const</td></tr>
 <tr class="memdesc:gac1b993c85fac9bfdca68021040099c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the underlying complete basis.  <a href="group__Basis.html#gac1b993c85fac9bfdca68021040099c2a">More...</a><br /></td></tr>
 <tr class="separator:gac1b993c85fac9bfdca68021040099c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -10380,6 +10383,35 @@ template&lt;typename ScalarFamilyType &gt; </div>
 </div><div class="memdoc">
 
 <p>The following function creates the "scalar rot" basis of a <a class="el" href="classHArDCore3D_1_1TangentFamily.html" title="Vector family for polynomial functions that are tangent to a certain place (determined by the generat...">TangentFamily</a> on a face. </p>
+
+</div>
+</div>
+<a id="gacabfeb04455e7b982b532014af8ce9f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacabfeb04455e7b982b532014af8ce9f4">&#9670;&nbsp;</a></span>shift()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">HArDCore3D::ShiftedBasis</a>&lt; BasisType &gt;::shift </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the shift. </p>
 
 </div>
 </div>

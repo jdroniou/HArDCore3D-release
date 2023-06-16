@@ -82,9 +82,14 @@ $(function() {
 <li>face_orientation()
 : <a class="el" href="group__Mesh.html#ga228570052980385cb87564da8096d801">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
+<li>face_tangent()
+: <a class="el" href="group__Mesh.html#ga87d738ce75e7f6b548431641c532eb1f">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
+</li>
 <li>faceBases()
 : <a class="el" href="group__DDRCore.html#gadd926309d1517cf7d591215afcf2dfd5">HArDCore3D::DDRCore</a>
 , <a class="el" href="group__HHOSpace.html#ga6e773e8add3a27c5ad440ba5c84b6ff1">HArDCore3D::HHOSpace</a>
+, <a class="el" href="group__LADDRCore.html#ga07cb952ad67ae364cc3da65aa76ef8b8">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__LADDRCore.html#ga928d7e5b8e295a946573e5c0e75b33d0">HArDCore3D::LASXGrad</a>
 , <a class="el" href="group__LADDRCore.html#ga4abede871b117c910ba85fc5381e5e3d">HArDCore3D::LAXCurl</a>
 , <a class="el" href="group__LADDRCore.html#gae2cf5b9165e8541aef140353b30721cd">HArDCore3D::LAXDiv</a>
 , <a class="el" href="group__LADDRCore.html#ga923d8748b2de6fbdb009a7f56bf49b4a">HArDCore3D::LAXGrad</a>
@@ -96,7 +101,7 @@ $(function() {
 , <a class="el" href="group__VEMCore.html#ga7b07e16b99e2ffe616cc350d41d97ae8">HArDCore3D::VGrad</a>
 , <a class="el" href="group__HHOSpace.html#ga68e7c7cba9fd6fc3dd846401353e3cb6">HArDCore3D::VHHOSpace</a>
 , <a class="el" href="group__DDRCore.html#ga310b45935cb310be057a64cfd06ffdf2">HArDCore3D::XCurl</a>
-, <a class="el" href="group__DDRCore.html#ga7cb8248afff89a299f8076e3515911ea">HArDCore3D::XDiv</a>
+, <a class="el" href="group__DDRCore.html#gac8cefcb0fc66710090d254e13dac919a">HArDCore3D::XDiv</a>
 , <a class="el" href="group__DDRCore.html#gacd58fb250bc2a93bd6f2e1c7a2f6ae6d">HArDCore3D::XGrad</a>
 </li>
 <li>FaceBasis()
@@ -109,25 +114,29 @@ $(function() {
 : <a class="el" href="group__DDRCore.html#ga14b977b22c0eb89d2cedaf9bc418c8ba">HArDCore3D::SerendipityProblem</a>
 </li>
 <li>faceCurl()
-: <a class="el" href="group__DDRCore.html#ga2c6d7f55cce5ea64383a7fc59f145b6b">HArDCore3D::SXCurl</a>
+: <a class="el" href="group__LADDRCore.html#ga9397753a99e6840106570c812ec3e063">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__DDRCore.html#ga2c6d7f55cce5ea64383a7fc59f145b6b">HArDCore3D::SXCurl</a>
 </li>
 <li>FaceDegree()
 : <a class="el" href="group__HybridCore.html#gabd72ee1721337185ed3c39da286e2928">HArDCore3D::HybridCore</a>
 </li>
 <li>faceGradient()
-: <a class="el" href="group__DDRCore.html#gab4f812b1ab331b2044ea6a05e66d8707">HArDCore3D::SXGrad</a>
+: <a class="el" href="group__LADDRCore.html#ga6080deb84f24daa43dc5b3d359265b22">HArDCore3D::LASXGrad</a>
+, <a class="el" href="group__DDRCore.html#ga8d57dd9b63ca220996eaa644b45e96ef">HArDCore3D::SXGrad</a>
 </li>
 <li>faceOperators()
 : <a class="el" href="group__LADDRCore.html#ga192476d81c99162550bb6fd035cae86f">HArDCore3D::LAXCurl</a>
-, <a class="el" href="group__LADDRCore.html#ga097da45a5c1dc27d0dea2989df467672">HArDCore3D::LAXGrad</a>
-, <a class="el" href="group__VEMCore.html#gac53bfe01ed158e1be49d652ef1aef612">HArDCore3D::VCurl</a>
-, <a class="el" href="group__VEMCore.html#ga8502c77ce53539beec2d5677acc0d097">HArDCore3D::VDiv</a>
-, <a class="el" href="group__VEMCore.html#ga44b57909d37100aa227ad67bbce3f8e6">HArDCore3D::VGrad</a>
-, <a class="el" href="group__DDRCore.html#ga720ee0d479c61a59b4192899f4d8610a">HArDCore3D::XCurl</a>
+, <a class="el" href="group__LADDRCore.html#ga208c4222a2941ab11ba4affb70df91ee">HArDCore3D::LAXGrad</a>
+, <a class="el" href="group__VEMCore.html#ga6897fd23a59fcffcd002fe1de5b365f1">HArDCore3D::VCurl</a>
+, <a class="el" href="group__VEMCore.html#ga2e1d3f246a9876aa162234add5366a12">HArDCore3D::VDiv</a>
+, <a class="el" href="group__VEMCore.html#gabfb0b53d5059fccfaebe59cd08ba8d5d">HArDCore3D::VGrad</a>
+, <a class="el" href="group__DDRCore.html#ga23a50dcc144bba2abe9742ad016ca58e">HArDCore3D::XCurl</a>
 , <a class="el" href="group__DDRCore.html#ga39c8365e893f692f285fe15be8b7162b">HArDCore3D::XGrad</a>
 </li>
 <li>facePotential()
-: <a class="el" href="group__DDRCore.html#gadf755c4880fc2e141e4956e45c8385c0">HArDCore3D::SXCurl</a>
+: <a class="el" href="group__LADDRCore.html#ga229284bab8798245ed7966f16be38dde">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__LADDRCore.html#ga1ce22db1151975f65b93a53192814754">HArDCore3D::LASXGrad</a>
+, <a class="el" href="group__DDRCore.html#gaf0f2073b5621de532890119fbb42944c">HArDCore3D::SXCurl</a>
 , <a class="el" href="group__DDRCore.html#ga3a174eb9197279fe1f8d6b1b9c2b99b5">HArDCore3D::SXGrad</a>
 </li>
 <li>family()

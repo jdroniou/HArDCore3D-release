@@ -83,14 +83,14 @@ Eigen::MatrixXd GramMatrix(const Edge& E,         ///< Edge to which the basis c
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GramMatrix(E, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );
     }
 
-  };
+  }
   
 /// This overload to simplify the call to GramMatrix in case the two bases are the same
 template<typename BasisType>
 Eigen::MatrixXd GramMatrix(const Edge& E, const BasisType & basis, MonomialEdgeIntegralsType mono_int_map = {})
   {
     return GramMatrix(E, basis, basis, mono_int_map);
-  };
+  }
  
 /* GRADIENT-SCALAR bases */ 
  
@@ -121,7 +121,7 @@ Eigen::MatrixXd GMDer(const Edge& E,         ///< Edge to which the basis corres
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GMDer(E, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );
     }
 
-  };
+  }
 
 
 /// Computes the Gram Matrix of a gradient basis (considering the tangential gradient as a scalar) and a scalar basis
@@ -134,7 +134,7 @@ Eigen::MatrixXd GramMatrix(
                     )
   {
     return GMDer(E, basis1.ancestor(), basis2, mono_int_map)/E.diam();
-  };
+  }
   
 /// Computes the Gram Matrix of a scalar basis and a gradient basis (considering the tangential gradient as a scalar)
 template<typename BasisType1, typename BasisType2>
@@ -146,7 +146,7 @@ Eigen::MatrixXd GramMatrix(
                     )
   {
     return (GMDer(E, basis2.ancestor(), basis1, mono_int_map).transpose())/E.diam();
-  };
+  }
 
 
 

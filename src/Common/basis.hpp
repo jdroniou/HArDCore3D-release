@@ -1046,7 +1046,13 @@ namespace HArDCore3D
     {
       return m_basis.dimension() - m_shift;
     }
-    
+
+    /// Return the shift
+    inline size_t shift() const
+    {
+      return m_shift;
+    }
+
     /// Return the underlying complete basis
     constexpr inline const BasisType &ancestor() const
     {
@@ -1415,7 +1421,7 @@ namespace HArDCore3D
     TangentFamily<ScalarFamilyType> rotated_tangent_family(tangent_family.ancestor(), rotated_gen);
 
     return DivergenceBasis<TangentFamily<ScalarFamilyType>>(rotated_tangent_family);
-  };
+  }
 
   //---------------------------------------------------------------------
   //      BASES FOR THE KOSZUL COMPLEMENTS OF G^k, R^k 
@@ -1725,7 +1731,7 @@ namespace HArDCore3D
     std::transform( B_quad.origin(), B_quad.origin() + B_quad.num_elements(), transformed_B_quad.origin(), F);
 
     return transformed_B_quad;
-  };
+  }
 
   /// From a scalar family B=(B_1..B_r) and vectors (v_1..v_k) in R^N, constructs a "Family" of "TensorizedVectorFamily" (built on B, of size N) that represents the family (B_1v_1..B_rv_1 B_1v_2...B_rv_2... B_1v_k..B_rv_k).
   /** Useful to tensorized scalar family while controlling the directions of tensorization (e.g. to identify tangential and normal directions along a surface, etc.). If B and v are orthonormal, then so is the returned family of tensorized basis. */
@@ -1752,7 +1758,7 @@ namespace HArDCore3D
   
     TensorizedVectorFamily<ScalarBasisType, N> tensbasis(B);
     return Family<TensorizedVectorFamily<ScalarBasisType, N>>(tensbasis, M);
-  };
+  }
 
 
   /// Function to symmetrise a matrix (useful together with transform_values_quad)
@@ -1779,7 +1785,7 @@ namespace HArDCore3D
   
     MatrixFamily<ScalarBasisType, N> matbasis(B);
     return Family<MatrixFamily<ScalarBasisType, N>>(matbasis, M);
-  };
+  }
 
   //------------------------------------------------------------------------------
   //                      BASIS EVALUATIONS

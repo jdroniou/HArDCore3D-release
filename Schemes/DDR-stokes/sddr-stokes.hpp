@@ -23,7 +23,7 @@
 #include <sxdiv.hpp>
 
 /*!
- * @defgroup DDR_stokes
+ * @defgroup SDDR_stokes
  * @brief Implementation of the serendipity DDR scheme for the %Stokes problem in curl-curl formulation
  */
 
@@ -31,7 +31,7 @@ namespace HArDCore3D
 {
 
   /*!
-   * @addtogroup DDR_stokes
+   * @addtogroup SDDR_stokes
    * @{
    */
    

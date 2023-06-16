@@ -178,6 +178,8 @@ const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DD
 \begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
 const size\+\_\+t \& \mbox{\hyperlink{group__DDRCore_ga59f8e6ea7c7c5121c035105c93687102}{HAr\+DCore3\+D\+::\+SXCurl\+::degree}} () const
 \begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \& \mbox{\hyperlink{group__DDRCore_gadca23618c3273a413b0c2d9e17380555}{HAr\+DCore3\+D\+::\+SXCurl\+::ser\+Pro}} () const
+\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga45d84a4ae4ee1af1acfd8a6a866aee83}{HAr\+DCore3\+D\+::\+SXCurl\+::interpolate}} (const \mbox{\hyperlink{group__DDRCore_ga54005a93080c30da08c1ee04c12c7588}{Function\+Type}} \&v, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
 \begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
 const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_gae10c8af996f2ec020a62c4590828a107}{HAr\+DCore3\+D\+::\+SXCurl\+::\+Scurl\+Face}} (size\+\_\+t iF) const
@@ -248,6 +250,8 @@ const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__DD
 \begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
 const size\+\_\+t \& \mbox{\hyperlink{group__DDRCore_ga2e4c9f6bc7a0858aa31f59e3b396769f}{HAr\+DCore3\+D\+::\+SXGrad\+::degree}} () const
 \begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \& \mbox{\hyperlink{group__DDRCore_ga9ab8683d76e88119d3bb4b016fdcb362}{HAr\+DCore3\+D\+::\+SXGrad\+::ser\+Pro}} () const
+\item 
 Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__DDRCore_ga9f142520cf80ade8e20444719aaa394f}{HAr\+DCore3\+D\+::\+SXGrad\+::interpolate}} (const \mbox{\hyperlink{group__DDRCore_gad31e6bd58000471db0da65d94f2e0c30}{Function\+Type}} \&q, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
 \begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
 const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__DDRCore_ga31aa13a84a5d8fb2f0ac50fb944ebb2e}{HAr\+DCore3\+D\+::\+SXGrad\+::\+Sgrad\+Face}} (size\+\_\+t iF) const
@@ -2381,6 +2385,18 @@ Compute the serendipity operator on the face of index iF.
 
 
 Constructor. 
+
+\mbox{\Hypertarget{group__DDRCore_gadca23618c3273a413b0c2d9e17380555}\label{group__DDRCore_gadca23618c3273a413b0c2d9e17380555}} 
+\index{DDRCore@{DDRCore}!serPro@{serPro}}
+\index{serPro@{serPro}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{serPro()}{serPro()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}}\& HAr\+DCore3\+D\+::\+SXCurl\+::ser\+Pro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{group__DDRCore_ga9ab8683d76e88119d3bb4b016fdcb362}\label{group__DDRCore_ga9ab8683d76e88119d3bb4b016fdcb362}} 
+\index{DDRCore@{DDRCore}!serPro@{serPro}}
+\index{serPro@{serPro}!DDRCore@{DDRCore}}
+\doxysubsubsection{\texorpdfstring{serPro()}{serPro()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}}\& HAr\+DCore3\+D\+::\+SXGrad\+::ser\+Pro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{group__DDRCore_ga7f2c579fd5dab20ef746acaf6e37c6aa}\label{group__DDRCore_ga7f2c579fd5dab20ef746acaf6e37c6aa}} 
 \index{DDRCore@{DDRCore}!SgradCell@{SgradCell}}

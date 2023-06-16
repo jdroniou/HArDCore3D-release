@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Execute hho file on series of meshes, and calculate outputs
+# Execute ddr-stokes file on series of meshes, and calculate outputs
 #
 
 # Options

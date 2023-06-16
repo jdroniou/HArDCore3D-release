@@ -1,0 +1,127 @@
+\hypertarget{classHArDCore3D_1_1LASXCurl}{}\doxysection{HAr\+DCore3D\+::LASXCurl Class Reference}
+\label{classHArDCore3D_1_1LASXCurl}\index{HArDCore3D::LASXCurl@{HArDCore3D::LASXCurl}}
+
+
+Discrete Lie algebra valued Serendipity Hcurl space\+: local operators, L2 product and global interpolator.  
+
+
+
+
+{\ttfamily \#include $<$lasxcurl.\+hpp$>$}
+
+
+
+Inheritance diagram for HAr\+DCore3D\+::LASXCurl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classHArDCore3D_1_1LASXCurl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for HAr\+DCore3D\+::LASXCurl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classHArDCore3D_1_1LASXCurl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1LASXCurl_1_1TransferOperators}{Transfer\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store the serendipity, extension and reduction operators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__LADDRCore_gacc211870202c8800c9e896121d81eab6}{Function\+Type}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{group__LADDRCore_gacc211870202c8800c9e896121d81eab6}{Function\+Type}} $>$ \mbox{\hyperlink{group__LADDRCore_ga2f0be8a26f5e09132d5be25e389499cd}{LAFunction\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__LADDRCore_gaf8c61ad4f6658560b06a68e50714e202}{LASXCurl}} (const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&lie\+\_\+algebra, const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} \&sx\+\_\+curl, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__LADDRCore_ga0a0e05509ae834ad751344d862ae59a6}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__LADDRCore_ga4163a08fb0bbfdfe6a37006e0d1faadf}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_ga7e12345cff8637d0cfdc5d03a2b72ac5}{lie\+Alg}} () const
+\begin{DoxyCompactList}\small\item\em Return the Lie algebra. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \& \mbox{\hyperlink{group__LADDRCore_gac4d5892a9d91dda701b5b42297387e5d}{ser\+Pro}} () const
+\begin{DoxyCompactList}\small\item\em Return the serendipity operators. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__LADDRCore_gad2efc5016d215b73f10a5cdb3dcda34a}{interpolate}} (const \mbox{\hyperlink{group__LADDRCore_ga2f0be8a26f5e09132d5be25e389499cd}{LAFunction\+Type}} \&v, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__LADDRCore_ga80dcab088b935d14aa4b0416ec5238f5}{LaxcurlI}} (size\+\_\+t iG, Eigen\+::\+Vector\+Xd \&v) const
+\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga2370e761bd432b6d0fcf44c6db6819e4}{Scurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga5f483807f15c9c9d89474cf9202fb084}{Ecurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gaa29a2d7abd8292591357744ceb2e9a7b}{Rcurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga2e0d1f923e06e18a06449d204cb6086d}{Scurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga48b2135f06fc896a0816292842b7aaae}{Ecurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the extension for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga482e9b1f2e0b094284b5809da1317fa2}{Rcurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga8c1227164f66756975a96cd3df8302bc}{Scurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gaa27852c13a282c9bb6f04b8768537c82}{Ecurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gac09899407551a6210e184c4464258371}{Rcurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gafb7c3a298b8237a280a55d7fb72c1eaa}{Scurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga93fefc98e0a33648480fa95b2dd34bce}{Ecurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the extension for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gae055d18efc496d8a1acb025733a37c75}{Rcurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga9397753a99e6840106570c812ec3e063}{face\+Curl}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gad05483652f4972e0477abb1a8d0d6b03}{face\+Curl}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga6b8920eecf1210b72402e552aec58d76}{face\+Potential}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga229284bab8798245ed7966f16be38dde}{face\+Potential}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga17b8891a96b8bf5c155b7600ff6648af}{cell\+Curl}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga6087b6c7f912af19c5033147eaf562ad}{cell\+Curl}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gab20051acf6ff247c7527614f3a4ca2dc}{cell\+Potential}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga270159011a635a007c331456abf5eb7d}{cell\+Potential}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga3fc9b4714c90a51322ae730e83d84337}{compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gac69d0f379101aa9bb78393058ad14856}{compute\+L2\+Product\+Gradient}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{SXGrad}} \&sx\+\_\+grad, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete gradient on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga6f11d9866d4fa5f53ccf08a0ad2b6ad5}{cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga483fe1b95def6939a96ce0836ae80f14}{cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga245232eb9434dab02db541581caa852d}{face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga07cb952ad67ae364cc3da65aa76ef8b8}{face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_gaa4a8015c4ebb5a4e77f7322f2a944ddf}{edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga85e7077a12cb9ea0cb8c33fa3bc24774}{edge\+Bases}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Discrete Lie algebra valued Serendipity Hcurl space\+: local operators, L2 product and global interpolator. 
+
+Each DOF in the \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} space corresponds to the dimension of the Lie algebra number of DOFs in the \mbox{\hyperlink{classHArDCore3D_1_1LAXCurl}{LAXCurl}} space. These DOFs are stored consecutively with overall ordering given by \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}}; they represent and are locally ordered by the basis in the \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+LADDRCore/\mbox{\hyperlink{lasxcurl_8hpp}{lasxcurl.\+hpp}}\item 
+src/\+LADDRCore/\mbox{\hyperlink{lasxcurl_8cpp}{lasxcurl.\+cpp}}\end{DoxyCompactItemize}

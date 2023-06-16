@@ -77,6 +77,8 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classHArDCore3D_1_1LAXDiv-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">HArDCore3D::LAXDiv Class Reference<div class="ingroups"><a class="el" href="group__LADDRCore.html">LADDRCore</a></div></div>  </div>
@@ -93,6 +95,7 @@ Inheritance diagram for HArDCore3D::LAXDiv:</div>
 <div class="center"><img src="classHArDCore3D_1_1LAXDiv__inherit__graph.png" border="0" usemap="#aHArDCore3D_1_1LAXDiv_inherit__map" alt="Inheritance graph"/></div>
 <map name="aHArDCore3D_1_1LAXDiv_inherit__map" id="aHArDCore3D_1_1LAXDiv_inherit__map">
 <area shape="rect" title="Discrete Lie algebra valued Hdiv space: local operators, L2 product and global interpolator." alt="" coords="34,155,187,181"/>
+<area shape="rect" href="classHArDCore3D_1_1LASXDiv.html" title="Discrete Serendipity Hdiv space: local operators, L2 product and global interpolator." alt="" coords="29,229,192,256"/>
 <area shape="rect" href="classHArDCore3D_1_1GlobalDOFSpace.html" title="Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei..." alt="" coords="5,80,216,107"/>
 <area shape="rect" href="classHArDCore3D_1_1LocalDOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="9,5,213,32"/>
 </map>
@@ -102,10 +105,13 @@ Collaboration diagram for HArDCore3D::LAXDiv:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHArDCore3D_1_1LAXDiv__coll__graph.png" border="0" usemap="#aHArDCore3D_1_1LAXDiv_coll__map" alt="Collaboration graph"/></div>
 <map name="aHArDCore3D_1_1LAXDiv_coll__map" id="aHArDCore3D_1_1LAXDiv_coll__map">
-<area shape="rect" title="Discrete Lie algebra valued Hdiv space: local operators, L2 product and global interpolator." alt="" coords="34,247,187,273"/>
-<area shape="rect" href="classHArDCore3D_1_1GlobalDOFSpace.html" title="Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei..." alt="" coords="5,171,216,197"/>
-<area shape="rect" href="classHArDCore3D_1_1LocalDOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="9,95,213,121"/>
-<area shape="rect" href="classMeshND_1_1Mesh.html" title="Class to describe a mesh." alt="" coords="12,5,209,32"/>
+<area shape="rect" title="Discrete Lie algebra valued Hdiv space: local operators, L2 product and global interpolator." alt="" coords="225,349,379,376"/>
+<area shape="rect" href="classHArDCore3D_1_1GlobalDOFSpace.html" title="Base class for global DOF spaces. Provides functions to manipulate global DOFs (the local version bei..." alt="" coords="197,171,407,197"/>
+<area shape="rect" href="classHArDCore3D_1_1XDiv.html" title="Discrete Hdiv space: local operators, L2 product and global interpolator." alt="" coords="127,260,264,287"/>
+<area shape="rect" href="classHArDCore3D_1_1LocalDOFSpace.html" title="Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to t..." alt="" coords="200,95,404,121"/>
+<area shape="rect" href="classMeshND_1_1Mesh.html" title="Class to describe a mesh." alt="" coords="203,5,401,32"/>
+<area shape="rect" href="classHArDCore3D_1_1DDRCore.html" title="Construct all polynomial spaces for the DDR sequence." alt="" coords="5,171,172,197"/>
+<area shape="rect" href="classHArDCore3D_1_1LieAlgebra.html" title="Lie algebra class: mass matrix, structure constants and Lie bracket." alt="" coords="340,260,509,287"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -176,6 +182,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ga1229b099903e229e3e63c4a56949a835 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga1229b099903e229e3e63c4a56949a835">globalOffset</a> (const Cell &amp;T) const</td></tr>
 <tr class="memdesc:ga1229b099903e229e3e63c4a56949a835 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the global offset for the unknowns on the cell T.  <a href="group__Common.html#ga1229b099903e229e3e63c4a56949a835">More...</a><br /></td></tr>
 <tr class="separator:ga1229b099903e229e3e63c4a56949a835 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44f26c88e322ca732450e8669891225d inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga44f26c88e322ca732450e8669891225d">globalOffset</a> (size_t d, size_t i) const</td></tr>
+<tr class="memdesc:ga44f26c88e322ca732450e8669891225d inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the global offset for the unknows on the i-th element of dimension d.  <a href="group__Common.html#ga44f26c88e322ca732450e8669891225d">More...</a><br /></td></tr>
+<tr class="separator:ga44f26c88e322ca732450e8669891225d inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9cabf022121084dd0ab57de128ba953c inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga9cabf022121084dd0ab57de128ba953c">restrictEdge</a> (size_t iE, const Eigen::VectorXd &amp;vh) const</td></tr>
 <tr class="memdesc:ga9cabf022121084dd0ab57de128ba953c inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restrict to the edge (including its vertices) of index iE.  <a href="group__Common.html#ga9cabf022121084dd0ab57de128ba953c">More...</a><br /></td></tr>
 <tr class="separator:ga9cabf022121084dd0ab57de128ba953c inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,6 +211,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:gafa03cd062083ef8fbe3089d395f81338 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gafa03cd062083ef8fbe3089d395f81338">extendOperator</a> (const Face &amp;F, const Edge &amp;E, const Eigen::MatrixXd &amp;opE) const</td></tr>
 <tr class="memdesc:gafa03cd062083ef8fbe3089d395f81338 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extend an edge operator to a face.  <a href="group__Common.html#gafa03cd062083ef8fbe3089d395f81338">More...</a><br /></td></tr>
 <tr class="separator:gafa03cd062083ef8fbe3089d395f81338 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44cae72166e12dd00a3dd673bf2a5d06 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga44cae72166e12dd00a3dd673bf2a5d06">extendOperator</a> (size_t d1, size_t i1, size_t d2, size_t i2, const Eigen::MatrixXd &amp;op) const</td></tr>
+<tr class="memdesc:ga44cae72166e12dd00a3dd673bf2a5d06 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic extension operator from the i2-th d2-cell to the i1-th d1-cell.  <a href="group__Common.html#ga44cae72166e12dd00a3dd673bf2a5d06">More...</a><br /></td></tr>
+<tr class="separator:ga44cae72166e12dd00a3dd673bf2a5d06 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga377359e7be24409898f4bd5b709aec76 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga377359e7be24409898f4bd5b709aec76">addInnerProductContribution</a> (const Cell &amp;T, const Face &amp;F, Eigen::MatrixXd &amp;prodT, const Eigen::MatrixXd &amp;prodF) const</td></tr>
 <tr class="memdesc:ga377359e7be24409898f4bd5b709aec76 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T)  <a href="group__Common.html#ga377359e7be24409898f4bd5b709aec76">More...</a><br /></td></tr>
 <tr class="separator:ga377359e7be24409898f4bd5b709aec76 inherit pub_methods_classHArDCore3D_1_1GlobalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,6 +242,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ga63c9c43b9c52f18389de01b1b2669258 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga63c9c43b9c52f18389de01b1b2669258">numLocalDofsCell</a> () const</td></tr>
 <tr class="memdesc:ga63c9c43b9c52f18389de01b1b2669258 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of local cell DOFs.  <a href="group__Common.html#ga63c9c43b9c52f18389de01b1b2669258">More...</a><br /></td></tr>
 <tr class="separator:ga63c9c43b9c52f18389de01b1b2669258 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa9ed015a37af834c23a84e16af10876 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaaa9ed015a37af834c23a84e16af10876">numLocalDofs</a> (size_t d) const</td></tr>
+<tr class="memdesc:gaaa9ed015a37af834c23a84e16af10876 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of local d-cell DOFs.  <a href="group__Common.html#gaaa9ed015a37af834c23a84e16af10876">More...</a><br /></td></tr>
+<tr class="separator:gaaa9ed015a37af834c23a84e16af10876 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2f9a4f73d3d98508bb70d42a72b38943 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2f9a4f73d3d98508bb70d42a72b38943">dimension</a> () const</td></tr>
 <tr class="memdesc:ga2f9a4f73d3d98508bb70d42a72b38943 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension of the global space (all DOFs for all geometric entities)  <a href="group__Common.html#ga2f9a4f73d3d98508bb70d42a72b38943">More...</a><br /></td></tr>
 <tr class="separator:ga2f9a4f73d3d98508bb70d42a72b38943 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,6 +272,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ga87216ee57909d43fbd55367e66c52659 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga87216ee57909d43fbd55367e66c52659">dimensionCell</a> (size_t iT) const</td></tr>
 <tr class="memdesc:ga87216ee57909d43fbd55367e66c52659 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension of the local space on the cell of index iT (including faces, edges and vertices)  <a href="group__Common.html#ga87216ee57909d43fbd55367e66c52659">More...</a><br /></td></tr>
 <tr class="separator:ga87216ee57909d43fbd55367e66c52659 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae945c5d213bbb493cfd7a2e6bc14e480 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gae945c5d213bbb493cfd7a2e6bc14e480">dimension</a> (size_t d, size_t i) const</td></tr>
+<tr class="memdesc:gae945c5d213bbb493cfd7a2e6bc14e480 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension of the local space on the d-cell of index i (including its boundary)  <a href="group__Common.html#gae945c5d213bbb493cfd7a2e6bc14e480">More...</a><br /></td></tr>
+<tr class="separator:gae945c5d213bbb493cfd7a2e6bc14e480 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad0f2767844ac3afe4e943886e81f6ee1 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gad0f2767844ac3afe4e943886e81f6ee1">localOffset</a> (const Edge &amp;E, const Vertex &amp;V) const</td></tr>
 <tr class="memdesc:gad0f2767844ac3afe4e943886e81f6ee1 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the local offset of the vertex V with respect to the edge E.  <a href="group__Common.html#gad0f2767844ac3afe4e943886e81f6ee1">More...</a><br /></td></tr>
 <tr class="separator:gad0f2767844ac3afe4e943886e81f6ee1 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,8 +303,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ga8ebfa6da885fecc1bb09ccac1f923149 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the local offset of the unknowns attached to the element T.  <a href="group__Common.html#ga8ebfa6da885fecc1bb09ccac1f923149">More...</a><br /></td></tr>
 <tr class="separator:ga8ebfa6da885fecc1bb09ccac1f923149 inherit pub_methods_classHArDCore3D_1_1LocalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:gaf0d7f0b51f050d1936bf33a636659f28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHArDCore3D_1_1LAXDiv_1_1LocalOperators.html">LocalOperators</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaf0d7f0b51f050d1936bf33a636659f28">_compute_cell_divergence_potential</a> (size_t iT)</td></tr>
+<tr class="separator:gaf0d7f0b51f050d1936bf33a636659f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ga0a1ab8b334914b4b45412b49dd6a6eb1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1LieAlgebra.html">LieAlgebra</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga0a1ab8b334914b4b45412b49dd6a6eb1">m_lie_algebra</a></td></tr>
+<tr class="separator:ga0a1ab8b334914b4b45412b49dd6a6eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb1be18a8d6db3c23d84eaeac203437d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHArDCore3D_1_1XDiv.html">XDiv</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gacb1be18a8d6db3c23d84eaeac203437d">m_xdiv</a></td></tr>
+<tr class="separator:gacb1be18a8d6db3c23d84eaeac203437d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa69a6bd1344404d08098ecd6e14cd18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaaa69a6bd1344404d08098ecd6e14cd18">m_use_threads</a></td></tr>
+<tr class="separator:gaaa69a6bd1344404d08098ecd6e14cd18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga247b23c5fcc0d18a8a6801f7e1cf24a0"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#ga247b23c5fcc0d18a8a6801f7e1cf24a0">m_output</a></td></tr>
+<tr class="separator:ga247b23c5fcc0d18a8a6801f7e1cf24a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf250a4da2c9bf23440d2ca5c64648ffd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="structHArDCore3D_1_1LAXDiv_1_1LocalOperators.html">LocalOperators</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LADDRCore.html#gaf250a4da2c9bf23440d2ca5c64648ffd">m_cell_operators</a></td></tr>
+<tr class="separator:gaf250a4da2c9bf23440d2ca5c64648ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classHArDCore3D_1_1LocalDOFSpace"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classHArDCore3D_1_1LocalDOFSpace')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classHArDCore3D_1_1LocalDOFSpace.html">HArDCore3D::LocalDOFSpace</a></td></tr>
 <tr class="memitem:gaf892ca81e64966ad421de137a5bc3fbb inherit pro_attribs_classHArDCore3D_1_1LocalDOFSpace"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMeshND_1_1Mesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaf892ca81e64966ad421de137a5bc3fbb">m_mesh</a></td></tr>
 <tr class="separator:gaf892ca81e64966ad421de137a5bc3fbb inherit pro_attribs_classHArDCore3D_1_1LocalDOFSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>

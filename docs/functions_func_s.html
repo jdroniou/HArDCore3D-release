@@ -77,18 +77,22 @@ $(function() {
 , <a class="el" href="group__HHO__fullgradientdiff.html#gac4a3b0329387044edd0dc341103d2df0">HArDCore3D::FullGradientDiffusion</a>
 , <a class="el" href="structHArDCore3D_1_1Magnetostatics.html#ga7c5f649d4c5d14b11f52033b4cfff644">HArDCore3D::Magnetostatics</a>
 , <a class="el" href="group__DDR__stokes.html#ga84c005b53d8d83c1be5b078dae093d9d">HArDCore3D::Stokes</a>
+, <a class="el" href="group__SDDR__yangmills.html#ga3db26063e4777a42936cea1c0a02daa7">HArDCore3D::YangMills</a>
 </li>
 <li>ScurlCell()
-: <a class="el" href="group__DDRCore.html#gaf0b18320b658cb6b967aa992b2ceea9b">HArDCore3D::SXCurl</a>
+: <a class="el" href="group__LADDRCore.html#ga8c1227164f66756975a96cd3df8302bc">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__DDRCore.html#gaf0b18320b658cb6b967aa992b2ceea9b">HArDCore3D::SXCurl</a>
 </li>
 <li>ScurlFace()
-: <a class="el" href="group__DDRCore.html#gae10c8af996f2ec020a62c4590828a107">HArDCore3D::SXCurl</a>
+: <a class="el" href="group__LADDRCore.html#ga2370e761bd432b6d0fcf44c6db6819e4">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__DDRCore.html#gae10c8af996f2ec020a62c4590828a107">HArDCore3D::SXCurl</a>
 </li>
 <li>scVector()
 : <a class="el" href="group__HHO__brinkman.html#gab05765326bdd6ccfc851a50a2f671544">HArDCore3D::Brinkman</a>
 , <a class="el" href="group__HHO__fullgradientdiff.html#gab8271c78fb7d00e7427a409c3408bad2">HArDCore3D::FullGradientDiffusion</a>
 , <a class="el" href="group__DDR__magnetostatic.html#gac5cc8800c0cea12e57a31a8f97f58ce7">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__DDR__stokes.html#gac24f18b70fee7f0796258e2bb2c46b59">HArDCore3D::Stokes</a>
+, <a class="el" href="group__SDDR__stokes.html#gac24f18b70fee7f0796258e2bb2c46b59">HArDCore3D::Stokes</a>
+, <a class="el" href="group__SDDR__yangmills.html#ga5d098ffcc38650baff250fa4893221f4">HArDCore3D::YangMills</a>
 </li>
 <li>serDegreeCell()
 : <a class="el" href="group__DDRCore.html#gaaeb03ce52be3818be31f956498d06934">HArDCore3D::SerendipityProblem</a>
@@ -111,8 +115,17 @@ $(function() {
 <li>SerendipityProblem()
 : <a class="el" href="group__DDRCore.html#gad6052eded3f2f90d3ddcd8821a7ae7e6">HArDCore3D::SerendipityProblem</a>
 </li>
+<li>serPro()
+: <a class="el" href="group__LADDRCore.html#gac4d5892a9d91dda701b5b42297387e5d">HArDCore3D::LASXCurl</a>
+, <a class="el" href="group__LADDRCore.html#gae232f319c551d4464a1765d0ae860ba3">HArDCore3D::LASXGrad</a>
+, <a class="el" href="group__DDRCore.html#gadca23618c3273a413b0c2d9e17380555">HArDCore3D::SXCurl</a>
+, <a class="el" href="group__DDRCore.html#ga9ab8683d76e88119d3bb4b016fdcb362">HArDCore3D::SXGrad</a>
+</li>
 <li>set_boundary()
 : <a class="el" href="group__Mesh.html#ga92c44918ffcdb15e7d89b26e871db125">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
+</li>
+<li>set_coords()
+: <a class="el" href="group__Mesh.html#ga9b12aa83a0f2721c6e21c6a77ed083cf">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
 <li>set_dirichlet()
 : <a class="el" href="group__HHO3D.html#ga2230426ff92810893168177ddd623f35">HHO3D</a>
@@ -129,8 +142,14 @@ $(function() {
 <li>set_name()
 : <a class="el" href="group__Mesh.html#ga21927164b11699b470be658f085b04e5">MeshND::Mesh&lt; dimension &gt;</a>
 </li>
+<li>set_simplices()
+: <a class="el" href="group__Mesh.html#ga68d0a3b3de3cbce8c450f483b13e574c">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
+</li>
 <li>set_values()
 : <a class="el" href="group__HHO__MHD.html#ga11701714647e6a25844189a2b730632c">SolutionVector</a>
+</li>
+<li>setNonlinearRes()
+: <a class="el" href="group__SDDR__yangmills.html#ga757ff5e7538dcb0d30fddade02f1a7f0">HArDCore3D::YangMills</a>
 </li>
 <li>setSystemVector()
 : <a class="el" href="group__DDR__yangmills.html#gaefdb7b67445854fc078bb94553fd6227">HArDCore3D::YangMills</a>
@@ -141,10 +160,15 @@ $(function() {
 , <a class="el" href="group__Quadratures.html#ga5b3fbfdc8b8c49bd090bf216cfe105ee">HArDCore3D::QuadRuleTriangle</a>
 </li>
 <li>SgradCell()
-: <a class="el" href="group__DDRCore.html#ga0295b3277865edf3aa18cb35cbb3c665">HArDCore3D::SXGrad</a>
+: <a class="el" href="group__LADDRCore.html#ga70a2aa4e091d6cb3edbd754c1244075e">HArDCore3D::LASXGrad</a>
+, <a class="el" href="group__DDRCore.html#ga7f2c579fd5dab20ef746acaf6e37c6aa">HArDCore3D::SXGrad</a>
 </li>
 <li>SgradFace()
-: <a class="el" href="group__DDRCore.html#ga31aa13a84a5d8fb2f0ac50fb944ebb2e">HArDCore3D::SXGrad</a>
+: <a class="el" href="group__LADDRCore.html#gaf9d003bb6422cde2e7d9eec9dcd33bdb">HArDCore3D::LASXGrad</a>
+, <a class="el" href="group__DDRCore.html#ga31aa13a84a5d8fb2f0ac50fb944ebb2e">HArDCore3D::SXGrad</a>
+</li>
+<li>shift()
+: <a class="el" href="group__Basis.html#gacabfeb04455e7b982b532014af8ce9f4">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
 </li>
 <li>ShiftedBasis()
 : <a class="el" href="group__Basis.html#gaea075c3cb8fbdd848e30d84821f23711">HArDCore3D::ShiftedBasis&lt; BasisType &gt;</a>
@@ -153,7 +177,7 @@ $(function() {
 : <a class="el" href="group__HHO__brinkman.html#ga27b8de59c9272fb88068c7125a017b4c">HArDCore3D::Brinkman</a>
 , <a class="el" href="group__HHO__fullgradientdiff.html#ga976f0f7fd349df05c25f477f3cff7de3">HArDCore3D::FullGradientDiffusion</a>
 , <a class="el" href="group__DDR__magnetostatic.html#gab9bdfe696d9b36cca0546e85ee73eed4">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__VEM__stokes.html#ga5afaebf629ae7ee2b7835f544f975780">HArDCore3D::Stokes</a>
+, <a class="el" href="group__DDR__stokes.html#ga5afaebf629ae7ee2b7835f544f975780">HArDCore3D::Stokes</a>
 , <a class="el" href="group__DDR__yangmills.html#ga6482f6aa2cf8571951eefb1e9a3c3796">HArDCore3D::YangMills</a>
 </li>
 <li>Solution()
@@ -171,10 +195,10 @@ $(function() {
 : <a class="el" href="group__HHO__MHD.html#gab042b2e7ca94620b11956247a20b9afe">MHDModel</a>
 </li>
 <li>stabilizationParameter()
-: <a class="el" href="group__HHO__brinkman.html#ga6caeda81b77d830540cc47c05173b92d">HArDCore3D::Brinkman</a>
+: <a class="el" href="group__HHO__brinkman.html#ga22a2df1874e7dcbff999defcf6b62cbc">HArDCore3D::Brinkman</a>
 , <a class="el" href="group__HHO__fullgradientdiff.html#gac286a64ac1fcd09d605a5495a4b51c35">HArDCore3D::FullGradientDiffusion</a>
-, <a class="el" href="structHArDCore3D_1_1Magnetostatics.html#ga36ff2404c85e550ad25907ec8ba188db">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__DDR__stokes.html#ga7844fc93907f58dfd21bb8b7a6c1af56">HArDCore3D::Stokes</a>
+, <a class="el" href="group__DDR__magnetostatic.html#gaa900b40958daa559bdf2d900e105a51c">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__VEM__stokes.html#ga7844fc93907f58dfd21bb8b7a6c1af56">HArDCore3D::Stokes</a>
 , <a class="el" href="group__DDR__yangmills.html#ga93536edcc0d544f4fa8289403c1dbe2d">HArDCore3D::YangMills</a>
 </li>
 <li>standard_load_vector()
@@ -184,7 +208,7 @@ $(function() {
 : <a class="el" href="group__DDR__stokes.html#ga93fd886edeb08d1af3f2a9d6e2a519a7">HArDCore3D::Stokes</a>
 </li>
 <li>StokesNorms()
-: <a class="el" href="group__VEM__stokes.html#gaa91c7fcde0204b65d76746be523bee10">HArDCore3D::StokesNorms</a>
+: <a class="el" href="group__SDDR__stokes.html#gaa91c7fcde0204b65d76746be523bee10">HArDCore3D::StokesNorms</a>
 </li>
 <li>stoppingCrit()
 : <a class="el" href="group__DDR__yangmills.html#gaaa13f9fc6bc43edacd536035645c4956">HArDCore3D::YangMills</a>
@@ -230,20 +254,20 @@ $(function() {
 </li>
 <li>sxCurl()
 : <a class="el" href="group__DDR__magnetostatic.html#ga3edac16dbe79d6677962bdaab0724af4">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__DDR__stokes.html#ga0e49353d87310fa4212cad6acdfc986e">HArDCore3D::Stokes</a>
+, <a class="el" href="group__SDDR__stokes.html#ga0e49353d87310fa4212cad6acdfc986e">HArDCore3D::Stokes</a>
 </li>
 <li>SXCurl()
 : <a class="el" href="group__DDRCore.html#ga7cbee3d46504ec031f328b44cd841fc8">HArDCore3D::SXCurl</a>
 </li>
 <li>sxDiv()
 : <a class="el" href="group__DDR__magnetostatic.html#gabaf43011cd68590a75861ebfd4e3d02e">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__DDR__stokes.html#ga28d77ca8dd41503bf1b1befeeabe438c">HArDCore3D::Stokes</a>
+, <a class="el" href="group__SDDR__stokes.html#ga28d77ca8dd41503bf1b1befeeabe438c">HArDCore3D::Stokes</a>
 </li>
 <li>SXDiv()
 : <a class="el" href="group__DDRCore.html#ga8c10cba0c0e5fd822e1a91254a80852a">HArDCore3D::SXDiv</a>
 </li>
 <li>sxGrad()
-: <a class="el" href="group__DDR__stokes.html#ga87eb619d608e1ec7ec40c5265daa17b7">HArDCore3D::Stokes</a>
+: <a class="el" href="group__SDDR__stokes.html#ga87eb619d608e1ec7ec40c5265daa17b7">HArDCore3D::Stokes</a>
 </li>
 <li>SXGrad()
 : <a class="el" href="group__DDRCore.html#ga4ff5e43e311e2305f5de83ad90742284">HArDCore3D::SXGrad</a>
@@ -255,18 +279,24 @@ $(function() {
 : <a class="el" href="group__Basis.html#ga0a49ee1b317f37603ebde6873a1c3e7f">HArDCore3D::MatrixFamily&lt; ScalarFamilyType, N &gt;</a>
 </li>
 <li>systemMatrix()
-: <a class="el" href="group__HHO__brinkman.html#gaf6527cd2547629da9a888792132e3269">HArDCore3D::Brinkman</a>
+: <a class="el" href="group__HHO__brinkman.html#ga9b722d0ade5c239395e48b90bfecb51d">HArDCore3D::Brinkman</a>
 , <a class="el" href="group__HHO__fullgradientdiff.html#gad7e033827cd37c4c9ac6e538c3562319">HArDCore3D::FullGradientDiffusion</a>
-, <a class="el" href="group__DDR__magnetostatic.html#gafb6670bd6c5b8a6754108f45de910a63">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__VEM__stokes.html#ga99db170b7f151f7d37828065b02dd1a3">HArDCore3D::Stokes</a>
-, <a class="el" href="group__DDR__yangmills.html#gacc657607c0c7d1ac46e78813afbd8c2c">HArDCore3D::YangMills</a>
+, <a class="el" href="group__DDR__magnetostatic.html#gaada8e4f19159b7e7ca218dffeccf6a3e">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__SDDR__stokes.html#ga7a7c455112aa41ea9cb6ed817b417702">HArDCore3D::Stokes</a>
+, <a class="el" href="group__SDDR__yangmills.html#gacc657607c0c7d1ac46e78813afbd8c2c">HArDCore3D::YangMills</a>
 </li>
 <li>systemVector()
-: <a class="el" href="group__HHO__brinkman.html#ga640586cc819e4de5afd3a2edb1432b9c">HArDCore3D::Brinkman</a>
+: <a class="el" href="group__HHO__brinkman.html#gad2d60af85842cc09744311d13079911f">HArDCore3D::Brinkman</a>
 , <a class="el" href="group__HHO__fullgradientdiff.html#ga0f1fe476db6978a25aa597b9494d43a2">HArDCore3D::FullGradientDiffusion</a>
-, <a class="el" href="group__DDR__magnetostatic.html#ga29cbbcb0980b052188bb32902e57db67">HArDCore3D::Magnetostatics</a>
-, <a class="el" href="group__VEM__stokes.html#ga67c5932d1f6296ac1f3e4e1d4cf53e3b">HArDCore3D::Stokes</a>
+, <a class="el" href="group__DDR__magnetostatic.html#ga4e0de6a7a5cf5f6fdd0c511b1f4776e9">HArDCore3D::Magnetostatics</a>
+, <a class="el" href="group__DDR__stokes.html#ga67c5932d1f6296ac1f3e4e1d4cf53e3b">HArDCore3D::Stokes</a>
 , <a class="el" href="group__DDR__yangmills.html#gae45049dcce6efd1d31e16380b52e8a24">HArDCore3D::YangMills</a>
+</li>
+<li>systemVectorNewton()
+: <a class="el" href="group__SDDR__yangmills.html#ga176419583fe05768314258b2839a2a54">HArDCore3D::YangMills</a>
+</li>
+<li>SystemVectors()
+: <a class="el" href="group__Common.html#gab434bf1a9a9f6be073efe0505239bcda">HArDCore3D::SystemVectors&lt; MatrixType &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

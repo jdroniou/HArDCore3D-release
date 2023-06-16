@@ -24,7 +24,7 @@ BoundaryConditions::BoundaryConditions(const std::string bc_id, Mesh& mesh)
         m_n_dir_faces++;
       }
     }
-  };
+  }
 
 
 // Returns the type of BC of a face

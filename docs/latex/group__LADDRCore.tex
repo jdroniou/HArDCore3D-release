@@ -1,13 +1,20 @@
 \hypertarget{group__LADDRCore}{}\doxysection{LADDRCore}
 \label{group__LADDRCore}\index{LADDRCore@{LADDRCore}}
-
-
-Classes defining the Discrete De Rham sequence for Lie-\/algebra functions.  
-
-
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classHArDCore3D_1_1LADDRCore}{HAr\+DCore3\+D\+::\+LADDRCore}}
+\begin{DoxyCompactList}\small\item\em Construct the spaces for the LADDR sequence. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1LASXCurl}{HAr\+DCore3\+D\+::\+LASXCurl}}
+\begin{DoxyCompactList}\small\item\em Discrete Lie algebra valued Serendipity Hcurl space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1LASXCurl_1_1TransferOperators}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Transfer\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store the serendipity, extension and reduction operators. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1LASXDiv}{HAr\+DCore3\+D\+::\+LASXDiv}}
+\begin{DoxyCompactList}\small\item\em Discrete Serendipity Hdiv space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHArDCore3D_1_1LASXGrad}{HAr\+DCore3\+D\+::\+LASXGrad}}
+\begin{DoxyCompactList}\small\item\em Discrete Serendipity Hgrad space\+: local operators, L2 product and global interpolator. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHArDCore3D_1_1LASXGrad_1_1TransferOperators}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Transfer\+Operators}}
+\begin{DoxyCompactList}\small\item\em A structure to store the serendipity, extension and reduction operators. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classHArDCore3D_1_1LAXCurl}{HAr\+DCore3\+D\+::\+LAXCurl}}
 \begin{DoxyCompactList}\small\item\em Discrete Lie algebra valued Hcurl space. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structHArDCore3D_1_1LAXCurl_1_1LocalOperators}{HAr\+DCore3\+D\+::\+LAXCurl\+::\+Local\+Operators}}
@@ -24,6 +31,14 @@ class \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{HAr\+DCore3\+D\+::\+Lie\+A
 \begin{DoxyCompactList}\small\item\em Lie algebra class\+: mass matrix, structure constants and Lie bracket. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__LADDRCore_gacc211870202c8800c9e896121d81eab6}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Function\+Type}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{group__LADDRCore_gacc211870202c8800c9e896121d81eab6}{Function\+Type}} $>$ \mbox{\hyperlink{group__LADDRCore_ga2f0be8a26f5e09132d5be25e389499cd}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+LAFunction\+Type}}
+\item 
+typedef std\+::function$<$ double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__LADDRCore_ga3cfb70b6cdd23bd2273bf1af7b1e87eb}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Function\+Type}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{group__LADDRCore_ga3cfb70b6cdd23bd2273bf1af7b1e87eb}{Function\+Type}} $>$ \mbox{\hyperlink{group__LADDRCore_gab30d96b69c36d139f71cdfee3ba6dae3}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+LAFunction\+Type}}
 \item 
 typedef std\+::function$<$ Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__LADDRCore_gaecbef92c0d82f58b5fea98398f5672c9}{HAr\+DCore3\+D\+::\+LAXCurl\+::\+Function\+Type}}
 \item 
@@ -44,6 +59,166 @@ typedef std\+::function$<$ double(\mbox{\hyperlink{group__LADDRCore_ga4fdf08268e
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{group__LADDRCore_gad56d6b4df393c6473a4f03213cd938f5}{HAr\+DCore3\+D\+::\+LADDRCore\+::\+LADDRCore}} (const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&lie\+\_\+algebra, const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&\mbox{\hyperlink{group__DDRCore_ga4b3c317f8cf4193ba4b945f2b087a6f2}{mesh}}, size\+\_\+t \mbox{\hyperlink{group__HHO__DiffAdvecReac_gaf169764abf85f85bec428e43dc60274b}{K}}, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__DDRCore_ga93b7460f638eb1b520354073e72535cc}{DDRCore\+::\+Poly3\+Basis\+Cell\+Type}} \& \mbox{\hyperlink{group__LADDRCore_ga85217548bdfd69242e37173feccbe917}{HAr\+DCore3\+D\+::\+LADDRCore\+::\+P2k3}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for element iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_ga6773deee9a1a8e045b45dfbb0d7e0365}{HAr\+DCore3\+D\+::\+LADDRCore\+::lie\+Alg}} () const
+\begin{DoxyCompactList}\small\item\em Return the Lie algebra. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__LADDRCore_ga96aee755c1d55da296f84cfaa3b1c2b3}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Transfer\+Operators\+::\+Transfer\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+serendipity, const Eigen\+::\+Matrix\+Xd \&\+\_\+extension, const Eigen\+::\+Matrix\+Xd \&\+\_\+reduction)
+\item 
+\mbox{\hyperlink{group__LADDRCore_gaf8c61ad4f6658560b06a68e50714e202}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+LASXCurl}} (const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&lie\+\_\+algebra, const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} \&sx\+\_\+curl, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__LADDRCore_ga0a0e05509ae834ad751344d862ae59a6}{HAr\+DCore3\+D\+::\+LASXCurl\+::mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__LADDRCore_ga4163a08fb0bbfdfe6a37006e0d1faadf}{HAr\+DCore3\+D\+::\+LASXCurl\+::degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_ga7e12345cff8637d0cfdc5d03a2b72ac5}{HAr\+DCore3\+D\+::\+LASXCurl\+::lie\+Alg}} () const
+\begin{DoxyCompactList}\small\item\em Return the Lie algebra. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \& \mbox{\hyperlink{group__LADDRCore_gac4d5892a9d91dda701b5b42297387e5d}{HAr\+DCore3\+D\+::\+LASXCurl\+::ser\+Pro}} () const
+\begin{DoxyCompactList}\small\item\em Return the serendipity operators. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__LADDRCore_gad2efc5016d215b73f10a5cdb3dcda34a}{HAr\+DCore3\+D\+::\+LASXCurl\+::interpolate}} (const \mbox{\hyperlink{group__LADDRCore_ga2f0be8a26f5e09132d5be25e389499cd}{LAFunction\+Type}} \&v, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__LADDRCore_ga80dcab088b935d14aa4b0416ec5238f5}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+LaxcurlI}} (size\+\_\+t iG, Eigen\+::\+Vector\+Xd \&v) const
+\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga2370e761bd432b6d0fcf44c6db6819e4}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Scurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga5f483807f15c9c9d89474cf9202fb084}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Ecurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gaa29a2d7abd8292591357744ceb2e9a7b}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Rcurl\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga2e0d1f923e06e18a06449d204cb6086d}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Scurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga48b2135f06fc896a0816292842b7aaae}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Ecurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the extension for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga482e9b1f2e0b094284b5809da1317fa2}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Rcurl\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga8c1227164f66756975a96cd3df8302bc}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Scurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gaa27852c13a282c9bb6f04b8768537c82}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Ecurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gac09899407551a6210e184c4464258371}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Rcurl\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gafb7c3a298b8237a280a55d7fb72c1eaa}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Scurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga93fefc98e0a33648480fa95b2dd34bce}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Ecurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the extension for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gae055d18efc496d8a1acb025733a37c75}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Rcurl\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga9397753a99e6840106570c812ec3e063}{HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Curl}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gad05483652f4972e0477abb1a8d0d6b03}{HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Curl}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga6b8920eecf1210b72402e552aec58d76}{HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Potential}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga229284bab8798245ed7966f16be38dde}{HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Potential}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga17b8891a96b8bf5c155b7600ff6648af}{HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Curl}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga6087b6c7f912af19c5033147eaf562ad}{HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Curl}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the full curl operator on cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gab20051acf6ff247c7527614f3a4ca2dc}{HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Potential}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga270159011a635a007c331456abf5eb7d}{HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Potential}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga3fc9b4714c90a51322ae730e83d84337}{HAr\+DCore3\+D\+::\+LASXCurl\+::compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gac69d0f379101aa9bb78393058ad14856}{HAr\+DCore3\+D\+::\+LASXCurl\+::compute\+L2\+Product\+Gradient}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{SXGrad}} \&sx\+\_\+grad, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete gradient on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga6f11d9866d4fa5f53ccf08a0ad2b6ad5}{HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga483fe1b95def6939a96ce0836ae80f14}{HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga245232eb9434dab02db541581caa852d}{HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga07cb952ad67ae364cc3da65aa76ef8b8}{HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_gaa4a8015c4ebb5a4e77f7322f2a944ddf}{HAr\+DCore3\+D\+::\+LASXCurl\+::edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga85e7077a12cb9ea0cb8c33fa3bc24774}{HAr\+DCore3\+D\+::\+LASXCurl\+::edge\+Bases}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__LADDRCore_ga3943bf09c9a0dba06d56960fa731947e}{HAr\+DCore3\+D\+::\+LASXDiv\+::\+LASXDiv}} (const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&lie\+\_\+algebra, const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}} \&xdiv, const \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{SXDiv}} \&sxdiv, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_gae02ef8baf53dc136a77df5c66b9e0e8f}{HAr\+DCore3\+D\+::\+LASXDiv\+::lie\+Alg}} () const
+\begin{DoxyCompactList}\small\item\em Return the Lie algebra. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga74f291de5bbb2c162b357b52f29b8387}{HAr\+DCore3\+D\+::\+LASXDiv\+::compute\+L2\+Product\+Curl}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} \&sx\+\_\+curl, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete serendipity curl on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__LADDRCore_ga877a35995e3ecbee10f27df5c7bb9cf9}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Transfer\+Operators\+::\+Transfer\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+serendipity, const Eigen\+::\+Matrix\+Xd \&\+\_\+extension, const Eigen\+::\+Matrix\+Xd \&\+\_\+reduction)
+\item 
+\mbox{\hyperlink{group__LADDRCore_ga86b4f8c226218993ad411699f3dc416e}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+LASXGrad}} (const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&lie\+\_\+algebra, const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{SXGrad}} \&sxgrad, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{group__LADDRCore_ga646a0a5e34def85ef9a6223f7c1d0d71}{HAr\+DCore3\+D\+::\+LASXGrad\+::mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return the mesh. \end{DoxyCompactList}\item 
+const size\+\_\+t \& \mbox{\hyperlink{group__LADDRCore_ga0e72da58f032e9fe5494b78201d3c9a9}{HAr\+DCore3\+D\+::\+LASXGrad\+::degree}} () const
+\begin{DoxyCompactList}\small\item\em Return the polynomial degree. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_ga942f7dcb136c9ed04e627be7e89aafc3}{HAr\+DCore3\+D\+::\+LASXGrad\+::lie\+Alg}} () const
+\begin{DoxyCompactList}\small\item\em Return the Lie algebra. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}} \& \mbox{\hyperlink{group__LADDRCore_gae232f319c551d4464a1765d0ae860ba3}{HAr\+DCore3\+D\+::\+LASXGrad\+::ser\+Pro}} () const
+\begin{DoxyCompactList}\small\item\em Return the serendipity operators. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{group__LADDRCore_ga63933ab9549ab0f9a4e90a74504ef13f}{HAr\+DCore3\+D\+::\+LASXGrad\+::interpolate}} (const \mbox{\hyperlink{group__LADDRCore_gab30d96b69c36d139f71cdfee3ba6dae3}{LAFunction\+Type}} \&q, const int doe\+\_\+cell=-\/1, const int doe\+\_\+face=-\/1, const int doe\+\_\+edge=-\/1) const
+\begin{DoxyCompactList}\small\item\em Interpolator of a continuous function. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gaf9d003bb6422cde2e7d9eec9dcd33bdb}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Sgrad\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gad444fce53ea80e0c0cb66b8a52c410fb}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Egrad\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gae94f490d50a6a709a5ce76c9ed9ff593}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Rgrad\+Face}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga48d2c4c7566616731f2f4e102604c8b0}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Sgrad\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gac5d8822209e5b02258883ee64d5f4432}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Egrad\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the extension for face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga67da8796974bc8b79c8361cf7978c6f7}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Rgrad\+Face}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga70a2aa4e091d6cb3edbd754c1244075e}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Sgrad\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gab42256bc0a6b3a40df0d32d35e4c4bf8}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Egrad\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the extension for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_ga0b36e7aaa6233e1735e2f554cb3d7111}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Rgrad\+Cell}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gadb9192fadb7a6bea205cfc63a71d5446}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Sgrad\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the serendipity reconstruction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gab292b5f7109ec2cecfba1b3d32ecfc19}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Egrad\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the extension for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \& \mbox{\hyperlink{group__LADDRCore_gaedb43d8b39878e803493805cc462317b}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Rgrad\+Cell}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the reduction for cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga53210234622a9e9355a53108e63c19cb}{HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Gradient}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on the edge of index iE. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga633f6aca0fc668bc53c6ef7863d10e69}{HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Gradient}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on edge E. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gaf2ecca6ac55198abe29864acbfe83c1b}{HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Potential}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the edge of index iE. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga15d74dc860e1c1a9e17dbf294835885b}{HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Potential}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on edge E. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga43643d156f59f37fdaef271ba6e785a6}{HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Gradient}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga6080deb84f24daa43dc5b3d359265b22}{HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Gradient}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gaf11caddde66ea874a37db0b3ac0948ea}{HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Potential}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the face of index iF. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga1ce22db1151975f65b93a53192814754}{HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Potential}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on face F. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga78c0b6efdffa25e25244c5d91a9c75dd}{HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Gradient}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga585e62d0079530fb1398abeef698995a}{HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Gradient}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the full gradient operator on cell T. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga142b7065a13ef2198c37e10c9dc26d49}{HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Potential}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on the cell of index iT. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga752253b293426b3210f2ea3fffdbd075}{HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Potential}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return the potential operator on cell T. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga6e58b6e5182d0db77c3576a040f2eede}{HAr\+DCore3\+D\+::\+LASXGrad\+::compute\+L2\+Product}} (const size\+\_\+t iT, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
+\begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga6519627287caa0665d2102cc9fbfcbd7}{HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Bases}} (size\+\_\+t iT) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for the face of index iT. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_gadad571e6fb187b7626fa0b282d76d3e6}{HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Bases}} (const Cell \&T) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for cell T. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_gaddf29469ce9e0c7502a60a66428e8d19}{HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Bases}} (size\+\_\+t iF) const
+\begin{DoxyCompactList}\small\item\em Return face bases for the face of index iF. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_ga928d7e5b8e295a946573e5c0e75b33d0}{HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Bases}} (const Face \&F) const
+\begin{DoxyCompactList}\small\item\em Return cell bases for face F. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_gab2c8219129914ac69718353e9e8f52f4}{HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Bases}} (size\+\_\+t iE) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for the edge of index iE. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}} \& \mbox{\hyperlink{group__LADDRCore_gae27db70cbf4a1ae82f0a9bd49017c555}{HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Bases}} (const Edge \&E) const
+\begin{DoxyCompactList}\small\item\em Return edge bases for edge E. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_gaf57f735cd1cae66888307c2e081d2df4}{HAr\+DCore3\+D\+::\+LAXCurl\+::lie\+Algebra}} () const
 \begin{DoxyCompactList}\small\item\em Returns the Lie algebra. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \& \mbox{\hyperlink{group__LADDRCore_ga47db4eb928f4543685095e5efc8cd9a4}{HAr\+DCore3\+D\+::\+LAXCurl\+::x\+Curl}} () const
@@ -108,6 +283,8 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gad05e305a92714d93a69d36
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product for the cell of index iT. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gaa08771eaa0678ce7db39685aab3d1f2a}{HAr\+DCore3\+D\+::\+LAXDiv\+::compute\+L2\+Product\+Curl}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \&x\+\_\+curl, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete curl on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structHArDCore3D_1_1LAXDiv_1_1LocalOperators}{Local\+Operators}} \mbox{\hyperlink{group__LADDRCore_gaf0d7f0b51f050d1936bf33a636659f28}{HAr\+DCore3\+D\+::\+LAXDiv\+::\+\_\+compute\+\_\+cell\+\_\+divergence\+\_\+potential}} (size\+\_\+t iT)
+\item 
 \mbox{\hyperlink{group__LADDRCore_gabc15e4cb947556645b56e223814824cf}{HAr\+DCore3\+D\+::\+LAXGrad\+::\+Local\+Operators\+::\+Local\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+gradient, const Eigen\+::\+Matrix\+Xd \&\+\_\+potential)
 \item 
 \mbox{\hyperlink{group__LADDRCore_ga4bf86c52d06373c2887ea81fb8f89a29}{HAr\+DCore3\+D\+::\+LAXGrad\+::\+LAXGrad}} (const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&lie\+\_\+algebra, const \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}} \&xgrad, bool \mbox{\hyperlink{group__HHO__DiffAdvecReac_ga61c147fa3e7a4b2f35ba838ce26aa026}{use\+\_\+threads}}=true, std\+::ostream \&output=std\+::cout)
@@ -161,6 +338,18 @@ const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \& \mbox{\hyperlink{group__LADD
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga76cf2745ba304d5909d9b59e17c4adc6}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Transfer\+Operators\+::serendipity}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga0648faf34046cd15825d40b15eeb47f5}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Transfer\+Operators\+::extension}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga9e9fa206ea22f371bd2d5f81119b8911}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Transfer\+Operators\+::reduction}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gaafe956aa360d99cd80e5cccdc0c65e93}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Transfer\+Operators\+::serendipity}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gaa211e444f05f2c50a524203315530a21}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Transfer\+Operators\+::extension}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga68a5e1bd01ec55f8b7e52abd72625085}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Transfer\+Operators\+::reduction}}
+\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga3049acbe78c1bb5fb9959cc12ec417ec}{HAr\+DCore3\+D\+::\+LAXCurl\+::\+Local\+Operators\+::curl}}
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga692976197e302565abfe6ea53dac15ad}{HAr\+DCore3\+D\+::\+LAXCurl\+::\+Local\+Operators\+::potential}}
@@ -171,6 +360,16 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga81d0100f6541a28d3d75ad
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gab955d9602d1c41f90f6eb5ef1ee512b9}{HAr\+DCore3\+D\+::\+LAXDiv\+::\+Local\+Operators\+::potential}}
 \item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_ga0a1ab8b334914b4b45412b49dd6a6eb1}{HAr\+DCore3\+D\+::\+LAXDiv\+::m\+\_\+lie\+\_\+algebra}}
+\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}} \& \mbox{\hyperlink{group__LADDRCore_gacb1be18a8d6db3c23d84eaeac203437d}{HAr\+DCore3\+D\+::\+LAXDiv\+::m\+\_\+xdiv}}
+\item 
+bool \mbox{\hyperlink{group__LADDRCore_gaaa69a6bd1344404d08098ecd6e14cd18}{HAr\+DCore3\+D\+::\+LAXDiv\+::m\+\_\+use\+\_\+threads}}
+\item 
+std\+::ostream \& \mbox{\hyperlink{group__LADDRCore_ga247b23c5fcc0d18a8a6801f7e1cf24a0}{HAr\+DCore3\+D\+::\+LAXDiv\+::m\+\_\+output}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structHArDCore3D_1_1LAXDiv_1_1LocalOperators}{Local\+Operators}} $>$ $>$ \mbox{\hyperlink{group__LADDRCore_gaf250a4da2c9bf23440d2ca5c64648ffd}{HAr\+DCore3\+D\+::\+LAXDiv\+::m\+\_\+cell\+\_\+operators}}
+\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga9743285329382fd9b922177cee669638}{HAr\+DCore3\+D\+::\+LAXGrad\+::\+Local\+Operators\+::gradient}}
 \item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga73bb1889c41629a822be5964596a6448}{HAr\+DCore3\+D\+::\+LAXGrad\+::\+Local\+Operators\+::potential}}
@@ -178,45 +377,67 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga73bb1889c41629a822be59
 
 
 \doxysubsection{Detailed Description}
-Classes defining the Discrete De Rham sequence for Lie-\/algebra functions. 
-
 
 
 \doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__LADDRCore_gacc211870202c8800c9e896121d81eab6}\label{group__LADDRCore_gacc211870202c8800c9e896121d81eab6}} 
+\index{LADDRCore@{LADDRCore}!FunctionType@{FunctionType}}
+\index{FunctionType@{FunctionType}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__LADDRCore_gacc211870202c8800c9e896121d81eab6}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+Function\+Type}}}
+
+\mbox{\Hypertarget{group__LADDRCore_ga3cfb70b6cdd23bd2273bf1af7b1e87eb}\label{group__LADDRCore_ga3cfb70b6cdd23bd2273bf1af7b1e87eb}} 
+\index{LADDRCore@{LADDRCore}!FunctionType@{FunctionType}}
+\index{FunctionType@{FunctionType}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily typedef std\+::function$<$double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__LADDRCore_ga3cfb70b6cdd23bd2273bf1af7b1e87eb}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+Function\+Type}}}
+
 \mbox{\Hypertarget{group__LADDRCore_gaecbef92c0d82f58b5fea98398f5672c9}\label{group__LADDRCore_gaecbef92c0d82f58b5fea98398f5672c9}} 
 \index{LADDRCore@{LADDRCore}!FunctionType@{FunctionType}}
 \index{FunctionType@{FunctionType}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__LADDRCore_gaecbef92c0d82f58b5fea98398f5672c9}{HAr\+DCore3\+D\+::\+LAXCurl\+::\+Function\+Type}}}
 
 \mbox{\Hypertarget{group__LADDRCore_ga8b8d7bcc5412c1f13ee667ed55a461c4}\label{group__LADDRCore_ga8b8d7bcc5412c1f13ee667ed55a461c4}} 
 \index{LADDRCore@{LADDRCore}!FunctionType@{FunctionType}}
 \index{FunctionType@{FunctionType}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily typedef std\+::function$<$Eigen\+::\+Vector3d(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__LADDRCore_ga8b8d7bcc5412c1f13ee667ed55a461c4}{HAr\+DCore3\+D\+::\+LAXDiv\+::\+Function\+Type}}}
 
 \mbox{\Hypertarget{group__LADDRCore_ga0e926dbf5c9b15e6c1077cc204e21dd9}\label{group__LADDRCore_ga0e926dbf5c9b15e6c1077cc204e21dd9}} 
 \index{LADDRCore@{LADDRCore}!FunctionType@{FunctionType}}
 \index{FunctionType@{FunctionType}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{FunctionType}{FunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily typedef std\+::function$<$double(const Eigen\+::\+Vector3d \&)$>$ \mbox{\hyperlink{group__LADDRCore_ga0e926dbf5c9b15e6c1077cc204e21dd9}{HAr\+DCore3\+D\+::\+LAXGrad\+::\+Function\+Type}}}
+
+\mbox{\Hypertarget{group__LADDRCore_ga2f0be8a26f5e09132d5be25e389499cd}\label{group__LADDRCore_ga2f0be8a26f5e09132d5be25e389499cd}} 
+\index{LADDRCore@{LADDRCore}!LAFunctionType@{LAFunctionType}}
+\index{LAFunctionType@{LAFunctionType}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{LAFunctionType}{LAFunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{group__LADDRCore_gacc211870202c8800c9e896121d81eab6}{Function\+Type}}$>$ \mbox{\hyperlink{group__LADDRCore_ga2f0be8a26f5e09132d5be25e389499cd}{HAr\+DCore3\+D\+::\+LASXCurl\+::\+LAFunction\+Type}}}
+
+\mbox{\Hypertarget{group__LADDRCore_gab30d96b69c36d139f71cdfee3ba6dae3}\label{group__LADDRCore_gab30d96b69c36d139f71cdfee3ba6dae3}} 
+\index{LADDRCore@{LADDRCore}!LAFunctionType@{LAFunctionType}}
+\index{LAFunctionType@{LAFunctionType}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{LAFunctionType}{LAFunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{group__LADDRCore_ga3cfb70b6cdd23bd2273bf1af7b1e87eb}{Function\+Type}}$>$ \mbox{\hyperlink{group__LADDRCore_gab30d96b69c36d139f71cdfee3ba6dae3}{HAr\+DCore3\+D\+::\+LASXGrad\+::\+LAFunction\+Type}}}
 
 \mbox{\Hypertarget{group__LADDRCore_ga56d4d6afeb018bafbd088ac9eb555c28}\label{group__LADDRCore_ga56d4d6afeb018bafbd088ac9eb555c28}} 
 \index{LADDRCore@{LADDRCore}!LAFunctionType@{LAFunctionType}}
 \index{LAFunctionType@{LAFunctionType}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{LAFunctionType}{LAFunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{LAFunctionType}{LAFunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{group__LADDRCore_gaecbef92c0d82f58b5fea98398f5672c9}{Function\+Type}}$>$ \mbox{\hyperlink{group__LADDRCore_ga56d4d6afeb018bafbd088ac9eb555c28}{HAr\+DCore3\+D\+::\+LAXCurl\+::\+LAFunction\+Type}}}
 
 \mbox{\Hypertarget{group__LADDRCore_gaac4662a81a3edb112a2337f40bea422d}\label{group__LADDRCore_gaac4662a81a3edb112a2337f40bea422d}} 
 \index{LADDRCore@{LADDRCore}!LAFunctionType@{LAFunctionType}}
 \index{LAFunctionType@{LAFunctionType}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{LAFunctionType}{LAFunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{LAFunctionType}{LAFunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{group__LADDRCore_ga8b8d7bcc5412c1f13ee667ed55a461c4}{Function\+Type}}$>$ \mbox{\hyperlink{group__LADDRCore_gaac4662a81a3edb112a2337f40bea422d}{HAr\+DCore3\+D\+::\+LAXDiv\+::\+LAFunction\+Type}}}
 
 \mbox{\Hypertarget{group__LADDRCore_gadd21e9106aadcc2ecf2d864ac06ba1dc}\label{group__LADDRCore_gadd21e9106aadcc2ecf2d864ac06ba1dc}} 
 \index{LADDRCore@{LADDRCore}!LAFunctionType@{LAFunctionType}}
 \index{LAFunctionType@{LAFunctionType}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{LAFunctionType}{LAFunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{LAFunctionType}{LAFunctionType}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{group__LADDRCore_ga0e926dbf5c9b15e6c1077cc204e21dd9}{Function\+Type}}$>$ \mbox{\hyperlink{group__LADDRCore_gadd21e9106aadcc2ecf2d864ac06ba1dc}{HAr\+DCore3\+D\+::\+LAXGrad\+::\+LAFunction\+Type}}}
 
 \mbox{\Hypertarget{group__LADDRCore_ga024c0d76567c07d675da1ea72badb403}\label{group__LADDRCore_ga024c0d76567c07d675da1ea72badb403}} 
@@ -234,6 +455,12 @@ Classes defining the Discrete De Rham sequence for Lie-\/algebra functions.
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__LADDRCore_gaf0d7f0b51f050d1936bf33a636659f28}\label{group__LADDRCore_gaf0d7f0b51f050d1936bf33a636659f28}} 
+\index{LADDRCore@{LADDRCore}!\_compute\_cell\_divergence\_potential@{\_compute\_cell\_divergence\_potential}}
+\index{\_compute\_cell\_divergence\_potential@{\_compute\_cell\_divergence\_potential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{\_compute\_cell\_divergence\_potential()}{\_compute\_cell\_divergence\_potential()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1LAXDiv_1_1LocalOperators}{LAXDiv\+::\+Local\+Operators}} LAXDiv\+::\+\_\+compute\+\_\+cell\+\_\+divergence\+\_\+potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{group__LADDRCore_ga0e40822f5f462decf22eb214301aa05f}\label{group__LADDRCore_ga0e40822f5f462decf22eb214301aa05f}} 
 \index{LADDRCore@{LADDRCore}!basis@{basis}}
 \index{basis@{basis}!LADDRCore@{LADDRCore}}
@@ -244,10 +471,30 @@ Classes defining the Discrete De Rham sequence for Lie-\/algebra functions.
 
 Returns the basis of the Lie algebra. 
 
+\mbox{\Hypertarget{group__LADDRCore_ga483fe1b95def6939a96ce0836ae80f14}\label{group__LADDRCore_ga483fe1b95def6939a96ce0836ae80f14}} 
+\index{LADDRCore@{LADDRCore}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}}\& HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_gadad571e6fb187b7626fa0b282d76d3e6}\label{group__LADDRCore_gadad571e6fb187b7626fa0b282d76d3e6}} 
+\index{LADDRCore@{LADDRCore}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}}\& HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for cell T. 
+
 \mbox{\Hypertarget{group__LADDRCore_gaca9399e64f85d955eca96c7ad0d36d22}\label{group__LADDRCore_gaca9399e64f85d955eca96c7ad0d36d22}} 
 \index{LADDRCore@{LADDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}}\& HAr\+DCore3\+D\+::\+LAXCurl\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -257,7 +504,7 @@ Return cell bases for cell T.
 \mbox{\Hypertarget{group__LADDRCore_gaeccaa68b92571bba75c1147d5f994c58}\label{group__LADDRCore_gaeccaa68b92571bba75c1147d5f994c58}} 
 \index{LADDRCore@{LADDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}}\& HAr\+DCore3\+D\+::\+LAXDiv\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -267,17 +514,37 @@ Return cell bases for cell T.
 \mbox{\Hypertarget{group__LADDRCore_gaec5dd607cd3d4a154d88fed3a6329980}\label{group__LADDRCore_gaec5dd607cd3d4a154d88fed3a6329980}} 
 \index{LADDRCore@{LADDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}}\& HAr\+DCore3\+D\+::\+LAXGrad\+::cell\+Bases (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return cell bases for cell T. 
 
+\mbox{\Hypertarget{group__LADDRCore_ga6f11d9866d4fa5f53ccf08a0ad2b6ad5}\label{group__LADDRCore_ga6f11d9866d4fa5f53ccf08a0ad2b6ad5}} 
+\index{LADDRCore@{LADDRCore}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}}\& HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for the face of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga6519627287caa0665d2102cc9fbfcbd7}\label{group__LADDRCore_ga6519627287caa0665d2102cc9fbfcbd7}} 
+\index{LADDRCore@{LADDRCore}!cellBases@{cellBases}}
+\index{cellBases@{cellBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}}\& HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for the face of index iT. 
+
 \mbox{\Hypertarget{group__LADDRCore_ga5d5d7a36e623db495739a5c6514a2b3a}\label{group__LADDRCore_ga5d5d7a36e623db495739a5c6514a2b3a}} 
 \index{LADDRCore@{LADDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}}\& HAr\+DCore3\+D\+::\+LAXCurl\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -287,7 +554,7 @@ Return cell bases for the face of index iT.
 \mbox{\Hypertarget{group__LADDRCore_ga7a395f381c4865ae94192c5489b07ad9}\label{group__LADDRCore_ga7a395f381c4865ae94192c5489b07ad9}} 
 \index{LADDRCore@{LADDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}}\& HAr\+DCore3\+D\+::\+LAXDiv\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -297,12 +564,52 @@ Return cell bases for the face of index iT.
 \mbox{\Hypertarget{group__LADDRCore_ga4f8f9e1ff63f73b1c892db9a53aeefe9}\label{group__LADDRCore_ga4f8f9e1ff63f73b1c892db9a53aeefe9}} 
 \index{LADDRCore@{LADDRCore}!cellBases@{cellBases}}
 \index{cellBases@{cellBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\doxysubsubsection{\texorpdfstring{cellBases()}{cellBases()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1CellBases}{DDRCore\+::\+Cell\+Bases}}\& HAr\+DCore3\+D\+::\+LAXGrad\+::cell\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return cell bases for the cell of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga6087b6c7f912af19c5033147eaf562ad}\label{group__LADDRCore_ga6087b6c7f912af19c5033147eaf562ad}} 
+\index{LADDRCore@{LADDRCore}!cellCurl@{cellCurl}}
+\index{cellCurl@{cellCurl}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellCurl()}{cellCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Curl (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full curl operator on cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga17b8891a96b8bf5c155b7600ff6648af}\label{group__LADDRCore_ga17b8891a96b8bf5c155b7600ff6648af}} 
+\index{LADDRCore@{LADDRCore}!cellCurl@{cellCurl}}
+\index{cellCurl@{cellCurl}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellCurl()}{cellCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Curl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full curl operator on the cell of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga585e62d0079530fb1398abeef698995a}\label{group__LADDRCore_ga585e62d0079530fb1398abeef698995a}} 
+\index{LADDRCore@{LADDRCore}!cellGradient@{cellGradient}}
+\index{cellGradient@{cellGradient}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellGradient()}{cellGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Gradient (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga78c0b6efdffa25e25244c5d91a9c75dd}\label{group__LADDRCore_ga78c0b6efdffa25e25244c5d91a9c75dd}} 
+\index{LADDRCore@{LADDRCore}!cellGradient@{cellGradient}}
+\index{cellGradient@{cellGradient}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellGradient()}{cellGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Gradient (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on the cell of index iT. 
 
 \mbox{\Hypertarget{group__LADDRCore_gab5fafb0fefe8846737b77fde7d4e32dc}\label{group__LADDRCore_gab5fafb0fefe8846737b77fde7d4e32dc}} 
 \index{LADDRCore@{LADDRCore}!cellOperators@{cellOperators}}
@@ -364,10 +671,92 @@ Return cell operators for the cell of index iT.
 
 Return cell operators for the cell of index iT. 
 
+\mbox{\Hypertarget{group__LADDRCore_ga270159011a635a007c331456abf5eb7d}\label{group__LADDRCore_ga270159011a635a007c331456abf5eb7d}} 
+\index{LADDRCore@{LADDRCore}!cellPotential@{cellPotential}}
+\index{cellPotential@{cellPotential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellPotential()}{cellPotential()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Potential (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga752253b293426b3210f2ea3fffdbd075}\label{group__LADDRCore_ga752253b293426b3210f2ea3fffdbd075}} 
+\index{LADDRCore@{LADDRCore}!cellPotential@{cellPotential}}
+\index{cellPotential@{cellPotential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellPotential()}{cellPotential()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Potential (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_gab20051acf6ff247c7527614f3a4ca2dc}\label{group__LADDRCore_gab20051acf6ff247c7527614f3a4ca2dc}} 
+\index{LADDRCore@{LADDRCore}!cellPotential@{cellPotential}}
+\index{cellPotential@{cellPotential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellPotential()}{cellPotential()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::cell\+Potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on the cell of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga142b7065a13ef2198c37e10c9dc26d49}\label{group__LADDRCore_ga142b7065a13ef2198c37e10c9dc26d49}} 
+\index{LADDRCore@{LADDRCore}!cellPotential@{cellPotential}}
+\index{cellPotential@{cellPotential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{cellPotential()}{cellPotential()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::cell\+Potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on the cell of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga3fc9b4714c90a51322ae730e83d84337}\label{group__LADDRCore_ga3fc9b4714c90a51322ae730e83d84337}} 
+\index{LADDRCore@{LADDRCore}!computeL2Product@{computeL2Product}}
+\index{computeL2Product@{computeL2Product}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::compute\+L2\+Product (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the matrix of the (weighted) L2-\/product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iT} & index of the cell \\
+\hline
+{\em penalty\+\_\+factor} & pre-\/factor for stabilisation term \\
+\hline
+{\em mass\+\_\+\+Pk3\+\_\+T} & if pre-\/computed, the mass matrix of (P$^\wedge$k(T))$^\wedge$3; if none is pre-\/computed, passing Eigen\+::\+Matrix\+Xd\+::\+Zero(1,1) will force the calculation \\
+\hline
+{\em weight} & weight function in the L2 product, defaults to 1 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__LADDRCore_ga6e58b6e5182d0db77c3576a040f2eede}\label{group__LADDRCore_ga6e58b6e5182d0db77c3576a040f2eede}} 
+\index{LADDRCore@{LADDRCore}!computeL2Product@{computeL2Product}}
+\index{computeL2Product@{computeL2Product}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::compute\+L2\+Product (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the matrix of the (weighted) L2-\/product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iT} & index of the cell \\
+\hline
+{\em penalty\+\_\+factor} & pre-\/factor for stabilisation term \\
+\hline
+{\em mass\+\_\+\+Pk3\+\_\+T} & if pre-\/computed, the mass matrix of (P$^\wedge$k(T))$^\wedge$3; if none is pre-\/computed, passing Eigen\+::\+Matrix\+Xd\+::\+Zero(1,1) will force the calculation \\
+\hline
+{\em weight} & weight function in the L2 product, defaults to 1 \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__LADDRCore_gaa6f17885c3ec26554a9e54b14c4378c5}\label{group__LADDRCore_gaa6f17885c3ec26554a9e54b14c4378c5}} 
 \index{LADDRCore@{LADDRCore}!computeL2Product@{computeL2Product}}
 \index{computeL2Product@{computeL2Product}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd LAXCurl\+::compute\+L2\+Product (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
 
 Compute the matrix of the (weighted) L2-\/product for the cell of index iT. We required the same arguments as the product functions in \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} since they are called in the construction. From the choice of ordering of the DOFs, this matrix is the Kronecker product of the L2-\/product matrix of iT in \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} with the mass matrix of the Lie algebra. 
@@ -384,7 +773,7 @@ Compute the matrix of the (weighted) L2-\/product for the cell of index iT. We r
 \mbox{\Hypertarget{group__LADDRCore_gad05e305a92714d93a69d369ce56e15a6}\label{group__LADDRCore_gad05e305a92714d93a69d369ce56e15a6}} 
 \index{LADDRCore@{LADDRCore}!computeL2Product@{computeL2Product}}
 \index{computeL2Product@{computeL2Product}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd LAXDiv\+::compute\+L2\+Product (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
 
 
@@ -405,7 +794,7 @@ Compute the matrix of the (weighted) L2-\/product for the cell of index iT.
 \mbox{\Hypertarget{group__LADDRCore_ga6274b4b26e6ce1043b6982dd93c31da5}\label{group__LADDRCore_ga6274b4b26e6ce1043b6982dd93c31da5}} 
 \index{LADDRCore@{LADDRCore}!computeL2Product@{computeL2Product}}
 \index{computeL2Product@{computeL2Product}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{computeL2Product()}{computeL2Product()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd LAXGrad\+::compute\+L2\+Product (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pkpo\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
 
 
@@ -423,10 +812,35 @@ Compute the matrix of the (weighted) L2-\/product for the cell of index iT. The 
 {\em weight} & weight function in the L2 product, defaults to 1 \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__LADDRCore_ga74f291de5bbb2c162b357b52f29b8387}\label{group__LADDRCore_ga74f291de5bbb2c162b357b52f29b8387}} 
+\index{LADDRCore@{LADDRCore}!computeL2ProductCurl@{computeL2ProductCurl}}
+\index{computeL2ProductCurl@{computeL2ProductCurl}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{computeL2ProductCurl()}{computeL2ProductCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd LASXDiv\+::compute\+L2\+Product\+Curl (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} \&}]{sx\+\_\+curl,  }\item[{const std\+::string \&}]{side,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
+
+
+
+Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete serendipity curl on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iT} & index of the cell \\
+\hline
+{\em sx\+\_\+curl} & instance of \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} to access the serendipity curls \\
+\hline
+{\em side} & which side (left, right, both) we apply the gradient to \\
+\hline
+{\em penalty\+\_\+factor} & pre-\/factor for stabilisation term \\
+\hline
+{\em mass\+\_\+\+Pk3\+\_\+T} & if pre-\/computed, the mass matrix of (P$^\wedge$k(T))$^\wedge$3; if none is pre-\/computed, passing Eigen\+::\+Matrix\+Xd\+::\+Zero(1,1) will force the calculation \\
+\hline
+{\em weight} & weight function in the L2 product, defaults to constant 1. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__LADDRCore_gaa08771eaa0678ce7db39685aab3d1f2a}\label{group__LADDRCore_gaa08771eaa0678ce7db39685aab3d1f2a}} 
 \index{LADDRCore@{LADDRCore}!computeL2ProductCurl@{computeL2ProductCurl}}
 \index{computeL2ProductCurl@{computeL2ProductCurl}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{computeL2ProductCurl()}{computeL2ProductCurl()}}
+\doxysubsubsection{\texorpdfstring{computeL2ProductCurl()}{computeL2ProductCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd LAXDiv\+::compute\+L2\+Product\+Curl (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \&}]{x\+\_\+curl,  }\item[{const std\+::string \&}]{side,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
 
 
@@ -448,10 +862,35 @@ Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+
 {\em weight} & weight function in the L2 product, defaults to constant 1. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__LADDRCore_gac69d0f379101aa9bb78393058ad14856}\label{group__LADDRCore_gac69d0f379101aa9bb78393058ad14856}} 
+\index{LADDRCore@{LADDRCore}!computeL2ProductGradient@{computeL2ProductGradient}}
+\index{computeL2ProductGradient@{computeL2ProductGradient}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{computeL2ProductGradient()}{computeL2ProductGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd LASXCurl\+::compute\+L2\+Product\+Gradient (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{SXGrad}} \&}]{sx\+\_\+grad,  }\item[{const std\+::string \&}]{side,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
+
+
+
+Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete gradient on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iT} & index of the cell \\
+\hline
+{\em sx\+\_\+grad} & instance of \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{SXGrad}} to access the full gradients \\
+\hline
+{\em side} & which side (left, right, both) we apply the gradient to \\
+\hline
+{\em penalty\+\_\+factor} & pre-\/factor for stabilisation term \\
+\hline
+{\em mass\+\_\+\+Pk3\+\_\+T} & if pre-\/computed, the mass matrix of (P$^\wedge$k(T))$^\wedge$3; if none is pre-\/computed, passing Eigen\+::\+Matrix\+Xd\+::\+Zero(1,1) will force the calculation \\
+\hline
+{\em weight} & weight function in the L2 product, defaults to constant 1. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__LADDRCore_ga4fa07c247b0faf06d8ef9155e8579e4d}\label{group__LADDRCore_ga4fa07c247b0faf06d8ef9155e8579e4d}} 
 \index{LADDRCore@{LADDRCore}!computeL2ProductGradient@{computeL2ProductGradient}}
 \index{computeL2ProductGradient@{computeL2ProductGradient}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{computeL2ProductGradient()}{computeL2ProductGradient()}}
+\doxysubsubsection{\texorpdfstring{computeL2ProductGradient()}{computeL2ProductGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd LAXCurl\+::compute\+L2\+Product\+Gradient (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{iT,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}} \&}]{x\+\_\+grad,  }\item[{const std\+::string \&}]{side,  }\item[{const double \&}]{penalty\+\_\+factor = {\ttfamily 1.},  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{mass\+\_\+\+Pk3\+\_\+T = {\ttfamily Eigen\+:\+:MatrixXd\+:\+:Zero(1,1)},  }\item[{const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&}]{weight = {\ttfamily \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)} }\end{DoxyParamCaption}) const}
 
 
@@ -473,10 +912,30 @@ Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+
 {\em weight} & weight function in the L2 product, defaults to constant 1. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__LADDRCore_ga4163a08fb0bbfdfe6a37006e0d1faadf}\label{group__LADDRCore_ga4163a08fb0bbfdfe6a37006e0d1faadf}} 
+\index{LADDRCore@{LADDRCore}!degree@{degree}}
+\index{degree@{degree}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily const size\+\_\+t\& HAr\+DCore3\+D\+::\+LASXCurl\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the polynomial degree. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga0e72da58f032e9fe5494b78201d3c9a9}\label{group__LADDRCore_ga0e72da58f032e9fe5494b78201d3c9a9}} 
+\index{LADDRCore@{LADDRCore}!degree@{degree}}
+\index{degree@{degree}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily const size\+\_\+t\& HAr\+DCore3\+D\+::\+LASXGrad\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the polynomial degree. 
+
 \mbox{\Hypertarget{group__LADDRCore_gaa527c84aa90f1a0981ac1bbd91e74cc2}\label{group__LADDRCore_gaa527c84aa90f1a0981ac1bbd91e74cc2}} 
 \index{LADDRCore@{LADDRCore}!degree@{degree}}
 \index{degree@{degree}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily const size\+\_\+t\& HAr\+DCore3\+D\+::\+LAXCurl\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -486,7 +945,7 @@ Return the polynomial degree.
 \mbox{\Hypertarget{group__LADDRCore_ga8743e1f3dd391bf50949e2fc6c1fb970}\label{group__LADDRCore_ga8743e1f3dd391bf50949e2fc6c1fb970}} 
 \index{LADDRCore@{LADDRCore}!degree@{degree}}
 \index{degree@{degree}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily const size\+\_\+t\& HAr\+DCore3\+D\+::\+LAXDiv\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -496,7 +955,7 @@ Return the polynomial degree.
 \mbox{\Hypertarget{group__LADDRCore_ga5dd9116fb7d7ca41da8444f70996609c}\label{group__LADDRCore_ga5dd9116fb7d7ca41da8444f70996609c}} 
 \index{LADDRCore@{LADDRCore}!degree@{degree}}
 \index{degree@{degree}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{degree()}{degree()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily const size\+\_\+t\& HAr\+DCore3\+D\+::\+LAXGrad\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -513,10 +972,70 @@ Return the polynomial degree.
 
 Assuming orthonormal basis. 
 
-Returns the dimension of the Lie algebra \mbox{\Hypertarget{group__LADDRCore_gae1cb5dbfba658a220243281f5d8a5874}\label{group__LADDRCore_gae1cb5dbfba658a220243281f5d8a5874}} 
+Returns the dimension of the Lie algebra \mbox{\Hypertarget{group__LADDRCore_ga93fefc98e0a33648480fa95b2dd34bce}\label{group__LADDRCore_ga93fefc98e0a33648480fa95b2dd34bce}} 
+\index{LADDRCore@{LADDRCore}!EcurlCell@{EcurlCell}}
+\index{EcurlCell@{EcurlCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{EcurlCell()}{EcurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Ecurl\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_gaa27852c13a282c9bb6f04b8768537c82}\label{group__LADDRCore_gaa27852c13a282c9bb6f04b8768537c82}} 
+\index{LADDRCore@{LADDRCore}!EcurlCell@{EcurlCell}}
+\index{EcurlCell@{EcurlCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{EcurlCell()}{EcurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Ecurl\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for the cell of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga48b2135f06fc896a0816292842b7aaae}\label{group__LADDRCore_ga48b2135f06fc896a0816292842b7aaae}} 
+\index{LADDRCore@{LADDRCore}!EcurlFace@{EcurlFace}}
+\index{EcurlFace@{EcurlFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{EcurlFace()}{EcurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Ecurl\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for face F. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga5f483807f15c9c9d89474cf9202fb084}\label{group__LADDRCore_ga5f483807f15c9c9d89474cf9202fb084}} 
+\index{LADDRCore@{LADDRCore}!EcurlFace@{EcurlFace}}
+\index{EcurlFace@{EcurlFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{EcurlFace()}{EcurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Ecurl\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for the face of index iF. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga85e7077a12cb9ea0cb8c33fa3bc24774}\label{group__LADDRCore_ga85e7077a12cb9ea0cb8c33fa3bc24774}} 
 \index{LADDRCore@{LADDRCore}!edgeBases@{edgeBases}}
 \index{edgeBases@{edgeBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}}\& HAr\+DCore3\+D\+::\+LASXCurl\+::edge\+Bases (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return edge bases for edge E. 
+
+\mbox{\Hypertarget{group__LADDRCore_gae27db70cbf4a1ae82f0a9bd49017c555}\label{group__LADDRCore_gae27db70cbf4a1ae82f0a9bd49017c555}} 
+\index{LADDRCore@{LADDRCore}!edgeBases@{edgeBases}}
+\index{edgeBases@{edgeBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}}\& HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Bases (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return edge bases for edge E. 
+
+\mbox{\Hypertarget{group__LADDRCore_gae1cb5dbfba658a220243281f5d8a5874}\label{group__LADDRCore_gae1cb5dbfba658a220243281f5d8a5874}} 
+\index{LADDRCore@{LADDRCore}!edgeBases@{edgeBases}}
+\index{edgeBases@{edgeBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}}\& HAr\+DCore3\+D\+::\+LAXCurl\+::edge\+Bases (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -526,17 +1045,37 @@ Return edge bases for edge E.
 \mbox{\Hypertarget{group__LADDRCore_gaa103cd74c53e163b2f6a3bdaeea0dd49}\label{group__LADDRCore_gaa103cd74c53e163b2f6a3bdaeea0dd49}} 
 \index{LADDRCore@{LADDRCore}!edgeBases@{edgeBases}}
 \index{edgeBases@{edgeBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}}\& HAr\+DCore3\+D\+::\+LAXGrad\+::edge\+Bases (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return edge bases for edge E. 
 
+\mbox{\Hypertarget{group__LADDRCore_gaa4a8015c4ebb5a4e77f7322f2a944ddf}\label{group__LADDRCore_gaa4a8015c4ebb5a4e77f7322f2a944ddf}} 
+\index{LADDRCore@{LADDRCore}!edgeBases@{edgeBases}}
+\index{edgeBases@{edgeBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}}\& HAr\+DCore3\+D\+::\+LASXCurl\+::edge\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return edge bases for the edge of index iE. 
+
+\mbox{\Hypertarget{group__LADDRCore_gab2c8219129914ac69718353e9e8f52f4}\label{group__LADDRCore_gab2c8219129914ac69718353e9e8f52f4}} 
+\index{LADDRCore@{LADDRCore}!edgeBases@{edgeBases}}
+\index{edgeBases@{edgeBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}}\& HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return edge bases for the edge of index iE. 
+
 \mbox{\Hypertarget{group__LADDRCore_gad3078fe6f21e9e4f1598facfed9b8d10}\label{group__LADDRCore_gad3078fe6f21e9e4f1598facfed9b8d10}} 
 \index{LADDRCore@{LADDRCore}!edgeBases@{edgeBases}}
 \index{edgeBases@{edgeBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}}\& HAr\+DCore3\+D\+::\+LAXCurl\+::edge\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -546,12 +1085,32 @@ Return edge bases for the edge of index iE.
 \mbox{\Hypertarget{group__LADDRCore_ga43778753fa7632ab907659c4a4b7d1f2}\label{group__LADDRCore_ga43778753fa7632ab907659c4a4b7d1f2}} 
 \index{LADDRCore@{LADDRCore}!edgeBases@{edgeBases}}
 \index{edgeBases@{edgeBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\doxysubsubsection{\texorpdfstring{edgeBases()}{edgeBases()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1EdgeBases}{DDRCore\+::\+Edge\+Bases}}\& HAr\+DCore3\+D\+::\+LAXGrad\+::edge\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return edge bases for the edge of index iE. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga633f6aca0fc668bc53c6ef7863d10e69}\label{group__LADDRCore_ga633f6aca0fc668bc53c6ef7863d10e69}} 
+\index{LADDRCore@{LADDRCore}!edgeGradient@{edgeGradient}}
+\index{edgeGradient@{edgeGradient}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeGradient()}{edgeGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Gradient (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on edge E. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga53210234622a9e9355a53108e63c19cb}\label{group__LADDRCore_ga53210234622a9e9355a53108e63c19cb}} 
+\index{LADDRCore@{LADDRCore}!edgeGradient@{edgeGradient}}
+\index{edgeGradient@{edgeGradient}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{edgeGradient()}{edgeGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Gradient (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on the edge of index iE. 
 
 \mbox{\Hypertarget{group__LADDRCore_gacd45d5c7bbf4bd0ba24bc3471bcb9bb7}\label{group__LADDRCore_gacd45d5c7bbf4bd0ba24bc3471bcb9bb7}} 
 \index{LADDRCore@{LADDRCore}!edgeOperators@{edgeOperators}}
@@ -573,10 +1132,90 @@ Return edge operators for edge E.
 
 Return edge operators for the edge of index iE. 
 
+\mbox{\Hypertarget{group__LADDRCore_ga15d74dc860e1c1a9e17dbf294835885b}\label{group__LADDRCore_ga15d74dc860e1c1a9e17dbf294835885b}} 
+\index{LADDRCore@{LADDRCore}!edgePotential@{edgePotential}}
+\index{edgePotential@{edgePotential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{edgePotential()}{edgePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Potential (\begin{DoxyParamCaption}\item[{const Edge \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on edge E. 
+
+\mbox{\Hypertarget{group__LADDRCore_gaf2ecca6ac55198abe29864acbfe83c1b}\label{group__LADDRCore_gaf2ecca6ac55198abe29864acbfe83c1b}} 
+\index{LADDRCore@{LADDRCore}!edgePotential@{edgePotential}}
+\index{edgePotential@{edgePotential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{edgePotential()}{edgePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::edge\+Potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iE }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on the edge of index iE. 
+
+\mbox{\Hypertarget{group__LADDRCore_gab292b5f7109ec2cecfba1b3d32ecfc19}\label{group__LADDRCore_gab292b5f7109ec2cecfba1b3d32ecfc19}} 
+\index{LADDRCore@{LADDRCore}!EgradCell@{EgradCell}}
+\index{EgradCell@{EgradCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{EgradCell()}{EgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Egrad\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_gab42256bc0a6b3a40df0d32d35e4c4bf8}\label{group__LADDRCore_gab42256bc0a6b3a40df0d32d35e4c4bf8}} 
+\index{LADDRCore@{LADDRCore}!EgradCell@{EgradCell}}
+\index{EgradCell@{EgradCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{EgradCell()}{EgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Egrad\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for the cell of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_gac5d8822209e5b02258883ee64d5f4432}\label{group__LADDRCore_gac5d8822209e5b02258883ee64d5f4432}} 
+\index{LADDRCore@{LADDRCore}!EgradFace@{EgradFace}}
+\index{EgradFace@{EgradFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{EgradFace()}{EgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Egrad\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for face F. 
+
+\mbox{\Hypertarget{group__LADDRCore_gad444fce53ea80e0c0cb66b8a52c410fb}\label{group__LADDRCore_gad444fce53ea80e0c0cb66b8a52c410fb}} 
+\index{LADDRCore@{LADDRCore}!EgradFace@{EgradFace}}
+\index{EgradFace@{EgradFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{EgradFace()}{EgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Egrad\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the extension for the face of index iF. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga07cb952ad67ae364cc3da65aa76ef8b8}\label{group__LADDRCore_ga07cb952ad67ae364cc3da65aa76ef8b8}} 
+\index{LADDRCore@{LADDRCore}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}}\& HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for face F. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga928d7e5b8e295a946573e5c0e75b33d0}\label{group__LADDRCore_ga928d7e5b8e295a946573e5c0e75b33d0}} 
+\index{LADDRCore@{LADDRCore}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}}\& HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for face F. 
+
 \mbox{\Hypertarget{group__LADDRCore_ga4abede871b117c910ba85fc5381e5e3d}\label{group__LADDRCore_ga4abede871b117c910ba85fc5381e5e3d}} 
 \index{LADDRCore@{LADDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}}\& HAr\+DCore3\+D\+::\+LAXCurl\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -586,7 +1225,7 @@ Return cell bases for face F.
 \mbox{\Hypertarget{group__LADDRCore_ga68841c1f74f9d8ff0f2538fcad67c593}\label{group__LADDRCore_ga68841c1f74f9d8ff0f2538fcad67c593}} 
 \index{LADDRCore@{LADDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}}\& HAr\+DCore3\+D\+::\+LAXDiv\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -596,17 +1235,37 @@ Return cell bases for face F.
 \mbox{\Hypertarget{group__LADDRCore_ga923d8748b2de6fbdb009a7f56bf49b4a}\label{group__LADDRCore_ga923d8748b2de6fbdb009a7f56bf49b4a}} 
 \index{LADDRCore@{LADDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}}\& HAr\+DCore3\+D\+::\+LAXGrad\+::face\+Bases (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return cell bases for face F. 
 
+\mbox{\Hypertarget{group__LADDRCore_ga245232eb9434dab02db541581caa852d}\label{group__LADDRCore_ga245232eb9434dab02db541581caa852d}} 
+\index{LADDRCore@{LADDRCore}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}}\& HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return face bases for the face of index iF. 
+
+\mbox{\Hypertarget{group__LADDRCore_gaddf29469ce9e0c7502a60a66428e8d19}\label{group__LADDRCore_gaddf29469ce9e0c7502a60a66428e8d19}} 
+\index{LADDRCore@{LADDRCore}!faceBases@{faceBases}}
+\index{faceBases@{faceBases}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}}\& HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return face bases for the face of index iF. 
+
 \mbox{\Hypertarget{group__LADDRCore_ga48dc68d6ba22b1070d9d2eba077208f1}\label{group__LADDRCore_ga48dc68d6ba22b1070d9d2eba077208f1}} 
 \index{LADDRCore@{LADDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}}\& HAr\+DCore3\+D\+::\+LAXCurl\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -616,7 +1275,7 @@ Return face bases for the face of index iF.
 \mbox{\Hypertarget{group__LADDRCore_gae2cf5b9165e8541aef140353b30721cd}\label{group__LADDRCore_gae2cf5b9165e8541aef140353b30721cd}} 
 \index{LADDRCore@{LADDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}}\& HAr\+DCore3\+D\+::\+LAXDiv\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -626,12 +1285,52 @@ Return face bases for the face of index iF.
 \mbox{\Hypertarget{group__LADDRCore_ga023dfafe439eb52255a2f2806f584284}\label{group__LADDRCore_ga023dfafe439eb52255a2f2806f584284}} 
 \index{LADDRCore@{LADDRCore}!faceBases@{faceBases}}
 \index{faceBases@{faceBases}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\doxysubsubsection{\texorpdfstring{faceBases()}{faceBases()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{structHArDCore3D_1_1DDRCore_1_1FaceBases}{DDRCore\+::\+Face\+Bases}}\& HAr\+DCore3\+D\+::\+LAXGrad\+::face\+Bases (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return face bases for the face of index iF. 
+
+\mbox{\Hypertarget{group__LADDRCore_gad05483652f4972e0477abb1a8d0d6b03}\label{group__LADDRCore_gad05483652f4972e0477abb1a8d0d6b03}} 
+\index{LADDRCore@{LADDRCore}!faceCurl@{faceCurl}}
+\index{faceCurl@{faceCurl}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{faceCurl()}{faceCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Curl (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full curl operator on face F. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga9397753a99e6840106570c812ec3e063}\label{group__LADDRCore_ga9397753a99e6840106570c812ec3e063}} 
+\index{LADDRCore@{LADDRCore}!faceCurl@{faceCurl}}
+\index{faceCurl@{faceCurl}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{faceCurl()}{faceCurl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Curl (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full curl operator on the face of index iF. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga6080deb84f24daa43dc5b3d359265b22}\label{group__LADDRCore_ga6080deb84f24daa43dc5b3d359265b22}} 
+\index{LADDRCore@{LADDRCore}!faceGradient@{faceGradient}}
+\index{faceGradient@{faceGradient}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{faceGradient()}{faceGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Gradient (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on face F. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga43643d156f59f37fdaef271ba6e785a6}\label{group__LADDRCore_ga43643d156f59f37fdaef271ba6e785a6}} 
+\index{LADDRCore@{LADDRCore}!faceGradient@{faceGradient}}
+\index{faceGradient@{faceGradient}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{faceGradient()}{faceGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Gradient (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the full gradient operator on the face of index iF. 
 
 \mbox{\Hypertarget{group__LADDRCore_ga38a62e6872b6503ac3ac6e3a11d0c260}\label{group__LADDRCore_ga38a62e6872b6503ac3ac6e3a11d0c260}} 
 \index{LADDRCore@{LADDRCore}!faceOperators@{faceOperators}}
@@ -673,10 +1372,71 @@ Return face operators for the face of index iF.
 
 Return face operators for the face of index iF. 
 
+\mbox{\Hypertarget{group__LADDRCore_ga229284bab8798245ed7966f16be38dde}\label{group__LADDRCore_ga229284bab8798245ed7966f16be38dde}} 
+\index{LADDRCore@{LADDRCore}!facePotential@{facePotential}}
+\index{facePotential@{facePotential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{facePotential()}{facePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Potential (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on face F. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga1ce22db1151975f65b93a53192814754}\label{group__LADDRCore_ga1ce22db1151975f65b93a53192814754}} 
+\index{LADDRCore@{LADDRCore}!facePotential@{facePotential}}
+\index{facePotential@{facePotential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{facePotential()}{facePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Potential (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on face F. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga6b8920eecf1210b72402e552aec58d76}\label{group__LADDRCore_ga6b8920eecf1210b72402e552aec58d76}} 
+\index{LADDRCore@{LADDRCore}!facePotential@{facePotential}}
+\index{facePotential@{facePotential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{facePotential()}{facePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::face\+Potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on the face of index iF. 
+
+\mbox{\Hypertarget{group__LADDRCore_gaf11caddde66ea874a37db0b3ac0948ea}\label{group__LADDRCore_gaf11caddde66ea874a37db0b3ac0948ea}} 
+\index{LADDRCore@{LADDRCore}!facePotential@{facePotential}}
+\index{facePotential@{facePotential}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{facePotential()}{facePotential()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::face\+Potential (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the potential operator on the face of index iF. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga63933ab9549ab0f9a4e90a74504ef13f}\label{group__LADDRCore_ga63933ab9549ab0f9a4e90a74504ef13f}} 
+\index{LADDRCore@{LADDRCore}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd LASXGrad\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__LADDRCore_gab30d96b69c36d139f71cdfee3ba6dae3}{LAFunction\+Type}} \&}]{q,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+edge = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
+
+
+
+Interpolator of a continuous function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The function to interpolate \\
+\hline
+{\em doe\+\_\+cell} & The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+face} & The optional degre of face quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+edge} & The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__LADDRCore_gaff971b75546e5108b03ef2f00bd53bc8}\label{group__LADDRCore_gaff971b75546e5108b03ef2f00bd53bc8}} 
 \index{LADDRCore@{LADDRCore}!interpolate@{interpolate}}
 \index{interpolate@{interpolate}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Vector\+Xd LAXGrad\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__LADDRCore_gadd21e9106aadcc2ecf2d864ac06ba1dc}{LAFunction\+Type}} \&}]{q,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+edge = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
 
 
@@ -697,7 +1457,7 @@ Interpolator of a continuous function.
 \mbox{\Hypertarget{group__LADDRCore_ga8e17d6062eb2281275cdaa9577d4aea3}\label{group__LADDRCore_ga8e17d6062eb2281275cdaa9577d4aea3}} 
 \index{LADDRCore@{LADDRCore}!interpolate@{interpolate}}
 \index{interpolate@{interpolate}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Vector\+Xd LAXDiv\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__LADDRCore_gaac4662a81a3edb112a2337f40bea422d}{LAFunction\+Type}} \&}]{v,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
 
 
@@ -713,10 +1473,31 @@ Interpolator of a continuous function.
 {\em doe\+\_\+face} & The optional degre of face quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__LADDRCore_gad2efc5016d215b73f10a5cdb3dcda34a}\label{group__LADDRCore_gad2efc5016d215b73f10a5cdb3dcda34a}} 
+\index{LADDRCore@{LADDRCore}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd LASXCurl\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__LADDRCore_ga2f0be8a26f5e09132d5be25e389499cd}{LAFunction\+Type}} \&}]{v,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+edge = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
+
+
+
+Interpolator of a continuous function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The function to interpolate \\
+\hline
+{\em doe\+\_\+cell} & The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+face} & The optional degre of face quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+{\em doe\+\_\+edge} & The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__LADDRCore_gad5872b00cc1a2f455b73fbbe4a393122}\label{group__LADDRCore_gad5872b00cc1a2f455b73fbbe4a393122}} 
 \index{LADDRCore@{LADDRCore}!interpolate@{interpolate}}
 \index{interpolate@{interpolate}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily Eigen\+::\+Vector\+Xd LAXCurl\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__LADDRCore_ga56d4d6afeb018bafbd088ac9eb555c28}{LAFunction\+Type}} \&}]{v,  }\item[{const int}]{doe\+\_\+cell = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+face = {\ttfamily -\/1},  }\item[{const int}]{doe\+\_\+edge = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
 
 
@@ -734,6 +1515,46 @@ Interpolator of a continuous Lie algebra valued function decomposed on the basis
 {\em doe\+\_\+edge} & The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2$\ast$degree()+3 will be used. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{group__LADDRCore_gad56d6b4df393c6473a4f03213cd938f5}\label{group__LADDRCore_gad56d6b4df393c6473a4f03213cd938f5}} 
+\index{LADDRCore@{LADDRCore}!LADDRCore@{LADDRCore}}
+\index{LADDRCore@{LADDRCore}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{LADDRCore()}{LADDRCore()}}
+{\footnotesize\ttfamily LADDRCore\+::\+LADDRCore (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&}]{lie\+\_\+algebra,  }\item[{const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}} \&}]{mesh,  }\item[{size\+\_\+t}]{K,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{group__LADDRCore_gaf8c61ad4f6658560b06a68e50714e202}\label{group__LADDRCore_gaf8c61ad4f6658560b06a68e50714e202}} 
+\index{LADDRCore@{LADDRCore}!LASXCurl@{LASXCurl}}
+\index{LASXCurl@{LASXCurl}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{LASXCurl()}{LASXCurl()}}
+{\footnotesize\ttfamily LASXCurl\+::\+LASXCurl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&}]{lie\+\_\+algebra,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} \&}]{sx\+\_\+curl,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga3943bf09c9a0dba06d56960fa731947e}\label{group__LADDRCore_ga3943bf09c9a0dba06d56960fa731947e}} 
+\index{LADDRCore@{LADDRCore}!LASXDiv@{LASXDiv}}
+\index{LASXDiv@{LASXDiv}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{LASXDiv()}{LASXDiv()}}
+{\footnotesize\ttfamily LASXDiv\+::\+LASXDiv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&}]{lie\+\_\+algebra,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}} \&}]{xdiv,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1SXDiv}{SXDiv}} \&}]{sxdiv,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga86b4f8c226218993ad411699f3dc416e}\label{group__LADDRCore_ga86b4f8c226218993ad411699f3dc416e}} 
+\index{LADDRCore@{LADDRCore}!LASXGrad@{LASXGrad}}
+\index{LASXGrad@{LASXGrad}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{LASXGrad()}{LASXGrad()}}
+{\footnotesize\ttfamily LASXGrad\+::\+LASXGrad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \&}]{lie\+\_\+algebra,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{SXGrad}} \&}]{sxgrad,  }\item[{bool}]{use\+\_\+threads = {\ttfamily true},  }\item[{std\+::ostream \&}]{output = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
 \mbox{\Hypertarget{group__LADDRCore_ga3460ba61a346924322d490258c41f144}\label{group__LADDRCore_ga3460ba61a346924322d490258c41f144}} 
 \index{LADDRCore@{LADDRCore}!LAXCurl@{LAXCurl}}
 \index{LAXCurl@{LAXCurl}!LADDRCore@{LADDRCore}}
@@ -743,6 +1564,12 @@ Interpolator of a continuous Lie algebra valued function decomposed on the basis
 
 
 Constructor. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga80dcab088b935d14aa4b0416ec5238f5}\label{group__LADDRCore_ga80dcab088b935d14aa4b0416ec5238f5}} 
+\index{LADDRCore@{LADDRCore}!LaxcurlI@{LaxcurlI}}
+\index{LaxcurlI@{LaxcurlI}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{LaxcurlI()}{LaxcurlI()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::\+LaxcurlI (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iG,  }\item[{Eigen\+::\+Vector\+Xd \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{group__LADDRCore_ga376508a4adec8e2966ac04b205f5bd8d}\label{group__LADDRCore_ga376508a4adec8e2966ac04b205f5bd8d}} 
 \index{LADDRCore@{LADDRCore}!LAXDiv@{LAXDiv}}
@@ -763,6 +1590,46 @@ Constructor.
 
 
 Constructor. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga6773deee9a1a8e045b45dfbb0d7e0365}\label{group__LADDRCore_ga6773deee9a1a8e045b45dfbb0d7e0365}} 
+\index{LADDRCore@{LADDRCore}!lieAlg@{lieAlg}}
+\index{lieAlg@{lieAlg}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{lieAlg()}{lieAlg()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}}\& HAr\+DCore3\+D\+::\+LADDRCore\+::lie\+Alg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the Lie algebra. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga7e12345cff8637d0cfdc5d03a2b72ac5}\label{group__LADDRCore_ga7e12345cff8637d0cfdc5d03a2b72ac5}} 
+\index{LADDRCore@{LADDRCore}!lieAlg@{lieAlg}}
+\index{lieAlg@{lieAlg}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{lieAlg()}{lieAlg()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}}\& HAr\+DCore3\+D\+::\+LASXCurl\+::lie\+Alg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the Lie algebra. 
+
+\mbox{\Hypertarget{group__LADDRCore_gae02ef8baf53dc136a77df5c66b9e0e8f}\label{group__LADDRCore_gae02ef8baf53dc136a77df5c66b9e0e8f}} 
+\index{LADDRCore@{LADDRCore}!lieAlg@{lieAlg}}
+\index{lieAlg@{lieAlg}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{lieAlg()}{lieAlg()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}}\& HAr\+DCore3\+D\+::\+LASXDiv\+::lie\+Alg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the Lie algebra. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga942f7dcb136c9ed04e627be7e89aafc3}\label{group__LADDRCore_ga942f7dcb136c9ed04e627be7e89aafc3}} 
+\index{LADDRCore@{LADDRCore}!lieAlg@{lieAlg}}
+\index{lieAlg@{lieAlg}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{lieAlg()}{lieAlg()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}}\& HAr\+DCore3\+D\+::\+LASXGrad\+::lie\+Alg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the Lie algebra. 
 
 \mbox{\Hypertarget{group__LADDRCore_ga2cf2fafd92b11f982cdd013f638fc112}\label{group__LADDRCore_ga2cf2fafd92b11f982cdd013f638fc112}} 
 \index{LADDRCore@{LADDRCore}!LieAlgebra@{LieAlgebra}}
@@ -851,10 +1718,30 @@ Computes the Lie bracket of two Lie algebra elements.
 
 Returns the Gram matrix of the Lie algebra. 
 
+\mbox{\Hypertarget{group__LADDRCore_ga0a0e05509ae834ad751344d862ae59a6}\label{group__LADDRCore_ga0a0e05509ae834ad751344d862ae59a6}} 
+\index{LADDRCore@{LADDRCore}!mesh@{mesh}}
+\index{mesh@{mesh}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+LASXCurl\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the mesh. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga646a0a5e34def85ef9a6223f7c1d0d71}\label{group__LADDRCore_ga646a0a5e34def85ef9a6223f7c1d0d71}} 
+\index{LADDRCore@{LADDRCore}!mesh@{mesh}}
+\index{mesh@{mesh}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+LASXGrad\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the mesh. 
+
 \mbox{\Hypertarget{group__LADDRCore_gac5a4f1759deed843111732c809fc06e9}\label{group__LADDRCore_gac5a4f1759deed843111732c809fc06e9}} 
 \index{LADDRCore@{LADDRCore}!mesh@{mesh}}
 \index{mesh@{mesh}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+LAXCurl\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -864,7 +1751,7 @@ Return the mesh.
 \mbox{\Hypertarget{group__LADDRCore_gabe40bfff95397588438f4ec3638fa9cc}\label{group__LADDRCore_gabe40bfff95397588438f4ec3638fa9cc}} 
 \index{LADDRCore@{LADDRCore}!mesh@{mesh}}
 \index{mesh@{mesh}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+LAXDiv\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -874,12 +1761,202 @@ Return the mesh.
 \mbox{\Hypertarget{group__LADDRCore_gaabbf9ab943cea8b8d8aadaea37df15e4}\label{group__LADDRCore_gaabbf9ab943cea8b8d8aadaea37df15e4}} 
 \index{LADDRCore@{LADDRCore}!mesh@{mesh}}
 \index{mesh@{mesh}!LADDRCore@{LADDRCore}}
-\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{mesh()}{mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{classMeshND_1_1Mesh}{Mesh}}\& HAr\+DCore3\+D\+::\+LAXGrad\+::mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Return the mesh. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga85217548bdfd69242e37173feccbe917}\label{group__LADDRCore_ga85217548bdfd69242e37173feccbe917}} 
+\index{LADDRCore@{LADDRCore}!P2k3@{P2k3}}
+\index{P2k3@{P2k3}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{P2k3()}{P2k3()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__DDRCore_ga93b7460f638eb1b520354073e72535cc}{DDRCore\+::\+Poly3\+Basis\+Cell\+Type}}\& HAr\+DCore3\+D\+::\+LADDRCore\+::\+P2k3 (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell bases for element iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_gae055d18efc496d8a1acb025733a37c75}\label{group__LADDRCore_gae055d18efc496d8a1acb025733a37c75}} 
+\index{LADDRCore@{LADDRCore}!RcurlCell@{RcurlCell}}
+\index{RcurlCell@{RcurlCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{RcurlCell()}{RcurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Rcurl\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_gac09899407551a6210e184c4464258371}\label{group__LADDRCore_gac09899407551a6210e184c4464258371}} 
+\index{LADDRCore@{LADDRCore}!RcurlCell@{RcurlCell}}
+\index{RcurlCell@{RcurlCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{RcurlCell()}{RcurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Rcurl\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for the cell of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga482e9b1f2e0b094284b5809da1317fa2}\label{group__LADDRCore_ga482e9b1f2e0b094284b5809da1317fa2}} 
+\index{LADDRCore@{LADDRCore}!RcurlFace@{RcurlFace}}
+\index{RcurlFace@{RcurlFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{RcurlFace()}{RcurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Rcurl\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell reduction for cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_gaa29a2d7abd8292591357744ceb2e9a7b}\label{group__LADDRCore_gaa29a2d7abd8292591357744ceb2e9a7b}} 
+\index{LADDRCore@{LADDRCore}!RcurlFace@{RcurlFace}}
+\index{RcurlFace@{RcurlFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{RcurlFace()}{RcurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Rcurl\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for the face of index iF. 
+
+\mbox{\Hypertarget{group__LADDRCore_gaedb43d8b39878e803493805cc462317b}\label{group__LADDRCore_gaedb43d8b39878e803493805cc462317b}} 
+\index{LADDRCore@{LADDRCore}!RgradCell@{RgradCell}}
+\index{RgradCell@{RgradCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{RgradCell()}{RgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Rgrad\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga0b36e7aaa6233e1735e2f554cb3d7111}\label{group__LADDRCore_ga0b36e7aaa6233e1735e2f554cb3d7111}} 
+\index{LADDRCore@{LADDRCore}!RgradCell@{RgradCell}}
+\index{RgradCell@{RgradCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{RgradCell()}{RgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Rgrad\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for the cell of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga67da8796974bc8b79c8361cf7978c6f7}\label{group__LADDRCore_ga67da8796974bc8b79c8361cf7978c6f7}} 
+\index{LADDRCore@{LADDRCore}!RgradFace@{RgradFace}}
+\index{RgradFace@{RgradFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{RgradFace()}{RgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Rgrad\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return cell reduction for cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_gae94f490d50a6a709a5ce76c9ed9ff593}\label{group__LADDRCore_gae94f490d50a6a709a5ce76c9ed9ff593}} 
+\index{LADDRCore@{LADDRCore}!RgradFace@{RgradFace}}
+\index{RgradFace@{RgradFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{RgradFace()}{RgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Rgrad\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the reduction for the face of index iF. 
+
+\mbox{\Hypertarget{group__LADDRCore_gafb7c3a298b8237a280a55d7fb72c1eaa}\label{group__LADDRCore_gafb7c3a298b8237a280a55d7fb72c1eaa}} 
+\index{LADDRCore@{LADDRCore}!ScurlCell@{ScurlCell}}
+\index{ScurlCell@{ScurlCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{ScurlCell()}{ScurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Scurl\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga8c1227164f66756975a96cd3df8302bc}\label{group__LADDRCore_ga8c1227164f66756975a96cd3df8302bc}} 
+\index{LADDRCore@{LADDRCore}!ScurlCell@{ScurlCell}}
+\index{ScurlCell@{ScurlCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{ScurlCell()}{ScurlCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Scurl\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for the cell of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga2e0d1f923e06e18a06449d204cb6086d}\label{group__LADDRCore_ga2e0d1f923e06e18a06449d204cb6086d}} 
+\index{LADDRCore@{LADDRCore}!ScurlFace@{ScurlFace}}
+\index{ScurlFace@{ScurlFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{ScurlFace()}{ScurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Scurl\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for face F. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga2370e761bd432b6d0fcf44c6db6819e4}\label{group__LADDRCore_ga2370e761bd432b6d0fcf44c6db6819e4}} 
+\index{LADDRCore@{LADDRCore}!ScurlFace@{ScurlFace}}
+\index{ScurlFace@{ScurlFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{ScurlFace()}{ScurlFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXCurl\+::\+Scurl\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for the face of index iF. 
+
+\mbox{\Hypertarget{group__LADDRCore_gac4d5892a9d91dda701b5b42297387e5d}\label{group__LADDRCore_gac4d5892a9d91dda701b5b42297387e5d}} 
+\index{LADDRCore@{LADDRCore}!serPro@{serPro}}
+\index{serPro@{serPro}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{serPro()}{serPro()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}}\& HAr\+DCore3\+D\+::\+LASXCurl\+::ser\+Pro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity operators. 
+
+\mbox{\Hypertarget{group__LADDRCore_gae232f319c551d4464a1765d0ae860ba3}\label{group__LADDRCore_gae232f319c551d4464a1765d0ae860ba3}} 
+\index{LADDRCore@{LADDRCore}!serPro@{serPro}}
+\index{serPro@{serPro}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{serPro()}{serPro()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1SerendipityProblem}{Serendipity\+Problem}}\& HAr\+DCore3\+D\+::\+LASXGrad\+::ser\+Pro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity operators. 
+
+\mbox{\Hypertarget{group__LADDRCore_gadb9192fadb7a6bea205cfc63a71d5446}\label{group__LADDRCore_gadb9192fadb7a6bea205cfc63a71d5446}} 
+\index{LADDRCore@{LADDRCore}!SgradCell@{SgradCell}}
+\index{SgradCell@{SgradCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{SgradCell()}{SgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Sgrad\+Cell (\begin{DoxyParamCaption}\item[{const Cell \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for cell T. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga70a2aa4e091d6cb3edbd754c1244075e}\label{group__LADDRCore_ga70a2aa4e091d6cb3edbd754c1244075e}} 
+\index{LADDRCore@{LADDRCore}!SgradCell@{SgradCell}}
+\index{SgradCell@{SgradCell}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{SgradCell()}{SgradCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Sgrad\+Cell (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for the cell of index iT. 
+
+\mbox{\Hypertarget{group__LADDRCore_ga48d2c4c7566616731f2f4e102604c8b0}\label{group__LADDRCore_ga48d2c4c7566616731f2f4e102604c8b0}} 
+\index{LADDRCore@{LADDRCore}!SgradFace@{SgradFace}}
+\index{SgradFace@{SgradFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{SgradFace()}{SgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Sgrad\+Face (\begin{DoxyParamCaption}\item[{const Face \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for face F. 
+
+\mbox{\Hypertarget{group__LADDRCore_gaf9d003bb6422cde2e7d9eec9dcd33bdb}\label{group__LADDRCore_gaf9d003bb6422cde2e7d9eec9dcd33bdb}} 
+\index{LADDRCore@{LADDRCore}!SgradFace@{SgradFace}}
+\index{SgradFace@{SgradFace}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{SgradFace()}{SgradFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd\& HAr\+DCore3\+D\+::\+LASXGrad\+::\+Sgrad\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{iF }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the serendipity reconstruction for the face of index iF. 
 
 \mbox{\Hypertarget{group__LADDRCore_ga4233d6e90607df477bd9214b12442bc2}\label{group__LADDRCore_ga4233d6e90607df477bd9214b12442bc2}} 
 \index{LADDRCore@{LADDRCore}!structureConst@{structureConst}}
@@ -891,6 +1968,36 @@ Return the mesh.
 
 Computes the structure constants of the Lie algebra. 
 
+\mbox{\Hypertarget{group__LADDRCore_ga96aee755c1d55da296f84cfaa3b1c2b3}\label{group__LADDRCore_ga96aee755c1d55da296f84cfaa3b1c2b3}} 
+\index{LADDRCore@{LADDRCore}!TransferOperators@{TransferOperators}}
+\index{TransferOperators@{TransferOperators}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{TransferOperators()}{TransferOperators()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+LASXCurl\+::\+Transfer\+Operators\+::\+Transfer\+Operators (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+serendipity,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+extension,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+reduction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+serendipity} & Serendipity reconstruction \\
+\hline
+{\em \+\_\+extension} & Extension SXCurl-\/$>$\mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \\
+\hline
+{\em \+\_\+reduction} & Reduction XCurl-\/$>$\mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__LADDRCore_ga877a35995e3ecbee10f27df5c7bb9cf9}\label{group__LADDRCore_ga877a35995e3ecbee10f27df5c7bb9cf9}} 
+\index{LADDRCore@{LADDRCore}!TransferOperators@{TransferOperators}}
+\index{TransferOperators@{TransferOperators}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{TransferOperators()}{TransferOperators()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily HAr\+DCore3\+D\+::\+LASXGrad\+::\+Transfer\+Operators\+::\+Transfer\+Operators (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+serendipity,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+extension,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{\+\_\+reduction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+serendipity} & Serendipity reconstruction \\
+\hline
+{\em \+\_\+extension} & Extension SXCurl-\/$>$\mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \\
+\hline
+{\em \+\_\+reduction} & Reduction XCurl-\/$>$\mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__LADDRCore_ga47db4eb928f4543685095e5efc8cd9a4}\label{group__LADDRCore_ga47db4eb928f4543685095e5efc8cd9a4}} 
 \index{LADDRCore@{LADDRCore}!xCurl@{xCurl}}
 \index{xCurl@{xCurl}!LADDRCore@{LADDRCore}}
@@ -922,11 +2029,53 @@ Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}}.
 \doxysubsubsection{\texorpdfstring{divergence\_rhs}{divergence\_rhs}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LAXDiv\+::\+Local\+Operators\+::divergence\+\_\+rhs}
 
+\mbox{\Hypertarget{group__LADDRCore_ga0648faf34046cd15825d40b15eeb47f5}\label{group__LADDRCore_ga0648faf34046cd15825d40b15eeb47f5}} 
+\index{LADDRCore@{LADDRCore}!extension@{extension}}
+\index{extension@{extension}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{extension}{extension}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::\+Transfer\+Operators\+::extension}
+
+\mbox{\Hypertarget{group__LADDRCore_gaa211e444f05f2c50a524203315530a21}\label{group__LADDRCore_gaa211e444f05f2c50a524203315530a21}} 
+\index{LADDRCore@{LADDRCore}!extension@{extension}}
+\index{extension@{extension}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{extension}{extension}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::\+Transfer\+Operators\+::extension}
+
 \mbox{\Hypertarget{group__LADDRCore_ga9743285329382fd9b922177cee669638}\label{group__LADDRCore_ga9743285329382fd9b922177cee669638}} 
 \index{LADDRCore@{LADDRCore}!gradient@{gradient}}
 \index{gradient@{gradient}!LADDRCore@{LADDRCore}}
 \doxysubsubsection{\texorpdfstring{gradient}{gradient}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LAXGrad\+::\+Local\+Operators\+::gradient}
+
+\mbox{\Hypertarget{group__LADDRCore_gaf250a4da2c9bf23440d2ca5c64648ffd}\label{group__LADDRCore_gaf250a4da2c9bf23440d2ca5c64648ffd}} 
+\index{LADDRCore@{LADDRCore}!m\_cell\_operators@{m\_cell\_operators}}
+\index{m\_cell\_operators@{m\_cell\_operators}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{m\_cell\_operators}{m\_cell\_operators}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{structHArDCore3D_1_1LAXDiv_1_1LocalOperators}{Local\+Operators}}$>$ $>$ HAr\+DCore3\+D\+::\+LAXDiv\+::m\+\_\+cell\+\_\+operators\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{group__LADDRCore_ga0a1ab8b334914b4b45412b49dd6a6eb1}\label{group__LADDRCore_ga0a1ab8b334914b4b45412b49dd6a6eb1}} 
+\index{LADDRCore@{LADDRCore}!m\_lie\_algebra@{m\_lie\_algebra}}
+\index{m\_lie\_algebra@{m\_lie\_algebra}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{m\_lie\_algebra}{m\_lie\_algebra}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}}\& HAr\+DCore3\+D\+::\+LAXDiv\+::m\+\_\+lie\+\_\+algebra\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{group__LADDRCore_ga247b23c5fcc0d18a8a6801f7e1cf24a0}\label{group__LADDRCore_ga247b23c5fcc0d18a8a6801f7e1cf24a0}} 
+\index{LADDRCore@{LADDRCore}!m\_output@{m\_output}}
+\index{m\_output@{m\_output}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{m\_output}{m\_output}}
+{\footnotesize\ttfamily std\+::ostream\& HAr\+DCore3\+D\+::\+LAXDiv\+::m\+\_\+output\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{group__LADDRCore_gaaa69a6bd1344404d08098ecd6e14cd18}\label{group__LADDRCore_gaaa69a6bd1344404d08098ecd6e14cd18}} 
+\index{LADDRCore@{LADDRCore}!m\_use\_threads@{m\_use\_threads}}
+\index{m\_use\_threads@{m\_use\_threads}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{m\_use\_threads}{m\_use\_threads}}
+{\footnotesize\ttfamily bool HAr\+DCore3\+D\+::\+LAXDiv\+::m\+\_\+use\+\_\+threads\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{group__LADDRCore_gacb1be18a8d6db3c23d84eaeac203437d}\label{group__LADDRCore_gacb1be18a8d6db3c23d84eaeac203437d}} 
+\index{LADDRCore@{LADDRCore}!m\_xdiv@{m\_xdiv}}
+\index{m\_xdiv@{m\_xdiv}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{m\_xdiv}{m\_xdiv}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}}\& HAr\+DCore3\+D\+::\+LAXDiv\+::m\+\_\+xdiv\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{group__LADDRCore_ga692976197e302565abfe6ea53dac15ad}\label{group__LADDRCore_ga692976197e302565abfe6ea53dac15ad}} 
 \index{LADDRCore@{LADDRCore}!potential@{potential}}
@@ -945,4 +2094,28 @@ Returns the space \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}}.
 \index{potential@{potential}!LADDRCore@{LADDRCore}}
 \doxysubsubsection{\texorpdfstring{potential}{potential}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LAXGrad\+::\+Local\+Operators\+::potential}
+
+\mbox{\Hypertarget{group__LADDRCore_ga9e9fa206ea22f371bd2d5f81119b8911}\label{group__LADDRCore_ga9e9fa206ea22f371bd2d5f81119b8911}} 
+\index{LADDRCore@{LADDRCore}!reduction@{reduction}}
+\index{reduction@{reduction}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{reduction}{reduction}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::\+Transfer\+Operators\+::reduction}
+
+\mbox{\Hypertarget{group__LADDRCore_ga68a5e1bd01ec55f8b7e52abd72625085}\label{group__LADDRCore_ga68a5e1bd01ec55f8b7e52abd72625085}} 
+\index{LADDRCore@{LADDRCore}!reduction@{reduction}}
+\index{reduction@{reduction}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{reduction}{reduction}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::\+Transfer\+Operators\+::reduction}
+
+\mbox{\Hypertarget{group__LADDRCore_ga76cf2745ba304d5909d9b59e17c4adc6}\label{group__LADDRCore_ga76cf2745ba304d5909d9b59e17c4adc6}} 
+\index{LADDRCore@{LADDRCore}!serendipity@{serendipity}}
+\index{serendipity@{serendipity}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{serendipity}{serendipity}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXCurl\+::\+Transfer\+Operators\+::serendipity}
+
+\mbox{\Hypertarget{group__LADDRCore_gaafe956aa360d99cd80e5cccdc0c65e93}\label{group__LADDRCore_gaafe956aa360d99cd80e5cccdc0c65e93}} 
+\index{LADDRCore@{LADDRCore}!serendipity@{serendipity}}
+\index{serendipity@{serendipity}!LADDRCore@{LADDRCore}}
+\doxysubsubsection{\texorpdfstring{serendipity}{serendipity}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd HAr\+DCore3\+D\+::\+LASXGrad\+::\+Transfer\+Operators\+::serendipity}
 

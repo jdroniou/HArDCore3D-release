@@ -96,6 +96,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHArDCore3D_1_1LocalDOFSpace.html">HArDCore3D::LocalDOFSpace</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for DOF spaces: functions to access local DOFs (organised from the smallest dimension to the largest) associated with each geometric entity.  <a href="classHArDCore3D_1_1LocalDOFSpace.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1SystemVectors.html">HArDCore3D::SystemVectors&lt; MatrixType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to store the systems and vector.  <a href="structHArDCore3D_1_1SystemVectors.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1PolynomialSpaceDimension.html">HArDCore3D::PolynomialSpaceDimension&lt; GeometricSupport &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basis dimensions for various polynomial spaces on edges/faces/elements (when relevant): Pk, Gk, Rk and complements.  <a href="structHArDCore3D_1_1PolynomialSpaceDimension.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +139,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga1229b099903e229e3e63c4a56949a835"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga1229b099903e229e3e63c4a56949a835">HArDCore3D::GlobalDOFSpace::globalOffset</a> (const Cell &amp;T) const</td></tr>
 <tr class="memdesc:ga1229b099903e229e3e63c4a56949a835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the global offset for the unknowns on the cell T.  <a href="group__Common.html#ga1229b099903e229e3e63c4a56949a835">More...</a><br /></td></tr>
 <tr class="separator:ga1229b099903e229e3e63c4a56949a835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44f26c88e322ca732450e8669891225d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga44f26c88e322ca732450e8669891225d">HArDCore3D::GlobalDOFSpace::globalOffset</a> (size_t d, size_t i) const</td></tr>
+<tr class="memdesc:ga44f26c88e322ca732450e8669891225d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the global offset for the unknows on the i-th element of dimension d.  <a href="group__Common.html#ga44f26c88e322ca732450e8669891225d">More...</a><br /></td></tr>
+<tr class="separator:ga44f26c88e322ca732450e8669891225d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9cabf022121084dd0ab57de128ba953c"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga9cabf022121084dd0ab57de128ba953c">HArDCore3D::GlobalDOFSpace::restrictEdge</a> (size_t iE, const Eigen::VectorXd &amp;vh) const</td></tr>
 <tr class="memdesc:ga9cabf022121084dd0ab57de128ba953c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restrict to the edge (including its vertices) of index iE.  <a href="group__Common.html#ga9cabf022121084dd0ab57de128ba953c">More...</a><br /></td></tr>
 <tr class="separator:ga9cabf022121084dd0ab57de128ba953c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,6 +168,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gafa03cd062083ef8fbe3089d395f81338"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gafa03cd062083ef8fbe3089d395f81338">HArDCore3D::GlobalDOFSpace::extendOperator</a> (const Face &amp;F, const Edge &amp;E, const Eigen::MatrixXd &amp;opE) const</td></tr>
 <tr class="memdesc:gafa03cd062083ef8fbe3089d395f81338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extend an edge operator to a face.  <a href="group__Common.html#gafa03cd062083ef8fbe3089d395f81338">More...</a><br /></td></tr>
 <tr class="separator:gafa03cd062083ef8fbe3089d395f81338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44cae72166e12dd00a3dd673bf2a5d06"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga44cae72166e12dd00a3dd673bf2a5d06">HArDCore3D::GlobalDOFSpace::extendOperator</a> (size_t d1, size_t i1, size_t d2, size_t i2, const Eigen::MatrixXd &amp;op) const</td></tr>
+<tr class="memdesc:ga44cae72166e12dd00a3dd673bf2a5d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic extension operator from the i2-th d2-cell to the i1-th d1-cell.  <a href="group__Common.html#ga44cae72166e12dd00a3dd673bf2a5d06">More...</a><br /></td></tr>
+<tr class="separator:ga44cae72166e12dd00a3dd673bf2a5d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga377359e7be24409898f4bd5b709aec76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga377359e7be24409898f4bd5b709aec76">HArDCore3D::GlobalDOFSpace::addInnerProductContribution</a> (const Cell &amp;T, const Face &amp;F, Eigen::MatrixXd &amp;prodT, const Eigen::MatrixXd &amp;prodF) const</td></tr>
 <tr class="memdesc:ga377359e7be24409898f4bd5b709aec76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T)  <a href="group__Common.html#ga377359e7be24409898f4bd5b709aec76">More...</a><br /></td></tr>
 <tr class="separator:ga377359e7be24409898f4bd5b709aec76"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,6 +234,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga63c9c43b9c52f18389de01b1b2669258"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga63c9c43b9c52f18389de01b1b2669258">HArDCore3D::LocalDOFSpace::numLocalDofsCell</a> () const</td></tr>
 <tr class="memdesc:ga63c9c43b9c52f18389de01b1b2669258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of local cell DOFs.  <a href="group__Common.html#ga63c9c43b9c52f18389de01b1b2669258">More...</a><br /></td></tr>
 <tr class="separator:ga63c9c43b9c52f18389de01b1b2669258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa9ed015a37af834c23a84e16af10876"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaaa9ed015a37af834c23a84e16af10876">HArDCore3D::LocalDOFSpace::numLocalDofs</a> (size_t d) const</td></tr>
+<tr class="memdesc:gaaa9ed015a37af834c23a84e16af10876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of local d-cell DOFs.  <a href="group__Common.html#gaaa9ed015a37af834c23a84e16af10876">More...</a><br /></td></tr>
+<tr class="separator:gaaa9ed015a37af834c23a84e16af10876"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2f9a4f73d3d98508bb70d42a72b38943"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2f9a4f73d3d98508bb70d42a72b38943">HArDCore3D::LocalDOFSpace::dimension</a> () const</td></tr>
 <tr class="memdesc:ga2f9a4f73d3d98508bb70d42a72b38943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension of the global space (all DOFs for all geometric entities)  <a href="group__Common.html#ga2f9a4f73d3d98508bb70d42a72b38943">More...</a><br /></td></tr>
 <tr class="separator:ga2f9a4f73d3d98508bb70d42a72b38943"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,6 +264,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga87216ee57909d43fbd55367e66c52659"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga87216ee57909d43fbd55367e66c52659">HArDCore3D::LocalDOFSpace::dimensionCell</a> (size_t iT) const</td></tr>
 <tr class="memdesc:ga87216ee57909d43fbd55367e66c52659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension of the local space on the cell of index iT (including faces, edges and vertices)  <a href="group__Common.html#ga87216ee57909d43fbd55367e66c52659">More...</a><br /></td></tr>
 <tr class="separator:ga87216ee57909d43fbd55367e66c52659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae945c5d213bbb493cfd7a2e6bc14e480"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gae945c5d213bbb493cfd7a2e6bc14e480">HArDCore3D::LocalDOFSpace::dimension</a> (size_t d, size_t i) const</td></tr>
+<tr class="memdesc:gae945c5d213bbb493cfd7a2e6bc14e480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension of the local space on the d-cell of index i (including its boundary)  <a href="group__Common.html#gae945c5d213bbb493cfd7a2e6bc14e480">More...</a><br /></td></tr>
+<tr class="separator:gae945c5d213bbb493cfd7a2e6bc14e480"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad0f2767844ac3afe4e943886e81f6ee1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gad0f2767844ac3afe4e943886e81f6ee1">HArDCore3D::LocalDOFSpace::localOffset</a> (const Edge &amp;E, const Vertex &amp;V) const</td></tr>
 <tr class="memdesc:gad0f2767844ac3afe4e943886e81f6ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the local offset of the vertex V with respect to the edge E.  <a href="group__Common.html#gad0f2767844ac3afe4e943886e81f6ee1">More...</a><br /></td></tr>
 <tr class="separator:gad0f2767844ac3afe4e943886e81f6ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -279,17 +294,23 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8ebfa6da885fecc1bb09ccac1f923149"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga8ebfa6da885fecc1bb09ccac1f923149">HArDCore3D::LocalDOFSpace::localOffset</a> (const Cell &amp;T) const</td></tr>
 <tr class="memdesc:ga8ebfa6da885fecc1bb09ccac1f923149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the local offset of the unknowns attached to the element T.  <a href="group__Common.html#ga8ebfa6da885fecc1bb09ccac1f923149">More...</a><br /></td></tr>
 <tr class="separator:ga8ebfa6da885fecc1bb09ccac1f923149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab434bf1a9a9f6be073efe0505239bcda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gab434bf1a9a9f6be073efe0505239bcda">HArDCore3D::SystemVectors&lt; MatrixType &gt;::SystemVectors</a> (std::vector&lt; MatrixType &gt; sys, std::vector&lt; Eigen::VectorXd &gt; vec)</td></tr>
+<tr class="memdesc:gab434bf1a9a9f6be073efe0505239bcda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__Common.html#gab434bf1a9a9f6be073efe0505239bcda">More...</a><br /></td></tr>
+<tr class="separator:gab434bf1a9a9f6be073efe0505239bcda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2f774534f2a50336fed81ee6278811b5"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; std::vector&lt; int &gt;, std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga2f774534f2a50336fed81ee6278811b5">HArDCore3D::distributeLoad</a> (size_t nb_elements, unsigned nb_threads)</td></tr>
 <tr class="memdesc:ga2f774534f2a50336fed81ee6278811b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to distribute elements (considered as jobs) over threads. It returns a pair of vectors indicating the start and end element of each thread.  <a href="group__Common.html#ga2f774534f2a50336fed81ee6278811b5">More...</a><br /></td></tr>
 <tr class="separator:ga2f774534f2a50336fed81ee6278811b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3d0b88a9cf4441b331df044ff5283323"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga3d0b88a9cf4441b331df044ff5283323">HArDCore3D::parallel_for</a> (unsigned nb_elements, std::function&lt; void(size_t start, size_t end)&gt; functor, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true)</td></tr>
 <tr class="memdesc:ga3d0b88a9cf4441b331df044ff5283323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic function to execute threaded processes.  <a href="group__Common.html#ga3d0b88a9cf4441b331df044ff5283323">More...</a><br /></td></tr>
 <tr class="separator:ga3d0b88a9cf4441b331df044ff5283323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0afaaf04ea8a13c61cf2ab9650a293ca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structHArDCore3D_1_1SystemVectors.html">SystemVectors</a>&lt; Eigen::SparseMatrix&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga0afaaf04ea8a13c61cf2ab9650a293ca">HArDCore3D::parallel_assembly_system</a> (size_t nb_elements, std::vector&lt; std::pair&lt; size_t, size_t &gt;&gt; size_systems, std::vector&lt; size_t &gt; size_vectors, std::function&lt; void(size_t start, size_t end, std::vector&lt; std::list&lt; Eigen::Triplet&lt; double &gt;&gt;&gt; *triplets, std::vector&lt; Eigen::VectorXd &gt; *vecs)&gt; batch_local_assembly, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true)</td></tr>
+<tr class="memdesc:ga0afaaf04ea8a13c61cf2ab9650a293ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to assemble global matrices from a procedure that compute local triplets.  <a href="group__Common.html#ga0afaaf04ea8a13c61cf2ab9650a293ca">More...</a><br /></td></tr>
+<tr class="separator:ga0afaaf04ea8a13c61cf2ab9650a293ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac77ab9801f6fcca6b81f0a069969c951"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; Eigen::SparseMatrix&lt; double &gt;, Eigen::VectorXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gac77ab9801f6fcca6b81f0a069969c951">HArDCore3D::parallel_assembly_system</a> (size_t nb_elements, size_t size_system, std::function&lt; void(size_t start, size_t end, std::list&lt; Eigen::Triplet&lt; double &gt;&gt; *triplets, Eigen::VectorXd *rhs)&gt; batch_local_assembly, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true)</td></tr>
-<tr class="memdesc:gac77ab9801f6fcca6b81f0a069969c951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to assemble global matrix and right-hand side from a procedure that compute local triplets and rhs contributions.  <a href="group__Common.html#gac77ab9801f6fcca6b81f0a069969c951">More...</a><br /></td></tr>
+<tr class="memdesc:gac77ab9801f6fcca6b81f0a069969c951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to assemble a global matrix and right-hand side from a procedure that compute local triplets and rhs contributions (a wrapper for the more general function that can assemble several matrices and vectors)  <a href="group__Common.html#gac77ab9801f6fcca6b81f0a069969c951">More...</a><br /></td></tr>
 <tr class="separator:gac77ab9801f6fcca6b81f0a069969c951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga96c8e29a4f63768d516460ff68a4e979"><td class="memItemLeft" align="right" valign="top">static std::tuple&lt; Eigen::SparseMatrix&lt; double &gt;, Eigen::VectorXd, Eigen::SparseMatrix&lt; double &gt;, Eigen::VectorXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga96c8e29a4f63768d516460ff68a4e979">HArDCore3D::parallel_assembly_system</a> (size_t nb_elements, size_t size_system1, std::pair&lt; size_t, size_t &gt; size_Mat2, size_t size_b2, std::function&lt; void(size_t start, size_t end, std::list&lt; Eigen::Triplet&lt; double &gt;&gt; *triplets1, Eigen::VectorXd *vec1, std::list&lt; Eigen::Triplet&lt; double &gt;&gt; *triplets2, Eigen::VectorXd *vec2)&gt; batch_local_assembly, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true)</td></tr>
-<tr class="memdesc:ga96c8e29a4f63768d516460ff68a4e979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to assemble a two global matrices and vectors (such as: system and static condensation operator, or system and matrix for BC) from a procedure that compute local triplets and rhs contributions.  <a href="group__Common.html#ga96c8e29a4f63768d516460ff68a4e979">More...</a><br /></td></tr>
+<tr class="memdesc:ga96c8e29a4f63768d516460ff68a4e979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to assemble two global matrices and vectors (such as: system and static condensation operator, or system and matrix for BC) from a procedure that compute local triplets and rhs contributions (a wrapper for the more general function that can assemble several matrices and vectors)  <a href="group__Common.html#ga96c8e29a4f63768d516460ff68a4e979">More...</a><br /></td></tr>
 <tr class="separator:ga96c8e29a4f63768d516460ff68a4e979"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa4f1be3674586f91be75fa82b0f15c06"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaa4f1be3674586f91be75fa82b0f15c06">HArDCore3D::PolynomialSpaceDimension&lt; Cell &gt;::Poly</a> (int k)</td></tr>
 <tr class="memdesc:gaa4f1be3674586f91be75fa82b0f15c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of Pk(T)  <a href="group__Common.html#gaa4f1be3674586f91be75fa82b0f15c06">More...</a><br /></td></tr>
@@ -470,6 +491,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ga23e565cc3f97d069b662128104625911"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga23e565cc3f97d069b662128104625911">HArDCore3D::VariableDOFSpace::extendOperator</a> (const Face &amp;F, const Edge &amp;E, const Eigen::MatrixXd &amp;opE) const</td></tr>
 <tr class="memdesc:ga23e565cc3f97d069b662128104625911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extend an edge operator to a face.  <a href="group__Common.html#ga23e565cc3f97d069b662128104625911">More...</a><br /></td></tr>
 <tr class="separator:ga23e565cc3f97d069b662128104625911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa87d6dff8096c48f18d2d14487b93bff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaa87d6dff8096c48f18d2d14487b93bff">HArDCore3D::VariableDOFSpace::extendOperator</a> (const Cell &amp;T, const Face &amp;F, Eigen::Ref&lt; Eigen::MatrixXd &gt; opT, const Eigen::MatrixXd &amp;opF) const</td></tr>
+<tr class="memdesc:gaa87d6dff8096c48f18d2d14487b93bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a face operator to a cell operator: distributes and adds the contributions from face F to the operator opT on element T (equivalent to opT + extendOperator(T, F, opF)).  <a href="group__Common.html#gaa87d6dff8096c48f18d2d14487b93bff">More...</a><br /></td></tr>
+<tr class="separator:gaa87d6dff8096c48f18d2d14487b93bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf4ca3c98488bc002ff92a11a081122c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gacf4ca3c98488bc002ff92a11a081122c">HArDCore3D::VariableDOFSpace::extendOperator</a> (const Cell &amp;T, const Edge &amp;E, Eigen::MatrixXd &amp;opT, const Eigen::MatrixXd &amp;opE) const</td></tr>
+<tr class="memdesc:gacf4ca3c98488bc002ff92a11a081122c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an edge operator to a cell.  <a href="group__Common.html#gacf4ca3c98488bc002ff92a11a081122c">More...</a><br /></td></tr>
+<tr class="separator:gacf4ca3c98488bc002ff92a11a081122c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4dcac84d6ae301efe420a105b696ad0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga4dcac84d6ae301efe420a105b696ad0d">HArDCore3D::VariableDOFSpace::extendOperator</a> (const Face &amp;F, const Edge &amp;E, Eigen::MatrixXd &amp;opF, const Eigen::MatrixXd &amp;opE) const</td></tr>
+<tr class="memdesc:ga4dcac84d6ae301efe420a105b696ad0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an edge operator to a face.  <a href="group__Common.html#ga4dcac84d6ae301efe420a105b696ad0d">More...</a><br /></td></tr>
+<tr class="separator:ga4dcac84d6ae301efe420a105b696ad0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ac34f2921960ea153edb6ff9c7e84bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga8ac34f2921960ea153edb6ff9c7e84bf">HArDCore3D::VariableDOFSpace::addInnerProductContribution</a> (const Cell &amp;T, const Face &amp;F, Eigen::MatrixXd &amp;prodT, const Eigen::MatrixXd &amp;prodF) const</td></tr>
+<tr class="memdesc:ga8ac34f2921960ea153edb6ff9c7e84bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T)  <a href="group__Common.html#ga8ac34f2921960ea153edb6ff9c7e84bf">More...</a><br /></td></tr>
+<tr class="separator:ga8ac34f2921960ea153edb6ff9c7e84bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga900f809c3b9bd97b544dbc114f5197a1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga900f809c3b9bd97b544dbc114f5197a1">HArDCore3D::VariableDOFSpace::globalDOFIndices</a> (const Cell &amp;T) const</td></tr>
 <tr class="memdesc:ga900f809c3b9bd97b544dbc114f5197a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector listing the global DOFs attached to the element T: vertex DOFs, edge DOFs, face DOFs and element DOFs.  <a href="group__Common.html#ga900f809c3b9bd97b544dbc114f5197a1">More...</a><br /></td></tr>
 <tr class="separator:ga900f809c3b9bd97b544dbc114f5197a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -503,6 +536,10 @@ Variables</h2></td></tr>
 <tr class="separator:gab452b6bcab9670d9ceb6f0497ec9aa40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacc921ba72df56713816eb806bf498cca"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gacc921ba72df56713816eb806bf498cca">HArDCore3D::LocalDOFSpace::m_n_local_cell_dofs</a></td></tr>
 <tr class="separator:gacc921ba72df56713816eb806bf498cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9abbead75a73052d7bf324190bc06a4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; MatrixType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gae9abbead75a73052d7bf324190bc06a4">HArDCore3D::SystemVectors&lt; MatrixType &gt;::systems</a></td></tr>
+<tr class="separator:gae9abbead75a73052d7bf324190bc06a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab856ed16da6e6fdc57e80ad6dbab9298"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::VectorXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gab856ed16da6e6fdc57e80ad6dbab9298">HArDCore3D::SystemVectors&lt; MatrixType &gt;::vectors</a></td></tr>
+<tr class="separator:gab856ed16da6e6fdc57e80ad6dbab9298"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Various general functions and classes. </p>
@@ -537,13 +574,55 @@ Variables</h2></td></tr>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga377359e7be24409898f4bd5b709aec76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga377359e7be24409898f4bd5b709aec76">&#9670;&nbsp;</a></span>addInnerProductContribution()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga377359e7be24409898f4bd5b709aec76">&#9670;&nbsp;</a></span>addInnerProductContribution() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void GlobalDOFSpace::addInnerProductContribution </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>prodT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>prodF</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T) </p>
+
+</div>
+</div>
+<a id="ga8ac34f2921960ea153edb6ff9c7e84bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ac34f2921960ea153edb6ff9c7e84bf">&#9670;&nbsp;</a></span>addInnerProductContribution() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VariableDOFSpace::addInnerProductContribution </td>
           <td>(</td>
           <td class="paramtype">const Cell &amp;&#160;</td>
           <td class="paramname"><em>T</em>, </td>
@@ -662,7 +741,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga2f9a4f73d3d98508bb70d42a72b38943"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2f9a4f73d3d98508bb70d42a72b38943">&#9670;&nbsp;</a></span>dimension() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f9a4f73d3d98508bb70d42a72b38943">&#9670;&nbsp;</a></span>dimension() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -689,7 +768,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaacdd0184ce59295b1251701631bfc342"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaacdd0184ce59295b1251701631bfc342">&#9670;&nbsp;</a></span>dimension() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaacdd0184ce59295b1251701631bfc342">&#9670;&nbsp;</a></span>dimension() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -712,6 +791,44 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the dimension of the global space (all DOFs for all geometric entities) </p>
+
+</div>
+</div>
+<a id="gae945c5d213bbb493cfd7a2e6bc14e480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae945c5d213bbb493cfd7a2e6bc14e480">&#9670;&nbsp;</a></span>dimension() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::LocalDOFSpace::dimension </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the dimension of the local space on the d-cell of index i (including its boundary) </p>
 
 </div>
 </div>
@@ -1202,7 +1319,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gabf4eafe2cf13ad7f5eeb322cb9097d22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabf4eafe2cf13ad7f5eeb322cb9097d22">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf4eafe2cf13ad7f5eeb322cb9097d22">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[1/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1238,7 +1355,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaa34d6a40007fb0e4ffeefe00368acb2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa34d6a40007fb0e4ffeefe00368acb2b">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa34d6a40007fb0e4ffeefe00368acb2b">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[2/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1273,8 +1390,50 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gacf4ca3c98488bc002ff92a11a081122c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf4ca3c98488bc002ff92a11a081122c">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[3/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VariableDOFSpace::extendOperator </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Edge &amp;&#160;</td>
+          <td class="paramname"><em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>opT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>opE</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an edge operator to a cell. </p>
+
+</div>
+</div>
 <a id="ga93d06b3be5ace110a4ca1d636a4aa7f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga93d06b3be5ace110a4ca1d636a4aa7f1">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga93d06b3be5ace110a4ca1d636a4aa7f1">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[4/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1309,7 +1468,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga7dcc8cac4dd10472c63deba64949c597"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7dcc8cac4dd10472c63deba64949c597">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7dcc8cac4dd10472c63deba64949c597">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[5/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1339,12 +1498,54 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Extend a face operator to a cell: starting from a matrix acting on the DOFs of F (and its edges and vertices), redistribute the coefficients in a matrix acting on the DOFs viewed from T. </p>
+<p>Extend a face operator to a cell: starting from a matrix opF acting on the DOFs of F (and its edges and vertices), redistribute the coefficients in a matrix acting on the DOFs viewed from T. </p>
+
+</div>
+</div>
+<a id="gaa87d6dff8096c48f18d2d14487b93bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa87d6dff8096c48f18d2d14487b93bff">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VariableDOFSpace::extendOperator </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Ref&lt; Eigen::MatrixXd &gt;&#160;</td>
+          <td class="paramname"><em>opT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>opF</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a face operator to a cell operator: distributes and adds the contributions from face F to the operator opT on element T (equivalent to opT + extendOperator(T, F, opF)). </p>
 
 </div>
 </div>
 <a id="gafa03cd062083ef8fbe3089d395f81338"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafa03cd062083ef8fbe3089d395f81338">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa03cd062083ef8fbe3089d395f81338">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[7/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1380,7 +1581,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga23e565cc3f97d069b662128104625911"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga23e565cc3f97d069b662128104625911">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga23e565cc3f97d069b662128104625911">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[8/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1412,6 +1613,96 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Extend an edge operator to a face. </p>
+
+</div>
+</div>
+<a id="ga4dcac84d6ae301efe420a105b696ad0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4dcac84d6ae301efe420a105b696ad0d">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[9/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VariableDOFSpace::extendOperator </td>
+          <td>(</td>
+          <td class="paramtype">const Face &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Edge &amp;&#160;</td>
+          <td class="paramname"><em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>opF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>opE</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an edge operator to a face. </p>
+
+</div>
+</div>
+<a id="ga44cae72166e12dd00a3dd673bf2a5d06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44cae72166e12dd00a3dd673bf2a5d06">&#9670;&nbsp;</a></span>extendOperator() <span class="overload">[10/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd GlobalDOFSpace::extendOperator </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>d1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>d2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>op</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generic extension operator from the i2-th d2-cell to the i1-th d1-cell. </p>
 
 </div>
 </div>
@@ -1598,7 +1889,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga1229b099903e229e3e63c4a56949a835"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1229b099903e229e3e63c4a56949a835">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[1/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1229b099903e229e3e63c4a56949a835">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1626,7 +1917,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gae3c54b0329eea56b4a29217180f47216"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae3c54b0329eea56b4a29217180f47216">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[2/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gae3c54b0329eea56b4a29217180f47216">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1654,7 +1945,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gadbe66a72149a46edb01ff255ec600903"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadbe66a72149a46edb01ff255ec600903">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[3/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gadbe66a72149a46edb01ff255ec600903">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1682,7 +1973,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga274243e23cf345f52f20472a82078380"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga274243e23cf345f52f20472a82078380">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[4/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga274243e23cf345f52f20472a82078380">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1710,7 +2001,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga51495600d8dea1161e6bc23db8b99c91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga51495600d8dea1161e6bc23db8b99c91">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[5/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga51495600d8dea1161e6bc23db8b99c91">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1738,7 +2029,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga02eb01717509f06303c15a35eccb432d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga02eb01717509f06303c15a35eccb432d">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[6/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02eb01717509f06303c15a35eccb432d">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1766,7 +2057,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga44447e854ca3aad5a21ebef9aa322a56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga44447e854ca3aad5a21ebef9aa322a56">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[7/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44447e854ca3aad5a21ebef9aa322a56">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1794,7 +2085,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gaf9fb652af8a6158c2e98526918e94e7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf9fb652af8a6158c2e98526918e94e7e">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[8/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf9fb652af8a6158c2e98526918e94e7e">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[8/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1818,6 +2109,44 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the global offset for the unknowns on the vertex V. </p>
+
+</div>
+</div>
+<a id="ga44f26c88e322ca732450e8669891225d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44f26c88e322ca732450e8669891225d">&#9670;&nbsp;</a></span>globalOffset() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::GlobalDOFSpace::globalOffset </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the global offset for the unknows on the i-th element of dimension d. </p>
 
 </div>
 </div>
@@ -2958,6 +3287,34 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gaaa9ed015a37af834c23a84e16af10876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaa9ed015a37af834c23a84e16af10876">&#9670;&nbsp;</a></span>numLocalDofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t HArDCore3D::LocalDOFSpace::numLocalDofs </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of local d-cell DOFs. </p>
+
+</div>
+</div>
 <a id="ga63c9c43b9c52f18389de01b1b2669258"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga63c9c43b9c52f18389de01b1b2669258">&#9670;&nbsp;</a></span>numLocalDofsCell() <span class="overload">[1/3]</span></h2>
 
@@ -3367,7 +3724,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="gac77ab9801f6fcca6b81f0a069969c951"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac77ab9801f6fcca6b81f0a069969c951">&#9670;&nbsp;</a></span>parallel_assembly_system() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gac77ab9801f6fcca6b81f0a069969c951">&#9670;&nbsp;</a></span>parallel_assembly_system() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3412,12 +3769,12 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Function to assemble global matrix and right-hand side from a procedure that compute local triplets and rhs contributions. </p>
+<p>Function to assemble a global matrix and right-hand side from a procedure that compute local triplets and rhs contributions (a wrapper for the more general function that can assemble several matrices and vectors) </p>
 
 </div>
 </div>
 <a id="ga96c8e29a4f63768d516460ff68a4e979"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga96c8e29a4f63768d516460ff68a4e979">&#9670;&nbsp;</a></span>parallel_assembly_system() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96c8e29a4f63768d516460ff68a4e979">&#9670;&nbsp;</a></span>parallel_assembly_system() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3474,7 +3831,63 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Function to assemble a two global matrices and vectors (such as: system and static condensation operator, or system and matrix for BC) from a procedure that compute local triplets and rhs contributions. </p>
+<p>Function to assemble two global matrices and vectors (such as: system and static condensation operator, or system and matrix for BC) from a procedure that compute local triplets and rhs contributions (a wrapper for the more general function that can assemble several matrices and vectors) </p>
+
+</div>
+</div>
+<a id="ga0afaaf04ea8a13c61cf2ab9650a293ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0afaaf04ea8a13c61cf2ab9650a293ca">&#9670;&nbsp;</a></span>parallel_assembly_system() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structHArDCore3D_1_1SystemVectors.html">SystemVectors</a>&lt;Eigen::SparseMatrix&lt;double&gt; &gt; HArDCore3D::parallel_assembly_system </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nb_elements</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; size_t, size_t &gt;&gt;&#160;</td>
+          <td class="paramname"><em>size_systems</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; size_t &gt;&#160;</td>
+          <td class="paramname"><em>size_vectors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void(size_t start, size_t end, std::vector&lt; std::list&lt; Eigen::Triplet&lt; double &gt;&gt;&gt; *triplets, std::vector&lt; Eigen::VectorXd &gt; *vecs)&gt;&#160;</td>
+          <td class="paramname"><em>batch_local_assembly</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_threads</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function to assemble global matrices from a procedure that compute local triplets. </p>
 
 </div>
 </div>
@@ -4172,6 +4585,46 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gab434bf1a9a9f6be073efe0505239bcda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab434bf1a9a9f6be073efe0505239bcda">&#9670;&nbsp;</a></span>SystemVectors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MatrixType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structHArDCore3D_1_1SystemVectors.html">HArDCore3D::SystemVectors</a>&lt; MatrixType &gt;::<a class="el" href="structHArDCore3D_1_1SystemVectors.html">SystemVectors</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MatrixType &gt;&#160;</td>
+          <td class="paramname"><em>sys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Eigen::VectorXd &gt;&#160;</td>
+          <td class="paramname"><em>vec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
 <a id="ga7db5411bc5570e3f43d26ac31741fbdb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7db5411bc5570e3f43d26ac31741fbdb">&#9670;&nbsp;</a></span>VariableDOFSpace() <span class="overload">[1/5]</span></h2>
 
@@ -4607,6 +5060,22 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gae9abbead75a73052d7bf324190bc06a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae9abbead75a73052d7bf324190bc06a4">&#9670;&nbsp;</a></span>systems</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MatrixType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;MatrixType&gt; <a class="el" href="structHArDCore3D_1_1SystemVectors.html">HArDCore3D::SystemVectors</a>&lt; MatrixType &gt;::systems</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="gadc026ae462aa662862e53f2adb084400"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gadc026ae462aa662862e53f2adb084400">&#9670;&nbsp;</a></span>value</h2>
 
@@ -4615,6 +5084,22 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__Common.html#ga0396c9c15024a70638bd9fb16712d13f">IntegralWeightValueType</a> HArDCore3D::IntegralWeight::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab856ed16da6e6fdc57e80ad6dbab9298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab856ed16da6e6fdc57e80ad6dbab9298">&#9670;&nbsp;</a></span>vectors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MatrixType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Eigen::VectorXd&gt; <a class="el" href="structHArDCore3D_1_1SystemVectors.html">HArDCore3D::SystemVectors</a>&lt; MatrixType &gt;::vectors</td>
         </tr>
       </table>
 </div><div class="memdoc">

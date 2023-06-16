@@ -98,6 +98,9 @@ $(function() {
 : <a class="el" href="group__Mesh.html#ga2bc88e611b399c36dd3bc29c55ba376d">MeshND::Mesh&lt; dimension &gt;</a>
 , <a class="el" href="group__Mesh.html#gac47817d75ab87e8e61fcfdc2b32cb5a3">MeshND::MeshObject&lt; space_dim, object_dim &gt;</a>
 </li>
+<li>n_elems()
+: <a class="el" href="group__Mesh.html#gac32c0cbf871a206f2078262f96412c8b">MeshND::Mesh&lt; dimension &gt;</a>
+</li>
 <li>n_face_dofs()
 : <a class="el" href="group__HybridCore.html#gaa1f68faa5324ceceee6d49e66e766fc3">HArDCore3D::UVector</a>
 </li>
@@ -136,9 +139,16 @@ $(function() {
 <li>nbSCDOFs()
 : <a class="el" href="group__DDR__magnetostatic.html#ga4a501f243a498fd6567c2b7b71c9be98">HArDCore3D::Magnetostatics</a>
 , <a class="el" href="group__DDR__stokes.html#ga5ac301f6b8248e2e81d720e3dcef92c2">HArDCore3D::Stokes</a>
+, <a class="el" href="group__SDDR__yangmills.html#ga11e64c112bafab098ab2b9022b4c34ea">HArDCore3D::YangMills</a>
+</li>
+<li>nbSCDOFs_E()
+: <a class="el" href="group__SDDR__yangmills.html#ga66dd5024794d99a9cebed7434b21da58">HArDCore3D::YangMills</a>
+</li>
+<li>nbSCDOFs_lambda()
+: <a class="el" href="group__SDDR__yangmills.html#gac8208c83908e31f9d7f0fff5fca94729">HArDCore3D::YangMills</a>
 </li>
 <li>nbSCDOFs_p()
-: <a class="el" href="structHArDCore3D_1_1Stokes.html#ga2c90515a4a5cc2e081cf5f7485706418">HArDCore3D::Stokes</a>
+: <a class="el" href="group__DDR__stokes.html#ga2c90515a4a5cc2e081cf5f7485706418">HArDCore3D::Stokes</a>
 </li>
 <li>nbSCDOFs_u()
 : <a class="el" href="group__DDR__stokes.html#ga137becabbdc3f6d87ce6a34ae934f729">HArDCore3D::Stokes</a>
@@ -180,6 +190,9 @@ $(function() {
 : <a class="el" href="group__TransformMeshes.html#gaeaa08c422428f795a4b3061010fa32fc">CellNodeArray</a>
 , <a class="el" href="group__TransformMeshes.html#ga643e4b8829864ecd3bc5e6dcc904bfd6">GraphNodeArray</a>
 </li>
+<li>nonlinearRes()
+: <a class="el" href="group__SDDR__yangmills.html#ga5b839e9bc82e85dc73fdeee7c8e83254">HArDCore3D::YangMills</a>
+</li>
 <li>normal()
 : <a class="el" href="group__Basis.html#ga942d185d76dc58075a5db479eb3c0e14">HArDCore3D::GolyComplBasisFace</a>
 , <a class="el" href="group__Basis.html#ga299c04e82954cd6bd69a31de664d1150">HArDCore3D::MonomialScalarBasisFace</a>
@@ -197,9 +210,12 @@ $(function() {
 : <a class="el" href="group__HHO__brinkman.html#ga05019596c999c88b944afeae4e6cb5fb">HArDCore3D::Brinkman</a>
 , <a class="el" href="group__HHO__fullgradientdiff.html#gaae4bb83a8fb906f61e7f0909fa9162b2">HArDCore3D::FullGradientDiffusion</a>
 </li>
+<li>numLocalDofs()
+: <a class="el" href="group__Common.html#gaaa9ed015a37af834c23a84e16af10876">HArDCore3D::LocalDOFSpace</a>
+</li>
 <li>numLocalDofsCell()
 : <a class="el" href="group__Common.html#ga63c9c43b9c52f18389de01b1b2669258">HArDCore3D::LocalDOFSpace</a>
-, <a class="el" href="group__Common.html#ga7e00e290fa12e7cbf824783488f5e409">HArDCore3D::VariableDOFSpace</a>
+, <a class="el" href="group__Common.html#gac090a13e6cf061000167b4cda9b75d0b">HArDCore3D::VariableDOFSpace</a>
 </li>
 <li>numLocalDofsEdge()
 : <a class="el" href="group__Common.html#ga528c6d896f2ab32b50751fb22bcf8910">HArDCore3D::LocalDOFSpace</a>
@@ -207,7 +223,7 @@ $(function() {
 </li>
 <li>numLocalDofsFace()
 : <a class="el" href="group__Common.html#gad3de9b38dbf2a2447bf4b07dea726bb5">HArDCore3D::LocalDOFSpace</a>
-, <a class="el" href="group__Common.html#gafdbc0e60bfb3263e10f9f8514708c536">HArDCore3D::VariableDOFSpace</a>
+, <a class="el" href="group__Common.html#ga989fad9b3dbb5fd931113428220b061f">HArDCore3D::VariableDOFSpace</a>
 </li>
 <li>numLocalDofsVertex()
 : <a class="el" href="group__Common.html#gac5ac77404d4e30ab0baf187f2cd341ba">HArDCore3D::LocalDOFSpace</a>

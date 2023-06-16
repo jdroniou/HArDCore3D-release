@@ -139,6 +139,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5c01b1a270d5e1f8f530c530c77c4b19"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga5c01b1a270d5e1f8f530c530c77c4b19">MeshND::Mesh&lt; dimension &gt;::n_cells</a> () const</td></tr>
 <tr class="memdesc:ga5c01b1a270d5e1f8f530c530c77c4b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of cells in the mesh.  <a href="group__Mesh.html#ga5c01b1a270d5e1f8f530c530c77c4b19">More...</a><br /></td></tr>
 <tr class="separator:ga5c01b1a270d5e1f8f530c530c77c4b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac32c0cbf871a206f2078262f96412c8b"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gac32c0cbf871a206f2078262f96412c8b">MeshND::Mesh&lt; dimension &gt;::n_elems</a> (size_t d) const</td></tr>
+<tr class="memdesc:gac32c0cbf871a206f2078262f96412c8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; number of d-cells in the mesh  <a href="group__Mesh.html#gac32c0cbf871a206f2078262f96412c8b">More...</a><br /></td></tr>
+<tr class="separator:gac32c0cbf871a206f2078262f96412c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3ace0a118f2a7899f578befc4df17a4a"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga3ace0a118f2a7899f578befc4df17a4a">MeshND::Mesh&lt; dimension &gt;::n_b_vertices</a> () const</td></tr>
 <tr class="memdesc:ga3ace0a118f2a7899f578befc4df17a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of boundary vertices in the mesh.  <a href="group__Mesh.html#ga3ace0a118f2a7899f578befc4df17a4a">More...</a><br /></td></tr>
 <tr class="separator:ga3ace0a118f2a7899f578befc4df17a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,6 +262,10 @@ Functions</h2></td></tr>
 <tr class="memitem:gabc52607af8a20cd7228863ac7de3ce22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Mesh.html#gaccc346b5620989466f9bb142c1680ac7">Cell</a>&lt; dimension &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gabc52607af8a20cd7228863ac7de3ce22">MeshND::Mesh&lt; dimension &gt;::i_cell</a> (std::size_t index) const</td></tr>
 <tr class="memdesc:gabc52607af8a20cd7228863ac7de3ce22"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a constant pointer to an internal cell using an index  <a href="group__Mesh.html#gabc52607af8a20cd7228863ac7de3ce22">More...</a><br /></td></tr>
 <tr class="separator:gabc52607af8a20cd7228863ac7de3ce22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae09647646662b6f6b8c4b6c78329cd30"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gae09647646662b6f6b8c4b6c78329cd30">MeshND::Mesh&lt; dimension &gt;::get_boundary</a> (size_t d, size_t index) const</td></tr>
+<tr class="separator:gae09647646662b6f6b8c4b6c78329cd30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35a9068b5b9acb460962df65d287c504"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga35a9068b5b9acb460962df65d287c504">MeshND::Mesh&lt; dimension &gt;::boundary_orientation</a> (size_t d, size_t i, size_t j) const</td></tr>
+<tr class="separator:ga35a9068b5b9acb460962df65d287c504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaee01a22cba97a303a7d61b6f01b196ef"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gaee01a22cba97a303a7d61b6f01b196ef">MeshND::Mesh&lt; dimension &gt;::regularity</a> ()</td></tr>
 <tr class="separator:gaee01a22cba97a303a7d61b6f01b196ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0cfa70c884b3fb337d07506717db362f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga0cfa70c884b3fb337d07506717db362f">MeshND::Mesh&lt; dimension &gt;::renum</a> (const char B, const std::vector&lt; size_t &gt; new_to_old)</td></tr>
@@ -292,6 +299,8 @@ Functions</h2></td></tr>
 <tr class="memitem:gae1c358f11ceef50222e6feaac03dae64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceMeshND.html#a4d216a3ef63fb3cf764b405b2b8e9db2">Simplices</a>&lt; space_dim, object_dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gae1c358f11ceef50222e6feaac03dae64">MeshND::MeshObject&lt; space_dim, object_dim &gt;::get_simplices</a> () const</td></tr>
 <tr class="memdesc:gae1c358f11ceef50222e6feaac03dae64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the simplices making up the <a class="el" href="classMeshND_1_1MeshObject.html" title="Generic class to describe a cell, face, edge or vertex.">MeshObject</a>.  <a href="group__Mesh.html#gae1c358f11ceef50222e6feaac03dae64">More...</a><br /></td></tr>
 <tr class="separator:gae1c358f11ceef50222e6feaac03dae64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga68d0a3b3de3cbce8c450f483b13e574c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceMeshND.html#a4d216a3ef63fb3cf764b405b2b8e9db2">Simplices</a>&lt; space_dim, object_dim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga68d0a3b3de3cbce8c450f483b13e574c">MeshND::MeshObject&lt; space_dim, object_dim &gt;::set_simplices</a> ()</td></tr>
+<tr class="separator:ga68d0a3b3de3cbce8c450f483b13e574c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad3e3369dca9c7df500afa41227bb2902"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gad3e3369dca9c7df500afa41227bb2902">MeshND::MeshObject&lt; space_dim, object_dim &gt;::set_global_index</a> (const size_t idx)</td></tr>
 <tr class="memdesc:gad3e3369dca9c7df500afa41227bb2902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global index.  <a href="group__Mesh.html#gad3e3369dca9c7df500afa41227bb2902">More...</a><br /></td></tr>
 <tr class="separator:gad3e3369dca9c7df500afa41227bb2902"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -367,6 +376,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga70e525257730123d4c331d11468c66bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceMeshND.html#a36f45c57c87a9d08d94fefe52f6fad56">VectorRd</a>&lt; space_dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga70e525257730123d4c331d11468c66bb">MeshND::MeshObject&lt; space_dim, object_dim &gt;::coords</a> () const</td></tr>
 <tr class="memdesc:ga70e525257730123d4c331d11468c66bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the coordinates of a Vertex.  <a href="group__Mesh.html#ga70e525257730123d4c331d11468c66bb">More...</a><br /></td></tr>
 <tr class="separator:ga70e525257730123d4c331d11468c66bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b12aa83a0f2721c6e21c6a77ed083cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga9b12aa83a0f2721c6e21c6a77ed083cf">MeshND::MeshObject&lt; space_dim, object_dim &gt;::set_coords</a> (const <a class="el" href="namespaceMeshND.html#a36f45c57c87a9d08d94fefe52f6fad56">VectorRd</a>&lt; space_dim &gt; &amp;x)</td></tr>
+<tr class="memdesc:ga9b12aa83a0f2721c6e21c6a77ed083cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the coordinates of a Vertex.  <a href="group__Mesh.html#ga9b12aa83a0f2721c6e21c6a77ed083cf">More...</a><br /></td></tr>
+<tr class="separator:ga9b12aa83a0f2721c6e21c6a77ed083cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5a365aeca45130fd8786b88b60c00165"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceMeshND.html#a36f45c57c87a9d08d94fefe52f6fad56">VectorRd</a>&lt; space_dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga5a365aeca45130fd8786b88b60c00165">MeshND::MeshObject&lt; space_dim, object_dim &gt;::face_normal</a> (const size_t face_index) const</td></tr>
 <tr class="memdesc:ga5a365aeca45130fd8786b88b60c00165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the outer normal of a Cell towards the Face located at face_index.  <a href="group__Mesh.html#ga5a365aeca45130fd8786b88b60c00165">More...</a><br /></td></tr>
 <tr class="separator:ga5a365aeca45130fd8786b88b60c00165"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -379,12 +391,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ga39f476a9ddec51e9c930c79c33641b59"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga39f476a9ddec51e9c930c79c33641b59">MeshND::MeshObject&lt; space_dim, object_dim &gt;::edge_orientation</a> (const size_t edge_index) const</td></tr>
 <tr class="memdesc:ga39f476a9ddec51e9c930c79c33641b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the orientation of a Edge (multiplied by edge_normal, gives the outer normal to the face)  <a href="group__Mesh.html#ga39f476a9ddec51e9c930c79c33641b59">More...</a><br /></td></tr>
 <tr class="separator:ga39f476a9ddec51e9c930c79c33641b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7d865d319e9f196519fffcd84a7773cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga7d865d319e9f196519fffcd84a7773cd">MeshND::MeshObject&lt; space_dim, object_dim &gt;::induced_orientation</a> (const size_t index) const</td></tr>
+<tr class="memdesc:ga7d865d319e9f196519fffcd84a7773cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return 1 if the volume form on the boundary is positively oriented, -1 else.  <a href="group__Mesh.html#ga7d865d319e9f196519fffcd84a7773cd">More...</a><br /></td></tr>
+<tr class="separator:ga7d865d319e9f196519fffcd84a7773cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadaf3f7f4977287819dc61cc845cbb900"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceMeshND.html#a36f45c57c87a9d08d94fefe52f6fad56">VectorRd</a>&lt; space_dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gadaf3f7f4977287819dc61cc845cbb900">MeshND::MeshObject&lt; space_dim, object_dim &gt;::normal</a> () const</td></tr>
 <tr class="memdesc:gadaf3f7f4977287819dc61cc845cbb900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the normal of a Face.  <a href="group__Mesh.html#gadaf3f7f4977287819dc61cc845cbb900">More...</a><br /></td></tr>
 <tr class="separator:gadaf3f7f4977287819dc61cc845cbb900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae3cc3947e14ec1b24017b560c4720717"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceMeshND.html#a36f45c57c87a9d08d94fefe52f6fad56">VectorRd</a>&lt; space_dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gae3cc3947e14ec1b24017b560c4720717">MeshND::MeshObject&lt; space_dim, object_dim &gt;::tangent</a> () const</td></tr>
 <tr class="memdesc:gae3cc3947e14ec1b24017b560c4720717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the tangent of a Edge.  <a href="group__Mesh.html#gae3cc3947e14ec1b24017b560c4720717">More...</a><br /></td></tr>
 <tr class="separator:gae3cc3947e14ec1b24017b560c4720717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87d738ce75e7f6b548431641c532eb1f"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; double, space_dim, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#ga87d738ce75e7f6b548431641c532eb1f">MeshND::MeshObject&lt; space_dim, object_dim &gt;::face_tangent</a> () const</td></tr>
+<tr class="memdesc:ga87d738ce75e7f6b548431641c532eb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the tangent space of a Face.  <a href="group__Mesh.html#ga87d738ce75e7f6b548431641c532eb1f">More...</a><br /></td></tr>
+<tr class="separator:ga87d738ce75e7f6b548431641c532eb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafa3cf17d82b8f8b3930f5e2f13064628"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Mesh.html#gafa3cf17d82b8f8b3930f5e2f13064628">MeshND::MeshObject&lt; space_dim, object_dim &gt;::construct_face_orientations</a> ()</td></tr>
 <tr class="memdesc:gafa3cf17d82b8f8b3930f5e2f13064628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the directions of the face normals of a cell.  <a href="group__Mesh.html#gafa3cf17d82b8f8b3930f5e2f13064628">More...</a><br /></td></tr>
 <tr class="separator:gafa3cf17d82b8f8b3930f5e2f13064628"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1089,6 +1107,50 @@ template&lt;std::size_t dimension&gt; </div>
 
 </div>
 </div>
+<a id="ga35a9068b5b9acb460962df65d287c504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35a9068b5b9acb460962df65d287c504">&#9670;&nbsp;</a></span>boundary_orientation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t dimension&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classMeshND_1_1Mesh.html">MeshND::Mesh</a>&lt; dimension &gt;::boundary_orientation </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga59a73d89c5469a10a6d7e2d0a25a3789"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga59a73d89c5469a10a6d7e2d0a25a3789">&#9670;&nbsp;</a></span>cell() <span class="overload">[1/2]</span></h2>
 
@@ -1457,6 +1519,24 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
 
 </div>
 </div>
+<a id="ga87d738ce75e7f6b548431641c532eb1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87d738ce75e7f6b548431641c532eb1f">&#9670;&nbsp;</a></span>face_tangent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix&lt; double, space_dim, 2 &gt; <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::face_tangent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the tangent space of a Face. </p>
+
+</div>
+</div>
 <a id="gaff67b81da5a0272551d457a392e28998"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaff67b81da5a0272551d457a392e28998">&#9670;&nbsp;</a></span>get_b_cells()</h2>
 
@@ -1570,6 +1650,44 @@ template&lt;std::size_t dimension&gt; </div>
 </div><div class="memdoc">
 
 <p>lists the boundary vertices in the mesh. </p>
+
+</div>
+</div>
+<a id="gae09647646662b6f6b8c4b6c78329cd30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae09647646662b6f6b8c4b6c78329cd30">&#9670;&nbsp;</a></span>get_boundary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t dimension&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;size_t&gt; <a class="el" href="classMeshND_1_1Mesh.html">MeshND::Mesh</a>&lt; dimension &gt;::get_boundary </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -2245,6 +2363,28 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
 
 </div>
 </div>
+<a id="ga7d865d319e9f196519fffcd84a7773cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7d865d319e9f196519fffcd84a7773cd">&#9670;&nbsp;</a></span>induced_orientation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::induced_orientation </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return 1 if the volume form on the boundary is positively oriented, -1 else. </p>
+
+</div>
+</div>
 <a id="gabece3008f45548acdcabcf37eb09ba5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gabece3008f45548acdcabcf37eb09ba5e">&#9670;&nbsp;</a></span>is_boundary()</h2>
 
@@ -2703,6 +2843,36 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
 
 </div>
 </div>
+<a id="gac32c0cbf871a206f2078262f96412c8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac32c0cbf871a206f2078262f96412c8b">&#9670;&nbsp;</a></span>n_elems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t dimension&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classMeshND_1_1Mesh.html">MeshND::Mesh</a>&lt; dimension &gt;::n_elems </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>&lt; number of d-cells in the mesh </p>
+
+</div>
+</div>
 <a id="ga468c3251eb5e4330256d2bf30dd1d389"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga468c3251eb5e4330256d2bf30dd1d389">&#9670;&nbsp;</a></span>n_faces() <span class="overload">[1/2]</span></h2>
 
@@ -3053,6 +3223,28 @@ template&lt;size_t space_dim, size_t object_dim&gt; </div>
 
 </div>
 </div>
+<a id="ga9b12aa83a0f2721c6e21c6a77ed083cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b12aa83a0f2721c6e21c6a77ed083cf">&#9670;&nbsp;</a></span>set_coords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::set_coords </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceMeshND.html#a36f45c57c87a9d08d94fefe52f6fad56">VectorRd</a>&lt; space_dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the coordinates of a Vertex. </p>
+
+</div>
+</div>
 <a id="gad3e3369dca9c7df500afa41227bb2902"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad3e3369dca9c7df500afa41227bb2902">&#9670;&nbsp;</a></span>set_global_index()</h2>
 
@@ -3110,6 +3302,33 @@ template&lt;std::size_t dimension&gt; </div>
 </div><div class="memdoc">
 
 <p>set the name of the mesh </p>
+
+</div>
+</div>
+<a id="ga68d0a3b3de3cbce8c450f483b13e574c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga68d0a3b3de3cbce8c450f483b13e574c">&#9670;&nbsp;</a></span>set_simplices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t space_dim, size_t object_dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceMeshND.html#a4d216a3ef63fb3cf764b405b2b8e9db2">Simplices</a>&lt;space_dim, object_dim&gt;&amp; <a class="el" href="classMeshND_1_1MeshObject.html">MeshND::MeshObject</a>&lt; space_dim, object_dim &gt;::set_simplices </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

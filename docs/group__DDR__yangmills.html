@@ -79,8 +79,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the DDR scheme for the Yang-Mills problem.  
+<p>Implementation of the lowest order DDR scheme for the Yang-Mills problem.  
 <a href="#details">More...</a></p>
+<div class="dynheader">
+Collaboration diagram for DDR_yangmills:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__DDR__yangmills.png" border="0" usemap="#agroup____DDR____yangmills" alt=""/></div>
+<map name="agroup____DDR____yangmills" id="agroup____DDR____yangmills">
+<area shape="rect" href="group__SDDR__yangmills.html" title="Implementation of the arbitrary order Serendipity DDR scheme for the Yang&#45;Mills problem." alt="" coords="349,22,472,47"/>
+<area shape="rect" title="Implementation of the lowest order DDR scheme for the Yang&#45;Mills problem." alt="" coords="5,22,120,47"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -160,14 +169,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gab861214e7d59f4a352cc119932ccd208"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#gab861214e7d59f4a352cc119932ccd208">HArDCore3D::YangMills::computeInitialConditions</a> (const Eigen::MatrixXd &amp;Eh, const Eigen::MatrixXd &amp;Ah, const double nonlinear_coeff, const size_t solver)</td></tr>
 <tr class="memdesc:gab861214e7d59f4a352cc119932ccd208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the projected initial conditions that satisfy the constraint.  <a href="group__DDR__yangmills.html#gab861214e7d59f4a352cc119932ccd208">More...</a><br /></td></tr>
 <tr class="separator:gab861214e7d59f4a352cc119932ccd208"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga137ce38b721fa63ec052802cc37891a9"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#ga137ce38b721fa63ec052802cc37891a9">HArDCore3D::YangMills::epsBkt_v</a> (size_t iT, const Eigen::VectorXd &amp;v) const</td></tr>
-<tr class="memdesc:ga137ce38b721fa63ec052802cc37891a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the matrix of Hstar[v,.] in element index iT.  <a href="group__DDR__yangmills.html#ga137ce38b721fa63ec052802cc37891a9">More...</a><br /></td></tr>
-<tr class="separator:ga137ce38b721fa63ec052802cc37891a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb5ef41fbc8ed9ad41589ce8ac99865f"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#gadb5ef41fbc8ed9ad41589ce8ac99865f">HArDCore3D::YangMills::epsBkt_v</a> (size_t iT, boost::multi_array&lt; double, 3 &gt; &amp;ebkt_T, const Eigen::VectorXd &amp;v) const</td></tr>
+<tr class="memdesc:gadb5ef41fbc8ed9ad41589ce8ac99865f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the matrix of *[v,.]^div in element index iT.  <a href="group__DDR__yangmills.html#gadb5ef41fbc8ed9ad41589ce8ac99865f">More...</a><br /></td></tr>
+<tr class="separator:gadb5ef41fbc8ed9ad41589ce8ac99865f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3730fbcd2c9fae4eee0b7a12ff07c169"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#ga3730fbcd2c9fae4eee0b7a12ff07c169">HArDCore3D::YangMills::L2v_Bkt</a> (size_t iT, boost::multi_array&lt; double, 3 &gt; &amp;intPciPcjPgk, const Eigen::VectorXd &amp;v, const size_t &amp;entry) const</td></tr>
 <tr class="memdesc:ga3730fbcd2c9fae4eee0b7a12ff07c169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper to plug vector into L2 integral product: int (Pcurl 1,[Pcurl 2, Pgrad 3])  <a href="group__DDR__yangmills.html#ga3730fbcd2c9fae4eee0b7a12ff07c169">More...</a><br /></td></tr>
 <tr class="separator:ga3730fbcd2c9fae4eee0b7a12ff07c169"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga709c6f792ee843147b9ad27379d76f22"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#ga709c6f792ee843147b9ad27379d76f22">HArDCore3D::YangMills::L2v_epsBkt</a> (size_t iT, const Eigen::VectorXd &amp;v_T, const Eigen::MatrixXd &amp;L2prod) const</td></tr>
-<tr class="separator:ga709c6f792ee843147b9ad27379d76f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2d071b99eaacbcfd7548f9e7cf6c739"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#gae2d071b99eaacbcfd7548f9e7cf6c739">HArDCore3D::YangMills::L2v_epsBkt</a> (size_t iT, boost::multi_array&lt; double, 3 &gt; &amp;ebkt_T, const Eigen::VectorXd &amp;v_T, const Eigen::MatrixXd &amp;L2prod) const</td></tr>
+<tr class="memdesc:gae2d071b99eaacbcfd7548f9e7cf6c739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the bracket inside the L2prod with v.  <a href="group__DDR__yangmills.html#gae2d071b99eaacbcfd7548f9e7cf6c739">More...</a><br /></td></tr>
+<tr class="separator:gae2d071b99eaacbcfd7548f9e7cf6c739"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2211f57aa6040bc6ece68ecfed9af94f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#ga2211f57aa6040bc6ece68ecfed9af94f">HArDCore3D::YangMills::dimension</a> () const</td></tr>
 <tr class="memdesc:ga2211f57aa6040bc6ece68ecfed9af94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the global problem dimension.  <a href="group__DDR__yangmills.html#ga2211f57aa6040bc6ece68ecfed9af94f">More...</a><br /></td></tr>
 <tr class="separator:ga2211f57aa6040bc6ece68ecfed9af94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,19 +245,16 @@ Functions</h2></td></tr>
 <tr class="separator:gaa41aff353059359730d693c683d327fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac8d0608937397ae2819169856c93fcfb"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#gac8d0608937397ae2819169856c93fcfb">HArDCore3D::YangMills::computeConditionNum</a> () const</td></tr>
 <tr class="separator:gac8d0608937397ae2819169856c93fcfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga31920634bc32f12292abafb48ee47983"><td class="memTemplParams" colspan="2">template&lt;typename outValue , typename Fct &gt; </td></tr>
-<tr class="memitem:ga31920634bc32f12292abafb48ee47983"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; Fct &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#ga31920634bc32f12292abafb48ee47983">HArDCore3D::sumLA</a> (const std::vector&lt; Fct &gt; &amp;LAF, const std::vector&lt; Fct &gt; &amp;LAG, double lambda)</td></tr>
-<tr class="memdesc:ga31920634bc32f12292abafb48ee47983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template to evaluate a vector of functions.  <a href="group__DDR__yangmills.html#ga31920634bc32f12292abafb48ee47983">More...</a><br /></td></tr>
-<tr class="separator:ga31920634bc32f12292abafb48ee47983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff33e708e3b03a979ca95abfea149f67"><td class="memTemplParams" colspan="2">template&lt;typename outValue , typename Fct &gt; </td></tr>
+<tr class="memitem:gaff33e708e3b03a979ca95abfea149f67"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; Fct &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#gaff33e708e3b03a979ca95abfea149f67">HArDCore3D::sumLA</a> (const std::vector&lt; Fct &gt; &amp;LAF, const std::vector&lt; Fct &gt; &amp;LAG, double lambda)</td></tr>
+<tr class="memdesc:gaff33e708e3b03a979ca95abfea149f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template to evaluate a vector of functions.  <a href="group__DDR__yangmills.html#gaff33e708e3b03a979ca95abfea149f67">More...</a><br /></td></tr>
+<tr class="separator:gaff33e708e3b03a979ca95abfea149f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0090492baa5464ee3adcb28f0d0e3e76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#ga0090492baa5464ee3adcb28f0d0e3e76">HArDCore3D::AssembleSystems::AssembleSystems</a> (std::vector&lt; Eigen::MatrixXd &gt; sys, std::vector&lt; Eigen::VectorXd &gt; vec)</td></tr>
 <tr class="memdesc:ga0090492baa5464ee3adcb28f0d0e3e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__DDR__yangmills.html#ga0090492baa5464ee3adcb28f0d0e3e76">More...</a><br /></td></tr>
 <tr class="separator:ga0090492baa5464ee3adcb28f0d0e3e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga567baa1497a74d8b906927a994b2629e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#ga567baa1497a74d8b906927a994b2629e">HArDCore3D::AssembledSystems::AssembledSystems</a> (std::vector&lt; Eigen::SparseMatrix&lt; double &gt;&gt; sys, std::vector&lt; Eigen::VectorXd &gt; vec)</td></tr>
 <tr class="memdesc:ga567baa1497a74d8b906927a994b2629e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__DDR__yangmills.html#ga567baa1497a74d8b906927a994b2629e">More...</a><br /></td></tr>
 <tr class="separator:ga567baa1497a74d8b906927a994b2629e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf588f2f452bfcfb504349ff3bbae1037"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structHArDCore3D_1_1AssembledSystems.html">AssembledSystems</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__yangmills.html#gaf588f2f452bfcfb504349ff3bbae1037">HArDCore3D::parallel_assembly_system</a> (size_t nb_elements, std::vector&lt; std::pair&lt; size_t, size_t &gt;&gt; size_systems, std::vector&lt; size_t &gt; size_vectors, std::function&lt; void(size_t start, size_t end, std::vector&lt; std::list&lt; Eigen::Triplet&lt; double &gt;&gt;&gt; *triplets, std::vector&lt; Eigen::VectorXd &gt; *vecs)&gt; batch_local_assembly, bool <a class="el" href="group__HHO__DiffAdvecReac.html#ga61c147fa3e7a4b2f35ba838ce26aa026">use_threads</a>=true)</td></tr>
-<tr class="memdesc:gaf588f2f452bfcfb504349ff3bbae1037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to assemble global matrices from a procedure that compute local triplets.  <a href="group__DDR__yangmills.html#gaf588f2f452bfcfb504349ff3bbae1037">More...</a><br /></td></tr>
-<tr class="separator:gaf588f2f452bfcfb504349ff3bbae1037"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -440,7 +447,7 @@ Variables</h2></td></tr>
 <tr class="separator:ga9f495ec911d6c96d6913047ae341b92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Implementation of the DDR scheme for the Yang-Mills problem. </p>
+<p>Implementation of the lowest order DDR scheme for the Yang-Mills problem. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga15d4a3f1aa8409b3cbb5a1519617de66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga15d4a3f1aa8409b3cbb5a1519617de66">&#9670;&nbsp;</a></span>ElectricFieldType</h2>
@@ -1132,8 +1139,8 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
 
 </div>
 </div>
-<a id="ga137ce38b721fa63ec052802cc37891a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga137ce38b721fa63ec052802cc37891a9">&#9670;&nbsp;</a></span>epsBkt_v()</h2>
+<a id="gadb5ef41fbc8ed9ad41589ce8ac99865f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadb5ef41fbc8ed9ad41589ce8ac99865f">&#9670;&nbsp;</a></span>epsBkt_v()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1143,6 +1150,12 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>iT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::multi_array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ebkt_T</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1158,7 +1171,15 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates the matrix of Hstar[v,.] in element index iT. </p>
+<p>Calculates the matrix of *[v,.]^div in element index iT. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iT</td><td><a class="el" href="structElement.html" title="Structure to store elements.">Element</a> index </td></tr>
+    <tr><td class="paramname">ebkt_T</td><td>The *[.,.]^div operator for cell values (doesn't include faces) </td></tr>
+    <tr><td class="paramname">v</td><td>Vector to plug in </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1206,14 +1227,15 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
     <tr><td class="paramname">iT</td><td><a class="el" href="structElement.html" title="Structure to store elements.">Element</a> index </td></tr>
     <tr><td class="paramname">intPciPcjPgk</td><td>L2 integral product (trilinear form) </td></tr>
     <tr><td class="paramname">v</td><td>Vector to plug in </td></tr>
+    <tr><td class="paramname">entry</td><td>Position to put vector (1, 2, 3) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ga709c6f792ee843147b9ad27379d76f22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga709c6f792ee843147b9ad27379d76f22">&#9670;&nbsp;</a></span>L2v_epsBkt()</h2>
+<a id="gae2d071b99eaacbcfd7548f9e7cf6c739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae2d071b99eaacbcfd7548f9e7cf6c739">&#9670;&nbsp;</a></span>L2v_epsBkt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1223,6 +1245,12 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>iT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::multi_array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ebkt_T</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1243,10 +1271,13 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calculates the bracket inside the L2prod with v. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">iT</td><td><a class="el" href="structElement.html" title="Structure to store elements.">Element</a> index </td></tr>
-    <tr><td class="paramname">v_T</td><td>Local vector in T </td></tr>
+    <tr><td class="paramname">ebkt_T</td><td>The *[.,.]^div operator for cell values (doesn't include faces) </td></tr>
+    <tr><td class="paramname">v_T</td><td>Local vector in T (because we often only have the local part of the vector e.g. (*[A,A]^div)_T ) </td></tr>
     <tr><td class="paramname">L2prod</td><td>L2 product to be combined with bracket </td></tr>
   </table>
   </dd>
@@ -1359,62 +1390,6 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the Lie algebra. </p>
-
-</div>
-</div>
-<a id="gaf588f2f452bfcfb504349ff3bbae1037"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf588f2f452bfcfb504349ff3bbae1037">&#9670;&nbsp;</a></span>parallel_assembly_system()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="structHArDCore3D_1_1AssembledSystems.html">AssembledSystems</a> HArDCore3D::parallel_assembly_system </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>nb_elements</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; std::pair&lt; size_t, size_t &gt;&gt;&#160;</td>
-          <td class="paramname"><em>size_systems</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; size_t &gt;&#160;</td>
-          <td class="paramname"><em>size_vectors</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::function&lt; void(size_t start, size_t end, std::vector&lt; std::list&lt; Eigen::Triplet&lt; double &gt;&gt;&gt; *triplets, std::vector&lt; Eigen::VectorXd &gt; *vecs)&gt;&#160;</td>
-          <td class="paramname"><em>batch_local_assembly</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>use_threads</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Function to assemble global matrices from a procedure that compute local triplets. </p>
 
 </div>
 </div>
@@ -1680,8 +1655,8 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
 
 </div>
 </div>
-<a id="ga31920634bc32f12292abafb48ee47983"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga31920634bc32f12292abafb48ee47983">&#9670;&nbsp;</a></span>sumLA()</h2>
+<a id="gaff33e708e3b03a979ca95abfea149f67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff33e708e3b03a979ca95abfea149f67">&#9670;&nbsp;</a></span>sumLA()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1689,7 +1664,7 @@ template&lt;typename outValue , typename Fct , typename TFct &gt; </div>
 template&lt;typename outValue , typename Fct &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;Fct&gt; HArDCore3D::sumLA </td>
+          <td class="memname">std::vector&lt; Fct &gt; HArDCore3D::sumLA </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; Fct &gt; &amp;&#160;</td>
           <td class="paramname"><em>LAF</em>, </td>
@@ -3534,7 +3509,7 @@ template&lt;typename outValue , typename Fct &gt; </div>
 <div class="line">                                              -0.5*sin(<a class="code" href="group__DDR__yangmills.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(2))*cos(t)*cos(<a class="code" href="group__DDR__yangmills.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(0))*cos(<a class="code" href="group__DDR__yangmills.html#ga05c87d0a93c5df840c07c09ded686aeb">PI</a>*x(1))</div>
 <div class="line">                                              );</div>
 <div class="line">                      }</div>
-<div class="ttc" id="agroup__DDR__yangmills_html_ga05c87d0a93c5df840c07c09ded686aeb"><div class="ttname"><a href="group__DDR__yangmills.html#ga05c87d0a93c5df840c07c09ded686aeb">HArDCore3D::PI</a></div><div class="ttdeci">static const double PI</div><div class="ttdef"><b>Definition:</b> laddr-yangmills-lm.hpp:328</div></div>
+<div class="ttc" id="agroup__DDR__yangmills_html_ga05c87d0a93c5df840c07c09ded686aeb"><div class="ttname"><a href="group__DDR__yangmills.html#ga05c87d0a93c5df840c07c09ded686aeb">HArDCore3D::PI</a></div><div class="ttdeci">static const double PI</div><div class="ttdef"><b>Definition:</b> laddr-yangmills-lm.hpp:343</div></div>
 </div><!-- fragment -->
 </div>
 </div>

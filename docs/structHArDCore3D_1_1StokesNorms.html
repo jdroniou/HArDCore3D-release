@@ -78,7 +78,7 @@ $(function() {
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structHArDCore3D_1_1StokesNorms-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">HArDCore3D::StokesNorms Struct Reference<div class="ingroups"><a class="el" href="group__DDR__stokes.html">DDR_stokes</a> &#124; <a class="el" href="group__VEM__stokes.html">VEM_stokes</a></div></div>  </div>
+<div class="title">HArDCore3D::StokesNorms Struct Reference<div class="ingroups"><a class="el" href="group__DDR__stokes.html">DDR_stokes</a> &#124; <a class="el" href="group__SDDR__stokes.html">SDDR_stokes</a> &#124; <a class="el" href="group__VEM__stokes.html">VEM_stokes</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -92,8 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:gaa91c7fcde0204b65d76746be523bee10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DDR__stokes.html#gaa91c7fcde0204b65d76746be523bee10">StokesNorms</a> (double norm_u, double norm_curl_u, double norm_p, double norm_grad_p)</td></tr>
 <tr class="memdesc:gaa91c7fcde0204b65d76746be523bee10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__DDR__stokes.html#gaa91c7fcde0204b65d76746be523bee10">More...</a><br /></td></tr>
 <tr class="separator:gaa91c7fcde0204b65d76746be523bee10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa91c7fcde0204b65d76746be523bee10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHArDCore3D_1_1StokesNorms.html#gaa91c7fcde0204b65d76746be523bee10">StokesNorms</a> (double norm_u, double norm_curl_u, double norm_p, double norm_grad_p)</td></tr>
-<tr class="memdesc:gaa91c7fcde0204b65d76746be523bee10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="structHArDCore3D_1_1StokesNorms.html#gaa91c7fcde0204b65d76746be523bee10">More...</a><br /></td></tr>
+<tr class="memitem:gaa91c7fcde0204b65d76746be523bee10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SDDR__stokes.html#gaa91c7fcde0204b65d76746be523bee10">StokesNorms</a> (double norm_u, double norm_curl_u, double norm_p, double norm_grad_p)</td></tr>
+<tr class="memdesc:gaa91c7fcde0204b65d76746be523bee10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__SDDR__stokes.html#gaa91c7fcde0204b65d76746be523bee10">More...</a><br /></td></tr>
 <tr class="separator:gaa91c7fcde0204b65d76746be523bee10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa91c7fcde0204b65d76746be523bee10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VEM__stokes.html#gaa91c7fcde0204b65d76746be523bee10">StokesNorms</a> (double norm_u, double norm_curl_u, double norm_p, double norm_grad_p)</td></tr>
 <tr class="memdesc:gaa91c7fcde0204b65d76746be523bee10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="group__VEM__stokes.html#gaa91c7fcde0204b65d76746be523bee10">More...</a><br /></td></tr>
@@ -122,58 +122,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure to store norm components (for velocity, its curl, pressure, and its gradient), as well as Hcurl and Hgrad norms of velocity and pressure. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="gaa91c7fcde0204b65d76746be523bee10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa91c7fcde0204b65d76746be523bee10">&#9670;&nbsp;</a></span>StokesNorms()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">HArDCore3D::StokesNorms::StokesNorms </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>norm_u</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>norm_curl_u</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>norm_p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>norm_grad_p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructor. </p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
+</div><hr/>The documentation for this struct was generated from the following files:<ul>
 <li>Schemes/DDR-stokes/<a class="el" href="ddr-stokes_8hpp_source.html">ddr-stokes.hpp</a></li>
 <li>Schemes/DDR-stokes/<a class="el" href="sddr-stokes_8hpp_source.html">sddr-stokes.hpp</a></li>
 <li>Schemes/VEM-stokes/<a class="el" href="vem-stokes_8hpp_source.html">vem-stokes.hpp</a></li>

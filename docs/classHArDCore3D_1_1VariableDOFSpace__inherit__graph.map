@@ -1,5 +1,7 @@
 <map id="HArDCore3D::VariableDOFSpace" name="HArDCore3D::VariableDOFSpace">
-<area shape="rect" id="node1" title="Base class for global DOF spaces." alt="" coords="59,5,278,32"/>
-<area shape="rect" id="node2" href="$classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator." alt="" coords="5,80,156,107"/>
-<area shape="rect" id="node3" href="$classHArDCore3D_1_1SXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator." alt="" coords="181,80,335,107"/>
+<area shape="rect" id="node1" title="Base class for global DOF spaces." alt="" coords="265,5,483,32"/>
+<area shape="rect" id="node2" href="$classHArDCore3D_1_1LASXCurl.html" title="Discrete Lie algebra valued Serendipity Hcurl space: local operators, L2 product and global interpola..." alt="" coords="5,80,172,107"/>
+<area shape="rect" id="node3" href="$classHArDCore3D_1_1LASXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator." alt="" coords="197,80,367,107"/>
+<area shape="rect" id="node4" href="$classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator." alt="" coords="392,80,543,107"/>
+<area shape="rect" id="node5" href="$classHArDCore3D_1_1SXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator." alt="" coords="567,80,722,107"/>
 </map>

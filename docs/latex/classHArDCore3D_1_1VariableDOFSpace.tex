@@ -11,11 +11,12 @@ Base class for global DOF spaces.
 
 
 
-Inheritance diagram for HAr\+DCore3D\+::Variable\+DOFSpace\+:\nopagebreak
+Inheritance diagram for HAr\+DCore3D\+::Variable\+DOFSpace\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=328pt]{classHArDCore3D_1_1VariableDOFSpace__inherit__graph}
+\includegraphics[width=350pt]{classHArDCore3D_1_1VariableDOFSpace__inherit__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -119,6 +120,14 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_gaa34d6a40007fb0e4ffeefe003
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a cell. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Common_ga23e565cc3f97d069b662128104625911}{extend\+Operator}} (const Face \&F, const Edge \&E, const Eigen\+::\+Matrix\+Xd \&opE) const
 \begin{DoxyCompactList}\small\item\em Extend an edge operator to a face. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__Common_gaa87d6dff8096c48f18d2d14487b93bff}{extend\+Operator}} (const Cell \&T, const Face \&F, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ opT, const Eigen\+::\+Matrix\+Xd \&opF) const
+\begin{DoxyCompactList}\small\item\em Adds a face operator to a cell operator\+: distributes and adds the contributions from face F to the operator opT on element T (equivalent to opT + extend\+Operator(\+T, F, op\+F)). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__Common_gacf4ca3c98488bc002ff92a11a081122c}{extend\+Operator}} (const Cell \&T, const Edge \&E, Eigen\+::\+Matrix\+Xd \&opT, const Eigen\+::\+Matrix\+Xd \&opE) const
+\begin{DoxyCompactList}\small\item\em Adds an edge operator to a cell. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__Common_ga4dcac84d6ae301efe420a105b696ad0d}{extend\+Operator}} (const Face \&F, const Edge \&E, Eigen\+::\+Matrix\+Xd \&opF, const Eigen\+::\+Matrix\+Xd \&opE) const
+\begin{DoxyCompactList}\small\item\em Adds an edge operator to a face. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__Common_ga8ac34f2921960ea153edb6ff9c7e84bf}{add\+Inner\+Product\+Contribution}} (const Cell \&T, const Face \&F, Eigen\+::\+Matrix\+Xd \&prodT, const Eigen\+::\+Matrix\+Xd \&prodF) const
+\begin{DoxyCompactList}\small\item\em Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T) \end{DoxyCompactList}\item 
 std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga900f809c3b9bd97b544dbc114f5197a1}{global\+DOFIndices}} (const Cell \&T) const
 \begin{DoxyCompactList}\small\item\em Returns a vector listing the global DOFs attached to the element T\+: vertex DOFs, edge DOFs, face DOFs and element DOFs. \end{DoxyCompactList}\item 
 std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{group__Common_ga9b6de6241a74cf7f620faf8f056e3ad2}{global\+DOFIndices}} (const Face \&F) const

@@ -9,8 +9,8 @@ Implementation of the HHO scheme with full gradient, for the Stokes and Brinkman
 
 The paper specifically associated with this code is
  A polytopal method for the Brinkman problem robust in all regimes
- D. A. Di Pietro and J. Droniou, 2023, 26p.
- https://arxiv.org/abs/2301.03272
+ D. A. Di Pietro and J. Droniou, Comput. Methods Appl. Mech. Engrg. 409, p. 115981, 2023. 
+ doi: 10.1016/j.cma.2023.115981. url: https://arxiv.org/abs/2301.03272.
 
 If you use these codes for a scientific publication, please mention the above references.
  

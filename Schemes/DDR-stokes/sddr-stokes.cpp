@@ -45,7 +45,7 @@ int main(int argc, const char* argv[])
     ("degree,k", boost::program_options::value<size_t>()->default_value(1), "The polynomial degree of the sequence")
     ("pthread,p", boost::program_options::value<bool>()->default_value(true), "Use thread-based parallelism")
     ("solution,s", boost::program_options::value<int>()->default_value(0), "Select the solution")
-    ("pressure_scaling", boost::program_options::value<double>()->default_value(.1), "Select the pressure scaling")
+    ("pressure_scaling", boost::program_options::value<double>()->default_value(1), "Select the pressure scaling")
     ("export-matrix,e", "Export matrix to Matrix Market format")
     ("iterative-solver,i", "Use iterative linear solver")
     ("stabilization-parameter,x", boost::program_options::value<double>(), "Set the stabilization parameter");
@@ -241,10 +241,6 @@ int main(int argc, const char* argv[])
   std::tie(t_wall_norms, t_proc_norms) = store_times(timer, "[main] Time norms (wall/proc) ");
   
   std::cout << "[main] Mesh diameter " << mesh_ptr->h_max() << std::endl;
- 
-  // Comment out to avoid evaluation of defect of commutation with the chosen quadrature degree (which should match the degree used to interpolate f in assembleLinearSystem
-//  std::cout << "[main | DEBUG] Defect commutation= " << st.evaluateDefectCommutationGradInterp(p, grad_p, MAX_DOE_CELL) << std::endl;
-   
   // Write results to file
   std::ofstream out("results.txt");
   out << "Solution: " << solution << std::endl;

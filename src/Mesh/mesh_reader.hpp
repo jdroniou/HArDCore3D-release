@@ -43,5 +43,5 @@ namespace HArDCore3D
         std::string _file_name; ///< name of the file being read
     };
 
-}; // end namespace HArDCore3D
+} // end namespace HArDCore3D
 #endif

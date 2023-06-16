@@ -12,6 +12,21 @@ namespace HArDCore3D
    * @{
    */
 
+  /// Struct to store the systems and vector
+  template<typename MatrixType>
+  struct SystemVectors
+  {
+    /// Constructor
+    SystemVectors(std::vector<MatrixType> sys, std::vector<Eigen::VectorXd> vec):
+      systems(sys),
+      vectors(vec)
+      {
+      };
+    
+    std::vector<MatrixType> systems;
+    std::vector<Eigen::VectorXd> vectors;
+  };
+
   /// Function to distribute elements (considered as jobs) over threads. It returns a pair of vectors indicating the start and end element of each thread
   static std::pair<std::vector<int>, std::vector<int>> 
     distributeLoad(size_t nb_elements, unsigned nb_threads)
@@ -69,9 +84,80 @@ namespace HArDCore3D
       std::for_each(my_threads.begin(), my_threads.end(), std::mem_fn(&std::thread::join));
     }
   }
+
+ /// Function to assemble global matrices from a procedure that compute local triplets
+  static inline SystemVectors<Eigen::SparseMatrix<double>>
+         parallel_assembly_system(
+            size_t nb_elements,    //< nb of elements over which the threading will be done
+            std::vector<std::pair<size_t, size_t>> size_systems,    //< sizes of each system to assemble
+            std::vector<size_t> size_vectors,   //< sizes of each vector to assemble
+            std::function<void(size_t start, size_t end, std::vector<std::list<Eigen::Triplet<double>>> * triplets, std::vector<Eigen::VectorXd> * vecs)> batch_local_assembly, //< procedure to compute all the local contributions to the matrices (put in the triplets) and vectors between start and end points (e.g. elements indices) 
+            bool use_threads = true   //< determine if threaded process is used or not
+            )
+  {
+    // Matrices and vectors
+    std::vector<Eigen::SparseMatrix<double>> systems;
+    systems.reserve(size_systems.size());
+    std::vector<Eigen::VectorXd> vectors;
+    for (auto size : size_vectors){
+      vectors.emplace_back(Eigen::VectorXd::Zero(size));
+    }
+    
+    if (use_threads) {
+      // Select the number of threads
+      unsigned nb_threads_hint = std::thread::hardware_concurrency();
+      unsigned nb_threads = nb_threads_hint == 0 ? 8 : (nb_threads_hint);
+
+      // Generate the start and end indices
+      auto [start, end] = distributeLoad(nb_elements, nb_threads);
+
+      // Create vectors of triplets and vectors
+      std::vector<std::vector<std::list<Eigen::Triplet<double> > > > triplets(nb_threads, std::vector<std::list<Eigen::Triplet<double> > >(size_systems.size()));
+      std::vector<std::vector<Eigen::VectorXd>> vecs(nb_threads, vectors);
+
+      // Assign a task to each thread
+      std::vector<std::thread> my_threads(nb_threads);
+      for (unsigned i = 0; i < nb_threads; ++i) {
+          my_threads[i] = std::thread(batch_local_assembly, start[i], end[i], &triplets[i], &vecs[i]);
+          // std::cout << "Thread " << i << ": " << start[i] << " " << end[i] << std::endl;
+      }
+    
+      // Wait for the other threads to finish their task
+      std::for_each(my_threads.begin(), my_threads.end(), std::mem_fn(&std::thread::join));
+    
+      // Create systems from triplets
+      for (size_t i = 0; i < size_systems.size(); i++){
+        systems.emplace_back(Eigen::SparseMatrix<double>(size_systems[i].first, size_systems[i].second));
+        size_t n_triplets = 0;
+        for (auto triplets_thread : triplets) {
+          n_triplets += triplets_thread[i].size();
+        }
+        std::vector<Eigen::Triplet<double>> all_triplets(n_triplets);
+        auto triplet_index = all_triplets.begin();
+        for (auto triplets_thread : triplets) {
+          triplet_index = std::copy(triplets_thread[i].begin(), triplets_thread[i].end(), triplet_index);
+        }
+        systems[i].setFromTriplets(all_triplets.begin(), all_triplets.end());
+      }
+      
+      for (size_t i = 0; i < size_vectors.size(); i++){
+        for (auto vec_thread : vecs){
+          vectors[i] += vec_thread[i];
+        }
+      }
+
+    } else {
+      std::vector<std::list<Eigen::Triplet<double> > > triplets(size_systems.size());
+      batch_local_assembly(0, nb_elements, &triplets, &vectors);
+      for (size_t i = 0; i < size_systems.size(); i++){
+        systems.emplace_back(Eigen::SparseMatrix<double>(size_systems[i].first, size_systems[i].second));
+        systems[i].setFromTriplets(triplets[i].begin(), triplets[i].end());
+      }
+    }
+    return SystemVectors(systems, vectors);  
+  }
   
-  
-  /// Function to assemble global matrix and right-hand side from a procedure that compute local triplets and rhs contributions
+  /// Function to assemble a global matrix and right-hand side from a procedure that compute local triplets and rhs contributions (a wrapper for the more general function that can assemble several matrices and vectors)
   static inline std::pair<Eigen::SparseMatrix<double>, Eigen::VectorXd>
          parallel_assembly_system(
             size_t nb_elements, //< nb of elements over which the threading will be done
@@ -80,60 +166,15 @@ namespace HArDCore3D
             bool use_threads = true //< determine if threaded process is used or not
         )
   {
-    // Matrix and rhs
-    Eigen::SparseMatrix<double> A(size_system, size_system);
-    Eigen::VectorXd b = Eigen::VectorXd::Zero(size_system);
-  
-    if (use_threads) {
-      // Select the number of threads
-      unsigned nb_threads_hint = std::thread::hardware_concurrency();
-      unsigned nb_threads = nb_threads_hint == 0 ? 8 : (nb_threads_hint);
-
-      // Generate the start and end indices
-      auto [start, end] = distributeLoad(nb_elements, nb_threads);
-      
-      // Create vectors of triplets and vectors
-      std::vector<std::list<Eigen::Triplet<double> > > triplets(nb_threads);
-      std::vector<Eigen::VectorXd> rhs(nb_threads);
-
-      for (unsigned i = 0; i < nb_threads; i++) {
-        rhs[i] = Eigen::VectorXd::Zero(size_system);
-      } // for i
-
-      // Assign a task to each thread
-      std::vector<std::thread> my_threads(nb_threads);
-      for (unsigned i = 0; i < nb_threads; ++i) {
-        my_threads[i] = std::thread(batch_local_assembly, start[i], end[i], &triplets[i], &rhs[i]);
-      }
-
-      // Wait for the other threads to finish their task
-      std::for_each(my_threads.begin(), my_threads.end(), std::mem_fn(&std::thread::join));
-
-      // Create matrix from triplets
-      size_t n_triplets = 0;
-      for (auto triplets_thread : triplets) {
-        n_triplets += triplets_thread.size();
-      }
-      std::vector<Eigen::Triplet<double> > all_triplets(n_triplets);
-      auto triplet_index = all_triplets.begin();
-      for (auto triplets_thread : triplets) {
-        triplet_index = std::copy(triplets_thread.begin(), triplets_thread.end(), triplet_index);
-      }
-      A.setFromTriplets(all_triplets.begin(), all_triplets.end());
-      for (auto rhs_thread : rhs) {
-        b += rhs_thread;
-      }
-    } else {
-      std::list<Eigen::Triplet<double> > triplets;
-      batch_local_assembly(0, nb_elements, &triplets, &b);
-      A.setFromTriplets(triplets.begin(), triplets.end());
-    }
-
-    return std::make_pair(A, b);  
+    std::function<void(size_t start, size_t end, std::vector<std::list<Eigen::Triplet<double>>> * triplets, std::vector<Eigen::VectorXd> * vecs)> 
+    new_batch_local_assembly = [&](size_t start, size_t end, std::vector<std::list<Eigen::Triplet<double>>> * triplets, std::vector<Eigen::VectorXd> * vecs)-> void
+    {batch_local_assembly(start, end, &(*triplets)[0], &(*vecs)[0]);};
+    auto [systems, vectors] = parallel_assembly_system(nb_elements, {std::make_pair(size_system, size_system)}, {size_system}, new_batch_local_assembly, use_threads);
+    return std::make_pair(systems[0], vectors[0]); 
   }
   
     
-  /// Function to assemble a two global matrices and vectors (such as: system and static condensation operator, or system and matrix for BC) from a procedure that compute local triplets and rhs contributions
+  /// Function to assemble two global matrices and vectors (such as: system and static condensation operator, or system and matrix for BC) from a procedure that compute local triplets and rhs contributions  (a wrapper for the more general function that can assemble several matrices and vectors)
   static inline std::tuple<Eigen::SparseMatrix<double>, Eigen::VectorXd, Eigen::SparseMatrix<double>, Eigen::VectorXd>
          parallel_assembly_system(
             size_t nb_elements, //< nb of elements over which the threading will be done
@@ -144,81 +185,13 @@ namespace HArDCore3D
             bool use_threads = true //< determine if threaded process is used or not
         )
   {
-    // Matrices and vectors
-    Eigen::SparseMatrix<double> A1(size_system1, size_system1);
-    Eigen::VectorXd b1 = Eigen::VectorXd::Zero(size_system1);
-    Eigen::SparseMatrix<double> A2(size_Mat2.first, size_Mat2.second);
-    Eigen::VectorXd b2 = Eigen::VectorXd::Zero(size_b2);
-  
-    if (use_threads) {
-      // Select the number of threads
-      unsigned nb_threads_hint = std::thread::hardware_concurrency();
-      unsigned nb_threads = nb_threads_hint == 0 ? 8 : (nb_threads_hint);
-
-      // Generate the start and end indices
-      auto [start, end] = distributeLoad(nb_elements, nb_threads);
-
-      // Create vectors of triplets and vectors
-      std::vector<std::list<Eigen::Triplet<double> > > triplets1(nb_threads);
-      std::vector<Eigen::VectorXd> vec1(nb_threads);
-      std::vector<std::list<Eigen::Triplet<double> > > triplets2(nb_threads);
-      std::vector<Eigen::VectorXd> vec2(nb_threads);
-
-      for (unsigned i = 0; i < nb_threads; i++) {
-        vec1[i] = Eigen::VectorXd::Zero(size_system1);
-        vec2[i] = Eigen::VectorXd::Zero(size_b2);
-      } // for i
-
-      // Assign a task to each thread
-      std::vector<std::thread> my_threads(nb_threads);
-      for (unsigned i = 0; i < nb_threads; ++i) {
-        my_threads[i] = std::thread(batch_local_assembly, start[i], end[i], &triplets1[i], &vec1[i], &triplets2[i], &vec2[i]);
-      }
-
-      // Wait for the other threads to finish their task
-      std::for_each(my_threads.begin(), my_threads.end(), std::mem_fn(&std::thread::join));
-
-      // Create system 1 from triplets
-      size_t n_triplets1 = 0;
-      for (auto triplets_thread : triplets1) {
-        n_triplets1 += triplets_thread.size();
-      }
-      std::vector<Eigen::Triplet<double> > all_triplets1(n_triplets1);
-      auto triplet1_index = all_triplets1.begin();
-      for (auto triplets_thread : triplets1) {
-        triplet1_index = std::copy(triplets_thread.begin(), triplets_thread.end(), triplet1_index);
-      }
-      A1.setFromTriplets(all_triplets1.begin(), all_triplets1.end());
-      for (auto vec_thread : vec1) {
-        b1 += vec_thread;
-      }
-
-      // Create system 2 from triplets
-      size_t n_triplets2 = 0;
-      for (auto triplets_thread : triplets2) {
-        n_triplets2 += triplets_thread.size();
-      }
-      std::vector<Eigen::Triplet<double> > all_triplets2(n_triplets2);
-      auto triplet2_index = all_triplets2.begin();
-      for (auto triplets_thread : triplets2) {
-        triplet2_index = std::copy(triplets_thread.begin(), triplets_thread.end(), triplet2_index);
-      }
-      A2.setFromTriplets(all_triplets2.begin(), all_triplets2.end());
-      for (auto vec_thread : vec2) {
-        b2 += vec_thread;
-      }
-    } else {
-      std::list<Eigen::Triplet<double> > triplets1;
-      std::list<Eigen::Triplet<double> > triplets2;
-      batch_local_assembly(0, nb_elements, &triplets1, &b1, &triplets2, &b2);
-      A1.setFromTriplets(triplets1.begin(), triplets1.end());
-      A2.setFromTriplets(triplets2.begin(), triplets2.end());      
-    }
-
-    return std::make_tuple(A1, b1, A2, b2);  
+    std::function<void(size_t start, size_t end, std::vector<std::list<Eigen::Triplet<double>>> * triplets, std::vector<Eigen::VectorXd> * vecs)> 
+    new_batch_local_assembly = [&](size_t start, size_t end, std::vector<std::list<Eigen::Triplet<double>>> * triplets, std::vector<Eigen::VectorXd> * vecs)-> void
+    {batch_local_assembly(start, end, &(*triplets)[0], &(*vecs)[0], &(*triplets)[1], &(*vecs)[1]);};
+    auto [systems, vectors] = parallel_assembly_system(nb_elements, {std::make_pair(size_system1, size_system1), size_Mat2}, {size_system1, size_b2}, new_batch_local_assembly, use_threads);
+    return std::make_tuple(systems[0], vectors[0], systems[1], vectors[1]);
   }
-
-    //@}
+  //@}
   
 } // end of namespace HArDCore3D
 #endif

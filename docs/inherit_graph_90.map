@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structHArDCore3D_1_1VecFaceHash.html" title="Hash function for VectorZd type." alt="" coords="5,5,196,32"/>
+<area shape="rect" id="node1" href="$classHArDCore3D_1_1VariableDOFSpace.html" title="Base class for global DOF spaces." alt="" coords="5,81,224,108"/>
+<area shape="rect" id="node2" href="$classHArDCore3D_1_1LASXCurl.html" title="Discrete Lie algebra valued Serendipity Hcurl space: local operators, L2 product and global interpola..." alt="" coords="274,5,441,32"/>
+<area shape="rect" id="node3" href="$classHArDCore3D_1_1LASXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator." alt="" coords="272,56,443,83"/>
+<area shape="rect" id="node4" href="$classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator." alt="" coords="282,107,433,133"/>
+<area shape="rect" id="node5" href="$classHArDCore3D_1_1SXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator." alt="" coords="280,157,435,184"/>
 </map>

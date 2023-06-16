@@ -1,4 +1,5 @@
 <map id="VEM_stokes" name="VEM_stokes">
-<area shape="rect" id="node1" href="$group__DDR__stokes.html" title="Implementation of the DDR scheme for the Stokes problem in curl&#45;curl formulation." alt="" coords="317,22,416,47"/>
-<area shape="rect" id="node2" title="Implementation of the VEM scheme for the Stokes problem in curl&#45;curl formulation." alt="" coords="5,22,103,47"/>
+<area shape="rect" id="node1" href="$group__SDDR__stokes.html" title="Implementation of the serendipity DDR scheme for the Stokes problem in curl&#45;curl formulation." alt="" coords="317,13,424,38"/>
+<area shape="rect" id="node2" href="$group__DDR__stokes.html" title="Implementation of the DDR scheme for the Stokes problem in curl&#45;curl formulation." alt="" coords="321,73,420,98"/>
+<area shape="rect" id="node3" title="Implementation of the VEM scheme for the Stokes problem in curl&#45;curl formulation." alt="" coords="5,43,103,69"/>
 </map>

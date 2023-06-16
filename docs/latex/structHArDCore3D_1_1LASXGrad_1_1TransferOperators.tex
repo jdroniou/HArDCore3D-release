@@ -1,0 +1,35 @@
+\hypertarget{structHArDCore3D_1_1LASXGrad_1_1TransferOperators}{}\doxysection{HAr\+DCore3D\+::LASXGrad\+::Transfer\+Operators Struct Reference}
+\label{structHArDCore3D_1_1LASXGrad_1_1TransferOperators}\index{HArDCore3D::LASXGrad::TransferOperators@{HArDCore3D::LASXGrad::TransferOperators}}
+
+
+A structure to store the serendipity, extension and reduction operators.  
+
+
+
+
+{\ttfamily \#include $<$lasxgrad.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__LADDRCore_ga877a35995e3ecbee10f27df5c7bb9cf9}{Transfer\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+serendipity, const Eigen\+::\+Matrix\+Xd \&\+\_\+extension, const Eigen\+::\+Matrix\+Xd \&\+\_\+reduction)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gaafe956aa360d99cd80e5cccdc0c65e93}{serendipity}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gaa211e444f05f2c50a524203315530a21}{extension}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga68a5e1bd01ec55f8b7e52abd72625085}{reduction}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A structure to store the serendipity, extension and reduction operators. 
+
+The extension operators do \mbox{\hyperlink{classHArDCore3D_1_1SXGrad}{SXGrad}} -\/$>$ \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}}. The reduction operators do not produce all unknowns, only the ones in the mesh entities they\textquotesingle{}re associated to; so they do \mbox{\hyperlink{classHArDCore3D_1_1XGrad}{XGrad}} -\/$>$ $P^{\ell_P}(P)$ where P is a face or an element (the only use of the reduction operator is to compute the interpolate, and this version is what is useful). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+LADDRCore/\mbox{\hyperlink{lasxgrad_8hpp}{lasxgrad.\+hpp}}\end{DoxyCompactItemize}

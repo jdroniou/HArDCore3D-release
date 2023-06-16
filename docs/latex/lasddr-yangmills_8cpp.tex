@@ -1,0 +1,70 @@
+\hypertarget{lasddr-yangmills_8cpp}{}\doxysection{Schemes/\+LADDR-\/yangmills/lasddr-\/yangmills.cpp File Reference}
+\label{lasddr-yangmills_8cpp}\index{Schemes/LADDR-\/yangmills/lasddr-\/yangmills.cpp@{Schemes/LADDR-\/yangmills/lasddr-\/yangmills.cpp}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \char`\"{}lasddr-\/yangmills.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$max\+\_\+degrees\+\_\+quadratures.\+hpp$>$}\newline
+{\ttfamily \#include $<$GMpoly\+\_\+cell.\+hpp$>$}\newline
+{\ttfamily \#include $<$Integrate\+Triple\+Product.\+hpp$>$}\newline
+{\ttfamily \#include $<$unsupported/\+Eigen/\+Kronecker\+Product$>$}\newline
+{\ttfamily \#include $<$boost/program\+\_\+options.\+hpp$>$}\newline
+{\ttfamily \#include $<$display\+\_\+timer.\+hpp$>$}\newline
+Include dependency graph for lasddr-\/yangmills.cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lasddr-yangmills_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lasddr-yangmills_8cpp_acfec7849f05710c7fb4106fea8a286fc}{FORMAT}}(W)~  std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lasddr-yangmills_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{lasddr-yangmills_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} = \char`\"{}../../meshes/\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{lasddr-yangmills_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}{default\+\_\+mesh}} = \mbox{\hyperlink{group__TransformMeshes_ga43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{lasddr-yangmills_8cpp_acfec7849f05710c7fb4106fea8a286fc}\label{lasddr-yangmills_8cpp_acfec7849f05710c7fb4106fea8a286fc}} 
+\index{lasddr-\/yangmills.cpp@{lasddr-\/yangmills.cpp}!FORMAT@{FORMAT}}
+\index{FORMAT@{FORMAT}!lasddr-\/yangmills.cpp@{lasddr-\/yangmills.cpp}}
+\doxysubsubsection{\texorpdfstring{FORMAT}{FORMAT}}
+{\footnotesize\ttfamily \#define FORMAT(\begin{DoxyParamCaption}\item[{}]{W }\end{DoxyParamCaption})~  std\+::setiosflags(std\+::ios\+\_\+base\+::left) $<$$<$ std\+::setw(W) $<$$<$ std\+::setfill(\textquotesingle{} \textquotesingle{})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lasddr-yangmills_8cpp_ac0f2228420376f4db7e1274f2b41667c}\label{lasddr-yangmills_8cpp_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{lasddr-\/yangmills.cpp@{lasddr-\/yangmills.cpp}!main@{main}}
+\index{main@{main}!lasddr-\/yangmills.cpp@{lasddr-\/yangmills.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{lasddr-yangmills_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}\label{lasddr-yangmills_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}} 
+\index{lasddr-\/yangmills.cpp@{lasddr-\/yangmills.cpp}!default\_mesh@{default\_mesh}}
+\index{default\_mesh@{default\_mesh}!lasddr-\/yangmills.cpp@{lasddr-\/yangmills.cpp}}
+\doxysubsubsection{\texorpdfstring{default\_mesh}{default\_mesh}}
+{\footnotesize\ttfamily std\+::string default\+\_\+mesh = \mbox{\hyperlink{group__TransformMeshes_ga43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}}
+
+\mbox{\Hypertarget{lasddr-yangmills_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}\label{lasddr-yangmills_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}} 
+\index{lasddr-\/yangmills.cpp@{lasddr-\/yangmills.cpp}!mesh\_dir@{mesh\_dir}}
+\index{mesh\_dir@{mesh\_dir}!lasddr-\/yangmills.cpp@{lasddr-\/yangmills.cpp}}
+\doxysubsubsection{\texorpdfstring{mesh\_dir}{mesh\_dir}}
+{\footnotesize\ttfamily const std\+::string mesh\+\_\+dir = \char`\"{}../../meshes/\char`\"{}}
+

@@ -98,7 +98,7 @@ Eigen::MatrixXd GramMatrix(const Face& F,         ///< Face to which the basis c
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GramMatrix(F, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );
     }
 
-  };
+  }
 
 /// Computes the Gram Matrix of a pair of local scalar monomial bases
 Eigen::MatrixXd GramMatrix(
@@ -113,7 +113,7 @@ template<typename BasisType>
 Eigen::MatrixXd GramMatrix(const Face& F, const BasisType & basis, MonomialFaceIntegralsType mono_int_map = {})
   {
     return GramMatrix(F, basis, basis, mono_int_map);
-  };
+  }
 
 /// Template to compute the Gram Matrix of any pair of tensorized scalar bases
 template<typename BasisType1, typename BasisType2, size_t N>
@@ -134,7 +134,7 @@ Eigen::MatrixXd GramMatrix(
       gm.block(i*dim1, i*dim2, dim1, dim2) = anc_gm;    
     }
     return gm;
-  };
+  }
   
 /// Computes the Gram Matrix of a pair of tangent bases
 template<typename BasisType1, typename BasisType2>
@@ -161,7 +161,7 @@ Eigen::MatrixXd GramMatrix(
     }
     
     return gm;
-  };
+  }
 
 /// Computes the Gram Matrix of a pair of RolyCompl bases
 Eigen::MatrixXd GramMatrix(
@@ -208,7 +208,7 @@ Eigen::MatrixXd GramMatrix(
     }
     
     return F.diam() * gm;
-  };
+  }
 
 /// Computes the Gram Matrix of a RolyCompl basis and a tangent basis
 template<typename BasisType>
@@ -220,7 +220,7 @@ Eigen::MatrixXd GramMatrix(
                     )
   {
     return GramMatrix(F, basis2, basis1, mono_int_map).transpose();
-  };
+  }
 
 /// Computes the Gram Matrix of the scalar part of a RolyCompl Basis and a monomial basis with an extra power on the mth variable
 Eigen::MatrixXd GMRolyComplScalar(
@@ -244,7 +244,7 @@ Eigen::MatrixXd GMRolyComplScalar(
     // If no ancestor is to be used, we shouldn't be in this overload
     static_assert(BasisType::hasAncestor, "No method to compute this Gram matrix of derivatives");
     return transformGM(basis2, 'C', GMRolyComplScalar(F, basis1, basis2.ancestor(), m, mono_int_map) );
-  };
+  }
   
 /// Computes the Gram Matrix of a pair of local scalar monomial bases, taking a partial derivative of the first (w.r.t. homogeneous coordinates on the face, no change of variable)
 Eigen::MatrixXd GMScalarDerivative(
@@ -285,7 +285,7 @@ Eigen::MatrixXd GMScalarDerivative(
     } else {
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GMScalarDerivative(F, basis1.ancestor(), basis2.ancestor(), m, mono_int_map) ) );
     }
-  };
+  }
   
 /// Generic template to compute the Gram Matrix of any pair of scalar bases, taking a partial derivative of each (w.r.t. homogeneous coordinates on the face, no change of variable)
 template<typename BasisType1, typename BasisType2>
@@ -309,7 +309,7 @@ Eigen::MatrixXd GMScalarDerivative(
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GMScalarDerivative(F, basis1.ancestor(), basis2.ancestor(), m, l, mono_int_map) ) );
     }
     
-  };
+  }
   
 /// Generic template to compute the Gram Matrix of a pair of Curl bases
 template<typename BasisType1, typename BasisType2>
@@ -397,7 +397,7 @@ typename boost::disable_if<boost::is_same<BasisType2, MonomialFaceIntegralsType>
                      )
   {
     return GramMatrixDiv(F, basis1.ancestor(), basis2, mono_int_map);
-  };
+  }
   
 /// Template to compute the Gram Matrix of any basis and a Divergence basis
 template<typename BasisType1, typename Basis2>
@@ -409,7 +409,7 @@ Eigen::MatrixXd GramMatrix(
                     )
   {
     return GramMatrixDiv(F, basis2.ancestor(), basis1, mono_int_map).transpose();
-  };
+  }
   
 /// Template to compute the Gram Matrix of a Divergence<TangentFamily> basis and a monomial scalar basis
 /* This will work only if the generators of the TangentFamily are an orthonormal version of the Jacobian (change of variable 3D->2D) on the face */
@@ -434,7 +434,7 @@ Eigen::MatrixXd GramMatrixDiv(
     }
     
     return gm/F.diam();
-  };
+  }
   
 /// Computes the Gram Matrix of a Divergence<RolyCompl> basis and a monomial scalar basis
 Eigen::MatrixXd GramMatrixDiv(
@@ -463,7 +463,7 @@ Eigen::MatrixXd GramMatrixDiv(
     } else {
       return transformGM(basis1, 'R', transformGM(basis2, 'C', GramMatrixDiv(F, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );
     }
-  };
+  }
 
 
 

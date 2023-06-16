@@ -42,7 +42,7 @@ namespace HArDCore3D
       }
 
       return std::make_pair(twall, tproc);
-    };
+    }
 
   //@}
 

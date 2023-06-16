@@ -30,7 +30,7 @@ int \mbox{\hyperlink{ddr-magnetostatics_8cpp_gad53223b8779f25caeddb70a3b9172967}
 \item 
 const std\+::string \mbox{\hyperlink{ddr-magnetostatics_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} = \char`\"{}../../meshes/\char`\"{}
 \item 
-std\+::string \mbox{\hyperlink{ddr-magnetostatics_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}{default\+\_\+mesh}} = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}
+std\+::string \mbox{\hyperlink{ddr-magnetostatics_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}{default\+\_\+mesh}} = \mbox{\hyperlink{group__TransformMeshes_ga43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}
 \end{DoxyCompactItemize}
 
 
@@ -54,14 +54,18 @@ std\+::string \mbox{\hyperlink{ddr-magnetostatics_8cpp_a21b3062739c7e8a3b0887dc5
 
 Main executable (Make\+Flat\+Faces) to try and create a mesh with flat faces (by subdivision) 
 
-Main executable (Mesh\+To\+VTU) to transform an RF mesh into a VTU file. 
+Main executable (RFTo\+VTU) to transform an RF mesh into a VTU file.
+
+Main executable (RFTo\+FVCA10format) to transform an RF mesh into a .msh FVCA10 format.
+
+Main executable (Move\+Vertices) to modify a mesh by moving its vertices. 
 
 \doxysubsection{Variable Documentation}
 \mbox{\Hypertarget{ddr-magnetostatics_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}\label{ddr-magnetostatics_8cpp_a21b3062739c7e8a3b0887dc5b7d36d63}} 
 \index{ddr-\/magnetostatics.cpp@{ddr-\/magnetostatics.cpp}!default\_mesh@{default\_mesh}}
 \index{default\_mesh@{default\_mesh}!ddr-\/magnetostatics.cpp@{ddr-\/magnetostatics.cpp}}
 \doxysubsubsection{\texorpdfstring{default\_mesh}{default\_mesh}}
-{\footnotesize\ttfamily std\+::string default\+\_\+mesh = \mbox{\hyperlink{vem-stokes_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}}
+{\footnotesize\ttfamily std\+::string default\+\_\+mesh = \mbox{\hyperlink{group__TransformMeshes_ga43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Voro-\/small-\/0/RF\+\_\+fmt/voro-\/2\char`\"{}}
 
 \mbox{\Hypertarget{ddr-magnetostatics_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}\label{ddr-magnetostatics_8cpp_a43fed21b5f1b68d8d93bfda38c651ba2}} 
 \index{ddr-\/magnetostatics.cpp@{ddr-\/magnetostatics.cpp}!mesh\_dir@{mesh\_dir}}

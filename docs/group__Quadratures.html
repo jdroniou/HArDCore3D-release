@@ -113,6 +113,12 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga14161bf80013825fa5c73c188133e466"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; Eigen::Vector2i, double, <a class="el" href="structHArDCore3D_1_1VecFaceHash.html">VecFaceHash</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga14161bf80013825fa5c73c188133e466">HArDCore3D::MonomialFaceIntegralsType</a></td></tr>
 <tr class="memdesc:ga14161bf80013825fa5c73c188133e466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for list of face integrals of monomials.  <a href="group__Quadratures.html#ga14161bf80013825fa5c73c188133e466">More...</a><br /></td></tr>
 <tr class="separator:ga14161bf80013825fa5c73c188133e466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0514b94be0c63ff173cb8b27c273bfcb"><td class="memItemLeft" align="right" valign="top">typedef boost::multi_array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">HArDCore3D::Scalar3Tensor</a></td></tr>
+<tr class="separator:ga0514b94be0c63ff173cb8b27c273bfcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7e4443f723ceac698fa6f1cb67f2210"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Map&lt; Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride&lt; Eigen::Dynamic, Eigen::Dynamic &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gad7e4443f723ceac698fa6f1cb67f2210">HArDCore3D::MatrixSlice</a></td></tr>
+<tr class="separator:gad7e4443f723ceac698fa6f1cb67f2210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga633cec6b8b0ae7c9173c18384dc0bc73"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Map&lt; Eigen::VectorXd, Eigen::Unaligned, Eigen::InnerStride&lt; Eigen::Dynamic &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga633cec6b8b0ae7c9173c18384dc0bc73">HArDCore3D::VectorSlice</a></td></tr>
+<tr class="separator:ga633cec6b8b0ae7c9173c18384dc0bc73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga41055a24d71d12c64b5fddddc0bbad22"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="structHArDCore3D_1_1QuadratureNode.html">QuadratureNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">HArDCore3D::QuadratureRule</a></td></tr>
 <tr class="separator:ga41055a24d71d12c64b5fddddc0bbad22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -480,6 +486,49 @@ Functions</h2></td></tr>
 <tr class="memitem:gab8e9cbcb90a094badf973a427ff9a6d1"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gab8e9cbcb90a094badf973a427ff9a6d1">HArDCore3D::GramMatrixDiv</a> (const Face &amp;F, const BasisType1 &amp;basis1, const BasisType2 &amp;basis2, <a class="el" href="group__Quadratures.html#ga14161bf80013825fa5c73c188133e466">MonomialFaceIntegralsType</a> mono_int_map={})</td></tr>
 <tr class="memdesc:gab8e9cbcb90a094badf973a427ff9a6d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template to compute the Gram Matrix of the divergence of any basis and any other basis.  <a href="group__Quadratures.html#gab8e9cbcb90a094badf973a427ff9a6d1">More...</a><br /></td></tr>
 <tr class="separator:gab8e9cbcb90a094badf973a427ff9a6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89f44c002d325e5fefa134083c918bd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#gad7e4443f723ceac698fa6f1cb67f2210">MatrixSlice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga89f44c002d325e5fefa134083c918bd8">HArDCore3D::slice</a> (<a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> &amp;tensor, size_t fixed_dim, size_t index)</td></tr>
+<tr class="memdesc:ga89f44c002d325e5fefa134083c918bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to slice a 3-tensor with respect to one index (returns a 2-tensor)  <a href="group__Quadratures.html#ga89f44c002d325e5fefa134083c918bd8">More...</a><br /></td></tr>
+<tr class="separator:ga89f44c002d325e5fefa134083c918bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac77a76619bb3a0c23089b20cd1f088ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga633cec6b8b0ae7c9173c18384dc0bc73">VectorSlice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gac77a76619bb3a0c23089b20cd1f088ae">HArDCore3D::slice</a> (<a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> &amp;tensor, size_t fixed_dim1, size_t index1, size_t fixed_dim2, size_t index2)</td></tr>
+<tr class="memdesc:gac77a76619bb3a0c23089b20cd1f088ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to slice a 3-tensor with respect to two indices (returns a 1-tensor)  <a href="group__Quadratures.html#gac77a76619bb3a0c23089b20cd1f088ae">More...</a><br /></td></tr>
+<tr class="separator:gac77a76619bb3a0c23089b20cd1f088ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga351079bfdcb59f1ea6f4b6de725f51f6"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:ga351079bfdcb59f1ea6f4b6de725f51f6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga351079bfdcb59f1ea6f4b6de725f51f6">HArDCore3D::tripleInt</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a> &amp;basis1, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="memdesc:ga351079bfdcb59f1ea6f4b6de725f51f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the triple integral product of a scalar times the dot product of two vectors - basis1(basis2 . basis2).  <a href="group__Quadratures.html#ga351079bfdcb59f1ea6f4b6de725f51f6">More...</a><br /></td></tr>
+<tr class="separator:ga351079bfdcb59f1ea6f4b6de725f51f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf13e635655142dd0d2b0d20bb64ccce3"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:gaf13e635655142dd0d2b0d20bb64ccce3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gaf13e635655142dd0d2b0d20bb64ccce3">HArDCore3D::tripleInt</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;tens_family1, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;tens_family2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="memdesc:gaf13e635655142dd0d2b0d20bb64ccce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the triple integral product of a vector basis dot the cross product of the second vector basis - tens_family1 . (tens_family2 x tens_family2).  <a href="group__Quadratures.html#gaf13e635655142dd0d2b0d20bb64ccce3">More...</a><br /></td></tr>
+<tr class="separator:gaf13e635655142dd0d2b0d20bb64ccce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58fdaab5fa55850c89dc121e077e6f9c"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:ga58fdaab5fa55850c89dc121e077e6f9c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga58fdaab5fa55850c89dc121e077e6f9c">HArDCore3D::tripleInt</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a> &gt; &amp;grad_basis, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;tens_family, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="memdesc:ga58fdaab5fa55850c89dc121e077e6f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the triple integral product of a vector basis dot the cross product of the second vector basis - grad_basis . (tens_family x tens_family).  <a href="group__Quadratures.html#ga58fdaab5fa55850c89dc121e077e6f9c">More...</a><br /></td></tr>
+<tr class="separator:ga58fdaab5fa55850c89dc121e077e6f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04e4f9adaec3c48634a03f59c50e7d36"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:ga04e4f9adaec3c48634a03f59c50e7d36"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga04e4f9adaec3c48634a03f59c50e7d36">HArDCore3D::tripleInt</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1GolyComplBasisCell.html">GolyComplBasisCell</a> &amp;golycompl_basis, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;tens_family, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="memdesc:ga04e4f9adaec3c48634a03f59c50e7d36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the triple integral product of a vector basis dot the cross product of the second vector basis - golycompl_basis . (tens_family x tens_family).  <a href="group__Quadratures.html#ga04e4f9adaec3c48634a03f59c50e7d36">More...</a><br /></td></tr>
+<tr class="separator:ga04e4f9adaec3c48634a03f59c50e7d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50239b85162ede70d1a9174709e98576"><td class="memTemplParams" colspan="2">template&lt;typename ScalarBasisType1 , typename ScalarBasisType2 , size_t N&gt; </td></tr>
+<tr class="memitem:ga50239b85162ede70d1a9174709e98576"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga50239b85162ede70d1a9174709e98576">HArDCore3D::tripleInt</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">ShiftedBasis</a>&lt; ScalarBasisType1 &gt;&gt; &amp;grad_shift_basis, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; ScalarBasisType2 &gt;, N &gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="separator:ga50239b85162ede70d1a9174709e98576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f32b327bc6e87215c4fa0e070271352"><td class="memTemplParams" colspan="2">template&lt;typename ScalarBasisType , typename BasisType &gt; </td></tr>
+<tr class="memitem:ga0f32b327bc6e87215c4fa0e070271352"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga0f32b327bc6e87215c4fa0e070271352">HArDCore3D::tripleInt</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">ShiftedBasis</a>&lt; ScalarBasisType &gt;&gt; &amp;grad_shift_basis, const BasisType &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="separator:ga0f32b327bc6e87215c4fa0e070271352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7499d264310e63f58172540d67aff706"><td class="memTemplParams" colspan="2">template&lt;typename BasisType , typename ScalarBasisType , size_t N&gt; </td></tr>
+<tr class="memitem:ga7499d264310e63f58172540d67aff706"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga7499d264310e63f58172540d67aff706">HArDCore3D::tripleInt</a> (const Cell &amp;T, const BasisType &amp;basis1, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; ScalarBasisType &gt;, N &gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="separator:ga7499d264310e63f58172540d67aff706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga20dd08c0c6a3f322f7a9625fc93782c4"><td class="memTemplParams" colspan="2">template&lt;typename BasisType , typename ScalarBasisType , size_t N&gt; </td></tr>
+<tr class="memitem:ga20dd08c0c6a3f322f7a9625fc93782c4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga20dd08c0c6a3f322f7a9625fc93782c4">HArDCore3D::tripleInt</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; BasisType &gt; &amp;basis1, const <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; ScalarBasisType, N &gt;&gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="separator:ga20dd08c0c6a3f322f7a9625fc93782c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga19a82a0b44a5c306edcd19d7e02b5d5e"><td class="memTemplParams" colspan="2">template&lt;typename BasisType , size_t N&gt; </td></tr>
+<tr class="memitem:ga19a82a0b44a5c306edcd19d7e02b5d5e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga19a82a0b44a5c306edcd19d7e02b5d5e">HArDCore3D::tripleInt</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; BasisType &gt; &amp;basis1, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="separator:ga19a82a0b44a5c306edcd19d7e02b5d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73e624477eac371223cfe543f50009d0"><td class="memTemplParams" colspan="2">template&lt;typename BasisType1 , typename BasisType2 &gt; </td></tr>
+<tr class="memitem:ga73e624477eac371223cfe543f50009d0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga73e624477eac371223cfe543f50009d0">HArDCore3D::tripleInt</a> (const Cell &amp;T, const BasisType1 &amp;basis1, const <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; BasisType2 &gt; &amp;basis2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="separator:ga73e624477eac371223cfe543f50009d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5415f2a157e4d5074abb02570988cc9"><td class="memTemplParams" colspan="2">template&lt;size_t N, typename ScalarBasisType &gt; </td></tr>
+<tr class="memitem:gab5415f2a157e4d5074abb02570988cc9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gab5415f2a157e4d5074abb02570988cc9">HArDCore3D::tripleInt</a> (const Cell &amp;T, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; ScalarBasisType &gt;, N &gt; &amp;tens_family1, const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;tens_family2, <a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a> mono_int_map={})</td></tr>
+<tr class="separator:gab5415f2a157e4d5074abb02570988cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabb254b22a706f3781b2b8a7b3fafa288"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#gabb254b22a706f3781b2b8a7b3fafa288">HArDCore3D::QuadRuleEdge::QuadRuleEdge</a> (size_t doe, bool warn)</td></tr>
 <tr class="separator:gabb254b22a706f3781b2b8a7b3fafa288"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4b5c5c3ca8408bc40a5c150f48ee2ca8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Quadratures.html#ga4b5c5c3ca8408bc40a5c150f48ee2ca8">HArDCore3D::QuadRuleEdge::~QuadRuleEdge</a> ()</td></tr>
@@ -661,6 +710,20 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Classes providing quadratures rules on cells, faces and edges, as well as cost-effective ways to compute Gram matrices of polynomial bases. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="gad7e4443f723ceac698fa6f1cb67f2210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7e4443f723ceac698fa6f1cb67f2210">&#9670;&nbsp;</a></span>MatrixSlice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::Map&lt;Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride&lt;Eigen::Dynamic, Eigen::Dynamic&gt; &gt; <a class="el" href="group__Quadratures.html#gad7e4443f723ceac698fa6f1cb67f2210">HArDCore3D::MatrixSlice</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="gaf37f2a4e6539687603aaf8d4d9ca903c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf37f2a4e6539687603aaf8d4d9ca903c">&#9670;&nbsp;</a></span>MonomialCellIntegralsType</h2>
 
@@ -717,6 +780,34 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">typedef std::vector&lt;<a class="el" href="structHArDCore3D_1_1QuadratureNode.html">QuadratureNode</a>&gt; <a class="el" href="group__Quadratures.html#ga41055a24d71d12c64b5fddddc0bbad22">HArDCore3D::QuadratureRule</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0514b94be0c63ff173cb8b27c273bfcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0514b94be0c63ff173cb8b27c273bfcb">&#9670;&nbsp;</a></span>Scalar3Tensor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::multi_array&lt;double, 3&gt; <a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">HArDCore3D::Scalar3Tensor</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga633cec6b8b0ae7c9173c18384dc0bc73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga633cec6b8b0ae7c9173c18384dc0bc73">&#9670;&nbsp;</a></span>VectorSlice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::Map&lt;Eigen::VectorXd, Eigen::Unaligned, Eigen::InnerStride&lt;Eigen::Dynamic&gt; &gt; <a class="el" href="group__Quadratures.html#ga633cec6b8b0ae7c9173c18384dc0bc73">HArDCore3D::VectorSlice</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -6382,6 +6473,110 @@ template&lt;typename BasisType1 , typename BasisType2 , size_t N&gt; </div>
 
 </div>
 </div>
+<a id="ga89f44c002d325e5fefa134083c918bd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga89f44c002d325e5fefa134083c918bd8">&#9670;&nbsp;</a></span>slice() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#gad7e4443f723ceac698fa6f1cb67f2210">MatrixSlice</a> HArDCore3D::slice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>tensor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>fixed_dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to slice a 3-tensor with respect to one index (returns a 2-tensor) </p>
+<p>Slicing is always in order e.g. fixing y=5, returns matrix[i][k] = tensor[i][5][k]. The output is an Eigen::Map of the tensor (so accessing the values of the 2-tensor actually access the values of the original 3-tensor) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tensor</td><td>Tensor to slice </td></tr>
+    <tr><td class="paramname">fixed_dim</td><td>Position of the index with respect to which we slice (fix the value) </td></tr>
+    <tr><td class="paramname">index</td><td>Value of the index where the slicing is done </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac77a76619bb3a0c23089b20cd1f088ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac77a76619bb3a0c23089b20cd1f088ae">&#9670;&nbsp;</a></span>slice() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga633cec6b8b0ae7c9173c18384dc0bc73">VectorSlice</a> HArDCore3D::slice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> &amp;&#160;</td>
+          <td class="paramname"><em>tensor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>fixed_dim1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>fixed_dim2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to slice a 3-tensor with respect to two indices (returns a 1-tensor) </p>
+<p>See comment in the other slice function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tensor</td><td>Tensor to slice </td></tr>
+    <tr><td class="paramname">fixed_dim1</td><td>Position of the first index with respect to which we slice (fix the value) </td></tr>
+    <tr><td class="paramname">index1</td><td>Value of the first index to fix </td></tr>
+    <tr><td class="paramname">fixed_dim2</td><td>Position of the second index with respect to which we slice (fix the value) </td></tr>
+    <tr><td class="paramname">index2</td><td>Value of the second index to fix </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gaa60072df54f7acc9bad7362e4d6f6f72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa60072df54f7acc9bad7362e4d6f6f72">&#9670;&nbsp;</a></span>sub_rule_01()</h2>
 
@@ -6986,6 +7181,575 @@ template&lt;typename BasisType &gt; </div>
     <tr><td class="paramname">shifted_basis</td><td>Shifted basis </td></tr>
     <tr><td class="paramname">RC</td><td>R if transformation applied on rows (left), C if applied on columns (right) </td></tr>
     <tr><td class="paramname">anc_GM</td><td>Gram matrix of the ancestor basis </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7499d264310e63f58172540d67aff706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7499d264310e63f58172540d67aff706">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[1/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType , typename ScalarBasisType , size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const BasisType &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; ScalarBasisType &gt;, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>First basis </td></tr>
+    <tr><td class="paramname">basis2</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga73e624477eac371223cfe543f50009d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga73e624477eac371223cfe543f50009d0">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[2/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType1 , typename BasisType2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const BasisType1 &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; BasisType2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>First basis </td></tr>
+    <tr><td class="paramname">basis2</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga20dd08c0c6a3f322f7a9625fc93782c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga20dd08c0c6a3f322f7a9625fc93782c4">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[3/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType , typename ScalarBasisType , size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; BasisType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; ScalarBasisType, N &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>First basis </td></tr>
+    <tr><td class="paramname">basis2</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga19a82a0b44a5c306edcd19d7e02b5d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga19a82a0b44a5c306edcd19d7e02b5d5e">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[4/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasisType , size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; BasisType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>First basis </td></tr>
+    <tr><td class="paramname">basis2</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga04e4f9adaec3c48634a03f59c50e7d36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04e4f9adaec3c48634a03f59c50e7d36">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[5/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1GolyComplBasisCell.html">GolyComplBasisCell</a> &amp;&#160;</td>
+          <td class="paramname"><em>golycompl_basis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tens_family</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the triple integral product of a vector basis dot the cross product of the second vector basis - golycompl_basis . (tens_family x tens_family). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">golycompl_basis</td><td>First basis </td></tr>
+    <tr><td class="paramname">tens_family</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga58fdaab5fa55850c89dc121e077e6f9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga58fdaab5fa55850c89dc121e077e6f9c">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[6/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>grad_basis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tens_family</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the triple integral product of a vector basis dot the cross product of the second vector basis - grad_basis . (tens_family x tens_family). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">grad_basis</td><td>First basis </td></tr>
+    <tr><td class="paramname">tens_family</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0f32b327bc6e87215c4fa0e070271352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0f32b327bc6e87215c4fa0e070271352">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[7/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ScalarBasisType , typename BasisType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">ShiftedBasis</a>&lt; ScalarBasisType &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>grad_shift_basis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const BasisType &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">grad_shift_basis</td><td>First basis </td></tr>
+    <tr><td class="paramname">basis2</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga50239b85162ede70d1a9174709e98576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50239b85162ede70d1a9174709e98576">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[8/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ScalarBasisType1 , typename ScalarBasisType2 , size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1GradientBasis.html">GradientBasis</a>&lt; <a class="el" href="classHArDCore3D_1_1ShiftedBasis.html">ShiftedBasis</a>&lt; ScalarBasisType1 &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>grad_shift_basis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; ScalarBasisType2 &gt;, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">grad_shift_basis</td><td>First basis </td></tr>
+    <tr><td class="paramname">basis2</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga351079bfdcb59f1ea6f4b6de725f51f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga351079bfdcb59f1ea6f4b6de725f51f6">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[9/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a> &amp;&#160;</td>
+          <td class="paramname"><em>basis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>basis2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the triple integral product of a scalar times the dot product of two vectors - basis1(basis2 . basis2). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">basis1</td><td>First basis </td></tr>
+    <tr><td class="paramname">basis2</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab5415f2a157e4d5074abb02570988cc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5415f2a157e4d5074abb02570988cc9">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[10/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N, typename ScalarBasisType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1Family.html">Family</a>&lt; ScalarBasisType &gt;, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tens_family1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tens_family2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">tens_family1</td><td>First basis </td></tr>
+    <tr><td class="paramname">tens_family2</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf13e635655142dd0d2b0d20bb64ccce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf13e635655142dd0d2b0d20bb64ccce3">&#9670;&nbsp;</a></span>tripleInt() <span class="overload">[11/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Quadratures.html#ga0514b94be0c63ff173cb8b27c273bfcb">Scalar3Tensor</a> HArDCore3D::tripleInt </td>
+          <td>(</td>
+          <td class="paramtype">const Cell &amp;&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tens_family1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classHArDCore3D_1_1TensorizedVectorFamily.html">TensorizedVectorFamily</a>&lt; <a class="el" href="classHArDCore3D_1_1MonomialScalarBasisCell.html">MonomialScalarBasisCell</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tens_family2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Quadratures.html#gaf37f2a4e6539687603aaf8d4d9ca903c">MonomialCellIntegralsType</a>&#160;</td>
+          <td class="paramname"><em>mono_int_map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the triple integral product of a vector basis dot the cross product of the second vector basis - tens_family1 . (tens_family2 x tens_family2). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Cell to which the basis corresponds </td></tr>
+    <tr><td class="paramname">tens_family1</td><td>First basis </td></tr>
+    <tr><td class="paramname">tens_family2</td><td>Second basis </td></tr>
+    <tr><td class="paramname">mono_int_map</td><td>Optional list of integrals of monomials up to the sum of max degree of the bases </td></tr>
   </table>
   </dd>
 </dl>

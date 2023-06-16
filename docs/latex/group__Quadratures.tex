@@ -31,6 +31,12 @@ typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{group__Quadratures_ga6d5b9a
 \begin{DoxyCompactList}\small\item\em Type for list of edge integrals of monomials. \end{DoxyCompactList}\item 
 typedef std\+::unordered\+\_\+map$<$ Eigen\+::\+Vector2i, double, \mbox{\hyperlink{structHArDCore3D_1_1VecFaceHash}{Vec\+Face\+Hash}} $>$ \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{HAr\+DCore3\+D\+::\+Monomial\+Face\+Integrals\+Type}}
 \begin{DoxyCompactList}\small\item\em Type for list of face integrals of monomials. \end{DoxyCompactList}\item 
+typedef boost\+::multi\+\_\+array$<$ double, 3 $>$ \mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{HAr\+DCore3\+D\+::\+Scalar3\+Tensor}}
+\item 
+typedef Eigen\+::\+Map$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Unaligned, Eigen\+::\+Stride$<$ Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ $>$ \mbox{\hyperlink{group__Quadratures_gad7e4443f723ceac698fa6f1cb67f2210}{HAr\+DCore3\+D\+::\+Matrix\+Slice}}
+\item 
+typedef Eigen\+::\+Map$<$ Eigen\+::\+Vector\+Xd, Eigen\+::\+Unaligned, Eigen\+::\+Inner\+Stride$<$ Eigen\+::\+Dynamic $>$ $>$ \mbox{\hyperlink{group__Quadratures_ga633cec6b8b0ae7c9173c18384dc0bc73}{HAr\+DCore3\+D\+::\+Vector\+Slice}}
+\item 
 typedef std\+::vector$<$ \mbox{\hyperlink{structHArDCore3D_1_1QuadratureNode}{Quadrature\+Node}} $>$ \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{HAr\+DCore3\+D\+::\+Quadrature\+Rule}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
@@ -234,6 +240,32 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gaa7e7815a75a196aec60c
 \begin{DoxyCompactList}\small\item\em Computes the Gram Matrix of a Divergence$<$\+Roly\+Compl$>$ basis and a monomial scalar basis. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__Quadratures_gab8e9cbcb90a094badf973a427ff9a6d1}{HAr\+DCore3\+D\+::\+Gram\+Matrix\+Div}} (const Face \&F, const Basis\+Type1 \&basis1, const Basis\+Type2 \&basis2, \mbox{\hyperlink{group__Quadratures_ga14161bf80013825fa5c73c188133e466}{Monomial\+Face\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
 \begin{DoxyCompactList}\small\item\em Template to compute the Gram Matrix of the divergence of any basis and any other basis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Quadratures_gad7e4443f723ceac698fa6f1cb67f2210}{Matrix\+Slice}} \mbox{\hyperlink{group__Quadratures_ga89f44c002d325e5fefa134083c918bd8}{HAr\+DCore3\+D\+::slice}} (\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \&tensor, size\+\_\+t fixed\+\_\+dim, size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Function to slice a 3-\/tensor with respect to one index (returns a 2-\/tensor) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Quadratures_ga633cec6b8b0ae7c9173c18384dc0bc73}{Vector\+Slice}} \mbox{\hyperlink{group__Quadratures_gac77a76619bb3a0c23089b20cd1f088ae}{HAr\+DCore3\+D\+::slice}} (\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \&tensor, size\+\_\+t fixed\+\_\+dim1, size\+\_\+t index1, size\+\_\+t fixed\+\_\+dim2, size\+\_\+t index2)
+\begin{DoxyCompactList}\small\item\em Function to slice a 3-\/tensor with respect to two indices (returns a 1-\/tensor) \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_ga351079bfdcb59f1ea6f4b6de725f51f6}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Computes the triple integral product of a scalar times the dot product of two vectors -\/ basis1(basis2 . basis2). \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_gaf13e635655142dd0d2b0d20bb64ccce3}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&tens\+\_\+family1, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&tens\+\_\+family2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Computes the triple integral product of a vector basis dot the cross product of the second vector basis -\/ tens\+\_\+family1 . (tens\+\_\+family2 x tens\+\_\+family2). \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_ga58fdaab5fa55850c89dc121e077e6f9c}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ \&grad\+\_\+basis, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&tens\+\_\+family, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Computes the triple integral product of a vector basis dot the cross product of the second vector basis -\/ grad\+\_\+basis . (tens\+\_\+family x tens\+\_\+family). \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_ga04e4f9adaec3c48634a03f59c50e7d36}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{Goly\+Compl\+Basis\+Cell}} \&golycompl\+\_\+basis, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&tens\+\_\+family, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Computes the triple integral product of a vector basis dot the cross product of the second vector basis -\/ golycompl\+\_\+basis . (tens\+\_\+family x tens\+\_\+family). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\+Basis\+Type1 , typename Scalar\+Basis\+Type2 , size\+\_\+t N$>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_ga50239b85162ede70d1a9174709e98576}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ Scalar\+Basis\+Type1 $>$$>$ \&grad\+\_\+shift\+\_\+basis, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Scalar\+Basis\+Type2 $>$, N $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$typename Scalar\+Basis\+Type , typename Basis\+Type $>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_ga0f32b327bc6e87215c4fa0e070271352}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ Scalar\+Basis\+Type $>$$>$ \&grad\+\_\+shift\+\_\+basis, const Basis\+Type \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$typename Basis\+Type , typename Scalar\+Basis\+Type , size\+\_\+t N$>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_ga7499d264310e63f58172540d67aff706}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Basis\+Type \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Scalar\+Basis\+Type $>$, N $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$typename Basis\+Type , typename Scalar\+Basis\+Type , size\+\_\+t N$>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_ga20dd08c0c6a3f322f7a9625fc93782c4}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$$>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$typename Basis\+Type , size\+\_\+t N$>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_ga19a82a0b44a5c306edcd19d7e02b5d5e}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$ \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_ga73e624477eac371223cfe543f50009d0}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Basis\+Type1 \&basis1, const \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type2 $>$ \&basis2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$size\+\_\+t N, typename Scalar\+Basis\+Type $>$ }\\\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \mbox{\hyperlink{group__Quadratures_gab5415f2a157e4d5074abb02570988cc9}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Scalar\+Basis\+Type $>$, N $>$ \&tens\+\_\+family1, const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&tens\+\_\+family2, \mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}} mono\+\_\+int\+\_\+map=\{\})
+\item 
 \mbox{\hyperlink{group__Quadratures_gabb254b22a706f3781b2b8a7b3fafa288}{HAr\+DCore3\+D\+::\+Quad\+Rule\+Edge\+::\+Quad\+Rule\+Edge}} (size\+\_\+t doe, bool warn)
 \item 
 \mbox{\hyperlink{group__Quadratures_ga4b5c5c3ca8408bc40a5c150f48ee2ca8}{HAr\+DCore3\+D\+::\+Quad\+Rule\+Edge\+::$\sim$\+Quad\+Rule\+Edge}} ()
@@ -409,6 +441,12 @@ Classes providing quadratures rules on cells, faces and edges, as well as cost-\
 
 
 \doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__Quadratures_gad7e4443f723ceac698fa6f1cb67f2210}\label{group__Quadratures_gad7e4443f723ceac698fa6f1cb67f2210}} 
+\index{Quadratures@{Quadratures}!MatrixSlice@{MatrixSlice}}
+\index{MatrixSlice@{MatrixSlice}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{MatrixSlice}{MatrixSlice}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Map$<$Eigen\+::\+Matrix\+Xd, Eigen\+::\+Unaligned, Eigen\+::\+Stride$<$Eigen\+::\+Dynamic, Eigen\+::\+Dynamic$>$ $>$ \mbox{\hyperlink{group__Quadratures_gad7e4443f723ceac698fa6f1cb67f2210}{HAr\+DCore3\+D\+::\+Matrix\+Slice}}}
+
 \mbox{\Hypertarget{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}\label{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}} 
 \index{Quadratures@{Quadratures}!MonomialCellIntegralsType@{MonomialCellIntegralsType}}
 \index{MonomialCellIntegralsType@{MonomialCellIntegralsType}!Quadratures@{Quadratures}}
@@ -444,6 +482,18 @@ Type for list of face integrals of monomials.
 \index{QuadratureRule@{QuadratureRule}!Quadratures@{Quadratures}}
 \doxysubsubsection{\texorpdfstring{QuadratureRule}{QuadratureRule}}
 {\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structHArDCore3D_1_1QuadratureNode}{Quadrature\+Node}}$>$ \mbox{\hyperlink{group__Quadratures_ga41055a24d71d12c64b5fddddc0bbad22}{HAr\+DCore3\+D\+::\+Quadrature\+Rule}}}
+
+\mbox{\Hypertarget{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}\label{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}} 
+\index{Quadratures@{Quadratures}!Scalar3Tensor@{Scalar3Tensor}}
+\index{Scalar3Tensor@{Scalar3Tensor}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{Scalar3Tensor}{Scalar3Tensor}}
+{\footnotesize\ttfamily typedef boost\+::multi\+\_\+array$<$double, 3$>$ \mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{HAr\+DCore3\+D\+::\+Scalar3\+Tensor}}}
+
+\mbox{\Hypertarget{group__Quadratures_ga633cec6b8b0ae7c9173c18384dc0bc73}\label{group__Quadratures_ga633cec6b8b0ae7c9173c18384dc0bc73}} 
+\index{Quadratures@{Quadratures}!VectorSlice@{VectorSlice}}
+\index{VectorSlice@{VectorSlice}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{VectorSlice}{VectorSlice}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Map$<$Eigen\+::\+Vector\+Xd, Eigen\+::\+Unaligned, Eigen\+::\+Inner\+Stride$<$Eigen\+::\+Dynamic$>$ $>$ \mbox{\hyperlink{group__Quadratures_ga633cec6b8b0ae7c9173c18384dc0bc73}{HAr\+DCore3\+D\+::\+Vector\+Slice}}}
 
 
 
@@ -2668,6 +2718,48 @@ If no such rule exists, returns the highest rule. \mbox{\Hypertarget{group__Quad
 \doxysubsubsection{\texorpdfstring{setup()}{setup()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily void Quad\+Rule\+Tetra\+::setup (\begin{DoxyParamCaption}\item[{double(\&)}]{\+\_\+xV\mbox{[}4\mbox{]},  }\item[{double(\&)}]{\+\_\+yV\mbox{[}4\mbox{]},  }\item[{double(\&)}]{\+\_\+zV\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{group__Quadratures_ga89f44c002d325e5fefa134083c918bd8}\label{group__Quadratures_ga89f44c002d325e5fefa134083c918bd8}} 
+\index{Quadratures@{Quadratures}!slice@{slice}}
+\index{slice@{slice}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Quadratures_gad7e4443f723ceac698fa6f1cb67f2210}{Matrix\+Slice}} HAr\+DCore3\+D\+::slice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \&}]{tensor,  }\item[{size\+\_\+t}]{fixed\+\_\+dim,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Function to slice a 3-\/tensor with respect to one index (returns a 2-\/tensor) 
+
+Slicing is always in order e.\+g. fixing y=5, returns matrix\mbox{[}i\mbox{]}\mbox{[}k\mbox{]} = tensor\mbox{[}i\mbox{]}\mbox{[}5\mbox{]}\mbox{[}k\mbox{]}. The output is an Eigen\+::\+Map of the tensor (so accessing the values of the 2-\/tensor actually access the values of the original 3-\/tensor) 
+\begin{DoxyParams}{Parameters}
+{\em tensor} & Tensor to slice \\
+\hline
+{\em fixed\+\_\+dim} & Position of the index with respect to which we slice (fix the value) \\
+\hline
+{\em index} & Value of the index where the slicing is done \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_gac77a76619bb3a0c23089b20cd1f088ae}\label{group__Quadratures_gac77a76619bb3a0c23089b20cd1f088ae}} 
+\index{Quadratures@{Quadratures}!slice@{slice}}
+\index{slice@{slice}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Quadratures_ga633cec6b8b0ae7c9173c18384dc0bc73}{Vector\+Slice}} HAr\+DCore3\+D\+::slice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} \&}]{tensor,  }\item[{size\+\_\+t}]{fixed\+\_\+dim1,  }\item[{size\+\_\+t}]{index1,  }\item[{size\+\_\+t}]{fixed\+\_\+dim2,  }\item[{size\+\_\+t}]{index2 }\end{DoxyParamCaption})}
+
+
+
+Function to slice a 3-\/tensor with respect to two indices (returns a 1-\/tensor) 
+
+See comment in the other slice function 
+\begin{DoxyParams}{Parameters}
+{\em tensor} & Tensor to slice \\
+\hline
+{\em fixed\+\_\+dim1} & Position of the first index with respect to which we slice (fix the value) \\
+\hline
+{\em index1} & Value of the first index to fix \\
+\hline
+{\em fixed\+\_\+dim2} & Position of the second index with respect to which we slice (fix the value) \\
+\hline
+{\em index2} & Value of the second index to fix \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{group__Quadratures_gaa60072df54f7acc9bad7362e4d6f6f72}\label{group__Quadratures_gaa60072df54f7acc9bad7362e4d6f6f72}} 
 \index{Quadratures@{Quadratures}!sub\_rule\_01@{sub\_rule\_01}}
 \index{sub\_rule\_01@{sub\_rule\_01}!Quadratures@{Quadratures}}
@@ -2834,6 +2926,220 @@ Transforms a Gram Matrix from an ancestor to a shifted basis.
 {\em RC} & R if transformation applied on rows (left), C if applied on columns (right) \\
 \hline
 {\em anc\+\_\+\+GM} & Gram matrix of the ancestor basis \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga7499d264310e63f58172540d67aff706}\label{group__Quadratures_ga7499d264310e63f58172540d67aff706}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type , typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Basis\+Type \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Scalar\+Basis\+Type $>$, N $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & First basis \\
+\hline
+{\em basis2} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga73e624477eac371223cfe543f50009d0}\label{group__Quadratures_ga73e624477eac371223cfe543f50009d0}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const Basis\+Type1 \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type2 $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & First basis \\
+\hline
+{\em basis2} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga20dd08c0c6a3f322f7a9625fc93782c4}\label{group__Quadratures_ga20dd08c0c6a3f322f7a9625fc93782c4}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type , typename Scalar\+Basis\+Type , size\+\_\+t N$>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ Scalar\+Basis\+Type, N $>$$>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & First basis \\
+\hline
+{\em basis2} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga19a82a0b44a5c306edcd19d7e02b5d5e}\label{group__Quadratures_ga19a82a0b44a5c306edcd19d7e02b5d5e}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type , size\+\_\+t N$>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Basis\+Type $>$ \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & First basis \\
+\hline
+{\em basis2} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga04e4f9adaec3c48634a03f59c50e7d36}\label{group__Quadratures_ga04e4f9adaec3c48634a03f59c50e7d36}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GolyComplBasisCell}{Goly\+Compl\+Basis\+Cell}} \&}]{golycompl\+\_\+basis,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&}]{tens\+\_\+family,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Computes the triple integral product of a vector basis dot the cross product of the second vector basis -\/ golycompl\+\_\+basis . (tens\+\_\+family x tens\+\_\+family). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em golycompl\+\_\+basis} & First basis \\
+\hline
+{\em tens\+\_\+family} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga58fdaab5fa55850c89dc121e077e6f9c}\label{group__Quadratures_ga58fdaab5fa55850c89dc121e077e6f9c}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} $>$ \&}]{grad\+\_\+basis,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&}]{tens\+\_\+family,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Computes the triple integral product of a vector basis dot the cross product of the second vector basis -\/ grad\+\_\+basis . (tens\+\_\+family x tens\+\_\+family). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em grad\+\_\+basis} & First basis \\
+\hline
+{\em tens\+\_\+family} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga0f32b327bc6e87215c4fa0e070271352}\label{group__Quadratures_ga0f32b327bc6e87215c4fa0e070271352}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type , typename Basis\+Type $>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ Scalar\+Basis\+Type $>$$>$ \&}]{grad\+\_\+shift\+\_\+basis,  }\item[{const Basis\+Type \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em grad\+\_\+shift\+\_\+basis} & First basis \\
+\hline
+{\em basis2} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga50239b85162ede70d1a9174709e98576}\label{group__Quadratures_ga50239b85162ede70d1a9174709e98576}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Basis\+Type1 , typename Scalar\+Basis\+Type2 , size\+\_\+t N$>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1GradientBasis}{Gradient\+Basis}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{Shifted\+Basis}}$<$ Scalar\+Basis\+Type1 $>$$>$ \&}]{grad\+\_\+shift\+\_\+basis,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Scalar\+Basis\+Type2 $>$, N $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em grad\+\_\+shift\+\_\+basis} & First basis \\
+\hline
+{\em basis2} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_ga351079bfdcb59f1ea6f4b6de725f51f6}\label{group__Quadratures_ga351079bfdcb59f1ea6f4b6de725f51f6}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}} \&}]{basis1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&}]{basis2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Computes the triple integral product of a scalar times the dot product of two vectors -\/ basis1(basis2 . basis2). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em basis1} & First basis \\
+\hline
+{\em basis2} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_gab5415f2a157e4d5074abb02570988cc9}\label{group__Quadratures_gab5415f2a157e4d5074abb02570988cc9}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, typename Scalar\+Basis\+Type $>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1Family}{Family}}$<$ Scalar\+Basis\+Type $>$, N $>$ \&}]{tens\+\_\+family1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&}]{tens\+\_\+family2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em tens\+\_\+family1} & First basis \\
+\hline
+{\em tens\+\_\+family2} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__Quadratures_gaf13e635655142dd0d2b0d20bb64ccce3}\label{group__Quadratures_gaf13e635655142dd0d2b0d20bb64ccce3}} 
+\index{Quadratures@{Quadratures}!tripleInt@{tripleInt}}
+\index{tripleInt@{tripleInt}!Quadratures@{Quadratures}}
+\doxysubsubsection{\texorpdfstring{tripleInt()}{tripleInt()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+\mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{Scalar3\+Tensor}} HAr\+DCore3\+D\+::triple\+Int (\begin{DoxyParamCaption}\item[{const Cell \&}]{T,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&}]{tens\+\_\+family1,  }\item[{const \mbox{\hyperlink{classHArDCore3D_1_1TensorizedVectorFamily}{Tensorized\+Vector\+Family}}$<$ \mbox{\hyperlink{classHArDCore3D_1_1MonomialScalarBasisCell}{Monomial\+Scalar\+Basis\+Cell}}, N $>$ \&}]{tens\+\_\+family2,  }\item[{\mbox{\hyperlink{group__Quadratures_gaf37f2a4e6539687603aaf8d4d9ca903c}{Monomial\+Cell\+Integrals\+Type}}}]{mono\+\_\+int\+\_\+map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Computes the triple integral product of a vector basis dot the cross product of the second vector basis -\/ tens\+\_\+family1 . (tens\+\_\+family2 x tens\+\_\+family2). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Cell to which the basis corresponds \\
+\hline
+{\em tens\+\_\+family1} & First basis \\
+\hline
+{\em tens\+\_\+family2} & Second basis \\
+\hline
+{\em mono\+\_\+int\+\_\+map} & Optional list of integrals of monomials up to the sum of max degree of the bases \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{group__Quadratures_gab37d87cd44669f3452851ae4be8870bc}\label{group__Quadratures_gab37d87cd44669f3452851ae4be8870bc}} 

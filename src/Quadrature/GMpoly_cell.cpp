@@ -500,7 +500,7 @@ Eigen::MatrixXd HArDCore3D::GramMatrixDiv(const Cell & T, const RolyComplBasisCe
   }   // for i
   
   return gm / T.diam();
-};
+}
    
 /// Computes the Gram Matrix of the divergence of a RolyCompl Basis and the kth derivative of a monomial basis
 Eigen::MatrixXd HArDCore3D::GMRolyComplScalarDiv(const Cell & T, const MonomialScalarBasisCell & mono_basis, const RolyComplBasisCell & rolycompl_basis, const size_t k, MonomialCellIntegralsType intmap)
@@ -520,5 +520,5 @@ Eigen::MatrixXd HArDCore3D::GMRolyComplScalarDiv(const Cell & T, const MonomialS
   }   // for i
   
   return gm / std::pow(T.diam(),2);
-};
+}
   

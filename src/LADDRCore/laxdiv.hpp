@@ -121,7 +121,7 @@ namespace HArDCore3D
                                      const IntegralWeight & weight = IntegralWeight(1.) ///< weight function in the L2 product, defaults to constant 1.
                                      ) const;
 
-  private:
+  protected:
     LocalOperators _compute_cell_divergence_potential(size_t iT);
 
     const LieAlgebra & m_lie_algebra;

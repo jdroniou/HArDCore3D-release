@@ -6,7 +6,9 @@
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
-Include dependency graph for MSHTo\+RF.\+cpp\+:\nopagebreak
+{\ttfamily \#include $<$boost/program\+\_\+options.\+hpp$>$}\newline
+Include dependency graph for MSHTo\+RF.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,3 +25,10 @@ struct \mbox{\hyperlink{structElement}{Element}}
 \item 
 int \mbox{\hyperlink{group__TransformMeshes_ga0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em Main executable (Mesh\+Coarsen) to coarsen a mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{group__TransformMeshes_ga43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} = \char`\"{}../../../meshes/\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{group__TransformMeshes_ga21b3062739c7e8a3b0887dc5b7d36d63}{default\+\_\+mesh}} = \mbox{\hyperlink{group__TransformMeshes_ga43fed21b5f1b68d8d93bfda38c651ba2}{mesh\+\_\+dir}} + \char`\"{}Complex\+Geometries/Cube\+Cavity\+Wedge/MSH\+\_\+fmt/hexa.\+1\char`\"{}
+\end{DoxyCompactItemize}

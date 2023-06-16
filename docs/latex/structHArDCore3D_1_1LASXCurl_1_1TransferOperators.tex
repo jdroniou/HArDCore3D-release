@@ -1,0 +1,35 @@
+\hypertarget{structHArDCore3D_1_1LASXCurl_1_1TransferOperators}{}\doxysection{HAr\+DCore3D\+::LASXCurl\+::Transfer\+Operators Struct Reference}
+\label{structHArDCore3D_1_1LASXCurl_1_1TransferOperators}\index{HArDCore3D::LASXCurl::TransferOperators@{HArDCore3D::LASXCurl::TransferOperators}}
+
+
+A structure to store the serendipity, extension and reduction operators.  
+
+
+
+
+{\ttfamily \#include $<$lasxcurl.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__LADDRCore_ga96aee755c1d55da296f84cfaa3b1c2b3}{Transfer\+Operators}} (const Eigen\+::\+Matrix\+Xd \&\+\_\+serendipity, const Eigen\+::\+Matrix\+Xd \&\+\_\+extension, const Eigen\+::\+Matrix\+Xd \&\+\_\+reduction)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga76cf2745ba304d5909d9b59e17c4adc6}{serendipity}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga0648faf34046cd15825d40b15eeb47f5}{extension}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_ga9e9fa206ea22f371bd2d5f81119b8911}{reduction}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A structure to store the serendipity, extension and reduction operators. 
+
+The extension operators do \mbox{\hyperlink{classHArDCore3D_1_1SXCurl}{SXCurl}} -\/$>$ Xcurl. The reduction operators do not produce all unknowns, only the ones in the mesh entities they\textquotesingle{}re associated to; so they do \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} -\/$>$ $R^{k-1}(P) \times R^{c,\ell_P+1}(P)$ where P is a face or an element (the only use of the reduction operator is to compute the interpolate, and this version is what is useful). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+LADDRCore/\mbox{\hyperlink{lasxcurl_8hpp}{lasxcurl.\+hpp}}\end{DoxyCompactItemize}

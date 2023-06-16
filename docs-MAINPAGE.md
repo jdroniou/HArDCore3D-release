@@ -125,9 +125,12 @@ However, the builder assumes that each cell is star-shaped with respect to the i
 Several other codes (in src/Mesh/Transforms) are provided to manipulate meshes:
 * Create agglomerated meshes [MeshCoarsen](@ref MeshCoarsen.cpp),
 * Check that an RF file produces a valid mesh [CheckMesh](@ref CheckMesh.cpp),
-* Make flat faces in a mesh where some are not (e.g., generic hexahedral meshes) [MakeFlatFaces](@ref MakeFlatFaces.cpp), 
-* Create a .vtu file from an RF mesh file [MeshToVTU](@ref MeshToVTU.cpp),
-* Transform a .msh file (created by Gmsh, version 4.11) into an RF mesh file [MSHToRF](@ref MSHToRF.cpp).
+* Make flat faces in a mesh where some are not (e.g., generic hexahedral meshes) [MakeFlatFaces](@ref MakeFlatFaces.cpp),
+* Move the vertices of a mesh [MoveVertices](@ref MoveVertices.cpp),
+* Various transformations of mesh format:
+  - Gmsh .msh file (version 4.11) into an RF mesh file [MSHToRF](@ref MSHToRF.cpp).
+  - RF mesh into a .vtu file [RFToVTU](@ref RFToVTU.cpp),
+  - RF mesh into an FVCA10 format .msh file [RFToFVCA10format](@ref RFToFVCA10format.cpp),
 
 <a name="common">
 \section common_module Common module
@@ -364,13 +367,13 @@ The following schemes are currently available in HArD::Core3D. The Hybrid High-O
 
  - [DDR_magnetostatic](@ref DDR_magnetostatic): Discrete De Rham (DDR) scheme, and serendipity version, for the magnetostatic problem, as per https://doi.org/10.1016/j.jcp.2020.109991 (but using Koszul complements).
 
- - [DDR_stokes](@ref DDR_stokes): Discrete De Rham (DDR) scheme, and serendipity version, for the %Stokes problem in curl-curl form.
+ - [DDR_stokes](@ref DDR_stokes): Discrete De Rham (DDR) scheme for the %Stokes problem in curl-curl form. See also [SDDR_stokes](@ref SDDR_stokes) for the serendipity version.
 
  - [VEM_stokes](@ref VEM_stokes): Virtual Element Method (VEM) scheme for the %Stokes problem in curl-curl form.
 
  - [HHO_MHD](@ref HHO_MHD): HHO scheme for the MHD problem.
 
- - [DDR_yangmills](@ref DDR_yangmills): DDR scheme for the Yang-Mills equations (based on [LADDR](@ref LADDRCore), the extension of DDR to Lie algebra valued fields).
+ - [DDR_yangmills](@ref DDR_yangmills): lowest-order DDR scheme for the Yang-Mills equations (based on [LADDR](@ref LADDRCore), the extension of DDR to Lie algebra valued fields). See also [SDDR_yangmills](@ref SDDR_yangmills) for the arbitrary order serendipity version.
  
  - [HHO_fullgradientdiff](@ref HHO_fullgradientdiff): HHO scheme with full gradient; similar to [HHO_locvardiff](@ref HArDCore3D::HHO_LocVarDiff) but implemented using the [HHOSpace](#hhospace) module instead of the [HybridCore](#hybridcore) module.
  

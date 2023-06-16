@@ -11,7 +11,8 @@ Discrete Lie algebra valued Hdiv space\+: local operators, L2 product and global
 
 
 
-Inheritance diagram for HAr\+DCore3D\+::LAXDiv\+:\nopagebreak
+Inheritance diagram for HAr\+DCore3D\+::LAXDiv\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,11 +21,12 @@ Inheritance diagram for HAr\+DCore3D\+::LAXDiv\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for HAr\+DCore3D\+::LAXDiv\+:\nopagebreak
+Collaboration diagram for HAr\+DCore3D\+::LAXDiv\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=238pt]{classHArDCore3D_1_1LAXDiv__coll__graph}
+\includegraphics[width=350pt]{classHArDCore3D_1_1LAXDiv__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Classes}
@@ -66,7 +68,24 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gad05e305a92714d93a69d36
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product for the cell of index iT. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{group__LADDRCore_gaa08771eaa0678ce7db39685aab3d1f2a}{compute\+L2\+Product\+Curl}} (const size\+\_\+t iT, const \mbox{\hyperlink{classHArDCore3D_1_1XCurl}{XCurl}} \&x\+\_\+curl, const std\+::string \&side, const double \&penalty\+\_\+factor=1., const Eigen\+::\+Matrix\+Xd \&mass\+\_\+\+Pk3\+\_\+T=Eigen\+::\+Matrix\+Xd\+::\+Zero(1, 1), const \mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}} \&weight=\mbox{\hyperlink{structHArDCore3D_1_1IntegralWeight}{Integral\+Weight}}(1.)) const
 \begin{DoxyCompactList}\small\item\em Compute the matrix of the (weighted) L2-\/product as \textquotesingle{}compute\+L2\+Product\textquotesingle{}, with application of the discrete curl on the left/right/both sides (depending on argument \char`\"{}side\char`\"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structHArDCore3D_1_1LAXDiv_1_1LocalOperators}{Local\+Operators}} \mbox{\hyperlink{group__LADDRCore_gaf0d7f0b51f050d1936bf33a636659f28}{\+\_\+compute\+\_\+cell\+\_\+divergence\+\_\+potential}} (size\+\_\+t iT)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1LieAlgebra}{Lie\+Algebra}} \& \mbox{\hyperlink{group__LADDRCore_ga0a1ab8b334914b4b45412b49dd6a6eb1}{m\+\_\+lie\+\_\+algebra}}
+\item 
+const \mbox{\hyperlink{classHArDCore3D_1_1XDiv}{XDiv}} \& \mbox{\hyperlink{group__LADDRCore_gacb1be18a8d6db3c23d84eaeac203437d}{m\+\_\+xdiv}}
+\item 
+bool \mbox{\hyperlink{group__LADDRCore_gaaa69a6bd1344404d08098ecd6e14cd18}{m\+\_\+use\+\_\+threads}}
+\item 
+std\+::ostream \& \mbox{\hyperlink{group__LADDRCore_ga247b23c5fcc0d18a8a6801f7e1cf24a0}{m\+\_\+output}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structHArDCore3D_1_1LAXDiv_1_1LocalOperators}{Local\+Operators}} $>$ $>$ \mbox{\hyperlink{group__LADDRCore_gaf250a4da2c9bf23440d2ca5c64648ffd}{m\+\_\+cell\+\_\+operators}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

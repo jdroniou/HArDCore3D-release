@@ -6,7 +6,7 @@ ADD_LIBRARY(mesh ${source_list})
 ADD_LIBRARY(DirectedGraph OBJECT Transforms/DirectedGraph.cpp)
 
 # Transform RF mesh in VTU file
-ADD_EXECUTABLE(rf-to-vtu Transforms/MeshToVTU.cpp)
+ADD_EXECUTABLE(rf-to-vtu Transforms/RFToVTU.cpp)
 TARGET_LINK_LIBRARIES(rf-to-vtu mesh plot ${Boost_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(rf-to-vtu PUBLIC ${EIGEN3_INCLUDE_DIR})
 
@@ -29,4 +29,14 @@ TARGET_INCLUDE_DIRECTORIES(check-mesh PUBLIC ${EIGEN3_INCLUDE_DIR})
 ADD_EXECUTABLE(make-flat-faces Transforms/MakeFlatFaces.cpp)
 TARGET_LINK_LIBRARIES(make-flat-faces mesh ${Boost_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(make-flat-faces PUBLIC ${EIGEN3_INCLUDE_DIR})
+
+# Move vertices of a mesh
+ADD_EXECUTABLE(move-vertices Transforms/MoveVertices.cpp)
+TARGET_LINK_LIBRARIES(move-vertices mesh ${Boost_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(move-vertices PUBLIC ${EIGEN3_INCLUDE_DIR})
+
+# Write an FVCA10 format mesh from an RF mesh
+ADD_EXECUTABLE(rf-to-fvca10format Transforms/RFToFVCA10format.cpp)
+TARGET_LINK_LIBRARIES(rf-to-fvca10format mesh ${Boost_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(rf-to-fvca10format PUBLIC ${EIGEN3_INCLUDE_DIR})
 

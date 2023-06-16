@@ -84,6 +84,7 @@ namespace MeshND
 
         /// Returns the simplices making up the MeshObject
         inline Simplices<space_dim, object_dim> get_simplices() const { return _simplices; }
+        inline Simplices<space_dim, object_dim>& set_simplices() { return _simplices; }
         /// Set the global index
         inline void set_global_index(const size_t idx) { _index = idx; }
         /// Returns true if MeshObject is a boundary object, false otherwise
@@ -127,6 +128,7 @@ namespace MeshND
         int index_cell(const MeshObject<space_dim, space_dim>* cell) const;       ///< Returns the local index of a cell
 
         VectorRd<space_dim> coords() const; ///< Return the coordinates of a Vertex
+        void set_coords(const VectorRd<space_dim> & x); ///< Set the coordinates of a Vertex
 
         VectorRd<space_dim> face_normal(const size_t face_index) const; ///< Return the outer normal of a Cell towards the Face located at face_index
         VectorRd<space_dim> edge_normal(const size_t edge_index) const; ///< Return the edge normal of a 2D object
@@ -134,8 +136,11 @@ namespace MeshND
         int face_orientation(const size_t face_index) const; ///< Return the orientation of a Face
         int edge_orientation(const size_t edge_index) const; ///< Return the orientation of a Edge (multiplied by edge_normal, gives the outer normal to the face)
 
+        int induced_orientation(const size_t index) const; ///< Return 1 if the volume form on the boundary is positively oriented, -1 else
+
         VectorRd<space_dim> normal() const;     ///< Return the normal of a Face
         VectorRd<space_dim> tangent() const;    ///< Return the tangent of a Edge
+        Eigen::Matrix<double,space_dim,2> face_tangent() const; ///< Return the tangent space of a Face
 
         void construct_face_orientations(); ///< Set the directions of the face normals of a cell
 
@@ -454,6 +459,13 @@ namespace MeshND
     }
 
     template <size_t space_dim, size_t object_dim>
+    void MeshObject<space_dim, object_dim>::set_coords(const VectorRd<space_dim> & x) // only for vertices
+    {
+        assert(object_dim == 0);
+        this->set_simplices()[0][0] = x;
+    }
+
+    template <size_t space_dim, size_t object_dim>
     VectorRd<space_dim> MeshObject<space_dim, object_dim>::normal() const
     {
         assert(object_dim == space_dim - 1);
@@ -465,6 +477,16 @@ namespace MeshND
     {
         assert(object_dim == 1);
         return (this->get_vertices()[1]->coords() - this->get_vertices()[0]->coords()).normalized();
+    }
+
+    template <size_t space_dim, size_t object_dim>
+    Eigen::Matrix<double,space_dim,2> MeshObject<space_dim, object_dim>::face_tangent() const
+    {
+        assert(object_dim == 2);
+        Eigen::Matrix<double,space_dim,2> rv;
+        rv.col(0) = edge(0)->tangent();
+        rv.col(1) = edge_normal(0);
+        return rv;
     }
 
     template <size_t space_dim, size_t object_dim>
@@ -536,7 +558,28 @@ namespace MeshND
         assert(edge_index < _edges.size());
         return Math::sgn((_edges[edge_index]->center_mass() - this->center_mass()).dot(this->edge_normal(edge_index))); // assuming face is star-shaped wrt face-center !!
     }
-
+    template <size_t space_dim, size_t object_dim>
+    int MeshObject<space_dim, object_dim>::induced_orientation(const size_t index) const
+    {
+        assert((object_dim == 2 && index < _edges.size())||(object_dim == 3 && index < _faces.size()));
+        if constexpr(object_dim == 2) {
+          VectorRd<space_dim> const n = edge_orientation(index)*edge_normal(index), 
+                                    t = edge(index)->tangent();
+          Eigen::Matrix<double,space_dim,2> const ab = face_tangent();
+          return Math::sgn(ab.col(0).dot(n)*ab.col(1).dot(t) - ab.col(0).dot(t)*ab.col(1).dot(n));
+          // If vol_f = da^db, vol_E = dt and n is the outward unit vector
+          // then da^db = (da(n)*db(t) - da(t)*db(n))dn^dt, hence i_{n}(da^db) = (da(n)*db(t) - da(t)*db(n))dn^dt
+          // The induced orientation on E is then sgn(da(n)*db(t) - da(t)*db(n)) dt 
+          // sgn(da(n)*db(t) - da(t)*db(n)) should be equal to da(n)*db(t) - da(t)*db(n)
+        } else { // object_dim == 3
+          Eigen::Matrix<double,space_dim,object_dim> nab;
+          nab.rightCols(2) = face(index)->face_tangent();
+          nab.leftCols(1) = face_normal(index); // This seems inconsistent with the behavior in 2D, why does this one is outer and not edge_orientation?
+          return Math::sgn(nab.determinant());
+          // We assume that the volume form on T is dx^dy^dz, then dx^dy^dz = det(n,a,b) dn^da^db
+          // The induced orientation on F is then sign(det(n,a,b))
+        }
+    }
 
 } // namespace MeshND
 

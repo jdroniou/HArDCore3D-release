@@ -6,7 +6,8 @@
 #include "laddr-yangmills-lm.hpp"
 #include <parallel_for.hpp>
 #include <max_degrees_quadratures.hpp>
-#include <GMpoly_cell.hpp>
+#include <IntegrateTripleProduct.hpp>
+
 #include <unsupported/Eigen/KroneckerProduct>
 
 #include <boost/program_options.hpp>
@@ -18,7 +19,6 @@
 
 #ifdef WITH_MKL
   #include <Eigen/PardisoSupport>
-  #include <mkl.h>
 #endif
 
 #ifdef WITH_SPECTRA
@@ -49,7 +49,7 @@ int main(int argc, const char* argv[])
   desc.add_options()
     ("help,h", "Display this help message")
     ("mesh,m", boost::program_options::value<std::string>(), "Set the mesh")
-    ("degree,k", boost::program_options::value<size_t>()->default_value(0), "The polynomial degree of the sequence")
+    ("degree,k", boost::program_options::value<size_t>()->default_value(1), "The polynomial degree of the sequence")
     ("pthread,p", boost::program_options::value<bool>()->default_value(true), "Use thread-based parallelism")
     ("solution,s", boost::program_options::value<int>()->default_value(1), "Select the solution")
     ("export-matrix,e", "Export matrix to Matrix Market format")
@@ -204,15 +204,15 @@ int main(int argc, const char* argv[])
   double max_res = 0;
   double max_const = 0;
   size_t nonlinear_it = 0;
+  double t_wall_assemble, t_proc_assemble;
+  double t_wall_solve, t_proc_solve;
+
   // Print solver
   if (itersolver) {
     std::cout << "[main] Solving the linear system using LeastSquaresConjugateGradient" << std::endl;
   } else { 
   #ifdef WITH_MKL
-      std::cout << "[main] Solving the linear system using Pardiso" << std::endl;
-      unsigned nb_threads_hint = std::thread::hardware_concurrency();
-      mkl_set_dynamic(0);
-      mkl_set_num_threads(nb_threads_hint);
+      std::cout << "[main] Solving the linear system using Pardiso" << std::endl; 
   #elif WITH_UMFPACK
       std::cout << "[main] Solving the linear system using Umfpack" << std::endl;
   #else
@@ -226,6 +226,7 @@ int main(int argc, const char* argv[])
   // Solve the problem
 {
   size_t prog = 0;
+  boost::timer::cpu_timer it_timer;
   for (size_t i = 0 ; i < it; i++){
     if (100*i/it >= prog){
       std::cout << "[main] " << 100*i/it << "%..." << std::endl;
@@ -246,7 +247,6 @@ int main(int argc, const char* argv[])
       interp_Aipomtheta = ym.laXCurl().interpolate(ym.contractParaLA<Eigen::Vector3d, YangMills::ForcingTermType>(A, t+(1-theta)*dt), MAX_DOE_CELL, MAX_DOE_FACE, MAX_DOE_EDGE);
     }
 
-
     // System vector of the nonlinear problem
     Eigen::VectorXd Eh_old = Elambdah.head(ym.laXCurl().dimension());
     ym.setSystemVector(interp_f, interp_Eipo-interp_Ei, interp_Aipomtheta, Eh_old, Ah, dt, theta, nonlinear_coeff);
@@ -261,11 +261,19 @@ int main(int argc, const char* argv[])
 
     while (ym.stoppingCrit2(Elambdah, Eh_old, Ah, sysVec, dt, theta, nonlinear_coeff) > stop_val){
       nonlinear_it++;
+
+      it_timer.start();
       ym.assembleSystemNewton(Eh_old, Ah, Elambdah, sysVec, dt, theta, nonlinear_coeff);
-     
+      it_timer.stop();
+      double it_wall_assemble, it_proc_assemble;
+      std::tie(it_wall_assemble, it_proc_assemble) = store_times(it_timer, "[main] Time assemble (wall/proc) ");
+      t_wall_assemble += it_wall_assemble;
+      t_proc_assemble += it_proc_assemble;
+
+      it_timer.start();
       if (itersolver){
         Eigen::LeastSquaresConjugateGradient<YangMills::SystemMatrixType> solver;
-        // solver.preconditioner().setFillfactor(2);
+        // solver.preconditioner().setFillfactor(2);m_ebkt_F
         solver.compute(ym.systemMatrix());
         if (solver.info() != Eigen::Success) {
           std::cerr << "[main] ERROR: Could not factorize matrix" << std::endl;
@@ -277,7 +285,7 @@ int main(int argc, const char* argv[])
           exit(1);
         }
       } else { 
-        #ifdef WITH_MKL
+        #ifdef WITH_MKL   
             Eigen::PardisoLU<YangMills::SystemMatrixType> solver;
         #elif WITH_UMFPACK   
             Eigen::UmfPackLU<YangMills::SystemMatrixType> solver;
@@ -295,6 +303,12 @@ int main(int argc, const char* argv[])
         }
       Elambdah = Elambdah + dElambdak;
 
+      it_timer.stop();
+      double it_wall_solve, it_proc_solve;
+      std::tie(it_wall_solve, it_proc_solve) = store_times(it_timer, "[main] Time solve (wall/proc) ");
+      t_wall_solve += it_wall_solve;
+      t_proc_solve += it_proc_solve;
+
       // Update residual and condition numbers
       double res = ym.computeResidual(dElambdak);
       // std::cout << FORMAT(25) << "[main] Residual: " << res << std::endl;
@@ -309,7 +323,7 @@ int main(int argc, const char* argv[])
       max_res = std::max(max_res, res);
     };
 
-    // Update A and the constraint violation
+    // Update A and the maximum difference from initial constraint
     Eigen::VectorXd Eh_new = Elambdah.head(ym.laXCurl().dimension());
     Ah -= dt*(1-theta)*Eh_old + dt*theta*Eh_new;
     max_const = std::max(max_const, ym.computeConstraintNorm(ym.computeConstraint(Eh_new, Ah, nonlinear_coeff)-initial_constraint, itersolver));
@@ -318,8 +332,12 @@ int main(int argc, const char* argv[])
   cn << std::flush;
   cn.close();
   timer.stop();
-  double t_wall_solve, t_proc_solve;
-  std::tie(t_wall_solve, t_proc_solve) = store_times(timer, "[main] Time solve (wall/proc) ");
+  double t_wall_solution, t_proc_solution;
+  std::tie(t_wall_solution, t_proc_solution) = store_times(timer, "[main] Time solution (wall/proc) ");
+  t_wall_assemble = t_wall_assemble/double(nonlinear_it);
+  t_proc_assemble = t_proc_assemble/double(nonlinear_it);
+  t_wall_solve = t_wall_solve/double(nonlinear_it);
+  t_proc_solve = t_proc_solve/double(nonlinear_it);
 
   // Export matrix if requested  
   if (vm.count("export-matrix")) {
@@ -392,10 +410,14 @@ int main(int argc, const char* argv[])
   out << "N_L2Pot: " << norms.A << std::endl;
   out << "TwallDDRCore: " << t_wall_ddrcore << std::endl;  
   out << "TprocDDRCore: " << t_proc_ddrcore << std::endl;  
-  out << "TwallModel: " << t_wall_model << std::endl;  
-  out << "TprocModel: " << t_proc_model << std::endl;  
+  out << "TwallModel: " << t_wall_model << std::endl;
+  out << "TprocModel: " << t_proc_model << std::endl;
+  out << "TwallAssemble: " << t_wall_assemble << std::endl;
+  out << "TprocAssemble: " << t_proc_assemble << std::endl;
   out << "TwallSolve: " << t_wall_solve << std::endl;  
-  out << "TprocSolve: " << t_proc_solve << std::endl; 
+  out << "TprocSolve: " << t_proc_solve << std::endl;  
+  out << "TwallSolution: " << t_wall_solution << std::endl;  
+  out << "TprocSolution: " << t_proc_solution << std::endl; 
   if (itersolver){
     out << "Solver: " << "LeastSquaresConjugateGradient" << std::endl;
   } else { 
@@ -436,25 +458,31 @@ YangMills::YangMills(
     m_laxdiv(liealgebra, m_xdiv, use_threads),
     m_A(sizeSystem(), sizeSystem()),
     m_b(Eigen::VectorXd::Zero(sizeSystem())),
+    m_laxgrad_L2(m_laxgrad.dimension(), m_laxgrad.dimension()),
     m_laxcurl_L2(m_laxcurl.dimension(), m_laxcurl.dimension()),
     m_laxdiv_L2(m_laxdiv.dimension(), m_laxdiv.dimension()),
-    m_laxgrad_L2(m_laxgrad.dimension(), m_laxgrad.dimension()),
-    m_F_ebkt(_epsBkt()),
     m_stab_par(0.1)   
 {
-  // Compute the basis integrals of the bracket (LaxGrad)x(LaxCurl)->LaxCurl
-  for (size_t iT = 0; iT < ddrcore.mesh().n_cells(); iT++){
-    m_int_PciPcjPgk.emplace_back(boost::multi_array<double, 3>(boost::extents[m_laxcurl.dimensionCell(iT)][m_laxcurl.dimensionCell(iT)][m_laxgrad.dimensionCell(iT)]));
-  }
-  std::function<void(size_t, size_t)> fill_ints
-  = [this](size_t start, size_t end)->void
-    {
-      for (size_t iT = start; iT < end; iT++) {
-        m_int_PciPcjPgk[iT]=_int_Pci_bktPcjPgk(iT);
-      } // for iF
-    };
-  parallel_for(ddrcore.mesh().n_cells(), fill_ints, use_threads);
-  
+  // size_t size_bkt_F = 0;
+  // size_t size_bkt_T = 0;
+  // size_t size_int_bkt = 0;
+  // for (size_t iF = 0; iF < m_ddrcore.mesh().n_faces(); iF++){
+  //   size_t dim_laPolykF = m_liealg.dimension() * PolynomialSpaceDimension<Face>::Poly(m_ddrcore.degree());
+  //   size_t dim_laxcurl_F = m_laxcurl.dimensionFace(iF);
+  //   size_bkt_F += dim_laxcurl_F*dim_laxcurl_F*dim_laPolykF;
+  // }
+  // for (size_t iT = 0; iT < m_ddrcore.mesh().n_cells(); iT++){
+  //   size_t dim_laGolykmoT = m_liealg.dimension() * PolynomialSpaceDimension<Cell>::Goly(m_ddrcore.degree()-1);
+  //   size_t dim_laGolyComplkT = m_liealg.dimension() * PolynomialSpaceDimension<Cell>::GolyCompl(m_ddrcore.degree());
+  //   size_t dim_laxcurl_T = m_laxcurl.dimensionCell(iT);
+  //   size_bkt_T += dim_laxcurl_T*dim_laxcurl_T*(dim_laGolykmoT+dim_laGolyComplkT);
+  // }
+  // for (size_t iT = 0; iT < ddrcore.mesh().n_cells(); iT++){
+  //   size_int_bkt += m_laxcurl.dimensionCell(iT)*m_laxcurl.dimensionCell(iT)*m_laxgrad.dimensionCell(iT);
+  // }
+  // m_output << "Size bracket face " << size_bkt_F*sizeof(double)*1e-9 << std::endl;
+  // m_output << "Size bracket element " << size_bkt_T*sizeof(double)*1e-9 << std::endl;
+  // m_output << "Size integral bracket " << size_int_bkt*sizeof(double)*1e-9 << std::endl;
   m_output << "[YangMills] Initializing" << std::endl;
 }
 
@@ -491,6 +519,7 @@ void YangMills::assembleLinearSystem(
   
   std::vector<std::pair<size_t, size_t>> size_systems{std::make_pair(m_laxcurl.dimension(), m_laxcurl.dimension()), std::make_pair(m_laxdiv.dimension(), m_laxdiv.dimension()), std::make_pair(m_laxgrad.dimension(), m_laxgrad.dimension())}; 
   auto [systems, vectors] = parallel_assembly_system(m_ddrcore.mesh().n_cells(), size_systems, {}, assemble, m_use_threads);
+
   m_laxcurl_L2 = systems[0];
   m_laxdiv_L2 = systems[1];
   m_laxgrad_L2 = systems[2];
@@ -609,12 +638,13 @@ std::function<Eigen::VectorXd(size_t iT, double dt)> compute_local_F
   Eigen::VectorXd A_i_T = m_laxcurl.restrict(T, A_i);
   Eigen::VectorXd X_T = m_laxcurl.restrict(T, X);
   Eigen::VectorXd Y_T = m_laxcurl.restrict(T, Y);
-  // Bracket matrices: Hstar[u,.]
-  Eigen::MatrixXd ebkt_A = nonlinear_coeff * epsBkt_v(iT, A_i);
-  Eigen::MatrixXd ebkt_E = nonlinear_coeff * epsBkt_v(iT, E_k);
-  Eigen::MatrixXd ebkt_X = nonlinear_coeff * epsBkt_v(iT, X);
-  Eigen::MatrixXd ebkt_Y = nonlinear_coeff * epsBkt_v(iT, Y);
-  // Bracket vectors: Hstar[u,v]
+  // Bracket matrices: *[u,.]^div
+  boost::multi_array<double, 3> ebkt_T = epsBkt_T(iT);
+  Eigen::MatrixXd ebkt_A = nonlinear_coeff * epsBkt_v(iT, ebkt_T, A_i);
+  Eigen::MatrixXd ebkt_E = nonlinear_coeff * epsBkt_v(iT, ebkt_T, E_k);
+  Eigen::MatrixXd ebkt_X = nonlinear_coeff * epsBkt_v(iT, ebkt_T, X);
+  Eigen::MatrixXd ebkt_Y = nonlinear_coeff * epsBkt_v(iT, ebkt_T, Y);
+  // Bracket vectors: *[u,v]^div
   Eigen::VectorXd ebkt_A_A = ebkt_A * A_i_T;
   Eigen::VectorXd ebkt_E_E = ebkt_E * E_k_T;
   Eigen::VectorXd ebkt_E_A = ebkt_E * A_i_T;
@@ -627,22 +657,23 @@ std::function<Eigen::VectorXd(size_t iT, double dt)> compute_local_F
   Eigen::MatrixXd laxdiv_L2 = m_laxdiv.computeL2Product(iT, m_stab_par, mass_Pk3_T);
   Eigen::MatrixXd laxcurl_L2Grad_right = m_laxcurl.computeL2ProductGradient(iT, m_xgrad, "right", m_stab_par, mass_Pk3_T);
   // L2 product matrices with brackets
-  Eigen::MatrixXd L2CurlA_ebkt = nonlinear_coeff * L2v_epsBkt(iT, A_i_T, laxdiv_L2Curl_left);
-  Eigen::MatrixXd L2CurlX_ebkt = nonlinear_coeff * L2v_epsBkt(iT, X_T, laxdiv_L2Curl_left);
-  Eigen::MatrixXd L2CurlE_ebkt = nonlinear_coeff * L2v_epsBkt(iT, E_k_T, laxdiv_L2Curl_left);
-  Eigen::MatrixXd L2ebktAA_ebkt = L2v_epsBkt(iT, ebkt_A_A, laxdiv_L2);
-  Eigen::MatrixXd L2ebktXX_ebkt = L2v_epsBkt(iT, ebkt_X_X, laxdiv_L2);
-  Eigen::MatrixXd L2ebktXE_ebkt = L2v_epsBkt(iT, ebkt_X_E, laxdiv_L2);
-  Eigen::MatrixXd L2ebktEE_ebkt = L2v_epsBkt(iT, ebkt_E_E, laxdiv_L2);
+  Eigen::MatrixXd L2CurlA_ebkt = nonlinear_coeff * L2v_epsBkt(iT, ebkt_T, A_i_T, laxdiv_L2Curl_left);
+  Eigen::MatrixXd L2CurlX_ebkt = nonlinear_coeff * L2v_epsBkt(iT, ebkt_T, X_T, laxdiv_L2Curl_left);
+  Eigen::MatrixXd L2CurlE_ebkt = nonlinear_coeff * L2v_epsBkt(iT, ebkt_T, E_k_T, laxdiv_L2Curl_left);
+  Eigen::MatrixXd L2ebktAA_ebkt = L2v_epsBkt(iT, ebkt_T, ebkt_A_A, laxdiv_L2);
+  Eigen::MatrixXd L2ebktXX_ebkt = L2v_epsBkt(iT, ebkt_T, ebkt_X_X, laxdiv_L2);
+  Eigen::MatrixXd L2ebktXE_ebkt = L2v_epsBkt(iT, ebkt_T, ebkt_X_E, laxdiv_L2);
+  Eigen::MatrixXd L2ebktEE_ebkt = L2v_epsBkt(iT, ebkt_T, ebkt_E_E, laxdiv_L2);
   Eigen::MatrixXd L2Curl_left_ebkt_E = laxdiv_L2Curl_left * ebkt_E;
   Eigen::MatrixXd L2Curl_left_ebkt_X = laxdiv_L2Curl_left * ebkt_X;
   Eigen::MatrixXd L2Curl_left_ebkt_Y = laxdiv_L2Curl_left * ebkt_Y;
   Eigen::MatrixXd L2_ebkt_E = ebkt_E.transpose() * laxdiv_L2;
   // L2 integral bracket product matrices: int <1,[2,3]>
-  Eigen::MatrixXd L2E_bkt = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], E_k, 1);
-  Eigen::MatrixXd L2Ei_bkt = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], E_i, 1);
-  Eigen::MatrixXd L2bkt_Z = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], Z, 2);
-  Eigen::MatrixXd L2bkt_E = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], E_k, 2);
+  boost::multi_array<double, 3> int_PciPcjPgk = _int_Pci_bktPcjPgk(iT);
+  Eigen::MatrixXd L2E_bkt = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, E_k, 1);
+  Eigen::MatrixXd L2Ei_bkt = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, E_i, 1);
+  Eigen::MatrixXd L2bkt_Z = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, Z, 2);
+  Eigen::MatrixXd L2bkt_E = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, E_k, 2);
 
   //------------------------------------------------------------------------------
   // Vector
@@ -755,11 +786,12 @@ void YangMills::setSystemVector(
     Eigen::VectorXd interp_f_T = m_laxcurl.restrict(T, interp_f);
     Eigen::VectorXd interp_dE_T = m_laxcurl.restrict(T, interp_dE);
     Eigen::VectorXd X_T = m_laxcurl.restrict(T, X);
-    // Bracket matrices: Hstar[u,.]
-    Eigen::MatrixXd ebkt_A = nonlinear_coeff * epsBkt_v(iT, A_old);
-    Eigen::MatrixXd ebkt_X = nonlinear_coeff * epsBkt_v(iT, X);
-    Eigen::MatrixXd ebkt_Y = nonlinear_coeff * epsBkt_v(iT, Y);
-    // Bracket vectors: Hstar[u,v]
+    // Bracket matrices: *[u,.]^div
+    boost::multi_array<double, 3> ebkt_T = epsBkt_T(iT);
+    Eigen::MatrixXd ebkt_A = nonlinear_coeff * epsBkt_v(iT, ebkt_T, A_old);
+    Eigen::MatrixXd ebkt_X = nonlinear_coeff * epsBkt_v(iT, ebkt_T, X);
+    Eigen::MatrixXd ebkt_Y = nonlinear_coeff * epsBkt_v(iT, ebkt_T, Y);
+    // Bracket vectors: *[u,v]^div
     Eigen::VectorXd ebkt_A_A = ebkt_A * A_old_T;
     Eigen::VectorXd ebkt_X_X = ebkt_X * X_T;
     // L2 product matrices
@@ -771,9 +803,10 @@ void YangMills::setSystemVector(
     // L2 product matrices with brackets
     Eigen::MatrixXd L2_ebkt_Y = ebkt_Y.transpose() * laxdiv_L2;
     Eigen::MatrixXd L2Curl_left_ebkt_Y = laxdiv_L2Curl_left * ebkt_Y;
-    // L2 integral bracket product matrices: int <1,[2,3]> 
-    Eigen::MatrixXd L2bkt_interp_A = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], interp_A, 2);
-    Eigen::MatrixXd L2bkt_Z = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], Z, 2);
+    // L2 integral bracket product matrices: int <1,[2,3]>
+    boost::multi_array<double, 3> int_PciPcjPgk = _int_Pci_bktPcjPgk(iT);
+    Eigen::MatrixXd L2bkt_interp_A = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, interp_A, 2);
+    Eigen::MatrixXd L2bkt_Z = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, Z, 2);
 
     //------------------------------------------------------------------------------
     // System Vector 
@@ -874,12 +907,13 @@ void YangMills::assembleSystemNewton(
   Eigen::VectorXd A_i_T = m_laxcurl.restrict(T, A_i);
   Eigen::VectorXd X_T = m_laxcurl.restrict(T, X);
   Eigen::VectorXd Y_T = m_laxcurl.restrict(T, Y);
-  // Bracket matrices: Hstar[u,.]
-  Eigen::MatrixXd ebkt_A = nonlinear_coeff * epsBkt_v(iT, A_i);
-  Eigen::MatrixXd ebkt_E = nonlinear_coeff * epsBkt_v(iT, E_k);
-  Eigen::MatrixXd ebkt_X = nonlinear_coeff * epsBkt_v(iT, X);
-  Eigen::MatrixXd ebkt_Y = nonlinear_coeff * epsBkt_v(iT, Y);
-  // Bracket vectors: Hstar[u,v]
+  // Local bracket matrices: *[u,.]^div
+  boost::multi_array<double, 3> ebkt_T = epsBkt_T(iT);
+  Eigen::MatrixXd ebkt_A = nonlinear_coeff * epsBkt_v(iT, ebkt_T, A_i);
+  Eigen::MatrixXd ebkt_E = nonlinear_coeff * epsBkt_v(iT, ebkt_T, E_k);
+  Eigen::MatrixXd ebkt_X = nonlinear_coeff * epsBkt_v(iT, ebkt_T, X);
+  Eigen::MatrixXd ebkt_Y = nonlinear_coeff * epsBkt_v(iT, ebkt_T, Y);
+  // Local bracket vectors: *[u,v]^div
   Eigen::VectorXd ebkt_A_A = ebkt_A * A_i_T;
   Eigen::VectorXd ebkt_E_E = ebkt_E * E_k_T;
   Eigen::VectorXd ebkt_E_A = ebkt_E * A_i_T;
@@ -892,23 +926,24 @@ void YangMills::assembleSystemNewton(
   Eigen::MatrixXd laxdiv_L2 = m_laxdiv.computeL2Product(iT, m_stab_par, mass_Pk3_T);
   Eigen::MatrixXd laxcurl_L2Grad_right = m_laxcurl.computeL2ProductGradient(iT, m_xgrad, "right", m_stab_par, mass_Pk3_T);
   // L2 product matrices with brackets
-  Eigen::MatrixXd L2CurlA_ebkt = nonlinear_coeff * L2v_epsBkt(iT, A_i_T, laxdiv_L2Curl_left);
-  Eigen::MatrixXd L2CurlX_ebkt = nonlinear_coeff * L2v_epsBkt(iT, X_T, laxdiv_L2Curl_left);
-  Eigen::MatrixXd L2CurlE_ebkt = nonlinear_coeff * L2v_epsBkt(iT, E_k_T, laxdiv_L2Curl_left);
-  Eigen::MatrixXd L2ebktAA_ebkt = L2v_epsBkt(iT, ebkt_A_A, laxdiv_L2);
-  Eigen::MatrixXd L2ebktXX_ebkt = L2v_epsBkt(iT, ebkt_X_X, laxdiv_L2);
-  Eigen::MatrixXd L2ebktXE_ebkt = L2v_epsBkt(iT, ebkt_X_E, laxdiv_L2);
-  Eigen::MatrixXd L2ebktEE_ebkt = L2v_epsBkt(iT, ebkt_E_E, laxdiv_L2);
+  Eigen::MatrixXd L2CurlA_ebkt = nonlinear_coeff * L2v_epsBkt(iT, ebkt_T, A_i_T, laxdiv_L2Curl_left);
+  Eigen::MatrixXd L2CurlX_ebkt = nonlinear_coeff * L2v_epsBkt(iT, ebkt_T, X_T, laxdiv_L2Curl_left);
+  Eigen::MatrixXd L2CurlE_ebkt = nonlinear_coeff * L2v_epsBkt(iT, ebkt_T, E_k_T, laxdiv_L2Curl_left);
+  Eigen::MatrixXd L2ebktAA_ebkt = L2v_epsBkt(iT, ebkt_T, ebkt_A_A, laxdiv_L2);
+  Eigen::MatrixXd L2ebktXX_ebkt = L2v_epsBkt(iT, ebkt_T, ebkt_X_X, laxdiv_L2);
+  Eigen::MatrixXd L2ebktXE_ebkt = L2v_epsBkt(iT, ebkt_T, ebkt_X_E, laxdiv_L2);
+  Eigen::MatrixXd L2ebktEE_ebkt = L2v_epsBkt(iT, ebkt_T, ebkt_E_E, laxdiv_L2);
   Eigen::MatrixXd L2Curl_left_ebkt_E = laxdiv_L2Curl_left * ebkt_E;
   Eigen::MatrixXd L2Curl_left_ebkt_X = laxdiv_L2Curl_left * ebkt_X;
   Eigen::MatrixXd L2Curl_left_ebkt_Y = laxdiv_L2Curl_left * ebkt_Y;
   Eigen::MatrixXd L2_ebkt_E = ebkt_E.transpose() * laxdiv_L2;
-  // L2 integral bracket product matrices: int <1,[2,3]> 
-  Eigen::MatrixXd L2E_bkt = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], E_k, 1);
-  Eigen::MatrixXd L2Ei_bkt = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], E_i, 1);
-  Eigen::MatrixXd L2bkt_Z = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], Z, 2);
-  Eigen::MatrixXd L2bkt_E = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], E_k, 2);
-  Eigen::MatrixXd L2bkt_lambda = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], lambda_k, 3);
+  // L2 integral bracket product matrices: int <1,[2,3]>
+  boost::multi_array<double, 3> int_PciPcjPgk = _int_Pci_bktPcjPgk(iT);
+  Eigen::MatrixXd L2E_bkt = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, E_k, 1);
+  Eigen::MatrixXd L2Ei_bkt = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, E_i, 1);
+  Eigen::MatrixXd L2bkt_Z = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, Z, 2);
+  Eigen::MatrixXd L2bkt_E = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, E_k, 2);
+  Eigen::MatrixXd L2bkt_lambda = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, lambda_k, 3);
 
   //------------------------------------------------------------------------------
   // System Vector 
@@ -1093,87 +1128,234 @@ void YangMills::_assemble_local_contribution(
 
 //------------------------------------------------------------------------------
 
-std::vector<Eigen::MatrixXd> YangMills::_epsBkt()
+boost::multi_array<double, 3> YangMills::epsBkt_F(size_t iF) const
 {
-  std::vector<Eigen::MatrixXd> epsBkt(m_laxdiv.dimension());
+  size_t dim_laPolykF = m_liealg.dimension() * PolynomialSpaceDimension<Face>::Poly(m_ddrcore.degree());
+  size_t dim_laxcurl_F = m_laxcurl.dimensionFace(iF);
+  boost::multi_array<double, 3> epsBkt_F(boost::extents[dim_laxcurl_F][dim_laxcurl_F][dim_laPolykF]);
+  std::fill_n(epsBkt_F.data(), epsBkt_F.num_elements(), 0);
+
   std::vector<Eigen::MatrixXd> C_IJ = m_liealg.structureConst();
+  size_t dim_PolykF = PolynomialSpaceDimension<Face>::Poly(m_ddrcore.degree());
+  size_t dim_xcurl_F = m_xcurl.dimensionFace(iF);
 
-  std::function<void(size_t, size_t)> compute_ebkt
-  = [&, this](size_t start, size_t end)->void
-  {
-    for (size_t iF = start; iF < end; iF++){
-      Face & F = *m_laxcurl.mesh().face(iF);
-      // Xcurl matrix to recover scalar face values
-      Eigen::MatrixXd detProduct = _compute_det_bracket_face(iF);
-      std::vector<size_t> IF_laXdiv = m_laxdiv.globalDOFIndices(F);
-      // Kronecker product with structure constants to expand in Lie algebra indices
-      for (size_t K = 0; K < m_liealg.dimension(); K++){
-        epsBkt[IF_laXdiv[K]] = 1./m_xcurl.faceBases(iF).Polyk->function(0, F.center_mass()) * Eigen::KroneckerProduct(detProduct, C_IJ[K]);
-      }
-    }
-  };
-  parallel_for(m_ddrcore.mesh().n_faces(), compute_ebkt, m_use_threads);
-  return epsBkt;
-}
+  boost::multi_array<double, 3> detnij_Pot_PkF = _compute_detnij_Pot_PkF(iF);
 
-//------------------------------------------------------------------------------
-
-Eigen::MatrixXd YangMills::_compute_det_bracket_face(const size_t iF) const
-{
-  Face & F = *m_xcurl.mesh().face(iF);
-
-  Eigen::MatrixXd potM_F = _compute_face_tangent(iF);
-
-  Eigen::MatrixXd det_nij = Eigen::MatrixXd::Zero(m_xcurl.dimensionFace(iF), m_xcurl.dimensionFace(iF));
-  Eigen::MatrixXd nij = Eigen::MatrixXd::Zero(F.normal().size(), F.normal().size());
-  nij.col(0) = F.normal();
-  for (size_t i = 0; i < m_xcurl.dimensionFace(iF); i++){
-    nij.col(1) = potM_F.col(i);
-    for (size_t j = 0; j < i; j++){
-      nij.col(2) = potM_F.col(j);
-      det_nij(i, j) = nij.determinant();
-      det_nij(j, i) = -det_nij(i, j);
+  for (size_t k = 0; k < dim_PolykF; k++){
+    Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  detBkt_k(detnij_Pot_PkF.data() + k, dim_xcurl_F, dim_xcurl_F, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_PolykF, dim_PolykF*dim_xcurl_F));
+    for (size_t K = 0; K < m_liealg.dimension(); K++){
+      Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  epsBkt_k(epsBkt_F.data() + k*m_liealg.dimension() + K, dim_laxcurl_F, dim_laxcurl_F, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_laPolykF, dim_laPolykF*dim_laxcurl_F));
+      epsBkt_k = Eigen::KroneckerProduct(detBkt_k, C_IJ[K]); 
     }
   }
-  return det_nij;
+
+  return epsBkt_F;
 }
 
 //------------------------------------------------------------------------------
 
-Eigen::MatrixXd YangMills::_compute_face_tangent(const size_t iF) const
+boost::multi_array<double, 3> YangMills::_compute_detnij_Pot_PkF(const size_t iF) const
 {
-  Face & F = *m_xcurl.mesh().face(iF);
+  boost::multi_array<double, 3> detnij_PkF = _compute_detnij_PkF(iF);
+
+  size_t dim_PolykF = PolynomialSpaceDimension<Face>::Poly(m_ddrcore.degree());
+  size_t dim_Polyk2F = m_ddrcore.faceBases(iF).Polyk2->dimension();
+
+  size_t dim_xcurl_F = m_xcurl.dimensionFace(iF);
   Eigen::MatrixXd pot_F = m_xcurl.faceOperators(iF).potential;
 
-  size_t dim_F = pot_F.rows();
-  size_t dim_func = 3;
+  boost::multi_array<double, 3> detnij_Pot_PkF(boost::extents[dim_xcurl_F][dim_xcurl_F][dim_PolykF]);
+  std::fill_n(detnij_Pot_PkF.data(), detnij_Pot_PkF.num_elements(), 0);
 
-  Eigen::MatrixXd basis_F = Eigen::MatrixXd::Zero(dim_func, dim_F);
+  for (size_t k = 0; k < dim_PolykF; k++){
+    const Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  detnij(detnij_PkF.data() + k, dim_Polyk2F, dim_Polyk2F, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_PolykF, dim_PolykF*dim_Polyk2F));
+    
+    // Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  detnij_Pot(detnij_Pot_PkF.data() + k, dim_xcurl_F, dim_xcurl_F, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_PolykF, dim_PolykF*dim_xcurl_F));
+    // detnij_Pot = pot_F.transpose() * detnij * pot_F;
 
-  for (size_t i = 0; i < dim_F; i++){
-    basis_F.col(i) = (*m_xcurl.faceBases(iF).Polyk2).function(i, F.center_mass());
+    // Does the same thing as the above two lines
+    for (size_t i = 0; i < dim_xcurl_F; i++){
+      for (size_t j = 0; j < i; j++){
+          detnij_Pot_PkF[i][j][k] = pot_F.col(i).transpose() * detnij * pot_F.col(j);
+          detnij_Pot_PkF[j][i][k] = -detnij_Pot_PkF[i][j][k];
+      }
+    }
   }
-
-  return basis_F * pot_F;
+  return detnij_Pot_PkF;
 }
 
 //------------------------------------------------------------------------------
 
-Eigen::MatrixXd YangMills::epsBkt_v(size_t iT, const Eigen::VectorXd & v) const
+boost::multi_array<double, 3> YangMills::_compute_detnij_PkF(const size_t iF) const
+{
+  Face & F = *m_ddrcore.mesh().face(iF);
+  size_t dim_Polyk2F = m_ddrcore.faceBases(iF).Polyk2->dimension();
+  size_t dim_PolykF = PolynomialSpaceDimension<Face>::Poly(m_ddrcore.degree());
+
+  boost::multi_array<double, 3> detnij_PkF(boost::extents[dim_Polyk2F][dim_Polyk2F][dim_PolykF]);
+  std::fill_n(detnij_PkF.data(), detnij_PkF.num_elements(), 0);
+
+  QuadratureRule quad_3k_F = generate_quadrature_rule(F, 3*m_ddrcore.degree());
+  auto basis_Pk_F_quad = evaluate_quad<Function>::compute(*m_xcurl.faceBases(iF).Polyk, quad_3k_F);
+  const Eigen::Vector3d & nF = F.normal();
+  auto & Pk2 = *(m_ddrcore.faceBases(iF).Polyk2);
+  Eigen::MatrixXd mass_Pk_F = compute_gram_matrix(basis_Pk_F_quad, quad_3k_F);
+
+  for (size_t i = 0; i < dim_Polyk2F; i++){
+    for (size_t j = 0; j < i; j++){
+      auto cross_ij = [&Pk2, i, j, nF](const Eigen::Vector3d & x)-> double {return Pk2.function(i, x).cross(Pk2.function(j, x)).dot(nF);};
+      Eigen::VectorXd proj_ij = l2_projection(cross_ij, *m_ddrcore.faceBases(iF).Polyk, quad_3k_F, basis_Pk_F_quad, mass_Pk_F);
+      for (size_t k = 0; k < dim_PolykF; k++){
+        detnij_PkF[i][j][k] = proj_ij[k];
+        detnij_PkF[j][i][k] = -proj_ij[k];
+      }
+    }
+  }
+  return detnij_PkF;
+}
+
+//------------------------------------------------------------------------------
+
+boost::multi_array<double, 3> YangMills::epsBkt_T(size_t iT) const
+{
+  size_t dim_GolykmoT = PolynomialSpaceDimension<Cell>::Goly(m_ddrcore.degree()-1);
+  size_t dim_GolyComplkT = PolynomialSpaceDimension<Cell>::GolyCompl(m_ddrcore.degree());
+  size_t dim_laxcurl_T = m_laxcurl.dimensionCell(iT);
+  size_t dim_laGolykmoT = m_liealg.dimension() * dim_GolykmoT;
+  size_t dim_laGolyComplkT = m_liealg.dimension() * dim_GolyComplkT;
+
+  boost::multi_array<double, 3> epsBkt_T(boost::extents[dim_laxcurl_T][dim_laxcurl_T][dim_laGolykmoT+dim_laGolyComplkT]);
+  std::fill_n(epsBkt_T.data(), epsBkt_T.num_elements(), 0);
+
+  if (m_ddrcore.degree()>0){
+    std::vector<Eigen::MatrixXd> C_IJ = m_liealg.structureConst();
+    size_t dim_xcurl_T = m_xcurl.dimensionCell(iT);
+
+    boost::multi_array<double, 3> crossij_Pot_T = _compute_crossij_Pot_T(iT);
+
+    for (size_t k = 0; k < dim_GolykmoT+dim_GolyComplkT; k++){
+      Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  crossij_Pot(crossij_Pot_T.data() + k, dim_xcurl_T, dim_xcurl_T, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_GolykmoT+dim_GolyComplkT, (dim_GolykmoT+dim_GolyComplkT)*dim_xcurl_T));
+      for (size_t K = 0; K < m_liealg.dimension(); K++){
+        Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  epsBkt(epsBkt_T.data() + k*m_liealg.dimension() + K, dim_laxcurl_T, dim_laxcurl_T, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_laGolykmoT+dim_laGolyComplkT, (dim_laGolykmoT+dim_laGolyComplkT)*dim_laxcurl_T));
+        epsBkt = Eigen::KroneckerProduct(crossij_Pot, C_IJ[K]); 
+      }
+    }
+  }
+  return epsBkt_T;
+}
+
+//------------------------------------------------------------------------------
+
+boost::multi_array<double, 3> YangMills::_compute_crossij_Pot_T(const size_t iT) const
+{
+  size_t dim_Polyk3T = m_ddrcore.cellBases(iT).Polyk3->dimension();
+  size_t dim_GolykmoT = PolynomialSpaceDimension<Cell>::Goly(m_ddrcore.degree()-1);
+  size_t dim_GolyComplkT = PolynomialSpaceDimension<Cell>::GolyCompl(m_ddrcore.degree());
+  size_t dim_xcurl_T = m_xcurl.dimensionCell(iT);
+  Eigen::MatrixXd pot_T = m_xcurl.cellOperators(iT).potential;
+
+  boost::multi_array<double, 3> crossij_Pot_T(boost::extents[dim_xcurl_T][dim_xcurl_T][dim_GolykmoT+dim_GolyComplkT]);
+  std::fill_n(crossij_Pot_T.data(), crossij_Pot_T.num_elements(), 0);
+  boost::multi_array<double, 3> crossij_T = _compute_crossij_T(iT);
+
+  for (size_t k = 0; k < dim_GolykmoT+dim_GolyComplkT; k++){
+    Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  crossij(crossij_T.data() + k, dim_Polyk3T, dim_Polyk3T, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_GolykmoT+dim_GolyComplkT, (dim_GolykmoT+dim_GolyComplkT)*dim_Polyk3T));
+
+    // Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  crossij_Pot(crossij_Pot_T.data() + k, dim_xcurl_T, dim_xcurl_T, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_GolykmoT+dim_GolyComplkT, (dim_GolykmoT+dim_GolyComplkT)*dim_xcurl_T));
+    // crossij_Pot = pot_T.transpose() * crossij * pot_T;
+
+    // Does the same thing as the above two lines
+    for (size_t i = 0; i < dim_xcurl_T; i++){
+      for (size_t j = 0; j < i; j++){
+          crossij_Pot_T[i][j][k] = pot_T.col(i).transpose() * crossij * pot_T.col(j);
+          crossij_Pot_T[j][i][k] = -crossij_Pot_T[i][j][k];
+      }
+    }
+  }
+  return crossij_Pot_T;
+}
+
+//------------------------------------------------------------------------------
+
+boost::multi_array<double, 3> YangMills::_compute_crossij_T(const size_t iT) const
+{
+  Cell & T = *m_ddrcore.mesh().cell(iT);
+
+  size_t dim_Polyk3T = m_ddrcore.cellBases(iT).Polyk3->dimension();
+  size_t dim_GolykmoT = PolynomialSpaceDimension<Cell>::Goly(m_ddrcore.degree()-1);
+  size_t dim_GolyComplkT = PolynomialSpaceDimension<Cell>::GolyCompl(m_ddrcore.degree());
+
+  boost::multi_array<double, 3> crossij_T(boost::extents[dim_Polyk3T][dim_Polyk3T][dim_GolykmoT+dim_GolyComplkT]);
+  std::fill_n(crossij_T.data(), crossij_T.num_elements(), 0);
+
+  QuadratureRule quad_3k_T = generate_quadrature_rule(T, 3*m_ddrcore.degree());
+
+  MonomialCellIntegralsType int_mono_3k = IntegrateCellMonomials(T, 3*m_ddrcore.degree());
+  boost::multi_array<double, 3> triple_int_Gkmo = tripleInt(T, *m_xcurl.cellBases(iT).Golykmo, *m_ddrcore.cellBases(iT).Polyk3, int_mono_3k);
+  boost::multi_array<double, 3> triple_int_GCk = tripleInt(T, *m_xcurl.cellBases(iT).GolyComplk, *m_ddrcore.cellBases(iT).Polyk3, int_mono_3k);
+  
+  Eigen::MatrixXd mass_Gkmo_T = GramMatrix(T, *m_xcurl.cellBases(iT).Golykmo, int_mono_3k);
+  Eigen::MatrixXd mass_GCk_T = GramMatrix(T, *m_xcurl.cellBases(iT).GolyComplk, int_mono_3k);
+  Eigen::LDLT<Eigen::MatrixXd> cholesky_mass_Gkmo(mass_Gkmo_T);
+  Eigen::LDLT<Eigen::MatrixXd> cholesky_mass_GCk(mass_GCk_T);
+
+  for (size_t i = 0; i < dim_Polyk3T; i++){
+    for (size_t j = 0; j < i; j++){
+      Eigen::VectorXd crossij_Gkmo = Eigen::Map<Eigen::VectorXd, 0, Eigen::InnerStride<Eigen::Dynamic>>(triple_int_Gkmo.data()+j+dim_Polyk3T*i, dim_GolykmoT, Eigen::InnerStride<>(dim_Polyk3T*dim_Polyk3T));
+      Eigen::VectorXd crossij_GCk = Eigen::Map<Eigen::VectorXd, 0, Eigen::InnerStride<Eigen::Dynamic>>(triple_int_GCk.data()+j+dim_Polyk3T*i, dim_GolyComplkT, Eigen::InnerStride<>(dim_Polyk3T*dim_Polyk3T));
+      Eigen::VectorXd proj_crossij_Gkmo = cholesky_mass_Gkmo.solve(crossij_Gkmo);
+      Eigen::VectorXd proj_crossij_GCk = cholesky_mass_GCk.solve(crossij_GCk);
+      for (size_t k = 0; k < dim_GolykmoT; k++){
+        crossij_T[i][j][k] = proj_crossij_Gkmo[k];
+        crossij_T[j][i][k] = -proj_crossij_Gkmo[k];
+      }
+      for (size_t k = 0; k < dim_GolyComplkT; k++){
+        crossij_T[i][j][dim_GolykmoT+k] = proj_crossij_GCk[k];
+        crossij_T[j][i][dim_GolykmoT+k] = -proj_crossij_GCk[k];
+      }
+    }
+  }
+  return crossij_T;
+}
+
+//------------------------------------------------------------------------------
+
+Eigen::MatrixXd YangMills::epsBkt_v(size_t iT, boost::multi_array<double, 3> & ebkt_T, const Eigen::VectorXd & v) const
 {
   Cell & T = *m_ddrcore.mesh().cell(iT);
   Eigen::MatrixXd epsBktv_T = Eigen::MatrixXd::Zero(m_laxdiv.dimensionCell(iT), m_laxcurl.dimensionCell(iT));
-    
-  std::vector<size_t> IT_laXdiv = m_laxdiv.globalDOFIndices(T);
-  for (size_t iF = 0; iF < T.n_faces(); iF++){
-    Face & F = *T.face(iF);
-    size_t DOFIndexF = iF * m_liealg.dimension();
+
+  size_t dim_laPolykF = m_liealg.dimension() * PolynomialSpaceDimension<Face>::Poly(m_ddrcore.degree());
+
+  for (auto Fp : T.get_faces()){
+    Face & F = *Fp;
+    size_t iF = F.global_index();
+    size_t offset_F = m_laxdiv.localOffset(T, F);
+    size_t dim_laxcurl_F = m_laxcurl.dimensionFace(iF);
+    Eigen::VectorXd v_F = m_laxcurl.restrict(F, v);
+    boost::multi_array<double, 3> ebkt_F = epsBkt_F(iF);
+
     // Extends the face brackets calculated in _epsBkt to T
-    for (size_t K = 0; K < m_liealg.dimension(); K++){
-      Eigen::RowVectorXd F_vepsBkt = m_F_ebkt[IT_laXdiv[DOFIndexF + K]] * m_laxcurl.restrict(F, v);
-      epsBktv_T.row(DOFIndexF + K) = m_laxcurl.extendOperator(T, F, F_vepsBkt);
+    for (size_t j = 0; j < dim_laPolykF; j++){
+      Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  epsBkt_k(ebkt_F.data()+j, dim_laxcurl_F, dim_laxcurl_F, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_laPolykF, dim_laPolykF*dim_laxcurl_F));
+      Eigen::RowVectorXd epsBkt_v_F = v_F.transpose() * epsBkt_k.transpose();
+      epsBktv_T.row(offset_F + j) = m_laxcurl.extendOperator(T, F, epsBkt_v_F);
     }
   }
+
+  if (m_ddrcore.degree()>0){
+    size_t offset_T = m_laxdiv.localOffset(T);
+    size_t dim_laGolykmoT = m_liealg.dimension() * PolynomialSpaceDimension<Cell>::Goly(m_ddrcore.degree()-1);
+    size_t dim_laGolyComplkT = m_liealg.dimension() * PolynomialSpaceDimension<Cell>::GolyCompl(m_ddrcore.degree());
+    size_t dim_laxcurl_T = m_laxcurl.dimensionCell(iT);
+    Eigen::VectorXd v_T = m_laxcurl.restrict(T, v);
+
+    for (size_t i = 0; i < dim_laGolykmoT+dim_laGolyComplkT; i++){
+      Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  epsBkt_k(ebkt_T.data() + i, dim_laxcurl_T, dim_laxcurl_T, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_laGolykmoT+dim_laGolyComplkT, (dim_laGolykmoT+dim_laGolyComplkT)*dim_laxcurl_T));
+      epsBktv_T.row(offset_T + i) = epsBkt_k * v_T;
+    }
+  }
+
   return epsBktv_T;
 }
 
@@ -1190,23 +1372,8 @@ boost::multi_array<double, 3> YangMills::_integral_ijk(size_t iT) const
   size_t dim_Pkpo = m_ddrcore.cellBases(iT).Polykpo->dimension();
 
   // integral of the basis functions in T (int (\phi_i . \phi_j) * \psi_k)
-  boost::multi_array<double, 3> integral_basis(boost::extents[dim_Pk3][dim_Pk3][dim_Pkpo]);
-  std::fill_n(integral_basis.data(), integral_basis.num_elements(), 0);
-  // Calculate quadrature rule for 3k+1 degrees
-  QuadratureRule quad_3kpo_T = generate_quadrature_rule(T, 3*m_ddrcore.degree()+1);
-  boost::multi_array<Eigen::Vector3d, 2> B_Pk3 = evaluate_quad<Function>::compute(*m_ddrcore.cellBases(iT).Polyk3, quad_3kpo_T);
-  boost::multi_array<double, 2> B_Pkpo = evaluate_quad<Function>::compute(*m_ddrcore.cellBases(iT).Polykpo, quad_3kpo_T);
-  // Manual integration using quadrature rules
-  for (size_t i = 0; i < dim_Pk3; i++){
-    for (size_t j = 0; j <= i; j++){
-      for (size_t k = 0; k < dim_Pk3; k++){
-        for (size_t iqn=0; iqn<quad_3kpo_T.size(); iqn++){
-          integral_basis[i][j][k] += quad_3kpo_T[iqn].w * B_Pk3[i][iqn].dot(B_Pk3[j][iqn]) * B_Pkpo[k][iqn];
-        }
-        integral_basis[j][i][k] = integral_basis[i][j][k];
-      }
-    }
-  }
+  MonomialCellIntegralsType int_mono_3kp1 = IntegrateCellMonomials(T, 3*m_ddrcore.degree() + 1);
+  boost::multi_array<double, 3> integral_basis = tripleInt(T, *m_ddrcore.cellBases(iT).Polykpo, *m_ddrcore.cellBases(iT).Polyk3, int_mono_3kp1);
 
   // integral over the basis in T of (Xcurl)x(Xcurl)x(xGrad) potentials
   boost::multi_array<double, 3> integral_PcPcPg(boost::extents[dim_xcurl_T][dim_xcurl_T][dim_xgrad_T]);
@@ -1217,7 +1384,7 @@ boost::multi_array<double, 3> YangMills::_integral_ijk(size_t iT) const
   for (size_t i = 0; i < dim_xcurl_T; i++){
     Eigen::MatrixXd integral_jk = Eigen::MatrixXd::Zero(dim_Pk3, dim_Pkpo);
     for (size_t l=0; l<dim_Pk3; l++){
-      Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  int_ljk(integral_basis.data() + l * dim_Pk3 * dim_Pkpo, dim_Pk3, dim_Pkpo, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(1, dim_Pkpo));
+      Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  int_ljk(integral_basis.data() + l * dim_Pk3, dim_Pk3, dim_Pkpo, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_Pk3*dim_Pk3, 1));
       integral_jk += xcurl_pot(l, i) * int_ljk;
     }
     for (size_t j = 0; j <= i; j++){
@@ -1227,13 +1394,15 @@ boost::multi_array<double, 3> YangMills::_integral_ijk(size_t iT) const
       }
     }
   }
+
   return integral_PcPcPg;
 }
 
 //------------------------------------------------------------------------------
 
-boost::multi_array<double, 3> YangMills::_int_Pci_bktPcjPgk(size_t iT)
+boost::multi_array<double, 3> YangMills::_int_Pci_bktPcjPgk(size_t iT) const
 { 
+
   size_t dim_xcurl_T = m_xcurl.dimensionCell(iT);
   size_t dim_xgrad_T = m_xgrad.dimensionCell(iT);
   size_t dim_laxcurl_T = m_laxcurl.dimensionCell(iT);
@@ -1255,6 +1424,7 @@ boost::multi_array<double, 3> YangMills::_int_Pci_bktPcjPgk(size_t iT)
       }
     }
   }
+
   return intPciPcjPgk;
 }
 
@@ -1293,23 +1463,42 @@ Eigen::MatrixXd YangMills::L2v_Bkt(size_t iT, boost::multi_array<double, 3> & in
 
 //------------------------------------------------------------------------------
 
-Eigen::MatrixXd YangMills::L2v_epsBkt(size_t iT, const Eigen::VectorXd & v_T, const Eigen::MatrixXd & L2prod) const
+Eigen::MatrixXd YangMills::L2v_epsBkt(size_t iT, boost::multi_array<double, 3> & ebkt_T, const Eigen::VectorXd & v_T, const Eigen::MatrixXd & L2prod) const
 {
-    Cell & T = *m_ddrcore.mesh().cell(iT);
+  Cell & T = *m_ddrcore.mesh().cell(iT);
 
-    Eigen::VectorXd T_L2prodv = v_T.transpose() * L2prod;;
+  Eigen::VectorXd T_L2prodv = v_T.transpose() * L2prod;;
 
-    std::vector<size_t> IT_laXdiv = m_laxdiv.globalDOFIndices(T);
-    Eigen::MatrixXd T_L2vepsBkt = Eigen::MatrixXd::Zero(m_laxcurl.dimensionCell(T), m_laxcurl.dimensionCell(T));
+  std::vector<size_t> IT_laXdiv = m_laxdiv.globalDOFIndices(T);
+  Eigen::MatrixXd T_L2vepsBkt = Eigen::MatrixXd::Zero(m_laxcurl.dimensionCell(T), m_laxcurl.dimensionCell(T));
+  size_t dim_laPolykF = m_liealg.dimension() * PolynomialSpaceDimension<Face>::Poly(m_ddrcore.degree());
 
-    for (size_t iF = 0; iF < T.n_faces(); iF++){
-      Face & F = *T.face(iF);
-      size_t DOFIndexF = iF * m_liealg.dimension();
-      for (size_t K = 0; K < m_liealg.dimension(); K++){
-        T_L2vepsBkt += T_L2prodv[DOFIndexF + K] * m_laxcurl.extendOperator(T, F, m_laxcurl.extendOperator(T, F, m_F_ebkt[IT_laXdiv[DOFIndexF + K]]).transpose());
-      }
+  for (auto Fp : T.get_faces()){
+    Face & F = *Fp;
+    size_t iF = F.global_index();
+    size_t offset_F = m_laxdiv.localOffset(T, F);
+    size_t dim_laxcurl_F = m_laxcurl.dimensionFace(iF);
+    boost::multi_array<double, 3> ebkt_F = epsBkt_F(iF);
+
+    for (size_t j = 0; j < dim_laPolykF; j++){
+      const Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  epsBkt_k(ebkt_F.data()+j, dim_laxcurl_F, dim_laxcurl_F, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_laPolykF, dim_laPolykF*dim_laxcurl_F));
+      T_L2vepsBkt += T_L2prodv[offset_F + j] * m_laxcurl.extendOperator(T, F, m_laxcurl.extendOperator(T, F, epsBkt_k).transpose());
     }
-    return T_L2vepsBkt;
+  }
+
+  if (m_ddrcore.degree()>0){
+    size_t offset_T = m_laxdiv.localOffset(T);
+    size_t dim_laGolykmoT = m_liealg.dimension() * PolynomialSpaceDimension<Cell>::Goly(m_ddrcore.degree()-1);
+    size_t dim_laGolyComplkT = m_liealg.dimension() * PolynomialSpaceDimension<Cell>::GolyCompl(m_ddrcore.degree());
+    size_t dim_laxcurl_T = m_laxcurl.dimensionCell(iT);
+
+    for (size_t i = 0; i < dim_laGolykmoT+dim_laGolyComplkT; i++){
+      Eigen::Map<Eigen::MatrixXd, Eigen::Unaligned, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>  epsBkt_k(ebkt_T.data() + i, dim_laxcurl_T, dim_laxcurl_T, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>(dim_laGolykmoT+dim_laGolyComplkT, (dim_laGolykmoT+dim_laGolyComplkT)*dim_laxcurl_T));
+      T_L2vepsBkt += T_L2prodv(offset_T + i) * epsBkt_k;
+    }
+  }
+
+  return T_L2vepsBkt;
 }
 
 //------------------------------------------------------------------------------
@@ -1347,15 +1536,21 @@ std::vector<YangMillsNorms> YangMills::computeYangMillsNorms(const std::vector<E
         }
       }
     };
-  parallel_for(ncells, compute_local_squarednorms, m_use_threads);
+  // parallel_for(ncells, compute_local_squarednorms, m_use_threads);
 
   // Assemble the output
   std::vector<YangMillsNorms> list_norms;
   list_norms.reserve(nb_vectors);
   for (size_t i=0; i<nb_vectors; i++){
-    double sqnorm_E = local_sqnorm_E[i].sum();
-    double sqnorm_A = local_sqnorm_A[i].sum();
-    double sqnorm_lambda = local_sqnorm_lambda[i].sum();
+    // double sqnorm_E = local_sqnorm_E[i].sum();
+    // double sqnorm_A = local_sqnorm_A[i].sum();
+    // double sqnorm_lambda = local_sqnorm_lambda[i].sum();
+    Eigen::VectorXd E_curl = list_dofs[i].head(m_laxcurl.dimension()).transpose();
+    Eigen::VectorXd lambda_grad = list_dofs[i].segment(m_laxcurl.dimension(), m_laxgrad.dimension());
+    Eigen::VectorXd A_curl = list_dofs[i].tail(m_laxcurl.dimension()).transpose();
+    double sqnorm_E = E_curl.transpose() * m_laxcurl_L2 * E_curl;
+    double sqnorm_A = A_curl.transpose() * m_laxcurl_L2 * A_curl;
+    double sqnorm_lambda = lambda_grad.transpose() * m_laxgrad_L2 * lambda_grad;
     list_norms[i] = YangMillsNorms(std::sqrt(std::abs(sqnorm_E)), std::sqrt(std::abs(sqnorm_A)), std::sqrt(std::abs(sqnorm_lambda)));
   }  
   return list_norms;
@@ -1429,8 +1624,8 @@ std::function<Eigen::VectorXd(size_t iT)> compute_local_const
     MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*m_ddrcore.degree());
     Eigen::MatrixXd mass_Pk3_T = GramMatrix(T, *m_ddrcore.cellBases(iT).Polyk3, int_mono_2k);
     Eigen::MatrixXd L2laxCurl_Gleft = m_laxcurl.computeL2ProductGradient(iT, m_xgrad, "left", m_stab_par, mass_Pk3_T);
-
-    Eigen::MatrixXd L2bkt_Ah = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], Ah, 2);
+    boost::multi_array<double, 3> int_PciPcjPgk = _int_Pci_bktPcjPgk(iT);
+    Eigen::MatrixXd L2bkt_Ah = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, Ah, 2);
     Eigen::VectorXd const_T = L2laxCurl_Gleft * E_T + L2bkt_Ah.transpose() * E_T;
   return const_T;
   };
@@ -1473,7 +1668,8 @@ Eigen::VectorXd YangMills::computeInitialConditions(const Eigen::MatrixXd & Eh, 
     // Local product matrices
     Eigen::MatrixXd L2laxcurl = m_laxcurl.computeL2Product(iT, m_stab_par, mass_Pk3_T);
     Eigen::MatrixXd L2laxcurl_Grad_right = m_laxcurl.computeL2ProductGradient(iT, m_xgrad, "right", m_stab_par, mass_Pk3_T);
-    Eigen::MatrixXd L2bkt_Ah = nonlinear_coeff * L2v_Bkt(iT, m_int_PciPcjPgk[iT], Ah, 2);
+    boost::multi_array<double, 3> int_PciPcjPgk = _int_Pci_bktPcjPgk(iT);
+    Eigen::MatrixXd L2bkt_Ah = nonlinear_coeff * L2v_Bkt(iT, int_PciPcjPgk, Ah, 2);
 
     size_t dimT_laxcurl = m_laxcurl.dimensionCell(iT);
     size_t dimT_laxgrad = m_laxgrad.dimensionCell(iT);

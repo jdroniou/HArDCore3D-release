@@ -10,15 +10,18 @@
 
 #include <mesh.hpp>
 #include <mesh_builder.hpp>
+#include <GMpoly_cell.hpp>
 
 #include <laxgrad.hpp>
 #include <laxcurl.hpp>
 #include <laxdiv.hpp>
 
+
  /*!
   * @defgroup DDR_yangmills
-  * @brief Implementation of the DDR scheme for the %Yang-Mills problem 
+  * @brief Implementation of the lowest order DDR scheme for the %Yang-Mills problem 
   */
+
 
 namespace HArDCore3D
 {
@@ -126,17 +129,23 @@ namespace HArDCore3D
                                              const size_t solver           ///< Solver to use
                                              );
 
-    /// Calculates the matrix of Hstar[v,.] in element index iT
-    Eigen::MatrixXd epsBkt_v(size_t iT, const Eigen::VectorXd & v) const;
+    /// Calculates the matrix of *[v,.]^div in element index iT
+    Eigen::MatrixXd epsBkt_v(size_t iT,                               ///< Element index
+                             boost::multi_array<double, 3> & ebkt_T,  ///< The *[.,.]^div operator for cell values (doesn't include faces)
+                             const Eigen::VectorXd & v                ///< Vector to plug in
+                             ) const;             
 
     /// Wrapper to plug vector into L2 integral product: int (Pcurl 1,[Pcurl 2, Pgrad 3])
     Eigen::MatrixXd L2v_Bkt(size_t iT,                                    ///< Element index
                             boost::multi_array<double, 3> & intPciPcjPgk, ///< L2 integral product (trilinear form)
                             const Eigen::VectorXd & v,                    ///< Vector to plug in
-                            const size_t & entry) const;
-
+                            const size_t & entry                          ///< Position to put vector (1, 2, 3)
+                            ) const;
+    
+    /// Calculates the bracket inside the L2prod with v 
     Eigen::MatrixXd L2v_epsBkt(size_t iT,                     ///< Element index
-                               const Eigen::VectorXd & v_T,   ///< Local vector in T 
+                               boost::multi_array<double, 3> & ebkt_T,  ///< The *[.,.]^div operator for cell values (doesn't include faces)
+                               const Eigen::VectorXd & v_T,   ///< Local vector in T (because we often only have the local part of the vector e.g. (*[A,A]^div)_T )
                                const Eigen::MatrixXd & L2prod ///< L2 product to be combined with bracket
                                ) const;
 
@@ -274,21 +283,29 @@ namespace HArDCore3D
                                       std::vector<Eigen::VectorXd> & vecs   //< List of vectors for the system
                                       );
 
-    std::vector<Eigen::MatrixXd> _epsBkt();
+    /// Local face *[.,.]^div operators (trilinear form). Returns the projection onto LaPk_F of *[P_laxcurl v_i, P_laxcurl v_j].nF (v_ basis of laxcurl_F) and stores the coefficients (on LaPolyk) of the function in the index k
+    boost::multi_array<double, 3> epsBkt_F(size_t iF) const;
 
-    /// Computes the Lie bracket of two (constant) vectors contracted with epsilon (antisymmetric symbol)
-    Eigen::MatrixXd _compute_det_bracket_face(
-                                      const size_t iF ///< index of the face
-                                      ) const;
+    /// Builds off of _compute_detnij_PkF. Calculates the projection onto Pk_F of (P_curl v_i x P_curl v_j).nF (v_ basis of xcurl_F) and stores the coefficients (on Polyk) of the function in the index k
+    boost::multi_array<double, 3> _compute_detnij_Pot_PkF(size_t iF) const;
 
-    /// Computes the (constant) face tangent functions on the basis of F
-    Eigen::MatrixXd _compute_face_tangent(const size_t iF) const;
+    /// Calculates the projection onto Pk_F of (phi_i x phi_j).nF (phi_ basis of Polyk2) and stores the coefficients (on Polyk) of the function in the index k
+    boost::multi_array<double, 3> _compute_detnij_PkF(size_t iF) const;
+
+    // Local cell *[.,.]^div operators (trilinear form). Returns the projection onto LaGkmo_T and LaGCk_T of *[P_laxcurl v_i, P_laxcurl v_j] (v_ basis of laxcurl_T) and stores the coefficients (on LaGkmo and LaGCk) of the function in the index k
+    boost::multi_array<double, 3> epsBkt_T(size_t iT) const;
+
+    /// Builds off of _compute_crossij_T. Calculates the projection onto Gkmo_T and GCk_T of (P_curl v_i x P_curl v_j) (v_ basis of xcurl_T) and stores the coefficients (on Gkmo_T and GCk_T in that order) of the function in the index k
+    boost::multi_array<double, 3> _compute_crossij_Pot_T(size_t iT) const; 
+
+    /// Calculates the projection onto Gkmo_T and GCk_T of (phi_i x phi_j) (phi_ basis of Polyk3) and stores the coefficients (on Gkmo_T and GCk_T in that order) of the function in the index k
+    boost::multi_array<double, 3> _compute_crossij_T(size_t iT) const;
 
     /// Computes integrals of three basis function potentials (Xcurl)x(Xcurl)x(xGrad)
     boost::multi_array<double, 3> _integral_ijk(size_t iT) const;
 
     /// Creates L2 integral product with bracket: int (P_LaXcurl,[P_LaXcurl, P_LaXgrad])
-    boost::multi_array<double, 3> _int_Pci_bktPcjPgk(size_t iT);
+    boost::multi_array<double, 3> _int_Pci_bktPcjPgk(size_t iT) const;
 
     const DDRCore & m_ddrcore;
     bool m_use_threads;
@@ -302,11 +319,9 @@ namespace HArDCore3D
     const LAXDiv m_laxdiv;
     SystemMatrixType m_A;   // Matrix and RHS system
     Eigen::VectorXd m_b;
+    SystemMatrixType m_laxgrad_L2;   // Global laxgrad L2Product matrix
     SystemMatrixType m_laxcurl_L2;   // Global laxcurl L2Product matrix
     SystemMatrixType m_laxdiv_L2;   // Global laxdiv L2Product matrix
-    SystemMatrixType m_laxgrad_L2;   // Global laxgrad L2Product matrix
-    std::vector<Eigen::MatrixXd> m_F_ebkt;  // Matrix operator on the face to recover (LA) face value of ebkt
-    std::vector<boost::multi_array<double, 3>> m_int_PciPcjPgk;   // L2 integral product with bracket (trilinear form)
     double m_stab_par;
   };
 
@@ -854,82 +869,7 @@ namespace HArDCore3D
     std::vector<Eigen::VectorXd> vectors;
   };
 
-  /// Function to assemble global matrices from a procedure that compute local triplets
-  static inline AssembledSystems
-         parallel_assembly_system(
-            size_t nb_elements,    //< nb of elements over which the threading will be done
-            std::vector<std::pair<size_t, size_t>> size_systems,    //< sizes of each system to assemble
-            std::vector<size_t> size_vectors,   //< sizes of each vector to assemble
-            std::function<void(size_t start, size_t end, std::vector<std::list<Eigen::Triplet<double>>> * triplets, std::vector<Eigen::VectorXd> * vecs)> batch_local_assembly, //< procedure to compute all the local contributions to the matrices (put in the triplets) and vectors between start and end points (e.g. elements indices) 
-            bool use_threads = true   //< determine if threaded process is used or not
-            )
-  {
-    // Matrices and vectors
-    std::vector<Eigen::SparseMatrix<double>> systems;
-    systems.reserve(size_systems.size());
-    std::vector<Eigen::VectorXd> vectors;
-    for (auto size : size_vectors){
-      vectors.emplace_back(Eigen::VectorXd::Zero(size));
-    }
 
-    if (use_threads) {
-      // Select the number of threads
-      unsigned nb_threads_hint = std::thread::hardware_concurrency();
-      unsigned nb_threads = nb_threads_hint == 0 ? 8 : (nb_threads_hint);
-
-      // Compute the batch size and the remainder
-      unsigned batch_size = nb_elements / nb_threads;
-      unsigned batch_remainder = nb_elements % nb_threads;
-
-      // Create vectors of triplets and vectors
-      std::vector<std::vector<std::list<Eigen::Triplet<double> > > > triplets(nb_threads + 1, std::vector<std::list<Eigen::Triplet<double> > >(size_systems.size()));
-      std::vector<std::vector<Eigen::VectorXd>> vecs(nb_threads + 1, vectors);
-
-      // Assign a task to each thread
-      std::vector<std::thread> my_threads(nb_threads);
-      for (unsigned i = 0; i < nb_threads; ++i) {
-        int start = i * batch_size;
-        my_threads[i] = std::thread(batch_local_assembly, start, start + batch_size, &triplets[i], &vecs[i]);
-      }
-
-      // Execute the elements left
-      int start = nb_threads * batch_size;
-      batch_local_assembly(start, start + batch_remainder, &triplets[nb_threads], &vecs[nb_threads]);
-
-      // Wait for the other threads to finish their task
-      std::for_each(my_threads.begin(), my_threads.end(), std::mem_fn(&std::thread::join));
-
-      // Create systems from triplets
-      for (size_t i = 0; i < size_systems.size(); i++){
-        systems.emplace_back(Eigen::SparseMatrix<double>(size_systems[i].first, size_systems[i].second));
-        size_t n_triplets = 0;
-        for (auto triplets_thread : triplets) {
-          n_triplets += triplets_thread[i].size();
-        }
-        std::vector<Eigen::Triplet<double> > all_triplets(n_triplets);
-        auto triplet_index = all_triplets.begin();
-        for (auto triplets_thread : triplets) {
-          triplet_index = std::copy(triplets_thread[i].begin(), triplets_thread[i].end(), triplet_index);
-        }
-        systems[i].setFromTriplets(all_triplets.begin(), all_triplets.end());
-      }
-
-      for (size_t i = 0; i < size_vectors.size(); i++){
-        for (auto vec_thread : vecs){
-          vectors[i] += vec_thread[i];
-        }
-      }
-
-    } else {
-      std::vector<std::list<Eigen::Triplet<double> > > triplets(size_systems.size());
-      batch_local_assembly(0, nb_elements, &triplets, &vectors);
-      for (size_t i = 0; i < size_systems.size(); i++){
-        systems.emplace_back(Eigen::SparseMatrix<double>(size_systems[i].first, size_systems[i].second));
-        systems[i].setFromTriplets(triplets[i].begin(), triplets[i].end());
-      }
-    }
-    return AssembledSystems(systems, vectors);  
-  }
   
 } // end of namespace HArDCore3D
 

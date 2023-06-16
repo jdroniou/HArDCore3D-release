@@ -151,13 +151,13 @@ $(function() {
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__Quadratures.html#gab5eef460482b41734f600d1e9d0a07ee">transformGM</a>(basis1, <span class="charliteral">&#39;R&#39;</span>, <a class="code" href="group__Quadratures.html#gab5eef460482b41734f600d1e9d0a07ee">transformGM</a>(basis2, <span class="charliteral">&#39;C&#39;</span>, <a class="code" href="group__Quadratures.html#ga017ba781ad8f6bb51d82473d6ea16dc9">GramMatrix</a>(E, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  };</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> BasisType&gt;</div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="group__Quadratures.html#ga7c7b253c7299bc537ca60b078599a151">   90</a></span>&#160;Eigen::MatrixXd <a class="code" href="group__Quadratures.html#ga017ba781ad8f6bb51d82473d6ea16dc9">GramMatrix</a>(<span class="keyword">const</span> <a class="code" href="namespaceMesh2D.html#aba666a81a844155083acdceb691c0050">Edge</a>&amp; E, <span class="keyword">const</span> BasisType &amp; basis, <a class="code" href="group__Quadratures.html#ga6d5b9ab76ae93fbbe5dc3c3e14537cdd">MonomialEdgeIntegralsType</a> mono_int_map = {})</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__Quadratures.html#ga017ba781ad8f6bb51d82473d6ea16dc9">GramMatrix</a>(E, basis, basis, mono_int_map);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  };</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/* GRADIENT-SCALAR bases */</span> </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
@@ -186,7 +186,7 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="group__Quadratures.html#gab5eef460482b41734f600d1e9d0a07ee">transformGM</a>(basis1, <span class="charliteral">&#39;R&#39;</span>, <a class="code" href="group__Quadratures.html#gab5eef460482b41734f600d1e9d0a07ee">transformGM</a>(basis2, <span class="charliteral">&#39;C&#39;</span>, <a class="code" href="group__Quadratures.html#ga2a317983e35202b2afa465932c21da0c">GMDer</a>(E, basis1.ancestor(), basis2.ancestor(), mono_int_map) ) );</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  };</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  }</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> BasisType1, <span class="keyword">typename</span> BasisType2&gt;</div>
@@ -198,7 +198,7 @@ $(function() {
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    )</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__Quadratures.html#ga2a317983e35202b2afa465932c21da0c">GMDer</a>(E, basis1.<a class="code" href="group__Basis.html#ga8792890c12bacd446176f4602056417e">ancestor</a>(), basis2, mono_int_map)/E.diam();</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  };</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  }</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  </div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> BasisType1, <span class="keyword">typename</span> BasisType2&gt;</div>
 <div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="group__Quadratures.html#gaea85974fe1a185c380fa20eb6635a900">  141</a></span>&#160;Eigen::MatrixXd <a class="code" href="group__Quadratures.html#ga017ba781ad8f6bb51d82473d6ea16dc9">GramMatrix</a>(</div>
@@ -209,7 +209,7 @@ $(function() {
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    )</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="group__Quadratures.html#ga2a317983e35202b2afa465932c21da0c">GMDer</a>(E, basis2.<a class="code" href="group__Basis.html#ga8792890c12bacd446176f4602056417e">ancestor</a>(), basis1, mono_int_map).transpose())/E.diam();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  };</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  }</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
@@ -219,8 +219,8 @@ $(function() {
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// end of _GMPOLY_EDGE_HPP</span></div>
 <div class="ttc" id="aGMpoly__cell_8hpp_html"><div class="ttname"><a href="GMpoly__cell_8hpp.html">GMpoly_cell.hpp</a></div></div>
 <div class="ttc" id="abasis_8hpp_html"><div class="ttname"><a href="basis_8hpp.html">basis.hpp</a></div></div>
-<div class="ttc" id="aclassHArDCore3D_1_1GradientBasis_html"><div class="ttname"><a href="classHArDCore3D_1_1GradientBasis.html">HArDCore3D::GradientBasis</a></div><div class="ttdoc">Basis for the space of gradients of polynomials.</div><div class="ttdef"><b>Definition:</b> basis.hpp:1222</div></div>
-<div class="ttc" id="agroup__Basis_html_ga8792890c12bacd446176f4602056417e"><div class="ttname"><a href="group__Basis.html#ga8792890c12bacd446176f4602056417e">HArDCore3D::GradientBasis::ancestor</a></div><div class="ttdeci">constexpr const BasisType &amp; ancestor() const</div><div class="ttdoc">Return the ancestor (basis that the gradient was taken of)</div><div class="ttdef"><b>Definition:</b> basis.hpp:1267</div></div>
+<div class="ttc" id="aclassHArDCore3D_1_1GradientBasis_html"><div class="ttname"><a href="classHArDCore3D_1_1GradientBasis.html">HArDCore3D::GradientBasis</a></div><div class="ttdoc">Basis for the space of gradients of polynomials.</div><div class="ttdef"><b>Definition:</b> basis.hpp:1228</div></div>
+<div class="ttc" id="agroup__Basis_html_ga8792890c12bacd446176f4602056417e"><div class="ttname"><a href="group__Basis.html#ga8792890c12bacd446176f4602056417e">HArDCore3D::GradientBasis::ancestor</a></div><div class="ttdeci">constexpr const BasisType &amp; ancestor() const</div><div class="ttdoc">Return the ancestor (basis that the gradient was taken of)</div><div class="ttdef"><b>Definition:</b> basis.hpp:1273</div></div>
 <div class="ttc" id="agroup__Quadratures_html_ga017ba781ad8f6bb51d82473d6ea16dc9"><div class="ttname"><a href="group__Quadratures.html#ga017ba781ad8f6bb51d82473d6ea16dc9">HArDCore3D::GramMatrix</a></div><div class="ttdeci">Eigen::MatrixXd GramMatrix(const Cell &amp;T, const MonomialScalarBasisCell &amp;basis1, const MonomialScalarBasisCell &amp;basis2, MonomialCellIntegralsType mono_int_map={})</div><div class="ttdoc">Computes the Gram Matrix of a pair of local scalar monomial bases.</div><div class="ttdef"><b>Definition:</b> GMpoly_cell.cpp:170</div></div>
 <div class="ttc" id="agroup__Quadratures_html_ga2a317983e35202b2afa465932c21da0c"><div class="ttname"><a href="group__Quadratures.html#ga2a317983e35202b2afa465932c21da0c">HArDCore3D::GMDer</a></div><div class="ttdeci">Eigen::MatrixXd GMDer(const Edge &amp;E, const MonomialScalarBasisEdge &amp;basis1, const MonomialScalarBasisEdge &amp;basis2, MonomialEdgeIntegralsType mono_int_map={})</div><div class="ttdoc">Computes the Gram Matrix of the derivative of a monomial basis with another monomial basis.</div><div class="ttdef"><b>Definition:</b> GMpoly_edge.cpp:52</div></div>
 <div class="ttc" id="agroup__Quadratures_html_ga5df7229d77d814172a553202c73311f1"><div class="ttname"><a href="group__Quadratures.html#ga5df7229d77d814172a553202c73311f1">HArDCore3D::CheckIntegralsDegree</a></div><div class="ttdeci">MonomialCellIntegralsType CheckIntegralsDegree(const Cell &amp;T, const size_t degree, const MonomialCellIntegralsType &amp;mono_int_map={})</div><div class="ttdoc">Checks if the degree of an existing list of monomial integrals is sufficient, other re-compute and re...</div><div class="ttdef"><b>Definition:</b> GMpoly_cell.cpp:160</div></div>

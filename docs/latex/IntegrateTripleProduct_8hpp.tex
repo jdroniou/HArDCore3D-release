@@ -1,0 +1,62 @@
+\hypertarget{IntegrateTripleProduct_8hpp}{}\doxysection{src/\+Quadrature/\+Integrate\+Triple\+Product.hpp File Reference}
+\label{IntegrateTripleProduct_8hpp}\index{src/Quadrature/IntegrateTripleProduct.hpp@{src/Quadrature/IntegrateTripleProduct.hpp}}
+{\ttfamily \#include $<$GMpoly\+\_\+cell.\+hpp$>$}\newline
+Include dependency graph for Integrate\+Triple\+Product.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{IntegrateTripleProduct_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{IntegrateTripleProduct_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceHArDCore3D}{HAr\+DCore3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::multi\+\_\+array$<$ double, 3 $>$ \mbox{\hyperlink{group__Quadratures_ga0514b94be0c63ff173cb8b27c273bfcb}{HAr\+DCore3\+D\+::\+Scalar3\+Tensor}}
+\item 
+typedef Eigen\+::\+Map$<$ Eigen\+::\+Matrix\+Xd, Eigen\+::\+Unaligned, Eigen\+::\+Stride$<$ Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ $>$ \mbox{\hyperlink{group__Quadratures_gad7e4443f723ceac698fa6f1cb67f2210}{HAr\+DCore3\+D\+::\+Matrix\+Slice}}
+\item 
+typedef Eigen\+::\+Map$<$ Eigen\+::\+Vector\+Xd, Eigen\+::\+Unaligned, Eigen\+::\+Inner\+Stride$<$ Eigen\+::\+Dynamic $>$ $>$ \mbox{\hyperlink{group__Quadratures_ga633cec6b8b0ae7c9173c18384dc0bc73}{HAr\+DCore3\+D\+::\+Vector\+Slice}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Matrix\+Slice \mbox{\hyperlink{group__Quadratures_ga89f44c002d325e5fefa134083c918bd8}{HAr\+DCore3\+D\+::slice}} (Scalar3\+Tensor \&tensor, size\+\_\+t fixed\+\_\+dim, size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Function to slice a 3-\/tensor with respect to one index (returns a 2-\/tensor) \end{DoxyCompactList}\item 
+Vector\+Slice \mbox{\hyperlink{group__Quadratures_gac77a76619bb3a0c23089b20cd1f088ae}{HAr\+DCore3\+D\+::slice}} (Scalar3\+Tensor \&tensor, size\+\_\+t fixed\+\_\+dim1, size\+\_\+t index1, size\+\_\+t fixed\+\_\+dim2, size\+\_\+t index2)
+\begin{DoxyCompactList}\small\item\em Function to slice a 3-\/tensor with respect to two indices (returns a 1-\/tensor) \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_ga351079bfdcb59f1ea6f4b6de725f51f6}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Monomial\+Scalar\+Basis\+Cell \&basis1, const Tensorized\+Vector\+Family$<$ Monomial\+Scalar\+Basis\+Cell, N $>$ \&basis2, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Computes the triple integral product of a scalar times the dot product of two vectors -\/ basis1(basis2 . basis2). \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_gaf13e635655142dd0d2b0d20bb64ccce3}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Tensorized\+Vector\+Family$<$ Monomial\+Scalar\+Basis\+Cell, N $>$ \&tens\+\_\+family1, const Tensorized\+Vector\+Family$<$ Monomial\+Scalar\+Basis\+Cell, N $>$ \&tens\+\_\+family2, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Computes the triple integral product of a vector basis dot the cross product of the second vector basis -\/ tens\+\_\+family1 . (tens\+\_\+family2 x tens\+\_\+family2). \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_ga58fdaab5fa55850c89dc121e077e6f9c}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Gradient\+Basis$<$ Monomial\+Scalar\+Basis\+Cell $>$ \&grad\+\_\+basis, const Tensorized\+Vector\+Family$<$ Monomial\+Scalar\+Basis\+Cell, N $>$ \&tens\+\_\+family, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Computes the triple integral product of a vector basis dot the cross product of the second vector basis -\/ grad\+\_\+basis . (tens\+\_\+family x tens\+\_\+family). \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_ga04e4f9adaec3c48634a03f59c50e7d36}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Goly\+Compl\+Basis\+Cell \&golycompl\+\_\+basis, const Tensorized\+Vector\+Family$<$ Monomial\+Scalar\+Basis\+Cell, N $>$ \&tens\+\_\+family, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\begin{DoxyCompactList}\small\item\em Computes the triple integral product of a vector basis dot the cross product of the second vector basis -\/ golycompl\+\_\+basis . (tens\+\_\+family x tens\+\_\+family). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\+Basis\+Type1 , typename Scalar\+Basis\+Type2 , size\+\_\+t N$>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_ga50239b85162ede70d1a9174709e98576}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Gradient\+Basis$<$ Shifted\+Basis$<$ Scalar\+Basis\+Type1 $>$$>$ \&grad\+\_\+shift\+\_\+basis, const Tensorized\+Vector\+Family$<$ Family$<$ Scalar\+Basis\+Type2 $>$, N $>$ \&basis2, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$typename Scalar\+Basis\+Type , typename Basis\+Type $>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_ga0f32b327bc6e87215c4fa0e070271352}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Gradient\+Basis$<$ Shifted\+Basis$<$ Scalar\+Basis\+Type $>$$>$ \&grad\+\_\+shift\+\_\+basis, const Basis\+Type \&basis2, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$typename Basis\+Type , typename Scalar\+Basis\+Type , size\+\_\+t N$>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_ga7499d264310e63f58172540d67aff706}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Basis\+Type \&basis1, const Tensorized\+Vector\+Family$<$ Family$<$ Scalar\+Basis\+Type $>$, N $>$ \&basis2, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$typename Basis\+Type , typename Scalar\+Basis\+Type , size\+\_\+t N$>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_ga20dd08c0c6a3f322f7a9625fc93782c4}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Family$<$ Basis\+Type $>$ \&basis1, const Family$<$ Tensorized\+Vector\+Family$<$ Scalar\+Basis\+Type, N $>$$>$ \&basis2, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$typename Basis\+Type , size\+\_\+t N$>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_ga19a82a0b44a5c306edcd19d7e02b5d5e}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Family$<$ Basis\+Type $>$ \&basis1, const Tensorized\+Vector\+Family$<$ Monomial\+Scalar\+Basis\+Cell, N $>$ \&basis2, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$typename Basis\+Type1 , typename Basis\+Type2 $>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_ga73e624477eac371223cfe543f50009d0}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Basis\+Type1 \&basis1, const Family$<$ Basis\+Type2 $>$ \&basis2, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\item 
+{\footnotesize template$<$size\+\_\+t N, typename Scalar\+Basis\+Type $>$ }\\Scalar3\+Tensor \mbox{\hyperlink{group__Quadratures_gab5415f2a157e4d5074abb02570988cc9}{HAr\+DCore3\+D\+::triple\+Int}} (const Cell \&T, const Tensorized\+Vector\+Family$<$ Family$<$ Scalar\+Basis\+Type $>$, N $>$ \&tens\+\_\+family1, const Tensorized\+Vector\+Family$<$ Monomial\+Scalar\+Basis\+Cell, N $>$ \&tens\+\_\+family2, Monomial\+Cell\+Integrals\+Type mono\+\_\+int\+\_\+map=\{\})
+\end{DoxyCompactItemize}

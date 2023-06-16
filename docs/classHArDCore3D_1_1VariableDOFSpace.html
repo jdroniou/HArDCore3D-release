@@ -90,9 +90,11 @@ Inheritance diagram for HArDCore3D::VariableDOFSpace:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHArDCore3D_1_1VariableDOFSpace__inherit__graph.png" border="0" usemap="#aHArDCore3D_1_1VariableDOFSpace_inherit__map" alt="Inheritance graph"/></div>
 <map name="aHArDCore3D_1_1VariableDOFSpace_inherit__map" id="aHArDCore3D_1_1VariableDOFSpace_inherit__map">
-<area shape="rect" title="Base class for global DOF spaces." alt="" coords="59,5,278,32"/>
-<area shape="rect" href="classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator." alt="" coords="5,80,156,107"/>
-<area shape="rect" href="classHArDCore3D_1_1SXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator." alt="" coords="181,80,335,107"/>
+<area shape="rect" title="Base class for global DOF spaces." alt="" coords="265,5,483,32"/>
+<area shape="rect" href="classHArDCore3D_1_1LASXCurl.html" title="Discrete Lie algebra valued Serendipity Hcurl space: local operators, L2 product and global interpola..." alt="" coords="5,80,172,107"/>
+<area shape="rect" href="classHArDCore3D_1_1LASXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator." alt="" coords="197,80,367,107"/>
+<area shape="rect" href="classHArDCore3D_1_1SXCurl.html" title="Discrete Serendipity Hcurl space: local operators, L2 product and global interpolator." alt="" coords="392,80,543,107"/>
+<area shape="rect" href="classHArDCore3D_1_1SXGrad.html" title="Discrete Serendipity Hgrad space: local operators, L2 product and global interpolator." alt="" coords="567,80,722,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -244,6 +246,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ga23e565cc3f97d069b662128104625911"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga23e565cc3f97d069b662128104625911">extendOperator</a> (const Face &amp;F, const Edge &amp;E, const Eigen::MatrixXd &amp;opE) const</td></tr>
 <tr class="memdesc:ga23e565cc3f97d069b662128104625911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extend an edge operator to a face.  <a href="group__Common.html#ga23e565cc3f97d069b662128104625911">More...</a><br /></td></tr>
 <tr class="separator:ga23e565cc3f97d069b662128104625911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa87d6dff8096c48f18d2d14487b93bff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gaa87d6dff8096c48f18d2d14487b93bff">extendOperator</a> (const Cell &amp;T, const Face &amp;F, Eigen::Ref&lt; Eigen::MatrixXd &gt; opT, const Eigen::MatrixXd &amp;opF) const</td></tr>
+<tr class="memdesc:gaa87d6dff8096c48f18d2d14487b93bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a face operator to a cell operator: distributes and adds the contributions from face F to the operator opT on element T (equivalent to opT + extendOperator(T, F, opF)).  <a href="group__Common.html#gaa87d6dff8096c48f18d2d14487b93bff">More...</a><br /></td></tr>
+<tr class="separator:gaa87d6dff8096c48f18d2d14487b93bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf4ca3c98488bc002ff92a11a081122c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#gacf4ca3c98488bc002ff92a11a081122c">extendOperator</a> (const Cell &amp;T, const Edge &amp;E, Eigen::MatrixXd &amp;opT, const Eigen::MatrixXd &amp;opE) const</td></tr>
+<tr class="memdesc:gacf4ca3c98488bc002ff92a11a081122c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an edge operator to a cell.  <a href="group__Common.html#gacf4ca3c98488bc002ff92a11a081122c">More...</a><br /></td></tr>
+<tr class="separator:gacf4ca3c98488bc002ff92a11a081122c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4dcac84d6ae301efe420a105b696ad0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga4dcac84d6ae301efe420a105b696ad0d">extendOperator</a> (const Face &amp;F, const Edge &amp;E, Eigen::MatrixXd &amp;opF, const Eigen::MatrixXd &amp;opE) const</td></tr>
+<tr class="memdesc:ga4dcac84d6ae301efe420a105b696ad0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an edge operator to a face.  <a href="group__Common.html#ga4dcac84d6ae301efe420a105b696ad0d">More...</a><br /></td></tr>
+<tr class="separator:ga4dcac84d6ae301efe420a105b696ad0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ac34f2921960ea153edb6ff9c7e84bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga8ac34f2921960ea153edb6ff9c7e84bf">addInnerProductContribution</a> (const Cell &amp;T, const Face &amp;F, Eigen::MatrixXd &amp;prodT, const Eigen::MatrixXd &amp;prodF) const</td></tr>
+<tr class="memdesc:ga8ac34f2921960ea153edb6ff9c7e84bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes an inner product prodF on a face F, and adds its contributions to the inner product prodT on the element T (distributes the contributions according to the DOFs as seen from T)  <a href="group__Common.html#ga8ac34f2921960ea153edb6ff9c7e84bf">More...</a><br /></td></tr>
+<tr class="separator:ga8ac34f2921960ea153edb6ff9c7e84bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga900f809c3b9bd97b544dbc114f5197a1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Common.html#ga900f809c3b9bd97b544dbc114f5197a1">globalDOFIndices</a> (const Cell &amp;T) const</td></tr>
 <tr class="memdesc:ga900f809c3b9bd97b544dbc114f5197a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector listing the global DOFs attached to the element T: vertex DOFs, edge DOFs, face DOFs and element DOFs.  <a href="group__Common.html#ga900f809c3b9bd97b544dbc114f5197a1">More...</a><br /></td></tr>
 <tr class="separator:ga900f809c3b9bd97b544dbc114f5197a1"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -516,10 +516,12 @@ size\+\_\+t \mbox{\hyperlink{group__Basis_gad753134cb7b00af29f2430a524978d12}{HA
 \begin{DoxyCompactList}\small\item\em Returns the maximum degree of the basis functions. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix$<$ double, 2, \mbox{\hyperlink{group__Basis_ga23a211ab9d745e2e803ad606e1df445f}{dimspace}} $>$ \mbox{\hyperlink{group__Basis_gab57e166ae408723200908def889dac07}{HAr\+DCore3\+D\+::\+Tangent\+Family$<$ Scalar\+Family\+Type $>$\+::generators}} () const
 \begin{DoxyCompactList}\small\item\em Returns the generators of the basis functions. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__Basis_gaea075c3cb8fbdd848e30d84821f23711}{HAr\+DCore3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::\+Shifted\+Basis}} (const Basis\+Type \&basis, const int shift)
+\mbox{\hyperlink{group__Basis_gaea075c3cb8fbdd848e30d84821f23711}{HAr\+DCore3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::\+Shifted\+Basis}} (const Basis\+Type \&basis, const int \mbox{\hyperlink{group__Basis_gacabfeb04455e7b982b532014af8ce9f4}{shift}})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_ga0d1ffbb1cb714755de9035fcb9d5f183}{HAr\+DCore3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::dimension}} () const
 \begin{DoxyCompactList}\small\item\em Return the dimension of the basis. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__Basis_gacabfeb04455e7b982b532014af8ce9f4}{HAr\+DCore3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::shift}} () const
+\begin{DoxyCompactList}\small\item\em Return the shift. \end{DoxyCompactList}\item 
 constexpr const Basis\+Type \& \mbox{\hyperlink{group__Basis_gac1b993c85fac9bfdca68021040099c2a}{HAr\+DCore3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::ancestor}} () const
 \begin{DoxyCompactList}\small\item\em Return the underlying complete basis. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__Basis_ga456b3898a7ee7d67c75c45bba1c21c4b}{HAr\+DCore3\+D\+::\+Shifted\+Basis$<$ Basis\+Type $>$\+::max\+\_\+degree}} () const
@@ -4153,6 +4155,17 @@ Scalar product between two vectors.
 
 
 The following function creates the \char`\"{}scalar rot\char`\"{} basis of a \mbox{\hyperlink{classHArDCore3D_1_1TangentFamily}{Tangent\+Family}} on a face. 
+
+\mbox{\Hypertarget{group__Basis_gacabfeb04455e7b982b532014af8ce9f4}\label{group__Basis_gacabfeb04455e7b982b532014af8ce9f4}} 
+\index{Basis@{Basis}!shift@{shift}}
+\index{shift@{shift}!Basis@{Basis}}
+\doxysubsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily template$<$typename Basis\+Type $>$ \\
+size\+\_\+t \mbox{\hyperlink{classHArDCore3D_1_1ShiftedBasis}{HAr\+DCore3\+D\+::\+Shifted\+Basis}}$<$ Basis\+Type $>$\+::shift (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the shift. 
 
 \mbox{\Hypertarget{group__Basis_gaea075c3cb8fbdd848e30d84821f23711}\label{group__Basis_gaea075c3cb8fbdd848e30d84821f23711}} 
 \index{Basis@{Basis}!ShiftedBasis@{ShiftedBasis}}

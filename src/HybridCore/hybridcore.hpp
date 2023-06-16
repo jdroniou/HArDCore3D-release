@@ -61,7 +61,7 @@ namespace HArDCore3D {
   inline const size_t DimPoly<Cell>(const int m)   /**< Polynomial degree */
     {
       return (m >= 0 ? (m * (m + 1) * (2 * m + 1) + 9 * m * (m + 1) + 12 * (m + 1)) / 12 : 0);
-    };
+    }
 
   /// Compute the size of the basis of 2-variate polynomials up to degree m
   template<>
