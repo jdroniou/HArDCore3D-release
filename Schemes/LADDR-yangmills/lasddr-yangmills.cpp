@@ -1206,9 +1206,9 @@ Scalar3Tensor YangMills::_compute_detnij_Pot_PkF(const size_t iF) const
 
   for (size_t k = 0; k < dim_PolykF; k++){
     // The matrix giving the kth coefficients (on PolykF) of the integrals of (phi_i x phi_j).nF
-    Eigen::MatrixXd detnij = slice(detnij_PkF, 3, k);
+    Eigen::MatrixXd detnij = slice(detnij_PkF, 2, k);
     // The kth coefficient (on PolykF) of the integrals of potentials (P_curl e_i x P_curl e_j).nF
-    slice(detnij_Pot_PkF, 3, k) = pot_F.transpose() * detnij * pot_F;
+    slice(detnij_Pot_PkF, 2, k) = pot_F.transpose() * detnij * pot_F;
   } 
   return detnij_Pot_PkF;
 }
@@ -1269,8 +1269,8 @@ Scalar3Tensor YangMills::_compute_crossij_T(const size_t iT) const
   // For each i, j, calculate the projection of (phi_i x phi_j) and set the coefficients
   for (size_t i = 0; i < dim_Polyk3T; i++){
     for (size_t j = 0; j < i; j++){
-      Eigen::VectorXd crossij_Gkmo = slice(triple_int_Gkmo, 2, i, 3, j);
-      Eigen::VectorXd crossij_GCk = slice(triple_int_GCk, 2, i, 3, j);
+      Eigen::VectorXd crossij_Gkmo = slice(triple_int_Gkmo, 1, i, 2, j);
+      Eigen::VectorXd crossij_GCk = slice(triple_int_GCk, 1, i, 2, j);
       Eigen::VectorXd proj_crossij_Gkmo = cholesky_mass_Gkmo.solve(crossij_Gkmo);
       Eigen::VectorXd proj_crossij_GCk = cholesky_mass_GCk.solve(crossij_GCk);
       for (size_t k = 0; k < dim_GolykmoT; k++){
@@ -1305,8 +1305,8 @@ Scalar3Tensor YangMills::_compute_crossij_Pot_T(const size_t iT) const
 
       for (size_t k = 0; k < dim_xdiv_DofsCell_T; k++){
         // The matrix giving the kth coefficients (on Golykmo/GolyComplk) of the integrals of (phi_i x phi_j)
-        Eigen::MatrixXd crossij = slice(crossij_T, 3, k);        
-        slice(crossij_Pot_T, 3, k) = pot_T.transpose() * crossij * pot_T;
+        Eigen::MatrixXd crossij = slice(crossij_T, 2, k);        
+        slice(crossij_Pot_T, 2, k) = pot_T.transpose() * crossij * pot_T;
 
       }
     }
@@ -1324,7 +1324,7 @@ Scalar3Tensor YangMills::_compute_crossij_Pot_T(const size_t iT) const
     Scalar3Tensor triple_int_P2k = tripleInt(T, m_laddrcore.P2k3(iT), *m_ddrcore.cellBases(iT).Polyk3, int_mono_3k);
 
     for (size_t i = 0; i < dim_Poly2k3T; i++){      
-      slice(crossij_Pot_T, 3, i) = pot_T.transpose() * slice(triple_int_P2k, 1, i) * pot_T;
+      slice(crossij_Pot_T, 2, i) = pot_T.transpose() * slice(triple_int_P2k, 0, i) * pot_T;
     }
 
     return crossij_Pot_T;
@@ -1360,7 +1360,7 @@ Scalar3Tensor YangMills::_integral_Pot_ijk(size_t iT) const
     // Calculate (P_curl e_i . \phi_i)\phi_j
     Eigen::MatrixXd integral_jk = Eigen::MatrixXd::Zero(dim_Pk3, dim_Pkpo);
     for (size_t l=0; l<dim_Pkpo; l++){
-      integral_jk.col(l) += slice(integral_basis, 1, l).transpose() * xcurl_pot.col(i);
+      integral_jk.col(l) += slice(integral_basis, 0, l).transpose() * xcurl_pot.col(i);
     }
     // Calculate (P_curl e_i . P_curl e_j)P_grad a_k
     for (size_t j = 0; j <= i; j++){
@@ -1410,12 +1410,12 @@ std::vector<Eigen::MatrixXd> YangMills::L2v_Bkt(size_t iT,
       std::fill_n(v_I_intjk.data(), v_I_intjk.size(), 0.);
 
       for (size_t j = 0; j < dim_xcurl_T; j++){
-        slice(v_I_intjk, 2, j) = M_v * slice(intPciPcjPgk, 2, j);
+        slice(v_I_intjk, 1, j) = M_v * slice(intPciPcjPgk, 1, j);
       }
       // Calculate the Lie algebra operator: take the kronecker product and contract (v_i)_I (P_curl e_i . P_curl e_j)P_grad a_k on I-L with C^K_IJ <e_K, e_L>
       L2v_Bkt_list.emplace_back(Eigen::MatrixXd::Zero(dim_laxcurl_T, dim_laxgrad_T));
       for (size_t I = 0; I < dim_la; I++){
-        L2v_Bkt_list[iv] += Eigen::KroneckerProduct(slice(v_I_intjk, 1, I), C_JK_massMatrix_KL[I]);
+        L2v_Bkt_list[iv] += Eigen::KroneckerProduct(slice(v_I_intjk, 0, I), C_JK_massMatrix_KL[I]);
       }
     }
     return L2v_Bkt_list;
@@ -1440,12 +1440,12 @@ std::vector<Eigen::MatrixXd> YangMills::L2v_Bkt(size_t iT,
       std::fill_n(v_J_intik.data(), v_J_intik.size(), 0.);
 
       for (size_t i = 0; i < dim_xcurl_T; i++){
-        slice(v_J_intik, 2, i) = M_v * slice(intPciPcjPgk, 1, i);
+        slice(v_J_intik, 1, i) = M_v * slice(intPciPcjPgk, 0, i);
       }
       // Calculate the Lie algebra operator: take the kronecker product and contract (v_j)_J (P_curl e_i . P_curl e_j)P_grad a_k on J-J with C^K_IJ <e_K, e_L>
       L2v_Bkt_list.emplace_back(Eigen::MatrixXd::Zero(dim_laxcurl_T, dim_laxgrad_T));
       for (size_t J = 0; J < dim_la; J++){
-        L2v_Bkt_list[iv] += Eigen::KroneckerProduct(slice(v_J_intik, 1, J), C_JK_massMatrix_KL[J]);
+        L2v_Bkt_list[iv] += Eigen::KroneckerProduct(slice(v_J_intik, 0, J), C_JK_massMatrix_KL[J]);
       }
     }
     return L2v_Bkt_list;
@@ -1469,12 +1469,12 @@ std::vector<Eigen::MatrixXd> YangMills::L2v_Bkt(size_t iT,
       std::fill_n(q_K_intij.data(), q_K_intij.size(), 0.);
 
       for (size_t i = 0; i < dim_xcurl_T; i++){
-        slice(q_K_intij, 2, i) = M_v * slice(intPciPcjPgk, 1, i).transpose();
+        slice(q_K_intij, 1, i) = M_v * slice(intPciPcjPgk, 0, i).transpose();
       }
       // Calculate the Lie algebra operator: take the kronecker product and contract (q_k)_K (P_curl e_i . P_curl e_j)P_grad a_k on K-L with C^K_IJ <e_K, e_L>
       L2v_Bkt_list.emplace_back(Eigen::MatrixXd::Zero(dim_laxcurl_T, dim_laxcurl_T));
       for (size_t K = 0; K < dim_la; K++){
-        L2v_Bkt_list[iv] += Eigen::KroneckerProduct(slice(q_K_intij, 1, K), C_JK_massMatrix_KL[K]);
+        L2v_Bkt_list[iv] += Eigen::KroneckerProduct(slice(q_K_intij, 0, K), C_JK_massMatrix_KL[K]);
       }
     }
     return L2v_Bkt_list;
@@ -1531,11 +1531,11 @@ std::vector<Eigen::MatrixXd> YangMills::epsBkt_v(size_t iT, Scalar3Tensor & cros
       std::fill_n(v_I_det_jk.data(), v_I_det_jk.size(), 0.);
 
       for (size_t j=0; j < dim_xcurl_F; j++){
-        slice(v_I_det_jk, 2, j) = M_v * slice(detnij_Pot_PkF, 2, j);
+        slice(v_I_det_jk, 1, j) = M_v * slice(detnij_Pot_PkF, 1, j);
       }
       // Calculate the Lie algebra operator: contract (v_i)_I (P_curl e_i x P_curl e_j).nF on I with C^K_IJ, then extend from face to cell and sum
       for (size_t I=0; I < dim_la; I++){
-        m_lasxcurl.extendOperator(T, F, epsBkt_v_list[iv].block(offset_F, 0, dim_laxdiv_DofsFace_F, dim_laxcurl_T), Eigen::KroneckerProduct(slice(v_I_det_jk, 1, I), C_JK[I]).transpose());
+        m_lasxcurl.extendOperator(T, F, epsBkt_v_list[iv].block(offset_F, 0, dim_laxdiv_DofsFace_F, dim_laxcurl_T), Eigen::KroneckerProduct(slice(v_I_det_jk, 0, I), C_JK[I]).transpose());
       }
     }//for iv
   }//for Fp
@@ -1559,11 +1559,11 @@ std::vector<Eigen::MatrixXd> YangMills::epsBkt_v(size_t iT, Scalar3Tensor & cros
       std::fill_n(v_I_cross_jk.data(), v_I_cross_jk.size(), 0.);
 
       for (size_t j=0; j < dim_xcurl_T; j++){
-        slice(v_I_cross_jk, 2, j) = M_v * slice(crossij_Pot_T, 2, j);
+        slice(v_I_cross_jk, 1, j) = M_v * slice(crossij_Pot_T, 1, j);
       }
       // Calculate the Lie algebra operator: contract (v_i)_I (P_curl e_i x P_curl e_j)^k on I with C^K_IJ, and set the section on the cell Dofs
       for (size_t I=0; I < dim_la; I++){
-        epsBkt_v_list[iv].block(offset_T, 0, dim_laxdiv_DofsCell_T, dim_laxcurl_T) += Eigen::KroneckerProduct(slice(v_I_cross_jk, 1, I), C_JK[I]).transpose();
+        epsBkt_v_list[iv].block(offset_T, 0, dim_laxdiv_DofsCell_T, dim_laxcurl_T) += Eigen::KroneckerProduct(slice(v_I_cross_jk, 0, I), C_JK[I]).transpose();
       }
     }
   }
@@ -1591,11 +1591,11 @@ std::vector<Eigen::MatrixXd> YangMills::epsBkt_v(size_t iT, Scalar3Tensor & cros
       std::fill_n(v_I_cross_jk.data(), v_I_cross_jk.size(), 0.);
 
       for (size_t j=0; j < dim_xcurl_T; j++){
-        slice(v_I_cross_jk, 2, j) = M_v * slice(crossij_Pot_T, 2, j);
+        slice(v_I_cross_jk, 1, j) = M_v * slice(crossij_Pot_T, 1, j);
       }
       // Calculate the Lie algebra operator: contract (v_i)_I (P_curl e_i x P_curl e_j)^k on I with C^K_IJ
       for (size_t I=0; I < dim_la; I++){
-        epsBkt_v_list[iv] += Eigen::KroneckerProduct(slice(v_I_cross_jk, 1, I), C_JK[I]).transpose();
+        epsBkt_v_list[iv] += Eigen::KroneckerProduct(slice(v_I_cross_jk, 0, I), C_JK[I]).transpose();
       }
     }
     return epsBkt_v_list;
@@ -1646,12 +1646,12 @@ std::vector<Eigen::MatrixXd> YangMills::L2v_epsBkt(size_t iT, Scalar3Tensor & cr
         std::fill_n(vL2_L_cross_ij.data(), vL2_L_cross_ij.size(), 0.);
 
         for (size_t j=0; j<dim_xcurl_F; j++){
-          slice(vL2_L_cross_ij, 3, j) = M_vL2 * slice(detnij_Pot_PkF, 2, j).transpose();
+          slice(vL2_L_cross_ij, 2, j) = M_vL2 * slice(detnij_Pot_PkF, 1, j).transpose();
         }
         // Calculate the Lie algebra operator: take the kronecker product and contract ((v_i)_I, (e_i x e_j).nF)_L2 <e_I, e_L> on L-K with C^K_IJ, then extend from face to cell and sum
         Eigen::MatrixXd L2v_epsBkt_F(Eigen::MatrixXd::Zero(dim_laxcurl_F, dim_laxcurl_F));
         for (size_t L=0; L<dim_la; L++){
-          L2v_epsBkt_F += Eigen::KroneckerProduct(slice(vL2_L_cross_ij, 1, L), C_IJ[L]);
+          L2v_epsBkt_F += Eigen::KroneckerProduct(slice(vL2_L_cross_ij, 0, L), C_IJ[L]);
         }
         m_lasxcurl.addInnerProductContribution(T, F, L2v_epsBkt_list[iv], L2v_epsBkt_F);
         
@@ -1676,11 +1676,11 @@ std::vector<Eigen::MatrixXd> YangMills::L2v_epsBkt(size_t iT, Scalar3Tensor & cr
         std::fill_n(vL2_L_cross_ij.data(), vL2_L_cross_ij.size(), 0.);
 
         for (size_t j=0; j<dim_xcurl_T; j++){
-          slice(vL2_L_cross_ij, 3, j) = M_vL2 * slice(crossij_Pot_T, 2, j).transpose();
+          slice(vL2_L_cross_ij, 2, j) = M_vL2 * slice(crossij_Pot_T, 1, j).transpose();
         }
         // Calculate the Lie algebra operator: take the kronecker product and contract ((v_i)_I, e_i x e_j)_L2 <e_I, e_L> on L-K with C^K_IJ
         for (size_t L=0; L<dim_la; L++){
-          L2v_epsBkt_list[iv] += Eigen::KroneckerProduct(slice(vL2_L_cross_ij, 1, L), C_IJ[L]);
+          L2v_epsBkt_list[iv] += Eigen::KroneckerProduct(slice(vL2_L_cross_ij, 0, L), C_IJ[L]);
         }
       }// for iv
     }// if
@@ -1710,12 +1710,12 @@ std::vector<Eigen::MatrixXd> YangMills::L2v_epsBkt(size_t iT, Scalar3Tensor & cr
       std::fill_n(vL2_L_cross_ij.data(), vL2_L_cross_ij.size(), 0.);
 
       for (size_t j=0; j<dim_xcurl_T; j++){
-        slice(vL2_L_cross_ij, 3, j) = M_vL2 * slice(crossij_Pot_T, 2, j).transpose();
+        slice(vL2_L_cross_ij, 2, j) = M_vL2 * slice(crossij_Pot_T, 1, j).transpose();
       }
 
       // Calculate the Lie algebra operator: take the Kronecker product and contract ((v_i)_I, e_i x e_j)_L2 <e_I, e_L> on L-K with C^K_IJ
       for (size_t L=0; L<dim_la; L++){
-        L2v_epsBkt_list[iv] += Eigen::KroneckerProduct(slice(vL2_L_cross_ij, 1, L), C_IJ[L]);
+        L2v_epsBkt_list[iv] += Eigen::KroneckerProduct(slice(vL2_L_cross_ij, 0, L), C_IJ[L]);
       }
     }// for iv
 

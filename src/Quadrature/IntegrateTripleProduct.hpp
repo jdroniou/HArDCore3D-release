@@ -22,13 +22,13 @@ typedef Eigen::Map<Eigen::VectorXd, Eigen::Unaligned, Eigen::InnerStride<Eigen::
 
 //
 /// Function to slice a 3-tensor with respect to one index (returns a 2-tensor)
-/** Slicing is always in order e.g. fixing y=5, returns matrix[i][k] = tensor[i][5][k].
+/** Slicing is always in order e.g. fixing the index 1 at 5, returns matrix[i][k] = tensor[i][5][k].
 The output is an Eigen::Map of the tensor (so accessing the values of the 2-tensor actually
 access the values of the original 3-tensor) */
 MatrixSlice slice(
                  Scalar3Tensor & tensor,  ///< Tensor to slice
-                 size_t fixed_dim,  ///< Position of the index with respect to which we slice (fix the value)
-                 size_t index   ///< Value of the index where the slicing is done
+                 size_t fixed_dim,  ///< Position of the index (0, 1, 2) with respect to which we slice (fix the value)
+                 size_t index       ///< Value of the index where the slicing is done
                  )
 {
   size_t size_dim1 = tensor.shape()[0];
@@ -41,19 +41,19 @@ MatrixSlice slice(
   size_t column_stride; // no. elements between two column entries
   size_t row_stride;  // no. elements between two row entries
 
-  if (fixed_dim == 1 && index < size_dim1){
+  if (fixed_dim == 0 && index < size_dim1){
     start = index*size_dim2*size_dim3;
     num_rows = size_dim2;
     num_cols = size_dim3;
     column_stride = 1;
     row_stride = size_dim3;
-  } else if (fixed_dim == 2 && index < size_dim2){
+  } else if (fixed_dim == 1 && index < size_dim2){
     start = index*size_dim3;
     num_rows = size_dim1;
     num_cols = size_dim3;
     column_stride = 1;
     row_stride = size_dim2*size_dim3;
-  } else if (fixed_dim == 3 && index < size_dim3){
+  } else if (fixed_dim == 2 && index < size_dim3){
     // Note: this map can be slow in calculations possibly due to the the spacing of the data (non-contiguous in either index), try using a copy if tests are slow.
     start = index;
     num_rows = size_dim1;
@@ -71,9 +71,9 @@ return MatrixSlice(tensor.data() + start, num_rows, num_cols, Eigen::Stride<Eige
 /** See comment in the other slice function */
 VectorSlice slice(
                   Scalar3Tensor & tensor,  ///< Tensor to slice
-                  size_t fixed_dim1,  ///< Position of the first index with respect to which we slice (fix the value)
+                  size_t fixed_dim1,  ///< Position of the first index (0, 1, 2) with respect to which we slice (fix the value)
                   size_t index1,      ///< Value of the first index to fix
-                  size_t fixed_dim2,  ///< Position of the second index with respect to which we slice (fix the value)
+                  size_t fixed_dim2,  ///< Position of the second index (0, 1, 2) with respect to which we slice (fix the value)
                   size_t index2     ///< Value of the second index to fix
                   )
 {
@@ -85,27 +85,27 @@ VectorSlice slice(
   size_t num_elements;
   size_t stride;  // no. elements between two entries
 
-  if (fixed_dim1 == 1 && index1 < size_dim1 && fixed_dim2 == 2 && index2 < size_dim2){
+  if (fixed_dim1 == 0 && index1 < size_dim1 && fixed_dim2 == 1 && index2 < size_dim2){
     start = index1*size_dim2*size_dim3 + index2*size_dim3;
     num_elements = size_dim3;
     stride = 1;
-  } else if (fixed_dim1 == 2 && index1 < size_dim2 && fixed_dim2 == 1 && index2 < size_dim1){
+  } else if (fixed_dim1 == 1 && index1 < size_dim2 && fixed_dim2 == 0 && index2 < size_dim1){
     start = index2*size_dim2*size_dim3 + index1*size_dim3;
     num_elements = size_dim3;
     stride = 1;
-  } else if (fixed_dim1 == 1 && index1 < size_dim1 && fixed_dim2 == 3 && index2 < size_dim3){
+  } else if (fixed_dim1 == 0 && index1 < size_dim1 && fixed_dim2 == 2 && index2 < size_dim3){
     start = index1*size_dim2*size_dim3 + index2;
     num_elements = size_dim2;
     stride = size_dim3;
-  } else if (fixed_dim1 == 3 && index1 < size_dim3 && fixed_dim2 == 1 && index2 < size_dim1){
+  } else if (fixed_dim1 == 2 && index1 < size_dim3 && fixed_dim2 == 0 && index2 < size_dim1){
     start = index1 + index2*size_dim2*size_dim3;
     num_elements = size_dim2;
     stride = size_dim3;
-  } else if (fixed_dim1 == 2 && index1 < size_dim2 && fixed_dim2 == 3 && index2 < size_dim3){
+  } else if (fixed_dim1 == 1 && index1 < size_dim2 && fixed_dim2 == 2 && index2 < size_dim3){
     start = index1*size_dim3 + index2;
     num_elements = size_dim1;
     stride = size_dim2*size_dim3;
-  } else if (fixed_dim1 == 3 && index1 < size_dim3 && fixed_dim2 == 2 && index2 < size_dim2) {
+  } else if (fixed_dim1 == 2 && index1 < size_dim3 && fixed_dim2 == 1 && index2 < size_dim2) {
     start = index1 + index2*size_dim3;
     num_elements = size_dim1;
     stride = size_dim2*size_dim3;
@@ -126,6 +126,10 @@ VectorSlice slice(
 /* BASIC ONES: Monomial, tensorized, and generic template */
 
 /// Computes the triple integral product of a scalar times the dot product of two vectors - basis1(basis2 . basis2).
+/** If basis1 = \f$(\phi_i)_i\f$ and basis2=\f$(\psi_j)_j\f$, then this function returns the tensor
+\f$T_{ijk}=\int_T \phi_i(\psi_j\cdot\psi_k)\f$.
+*/
+
 template<size_t N>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -164,6 +168,9 @@ Scalar3Tensor tripleInt(
   };
 
 /// Computes the triple integral product of a vector basis dot the cross product of the second vector basis - tens_family1 . (tens_family2 x tens_family2).
+/** If tens_family1 = \f$(\phi_i)_i\f$ and tens_family2=\f$(\psi_j)_j\f$, then this function returns the tensor
+\f$T_{ijk}=\int_T \phi_i\cdot(\psi_j\times\psi_k)\f$.
+*/
 template<size_t N>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -218,6 +225,9 @@ Scalar3Tensor tripleInt(
   };
 
 /// Computes the triple integral product of a vector basis dot the cross product of the second vector basis - grad_basis . (tens_family x tens_family).
+/** If grad_basis = \f$(\phi_i)_i\f$ and tens_family=\f$(\psi_j)_j\f$, then this function returns the tensor
+\f$T_{ijk}=\int_T \phi_i\cdot(\psi_j\times\psi_k)\f$.
+*/
 template<size_t N>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -274,6 +284,9 @@ Scalar3Tensor tripleInt(
   };
 
 /// Computes the triple integral product of a vector basis dot the cross product of the second vector basis - golycompl_basis . (tens_family x tens_family).
+/** If golycompl_basis = \f$(\phi_i)_i\f$ and tens_family=\f$(\psi_j)_j\f$, then this function returns the tensor
+\f$T_{ijk}=\int_T \phi_i\cdot(\psi_j\times\psi_k)\f$.
+*/
 template<size_t N>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -362,6 +375,7 @@ Scalar3Tensor tripleInt(
 //----------------------------------------------------------------------
 // Family, Shift, Tensorized
 
+/// Handles a derived basis (see other functions for detailed output)
 template<typename ScalarBasisType1, typename ScalarBasisType2, size_t N>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -383,6 +397,8 @@ Scalar3Tensor tripleInt(
     return integrals;
   };
 
+
+/// Handles a derived basis (see other functions for detailed output)
 template<typename ScalarBasisType, typename BasisType>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -404,6 +420,8 @@ Scalar3Tensor tripleInt(
     return integrals;
   };
 
+
+/// Handles a derived basis (see other functions for detailed output)
 template<typename BasisType, typename ScalarBasisType, size_t N>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -430,7 +448,7 @@ Scalar3Tensor tripleInt(
       for (size_t k = 0; k < N; k++){
         Scalar3Tensor anc_scalar_integrals = tensor_integrals[boost::indices[boost::multi_array_types::index_range(0,dim1)][boost::multi_array_types::index_range(j*anc_anc_dim2,(j+1)*anc_anc_dim2)][boost::multi_array_types::index_range(k*anc_anc_dim2,(k+1)*anc_anc_dim2)]];
         for (size_t i = 0; i < dim1; i++){
-          MatrixSlice int_jk = slice(anc_scalar_integrals, 1, i);
+          MatrixSlice int_jk = slice(anc_scalar_integrals, 0, i);
           for (size_t sub_j = 0; sub_j < anc_dim2; sub_j++){
             for (size_t sub_k = 0; sub_k <= sub_j; sub_k++){
               integrals[i][anc_dim2*j + sub_j][anc_dim2*k + sub_k] = M2.row(sub_j) * int_jk * M2.row(sub_k).transpose();
@@ -443,6 +461,8 @@ Scalar3Tensor tripleInt(
     return integrals;
   };
 
+
+/// Handles a derived basis (see other functions for detailed output)
 template<typename BasisType, typename ScalarBasisType, size_t N>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -467,7 +487,7 @@ Scalar3Tensor tripleInt(
     for (size_t i = 0; i < dim1; i++){
       Eigen::MatrixXd int_jk = Eigen::MatrixXd::Zero(anc_dim2, anc_dim2);
       for (size_t l = 0; l < anc_dim1; l++){
-        int_jk += M1(i, l) * slice(anc_integrals, 1, l);
+        int_jk += M1(i, l) * slice(anc_integrals, 0, l);
       }
       
       for (size_t j = 0; j < dim2; j++){
@@ -479,6 +499,7 @@ Scalar3Tensor tripleInt(
     return integrals;
   };
 
+/// Handles a derived basis (see other functions for detailed output)
 template<typename BasisType, size_t N>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -499,14 +520,15 @@ Scalar3Tensor tripleInt(
     Scalar3Tensor scalar_integrals = tripleInt(T, basis1.ancestor(), basis2, mono_int_map);
 
     for (size_t i = 0; i < dim1; i++){
-      MatrixSlice int_jk = slice(integrals, 1, i);
+      MatrixSlice int_jk = slice(integrals, 0, i);
       for (size_t l = 0; l < anc_dim1; l++){
-        int_jk += M1(i, l) * slice(scalar_integrals, 1, l);
+        int_jk += M1(i, l) * slice(scalar_integrals, 0, l);
       }
     }
     return integrals;
   };
 
+/// Handles a derived basis (see other functions for detailed output)
 template<typename BasisType1, typename BasisType2>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -526,7 +548,7 @@ Scalar3Tensor tripleInt(
     Scalar3Tensor scalar_integrals = tripleInt(T, basis1, basis2.ancestor(), mono_int_map);
 
     for (size_t i = 0; i < dim1; i++){
-      MatrixSlice int_jk = slice(scalar_integrals, 1, i);
+      MatrixSlice int_jk = slice(scalar_integrals, 0, i);
       for (size_t j = 0; j < dim2; j++){
         for (size_t k = 0; k <= j; k++){
           integrals[i][j][k] = M2.row(j) * int_jk * M2.row(k).transpose();
@@ -537,6 +559,7 @@ Scalar3Tensor tripleInt(
     return integrals;
   };
 
+/// Handles a derived basis (see other functions for detailed output)
 template<size_t N, typename ScalarBasisType>
 Scalar3Tensor tripleInt(
                      const Cell& T, ///< Cell to which the basis corresponds
@@ -568,7 +591,7 @@ Scalar3Tensor tripleInt(
           if (sign){
             Scalar3Tensor anc_scalar_integrals = tensor_integrals[boost::indices[boost::multi_array_types::index_range(i*anc_anc_dim1,(i+1)*anc_anc_dim1)][boost::multi_array_types::index_range(j*anc_dim2,(j+1)*anc_dim2)][boost::multi_array_types::index_range(k*anc_dim2,(k+1)*anc_dim2)]];
             for (size_t sub_j = 0; sub_j < anc_dim2; sub_j++){
-              Eigen::MatrixXd fam_int_jk = M1 * slice(anc_scalar_integrals, 2, sub_j);
+              Eigen::MatrixXd fam_int_jk = M1 * slice(anc_scalar_integrals, 1, sub_j);
               for (size_t sub_i = 0; sub_i < anc_dim1; sub_i++){
                 for (size_t sub_k = 0; sub_k < anc_dim2; sub_k++){
                   integrals[i*anc_dim1+sub_i][j*anc_dim2+sub_j][k*anc_dim2+sub_k] = fam_int_jk(sub_i, sub_k);
