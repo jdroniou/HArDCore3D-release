@@ -407,8 +407,8 @@ namespace HArDCore3D
     const LASXGrad m_lasxgrad;
     const LASXCurl m_lasxcurl;
     const LASXDiv m_lasxdiv;
-    const Eigen::VectorXd m_nloc_sc_E; // Nb of statically condensed DOFs for electric field in each cell (cell unknowns)
-    const Eigen::VectorXd m_nloc_sc_lambda; // Nb of statically condensed DOFs for lambda in each cell (cell unknowns)
+    const Eigen::VectorXi m_nloc_sc_E; // Nb of statically condensed DOFs for electric field in each cell (cell unknowns)
+    const Eigen::VectorXi m_nloc_sc_lambda; // Nb of statically condensed DOFs for lambda in each cell (cell unknowns)
     SystemMatrixType m_A;   // Matrix and RHS system
     Eigen::VectorXd m_b;    // RHS to Newton problem after static condensation
     Eigen::VectorXd m_b_i;  // RHS to nonlinear problem (F(x)=b)

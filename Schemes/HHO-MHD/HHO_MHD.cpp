@@ -1,6 +1,6 @@
 #include "HHO_MHD.hpp"
 
-bool program_options(int, const char **, std::string &, size_t &, size_t &, size_t &, double &, double &, char &, char &, size_t &, size_t &, std::string &, bool &, double &);
+bool program_options(int, const char **, std::string &, size_t &, size_t &, size_t &, double &, double &, char &, char &, size_t &, size_t &, std::string &, bool &, double &, std::string &);
 
 int main(const int argc, const char **argv)
 {
@@ -9,8 +9,9 @@ int main(const int argc, const char **argv)
     double visc, diff, tol;
     std::string mesh_name, plot_file;
     bool use_threads;
+    std::string name_solver;
 
-    if (!program_options(argc, argv, mesh_name, u_id, b_id, p_id, visc, diff, u_bc_id, b_bc_id, L, K, plot_file, use_threads, tol))
+    if (!program_options(argc, argv, mesh_name, u_id, b_id, p_id, visc, diff, u_bc_id, b_bc_id, L, K, plot_file, use_threads, tol, name_solver))
     {
         return 0;
     }
@@ -56,16 +57,17 @@ int main(const int argc, const char **argv)
 
     // exit(1);
     // Eigen::VectorXd init = Eigen::VectorXd::Zero;
+    
+    // Select solver and solve
+    LinearSolver<Eigen::SparseMatrix<double>> solver(name_solver);
+    SolutionVector sol = model.solve_with_static_cond(mhd_tc.velocity_source(), mhd_tc.magnetic_source(), visc, diff, tol, solver, use_threads);
 
-    // SolutionVector sol = model.solve(mhd_tc.velocity_source(), mhd_tc.magnetic_source(), visc, diff, tol, use_threads);
-    SolutionVector sol = model.solve_with_static_cond(mhd_tc.velocity_source(), mhd_tc.magnetic_source(), visc, diff, tol, use_threads);
-    // SolutionVector sol = model.solve(mhd_tc.velocity_source(), mhd_tc.magnetic_source(), intepolant.asVectorXd(), visc, diff, tol, use_threads);
 
-    std::cout << "\n[Scheme] Computing Intepolant\n";
-    SolutionVector intepolant = model.global_interpolant(mhd_tc.velocity(), mhd_tc.pressure(), mhd_tc.magnetic());
+    std::cout << "\n[Scheme] Computing Interpolant\n";
+    SolutionVector interpolant = model.global_interpolant(mhd_tc.velocity(), mhd_tc.pressure(), mhd_tc.magnetic());
 
     std::cout << "\n[Scheme] Computing Errors\n";
-    std::vector<double> errors = model.compute_errors(intepolant, sol, visc, diff);
+    std::vector<double> errors = model.compute_errors(interpolant, sol, visc, diff);
 
     std::cout << "     Energy Error (velocity) = " << errors[0] << "\n";
     std::cout << "     Energy Error (magnetic) = " << errors[1] << "\n";
@@ -101,14 +103,14 @@ int main(const int argc, const char **argv)
     return 0;
 }
 
-bool program_options(int argc, const char **argv, std::string &mesh_name, size_t &u_id, size_t &b_id, size_t &p_id, double &visc, double &diff, char &u_bc_id, char &b_bc_id, size_t &L, size_t &K, std::string &plot_file, bool &use_threads, double &tol)
+bool program_options(int argc, const char **argv, std::string &mesh_name, size_t &u_id, size_t &b_id, size_t &p_id, double &visc, double &diff, char &u_bc_id, char &b_bc_id, size_t &L, size_t &K, std::string &plot_file, bool &use_threads, double &tol, std::string &name_solver)
 {
     namespace po = boost::program_options;
 
     // Program options
     po::options_description desc("Allowed options");
 
-    desc.add_options()("help,h", "Produce help message")("mesh,m", po::value<std::string>(), "Set the mesh")("velocity,u", po::value<size_t>(), "Set the velocity")("magnetic,b", po::value<size_t>(), "Set the magnetic")("pressure,p", po::value<size_t>(), "Set the pressure")("viscosity,v", po::value<double>(), "Set the viscosity")("diffusivity,d", po::value<double>(), "Set the diffusivity")("u_bc", po::value<char>(), "Set the type of velocity boundary condition ('H' = Hodge, 'D' = Dirichlet')")("b_bc", po::value<char>(), "Set the type of magnetic boundary condition ('H' = Hodge, 'D' = Dirichlet')")("celldegree,l", po::value<size_t>(), "Set the degree of the cell polynomials")("facedegree,k", po::value<size_t>(), "Set the degree of the face polynomials")("plot", po::value<std::string>(), "Plot to file")("use_threads", po::value<bool>(), "Using multithreading")("tolerance", po::value<double>(), "The tolerance of the Newton iteration");
+    desc.add_options()("help,h", "Produce help message")("mesh,m", po::value<std::string>(), "Set the mesh")("velocity,u", po::value<size_t>(), "Set the velocity")("magnetic,b", po::value<size_t>(), "Set the magnetic")("pressure,p", po::value<size_t>(), "Set the pressure")("viscosity,v", po::value<double>(), "Set the viscosity")("diffusivity,d", po::value<double>(), "Set the diffusivity")("u_bc", po::value<char>(), "Set the type of velocity boundary condition ('H' = Hodge, 'D' = Dirichlet')")("b_bc", po::value<char>(), "Set the type of magnetic boundary condition ('H' = Hodge, 'D' = Dirichlet')")("celldegree,l", po::value<size_t>(), "Set the degree of the cell polynomials")("facedegree,k", po::value<size_t>(), "Set the degree of the face polynomials")("plot", po::value<std::string>(), "Plot to file")("use_threads", po::value<bool>(), "Using multithreading")("tolerance", po::value<double>(), "The tolerance of the Newton iteration")("solver", boost::program_options::value<std::string>()->default_value("PardisoLU"), "Choice of solver, not case dependent. Options are: PardisoLU, UMFPACK, PaStiXLU, PaStiXLLT, EigenLU, EigenBiCGSTAB (reverts to EigenLU if the selected solver is not available)");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, argv, desc), vm);
@@ -153,6 +155,10 @@ bool program_options(int argc, const char **argv, std::string &mesh_name, size_t
 
     // Get use_threads
     use_threads = (vm.count("use_threads") ? vm["use_threads"].as<bool>() : true);
+    
+    // Name of solver
+    name_solver = vm["solver"].as<std::string>();
+
 
     return true;
 }

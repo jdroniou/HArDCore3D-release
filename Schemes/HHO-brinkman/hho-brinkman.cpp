@@ -13,15 +13,6 @@
 
 #include "vtu_writer.hpp"
 
-#ifdef WITH_UMFPACK
-  #include <Eigen/UmfPackSupport>
-#endif
-
-#ifdef WITH_MKL
-  #include <Eigen/PardisoSupport>
-  #include <mkl.h>
-#endif
-
 #ifdef WITH_SPECTRA
   #include <Spectra/SymEigsSolver.h>
   #include <Spectra/MatOp/SparseSymShiftSolve.h>
@@ -60,7 +51,7 @@ int main(int argc, const char* argv[])
     ("scaling_permeabilityinv,p", boost::program_options::value<double>()->default_value(1.), "Set the scaling of the inverse of the permeability")
     ("export-matrix,e", "Export matrix to Matrix Market format")
     ("plot", boost::program_options::value<std::string>(), "Save plot of the solution to the given filename")
-    ("iterative-solver,i", "Use iterative linear solver")
+    ("solver", boost::program_options::value<std::string>()->default_value("PardisoLU"), "Choice of solver, not case dependent. Options are: PardisoLU, UMFPACK, PaStiXLU, PaStiXLLT, EigenLU, EigenBiCGSTAB (reverts to EigenLU if the selected solver is not available)")
     ("stabilization-parameter-stokes,x", boost::program_options::value<double>()->default_value(3.), "Set the stabilization parameter for Stokes terms")
     ("stabilization-parameter-darcy,y", boost::program_options::value<double>()->default_value(.3), "Set the stabilization parameter for Stokes terms")
     ("condition-number,c", boost::program_options::value<int>()->default_value(0), "Calculate condition number if >0 (requires the Spectra library); if >1, compute condition number and exits.")
@@ -259,49 +250,15 @@ int main(int argc, const char* argv[])
       exit(0);
     }
   }
+  
+  // Select linear solver
+  std::string name_solver = vm["solver"].as<std::string>();
+  LinearSolver<Brinkman::SystemMatrixType> solver(name_solver);
+  std::cout << "[main] Solving the system using " << solver.name() << std::endl;
 
   // Solve the problem
   timer.start();
-  Eigen::VectorXd uph_solsystem;
-  if (vm.count("iterative-solver")) {
-    std::cout << "[main] Solving the linear system using BiCGSTAB..." << std::endl;
-    
-    Eigen::BiCGSTAB<Brinkman::SystemMatrixType, Eigen::IncompleteLUT<double> > solver;
-    // solver.preconditioner().setFillfactor(2);
-    solver.compute(br.systemMatrix());
-    if (solver.info() != Eigen::Success) {
-      std::cerr << "[main] ERROR: Could not factorize matrix" << std::endl;
-      exit(1);
-    }
-    uph_solsystem = solver.solve(br.systemVector());
-    if (solver.info() != Eigen::Success) {
-      std::cerr << "[main] ERROR: Could not solve direct system" << std::endl;
-      exit(1);
-    }
-  } else { 
-#ifdef WITH_MKL
-    std::cout << "[main] Solving the linear system using Pardiso..." ;    
-    unsigned nb_threads_hint = std::thread::hardware_concurrency();
-    mkl_set_dynamic(0);
-    mkl_set_num_threads(nb_threads_hint);
-    Eigen::PardisoLU<Brinkman::SystemMatrixType> solver;
-    solver.pardisoParameterArray()[9] = 6; // Pivoting perturbation (see iparm[9] in Pardiso documentation)
-#elif WITH_UMFPACK
-    std::cout << "[main] Solving the linear system using Umfpack...";    
-    Eigen::UmfPackLU<Brinkman::SystemMatrixType> solver;
-#else
-    std::cout << "[main] Solving the linear system using direct solver...";    
-    Eigen::SparseLU<Brinkman::SystemMatrixType> solver;
-#endif
-    solver.compute(br.systemMatrix());
-    if (solver.info() != Eigen::Success) {
-      std::cerr << "[main] ERROR: Could not factorize matrix" << std::endl;
-    }
-    uph_solsystem = solver.solve(br.systemVector());
-    if (solver.info() != Eigen::Success) {
-      std::cerr << "[main] ERROR: Could not solve linear system" << std::endl;
-    }
-  }
+  Eigen::VectorXd uph_solsystem = solver.compute_and_solve(br.systemMatrix(), br.systemVector());
     
   double absolute_residual_solver = (br.systemMatrix() * uph_solsystem - br.systemVector()).norm();
   double residual_solver = absolute_residual_solver / br.systemVector().norm();
@@ -695,10 +652,10 @@ void Brinkman::_assemble_local_contribution(
   std::tie(AT_sys, bT_sys, AT_sc, bT_sc) = locSC.compute(lsT);
   
   // STATICALLY CONDENSED SYSTEM
-  std::vector<size_t> IT_sys = locSC.globalDOFs_sys();
-  for (size_t i = 0; i < locSC.dim_sys(); i++){
+  std::vector<size_t> IT_sys = locSC.globalDOFs_gl();
+  for (size_t i = 0; i < locSC.dim_gl(); i++){
     rhs_sys(IT_sys[i]) += bT_sys(i);
-    for (size_t j = 0; j < locSC.dim_sys(); j++){    
+    for (size_t j = 0; j < locSC.dim_gl(); j++){    
       triplets_sys.emplace_back(IT_sys[i], IT_sys[j], AT_sys(i,j));
     }
   }
@@ -706,7 +663,7 @@ void Brinkman::_assemble_local_contribution(
   std::vector<size_t> IT_sc = locSC.globalDOFs_sc();
   for (size_t i = 0; i < locSC.dim_sc(); i++){
     rhs_sc(IT_sc[i]) += bT_sc(i);
-    for (size_t j = 0; j < locSC.dim_sys(); j++){
+    for (size_t j = 0; j < locSC.dim_gl(); j++){
       triplets_sc.emplace_back(IT_sc[i], IT_sys[j], AT_sc(i,j));
     }
   }

@@ -31,6 +31,7 @@
 #include <mesh.hpp>
 #include <mesh_builder.hpp>
 #include <local_static_condensation.hpp>
+#include <linearsolver.hpp>
 
 #include <sxdiv.hpp>
 #include <sxcurl.hpp>
@@ -176,7 +177,7 @@ namespace HArDCore3D
     SerendipityProblem m_ser_pro;
     SXCurl m_sxcurl;
     SXDiv m_sxdiv;
-    Eigen::VectorXd m_nloc_sc_H; // Number of statically condensed DOF in each cell
+    Eigen::VectorXi m_nloc_sc_H; // Number of statically condensed DOF in each cell
     SystemMatrixType m_A;   // Matrix and RHS of statically condensed system
     Eigen::VectorXd m_b;
     SystemMatrixType m_sc_A; // Static condensation operator and RHS (to recover statically condensed DOFs)

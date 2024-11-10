@@ -18,9 +18,8 @@
 #include <boost/program_options.hpp>
 #include <boost/timer/timer.hpp>
 
-#ifdef WITH_MKL
-#include <Eigen/PardisoSupport>
-#endif
+#include <linearsolver.hpp>
+
 
 /*!
  * @defgroup HHO_MHD
@@ -193,6 +192,8 @@ private:
     const size_t n_total_pressure_dofs = n_cells * n_local_pressure_dofs;
     const size_t n_total_lagrange_dofs = n_cells * n_local_lagrange_dofs;
 
+    const size_t n_total_dofs = n_total_cell_velocity_dofs + n_total_cell_magnetic_dofs + n_total_face_velocity_dofs + n_total_face_magnetic_dofs + n_total_pressure_dofs + n_total_lagrange_dofs;
+
     inline size_t n_local_velocity_dofs(const size_t iT) const
     {
         return n_local_cell_velocity_dofs + m_mesh_ptr->cell(iT)->n_faces() * n_local_face_velocity_dofs;
@@ -209,9 +210,9 @@ class MHDModel
 public:
     MHDModel(HybridCore &, size_t, size_t, char, char);
 
-    SolutionVector solve_with_static_cond(FType<VectorRd> f_source, FType<VectorRd> g_source, double visc, double diff, double tol, bool threading = true);
+    SolutionVector solve_with_static_cond(FType<VectorRd> f_source, FType<VectorRd> g_source, double visc, double diff, double tol, LinearSolver<Eigen::SparseMatrix<double>> & solver, bool threading = true);
     SolutionVector global_interpolant(FType<VectorRd> velocity, FType<double> pressure, FType<VectorRd> magnetic);
-    std::vector<double> compute_errors(SolutionVector intepolant, SolutionVector discrete, double visc, double diff);
+    std::vector<double> compute_errors(SolutionVector interpolant, SolutionVector discrete, double visc, double diff);
 
 private:
     Eigen::MatrixXd gradient_term(Cell *cell, ElementQuad &elquad);
@@ -265,7 +266,7 @@ private:
     std::vector<Eigen::MatrixXd> RT;
 };
 
-std::vector<double> MHDModel::compute_errors(SolutionVector intepolant, SolutionVector discrete, double visc, double diff)
+std::vector<double> MHDModel::compute_errors(SolutionVector interpolant, SolutionVector discrete, double visc, double diff)
 {
 
     double vel_energy_difference = 0.0;
@@ -294,10 +295,10 @@ std::vector<double> MHDModel::compute_errors(SolutionVector intepolant, Solution
     //     {
     for (size_t iT = 0; iT < n_cells; ++iT)
     {
-        Eigen::VectorXd local_vel_difference = (intepolant - discrete).velocity_restr(iT);
-        Eigen::VectorXd local_vel_exact = intepolant.velocity_restr(iT);
-        Eigen::VectorXd local_mag_difference = (intepolant - discrete).magnetic_restr(iT);
-        Eigen::VectorXd local_mag_exact = intepolant.magnetic_restr(iT);
+        Eigen::VectorXd local_vel_difference = (interpolant - discrete).velocity_restr(iT);
+        Eigen::VectorXd local_vel_exact = interpolant.velocity_restr(iT);
+        Eigen::VectorXd local_mag_difference = (interpolant - discrete).magnetic_restr(iT);
+        Eigen::VectorXd local_mag_exact = interpolant.magnetic_restr(iT);
 
         vel_energy_difference += local_vel_difference.transpose() * AT[iT] * local_vel_difference;
         mag_energy_difference += local_mag_difference.transpose() * AT[iT] * local_mag_difference;
@@ -387,10 +388,10 @@ std::vector<double> MHDModel::compute_errors(SolutionVector intepolant, Solution
         vel_l2_exact += hT * local_vel_exact.tail(n_local_bdry_vector_dofs).transpose() * M_BDRY_BDRY * local_vel_exact.tail(n_local_bdry_vector_dofs);
         mag_l2_exact += hT * local_mag_exact.tail(n_local_bdry_vector_dofs).transpose() * M_BDRY_BDRY * local_mag_exact.tail(n_local_bdry_vector_dofs);
 
-        Eigen::VectorXd local_pressure_difference = (intepolant - discrete).pressure_restr(iT);
-        Eigen::VectorXd local_pressure_exact = intepolant.pressure_restr(iT);
-        Eigen::VectorXd local_lagrange_difference = (intepolant - discrete).lagrange_restr(iT);
-        Eigen::VectorXd local_lagrange_exact = intepolant.lagrange_restr(iT);
+        Eigen::VectorXd local_pressure_difference = (interpolant - discrete).pressure_restr(iT);
+        Eigen::VectorXd local_pressure_exact = interpolant.pressure_restr(iT);
+        Eigen::VectorXd local_lagrange_difference = (interpolant - discrete).lagrange_restr(iT);
+        Eigen::VectorXd local_lagrange_exact = interpolant.lagrange_restr(iT);
 
         pressure_energy_difference += local_pressure_difference.transpose() * MTT * local_pressure_difference;
         lagrange_energy_difference += local_lagrange_difference.transpose() * MTT * local_lagrange_difference;
@@ -1323,7 +1324,7 @@ Eigen::VectorXd MHDModel::source_term(FType<VectorRd> f_vec, Cell *cell, Element
     return source_vec;
 }
 
-SolutionVector MHDModel::solve_with_static_cond(FType<VectorRd> f_source, FType<VectorRd> g_source, double visc, double diff, double tol, bool threading)
+SolutionVector MHDModel::solve_with_static_cond(FType<VectorRd> f_source, FType<VectorRd> g_source, double visc, double diff, double tol, LinearSolver<Eigen::SparseMatrix<double>> & solver, bool threading)
 {
 
     std::vector<Eigen::VectorXd> LTf(n_cells);
@@ -1400,6 +1401,9 @@ SolutionVector MHDModel::solve_with_static_cond(FType<VectorRd> f_source, FType<
 
     double residual_error = 0.0;
     int i = 0;
+    
+    // to not re-compute the solver if already done
+    bool solver_analyzed = false;
 
     do
     {
@@ -1739,16 +1743,18 @@ SolutionVector MHDModel::solve_with_static_cond(FType<VectorRd> f_source, FType<
 
         Eigen::SparseMatrix<double> condensed_SysMat = LTgg - LTgl * inv_LTll_LTlg;
 
-        // Eigen::SparseLU<Eigen::SparseMatrix<double>, Eigen::COLAMDOrdering<int>> condensed_solver;
-        // condensed_solver.analyzePattern(condensed_SysMat);
-        // condensed_solver.factorize(condensed_SysMat);
-
-        Eigen::PardisoLU<Eigen::SparseMatrix<double>> condensed_solver;
-        condensed_solver.compute(condensed_SysMat);
+        if (!solver_analyzed){
+          solver.analyzePattern(condensed_SysMat);
+          solver_analyzed = true;
+        }
+        solver.factorize(condensed_SysMat);
+////        Eigen::PardisoLU<Eigen::SparseMatrix<double>> condensed_solver;
+////        condensed_solver.compute(condensed_SysMat);
 
         Eigen::VectorXd RHS = rTg - LTgl * inv_LTll_rTl;
 
-        Eigen::VectorXd condensed_terms = condensed_solver.solve(RHS);
+////        Eigen::VectorXd condensed_terms = condensed_solver.solve(RHS);
+        Eigen::VectorXd condensed_terms = solver.solve(RHS);
         double residual_of_linear_system = (condensed_SysMat * condensed_terms - RHS).norm();
         // std::cout << "Residual of linear system = " << (condensed_SysMat * condensed_terms - RHS).norm() << "\n";
 

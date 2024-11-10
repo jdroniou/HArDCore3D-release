@@ -49,6 +49,9 @@ namespace HArDCore3D
       {
         // do nothing
       };
+      
+    // Constructor without arguments
+    StokesNorms() : StokesNorms(0., 0., 0., 0.) {};
     
     double u; ///< Norm of velocity
     double curl_u; ///< Norm of curl of velocity (vorticity)
@@ -218,8 +221,8 @@ namespace HArDCore3D
     const SXGrad m_sxgrad;
     const SXCurl m_sxcurl;
     const SXDiv m_sxdiv;
-    const Eigen::VectorXd m_nloc_sc_u; // Nb of statically condensed DOFs for velocity in each cell (cell unknowns)
-    const Eigen::VectorXd m_nloc_sc_p; // Nb of statically condensed DOFs for pressure in each cell (cell unknowns)
+    const Eigen::VectorXi m_nloc_sc_u; // Nb of statically condensed DOFs for velocity in each cell (cell unknowns)
+    const Eigen::VectorXi m_nloc_sc_p; // Nb of statically condensed DOFs for pressure in each cell (cell unknowns)
     SystemMatrixType m_A;   // Matrix and RHS of statically condensed system
     Eigen::VectorXd m_b;
     SystemMatrixType m_sc_A; // Static condensation operator and RHS (to recover statically condensed DOFs)
@@ -367,6 +370,41 @@ namespace HArDCore3D
 
   //------------------------------------------------------------------------------
   
+  //------------------------------------------------------------------------------
+  // Vertical flow
+  //------------------------------------------------------------------------------
+
+  static Stokes::VelocityType
+  vertical_u = [](const Eigen::Vector3d & x) -> Eigen::Vector3d {
+                      return Eigen::Vector3d( cos(PI*x.y()), cos(PI*x.x()), 1.);
+                    };
+
+  static Stokes::VorticityType
+  vertical_curl_u = [](const Eigen::Vector3d & x) -> Eigen::Vector3d {
+                      return Eigen::Vector3d(0, 0, -PI*sin(PI*x.x()) + PI*sin(PI*x.y()) );
+                         };
+
+  static Stokes::PressureType
+  vertical_p = trigonometric_p;
+
+  static Stokes::PressureGradientType
+  vertical_grad_p = trigonometric_grad_p;
+
+  static Stokes::ForcingTermType
+  vertical_curl_u_cross_u = [](const Eigen::Vector3d & x) -> Eigen::Vector3d {
+                      return Eigen::Vector3d (
+                                             -(-PI*sin(PI*x.x()) + PI*sin(PI*x.y()))*cos(PI*x.x()),
+                                             (-PI*sin(PI*x.x()) + PI*sin(PI*x.y()))*cos(PI*x.y()), 
+                                             0.
+                                             );
+                    };
+
+  static Stokes::ForcingTermType
+  vertical_f = [](const Eigen::Vector3d & x) -> Eigen::Vector3d {
+                      return Eigen::Vector3d(pow(PI, 2)*cos(PI*x.y()), pow(PI, 2)*cos(PI*x.x()), 0.)
+                        + vertical_grad_p(x);
+                    };
+
 
 } // end of namespace HArDCore3D
 

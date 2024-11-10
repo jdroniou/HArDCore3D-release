@@ -8,10 +8,10 @@ using namespace HArDCore3D;
 
 VariableDOFSpace::VariableDOFSpace(
                    const Mesh & mesh,
-                   const Eigen::VectorXd n_local_vertex_dofs,
-                   const Eigen::VectorXd n_local_edge_dofs,
-                   const Eigen::VectorXd n_local_face_dofs,
-                   const Eigen::VectorXd n_local_cell_dofs		   
+                   const Eigen::VectorXi n_local_vertex_dofs,
+                   const Eigen::VectorXi n_local_edge_dofs,
+                   const Eigen::VectorXi n_local_face_dofs,
+                   const Eigen::VectorXi n_local_cell_dofs		   
                    )
   : m_mesh(mesh),
     m_n_local_vertex_dofs(n_local_vertex_dofs),
@@ -25,12 +25,12 @@ VariableDOFSpace::VariableDOFSpace(
 VariableDOFSpace::VariableDOFSpace(
                    const Mesh & mesh,
                    size_t n_local_vertex_dofs,
-                   const Eigen::VectorXd n_local_edge_dofs,
-                   const Eigen::VectorXd n_local_face_dofs,
-                   const Eigen::VectorXd n_local_cell_dofs		   
+                   const Eigen::VectorXi n_local_edge_dofs,
+                   const Eigen::VectorXi n_local_face_dofs,
+                   const Eigen::VectorXi n_local_cell_dofs		   
                    )
   : m_mesh(mesh),
-    m_n_local_vertex_dofs(n_local_vertex_dofs * Eigen::VectorXd::Ones(mesh.n_vertices())),
+    m_n_local_vertex_dofs(n_local_vertex_dofs * Eigen::VectorXi::Ones(mesh.n_vertices())),
     m_n_local_edge_dofs(n_local_edge_dofs),
     m_n_local_face_dofs(n_local_face_dofs),
     m_n_local_cell_dofs(n_local_cell_dofs)
@@ -43,12 +43,12 @@ VariableDOFSpace::VariableDOFSpace(
                    const Mesh & mesh,
                    size_t n_local_vertex_dofs,
                    size_t n_local_edge_dofs,
-                   const Eigen::VectorXd n_local_face_dofs,
-                   const Eigen::VectorXd n_local_cell_dofs		   
+                   const Eigen::VectorXi n_local_face_dofs,
+                   const Eigen::VectorXi n_local_cell_dofs		   
                    )
   : m_mesh(mesh),
-    m_n_local_vertex_dofs(n_local_vertex_dofs * Eigen::VectorXd::Ones(mesh.n_vertices())),
-    m_n_local_edge_dofs(n_local_edge_dofs * Eigen::VectorXd::Ones(mesh.n_edges())),
+    m_n_local_vertex_dofs(n_local_vertex_dofs * Eigen::VectorXi::Ones(mesh.n_vertices())),
+    m_n_local_edge_dofs(n_local_edge_dofs * Eigen::VectorXi::Ones(mesh.n_edges())),
     m_n_local_face_dofs(n_local_face_dofs),
     m_n_local_cell_dofs(n_local_cell_dofs)
     
@@ -61,12 +61,12 @@ VariableDOFSpace::VariableDOFSpace(
                    size_t n_local_vertex_dofs,
                    size_t n_local_edge_dofs,
                    size_t n_local_face_dofs,
-                   const Eigen::VectorXd n_local_cell_dofs		   
+                   const Eigen::VectorXi n_local_cell_dofs		   
                    )
   : m_mesh(mesh),
-    m_n_local_vertex_dofs(n_local_vertex_dofs * Eigen::VectorXd::Ones(mesh.n_vertices())),
-    m_n_local_edge_dofs(n_local_edge_dofs * Eigen::VectorXd::Ones(mesh.n_edges())),
-    m_n_local_face_dofs(n_local_face_dofs * Eigen::VectorXd::Ones(mesh.n_faces())),
+    m_n_local_vertex_dofs(n_local_vertex_dofs * Eigen::VectorXi::Ones(mesh.n_vertices())),
+    m_n_local_edge_dofs(n_local_edge_dofs * Eigen::VectorXi::Ones(mesh.n_edges())),
+    m_n_local_face_dofs(n_local_face_dofs * Eigen::VectorXi::Ones(mesh.n_faces())),
     m_n_local_cell_dofs(n_local_cell_dofs)
     
 {
@@ -81,10 +81,10 @@ VariableDOFSpace::VariableDOFSpace(
                    size_t n_local_cell_dofs		   
                    )
   : m_mesh(mesh),
-    m_n_local_vertex_dofs(n_local_vertex_dofs * Eigen::VectorXd::Ones(mesh.n_vertices())),
-    m_n_local_edge_dofs(n_local_edge_dofs * Eigen::VectorXd::Ones(mesh.n_edges())),
-    m_n_local_face_dofs(n_local_face_dofs * Eigen::VectorXd::Ones(mesh.n_faces())),
-    m_n_local_cell_dofs(n_local_cell_dofs * Eigen::VectorXd::Ones(mesh.n_cells()))
+    m_n_local_vertex_dofs(n_local_vertex_dofs * Eigen::VectorXi::Ones(mesh.n_vertices())),
+    m_n_local_edge_dofs(n_local_edge_dofs * Eigen::VectorXi::Ones(mesh.n_edges())),
+    m_n_local_face_dofs(n_local_face_dofs * Eigen::VectorXi::Ones(mesh.n_faces())),
+    m_n_local_cell_dofs(n_local_cell_dofs * Eigen::VectorXi::Ones(mesh.n_cells()))
     
 {
   // Do nothing

@@ -429,9 +429,23 @@ Eigen::MatrixXd XGrad::computeL2Product(
     w_mass_Pkpo_T = compute_weighted_gram_matrix(weight_T, basis_Pkpo_T_quad, basis_Pkpo_T_quad, quad_2kpo_pw_T, "sym");
   }
 
+  // Potential in the cell
+  Eigen::MatrixXd Potential_T = cellOperators(iT).potential;
 
-  // Compute matrix of L2 product  
-  Eigen::MatrixXd L2P = Eigen::MatrixXd::Zero(dimensionCell(iT), dimensionCell(iT));
+  // Consistent term and stabilisation
+  return Potential_T.transpose() * w_mass_Pkpo_T * Potential_T 
+          + penalty_factor * computeStabilisation(iT, weight);
+
+}
+
+Eigen::MatrixXd XGrad::computeStabilisation(
+                                        const size_t iT,
+                                        const IntegralWeight & weight
+                                        ) const
+{
+  const Cell & T = *mesh().cell(iT); 
+  
+  Eigen::MatrixXd ST = Eigen::MatrixXd::Zero(dimensionCell(iT), dimensionCell(iT));
 
   // We need the potential in the cell
   Eigen::MatrixXd Potential_T = cellOperators(iT).potential;
@@ -461,9 +475,10 @@ Eigen::MatrixXd XGrad::computeL2Product(
 
     // Contribution of edge E
     Eigen::MatrixXd PTtrans_mass_PE = Potential_T.transpose() * gram_PkpoT_PkpoE * Potential_E;
-    L2P += w_hE2 * ( Potential_T.transpose() * compute_gram_matrix(basis_Pkpo_T_quad, quad_2kpo_E) * Potential_T
-                   - PTtrans_mass_PE - PTtrans_mass_PE.transpose()
-                   + Potential_E.transpose() * compute_gram_matrix(basis_Pkpo_E_quad, quad_2kpo_E) * Potential_E );
+    ST += 
+        w_hE2 * ( Potential_T.transpose() * compute_gram_matrix(basis_Pkpo_T_quad, quad_2kpo_E) * Potential_T
+                  - PTtrans_mass_PE - PTtrans_mass_PE.transpose()
+                  + Potential_E.transpose() * compute_gram_matrix(basis_Pkpo_E_quad, quad_2kpo_E) * Potential_E );
   } // for iE
 
   // Face penalty terms
@@ -491,7 +506,7 @@ Eigen::MatrixXd XGrad::computeL2Product(
     // Contribution of face F
     Eigen::MatrixXd Potential_F = extendOperator(T, F, faceOperators(F).potential);
     Eigen::MatrixXd PTtrans_mass_PF = Potential_T.transpose() * gram_PkpoT_PkpoF * Potential_F;
-    L2P += w_hF * ( Potential_T.transpose() * GramMatrix(F, PkpoT_family_PkpoF, int_monoF_2kp2) * Potential_T
+    ST += w_hF * ( Potential_T.transpose() * GramMatrix(F, PkpoT_family_PkpoF, int_monoF_2kp2) * Potential_T
                  - PTtrans_mass_PF - PTtrans_mass_PF.transpose()
                  + Potential_F.transpose() * GramMatrix(F, *faceBases(F).Polykpo, int_monoF_2kp2) * Potential_F );
                    
@@ -505,7 +520,7 @@ Eigen::MatrixXd XGrad::computeL2Product(
       Eigen::MatrixXd PTtrans_mass_PF = Potential_T.transpose() * gram_PkpoT_PkpoF * Potential_F;
 
       // Contribution of face F
-      L2P += w_hF * ( Potential_T.transpose() * compute_gram_matrix(basis_Pkpo_T_quad, quad_2kpo_F) * Potential_T
+      ST += w_hF * ( Potential_T.transpose() * compute_gram_matrix(basis_Pkpo_T_quad, quad_2kpo_F) * Potential_T
                      - PTtrans_mass_PF - PTtrans_mass_PF.transpose()
                      + Potential_F.transpose() * GramMatrix(F, *faceBases(F).Polykpo) * Potential_F );
     */       
@@ -513,12 +528,7 @@ Eigen::MatrixXd XGrad::computeL2Product(
     
   } // for iF
 
-  L2P *= penalty_factor;
-
-  // Cell term
-  L2P += Potential_T.transpose() * w_mass_Pkpo_T * Potential_T;
-
-  return L2P;
+  return ST;
 
 }
 

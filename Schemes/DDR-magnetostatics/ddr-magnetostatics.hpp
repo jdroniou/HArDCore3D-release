@@ -27,6 +27,7 @@
 #include <mesh.hpp>
 #include <mesh_builder.hpp>
 #include <local_static_condensation.hpp>
+#include <linearsolver.hpp>
 
 #include <xdiv.hpp>
 #include <xcurl.hpp>

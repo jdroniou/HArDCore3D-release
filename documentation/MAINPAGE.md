@@ -16,22 +16,30 @@ You will find on this page the following sections:
   - [DDRCore](#ddr) -- Methods (basis functions, discrete spaces and operators) for the Discrete De Rham sequence (DDR). This is extended in [LADDRCore](@ref LADDRCore) to cover Lie-algebra valued functions.
 * [Schemes](#schemes) -- List of schemes currently implemented in HArDCore3D.
 
+A [tutorial](tutorial_scheme.md) describes the principles for implementing a scheme using the HArDCore3D tools.
+
 <a name="build">
 \section build Build instructions
 </a>
 
 \subsection buildlib Building the libraries and the schemes
 
+A template for the main CMakeLists is provided in the repository. Copy CMakeLists-template.txt into CMakeLists.txt and edit the later according to your compilation needs.
+
 To build the libraries and implemented schemes, the minimal requirements are:
 
 * CMake version 2.6 or above (https://cmake.org/)
 * A C++ compiler that supports the C++14 standard, eg. GCC (https://gcc.gnu.org/) or Clang (https://clang.llvm.org/).
-* Eigen C++ library, version 3.3 or above (http://eigen.tuxfamily.org/)
+* Eigen C++ library, version 3.3 or above (http://eigen.tuxfamily.org/), which needs to be installed using cmake (not by simply copying the header files).
 * The following Boost C++ libraries (http://www.boost.org/): filesystem, program options, timer, chrono.
 
 Make sure that you have the development version of boost installed. On Linux, install `libboost-dev`, `libboost-filesystem-dev`, `libboost-program-options-dev`, `libboost-chrono-dev` and `libboost-timer-dev` from your package manager.
 
-The linear systems resulting from the assembled scheme are solved using the BiCGStab implementation of Eigen. Alternatives are also provided, but require additional libraries (UMFPACK, SUPERLU, etc.). Some schemes have procedures to compute condition numbers of matrices; these require the Spectra library (https://spectralib.org/). See the main CMakeLists.txt file for the libraries the code attempts to find, and the 'HINTS' section of individual CMake/*.cmake files for where it tries to find them.
+The provided CMakeLists.txt file should take care of installing these minimal libraries in case they are not found on your system; see INSTALL_NOTES.txt for details.
+
+The default solver for linear systems is the LU implementation of Eigen, but alternative can easily be selected via the class LinearSolver. Some of these alternative (UMFPACK, SUPERLU, Pastix...) require additional libraries, which can be installed by passing the proper arguments to cmake (see INSTALL_NOTES.txt and the provided CMakeLists file).
+
+A couple of schemes have procedures to compute condition numbers of matrices; these require the Spectra library (https://spectralib.org/). 
 
 Once you have installed all of the required dependencies, set up the build directory and generate the build files by running the following from the repository root:
 

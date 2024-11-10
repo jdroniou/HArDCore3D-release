@@ -2,7 +2,7 @@
 # path of the folder from where this runseries.sh will be executed
 
 # Source of all the project
-root="/home/jdroniou/programmes/github/HArDCore3D"
+root="<root directory of HArDCore3D>"
 
 # Location for the schemes' executable
 executable=$root"/build/Schemes/$executable_name"

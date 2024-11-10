@@ -282,7 +282,6 @@ namespace HArDCore3D
     return (powers(0)+powers(1)+2) * std::pow(y(0), powers(0)) * std::pow(y(1), powers(1)) / m_hF;
   }
 
-
   //------------------------------------------------------------------------------
   // Basis for G^{c,k}(F)
   //------------------------------------------------------------------------------
@@ -300,6 +299,7 @@ namespace HArDCore3D
     return (m_Rck_basis->function(i, x)).cross(m_nF);
   }
 
+  //-------------------- FREE FUNCTIONS ------------------------------------------
 
   //------------------------------------------------------------------------------
   // A common notion of scalar product for scalars and vectors
@@ -330,6 +330,20 @@ namespace HArDCore3D
                    basis_cross_v_quad.origin(), [&v](const VectorRd &x) -> VectorRd { return x.cross(v); });
     return basis_cross_v_quad;
   }
+
+  //------------------------------------------------------------------------------
+  //      Manipulations of bases
+  //------------------------------------------------------------------------------
+
+  Eigen::MatrixXd PermuteTensorization( const size_t a, const size_t b ){
+    // Useful formulas
+    //      the l-th element of (e \otimes f) is e_{l%a} f_{l/a}
+    //      the element e_if_j is the k-th in the family with k = i + j*a
+    Eigen::MatrixXd Perm = Eigen::MatrixXd::Zero(a*b, a*b);
+    for (size_t l = 0; l < a*b; l++) Perm( l, l/a + (l%a)*b ) = 1.;
+    return Perm;
+  };
+
 
   //------------------------------------------------------------------------------
   //      Gram matrices

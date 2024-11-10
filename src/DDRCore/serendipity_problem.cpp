@@ -8,9 +8,10 @@ using namespace HArDCore3D;
 
 //------------------------------------------------------------------------------
 
-SerendipityProblem::SerendipityProblem(const DDRCore & ddrcore, bool use_threads, std::ostream & output)
+SerendipityProblem::SerendipityProblem(const DDRCore & ddrcore, bool use_threads, std::ostream & output, bool use_serendipity)
   : m_ddrcore(ddrcore),
     m_output(output),
+    m_use_serendipity(use_serendipity),
     m_face_bases_Polyl(ddrcore.mesh().n_faces()),
     m_cell_bases_Polyl(ddrcore.mesh().n_cells()),
     m_face_bases_RolyCompllpo(ddrcore.mesh().n_faces()),
@@ -67,6 +68,9 @@ std::vector<size_t> SerendipityProblem::_compute_serendipity_edges(size_t iF)
   const Face & F = *mesh().face(iF);
   std::vector<size_t> ser_edges;
   ser_edges.reserve(F.n_edges());
+  
+  // Maximum number of serendipity edges: as much as we can, unless we do not want to apply serendipity
+  const size_t nmax_ser_edges = (m_use_serendipity ? F.n_edges() : 2);
 
   // For an edge to be selected, it must not be aligned with previously selected edges,
   // and the face must lie only on one side of the edge. We check that by asking that
@@ -99,7 +103,7 @@ std::vector<size_t> SerendipityProblem::_compute_serendipity_edges(size_t iF)
       }
     }
   
-    if (use_edge){
+    if (use_edge && ser_edges.size() < nmax_ser_edges){
       ser_edges.push_back(iE);
     }
 
@@ -168,6 +172,9 @@ std::vector<size_t> SerendipityProblem::_compute_serendipity_faces(size_t iT)
   std::vector<size_t> ser_faces;
   ser_faces.reserve(T.n_faces());
 
+  // Maximum number of serendipity faces: as much as we can, unless we do not want to apply serendipity
+  const size_t nmax_ser_faces = (m_use_serendipity ? T.n_faces() : 2);
+
   double skew = T.measure() / std::pow(T.diam(), 3);
   double threshold = 0.1 * skew * T.diam();
 
@@ -193,7 +200,7 @@ std::vector<size_t> SerendipityProblem::_compute_serendipity_faces(size_t iT)
       }
     }
   
-    if (use_face){
+    if (use_face && ser_faces.size() < nmax_ser_faces){
       ser_faces.push_back(iF);
     }
 
@@ -252,9 +259,9 @@ const Eigen::MatrixXd SerendipityProblem::SerendipityOperatorCell(const size_t i
 
 //------------------------------------------------------------------------------
 
-Eigen::VectorXd SerendipityProblem::nDOFs_faces_SXGrad() const
+Eigen::VectorXi SerendipityProblem::nDOFs_faces_SXGrad() const
 {
-  Eigen::VectorXd n_local_face_dofs = Eigen::VectorXd::Zero(mesh().n_faces());
+  Eigen::VectorXi n_local_face_dofs = Eigen::VectorXi::Zero(mesh().n_faces());
   for (size_t iF = 0; iF < mesh().n_faces(); iF++){
     n_local_face_dofs(iF) = dimFacePolyl(iF);
   }
@@ -262,9 +269,9 @@ Eigen::VectorXd SerendipityProblem::nDOFs_faces_SXGrad() const
   return n_local_face_dofs;
 }
 
-Eigen::VectorXd SerendipityProblem::nDOFs_cells_SXGrad() const
+Eigen::VectorXi SerendipityProblem::nDOFs_cells_SXGrad() const
 {
-  Eigen::VectorXd n_local_cell_dofs = Eigen::VectorXd::Zero(mesh().n_cells());
+  Eigen::VectorXi n_local_cell_dofs = Eigen::VectorXi::Zero(mesh().n_cells());
   for (size_t iT = 0; iT < mesh().n_cells(); iT++){
     n_local_cell_dofs(iT) += dimCellPolyl(iT);
   }
@@ -274,10 +281,10 @@ Eigen::VectorXd SerendipityProblem::nDOFs_cells_SXGrad() const
 
 //------------------------------------------------------------------------------
 
-Eigen::VectorXd SerendipityProblem::nDOFs_faces_SXCurl() const
+Eigen::VectorXi SerendipityProblem::nDOFs_faces_SXCurl() const
 {
   size_t dim_RkmoF = PolynomialSpaceDimension<Face>::Roly(m_ddrcore.degree()-1);
-  Eigen::VectorXd n_local_face_dofs = Eigen::VectorXd::LinSpaced(mesh().n_faces(), dim_RkmoF, dim_RkmoF);
+  Eigen::VectorXi n_local_face_dofs = Eigen::VectorXi::LinSpaced(mesh().n_faces(), dim_RkmoF, dim_RkmoF);
   for (size_t iF = 0; iF < mesh().n_faces(); iF++){
     n_local_face_dofs(iF) += dimFaceRolyCompllpo(iF);
   }
@@ -285,10 +292,10 @@ Eigen::VectorXd SerendipityProblem::nDOFs_faces_SXCurl() const
   return n_local_face_dofs;
 }
 
-Eigen::VectorXd SerendipityProblem::nDOFs_cells_SXCurl() const
+Eigen::VectorXi SerendipityProblem::nDOFs_cells_SXCurl() const
 {
   size_t dim_RkmoT = PolynomialSpaceDimension<Cell>::Roly(m_ddrcore.degree()-1);
-  Eigen::VectorXd n_local_cell_dofs = Eigen::VectorXd::LinSpaced(mesh().n_cells(), dim_RkmoT, dim_RkmoT);
+  Eigen::VectorXi n_local_cell_dofs = Eigen::VectorXi::LinSpaced(mesh().n_cells(), dim_RkmoT, dim_RkmoT);
   for (size_t iT = 0; iT < mesh().n_cells(); iT++){
     n_local_cell_dofs(iT) += dimCellRolyCompllpo(iT);
   }

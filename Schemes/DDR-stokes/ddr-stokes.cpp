@@ -10,15 +10,7 @@
 
 #include <boost/program_options.hpp>
 #include <display_timer.hpp>
-
-#ifdef WITH_UMFPACK
-#include <Eigen/UmfPackSupport>
-#endif
-
-#ifdef WITH_MKL
-#include <Eigen/PardisoSupport>
-#include <mkl.h>
-#endif
+#include <linearsolver.hpp>
 
 #define FORMAT(W)                                                       \
   std::setiosflags(std::ios_base::left) << std::setw(W) << std::setfill(' ')
@@ -46,7 +38,7 @@ int main(int argc, const char* argv[])
     ("solution,s", boost::program_options::value<int>()->default_value(0), "Select the solution")
     ("pressure_scaling", boost::program_options::value<double>()->default_value(1.), "Select the pressure scaling")
     ("export-matrix,e", "Export matrix to Matrix Market format")
-    ("iterative-solver,i", "Use iterative linear solver")
+    ("solver", boost::program_options::value<std::string>()->default_value("PardisoLU"), "Choice of solver, not case dependent. Options are: PardisoLU, UMFPACK, PaStiXLU, PaStiXLLT, EigenLU, EigenBiCGSTAB (reverts to EigenLU if the selected solver is not available)")
     ("stabilization-parameter,x", boost::program_options::value<double>(), "Set the stabilization parameter");
 
   boost::program_options::variables_map vm;
@@ -158,47 +150,15 @@ int main(int argc, const char* argv[])
     saveMarket(st.systemVector(), "b_stokes.mtx");
   }
 
+  // Select linear solver
+  std::string name_solver = vm["solver"].as<std::string>();
+  LinearSolver<Stokes::SystemMatrixType> solver(name_solver);
+  std::cout << "[main] Solving the system using " << solver.name() << std::endl;
+  
   // Solve the problem
   timer.start();
-  Eigen::VectorXd uplambdah_condensed;
-  if (vm.count("iterative-solver")) {
-    std::cout << "[main] Solving the linear system using BiCGSTAB" << std::endl;
-    
-    Eigen::BiCGSTAB<Stokes::SystemMatrixType, Eigen::IncompleteLUT<double> > solver;
-    // solver.preconditioner().setFillfactor(2);
-    solver.compute(st.systemMatrix());
-    if (solver.info() != Eigen::Success) {
-      std::cerr << "[main] ERROR: Could not factorize matrix" << std::endl;
-      exit(1);
-    }
-    uplambdah_condensed = solver.solve(st.systemVector());
-    if (solver.info() != Eigen::Success) {
-      std::cerr << "[main] ERROR: Could not solve direct system" << std::endl;
-      exit(1);
-    }
-  } else { 
-#ifdef WITH_MKL
-    std::cout << "[main] Solving the linear system using Pardiso" << std::endl;    
-    unsigned nb_threads_hint = std::thread::hardware_concurrency();
-    mkl_set_dynamic(0);
-    mkl_set_num_threads(nb_threads_hint);
-    Eigen::PardisoLU<Stokes::SystemMatrixType> solver;
-#elif WITH_UMFPACK
-    std::cout << "[main] Solving the linear system using Umfpack" << std::endl;    
-    Eigen::UmfPackLU<Stokes::SystemMatrixType> solver;
-#else
-    std::cout << "[main] Solving the linear system using direct solver" << std::endl;    
-    Eigen::SparseLU<Stokes::SystemMatrixType> solver;
-#endif
-    solver.compute(st.systemMatrix());
-    if (solver.info() != Eigen::Success) {
-      std::cerr << "[main] ERROR: Could not factorize matrix" << std::endl;
-    }
-    uplambdah_condensed = solver.solve(st.systemVector());
-    if (solver.info() != Eigen::Success) {
-      std::cerr << "[main] ERROR: Could not solve linear system" << std::endl;
-    }
-  }
+  Eigen::VectorXd uplambdah_condensed = solver.compute_and_solve(st.systemMatrix(), st.systemVector());
+
   // Re-create statically condensed unknowns
   Eigen::VectorXd uph = Eigen::VectorXd::Zero(st.dimension());
   Eigen::VectorXd sc_unknowns = st.scVector() + st.scMatrix() * uplambdah_condensed;
@@ -531,10 +491,10 @@ void Stokes::_assemble_local_contribution(
   std::tie(AT_sys, bT_sys, AT_sc, bT_sc) = locSC.compute(lsT);
   
   // STATICALLY CONDENSED SYSTEM
-  std::vector<size_t> IT_sys = locSC.globalDOFs_sys();
-  for (size_t i = 0; i < locSC.dim_sys(); i++){
+  std::vector<size_t> IT_sys = locSC.globalDOFs_gl();
+  for (size_t i = 0; i < locSC.dim_gl(); i++){
     rhs_sys(IT_sys[i]) += bT_sys(i);
-    for (size_t j = 0; j < locSC.dim_sys(); j++){    
+    for (size_t j = 0; j < locSC.dim_gl(); j++){    
       triplets_sys.emplace_back(IT_sys[i], IT_sys[j], AT_sys(i,j));
     }
   }
@@ -543,7 +503,7 @@ void Stokes::_assemble_local_contribution(
   std::vector<size_t> IT_sc = locSC.globalDOFs_sc();
   for (size_t i = 0; i < locSC.dim_sc(); i++){
     rhs_sc(IT_sc[i]) += bT_sc(i);
-    for (size_t j = 0; j < locSC.dim_sys(); j++){
+    for (size_t j = 0; j < locSC.dim_gl(); j++){
       triplets_sc.emplace_back(IT_sc[i], IT_sys[j], AT_sc(i,j));
     }
   }
@@ -595,7 +555,7 @@ std::vector<StokesNorms> Stokes::computeStokesNorms(const std::vector<Eigen::Vec
 
   // Assemble the output
   std::vector<StokesNorms> list_norms;
-  list_norms.reserve(nb_vectors);
+  list_norms.resize(nb_vectors);
   for (size_t i=0; i<nb_vectors; i++){  
     double sqnorm_u = local_sqnorm_u[i].sum();
     double sqnorm_curl_u = local_sqnorm_curl_u[i].sum();

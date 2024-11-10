@@ -223,6 +223,11 @@ namespace HArDCore3D
                                      const IntegralWeight & weight = IntegralWeight(1.) ///< weight function in the L2 product, defaults to constant 1.
                                      ) const;
 
+    /// Computes the values of the potential reconstruction at the mesh vertices
+    std::vector<VectorRd> computeVertexValues(
+                  const Eigen::VectorXd & u   ///< DOFs in the discrete space
+                  ) const;
+
     //-----------------------//       
     //---- Getters ----------//
 

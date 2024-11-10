@@ -544,10 +544,10 @@ void Stokes::_assemble_local_contribution(
   std::tie(AT_sys, bT_sys, AT_sc, bT_sc) = locSC.compute(lsT);
   
   // STATICALLY CONDENSED SYSTEM
-  std::vector<size_t> IT_sys = locSC.globalDOFs_sys();
-  for (size_t i = 0; i < locSC.dim_sys(); i++){
+  std::vector<size_t> IT_sys = locSC.globalDOFs_gl();
+  for (size_t i = 0; i < locSC.dim_gl(); i++){
     rhs_sys(IT_sys[i]) += bT_sys(i);
-    for (size_t j = 0; j < locSC.dim_sys(); j++){    
+    for (size_t j = 0; j < locSC.dim_gl(); j++){    
       triplets_sys.emplace_back(IT_sys[i], IT_sys[j], AT_sys(i,j));
     }
   }
@@ -556,7 +556,7 @@ void Stokes::_assemble_local_contribution(
   std::vector<size_t> IT_sc = locSC.globalDOFs_sc();
   for (size_t i = 0; i < locSC.dim_sc(); i++){
     rhs_sc(IT_sc[i]) += bT_sc(i);
-    for (size_t j = 0; j < locSC.dim_sys(); j++){
+    for (size_t j = 0; j < locSC.dim_gl(); j++){
       triplets_sc.emplace_back(IT_sc[i], IT_sys[j], AT_sc(i,j));
     }
   }

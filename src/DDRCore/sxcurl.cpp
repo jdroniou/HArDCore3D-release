@@ -398,3 +398,33 @@ Eigen::MatrixXd SXCurl::computeL2ProductGradient(
 
 }
 
+
+//------------------------------------------------------------------------------
+// Vertex values 
+//------------------------------------------------------------------------------
+std::vector<VectorRd> SXCurl::computeVertexValues(const Eigen::VectorXd & u) const
+{
+  std::vector<VectorRd> values(mesh().n_vertices(), VectorRd::Zero());
+  
+  // Value at each vertex obtained averaging the values from all the cells around
+  for (Vertex * V : mesh().get_vertices()){
+    size_t iV = V->global_index();
+ 
+    for (Cell * T : V->get_cells()){
+      size_t iT = T->global_index();
+      Eigen::VectorXd pTuT = cellPotential(iT) * restrict(*T, u);
+      
+      for (size_t i=0; i < cellBases(iT).Polyk3->dimension(); i++){
+        values[iV] += pTuT(i) * cellBases(iT).Polyk3->function(i, V->coords());
+      }
+    }
+    
+    values[iV] /= V->n_cells();
+
+  }
+  
+  return values;
+}                  
+
+
+

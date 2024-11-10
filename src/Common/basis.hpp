@@ -1,4 +1,4 @@
-// Core data structures and methods required to implement the discrete de Rham sequence in 3D
+// Core data structures and methods required to implement polytopal methods in 3D
 //
 // Provides:
 //  - Full and partial polynomial spaces on the element, faces, and edges
@@ -49,6 +49,7 @@ namespace HArDCore3D
   /// Dimension, and generic types for vector in correct dimension (makes it easier to translate a code between 2D and 3D)
   constexpr int dimspace = 3;
   typedef Eigen::Matrix3d MatrixRd;
+  static const std::vector<VectorRd> basisRd = { VectorRd(1., 0., 0.), VectorRd(0., 1., 0.), VectorRd(0., 0., 1.) };
 
   template <typename T>
   using FType = std::function<T(const VectorRd&)>; ///< type for function of point. T is the return type of the function
@@ -579,9 +580,9 @@ namespace HArDCore3D
 
   //----------------------TENSORIZED--------------------------------------------------------
 
-  /// Vector family obtained by tensorization of a scalar family
-  /** The tensorization is done the following way: if \f$(f_1,...,f_r)\f$ is the family of scalar functions,
-   the tensorized family of rank N is given by (where all vectors are columns of size N):
+  /// Vector family obtained by tensorization of a scalar family.
+  /** The tensorization is done the following way: if \f$(f_i)_{i=1..r}\f$ is the family of scalar functions and 
+   \f$(e_j)_{j=1..N}\f$ is the canonical basis of \f$R^N\f$, the tensorized basis is \f$f\otimes e=(f_1e_1,f_2e_1,f_3e_1,\ldots,f_re_1,f_1e_2,f_2e_2,\ldots)\f$. More explicitly, the basis is:
   
      \f$\left(\begin{array}{c}f_1\\0\\\vdots\\0\end{array}\right)\f$;
      \f$\left(\begin{array}{c}f_2\\0\\\vdots\\0\end{array}\right)\f$;...;
@@ -758,6 +759,7 @@ namespace HArDCore3D
   private:
     ScalarFamilyType m_scalar_family;
   };
+    
 
   //----------------------MATRIX FAMILY--------------------------------------------------------
 
@@ -770,7 +772,7 @@ namespace HArDCore3D
   // Useful formulas to manipulate this basis (all indices starting from 0):
   //      the i-th element in the basis is f_{i%r} E_{i/r}
   //      the matrix E_m has 1 at position (m%N, m/N)
-  //      the element f_aE_b is the i-th in the family with i = ( [b/N]N + [b%N] )r + a
+  //      the element f_aE_b is the i-th in the family with i = b*r + a
   template<typename ScalarFamilyType, size_t N>
   class MatrixFamily
   {
@@ -871,27 +873,27 @@ namespace HArDCore3D
       return N;
     }
     
-    /// Return the transpose operator, the rN^2 square matrix that to a given vector of coefficients on the Matrix family associate the vector of coefficients corresponding to the transpose
+    /// Return the transpose operator, the rN^2 square matrix that to a given vector of coefficients on the Matrix family associates the vector of coefficients corresponding to the transpose
     inline const Eigen::MatrixXd transposeOperator() const
     {
       return m_transposeOperator;
     }
     
-    /// Return the symmetrisation operator, the rN^2 square matrix that to a given vector of coefficients on the Matrix family associate the vector of coefficients corresponding to the symmetrised matrix
+    /// Return the symmetrisation operator, the rN^2 square matrix that to a given vector of coefficients on the Matrix family associates the vector of coefficients corresponding to the symmetrised matrix
     inline const Eigen::MatrixXd symmetriseOperator() const
     {
       return (Eigen::MatrixXd::Identity(dimension(), dimension()) + m_transposeOperator)/2;
     }
 
     /// Returns the matrix that can be used, in a Family of this MatrixBasis, to create a basis of the subspace of symmetric matrices
-    const Eigen::MatrixXd symmetricBasis() const
+    inline const Eigen::MatrixXd symmetricBasis() const
     {
       size_t dim_scalar =  m_scalar_family.dimension();
       Eigen::MatrixXd symOpe = symmetriseOperator();
       
       Eigen::MatrixXd SB = Eigen::MatrixXd::Zero(dim_scalar * N*(N+1)/2, dimension());
       
-      // The matrix consists in selecting certain rows of symmetriseOperator, corresponding to the lower triangle part
+      // The matrix consists in selecting certain rows of symmetriseOperator, corresponding to the lower trianglular part
       // To select these rows, we loop over the columns of the underlying matrices, and get the rows in symmetriseOperator()
       // corresponding to the lower triangular part of each column
       size_t position = 0;
@@ -903,6 +905,32 @@ namespace HArDCore3D
       }
       
       return SB;
+    }
+
+    /// Returns the matrix corresponding to the trace, expressed as a linear operator between that MatrixFamily and the underlying scalar family.
+    /**
+      Tr_{kl} is the coefficient on f_k (scalar family) of the l-th element of the Matrix family.
+    */
+    inline const Eigen::MatrixXd traceOperator() const
+    {
+      size_t r =  m_scalar_family.dimension();
+      
+      Eigen::MatrixXd Tr = Eigen::MatrixXd::Zero(r, dimension());
+      
+      /* According to the formulas described at the start of this class, the l-th element of the
+       matrix family is f_{l%r} E_{l/r}.
+       Given the construction of E_m=E_{l/r}, the trace is either 0, or 1 if m%N=m/N, that is,
+       (l/r)%N = (l/r)/N.
+       So Tr_{kl}=1 only if k=l%r and (l/r)%N = (l/r)/N
+      */
+      for (size_t l=0; l < dimension(); l++){
+        if ( size_t(l/r)%N == size_t(size_t(l/r)/N) ){
+          size_t k = l%r;
+          Tr(k,l) = 1.;
+        }
+      }
+             
+      return Tr;
     }
 
   private:
@@ -1733,7 +1761,7 @@ namespace HArDCore3D
     return transformed_B_quad;
   }
 
-  /// From a scalar family B=(B_1..B_r) and vectors (v_1..v_k) in R^N, constructs a "Family" of "TensorizedVectorFamily" (built on B, of size N) that represents the family (B_1v_1..B_rv_1 B_1v_2...B_rv_2... B_1v_k..B_rv_k).
+  /// From a scalar family B=(B_1..B_r) and vectors (v_1..v_k) in R^N, constructs a "Family" of "TensorizedVectorFamily" (built on B, of size N) that represents the family (B_1v_1..B_rv_1 B_1v_2...B_rv_2...B_1v_k...B_rv_k).
   /** Useful to tensorized scalar family while controlling the directions of tensorization (e.g. to identify tangential and normal directions along a surface, etc.). If B and v are orthonormal, then so is the returned family of tensorized basis. */
   template <typename ScalarBasisType, size_t N>  
   Family<TensorizedVectorFamily<ScalarBasisType, N>> GenericTensorization(
@@ -1760,6 +1788,13 @@ namespace HArDCore3D
     return Family<TensorizedVectorFamily<ScalarBasisType, N>>(tensbasis, M);
   }
 
+  /// Returns the matrix giving the permutation of the tensorization of a family of size a with a family of size b.
+  /** For \f$(e_i)_{i=1..a}\f$ and \f$(f_i)_{i=1..b}\f$ two families, define \f$(e\otimes f)\f$ as the family \f$(e\otimes f)_{l=1..ab}=(e_1\otimes f_1,\ldots,e_a\otimes f_1,e_1\otimes f_2,\ldots)\f$. Then this function returns the permutation matrix \f$M\f$ such that \f$M_{lk}=1\f$ if and only if \f$(e\otimes f)_l\f$ and \f$(f\otimes e)_k\f$ correspond to the same \f$e_i\f$ and \f$f_j\f$.  
+  If we consider the tensor product as "symmetric" (the order does not count, that is, \f$e_if_j=f_je_i\f$), and \f$e\f$ and \f$f\f$ as bases of \f$E\f$ and \f$F\f$, then \f$(e\otimes f)\f$ and \f$(f\otimes e)\f$ are just two different ways of creating a basis of the tensor space \f$E\otimes F\f$ by incrementing first either the indices of \f$e\f$ or \f$f\f$. Then \f$M\f$ is the matrix that expresses the family \f$(f\otimes e)\f$ on the family \f$(e\otimes f)\f$: \f$(f\otimes e)_l = \sum_k M_{lk}(e\otimes f)_k\f$. In that interpretation, \f$M\f$ is actually the change-of-basis matrix from \f$(e\otimes f)\f$ to \f$(f\otimes e)\f$, that is, if \f$X\f$ are the coordinates of some vector in \f$(f\otimes e)\f$ then \f$MX\f$ are the coordinates of that vector in \f$(e\otimes f)\f$.
+  */
+  Eigen::MatrixXd PermuteTensorization( const size_t a,  ///< Size of the first family \f$e\f$ in the tensor product
+                                        const size_t b   ///< Size of the second family \f$f\f$ in the tensor product
+                                      );
 
   /// Function to symmetrise a matrix (useful together with transform_values_quad)
   inline static std::function<Eigen::MatrixXd(const Eigen::MatrixXd &)> 
@@ -1773,7 +1808,7 @@ namespace HArDCore3D
   /** Useful, e.g., to compute Gram matrices involving traces, by writing tr(G) B = G : B Id and computing the Gram matrix of G with the output of this function. */
   template <typename ScalarBasisType, size_t N>  
   Family<MatrixFamily<ScalarBasisType, N>> IsotropicMatrixFamily(
-                                                          const ScalarBasisType & B  /// The scalar family
+                                                          const ScalarBasisType & B  ///< The scalar family
                                                           )
   {
     size_t r = B.dimension();

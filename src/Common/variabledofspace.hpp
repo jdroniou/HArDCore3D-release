@@ -19,19 +19,19 @@ namespace HArDCore3D
     /// Constructor
     VariableDOFSpace(
              const Mesh & mesh,
-             const Eigen::VectorXd n_local_vertex_dofs,
-             const Eigen::VectorXd n_local_edge_dofs,
-             const Eigen::VectorXd n_local_face_dofs,
-             const Eigen::VectorXd n_local_cell_dofs
+             const Eigen::VectorXi n_local_vertex_dofs,
+             const Eigen::VectorXi n_local_edge_dofs,
+             const Eigen::VectorXi n_local_face_dofs,
+             const Eigen::VectorXi n_local_cell_dofs
              );
 
     /// Simpler constructor if all vertices have the same number of DOFs
     VariableDOFSpace(
              const Mesh & mesh,
              size_t n_local_vertex_dofs,
-             const Eigen::VectorXd n_local_edge_dofs,
-             const Eigen::VectorXd n_local_face_dofs,
-             const Eigen::VectorXd n_local_cell_dofs
+             const Eigen::VectorXi n_local_edge_dofs,
+             const Eigen::VectorXi n_local_face_dofs,
+             const Eigen::VectorXi n_local_cell_dofs
              );
 
     /// Simpler constructor if all vertices/edges have the same number of DOFs
@@ -39,8 +39,8 @@ namespace HArDCore3D
              const Mesh & mesh,
              size_t n_local_vertex_dofs,
              size_t n_local_edge_dofs,
-             const Eigen::VectorXd n_local_face_dofs,
-             const Eigen::VectorXd n_local_cell_dofs
+             const Eigen::VectorXi n_local_face_dofs,
+             const Eigen::VectorXi n_local_cell_dofs
              );
 
     /// Simpler constructor if all vertices/edges/faces have the same number of DOFs
@@ -49,7 +49,7 @@ namespace HArDCore3D
              size_t n_local_vertex_dofs,
              size_t n_local_edge_dofs,
              size_t n_local_face_dofs,
-             const Eigen::VectorXd n_local_cell_dofs
+             const Eigen::VectorXi n_local_cell_dofs
              );
 
     /// Simpler constructor if all vertices/edges/faces/cells have the same number of DOFs
@@ -446,10 +446,10 @@ namespace HArDCore3D
     
     private:
     const Mesh & m_mesh;
-    Eigen::VectorXd m_n_local_vertex_dofs;
-    Eigen::VectorXd m_n_local_edge_dofs;
-    Eigen::VectorXd m_n_local_face_dofs;
-    Eigen::VectorXd m_n_local_cell_dofs;
+    Eigen::VectorXi m_n_local_vertex_dofs;
+    Eigen::VectorXi m_n_local_edge_dofs;
+    Eigen::VectorXi m_n_local_face_dofs;
+    Eigen::VectorXi m_n_local_cell_dofs;
 
       
   };

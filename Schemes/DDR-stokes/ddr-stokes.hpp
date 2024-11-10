@@ -51,6 +51,9 @@ namespace HArDCore3D
         // do nothing
       };
     
+    // Constructor without arguments
+    StokesNorms() : StokesNorms(0., 0., 0., 0.) {};
+    
     double u; ///< Norm of velocity
     double curl_u; ///< Norm of curl of velocity (vorticity)
     double p; ///< Norm of pressure

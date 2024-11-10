@@ -226,14 +226,31 @@ namespace HArDCore3D
     Eigen::MatrixXd computeL2Product(
                                      const size_t iT, ///< index of the cell
                                      const double & penalty_factor = 1., ///< pre-factor for stabilisation term
-                                     const Eigen::MatrixXd & mass_Pk3_T = Eigen::MatrixXd::Zero(1,1), ///< if pre-computed, the mass matrix of (P^k(T))^3; if none is pre-computed, passing Eigen::MatrixXd::Zero(1,1) will force the calculation
+                                     const Eigen::MatrixXd & mass_Pkpo_T = Eigen::MatrixXd::Zero(1,1), ///< if pre-computed, the mass matrix of P^{k+1}(T); if none is pre-computed, passing Eigen::MatrixXd::Zero(1,1) will force the calculation
                                      const IntegralWeight & weight = IntegralWeight(1.) ///< weight function in the L2 product, defaults to 1
                                      ) const
     {
       return EgradCell(iT).transpose() 
-                * m_xgrad.computeL2Product(iT, penalty_factor, mass_Pk3_T, weight)
-                  *EgradCell(iT);  
+                * m_xgrad.computeL2Product(iT, penalty_factor, mass_Pkpo_T, weight)
+                  * EgradCell(iT);  
     }
+    
+    /// Computes only the stabilisation matrix of the (weighted) L2-product for the cell of index iT.
+    Eigen::MatrixXd computeStabilisation(
+                                     const size_t iT, ///< index of the cell
+                                     const IntegralWeight & weight = IntegralWeight(1.) ///< weight function in the stabilisation, defaults to 1
+                                     ) const
+    {
+      return EgradCell(iT).transpose() 
+                * m_xgrad.computeStabilisation(iT, weight)
+                  * EgradCell(iT);
+    }
+
+    
+    /// Computes the values of the potential reconstruction at the mesh vertices
+    std::vector<double> computeVertexValues(
+                  const Eigen::VectorXd & u   ///< DOFs in the discrete space
+                  ) const;
 
          
     //-----------------------//       
@@ -257,7 +274,7 @@ namespace HArDCore3D
       return m_ddr_core.faceBases(iF);
     }
 
-    /// Return cell bases for face F
+    /// Return face bases for face F
     inline const DDRCore::FaceBases & faceBases(const Face & F) const
     {
       return m_ddr_core.faceBases(F.global_index());

@@ -32,6 +32,7 @@
 #include <mesh.hpp>
 #include <mesh_builder.hpp>
 #include <local_static_condensation.hpp>
+#include <linearsolver.hpp>
 
 #include <vhhospace.hpp>
 #include <BoundaryConditions/BoundaryConditions.hpp>

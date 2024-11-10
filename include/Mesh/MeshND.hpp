@@ -167,7 +167,7 @@ namespace MeshND
         void add_i_edge(Edge<dimension> *edge) ///<  adds an internal edge to the mesh
         {
             assert(std::find(_i_edges.begin(), _i_edges.end(), edge) == _i_edges.end());
-            _b_edges.push_back(edge);
+            _i_edges.push_back(edge);
             if (dimension == 2)
             {
                 assert(std::find(_i_faces.begin(), _i_faces.end(), reinterpret_cast<Face<dimension> *>(edge)) == _i_faces.end());

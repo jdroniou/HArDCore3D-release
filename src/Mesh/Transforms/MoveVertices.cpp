@@ -69,11 +69,22 @@ int main(const int argc, const char *argv[])
       random_move(mesh_ptr.get(), factor);       
       apply_transformation(mesh_ptr.get(), [](const VectorRd & x)->VectorRd { return 2.*x - VectorRd(1.,1.,1.);}); 
       break;
-
-  default:
-    std::cerr << "[main] ERROR: Type of move unknown" << std::endl;
-    exit(1);
-
+    
+    case 1:
+      // Apply a transformation that squeezes the mesh from x=0 (unchanged) to x=1/2 (squeezed)
+      {
+      std::function<double(double,double)> f = 
+            [](const double l, const double s)->double 
+              { 
+                return (l < 0.5 ? s*(1-l)+0.5*l : 0.5*s + 0.25);
+              };
+      apply_transformation(mesh_ptr.get(), [&f](const VectorRd & x)->VectorRd { return VectorRd(x.x(), f(x.x(),x.y()), f(x.x(),x.z()));});
+      break;
+      }
+      
+    default:
+      std::cerr << "[main] ERROR: Type of move unknown" << std::endl;
+      exit(1);
   }
   
   // Write new mesh

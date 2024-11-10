@@ -49,7 +49,11 @@ namespace HArDCore3D
     typedef Eigen::FullPivLU<Eigen::MatrixXd> InverseProblem;
     
     /// Constructor
-    SerendipityProblem(const DDRCore & ddrcore, bool use_threads = true, std::ostream & output = std::cout);
+    SerendipityProblem(const DDRCore & ddrcore,   ///< DDR class from which this serendipity is constructed
+                       bool use_threads = true,   ///< Using multithreading for construction
+                       std::ostream & output = std::cout,   ///< Output for messages
+                       bool use_serendipity = true  ///< False means that we actually use the DDR class (no serendipity is applied)
+                       );
     
     //---------- Serendipity edges and faces, and degrees -------------//
     /// Return the list of serendipity edges in a face
@@ -144,9 +148,9 @@ namespace HArDCore3D
     }
 
     /// Number of DOFs on faces for serendipity XGrad space
-    Eigen::VectorXd nDOFs_faces_SXGrad() const;
+    Eigen::VectorXi nDOFs_faces_SXGrad() const;
     /// Number of DOFs on cells for serendipity XGrad space
-    Eigen::VectorXd nDOFs_cells_SXGrad() const;
+    Eigen::VectorXi nDOFs_cells_SXGrad() const;
 
     //---------- Serendipity dimensions and bases for curl -------------//
     /// Return the dimension of R^{c,l+1} on face of index iF
@@ -204,9 +208,9 @@ namespace HArDCore3D
     }
     
     /// Number of DOFs on faces for serendipity XCurl space
-    Eigen::VectorXd nDOFs_faces_SXCurl() const;
+    Eigen::VectorXi nDOFs_faces_SXCurl() const;
     /// Number of DOFs on cells for serendipity XCurl space
-    Eigen::VectorXd nDOFs_cells_SXCurl() const;
+    Eigen::VectorXi nDOFs_cells_SXCurl() const;
 
     //------------ Serendipity operators ---------------//
     /// Compute the serendipity operator on the face of index iF
@@ -234,6 +238,12 @@ namespace HArDCore3D
       return m_ddrcore.mesh();
     }
 
+    /// Return a const reference to the underlying DDR core
+    inline const DDRCore & ddrCore() const
+    {
+      return m_ddrcore;
+    }
+
   private:
     /// Create list of serendipity edge on face iF
     std::vector<size_t> _compute_serendipity_edges(size_t iF);
@@ -251,6 +261,9 @@ namespace HArDCore3D
     const DDRCore & m_ddrcore;
     // Output stream
     std::ostream & m_output;
+    
+    // To determine if we want to actually use serendipity or not. False gives back the standard DDR
+    bool m_use_serendipity;
 
     // Face and cell basis P^l
     std::vector<std::unique_ptr<PolylBasisFaceType> > m_face_bases_Polyl;
