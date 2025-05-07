@@ -17,7 +17,9 @@
 using namespace HArDCore3D;
 using namespace Manicore; 
 
-DDR_PEC::DDR_PEC(Mesh const & mesh,int r, bool use_threads, std::ostream & output) : _r(r) {
+DDR_PEC::DDR_PEC(Mesh const & mesh,int r, bool use_threads, std::ostream & output) 
+  : _r(r) 
+{
   // Initialize global data
   Initialize_exterior_module<3>::init(r);
   _dim_table.resize(3+1);
@@ -309,6 +311,27 @@ Eigen::Matrix<double,-1,-1,0,3,3> DDR_PEC::get_hodge_star(size_t k, size_t d, si
       return Eigen::Matrix<double,3,3>{{0.,0.,1.},{0.,-1.,0.},{1.,0.,0.}};
     }
   }
+}
+
+Eigen::MatrixXd DDR_PEC::discrete_hodge_star(size_t k, size_t d, size_t i) const {
+  assert(d < 4 && k <= d && "Dimension or form degree too high");
+  assert(i < _nbelem[d] && "Element index too high");
+  if (k == 0) { 
+    return std::pow(get_scaling(d, i), -int(d)) * Eigen::MatrixXd::Identity(Dimension::PolyDim(_r,d), Dimension::PolyDim(_r,d));
+  } else if (k == d) { 
+    return std::pow(get_scaling(d, i), d) *Eigen::MatrixXd::Identity(Dimension::PolyDim(_r,d), Dimension::PolyDim(_r,d));
+  } else {
+    if (d == 2) { // k = 1, basis dx,dy 
+      return Eigen::KroneckerProduct(get_hodge_star(k,d,i), Eigen::MatrixXd::Identity(Dimension::PolyDim(_r,d), Dimension::PolyDim(_r,d)));
+    } else { // d = 3, k = 1 or 2
+      int diff_deg = d-k-k;
+      return std::pow(get_scaling(d, i), -diff_deg)*Eigen::KroneckerProduct(get_hodge_star(k,d,i), Eigen::MatrixXd::Identity(Dimension::PolyDim(_r,d), Dimension::PolyDim(_r,d)));
+    }
+  }
+}
+
+Eigen::MatrixXd DDR_PEC::discrete_inv_hodge_star(size_t k, size_t d, size_t i) const {
+  return std::pow(-1, k*(d-k)) * discrete_hodge_star(k, d, i);
 }
 
 Eigen::Matrix<double,-1,1,0,3,1> DDR_PEC::evaluate_basis(Eigen::Vector3d const &x,size_t k,size_t d,size_t i_cell,int i_basis) const {

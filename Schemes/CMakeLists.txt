@@ -64,6 +64,16 @@ ADD_EXECUTABLE(lasddr-yangmills LADDR-yangmills/lasddr-yangmills.cpp)
 TARGET_LINK_LIBRARIES(lasddr-yangmills laddrcore plot ${EXTERNAL_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(lasddr-yangmills PUBLIC ${EXTERNAL_INCLUDES})
 
+# ECDDR Einstein (D, theta) scheme 
+ADD_EXECUTABLE(ecddr-einstein ECDDR-einstein/ecddr-einstein.cpp)
+TARGET_LINK_LIBRARIES(ecddr-einstein ddr_pec ddr_spaces exterior_cell plot ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(ecddr-einstein PUBLIC ${EXTERNAL_INCLUDES})
+
+# ECDDR Einstein (D, theta, B) scheme
+ADD_EXECUTABLE(ecddr-einstein-dtb ECDDR-einstein/ecddr-einstein-dtb.cpp)
+TARGET_LINK_LIBRARIES(ecddr-einstein-dtb ddr_pec ddr_spaces exterior_cell plot ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(ecddr-einstein-dtb PUBLIC ${EXTERNAL_INCLUDES})
+
 # VEM Stokes
 ADD_EXECUTABLE(vem-stokes VEM-stokes/vem-stokes.cpp)
 TARGET_LINK_LIBRARIES(vem-stokes vemcore plot ${EXTERNAL_LIBRARIES})

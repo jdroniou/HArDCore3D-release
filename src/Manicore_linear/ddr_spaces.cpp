@@ -6,7 +6,6 @@
 
 
 #include "ddr_spaces.hpp"
-#include "ddr_pec.hpp"
 
 #include "parallel_for.hpp"
 #include "quadraturerule.hpp"
@@ -15,7 +14,7 @@ using namespace HArDCore3D;
 using namespace Manicore;
 
 DDR_Spaces::DDR_Spaces(Mesh const & mesh, int r, bool use_threads, std::ostream & output) 
-  : _r(r), _use_threads(use_threads), 
+  : _mesh(mesh), _r(r), _use_threads(use_threads), 
     _ddr(std::make_unique<DDR_PEC>(mesh,_r,_use_threads,output)),
     _ddr_po(std::make_unique<DDR_PEC>(mesh,_r+1,_use_threads,output)),
     _dofspace(std::array<GlobalDOFSpace,4>{
@@ -293,7 +292,143 @@ const Eigen::MatrixXd & DDR_Spaces::potential(size_t k, size_t d, size_t i) cons
   return _ops[d][i].P[k];
 }
 
-Eigen::Matrix<double,-1,1,0,3,1> DDR_Spaces::evaluate_basis(Eigen::Vector3d const &x,size_t k,size_t d,size_t i,Eigen::VectorXd const &b) const {
-  return _ddr->evaluate_basis(x,k,d,i,b);
+Eigen::Matrix<double,-1,1,0,3,1> DDR_Spaces::evaluate_basis(Eigen::Vector3d const &x, size_t k, size_t d, size_t i_cell, Eigen::VectorXd const &b) const {
+  return _ddr->evaluate_basis(x, k, d, i_cell, b);
 }
 
+Eigen::Matrix<double,-1,1,0,3,1> DDR_Spaces::evaluate_basis(Eigen::Vector3d const &x, size_t k, size_t d, size_t i_cell, int i_basis) const {
+  return _ddr->evaluate_basis(x, k, d, i_cell, i_basis);
+}
+
+Eigen::Matrix<double,-1,-1,0,3,3> DDR_Spaces::get_hodge_star(size_t k, size_t d, size_t i) const 
+{
+  return _ddr->get_hodge_star(k, d, i);
+}
+
+Eigen::MatrixXd DDR_Spaces::discrete_hodge_star(size_t k, size_t d, size_t i) const 
+{
+  return _ddr->discrete_hodge_star(k, d, i);
+}
+
+Eigen::MatrixXd DDR_Spaces::discrete_inv_hodge_star(size_t k, size_t d, size_t i) const 
+{
+  return _ddr->discrete_inv_hodge_star(k, d, i);
+}
+
+Eigen::Matrix<double,-1,-1,0,3,3> DDR_Spaces::get_exterior_trace(size_t k, size_t d, size_t i) const 
+{
+  return _ddr->get_exterior_trace(k, d, i);
+}
+
+ DDR_PEC::Kronecker DDR_Spaces::get_mass(size_t k, size_t d, size_t i) const 
+{
+  return _ddr->get_mass(k, d, i);
+}
+
+Eigen::MatrixXd DDR_Spaces::computeL2Product(size_t k, size_t i_cell, const double penalty_factor) const {
+  const size_t d = 3;
+  assert(d <= 3 && k <= d && i_cell < _mesh.n_cells() && "Access cell out of range");
+  auto const & dofspace = _dofspace[k];
+  // Top dimensional
+  const Cell & T = *_mesh.cell(i_cell);
+
+  Eigen::MatrixXd P = std::pow(-1, k*(d-k))*discrete_hodge_star(d-k, d, i_cell) * potential(k, d, i_cell); // $k$ valued
+  
+  Eigen::MatrixXd rv = P.transpose()*_ddr->get_mass(k, d, i_cell)*P;
+
+  /// Non recursive calculation of the inner products
+  if (k==0){
+    // Penalty on faces
+    for (size_t iF_T = 0; iF_T < T.n_faces(); iF_T++){
+      size_t iF = T.face(iF_T)->global_index();
+      const Face & F = *_mesh.face(iF);
+      double hF = F.diam();
+
+      Eigen::MatrixXd trP_F = _ddr->get_trace(k, d, i_cell, iF_T) * P;
+      Eigen::MatrixXd Ptr_F = dofspace.extendOperator(T, *T.face(iF_T), std::pow(-1, k*(2-k))*discrete_hodge_star(2-k, 2, iF)*potential(k, 2, iF));
+      Eigen::MatrixXd mass_F = _ddr->get_mass(k, 2, iF);
+
+      rv += penalty_factor * hF*(trP_F-Ptr_F).transpose()*mass_F*(trP_F-Ptr_F);
+
+      // Penalty on edges 
+      for (size_t iE_F = 0; iE_F < F.n_edges(); iE_F++){
+        size_t iE = F.edge(iE_F)->global_index();
+        const Edge & E = *_mesh.edge(iE);
+        double hE = E.diam();
+
+        Eigen::MatrixXd trP_E =_ddr->get_trace(k, 2, iF, iE_F) * trP_F;
+        Eigen::MatrixXd Ptr_E = dofspace.extendOperator(T, *F.edge(iE_F),  std::pow(-1, k*(1-k))*discrete_hodge_star(1-k, 1, iE)*potential(k, 1, iE));
+        Eigen::MatrixXd mass_E = _ddr->get_mass(k, 1, iE);
+
+        rv += penalty_factor * 0.5 * std::pow(hE, 2)*(trP_E-Ptr_E).transpose()*mass_E*(trP_E-Ptr_E); 
+      }
+    }
+  }else if (k==1){
+    // Penalty on faces
+    for (size_t iF_T = 0; iF_T < T.n_faces(); iF_T++){
+      size_t iF = T.face(iF_T)->global_index();
+      const Face & F = *_mesh.face(iF);
+      double hF = F.diam();
+
+      Eigen::MatrixXd trP_F = _ddr->get_trace(k, d, i_cell, iF_T) * P;
+      Eigen::MatrixXd Ptr_F = dofspace.extendOperator(T, *T.face(iF_T), std::pow(-1, k*(2-k))*discrete_hodge_star(2-k, 2, iF)*potential(k, 2, iF));
+      Eigen::MatrixXd mass_F = _ddr->get_mass(k, 2, iF);
+
+      rv += penalty_factor * hF*(trP_F-Ptr_F).transpose()*mass_F*(trP_F-Ptr_F);
+
+      // Penalty on edges
+      for (size_t iE_F = 0; iE_F < F.n_edges(); iE_F++){
+        size_t iE = F.edge(iE_F)->global_index();
+        const Edge & E = *_mesh.edge(iE);
+        double hE =E.diam();
+
+        Eigen::MatrixXd trP_E =_ddr->get_trace(k, 2, iF, iE_F) * trP_F;
+        Eigen::MatrixXd Ptr_E = dofspace.extendOperator(T, *F.edge(iE_F), std::pow(-1, k*(1-k))*discrete_hodge_star(1-k, 1, iE)*potential(k, 1, iE));
+        Eigen::MatrixXd mass_E = _ddr->get_mass(k, 1, iE);
+
+        rv += penalty_factor * 0.5 * std::pow(hE, 2)*(trP_E-Ptr_E).transpose()*mass_E*(trP_E-Ptr_E); 
+      }
+    }
+
+  }else if (k==2){
+    // Penalty on faces
+    for (size_t iF_T = 0; iF_T < T.n_faces(); iF_T++){
+      size_t iF = T.face(iF_T)->global_index();
+      const Face & F = *_mesh.face(iF);
+      double hF = F.diam();
+
+      Eigen::MatrixXd trP_F = _ddr->get_trace(k, d, i_cell, iF_T) * P;
+      Eigen::MatrixXd Ptr_F = dofspace.extendOperator(T, *T.face(iF_T), std::pow(-1, k*(2-k))*discrete_hodge_star(2-k, 2, iF)*potential(k, 2, iF));
+
+      Eigen::MatrixXd mass_F = _ddr->get_mass(k, 2, iF);
+      
+      rv += penalty_factor * hF*(trP_F-Ptr_F).transpose()*mass_F*(trP_F-Ptr_F); 
+    }
+  }
+  return rv;
+}
+
+//------------------------------------------------------------------------------
+// Vertex values 
+//------------------------------------------------------------------------------
+
+std::vector<VectorRd> DDR_Spaces::computeVertexValues(const size_t k, const Eigen::VectorXd & u) const
+{
+  std::vector<VectorRd> values(mesh().n_vertices(), VectorRd::Zero());
+  
+  // Value at each vertex obtained averaging the values from all the cells around
+  for (Vertex * V : mesh().get_vertices()){
+    size_t iV = V->global_index();
+ 
+    for (Cell * T : V->get_cells()){
+      size_t iT = T->global_index();
+      Eigen::VectorXd pTuT =  discrete_inv_hodge_star(3-k, 3, iT) * potential(k, 3, iT) * _dofspace[k].restrictCell(iT, u);
+      values[iV] += evaluate_basis(V->coords(), k, 3, iT, pTuT);
+    }
+    
+    values[iV] /= V->n_cells();
+
+  }
+  
+  return values;
+}
