@@ -57,7 +57,8 @@ namespace HArDCore3D
           const FunctionType & v, ///< The function to interpolate
           const int doe_cell = -1, ///< The optional degre of cell quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
           const int doe_face = -1, ///< The optional degre of face quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
-          const int doe_edge = -1 ///< The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
+          const int doe_edge = -1, ///< The optional degre of edge quadrature rules to compute the interpolate. If negative, then 2*degree()+3 will be used.
+          const bool boundary_only = false ///< If true, only boundary values will be computed, the other ones will be left to 0
           ) const;
 
     /// Return cell operators for the cell of index iT

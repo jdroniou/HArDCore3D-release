@@ -35,6 +35,33 @@ namespace HArDCore3D
   /// Enumeration of all available solvers
   enum SolverName { EigenLU, EigenBiCGStab, PardisoLU, UMFPACK, PaStiXLU, PaStiXLLT };
 
+  /// To parse optional Solver parameter from command line
+  std::map<std::string, int> ParamName{
+  #ifdef WITH_PASTIX
+  {"eps_refinement",0},{"eps_ctrl",1}
+  #endif
+  };
+
+  /// Create space and stores default values of optional solver parameters
+  std::vector<double> SolverParam{
+  #ifdef WITH_PASTIX
+    -1.0, -1.0 // eps_refinement, eps_ctrl with default values
+  #endif
+  };
+
+  /// Create a solver specific description in boost::desc.options
+  const char *SolverParamHelper{
+  #ifdef WITH_PASTIX
+  "Set the solver parameters; Usage [with v1, v2 as doubles]: \n"
+   "--solver-parameters param1=v1 param2=v2\n"
+   "--solver-parameters param1=v1 --solver-parameters param2=v2 \n"
+   "-sparm param=v \n"
+   "Possible parameters are [all optionals]:\n eps_refinement \n eps_ctrl\n"
+  #else
+  "Set the solver parameters, not implemented with this solver, see src/Common/linearsolver.hpp for modifications\n"
+  #endif
+  };
+
   // Types of Eigen wrappers for each solver (if the module is not available, we define bools just to have a name of that type)
   template<typename MatrixType>
   using EigenLUType = Eigen::SparseLU<MatrixType>;
@@ -164,7 +191,7 @@ namespace HArDCore3D
               case PaStiXLU:
               {
                 std::get<4>(m_list_solvers).reset( new PastixLUType );
-		// std::get<4>(m_list_solvers).get()->init(1e-3,1e-3); // Does not seem to work in 3D
+                std::get<4>(m_list_solvers).get()->init(SolverParam[0],SolverParam[1]);
                 break;
               }
               case PaStiXLLT:
@@ -200,51 +227,55 @@ namespace HArDCore3D
     void analyzePattern(MatrixType & A  ///< Matrix of the system to solve
                        )
     {
-      switch(m_name){
-        case EigenLU:
-          {
-            std::get<0>(m_list_solvers).get()->analyzePattern(A);
-            break;
-          }
-        case EigenBiCGStab:
-          {
-            std::get<1>(m_list_solvers).get()->analyzePattern(A);
-            break;
-          }
-        #ifdef WITH_MKL
-        case PardisoLU:
-          {
-            std::get<2>(m_list_solvers).get()->analyzePattern(A);
-            break;
-          }
-        #endif
-        
-        #ifdef WITH_UMFPACK
-        case UMFPACK:
-          {
-            std::get<3>(m_list_solvers).get()->analyzePattern(A);
-            break;
-          }
-        #endif
+      // Only if the pattern hasn't been analyzed yet
+      if (m_is_pattern_analyzed == false){
+        switch(m_name){
+          case EigenLU:
+            {
+              std::get<0>(m_list_solvers).get()->analyzePattern(A);
+              break;
+            }
+          case EigenBiCGStab:
+            {
+              std::get<1>(m_list_solvers).get()->analyzePattern(A);
+              break;
+            }
+          #ifdef WITH_MKL
+          case PardisoLU:
+            {
+              std::get<2>(m_list_solvers).get()->analyzePattern(A);
+              break;
+            }
+          #endif
+          
+          #ifdef WITH_UMFPACK
+          case UMFPACK:
+            {
+              std::get<3>(m_list_solvers).get()->analyzePattern(A);
+              break;
+            }
+          #endif
+  
+          #ifdef WITH_PASTIX
+          case PaStiXLU:
+            {
+              std::get<4>(m_list_solvers).get()->analyzePattern(A);
+              break;
+            }
+  
+          case PaStiXLLT:
+            {
+              std::get<5>(m_list_solvers).get()->analyzePattern(A);
+              break;
+            }
+          #endif
 
-        #ifdef WITH_PASTIX
-        case PaStiXLU:
-          {
-            std::get<4>(m_list_solvers).get()->analyzePattern(A);
-            break;
-          }
-
-        case PaStiXLLT:
-          {
-            std::get<5>(m_list_solvers).get()->analyzePattern(A);
-            break;
-          }
-        #endif
-                
-        default:
-            break;
-      } // end switch for m_name 
-      
+          default:
+              break;
+        } // end switch for m_name 
+  
+        m_is_pattern_analyzed = true;
+      }
     }
     
     /// Factorize the matrix
@@ -375,7 +406,7 @@ namespace HArDCore3D
       _check_info(m_info_solve, "solve");
 
       return x;
-    };
+    }
 
     /// Perform all operators to solve Ax=b
     template<typename VectorType>
@@ -391,7 +422,7 @@ namespace HArDCore3D
     /// Check relative infinity norm of residual: ||Ax-b||/||b||
     template <typename VectorType>
     inline double residual(MatrixType & A, VectorType & b, VectorType & x) 
-      { return (A*x - b).template lpNorm<Eigen::Infinity>() / (b.template lpNorm<Eigen::Infinity>()+1e-8); };
+      { return (A*x - b).template lpNorm<Eigen::Infinity>() / (b.template lpNorm<Eigen::Infinity>()+1e-8); }
 
     private:
   
@@ -410,6 +441,7 @@ namespace HArDCore3D
     ListSolvers<MatrixType> m_list_solvers;
     Eigen::ComputationInfo m_info_factorize;
     Eigen::ComputationInfo m_info_solve;
+    bool m_is_pattern_analyzed = false; // to avoid analyzing a pattern twice, Eigen does not like it
   }; // end definition class
 
 

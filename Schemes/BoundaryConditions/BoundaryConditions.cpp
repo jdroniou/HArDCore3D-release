@@ -94,6 +94,9 @@ const std::string BoundaryConditions::type(const Face& face) const
       }else if (m_bc_id == "M2"){
         // Dirichlet between planes x=.25 and x=.5, Neumann everywhere else.
         return ( plane_x_quarter.is_on_side(face, 1.) && plane_x_half.is_on_side(face, -1.) ? "dir" : "neu");
+      }else if (m_bc_id == "M3"){
+        // Dirichlet on plane z=0.0 and z=1.0, Neumann elsewhere.
+        return ( plane_z_zero.is_in(face) || plane_z_one.is_in(face) ? "dir" : "neu");
       }
 
     }
@@ -117,6 +120,9 @@ const std::string BoundaryConditions::type(const Edge& edge) const
       }else if (m_bc_id == "M2"){
         // Dirichlet between planes x=.25 and x=.5, Neumann everywhere else.
         return ( plane_x_quarter.is_on_side(edge, 1.) && plane_x_half.is_on_side(edge, -1.) ? "dir" : "neu");
+      }else if (m_bc_id == "M3"){
+        // Dirichlet on plane z=0.0 and z=1.0, Neumann elsewhere.
+        return ( plane_z_zero.is_in(edge) || plane_z_one.is_in(edge) ? "dir" : "neu");
       }
     }
     return "int";
@@ -139,6 +145,9 @@ const std::string BoundaryConditions::type(const Vertex& vertex) const
       }else if (m_bc_id == "M2"){
         // Dirichlet between planes x=.25 and x=.5, Neumann everywhere else.
         return ( plane_x_quarter.is_on_side(vertex, 1.) && plane_x_half.is_on_side(vertex, -1.) ? "dir" : "neu");
+      }else if (m_bc_id == "M3"){
+        // Dirichlet on plane z=0.0 and z=1.0, Neumann elsewhere.
+        return ( plane_z_zero.is_in(vertex) || plane_z_one.is_in(vertex) ? "dir" : "neu");
       }
     }
     return "int";

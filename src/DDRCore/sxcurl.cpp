@@ -62,12 +62,12 @@ SXCurl::SXCurl(const DDRCore & ddr_core, const SerendipityProblem & ser_pro, boo
 // Interpolator
 //------------------------------------------------------------------------------
 
-Eigen::VectorXd SXCurl::interpolate(const FunctionType & v, const int doe_cell, const int doe_face, const int doe_edge) const
+Eigen::VectorXd SXCurl::interpolate(const FunctionType & v, const int doe_cell, const int doe_face, const int doe_edge, bool boundary_only) const
 {
   Eigen::VectorXd vh = Eigen::VectorXd::Zero(dimension());
   
   // We interpolate via xcurl and then apply the reduction.
-  Eigen::VectorXd vh_xcurl = m_xcurl.interpolate(v, doe_cell, doe_face, doe_edge);
+  Eigen::VectorXd vh_xcurl = m_xcurl.interpolate(v, doe_cell, doe_face, doe_edge, boundary_only);
   
   // No change to edge DOFs
   vh.head(nDOFs_edges()) = vh_xcurl.head(nDOFs_edges());

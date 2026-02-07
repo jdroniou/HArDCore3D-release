@@ -45,7 +45,7 @@ XDiv::XDiv(const DDRCore & ddr_core, bool use_threads, std::ostream & output)
 // Interpolator
 //------------------------------------------------------------------------------
 
-Eigen::VectorXd XDiv::interpolate(const FunctionType & v,  const int doe_cell, const int doe_face) const
+Eigen::VectorXd XDiv::interpolate(const FunctionType & v,  const int doe_cell, const int doe_face, const bool boundary_only) const
 {
   Eigen::VectorXd vh = Eigen::VectorXd::Zero(dimension());
 
@@ -55,46 +55,50 @@ Eigen::VectorXd XDiv::interpolate(const FunctionType & v,  const int doe_cell, c
   
   // Interpolate at faces
   std::function<void(size_t, size_t)> interpolate_faces
-    = [this, &vh, v, &dqr_face](size_t start, size_t end)->void
+    = [this, &vh, v, &dqr_face, &boundary_only](size_t start, size_t end)->void
       {
-	for (size_t iF = start; iF < end; iF++) {
-	  const Face & F = *mesh().face(iF);
+    	  for (size_t iF = start; iF < end; iF++) {
+      	  const Face & F = *mesh().face(iF);
 
-	  Eigen::Vector3d nF = F.normal();
-	  auto v_dot_nF = [&nF, v](const Eigen::Vector3d & x)->double {
-			    return v(x).dot(nF);
-			  };
-	  
-	  QuadratureRule quad_dqr_F = generate_quadrature_rule(F, dqr_face);
-	  auto basis_Pk_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).Polyk, quad_dqr_F);
-	  vh.segment(globalOffset(F), PolynomialSpaceDimension<Face>::Poly(degree()))
-	    = l2_projection(v_dot_nF, *faceBases(iF).Polyk, quad_dqr_F, basis_Pk_F_quad);
-	} // for iF
+          if (!boundary_only || F.is_boundary()){
+        	  Eigen::Vector3d nF = F.normal();
+        	  auto v_dot_nF = [&nF, v](const Eigen::Vector3d & x)->double {
+  			        return v(x).dot(nF);
+  		          };
+  	  
+        	  QuadratureRule quad_dqr_F = generate_quadrature_rule(F, dqr_face);
+        	  auto basis_Pk_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).Polyk, quad_dqr_F);
+        	  vh.segment(globalOffset(F), PolynomialSpaceDimension<Face>::Poly(degree()))
+        	    = l2_projection(v_dot_nF, *faceBases(iF).Polyk, quad_dqr_F, basis_Pk_F_quad);
+        	} // end test boundary
+      	} // for iF
       };
   parallel_for(mesh().n_faces(), interpolate_faces, m_use_threads);
   
   // Interpolate at cells
   if (degree() > 0) {  
     std::function<void(size_t, size_t)> interpolate_cells
-      = [this, &vh, v, &dqr_cell](size_t start, size_t end)->void
-	{
-	  for (size_t iT = start; iT < end; iT++) {		 
-	    const Cell & T = *mesh().cell(iT);
-
-	    size_t offset_T = globalOffset(T);
-
-	    QuadratureRule quad_dqr_T = generate_quadrature_rule(T, dqr_cell);
-	    MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*degree());
-	    auto basis_Gkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Golykmo, quad_dqr_T);
-	    vh.segment(offset_T, PolynomialSpaceDimension<Cell>::Goly(degree() - 1))
-	      = l2_projection(v, *cellBases(iT).Golykmo, quad_dqr_T, basis_Gkmo_T_quad, GramMatrix(T, *cellBases(iT).Golykmo, int_mono_2k));
-
-	    offset_T += PolynomialSpaceDimension<Cell>::Goly(degree() - 1);	    
-	    auto basis_Gck_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).GolyComplk, quad_dqr_T);
-	    vh.segment(offset_T, PolynomialSpaceDimension<Cell>::GolyCompl(degree()))
-	      = l2_projection(v, *cellBases(iT).GolyComplk, quad_dqr_T, basis_Gck_T_quad, GramMatrix(T, *cellBases(iT).GolyComplk, int_mono_2k));
-	  } // for iT
-	};
+      = [this, &vh, v, &dqr_cell, &boundary_only](size_t start, size_t end)->void
+        {
+          for (size_t iT = start; iT < end; iT++) {		 
+          const Cell & T = *mesh().cell(iT);
+          
+          if (!boundary_only){
+            size_t offset_T = globalOffset(T);
+          
+            QuadratureRule quad_dqr_T = generate_quadrature_rule(T, dqr_cell);
+            MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*degree());
+            auto basis_Gkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Golykmo, quad_dqr_T);
+            vh.segment(offset_T, PolynomialSpaceDimension<Cell>::Goly(degree() - 1))
+              = l2_projection(v, *cellBases(iT).Golykmo, quad_dqr_T, basis_Gkmo_T_quad, GramMatrix(T, *cellBases(iT).Golykmo, int_mono_2k));
+          
+            offset_T += PolynomialSpaceDimension<Cell>::Goly(degree() - 1);	    
+            auto basis_Gck_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).GolyComplk, quad_dqr_T);
+            vh.segment(offset_T, PolynomialSpaceDimension<Cell>::GolyCompl(degree()))
+              = l2_projection(v, *cellBases(iT).GolyComplk, quad_dqr_T, basis_Gck_T_quad, GramMatrix(T, *cellBases(iT).GolyComplk, int_mono_2k));
+            } // end test boundary
+          } // for iT
+        };
     parallel_for(mesh().n_cells(), interpolate_cells, m_use_threads);
   } // if degree() > 0
 	

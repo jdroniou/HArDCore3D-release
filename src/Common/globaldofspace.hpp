@@ -25,6 +25,34 @@ namespace HArDCore3D
              );
 
     //------------------------------------------------------------------------------
+    // Dimensions
+    //------------------------------------------------------------------------------
+       
+    /// Total number of vertices DOFs
+    inline size_t nDOFs_vertices() const
+    {
+      return m_mesh.n_vertices() * m_n_local_vertex_dofs;
+    }
+   
+    /// Total number of edges DOFs
+    inline size_t nDOFs_edges() const
+    {
+      return m_mesh.n_edges() * m_n_local_edge_dofs;
+    }
+
+    /// Total number of faces DOFs
+    inline size_t nDOFs_faces() const
+    {
+      return m_mesh.n_faces() * m_n_local_face_dofs;
+    }
+
+    /// Total number of cells DOFs
+    inline size_t nDOFs_cells() const
+    {
+      return m_mesh.n_cells() * m_n_local_cell_dofs;
+    }
+
+    //------------------------------------------------------------------------------
     // Global offsets
     //------------------------------------------------------------------------------
     

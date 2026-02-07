@@ -53,7 +53,6 @@ make
 After this, `build/Schemes` will contain the executables (e.g. `hho-diffusion`) to run the schemes. These executables need to access the meshes, which they should naturally find if you have left the `meshes` directory at the root of the project's files.
 
 
-
 \subsection doco Building the Documentation
 
 The mesh documentation is built with Doxygen (http://www.stack.nl/~dimitri/doxygen/). If you are reading this then somebody has already built it for you. If you modify the code and wish to rebuild the documentation, simply run `doxygen` from the root directory. The HTML version of the documentation is generated inside `docs` and the LaTeX version is generated inside `docs/latex` and can be compiled using the generated Makefile.
@@ -386,6 +385,9 @@ The following schemes are currently available in HArD::Core3D. The Hybrid High-O
  - [HHO_fullgradientdiff](@ref HHO_fullgradientdiff): HHO scheme with full gradient; similar to [HHO_locvardiff](@ref HArDCore3D::HHO_LocVarDiff) but implemented using the [HHOSpace](#hhospace) module instead of the [HybridCore](#hybridcore) module.
  
  - [HHO_brinkman](@ref HHO_brinkman): HHO scheme for the Brinkman equation (based on [HHOSpace](@ref HHOSpace)).
+
+ - [DDR_elasticity](@ref DDR_elasticity): (S)DDR schemes for elasticity problems, with or without fractures and with or without bubble DOFs.
+
 
 The directory `runs` contains BASH scripts to run series of tests on families of meshes. The files `data.sh` describe the parameters of the test cases (polynomial degrees, boundary conditions, mesh families, etc.). The script produces results in the `output` directory, shows the convergence rate in the standard console output, and creates a pdf file `rate.pdf` describing the rates of convergence in various energy norms (you will need `pdflatex` to create this pdf file; commenting out the corresponding line is fine, the pdf will simply not be create).
 

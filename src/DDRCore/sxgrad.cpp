@@ -62,12 +62,12 @@ SXGrad::SXGrad(const DDRCore & ddr_core, const SerendipityProblem & ser_pro, boo
 // Interpolator
 //------------------------------------------------------------------------------
 
-Eigen::VectorXd SXGrad::interpolate(const FunctionType & q, const int doe_cell, const int doe_face, const int doe_edge) const
+Eigen::VectorXd SXGrad::interpolate(const FunctionType & q, const int doe_cell, const int doe_face, const int doe_edge, bool boundary_only) const
 {
   Eigen::VectorXd qh = Eigen::VectorXd::Zero(dimension());
   
   // We interpolate via xgrad and then apply the reduction.
-  Eigen::VectorXd qh_xgrad = m_xgrad.interpolate(q, doe_cell, doe_face, doe_edge);
+  Eigen::VectorXd qh_xgrad = m_xgrad.interpolate(q, doe_cell, doe_face, doe_edge, boundary_only);
   
   // No change to vertex and edge DOFs
   qh.head(nDOFs_vertices() + nDOFs_edges()) = qh_xgrad.head(nDOFs_vertices() + nDOFs_edges());

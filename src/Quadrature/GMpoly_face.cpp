@@ -94,7 +94,7 @@ MonomialFaceIntegralsType HArDCore3D::IntegrateFaceMonomials(const Face & F, con
       VectorRd nFE = F.edge_normal(iE);
       VectorRd xE = F.edge(iE)->center_mass();
       
-      int_mono += abs(nFE.dot(xE-xF)) * integrals_edges[iE][powers[m]];
+      int_mono += std::abs(nFE.dot(xE-xF)) * integrals_edges[iE][powers[m]];
     } // for iE
     
     // Store

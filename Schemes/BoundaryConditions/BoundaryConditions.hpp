@@ -119,6 +119,8 @@ struct Hull {
 
 // Various definitions of planes and convex hulls used in the BCs below
 const Plane plane_x_zero(VectorRd::Zero(), VectorRd(1., 0., 0.));
+const Plane plane_z_zero(VectorRd::Zero(), VectorRd(0., 0., 1.));
+const Plane plane_z_one(VectorRd(0.,0.,1.0), VectorRd(0., 0., 1.));
 const Plane plane_x_quarter(VectorRd(.25,0.,0.), VectorRd(1.,0.,0.));
 const Plane plane_x_half(VectorRd(.5,0.,0.), VectorRd(1.,0.,0.));
 const Hull lower_bottom_corner_x_zero({VectorRd(0.,0.,0.), VectorRd(0.,.25,0.), VectorRd(0.,.25,.25), VectorRd(0.,0.,.25)}, VectorRd(1., 0., 0.));
@@ -186,6 +188,8 @@ public:
       return "Mixed #1 (Dirichlet at x=0 a small rectangle, Neumann elsewhere)";
     }else if (m_bc_id == "M2"){
       return "Mixed #2 (Dirichlet between planes x=.25 and x=.5, Neumann elsewhere)";
+    }else if (m_bc_id == "M3"){
+      return "Mixed #3 (Dirichlet on plane z=0.0 and z=1.0, Neumann elsewhere)";
     }
     std::cout << "Unknown boundary conditions: " << m_bc_id << "\n";
     exit(1);

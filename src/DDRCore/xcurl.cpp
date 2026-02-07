@@ -60,7 +60,7 @@ XCurl::XCurl(const DDRCore & ddr_core, bool use_threads, std::ostream & output)
 // Interpolator
 //------------------------------------------------------------------------------
 
-Eigen::VectorXd XCurl::interpolate(const FunctionType & v, const int doe_cell, const int doe_face, const int doe_edge) const
+Eigen::VectorXd XCurl::interpolate(const FunctionType & v, const int doe_cell, const int doe_face, const int doe_edge, bool boundary_only) const
 {
   Eigen::VectorXd vh = Eigen::VectorXd::Zero(dimension());
   
@@ -71,20 +71,22 @@ Eigen::VectorXd XCurl::interpolate(const FunctionType & v, const int doe_cell, c
   
   // Interpolate at edges
   std::function<void(size_t, size_t)> interpolate_edges
-    = [this, &vh, v, &dqr_edge](size_t start, size_t end)->void
+    = [this, &vh, v, &dqr_edge, &boundary_only](size_t start, size_t end)->void
       {
 	      for (size_t iE = start; iE < end; iE++) {
 	        const Edge & E = *mesh().edge(iE);
 
-	        Eigen::Vector3d tE = E.tangent();
-	        auto v_dot_tE = [&tE, v](const Eigen::Vector3d & x)->double {
-			          return v(x).dot(tE);
-			        };
-
-	        QuadratureRule quad_dqr_E = generate_quadrature_rule(E, dqr_edge);
-	        auto basis_Pk_E_quad = evaluate_quad<Function>::compute(*edgeBases(iE).Polyk, quad_dqr_E);
-	        vh.segment(globalOffset(E), edgeBases(iE).Polyk->dimension())
-	          = l2_projection(v_dot_tE, *edgeBases(iE).Polyk, quad_dqr_E, basis_Pk_E_quad);
+          if (!boundary_only || E.is_boundary()){
+  	        Eigen::Vector3d tE = E.tangent();
+  	        auto v_dot_tE = [&tE, v](const Eigen::Vector3d & x)->double {
+  			          return v(x).dot(tE);
+  			        };
+  
+  	        QuadratureRule quad_dqr_E = generate_quadrature_rule(E, dqr_edge);
+  	        auto basis_Pk_E_quad = evaluate_quad<Function>::compute(*edgeBases(iE).Polyk, quad_dqr_E);
+  	        vh.segment(globalOffset(E), edgeBases(iE).Polyk->dimension())
+  	          = l2_projection(v_dot_tE, *edgeBases(iE).Polyk, quad_dqr_E, basis_Pk_E_quad);
+  	       } // end test boundary
 	      } // for iE
       };
   parallel_for(mesh().n_edges(), interpolate_edges, m_use_threads);
@@ -92,50 +94,54 @@ Eigen::VectorXd XCurl::interpolate(const FunctionType & v, const int doe_cell, c
   if (degree() > 0 ) {
     // Interpolate at faces
     std::function<void(size_t, size_t)> interpolate_faces
-      = [this, &vh, v, &dqr_face](size_t start, size_t end)->void
+      = [this, &vh, v, &dqr_face, &boundary_only](size_t start, size_t end)->void
 	      {
 	        for (size_t iF = start; iF < end; iF++) {
 	          const Face & F = *mesh().face(iF);
-
-	          Eigen::Vector3d nF = F.normal();
-	          auto nF_cross_v_cross_nF = [&nF, v](const Eigen::Vector3d & x)->Eigen::Vector3d {
-                                         return nF.cross(v(x).cross(nF));
-                                       };
-
-	          QuadratureRule quad_dqr_F = generate_quadrature_rule(F, dqr_face);
-
-	          size_t offset_F = globalOffset(F);
-	          auto basis_Rkmo_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).Rolykmo, quad_dqr_F);
-	          vh.segment(offset_F, PolynomialSpaceDimension<Face>::Roly(degree() - 1))
-	            = l2_projection(nF_cross_v_cross_nF, *faceBases(iF).Rolykmo, quad_dqr_F, basis_Rkmo_F_quad);
-
-	          offset_F += PolynomialSpaceDimension<Face>::Roly(degree() - 1);
-	          auto basis_Rck_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).RolyComplk, quad_dqr_F);
-	          vh.segment(offset_F, PolynomialSpaceDimension<Face>::RolyCompl(degree()))
-	            = l2_projection(nF_cross_v_cross_nF, *faceBases(iF).RolyComplk, quad_dqr_F, basis_Rck_F_quad);
+  
+            if (!boundary_only || F.is_boundary()){
+              Eigen::Vector3d nF = F.normal();
+  	          auto nF_cross_v_cross_nF = [&nF, v](const Eigen::Vector3d & x)->Eigen::Vector3d {
+                                           return nF.cross(v(x).cross(nF));
+                                         };
+  
+  	          QuadratureRule quad_dqr_F = generate_quadrature_rule(F, dqr_face);
+  
+  	          size_t offset_F = globalOffset(F);
+  	          auto basis_Rkmo_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).Rolykmo, quad_dqr_F);
+  	          vh.segment(offset_F, PolynomialSpaceDimension<Face>::Roly(degree() - 1))
+  	            = l2_projection(nF_cross_v_cross_nF, *faceBases(iF).Rolykmo, quad_dqr_F, basis_Rkmo_F_quad);
+  
+  	          offset_F += PolynomialSpaceDimension<Face>::Roly(degree() - 1);
+  	          auto basis_Rck_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).RolyComplk, quad_dqr_F);
+  	          vh.segment(offset_F, PolynomialSpaceDimension<Face>::RolyCompl(degree()))
+  	            = l2_projection(nF_cross_v_cross_nF, *faceBases(iF).RolyComplk, quad_dqr_F, basis_Rck_F_quad);
+	          } // end test boundary
 	        } // for iF
 	      };
     parallel_for(mesh().n_faces(), interpolate_faces, m_use_threads);
 
     // Interpolate at cells
     std::function<void(size_t, size_t)> interpolate_cells
-      = [this, &vh, v, &dqr_cell](size_t start, size_t end)->void
+      = [this, &vh, v, &dqr_cell, &boundary_only](size_t start, size_t end)->void
 	      {
 	        for (size_t iT = start; iT < end; iT++) {
 	          const Cell & T = *mesh().cell(iT);
 
-	          QuadratureRule quad_dqr_T = generate_quadrature_rule(T, dqr_cell);
-	          MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*degree());
-
-	          Eigen::Index offset_T = globalOffset(T);
-	          auto basis_Rkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Rolykmo, quad_dqr_T);
-	          vh.segment(offset_T, PolynomialSpaceDimension<Cell>::Roly(degree() - 1))
-	            = l2_projection(v, *cellBases(iT).Rolykmo, quad_dqr_T, basis_Rkmo_T_quad, GramMatrix(T, *cellBases(iT).Rolykmo, int_mono_2k));
-
-	          offset_T += PolynomialSpaceDimension<Cell>::Roly(degree() - 1);
-	          auto basis_Rck_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).RolyComplk, quad_dqr_T);
-	          vh.segment(offset_T, PolynomialSpaceDimension<Cell>::RolyCompl(degree()))
-	            = l2_projection(v, *cellBases(iT).RolyComplk, quad_dqr_T, basis_Rck_T_quad, GramMatrix(T, *cellBases(iT).RolyComplk, int_mono_2k));
+            if (!boundary_only){
+  	          QuadratureRule quad_dqr_T = generate_quadrature_rule(T, dqr_cell);
+  	          MonomialCellIntegralsType int_mono_2k = IntegrateCellMonomials(T, 2*degree());
+  
+  	          Eigen::Index offset_T = globalOffset(T);
+  	          auto basis_Rkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Rolykmo, quad_dqr_T);
+  	          vh.segment(offset_T, PolynomialSpaceDimension<Cell>::Roly(degree() - 1))
+  	            = l2_projection(v, *cellBases(iT).Rolykmo, quad_dqr_T, basis_Rkmo_T_quad, GramMatrix(T, *cellBases(iT).Rolykmo, int_mono_2k));
+  
+  	          offset_T += PolynomialSpaceDimension<Cell>::Roly(degree() - 1);
+  	          auto basis_Rck_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).RolyComplk, quad_dqr_T);
+  	          vh.segment(offset_T, PolynomialSpaceDimension<Cell>::RolyCompl(degree()))
+  	            = l2_projection(v, *cellBases(iT).RolyComplk, quad_dqr_T, basis_Rck_T_quad, GramMatrix(T, *cellBases(iT).RolyComplk, int_mono_2k));
+            } // end test boundary
 	        } // for iT
 	      };
     parallel_for(mesh().n_cells(), interpolate_cells, m_use_threads);

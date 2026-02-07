@@ -127,9 +127,7 @@ namespace HArDCore3D
     //------------------------------------------------------------------------------
     // Dimensions
     //------------------------------------------------------------------------------
-    
-///// We could consider pre-calculating and storing a number of these elements below... will see later if necessary in terms of cost 
-   
+       
     /// Total number of vertices DOFs
     inline size_t nDOFs_vertices() const
     {

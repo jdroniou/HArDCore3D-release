@@ -38,6 +38,12 @@ namespace HArDCore3D {
     {
       return m_n_local_vertex_dofs;
     }
+
+    /// Returns the number of local vertex DOFs (provided for compatibility with variabledofspace)
+    inline size_t numLocalDofsVertex(const Vertex & V) const
+    {
+      return m_n_local_vertex_dofs;
+    }
     
     /// Returns the number of local edge DOFs
     inline size_t numLocalDofsEdge() const
@@ -45,14 +51,32 @@ namespace HArDCore3D {
       return m_n_local_edge_dofs;
     }
     
+    /// Returns the number of local edge DOFs (provided for compatibility with variabledofspace)
+    inline size_t numLocalDofsEdge(const Edge & E) const
+    {
+      return m_n_local_edge_dofs;
+    }
+
     /// Returns the number of local face DOFs
     inline size_t numLocalDofsFace() const
     {
       return m_n_local_face_dofs;
     }
     
+    /// Returns the number of local face DOFs (provided for compatibility with variabledofspace)
+    inline size_t numLocalDofsFace(const Face & F) const
+    {
+      return m_n_local_face_dofs;
+    }
+
     /// Returns the number of local cell DOFs
     inline size_t numLocalDofsCell() const
+    {
+      return m_n_local_cell_dofs;
+    }
+
+    /// Returns the number of local cell DOFs (provided for compatibility with variabledofspace)
+    inline size_t numLocalDofsCell(const Cell & T) const
     {
       return m_n_local_cell_dofs;
     }
@@ -75,7 +99,7 @@ namespace HArDCore3D {
     //------------------------------------------------------------------------------
     // Dimensions
     //------------------------------------------------------------------------------
-    
+        
     /// Returns the dimension of the global space (all DOFs for all geometric entities)
     inline size_t dimension() const
     {

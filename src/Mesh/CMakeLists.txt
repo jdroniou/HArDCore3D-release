@@ -1,6 +1,6 @@
 # Libraries
 
-FILE(GLOB source_list mesh.* mesh_builder.* mesh_reader.*)
+FILE(GLOB source_list mesh.* mesh_builder.* mesh_reader.* mesh_reader_fracture.*)
 ADD_LIBRARY(mesh ${source_list})
 TARGET_LINK_LIBRARIES(mesh Eigen3::Eigen)
 

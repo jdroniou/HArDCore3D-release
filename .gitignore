@@ -1,4 +1,5 @@
 .DS_Store
+CMakeLists.txt
 meshes/
 build/
 outputs/

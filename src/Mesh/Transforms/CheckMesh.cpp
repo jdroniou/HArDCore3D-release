@@ -88,6 +88,24 @@ int main(const int argc, const char *argv[])
       logs << "**** There are " << mesh_ptr->n_i_cells() << " internal cells, " << mesh_ptr->n_b_cells() << " boundary cells and " << mesh_ptr->n_cells() << " total cells.\n";
       valid = false;
   }
+  
+  /////
+  ///// Isolated vertices (not attached to any cell)
+  std::cout << "Check isolated vertices." << std::endl;
+  logs << "Check isolated vertices." << std::endl;
+  std::vector<bool> vertex_in_cell(mesh_ptr->n_vertices(), false);
+  for (auto T : mesh_ptr->get_cells()){
+    for (auto V : T->get_vertices()){
+      vertex_in_cell[V->global_index()] = true;
+    }
+  }
+  for (size_t i=0; i<mesh_ptr->n_vertices(); i++){
+    if (!vertex_in_cell[i]){
+          logs << "*** Vertex " << i << " of coordinate " << " " << mesh_ptr->vertex(i)->coords().transpose() << " is not in any element" << std::endl;
+          valid = false;
+    }
+  }
+
 
   /////
   ///// Orientation of faces

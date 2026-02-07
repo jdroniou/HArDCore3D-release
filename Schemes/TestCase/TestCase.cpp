@@ -144,6 +144,20 @@ Solution TestCase::create_solution(const size_t n)
     };
     break;
 
+    /// m_iTC[0]=7: \f$u(x,y,z)= 1\f$ at \f$x=0\f$, 0 elsewhere (just to impose BCs)
+  case 7:
+    u = [&](const VectorRd p) -> double {
+      return (p.x()<1e-8 ? 1. : 0. );
+    };
+    G = [&](const VectorRd p, const Cell *T) -> VectorRd {
+      return VectorRd::Zero();
+    };
+    H = [&](const VectorRd p, const Cell *T) -> MatrixRd {
+      MatrixRd val = MatrixRd::Zero();
+      return val;
+    };
+    break;
+
   default:
     break;
   }
@@ -406,7 +420,7 @@ CellFType<double> TestCase::diff_advec_reac_source()
 
 void TestCase::validate()
 {
-  if (m_iTC[0] > 6 || m_iTC[0] < 1 || m_iTC[1] > 2 || m_iTC[1] < 1 || m_iTC[2] > 6 || m_iTC[2] < 0 || m_iTC[3] > 8 || m_iTC[3] < 0 || (m_iTC[1] == 3 && m_iTC[0] != 2))
+  if (m_iTC[0] > 7 || m_iTC[0] < 1 || m_iTC[1] > 2 || m_iTC[1] < 1 || m_iTC[2] > 6 || m_iTC[2] < 0 || m_iTC[3] > 8 || m_iTC[3] < 0 || (m_iTC[1] == 3 && m_iTC[0] != 2))
   {
     std::cout << "Incorrect choice of test cases: iTC = " << m_iTC[0] << ", " << m_iTC[1] << ", " << m_iTC[2] << ", " << m_iTC[3] << "\n";
     exit(EXIT_FAILURE);

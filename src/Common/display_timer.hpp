@@ -44,6 +44,39 @@ namespace HArDCore3D
       return std::make_pair(twall, tproc);
     }
 
+
+    /// Function to store and display wall/proc timers from boost::timer::cpu_timer. 
+    void store_times(
+                     double & twall, ///< Variable to store wall time
+                     double & tproc, ///< Variable to store proc time
+                     boost::timer::cpu_timer & timer,  ///< The timer
+                     std::string message = ""        ///< Optional message to display with time (if not message is passed, times are not displayed)
+                              )
+    {
+      twall = double(timer.elapsed().wall) * pow(10, -9);
+      tproc = double(timer.elapsed().user + timer.elapsed().system) * pow(10, -9);
+      
+      if (message != ""){
+        std::cout << message << twall << "/" << tproc << std::endl;
+      }
+    }
+
+    /// Function to increment time values with those elapsed in the timer
+    void increment_times(
+                     double & twall, ///< Variable to increment wall time
+                     double & tproc, ///< Variable to increment proc time
+                     boost::timer::cpu_timer & timer,  ///< The timer
+                     std::string message = ""        ///< Optional message to display with time (if not message is passed, times are not displayed)
+                              )
+    {
+      twall += double(timer.elapsed().wall) * pow(10, -9);
+      tproc += double(timer.elapsed().user + timer.elapsed().system) * pow(10, -9);
+      
+      if (message != ""){
+        std::cout << message << twall << "/" << tproc << std::endl;
+      }
+    }
+
   //@}
 
 } // end of namespace HArDCore3D

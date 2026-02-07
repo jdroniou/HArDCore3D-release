@@ -2322,7 +2322,7 @@ int i4_modp(int i, int j)
     value = i % j;
 
     if (value < 0) {
-        value = value + abs(j);
+        value = value + std::abs(j);
     }
 
     return value;
@@ -2484,7 +2484,7 @@ int r8_nint(double x)
     } else {
         s = 1;
     }
-    value = s * (int)(fabs(x) + 0.5);
+    value = s * (int)(std::fabs(x) + 0.5);
 
     return value;
 }

@@ -74,7 +74,7 @@ XGrad::XGrad(const DDRCore & ddr_core, bool use_threads, std::ostream & output)
 // Interpolator
 //------------------------------------------------------------------------------
 
-Eigen::VectorXd XGrad::interpolate(const FunctionType & q, const int doe_cell, const int doe_face, const int doe_edge) const
+Eigen::VectorXd XGrad::interpolate(const FunctionType & q, const int doe_cell, const int doe_face, const int doe_edge, bool boundary_only) const
 {
   Eigen::VectorXd qh = Eigen::VectorXd::Zero(dimension());
 
@@ -85,10 +85,13 @@ Eigen::VectorXd XGrad::interpolate(const FunctionType & q, const int doe_cell, c
   
   // Interpolate at vertices
   std::function<void(size_t, size_t)> interpolate_vertices
-    = [this, &qh, q](size_t start, size_t end)->void
+    = [this, &qh, q, &boundary_only](size_t start, size_t end)->void
       {
         for (size_t iV = start; iV < end; iV++) {
-          qh(iV) = q(mesh().vertex(iV)->coords());
+          const Vertex & V = *mesh().vertex(iV);
+          if (!boundary_only || V.is_boundary()){
+            qh(iV) = q(V.coords());
+          } // end test boundary
         } // for iV
       };
   parallel_for(mesh().n_vertices(), interpolate_vertices, m_use_threads);
@@ -97,43 +100,50 @@ Eigen::VectorXd XGrad::interpolate(const FunctionType & q, const int doe_cell, c
     
     // Interpolate at edges
     std::function<void(size_t, size_t)> interpolate_edges
-      = [this, &qh, q, &dqr_edge](size_t start, size_t end)->void
+      = [this, &qh, q, &dqr_edge, &boundary_only](size_t start, size_t end)->void
         {
           for (size_t iE = start; iE < end; iE++) {
             const Edge & E = *mesh().edge(iE);
-            QuadratureRule quad_dqr_E = generate_quadrature_rule(E, dqr_edge);
-            auto basis_Pkmo_E_quad = evaluate_quad<Function>::compute(*edgeBases(iE).Polykmo, quad_dqr_E);
-            qh.segment(globalOffset(E), PolynomialSpaceDimension<Edge>::Poly(degree() - 1)) 
-              = l2_projection(q, *edgeBases(iE).Polykmo, quad_dqr_E, basis_Pkmo_E_quad);
+            if (!boundary_only || E.is_boundary()){            
+              QuadratureRule quad_dqr_E = generate_quadrature_rule(E, dqr_edge);
+              auto basis_Pkmo_E_quad = evaluate_quad<Function>::compute(*edgeBases(iE).Polykmo, quad_dqr_E);
+              qh.segment(globalOffset(E), PolynomialSpaceDimension<Edge>::Poly(degree() - 1)) 
+                = l2_projection(q, *edgeBases(iE).Polykmo, quad_dqr_E, basis_Pkmo_E_quad);
+            } // end test boundary
           } // for iE
         };
     parallel_for(mesh().n_edges(), interpolate_edges, m_use_threads);
     
     // Interpolate at faces
     std::function<void(size_t, size_t)> interpolate_faces
-      = [this, &qh, q, &dqr_face](size_t start, size_t end)->void
+      = [this, &qh, q, &dqr_face, &boundary_only](size_t start, size_t end)->void
         {
           for (size_t iF = start; iF < end; iF++) {
             const Face & F = *mesh().face(iF);
-            QuadratureRule quad_dqr_F = generate_quadrature_rule(F, dqr_face);
-            auto basis_Pkmo_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).Polykmo, quad_dqr_F);
-            qh.segment(globalOffset(F), PolynomialSpaceDimension<Face>::Poly(degree() - 1)) 
-              = l2_projection(q, *faceBases(iF).Polykmo, quad_dqr_F, basis_Pkmo_F_quad);
+            if (!boundary_only || F.is_boundary()){
+              QuadratureRule quad_dqr_F = generate_quadrature_rule(F, dqr_face);
+              auto basis_Pkmo_F_quad = evaluate_quad<Function>::compute(*faceBases(iF).Polykmo, quad_dqr_F);
+              qh.segment(globalOffset(F), PolynomialSpaceDimension<Face>::Poly(degree() - 1)) 
+                = l2_projection(q, *faceBases(iF).Polykmo, quad_dqr_F, basis_Pkmo_F_quad);
+            } // end test boundary
           } // for iF
         };
     parallel_for(mesh().n_faces(), interpolate_faces, m_use_threads);
 
     // Interpolate at cells
     std::function<void(size_t, size_t)> interpolate_cells
-      = [this, &qh, q, &dqr_cell](size_t start, size_t end)->void
+      = [this, &qh, q, &dqr_cell, &boundary_only](size_t start, size_t end)->void
         {
           for (size_t iT = start; iT < end; iT++) {
             const Cell & T = *mesh().cell(iT);
-            QuadratureRule quad_dqr_T = generate_quadrature_rule(T, dqr_cell);
-            auto basis_Pkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykmo, quad_dqr_T);
-            MonomialCellIntegralsType int_mono_2km2 = IntegrateCellMonomials(T, 2*degree()-2);
-            qh.segment(globalOffset(T), PolynomialSpaceDimension<Cell>::Poly(degree() - 1)) 
-              = l2_projection(q, *cellBases(iT).Polykmo, quad_dqr_T, basis_Pkmo_T_quad, GramMatrix(T, *cellBases(iT).Polykmo, int_mono_2km2));
+
+            if (!boundary_only){
+              QuadratureRule quad_dqr_T = generate_quadrature_rule(T, dqr_cell);
+              auto basis_Pkmo_T_quad = evaluate_quad<Function>::compute(*cellBases(iT).Polykmo, quad_dqr_T);
+              MonomialCellIntegralsType int_mono_2km2 = IntegrateCellMonomials(T, 2*degree()-2);
+              qh.segment(globalOffset(T), PolynomialSpaceDimension<Cell>::Poly(degree() - 1)) 
+                = l2_projection(q, *cellBases(iT).Polykmo, quad_dqr_T, basis_Pkmo_T_quad, GramMatrix(T, *cellBases(iT).Polykmo, int_mono_2km2));
+            } // end test boundary
           } // for iT
         };
     parallel_for(mesh().n_cells(), interpolate_cells, m_use_threads);

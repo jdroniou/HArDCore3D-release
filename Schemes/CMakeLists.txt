@@ -54,6 +54,16 @@ ADD_EXECUTABLE(sddr-navier-stokes $<TARGET_OBJECTS:BoundaryConditions> DDR-navie
 TARGET_LINK_LIBRARIES(sddr-navier-stokes ddrcore plot ${EXTERNAL_LIBRARIES})
 TARGET_INCLUDE_DIRECTORIES(sddr-navier-stokes PUBLIC ${EXTERNAL_INCLUDES})
 
+# DDR Elasticity
+ADD_EXECUTABLE(sddr-elasticity $<TARGET_OBJECTS:BoundaryConditions> DDR-elasticity/sddr-elasticity.cpp)
+TARGET_LINK_LIBRARIES(sddr-elasticity ddrcore plot ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(sddr-elasticity PUBLIC ${EXTERNAL_INCLUDES})
+
+# DDR Elasticity Fracture
+ADD_EXECUTABLE(ddr-elasticity_fracture $<TARGET_OBJECTS:BoundaryConditions> DDR-elasticity-fracture/ddr-elasticity_fracture.cpp)
+TARGET_LINK_LIBRARIES(ddr-elasticity_fracture ddrcore plot ${EXTERNAL_LIBRARIES})
+TARGET_INCLUDE_DIRECTORIES(ddr-elasticity_fracture PUBLIC ${EXTERNAL_INCLUDES})
+
 # LADDR Yang-Mills Lagrange multiplier
 ADD_EXECUTABLE(laddr-yangmills-lm LADDR-yangmills/laddr-yangmills-lm.cpp)
 TARGET_LINK_LIBRARIES(laddr-yangmills-lm laddrcore plot ${EXTERNAL_LIBRARIES})

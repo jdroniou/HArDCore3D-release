@@ -6,7 +6,7 @@ Summary
 I     QUICK OVERVIEW
 II    BASIC INSTALLATION (Eigen & Boost only)
 III   LOCAL INSTALLATION DIRECTORY
-IV    COMPILATION WITH OTHER SOLVER (PASTIX, SUPERLU, UMFPACK)
+IV    COMPILATION WITH EXTERNAL LIBRARIES (PASTIX, SUPERLU, UMFPACK)
 V     COMPILATION WITH MKL
 VI    MPI
 VII   CHOICE OF COMPILER
@@ -93,9 +93,9 @@ WARNINGS:
 
 
 
-#~~~~~ IV COMPILATION WITH OTHER SOLVER (PASTIX, SUPERLU, UMFPACK) ~~~~~#
+#~~~~~ IV COMPILATION WITH EXTERNAL LIBRARIES (PASTIX, SUPERLU, UMFPACK) ~~~~~#
 
-HArDCore can use third party solvers. In command line, you request a third party by adding -DUSE_[LIBNAME]=ON
+HArDCore can use third party libraries (solvers). While running cmake, you request a third party by adding -DUSE_[LIBNAME]=ON
 
 ##~~~~ PASTIX ~~~~##
 
@@ -132,6 +132,7 @@ Beware that clang is not provided with OpenMP support if you use MacOS
 ##~~~~ UMFPACK ~~~~##
 
 $ cmake .. -DCMAKE_INSTALL_PREFIX=$(pwd) -DUSE_UMFPACK=ON
+
 
 
 

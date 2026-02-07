@@ -21,6 +21,8 @@
 
 #include <BoundaryConditions/BoundaryConditions.hpp>
 #include <mesh.hpp>
+#include <variabledofspace.hpp>
+#include <globaldofspace.hpp>
 
 using namespace HArDCore3D;
 
@@ -111,6 +113,55 @@ VecType replaceSectionsVector(
     posZ += sec[i].second;
   }
   return val;
+}
+
+
+/// Returns the number of face Dirichlet DOFs for the VariableDOFSpace X
+size_t numberFaceDirDOFs(const VariableDOFSpace & X, const BoundaryConditions & BC){
+  size_t ndofs = 0;
+  for (Face * F : X.mesh().get_b_faces()){
+    if (BC.type(*F) == "dir"){
+      ndofs += X.numLocalDofsFace(*F);
+    }
+  }
+  return ndofs;
+}
+
+/// Returns the number of edge Dirichlet DOFs for the VariableDOFSpace X
+size_t numberEdgeDirDOFs(const VariableDOFSpace & X, const BoundaryConditions & BC){
+  size_t ndofs = 0;
+  for (Edge * E : X.mesh().get_b_edges()){
+    if (BC.type(*E) == "dir"){
+      ndofs += X.numLocalDofsEdge(*E);
+    }
+  }
+  return ndofs;
+}
+
+/// Returns the number of vertex Dirichlet DOFs for the VariableDOFSpace X
+size_t numberVertexDirDOFs(const VariableDOFSpace & X, const BoundaryConditions & BC){
+  size_t ndofs = 0;
+  for (Vertex * V : X.mesh().get_b_vertices()){
+    if (BC.type(*V) == "dir"){
+      ndofs += X.numLocalDofsVertex(*V);
+    }
+  }
+  return ndofs;
+}
+
+/// Returns the number of face Dirichlet DOFs for the GlobalDOFSpace X
+size_t numberFaceDirDOFs(const GlobalDOFSpace & X, const BoundaryConditions & BC){
+  return BC.n_dir_faces() * X.numLocalDofsFace();
+}
+
+/// Returns the number of edge Dirichlet DOFs for the GlobalDOFSpace X
+size_t numberEdgeDirDOFs(const GlobalDOFSpace & X, const BoundaryConditions & BC){
+  return BC.n_dir_edges() * X.numLocalDofsEdge();
+}
+
+/// Returns the number of vertex Dirichlet DOFs for the GlobalDOFSpace X
+size_t numberVertexDirDOFs(const GlobalDOFSpace & X, const BoundaryConditions & BC){
+  return BC.n_dir_vertices() * X.numLocalDofsVertex();
 }
 
 //@}

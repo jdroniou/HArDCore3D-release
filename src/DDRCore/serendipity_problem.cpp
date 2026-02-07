@@ -92,16 +92,19 @@ std::vector<size_t> SerendipityProblem::_compute_serendipity_edges(size_t iF)
         break;
       }
     }
-    // Check if face on one side of the edge
-    if (use_edge){
-      const VectorRd outer_normal_E = F.edge_orientation(iE) * F.edge_normal(iE);
-      for (Vertex * V : F.get_vertices()){
-        if ( (E.center_mass() - V->coords()).dot(outer_normal_E) < -1e-3*threshold){
-          use_edge = false;
-          break;
-       }      
-      }
-    }
+    
+    // This commented section checks if the face is fully on one side of the edge, or else
+    // it refuses the edge. This is actually not necessary to the construction of a valid
+    // serendipity space...
+//    if (use_edge){
+//      const VectorRd outer_normal_E = F.edge_orientation(iE) * F.edge_normal(iE);
+//      for (Vertex * V : F.get_vertices()){
+//        if ( (E.center_mass() - V->coords()).dot(outer_normal_E) < -1e-3*threshold){
+//          use_edge = false;
+//          break;
+//       }      
+//      }
+//    }
   
     if (use_edge && ser_edges.size() < nmax_ser_edges){
       ser_edges.push_back(iE);
@@ -190,15 +193,18 @@ std::vector<size_t> SerendipityProblem::_compute_serendipity_faces(size_t iT)
         break;
       }
     }
-    // Check if cell on one side of the face
-    if (use_face){
-      for (Vertex * V : T.get_vertices()){
-        if ( (F.center_mass() - V->coords()).dot(T.face_normal(iF)) < -1e-3*threshold){
-          use_face = false;
-          break;
-       }      
-      }
-    }
+    
+    // This commented section checks if the cell is fully on one side of the face, or else
+    // it refuses the face. This is actually not necessary to the construction of a valid
+    // serendipity space...
+//    if (use_face){
+//      for (Vertex * V : T.get_vertices()){
+//        if ( (F.center_mass() - V->coords()).dot(T.face_normal(iF)) < -1e-3*threshold){
+//          use_face = false;
+//          break;
+//       }      
+//      }
+//    }
   
     if (use_face && ser_faces.size() < nmax_ser_faces){
       ser_faces.push_back(iF);

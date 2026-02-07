@@ -87,13 +87,13 @@ std::vector<MonomialCellIntegralsType> HArDCore3D::IntegrateCellMonomials_onFace
       double int_f_mono = 0.;
       // Loop over this face's edges and add their contribution
       for (size_t iE = 0; iE < F->n_edges(); iE++){
-        VectorRd nTFE = F->edge_normal(iE); // not necessarily outer normal, so abs() required below - we assume that F is star-shaped w.r.t. xF
+        VectorRd nTFE = F->edge_normal(iE); // not necessarily outer normal, so std::abs() required below - we assume that F is star-shaped w.r.t. xF
         VectorRd xFE = F->edge(iE)->center_mass();
         
         // Find where this edge is in the list of edges on the cell (and thus in integrals_edges)
         size_t iE_inT = T.index_edge(F->edge(iE));
 
-        int_f_mono += abs(nTFE.dot(xFE-xF))*integrals_edges[iE_inT][powers[m]];
+        int_f_mono += std::abs(nTFE.dot(xFE-xF))*integrals_edges[iE_inT][powers[m]];
       } // for iE
       // Gradient correction: linear combination (partial derivatives) of three face integrals of one lower degree
       for (size_t ip = 0; ip < d; ip++){
