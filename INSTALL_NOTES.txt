@@ -133,6 +133,10 @@ Beware that clang is not provided with OpenMP support if you use MacOS
 
 $ cmake .. -DCMAKE_INSTALL_PREFIX=$(pwd) -DUSE_UMFPACK=ON
 
+##~~~~ FHHOS4 ~~~~##
+
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$(pwd) -DUSE_FHHOS4=ON -Dfhhos4_DIR=<fhhos4>/build
+
 
 
 
