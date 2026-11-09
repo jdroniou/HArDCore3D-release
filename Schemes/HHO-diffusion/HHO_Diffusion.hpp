@@ -43,6 +43,9 @@
 #include <parallel_for.hpp>
 #include <TestCase/TestCase.hpp>
 #include <BoundaryConditions/BoundaryConditions.hpp>
+#ifdef WITH_FHHOS4
+#include <fhhos4>
+#endif
 
 /*!
  * @defgroup HHO_Diffusion
@@ -164,6 +167,13 @@ namespace HArDCore3D {
     // If static condensation (L>=0): matrix to recover cell unknowns
     // If barycentric elimination (L=-1): matrix to recover cell unknowns
     Eigen::SparseMatrix<double> ScBeMat;
+#ifdef WITH_FHHOS4
+    // With fhhos4 (no static condensation): the system before it, by blocks (T: cell unknowns, F: face unknowns, D: the
+    // values of the Dirichlet faces), the matrices A_TT (block diagonal), A_TF, A_FF, the couplings with the Dirichlet
+    // values A_TD, A_FD, and the right-hand sides b_T, b_F (without the Dirichlet values: solve())
+    Eigen::SparseMatrix<double, Eigen::RowMajor> A_TT, A_TF, A_FF, A_TD, A_FD;
+    Eigen::VectorXd b_T, b_F;
+#endif
     // Source terms for the system, and for recovering cell unknowns from static condensation
     Eigen::VectorXd GlobRHS;
     Eigen::VectorXd ScRHS;
@@ -203,6 +213,20 @@ namespace HArDCore3D {
       m_output << "[HHO_Diffusion] Initializing" << std::endl;
       GlobMat.resize(m_ntotal_face_dofs, m_ntotal_face_dofs);        
       ScBeMat.resize(m_ntotal_cell_dofs, m_ntotal_face_dofs);
+#ifdef WITH_FHHOS4
+      A_TT.resize(m_ntotal_cell_dofs, m_ntotal_cell_dofs);
+      A_TF.resize(m_ntotal_cell_dofs, m_nnondir_face_dofs);
+      A_FF.resize(m_nnondir_face_dofs, m_nnondir_face_dofs);
+      A_TD.resize(m_ntotal_cell_dofs, m_ndir_face_dofs);
+      A_FD.resize(m_nnondir_face_dofs, m_ndir_face_dofs);
+      b_T = Eigen::VectorXd::Zero(m_ntotal_cell_dofs);
+      b_F = Eigen::VectorXd::Zero(m_nnondir_face_dofs);
+#else
+      if (solver_type == "fhhos4") {
+        std::cerr << "HArDCore3D was built without fhhos4 (-DUSE_FHHOS4=ON)" << std::endl;
+        exit(1);
+      }
+#endif
     // Do nothing
   }
 
@@ -227,6 +251,15 @@ namespace HArDCore3D {
     cell_triplets_ScBe.resize(mesh->n_cells());
     size_t size_triplets_GlobMat = 0;
     size_t size_triplets_ScBe = 0;
+#ifdef WITH_FHHOS4
+    if (solver_type == "fhhos4" && m_L < 0) {
+      std::cerr << "fhhos4 solves the system with its cell unknowns (L >= 0)" << std::endl;
+      exit(1);
+    }
+    // With fhhos4: the triplets of A_TT, A_TF, A_FF, A_TD, A_FD, and the local source terms of the faces (one per cell)
+    std::vector<Eigen::Triplet<double>> triplets_TT, triplets_TF, triplets_FF, triplets_TD, triplets_FD;
+    std::vector<Eigen::VectorXd> cell_source_F(mesh->n_cells());
+#endif
 
     //-------------- ASSEMBLE LOCAL CONTRIBUTIONS -------------//
     
@@ -248,6 +281,14 @@ namespace HArDCore3D {
 
           aT[iT] = diffusion_operator(hho, iT, elquad);
           Eigen::VectorXd bT = load_operator(hho, iT, elquad);
+#ifdef WITH_FHHOS4
+          if (solver_type == "fhhos4") {
+            // No static condensation (fhhos4 condenses the system): aT and bT assembled as they are, below
+            b_T.segment(iT * m_nlocal_cell_dofs, m_nlocal_cell_dofs) = bT.head(m_nlocal_cell_dofs);
+            cell_source_F[iT] = bT.tail(face_dofs);
+            continue;
+          }
+#endif
 
           // Local matrix and right-hand side on the face unknowns
           Eigen::MatrixXd MatF = Eigen::MatrixXd::Zero(face_dofs,face_dofs);
@@ -340,7 +381,59 @@ namespace HArDCore3D {
     // Assemble local contribution into global matrix
     triplets_ScBe.reserve(size_triplets_ScBe);
     triplets_GlobMat.reserve(size_triplets_GlobMat);
+#ifdef WITH_FHHOS4
+    if (solver_type == "fhhos4") {
+      size_t size_F = 0, size_FF = 0; // bounds of the triplets of A_TF and A_FF
+      for (size_t iT = 0; iT < mesh->n_cells(); iT++) {
+        const size_t face_dofs = mesh->cell(iT)->n_faces() * m_nlocal_face_dofs;
+        size_F += face_dofs;
+        size_FF += face_dofs * face_dofs;
+      }
+      triplets_TT.reserve(mesh->n_cells() * m_nlocal_cell_dofs * m_nlocal_cell_dofs);
+      triplets_TF.reserve(size_F * m_nlocal_cell_dofs);
+      triplets_FF.reserve(size_FF);
+    }
+#endif
     for (size_t iT = 0; iT < mesh->n_cells(); iT++){
+#ifdef WITH_FHHOS4
+      if (solver_type == "fhhos4") {
+        // The local matrix by blocks, the cell unknowns first; the Dirichlet faces (the last ones): their columns in
+        // A_TD and A_FD, their equations dropped
+        Cell& T = *mesh->cell(iT);
+        const size_t nT = m_nlocal_cell_dofs, offset_T = iT * nT;
+        for (size_t i = 0; i < nT; i++) {
+          for (size_t j = 0; j < nT; j++) {
+            triplets_TT.emplace_back(offset_T + i, offset_T + j, aT[iT](i, j));
+          }
+        }
+        for (size_t jlF = 0; jlF < T.n_faces(); jlF++) {
+          const size_t jF = T.face(jlF)->global_index();
+          for (size_t jk = 0; jk < m_nlocal_face_dofs; jk++) {
+            const size_t jLocal = jlF * m_nlocal_face_dofs + jk;
+            const size_t jGlobal = jF * m_nlocal_face_dofs + jk;
+            const bool dirichlet = jGlobal >= m_nnondir_face_dofs;
+            const size_t col = dirichlet ? jGlobal - m_nnondir_face_dofs : jGlobal;
+            if (!dirichlet) {
+              b_F(jGlobal) += cell_source_F[iT](jLocal);
+            }
+            for (size_t i = 0; i < nT; i++) {
+              (dirichlet ? triplets_TD : triplets_TF).emplace_back(offset_T + i, col, aT[iT](i, nT + jLocal));
+            }
+            for (size_t ilF = 0; ilF < T.n_faces(); ilF++) {
+              const size_t iF = T.face(ilF)->global_index();
+              for (size_t ik = 0; ik < m_nlocal_face_dofs; ik++) {
+                const size_t iLocal = ilF * m_nlocal_face_dofs + ik;
+                const size_t iGlobal = iF * m_nlocal_face_dofs + ik;
+                if (iGlobal < m_nnondir_face_dofs) {
+                  (dirichlet ? triplets_FD : triplets_FF).emplace_back(iGlobal, col, aT[iT](nT + iLocal, nT + jLocal));
+                }
+              }
+            }
+          }
+        }
+        continue;
+      }
+#endif
       for (size_t i = 0; i < cell_triplets_ScBe[iT].size(); i++){
         triplets_ScBe.push_back(cell_triplets_ScBe[iT][i]);
       }
@@ -357,6 +450,20 @@ namespace HArDCore3D {
         }
       }
     }
+
+#ifdef WITH_FHHOS4
+    if (solver_type == "fhhos4") {
+      // The system before static condensation (the triplets of GlobMat and ScBeMat below are empty)
+      // (each vector of triplets released once its matrix is built)
+      A_TT.setFromTriplets(std::begin(triplets_TT), std::end(triplets_TT));
+      std::vector<Eigen::Triplet<double>>().swap(triplets_TT);
+      A_TF.setFromTriplets(std::begin(triplets_TF), std::end(triplets_TF));
+      std::vector<Eigen::Triplet<double>>().swap(triplets_TF);
+      A_TD.setFromTriplets(std::begin(triplets_TD), std::end(triplets_TD));
+      A_FD.setFromTriplets(std::begin(triplets_FD), std::end(triplets_FD));
+      A_FF.setFromTriplets(std::begin(triplets_FF), std::end(triplets_FF));
+    }
+#endif
 
     if (m_BC.name()=="Neumann"){
       // Neumann BC: remove a row in the matrix and fix the first degree of freedom
@@ -393,6 +500,10 @@ namespace HArDCore3D {
     Eigen::SparseMatrix<double> A;
     Eigen::VectorXd B;
     Eigen::VectorXd UDir;
+#ifdef WITH_FHHOS4
+    // With fhhos4: the right-hand sides of the system before static condensation
+    Eigen::VectorXd B_T, B_F;
+#endif
 
     if (m_BC.name() != "Neumann"){
       // Dirichlet boundary conditions
@@ -413,6 +524,12 @@ namespace HArDCore3D {
         UDir.segment(idF * m_nlocal_face_dofs, m_nlocal_face_dofs) = l2_projection<HybridCore::PolyFaceBasisType>(exact_solution, hho.FaceBasis(iF), quadF, phiF_quadF);
       }
 
+#ifdef WITH_FHHOS4
+      if (solver_type == "fhhos4") {
+        B_T = b_T - A_TD * UDir;
+        B_F = b_F - A_FD * UDir;
+      } else
+#endif
       B = GlobRHS.segment(0, n_unknowns) - GlobMat.topRightCorner(n_unknowns, n_fixed_dofs) * UDir;
 
     } else {
@@ -421,6 +538,13 @@ namespace HArDCore3D {
       A = GlobMat;
       B = GlobRHS;
       UDir = Eigen::VectorXd::Zero(n_fixed_dofs);
+#ifdef WITH_FHHOS4
+      if (solver_type == "fhhos4") {
+        // Singular system (fhhos4::Solver::SingularMatrix): the solution is translated to the proper average below
+        B_T = b_T;
+        B_F = b_F;
+      }
+#endif
     }
 
     //-------------- SOLVE CONDENSED SYSTEM -------------//
@@ -433,16 +557,48 @@ namespace HArDCore3D {
     //    solver.factorize(A);
     //    xF = solver.solve(B);
     //  } else {
-    Eigen::BiCGSTAB<Eigen::SparseMatrix<double> > solver;
-    solver.compute(A);
-    xF = solver.solve(B);
-    std::cout << "  [solver] #iterations: " << solver.iterations() << ", estimated error: " << solver.error() << std::endl;
+#ifdef WITH_FHHOS4
+    Eigen::VectorXd xT(m_ntotal_cell_dofs);
+    if (solver_type == "fhhos4") {
+      // The interpolation of the function 1 on the bases of the cells and faces: 1/phi_0, phi_0 being their first function
+      Eigen::VectorXd cell_one(mesh->n_cells()), face_one(n_unknowns / m_nlocal_face_dofs);
+      for (size_t iT = 0; iT < mesh->n_cells(); iT++) {
+        cell_one(iT) = 1. / hho.CellBasis(iT).function(0, mesh->cell(iT)->center_mass());
+      }
+      for (size_t iF = 0; iF < n_unknowns / m_nlocal_face_dofs; iF++) {
+        face_one(iF) = 1. / hho.FaceBasis(iF).function(0, mesh->face(iF)->center_mass());
+      }
+
+      fhhos4::Solver solver;
+      solver.Dimension = 3;
+      solver.FaceDegree = m_K;
+      solver.CellDegree = m_L;
+      solver.Tolerance = 1e-12;
+      solver.SingularMatrix = m_BC.name() == "Neumann"; // its kernel: the constants
+      solver.SetupSym(A_TT, A_TF, A_FF, cell_one, face_one);
+      fhhos4::Result result = solver.Solve(B_T, B_F, xT, xF);
+      std::cout << "  [solver] #iterations: " << result.Iterations << ", relative residual: " << result.RelativeResidual << std::endl;
+      // Residual of the equations of the faces, that of the condensed system (those of the cells are solved exactly)
+      _solving_error = (A_FF * xF + A_TF.transpose() * xT - B_F).norm();
+    } else
+#endif
+    {
+      Eigen::BiCGSTAB<Eigen::SparseMatrix<double> > solver;
+      solver.compute(A);
+      xF = solver.solve(B);
+      std::cout << "  [solver] #iterations: " << solver.iterations() << ", estimated error: " << solver.error() << std::endl;
+      _solving_error = (A * xF - B).norm();
+    }
     //  }
-    _solving_error = (A * xF - B).norm();
     // Recover the fixed boundary values, cell unknowns (from static condensation/barycentric elimination)
     Eigen::VectorXd Xh = Eigen::VectorXd::Zero(m_ntotal_dofs);
     Xh.tail(n_fixed_dofs) = UDir;
     Xh.segment(m_ntotal_cell_dofs, n_unknowns) = xF;
+#ifdef WITH_FHHOS4
+    if (solver_type == "fhhos4") {
+      Xh.head(m_ntotal_cell_dofs) = xT; // computed by fhhos4
+    } else
+#endif
     if (m_L>=0) {
       Xh.head(m_ntotal_cell_dofs) = ScRHS - ScBeMat * Xh.tail(m_ntotal_face_dofs);
     } else {

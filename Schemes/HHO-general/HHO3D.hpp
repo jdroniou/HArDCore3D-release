@@ -15,6 +15,9 @@
 
 #include <boost/timer/timer.hpp>
 #include <vtu_writer.hpp>
+#ifdef WITH_FHHOS4
+#include <fhhos4>
+#endif
 #ifndef _HHO3D_HPP
 #define _HHO3D_HPP
 
@@ -61,6 +64,10 @@ public:
 
     /// Solves the statically condensed system
     UVector solve();
+#ifdef WITH_FHHOS4
+    /// Solves the system before static condensation with fhhos4 (solve() calls it with the solver fhhos4)
+    UVector solve_fhhos4();
+#endif
 
     /// Solves the system when the model is ill posed (not yet running)
     UVector neumann_solve();
@@ -110,6 +117,19 @@ public:
     void set_dirichlet(
         const size_t ///< Number of Dirichlet faces
     );
+
+    /// Set the linear solver: bicgstab (default) or fhhos4
+    inline void set_solver_type(const std::string &solver_type)
+    {
+#ifndef WITH_FHHOS4
+        if (solver_type == "fhhos4")
+        {
+            std::cerr << "HArDCore3D was built without fhhos4 (-DUSE_FHHOS4=ON)" << std::endl;
+            exit(1);
+        }
+#endif
+        m_solver_type = solver_type;
+    };
 
     /// Return the (statically condensed) matrix system
     inline Eigen::SparseMatrix<double> get_SysMat()
@@ -171,6 +191,14 @@ private:
     Eigen::SparseMatrix<double> GlobMat;
     Eigen::SparseMatrix<double> SysMat;
     Eigen::SparseMatrix<double> ScBeMat;
+    std::string m_solver_type = "bicgstab";
+#ifdef WITH_FHHOS4
+    // With fhhos4 (no static condensation): the system before it, by blocks (T: cell unknowns, F: face unknowns, D: the
+    // values of the Dirichlet faces), the matrices A_TT (block diagonal), A_TF, A_FT, A_FF, the couplings with the
+    // Dirichlet values A_TD, A_FD, and the right-hand sides b_T, b_F (without the Dirichlet values: solve_fhhos4())
+    Eigen::SparseMatrix<double, Eigen::RowMajor> A_TT, A_TF, A_FT, A_FF, A_TD, A_FD;
+    Eigen::VectorXd b_T, b_F;
+#endif
 };
 
 #endif
