@@ -82,6 +82,7 @@ option(USE_PASTIX "Use Pastix library's solver. Warning: it enables the compilat
 option(USE_MPI "Enable compilation of Pastix and ptscoth with MPI. ONLY AVAILABLE IF USE_PASTIX IS ON.\n Usage: -DUSE_MPI=ON/OFF (default OFF)" OFF)
 option(USE_SUPERLU "Use SuperLU library's solver. Warning: it enables the compilation of SuperLU and its dependencies during build if not already present.\n Usage: -DUSE_SUPERLU=ON/OFF (default OFF)" OFF)
 option(USE_XML "Enable parsing options with pugixml.\n Usage: -DUSE_XML=ON/OFF (default OFF)" OFF)
+option(USE_FHHOS4 "Enable the linear solver fhhos4 (algebraic multigrid, built with the same Eigen) in the HHO schemes. Pass -DCMAKE_PREFIX_PATH=<fhhos4 installation> or -Dfhhos4_DIR=<fhhos4>/build.\n Usage: -DUSE_FHHOS4=ON/OFF (default OFF)" OFF)
 
 
 include(CMakeDependentOption) # Looks nice in ccmake
@@ -236,6 +237,13 @@ IF(USE_XML)
   SET(EXTERNAL_LIBRARIES ${EXTERNAL_LIBRARIES} ${PUGIXML_LIBRARIES})
   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DWITH_XML")
  ENDIF()
+ENDIF()
+
+IF(USE_FHHOS4)
+ FIND_PACKAGE(fhhos4 REQUIRED)
+ LINK_LIBRARIES(fhhos4::fhhos4)
+ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DWITH_FHHOS4")
+ MESSAGE(STATUS "Found fhhos4: ${fhhos4_DIR}")
 ENDIF()
 
 

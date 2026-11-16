@@ -45,5 +45,6 @@ std::string mesh_name, mesh_type, bc_id, plot_file;
 std::vector<int> id_tcase;
 size_t L, K;
 bool use_threads, export_matrix;
+std::string solver_type;
 
 // @}

@@ -258,6 +258,7 @@ int main(const int argc, const char *argv[])
     model.set_global_operator(AT);
     model.set_load_vector(bT);
     model.set_dirichlet(exact_solution, BC.n_dir_faces());
+    model.set_solver_type(solver_type);
 
     // Assemble model
     std::cout << "\n[Scheme] Assembling\n";
@@ -272,6 +273,13 @@ int main(const int argc, const char *argv[])
     std::cout << "     Solving time = " << model.get_solving_time() << "s\n";
     std::cout << "     Residual of the linear system = " << model.get_solving_error() << "\n";
 
+#ifdef WITH_FHHOS4
+    if (export_matrix && solver_type == "fhhos4")
+    {
+        std::cout << "\n[Scheme] No matrix to export: with fhhos4, the system is not condensed\n";
+    }
+    else
+#endif
     if (export_matrix)
     {
         std::cout << "\n[Scheme] Exporting matrix to Matrix Market format\n";
@@ -328,6 +336,7 @@ bool program_options(int argc, const char *argv[], std::string &mesh_name, std::
   // Program options
   po::options_description desc("Allowed options");
   desc.add_options()("help,h", "Produce help message")("mesh,m", po::value<std::string>(), "Set the mesh")("bc,b", po::value<std::string>(), "Set the boundary conditions (D=Dirichlet, N=Neumann, M0=Mixed)")("testcase,c", po::value<std::vector<int>>()->multitoken(), "Set the test case (sol diff advec reac)")("celldegree,l", po::value<size_t>(), "Set the degree of the cell polynomials")("facedegree,k", po::value<size_t>(), "Set the degree of the face polynomials")("plot,p", po::value<std::string>(), "Plot to file")("use_threads,u", po::value<bool>(), "Using multithreading")("export_matrix,e", po::value<bool>(), "Export matrix to Matrix Market format");
+  desc.add_options()("solver_type", po::value<std::string>(&solver_type)->default_value("bicgstab"), "Linear solver: bicgstab or fhhos4");
 
   po::variables_map vm;
   po::store(po::parse_command_line(argc, argv, desc), vm);
